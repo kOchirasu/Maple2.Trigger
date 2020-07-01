@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._80000012_bonus {
     public static class _camera_restore {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {

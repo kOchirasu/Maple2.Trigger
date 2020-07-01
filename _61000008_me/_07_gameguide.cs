@@ -1,46 +1,42 @@
-using System;
-
 namespace Maple2.Trigger._61000008_me {
     public static class _07_gameguide {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "GameGuide", value: 1)) {
+                if (context.GetUserValue(key: "GameGuide") == 1) {
                     context.State = new StateGameGuideR1_30(context);
                     return;
                 }
 
-                if (context.UserValue(key: "GameGuide", value: 2)) {
+                if (context.GetUserValue(key: "GameGuide") == 2) {
                     context.State = new StateGameGuideR2_20(context);
                     return;
                 }
 
-                if (context.UserValue(key: "GameGuide", value: 3)) {
+                if (context.GetUserValue(key: "GameGuide") == 3) {
                     context.State = new StateGameGuideR3_15(context);
                     return;
                 }
 
-                if (context.UserValue(key: "GameGuide", value: 4)) {
+                if (context.GetUserValue(key: "GameGuide") == 4) {
                     context.State = new StateGameGuideR4_10(context);
                     return;
                 }
 
-                if (context.UserValue(key: "GameGuide", value: 5)) {
+                if (context.GetUserValue(key: "GameGuide") == 5) {
                     context.State = new StateGameGuideR5_10(context);
                     return;
                 }
 
-                if (context.UserValue(key: "GameGuide", value: 6)) {
+                if (context.GetUserValue(key: "GameGuide") == 6) {
                     context.State = new StateGambleGuideR4_15(context);
                     return;
                 }
 
-                if (context.UserValue(key: "GameGuide", value: 7)) {
+                if (context.GetUserValue(key: "GameGuide") == 7) {
                     context.State = new StateJackpotGuideR4_20(context);
                     return;
                 }
@@ -138,7 +134,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateNormalGameGuide_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100804, textID: 26100804, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100804, textId: 26100804, duration: 4000);
             }
 
             public override void Execute() {
@@ -155,7 +151,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateNormalGameGuide_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100805, textID: 26100805, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100805, textId: 26100805, duration: 4000);
             }
 
             public override void Execute() {
@@ -177,7 +173,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateNormalGameGuide_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100808, textID: 26100808, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100808, textId: 26100808, duration: 4000);
             }
 
             public override void Execute() {
@@ -199,7 +195,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateNormalGameGuide_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100804, textID: 26100804, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100804, textId: 26100804, duration: 4000);
             }
 
             public override void Execute() {
@@ -221,7 +217,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateNormalGameGuide_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100805, textID: 26100805, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100805, textId: 26100805, duration: 4000);
             }
 
             public override void Execute() {
@@ -243,7 +239,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateNormalGameGuide_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100808, textID: 26100808, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100808, textId: 26100808, duration: 4000);
             }
 
             public override void Execute() {
@@ -299,7 +295,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGambleGameGuide_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100806, textID: 26100806, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100806, textId: 26100806, duration: 4000);
             }
 
             public override void Execute() {
@@ -316,7 +312,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGambleGameGuide_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100807, textID: 26100807, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100807, textId: 26100807, duration: 4000);
             }
 
             public override void Execute() {
@@ -333,7 +329,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGambleGameGuide_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100808, textID: 26100808, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100808, textId: 26100808, duration: 4000);
             }
 
             public override void Execute() {
@@ -355,7 +351,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGambleGameGuide_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100806, textID: 26100806, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100806, textId: 26100806, duration: 4000);
             }
 
             public override void Execute() {

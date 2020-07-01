@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02100004_bf {
     public static class _randomspawner {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199})) {
+                if (context.UserDetected(arg1: new[] {199})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RoundStart", value: 1)) {
+                if (context.GetUserValue(key: "RoundStart") == 1) {
                     context.State = new State랜덤스폰(context);
                     return;
                 }
@@ -38,7 +34,7 @@ namespace Maple2.Trigger._02100004_bf {
             internal State랜덤스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 999992, key: "RoundStart", value: 0);
+                context.SetUserValue(triggerId: 999992, key: "RoundStart", value: 0);
             }
 
             public override void Execute() {
@@ -112,13 +108,13 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "NpcSpawned01", value: 0)) {
-                    context.SetUserValue(triggerID: 999101, key: "NpcSpawn01", value: 1);
+                if (context.GetUserValue(key: "NpcSpawned01") == 0) {
+                    context.SetUserValue(triggerId: 999101, key: "NpcSpawn01", value: 1);
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "NpcSpawned01", value: 1)) {
+                if (context.GetUserValue(key: "NpcSpawned01") == 1) {
                     context.State = new State랜덤스폰(context);
                     return;
                 }
@@ -133,13 +129,13 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "NpcSpawned02", value: 0)) {
-                    context.SetUserValue(triggerID: 999102, key: "NpcSpawn02", value: 1);
+                if (context.GetUserValue(key: "NpcSpawned02") == 0) {
+                    context.SetUserValue(triggerId: 999102, key: "NpcSpawn02", value: 1);
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "NpcSpawned02", value: 1)) {
+                if (context.GetUserValue(key: "NpcSpawned02") == 1) {
                     context.State = new State랜덤스폰(context);
                     return;
                 }
@@ -154,13 +150,13 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "NpcSpawned03", value: 0)) {
-                    context.SetUserValue(triggerID: 999103, key: "NpcSpawn03", value: 1);
+                if (context.GetUserValue(key: "NpcSpawned03") == 0) {
+                    context.SetUserValue(triggerId: 999103, key: "NpcSpawn03", value: 1);
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "NpcSpawned03", value: 1)) {
+                if (context.GetUserValue(key: "NpcSpawned03") == 1) {
                     context.State = new State랜덤스폰(context);
                     return;
                 }
@@ -175,13 +171,13 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "NpcSpawned04", value: 0)) {
-                    context.SetUserValue(triggerID: 999104, key: "NpcSpawn04", value: 1);
+                if (context.GetUserValue(key: "NpcSpawned04") == 0) {
+                    context.SetUserValue(triggerId: 999104, key: "NpcSpawn04", value: 1);
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "NpcSpawned04", value: 1)) {
+                if (context.GetUserValue(key: "NpcSpawned04") == 1) {
                     context.State = new State랜덤스폰(context);
                     return;
                 }
@@ -196,13 +192,13 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "NpcSpawned05", value: 0)) {
-                    context.SetUserValue(triggerID: 999105, key: "NpcSpawn05", value: 1);
+                if (context.GetUserValue(key: "NpcSpawned05") == 0) {
+                    context.SetUserValue(triggerId: 999105, key: "NpcSpawn05", value: 1);
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "NpcSpawned05", value: 1)) {
+                if (context.GetUserValue(key: "NpcSpawned05") == 1) {
                     context.State = new State랜덤스폰(context);
                     return;
                 }
@@ -217,13 +213,13 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "NpcSpawned06", value: 0)) {
-                    context.SetUserValue(triggerID: 999106, key: "NpcSpawn06", value: 1);
+                if (context.GetUserValue(key: "NpcSpawned06") == 0) {
+                    context.SetUserValue(triggerId: 999106, key: "NpcSpawn06", value: 1);
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "NpcSpawned06", value: 1)) {
+                if (context.GetUserValue(key: "NpcSpawned06") == 1) {
                     context.State = new State랜덤스폰(context);
                     return;
                 }
@@ -238,13 +234,13 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "NpcSpawned08", value: 0)) {
-                    context.SetUserValue(triggerID: 999108, key: "NpcSpawn08", value: 1);
+                if (context.GetUserValue(key: "NpcSpawned08") == 0) {
+                    context.SetUserValue(triggerId: 999108, key: "NpcSpawn08", value: 1);
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "NpcSpawned08", value: 1)) {
+                if (context.GetUserValue(key: "NpcSpawned08") == 1) {
                     context.State = new State랜덤스폰(context);
                     return;
                 }
@@ -259,13 +255,13 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "NpcSpawned09", value: 0)) {
-                    context.SetUserValue(triggerID: 999109, key: "NpcSpawn09", value: 1);
+                if (context.GetUserValue(key: "NpcSpawned09") == 0) {
+                    context.SetUserValue(triggerId: 999109, key: "NpcSpawn09", value: 1);
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "NpcSpawned09", value: 1)) {
+                if (context.GetUserValue(key: "NpcSpawned09") == 1) {
                     context.State = new State랜덤스폰(context);
                     return;
                 }
@@ -280,13 +276,13 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "NpcSpawned10", value: 0)) {
-                    context.SetUserValue(triggerID: 999110, key: "NpcSpawn10", value: 1);
+                if (context.GetUserValue(key: "NpcSpawned10") == 0) {
+                    context.SetUserValue(triggerId: 999110, key: "NpcSpawn10", value: 1);
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "NpcSpawned10", value: 1)) {
+                if (context.GetUserValue(key: "NpcSpawned10") == 1) {
                     context.State = new State랜덤스폰(context);
                     return;
                 }
@@ -301,13 +297,13 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "NpcSpawned11", value: 0)) {
-                    context.SetUserValue(triggerID: 999111, key: "NpcSpawn11", value: 1);
+                if (context.GetUserValue(key: "NpcSpawned11") == 0) {
+                    context.SetUserValue(triggerId: 999111, key: "NpcSpawn11", value: 1);
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "NpcSpawned11", value: 1)) {
+                if (context.GetUserValue(key: "NpcSpawned11") == 1) {
                     context.State = new State랜덤스폰(context);
                     return;
                 }
@@ -322,13 +318,13 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "NpcSpawned12", value: 0)) {
-                    context.SetUserValue(triggerID: 999112, key: "NpcSpawn12", value: 1);
+                if (context.GetUserValue(key: "NpcSpawned12") == 0) {
+                    context.SetUserValue(triggerId: 999112, key: "NpcSpawn12", value: 1);
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "NpcSpawned12", value: 1)) {
+                if (context.GetUserValue(key: "NpcSpawned12") == 1) {
                     context.State = new State랜덤스폰(context);
                     return;
                 }
@@ -343,13 +339,13 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "NpcSpawned13", value: 0)) {
-                    context.SetUserValue(triggerID: 999113, key: "NpcSpawn13", value: 1);
+                if (context.GetUserValue(key: "NpcSpawned13") == 0) {
+                    context.SetUserValue(triggerId: 999113, key: "NpcSpawn13", value: 1);
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "NpcSpawned13", value: 1)) {
+                if (context.GetUserValue(key: "NpcSpawned13") == 1) {
                     context.State = new State랜덤스폰(context);
                     return;
                 }

@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._52010066_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State연출01(context);
-
-        private class State연출01 : TriggerState {
+        public class State연출01 : TriggerState {
             internal State연출01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.VisibleMyPc(isVisible: false);
-                    context.SetMeshAnimation(arg1: new int[] {9002}, arg2: false, arg3: 0, arg4: 0);
+                    context.SetMeshAnimation(arg1: new[] {9002}, arg2: false, arg3: 0, arg4: 0);
                     context.SetProductionUI(arg1: 1);
                     context.State = new State연출02(context);
                     return;
@@ -45,7 +41,7 @@ namespace Maple2.Trigger._52010066_qd {
 
             public override void OnEnter() {
                 context.SetTimeScale(enable: true, startScale: 0.8f, endScale: 0.8f, duration: 8.0f, interpolator: 1);
-                context.CameraSelectPath(arg1: new int[] {2000, 2001, 2002, 2003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {2000, 2001, 2002, 2003}, arg2: false);
             }
 
             public override void Execute() {
@@ -62,7 +58,7 @@ namespace Maple2.Trigger._52010066_qd {
             internal State연출04_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMeshAnimation(arg1: new int[] {9002}, arg2: true, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(arg1: new[] {9002}, arg2: true, arg3: 0, arg4: 0);
             }
 
             public override void Execute() {

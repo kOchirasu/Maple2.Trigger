@@ -1,23 +1,19 @@
-using System;
-
 namespace Maple2.Trigger._52010038_qd {
     public static class _mob_1_2 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "WaveStart", value: 1)) {
+                if (context.GetUserValue(key: "WaveStart") == 1) {
                     context.State = new State생성(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.SpawnNpcRange(rangeID: new int[] {2005, 2006, 2007}, isAutoTargeting: true);
+                context.SpawnNpcRange(rangeId: new[] {2005, 2006, 2007}, isAutoTargeting: true);
             }
         }
 
@@ -25,8 +21,8 @@ namespace Maple2.Trigger._52010038_qd {
             internal State생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {4000}, arg2: false);
-                context.SpawnNpcRange(rangeID: new int[] {2005, 2006, 2007}, isAutoTargeting: true, randomPickCount: 1);
+                context.CreateMonster(arg1: new[] {4000}, arg2: false);
+                context.SpawnNpcRange(rangeId: new[] {2005, 2006, 2007}, isAutoTargeting: true, randomPickCount: 1);
             }
 
             public override void Execute() {
@@ -35,7 +31,7 @@ namespace Maple2.Trigger._52010038_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "WaveEnd", value: 1)) {
+                if (context.GetUserValue(key: "WaveEnd") == 1) {
                     context.State = new State종료(context);
                     return;
                 }

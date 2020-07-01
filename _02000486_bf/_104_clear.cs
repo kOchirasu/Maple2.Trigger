@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000486_bf {
     public static class _104_clear {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State끝1(context);
-
-        private class State끝1 : TriggerState {
+        public class State끝1 : TriggerState {
             internal State끝1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9901})) {
+                if (context.UserDetected(arg1: new[] {9901})) {
                     context.State = new State끝2(context);
                     return;
                 }
@@ -25,8 +21,8 @@ namespace Maple2.Trigger._02000486_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckNpcHp(spawnPointId: 900, compare: "lowerEqual", value: 5, isRelative: "true")
-                    && context.CheckNpcHp(spawnPointId: 901, compare: "lowerEqual", value: 5, isRelative: "true")) {
+                if (context.GetNpcHpRate(spawnPointId: 900) <= 0.5f
+                    && context.GetNpcHpRate(spawnPointId: 901) <= 0.5f) {
                     context.State = new State끝3(context);
                     return;
                 }
@@ -39,9 +35,9 @@ namespace Maple2.Trigger._02000486_bf {
             internal State끝3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {900}, arg2: 50002505, arg3: 1, arg4: true, arg5: false);
-                context.AddBuff(arg1: new int[] {901}, arg2: 50002505, arg3: 1, arg4: true, arg5: false);
-                context.SetSkill(arg1: new int[] {1000049}, arg2: true);
+                context.AddBuff(arg1: new[] {900}, arg2: 50002505, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(arg1: new[] {901}, arg2: 50002505, arg3: 1, arg4: true, arg5: false);
+                context.SetSkill(arg1: new[] {1000049}, arg2: true);
             }
 
             public override void Execute() {

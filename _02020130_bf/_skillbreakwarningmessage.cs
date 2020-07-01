@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02020130_bf {
     public static class _skillbreakwarningmessage {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 601, arg2: 1)) {
+                if (context.GetUserCount(boxId: 601) == 1) {
                     context.State = new State신호받기대기중(context);
                     return;
                 }
@@ -27,22 +23,22 @@ namespace Maple2.Trigger._02020130_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "WarningMessage", value: 1)) {
+                if (context.GetUserValue(key: "WarningMessage") == 1) {
                     context.State = new State스킬브레이크메시지출력(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DeathIshuraRbladerDark", value: 1)) {
+                if (context.GetUserValue(key: "DeathIshuraRbladerDark") == 1) {
                     context.State = new State이슈라죽음알림(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DeathRenduebianRbladerDark", value: 1)) {
+                if (context.GetUserValue(key: "DeathRenduebianRbladerDark") == 1) {
                     context.State = new State렌듀비앙죽음알림(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DeathYuperiaRbladerDark", value: 1)) {
+                if (context.GetUserValue(key: "DeathYuperiaRbladerDark") == 1) {
                     context.State = new State유페리아죽음알림(context);
                     return;
                 }
@@ -55,7 +51,7 @@ namespace Maple2.Trigger._02020130_bf {
             internal State스킬브레이크메시지출력(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20051001, textID: 20051001);
+                context.ShowGuideSummary(entityId: 20051001, textId: 20051001);
             }
 
             public override void Execute() {
@@ -66,7 +62,7 @@ namespace Maple2.Trigger._02020130_bf {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20051001);
+                context.HideGuideSummary(entityId: 20051001);
             }
         }
 
@@ -74,7 +70,7 @@ namespace Maple2.Trigger._02020130_bf {
             internal State이슈라죽음알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20051002, textID: 20051002);
+                context.ShowGuideSummary(entityId: 20051002, textId: 20051002);
                 context.SetUserValue(key: "DeathIshuraRbladerDark", value: 0);
             }
 
@@ -84,19 +80,19 @@ namespace Maple2.Trigger._02020130_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "DeathRenduebianRbladerDark", value: 1)) {
+                if (context.GetUserValue(key: "DeathRenduebianRbladerDark") == 1) {
                     context.State = new State렌듀비앙죽음알림(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DeathYuperiaRbladerDark", value: 1)) {
+                if (context.GetUserValue(key: "DeathYuperiaRbladerDark") == 1) {
                     context.State = new State유페리아죽음알림(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20051002);
+                context.HideGuideSummary(entityId: 20051002);
             }
         }
 
@@ -104,7 +100,7 @@ namespace Maple2.Trigger._02020130_bf {
             internal State렌듀비앙죽음알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20051003, textID: 20051003);
+                context.ShowGuideSummary(entityId: 20051003, textId: 20051003);
                 context.SetUserValue(key: "DeathRenduebianRbladerDark", value: 0);
             }
 
@@ -114,19 +110,19 @@ namespace Maple2.Trigger._02020130_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "DeathIshuraRbladerDark", value: 1)) {
+                if (context.GetUserValue(key: "DeathIshuraRbladerDark") == 1) {
                     context.State = new State이슈라죽음알림(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DeathYuperiaRbladerDark", value: 1)) {
+                if (context.GetUserValue(key: "DeathYuperiaRbladerDark") == 1) {
                     context.State = new State유페리아죽음알림(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20051003);
+                context.HideGuideSummary(entityId: 20051003);
             }
         }
 
@@ -134,7 +130,7 @@ namespace Maple2.Trigger._02020130_bf {
             internal State유페리아죽음알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20051004, textID: 20051004);
+                context.ShowGuideSummary(entityId: 20051004, textId: 20051004);
                 context.SetUserValue(key: "DeathYuperiaRbladerDark", value: 0);
             }
 
@@ -144,19 +140,19 @@ namespace Maple2.Trigger._02020130_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "DeathIshuraRbladerDark", value: 1)) {
+                if (context.GetUserValue(key: "DeathIshuraRbladerDark") == 1) {
                     context.State = new State이슈라죽음알림(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DeathRenduebianRbladerDark", value: 1)) {
+                if (context.GetUserValue(key: "DeathRenduebianRbladerDark") == 1) {
                     context.State = new State렌듀비앙죽음알림(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20051004);
+                context.HideGuideSummary(entityId: 20051004);
             }
         }
 

@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._82000003_survival {
     public static class _08_raremob {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateSetting(context);
-
-        private class StateSetting : TriggerState {
+        public class StateSetting : TriggerState {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -13,7 +9,7 @@ namespace Maple2.Trigger._82000003_survival {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RareMobOnCount", value: 1)) {
+                if (context.GetUserValue(key: "RareMobOnCount") == 1) {
                     context.State = new StateDelay(context);
                     return;
                 }
@@ -33,7 +29,7 @@ namespace Maple2.Trigger._82000003_survival {
                     return;
                 }
 
-                if (context.UserValue(key: "RareMobOff", value: 1)) {
+                if (context.GetUserValue(key: "RareMobOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -47,14 +43,14 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() {
                 context.StartCombineSpawn(
-                    groupId: new int[] {
+                    groupId: new[] {
                         319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337,
                         338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354
-                    }, isStart: "true");
+                    }, isStart: true);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RareMobOff", value: 1)) {
+                if (context.GetUserValue(key: "RareMobOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -68,10 +64,10 @@ namespace Maple2.Trigger._82000003_survival {
 
             public override void OnEnter() {
                 context.StartCombineSpawn(
-                    groupId: new int[] {
+                    groupId: new[] {
                         319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337,
                         338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354
-                    }, isStart: "false");
+                    }, isStart: false);
             }
 
             public override void Execute() { }

@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._99999905 {
     public static class _pvp {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "30", arg2: 30, arg3: false);
-                context.SetMesh(arg1: new int[] {3001, 3002, 3003, 4001, 4002, 4003}, arg2: true, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 4001, 4002, 4003}, arg2: true, arg3: 0, arg4: 0,
                     arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 104, arg2: 1)) {
+                if (context.GetUserCount(boxId: 104) == 1) {
                     context.State = new StatePvP(context);
                     return;
                 }
@@ -52,7 +48,7 @@ namespace Maple2.Trigger._99999905 {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2, arg3: false);
-                context.SetEventUI(arg1: 1, arg2: "$99999905__PVP__0$", arg3: new int[] {2000});
+                context.SetEventUI(arg1: 1, arg2: "$99999905__PVP__0$", arg3: 2000);
             }
 
             public override void Execute() {
@@ -70,7 +66,7 @@ namespace Maple2.Trigger._99999905 {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "4", arg2: 4, arg3: false);
-                context.SetEventUI(arg1: 1, arg2: "$99999905__PVP__1$", arg3: new int[] {4000});
+                context.SetEventUI(arg1: 1, arg2: "$99999905__PVP__1$", arg3: 4000);
             }
 
             public override void Execute() {
@@ -88,7 +84,7 @@ namespace Maple2.Trigger._99999905 {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2, arg3: false);
-                context.SetEventUI(arg1: 1, arg2: "$99999905__PVP__2$", arg3: new int[] {2000});
+                context.SetEventUI(arg1: 1, arg2: "$99999905__PVP__2$", arg3: 2000);
             }
 
             public override void Execute() {
@@ -125,8 +121,8 @@ namespace Maple2.Trigger._99999905 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {105})) {
-                    context.SetMesh(arg1: new int[] {3001, 3002, 3003, 4001, 4002, 4003}, arg2: false, arg3: 0, arg4: 0,
+                if (context.UserDetected(arg1: new[] {105})) {
+                    context.SetMesh(arg1: new[] {3001, 3002, 3003, 4001, 4002, 4003}, arg2: false, arg3: 0, arg4: 0,
                         arg5: 0f);
                     context.State = new StatePvP종료(context);
                     return;

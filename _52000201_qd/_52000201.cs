@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000201_qd {
     public static class _52000201 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statestart(context);
-
-        private class Statestart : TriggerState {
+        public class Statestart : TriggerState {
             internal Statestart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {10003429},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003429},
                     arg3: new byte[] {2})) {
                     context.State = new StateCameraEffect01(context);
                     return;
@@ -43,7 +39,7 @@ namespace Maple2.Trigger._52000201_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
                 context.MoveUser(arg1: 52000201, arg2: 5001);
             }
 
@@ -79,7 +75,7 @@ namespace Maple2.Trigger._52000201_qd {
             internal StateCameraEffect04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
             }
 
             public override void Execute() {

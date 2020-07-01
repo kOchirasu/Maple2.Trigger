@@ -1,41 +1,37 @@
-using System;
-
 namespace Maple2.Trigger._51000003_dg {
     public static class _wave_projectile {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateRound_check(context);
-
-        private class StateRound_check : TriggerState {
+        public class StateRound_check : TriggerState {
             internal StateRound_check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[]
+                context.DestroyMonster(arg1: new[]
                     {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 298, 299});
-                context.DestroyMonster(arg1: new int[]
+                context.DestroyMonster(arg1: new[]
                     {401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417});
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Round_01", value: 1)) {
+                if (context.GetUserValue(key: "Round_01") == 1) {
                     context.State = new StateRound_01_Ready(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Round_02", value: 1)) {
+                if (context.GetUserValue(key: "Round_02") == 1) {
                     // context.State = new StateRound_02_Ready(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Round_03", value: 1)) {
+                if (context.GetUserValue(key: "Round_03") == 1) {
                     // context.State = new StateRound_03_Ready(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Round_04", value: 1)) {
+                if (context.GetUserValue(key: "Round_04") == 1) {
                     // context.State = new StateRound_04_Ready(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Round_05", value: 1)) {
+                if (context.GetUserValue(key: "Round_05") == 1) {
                     // context.State = new StateRound_05_Ready(context);
                     return;
                 }
@@ -85,7 +81,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_02", value: 1)) {
+                if (context.GetUserValue(key: "Round_02") == 1) {
                     context.State = new StateRound_02(context);
                     return;
                 }
@@ -98,7 +94,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_01_Random_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
@@ -108,12 +104,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_01", value: 0)) {
+                if (context.GetUserValue(key: "Round_01") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -126,7 +122,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_01_Random_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {202}, arg2: true);
+                context.CreateMonster(arg1: new[] {202}, arg2: true);
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
@@ -136,12 +132,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_01", value: 0)) {
+                if (context.GetUserValue(key: "Round_01") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -154,7 +150,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_01_Random_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {203}, arg2: true);
+                context.CreateMonster(arg1: new[] {203}, arg2: true);
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
@@ -164,12 +160,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_01", value: 0)) {
+                if (context.GetUserValue(key: "Round_01") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -182,7 +178,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_01_Random_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {204}, arg2: true);
+                context.CreateMonster(arg1: new[] {204}, arg2: true);
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
@@ -192,12 +188,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_01", value: 0)) {
+                if (context.GetUserValue(key: "Round_01") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -260,8 +256,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_02_Random_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {204}, arg2: true, arg3: 1000);
+                context.CreateMonster(arg1: new[] {201}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {204}, arg2: true, arg3: 1000);
                 context.SetTimer(arg1: "4", arg2: 4);
             }
 
@@ -271,12 +267,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_02", value: 0)) {
+                if (context.GetUserValue(key: "Round_02") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -289,8 +285,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_02_Random_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {202}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {203}, arg2: true, arg3: 1000);
+                context.CreateMonster(arg1: new[] {202}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {203}, arg2: true, arg3: 1000);
                 context.SetTimer(arg1: "4", arg2: 4);
             }
 
@@ -300,12 +296,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_02", value: 0)) {
+                if (context.GetUserValue(key: "Round_02") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -318,8 +314,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_02_Random_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {203}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {204}, arg2: true, arg3: 1000);
+                context.CreateMonster(arg1: new[] {203}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {204}, arg2: true, arg3: 1000);
                 context.SetTimer(arg1: "4", arg2: 4);
             }
 
@@ -329,12 +325,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_02", value: 0)) {
+                if (context.GetUserValue(key: "Round_02") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -347,8 +343,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_02_Random_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {202}, arg2: true, arg3: 1000);
+                context.CreateMonster(arg1: new[] {201}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {202}, arg2: true, arg3: 1000);
                 context.SetTimer(arg1: "4", arg2: 4);
             }
 
@@ -358,12 +354,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_02", value: 0)) {
+                if (context.GetUserValue(key: "Round_02") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -376,8 +372,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_02_Random_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {202}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {204}, arg2: true, arg3: 1000);
+                context.CreateMonster(arg1: new[] {202}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {204}, arg2: true, arg3: 1000);
                 context.SetTimer(arg1: "4", arg2: 4);
             }
 
@@ -387,12 +383,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_02", value: 0)) {
+                if (context.GetUserValue(key: "Round_02") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -405,8 +401,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_02_Random_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {401}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {403}, arg2: true, arg3: 1000);
+                context.CreateMonster(arg1: new[] {401}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {403}, arg2: true, arg3: 1000);
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
@@ -416,12 +412,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_02", value: 0)) {
+                if (context.GetUserValue(key: "Round_02") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -484,9 +480,9 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_03_Random_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {205}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {206}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {207}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {205}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {206}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {207}, arg2: true, arg3: 4000);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -496,12 +492,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_03", value: 0)) {
+                if (context.GetUserValue(key: "Round_03") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -514,9 +510,9 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_03_Random_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {208}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {209}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {210}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {208}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {209}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {210}, arg2: true, arg3: 4000);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -526,12 +522,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_03", value: 0)) {
+                if (context.GetUserValue(key: "Round_03") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -544,9 +540,9 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_03_Random_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {205}, arg2: true, arg3: 4000);
-                context.CreateMonster(arg1: new int[] {206}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {207}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {205}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {206}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {207}, arg2: true, arg3: 0);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -556,12 +552,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_03", value: 0)) {
+                if (context.GetUserValue(key: "Round_03") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -574,9 +570,9 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_03_Random_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {208}, arg2: true, arg3: 4000);
-                context.CreateMonster(arg1: new int[] {209}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {210}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {208}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {209}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {210}, arg2: true, arg3: 0);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -586,12 +582,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_03", value: 0)) {
+                if (context.GetUserValue(key: "Round_03") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -604,9 +600,9 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_03_Random_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {410}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {411}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {410}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {410}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {411}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {410}, arg2: true, arg3: 4000);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -616,12 +612,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_03", value: 0)) {
+                if (context.GetUserValue(key: "Round_03") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -634,9 +630,9 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_03_Random_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {412}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {413}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {412}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {412}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {413}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {412}, arg2: true, arg3: 4000);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -646,12 +642,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_03", value: 0)) {
+                if (context.GetUserValue(key: "Round_03") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -664,12 +660,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_03_Random_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {298}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {215}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {211}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {214}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {213}, arg2: true, arg3: 4000);
-                context.CreateMonster(arg1: new int[] {212}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {298}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {215}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {211}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {214}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {213}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {212}, arg2: true, arg3: 4000);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -679,12 +675,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_03", value: 0)) {
+                if (context.GetUserValue(key: "Round_03") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -697,12 +693,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_03_Random_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {299}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {216}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {217}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {220}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {218}, arg2: true, arg3: 4000);
-                context.CreateMonster(arg1: new int[] {219}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {299}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {216}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {217}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {220}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {218}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {219}, arg2: true, arg3: 4000);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -712,12 +708,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_03", value: 0)) {
+                if (context.GetUserValue(key: "Round_03") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -780,10 +776,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_04_Random_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {205}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {206}, arg2: true, arg3: 1500);
-                context.CreateMonster(arg1: new int[] {207}, arg2: true, arg3: 3000);
-                context.CreateMonster(arg1: new int[] {205}, arg2: true, arg3: 4500);
+                context.CreateMonster(arg1: new[] {205}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {206}, arg2: true, arg3: 1500);
+                context.CreateMonster(arg1: new[] {207}, arg2: true, arg3: 3000);
+                context.CreateMonster(arg1: new[] {205}, arg2: true, arg3: 4500);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -793,12 +789,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_04", value: 0)) {
+                if (context.GetUserValue(key: "Round_04") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -811,10 +807,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_04_Random_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {208}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {209}, arg2: true, arg3: 1500);
-                context.CreateMonster(arg1: new int[] {210}, arg2: true, arg3: 3000);
-                context.CreateMonster(arg1: new int[] {208}, arg2: true, arg3: 4500);
+                context.CreateMonster(arg1: new[] {208}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {209}, arg2: true, arg3: 1500);
+                context.CreateMonster(arg1: new[] {210}, arg2: true, arg3: 3000);
+                context.CreateMonster(arg1: new[] {208}, arg2: true, arg3: 4500);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -824,12 +820,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_04", value: 0)) {
+                if (context.GetUserValue(key: "Round_04") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -842,10 +838,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_04_Random_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {205}, arg2: true, arg3: 3000);
-                context.CreateMonster(arg1: new int[] {206}, arg2: true, arg3: 1500);
-                context.CreateMonster(arg1: new int[] {207}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {205}, arg2: true, arg3: 4500);
+                context.CreateMonster(arg1: new[] {205}, arg2: true, arg3: 3000);
+                context.CreateMonster(arg1: new[] {206}, arg2: true, arg3: 1500);
+                context.CreateMonster(arg1: new[] {207}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {205}, arg2: true, arg3: 4500);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -855,12 +851,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_04", value: 0)) {
+                if (context.GetUserValue(key: "Round_04") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -873,10 +869,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_04_Random_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {208}, arg2: true, arg3: 3000);
-                context.CreateMonster(arg1: new int[] {209}, arg2: true, arg3: 1500);
-                context.CreateMonster(arg1: new int[] {210}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {208}, arg2: true, arg3: 4500);
+                context.CreateMonster(arg1: new[] {208}, arg2: true, arg3: 3000);
+                context.CreateMonster(arg1: new[] {209}, arg2: true, arg3: 1500);
+                context.CreateMonster(arg1: new[] {210}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {208}, arg2: true, arg3: 4500);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -886,12 +882,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_04", value: 0)) {
+                if (context.GetUserValue(key: "Round_04") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -904,10 +900,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_04_Random_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {410}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {411}, arg2: true, arg3: 1500);
-                context.CreateMonster(arg1: new int[] {410}, arg2: true, arg3: 3000);
-                context.CreateMonster(arg1: new int[] {410}, arg2: true, arg3: 4500);
+                context.CreateMonster(arg1: new[] {410}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {411}, arg2: true, arg3: 1500);
+                context.CreateMonster(arg1: new[] {410}, arg2: true, arg3: 3000);
+                context.CreateMonster(arg1: new[] {410}, arg2: true, arg3: 4500);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -917,12 +913,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_04", value: 0)) {
+                if (context.GetUserValue(key: "Round_04") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -935,10 +931,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_04_Random_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {412}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {413}, arg2: true, arg3: 1500);
-                context.CreateMonster(arg1: new int[] {412}, arg2: true, arg3: 3000);
-                context.CreateMonster(arg1: new int[] {412}, arg2: true, arg3: 4500);
+                context.CreateMonster(arg1: new[] {412}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {413}, arg2: true, arg3: 1500);
+                context.CreateMonster(arg1: new[] {412}, arg2: true, arg3: 3000);
+                context.CreateMonster(arg1: new[] {412}, arg2: true, arg3: 4500);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -948,12 +944,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_04", value: 0)) {
+                if (context.GetUserValue(key: "Round_04") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -966,12 +962,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_04_Random_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {298}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {215}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {211}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {214}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {213}, arg2: true, arg3: 4000);
-                context.CreateMonster(arg1: new int[] {212}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {298}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {215}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {211}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {214}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {213}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {212}, arg2: true, arg3: 4000);
                 context.SetTimer(arg1: "6", arg2: 6);
             }
 
@@ -981,12 +977,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_04", value: 0)) {
+                if (context.GetUserValue(key: "Round_04") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -999,12 +995,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_04_Random_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {299}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {216}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {217}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {220}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {218}, arg2: true, arg3: 4000);
-                context.CreateMonster(arg1: new int[] {219}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {299}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {216}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {217}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {220}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {218}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {219}, arg2: true, arg3: 4000);
                 context.SetTimer(arg1: "6", arg2: 6);
             }
 
@@ -1014,12 +1010,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_04", value: 0)) {
+                if (context.GetUserValue(key: "Round_04") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -1082,10 +1078,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_05_Random_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {205}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {206}, arg2: true, arg3: 1500);
-                context.CreateMonster(arg1: new int[] {207}, arg2: true, arg3: 3000);
-                context.CreateMonster(arg1: new int[] {205}, arg2: true, arg3: 4500);
+                context.CreateMonster(arg1: new[] {205}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {206}, arg2: true, arg3: 1500);
+                context.CreateMonster(arg1: new[] {207}, arg2: true, arg3: 3000);
+                context.CreateMonster(arg1: new[] {205}, arg2: true, arg3: 4500);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -1095,12 +1091,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_05", value: 0)) {
+                if (context.GetUserValue(key: "Round_05") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -1113,10 +1109,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_05_Random_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {208}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {209}, arg2: true, arg3: 1500);
-                context.CreateMonster(arg1: new int[] {210}, arg2: true, arg3: 3000);
-                context.CreateMonster(arg1: new int[] {208}, arg2: true, arg3: 4500);
+                context.CreateMonster(arg1: new[] {208}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {209}, arg2: true, arg3: 1500);
+                context.CreateMonster(arg1: new[] {210}, arg2: true, arg3: 3000);
+                context.CreateMonster(arg1: new[] {208}, arg2: true, arg3: 4500);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -1126,12 +1122,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_05", value: 0)) {
+                if (context.GetUserValue(key: "Round_05") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -1144,10 +1140,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_05_Random_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {205}, arg2: true, arg3: 3000);
-                context.CreateMonster(arg1: new int[] {206}, arg2: true, arg3: 1500);
-                context.CreateMonster(arg1: new int[] {207}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {205}, arg2: true, arg3: 4500);
+                context.CreateMonster(arg1: new[] {205}, arg2: true, arg3: 3000);
+                context.CreateMonster(arg1: new[] {206}, arg2: true, arg3: 1500);
+                context.CreateMonster(arg1: new[] {207}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {205}, arg2: true, arg3: 4500);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -1157,12 +1153,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_05", value: 0)) {
+                if (context.GetUserValue(key: "Round_05") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -1175,10 +1171,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_05_Random_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {208}, arg2: true, arg3: 3000);
-                context.CreateMonster(arg1: new int[] {209}, arg2: true, arg3: 1500);
-                context.CreateMonster(arg1: new int[] {210}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {208}, arg2: true, arg3: 4500);
+                context.CreateMonster(arg1: new[] {208}, arg2: true, arg3: 3000);
+                context.CreateMonster(arg1: new[] {209}, arg2: true, arg3: 1500);
+                context.CreateMonster(arg1: new[] {210}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {208}, arg2: true, arg3: 4500);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -1188,12 +1184,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_05", value: 0)) {
+                if (context.GetUserValue(key: "Round_05") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -1206,10 +1202,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_05_Random_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {410}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {411}, arg2: true, arg3: 1500);
-                context.CreateMonster(arg1: new int[] {410}, arg2: true, arg3: 3000);
-                context.CreateMonster(arg1: new int[] {411}, arg2: true, arg3: 4500);
+                context.CreateMonster(arg1: new[] {410}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {411}, arg2: true, arg3: 1500);
+                context.CreateMonster(arg1: new[] {410}, arg2: true, arg3: 3000);
+                context.CreateMonster(arg1: new[] {411}, arg2: true, arg3: 4500);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -1219,12 +1215,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_05", value: 0)) {
+                if (context.GetUserValue(key: "Round_05") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -1237,10 +1233,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_05_Random_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {412}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {413}, arg2: true, arg3: 1500);
-                context.CreateMonster(arg1: new int[] {412}, arg2: true, arg3: 3000);
-                context.CreateMonster(arg1: new int[] {413}, arg2: true, arg3: 4500);
+                context.CreateMonster(arg1: new[] {412}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {413}, arg2: true, arg3: 1500);
+                context.CreateMonster(arg1: new[] {412}, arg2: true, arg3: 3000);
+                context.CreateMonster(arg1: new[] {413}, arg2: true, arg3: 4500);
                 context.SetTimer(arg1: "7", arg2: 7);
             }
 
@@ -1250,12 +1246,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_05", value: 0)) {
+                if (context.GetUserValue(key: "Round_05") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -1268,12 +1264,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_05_Random_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {298}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {215}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {211}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {214}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {213}, arg2: true, arg3: 4000);
-                context.CreateMonster(arg1: new int[] {212}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {298}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {215}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {211}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {214}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {213}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {212}, arg2: true, arg3: 4000);
                 context.SetTimer(arg1: "6", arg2: 6);
             }
 
@@ -1283,12 +1279,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_05", value: 0)) {
+                if (context.GetUserValue(key: "Round_05") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -1301,12 +1297,12 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_05_Random_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {299}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {216}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {217}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {220}, arg2: true, arg3: 2000);
-                context.CreateMonster(arg1: new int[] {218}, arg2: true, arg3: 4000);
-                context.CreateMonster(arg1: new int[] {219}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {299}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {216}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {217}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {220}, arg2: true, arg3: 2000);
+                context.CreateMonster(arg1: new[] {218}, arg2: true, arg3: 4000);
+                context.CreateMonster(arg1: new[] {219}, arg2: true, arg3: 4000);
                 context.SetTimer(arg1: "6", arg2: 6);
             }
 
@@ -1316,12 +1312,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_05", value: 0)) {
+                if (context.GetUserValue(key: "Round_05") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }

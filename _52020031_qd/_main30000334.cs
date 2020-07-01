@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._52020031_qd {
     public static class _main30000334 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {30000334},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000334},
                     arg3: new byte[] {1})) {
                     context.State = new State세번째전투끝나고(context);
                     return;
@@ -43,10 +39,10 @@ namespace Maple2.Trigger._52020031_qd {
             internal State세번째전투끝나고1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetEffect(arg1: new int[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {5001}, arg2: true);
             }
 
             public override void Execute() {
@@ -81,10 +77,10 @@ namespace Maple2.Trigger._52020031_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 6, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetEffect(arg1: new int[] {5001}, arg2: true);
-                context.FaceEmotion(spawnPointID: 0, emotionName: "defaultBattle");
+                context.SetEffect(arg1: new[] {5001}, arg2: true);
+                context.FaceEmotion(spawnPointId: 0, emotionName: "defaultBattle");
                 context.SetPcEmotionLoop(arg1: "Idle_A", arg2: 5000f);
-                context.AddCinematicTalk(npcID: 0, msg: @"역시 너희 흑성회는 믿을 만한 사람들이 아니었군.\n천공의 심장은 내가 가져가겠어.",
+                context.AddCinematicTalk(npcId: 0, msg: @"역시 너희 흑성회는 믿을 만한 사람들이 아니었군.\n천공의 심장은 내가 가져가겠어.",
                     duration: 5000);
             }
 
@@ -102,9 +98,9 @@ namespace Maple2.Trigger._52020031_qd {
             internal State세번째전투끝나고3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4010}, arg2: false);
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003756, msg: "크윽...", duration: 3000);
+                context.CameraSelectPath(arg1: new[] {4010}, arg2: false);
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003756, msg: "크윽...", duration: 3000);
             }
 
             public override void Execute() {
@@ -138,9 +134,9 @@ namespace Maple2.Trigger._52020031_qd {
             internal State세번째전투끝나고4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
-                context.AddCinematicTalk(npcID: 0, msg: "오늘 있었던 일은, 라딘에게도 전하겠어.", duration: 3000);
-                context.AddCinematicTalk(npcID: 0, msg: "흑성회와의 동맹은 여기까지야.", duration: 3000);
+                context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
+                context.AddCinematicTalk(npcId: 0, msg: "오늘 있었던 일은, 라딘에게도 전하겠어.", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, msg: "흑성회와의 동맹은 여기까지야.", duration: 3000);
             }
 
             public override void Execute() {

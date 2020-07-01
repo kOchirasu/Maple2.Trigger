@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000410_bf {
     public static class _itemnotice {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 750, arg2: 1)) {
+                if (context.GetUserCount(boxId: 750) == 1) {
                     context.State = new State전투시작(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "ItemNotice01", value: 1)) {
+                if (context.GetUserValue(key: "ItemNotice01") == 1) {
                     context.State = new State필수아이템01(context);
                     return;
                 }
@@ -38,7 +34,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State필수아이템01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20041008, textID: 20041008);
+                context.ShowGuideSummary(entityId: 20041008, textId: 20041008);
             }
 
             public override void Execute() {
@@ -49,7 +45,7 @@ namespace Maple2.Trigger._02000410_bf {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20041008);
+                context.HideGuideSummary(entityId: 20041008);
             }
         }
 
@@ -59,7 +55,7 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "ItemNotice02", value: 1)) {
+                if (context.GetUserValue(key: "ItemNotice02") == 1) {
                     context.State = new State필수아이템02(context);
                     return;
                 }
@@ -72,7 +68,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State필수아이템02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20041009, textID: 20041009);
+                context.ShowGuideSummary(entityId: 20041009, textId: 20041009);
             }
 
             public override void Execute() {
@@ -83,7 +79,7 @@ namespace Maple2.Trigger._02000410_bf {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20041009);
+                context.HideGuideSummary(entityId: 20041009);
             }
         }
 

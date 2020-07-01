@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._63000071_cs {
     public static class _63000071_main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statestandby(context);
-
-        private class Statestandby : TriggerState {
+        public class Statestandby : TriggerState {
             internal Statestandby(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._63000071_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new Stateopeningscene_start(context);
                     return;
                 }
@@ -28,9 +24,9 @@ namespace Maple2.Trigger._63000071_cs {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.VisibleMyPc(isVisible: false);
-                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: false);
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {8000, 8001}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
                 context.SetSceneSkip(arg1: "openingskip_1", arg2: "exit");
             }
 
@@ -51,8 +47,8 @@ namespace Maple2.Trigger._63000071_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetEffect(arg1: new int[] {5000}, arg2: false);
-                context.AddBalloonTalk(spawnPointID: 101, msg: "$63000071_CS__63000071_MAIN__0$", duration: 2500,
+                context.SetEffect(arg1: new[] {5000}, arg2: false);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$63000071_CS__63000071_MAIN__0$", duration: 2500,
                     delayTick: 1000);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Attack_01_A,Attack_01_B");
             }
@@ -72,7 +68,7 @@ namespace Maple2.Trigger._63000071_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Attack_Idle_A", arg3: 3500f);
-                context.AddBalloonTalk(spawnPointID: 101, msg: "$63000071_CS__63000071_MAIN__1$", duration: 2500,
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$63000071_CS__63000071_MAIN__1$", duration: 2500,
                     delayTick: 500);
             }
 
@@ -91,9 +87,9 @@ namespace Maple2.Trigger._63000071_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Stun_A", arg3: 8000f);
-                context.AddBalloonTalk(spawnPointID: 101, msg: "$63000071_CS__63000071_MAIN__2$", duration: 2500,
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$63000071_CS__63000071_MAIN__2$", duration: 2500,
                     delayTick: 500);
-                context.AddBalloonTalk(spawnPointID: 101, msg: "$63000071_CS__63000071_MAIN__3$", duration: 3500,
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$63000071_CS__63000071_MAIN__3$", duration: 3500,
                     delayTick: 4000);
             }
 
@@ -105,9 +101,9 @@ namespace Maple2.Trigger._63000071_cs {
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
-                context.SetEffect(arg1: new int[] {5001}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
+                context.SetEffect(arg1: new[] {5001}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
             }
         }
@@ -117,10 +113,10 @@ namespace Maple2.Trigger._63000071_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
-                context.AddBalloonTalk(spawnPointID: 102, msg: "$63000071_CS__63000071_MAIN__4$", duration: 2500,
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.AddBalloonTalk(spawnPointId: 102, msg: "$63000071_CS__63000071_MAIN__4$", duration: 2500,
                     delayTick: 500);
-                context.AddBalloonTalk(spawnPointID: 102, msg: "$63000071_CS__63000071_MAIN__5$", duration: 2500,
+                context.AddBalloonTalk(spawnPointId: 102, msg: "$63000071_CS__63000071_MAIN__5$", duration: 2500,
                     delayTick: 4000);
             }
 
@@ -132,7 +128,7 @@ namespace Maple2.Trigger._63000071_cs {
             }
 
             public override void OnExit() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_marien3");
             }
         }
@@ -141,9 +137,9 @@ namespace Maple2.Trigger._63000071_cs {
             internal Stateopeningscene_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004310, msg: "$63000071_CS__63000071_MAIN__6$", duration: 2500);
-                context.AddCinematicTalk(npcID: 11004310, msg: "$63000071_CS__63000071_MAIN__7$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004310, msg: "$63000071_CS__63000071_MAIN__8$", duration: 3500);
+                context.AddCinematicTalk(npcId: 11004310, msg: "$63000071_CS__63000071_MAIN__6$", duration: 2500);
+                context.AddCinematicTalk(npcId: 11004310, msg: "$63000071_CS__63000071_MAIN__7$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004310, msg: "$63000071_CS__63000071_MAIN__8$", duration: 3500);
             }
 
             public override void Execute() {
@@ -172,9 +168,9 @@ namespace Maple2.Trigger._63000071_cs {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {101, 102});
-                context.SetEffect(arg1: new int[] {5002}, arg2: true);
-                context.SetEffect(arg1: new int[] {5003}, arg2: true);
+                context.DestroyMonster(arg1: new[] {101, 102});
+                context.SetEffect(arg1: new[] {5002}, arg2: true);
+                context.SetEffect(arg1: new[] {5003}, arg2: true);
             }
         }
 
@@ -183,9 +179,9 @@ namespace Maple2.Trigger._63000071_cs {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
-                context.DestroyMonster(arg1: new int[] {101, 102});
-                context.SetEffect(arg1: new int[] {5002}, arg2: true);
-                context.SetEffect(arg1: new int[] {5003}, arg2: true);
+                context.DestroyMonster(arg1: new[] {101, 102});
+                context.SetEffect(arg1: new[] {5002}, arg2: true);
+                context.SetEffect(arg1: new[] {5003}, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 4);
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
@@ -205,12 +201,12 @@ namespace Maple2.Trigger._63000071_cs {
             internal StateBossbattle_ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5002}, arg2: false);
-                context.SetEffect(arg1: new int[] {5003}, arg2: false);
+                context.SetEffect(arg1: new[] {5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5003}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.VisibleMyPc(isVisible: true);
-                context.CreateMonster(arg1: new int[] {201}, arg2: false);
+                context.CreateMonster(arg1: new[] {201}, arg2: false);
             }
 
             public override void Execute() {
@@ -229,17 +225,17 @@ namespace Maple2.Trigger._63000071_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {201})) {
+                if (context.MonsterDead(arg1: new[] {201})) {
                     context.State = new Stateendingscene_start(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new int[] {103, 104}, arg2: false);
-                context.SetEffect(arg1: new int[] {5004}, arg2: true);
-                context.SetEffect(arg1: new int[] {5005}, arg2: true);
-                context.DestroyMonster(arg1: new int[] {201});
+                context.CreateMonster(arg1: new[] {103, 104}, arg2: false);
+                context.SetEffect(arg1: new[] {5004}, arg2: true);
+                context.SetEffect(arg1: new[] {5005}, arg2: true);
+                context.DestroyMonster(arg1: new[] {201});
             }
         }
 
@@ -250,11 +246,11 @@ namespace Maple2.Trigger._63000071_cs {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.VisibleMyPc(isVisible: false);
-                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8000, 8001}, arg2: false);
                 context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
                 context.SetSceneSkip(arg1: "endingskip_1", arg2: "exit");
-                context.SetEffect(arg1: new int[] {5004}, arg2: false);
-                context.SetEffect(arg1: new int[] {5005}, arg2: false);
+                context.SetEffect(arg1: new[] {5004}, arg2: false);
+                context.SetEffect(arg1: new[] {5005}, arg2: false);
             }
 
             public override void Execute() {
@@ -272,17 +268,17 @@ namespace Maple2.Trigger._63000071_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.AddBalloonTalk(spawnPointID: 104, msg: "$63000071_CS__63000071_MAIN__9$", duration: 2500,
+                context.AddBalloonTalk(spawnPointId: 104, msg: "$63000071_CS__63000071_MAIN__9$", duration: 2500,
                     delayTick: 500);
-                context.AddBalloonTalk(spawnPointID: 103, msg: "$63000071_CS__63000071_MAIN__10$", duration: 2500,
+                context.AddBalloonTalk(spawnPointId: 103, msg: "$63000071_CS__63000071_MAIN__10$", duration: 2500,
                     delayTick: 4000);
-                context.AddBalloonTalk(spawnPointID: 104, msg: "$63000071_CS__63000071_MAIN__11$", duration: 2500,
+                context.AddBalloonTalk(spawnPointId: 104, msg: "$63000071_CS__63000071_MAIN__11$", duration: 2500,
                     delayTick: 8000);
-                context.AddBalloonTalk(spawnPointID: 103, msg: "$63000071_CS__63000071_MAIN__12$", duration: 2500,
+                context.AddBalloonTalk(spawnPointId: 103, msg: "$63000071_CS__63000071_MAIN__12$", duration: 2500,
                     delayTick: 11500);
-                context.AddBalloonTalk(spawnPointID: 103, msg: "$63000071_CS__63000071_MAIN__13$", duration: 2500,
+                context.AddBalloonTalk(spawnPointId: 103, msg: "$63000071_CS__63000071_MAIN__13$", duration: 2500,
                     delayTick: 15000);
-                context.AddBalloonTalk(spawnPointID: 104, msg: "$63000071_CS__63000071_MAIN__14$", duration: 2500,
+                context.AddBalloonTalk(spawnPointId: 104, msg: "$63000071_CS__63000071_MAIN__14$", duration: 2500,
                     delayTick: 19000);
             }
 
@@ -302,8 +298,8 @@ namespace Maple2.Trigger._63000071_cs {
             internal Stateendingscene_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
-                context.AddCinematicTalk(npcID: 11004310, msg: "$63000071_CS__63000071_MAIN__15$", duration: 6000);
+                context.CameraSelectPath(arg1: new[] {8004}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004310, msg: "$63000071_CS__63000071_MAIN__15$", duration: 6000);
             }
 
             public override void Execute() {
@@ -322,7 +318,7 @@ namespace Maple2.Trigger._63000071_cs {
             internal Stateendingscene_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
             }
 
             public override void Execute() {
@@ -339,9 +335,9 @@ namespace Maple2.Trigger._63000071_cs {
             internal Stateendingscene_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 104, msg: "$63000071_CS__63000071_MAIN__16$", duration: 3000,
+                context.AddBalloonTalk(spawnPointId: 104, msg: "$63000071_CS__63000071_MAIN__16$", duration: 3000,
                     delayTick: 500);
-                context.AddBalloonTalk(spawnPointID: 104, msg: "$63000071_CS__63000071_MAIN__17$", duration: 3000,
+                context.AddBalloonTalk(spawnPointId: 104, msg: "$63000071_CS__63000071_MAIN__17$", duration: 3000,
                     delayTick: 4000);
             }
 
@@ -364,7 +360,7 @@ namespace Maple2.Trigger._63000071_cs {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9001, arg2: new int[] {0})) {
+                if (context.NpcDetected(arg1: 9001, arg2: new[] {0})) {
                     context.State = new Stateendingscene_end(context);
                     return;
                 }
@@ -377,9 +373,9 @@ namespace Maple2.Trigger._63000071_cs {
             internal Stateendingscene_end(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {103});
-                context.DestroyMonster(arg1: new int[] {104});
-                context.SetEffect(arg1: new int[] {5006}, arg2: true);
+                context.DestroyMonster(arg1: new[] {103});
+                context.DestroyMonster(arg1: new[] {104});
+                context.SetEffect(arg1: new[] {5006}, arg2: true);
                 context.SetSceneSkip();
             }
 
@@ -397,8 +393,8 @@ namespace Maple2.Trigger._63000071_cs {
             internal Stateendingskip_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {103});
-                context.DestroyMonster(arg1: new int[] {104});
+                context.DestroyMonster(arg1: new[] {103});
+                context.DestroyMonster(arg1: new[] {104});
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 4);
                 context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
@@ -423,7 +419,7 @@ namespace Maple2.Trigger._63000071_cs {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.VisibleMyPc(isVisible: true);
-                context.SetEffect(arg1: new int[] {5006}, arg2: false);
+                context.SetEffect(arg1: new[] {5006}, arg2: false);
             }
 
             public override void Execute() {

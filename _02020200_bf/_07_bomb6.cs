@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02020200_bf {
     public static class _07_bomb6 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "BombOn", value: 1)) {
+                if (context.GetUserValue(key: "BombOn") == 1) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -23,16 +19,16 @@ namespace Maple2.Trigger._02020200_bf {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {213}, arg2: false);
+                context.CreateMonster(arg1: new[] {213}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "BombOn", value: 2)) {
+                if (context.GetUserValue(key: "BombOn") == 2) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {213})) {
+                if (context.MonsterDead(arg1: new[] {213})) {
                     context.State = new State폭탄_터짐(context);
                     return;
                 }
@@ -45,11 +41,11 @@ namespace Maple2.Trigger._02020200_bf {
             internal State폭탄_터짐(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {2006}, arg2: false, arg3: 1500, arg5: 3f);
+                context.SetMesh(arg1: new[] {2006}, arg2: false, arg3: 1500, arg5: 3f);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "BombOn", value: 2)) {
+                if (context.GetUserValue(key: "BombOn") == 2) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -69,13 +65,13 @@ namespace Maple2.Trigger._02020200_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "BombOn", value: 2)) {
+                if (context.GetUserValue(key: "BombOn") == 2) {
                     context.State = new State종료(context);
                     return;
                 }
 
                 if (context.WaitTick(waitTick: 40000)) {
-                    context.SetMesh(arg1: new int[] {2006}, arg2: true, arg5: 3f);
+                    context.SetMesh(arg1: new[] {2006}, arg2: true, arg5: 3f);
                     context.State = new State시작(context);
                     return;
                 }
@@ -88,8 +84,8 @@ namespace Maple2.Trigger._02020200_bf {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {213});
-                context.SetMesh(arg1: new int[] {2006}, arg2: false, arg3: 1500, arg5: 3f);
+                context.DestroyMonster(arg1: new[] {213});
+                context.SetMesh(arg1: new[] {2006}, arg2: false, arg3: 1500, arg5: 3f);
             }
 
             public override void Execute() { }

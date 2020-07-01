@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02010054_bf {
     public static class _guide_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State반응대기(context);
-
-        private class State반응대기 : TriggerState {
+        public class State반응대기 : TriggerState {
             internal State반응대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000856}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000856}, arg2: 0)) {
                     context.State = new State가이드01(context);
                     return;
                 }
@@ -23,13 +19,13 @@ namespace Maple2.Trigger._02010054_bf {
             internal State가이드01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20105402, textID: 20105402);
+                context.ShowGuideSummary(entityId: 20105402, textId: 20105402);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.HideGuideSummary(entityID: 20105402);
+                    context.HideGuideSummary(entityId: 20105402);
                     context.State = new State감지대기(context);
                     return;
                 }
@@ -44,7 +40,7 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {108})) {
+                if (context.UserDetected(arg1: new[] {108})) {
                     context.State = new State가이드02(context);
                     return;
                 }
@@ -117,13 +113,13 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.ShowGuideSummary(entityID: 20105403, textID: 20105403);
+                context.ShowGuideSummary(entityId: 20105403, textId: 20105403);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000860, 10000861}, arg2: 0)) {
-                    context.HideGuideSummary(entityID: 20105403);
+                if (context.ObjectInteracted(arg1: new[] {10000860, 10000861}, arg2: 0)) {
+                    context.HideGuideSummary(entityId: 20105403);
                     context.State = new State가이드03(context);
                     return;
                 }
@@ -138,7 +134,7 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000858}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000858}, arg2: 0)) {
                     context.State = new State가이드03종료(context);
                     return;
                 }
@@ -151,13 +147,13 @@ namespace Maple2.Trigger._02010054_bf {
             internal State가이드03종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20105405, textID: 20105405);
+                context.ShowGuideSummary(entityId: 20105405, textId: 20105405);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.HideGuideSummary(entityID: 20105405);
+                    context.HideGuideSummary(entityId: 20105405);
                     context.State = new State반응대기02(context);
                     return;
                 }
@@ -172,7 +168,7 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {109})) {
+                if (context.UserDetected(arg1: new[] {109})) {
                     context.State = new State반응대기02종료(context);
                     return;
                 }
@@ -185,13 +181,13 @@ namespace Maple2.Trigger._02010054_bf {
             internal State반응대기02종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20105403, textID: 20105403);
+                context.ShowGuideSummary(entityId: 20105403, textId: 20105403);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.HideGuideSummary(entityID: 20105403);
+                    context.HideGuideSummary(entityId: 20105403);
                     context.State = new State가이드04(context);
                     return;
                 }
@@ -206,7 +202,7 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000857}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000857}, arg2: 0)) {
                     context.State = new State가이드04종료(context);
                     return;
                 }
@@ -219,13 +215,13 @@ namespace Maple2.Trigger._02010054_bf {
             internal State가이드04종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20105402, textID: 20105402);
+                context.ShowGuideSummary(entityId: 20105402, textId: 20105402);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.HideGuideSummary(entityID: 20105402);
+                    context.HideGuideSummary(entityId: 20105402);
                     context.State = new State감지대기02(context);
                     return;
                 }
@@ -240,8 +236,8 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {110})) {
-                    context.SetEventUI(arg1: 1, arg2: "$02010054_BF__GUIDE_01__0$", arg3: new int[] {5000}, arg4: "0");
+                if (context.UserDetected(arg1: new[] {110})) {
+                    context.SetEventUI(arg1: 1, arg2: "$02010054_BF__GUIdE_01__0$", arg3: 5000, arg4: "0");
                     context.State = new State종료(context);
                     return;
                 }

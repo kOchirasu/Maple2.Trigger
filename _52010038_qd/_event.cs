@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52010038_qd {
     public static class _event {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -21,18 +17,18 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetAgent(arg1: "8011", arg2: true);
                 context.SetAgent(arg1: "8012", arg2: true);
                 context.SetAgent(arg1: "8013", arg2: true);
-                context.SetSkill(arg1: new int[] {710}, arg2: false);
-                context.SetSkill(arg1: new int[] {711}, arg2: false);
-                context.SetEffect(arg1: new int[] {6110}, arg2: false);
-                context.SetEffect(arg1: new int[] {6111}, arg2: false);
-                context.SetEffect(arg1: new int[] {6298}, arg2: false);
+                context.SetSkill(arg1: new[] {710}, arg2: false);
+                context.SetSkill(arg1: new[] {711}, arg2: false);
+                context.SetEffect(arg1: new[] {6110}, arg2: false);
+                context.SetEffect(arg1: new[] {6111}, arg2: false);
+                context.SetEffect(arg1: new[] {6298}, arg2: false);
                 context.SetActor(arg1: 220, arg2: false);
                 context.SetActor(arg1: 221, arg2: false);
                 context.SetActor(arg1: 222, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "EventStart", value: 1)) {
+                if (context.GetUserValue(key: "EventStart") == 1) {
                     context.State = new State이벤트조건(context);
                     return;
                 }
@@ -45,11 +41,11 @@ namespace Maple2.Trigger._52010038_qd {
             internal State이벤트조건(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6298}, arg2: true);
+                context.SetEffect(arg1: new[] {6298}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103})) {
+                if (context.UserDetected(arg1: new[] {103})) {
                     context.State = new State이벤트시작(context);
                     return;
                 }
@@ -62,14 +58,14 @@ namespace Maple2.Trigger._52010038_qd {
             internal State이벤트시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1200}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {1201});
+                context.CreateMonster(arg1: new[] {1200}, arg2: false);
+                context.DestroyMonster(arg1: new[] {1201});
                 context.SetConversation(arg1: 1, arg2: 1200, arg3: "$52010038_QD__EVENT__0$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 1200, arg2: "MS2PatrolData_1200");
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 104, arg2: new int[] {1200})) {
+                if (context.NpcDetected(arg1: 104, arg2: new[] {1200})) {
                     context.State = new State생성(context);
                     return;
                 }
@@ -82,9 +78,9 @@ namespace Maple2.Trigger._52010038_qd {
             internal State생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {710}, arg2: true);
-                context.SetEffect(arg1: new int[] {6110}, arg2: true);
-                context.CreateMonster(arg1: new int[] {2012, 2013, 2014, 2015}, arg2: true);
+                context.SetSkill(arg1: new[] {710}, arg2: true);
+                context.SetEffect(arg1: new[] {6110}, arg2: true);
+                context.CreateMonster(arg1: new[] {2012, 2013, 2014, 2015}, arg2: true);
             }
 
             public override void Execute() {
@@ -114,7 +110,7 @@ namespace Maple2.Trigger._52010038_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {105})) {
+                if (context.UserDetected(arg1: new[] {105})) {
                     context.State = new State폭발시퀀스시작(context);
                     return;
                 }
@@ -168,9 +164,9 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetActor(arg1: 220, arg2: true, arg3: "Attack_02_A");
                 context.SetActor(arg1: 221, arg2: true, arg3: "Attack_02_A");
                 context.SetActor(arg1: 222, arg2: true, arg3: "Attack_02_A");
-                context.SetSkill(arg1: new int[] {711}, arg2: true);
-                context.SetEffect(arg1: new int[] {6298}, arg2: false);
-                context.SetEffect(arg1: new int[] {6111}, arg2: true);
+                context.SetSkill(arg1: new[] {711}, arg2: true);
+                context.SetEffect(arg1: new[] {6298}, arg2: false);
+                context.SetEffect(arg1: new[] {6111}, arg2: true);
             }
 
             public override void Execute() {
@@ -206,9 +202,9 @@ namespace Maple2.Trigger._52010038_qd {
             internal State점수(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {4010}, arg2: false);
-                context.CreateMonster(arg1: new int[] {4030}, arg2: false);
-                context.SideNpcTalk(npcID: 11003536, illust: "Neirin_normal", duration: 5000,
+                context.CreateMonster(arg1: new[] {4010}, arg2: false);
+                context.CreateMonster(arg1: new[] {4030}, arg2: false);
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000,
                     script: "$52010038_QD__event__4$", voice: @"ko/Npc/00002105");
             }
 

@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02000118_bf {
     public static class _earthquake03 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State레버당기기(context);
-
-        private class State레버당기기 : TriggerState {
+        public class State레버당기기 : TriggerState {
             internal State레버당기기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000292}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000292}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000292}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000292}, arg2: 0)) {
                     context.State = new State스킬동작(context);
                     return;
                 }
@@ -26,10 +22,10 @@ namespace Maple2.Trigger._02000118_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {2009}, arg2: true);
-                context.SetSkill(arg1: new int[] {2010}, arg2: true);
-                context.SetSkill(arg1: new int[] {2011}, arg2: true);
-                context.SetSkill(arg1: new int[] {2012}, arg2: true);
+                context.SetSkill(arg1: new[] {2009}, arg2: true);
+                context.SetSkill(arg1: new[] {2010}, arg2: true);
+                context.SetSkill(arg1: new[] {2011}, arg2: true);
+                context.SetSkill(arg1: new[] {2012}, arg2: true);
             }
 
             public override void Execute() {
@@ -47,10 +43,10 @@ namespace Maple2.Trigger._02000118_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 10);
-                context.SetSkill(arg1: new int[] {2009}, arg2: false);
-                context.SetSkill(arg1: new int[] {2010}, arg2: false);
-                context.SetSkill(arg1: new int[] {2011}, arg2: false);
-                context.SetSkill(arg1: new int[] {2012}, arg2: false);
+                context.SetSkill(arg1: new[] {2009}, arg2: false);
+                context.SetSkill(arg1: new[] {2010}, arg2: false);
+                context.SetSkill(arg1: new[] {2011}, arg2: false);
+                context.SetSkill(arg1: new[] {2012}, arg2: false);
             }
 
             public override void Execute() {

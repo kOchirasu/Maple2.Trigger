@@ -1,28 +1,25 @@
-using System;
 using System.Numerics;
 
 namespace Maple2.Trigger._02020111_bf {
     public static class _light_on {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Light_On_1", value: 2)
-                    && context.UserValue(key: "Light_On_2", value: 2)
-                    && context.UserValue(key: "Light_On_3", value: 2)
-                    && context.UserValue(key: "Light_On_4", value: 2)) {
+                if (context.GetUserValue(key: "Light_On_1") == 2
+                    && context.GetUserValue(key: "Light_On_2") == 2
+                    && context.GetUserValue(key: "Light_On_3") == 2
+                    && context.GetUserValue(key: "Light_On_4") == 2) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Light_On_1", value: 1)
-                    && context.UserValue(key: "Light_On_2", value: 1)
-                    && context.UserValue(key: "Light_On_3", value: 1)
-                    && context.UserValue(key: "Light_On_4", value: 1)) {
+                if (context.GetUserValue(key: "Light_On_1") == 1
+                    && context.GetUserValue(key: "Light_On_2") == 1
+                    && context.GetUserValue(key: "Light_On_3") == 1
+                    && context.GetUserValue(key: "Light_On_4") == 1) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -55,10 +52,10 @@ namespace Maple2.Trigger._02020111_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Light_On_1", value: 1)
-                    && context.UserValue(key: "Light_On_2", value: 1)
-                    && context.UserValue(key: "Light_On_3", value: 1)
-                    && context.UserValue(key: "Light_On_4", value: 1)) {
+                if (context.GetUserValue(key: "Light_On_1") == 1
+                    && context.GetUserValue(key: "Light_On_2") == 1
+                    && context.GetUserValue(key: "Light_On_3") == 1
+                    && context.GetUserValue(key: "Light_On_4") == 1) {
                     context.State = new State시작(context);
                     return;
                 }

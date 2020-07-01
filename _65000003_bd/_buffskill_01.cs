@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._65000003_bd {
     public static class _buffskill_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._65000003_bd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {10601})) {
+                if (context.UserDetected(arg1: new[] {10601})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -29,7 +25,7 @@ namespace Maple2.Trigger._65000003_bd {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {10601})) {
+                if (!context.UserDetected(arg1: new[] {10601})) {
                     context.State = new State초기화(context);
                     return;
                 }
@@ -57,13 +53,13 @@ namespace Maple2.Trigger._65000003_bd {
             internal StateA스킬작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {7101}, arg2: true);
+                context.SetSkill(arg1: new[] {7101}, arg2: true);
                 context.SetTimer(arg1: "60", arg2: 60);
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "60")) {
-                    context.SetSkill(arg1: new int[] {7101}, arg2: false);
+                    context.SetSkill(arg1: new[] {7101}, arg2: false);
                     context.State = new State시작대기중(context);
                     return;
                 }
@@ -76,13 +72,13 @@ namespace Maple2.Trigger._65000003_bd {
             internal StateB스킬작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {7102}, arg2: true);
+                context.SetSkill(arg1: new[] {7102}, arg2: true);
                 context.SetTimer(arg1: "60", arg2: 60);
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "60")) {
-                    context.SetSkill(arg1: new int[] {7102}, arg2: false);
+                    context.SetSkill(arg1: new[] {7102}, arg2: false);
                     context.State = new State시작대기중(context);
                     return;
                 }
@@ -95,13 +91,13 @@ namespace Maple2.Trigger._65000003_bd {
             internal StateC스킬작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {7103}, arg2: true);
+                context.SetSkill(arg1: new[] {7103}, arg2: true);
                 context.SetTimer(arg1: "60", arg2: 60);
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "60")) {
-                    context.SetSkill(arg1: new int[] {7103}, arg2: false);
+                    context.SetSkill(arg1: new[] {7103}, arg2: false);
                     context.State = new State시작대기중(context);
                     return;
                 }
@@ -115,9 +111,9 @@ namespace Maple2.Trigger._65000003_bd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {7101}, arg2: false);
-                context.SetSkill(arg1: new int[] {7102}, arg2: false);
-                context.SetSkill(arg1: new int[] {7103}, arg2: false);
+                context.SetSkill(arg1: new[] {7101}, arg2: false);
+                context.SetSkill(arg1: new[] {7102}, arg2: false);
+                context.SetSkill(arg1: new[] {7103}, arg2: false);
             }
 
             public override void Execute() {

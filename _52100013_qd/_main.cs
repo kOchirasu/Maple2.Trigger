@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._52100013_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7001}, arg2: false);
-                context.EnableSpawnPointPc(spawnPointID: 11001, isEnable: true);
-                context.EnableSpawnPointPc(spawnPointID: 11002, isEnable: false);
+                context.SetEffect(arg1: new[] {7001}, arg2: false);
+                context.EnableSpawnPointPc(spawnPointId: 11001, isEnable: true);
+                context.EnableSpawnPointPc(spawnPointId: 11002, isEnable: false);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CreateMonster(arg1: new int[] {101, 102}, arg2: true);
-                context.SetMesh(arg1: new int[] {1001, 1002, 1003}, arg2: true);
+                context.CreateMonster(arg1: new[] {101, 102}, arg2: true);
+                context.SetMesh(arg1: new[] {1001, 1002, 1003}, arg2: true);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118, 2119, 2120, 2121, 2122, 2123, 2124, 2125,
                         2126, 2127, 2128, 2129, 2130, 2131, 2132, 2133, 2134, 2135, 2136, 2137, 2138, 2139, 2140, 2141,
                         2142, 2143, 2144, 2145, 2146, 2147, 2148, 2149, 2150, 2151, 2152, 2153, 2154, 2155, 2156, 2157,
@@ -28,7 +24,7 @@ namespace Maple2.Trigger._52100013_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {701})) {
+                if (context.UserDetected(arg1: new[] {701})) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -64,9 +60,9 @@ namespace Maple2.Trigger._52100013_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetLocalCamera(cameraId: 8001, enable: true);
                 context.SetGravity(gravity: -25f);
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
-                context.EnableSpawnPointPc(spawnPointID: 11001, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 11002, isEnable: true);
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.EnableSpawnPointPc(spawnPointId: 11001, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 11002, isEnable: true);
             }
 
             public override void Execute() {
@@ -86,9 +82,9 @@ namespace Maple2.Trigger._52100013_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetLocalCamera(cameraId: 8001, enable: true);
                 context.SetGravity(gravity: -25f);
-                context.CreateMonster(arg1: new int[] {210}, arg2: true);
-                context.EnableSpawnPointPc(spawnPointID: 11001, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 11002, isEnable: true);
+                context.CreateMonster(arg1: new[] {210}, arg2: true);
+                context.EnableSpawnPointPc(spawnPointId: 11001, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 11002, isEnable: true);
             }
 
             public override void Execute() {
@@ -97,13 +93,13 @@ namespace Maple2.Trigger._52100013_qd {
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {50100080},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100080},
                     arg3: new byte[] {2})) {
                     context.State = new StateQuestEnd(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {50100090},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50100090},
                     arg3: new byte[] {1})) {
                     context.State = new StateQuestEnd(context);
                     return;
@@ -117,7 +113,7 @@ namespace Maple2.Trigger._52100013_qd {
             internal StateQuestEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {210, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510});
+                context.DestroyMonster(arg1: new[] {210, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510});
             }
 
             public override void Execute() { }

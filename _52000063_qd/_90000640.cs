@@ -1,25 +1,21 @@
-using System;
-
 namespace Maple2.Trigger._52000063_qd {
     public static class _90000640 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기(context);
-
-        private class State시작대기 : TriggerState {
+        public class State시작대기 : TriggerState {
             internal State시작대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3100}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3000, 3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {3100}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.CreateMonster(arg1: new int[] {1001, 1002}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1101, 1102, 1103, 1104, 1105}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 1002}, arg2: false);
+                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199})) {
+                if (context.UserDetected(arg1: new[] {199})) {
                     context.State = new State퀘스트분기(context);
                     return;
                 }
@@ -34,13 +30,13 @@ namespace Maple2.Trigger._52000063_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {90000640},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000640},
                     arg3: new byte[] {2})) {
                     context.State = new State90000640완료가능(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {90000640},
+                if (!context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000640},
                     arg3: new byte[] {2})) {
                     context.State = new State연출시작(context);
                     return;
@@ -54,12 +50,12 @@ namespace Maple2.Trigger._52000063_qd {
             internal State90000640완료가능(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1001, 1002});
-                context.CreateMonster(arg1: new int[] {1003, 1004}, arg2: false);
+                context.DestroyMonster(arg1: new[] {1001, 1002});
+                context.CreateMonster(arg1: new[] {1003, 1004}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {90000640},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000640},
                     arg3: new byte[] {3})) {
                     context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                     context.State = new State종료(context);
@@ -172,7 +168,7 @@ namespace Maple2.Trigger._52000063_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {101}, arg2: new int[] {90000640},
+                if (context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {90000640},
                     arg3: new byte[] {1})) {
                     context.MoveUser(arg1: 52000063, arg2: 1);
                     context.State = new State2차연출시작(context);
@@ -225,10 +221,10 @@ namespace Maple2.Trigger._52000063_qd {
             internal State카운트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3000, 3001, 3002, 3003, 3004, 3101}, arg2: true, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {3100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3101}, arg2: true, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.DestroyMonster(arg1: new int[] {1001, 1002});
+                context.DestroyMonster(arg1: new[] {1001, 1002});
                 context.CameraSelect(arg1: 304, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
@@ -249,10 +245,10 @@ namespace Maple2.Trigger._52000063_qd {
             internal State경기시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 99999102, key: "gameStart", value: 1);
-                context.SetUserValue(triggerID: 99999103, key: "gameStart", value: 1);
-                context.SetUserValue(triggerID: 99999104, key: "gameStart", value: 1);
-                context.CreateItem(arg1: new int[] {
+                context.SetUserValue(triggerId: 99999102, key: "gameStart", value: 1);
+                context.SetUserValue(triggerId: 99999103, key: "gameStart", value: 1);
+                context.SetUserValue(triggerId: 99999104, key: "gameStart", value: 1);
+                context.CreateItem(arg1: new[] {
                     9000, 9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015,
                     9016, 9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024, 9025
                 });
@@ -280,7 +276,7 @@ namespace Maple2.Trigger._52000063_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {102})) {
+                if (context.UserDetected(arg1: new[] {102})) {
                     context.State = new State완료대기(context);
                     return;
                 }
@@ -293,14 +289,14 @@ namespace Maple2.Trigger._52000063_qd {
             internal State완료대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateItem(arg1: new int[] {9026, 9027, 9028, 9029});
-                context.SetMesh(arg1: new int[] {3000, 3001, 3002, 3003, 3004, 3101}, arg2: false, arg3: 0, arg4: 0,
+                context.CreateItem(arg1: new[] {9026, 9027, 9028, 9029});
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3101}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.CreateMonster(arg1: new int[] {1003, 1004}, arg2: false);
+                context.CreateMonster(arg1: new[] {1003, 1004}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103})) {
+                if (context.UserDetected(arg1: new[] {103})) {
                     context.State = new State완료알림케이대사(context);
                     return;
                 }
@@ -332,14 +328,14 @@ namespace Maple2.Trigger._52000063_qd {
             internal State완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateItem(arg1: new int[] {9030, 9031, 9032, 9033, 9034, 9035});
+                context.CreateItem(arg1: new[] {9030, 9031, 9032, 9033, 9034, 9035});
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "ArrivedSupercar");
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {90000640},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000640},
                     arg3: new byte[] {3})) {
                     context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                     context.State = new State종료(context);

@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52100205_qd {
     public static class _52100205 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statestart(context);
-
-        private class Statestart : TriggerState {
+        public class Statestart : TriggerState {
             internal Statestart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {2001})) {
+                if (context.UserDetected(arg1: new[] {2001})) {
                     context.State = new StateCameraEffect01(context);
                     return;
                 }
@@ -41,8 +37,8 @@ namespace Maple2.Trigger._52100205_qd {
             internal StateCameraEffect02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201});
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
+                context.CreateMonster(arg1: new[] {201});
+                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
                 context.VisibleMyPc(isVisible: false);
                 context.SetProductionUI(arg1: 1);
                 context.MoveUser(arg1: 52100205, arg2: 5001);
@@ -100,7 +96,7 @@ namespace Maple2.Trigger._52100205_qd {
             internal StateCameraEffect03_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4002, 4003}, arg2: false);
             }
 
             public override void Execute() {
@@ -117,7 +113,7 @@ namespace Maple2.Trigger._52100205_qd {
             internal StateCameraEffect03_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4004}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52100205_QD__52100205__1$", align: "bottomLeft",
                     offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
             }
@@ -154,12 +150,12 @@ namespace Maple2.Trigger._52100205_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.DestroyMonster(arg1: new int[] {201});
+                context.DestroyMonster(arg1: new[] {201});
                 context.VisibleMyPc(isVisible: true);
                 context.SetVisibleUI(uiName: "MessengerBrowser,GroupMessengerBrowser,HighlightGameMenu",
                     visible: false);
-                context.AddBuff(arg1: new int[] {2001}, arg2: 99910400, arg3: 1, arg4: false, arg5: true);
-                context.AddBuff(arg1: new int[] {2001}, arg2: 99910400, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {2001}, arg2: 99910400, arg3: 1, arg4: false, arg5: true);
+                context.AddBuff(arg1: new[] {2001}, arg2: 99910400, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -194,8 +190,8 @@ namespace Maple2.Trigger._52100205_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcID: 11004612, msg: "$52100205_QD__52100205__2$", align: "left",
-                    illustID: "cladia_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004612, msg: "$52100205_QD__52100205__2$", align: "left",
+                    illustId: "cladia_normal", duration: 4000);
             }
 
             public override void Execute() {
@@ -217,7 +213,7 @@ namespace Maple2.Trigger._52100205_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {2002})) {
+                if (context.UserDetected(arg1: new[] {2002})) {
                     context.State = new State제시카_01(context);
                     return;
                 }
@@ -249,8 +245,8 @@ namespace Maple2.Trigger._52100205_qd {
             internal State제시카_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4005}, arg2: false);
-                context.CreateMonster(arg1: new int[] {101});
+                context.CameraSelectPath(arg1: new[] {4005}, arg2: false);
+                context.CreateMonster(arg1: new[] {101});
             }
 
             public override void Execute() {
@@ -285,7 +281,7 @@ namespace Maple2.Trigger._52100205_qd {
             internal State제시카_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4006}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4006}, arg2: false);
             }
 
             public override void Execute() {
@@ -303,8 +299,8 @@ namespace Maple2.Trigger._52100205_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcID: 11004575, msg: "$52100205_QD__52100205__3$", align: "left",
-                    illustID: "Jessica_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004575, msg: "$52100205_QD__52100205__3$", align: "left",
+                    illustId: "Jessica_normal", duration: 4000);
             }
 
             public override void Execute() {

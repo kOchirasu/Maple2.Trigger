@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._02000229_bf {
     public static class _fire_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000051}, arg2: 1);
-                context.SetEffect(arg1: new int[] {501}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10000051}, arg2: 1);
+                context.SetEffect(arg1: new[] {501}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000051}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000051}, arg2: 0)) {
                     context.State = new State오브젝트반응(context);
                     return;
                 }
@@ -35,8 +31,8 @@ namespace Maple2.Trigger._02000229_bf {
             }
 
             public override void OnExit() {
-                context.SetEffect(arg1: new int[] {501}, arg2: true);
-                context.CreateMonster(arg1: new int[] {101});
+                context.SetEffect(arg1: new[] {501}, arg2: true);
+                context.CreateMonster(arg1: new[] {101});
             }
         }
 
@@ -56,8 +52,8 @@ namespace Maple2.Trigger._02000229_bf {
             }
 
             public override void OnExit() {
-                context.SetEffect(arg1: new int[] {501}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {101});
+                context.SetEffect(arg1: new[] {501}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101});
             }
         }
 

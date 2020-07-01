@@ -1,23 +1,19 @@
-using System;
-
 namespace Maple2.Trigger._52100031_qd {
     public static class _faction_02 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveBuff(arg1: 199, arg2: 99910140);
-                context.SetInteractObject(arg1: new int[] {10002060}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10002061}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10002062}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10002063}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10002068}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10002060}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10002061}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10002062}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10002063}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10002068}, arg2: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "faction02", value: 1)) {
+                if (context.GetUserValue(key: "faction02") == 1) {
                     context.State = new State말준비(context);
                     return;
                 }
@@ -33,11 +29,11 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetSkip(arg1: "퀘스트");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.AddBuff(arg1: new int[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.CreateMonster(arg1: new int[] {1101, 1102, 1103, 1104, 1104}, arg2: false);
+                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1104}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 1101, arg3: "$52100031_QD__FACTION_02__0$", arg4: 5, arg5: 0);
-                context.SetInteractObject(arg1: new int[] {10002068}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10002068}, arg2: 1);
             }
 
             public override void Execute() {
@@ -74,7 +70,7 @@ namespace Maple2.Trigger._52100031_qd {
             internal State종료체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20040102, textID: 20040102, duration: 3000);
+                context.ShowGuideSummary(entityId: 20040102, textId: 20040102, duration: 3000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
             }
@@ -93,19 +89,19 @@ namespace Maple2.Trigger._52100031_qd {
             internal State2차안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20040105, textID: 20040105, duration: 3500);
+                context.ShowGuideSummary(entityId: 20040105, textId: 20040105, duration: 3500);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "DungeonClear", value: 1)) {
-                    context.DestroyMonster(arg1: new int[] {1101, 1102, 1103, 1104, 1104}, arg2: false);
-                    context.SetInteractObject(arg1: new int[] {10002060}, arg2: 0);
-                    context.SetInteractObject(arg1: new int[] {10002061}, arg2: 0);
-                    context.SetInteractObject(arg1: new int[] {10002062}, arg2: 0);
-                    context.SetInteractObject(arg1: new int[] {10002063}, arg2: 0);
-                    context.SetInteractObject(arg1: new int[] {10002068}, arg2: 0);
+                if (context.GetUserValue(key: "DungeonClear") == 1) {
+                    context.DestroyMonster(arg1: new[] {1101, 1102, 1103, 1104, 1104}, arg2: false);
+                    context.SetInteractObject(arg1: new[] {10002060}, arg2: 0);
+                    context.SetInteractObject(arg1: new[] {10002061}, arg2: 0);
+                    context.SetInteractObject(arg1: new[] {10002062}, arg2: 0);
+                    context.SetInteractObject(arg1: new[] {10002063}, arg2: 0);
+                    context.SetInteractObject(arg1: new[] {10002068}, arg2: 0);
                     context.RemoveBuff(arg1: 199, arg2: 99910140);
                     context.State = new State종료(context);
                     return;

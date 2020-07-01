@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52000084_qd {
     public static class _buff {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._52000084_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199})) {
+                if (context.UserDetected(arg1: new[] {199})) {
                     context.State = new State버프(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._52000084_qd {
             internal State버프(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {199}, arg2: 70000115, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {199}, arg2: 70000115, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -34,7 +30,7 @@ namespace Maple2.Trigger._52000084_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {199})) {
+                if (!context.UserDetected(arg1: new[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }

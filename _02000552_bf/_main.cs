@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000552_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new State기본셋팅(context);
                     return;
                 }
@@ -49,12 +45,12 @@ namespace Maple2.Trigger._02000552_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.DungeonID(dungeonID: 23050003)) {
+                if (context.GetDungeonId() == 23050003) {
                     context.State = new State쉬운난이도보스등장(context);
                     return;
                 }
 
-                if (context.DungeonID(dungeonID: 23051003)) {
+                if (context.GetDungeonId() == 23051003) {
                     context.State = new State여려움난이도보스등장(context);
                     return;
                 }
@@ -72,7 +68,7 @@ namespace Maple2.Trigger._02000552_bf {
             internal State여려움난이도보스등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
             public override void Execute() {
@@ -89,7 +85,7 @@ namespace Maple2.Trigger._02000552_bf {
             internal State쉬운난이도보스등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
             public override void Execute() {
@@ -108,22 +104,22 @@ namespace Maple2.Trigger._02000552_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "SmallRemove", value: 1)) {
+                if (context.GetUserValue(key: "SmallRemove") == 1) {
                     context.State = new State작아짐제거(context);
                     return;
                 }
 
-                if (context.UserValue(key: "VacuumMessage", value: 1)) {
+                if (context.GetUserValue(key: "VacuumMessage") == 1) {
                     context.State = new State메시지출력(context);
                     return;
                 }
 
-                if (context.UserValue(key: "NextPortal", value: 1)) {
+                if (context.GetUserValue(key: "NextPortal") == 1) {
                     context.State = new State다음이동포탈등장(context);
                     return;
                 }
 
-                if (context.UserValue(key: "End", value: 1)) {
+                if (context.GetUserValue(key: "End") == 1) {
                     context.State = new State종료딜레이(context);
                     return;
                 }
@@ -133,7 +129,7 @@ namespace Maple2.Trigger._02000552_bf {
                     return;
                 }
 
-                if (context.DungeonCheckState(checkState: "Fail")) {
+                if (context.GetDungeonState() == "Fail") {
                     context.State = new State던전실패(context);
                     return;
                 }
@@ -146,7 +142,7 @@ namespace Maple2.Trigger._02000552_bf {
             internal State메시지출력(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 29200008, textID: 29200008, duration: 6200);
+                context.ShowGuideSummary(entityId: 29200008, textId: 29200008, duration: 6200);
                 context.SetUserValue(key: "VacuumMessage", value: 0);
             }
 
@@ -164,8 +160,8 @@ namespace Maple2.Trigger._02000552_bf {
             internal State작아짐제거(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {702}, arg2: 50001556, arg3: 1, arg4: false, arg5: false);
-                context.AddBuff(arg1: new int[] {701}, arg2: 50001556, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {702}, arg2: 50001556, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 50001556, arg3: 1, arg4: false, arg5: false);
                 context.SetUserValue(key: "SmallRemove", value: 0);
             }
 
@@ -185,8 +181,8 @@ namespace Maple2.Trigger._02000552_bf {
             public override void OnEnter() {
                 context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 20, arg2: true, arg3: true, arg4: true);
-                context.AddBuff(arg1: new int[] {702}, arg2: 50001556, arg3: 1, arg4: false, arg5: false);
-                context.AddBuff(arg1: new int[] {701}, arg2: 50001556, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {702}, arg2: 50001556, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 50001556, arg3: 1, arg4: false, arg5: false);
                 context.SetUserValue(key: "NextPortal", value: 0);
                 context.SetUserValue(key: "SmallRemove", value: 0);
             }
@@ -207,7 +203,7 @@ namespace Maple2.Trigger._02000552_bf {
             public override void OnEnter() {
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.DestroyMonster(arg1: new[] {-1});
             }
 
             public override void Execute() {
@@ -226,8 +222,8 @@ namespace Maple2.Trigger._02000552_bf {
 
             public override void OnEnter() {
                 context.DungeonEnableGiveUp(isEnable: false);
-                context.AddBuff(arg1: new int[] {701}, arg2: 50000266, arg3: 1, arg4: false, arg5: false);
-                context.AddBuff(arg1: new int[] {702}, arg2: 50000266, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 50000266, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {702}, arg2: 50000266, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -244,8 +240,8 @@ namespace Maple2.Trigger._02000552_bf {
             internal State종료딜레이(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 50000266, arg3: 1, arg4: false, arg5: false);
-                context.AddBuff(arg1: new int[] {702}, arg2: 50000266, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 50000266, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {702}, arg2: 50000266, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -263,7 +259,7 @@ namespace Maple2.Trigger._02000552_bf {
 
             public override void OnEnter() {
                 context.DungeonClear();
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.DestroyMonster(arg1: new[] {-1});
             }
 
             public override void Execute() {

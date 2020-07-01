@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._80000015_bonus {
     public static class _lever2 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {7102}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10001315}, arg2: 1);
-                context.SetMesh(arg1: new int[] {3006, 3007, 3008, 3009, 3010, 3011}, arg2: true, arg3: 0, arg4: 0,
+                context.SetSkill(arg1: new[] {7102}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10001315}, arg2: 1);
+                context.SetMesh(arg1: new[] {3006, 3007, 3008, 3009, 3010, 3011}, arg2: true, arg3: 0, arg4: 0,
                     arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199})) {
+                if (context.UserDetected(arg1: new[] {199})) {
                     context.State = new State반응대기(context);
                     return;
                 }
@@ -30,12 +26,12 @@ namespace Maple2.Trigger._80000015_bonus {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {102})) {
+                if (context.UserDetected(arg1: new[] {102})) {
                     context.State = new State안내(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {10001315}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001315}, arg2: 0)) {
                     context.State = new State문열림(context);
                     return;
                 }
@@ -48,11 +44,11 @@ namespace Maple2.Trigger._80000015_bonus {
             internal State안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$80000015_bonus__lever2__0$", arg3: new int[] {2000}, arg4: "102");
+                context.SetEventUI(arg1: 1, arg2: "$80000015_bonus__lever2__0$", arg3: 2000, arg4: "102");
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001315}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001315}, arg2: 0)) {
                     context.State = new State문열림(context);
                     return;
                 }
@@ -70,14 +66,14 @@ namespace Maple2.Trigger._80000015_bonus {
             internal State문열림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6000}, arg2: true);
-                context.SpawnNpcRange(rangeID: new int[] {2002}, isAutoTargeting: false, score: 1500);
-                context.SetMesh(arg1: new int[] {3006, 3007, 3008, 3009, 3010, 3011}, arg2: false, arg3: 0, arg4: 0,
+                context.SetEffect(arg1: new[] {6000}, arg2: true);
+                context.SpawnNpcRange(rangeId: new[] {2002}, isAutoTargeting: false, score: 1500);
+                context.SetMesh(arg1: new[] {3006, 3007, 3008, 3009, 3010, 3011}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2002})) {
+                if (context.MonsterDead(arg1: new[] {2002})) {
                     context.State = new State딜레이(context);
                     return;
                 }
@@ -90,13 +86,13 @@ namespace Maple2.Trigger._80000015_bonus {
             internal State딜레이(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 999101, key: "Dead_B", value: 1);
-                context.SetEffect(arg1: new int[] {6000}, arg2: true);
+                context.SetUserValue(triggerId: 999101, key: "Dead_B", value: 1);
+                context.SetEffect(arg1: new[] {6000}, arg2: true);
             }
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetSkill(arg1: new int[] {7102}, arg2: true);
+                    context.SetSkill(arg1: new[] {7102}, arg2: true);
                     context.State = new State종료(context);
                     return;
                 }

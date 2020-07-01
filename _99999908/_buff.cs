@@ -1,14 +1,10 @@
-using System;
-
 namespace Maple2.Trigger._99999908 {
     public static class _buff {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 99910220, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 99910220, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._99999908 {
             internal Statebuff_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 99910220, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 99910220, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {

@@ -1,17 +1,13 @@
-using System;
-
 namespace Maple2.Trigger._52000037_qd {
     public static class _lookinto_runeblader_11 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4000, arg2: false, arg3: "Dead_A");
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(arg1: new int[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetOnetimeEffect(id: 2, enable: false,
                     path: @"BG/Common/Sound/Eff_System_Dark_Ending_Chord_01.xml");
@@ -24,31 +20,31 @@ namespace Maple2.Trigger._52000037_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {60100070}, arg3: new byte[] {3},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {60100070}, arg3: new byte[] {3},
                     arg4: 90)) {
                     context.State = new StateQuit(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {60100070}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100070}, arg3: new byte[] {2},
                     arg4: 90)) {
                     context.State = new StateQuit(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {60100070}, arg3: new byte[] {1},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100070}, arg3: new byte[] {1},
                     arg4: 90)) {
                     context.State = new StateLoadingDelay02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {60100065}, arg3: new byte[] {3},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {60100065}, arg3: new byte[] {3},
                     arg4: 90)) {
                     context.State = new StateDefaultSetting02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {60100065}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {60100065}, arg3: new byte[] {2},
                     arg4: 90)) {
                     context.State = new StateLoadingDelay01(context);
                     return;
@@ -249,11 +245,11 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Dead_A");
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {60100070},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100070},
                     arg3: new byte[] {1})) {
                     context.State = new StateLoadingDelay02(context);
                     return;
@@ -271,7 +267,7 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Dead_A");
-                context.CreateMonster(arg1: new int[] {501}, arg2: false);
+                context.CreateMonster(arg1: new[] {501}, arg2: false);
             }
 
             public override void Execute() {
@@ -360,7 +356,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateChase01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3000, 3001}, arg2: false, arg3: 100, arg4: 200, arg5: 1f);
+                context.SetMesh(arg1: new[] {3000, 3001}, arg2: false, arg3: 100, arg4: 200, arg5: 1f);
             }
 
             public override void Execute() {
@@ -381,7 +377,7 @@ namespace Maple2.Trigger._52000037_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9500, arg2: new int[] {501})) {
+                if (context.NpcDetected(arg1: 9500, arg2: new[] {501})) {
                     context.State = new StateChase03(context);
                     return;
                 }
@@ -394,7 +390,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateChase03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {501});
+                context.DestroyMonster(arg1: new[] {501});
             }
 
             public override void Execute() {
@@ -415,7 +411,7 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetProductionUI(arg1: 2);
                 context.CameraSelect(arg1: 811, arg2: false);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: "$52000037_QD__LOOKINTO_RUNEBLADER_11__0$", arg3: new int[] {3000},
+                context.SetEventUI(arg1: 1, arg2: "$52000037_QD__LOOKINTO_RUNEBLADER_11__0$", arg3: 3000,
                     arg4: "0");
             }
 

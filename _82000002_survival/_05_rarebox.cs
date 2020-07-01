@@ -1,28 +1,24 @@
-using System;
-
 namespace Maple2.Trigger._82000002_survival {
     public static class _05_rarebox {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateSetting(context);
-
-        private class StateSetting : TriggerState {
+        public class StateSetting : TriggerState {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.StartCombineSpawn(
-                    groupId: new int[] {
+                    groupId: new[] {
                         10000342, 10000343, 10000344, 10000345, 10000346, 10000347, 10000348, 10000349, 10000350,
                         10000351, 10000352, 10000353, 10000354, 10000355, 10000356, 10000357, 10000358, 10000359,
                         10000360, 10000361, 10000362, 10000363, 10000364, 10000365, 10000366, 10000367, 10000368,
                         10000369, 10000370, 10000371, 10000372, 10000373, 10000374, 10000375, 10000376, 10000377,
                         10000378, 10000379, 10000380, 10000381
-                    }, isStart: "false");
+                    }, isStart: false);
                 context.SetUserValue(key: "RareBoxOnCount", value: 0);
                 context.SetUserValue(key: "RareBoxOff", value: 0);
                 context.SetUserValue(key: "RareBoxStartTowerNumber", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RareBoxOnCount", value: 1)) {
+                if (context.GetUserValue(key: "RareBoxOnCount") == 1) {
                     context.State = new StateDelay(context);
                     return;
                 }
@@ -42,7 +38,7 @@ namespace Maple2.Trigger._82000002_survival {
                     return;
                 }
 
-                if (context.UserValue(key: "RareBoxOff", value: 1)) {
+                if (context.GetUserValue(key: "RareBoxOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -77,7 +73,7 @@ namespace Maple2.Trigger._82000002_survival {
                     return;
                 }
 
-                if (context.UserValue(key: "RareBoxOff", value: 1)) {
+                if (context.GetUserValue(key: "RareBoxOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -159,14 +155,14 @@ namespace Maple2.Trigger._82000002_survival {
 
             public override void OnEnter() {
                 context.StartCombineSpawn(
-                    groupId: new int[] {
+                    groupId: new[] {
                         10000342, 10000343, 10000344, 10000345, 10000346, 10000347, 10000348, 10000349, 10000350,
                         10000351
-                    }, isStart: "true");
+                    }, isStart: true);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RareBoxStartTowerNumber", value: 11)) {
+                if (context.GetUserValue(key: "RareBoxStartTowerNumber") == 11) {
                     context.State = new StateBoxOn(context);
                     return;
                 }
@@ -185,14 +181,14 @@ namespace Maple2.Trigger._82000002_survival {
 
             public override void OnEnter() {
                 context.StartCombineSpawn(
-                    groupId: new int[] {
+                    groupId: new[] {
                         10000352, 10000353, 10000354, 10000355, 10000356, 10000357, 10000358, 10000359, 10000360,
                         10000361
-                    }, isStart: "true");
+                    }, isStart: true);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RareBoxStartTowerNumber", value: 21)) {
+                if (context.GetUserValue(key: "RareBoxStartTowerNumber") == 21) {
                     context.State = new StateBoxOn(context);
                     return;
                 }
@@ -211,14 +207,14 @@ namespace Maple2.Trigger._82000002_survival {
 
             public override void OnEnter() {
                 context.StartCombineSpawn(
-                    groupId: new int[] {
+                    groupId: new[] {
                         10000362, 10000363, 10000364, 10000365, 10000366, 10000367, 10000368, 10000369, 10000370,
                         10000371
-                    }, isStart: "true");
+                    }, isStart: true);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RareBoxStartTowerNumber", value: 31)) {
+                if (context.GetUserValue(key: "RareBoxStartTowerNumber") == 31) {
                     context.State = new StateBoxOn(context);
                     return;
                 }
@@ -237,14 +233,14 @@ namespace Maple2.Trigger._82000002_survival {
 
             public override void OnEnter() {
                 context.StartCombineSpawn(
-                    groupId: new int[] {
+                    groupId: new[] {
                         10000372, 10000373, 10000374, 10000375, 10000376, 10000377, 10000378, 10000379, 10000380,
                         10000381
-                    }, isStart: "true");
+                    }, isStart: true);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RareBoxStartTowerNumber", value: 1)) {
+                if (context.GetUserValue(key: "RareBoxStartTowerNumber") == 1) {
                     context.State = new StateBoxOn(context);
                     return;
                 }
@@ -262,12 +258,12 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateBoxOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 23500110, illust: "Mushking_normal", duration: 5000,
+                context.SideNpcTalk(npcId: 23500110, illust: "Mushking_normal", duration: 5000,
                     script: "$82000002_survival__05_RAREBOX__0$");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RareBoxOff", value: 1)) {
+                if (context.GetUserValue(key: "RareBoxOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -281,13 +277,13 @@ namespace Maple2.Trigger._82000002_survival {
 
             public override void OnEnter() {
                 context.StartCombineSpawn(
-                    groupId: new int[] {
+                    groupId: new[] {
                         10000342, 10000343, 10000344, 10000345, 10000346, 10000347, 10000348, 10000349, 10000350,
                         10000351, 10000352, 10000353, 10000354, 10000355, 10000356, 10000357, 10000358, 10000359,
                         10000360, 10000361, 10000362, 10000363, 10000364, 10000365, 10000366, 10000367, 10000368,
                         10000369, 10000370, 10000371, 10000372, 10000373, 10000374, 10000375, 10000376, 10000377,
                         10000378, 10000379, 10000380, 10000381
-                    }, isStart: "false");
+                    }, isStart: false);
             }
 
             public override void Execute() { }

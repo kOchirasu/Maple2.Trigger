@@ -1,34 +1,30 @@
-using System;
-
 namespace Maple2.Trigger._52100022_qd {
     public static class _01_bossbattle {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {901, 902, 903});
+                context.DestroyMonster(arg1: new[] {901, 902, 903});
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
-                context.EnableSpawnPointPc(spawnPointID: 10000, isEnable: true);
-                context.EnableSpawnPointPc(spawnPointID: 10001, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 10002, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 10003, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 10000, isEnable: true);
+                context.EnableSpawnPointPc(spawnPointId: 10001, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 10002, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 10003, isEnable: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateBoss01SpawnDelay(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {9002})) {
+                if (context.UserDetected(arg1: new[] {9002})) {
                     context.State = new StateBoss02SpawnDelay(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {9003})) {
+                if (context.UserDetected(arg1: new[] {9003})) {
                     context.State = new StateBoss03SpawnDelay(context);
                     return;
                 }
@@ -41,8 +37,8 @@ namespace Maple2.Trigger._52100022_qd {
             internal StateBoss01SpawnDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointID: 10000, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 10001, isEnable: true);
+                context.EnableSpawnPointPc(spawnPointId: 10000, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 10001, isEnable: true);
             }
 
             public override void Execute() {
@@ -59,8 +55,8 @@ namespace Maple2.Trigger._52100022_qd {
             internal StateBoss01Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {901}, arg2: false);
-                context.SetUserValue(triggerID: 1122330, key: "AgentOff", value: 1);
+                context.CreateMonster(arg1: new[] {901}, arg2: false);
+                context.SetUserValue(triggerId: 1122330, key: "AgentOff", value: 1);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 501, arg2: true);
@@ -143,7 +139,7 @@ namespace Maple2.Trigger._52100022_qd {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {901})) {
+                if (context.MonsterDead(arg1: new[] {901})) {
                     context.State = new StateLeavePortalOn(context);
                     return;
                 }
@@ -156,8 +152,8 @@ namespace Maple2.Trigger._52100022_qd {
             internal StateBoss02SpawnDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointID: 10000, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 10002, isEnable: true);
+                context.EnableSpawnPointPc(spawnPointId: 10000, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 10002, isEnable: true);
             }
 
             public override void Execute() {
@@ -174,7 +170,7 @@ namespace Maple2.Trigger._52100022_qd {
             internal StateBoss02Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {902}, arg2: false);
+                context.CreateMonster(arg1: new[] {902}, arg2: false);
             }
 
             public override void Execute() {
@@ -273,7 +269,7 @@ namespace Maple2.Trigger._52100022_qd {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {902})) {
+                if (context.MonsterDead(arg1: new[] {902})) {
                     context.State = new StateLeavePortalOn(context);
                     return;
                 }
@@ -286,8 +282,8 @@ namespace Maple2.Trigger._52100022_qd {
             internal StateBoss03SpawnDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointID: 10000, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 10003, isEnable: true);
+                context.EnableSpawnPointPc(spawnPointId: 10000, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 10003, isEnable: true);
             }
 
             public override void Execute() {
@@ -304,8 +300,8 @@ namespace Maple2.Trigger._52100022_qd {
             internal StateBoss03Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {903}, arg2: false);
-                context.SetUserValue(triggerID: 1122330, key: "AgentOff", value: 1);
+                context.CreateMonster(arg1: new[] {903}, arg2: false);
+                context.SetUserValue(triggerId: 1122330, key: "AgentOff", value: 1);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 521, arg2: true);
@@ -388,7 +384,7 @@ namespace Maple2.Trigger._52100022_qd {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {903})) {
+                if (context.MonsterDead(arg1: new[] {903})) {
                     context.State = new StateLeavePortalOn(context);
                     return;
                 }
@@ -401,8 +397,8 @@ namespace Maple2.Trigger._52100022_qd {
             internal StateLeavePortalOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4, key: "BossKill", value: 1);
-                context.DestroyMonster(arg1: new int[] {901, 902, 903});
+                context.SetUserValue(triggerId: 4, key: "BossKill", value: 1);
+                context.DestroyMonster(arg1: new[] {901, 902, 903});
             }
 
             public override void Execute() {

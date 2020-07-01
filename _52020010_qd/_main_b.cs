@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52020010_qd {
     public static class _main_b {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateIdle(context);
-
-        private class StateIdle : TriggerState {
+        public class StateIdle : TriggerState {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2006}, arg2: new int[] {60200055},
+                if (context.QuestUserDetected(arg1: new[] {2006}, arg2: new[] {60200055},
                     arg3: new byte[] {1})) {
                     context.State = new StateObject_Check(context);
                     return;
@@ -26,7 +22,7 @@ namespace Maple2.Trigger._52020010_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001276}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001276}, arg2: 0)) {
                     context.State = new StateReady(context);
                     return;
                 }
@@ -78,7 +74,7 @@ namespace Maple2.Trigger._52020010_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetPcEmotionSequence(arg1: "Object_React_H");
-                context.AddCinematicTalk(npcID: 0, msg: "왜 아무일도 일어나지 않는거지?", duration: 2800);
+                context.AddCinematicTalk(npcId: 0, msg: "왜 아무일도 일어나지 않는거지?", duration: 2800);
                 context.SetSceneSkip(arg1: "Next", arg2: "nextState");
             }
 
@@ -97,7 +93,7 @@ namespace Maple2.Trigger._52020010_qd {
 
             public override void OnEnter() {
                 context.SetPcEmotionSequence(arg1: "Object_React_G");
-                context.AddCinematicTalk(npcID: 0, msg: "두들겨 볼까?", duration: 2800);
+                context.AddCinematicTalk(npcId: 0, msg: "두들겨 볼까?", duration: 2800);
             }
 
             public override void Execute() {
@@ -114,8 +110,8 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003610, msg: "으으으.... 시끄럽구나!", duration: 2800);
-                context.AddBalloonTalk(spawnPointID: 0, msg: "!!!", duration: 2000, delayTick: 1000);
+                context.AddCinematicTalk(npcId: 11003610, msg: "으으으.... 시끄럽구나!", duration: 2800);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "!!!", duration: 2000, delayTick: 1000);
             }
 
             public override void Execute() {
@@ -132,7 +128,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {501}, arg2: true);
+                context.CreateMonster(arg1: new[] {501}, arg2: true);
             }
 
             public override void Execute() {
@@ -151,7 +147,7 @@ namespace Maple2.Trigger._52020010_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcID: 11003610, msg: "네 놈이냐! 내 잠을 깨운 녀석이!", duration: 2800);
+                context.AddCinematicTalk(npcId: 11003610, msg: "네 놈이냐! 내 잠을 깨운 녀석이!", duration: 2800);
             }
 
             public override void Execute() {
@@ -170,7 +166,7 @@ namespace Maple2.Trigger._52020010_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcID: 11003610, msg: "감히 내 시간을 방해하다니 가만두지 않겠다!", duration: 2800);
+                context.AddCinematicTalk(npcId: 11003610, msg: "감히 내 시간을 방해하다니 가만두지 않겠다!", duration: 2800);
             }
 
             public override void Execute() {
@@ -187,8 +183,8 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateNext(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {501});
-                context.CreateMonster(arg1: new int[] {601}, arg2: true);
+                context.DestroyMonster(arg1: new[] {501});
+                context.CreateMonster(arg1: new[] {601}, arg2: true);
             }
 
             public override void Execute() {
@@ -210,7 +206,7 @@ namespace Maple2.Trigger._52020010_qd {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {601})) {
+                if (context.MonsterDead(arg1: new[] {601})) {
                     context.State = new StateMission_Clear(context);
                     return;
                 }
@@ -227,13 +223,13 @@ namespace Maple2.Trigger._52020010_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2006}, arg2: new int[] {60200050},
+                if (context.QuestUserDetected(arg1: new[] {2006}, arg2: new[] {60200050},
                     arg3: new byte[] {1})) {
                     context.State = new StateMission_Clear(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2006}, arg2: new int[] {60200055},
+                if (context.QuestUserDetected(arg1: new[] {2006}, arg2: new[] {60200055},
                     arg3: new byte[] {2})) {
                     context.State = new StateEvent_07(context);
                     return;
@@ -249,7 +245,7 @@ namespace Maple2.Trigger._52020010_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcID: 11003603, illustID: "0", msg: "인간! 파편이 돌아왔다! 어서 이리 와라!", duration: 2800,
+                context.AddCinematicTalk(npcId: 11003603, illustId: "0", msg: "인간! 파편이 돌아왔다! 어서 이리 와라!", duration: 2800,
                     align: "Left");
             }
 

@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000055_bf {
     public static class _regionskill01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 11, arg2: new int[] {91})) {
+                if (context.NpcDetected(arg1: 11, arg2: new[] {91})) {
                     context.State = new State스킬작동(context);
                     return;
                 }
@@ -23,12 +19,12 @@ namespace Maple2.Trigger._02000055_bf {
             internal State스킬작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {302}, arg2: true);
-                context.SetSkill(arg1: new int[] {303}, arg2: true);
+                context.SetSkill(arg1: new[] {302}, arg2: true);
+                context.SetSkill(arg1: new[] {303}, arg2: true);
             }
 
             public override void Execute() {
-                if (!context.NpcDetected(arg1: 11, arg2: new int[] {91})) {
+                if (!context.NpcDetected(arg1: 11, arg2: new[] {91})) {
                     context.State = new State트리거초기화(context);
                     return;
                 }
@@ -41,8 +37,8 @@ namespace Maple2.Trigger._02000055_bf {
             internal State트리거초기화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {302}, arg2: false);
-                context.SetSkill(arg1: new int[] {303}, arg2: false);
+                context.SetSkill(arg1: new[] {302}, arg2: false);
+                context.SetSkill(arg1: new[] {303}, arg2: false);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 

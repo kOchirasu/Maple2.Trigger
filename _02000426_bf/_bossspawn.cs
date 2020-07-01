@@ -1,23 +1,19 @@
-using System;
-
 namespace Maple2.Trigger._02000426_bf {
     public static class _bossspawn {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
-                context.SetMesh(arg1: new int[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(key: "ZakumBodyAppearance", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199})) {
+                if (context.UserDetected(arg1: new[] {199})) {
                     context.State = new State던전코드별보스등장(context);
                     return;
                 }
@@ -32,12 +28,12 @@ namespace Maple2.Trigger._02000426_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.DungeonID(dungeonID: 23040003)) {
+                if (context.GetDungeonId() == 23040003) {
                     context.State = new State어려운난이도보스등장(context);
                     return;
                 }
 
-                if (context.DungeonID(dungeonID: 23041003)) {
+                if (context.GetDungeonId() == 23041003) {
                     context.State = new State쉬운난이도보스등장(context);
                     return;
                 }
@@ -55,7 +51,7 @@ namespace Maple2.Trigger._02000426_bf {
             internal State어려운난이도보스등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {2001}, arg2: false);
+                context.CreateMonster(arg1: new[] {2001}, arg2: false);
             }
 
             public override void Execute() {
@@ -72,7 +68,7 @@ namespace Maple2.Trigger._02000426_bf {
             internal State쉬운난이도보스등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {2002}, arg2: false);
+                context.CreateMonster(arg1: new[] {2002}, arg2: false);
             }
 
             public override void Execute() {
@@ -91,12 +87,12 @@ namespace Maple2.Trigger._02000426_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "ZakumBodyAppearance", value: 1)) {
+                if (context.GetUserValue(key: "ZakumBodyAppearance") == 1) {
                     context.State = new State자쿰몸체등장(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ZakumDungeonEnd", value: 1)) {
+                if (context.GetUserValue(key: "ZakumDungeonEnd") == 1) {
                     context.State = new State종료딜레이(context);
                     return;
                 }
@@ -106,7 +102,7 @@ namespace Maple2.Trigger._02000426_bf {
                     return;
                 }
 
-                if (context.DungeonCheckState(checkState: "Fail")) {
+                if (context.GetDungeonState() == "Fail") {
                     context.State = new State던전실패(context);
                     return;
                 }
@@ -123,12 +119,12 @@ namespace Maple2.Trigger._02000426_bf {
             }
 
             public override void Execute() {
-                if (context.DungeonID(dungeonID: 23040003)) {
+                if (context.GetDungeonId() == 23040003) {
                     context.State = new State어려운난이도_자쿰몸등장(context);
                     return;
                 }
 
-                if (context.DungeonID(dungeonID: 23041003)) {
+                if (context.GetDungeonId() == 23041003) {
                     context.State = new State쉬운난이도_자쿰몸등장(context);
                     return;
                 }
@@ -146,7 +142,7 @@ namespace Maple2.Trigger._02000426_bf {
             internal State어려운난이도_자쿰몸등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {2011}, arg2: false);
+                context.CreateMonster(arg1: new[] {2011}, arg2: false);
             }
 
             public override void Execute() {
@@ -163,7 +159,7 @@ namespace Maple2.Trigger._02000426_bf {
             internal State쉬운난이도_자쿰몸등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {2012}, arg2: false);
+                context.CreateMonster(arg1: new[] {2012}, arg2: false);
             }
 
             public override void Execute() {
@@ -183,12 +179,12 @@ namespace Maple2.Trigger._02000426_bf {
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
                 context.SetAchievement(arg3: "ZakumKritiasClear");
-                context.SetUserValue(triggerID: 999103, key: "BattleEnd", value: 1);
-                context.SetUserValue(triggerID: 999102, key: "BattleEnd2", value: 1);
-                context.SetUserValue(triggerID: 999108, key: "BattleEnd2", value: 1);
-                context.SetUserValue(triggerID: 999109, key: "BattleEnd2", value: 1);
-                context.SetMesh(arg1: new int[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetUserValue(triggerId: 999103, key: "BattleEnd", value: 1);
+                context.SetUserValue(triggerId: 999102, key: "BattleEnd2", value: 1);
+                context.SetUserValue(triggerId: 999108, key: "BattleEnd2", value: 1);
+                context.SetUserValue(triggerId: 999109, key: "BattleEnd2", value: 1);
+                context.SetMesh(arg1: new[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.RemoveBuff(arg1: 199, arg2: 50005300);
                 context.RemoveBuff(arg1: 199, arg2: 50005301);
                 context.RemoveBuff(arg1: 199, arg2: 50001450);
@@ -210,12 +206,12 @@ namespace Maple2.Trigger._02000426_bf {
             internal State던전실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.DestroyMonster(arg1: new[] {-1});
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
-                context.SetUserValue(triggerID: 999103, key: "BattleEnd", value: 1);
-                context.SetMesh(arg1: new int[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetUserValue(triggerId: 999103, key: "BattleEnd", value: 1);
+                context.SetMesh(arg1: new[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.RemoveBuff(arg1: 199, arg2: 50005300);
                 context.RemoveBuff(arg1: 199, arg2: 50005301);
                 context.RemoveBuff(arg1: 199, arg2: 50001450);

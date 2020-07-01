@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._02000329_bf {
     public static class _cage_02 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6802}, arg2: false);
+                context.SetEffect(arg1: new[] {6802}, arg2: false);
                 context.SetActor(arg1: 202, arg2: true, arg3: "Closed");
-                context.CreateMonster(arg1: new int[] {1002, 1102}, arg2: false);
+                context.CreateMonster(arg1: new[] {1002, 1102}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {1102})) {
+                if (context.MonsterDead(arg1: new[] {1102})) {
                     context.State = new State닭생성(context);
                     return;
                 }
@@ -29,9 +25,9 @@ namespace Maple2.Trigger._02000329_bf {
             public override void OnEnter() {
                 context.SetActor(arg1: 202, arg2: true, arg3: "Opened");
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
-                context.SetEffect(arg1: new int[] {6602}, arg2: false);
-                context.SetEffect(arg1: new int[] {6802}, arg2: true);
+                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {6602}, arg2: false);
+                context.SetEffect(arg1: new[] {6802}, arg2: true);
             }
 
             public override void Execute() {
@@ -66,7 +62,7 @@ namespace Maple2.Trigger._02000329_bf {
             internal State닭소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1002});
+                context.DestroyMonster(arg1: new[] {1002});
             }
 
             public override void Execute() { }

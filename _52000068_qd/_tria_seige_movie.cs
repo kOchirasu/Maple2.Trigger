@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000068_qd {
     public static class _tria_seige_movie {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statestart(context);
-
-        private class Statestart : TriggerState {
+        public class Statestart : TriggerState {
             internal Statestart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "tria_seige", value: 1)) {
+                if (context.GetUserValue(key: "tria_seige") == 1) {
                     context.State = new StateLoadingDelayB0(context);
                     return;
                 }
@@ -30,7 +26,7 @@ namespace Maple2.Trigger._52000068_qd {
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetSkill(arg1: new int[] {701}, arg2: true);
+                context.SetSkill(arg1: new[] {701}, arg2: true);
                 context.SetActor(arg1: 11010, arg2: true, arg3: "Dead_A");
                 context.SetActor(arg1: 11010, arg2: true, arg3: "Dead_A");
                 context.SetActor(arg1: 16000, arg2: true, arg3: "Stun_A");
@@ -47,19 +43,19 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetActor(arg1: 16011, arg2: true, arg3: "Idle_A");
                 context.SetActor(arg1: 16012, arg2: true, arg3: "Stun_A");
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012,
                         10013, 10014, 10015, 10016, 10017, 10018, 10019, 10020, 10021, 10022, 10023
                     }, arg2: false);
                 context.CreateMonster(
-                    arg1: new int[] {10024, 10025, 10026, 10027, 10028, 10029, 10030, 10031, 10032, 10033, 10034},
+                    arg1: new[] {10024, 10025, 10026, 10027, 10028, 10029, 10030, 10031, 10032, 10033, 10034},
                     arg2: false);
                 context.SetVisibleBreakableObject(
-                    arg1: new int[] {5000, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012},
+                    arg1: new[] {5000, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012},
                     arg2: false);
-                context.CreateMonster(arg1: new int[] {11000, 11001, 11002, 11003, 11004, 11005, 11006, 11007},
+                context.CreateMonster(arg1: new[] {11000, 11001, 11002, 11003, 11004, 11005, 11006, 11007},
                     arg2: false);
-                context.CreateMonster(arg1: new int[] {11009}, arg2: false);
+                context.CreateMonster(arg1: new[] {11009}, arg2: false);
                 context.SetSound(arg1: 90000, arg2: true);
             }
 
@@ -97,7 +93,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State원경카메라01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {12000, 12001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {12000, 12001}, arg2: false);
             }
 
             public override void Execute() {
@@ -114,7 +110,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State원경카메라02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {12002, 12003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {12002, 12003}, arg2: false);
             }
 
             public override void Execute() {
@@ -131,7 +127,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State원경카메라03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {12004, 12005}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {12004, 12005}, arg2: false);
             }
 
             public override void Execute() {
@@ -148,7 +144,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State프레이대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11000064, illustID: "Lennon_closeEye",
+                context.AddCinematicTalk(npcId: 11000064, illustId: "Lennon_closeEye",
                     msg: "$52000068_QD__TRIA_SEIGE_MOVIE__0$", duration: 5000, align: "center");
             }
 
@@ -184,7 +180,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
-                context.CreateMonster(arg1: new int[] {11008}, arg2: false);
+                context.CreateMonster(arg1: new[] {11008}, arg2: false);
                 context.MoveNpc(arg1: 11008, arg2: "MS2PatrolData_soldier");
             }
 

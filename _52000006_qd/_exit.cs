@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000006_qd {
     public static class _exit {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State유저감지(context);
-
-        private class State유저감지 : TriggerState {
+        public class State유저감지 : TriggerState {
             internal State유저감지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State5초(context);
                     return;
                 }
@@ -28,8 +24,8 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.CreateItem(arg1: new int[] {9001, 9002, 9003, 9004, 9005}, arg2: 101);
-                    context.AddBuff(arg1: new int[] {101}, arg2: 70000019, arg3: 1);
+                    context.CreateItem(arg1: new[] {9001, 9002, 9003, 9004, 9005}, arg2: 101);
+                    context.AddBuff(arg1: new[] {101}, arg2: 70000019, arg3: 1);
                     context.State = new State30초(context);
                     return;
                 }
@@ -43,7 +39,7 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "300", arg2: 300, arg3: false);
-                context.SetEventUI(arg1: 1, arg2: "$52000006_QD__EXIT__0$", arg3: new int[] {4000});
+                context.SetEventUI(arg1: 1, arg2: "$52000006_QD__EXIT__0$", arg3: 4000);
             }
 
             public override void Execute() {

@@ -1,47 +1,44 @@
-using System;
 using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000315_bf {
     public static class _battle_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateSetting(context);
-
-        private class StateSetting : TriggerState {
+        public class StateSetting : TriggerState {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new int[] {5000}, arg2: false);
+                context.SetEffect(arg1: new[] {5000}, arg2: false);
                 context.SetLadder(arg1: 510, arg2: false, arg3: false);
                 context.SetLadder(arg1: 511, arg2: false, arg3: false);
                 context.SetLadder(arg1: 512, arg2: false, arg3: false);
                 context.SetLadder(arg1: 513, arg2: false, arg3: false);
-                context.SetMesh(arg1: new int[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109},
+                context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109},
                     arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209},
+                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209},
                     arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309},
+                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309},
                     arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3110}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3210}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3310}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3110}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3210}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3310}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetAgent(arg1: "8000", arg2: true);
                 context.SetAgent(arg1: "8001", arg2: true);
                 context.SetAgent(arg1: "8002", arg2: true);
                 context.SetAgent(arg1: "8003", arg2: true);
                 context.SetAgent(arg1: "8004", arg2: true);
                 context.SetAgent(arg1: "8005", arg2: true);
-                context.SetInteractObject(arg1: new int[] {10001043}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10001044}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10001035}, arg2: 1);
-                context.EnableSpawnPointPc(spawnPointID: 0, isEnable: true);
-                context.EnableSpawnPointPc(spawnPointID: 991, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 992, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 993, isEnable: false);
+                context.SetInteractObject(arg1: new[] {10001043}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001044}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001035}, arg2: 1);
+                context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
+                context.EnableSpawnPointPc(spawnPointId: 991, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 992, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 993, isEnable: false);
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new StateLoadingDelay(context);
                     return;
                 }
@@ -54,7 +51,7 @@ namespace Maple2.Trigger._02000315_bf {
             internal StateLoadingDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {99}, arg2: false);
+                context.CreateMonster(arg1: new[] {99}, arg2: false);
             }
 
             public override void Execute() {
@@ -72,10 +69,10 @@ namespace Maple2.Trigger._02000315_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {600, 601}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {600, 601}, arg2: false);
                 context.SetSkip(arg1: "CameraWalk01");
             }
 
@@ -93,7 +90,7 @@ namespace Maple2.Trigger._02000315_bf {
             internal StateCameraWalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {601, 600}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {601, 600}, arg2: true);
                 context.SetSkip();
             }
 
@@ -111,7 +108,7 @@ namespace Maple2.Trigger._02000315_bf {
                 context.SetLadder(arg1: 511, arg2: true, arg3: true);
                 context.SetLadder(arg1: 512, arg2: true, arg3: true);
                 context.SetLadder(arg1: 513, arg2: true, arg3: true);
-                context.SetMesh(arg1: new int[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
         }
 
@@ -119,12 +116,12 @@ namespace Maple2.Trigger._02000315_bf {
             internal State1stBattle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3, key: "CameraWalkEnd", value: 1);
-                context.CreateMonster(arg1: new int[] {901, 902, 903}, arg2: false);
+                context.SetUserValue(triggerId: 3, key: "CameraWalkEnd", value: 1);
+                context.CreateMonster(arg1: new[] {901, 902, 903}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001043}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001043}, arg2: 0)) {
                     context.State = new State1stBridgeOn(context);
                     return;
                 }
@@ -139,16 +136,16 @@ namespace Maple2.Trigger._02000315_bf {
             public override void OnEnter() {
                 context.SetAgent(arg1: "8000", arg2: false);
                 context.SetAgent(arg1: "8001", arg2: false);
-                context.DestroyMonster(arg1: new int[] {901, 902, 903});
-                context.SetMesh(arg1: new int[] {3110}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109},
+                context.DestroyMonster(arg1: new[] {901, 902, 903});
+                context.SetMesh(arg1: new[] {3110}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109},
                     arg2: true, arg3: 0, arg4: 100, arg5: 10f);
-                context.SetUserValue(triggerID: 101, key: "BridgeOpen", value: 1);
-                context.SetUserValue(triggerID: 102, key: "BridgeOpen", value: 1);
+                context.SetUserValue(triggerId: 101, key: "BridgeOpen", value: 1);
+                context.SetUserValue(triggerId: 102, key: "BridgeOpen", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {504})) {
+                if (context.UserDetected(arg1: new[] {504})) {
                     context.State = new State2ndBattle(context);
                     return;
                 }
@@ -161,13 +158,13 @@ namespace Maple2.Trigger._02000315_bf {
             internal State2ndBattle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointID: 0, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 991, isEnable: true);
-                context.CreateMonster(arg1: new int[] {904, 905, 906}, arg2: false);
+                context.EnableSpawnPointPc(spawnPointId: 0, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 991, isEnable: true);
+                context.CreateMonster(arg1: new[] {904, 905, 906}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001044}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001044}, arg2: 0)) {
                     context.State = new State2ndBridgeOn(context);
                     return;
                 }
@@ -182,19 +179,19 @@ namespace Maple2.Trigger._02000315_bf {
             public override void OnEnter() {
                 context.SetAgent(arg1: "8002", arg2: false);
                 context.SetAgent(arg1: "8003", arg2: false);
-                context.DestroyMonster(arg1: new int[] {904, 905, 906});
-                context.SetMesh(arg1: new int[] {3210}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209},
+                context.DestroyMonster(arg1: new[] {904, 905, 906});
+                context.SetMesh(arg1: new[] {3210}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209},
                     arg2: true, arg3: 0, arg4: 100, arg5: 10f);
-                context.SetUserValue(triggerID: 101, key: "BridgeOpen", value: 2);
-                context.SetUserValue(triggerID: 102, key: "BridgeOpen", value: 2);
-                context.SetUserValue(triggerID: 103, key: "BridgeOpen", value: 2);
-                context.SetUserValue(triggerID: 104, key: "BridgeOpen", value: 2);
-                context.SetUserValue(triggerID: 105, key: "BridgeOpen", value: 2);
+                context.SetUserValue(triggerId: 101, key: "BridgeOpen", value: 2);
+                context.SetUserValue(triggerId: 102, key: "BridgeOpen", value: 2);
+                context.SetUserValue(triggerId: 103, key: "BridgeOpen", value: 2);
+                context.SetUserValue(triggerId: 104, key: "BridgeOpen", value: 2);
+                context.SetUserValue(triggerId: 105, key: "BridgeOpen", value: 2);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {507})) {
+                if (context.UserDetected(arg1: new[] {507})) {
                     context.State = new State3rdBattle(context);
                     return;
                 }
@@ -207,13 +204,13 @@ namespace Maple2.Trigger._02000315_bf {
             internal State3rdBattle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointID: 991, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 993, isEnable: true);
-                context.CreateMonster(arg1: new int[] {907, 908, 909}, arg2: false);
+                context.EnableSpawnPointPc(spawnPointId: 991, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 993, isEnable: true);
+                context.CreateMonster(arg1: new[] {907, 908, 909}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001035}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001035}, arg2: 0)) {
                     context.State = new State3rdBridgeOn(context);
                     return;
                 }
@@ -228,21 +225,21 @@ namespace Maple2.Trigger._02000315_bf {
             public override void OnEnter() {
                 context.SetAgent(arg1: "8004", arg2: false);
                 context.SetAgent(arg1: "8005", arg2: false);
-                context.DestroyMonster(arg1: new int[] {907, 908, 909});
-                context.SetMesh(arg1: new int[] {3310}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309},
+                context.DestroyMonster(arg1: new[] {907, 908, 909});
+                context.SetMesh(arg1: new[] {3310}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309},
                     arg2: true, arg3: 0, arg4: 100, arg5: 10f);
-                context.SetUserValue(triggerID: 101, key: "BridgeOpen", value: 3);
-                context.SetUserValue(triggerID: 102, key: "BridgeOpen", value: 3);
-                context.SetUserValue(triggerID: 103, key: "BridgeOpen", value: 3);
-                context.SetUserValue(triggerID: 104, key: "BridgeOpen", value: 3);
-                context.SetUserValue(triggerID: 105, key: "BridgeOpen", value: 3);
-                context.SetUserValue(triggerID: 106, key: "BridgeOpen", value: 3);
-                context.SetUserValue(triggerID: 107, key: "BridgeOpen", value: 3);
+                context.SetUserValue(triggerId: 101, key: "BridgeOpen", value: 3);
+                context.SetUserValue(triggerId: 102, key: "BridgeOpen", value: 3);
+                context.SetUserValue(triggerId: 103, key: "BridgeOpen", value: 3);
+                context.SetUserValue(triggerId: 104, key: "BridgeOpen", value: 3);
+                context.SetUserValue(triggerId: 105, key: "BridgeOpen", value: 3);
+                context.SetUserValue(triggerId: 106, key: "BridgeOpen", value: 3);
+                context.SetUserValue(triggerId: 107, key: "BridgeOpen", value: 3);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {402})) {
+                if (context.UserDetected(arg1: new[] {402})) {
                     context.State = new StateBossBattle01(context);
                     return;
                 }
@@ -255,19 +252,19 @@ namespace Maple2.Trigger._02000315_bf {
             internal StateBossBattle01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointID: 993, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 992, isEnable: true);
+                context.EnableSpawnPointPc(spawnPointId: 993, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 992, isEnable: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new StateSuccess(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {99});
+                context.DestroyMonster(arg1: new[] {99});
             }
         }
 

@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000156_qd {
     public static class _52000156 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statewait_01(context);
-
-        private class Statewait_01 : TriggerState {
+        public class Statewait_01 : TriggerState {
             internal Statewait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {2001})) {
+                if (context.UserDetected(arg1: new[] {2001})) {
                     context.State = new Statewait_01_1(context);
                     return;
                 }
@@ -43,7 +39,7 @@ namespace Maple2.Trigger._52000156_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "jobChangeStory.swf", movieID: 1);
+                context.PlaySceneMovie(fileName: "jobChangeStory.swf", movieId: 1);
             }
 
             public override void Execute() {
@@ -68,7 +64,7 @@ namespace Maple2.Trigger._52000156_qd {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
             }
 
             public override void Execute() {
@@ -123,8 +119,8 @@ namespace Maple2.Trigger._52000156_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000156, arg2: 6003);
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {4003, 4004}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4003, 4004}, arg2: false);
             }
 
             public override void Execute() {
@@ -200,8 +196,8 @@ namespace Maple2.Trigger._52000156_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 4);
                 context.MoveUser(arg1: 52000156, arg2: 6003);
-                context.DestroyMonster(arg1: new int[] {101}, arg2: false);
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 2, enable: false,

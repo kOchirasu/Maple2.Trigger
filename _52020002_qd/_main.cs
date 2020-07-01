@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._52020002_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statestart(context);
-
-        private class Statestart : TriggerState {
+        public class Statestart : TriggerState {
             internal Statestart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {4001, 4002}, arg2: true);
-                context.DestroyMonster(arg1: new int[] {120, 121});
+                context.SetMesh(arg1: new[] {4001, 4002}, arg2: true);
+                context.DestroyMonster(arg1: new[] {120, 121});
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new State퀘스트조건체크(context);
                     return;
                 }
@@ -28,37 +24,37 @@ namespace Maple2.Trigger._52020002_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001779},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001779},
                     arg3: new byte[] {3})) {
                     context.State = new State진행이후_기본(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000},
-                    arg2: new int[] {50001775, 50001776, 50001777, 50001778, 50001779}, arg3: new byte[] {1, 2})) {
+                if (context.QuestUserDetected(arg1: new[] {9000},
+                    arg2: new[] {50001775, 50001776, 50001777, 50001778, 50001779}, arg3: new byte[] {1, 2})) {
                     context.State = new State제이든보고연출_완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001774},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001774},
                     arg3: new byte[] {3})) {
                     context.State = new State제이든보고연출_완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001774},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001774},
                     arg3: new byte[] {2})) {
                     context.State = new State제이든보고연출_완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001774},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001774},
                     arg3: new byte[] {1})) {
                     context.State = new State제이든보고연출_대기(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001773},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001773},
                     arg3: new byte[] {3})) {
                     context.State = new State기본(context);
                     return;
@@ -87,8 +83,8 @@ namespace Maple2.Trigger._52020002_qd {
             internal State진행이후_기본(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {4001, 4002}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {120, 121});
+                context.SetMesh(arg1: new[] {4001, 4002}, arg2: false);
+                context.DestroyMonster(arg1: new[] {120, 121});
             }
 
             public override void Execute() {
@@ -105,8 +101,8 @@ namespace Maple2.Trigger._52020002_qd {
             internal State제이든보고연출_대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {120}, arg2: false);
-                context.SetMesh(arg1: new int[] {4001, 4002}, arg2: false);
+                context.CreateMonster(arg1: new[] {120}, arg2: false);
+                context.SetMesh(arg1: new[] {4001, 4002}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -144,7 +140,7 @@ namespace Maple2.Trigger._52020002_qd {
             internal State연출시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
                 context.SetSceneSkip(arg1: "제이든보고_스킵완료", arg2: "nextState");
             }
 
@@ -163,7 +159,7 @@ namespace Maple2.Trigger._52020002_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.AddCinematicTalk(npcID: 11003540, illustID: "Jaiden_normal",
+                context.AddCinematicTalk(npcId: 11003540, illustId: "Jaiden_normal",
                     msg: @"안녕하세요? 제가 나타났습니다.\n연출은 제작 중이니 기다려 주세요.", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 120, arg2: "Talk_A", arg3: 3000f);
                 context.SetSkip(arg1: "01_skip");
@@ -203,8 +199,8 @@ namespace Maple2.Trigger._52020002_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 4);
-                context.DestroyMonster(arg1: new int[] {120});
-                context.CreateMonster(arg1: new int[] {121}, arg2: false);
+                context.DestroyMonster(arg1: new[] {120});
+                context.CreateMonster(arg1: new[] {121}, arg2: false);
             }
 
             public override void Execute() {
@@ -243,9 +239,9 @@ namespace Maple2.Trigger._52020002_qd {
             internal State제이든보고연출_완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {120});
-                context.CreateMonster(arg1: new int[] {121}, arg2: false);
-                context.SetMesh(arg1: new int[] {4001, 4002}, arg2: false);
+                context.DestroyMonster(arg1: new[] {120});
+                context.CreateMonster(arg1: new[] {121}, arg2: false);
+                context.SetMesh(arg1: new[] {4001, 4002}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 

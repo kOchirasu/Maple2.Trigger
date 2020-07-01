@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._82000003_survival {
     public static class _06_deathfromfall {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateSetting(context);
-
-        private class StateSetting : TriggerState {
+        public class StateSetting : TriggerState {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new StateWaitSomeoneFall(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._82000003_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9100})) {
+                if (context.UserDetected(arg1: new[] {9100})) {
                     context.State = new StateKillSomeoneFall(context);
                     return;
                 }
@@ -38,7 +34,7 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateKillSomeoneFall(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {9100}, arg2: 70001061, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {9100}, arg2: 70001061, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -47,7 +43,7 @@ namespace Maple2.Trigger._82000003_survival {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {9100})) {
+                if (!context.UserDetected(arg1: new[] {9100})) {
                     context.State = new StateWaitSomeoneFall(context);
                     return;
                 }

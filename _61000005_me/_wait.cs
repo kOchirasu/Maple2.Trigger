@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._61000005_me {
     public static class _wait {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State입장(context);
-
-        private class State입장 : TriggerState {
+        public class State입장 : TriggerState {
             internal State입장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._61000005_me {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {196})) {
+                if (context.UserDetected(arg1: new[] {196})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -25,11 +21,11 @@ namespace Maple2.Trigger._61000005_me {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000005_ME__WAIT__0$", arg3: new int[] {5000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$61000005_ME__WAIT__0$", arg3: 5000, arg4: "0");
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 196, arg2: 20)) {
+                if (context.GetUserCount(boxId: 196) == 20) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -52,7 +48,7 @@ namespace Maple2.Trigger._61000005_me {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000005_ME__WAIT__1$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$61000005_ME__WAIT__1$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() {

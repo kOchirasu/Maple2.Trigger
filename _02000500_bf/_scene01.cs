@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000500_bf {
     public static class _scene01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }

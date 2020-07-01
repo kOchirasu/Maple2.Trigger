@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._99999911 {
     public static class _wait {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State최초(context);
-
-        private class State최초 : TriggerState {
+        public class State최초 : TriggerState {
             internal State최초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 701, arg2: 1)) {
+                if (context.GetUserCount(boxId: 701) == 1) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -27,7 +23,7 @@ namespace Maple2.Trigger._99999911 {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {701})) {
+                if (context.UserDetected(arg1: new[] {701})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -40,11 +36,11 @@ namespace Maple2.Trigger._99999911 {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100001, textID: 26100001);
+                context.ShowGuideSummary(entityId: 26100001, textId: 26100001);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 701, arg2: 20)) {
+                if (context.GetUserCount(boxId: 701) == 20) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -61,7 +57,7 @@ namespace Maple2.Trigger._99999911 {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 26100001);
+                context.HideGuideSummary(entityId: 26100001);
             }
         }
 
@@ -69,11 +65,11 @@ namespace Maple2.Trigger._99999911 {
             internal State대기2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100002, textID: 26100002);
+                context.ShowGuideSummary(entityId: 26100002, textId: 26100002);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 701, arg2: 20)) {
+                if (context.GetUserCount(boxId: 701) == 20) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -90,7 +86,7 @@ namespace Maple2.Trigger._99999911 {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 26100002);
+                context.HideGuideSummary(entityId: 26100002);
             }
         }
 

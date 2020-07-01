@@ -1,18 +1,15 @@
-using System;
 using System.Numerics;
 
 namespace Maple2.Trigger._52100302_qd {
     public static class _move_3 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Archeon3", value: 1)) {
-                    context.SetUserValue(triggerID: 900009, key: "Archeon3", value: 0);
+                if (context.GetUserValue(key: "Archeon3") == 1) {
+                    context.SetUserValue(triggerId: 900009, key: "Archeon3", value: 0);
                     context.State = new StateArcheon_Ready(context);
                     return;
                 }
@@ -27,7 +24,7 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxID: 10001, additionalEffectID: 73000007,
+                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 10001, additionalEffectId: 73000007,
                     level: true)) {
                     context.MoveUserToPos(pos: new Vector3(8700f, -4800f, 2750f), rot: new Vector3(0f, 0f, 0f));
                     context.State = new StateArcheon_On(context);

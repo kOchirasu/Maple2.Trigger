@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._84000007_wd {
     public static class _g03p00_300 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -43,174 +39,174 @@ namespace Maple2.Trigger._84000007_wd {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P01Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P01Set") == 1) {
                     context.State = new StateNumberOnP01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P02Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P02Set") == 1) {
                     context.State = new StateNumberOnP02(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P03Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P03Set") == 1) {
                     context.State = new StateNumberOnP03(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P04Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P04Set") == 1) {
                     context.State = new StateNumberOnP04(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P05Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P05Set") == 1) {
                     context.State = new StateNumberOnP05(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P06Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P06Set") == 1) {
                     context.State = new StateNumberOnP06(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P07Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P07Set") == 1) {
                     context.State = new StateNumberOnP07(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P08Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P08Set") == 1) {
                     context.State = new StateNumberOnP08(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P09Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P09Set") == 1) {
                     context.State = new StateNumberOnP09(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P10Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P10Set") == 1) {
                     context.State = new StateNumberOnP10(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P11Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P11Set") == 1) {
                     context.State = new StateNumberOnP11(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P12Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P12Set") == 1) {
                     context.State = new StateNumberOnP12(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P13Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P13Set") == 1) {
                     context.State = new StateNumberOnP13(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P14Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P14Set") == 1) {
                     context.State = new StateNumberOnP14(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P15Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P15Set") == 1) {
                     context.State = new StateNumberOnP15(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P16Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P16Set") == 1) {
                     context.State = new StateNumberOnP16(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P17Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P17Set") == 1) {
                     context.State = new StateNumberOnP17(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P18Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P18Set") == 1) {
                     context.State = new StateNumberOnP18(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P19Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P19Set") == 1) {
                     context.State = new StateNumberOnP19(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P20Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P20Set") == 1) {
                     context.State = new StateNumberOnP20(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P21Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P21Set") == 1) {
                     context.State = new StateNumberOnP21(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P22Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P22Set") == 1) {
                     context.State = new StateNumberOnP22(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P23Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P23Set") == 1) {
                     context.State = new StateNumberOnP23(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P24Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P24Set") == 1) {
                     context.State = new StateNumberOnP24(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P25Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P25Set") == 1) {
                     context.State = new StateNumberOnP25(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P26Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P26Set") == 1) {
                     context.State = new StateNumberOnP26(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P27Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P27Set") == 1) {
                     context.State = new StateNumberOnP27(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P28Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P28Set") == 1) {
                     context.State = new StateNumberOnP28(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P29Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P29Set") == 1) {
                     context.State = new StateNumberOnP29(context);
                     return;
                 }
 
-                if (context.UserValue(key: "G03P30Set", value: 1)) {
+                if (context.GetUserValue(key: "G03P30Set") == 1) {
                     context.State = new StateNumberOnP30(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.SetUserValue(triggerID: 7110, key: "ColorStart", value: 1);
-                context.SetUserValue(triggerID: 7120, key: "ColorStart", value: 1);
-                context.SetUserValue(triggerID: 7130, key: "ColorStart", value: 1);
-                context.SetUserValue(triggerID: 7140, key: "ColorStart", value: 1);
-                context.SetUserValue(triggerID: 7210, key: "ColorStart", value: 1);
-                context.SetUserValue(triggerID: 7220, key: "ColorStart", value: 1);
-                context.SetUserValue(triggerID: 7230, key: "ColorStart", value: 1);
-                context.SetUserValue(triggerID: 7240, key: "ColorStart", value: 1);
-                context.SetUserValue(triggerID: 7310, key: "ColorStart", value: 1);
-                context.SetUserValue(triggerID: 7320, key: "ColorStart", value: 1);
-                context.SetUserValue(triggerID: 7330, key: "ColorStart", value: 1);
-                context.SetUserValue(triggerID: 7340, key: "ColorStart", value: 1);
-                context.SetUserValue(triggerID: 7410, key: "ColorStart", value: 1);
-                context.SetUserValue(triggerID: 7420, key: "ColorStart", value: 1);
-                context.SetUserValue(triggerID: 7430, key: "ColorStart", value: 1);
-                context.SetUserValue(triggerID: 7440, key: "ColorStart", value: 1);
+                context.SetUserValue(triggerId: 7110, key: "ColorStart", value: 1);
+                context.SetUserValue(triggerId: 7120, key: "ColorStart", value: 1);
+                context.SetUserValue(triggerId: 7130, key: "ColorStart", value: 1);
+                context.SetUserValue(triggerId: 7140, key: "ColorStart", value: 1);
+                context.SetUserValue(triggerId: 7210, key: "ColorStart", value: 1);
+                context.SetUserValue(triggerId: 7220, key: "ColorStart", value: 1);
+                context.SetUserValue(triggerId: 7230, key: "ColorStart", value: 1);
+                context.SetUserValue(triggerId: 7240, key: "ColorStart", value: 1);
+                context.SetUserValue(triggerId: 7310, key: "ColorStart", value: 1);
+                context.SetUserValue(triggerId: 7320, key: "ColorStart", value: 1);
+                context.SetUserValue(triggerId: 7330, key: "ColorStart", value: 1);
+                context.SetUserValue(triggerId: 7340, key: "ColorStart", value: 1);
+                context.SetUserValue(triggerId: 7410, key: "ColorStart", value: 1);
+                context.SetUserValue(triggerId: 7420, key: "ColorStart", value: 1);
+                context.SetUserValue(triggerId: 7430, key: "ColorStart", value: 1);
+                context.SetUserValue(triggerId: 7440, key: "ColorStart", value: 1);
             }
         }
 
@@ -235,26 +231,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {420}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {434}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 0);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 1);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 5);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 0);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 2);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 4);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 0);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 3);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 3);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 5);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 0);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 2);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 1);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 0);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 4);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 0);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 0);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 1);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 5);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 0);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 2);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 4);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 0);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 3);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 3);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 5);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 0);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 2);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 1);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 0);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 4);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P01TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P01TimeLimit") == 1) {
                     context.State = new StateCheckP01(context);
                     return;
                 }
@@ -267,22 +263,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 0);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 1);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 5);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 0);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 2);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 4);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 0);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 3);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 3);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 5);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 0);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 2);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 1);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 0);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 4);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 0);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 0);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 1);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 5);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 0);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 2);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 4);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 0);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 3);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 3);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 5);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 0);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 2);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 1);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 0);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 4);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
             public override void Execute() {
@@ -331,7 +327,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P01End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P01End", value: 1);
                 context.SetUserValue(key: "G03P01Set", value: 0);
                 context.SetUserValue(key: "G03P01TimeLimit", value: 0);
             }
@@ -367,26 +363,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {424}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {430}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 3);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 0);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 2);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 5);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 0);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 1);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 0);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 4);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 5);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 0);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 0);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 3);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 1);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 4);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 0);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 2);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 3);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 0);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 2);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 5);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 0);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 1);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 0);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 4);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 5);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 0);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 0);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 3);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 1);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 4);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 0);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P02TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P02TimeLimit") == 1) {
                     context.State = new StateCheckP02(context);
                     return;
                 }
@@ -399,22 +395,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 3);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 0);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 2);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 5);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 0);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 1);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 0);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 4);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 5);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 0);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 0);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 3);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 1);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 4);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 0);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 2);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 3);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 0);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 2);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 5);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 0);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 1);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 0);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 4);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 5);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 0);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 0);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 3);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 1);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 4);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 0);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
             public override void Execute() {
@@ -463,7 +459,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P02End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P02End", value: 1);
                 context.SetUserValue(key: "G03P02Set", value: 0);
                 context.SetUserValue(key: "G03P02TimeLimit", value: 0);
             }
@@ -499,26 +495,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {420}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {433}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {445}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 3);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 5);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 2);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 0);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 4);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 1);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 3);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 0);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 2);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 0);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 4);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 1);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 2);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 0);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 3);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 5);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 3);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 5);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 2);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 0);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 4);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 1);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 3);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 0);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 2);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 0);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 4);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 1);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 2);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 0);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 3);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 5);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P03TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P03TimeLimit") == 1) {
                     context.State = new StateCheckP03(context);
                     return;
                 }
@@ -531,22 +527,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 3);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 5);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 2);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 0);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 4);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 1);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 3);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 0);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 2);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 0);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 4);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 1);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 2);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 0);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 3);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 5);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 3);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 5);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 2);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 0);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 4);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 1);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 3);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 0);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 2);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 0);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 4);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 1);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 2);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 0);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 3);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 5);
             }
 
             public override void Execute() {
@@ -595,7 +591,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P03End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P03End", value: 1);
                 context.SetUserValue(key: "G03P03Set", value: 0);
                 context.SetUserValue(key: "G03P03TimeLimit", value: 0);
             }
@@ -631,26 +627,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {423}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {430}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 1);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 2);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 0);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 1);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 4);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 2);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 5);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 3);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 0);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 4);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 1);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 5);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 0);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 3);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 0);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 2);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 1);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 2);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 0);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 1);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 4);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 2);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 5);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 3);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 0);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 4);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 1);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 5);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 0);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 3);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 0);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P04TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P04TimeLimit") == 1) {
                     context.State = new StateCheckP04(context);
                     return;
                 }
@@ -663,22 +659,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 1);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 2);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 0);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 1);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 4);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 2);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 5);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 3);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 0);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 4);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 1);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 5);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 0);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 3);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 0);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 2);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 1);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 2);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 0);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 1);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 4);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 2);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 5);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 3);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 0);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 4);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 1);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 5);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 0);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 3);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 0);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
             public override void Execute() {
@@ -727,7 +723,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P04End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P04End", value: 1);
                 context.SetUserValue(key: "G03P04Set", value: 0);
                 context.SetUserValue(key: "G03P04TimeLimit", value: 0);
             }
@@ -763,26 +759,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {422}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {435}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 5);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 0);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 2);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 4);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 1);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 3);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 0);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 1);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 4);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 1);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 0);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 3);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 3);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 2);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 5);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 0);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 5);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 0);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 2);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 4);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 1);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 3);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 0);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 1);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 4);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 1);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 0);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 3);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 3);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 2);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 5);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P05TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P05TimeLimit") == 1) {
                     context.State = new StateCheckP05(context);
                     return;
                 }
@@ -795,22 +791,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 5);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 0);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 2);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 4);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 1);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 3);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 0);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 1);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 4);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 1);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 0);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 3);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 3);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 2);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 5);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 0);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 5);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 0);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 2);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 4);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 1);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 3);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 0);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 1);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 4);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 1);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 0);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 3);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 3);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 2);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 5);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
             public override void Execute() {
@@ -859,7 +855,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P05End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P05End", value: 1);
                 context.SetUserValue(key: "G03P05Set", value: 0);
                 context.SetUserValue(key: "G03P05TimeLimit", value: 0);
             }
@@ -895,26 +891,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {421}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {432}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {441}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 4);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 2);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 1);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 1);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 3);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 1);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 5);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 1);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 1);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 4);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 1);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 3);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 1);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 1);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 2);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 1);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 4);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 2);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 1);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 1);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 3);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 1);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 5);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 1);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 1);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 4);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 1);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 3);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 1);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 1);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 2);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P06TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P06TimeLimit") == 1) {
                     context.State = new StateCheckP06(context);
                     return;
                 }
@@ -927,22 +923,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 4);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 2);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 1);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 1);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 3);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 1);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 5);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 1);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 1);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 4);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 1);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 3);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 1);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 1);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 2);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 1);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 4);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 2);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 1);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 1);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 3);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 1);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 5);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 1);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 1);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 4);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 1);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 3);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 1);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 1);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 2);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 1);
             }
 
             public override void Execute() {
@@ -991,7 +987,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P06End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P06End", value: 1);
                 context.SetUserValue(key: "G03P06Set", value: 0);
                 context.SetUserValue(key: "G03P06TimeLimit", value: 0);
             }
@@ -1027,26 +1023,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {422}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {432}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 2);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 2);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 2);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 2);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 1);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 2);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 2);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 2);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 2);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 2);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 2);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 1);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 2);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 2);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 2);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 2);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 2);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 2);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 2);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 2);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 1);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 2);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 2);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 2);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 2);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 2);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 2);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 1);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 2);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 2);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 2);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P07TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P07TimeLimit") == 1) {
                     context.State = new StateCheckP07(context);
                     return;
                 }
@@ -1059,22 +1055,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 2);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 2);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 2);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 2);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 1);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 2);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 2);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 2);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 2);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 2);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 2);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 1);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 2);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 2);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 2);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 2);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 2);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 2);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 2);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 2);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 1);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 2);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 2);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 2);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 2);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 2);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 2);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 1);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 2);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 2);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 2);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
             public override void Execute() {
@@ -1123,7 +1119,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P07End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P07End", value: 1);
                 context.SetUserValue(key: "G03P07Set", value: 0);
                 context.SetUserValue(key: "G03P07TimeLimit", value: 0);
             }
@@ -1159,26 +1155,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {422}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {432}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 2);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 2);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 2);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 2);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 2);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 2);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 2);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 2);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 2);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 1);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 2);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 2);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 2);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 2);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 2);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 2);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 2);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 2);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 2);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 2);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 2);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 2);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 2);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 2);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 2);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 1);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 2);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 2);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 2);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 2);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 2);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P08TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P08TimeLimit") == 1) {
                     context.State = new StateCheckP08(context);
                     return;
                 }
@@ -1191,22 +1187,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 2);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 2);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 2);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 2);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 2);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 2);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 2);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 2);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 2);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 1);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 2);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 2);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 2);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 2);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 2);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 2);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 2);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 2);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 2);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 2);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 2);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 2);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 2);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 2);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 2);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 1);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 2);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 2);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 2);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 2);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 2);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
             public override void Execute() {
@@ -1255,7 +1251,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P08End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P08End", value: 1);
                 context.SetUserValue(key: "G03P08Set", value: 0);
                 context.SetUserValue(key: "G03P08TimeLimit", value: 0);
             }
@@ -1291,26 +1287,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {420}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {431}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {443}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 3);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 0);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 2);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 3);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 1);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 3);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 0);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 3);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 2);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 3);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 3);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 3);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 3);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 0);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 1);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 3);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 3);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 0);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 2);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 3);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 1);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 3);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 0);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 3);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 2);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 3);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 3);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 3);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 3);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 0);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 1);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P09TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P09TimeLimit") == 1) {
                     context.State = new StateCheckP09(context);
                     return;
                 }
@@ -1323,22 +1319,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 3);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 0);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 2);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 3);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 1);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 3);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 0);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 3);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 2);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 3);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 3);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 3);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 3);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 0);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 1);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 3);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 3);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 0);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 2);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 3);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 1);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 3);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 0);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 3);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 2);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 3);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 3);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 3);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 3);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 0);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 1);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
             public override void Execute() {
@@ -1387,7 +1383,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P09End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P09End", value: 1);
                 context.SetUserValue(key: "G03P09Set", value: 0);
                 context.SetUserValue(key: "G03P09TimeLimit", value: 0);
             }
@@ -1423,26 +1419,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {421}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {433}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 0);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 1);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 0);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 3);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 5);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 0);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 5);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 0);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 3);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 5);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 0);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 5);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 3);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 1);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 3);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 0);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 0);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 1);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 0);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 3);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 5);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 0);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 5);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 0);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 3);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 5);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 0);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 5);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 3);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 1);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 3);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P10TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P10TimeLimit") == 1) {
                     context.State = new StateCheckP10(context);
                     return;
                 }
@@ -1455,22 +1451,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 0);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 1);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 0);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 3);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 5);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 0);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 5);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 0);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 3);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 5);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 0);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 5);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 3);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 1);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 3);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 0);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 0);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 1);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 0);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 3);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 5);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 0);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 5);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 0);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 3);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 5);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 0);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 5);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 3);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 1);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 3);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
             public override void Execute() {
@@ -1519,7 +1515,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P10End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P10End", value: 1);
                 context.SetUserValue(key: "G03P10Set", value: 0);
                 context.SetUserValue(key: "G03P10TimeLimit", value: 0);
             }
@@ -1555,26 +1551,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {424}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {430}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 2);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 0);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 4);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 1);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 4);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 2);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 0);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 4);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 4);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 0);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 2);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 4);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 1);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 4);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 0);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 2);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 2);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 0);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 4);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 1);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 4);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 2);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 0);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 4);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 4);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 0);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 2);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 4);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 1);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 4);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 0);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P11TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P11TimeLimit") == 1) {
                     context.State = new StateCheckP11(context);
                     return;
                 }
@@ -1587,22 +1583,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 2);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 0);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 4);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 1);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 4);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 2);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 0);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 4);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 4);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 0);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 2);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 4);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 1);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 4);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 0);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 2);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 2);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 0);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 4);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 1);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 4);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 2);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 0);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 4);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 4);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 0);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 2);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 4);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 1);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 4);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 0);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
             public override void Execute() {
@@ -1651,7 +1647,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P11End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P11End", value: 1);
                 context.SetUserValue(key: "G03P11Set", value: 0);
                 context.SetUserValue(key: "G03P11TimeLimit", value: 0);
             }
@@ -1687,26 +1683,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {421}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {431}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {441}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 1);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 1);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 3);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 1);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 4);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 5);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 1);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 1);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 1);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 2);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 1);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 4);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 5);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 1);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 1);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 1);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 1);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 1);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 3);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 1);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 4);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 5);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 1);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 1);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 1);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 2);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 1);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 4);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 5);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 1);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 1);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P12TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P12TimeLimit") == 1) {
                     context.State = new StateCheckP12(context);
                     return;
                 }
@@ -1719,22 +1715,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 1);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 1);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 3);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 1);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 4);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 5);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 1);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 1);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 1);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 2);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 1);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 4);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 5);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 1);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 1);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 1);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 1);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 1);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 3);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 1);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 4);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 5);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 1);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 1);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 1);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 2);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 1);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 4);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 5);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 1);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 1);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 1);
             }
 
             public override void Execute() {
@@ -1783,7 +1779,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P12End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P12End", value: 1);
                 context.SetUserValue(key: "G03P12Set", value: 0);
                 context.SetUserValue(key: "G03P12TimeLimit", value: 0);
             }
@@ -1819,26 +1815,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {424}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {432}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {441}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 2);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 1);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 1);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 3);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 1);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 2);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 1);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 5);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 1);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 3);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 1);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 1);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 1);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 4);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 2);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 1);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 2);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 1);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 1);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 3);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 1);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 2);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 1);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 5);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 1);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 3);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 1);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 1);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 1);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 4);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 2);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P13TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P13TimeLimit") == 1) {
                     context.State = new StateCheckP13(context);
                     return;
                 }
@@ -1851,22 +1847,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 2);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 1);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 1);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 3);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 1);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 2);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 1);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 5);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 1);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 3);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 1);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 1);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 1);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 4);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 2);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 1);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 2);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 1);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 1);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 3);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 1);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 2);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 1);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 5);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 1);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 3);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 1);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 1);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 1);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 4);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 2);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 1);
             }
 
             public override void Execute() {
@@ -1915,7 +1911,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P13End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P13End", value: 1);
                 context.SetUserValue(key: "G03P13Set", value: 0);
                 context.SetUserValue(key: "G03P13TimeLimit", value: 0);
             }
@@ -1951,26 +1947,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {423}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {433}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 0);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 3);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 1);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 3);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 3);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 2);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 3);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 1);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 3);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 0);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 2);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 3);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 1);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 3);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 3);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 0);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 0);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 3);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 1);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 3);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 3);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 2);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 3);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 1);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 3);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 0);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 2);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 3);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 1);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 3);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 3);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P14TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P14TimeLimit") == 1) {
                     context.State = new StateCheckP14(context);
                     return;
                 }
@@ -1983,22 +1979,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 0);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 3);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 1);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 3);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 3);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 2);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 3);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 1);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 3);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 0);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 2);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 3);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 1);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 3);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 3);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 0);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 0);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 3);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 1);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 3);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 3);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 2);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 3);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 1);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 3);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 0);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 2);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 3);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 1);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 3);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 3);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
             public override void Execute() {
@@ -2047,7 +2043,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P14End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P14End", value: 1);
                 context.SetUserValue(key: "G03P14Set", value: 0);
                 context.SetUserValue(key: "G03P14TimeLimit", value: 0);
             }
@@ -2083,26 +2079,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {423}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {431}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {443}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 3);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 1);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 3);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 1);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 3);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 0);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 3);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 3);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 3);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 3);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 0);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 3);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 1);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 3);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 1);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 3);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 3);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 1);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 3);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 1);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 3);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 0);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 3);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 3);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 3);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 3);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 0);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 3);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 1);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 3);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 1);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P15TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P15TimeLimit") == 1) {
                     context.State = new StateCheckP15(context);
                     return;
                 }
@@ -2115,22 +2111,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 3);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 1);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 3);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 1);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 3);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 0);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 3);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 3);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 3);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 3);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 0);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 3);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 1);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 3);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 1);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 3);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 3);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 1);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 3);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 1);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 3);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 0);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 3);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 3);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 3);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 3);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 0);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 3);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 1);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 3);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 1);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
             public override void Execute() {
@@ -2179,7 +2175,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P15End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P15End", value: 1);
                 context.SetUserValue(key: "G03P15Set", value: 0);
                 context.SetUserValue(key: "G03P15TimeLimit", value: 0);
             }
@@ -2215,26 +2211,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {420}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {432}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 1);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 0);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 0);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 3);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 2);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 0);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 4);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 5);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 5);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 3);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 1);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 0);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 4);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 0);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 2);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 0);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 1);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 0);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 0);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 3);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 2);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 0);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 4);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 5);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 5);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 3);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 1);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 0);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 4);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 0);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 2);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P16TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P16TimeLimit") == 1) {
                     context.State = new StateCheckP16(context);
                     return;
                 }
@@ -2247,22 +2243,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 1);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 0);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 0);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 3);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 2);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 0);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 4);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 5);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 5);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 3);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 1);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 0);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 4);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 0);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 2);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 0);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 1);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 0);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 0);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 3);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 2);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 0);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 4);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 5);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 5);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 3);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 1);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 0);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 4);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 0);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 2);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
             public override void Execute() {
@@ -2311,7 +2307,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P16End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P16End", value: 1);
                 context.SetUserValue(key: "G03P16Set", value: 0);
                 context.SetUserValue(key: "G03P16TimeLimit", value: 0);
             }
@@ -2347,26 +2343,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {422}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {434}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 0);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 3);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 5);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 2);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 0);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 1);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 0);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 0);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 4);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 1);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 5);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 0);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 3);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 2);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 4);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 0);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 0);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 3);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 5);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 2);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 0);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 1);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 0);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 0);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 4);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 1);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 5);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 0);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 3);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 2);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 4);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P17TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P17TimeLimit") == 1) {
                     context.State = new StateCheckP17(context);
                     return;
                 }
@@ -2379,22 +2375,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 0);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 3);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 5);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 2);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 0);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 1);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 0);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 0);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 4);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 1);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 5);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 0);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 3);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 2);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 4);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 0);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 0);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 3);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 5);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 2);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 0);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 1);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 0);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 0);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 4);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 1);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 5);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 0);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 3);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 2);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 4);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
             public override void Execute() {
@@ -2443,7 +2439,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P17End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P17End", value: 1);
                 context.SetUserValue(key: "G03P17Set", value: 0);
                 context.SetUserValue(key: "G03P17TimeLimit", value: 0);
             }
@@ -2479,26 +2475,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {421}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {433}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {444}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 3);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 0);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 3);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 4);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 1);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 3);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 4);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 1);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 0);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 4);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 3);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 0);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 4);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 1);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 3);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 4);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 3);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 0);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 3);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 4);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 1);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 3);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 4);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 1);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 0);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 4);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 3);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 0);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 4);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 1);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 3);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 4);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P18TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P18TimeLimit") == 1) {
                     context.State = new StateCheckP18(context);
                     return;
                 }
@@ -2511,22 +2507,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 3);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 0);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 3);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 4);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 1);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 3);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 4);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 1);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 0);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 4);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 3);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 0);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 4);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 1);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 3);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 4);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 3);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 0);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 3);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 4);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 1);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 3);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 4);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 1);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 0);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 4);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 3);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 0);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 4);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 1);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 3);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 4);
             }
 
             public override void Execute() {
@@ -2575,7 +2571,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P18End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P18End", value: 1);
                 context.SetUserValue(key: "G03P18Set", value: 0);
                 context.SetUserValue(key: "G03P18TimeLimit", value: 0);
             }
@@ -2611,26 +2607,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {422}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {434}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {444}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 2);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 1);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 4);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 0);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 4);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 1);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 2);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 4);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 0);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 4);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 4);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 1);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 0);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 2);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 4);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 4);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 2);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 1);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 4);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 0);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 4);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 1);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 2);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 4);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 0);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 4);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 4);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 1);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 0);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 2);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 4);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 4);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P19TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P19TimeLimit") == 1) {
                     context.State = new StateCheckP19(context);
                     return;
                 }
@@ -2643,22 +2639,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 2);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 1);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 4);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 0);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 4);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 1);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 2);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 4);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 0);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 4);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 4);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 1);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 0);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 2);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 4);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 4);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 2);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 1);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 4);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 0);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 4);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 1);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 2);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 4);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 0);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 4);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 4);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 1);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 0);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 2);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 4);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 4);
             }
 
             public override void Execute() {
@@ -2707,7 +2703,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P19End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P19End", value: 1);
                 context.SetUserValue(key: "G03P19Set", value: 0);
                 context.SetUserValue(key: "G03P19TimeLimit", value: 0);
             }
@@ -2743,26 +2739,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {423}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {433}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 3);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 2);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 3);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 2);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 3);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 1);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 2);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 2);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 3);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 1);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 3);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 2);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 2);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 3);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 3);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 2);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 3);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 2);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 3);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 2);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 3);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 1);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 2);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 2);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 3);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 1);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 3);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 2);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 2);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 3);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 3);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P20TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P20TimeLimit") == 1) {
                     context.State = new StateCheckP20(context);
                     return;
                 }
@@ -2775,22 +2771,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 3);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 2);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 3);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 2);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 3);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 1);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 2);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 2);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 3);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 1);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 3);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 2);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 2);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 3);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 3);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 2);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 3);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 2);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 3);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 2);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 3);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 1);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 2);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 2);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 3);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 1);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 3);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 2);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 2);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 3);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 3);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
             public override void Execute() {
@@ -2839,7 +2835,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P20End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P20End", value: 1);
                 context.SetUserValue(key: "G03P20Set", value: 0);
                 context.SetUserValue(key: "G03P20TimeLimit", value: 0);
             }
@@ -2875,26 +2871,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {420}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {433}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 0);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 1);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 5);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 0);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 0);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 5);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 2);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 5);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 1);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 0);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 5);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 1);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 5);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 0);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 3);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 0);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 0);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 1);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 5);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 0);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 0);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 5);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 2);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 5);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 1);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 0);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 5);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 1);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 5);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 0);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 3);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P21TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P21TimeLimit") == 1) {
                     context.State = new StateCheckP21(context);
                     return;
                 }
@@ -2907,22 +2903,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 0);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 1);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 5);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 0);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 0);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 5);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 2);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 5);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 1);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 0);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 5);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 1);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 5);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 0);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 3);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 0);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 0);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 1);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 5);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 0);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 0);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 5);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 2);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 5);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 1);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 0);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 5);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 1);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 5);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 0);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 3);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
             public override void Execute() {
@@ -2971,7 +2967,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P21End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P21End", value: 1);
                 context.SetUserValue(key: "G03P21Set", value: 0);
                 context.SetUserValue(key: "G03P21TimeLimit", value: 0);
             }
@@ -3007,26 +3003,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {424}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {430}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {444}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 4);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 0);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 2);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 4);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 1);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 4);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 4);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 0);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 4);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 0);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 0);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 1);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 2);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 4);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 0);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 4);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 4);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 0);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 2);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 4);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 1);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 4);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 4);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 0);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 4);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 0);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 0);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 1);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 2);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 4);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 0);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 4);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P22TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P22TimeLimit") == 1) {
                     context.State = new StateCheckP22(context);
                     return;
                 }
@@ -3039,22 +3035,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 4);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 0);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 2);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 4);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 1);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 4);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 4);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 0);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 4);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 0);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 0);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 1);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 2);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 4);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 0);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 4);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 4);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 0);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 2);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 4);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 1);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 4);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 4);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 0);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 4);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 0);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 0);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 1);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 2);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 4);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 0);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 4);
             }
 
             public override void Execute() {
@@ -3103,7 +3099,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P22End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P22End", value: 1);
                 context.SetUserValue(key: "G03P22Set", value: 0);
                 context.SetUserValue(key: "G03P22TimeLimit", value: 0);
             }
@@ -3139,26 +3135,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {420}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {433}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 3);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 3);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 0);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 0);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 5);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 0);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 5);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 3);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 1);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 3);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 1);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 5);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 0);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 0);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 3);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 2);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 3);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 3);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 0);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 0);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 5);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 0);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 5);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 3);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 1);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 3);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 1);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 5);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 0);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 0);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 3);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P23TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P23TimeLimit") == 1) {
                     context.State = new StateCheckP23(context);
                     return;
                 }
@@ -3171,22 +3167,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP23(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 3);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 3);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 0);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 0);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 5);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 0);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 5);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 3);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 1);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 3);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 1);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 5);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 0);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 0);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 3);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 2);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 3);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 3);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 0);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 0);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 5);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 0);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 5);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 3);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 1);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 3);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 1);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 5);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 0);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 0);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 3);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
             public override void Execute() {
@@ -3235,7 +3231,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP23(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P23End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P23End", value: 1);
                 context.SetUserValue(key: "G03P23Set", value: 0);
                 context.SetUserValue(key: "G03P23TimeLimit", value: 0);
             }
@@ -3271,26 +3267,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {423}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {432}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {441}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 2);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 2);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 3);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 1);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 3);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 3);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 2);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 2);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 3);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 1);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 3);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 1);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 2);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 3);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 2);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 1);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 2);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 2);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 3);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 1);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 3);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 3);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 2);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 2);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 3);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 1);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 3);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 1);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 2);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 3);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 2);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P24TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P24TimeLimit") == 1) {
                     context.State = new StateCheckP24(context);
                     return;
                 }
@@ -3303,22 +3299,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP24(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 2);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 2);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 3);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 1);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 3);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 3);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 2);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 2);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 3);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 1);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 3);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 1);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 2);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 3);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 2);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 1);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 2);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 2);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 3);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 1);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 3);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 3);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 2);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 2);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 3);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 1);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 3);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 1);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 2);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 3);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 2);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 1);
             }
 
             public override void Execute() {
@@ -3367,7 +3363,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP24(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P24End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P24End", value: 1);
                 context.SetUserValue(key: "G03P24Set", value: 0);
                 context.SetUserValue(key: "G03P24TimeLimit", value: 0);
             }
@@ -3403,26 +3399,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {422}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {430}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 0);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 4);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 1);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 2);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 4);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 1);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 3);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 4);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 3);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 4);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 4);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 1);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 0);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 2);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 0);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 2);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 0);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 4);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 1);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 2);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 4);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 1);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 3);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 4);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 3);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 4);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 4);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 1);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 0);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 2);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 0);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P25TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P25TimeLimit") == 1) {
                     context.State = new StateCheckP25(context);
                     return;
                 }
@@ -3435,22 +3431,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP25(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 0);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 4);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 1);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 2);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 4);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 1);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 3);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 4);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 3);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 4);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 4);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 1);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 0);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 2);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 0);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 2);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 0);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 4);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 1);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 2);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 4);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 1);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 3);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 4);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 3);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 4);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 4);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 1);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 0);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 2);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 0);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
             public override void Execute() {
@@ -3499,7 +3495,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP25(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P25End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P25End", value: 1);
                 context.SetUserValue(key: "G03P25Set", value: 0);
                 context.SetUserValue(key: "G03P25TimeLimit", value: 0);
             }
@@ -3535,26 +3531,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {425}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {431}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 2);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 4);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 0);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 5);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 0);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 4);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 1);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 2);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 5);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 1);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 4);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 0);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 2);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 5);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 1);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 0);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 2);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 4);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 0);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 5);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 0);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 4);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 1);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 2);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 5);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 1);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 4);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 0);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 2);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 5);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 1);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P26TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P26TimeLimit") == 1) {
                     context.State = new StateCheckP26(context);
                     return;
                 }
@@ -3567,22 +3563,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP26(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 2);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 4);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 0);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 5);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 0);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 4);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 1);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 2);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 5);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 1);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 4);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 0);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 2);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 5);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 1);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 0);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 2);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 4);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 0);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 5);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 0);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 4);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 1);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 2);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 5);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 1);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 4);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 0);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 2);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 5);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 1);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
             public override void Execute() {
@@ -3631,7 +3627,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP26(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P26End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P26End", value: 1);
                 context.SetUserValue(key: "G03P26Set", value: 0);
                 context.SetUserValue(key: "G03P26TimeLimit", value: 0);
             }
@@ -3667,26 +3663,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {423}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {430}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {441}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 0);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 4);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 1);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 2);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 5);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 0);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 3);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 0);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 2);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 4);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 0);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 5);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 0);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 3);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 0);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 1);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 0);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 4);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 1);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 2);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 5);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 0);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 3);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 0);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 2);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 4);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 0);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 5);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 0);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 3);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 0);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P27TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P27TimeLimit") == 1) {
                     context.State = new StateCheckP27(context);
                     return;
                 }
@@ -3699,22 +3695,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP27(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 0);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 4);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 1);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 2);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 5);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 0);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 3);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 0);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 2);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 4);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 0);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 5);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 0);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 3);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 0);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 1);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 0);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 4);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 1);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 2);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 5);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 0);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 3);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 0);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 2);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 4);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 0);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 5);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 0);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 3);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 0);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 1);
             }
 
             public override void Execute() {
@@ -3763,7 +3759,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP27(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P27End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P27End", value: 1);
                 context.SetUserValue(key: "G03P27Set", value: 0);
                 context.SetUserValue(key: "G03P27TimeLimit", value: 0);
             }
@@ -3799,26 +3795,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {420}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {430}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {442}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 2);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 0);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 3);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 0);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 1);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 5);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 5);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 0);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 4);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 0);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 1);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 4);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 3);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 0);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 0);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 2);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 2);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 0);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 3);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 0);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 1);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 5);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 5);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 0);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 4);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 0);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 1);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 4);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 3);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 0);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 0);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P28TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P28TimeLimit") == 1) {
                     context.State = new StateCheckP28(context);
                     return;
                 }
@@ -3831,22 +3827,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP28(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 2);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 0);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 3);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 0);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 1);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 5);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 5);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 0);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 4);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 0);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 1);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 4);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 3);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 0);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 0);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 2);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 2);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 0);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 3);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 0);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 1);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 5);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 5);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 0);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 4);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 0);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 1);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 4);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 3);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 0);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 0);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 2);
             }
 
             public override void Execute() {
@@ -3895,7 +3891,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP28(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P28End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P28End", value: 1);
                 context.SetUserValue(key: "G03P28Set", value: 0);
                 context.SetUserValue(key: "G03P28TimeLimit", value: 0);
             }
@@ -3931,26 +3927,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {425}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {431}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {440}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 0);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 5);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 1);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 0);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 1);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 1);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 5);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 0);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 5);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 1);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 1);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 5);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 0);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 5);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 1);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 0);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 0);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 5);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 1);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 0);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 1);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 1);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 5);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 0);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 5);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 1);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 1);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 5);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 0);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 5);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 1);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P29TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P29TimeLimit") == 1) {
                     context.State = new StateCheckP29(context);
                     return;
                 }
@@ -3963,22 +3959,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP29(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 0);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 5);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 1);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 0);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 1);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 1);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 5);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 0);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 5);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 1);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 1);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 5);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 0);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 5);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 1);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 0);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 0);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 5);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 1);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 0);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 1);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 1);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 5);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 0);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 5);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 1);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 1);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 5);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 0);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 5);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 1);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 0);
             }
 
             public override void Execute() {
@@ -4027,7 +4023,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP29(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P29End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P29End", value: 1);
                 context.SetUserValue(key: "G03P29Set", value: 0);
                 context.SetUserValue(key: "G03P29TimeLimit", value: 0);
             }
@@ -4063,26 +4059,26 @@ namespace Maple2.Trigger._84000007_wd {
                 context.SetMesh(arg1: new int[] {422}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {431}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetMesh(arg1: new int[] {443}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 3);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 1);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 1);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 2);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 2);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 3);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 1);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 3);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 1);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 3);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 2);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 2);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 1);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 2);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 1);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 3);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 3);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 1);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 1);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 2);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 2);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 3);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 1);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 3);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 1);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 3);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 2);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 2);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 1);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 2);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 1);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 3);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P30TimeLimit", value: 1)) {
+                if (context.GetUserValue(key: "G03P30TimeLimit") == 1) {
                     context.State = new StateCheckP30(context);
                     return;
                 }
@@ -4095,22 +4091,22 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateCheckP30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9110, key: "Box11Check", value: 3);
-                context.SetUserValue(triggerID: 9120, key: "Box12Check", value: 1);
-                context.SetUserValue(triggerID: 9130, key: "Box13Check", value: 1);
-                context.SetUserValue(triggerID: 9140, key: "Box14Check", value: 2);
-                context.SetUserValue(triggerID: 9210, key: "Box21Check", value: 2);
-                context.SetUserValue(triggerID: 9220, key: "Box22Check", value: 3);
-                context.SetUserValue(triggerID: 9230, key: "Box23Check", value: 1);
-                context.SetUserValue(triggerID: 9240, key: "Box24Check", value: 3);
-                context.SetUserValue(triggerID: 9310, key: "Box31Check", value: 1);
-                context.SetUserValue(triggerID: 9320, key: "Box32Check", value: 3);
-                context.SetUserValue(triggerID: 9330, key: "Box33Check", value: 2);
-                context.SetUserValue(triggerID: 9340, key: "Box34Check", value: 2);
-                context.SetUserValue(triggerID: 9410, key: "Box41Check", value: 1);
-                context.SetUserValue(triggerID: 9420, key: "Box42Check", value: 2);
-                context.SetUserValue(triggerID: 9430, key: "Box43Check", value: 1);
-                context.SetUserValue(triggerID: 9440, key: "Box44Check", value: 3);
+                context.SetUserValue(triggerId: 9110, key: "Box11Check", value: 3);
+                context.SetUserValue(triggerId: 9120, key: "Box12Check", value: 1);
+                context.SetUserValue(triggerId: 9130, key: "Box13Check", value: 1);
+                context.SetUserValue(triggerId: 9140, key: "Box14Check", value: 2);
+                context.SetUserValue(triggerId: 9210, key: "Box21Check", value: 2);
+                context.SetUserValue(triggerId: 9220, key: "Box22Check", value: 3);
+                context.SetUserValue(triggerId: 9230, key: "Box23Check", value: 1);
+                context.SetUserValue(triggerId: 9240, key: "Box24Check", value: 3);
+                context.SetUserValue(triggerId: 9310, key: "Box31Check", value: 1);
+                context.SetUserValue(triggerId: 9320, key: "Box32Check", value: 3);
+                context.SetUserValue(triggerId: 9330, key: "Box33Check", value: 2);
+                context.SetUserValue(triggerId: 9340, key: "Box34Check", value: 2);
+                context.SetUserValue(triggerId: 9410, key: "Box41Check", value: 1);
+                context.SetUserValue(triggerId: 9420, key: "Box42Check", value: 2);
+                context.SetUserValue(triggerId: 9430, key: "Box43Check", value: 1);
+                context.SetUserValue(triggerId: 9440, key: "Box44Check", value: 3);
             }
 
             public override void Execute() {
@@ -4159,7 +4155,7 @@ namespace Maple2.Trigger._84000007_wd {
             internal StateResetP30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "G03P30End", value: 1);
+                context.SetUserValue(triggerId: 1, key: "G03P30End", value: 1);
                 context.SetUserValue(key: "G03P30Set", value: 0);
                 context.SetUserValue(key: "G03P30TimeLimit", value: 0);
             }

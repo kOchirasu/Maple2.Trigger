@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000357_bf {
     public static class _bossspawn {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._02000357_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State보스등장(context);
                     return;
                 }
@@ -28,7 +24,7 @@ namespace Maple2.Trigger._02000357_bf {
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CreateMonster(arg1: new int[] {99}, arg2: false);
+                context.CreateMonster(arg1: new[] {99}, arg2: false);
                 context.SetSkip(arg1: "종료체크");
             }
 
@@ -50,12 +46,12 @@ namespace Maple2.Trigger._02000357_bf {
             internal State종료체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20001945, textID: 20001945, duration: 4000);
+                context.ShowGuideSummary(entityId: 20001945, textId: 20001945, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State종료딜레이(context);
                     return;
                 }

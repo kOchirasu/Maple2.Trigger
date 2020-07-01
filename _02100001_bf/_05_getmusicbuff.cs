@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02100001_bf {
     public static class _05_getmusicbuff {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._02100001_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9900})) {
+                if (context.UserDetected(arg1: new[] {9900})) {
                     context.State = new StateGiveBuff01(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateGiveBuff01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {9900}, arg2: 71000030, arg3: 1);
+                context.AddBuff(arg1: new[] {9900}, arg2: 71000030, arg3: 1);
             }
 
             public override void Execute() {
@@ -34,7 +30,7 @@ namespace Maple2.Trigger._02100001_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "GiveBuffSlowly", value: 1)) {
+                if (context.GetUserValue(key: "GiveBuffSlowly") == 1) {
                     context.State = new StateGiveBuff02(context);
                     return;
                 }
@@ -47,16 +43,16 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateGiveBuff02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {9901}, arg2: 71000030, arg3: 1);
+                context.AddBuff(arg1: new[] {9901}, arg2: 71000030, arg3: 1);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9901})) {
+                if (context.UserDetected(arg1: new[] {9901})) {
                     context.State = new StateGiveBuff02(context);
                     return;
                 }
 
-                if (context.UserValue(key: "GiveBuffSlowly", value: 2)) {
+                if (context.GetUserValue(key: "GiveBuffSlowly") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -69,7 +65,7 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {9900}, arg2: 71000034, arg3: 1);
+                context.AddBuff(arg1: new[] {9900}, arg2: 71000034, arg3: 1);
             }
 
             public override void Execute() { }

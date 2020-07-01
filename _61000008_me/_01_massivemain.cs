@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._61000008_me {
     public static class _01_massivemain {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,56 +8,56 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 40000, arg2: false);
-                context.SetEffect(arg1: new int[] {8000}, arg2: false);
+                context.SetEffect(arg1: new[] {8000}, arg2: false);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {511, 512, 513, 514}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {521, 522, 523, 524}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {531, 532, 533, 534}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {541, 542, 543, 544}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {110, 111, 112, 113, 114, 115}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {511, 512, 513, 514}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {521, 522, 523, 524}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {531, 532, 533, 534}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {541, 542, 543, 544}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {110, 111, 112, 113, 114, 115}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.SetMesh(arg1: new int[] {120, 121, 122, 123, 124, 125}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {120, 121, 122, 123, 124, 125}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.SetMesh(arg1: new int[] {130, 131, 132, 133, 134, 135}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {130, 131, 132, 133, 134, 135}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.SetMesh(arg1: new int[] {140, 141, 142, 143, 144, 145}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {140, 141, 142, 143, 144, 145}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.SetMesh(arg1: new int[] {210, 211, 212, 213, 214, 215}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {210, 211, 212, 213, 214, 215}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.SetMesh(arg1: new int[] {220, 221, 222, 223, 224, 225}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {220, 221, 222, 223, 224, 225}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.SetMesh(arg1: new int[] {230, 231, 232, 233, 234, 235}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {230, 231, 232, 233, 234, 235}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.SetMesh(arg1: new int[] {240, 241, 242, 243, 244, 245}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {240, 241, 242, 243, 244, 245}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.SetMesh(arg1: new int[] {310, 311, 312, 313, 314, 315}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {310, 311, 312, 313, 314, 315}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.SetMesh(arg1: new int[] {320, 321, 322, 323, 324, 325}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {320, 321, 322, 323, 324, 325}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.SetMesh(arg1: new int[] {330, 331, 332, 333, 334, 335}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {330, 331, 332, 333, 334, 335}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.SetMesh(arg1: new int[] {340, 341, 342, 343, 344, 345}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {340, 341, 342, 343, 344, 345}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.SetMesh(arg1: new int[] {410, 411, 412, 413, 414, 415}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {410, 411, 412, 413, 414, 415}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.SetMesh(arg1: new int[] {420, 421, 422, 423, 424, 425}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {420, 421, 422, 423, 424, 425}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.SetMesh(arg1: new int[] {430, 431, 432, 433, 434, 435}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {430, 431, 432, 433, 434, 435}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.SetMesh(arg1: new int[] {440, 441, 442, 443, 444, 445}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {440, 441, 442, 443, 444, 445}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
                 context.SetMesh(
-                    arg1: new int[]
+                    arg1: new[]
                         {8900, 8901, 8902, 8903, 8904, 8905, 8906, 8907, 8908, 8909, 8910, 8911, 8912, 8913, 8914},
                     arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000936}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000936}, arg2: 2);
                 context.SetUserValue(key: "Round", value: 0);
                 context.SetUserValue(key: "GambleSuccess", value: 0);
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
@@ -69,7 +65,7 @@ namespace Maple2.Trigger._61000008_me {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateEntryDelay(context);
                     return;
                 }
@@ -91,7 +87,7 @@ namespace Maple2.Trigger._61000008_me {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 50)) {
+                if (context.GetUserCount(boxId: 9001) == 50) {
                     context.State = new StateMusicChange(context);
                     return;
                 }
@@ -105,7 +101,7 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
             public override void Execute() {
@@ -122,16 +118,16 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGameGuide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4, key: "BannerCheckIn", value: 1);
+                context.SetUserValue(triggerId: 4, key: "BannerCheckIn", value: 1);
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 10000, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__0$", arg3: new int[] {3000},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__0$", arg3: 3000,
                     arg4: "0");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Notice_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Notice_01");
                 context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "dailyquest_start");
                 context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "ddstop_start");
-                context.GiveGuildExp(boxID: false, type: 2);
-                context.SetMiniGameAreaForHack(boxID: 9001);
+                context.GiveGuildExp(boxId: false, type: 2);
+                context.SetMiniGameAreaForHack(boxId: 9001);
                 context.StartMiniGame(boxId: 9001, round: 5, gameName: "dancedancestop");
             }
 
@@ -149,9 +145,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGameGuide02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__1$", arg3: new int[] {4000},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__1$", arg3: 4000,
                     arg4: "0");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Notice_02");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Notice_02");
             }
 
             public override void Execute() {
@@ -168,7 +164,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGameGuide03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__2$", arg3: new int[] {4000},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__2$", arg3: 4000,
                     arg4: "0");
             }
 
@@ -186,7 +182,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGameGuide04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__3$", arg3: new int[] {5000},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__3$", arg3: 5000,
                     arg4: "0");
             }
 
@@ -206,13 +202,13 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__4$", arg3: new int[] {3000},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__4$", arg3: 3000,
                     arg4: "0");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancetime_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancetime_01");
                 context.SetEventUI(arg1: 0, arg2: "1,5");
                 context.SetSound(arg1: 10000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
                 context.StartMiniGameRound(boxId: 9001, round: 1);
             }
 
@@ -272,7 +268,7 @@ namespace Maple2.Trigger._61000008_me {
             }
 
             public override void OnExit() {
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
             }
         }
 
@@ -280,9 +276,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01DancePattern01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 1);
             }
 
             public override void Execute() {
@@ -299,9 +295,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01DancePattern02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 2);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 2);
             }
 
             public override void Execute() {
@@ -318,9 +314,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01DancePattern03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000936}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 3);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000936}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 3);
             }
 
             public override void Execute() {
@@ -337,9 +333,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01DancePattern0401(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 41);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 41);
             }
 
             public override void Execute() {
@@ -356,12 +352,12 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01DancePattern0402(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__9$", arg3: new int[] {1000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_01");
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__9$", arg3: 1000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_01");
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -378,10 +374,10 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01DancePattern0403(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__10$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__10$", arg3: 1500,
                     arg4: "0");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 0);
             }
 
             public override void Execute() {
@@ -400,9 +396,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 42);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 42);
             }
 
             public override void Execute() {
@@ -419,9 +415,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01DancePattern0501(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 51);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 51);
             }
 
             public override void Execute() {
@@ -438,12 +434,12 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01DancePattern0502(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__11$", arg3: new int[] {1000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_02");
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__11$", arg3: 1000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_02");
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 0);
             }
 
             public override void Execute() {
@@ -460,10 +456,10 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01DancePattern0503(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__12$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__12$", arg3: 1500,
                     arg4: "0");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -482,9 +478,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 52);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 52);
             }
 
             public override void Execute() {
@@ -501,9 +497,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01DancePattern0601(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 61);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 61);
             }
 
             public override void Execute() {
@@ -520,12 +516,12 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01DancePattern0602(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__13$", arg3: new int[] {1000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_03");
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__13$", arg3: 1000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_03");
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 0);
             }
 
             public override void Execute() {
@@ -542,10 +538,10 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01DancePattern0603(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__14$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__14$", arg3: 1500,
                     arg4: "0");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -564,9 +560,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 62);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 62);
             }
 
             public override void Execute() {
@@ -583,9 +579,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01DancePattern0701(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 71);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 71);
             }
 
             public override void Execute() {
@@ -602,12 +598,12 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01DancePattern0702(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__15$", arg3: new int[] {1000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_04");
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__15$", arg3: 1000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_04");
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -624,10 +620,10 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01DancePattern0703(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__16$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__16$", arg3: 1500,
                     arg4: "0");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 0);
             }
 
             public override void Execute() {
@@ -646,9 +642,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 72);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 72);
             }
 
             public override void Execute() {
@@ -667,7 +663,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
             public override void Execute() {
@@ -686,12 +682,12 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 40000, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000936}, arg2: 2);
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__17$", arg3: new int[] {4000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Round_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000936}, arg2: 2);
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__17$", arg3: 4000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Round_01");
             }
 
             public override void Execute() {
@@ -709,8 +705,8 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11111", arg2: 30, arg3: true, arg4: true, arg5: -40);
-                context.SetUserValue(triggerID: 8, key: "CheerUpTimer", value: 1);
-                context.SetUserValue(triggerID: 7, key: "GameGuide", value: 1);
+                context.SetUserValue(triggerId: 8, key: "CheerUpTimer", value: 1);
+                context.SetUserValue(triggerId: 7, key: "GameGuide", value: 1);
             }
 
             public override void Execute() {
@@ -729,27 +725,27 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9001, arg2: 40, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 40) {
                     context.State = new StateG05orG04(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 30, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 30) {
                     context.State = new StateG03orG04orG05(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 20, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 20) {
                     context.State = new StateG02orG03orG04(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 10, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 10) {
                     context.State = new StateG02orG03(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 10, arg3: "LessEqual")) {
+                if (context.GetUserCount(boxId: 9001) <= 10) {
                     context.State = new StateG01orG02(context);
                     return;
                 }
@@ -1822,24 +1818,24 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR01EndDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 7110, key: "Color11", value: 5);
-                context.SetUserValue(triggerID: 7120, key: "Color12", value: 5);
-                context.SetUserValue(triggerID: 7130, key: "Color13", value: 5);
-                context.SetUserValue(triggerID: 7140, key: "Color14", value: 5);
-                context.SetUserValue(triggerID: 7210, key: "Color21", value: 5);
-                context.SetUserValue(triggerID: 7220, key: "Color22", value: 5);
-                context.SetUserValue(triggerID: 7230, key: "Color23", value: 5);
-                context.SetUserValue(triggerID: 7240, key: "Color24", value: 5);
-                context.SetUserValue(triggerID: 7310, key: "Color31", value: 5);
-                context.SetUserValue(triggerID: 7320, key: "Color32", value: 5);
-                context.SetUserValue(triggerID: 7330, key: "Color33", value: 5);
-                context.SetUserValue(triggerID: 7340, key: "Color34", value: 5);
-                context.SetUserValue(triggerID: 7410, key: "Color41", value: 5);
-                context.SetUserValue(triggerID: 7420, key: "Color42", value: 5);
-                context.SetUserValue(triggerID: 7430, key: "Color43", value: 5);
-                context.SetUserValue(triggerID: 7440, key: "Color44", value: 5);
+                context.SetUserValue(triggerId: 7110, key: "Color11", value: 5);
+                context.SetUserValue(triggerId: 7120, key: "Color12", value: 5);
+                context.SetUserValue(triggerId: 7130, key: "Color13", value: 5);
+                context.SetUserValue(triggerId: 7140, key: "Color14", value: 5);
+                context.SetUserValue(triggerId: 7210, key: "Color21", value: 5);
+                context.SetUserValue(triggerId: 7220, key: "Color22", value: 5);
+                context.SetUserValue(triggerId: 7230, key: "Color23", value: 5);
+                context.SetUserValue(triggerId: 7240, key: "Color24", value: 5);
+                context.SetUserValue(triggerId: 7310, key: "Color31", value: 5);
+                context.SetUserValue(triggerId: 7320, key: "Color32", value: 5);
+                context.SetUserValue(triggerId: 7330, key: "Color33", value: 5);
+                context.SetUserValue(triggerId: 7340, key: "Color34", value: 5);
+                context.SetUserValue(triggerId: 7410, key: "Color41", value: 5);
+                context.SetUserValue(triggerId: 7420, key: "Color42", value: 5);
+                context.SetUserValue(triggerId: 7430, key: "Color43", value: 5);
+                context.SetUserValue(triggerId: 7440, key: "Color44", value: 5);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: true, arg3: 400, arg4: 0, arg5: 2f);
@@ -1866,12 +1862,12 @@ namespace Maple2.Trigger._61000008_me {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateR02Ready(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {9001})) {
+                if (!context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateFailAll(context);
                     return;
                 }
@@ -1888,7 +1884,7 @@ namespace Maple2.Trigger._61000008_me {
                 context.EndMiniGameRound(winnerBoxId: 9001, expRate: 0.2f);
                 context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "ddstop_pass");
                 context.SetMesh(
-                    arg1: new int[]
+                    arg1: new[]
                         {8900, 8901, 8902, 8903, 8904, 8905, 8906, 8907, 8908, 8909, 8910, 8911, 8912, 8913, 8914},
                     arg2: false, arg3: 400, arg4: 0, arg5: 0f);
             }
@@ -1907,28 +1903,28 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 10);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 10);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 10);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 10);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 10);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 10);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 10);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 10);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 10);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 10);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 10);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 10);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 10);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 10);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 10);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 10);
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__5$", arg3: new int[] {3000},
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 10);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 10);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 10);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 10);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 10);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 10);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 10);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 10);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 10);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 10);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 10);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 10);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 10);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 10);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 10);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 10);
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__5$", arg3: 3000,
                     arg4: "0");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancetime_02");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancetime_02");
                 context.SetSound(arg1: 40000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
                 context.SetEventUI(arg1: 0, arg2: "2,5");
                 context.StartMiniGameRound(boxId: 9001, round: 2);
             }
@@ -1995,9 +1991,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02DancePattern01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 1);
             }
 
             public override void Execute() {
@@ -2014,9 +2010,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02DancePattern02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 2);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 2);
             }
 
             public override void Execute() {
@@ -2033,9 +2029,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02DancePattern03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000936}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 3);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000936}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 3);
             }
 
             public override void Execute() {
@@ -2052,9 +2048,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02DancePattern0401(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 41);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 41);
             }
 
             public override void Execute() {
@@ -2071,12 +2067,12 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02DancePattern0402(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__9$", arg3: new int[] {1000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_01");
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__9$", arg3: 1000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_01");
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -2093,10 +2089,10 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02DancePattern0403(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__10$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__10$", arg3: 1500,
                     arg4: "0");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 0);
             }
 
             public override void Execute() {
@@ -2115,9 +2111,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 42);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 42);
             }
 
             public override void Execute() {
@@ -2134,9 +2130,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02DancePattern0501(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 51);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 51);
             }
 
             public override void Execute() {
@@ -2153,12 +2149,12 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02DancePattern0502(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__11$", arg3: new int[] {1000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_02");
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__11$", arg3: 1000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_02");
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 0);
             }
 
             public override void Execute() {
@@ -2175,10 +2171,10 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02DancePattern0503(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__12$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__12$", arg3: 1500,
                     arg4: "0");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -2197,9 +2193,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 52);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 52);
             }
 
             public override void Execute() {
@@ -2216,9 +2212,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02DancePattern0601(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 61);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 61);
             }
 
             public override void Execute() {
@@ -2235,12 +2231,12 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02DancePattern0602(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__13$", arg3: new int[] {1000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_03");
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__13$", arg3: 1000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_03");
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 0);
             }
 
             public override void Execute() {
@@ -2257,10 +2253,10 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02DancePattern0603(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__14$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__14$", arg3: 1500,
                     arg4: "0");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -2279,9 +2275,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 62);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 62);
             }
 
             public override void Execute() {
@@ -2298,9 +2294,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02DancePattern0701(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 71);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 71);
             }
 
             public override void Execute() {
@@ -2317,12 +2313,12 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02DancePattern0702(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__15$", arg3: new int[] {1000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_04");
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__15$", arg3: 1000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_04");
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -2339,10 +2335,10 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02DancePattern0703(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__16$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__16$", arg3: 1500,
                     arg4: "0");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 0);
             }
 
             public override void Execute() {
@@ -2361,9 +2357,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 72);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 72);
             }
 
             public override void Execute() {
@@ -2382,7 +2378,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
             public override void Execute() {
@@ -2401,12 +2397,12 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 40000, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000936}, arg2: 2);
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__18$", arg3: new int[] {4000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Round_02");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000936}, arg2: 2);
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__18$", arg3: 4000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Round_02");
             }
 
             public override void Execute() {
@@ -2424,8 +2420,8 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11111", arg2: 20, arg3: true, arg4: true, arg5: -40);
-                context.SetUserValue(triggerID: 8, key: "CheerUpTimer", value: 2);
-                context.SetUserValue(triggerID: 7, key: "GameGuide", value: 2);
+                context.SetUserValue(triggerId: 8, key: "CheerUpTimer", value: 2);
+                context.SetUserValue(triggerId: 7, key: "GameGuide", value: 2);
             }
 
             public override void Execute() {
@@ -2444,27 +2440,27 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9001, arg2: 40, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 40) {
                     context.State = new StateG05orG04(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 30, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 30) {
                     context.State = new StateG03orG04orG05(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 20, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 20) {
                     context.State = new StateG02orG03orG04(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 10, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 10) {
                     context.State = new StateG02orG03(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 10, arg3: "LessEqual")) {
+                if (context.GetUserCount(boxId: 9001) <= 10) {
                     context.State = new StateG01orG02(context);
                     return;
                 }
@@ -2477,24 +2473,24 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR02EndDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 7110, key: "Color11", value: 5);
-                context.SetUserValue(triggerID: 7120, key: "Color12", value: 5);
-                context.SetUserValue(triggerID: 7130, key: "Color13", value: 5);
-                context.SetUserValue(triggerID: 7140, key: "Color14", value: 5);
-                context.SetUserValue(triggerID: 7210, key: "Color21", value: 5);
-                context.SetUserValue(triggerID: 7220, key: "Color22", value: 5);
-                context.SetUserValue(triggerID: 7230, key: "Color23", value: 5);
-                context.SetUserValue(triggerID: 7240, key: "Color24", value: 5);
-                context.SetUserValue(triggerID: 7310, key: "Color31", value: 5);
-                context.SetUserValue(triggerID: 7320, key: "Color32", value: 5);
-                context.SetUserValue(triggerID: 7330, key: "Color33", value: 5);
-                context.SetUserValue(triggerID: 7340, key: "Color34", value: 5);
-                context.SetUserValue(triggerID: 7410, key: "Color41", value: 5);
-                context.SetUserValue(triggerID: 7420, key: "Color42", value: 5);
-                context.SetUserValue(triggerID: 7430, key: "Color43", value: 5);
-                context.SetUserValue(triggerID: 7440, key: "Color44", value: 5);
+                context.SetUserValue(triggerId: 7110, key: "Color11", value: 5);
+                context.SetUserValue(triggerId: 7120, key: "Color12", value: 5);
+                context.SetUserValue(triggerId: 7130, key: "Color13", value: 5);
+                context.SetUserValue(triggerId: 7140, key: "Color14", value: 5);
+                context.SetUserValue(triggerId: 7210, key: "Color21", value: 5);
+                context.SetUserValue(triggerId: 7220, key: "Color22", value: 5);
+                context.SetUserValue(triggerId: 7230, key: "Color23", value: 5);
+                context.SetUserValue(triggerId: 7240, key: "Color24", value: 5);
+                context.SetUserValue(triggerId: 7310, key: "Color31", value: 5);
+                context.SetUserValue(triggerId: 7320, key: "Color32", value: 5);
+                context.SetUserValue(triggerId: 7330, key: "Color33", value: 5);
+                context.SetUserValue(triggerId: 7340, key: "Color34", value: 5);
+                context.SetUserValue(triggerId: 7410, key: "Color41", value: 5);
+                context.SetUserValue(triggerId: 7420, key: "Color42", value: 5);
+                context.SetUserValue(triggerId: 7430, key: "Color43", value: 5);
+                context.SetUserValue(triggerId: 7440, key: "Color44", value: 5);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: true, arg3: 400, arg4: 0, arg5: 2f);
@@ -2521,12 +2517,12 @@ namespace Maple2.Trigger._61000008_me {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateR03Ready(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {9001})) {
+                if (!context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateFailAll(context);
                     return;
                 }
@@ -2543,7 +2539,7 @@ namespace Maple2.Trigger._61000008_me {
                 context.EndMiniGameRound(winnerBoxId: 9001, expRate: 0.2f);
                 context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "ddstop_pass");
                 context.SetMesh(
-                    arg1: new int[]
+                    arg1: new[]
                         {8900, 8901, 8902, 8903, 8904, 8905, 8906, 8907, 8908, 8909, 8910, 8911, 8912, 8913, 8914},
                     arg2: false, arg3: 400, arg4: 0, arg5: 0f);
             }
@@ -2562,28 +2558,28 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 10);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 10);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 10);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 10);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 10);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 10);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 10);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 10);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 10);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 10);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 10);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 10);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 10);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 10);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 10);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 10);
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__6$", arg3: new int[] {3000},
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 10);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 10);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 10);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 10);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 10);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 10);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 10);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 10);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 10);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 10);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 10);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 10);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 10);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 10);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 10);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 10);
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__6$", arg3: 3000,
                     arg4: "0");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancetime_03");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancetime_03");
                 context.SetSound(arg1: 40000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
                 context.SetEventUI(arg1: 0, arg2: "3,5");
                 context.StartMiniGameRound(boxId: 9001, round: 3);
             }
@@ -2650,9 +2646,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03DancePattern01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 1);
             }
 
             public override void Execute() {
@@ -2669,9 +2665,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03DancePattern02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 2);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 2);
             }
 
             public override void Execute() {
@@ -2688,9 +2684,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03DancePattern03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000936}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 3);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000936}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 3);
             }
 
             public override void Execute() {
@@ -2707,9 +2703,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03DancePattern0401(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 41);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 41);
             }
 
             public override void Execute() {
@@ -2726,12 +2722,12 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03DancePattern0402(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__9$", arg3: new int[] {1000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_01");
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__9$", arg3: 1000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_01");
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -2748,10 +2744,10 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03DancePattern0403(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__10$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__10$", arg3: 1500,
                     arg4: "0");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 0);
             }
 
             public override void Execute() {
@@ -2770,9 +2766,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 42);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 42);
             }
 
             public override void Execute() {
@@ -2789,9 +2785,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03DancePattern0501(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 51);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 51);
             }
 
             public override void Execute() {
@@ -2808,12 +2804,12 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03DancePattern0502(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__11$", arg3: new int[] {1000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_02");
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__11$", arg3: 1000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_02");
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 0);
             }
 
             public override void Execute() {
@@ -2830,10 +2826,10 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03DancePattern0503(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__12$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__12$", arg3: 1500,
                     arg4: "0");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -2852,9 +2848,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 52);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 52);
             }
 
             public override void Execute() {
@@ -2871,9 +2867,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03DancePattern0601(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 61);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 61);
             }
 
             public override void Execute() {
@@ -2890,12 +2886,12 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03DancePattern0602(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__13$", arg3: new int[] {1000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_03");
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__13$", arg3: 1000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_03");
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 0);
             }
 
             public override void Execute() {
@@ -2912,10 +2908,10 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03DancePattern0603(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__14$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__14$", arg3: 1500,
                     arg4: "0");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -2934,9 +2930,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 62);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 62);
             }
 
             public override void Execute() {
@@ -2953,9 +2949,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03DancePattern0701(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 71);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 71);
             }
 
             public override void Execute() {
@@ -2972,12 +2968,12 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03DancePattern0702(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__15$", arg3: new int[] {1000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_04");
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__15$", arg3: 1000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_04");
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -2994,10 +2990,10 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03DancePattern0703(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__16$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__16$", arg3: 1500,
                     arg4: "0");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 0);
             }
 
             public override void Execute() {
@@ -3016,9 +3012,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 72);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 72);
             }
 
             public override void Execute() {
@@ -3037,7 +3033,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
             public override void Execute() {
@@ -3056,12 +3052,12 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 40000, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000936}, arg2: 2);
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__19$", arg3: new int[] {4000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Round_03");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000936}, arg2: 2);
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__19$", arg3: 4000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Round_03");
             }
 
             public override void Execute() {
@@ -3079,8 +3075,8 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11111", arg2: 15, arg3: true, arg4: true, arg5: -40);
-                context.SetUserValue(triggerID: 8, key: "CheerUpTimer", value: 3);
-                context.SetUserValue(triggerID: 7, key: "GameGuide", value: 3);
+                context.SetUserValue(triggerId: 8, key: "CheerUpTimer", value: 3);
+                context.SetUserValue(triggerId: 7, key: "GameGuide", value: 3);
             }
 
             public override void Execute() {
@@ -3099,27 +3095,27 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9001, arg2: 40, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 40) {
                     context.State = new StateG05orG04(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 30, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 30) {
                     context.State = new StateG03orG04orG05(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 20, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 20) {
                     context.State = new StateG02orG03orG04(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 10, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 10) {
                     context.State = new StateG02orG03(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 10, arg3: "LessEqual")) {
+                if (context.GetUserCount(boxId: 9001) <= 10) {
                     context.State = new StateG01orG02(context);
                     return;
                 }
@@ -3132,24 +3128,24 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR03EndDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 7110, key: "Color11", value: 5);
-                context.SetUserValue(triggerID: 7120, key: "Color12", value: 5);
-                context.SetUserValue(triggerID: 7130, key: "Color13", value: 5);
-                context.SetUserValue(triggerID: 7140, key: "Color14", value: 5);
-                context.SetUserValue(triggerID: 7210, key: "Color21", value: 5);
-                context.SetUserValue(triggerID: 7220, key: "Color22", value: 5);
-                context.SetUserValue(triggerID: 7230, key: "Color23", value: 5);
-                context.SetUserValue(triggerID: 7240, key: "Color24", value: 5);
-                context.SetUserValue(triggerID: 7310, key: "Color31", value: 5);
-                context.SetUserValue(triggerID: 7320, key: "Color32", value: 5);
-                context.SetUserValue(triggerID: 7330, key: "Color33", value: 5);
-                context.SetUserValue(triggerID: 7340, key: "Color34", value: 5);
-                context.SetUserValue(triggerID: 7410, key: "Color41", value: 5);
-                context.SetUserValue(triggerID: 7420, key: "Color42", value: 5);
-                context.SetUserValue(triggerID: 7430, key: "Color43", value: 5);
-                context.SetUserValue(triggerID: 7440, key: "Color44", value: 5);
+                context.SetUserValue(triggerId: 7110, key: "Color11", value: 5);
+                context.SetUserValue(triggerId: 7120, key: "Color12", value: 5);
+                context.SetUserValue(triggerId: 7130, key: "Color13", value: 5);
+                context.SetUserValue(triggerId: 7140, key: "Color14", value: 5);
+                context.SetUserValue(triggerId: 7210, key: "Color21", value: 5);
+                context.SetUserValue(triggerId: 7220, key: "Color22", value: 5);
+                context.SetUserValue(triggerId: 7230, key: "Color23", value: 5);
+                context.SetUserValue(triggerId: 7240, key: "Color24", value: 5);
+                context.SetUserValue(triggerId: 7310, key: "Color31", value: 5);
+                context.SetUserValue(triggerId: 7320, key: "Color32", value: 5);
+                context.SetUserValue(triggerId: 7330, key: "Color33", value: 5);
+                context.SetUserValue(triggerId: 7340, key: "Color34", value: 5);
+                context.SetUserValue(triggerId: 7410, key: "Color41", value: 5);
+                context.SetUserValue(triggerId: 7420, key: "Color42", value: 5);
+                context.SetUserValue(triggerId: 7430, key: "Color43", value: 5);
+                context.SetUserValue(triggerId: 7440, key: "Color44", value: 5);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: true, arg3: 400, arg4: 0, arg5: 2f);
@@ -3176,12 +3172,12 @@ namespace Maple2.Trigger._61000008_me {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateR04Ready(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {9001})) {
+                if (!context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateFailAll(context);
                     return;
                 }
@@ -3198,7 +3194,7 @@ namespace Maple2.Trigger._61000008_me {
                 context.EndMiniGameRound(winnerBoxId: 9001, expRate: 0.2f);
                 context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "ddstop_pass");
                 context.SetMesh(
-                    arg1: new int[]
+                    arg1: new[]
                         {8900, 8901, 8902, 8903, 8904, 8905, 8906, 8907, 8908, 8909, 8910, 8911, 8912, 8913, 8914},
                     arg2: false, arg3: 400, arg4: 0, arg5: 0f);
             }
@@ -3217,28 +3213,28 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 10);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 10);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 10);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 10);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 10);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 10);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 10);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 10);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 10);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 10);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 10);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 10);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 10);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 10);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 10);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 10);
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__7$", arg3: new int[] {3000},
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 10);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 10);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 10);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 10);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 10);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 10);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 10);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 10);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 10);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 10);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 10);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 10);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 10);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 10);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 10);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 10);
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__7$", arg3: 3000,
                     arg4: "0");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancetime_04");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancetime_04");
                 context.SetSound(arg1: 40000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
                 context.SetEventUI(arg1: 0, arg2: "4,5");
                 context.StartMiniGameRound(boxId: 9001, round: 4);
             }
@@ -3305,9 +3301,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04DancePattern01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 1);
             }
 
             public override void Execute() {
@@ -3324,9 +3320,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04DancePattern02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 2);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 2);
             }
 
             public override void Execute() {
@@ -3343,9 +3339,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04DancePattern03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000936}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 3);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000936}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 3);
             }
 
             public override void Execute() {
@@ -3362,9 +3358,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04DancePattern0401(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 41);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 41);
             }
 
             public override void Execute() {
@@ -3381,12 +3377,12 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04DancePattern0402(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__9$", arg3: new int[] {1000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_01");
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__9$", arg3: 1000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_01");
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -3403,10 +3399,10 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04DancePattern0403(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__10$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__10$", arg3: 1500,
                     arg4: "0");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 0);
             }
 
             public override void Execute() {
@@ -3425,9 +3421,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 42);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 42);
             }
 
             public override void Execute() {
@@ -3444,9 +3440,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04DancePattern0501(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 51);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 51);
             }
 
             public override void Execute() {
@@ -3463,12 +3459,12 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04DancePattern0502(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__11$", arg3: new int[] {1000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_02");
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__11$", arg3: 1000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_02");
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 0);
             }
 
             public override void Execute() {
@@ -3485,10 +3481,10 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04DancePattern0503(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__12$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__12$", arg3: 1500,
                     arg4: "0");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -3507,9 +3503,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 52);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 52);
             }
 
             public override void Execute() {
@@ -3526,9 +3522,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04DancePattern0601(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 61);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 61);
             }
 
             public override void Execute() {
@@ -3545,12 +3541,12 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04DancePattern0602(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__13$", arg3: new int[] {1000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_03");
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__13$", arg3: 1000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_03");
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 0);
             }
 
             public override void Execute() {
@@ -3567,10 +3563,10 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04DancePattern0603(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__14$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__14$", arg3: 1500,
                     arg4: "0");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -3589,9 +3585,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 62);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 62);
             }
 
             public override void Execute() {
@@ -3608,9 +3604,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04DancePattern0701(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 71);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 71);
             }
 
             public override void Execute() {
@@ -3627,12 +3623,12 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04DancePattern0702(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__15$", arg3: new int[] {1000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_04");
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__15$", arg3: 1000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_04");
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -3649,10 +3645,10 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04DancePattern0703(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__16$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__16$", arg3: 1500,
                     arg4: "0");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 0);
             }
 
             public override void Execute() {
@@ -3671,9 +3667,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 72);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 72);
             }
 
             public override void Execute() {
@@ -3692,7 +3688,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
             public override void Execute() {
@@ -3711,17 +3707,17 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9001, arg2: 20, arg3: "GreaterEqual")) {
+                if (context.GetUserCount(boxId: 9001) >= 20) {
                     context.State = new StateR04_GambleOrJackpot(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 10, arg3: "GreaterEqual")) {
+                if (context.GetUserCount(boxId: 9001) >= 10) {
                     context.State = new StateR04_GambleOrNormal(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 10, arg3: "Less")) {
+                if (context.GetUserCount(boxId: 9001) < 10) {
                     context.State = new StateR04_GameStart(context);
                     return;
                 }
@@ -3777,12 +3773,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "Round", value: 6);
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 40000, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000936}, arg2: 2);
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__22$", arg3: new int[] {3000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Round_06");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000936}, arg2: 2);
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__22$", arg3: 3000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Round_06");
                 context.WriteLog(arg1: "dancedancestop", arg2: 9001, arg3: "system_event", arg4: 4, arg5: "gamble");
             }
 
@@ -3800,7 +3796,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04_GambleGuide02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__23$", arg3: new int[] {3000});
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__23$", arg3: 3000);
             }
 
             public override void Execute() {
@@ -3818,8 +3814,8 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11111", arg2: 15, arg3: true, arg4: true, arg5: -40);
-                context.SetUserValue(triggerID: 8, key: "CheerUpTimer", value: 3);
-                context.SetUserValue(triggerID: 7, key: "GameGuide", value: 6);
+                context.SetUserValue(triggerId: 8, key: "CheerUpTimer", value: 3);
+                context.SetUserValue(triggerId: 7, key: "GameGuide", value: 6);
             }
 
             public override void Execute() {
@@ -3838,27 +3834,27 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9001, arg2: 40, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 40) {
                     context.State = new StateG06P400_Random(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 30, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 30) {
                     context.State = new StateG06P300_Random(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 20, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 20) {
                     context.State = new StateG06P200_Random(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 10, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 10) {
                     context.State = new StateG06P100_Random(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 10, arg3: "LessEqual")) {
+                if (context.GetUserCount(boxId: 9001) <= 10) {
                     context.State = new StateG06P100_Random(context);
                     return;
                 }
@@ -4214,12 +4210,12 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetUserValue(key: "Round", value: 6);
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 40000, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000936}, arg2: 2);
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__24$", arg3: new int[] {3000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Round_06");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000936}, arg2: 2);
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__24$", arg3: 3000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Round_06");
                 context.WriteLog(arg1: "dancedancestop", arg2: 9001, arg3: "system_event", arg4: 4, arg5: "jackpot");
             }
 
@@ -4237,7 +4233,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04_JackpotGuide02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__25$", arg3: new int[] {3000});
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__25$", arg3: 3000);
             }
 
             public override void Execute() {
@@ -4255,8 +4251,8 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11111", arg2: 20, arg3: true, arg4: true, arg5: -40);
-                context.SetUserValue(triggerID: 8, key: "CheerUpTimer", value: 2);
-                context.SetUserValue(triggerID: 7, key: "GameGuide", value: 7);
+                context.SetUserValue(triggerId: 8, key: "CheerUpTimer", value: 2);
+                context.SetUserValue(triggerId: 7, key: "GameGuide", value: 7);
             }
 
             public override void Execute() {
@@ -4275,22 +4271,22 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9001, arg2: 40, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 40) {
                     context.State = new StateG07P400_Random(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 30, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 30) {
                     context.State = new StateG07P300_Random(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 20, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 20) {
                     context.State = new StateG07P200_Random(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 20, arg3: "LessEqual")) {
+                if (context.GetUserCount(boxId: 9001) <= 20) {
                     context.State = new StateG07P200_Random(context);
                     return;
                 }
@@ -4468,24 +4464,24 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04GambleEndDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 7110, key: "Color11", value: 5);
-                context.SetUserValue(triggerID: 7120, key: "Color12", value: 5);
-                context.SetUserValue(triggerID: 7130, key: "Color13", value: 5);
-                context.SetUserValue(triggerID: 7140, key: "Color14", value: 5);
-                context.SetUserValue(triggerID: 7210, key: "Color21", value: 5);
-                context.SetUserValue(triggerID: 7220, key: "Color22", value: 5);
-                context.SetUserValue(triggerID: 7230, key: "Color23", value: 5);
-                context.SetUserValue(triggerID: 7240, key: "Color24", value: 5);
-                context.SetUserValue(triggerID: 7310, key: "Color31", value: 5);
-                context.SetUserValue(triggerID: 7320, key: "Color32", value: 5);
-                context.SetUserValue(triggerID: 7330, key: "Color33", value: 5);
-                context.SetUserValue(triggerID: 7340, key: "Color34", value: 5);
-                context.SetUserValue(triggerID: 7410, key: "Color41", value: 5);
-                context.SetUserValue(triggerID: 7420, key: "Color42", value: 5);
-                context.SetUserValue(triggerID: 7430, key: "Color43", value: 5);
-                context.SetUserValue(triggerID: 7440, key: "Color44", value: 5);
+                context.SetUserValue(triggerId: 7110, key: "Color11", value: 5);
+                context.SetUserValue(triggerId: 7120, key: "Color12", value: 5);
+                context.SetUserValue(triggerId: 7130, key: "Color13", value: 5);
+                context.SetUserValue(triggerId: 7140, key: "Color14", value: 5);
+                context.SetUserValue(triggerId: 7210, key: "Color21", value: 5);
+                context.SetUserValue(triggerId: 7220, key: "Color22", value: 5);
+                context.SetUserValue(triggerId: 7230, key: "Color23", value: 5);
+                context.SetUserValue(triggerId: 7240, key: "Color24", value: 5);
+                context.SetUserValue(triggerId: 7310, key: "Color31", value: 5);
+                context.SetUserValue(triggerId: 7320, key: "Color32", value: 5);
+                context.SetUserValue(triggerId: 7330, key: "Color33", value: 5);
+                context.SetUserValue(triggerId: 7340, key: "Color34", value: 5);
+                context.SetUserValue(triggerId: 7410, key: "Color41", value: 5);
+                context.SetUserValue(triggerId: 7420, key: "Color42", value: 5);
+                context.SetUserValue(triggerId: 7430, key: "Color43", value: 5);
+                context.SetUserValue(triggerId: 7440, key: "Color44", value: 5);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: true, arg3: 400, arg4: 0, arg5: 2f);
@@ -4512,12 +4508,12 @@ namespace Maple2.Trigger._61000008_me {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateR05ReadyAfterGamble(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {9001})) {
+                if (!context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateFailAll(context);
                     return;
                 }
@@ -4534,7 +4530,7 @@ namespace Maple2.Trigger._61000008_me {
                 context.EndMiniGameRound(winnerBoxId: 9001, expRate: 0.2f);
                 context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "ddstop_pass");
                 context.SetMesh(
-                    arg1: new int[]
+                    arg1: new[]
                         {8900, 8901, 8902, 8903, 8904, 8905, 8906, 8907, 8908, 8909, 8910, 8911, 8912, 8913, 8914},
                     arg2: false, arg3: 400, arg4: 0, arg5: 0f);
             }
@@ -4555,12 +4551,12 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "GambleSuccess", value: 1)) {
+                if (context.GetUserValue(key: "GambleSuccess") == 1) {
                     context.State = new StateR05StartGamblePass(context);
                     return;
                 }
 
-                if (context.UserValue(key: "GambleSuccess", value: 0)) {
+                if (context.GetUserValue(key: "GambleSuccess") == 0) {
                     context.State = new StateR05StartGambleFail(context);
                     return;
                 }
@@ -4573,25 +4569,25 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05StartGamblePass(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 10);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 10);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 10);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 10);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 10);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 10);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 10);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 10);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 10);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 10);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 10);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 10);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 10);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 10);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 10);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 10);
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__26$", arg3: new int[] {5000},
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 10);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 10);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 10);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 10);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 10);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 10);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 10);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 10);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 10);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 10);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 10);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 10);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 10);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 10);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 10);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 10);
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__26$", arg3: 5000,
                     arg4: "0");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_02");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_02");
                 context.SetEventUI(arg1: 0, arg2: "5,5");
                 context.StartMiniGameRound(boxId: 9001, round: 5);
             }
@@ -4610,25 +4606,25 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05StartGambleFail(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 10);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 10);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 10);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 10);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 10);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 10);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 10);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 10);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 10);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 10);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 10);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 10);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 10);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 10);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 10);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 10);
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__27$", arg3: new int[] {4000},
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 10);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 10);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 10);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 10);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 10);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 10);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 10);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 10);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 10);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 10);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 10);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 10);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 10);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 10);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 10);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 10);
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__27$", arg3: 4000,
                     arg4: "0");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_03");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_03");
                 context.SetEventUI(arg1: 0, arg2: "5,5");
                 context.StartMiniGameRound(boxId: 9001, round: 5);
             }
@@ -4649,12 +4645,12 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 40000, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000936}, arg2: 2);
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__20$", arg3: new int[] {4000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Round_04");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000936}, arg2: 2);
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__20$", arg3: 4000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Round_04");
             }
 
             public override void Execute() {
@@ -4672,8 +4668,8 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11111", arg2: 10, arg3: true, arg4: true, arg5: -40);
-                context.SetUserValue(triggerID: 8, key: "CheerUpTimer", value: 4);
-                context.SetUserValue(triggerID: 7, key: "GameGuide", value: 4);
+                context.SetUserValue(triggerId: 8, key: "CheerUpTimer", value: 4);
+                context.SetUserValue(triggerId: 7, key: "GameGuide", value: 4);
             }
 
             public override void Execute() {
@@ -4692,27 +4688,27 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9001, arg2: 40, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 40) {
                     context.State = new StateG05orG04(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 30, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 30) {
                     context.State = new StateG03orG04orG05(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 20, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 20) {
                     context.State = new StateG02orG03orG04(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 10, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 10) {
                     context.State = new StateG02orG03(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 10, arg3: "LessEqual")) {
+                if (context.GetUserCount(boxId: 9001) <= 10) {
                     context.State = new StateG01orG02(context);
                     return;
                 }
@@ -4727,8 +4723,8 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 40000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__33$", arg3: new int[] {3000},
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__33$", arg3: 3000,
                     arg4: "0");
             }
 
@@ -4746,24 +4742,24 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR04EndDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 7110, key: "Color11", value: 5);
-                context.SetUserValue(triggerID: 7120, key: "Color12", value: 5);
-                context.SetUserValue(triggerID: 7130, key: "Color13", value: 5);
-                context.SetUserValue(triggerID: 7140, key: "Color14", value: 5);
-                context.SetUserValue(triggerID: 7210, key: "Color21", value: 5);
-                context.SetUserValue(triggerID: 7220, key: "Color22", value: 5);
-                context.SetUserValue(triggerID: 7230, key: "Color23", value: 5);
-                context.SetUserValue(triggerID: 7240, key: "Color24", value: 5);
-                context.SetUserValue(triggerID: 7310, key: "Color31", value: 5);
-                context.SetUserValue(triggerID: 7320, key: "Color32", value: 5);
-                context.SetUserValue(triggerID: 7330, key: "Color33", value: 5);
-                context.SetUserValue(triggerID: 7340, key: "Color34", value: 5);
-                context.SetUserValue(triggerID: 7410, key: "Color41", value: 5);
-                context.SetUserValue(triggerID: 7420, key: "Color42", value: 5);
-                context.SetUserValue(triggerID: 7430, key: "Color43", value: 5);
-                context.SetUserValue(triggerID: 7440, key: "Color44", value: 5);
+                context.SetUserValue(triggerId: 7110, key: "Color11", value: 5);
+                context.SetUserValue(triggerId: 7120, key: "Color12", value: 5);
+                context.SetUserValue(triggerId: 7130, key: "Color13", value: 5);
+                context.SetUserValue(triggerId: 7140, key: "Color14", value: 5);
+                context.SetUserValue(triggerId: 7210, key: "Color21", value: 5);
+                context.SetUserValue(triggerId: 7220, key: "Color22", value: 5);
+                context.SetUserValue(triggerId: 7230, key: "Color23", value: 5);
+                context.SetUserValue(triggerId: 7240, key: "Color24", value: 5);
+                context.SetUserValue(triggerId: 7310, key: "Color31", value: 5);
+                context.SetUserValue(triggerId: 7320, key: "Color32", value: 5);
+                context.SetUserValue(triggerId: 7330, key: "Color33", value: 5);
+                context.SetUserValue(triggerId: 7340, key: "Color34", value: 5);
+                context.SetUserValue(triggerId: 7410, key: "Color41", value: 5);
+                context.SetUserValue(triggerId: 7420, key: "Color42", value: 5);
+                context.SetUserValue(triggerId: 7430, key: "Color43", value: 5);
+                context.SetUserValue(triggerId: 7440, key: "Color44", value: 5);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: true, arg3: 400, arg4: 0, arg5: 2f);
@@ -4790,12 +4786,12 @@ namespace Maple2.Trigger._61000008_me {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateR05Ready(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {9001})) {
+                if (!context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateFailAll(context);
                     return;
                 }
@@ -4812,7 +4808,7 @@ namespace Maple2.Trigger._61000008_me {
                 context.EndMiniGameRound(winnerBoxId: 9001, expRate: 0.2f);
                 context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "ddstop_pass");
                 context.SetMesh(
-                    arg1: new int[]
+                    arg1: new[]
                         {8900, 8901, 8902, 8903, 8904, 8905, 8906, 8907, 8908, 8909, 8910, 8911, 8912, 8913, 8914},
                     arg2: false, arg3: 400, arg4: 0, arg5: 0f);
             }
@@ -4831,28 +4827,28 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 10);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 10);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 10);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 10);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 10);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 10);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 10);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 10);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 10);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 10);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 10);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 10);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 10);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 10);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 10);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 10);
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__8$", arg3: new int[] {3000},
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 10);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 10);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 10);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 10);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 10);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 10);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 10);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 10);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 10);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 10);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 10);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 10);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 10);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 10);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 10);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 10);
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__8$", arg3: 3000,
                     arg4: "0");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancetime_05");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancetime_05");
                 context.SetSound(arg1: 40000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
                 context.SetEventUI(arg1: 0, arg2: "5,5");
                 context.StartMiniGameRound(boxId: 9001, round: 5);
             }
@@ -4919,9 +4915,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05DancePattern01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 1);
             }
 
             public override void Execute() {
@@ -4938,9 +4934,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05DancePattern02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 2);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 2);
             }
 
             public override void Execute() {
@@ -4957,9 +4953,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05DancePattern03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000936}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 3);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000936}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 3);
             }
 
             public override void Execute() {
@@ -4976,9 +4972,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05DancePattern0401(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 41);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 41);
             }
 
             public override void Execute() {
@@ -4995,11 +4991,11 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05DancePattern0402(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__34$", arg3: new int[] {1000});
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__34$", arg3: 1000);
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -5016,11 +5012,11 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05DancePattern0403(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__35$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__35$", arg3: 1500,
                     arg4: "0");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_05");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 0);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_05");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 0);
             }
 
             public override void Execute() {
@@ -5039,9 +5035,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 42);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 42);
             }
 
             public override void Execute() {
@@ -5058,9 +5054,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05DancePattern0501(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 51);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 51);
             }
 
             public override void Execute() {
@@ -5077,11 +5073,11 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05DancePattern0502(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__36$", arg3: new int[] {1000});
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__36$", arg3: 1000);
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 0);
             }
 
             public override void Execute() {
@@ -5098,11 +5094,11 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05DancePattern0503(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__37$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__37$", arg3: 1500,
                     arg4: "0");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_05");
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_05");
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -5121,9 +5117,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 52);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 52);
             }
 
             public override void Execute() {
@@ -5140,9 +5136,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05DancePattern0601(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 61);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 61);
             }
 
             public override void Execute() {
@@ -5159,11 +5155,11 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05DancePattern0602(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__38$", arg3: new int[] {1000});
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__38$", arg3: 1000);
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 0);
             }
 
             public override void Execute() {
@@ -5180,11 +5176,11 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05DancePattern0603(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__39$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__39$", arg3: 1500,
                     arg4: "0");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_05");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_05");
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -5203,9 +5199,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 62);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 62);
             }
 
             public override void Execute() {
@@ -5222,9 +5218,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05DancePattern0701(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 71);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 71);
             }
 
             public override void Execute() {
@@ -5241,11 +5237,11 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05DancePattern0702(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__40$", arg3: new int[] {1000});
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__40$", arg3: 1000);
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 0);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 0);
             }
 
             public override void Execute() {
@@ -5262,11 +5258,11 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05DancePattern0703(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__41$", arg3: new int[] {1500},
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__41$", arg3: 1500,
                     arg4: "0");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancerandom_05");
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 0);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancerandom_05");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 0);
             }
 
             public override void Execute() {
@@ -5285,9 +5281,9 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 20000, arg2: true);
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DDStop_Stage_Ready_01");
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 1);
-                context.SetUserValue(triggerID: 6, key: "DanceGuide", value: 72);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DDStop_Stage_Ready_01");
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 1);
+                context.SetUserValue(triggerId: 6, key: "DanceGuide", value: 72);
             }
 
             public override void Execute() {
@@ -5306,7 +5302,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 30000, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: true);
+                context.SetEffect(arg1: new[] {8000}, arg2: true);
             }
 
             public override void Execute() {
@@ -5325,12 +5321,12 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.SetSound(arg1: 30000, arg2: false);
                 context.SetSound(arg1: 40000, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000933}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000934}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000935}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10000936}, arg2: 2);
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__21$", arg3: new int[] {4000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Round_05");
+                context.SetInteractObject(arg1: new[] {10000933}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000934}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000935}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000936}, arg2: 2);
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__21$", arg3: 4000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Round_05");
             }
 
             public override void Execute() {
@@ -5348,8 +5344,8 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11111", arg2: 10, arg3: true, arg4: true, arg5: -40);
-                context.SetUserValue(triggerID: 8, key: "CheerUpTimer", value: 4);
-                context.SetUserValue(triggerID: 7, key: "GameGuide", value: 5);
+                context.SetUserValue(triggerId: 8, key: "CheerUpTimer", value: 4);
+                context.SetUserValue(triggerId: 7, key: "GameGuide", value: 5);
             }
 
             public override void Execute() {
@@ -5368,27 +5364,27 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9001, arg2: 40, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 40) {
                     context.State = new StateG05orG04(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 30, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 30) {
                     context.State = new StateG03orG04orG05(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 20, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 20) {
                     context.State = new StateG02orG03orG04(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 10, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 9001) > 10) {
                     context.State = new StateG02orG03(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9001, arg2: 10, arg3: "LessEqual")) {
+                if (context.GetUserCount(boxId: 9001) <= 10) {
                     context.State = new StateG01orG02(context);
                     return;
                 }
@@ -5401,24 +5397,24 @@ namespace Maple2.Trigger._61000008_me {
             internal StateR05EndDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 7110, key: "Color11", value: 5);
-                context.SetUserValue(triggerID: 7120, key: "Color12", value: 5);
-                context.SetUserValue(triggerID: 7130, key: "Color13", value: 5);
-                context.SetUserValue(triggerID: 7140, key: "Color14", value: 5);
-                context.SetUserValue(triggerID: 7210, key: "Color21", value: 5);
-                context.SetUserValue(triggerID: 7220, key: "Color22", value: 5);
-                context.SetUserValue(triggerID: 7230, key: "Color23", value: 5);
-                context.SetUserValue(triggerID: 7240, key: "Color24", value: 5);
-                context.SetUserValue(triggerID: 7310, key: "Color31", value: 5);
-                context.SetUserValue(triggerID: 7320, key: "Color32", value: 5);
-                context.SetUserValue(triggerID: 7330, key: "Color33", value: 5);
-                context.SetUserValue(triggerID: 7340, key: "Color34", value: 5);
-                context.SetUserValue(triggerID: 7410, key: "Color41", value: 5);
-                context.SetUserValue(triggerID: 7420, key: "Color42", value: 5);
-                context.SetUserValue(triggerID: 7430, key: "Color43", value: 5);
-                context.SetUserValue(triggerID: 7440, key: "Color44", value: 5);
+                context.SetUserValue(triggerId: 7110, key: "Color11", value: 5);
+                context.SetUserValue(triggerId: 7120, key: "Color12", value: 5);
+                context.SetUserValue(triggerId: 7130, key: "Color13", value: 5);
+                context.SetUserValue(triggerId: 7140, key: "Color14", value: 5);
+                context.SetUserValue(triggerId: 7210, key: "Color21", value: 5);
+                context.SetUserValue(triggerId: 7220, key: "Color22", value: 5);
+                context.SetUserValue(triggerId: 7230, key: "Color23", value: 5);
+                context.SetUserValue(triggerId: 7240, key: "Color24", value: 5);
+                context.SetUserValue(triggerId: 7310, key: "Color31", value: 5);
+                context.SetUserValue(triggerId: 7320, key: "Color32", value: 5);
+                context.SetUserValue(triggerId: 7330, key: "Color33", value: 5);
+                context.SetUserValue(triggerId: 7340, key: "Color34", value: 5);
+                context.SetUserValue(triggerId: 7410, key: "Color41", value: 5);
+                context.SetUserValue(triggerId: 7420, key: "Color42", value: 5);
+                context.SetUserValue(triggerId: 7430, key: "Color43", value: 5);
+                context.SetUserValue(triggerId: 7440, key: "Color44", value: 5);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: true, arg3: 400, arg4: 0, arg5: 2f);
@@ -5445,12 +5441,12 @@ namespace Maple2.Trigger._61000008_me {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateGameWrapUp(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {9001})) {
+                if (!context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateFailAll(context);
                     return;
                 }
@@ -5466,25 +5462,25 @@ namespace Maple2.Trigger._61000008_me {
                 context.EndMiniGameRound(winnerBoxId: 9001, expRate: 0.2f);
                 context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "ddstop_pass");
                 context.SetMesh(
-                    arg1: new int[]
+                    arg1: new[]
                         {8900, 8901, 8902, 8903, 8904, 8905, 8906, 8907, 8908, 8909, 8910, 8911, 8912, 8913, 8914},
                     arg2: false, arg3: 400, arg4: 0, arg5: 0f);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 10);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 10);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 10);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 10);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 10);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 10);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 10);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 10);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 10);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 10);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 10);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 10);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 10);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 10);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 10);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 10);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 10);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 10);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 10);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 10);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 10);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 10);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 10);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 10);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 10);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 10);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 10);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 10);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 10);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 10);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 10);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 10);
             }
 
             public override void Execute() {
@@ -5519,12 +5515,12 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 61000008, arg2: 3, arg3: 9002);
-                context.SetEventUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__29$", arg3: new int[] {3000},
+                context.SetEventUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__29$", arg3: 3000,
                     arg4: "9001");
-                context.SetEventUI(arg1: 4, arg2: "$61000008_ME__01_MASSIVEMAIN__30$", arg3: new int[] {3000},
+                context.SetEventUI(arg1: 4, arg2: "$61000008_ME__01_MASSIVEMAIN__30$", arg3: 3000,
                     arg4: "!9001");
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "DJDD_Ending_01");
-                context.PlaySystemSoundInBox(arg1: new int[] {9010, 9011, 9012, 9013}, arg2: "DJDD_Ending_02");
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "DJDD_Ending_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9010, 9011, 9012, 9013}, arg2: "DJDD_Ending_02");
                 context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "ddstop_win");
             }
 
@@ -5544,7 +5540,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.MiniGameGiveReward(winnerBoxId: 9001, contentType: "miniGame");
                 context.EndMiniGame(winnerBoxId: 9001, gameName: "dancedancestop");
-                context.AddBuff(arg1: new int[] {9001}, arg2: 70000019, arg3: 1);
+                context.AddBuff(arg1: new[] {9001}, arg2: 70000019, arg3: 1);
             }
 
             public override void Execute() {
@@ -5563,47 +5559,47 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() {
                 context.EndMiniGame(winnerBoxId: 9001, gameName: "dancedancestop");
                 context.SetEventUI(arg1: 0, arg2: "0,0");
-                context.SetEventUI(arg1: 5, arg2: "$61000008_ME__01_MASSIVEMAIN__28$", arg3: new int[] {5000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Ending_02");
+                context.SetEventUI(arg1: 5, arg2: "$61000008_ME__01_MASSIVEMAIN__28$", arg3: 5000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Ending_02");
                 context.SetMesh(
-                    arg1: new int[]
+                    arg1: new[]
                         {8900, 8901, 8902, 8903, 8904, 8905, 8906, 8907, 8908, 8909, 8910, 8911, 8912, 8913, 8914},
                     arg2: false, arg3: 400, arg4: 0, arg5: 0f);
-                context.SetUserValue(triggerID: 4, key: "BannerCheckIn", value: 1);
-                context.SetUserValue(triggerID: 8110, key: "Barrier11", value: 10);
-                context.SetUserValue(triggerID: 8120, key: "Barrier12", value: 10);
-                context.SetUserValue(triggerID: 8130, key: "Barrier13", value: 10);
-                context.SetUserValue(triggerID: 8140, key: "Barrier14", value: 10);
-                context.SetUserValue(triggerID: 8210, key: "Barrier21", value: 10);
-                context.SetUserValue(triggerID: 8220, key: "Barrier22", value: 10);
-                context.SetUserValue(triggerID: 8230, key: "Barrier23", value: 10);
-                context.SetUserValue(triggerID: 8240, key: "Barrier24", value: 10);
-                context.SetUserValue(triggerID: 8310, key: "Barrier31", value: 10);
-                context.SetUserValue(triggerID: 8320, key: "Barrier32", value: 10);
-                context.SetUserValue(triggerID: 8330, key: "Barrier33", value: 10);
-                context.SetUserValue(triggerID: 8340, key: "Barrier34", value: 10);
-                context.SetUserValue(triggerID: 8410, key: "Barrier41", value: 10);
-                context.SetUserValue(triggerID: 8420, key: "Barrier42", value: 10);
-                context.SetUserValue(triggerID: 8430, key: "Barrier43", value: 10);
-                context.SetUserValue(triggerID: 8440, key: "Barrier44", value: 10);
-                context.SetUserValue(triggerID: 7110, key: "Color11", value: 5);
-                context.SetUserValue(triggerID: 7120, key: "Color12", value: 5);
-                context.SetUserValue(triggerID: 7130, key: "Color13", value: 5);
-                context.SetUserValue(triggerID: 7140, key: "Color14", value: 5);
-                context.SetUserValue(triggerID: 7210, key: "Color21", value: 5);
-                context.SetUserValue(triggerID: 7220, key: "Color22", value: 5);
-                context.SetUserValue(triggerID: 7230, key: "Color23", value: 5);
-                context.SetUserValue(triggerID: 7240, key: "Color24", value: 5);
-                context.SetUserValue(triggerID: 7310, key: "Color31", value: 5);
-                context.SetUserValue(triggerID: 7320, key: "Color32", value: 5);
-                context.SetUserValue(triggerID: 7330, key: "Color33", value: 5);
-                context.SetUserValue(triggerID: 7340, key: "Color34", value: 5);
-                context.SetUserValue(triggerID: 7410, key: "Color41", value: 5);
-                context.SetUserValue(triggerID: 7420, key: "Color42", value: 5);
-                context.SetUserValue(triggerID: 7430, key: "Color43", value: 5);
-                context.SetUserValue(triggerID: 7440, key: "Color44", value: 5);
+                context.SetUserValue(triggerId: 4, key: "BannerCheckIn", value: 1);
+                context.SetUserValue(triggerId: 8110, key: "Barrier11", value: 10);
+                context.SetUserValue(triggerId: 8120, key: "Barrier12", value: 10);
+                context.SetUserValue(triggerId: 8130, key: "Barrier13", value: 10);
+                context.SetUserValue(triggerId: 8140, key: "Barrier14", value: 10);
+                context.SetUserValue(triggerId: 8210, key: "Barrier21", value: 10);
+                context.SetUserValue(triggerId: 8220, key: "Barrier22", value: 10);
+                context.SetUserValue(triggerId: 8230, key: "Barrier23", value: 10);
+                context.SetUserValue(triggerId: 8240, key: "Barrier24", value: 10);
+                context.SetUserValue(triggerId: 8310, key: "Barrier31", value: 10);
+                context.SetUserValue(triggerId: 8320, key: "Barrier32", value: 10);
+                context.SetUserValue(triggerId: 8330, key: "Barrier33", value: 10);
+                context.SetUserValue(triggerId: 8340, key: "Barrier34", value: 10);
+                context.SetUserValue(triggerId: 8410, key: "Barrier41", value: 10);
+                context.SetUserValue(triggerId: 8420, key: "Barrier42", value: 10);
+                context.SetUserValue(triggerId: 8430, key: "Barrier43", value: 10);
+                context.SetUserValue(triggerId: 8440, key: "Barrier44", value: 10);
+                context.SetUserValue(triggerId: 7110, key: "Color11", value: 5);
+                context.SetUserValue(triggerId: 7120, key: "Color12", value: 5);
+                context.SetUserValue(triggerId: 7130, key: "Color13", value: 5);
+                context.SetUserValue(triggerId: 7140, key: "Color14", value: 5);
+                context.SetUserValue(triggerId: 7210, key: "Color21", value: 5);
+                context.SetUserValue(triggerId: 7220, key: "Color22", value: 5);
+                context.SetUserValue(triggerId: 7230, key: "Color23", value: 5);
+                context.SetUserValue(triggerId: 7240, key: "Color24", value: 5);
+                context.SetUserValue(triggerId: 7310, key: "Color31", value: 5);
+                context.SetUserValue(triggerId: 7320, key: "Color32", value: 5);
+                context.SetUserValue(triggerId: 7330, key: "Color33", value: 5);
+                context.SetUserValue(triggerId: 7340, key: "Color34", value: 5);
+                context.SetUserValue(triggerId: 7410, key: "Color41", value: 5);
+                context.SetUserValue(triggerId: 7420, key: "Color42", value: 5);
+                context.SetUserValue(triggerId: 7430, key: "Color43", value: 5);
+                context.SetUserValue(triggerId: 7440, key: "Color44", value: 5);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: true, arg3: 400, arg4: 0, arg5: 2f);
@@ -5628,9 +5624,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetLocalCamera(cameraId: 910, enable: false);
                 context.UnSetMiniGameAreaForHack();
                 context.SetSound(arg1: 40000, arg2: false);
-                context.SetUserValue(triggerID: 5, key: "BannerNumber", value: 0);
-                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__31$", arg3: new int[] {10000});
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Ending_03");
+                context.SetUserValue(triggerId: 5, key: "BannerNumber", value: 0);
+                context.SetEventUI(arg1: 1, arg2: "$61000008_ME__01_MASSIVEMAIN__31$", arg3: 10000);
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Ending_03");
                 context.SetSound(arg1: 10000, arg2: false);
             }
 
@@ -5660,7 +5656,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P01_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P01Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P01Set", value: 1);
             }
 
             public override void Execute() {
@@ -5682,9 +5678,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5704,8 +5700,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P01_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P01TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P01TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -5725,7 +5721,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P01End", value: 1)) {
+                if (context.GetUserValue(key: "G01P01End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -5738,7 +5734,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P02_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P02Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P02Set", value: 1);
             }
 
             public override void Execute() {
@@ -5760,9 +5756,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5782,8 +5778,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P02_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P02TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P02TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -5803,7 +5799,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P02End", value: 1)) {
+                if (context.GetUserValue(key: "G01P02End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -5816,7 +5812,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P03_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P03Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P03Set", value: 1);
             }
 
             public override void Execute() {
@@ -5838,9 +5834,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5860,8 +5856,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P03_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P03TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P03TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -5881,7 +5877,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P03End", value: 1)) {
+                if (context.GetUserValue(key: "G01P03End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -5894,7 +5890,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P04_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P04Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P04Set", value: 1);
             }
 
             public override void Execute() {
@@ -5916,9 +5912,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -5938,8 +5934,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P04_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P04TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P04TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -5959,7 +5955,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P04End", value: 1)) {
+                if (context.GetUserValue(key: "G01P04End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -5972,7 +5968,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P05_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P05Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P05Set", value: 1);
             }
 
             public override void Execute() {
@@ -5994,9 +5990,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6016,8 +6012,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P05_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P05TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P05TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -6037,7 +6033,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P05End", value: 1)) {
+                if (context.GetUserValue(key: "G01P05End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -6050,7 +6046,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P06_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P06Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P06Set", value: 1);
             }
 
             public override void Execute() {
@@ -6072,9 +6068,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6094,8 +6090,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P06_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P06TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P06TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -6115,7 +6111,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P06End", value: 1)) {
+                if (context.GetUserValue(key: "G01P06End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -6128,7 +6124,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P07_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P07Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P07Set", value: 1);
             }
 
             public override void Execute() {
@@ -6150,9 +6146,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6172,8 +6168,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P07_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P07TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P07TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -6193,7 +6189,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P07End", value: 1)) {
+                if (context.GetUserValue(key: "G01P07End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -6206,7 +6202,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P08_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P08Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P08Set", value: 1);
             }
 
             public override void Execute() {
@@ -6228,9 +6224,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6250,8 +6246,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P08_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P08TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P08TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -6271,7 +6267,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P08End", value: 1)) {
+                if (context.GetUserValue(key: "G01P08End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -6284,7 +6280,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P09_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P09Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P09Set", value: 1);
             }
 
             public override void Execute() {
@@ -6306,9 +6302,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6328,8 +6324,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P09_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P09TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P09TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -6349,7 +6345,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P09End", value: 1)) {
+                if (context.GetUserValue(key: "G01P09End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -6362,7 +6358,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P10_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P10Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P10Set", value: 1);
             }
 
             public override void Execute() {
@@ -6384,9 +6380,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6406,8 +6402,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P10_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P10TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P10TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -6427,7 +6423,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P10End", value: 1)) {
+                if (context.GetUserValue(key: "G01P10End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -6440,7 +6436,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P11_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P11Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P11Set", value: 1);
             }
 
             public override void Execute() {
@@ -6462,9 +6458,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6484,8 +6480,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P11_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P11TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P11TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -6505,7 +6501,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P11End", value: 1)) {
+                if (context.GetUserValue(key: "G01P11End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -6518,7 +6514,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P12_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P12Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P12Set", value: 1);
             }
 
             public override void Execute() {
@@ -6540,9 +6536,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6562,8 +6558,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P12_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P12TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P12TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -6583,7 +6579,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P12End", value: 1)) {
+                if (context.GetUserValue(key: "G01P12End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -6596,7 +6592,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P13_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P13Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P13Set", value: 1);
             }
 
             public override void Execute() {
@@ -6618,9 +6614,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6640,8 +6636,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P13_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P13TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P13TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -6661,7 +6657,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P13End", value: 1)) {
+                if (context.GetUserValue(key: "G01P13End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -6674,7 +6670,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P14_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P14Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P14Set", value: 1);
             }
 
             public override void Execute() {
@@ -6696,9 +6692,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6718,8 +6714,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P14_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P14TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P14TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -6739,7 +6735,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P14End", value: 1)) {
+                if (context.GetUserValue(key: "G01P14End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -6752,7 +6748,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P15_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P15Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P15Set", value: 1);
             }
 
             public override void Execute() {
@@ -6774,9 +6770,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6796,8 +6792,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P15_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P15TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P15TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -6817,7 +6813,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P15End", value: 1)) {
+                if (context.GetUserValue(key: "G01P15End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -6830,7 +6826,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P16_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P16Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P16Set", value: 1);
             }
 
             public override void Execute() {
@@ -6852,9 +6848,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6874,8 +6870,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P16_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P16TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P16TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -6895,7 +6891,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P16End", value: 1)) {
+                if (context.GetUserValue(key: "G01P16End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -6908,7 +6904,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P17_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P17Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P17Set", value: 1);
             }
 
             public override void Execute() {
@@ -6930,9 +6926,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -6952,8 +6948,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P17_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P17TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P17TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -6973,7 +6969,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P17End", value: 1)) {
+                if (context.GetUserValue(key: "G01P17End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -6986,7 +6982,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P18_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P18Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P18Set", value: 1);
             }
 
             public override void Execute() {
@@ -7008,9 +7004,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7030,8 +7026,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P18_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P18TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P18TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -7051,7 +7047,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P18End", value: 1)) {
+                if (context.GetUserValue(key: "G01P18End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -7064,7 +7060,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P19_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P19Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P19Set", value: 1);
             }
 
             public override void Execute() {
@@ -7086,9 +7082,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7108,8 +7104,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P19_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P19TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P19TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -7129,7 +7125,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P19End", value: 1)) {
+                if (context.GetUserValue(key: "G01P19End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -7142,7 +7138,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P20_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P20Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P20Set", value: 1);
             }
 
             public override void Execute() {
@@ -7164,9 +7160,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7186,8 +7182,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P20_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P20TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P20TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -7207,7 +7203,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P20End", value: 1)) {
+                if (context.GetUserValue(key: "G01P20End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -7220,7 +7216,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P21_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P21Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P21Set", value: 1);
             }
 
             public override void Execute() {
@@ -7242,9 +7238,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7264,8 +7260,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P21_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P21TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P21TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -7285,7 +7281,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P21End", value: 1)) {
+                if (context.GetUserValue(key: "G01P21End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -7298,7 +7294,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P22_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P22Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P22Set", value: 1);
             }
 
             public override void Execute() {
@@ -7320,9 +7316,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7342,8 +7338,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P22_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P22TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P22TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -7363,7 +7359,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P22End", value: 1)) {
+                if (context.GetUserValue(key: "G01P22End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -7376,7 +7372,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P23_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P23Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P23Set", value: 1);
             }
 
             public override void Execute() {
@@ -7398,9 +7394,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7420,8 +7416,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P23_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P23TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P23TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -7441,7 +7437,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P23End", value: 1)) {
+                if (context.GetUserValue(key: "G01P23End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -7454,7 +7450,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P24_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P24Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P24Set", value: 1);
             }
 
             public override void Execute() {
@@ -7476,9 +7472,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7498,8 +7494,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P24_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P24TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P24TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -7519,7 +7515,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P24End", value: 1)) {
+                if (context.GetUserValue(key: "G01P24End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -7532,7 +7528,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P25_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P25Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P25Set", value: 1);
             }
 
             public override void Execute() {
@@ -7554,9 +7550,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7576,8 +7572,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P25_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P25TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P25TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -7597,7 +7593,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P25End", value: 1)) {
+                if (context.GetUserValue(key: "G01P25End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -7610,7 +7606,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P26_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P26Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P26Set", value: 1);
             }
 
             public override void Execute() {
@@ -7632,9 +7628,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7654,8 +7650,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P26_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P26TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P26TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -7675,7 +7671,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P26End", value: 1)) {
+                if (context.GetUserValue(key: "G01P26End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -7688,7 +7684,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P27_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P27Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P27Set", value: 1);
             }
 
             public override void Execute() {
@@ -7710,9 +7706,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7732,8 +7728,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P27_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P27TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P27TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -7753,7 +7749,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P27End", value: 1)) {
+                if (context.GetUserValue(key: "G01P27End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -7766,7 +7762,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P28_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P28Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P28Set", value: 1);
             }
 
             public override void Execute() {
@@ -7788,9 +7784,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7810,8 +7806,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P28_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P28TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P28TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -7831,7 +7827,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P28End", value: 1)) {
+                if (context.GetUserValue(key: "G01P28End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -7844,7 +7840,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P29_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P29Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P29Set", value: 1);
             }
 
             public override void Execute() {
@@ -7866,9 +7862,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7888,8 +7884,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P29_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P29TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P29TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -7909,7 +7905,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P29End", value: 1)) {
+                if (context.GetUserValue(key: "G01P29End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -7922,7 +7918,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P30_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P30Set", value: 1);
+                context.SetUserValue(triggerId: 100, key: "G01P30Set", value: 1);
             }
 
             public override void Execute() {
@@ -7944,9 +7940,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -7966,8 +7962,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG01P30_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "G01P30TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 100, key: "G01P30TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -7987,7 +7983,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G01P30End", value: 1)) {
+                if (context.GetUserValue(key: "G01P30End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -8000,7 +7996,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P01_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P01Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P01Set", value: 1);
             }
 
             public override void Execute() {
@@ -8022,9 +8018,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8044,8 +8040,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P01_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P01TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P01TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -8065,7 +8061,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P01End", value: 1)) {
+                if (context.GetUserValue(key: "G02P01End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -8078,7 +8074,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P02_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P02Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P02Set", value: 1);
             }
 
             public override void Execute() {
@@ -8100,9 +8096,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8122,8 +8118,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P02_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P02TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P02TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -8143,7 +8139,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P02End", value: 1)) {
+                if (context.GetUserValue(key: "G02P02End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -8156,7 +8152,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P03_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P03Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P03Set", value: 1);
             }
 
             public override void Execute() {
@@ -8178,9 +8174,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8200,8 +8196,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P03_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P03TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P03TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -8221,7 +8217,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P03End", value: 1)) {
+                if (context.GetUserValue(key: "G02P03End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -8234,7 +8230,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P04_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P04Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P04Set", value: 1);
             }
 
             public override void Execute() {
@@ -8256,9 +8252,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8278,8 +8274,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P04_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P04TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P04TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -8299,7 +8295,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P04End", value: 1)) {
+                if (context.GetUserValue(key: "G02P04End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -8312,7 +8308,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P05_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P05Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P05Set", value: 1);
             }
 
             public override void Execute() {
@@ -8334,9 +8330,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8356,8 +8352,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P05_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P05TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P05TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -8377,7 +8373,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P05End", value: 1)) {
+                if (context.GetUserValue(key: "G02P05End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -8390,7 +8386,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P06_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P06Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P06Set", value: 1);
             }
 
             public override void Execute() {
@@ -8412,9 +8408,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8434,8 +8430,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P06_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P06TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P06TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -8455,7 +8451,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P06End", value: 1)) {
+                if (context.GetUserValue(key: "G02P06End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -8468,7 +8464,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P07_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P07Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P07Set", value: 1);
             }
 
             public override void Execute() {
@@ -8490,9 +8486,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8512,8 +8508,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P07_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P07TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P07TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -8533,7 +8529,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P07End", value: 1)) {
+                if (context.GetUserValue(key: "G02P07End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -8546,7 +8542,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P08_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P08Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P08Set", value: 1);
             }
 
             public override void Execute() {
@@ -8568,9 +8564,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8590,8 +8586,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P08_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P08TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P08TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -8611,7 +8607,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P08End", value: 1)) {
+                if (context.GetUserValue(key: "G02P08End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -8624,7 +8620,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P09_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P09Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P09Set", value: 1);
             }
 
             public override void Execute() {
@@ -8646,9 +8642,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8668,8 +8664,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P09_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P09TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P09TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -8689,7 +8685,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P09End", value: 1)) {
+                if (context.GetUserValue(key: "G02P09End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -8702,7 +8698,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P10_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P10Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P10Set", value: 1);
             }
 
             public override void Execute() {
@@ -8724,9 +8720,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8746,8 +8742,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P10_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P10TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P10TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -8767,7 +8763,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P10End", value: 1)) {
+                if (context.GetUserValue(key: "G02P10End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -8780,7 +8776,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P11_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P11Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P11Set", value: 1);
             }
 
             public override void Execute() {
@@ -8802,9 +8798,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8824,8 +8820,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P11_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P11TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P11TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -8845,7 +8841,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P11End", value: 1)) {
+                if (context.GetUserValue(key: "G02P11End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -8858,7 +8854,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P12_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P12Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P12Set", value: 1);
             }
 
             public override void Execute() {
@@ -8880,9 +8876,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8902,8 +8898,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P12_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P12TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P12TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -8923,7 +8919,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P12End", value: 1)) {
+                if (context.GetUserValue(key: "G02P12End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -8936,7 +8932,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P13_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P13Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P13Set", value: 1);
             }
 
             public override void Execute() {
@@ -8958,9 +8954,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -8980,8 +8976,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P13_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P13TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P13TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -9001,7 +8997,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P13End", value: 1)) {
+                if (context.GetUserValue(key: "G02P13End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -9014,7 +9010,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P14_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P14Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P14Set", value: 1);
             }
 
             public override void Execute() {
@@ -9036,9 +9032,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9058,8 +9054,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P14_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P14TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P14TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -9079,7 +9075,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P14End", value: 1)) {
+                if (context.GetUserValue(key: "G02P14End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -9092,7 +9088,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P15_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P15Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P15Set", value: 1);
             }
 
             public override void Execute() {
@@ -9114,9 +9110,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9136,8 +9132,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P15_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P15TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P15TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -9157,7 +9153,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P15End", value: 1)) {
+                if (context.GetUserValue(key: "G02P15End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -9170,7 +9166,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P16_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P16Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P16Set", value: 1);
             }
 
             public override void Execute() {
@@ -9192,9 +9188,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9214,8 +9210,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P16_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P16TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P16TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -9235,7 +9231,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P16End", value: 1)) {
+                if (context.GetUserValue(key: "G02P16End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -9248,7 +9244,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P17_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P17Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P17Set", value: 1);
             }
 
             public override void Execute() {
@@ -9270,9 +9266,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9292,8 +9288,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P17_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P17TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P17TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -9313,7 +9309,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P17End", value: 1)) {
+                if (context.GetUserValue(key: "G02P17End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -9326,7 +9322,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P18_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P18Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P18Set", value: 1);
             }
 
             public override void Execute() {
@@ -9348,9 +9344,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9370,8 +9366,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P18_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P18TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P18TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -9391,7 +9387,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P18End", value: 1)) {
+                if (context.GetUserValue(key: "G02P18End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -9404,7 +9400,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P19_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P19Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P19Set", value: 1);
             }
 
             public override void Execute() {
@@ -9426,9 +9422,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9448,8 +9444,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P19_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P19TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P19TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -9469,7 +9465,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P19End", value: 1)) {
+                if (context.GetUserValue(key: "G02P19End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -9482,7 +9478,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P20_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P20Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P20Set", value: 1);
             }
 
             public override void Execute() {
@@ -9504,9 +9500,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9526,8 +9522,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P20_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P20TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P20TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -9547,7 +9543,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P20End", value: 1)) {
+                if (context.GetUserValue(key: "G02P20End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -9560,7 +9556,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P21_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P21Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P21Set", value: 1);
             }
 
             public override void Execute() {
@@ -9582,9 +9578,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9604,8 +9600,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P21_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P21TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P21TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -9625,7 +9621,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P21End", value: 1)) {
+                if (context.GetUserValue(key: "G02P21End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -9638,7 +9634,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P22_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P22Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P22Set", value: 1);
             }
 
             public override void Execute() {
@@ -9660,9 +9656,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9682,8 +9678,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P22_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P22TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P22TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -9703,7 +9699,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P22End", value: 1)) {
+                if (context.GetUserValue(key: "G02P22End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -9716,7 +9712,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P23_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P23Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P23Set", value: 1);
             }
 
             public override void Execute() {
@@ -9738,9 +9734,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9760,8 +9756,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P23_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P23TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P23TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -9781,7 +9777,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P23End", value: 1)) {
+                if (context.GetUserValue(key: "G02P23End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -9794,7 +9790,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P24_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P24Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P24Set", value: 1);
             }
 
             public override void Execute() {
@@ -9816,9 +9812,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9838,8 +9834,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P24_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P24TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P24TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -9859,7 +9855,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P24End", value: 1)) {
+                if (context.GetUserValue(key: "G02P24End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -9872,7 +9868,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P25_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P25Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P25Set", value: 1);
             }
 
             public override void Execute() {
@@ -9894,9 +9890,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9916,8 +9912,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P25_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P25TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P25TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -9937,7 +9933,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P25End", value: 1)) {
+                if (context.GetUserValue(key: "G02P25End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -9950,7 +9946,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P26_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P26Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P26Set", value: 1);
             }
 
             public override void Execute() {
@@ -9972,9 +9968,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -9994,8 +9990,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P26_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P26TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P26TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -10015,7 +10011,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P26End", value: 1)) {
+                if (context.GetUserValue(key: "G02P26End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -10028,7 +10024,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P27_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P27Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P27Set", value: 1);
             }
 
             public override void Execute() {
@@ -10050,9 +10046,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10072,8 +10068,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P27_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P27TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P27TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -10093,7 +10089,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P27End", value: 1)) {
+                if (context.GetUserValue(key: "G02P27End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -10106,7 +10102,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P28_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P28Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P28Set", value: 1);
             }
 
             public override void Execute() {
@@ -10128,9 +10124,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10150,8 +10146,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P28_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P28TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P28TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -10171,7 +10167,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P28End", value: 1)) {
+                if (context.GetUserValue(key: "G02P28End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -10184,7 +10180,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P29_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P29Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P29Set", value: 1);
             }
 
             public override void Execute() {
@@ -10206,9 +10202,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10228,8 +10224,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P29_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P29TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P29TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -10249,7 +10245,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P29End", value: 1)) {
+                if (context.GetUserValue(key: "G02P29End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -10262,7 +10258,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P30_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P30Set", value: 1);
+                context.SetUserValue(triggerId: 200, key: "G02P30Set", value: 1);
             }
 
             public override void Execute() {
@@ -10284,9 +10280,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10306,8 +10302,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG02P30_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 200, key: "G02P30TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 200, key: "G02P30TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -10327,7 +10323,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G02P30End", value: 1)) {
+                if (context.GetUserValue(key: "G02P30End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -10340,7 +10336,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P01_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P01Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P01Set", value: 1);
             }
 
             public override void Execute() {
@@ -10362,9 +10358,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10384,8 +10380,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P01_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P01TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P01TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -10405,7 +10401,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P01End", value: 1)) {
+                if (context.GetUserValue(key: "G03P01End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -10418,7 +10414,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P02_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P02Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P02Set", value: 1);
             }
 
             public override void Execute() {
@@ -10440,9 +10436,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10462,8 +10458,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P02_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P02TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P02TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -10483,7 +10479,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P02End", value: 1)) {
+                if (context.GetUserValue(key: "G03P02End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -10496,7 +10492,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P03_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P03Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P03Set", value: 1);
             }
 
             public override void Execute() {
@@ -10518,9 +10514,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10540,8 +10536,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P03_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P03TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P03TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -10561,7 +10557,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P03End", value: 1)) {
+                if (context.GetUserValue(key: "G03P03End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -10574,7 +10570,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P04_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P04Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P04Set", value: 1);
             }
 
             public override void Execute() {
@@ -10596,9 +10592,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10618,8 +10614,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P04_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P04TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P04TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -10639,7 +10635,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P04End", value: 1)) {
+                if (context.GetUserValue(key: "G03P04End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -10652,7 +10648,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P05_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P05Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P05Set", value: 1);
             }
 
             public override void Execute() {
@@ -10674,9 +10670,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10696,8 +10692,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P05_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P05TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P05TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -10717,7 +10713,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P05End", value: 1)) {
+                if (context.GetUserValue(key: "G03P05End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -10730,7 +10726,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P06_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P06Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P06Set", value: 1);
             }
 
             public override void Execute() {
@@ -10752,9 +10748,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10774,8 +10770,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P06_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P06TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P06TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -10795,7 +10791,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P06End", value: 1)) {
+                if (context.GetUserValue(key: "G03P06End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -10808,7 +10804,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P07_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P07Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P07Set", value: 1);
             }
 
             public override void Execute() {
@@ -10830,9 +10826,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10852,8 +10848,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P07_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P07TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P07TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -10873,7 +10869,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P07End", value: 1)) {
+                if (context.GetUserValue(key: "G03P07End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -10886,7 +10882,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P08_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P08Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P08Set", value: 1);
             }
 
             public override void Execute() {
@@ -10908,9 +10904,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -10930,8 +10926,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P08_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P08TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P08TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -10951,7 +10947,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P08End", value: 1)) {
+                if (context.GetUserValue(key: "G03P08End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -10964,7 +10960,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P09_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P09Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P09Set", value: 1);
             }
 
             public override void Execute() {
@@ -10986,9 +10982,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11008,8 +11004,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P09_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P09TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P09TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -11029,7 +11025,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P09End", value: 1)) {
+                if (context.GetUserValue(key: "G03P09End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -11042,7 +11038,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P10_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P10Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P10Set", value: 1);
             }
 
             public override void Execute() {
@@ -11064,9 +11060,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11086,8 +11082,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P10_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P10TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P10TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -11107,7 +11103,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P10End", value: 1)) {
+                if (context.GetUserValue(key: "G03P10End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -11120,7 +11116,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P11_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P11Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P11Set", value: 1);
             }
 
             public override void Execute() {
@@ -11142,9 +11138,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11164,8 +11160,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P11_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P11TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P11TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -11185,7 +11181,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P11End", value: 1)) {
+                if (context.GetUserValue(key: "G03P11End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -11198,7 +11194,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P12_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P12Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P12Set", value: 1);
             }
 
             public override void Execute() {
@@ -11220,9 +11216,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11242,8 +11238,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P12_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P12TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P12TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -11263,7 +11259,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P12End", value: 1)) {
+                if (context.GetUserValue(key: "G03P12End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -11276,7 +11272,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P13_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P13Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P13Set", value: 1);
             }
 
             public override void Execute() {
@@ -11298,9 +11294,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11320,8 +11316,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P13_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P13TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P13TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -11341,7 +11337,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P13End", value: 1)) {
+                if (context.GetUserValue(key: "G03P13End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -11354,7 +11350,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P14_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P14Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P14Set", value: 1);
             }
 
             public override void Execute() {
@@ -11376,9 +11372,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11398,8 +11394,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P14_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P14TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P14TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -11419,7 +11415,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P14End", value: 1)) {
+                if (context.GetUserValue(key: "G03P14End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -11432,7 +11428,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P15_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P15Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P15Set", value: 1);
             }
 
             public override void Execute() {
@@ -11454,9 +11450,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11476,8 +11472,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P15_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P15TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P15TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -11497,7 +11493,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P15End", value: 1)) {
+                if (context.GetUserValue(key: "G03P15End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -11510,7 +11506,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P16_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P16Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P16Set", value: 1);
             }
 
             public override void Execute() {
@@ -11532,9 +11528,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11554,8 +11550,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P16_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P16TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P16TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -11575,7 +11571,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P16End", value: 1)) {
+                if (context.GetUserValue(key: "G03P16End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -11588,7 +11584,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P17_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P17Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P17Set", value: 1);
             }
 
             public override void Execute() {
@@ -11610,9 +11606,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11632,8 +11628,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P17_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P17TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P17TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -11653,7 +11649,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P17End", value: 1)) {
+                if (context.GetUserValue(key: "G03P17End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -11666,7 +11662,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P18_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P18Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P18Set", value: 1);
             }
 
             public override void Execute() {
@@ -11688,9 +11684,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11710,8 +11706,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P18_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P18TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P18TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -11731,7 +11727,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P18End", value: 1)) {
+                if (context.GetUserValue(key: "G03P18End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -11744,7 +11740,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P19_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P19Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P19Set", value: 1);
             }
 
             public override void Execute() {
@@ -11766,9 +11762,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11788,8 +11784,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P19_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P19TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P19TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -11809,7 +11805,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P19End", value: 1)) {
+                if (context.GetUserValue(key: "G03P19End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -11822,7 +11818,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P20_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P20Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P20Set", value: 1);
             }
 
             public override void Execute() {
@@ -11844,9 +11840,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11866,8 +11862,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P20_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P20TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P20TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -11887,7 +11883,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P20End", value: 1)) {
+                if (context.GetUserValue(key: "G03P20End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -11900,7 +11896,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P21_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P21Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P21Set", value: 1);
             }
 
             public override void Execute() {
@@ -11922,9 +11918,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -11944,8 +11940,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P21_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P21TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P21TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -11965,7 +11961,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P21End", value: 1)) {
+                if (context.GetUserValue(key: "G03P21End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -11978,7 +11974,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P22_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P22Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P22Set", value: 1);
             }
 
             public override void Execute() {
@@ -12000,9 +11996,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12022,8 +12018,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P22_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P22TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P22TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -12043,7 +12039,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P22End", value: 1)) {
+                if (context.GetUserValue(key: "G03P22End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -12056,7 +12052,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P23_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P23Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P23Set", value: 1);
             }
 
             public override void Execute() {
@@ -12078,9 +12074,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12100,8 +12096,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P23_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P23TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P23TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -12121,7 +12117,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P23End", value: 1)) {
+                if (context.GetUserValue(key: "G03P23End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -12134,7 +12130,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P24_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P24Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P24Set", value: 1);
             }
 
             public override void Execute() {
@@ -12156,9 +12152,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12178,8 +12174,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P24_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P24TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P24TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -12199,7 +12195,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P24End", value: 1)) {
+                if (context.GetUserValue(key: "G03P24End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -12212,7 +12208,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P25_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P25Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P25Set", value: 1);
             }
 
             public override void Execute() {
@@ -12234,9 +12230,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12256,8 +12252,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P25_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P25TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P25TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -12277,7 +12273,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P25End", value: 1)) {
+                if (context.GetUserValue(key: "G03P25End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -12290,7 +12286,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P26_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P26Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P26Set", value: 1);
             }
 
             public override void Execute() {
@@ -12312,9 +12308,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12334,8 +12330,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P26_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P26TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P26TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -12355,7 +12351,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P26End", value: 1)) {
+                if (context.GetUserValue(key: "G03P26End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -12368,7 +12364,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P27_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P27Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P27Set", value: 1);
             }
 
             public override void Execute() {
@@ -12390,9 +12386,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12412,8 +12408,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P27_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P27TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P27TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -12433,7 +12429,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P27End", value: 1)) {
+                if (context.GetUserValue(key: "G03P27End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -12446,7 +12442,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P28_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P28Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P28Set", value: 1);
             }
 
             public override void Execute() {
@@ -12468,9 +12464,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12490,8 +12486,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P28_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P28TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P28TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -12511,7 +12507,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P28End", value: 1)) {
+                if (context.GetUserValue(key: "G03P28End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -12524,7 +12520,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P29_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P29Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P29Set", value: 1);
             }
 
             public override void Execute() {
@@ -12546,9 +12542,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12568,8 +12564,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P29_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P29TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P29TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -12589,7 +12585,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P29End", value: 1)) {
+                if (context.GetUserValue(key: "G03P29End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -12602,7 +12598,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P30_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P30Set", value: 1);
+                context.SetUserValue(triggerId: 300, key: "G03P30Set", value: 1);
             }
 
             public override void Execute() {
@@ -12624,9 +12620,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12646,8 +12642,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG03P30_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 300, key: "G03P30TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 300, key: "G03P30TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -12667,7 +12663,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G03P30End", value: 1)) {
+                if (context.GetUserValue(key: "G03P30End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -12680,7 +12676,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P01_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P01Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P01Set", value: 1);
             }
 
             public override void Execute() {
@@ -12702,9 +12698,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12724,8 +12720,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P01_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P01TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P01TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -12745,7 +12741,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P01End", value: 1)) {
+                if (context.GetUserValue(key: "G04P01End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -12758,7 +12754,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P02_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P02Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P02Set", value: 1);
             }
 
             public override void Execute() {
@@ -12780,9 +12776,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12802,8 +12798,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P02_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P02TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P02TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -12823,7 +12819,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P02End", value: 1)) {
+                if (context.GetUserValue(key: "G04P02End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -12836,7 +12832,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P03_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P03Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P03Set", value: 1);
             }
 
             public override void Execute() {
@@ -12858,9 +12854,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12880,8 +12876,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P03_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P03TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P03TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -12901,7 +12897,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P03End", value: 1)) {
+                if (context.GetUserValue(key: "G04P03End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -12914,7 +12910,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P04_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P04Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P04Set", value: 1);
             }
 
             public override void Execute() {
@@ -12936,9 +12932,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -12958,8 +12954,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P04_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P04TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P04TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -12979,7 +12975,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P04End", value: 1)) {
+                if (context.GetUserValue(key: "G04P04End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -12992,7 +12988,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P05_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P05Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P05Set", value: 1);
             }
 
             public override void Execute() {
@@ -13014,9 +13010,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13036,8 +13032,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P05_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P05TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P05TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -13057,7 +13053,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P05End", value: 1)) {
+                if (context.GetUserValue(key: "G04P05End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -13070,7 +13066,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P06_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P06Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P06Set", value: 1);
             }
 
             public override void Execute() {
@@ -13092,9 +13088,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13114,8 +13110,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P06_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P06TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P06TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -13135,7 +13131,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P06End", value: 1)) {
+                if (context.GetUserValue(key: "G04P06End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -13148,7 +13144,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P07_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P07Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P07Set", value: 1);
             }
 
             public override void Execute() {
@@ -13170,9 +13166,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13192,8 +13188,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P07_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P07TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P07TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -13213,7 +13209,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P07End", value: 1)) {
+                if (context.GetUserValue(key: "G04P07End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -13226,7 +13222,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P08_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P08Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P08Set", value: 1);
             }
 
             public override void Execute() {
@@ -13248,9 +13244,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13270,8 +13266,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P08_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P08TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P08TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -13291,7 +13287,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P08End", value: 1)) {
+                if (context.GetUserValue(key: "G04P08End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -13304,7 +13300,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P09_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P09Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P09Set", value: 1);
             }
 
             public override void Execute() {
@@ -13326,9 +13322,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13348,8 +13344,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P09_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P09TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P09TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -13369,7 +13365,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P09End", value: 1)) {
+                if (context.GetUserValue(key: "G04P09End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -13382,7 +13378,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P10_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P10Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P10Set", value: 1);
             }
 
             public override void Execute() {
@@ -13404,9 +13400,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13426,8 +13422,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P10_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P10TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P10TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -13447,7 +13443,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P10End", value: 1)) {
+                if (context.GetUserValue(key: "G04P10End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -13460,7 +13456,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P11_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P11Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P11Set", value: 1);
             }
 
             public override void Execute() {
@@ -13482,9 +13478,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13504,8 +13500,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P11_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P11TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P11TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -13525,7 +13521,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P11End", value: 1)) {
+                if (context.GetUserValue(key: "G04P11End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -13538,7 +13534,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P12_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P12Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P12Set", value: 1);
             }
 
             public override void Execute() {
@@ -13560,9 +13556,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13582,8 +13578,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P12_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P12TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P12TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -13603,7 +13599,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P12End", value: 1)) {
+                if (context.GetUserValue(key: "G04P12End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -13616,7 +13612,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P13_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P13Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P13Set", value: 1);
             }
 
             public override void Execute() {
@@ -13638,9 +13634,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13660,8 +13656,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P13_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P13TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P13TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -13681,7 +13677,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P13End", value: 1)) {
+                if (context.GetUserValue(key: "G04P13End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -13694,7 +13690,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P14_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P14Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P14Set", value: 1);
             }
 
             public override void Execute() {
@@ -13716,9 +13712,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13738,8 +13734,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P14_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P14TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P14TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -13759,7 +13755,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P14End", value: 1)) {
+                if (context.GetUserValue(key: "G04P14End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -13772,7 +13768,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P15_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P15Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P15Set", value: 1);
             }
 
             public override void Execute() {
@@ -13794,9 +13790,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13816,8 +13812,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P15_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P15TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P15TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -13837,7 +13833,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P15End", value: 1)) {
+                if (context.GetUserValue(key: "G04P15End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -13850,7 +13846,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P16_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P16Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P16Set", value: 1);
             }
 
             public override void Execute() {
@@ -13872,9 +13868,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13894,8 +13890,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P16_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P16TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P16TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -13915,7 +13911,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P16End", value: 1)) {
+                if (context.GetUserValue(key: "G04P16End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -13928,7 +13924,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P17_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P17Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P17Set", value: 1);
             }
 
             public override void Execute() {
@@ -13950,9 +13946,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -13972,8 +13968,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P17_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P17TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P17TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -13993,7 +13989,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P17End", value: 1)) {
+                if (context.GetUserValue(key: "G04P17End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -14006,7 +14002,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P18_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P18Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P18Set", value: 1);
             }
 
             public override void Execute() {
@@ -14028,9 +14024,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14050,8 +14046,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P18_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P18TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P18TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -14071,7 +14067,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P18End", value: 1)) {
+                if (context.GetUserValue(key: "G04P18End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -14084,7 +14080,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P19_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P19Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P19Set", value: 1);
             }
 
             public override void Execute() {
@@ -14106,9 +14102,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14128,8 +14124,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P19_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P19TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P19TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -14149,7 +14145,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P19End", value: 1)) {
+                if (context.GetUserValue(key: "G04P19End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -14162,7 +14158,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P20_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P20Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P20Set", value: 1);
             }
 
             public override void Execute() {
@@ -14184,9 +14180,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14206,8 +14202,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P20_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P20TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P20TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -14227,7 +14223,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P20End", value: 1)) {
+                if (context.GetUserValue(key: "G04P20End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -14240,7 +14236,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P21_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P21Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P21Set", value: 1);
             }
 
             public override void Execute() {
@@ -14262,9 +14258,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14284,8 +14280,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P21_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P21TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P21TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -14305,7 +14301,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P21End", value: 1)) {
+                if (context.GetUserValue(key: "G04P21End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -14318,7 +14314,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P22_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P22Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P22Set", value: 1);
             }
 
             public override void Execute() {
@@ -14340,9 +14336,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14362,8 +14358,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P22_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P22TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P22TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -14383,7 +14379,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P22End", value: 1)) {
+                if (context.GetUserValue(key: "G04P22End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -14396,7 +14392,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P23_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P23Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P23Set", value: 1);
             }
 
             public override void Execute() {
@@ -14418,9 +14414,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14440,8 +14436,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P23_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P23TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P23TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -14461,7 +14457,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P23End", value: 1)) {
+                if (context.GetUserValue(key: "G04P23End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -14474,7 +14470,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P24_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P24Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P24Set", value: 1);
             }
 
             public override void Execute() {
@@ -14496,9 +14492,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14518,8 +14514,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P24_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P24TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P24TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -14539,7 +14535,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P24End", value: 1)) {
+                if (context.GetUserValue(key: "G04P24End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -14552,7 +14548,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P25_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P25Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P25Set", value: 1);
             }
 
             public override void Execute() {
@@ -14574,9 +14570,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14596,8 +14592,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P25_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P25TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P25TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -14617,7 +14613,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P25End", value: 1)) {
+                if (context.GetUserValue(key: "G04P25End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -14630,7 +14626,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P26_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P26Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P26Set", value: 1);
             }
 
             public override void Execute() {
@@ -14652,9 +14648,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14674,8 +14670,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P26_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P26TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P26TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -14695,7 +14691,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P26End", value: 1)) {
+                if (context.GetUserValue(key: "G04P26End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -14708,7 +14704,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P27_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P27Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P27Set", value: 1);
             }
 
             public override void Execute() {
@@ -14730,9 +14726,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14752,8 +14748,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P27_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P27TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P27TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -14773,7 +14769,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P27End", value: 1)) {
+                if (context.GetUserValue(key: "G04P27End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -14786,7 +14782,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P28_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P28Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P28Set", value: 1);
             }
 
             public override void Execute() {
@@ -14808,9 +14804,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14830,8 +14826,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P28_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P28TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P28TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -14851,7 +14847,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P28End", value: 1)) {
+                if (context.GetUserValue(key: "G04P28End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -14864,7 +14860,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P29_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P29Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P29Set", value: 1);
             }
 
             public override void Execute() {
@@ -14886,9 +14882,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14908,8 +14904,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P29_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P29TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P29TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -14929,7 +14925,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P29End", value: 1)) {
+                if (context.GetUserValue(key: "G04P29End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -14942,7 +14938,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P30_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P30Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P30Set", value: 1);
             }
 
             public override void Execute() {
@@ -14964,9 +14960,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -14986,8 +14982,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P30_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P30TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P30TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -15007,7 +15003,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P30End", value: 1)) {
+                if (context.GetUserValue(key: "G04P30End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -15020,7 +15016,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P31_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P31Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P31Set", value: 1);
             }
 
             public override void Execute() {
@@ -15042,9 +15038,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15064,8 +15060,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P31_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P31TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P31TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -15085,7 +15081,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P31End", value: 1)) {
+                if (context.GetUserValue(key: "G04P31End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -15098,7 +15094,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P32_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P32Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P32Set", value: 1);
             }
 
             public override void Execute() {
@@ -15120,9 +15116,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15142,8 +15138,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P32_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P32TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P32TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -15163,7 +15159,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P32End", value: 1)) {
+                if (context.GetUserValue(key: "G04P32End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -15176,7 +15172,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P33_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P33Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P33Set", value: 1);
             }
 
             public override void Execute() {
@@ -15198,9 +15194,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15220,8 +15216,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P33_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P33TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P33TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -15241,7 +15237,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P33End", value: 1)) {
+                if (context.GetUserValue(key: "G04P33End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -15254,7 +15250,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P34_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P34Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P34Set", value: 1);
             }
 
             public override void Execute() {
@@ -15276,9 +15272,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15298,8 +15294,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P34_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P34TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P34TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -15319,7 +15315,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P34End", value: 1)) {
+                if (context.GetUserValue(key: "G04P34End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -15332,7 +15328,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P35_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P35Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P35Set", value: 1);
             }
 
             public override void Execute() {
@@ -15354,9 +15350,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15376,8 +15372,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P35_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P35TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P35TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -15397,7 +15393,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P35End", value: 1)) {
+                if (context.GetUserValue(key: "G04P35End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -15410,7 +15406,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P36_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P36Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P36Set", value: 1);
             }
 
             public override void Execute() {
@@ -15432,9 +15428,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15454,8 +15450,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P36_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P36TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P36TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -15475,7 +15471,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P36End", value: 1)) {
+                if (context.GetUserValue(key: "G04P36End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -15488,7 +15484,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P37_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P37Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P37Set", value: 1);
             }
 
             public override void Execute() {
@@ -15510,9 +15506,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15532,8 +15528,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P37_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P37TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P37TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -15553,7 +15549,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P37End", value: 1)) {
+                if (context.GetUserValue(key: "G04P37End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -15566,7 +15562,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P38_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P38Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P38Set", value: 1);
             }
 
             public override void Execute() {
@@ -15588,9 +15584,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15610,8 +15606,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P38_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P38TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P38TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -15631,7 +15627,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P38End", value: 1)) {
+                if (context.GetUserValue(key: "G04P38End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -15644,7 +15640,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P39_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P39Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P39Set", value: 1);
             }
 
             public override void Execute() {
@@ -15666,9 +15662,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15688,8 +15684,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P39_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P39TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P39TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -15709,7 +15705,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P39End", value: 1)) {
+                if (context.GetUserValue(key: "G04P39End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -15722,7 +15718,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P40_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P40Set", value: 1);
+                context.SetUserValue(triggerId: 400, key: "G04P40Set", value: 1);
             }
 
             public override void Execute() {
@@ -15744,9 +15740,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15766,8 +15762,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG04P40_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 400, key: "G04P40TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 400, key: "G04P40TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -15787,7 +15783,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G04P40End", value: 1)) {
+                if (context.GetUserValue(key: "G04P40End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -15800,7 +15796,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P01_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P01Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P01Set", value: 1);
             }
 
             public override void Execute() {
@@ -15822,9 +15818,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15844,8 +15840,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P01_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P01TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P01TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -15865,7 +15861,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P01End", value: 1)) {
+                if (context.GetUserValue(key: "G05P01End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -15878,7 +15874,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P02_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P02Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P02Set", value: 1);
             }
 
             public override void Execute() {
@@ -15900,9 +15896,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -15922,8 +15918,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P02_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P02TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P02TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -15943,7 +15939,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P02End", value: 1)) {
+                if (context.GetUserValue(key: "G05P02End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -15956,7 +15952,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P03_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P03Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P03Set", value: 1);
             }
 
             public override void Execute() {
@@ -15978,9 +15974,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16000,8 +15996,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P03_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P03TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P03TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -16021,7 +16017,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P03End", value: 1)) {
+                if (context.GetUserValue(key: "G05P03End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -16034,7 +16030,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P04_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P04Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P04Set", value: 1);
             }
 
             public override void Execute() {
@@ -16056,9 +16052,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16078,8 +16074,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P04_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P04TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P04TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -16099,7 +16095,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P04End", value: 1)) {
+                if (context.GetUserValue(key: "G05P04End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -16112,7 +16108,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P05_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P05Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P05Set", value: 1);
             }
 
             public override void Execute() {
@@ -16134,9 +16130,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16156,8 +16152,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P05_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P05TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P05TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -16177,7 +16173,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P05End", value: 1)) {
+                if (context.GetUserValue(key: "G05P05End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -16190,7 +16186,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P06_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P06Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P06Set", value: 1);
             }
 
             public override void Execute() {
@@ -16212,9 +16208,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16234,8 +16230,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P06_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P06TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P06TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -16255,7 +16251,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P06End", value: 1)) {
+                if (context.GetUserValue(key: "G05P06End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -16268,7 +16264,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P07_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P07Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P07Set", value: 1);
             }
 
             public override void Execute() {
@@ -16290,9 +16286,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16312,8 +16308,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P07_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P07TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P07TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -16333,7 +16329,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P07End", value: 1)) {
+                if (context.GetUserValue(key: "G05P07End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -16346,7 +16342,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P08_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P08Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P08Set", value: 1);
             }
 
             public override void Execute() {
@@ -16368,9 +16364,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16390,8 +16386,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P08_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P08TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P08TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -16411,7 +16407,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P08End", value: 1)) {
+                if (context.GetUserValue(key: "G05P08End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -16424,7 +16420,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P09_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P09Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P09Set", value: 1);
             }
 
             public override void Execute() {
@@ -16446,9 +16442,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16468,8 +16464,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P09_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P09TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P09TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -16489,7 +16485,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P09End", value: 1)) {
+                if (context.GetUserValue(key: "G05P09End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -16502,7 +16498,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P10_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P10Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P10Set", value: 1);
             }
 
             public override void Execute() {
@@ -16524,9 +16520,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16546,8 +16542,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P10_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P10TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P10TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -16567,7 +16563,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P10End", value: 1)) {
+                if (context.GetUserValue(key: "G05P10End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -16580,7 +16576,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P11_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P11Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P11Set", value: 1);
             }
 
             public override void Execute() {
@@ -16602,9 +16598,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16624,8 +16620,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P11_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P11TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P11TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -16645,7 +16641,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P11End", value: 1)) {
+                if (context.GetUserValue(key: "G05P11End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -16658,7 +16654,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P12_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P12Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P12Set", value: 1);
             }
 
             public override void Execute() {
@@ -16680,9 +16676,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16702,8 +16698,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P12_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P12TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P12TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -16723,7 +16719,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P12End", value: 1)) {
+                if (context.GetUserValue(key: "G05P12End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -16736,7 +16732,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P13_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P13Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P13Set", value: 1);
             }
 
             public override void Execute() {
@@ -16758,9 +16754,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16780,8 +16776,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P13_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P13TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P13TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -16801,7 +16797,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P13End", value: 1)) {
+                if (context.GetUserValue(key: "G05P13End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -16814,7 +16810,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P14_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P14Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P14Set", value: 1);
             }
 
             public override void Execute() {
@@ -16836,9 +16832,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16858,8 +16854,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P14_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P14TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P14TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -16879,7 +16875,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P14End", value: 1)) {
+                if (context.GetUserValue(key: "G05P14End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -16892,7 +16888,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P15_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P15Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P15Set", value: 1);
             }
 
             public override void Execute() {
@@ -16914,9 +16910,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -16936,8 +16932,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P15_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P15TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P15TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -16957,7 +16953,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P15End", value: 1)) {
+                if (context.GetUserValue(key: "G05P15End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -16970,7 +16966,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P16_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P16Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P16Set", value: 1);
             }
 
             public override void Execute() {
@@ -16992,9 +16988,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17014,8 +17010,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P16_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P16TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P16TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -17035,7 +17031,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P16End", value: 1)) {
+                if (context.GetUserValue(key: "G05P16End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -17048,7 +17044,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P17_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P17Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P17Set", value: 1);
             }
 
             public override void Execute() {
@@ -17070,9 +17066,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17092,8 +17088,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P17_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P17TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P17TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -17113,7 +17109,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P17End", value: 1)) {
+                if (context.GetUserValue(key: "G05P17End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -17126,7 +17122,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P18_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P18Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P18Set", value: 1);
             }
 
             public override void Execute() {
@@ -17148,9 +17144,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17170,8 +17166,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P18_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P18TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P18TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -17191,7 +17187,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P18End", value: 1)) {
+                if (context.GetUserValue(key: "G05P18End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -17204,7 +17200,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P19_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P19Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P19Set", value: 1);
             }
 
             public override void Execute() {
@@ -17226,9 +17222,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17248,8 +17244,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P19_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P19TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P19TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -17269,7 +17265,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P19End", value: 1)) {
+                if (context.GetUserValue(key: "G05P19End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -17282,7 +17278,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P20_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P20Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P20Set", value: 1);
             }
 
             public override void Execute() {
@@ -17304,9 +17300,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17326,8 +17322,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P20_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P20TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P20TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -17347,7 +17343,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P20End", value: 1)) {
+                if (context.GetUserValue(key: "G05P20End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -17360,7 +17356,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P21_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P21Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P21Set", value: 1);
             }
 
             public override void Execute() {
@@ -17382,9 +17378,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17404,8 +17400,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P21_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P21TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P21TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -17425,7 +17421,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P21End", value: 1)) {
+                if (context.GetUserValue(key: "G05P21End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -17438,7 +17434,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P22_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P22Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P22Set", value: 1);
             }
 
             public override void Execute() {
@@ -17460,9 +17456,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17482,8 +17478,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P22_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P22TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P22TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -17503,7 +17499,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P22End", value: 1)) {
+                if (context.GetUserValue(key: "G05P22End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -17516,7 +17512,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P23_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P23Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P23Set", value: 1);
             }
 
             public override void Execute() {
@@ -17538,9 +17534,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17560,8 +17556,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P23_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P23TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P23TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -17581,7 +17577,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P23End", value: 1)) {
+                if (context.GetUserValue(key: "G05P23End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -17594,7 +17590,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P24_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P24Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P24Set", value: 1);
             }
 
             public override void Execute() {
@@ -17616,9 +17612,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17638,8 +17634,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P24_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P24TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P24TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -17659,7 +17655,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P24End", value: 1)) {
+                if (context.GetUserValue(key: "G05P24End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -17672,7 +17668,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P25_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P25Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P25Set", value: 1);
             }
 
             public override void Execute() {
@@ -17694,9 +17690,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17716,8 +17712,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P25_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P25TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P25TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -17737,7 +17733,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P25End", value: 1)) {
+                if (context.GetUserValue(key: "G05P25End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -17750,7 +17746,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P26_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P26Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P26Set", value: 1);
             }
 
             public override void Execute() {
@@ -17772,9 +17768,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17794,8 +17790,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P26_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P26TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P26TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -17815,7 +17811,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P26End", value: 1)) {
+                if (context.GetUserValue(key: "G05P26End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -17828,7 +17824,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P27_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P27Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P27Set", value: 1);
             }
 
             public override void Execute() {
@@ -17850,9 +17846,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17872,8 +17868,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P27_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P27TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P27TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -17893,7 +17889,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P27End", value: 1)) {
+                if (context.GetUserValue(key: "G05P27End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -17906,7 +17902,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P28_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P28Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P28Set", value: 1);
             }
 
             public override void Execute() {
@@ -17928,9 +17924,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -17950,8 +17946,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P28_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P28TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P28TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -17971,7 +17967,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P28End", value: 1)) {
+                if (context.GetUserValue(key: "G05P28End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -17984,7 +17980,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P29_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P29Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P29Set", value: 1);
             }
 
             public override void Execute() {
@@ -18006,9 +18002,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -18028,8 +18024,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P29_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P29TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P29TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -18049,7 +18045,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P29End", value: 1)) {
+                if (context.GetUserValue(key: "G05P29End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -18062,7 +18058,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P30_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P30Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P30Set", value: 1);
             }
 
             public override void Execute() {
@@ -18084,9 +18080,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -18106,8 +18102,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P30_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P30TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P30TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -18127,7 +18123,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P30End", value: 1)) {
+                if (context.GetUserValue(key: "G05P30End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -18140,7 +18136,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P31_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P31Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P31Set", value: 1);
             }
 
             public override void Execute() {
@@ -18162,9 +18158,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -18184,8 +18180,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P31_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P31TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P31TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -18205,7 +18201,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P31End", value: 1)) {
+                if (context.GetUserValue(key: "G05P31End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -18218,7 +18214,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P32_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P32Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P32Set", value: 1);
             }
 
             public override void Execute() {
@@ -18240,9 +18236,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -18262,8 +18258,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P32_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P32TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P32TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -18283,7 +18279,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P32End", value: 1)) {
+                if (context.GetUserValue(key: "G05P32End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -18296,7 +18292,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P33_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P33Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P33Set", value: 1);
             }
 
             public override void Execute() {
@@ -18318,9 +18314,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -18340,8 +18336,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P33_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P33TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P33TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -18361,7 +18357,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P33End", value: 1)) {
+                if (context.GetUserValue(key: "G05P33End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -18374,7 +18370,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P34_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P34Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P34Set", value: 1);
             }
 
             public override void Execute() {
@@ -18396,9 +18392,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -18418,8 +18414,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P34_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P34TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P34TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -18439,7 +18435,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P34End", value: 1)) {
+                if (context.GetUserValue(key: "G05P34End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -18452,7 +18448,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P35_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P35Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P35Set", value: 1);
             }
 
             public override void Execute() {
@@ -18474,9 +18470,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -18496,8 +18492,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P35_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P35TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P35TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -18517,7 +18513,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P35End", value: 1)) {
+                if (context.GetUserValue(key: "G05P35End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -18530,7 +18526,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P36_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P36Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P36Set", value: 1);
             }
 
             public override void Execute() {
@@ -18552,9 +18548,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -18574,8 +18570,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P36_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P36TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P36TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -18595,7 +18591,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P36End", value: 1)) {
+                if (context.GetUserValue(key: "G05P36End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -18608,7 +18604,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P37_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P37Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P37Set", value: 1);
             }
 
             public override void Execute() {
@@ -18630,9 +18626,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -18652,8 +18648,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P37_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P37TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P37TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -18673,7 +18669,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P37End", value: 1)) {
+                if (context.GetUserValue(key: "G05P37End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -18686,7 +18682,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P38_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P38Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P38Set", value: 1);
             }
 
             public override void Execute() {
@@ -18708,9 +18704,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -18730,8 +18726,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P38_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P38TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P38TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -18751,7 +18747,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P38End", value: 1)) {
+                if (context.GetUserValue(key: "G05P38End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -18764,7 +18760,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P39_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P39Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P39Set", value: 1);
             }
 
             public override void Execute() {
@@ -18786,9 +18782,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -18808,8 +18804,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P39_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P39TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P39TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -18829,7 +18825,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P39End", value: 1)) {
+                if (context.GetUserValue(key: "G05P39End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -18842,7 +18838,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P40_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P40Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P40Set", value: 1);
             }
 
             public override void Execute() {
@@ -18864,9 +18860,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -18886,8 +18882,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P40_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P40TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P40TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -18907,7 +18903,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P40End", value: 1)) {
+                if (context.GetUserValue(key: "G05P40End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -18920,7 +18916,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P41_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P41Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P41Set", value: 1);
             }
 
             public override void Execute() {
@@ -18942,9 +18938,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -18964,8 +18960,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P41_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P41TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P41TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -18985,7 +18981,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P41End", value: 1)) {
+                if (context.GetUserValue(key: "G05P41End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -18998,7 +18994,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P42_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P42Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P42Set", value: 1);
             }
 
             public override void Execute() {
@@ -19020,9 +19016,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -19042,8 +19038,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P42_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P42TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P42TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -19063,7 +19059,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P42End", value: 1)) {
+                if (context.GetUserValue(key: "G05P42End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -19076,7 +19072,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P43_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P43Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P43Set", value: 1);
             }
 
             public override void Execute() {
@@ -19098,9 +19094,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -19120,8 +19116,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P43_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P43TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P43TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -19141,7 +19137,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P43End", value: 1)) {
+                if (context.GetUserValue(key: "G05P43End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -19154,7 +19150,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P44_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P44Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P44Set", value: 1);
             }
 
             public override void Execute() {
@@ -19176,9 +19172,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -19198,8 +19194,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P44_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P44TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P44TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -19219,7 +19215,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P44End", value: 1)) {
+                if (context.GetUserValue(key: "G05P44End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -19232,7 +19228,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P45_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P45Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P45Set", value: 1);
             }
 
             public override void Execute() {
@@ -19254,9 +19250,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -19276,8 +19272,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P45_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P45TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P45TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -19297,7 +19293,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P45End", value: 1)) {
+                if (context.GetUserValue(key: "G05P45End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -19310,7 +19306,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P46_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P46Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P46Set", value: 1);
             }
 
             public override void Execute() {
@@ -19332,9 +19328,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -19354,8 +19350,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P46_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P46TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P46TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -19375,7 +19371,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P46End", value: 1)) {
+                if (context.GetUserValue(key: "G05P46End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -19388,7 +19384,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P47_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P47Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P47Set", value: 1);
             }
 
             public override void Execute() {
@@ -19410,9 +19406,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -19432,8 +19428,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P47_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P47TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P47TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -19453,7 +19449,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P47End", value: 1)) {
+                if (context.GetUserValue(key: "G05P47End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -19466,7 +19462,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P48_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P48Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P48Set", value: 1);
             }
 
             public override void Execute() {
@@ -19488,9 +19484,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -19510,8 +19506,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P48_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P48TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P48TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -19531,7 +19527,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P48End", value: 1)) {
+                if (context.GetUserValue(key: "G05P48End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -19544,7 +19540,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P49_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P49Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P49Set", value: 1);
             }
 
             public override void Execute() {
@@ -19566,9 +19562,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -19588,8 +19584,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P49_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P49TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P49TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -19609,7 +19605,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P49End", value: 1)) {
+                if (context.GetUserValue(key: "G05P49End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -19622,7 +19618,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P50_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P50Set", value: 1);
+                context.SetUserValue(triggerId: 500, key: "G05P50Set", value: 1);
             }
 
             public override void Execute() {
@@ -19644,9 +19640,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -19666,8 +19662,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG05P50_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 500, key: "G05P50TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 500, key: "G05P50TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -19687,7 +19683,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G05P50End", value: 1)) {
+                if (context.GetUserValue(key: "G05P50End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -19700,7 +19696,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P101_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P101Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P101Set", value: 1);
             }
 
             public override void Execute() {
@@ -19722,9 +19718,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -19744,8 +19740,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P101_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P101TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P101TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -19765,7 +19761,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P101End", value: 1)) {
+                if (context.GetUserValue(key: "G06P101End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -19778,7 +19774,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P102_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P102Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P102Set", value: 1);
             }
 
             public override void Execute() {
@@ -19800,9 +19796,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -19822,8 +19818,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P102_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P102TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P102TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -19843,7 +19839,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P102End", value: 1)) {
+                if (context.GetUserValue(key: "G06P102End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -19856,7 +19852,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P103_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P103Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P103Set", value: 1);
             }
 
             public override void Execute() {
@@ -19878,9 +19874,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -19900,8 +19896,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P103_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P103TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P103TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -19921,7 +19917,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P103End", value: 1)) {
+                if (context.GetUserValue(key: "G06P103End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -19934,7 +19930,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P104_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P104Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P104Set", value: 1);
             }
 
             public override void Execute() {
@@ -19956,9 +19952,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -19978,8 +19974,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P104_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P104TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P104TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -19999,7 +19995,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P104End", value: 1)) {
+                if (context.GetUserValue(key: "G06P104End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -20012,7 +20008,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P105_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P105Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P105Set", value: 1);
             }
 
             public override void Execute() {
@@ -20034,9 +20030,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -20056,8 +20052,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P105_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P105TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P105TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -20077,7 +20073,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P105End", value: 1)) {
+                if (context.GetUserValue(key: "G06P105End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -20090,7 +20086,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P106_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P106Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P106Set", value: 1);
             }
 
             public override void Execute() {
@@ -20112,9 +20108,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -20134,8 +20130,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P106_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P106TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P106TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -20155,7 +20151,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P106End", value: 1)) {
+                if (context.GetUserValue(key: "G06P106End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -20168,7 +20164,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P107_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P107Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P107Set", value: 1);
             }
 
             public override void Execute() {
@@ -20190,9 +20186,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -20212,8 +20208,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P107_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P107TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P107TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -20233,7 +20229,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P107End", value: 1)) {
+                if (context.GetUserValue(key: "G06P107End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -20246,7 +20242,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P108_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P108Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P108Set", value: 1);
             }
 
             public override void Execute() {
@@ -20268,9 +20264,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -20290,8 +20286,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P108_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P108TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P108TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -20311,7 +20307,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P108End", value: 1)) {
+                if (context.GetUserValue(key: "G06P108End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -20324,7 +20320,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P109_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P109Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P109Set", value: 1);
             }
 
             public override void Execute() {
@@ -20346,9 +20342,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -20368,8 +20364,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P109_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P109TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P109TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -20389,7 +20385,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P109End", value: 1)) {
+                if (context.GetUserValue(key: "G06P109End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -20402,7 +20398,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P110_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P110Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P110Set", value: 1);
             }
 
             public override void Execute() {
@@ -20424,9 +20420,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -20446,8 +20442,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P110_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P110TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P110TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -20467,7 +20463,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P110End", value: 1)) {
+                if (context.GetUserValue(key: "G06P110End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -20480,7 +20476,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P201_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P201Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P201Set", value: 1);
             }
 
             public override void Execute() {
@@ -20502,9 +20498,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -20524,8 +20520,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P201_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P201TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P201TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -20545,7 +20541,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P201End", value: 1)) {
+                if (context.GetUserValue(key: "G06P201End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -20558,7 +20554,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P202_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P202Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P202Set", value: 1);
             }
 
             public override void Execute() {
@@ -20580,9 +20576,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -20602,8 +20598,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P202_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P202TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P202TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -20623,7 +20619,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P202End", value: 1)) {
+                if (context.GetUserValue(key: "G06P202End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -20636,7 +20632,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P203_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P203Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P203Set", value: 1);
             }
 
             public override void Execute() {
@@ -20658,9 +20654,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -20680,8 +20676,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P203_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P203TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P203TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -20701,7 +20697,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P203End", value: 1)) {
+                if (context.GetUserValue(key: "G06P203End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -20714,7 +20710,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P204_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P204Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P204Set", value: 1);
             }
 
             public override void Execute() {
@@ -20736,9 +20732,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -20758,8 +20754,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P204_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P204TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P204TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -20779,7 +20775,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P204End", value: 1)) {
+                if (context.GetUserValue(key: "G06P204End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -20792,7 +20788,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P205_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P205Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P205Set", value: 1);
             }
 
             public override void Execute() {
@@ -20814,9 +20810,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -20836,8 +20832,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P205_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P205TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P205TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -20857,7 +20853,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P205End", value: 1)) {
+                if (context.GetUserValue(key: "G06P205End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -20870,7 +20866,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P206_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P206Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P206Set", value: 1);
             }
 
             public override void Execute() {
@@ -20892,9 +20888,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -20914,8 +20910,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P206_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P206TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P206TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -20935,7 +20931,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P206End", value: 1)) {
+                if (context.GetUserValue(key: "G06P206End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -20948,7 +20944,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P207_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P207Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P207Set", value: 1);
             }
 
             public override void Execute() {
@@ -20970,9 +20966,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -20992,8 +20988,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P207_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P207TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P207TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -21013,7 +21009,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P207End", value: 1)) {
+                if (context.GetUserValue(key: "G06P207End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -21026,7 +21022,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P208_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P208Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P208Set", value: 1);
             }
 
             public override void Execute() {
@@ -21048,9 +21044,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -21070,8 +21066,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P208_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P208TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P208TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -21091,7 +21087,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P208End", value: 1)) {
+                if (context.GetUserValue(key: "G06P208End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -21104,7 +21100,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P209_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P209Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P209Set", value: 1);
             }
 
             public override void Execute() {
@@ -21126,9 +21122,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -21148,8 +21144,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P209_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P209TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P209TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -21169,7 +21165,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P209End", value: 1)) {
+                if (context.GetUserValue(key: "G06P209End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -21182,7 +21178,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P210_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P210Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P210Set", value: 1);
             }
 
             public override void Execute() {
@@ -21204,9 +21200,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -21226,8 +21222,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P210_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P210TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P210TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -21247,7 +21243,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P210End", value: 1)) {
+                if (context.GetUserValue(key: "G06P210End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -21260,7 +21256,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P211_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P211Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P211Set", value: 1);
             }
 
             public override void Execute() {
@@ -21282,9 +21278,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -21304,8 +21300,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P211_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P211TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P211TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -21325,7 +21321,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P211End", value: 1)) {
+                if (context.GetUserValue(key: "G06P211End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -21338,7 +21334,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P212_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P212Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P212Set", value: 1);
             }
 
             public override void Execute() {
@@ -21360,9 +21356,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -21382,8 +21378,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P212_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P212TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P212TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -21403,7 +21399,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P212End", value: 1)) {
+                if (context.GetUserValue(key: "G06P212End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -21416,7 +21412,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P213_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P213Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P213Set", value: 1);
             }
 
             public override void Execute() {
@@ -21438,9 +21434,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -21460,8 +21456,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P213_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P213TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P213TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -21481,7 +21477,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P213End", value: 1)) {
+                if (context.GetUserValue(key: "G06P213End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -21494,7 +21490,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P214_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P214Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P214Set", value: 1);
             }
 
             public override void Execute() {
@@ -21516,9 +21512,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -21538,8 +21534,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P214_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P214TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P214TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -21559,7 +21555,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P214End", value: 1)) {
+                if (context.GetUserValue(key: "G06P214End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -21572,7 +21568,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P215_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P215Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P215Set", value: 1);
             }
 
             public override void Execute() {
@@ -21594,9 +21590,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -21616,8 +21612,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P215_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P215TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P215TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -21637,7 +21633,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P215End", value: 1)) {
+                if (context.GetUserValue(key: "G06P215End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -21650,7 +21646,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P216_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P216Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P216Set", value: 1);
             }
 
             public override void Execute() {
@@ -21672,9 +21668,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -21694,8 +21690,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P216_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P216TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P216TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -21715,7 +21711,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P216End", value: 1)) {
+                if (context.GetUserValue(key: "G06P216End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -21728,7 +21724,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P217_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P217Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P217Set", value: 1);
             }
 
             public override void Execute() {
@@ -21750,9 +21746,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -21772,8 +21768,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P217_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P217TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P217TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -21793,7 +21789,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P217End", value: 1)) {
+                if (context.GetUserValue(key: "G06P217End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -21806,7 +21802,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P218_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P218Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P218Set", value: 1);
             }
 
             public override void Execute() {
@@ -21828,9 +21824,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -21850,8 +21846,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P218_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P218TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P218TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -21871,7 +21867,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P218End", value: 1)) {
+                if (context.GetUserValue(key: "G06P218End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -21884,7 +21880,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P219_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P219Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P219Set", value: 1);
             }
 
             public override void Execute() {
@@ -21906,9 +21902,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -21928,8 +21924,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P219_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P219TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P219TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -21949,7 +21945,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P219End", value: 1)) {
+                if (context.GetUserValue(key: "G06P219End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -21962,7 +21958,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P220_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P220Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P220Set", value: 1);
             }
 
             public override void Execute() {
@@ -21984,9 +21980,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -22006,8 +22002,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P220_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P220TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P220TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -22027,7 +22023,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P220End", value: 1)) {
+                if (context.GetUserValue(key: "G06P220End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -22040,7 +22036,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P301_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P301Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P301Set", value: 1);
             }
 
             public override void Execute() {
@@ -22062,9 +22058,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -22084,8 +22080,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P301_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P301TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P301TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -22105,7 +22101,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P301End", value: 1)) {
+                if (context.GetUserValue(key: "G06P301End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -22118,7 +22114,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P302_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P302Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P302Set", value: 1);
             }
 
             public override void Execute() {
@@ -22140,9 +22136,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -22162,8 +22158,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P302_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P302TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P302TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -22183,7 +22179,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P302End", value: 1)) {
+                if (context.GetUserValue(key: "G06P302End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -22196,7 +22192,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P303_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P303Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P303Set", value: 1);
             }
 
             public override void Execute() {
@@ -22218,9 +22214,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -22240,8 +22236,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P303_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P303TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P303TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -22261,7 +22257,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P303End", value: 1)) {
+                if (context.GetUserValue(key: "G06P303End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -22274,7 +22270,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P304_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P304Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P304Set", value: 1);
             }
 
             public override void Execute() {
@@ -22296,9 +22292,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -22318,8 +22314,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P304_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P304TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P304TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -22339,7 +22335,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P304End", value: 1)) {
+                if (context.GetUserValue(key: "G06P304End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -22352,7 +22348,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P305_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P305Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P305Set", value: 1);
             }
 
             public override void Execute() {
@@ -22374,9 +22370,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -22396,8 +22392,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P305_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P305TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P305TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -22417,7 +22413,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P305End", value: 1)) {
+                if (context.GetUserValue(key: "G06P305End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -22430,7 +22426,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P306_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P306Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P306Set", value: 1);
             }
 
             public override void Execute() {
@@ -22452,9 +22448,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -22474,8 +22470,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P306_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P306TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P306TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -22495,7 +22491,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P306End", value: 1)) {
+                if (context.GetUserValue(key: "G06P306End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -22508,7 +22504,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P307_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P307Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P307Set", value: 1);
             }
 
             public override void Execute() {
@@ -22530,9 +22526,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -22552,8 +22548,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P307_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P307TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P307TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -22573,7 +22569,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P307End", value: 1)) {
+                if (context.GetUserValue(key: "G06P307End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -22586,7 +22582,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P308_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P308Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P308Set", value: 1);
             }
 
             public override void Execute() {
@@ -22608,9 +22604,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -22630,8 +22626,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P308_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P308TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P308TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -22651,7 +22647,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P308End", value: 1)) {
+                if (context.GetUserValue(key: "G06P308End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -22664,7 +22660,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P309_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P309Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P309Set", value: 1);
             }
 
             public override void Execute() {
@@ -22686,9 +22682,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -22708,8 +22704,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P309_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P309TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P309TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -22729,7 +22725,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P309End", value: 1)) {
+                if (context.GetUserValue(key: "G06P309End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -22742,7 +22738,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P310_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P310Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P310Set", value: 1);
             }
 
             public override void Execute() {
@@ -22764,9 +22760,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -22786,8 +22782,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P310_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P310TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P310TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -22807,7 +22803,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P310End", value: 1)) {
+                if (context.GetUserValue(key: "G06P310End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -22820,7 +22816,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P311_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P311Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P311Set", value: 1);
             }
 
             public override void Execute() {
@@ -22842,9 +22838,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -22864,8 +22860,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P311_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P311TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P311TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -22885,7 +22881,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P311End", value: 1)) {
+                if (context.GetUserValue(key: "G06P311End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -22898,7 +22894,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P312_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P312Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P312Set", value: 1);
             }
 
             public override void Execute() {
@@ -22920,9 +22916,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -22942,8 +22938,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P312_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P312TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P312TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -22963,7 +22959,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P312End", value: 1)) {
+                if (context.GetUserValue(key: "G06P312End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -22976,7 +22972,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P313_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P313Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P313Set", value: 1);
             }
 
             public override void Execute() {
@@ -22998,9 +22994,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -23020,8 +23016,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P313_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P313TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P313TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -23041,7 +23037,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P313End", value: 1)) {
+                if (context.GetUserValue(key: "G06P313End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -23054,7 +23050,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P314_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P314Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P314Set", value: 1);
             }
 
             public override void Execute() {
@@ -23076,9 +23072,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -23098,8 +23094,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P314_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P314TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P314TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -23119,7 +23115,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P314End", value: 1)) {
+                if (context.GetUserValue(key: "G06P314End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -23132,7 +23128,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P315_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P315Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P315Set", value: 1);
             }
 
             public override void Execute() {
@@ -23154,9 +23150,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -23176,8 +23172,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P315_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P315TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P315TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -23197,7 +23193,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P315End", value: 1)) {
+                if (context.GetUserValue(key: "G06P315End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -23210,7 +23206,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P316_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P316Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P316Set", value: 1);
             }
 
             public override void Execute() {
@@ -23232,9 +23228,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -23254,8 +23250,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P316_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P316TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P316TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -23275,7 +23271,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P316End", value: 1)) {
+                if (context.GetUserValue(key: "G06P316End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -23288,7 +23284,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P317_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P317Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P317Set", value: 1);
             }
 
             public override void Execute() {
@@ -23310,9 +23306,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -23332,8 +23328,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P317_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P317TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P317TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -23353,7 +23349,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P317End", value: 1)) {
+                if (context.GetUserValue(key: "G06P317End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -23366,7 +23362,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P318_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P318Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P318Set", value: 1);
             }
 
             public override void Execute() {
@@ -23388,9 +23384,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -23410,8 +23406,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P318_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P318TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P318TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -23431,7 +23427,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P318End", value: 1)) {
+                if (context.GetUserValue(key: "G06P318End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -23444,7 +23440,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P319_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P319Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P319Set", value: 1);
             }
 
             public override void Execute() {
@@ -23466,9 +23462,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -23488,8 +23484,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P319_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P319TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P319TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -23509,7 +23505,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P319End", value: 1)) {
+                if (context.GetUserValue(key: "G06P319End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -23522,7 +23518,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P320_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P320Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P320Set", value: 1);
             }
 
             public override void Execute() {
@@ -23544,9 +23540,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -23566,8 +23562,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P320_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P320TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P320TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -23587,7 +23583,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P320End", value: 1)) {
+                if (context.GetUserValue(key: "G06P320End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -23600,7 +23596,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P401_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P401Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P401Set", value: 1);
             }
 
             public override void Execute() {
@@ -23622,9 +23618,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -23644,8 +23640,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P401_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P401TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P401TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -23665,7 +23661,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P401End", value: 1)) {
+                if (context.GetUserValue(key: "G06P401End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -23678,7 +23674,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P402_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P402Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P402Set", value: 1);
             }
 
             public override void Execute() {
@@ -23700,9 +23696,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -23722,8 +23718,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P402_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P402TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P402TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -23743,7 +23739,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P402End", value: 1)) {
+                if (context.GetUserValue(key: "G06P402End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -23756,7 +23752,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P403_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P403Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P403Set", value: 1);
             }
 
             public override void Execute() {
@@ -23778,9 +23774,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -23800,8 +23796,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P403_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P403TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P403TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -23821,7 +23817,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P403End", value: 1)) {
+                if (context.GetUserValue(key: "G06P403End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -23834,7 +23830,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P404_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P404Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P404Set", value: 1);
             }
 
             public override void Execute() {
@@ -23856,9 +23852,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -23878,8 +23874,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P404_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P404TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P404TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -23899,7 +23895,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P404End", value: 1)) {
+                if (context.GetUserValue(key: "G06P404End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -23912,7 +23908,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P405_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P405Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P405Set", value: 1);
             }
 
             public override void Execute() {
@@ -23934,9 +23930,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -23956,8 +23952,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P405_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P405TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P405TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -23977,7 +23973,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P405End", value: 1)) {
+                if (context.GetUserValue(key: "G06P405End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -23990,7 +23986,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P406_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P406Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P406Set", value: 1);
             }
 
             public override void Execute() {
@@ -24012,9 +24008,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -24034,8 +24030,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P406_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P406TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P406TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -24055,7 +24051,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P406End", value: 1)) {
+                if (context.GetUserValue(key: "G06P406End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -24068,7 +24064,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P407_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P407Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P407Set", value: 1);
             }
 
             public override void Execute() {
@@ -24090,9 +24086,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -24112,8 +24108,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P407_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P407TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P407TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -24133,7 +24129,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P407End", value: 1)) {
+                if (context.GetUserValue(key: "G06P407End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -24146,7 +24142,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P408_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P408Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P408Set", value: 1);
             }
 
             public override void Execute() {
@@ -24168,9 +24164,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -24190,8 +24186,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P408_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P408TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P408TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -24211,7 +24207,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P408End", value: 1)) {
+                if (context.GetUserValue(key: "G06P408End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -24224,7 +24220,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P409_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P409Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P409Set", value: 1);
             }
 
             public override void Execute() {
@@ -24246,9 +24242,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -24268,8 +24264,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P409_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P409TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P409TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -24289,7 +24285,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P409End", value: 1)) {
+                if (context.GetUserValue(key: "G06P409End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -24302,7 +24298,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P410_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P410Set", value: 1);
+                context.SetUserValue(triggerId: 600, key: "G06P410Set", value: 1);
             }
 
             public override void Execute() {
@@ -24324,9 +24320,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -24346,8 +24342,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG06P410_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 600, key: "G06P410TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 600, key: "G06P410TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -24367,7 +24363,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G06P410End", value: 1)) {
+                if (context.GetUserValue(key: "G06P410End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -24380,7 +24376,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P201_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P201Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P201Set", value: 1);
             }
 
             public override void Execute() {
@@ -24402,9 +24398,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -24424,8 +24420,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P201_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P201TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P201TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -24445,7 +24441,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P201End", value: 1)) {
+                if (context.GetUserValue(key: "G07P201End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -24458,7 +24454,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P202_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P202Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P202Set", value: 1);
             }
 
             public override void Execute() {
@@ -24480,9 +24476,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -24502,8 +24498,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P202_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P202TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P202TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -24523,7 +24519,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P202End", value: 1)) {
+                if (context.GetUserValue(key: "G07P202End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -24536,7 +24532,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P203_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P203Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P203Set", value: 1);
             }
 
             public override void Execute() {
@@ -24558,9 +24554,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -24580,8 +24576,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P203_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P203TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P203TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -24601,7 +24597,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P203End", value: 1)) {
+                if (context.GetUserValue(key: "G07P203End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -24614,7 +24610,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P204_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P204Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P204Set", value: 1);
             }
 
             public override void Execute() {
@@ -24636,9 +24632,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -24658,8 +24654,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P204_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P204TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P204TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -24679,7 +24675,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P204End", value: 1)) {
+                if (context.GetUserValue(key: "G07P204End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -24692,7 +24688,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P205_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P205Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P205Set", value: 1);
             }
 
             public override void Execute() {
@@ -24714,9 +24710,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -24736,8 +24732,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P205_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P205TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P205TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -24757,7 +24753,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P205End", value: 1)) {
+                if (context.GetUserValue(key: "G07P205End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -24770,7 +24766,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P206_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P206Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P206Set", value: 1);
             }
 
             public override void Execute() {
@@ -24792,9 +24788,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -24814,8 +24810,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P206_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P206TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P206TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -24835,7 +24831,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P206End", value: 1)) {
+                if (context.GetUserValue(key: "G07P206End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -24848,7 +24844,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P207_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P207Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P207Set", value: 1);
             }
 
             public override void Execute() {
@@ -24870,9 +24866,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -24892,8 +24888,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P207_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P207TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P207TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -24913,7 +24909,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P207End", value: 1)) {
+                if (context.GetUserValue(key: "G07P207End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -24926,7 +24922,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P208_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P208Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P208Set", value: 1);
             }
 
             public override void Execute() {
@@ -24948,9 +24944,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -24970,8 +24966,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P208_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P208TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P208TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -24991,7 +24987,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P208End", value: 1)) {
+                if (context.GetUserValue(key: "G07P208End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -25004,7 +25000,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P209_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P209Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P209Set", value: 1);
             }
 
             public override void Execute() {
@@ -25026,9 +25022,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -25048,8 +25044,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P209_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P209TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P209TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -25069,7 +25065,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P209End", value: 1)) {
+                if (context.GetUserValue(key: "G07P209End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -25082,7 +25078,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P210_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P210Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P210Set", value: 1);
             }
 
             public override void Execute() {
@@ -25104,9 +25100,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -25126,8 +25122,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P210_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P210TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P210TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -25147,7 +25143,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P210End", value: 1)) {
+                if (context.GetUserValue(key: "G07P210End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -25160,7 +25156,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P301_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P301Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P301Set", value: 1);
             }
 
             public override void Execute() {
@@ -25182,9 +25178,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -25204,8 +25200,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P301_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P301TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P301TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -25225,7 +25221,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P301End", value: 1)) {
+                if (context.GetUserValue(key: "G07P301End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -25238,7 +25234,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P302_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P302Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P302Set", value: 1);
             }
 
             public override void Execute() {
@@ -25260,9 +25256,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -25282,8 +25278,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P302_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P302TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P302TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -25303,7 +25299,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P302End", value: 1)) {
+                if (context.GetUserValue(key: "G07P302End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -25316,7 +25312,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P303_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P303Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P303Set", value: 1);
             }
 
             public override void Execute() {
@@ -25338,9 +25334,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -25360,8 +25356,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P303_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P303TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P303TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -25381,7 +25377,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P303End", value: 1)) {
+                if (context.GetUserValue(key: "G07P303End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -25394,7 +25390,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P304_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P304Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P304Set", value: 1);
             }
 
             public override void Execute() {
@@ -25416,9 +25412,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -25438,8 +25434,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P304_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P304TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P304TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -25459,7 +25455,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P304End", value: 1)) {
+                if (context.GetUserValue(key: "G07P304End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -25472,7 +25468,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P305_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P305Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P305Set", value: 1);
             }
 
             public override void Execute() {
@@ -25494,9 +25490,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -25516,8 +25512,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P305_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P305TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P305TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -25537,7 +25533,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P305End", value: 1)) {
+                if (context.GetUserValue(key: "G07P305End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -25550,7 +25546,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P306_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P306Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P306Set", value: 1);
             }
 
             public override void Execute() {
@@ -25572,9 +25568,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -25594,8 +25590,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P306_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P306TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P306TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -25615,7 +25611,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P306End", value: 1)) {
+                if (context.GetUserValue(key: "G07P306End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -25628,7 +25624,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P307_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P307Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P307Set", value: 1);
             }
 
             public override void Execute() {
@@ -25650,9 +25646,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -25672,8 +25668,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P307_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P307TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P307TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -25693,7 +25689,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P307End", value: 1)) {
+                if (context.GetUserValue(key: "G07P307End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -25706,7 +25702,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P308_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P308Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P308Set", value: 1);
             }
 
             public override void Execute() {
@@ -25728,9 +25724,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -25750,8 +25746,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P308_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P308TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P308TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -25771,7 +25767,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P308End", value: 1)) {
+                if (context.GetUserValue(key: "G07P308End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -25784,7 +25780,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P309_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P309Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P309Set", value: 1);
             }
 
             public override void Execute() {
@@ -25806,9 +25802,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -25828,8 +25824,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P309_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P309TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P309TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -25849,7 +25845,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P309End", value: 1)) {
+                if (context.GetUserValue(key: "G07P309End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -25862,7 +25858,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P310_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P310Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P310Set", value: 1);
             }
 
             public override void Execute() {
@@ -25884,9 +25880,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -25906,8 +25902,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P310_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P310TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P310TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -25927,7 +25923,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P310End", value: 1)) {
+                if (context.GetUserValue(key: "G07P310End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -25940,7 +25936,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P401_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P401Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P401Set", value: 1);
             }
 
             public override void Execute() {
@@ -25962,9 +25958,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -25984,8 +25980,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P401_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P401TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P401TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -26005,7 +26001,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P401End", value: 1)) {
+                if (context.GetUserValue(key: "G07P401End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -26018,7 +26014,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P402_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P402Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P402Set", value: 1);
             }
 
             public override void Execute() {
@@ -26040,9 +26036,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -26062,8 +26058,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P402_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P402TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P402TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -26083,7 +26079,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P402End", value: 1)) {
+                if (context.GetUserValue(key: "G07P402End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -26096,7 +26092,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P403_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P403Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P403Set", value: 1);
             }
 
             public override void Execute() {
@@ -26118,9 +26114,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -26140,8 +26136,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P403_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P403TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P403TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -26161,7 +26157,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P403End", value: 1)) {
+                if (context.GetUserValue(key: "G07P403End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -26174,7 +26170,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P404_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P404Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P404Set", value: 1);
             }
 
             public override void Execute() {
@@ -26196,9 +26192,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -26218,8 +26214,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P404_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P404TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P404TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -26239,7 +26235,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P404End", value: 1)) {
+                if (context.GetUserValue(key: "G07P404End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -26252,7 +26248,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P405_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P405Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P405Set", value: 1);
             }
 
             public override void Execute() {
@@ -26274,9 +26270,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -26296,8 +26292,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P405_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P405TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P405TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -26317,7 +26313,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P405End", value: 1)) {
+                if (context.GetUserValue(key: "G07P405End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -26330,7 +26326,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P406_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P406Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P406Set", value: 1);
             }
 
             public override void Execute() {
@@ -26352,9 +26348,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -26374,8 +26370,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P406_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P406TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P406TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -26395,7 +26391,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P406End", value: 1)) {
+                if (context.GetUserValue(key: "G07P406End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -26408,7 +26404,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P407_RoundCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P407Set", value: 1);
+                context.SetUserValue(triggerId: 700, key: "G07P407Set", value: 1);
             }
 
             public override void Execute() {
@@ -26430,9 +26426,9 @@ namespace Maple2.Trigger._61000008_me {
                 context.SetProductionUI(arg1: 1);
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$61000008_ME__01_MASSIVEMAIN__32$");
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "DJDD_Dancing_01");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "DJDD_Dancing_01");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619,
                         620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633
                     }, arg2: false, arg3: 2000, arg4: 0, arg5: 2f);
@@ -26452,8 +26448,8 @@ namespace Maple2.Trigger._61000008_me {
             internal StateG07P407_Check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 700, key: "G07P407TimeLimit", value: 1);
-                context.PlaySystemSoundInBox(arg1: new int[] {6901, 6902, 6903, 6904, 6905, 6906},
+                context.SetUserValue(triggerId: 700, key: "G07P407TimeLimit", value: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906},
                     arg2: "DDStop_Stage_Fail_01");
             }
 
@@ -26473,7 +26469,7 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "G07P407End", value: 1)) {
+                if (context.GetUserValue(key: "G07P407End") == 1) {
                     context.State = new StateRoundCheckOut(context);
                     return;
                 }
@@ -26486,9 +26482,9 @@ namespace Maple2.Trigger._61000008_me {
             internal StateRoundCheckOut(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4, key: "BannerCheckIn", value: 1);
+                context.SetUserValue(triggerId: 4, key: "BannerCheckIn", value: 1);
                 context.SetMesh(
-                    arg1: new int[]
+                    arg1: new[]
                         {8900, 8901, 8902, 8903, 8904, 8905, 8906, 8907, 8908, 8909, 8910, 8911, 8912, 8913, 8914},
                     arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
@@ -26509,32 +26505,32 @@ namespace Maple2.Trigger._61000008_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Round", value: 1)) {
+                if (context.GetUserValue(key: "Round") == 1) {
                     context.State = new StateR01EndDelay(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Round", value: 2)) {
+                if (context.GetUserValue(key: "Round") == 2) {
                     context.State = new StateR02EndDelay(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Round", value: 3)) {
+                if (context.GetUserValue(key: "Round") == 3) {
                     context.State = new StateR03EndDelay(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Round", value: 4)) {
+                if (context.GetUserValue(key: "Round") == 4) {
                     context.State = new StateR04EndDelay(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Round", value: 6)) {
+                if (context.GetUserValue(key: "Round") == 6) {
                     context.State = new StateR04GambleEndDelay(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Round", value: 5)) {
+                if (context.GetUserValue(key: "Round") == 5) {
                     context.State = new StateR05EndDelay(context);
                     return;
                 }

@@ -1,17 +1,13 @@
-using System;
-
 namespace Maple2.Trigger._02000253_bf {
     public static class _ground {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {701}, arg2: false);
-                context.SetEffect(arg1: new int[] {702}, arg2: false);
+                context.SetEffect(arg1: new[] {701}, arg2: false);
+                context.SetEffect(arg1: new[] {702}, arg2: false);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125,
                         126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144,
                         145, 146, 147, 148, 149, 150, 151
@@ -19,7 +15,7 @@ namespace Maple2.Trigger._02000253_bf {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 906, arg2: 1)) {
+                if (context.GetUserCount(boxId: 906) == 1) {
                     context.State = new State벨라소환(context);
                     return;
                 }
@@ -33,7 +29,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 5);
-                context.CreateMonster(arg1: new int[] {1001});
+                context.CreateMonster(arg1: new[] {1001});
             }
 
             public override void Execute() {
@@ -88,7 +84,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 140);
-                context.DestroyMonster(arg1: new int[] {1001});
+                context.DestroyMonster(arg1: new[] {1001});
             }
 
             public override void Execute() {

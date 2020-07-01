@@ -1,35 +1,31 @@
-using System;
-
 namespace Maple2.Trigger._02000537_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {5000}, arg2: true);
-                context.SetMesh(arg1: new int[] {8900}, arg2: true);
-                context.SetMesh(arg1: new int[] {8901}, arg2: true);
-                context.SetMesh(arg1: new int[] {8902}, arg2: true);
-                context.SetMesh(arg1: new int[] {8903}, arg2: true);
-                context.SetMesh(arg1: new int[] {8904}, arg2: true);
-                context.SetMesh(arg1: new int[] {8905}, arg2: true);
-                context.SetEffect(arg1: new int[] {8000}, arg2: false);
-                context.SetEffect(arg1: new int[] {8001}, arg2: false);
-                context.SetSkill(arg1: new int[] {9000}, arg2: false);
-                context.EnableSpawnPointPc(spawnPointID: 0, isEnable: true);
-                context.EnableSpawnPointPc(spawnPointID: 1, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 2, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 3, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 4, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 5, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 6, isEnable: false);
+                context.SetMesh(arg1: new[] {5000}, arg2: true);
+                context.SetMesh(arg1: new[] {8900}, arg2: true);
+                context.SetMesh(arg1: new[] {8901}, arg2: true);
+                context.SetMesh(arg1: new[] {8902}, arg2: true);
+                context.SetMesh(arg1: new[] {8903}, arg2: true);
+                context.SetMesh(arg1: new[] {8904}, arg2: true);
+                context.SetMesh(arg1: new[] {8905}, arg2: true);
+                context.SetEffect(arg1: new[] {8000}, arg2: false);
+                context.SetEffect(arg1: new[] {8001}, arg2: false);
+                context.SetSkill(arg1: new[] {9000}, arg2: false);
+                context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
+                context.EnableSpawnPointPc(spawnPointId: 1, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 2, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 3, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 4, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 5, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 6, isEnable: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {701}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {701}, arg2: 0)) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -42,12 +38,12 @@ namespace Maple2.Trigger._02000537_bf {
             internal Stateready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000537_BF__MAIN__0$", arg3: new int[] {3000});
-                context.CreateMonster(arg1: new int[] {101, 1011, 1012, 1013, 1014, 1017, 1018, 1019}, arg2: false);
+                context.SetEventUI(arg1: 1, arg2: "$02000537_BF__MAIN__0$", arg3: 3000);
+                context.CreateMonster(arg1: new[] {101, 1011, 1012, 1013, 1014, 1017, 1018, 1019}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101, 1011, 1012, 1013, 1014, 1017, 1018, 1019})) {
+                if (context.MonsterDead(arg1: new[] {101, 1011, 1012, 1013, 1014, 1017, 1018, 1019})) {
                     context.State = new State도마뱀스폰1(context);
                     return;
                 }
@@ -60,12 +56,12 @@ namespace Maple2.Trigger._02000537_bf {
             internal State도마뱀스폰1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {8900}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1015, 1016}, arg2: true);
+                context.SetMesh(arg1: new[] {8900}, arg2: false);
+                context.CreateMonster(arg1: new[] {1015, 1016}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {702}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {702}, arg2: 0)) {
                     context.State = new State702시작(context);
                     return;
                 }
@@ -78,15 +74,15 @@ namespace Maple2.Trigger._02000537_bf {
             internal State702시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointID: 0, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 1, isEnable: true);
-                context.CreateMonster(arg1: new int[] {102, 1022, 1023, 1024, 1025}, arg2: true);
-                context.SideNpcTalk(npcID: 22600006, illust: "DesertDragonBigBlue_normal", duration: 4000,
+                context.EnableSpawnPointPc(spawnPointId: 0, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 1, isEnable: true);
+                context.CreateMonster(arg1: new[] {102, 1022, 1023, 1024, 1025}, arg2: true);
+                context.SideNpcTalk(npcId: 22600006, illust: "DesertDragonBigBlue_normal", duration: 4000,
                     script: "$02000537_BF__MAIN__1$");
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {102, 1022, 1023, 1024, 1025})) {
+                if (context.MonsterDead(arg1: new[] {102, 1022, 1023, 1024, 1025})) {
                     context.State = new State702마무리1(context);
                     return;
                 }
@@ -99,7 +95,7 @@ namespace Maple2.Trigger._02000537_bf {
             internal State702마무리1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {8901}, arg2: false);
+                context.SetMesh(arg1: new[] {8901}, arg2: false);
             }
 
             public override void Execute() {
@@ -116,12 +112,12 @@ namespace Maple2.Trigger._02000537_bf {
             internal State702마무리2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
                     script: "$02000537_BF__MAIN__2$");
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {703}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {703}, arg2: 0)) {
                     context.State = new State703시작(context);
                     return;
                 }
@@ -134,9 +130,9 @@ namespace Maple2.Trigger._02000537_bf {
             internal State703시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1026});
-                context.EnableSpawnPointPc(spawnPointID: 1, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 2, isEnable: true);
+                context.DestroyMonster(arg1: new[] {1026});
+                context.EnableSpawnPointPc(spawnPointId: 1, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 2, isEnable: true);
             }
 
             public override void Execute() {
@@ -153,13 +149,13 @@ namespace Maple2.Trigger._02000537_bf {
             internal State703진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000537_BF__MAIN__3$", arg3: new int[] {3000});
-                context.CreateMonster(arg1: new int[] {109}, arg2: true);
-                context.CreateMonster(arg1: new int[] {103, 1031, 1032, 1033, 1034}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "$02000537_BF__MAIN__3$", arg3: 3000);
+                context.CreateMonster(arg1: new[] {109}, arg2: true);
+                context.CreateMonster(arg1: new[] {103, 1031, 1032, 1033, 1034}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {103, 1031, 1032, 1033, 1034})) {
+                if (context.MonsterDead(arg1: new[] {103, 1031, 1032, 1033, 1034})) {
                     context.State = new State703마무리1(context);
                     return;
                 }
@@ -172,8 +168,8 @@ namespace Maple2.Trigger._02000537_bf {
             internal State703마무리1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {8902}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1035}, arg2: true);
+                context.SetMesh(arg1: new[] {8902}, arg2: false);
+                context.CreateMonster(arg1: new[] {1035}, arg2: true);
             }
 
             public override void Execute() {
@@ -190,12 +186,12 @@ namespace Maple2.Trigger._02000537_bf {
             internal State703마무리2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11004644, illust: "SlaveMan3_normal", duration: 4000,
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000,
                     script: "$02000537_BF__MAIN__4$");
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {704}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {704}, arg2: 0)) {
                     context.State = new State704시작(context);
                     return;
                 }
@@ -208,9 +204,9 @@ namespace Maple2.Trigger._02000537_bf {
             internal State704시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointID: 2, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 3, isEnable: true);
-                context.CreateMonster(arg1: new int[] {104, 1041, 1042, 1043, 1044}, arg2: false);
+                context.EnableSpawnPointPc(spawnPointId: 2, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 3, isEnable: true);
+                context.CreateMonster(arg1: new[] {104, 1041, 1042, 1043, 1044}, arg2: false);
             }
 
             public override void Execute() {
@@ -227,12 +223,12 @@ namespace Maple2.Trigger._02000537_bf {
             internal State704진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
                     script: "$02000537_BF__MAIN__5$");
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {104, 1041, 1042, 1043, 1044})) {
+                if (context.MonsterDead(arg1: new[] {104, 1041, 1042, 1043, 1044})) {
                     context.State = new State704마무리(context);
                     return;
                 }
@@ -245,13 +241,13 @@ namespace Maple2.Trigger._02000537_bf {
             internal State704마무리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {8903}, arg2: false);
-                context.SideNpcTalk(npcID: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
+                context.SetMesh(arg1: new[] {8903}, arg2: false);
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
                     script: "$02000537_BF__MAIN__6$");
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {705}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {705}, arg2: 0)) {
                     context.State = new State705시작(context);
                     return;
                 }
@@ -264,8 +260,8 @@ namespace Maple2.Trigger._02000537_bf {
             internal State705시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointID: 3, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 4, isEnable: true);
+                context.EnableSpawnPointPc(spawnPointId: 3, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 4, isEnable: true);
             }
 
             public override void Execute() {
@@ -282,13 +278,13 @@ namespace Maple2.Trigger._02000537_bf {
             internal State705진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {105, 1051, 1052, 1053, 1054}, arg2: true);
-                context.SideNpcTalk(npcID: 22600006, illust: "DesertDragonBigBlue_normal", duration: 4000,
+                context.CreateMonster(arg1: new[] {105, 1051, 1052, 1053, 1054}, arg2: true);
+                context.SideNpcTalk(npcId: 22600006, illust: "DesertDragonBigBlue_normal", duration: 4000,
                     script: "$02000537_BF__MAIN__7$");
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {105, 1051, 1052, 1053, 1054})) {
+                if (context.MonsterDead(arg1: new[] {105, 1051, 1052, 1053, 1054})) {
                     context.State = new State705마무리(context);
                     return;
                 }
@@ -301,12 +297,12 @@ namespace Maple2.Trigger._02000537_bf {
             internal State705마무리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {8904}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1036}, arg2: true);
+                context.SetMesh(arg1: new[] {8904}, arg2: false);
+                context.CreateMonster(arg1: new[] {1036}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {708}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {708}, arg2: 0)) {
                     context.State = new State버프걸어주기(context);
                     return;
                 }
@@ -319,13 +315,13 @@ namespace Maple2.Trigger._02000537_bf {
             internal State버프걸어주기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11004644, illust: "SlaveMan3_normal", duration: 4000,
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000,
                     script: "$02000537_BF__MAIN__8$");
-                context.SetSkill(arg1: new int[] {9000}, arg2: true);
+                context.SetSkill(arg1: new[] {9000}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {706}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {706}, arg2: 0)) {
                     context.State = new State706시작(context);
                     return;
                 }
@@ -338,15 +334,15 @@ namespace Maple2.Trigger._02000537_bf {
             internal State706시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
                     script: "$02000537_BF__MAIN__9$");
-                context.EnableSpawnPointPc(spawnPointID: 4, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 5, isEnable: true);
-                context.CreateMonster(arg1: new int[] {106, 1061, 1063, 1064, 1065}, arg2: true);
+                context.EnableSpawnPointPc(spawnPointId: 4, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 5, isEnable: true);
+                context.CreateMonster(arg1: new[] {106, 1061, 1063, 1064, 1065}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {106, 1061, 1063, 1064, 1065})) {
+                if (context.MonsterDead(arg1: new[] {106, 1061, 1063, 1064, 1065})) {
                     context.State = new State706마무리(context);
                     return;
                 }
@@ -359,13 +355,13 @@ namespace Maple2.Trigger._02000537_bf {
             internal State706마무리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {8905}, arg2: false);
-                context.SideNpcTalk(npcID: 11004644, illust: "SlaveMan3_normal", duration: 4000,
+                context.SetMesh(arg1: new[] {8905}, arg2: false);
+                context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000,
                     script: "$02000537_BF__MAIN__10$");
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {707}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {707}, arg2: 0)) {
                     context.State = new State707시작(context);
                     return;
                 }
@@ -378,15 +374,15 @@ namespace Maple2.Trigger._02000537_bf {
             internal State707시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointID: 5, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 6, isEnable: true);
-                context.CreateMonster(arg1: new int[] {108}, arg2: true);
-                context.SideNpcTalk(npcID: 22600006, illust: "DesertDragonBigBlue_normal", duration: 4000,
+                context.EnableSpawnPointPc(spawnPointId: 5, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 6, isEnable: true);
+                context.CreateMonster(arg1: new[] {108}, arg2: true);
+                context.SideNpcTalk(npcId: 22600006, illust: "DesertDragonBigBlue_normal", duration: 4000,
                     script: "$02000537_BF__MAIN__11$");
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {108})) {
+                if (context.MonsterDead(arg1: new[] {108})) {
                     context.State = new State포털생성전(context);
                     return;
                 }
@@ -399,8 +395,8 @@ namespace Maple2.Trigger._02000537_bf {
             internal State포털생성전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {109});
-                context.CreateMonster(arg1: new int[] {1091}, arg2: true);
+                context.DestroyMonster(arg1: new[] {109});
+                context.CreateMonster(arg1: new[] {1091}, arg2: true);
             }
 
             public override void Execute() {
@@ -417,9 +413,9 @@ namespace Maple2.Trigger._02000537_bf {
             internal State포털생성전2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {109});
-                context.CreateMonster(arg1: new int[] {1091}, arg2: true);
-                context.SideNpcTalk(npcID: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
+                context.DestroyMonster(arg1: new[] {109});
+                context.CreateMonster(arg1: new[] {1091}, arg2: true);
+                context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000,
                     script: "$02000537_BF__MAIN__12$");
             }
 

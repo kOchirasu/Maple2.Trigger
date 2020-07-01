@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._84000007_wd {
     public static class _02_wait {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._84000007_wd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -25,11 +21,11 @@ namespace Maple2.Trigger._84000007_wd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100001, textID: 26100001, duration: 5000);
+                context.ShowGuideSummary(entityId: 26100001, textId: 26100001, duration: 5000);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9000, arg2: 70)) {
+                if (context.GetUserCount(boxId: 9000) == 70) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -52,11 +48,11 @@ namespace Maple2.Trigger._84000007_wd {
             internal State대기2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100002, textID: 26100002, duration: 5000);
+                context.ShowGuideSummary(entityId: 26100002, textId: 26100002, duration: 5000);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9000, arg2: 70)) {
+                if (context.GetUserCount(boxId: 9000) == 70) {
                     context.State = new State종료(context);
                     return;
                 }

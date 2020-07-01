@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._52100051_qd {
     public static class _02_enteracemob {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateSetting(context);
-
-        private class StateSetting : TriggerState {
+        public class StateSetting : TriggerState {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {900, 901});
+                context.DestroyMonster(arg1: new[] {900, 901});
                 context.SetUserValue(key: "MobSpawn", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "MobSpawn", value: 1)) {
+                if (context.GetUserValue(key: "MobSpawn") == 1) {
                     context.State = new StateMobSpawn01(context);
                     return;
                 }
@@ -26,7 +22,7 @@ namespace Maple2.Trigger._52100051_qd {
             internal StateMobSpawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {900}, arg2: false);
+                context.CreateMonster(arg1: new[] {900}, arg2: false);
             }
 
             public override void Execute() {
@@ -43,11 +39,11 @@ namespace Maple2.Trigger._52100051_qd {
             internal StateMobSpawn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {901}, arg2: false);
+                context.CreateMonster(arg1: new[] {901}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {900, 901})) {
+                if (context.MonsterDead(arg1: new[] {900, 901})) {
                     context.State = new StateReset(context);
                     return;
                 }

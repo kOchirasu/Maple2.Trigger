@@ -1,23 +1,19 @@
-using System;
-
 namespace Maple2.Trigger._63000016_cs {
     public static class _meetjacey01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "Guide");
                 context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: true);
-                context.SetMesh(arg1: new int[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new int[] {5000}, arg2: false);
-                context.SetEffect(arg1: new int[] {6000}, arg2: false);
+                context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {5000}, arg2: false);
+                context.SetEffect(arg1: new[] {6000}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new StateWalkIn01(context);
                     return;
                 }
@@ -31,7 +27,7 @@ namespace Maple2.Trigger._63000016_cs {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 63000016, arg2: 10, arg3: 9000);
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
             public override void Execute() {
@@ -72,7 +68,7 @@ namespace Maple2.Trigger._63000016_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {90000431},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000431},
                     arg3: new byte[] {2})) {
                     context.State = new StateMoveToJacey01(context);
                     return;
@@ -128,7 +124,7 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateMeetJacey01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__0$", arg4: 4);
             }
 
@@ -297,7 +293,7 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateMinimapGuide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.GuideEvent(eventID: 10021010);
+                context.GuideEvent(eventId: 10021010);
             }
 
             public override void Execute() {
@@ -405,13 +401,13 @@ namespace Maple2.Trigger._63000016_cs {
             internal StatePatrolWithJacey01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 10021020, textID: 10021020);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.ShowGuideSummary(entityId: 10021020, textId: 10021020);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_103");
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9100, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 9100, arg2: new[] {101})) {
                     context.State = new StatePatrolWithJacey02(context);
                     return;
                 }
@@ -430,7 +426,7 @@ namespace Maple2.Trigger._63000016_cs {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9101, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 9101, arg2: new[] {101})) {
                     context.State = new StatePatrolWithJacey03(context);
                     return;
                 }
@@ -449,7 +445,7 @@ namespace Maple2.Trigger._63000016_cs {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9102, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 9102, arg2: new[] {101})) {
                     context.State = new StatePatrolWithJacey04(context);
                     return;
                 }
@@ -463,7 +459,7 @@ namespace Maple2.Trigger._63000016_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$63000016_CS__MEETJACEY01__12$", arg4: 3);
-                context.HideGuideSummary(entityID: 10021020);
+                context.HideGuideSummary(entityId: 10021020);
             }
 
             public override void Execute() {
@@ -499,9 +495,9 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateCallNextRoom02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3000}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new int[] {6000}, arg2: true);
+                context.SetMesh(arg1: new[] {3000}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {6000}, arg2: true);
             }
 
             public override void Execute() {
@@ -540,10 +536,10 @@ namespace Maple2.Trigger._63000016_cs {
                 context.SetSkip();
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.DestroyMonster(arg1: new int[] {101});
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101});
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
                 context.CameraSelect(arg1: 700, arg2: false);
-                context.SetEffect(arg1: new int[] {6000}, arg2: false);
+                context.SetEffect(arg1: new[] {6000}, arg2: false);
             }
 
             public override void Execute() {
@@ -560,12 +556,12 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateJaceyQuest00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 10021030, textID: 10021030);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.ShowGuideSummary(entityId: 10021030, textId: 10021030);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9002}, arg2: new int[] {90000431},
+                if (context.QuestUserDetected(arg1: new[] {9002}, arg2: new[] {90000431},
                     arg3: new byte[] {2})) {
                     context.State = new StateJaceyQuest01(context);
                     return;
@@ -579,7 +575,7 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateJaceyQuest01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 10021030);
+                context.HideGuideSummary(entityId: 10021030);
             }
 
             public override void Execute() {
@@ -635,8 +631,8 @@ namespace Maple2.Trigger._63000016_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__15$", arg4: 4);
-                context.DestroyMonster(arg1: new int[] {102});
-                context.CreateMonster(arg1: new int[] {103}, arg2: false);
+                context.DestroyMonster(arg1: new[] {102});
+                context.CreateMonster(arg1: new[] {103}, arg2: false);
                 context.SetSkip(arg1: "JaceyQuest05");
             }
 
@@ -741,7 +737,7 @@ namespace Maple2.Trigger._63000016_cs {
             }
 
             public override void OnExit() {
-                context.GuideEvent(eventID: 10021120);
+                context.GuideEvent(eventId: 10021120);
             }
         }
 
@@ -767,7 +763,7 @@ namespace Maple2.Trigger._63000016_cs {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.DestroyMonster(arg1: new int[] {103});
+                context.DestroyMonster(arg1: new[] {103});
             }
 
             public override void Execute() {
@@ -784,7 +780,7 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateSendSignalToGuide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.GuideEvent(eventID: 10021050);
+                context.GuideEvent(eventId: 10021050);
             }
 
             public override void Execute() {
@@ -805,7 +801,7 @@ namespace Maple2.Trigger._63000016_cs {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {9002})) {
+                if (!context.UserDetected(arg1: new[] {9002})) {
                     context.State = new StateQuit(context);
                     return;
                 }

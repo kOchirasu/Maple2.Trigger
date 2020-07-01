@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._82000003_survival {
     public static class _04_invincible {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new StateMakeInvincible(context);
                     return;
                 }
@@ -23,7 +19,7 @@ namespace Maple2.Trigger._82000003_survival {
             internal StateMakeInvincible(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {9000}, arg2: 71000049, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {9000}, arg2: 71000049, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -32,7 +28,7 @@ namespace Maple2.Trigger._82000003_survival {
                     return;
                 }
 
-                if (context.UserValue(key: "InvincibleOff", value: 1)) {
+                if (context.GetUserValue(key: "InvincibleOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }

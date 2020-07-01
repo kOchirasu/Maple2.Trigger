@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._02020130_bf {
     public static class _bossspawn {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
                         2017, 2018, 2019, 2020, 2021, 2022
                     }, arg2: false);
@@ -20,7 +16,7 @@ namespace Maple2.Trigger._02020130_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {600})) {
+                if (context.UserDetected(arg1: new[] {600})) {
                     context.State = new State보스등장(context);
                     return;
                 }
@@ -33,11 +29,11 @@ namespace Maple2.Trigger._02020130_bf {
             internal State보스등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {701, 702, 703}, arg2: false);
+                context.CreateMonster(arg1: new[] {701, 702, 703}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {701, 702, 703})) {
+                if (context.MonsterDead(arg1: new[] {701, 702, 703})) {
                     context.State = new State종료딜레이(context);
                     return;
                 }
@@ -47,7 +43,7 @@ namespace Maple2.Trigger._02020130_bf {
                     return;
                 }
 
-                if (context.DungeonCheckState(checkState: "Fail")) {
+                if (context.GetDungeonState() == "Fail") {
                     context.State = new State던전실패(context);
                     return;
                 }
@@ -61,7 +57,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override void OnEnter() {
                 context.DungeonStopTimer();
-                context.DungeonMissionComplete(missionID: 23040000);
+                context.DungeonMissionComplete(missionId: 23040000);
             }
 
             public override void Execute() {
@@ -80,7 +76,7 @@ namespace Maple2.Trigger._02020130_bf {
             internal State던전실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.DestroyMonster(arg1: new[] {-1});
             }
 
             public override void Execute() {

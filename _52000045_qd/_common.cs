@@ -1,41 +1,37 @@
-using System;
-
 namespace Maple2.Trigger._52000045_qd {
     public static class _common {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 702, arg2: new int[] {201})) {
+                if (context.NpcDetected(arg1: 702, arg2: new[] {201})) {
                     context.State = new Statenpc_exit_01(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 702, arg2: new int[] {202})) {
+                if (context.NpcDetected(arg1: 702, arg2: new[] {202})) {
                     context.State = new Statenpc_exit_02(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 702, arg2: new int[] {203})) {
+                if (context.NpcDetected(arg1: 702, arg2: new[] {203})) {
                     context.State = new Statenpc_exit_03(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 702, arg2: new int[] {204})) {
+                if (context.NpcDetected(arg1: 702, arg2: new[] {204})) {
                     context.State = new Statenpc_exit_04(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 702, arg2: new int[] {205})) {
+                if (context.NpcDetected(arg1: 702, arg2: new[] {205})) {
                     context.State = new Statenpc_exit_05(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 702, arg2: new int[] {206})) {
+                if (context.NpcDetected(arg1: 702, arg2: new[] {206})) {
                     context.State = new Statenpc_exit_06(context);
                     return;
                 }
@@ -48,7 +44,7 @@ namespace Maple2.Trigger._52000045_qd {
             internal Statenpc_exit_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {201});
+                context.DestroyMonster(arg1: new[] {201});
             }
 
             public override void Execute() {
@@ -65,7 +61,7 @@ namespace Maple2.Trigger._52000045_qd {
             internal Statenpc_exit_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {202});
+                context.DestroyMonster(arg1: new[] {202});
             }
 
             public override void Execute() {
@@ -82,7 +78,7 @@ namespace Maple2.Trigger._52000045_qd {
             internal Statenpc_exit_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {203});
+                context.DestroyMonster(arg1: new[] {203});
             }
 
             public override void Execute() {
@@ -99,7 +95,7 @@ namespace Maple2.Trigger._52000045_qd {
             internal Statenpc_exit_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {204});
+                context.DestroyMonster(arg1: new[] {204});
             }
 
             public override void Execute() {
@@ -116,7 +112,7 @@ namespace Maple2.Trigger._52000045_qd {
             internal Statenpc_exit_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {205});
+                context.DestroyMonster(arg1: new[] {205});
             }
 
             public override void Execute() {
@@ -133,7 +129,7 @@ namespace Maple2.Trigger._52000045_qd {
             internal Statenpc_exit_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {206});
+                context.DestroyMonster(arg1: new[] {206});
             }
 
             public override void Execute() {

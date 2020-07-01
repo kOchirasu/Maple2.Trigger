@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._99999913 {
     public static class _02_ride {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -13,42 +9,42 @@ namespace Maple2.Trigger._99999913 {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "SetRide", value: 1)) {
+                if (context.GetUserValue(key: "SetRide") == 1) {
                     context.State = new StateRide01_Ready(context);
                     return;
                 }
 
-                if (context.UserValue(key: "SetRide", value: 2)) {
+                if (context.GetUserValue(key: "SetRide") == 2) {
                     context.State = new StateRide02_Ready(context);
                     return;
                 }
 
-                if (context.UserValue(key: "SetRide", value: 3)) {
+                if (context.GetUserValue(key: "SetRide") == 3) {
                     context.State = new StateRide03_Ready(context);
                     return;
                 }
 
-                if (context.UserValue(key: "SetRide", value: 4)) {
+                if (context.GetUserValue(key: "SetRide") == 4) {
                     context.State = new StateRide04_Ready(context);
                     return;
                 }
 
-                if (context.UserValue(key: "SetRide", value: 5)) {
+                if (context.GetUserValue(key: "SetRide") == 5) {
                     context.State = new StateRide05_Ready(context);
                     return;
                 }
 
-                if (context.UserValue(key: "SetRide", value: 6)) {
+                if (context.GetUserValue(key: "SetRide") == 6) {
                     context.State = new StateRide06_Ready(context);
                     return;
                 }
 
-                if (context.UserValue(key: "SetRide", value: 7)) {
+                if (context.GetUserValue(key: "SetRide") == 7) {
                     context.State = new StateRide07_Ready(context);
                     return;
                 }
 
-                if (context.UserValue(key: "SetRide", value: 8)) {
+                if (context.GetUserValue(key: "SetRide") == 8) {
                     context.State = new StateRide08_Ready(context);
                     return;
                 }
@@ -61,12 +57,12 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide01_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {110}, arg2: false);
+                context.CreateMonster(arg1: new[] {110}, arg2: false);
                 context.WriteLog(arg1: "Survival", arg3: "bus_01");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "StartPatrol", value: 1)) {
+                if (context.GetUserValue(key: "StartPatrol") == 1) {
                     context.State = new StateRide01_StartPatrolDelay(context);
                     return;
                 }
@@ -111,12 +107,12 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide02_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {120}, arg2: false);
+                context.CreateMonster(arg1: new[] {120}, arg2: false);
                 context.WriteLog(arg1: "Survival", arg3: "bus_02");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "StartPatrol", value: 1)) {
+                if (context.GetUserValue(key: "StartPatrol") == 1) {
                     context.State = new StateRide02_StartPatrolDelay(context);
                     return;
                 }
@@ -161,12 +157,12 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide03_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {130}, arg2: false);
+                context.CreateMonster(arg1: new[] {130}, arg2: false);
                 context.WriteLog(arg1: "Survival", arg3: "bus_03");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "StartPatrol", value: 1)) {
+                if (context.GetUserValue(key: "StartPatrol") == 1) {
                     context.State = new StateRide03_StartPatrolDelay(context);
                     return;
                 }
@@ -211,12 +207,12 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide04_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {140}, arg2: false);
+                context.CreateMonster(arg1: new[] {140}, arg2: false);
                 context.WriteLog(arg1: "Survival", arg3: "bus_04");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "StartPatrol", value: 1)) {
+                if (context.GetUserValue(key: "StartPatrol") == 1) {
                     context.State = new StateRide04_StartPatrolDelay(context);
                     return;
                 }
@@ -261,12 +257,12 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide05_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {150}, arg2: false);
+                context.CreateMonster(arg1: new[] {150}, arg2: false);
                 context.WriteLog(arg1: "Survival", arg3: "bus_05");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "StartPatrol", value: 1)) {
+                if (context.GetUserValue(key: "StartPatrol") == 1) {
                     context.State = new StateRide05_StartPatrolDelay(context);
                     return;
                 }
@@ -311,12 +307,12 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide06_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {160}, arg2: false);
+                context.CreateMonster(arg1: new[] {160}, arg2: false);
                 context.WriteLog(arg1: "Survival", arg3: "bus_06");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "StartPatrol", value: 1)) {
+                if (context.GetUserValue(key: "StartPatrol") == 1) {
                     context.State = new StateRide06_StartPatrolDelay(context);
                     return;
                 }
@@ -361,12 +357,12 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide07_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {170}, arg2: false);
+                context.CreateMonster(arg1: new[] {170}, arg2: false);
                 context.WriteLog(arg1: "Survival", arg3: "bus_07");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "StartPatrol", value: 1)) {
+                if (context.GetUserValue(key: "StartPatrol") == 1) {
                     context.State = new StateRide07_StartPatrolDelay(context);
                     return;
                 }
@@ -411,12 +407,12 @@ namespace Maple2.Trigger._99999913 {
             internal StateRide08_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {180}, arg2: false);
+                context.CreateMonster(arg1: new[] {180}, arg2: false);
                 context.WriteLog(arg1: "Survival", arg3: "bus_08");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "StartPatrol", value: 1)) {
+                if (context.GetUserValue(key: "StartPatrol") == 1) {
                     context.State = new StateRide08_StartPatrolDelay(context);
                     return;
                 }
@@ -461,7 +457,7 @@ namespace Maple2.Trigger._99999913 {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {110, 120, 130, 140, 150, 160, 170, 180});
+                context.DestroyMonster(arg1: new[] {110, 120, 130, 140, 150, 160, 170, 180});
                 context.WriteLog(arg1: "Survival", arg3: "bus_end");
             }
 

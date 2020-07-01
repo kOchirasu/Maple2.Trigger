@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000471_bf {
     public static class _warp {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Warp", value: 1)) {
+                if (context.GetUserValue(key: "Warp") == 1) {
                     context.State = new Statewarp_1st(context);
                     return;
                 }
@@ -64,11 +60,11 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 11, arg3: 720, arg4: 1);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Warp", value: 2)) {
+                if (context.GetUserValue(key: "Warp") == 2) {
                     context.State = new Statewarp_2nd(context);
                     return;
                 }
@@ -82,11 +78,11 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 12, arg3: 720, arg4: 1);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Warp", value: 2)) {
+                if (context.GetUserValue(key: "Warp") == 2) {
                     context.State = new Statewarp_2nd(context);
                     return;
                 }
@@ -100,11 +96,11 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 13, arg3: 720, arg4: 1);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Warp", value: 2)) {
+                if (context.GetUserValue(key: "Warp") == 2) {
                     context.State = new Statewarp_2nd(context);
                     return;
                 }
@@ -118,11 +114,11 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 14, arg3: 720, arg4: 1);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Warp", value: 2)) {
+                if (context.GetUserValue(key: "Warp") == 2) {
                     context.State = new Statewarp_2nd(context);
                     return;
                 }
@@ -136,11 +132,11 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 15, arg3: 720, arg4: 1);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Warp", value: 2)) {
+                if (context.GetUserValue(key: "Warp") == 2) {
                     context.State = new Statewarp_2nd(context);
                     return;
                 }
@@ -154,11 +150,11 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 16, arg3: 720, arg4: 1);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Warp", value: 2)) {
+                if (context.GetUserValue(key: "Warp") == 2) {
                     context.State = new Statewarp_2nd(context);
                     return;
                 }
@@ -212,7 +208,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 11, arg3: 720, arg4: 2);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() { }
@@ -225,7 +221,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 12, arg3: 720, arg4: 2);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() { }
@@ -238,7 +234,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 13, arg3: 720, arg4: 2);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() { }
@@ -251,7 +247,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 14, arg3: 720, arg4: 2);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() { }
@@ -264,7 +260,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 15, arg3: 720, arg4: 2);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() { }
@@ -277,7 +273,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 16, arg3: 720, arg4: 2);
-                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000471_BF__WARP__0$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() { }

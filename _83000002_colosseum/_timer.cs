@@ -1,61 +1,57 @@
-using System;
-
 namespace Maple2.Trigger._83000002_colosseum {
     public static class _timer {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Timer", value: 1)) {
+                if (context.GetUserValue(key: "Timer") == 1) {
                     context.State = new State스테이지1(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Timer", value: 2)) {
+                if (context.GetUserValue(key: "Timer") == 2) {
                     context.State = new State스테이지2(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Timer", value: 3)) {
+                if (context.GetUserValue(key: "Timer") == 3) {
                     context.State = new State스테이지3(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Timer", value: 4)) {
+                if (context.GetUserValue(key: "Timer") == 4) {
                     context.State = new State스테이지4(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Timer", value: 5)) {
+                if (context.GetUserValue(key: "Timer") == 5) {
                     context.State = new State스테이지5(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Timer", value: 6)) {
+                if (context.GetUserValue(key: "Timer") == 6) {
                     context.State = new State스테이지6(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Timer", value: 7)) {
+                if (context.GetUserValue(key: "Timer") == 7) {
                     context.State = new State스테이지7(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Timer", value: 8)) {
+                if (context.GetUserValue(key: "Timer") == 8) {
                     context.State = new State스테이지8(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Timer", value: 9)) {
+                if (context.GetUserValue(key: "Timer") == 9) {
                     context.State = new State스테이지9(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Timer", value: 10)) {
+                if (context.GetUserValue(key: "Timer") == 10) {
                     context.State = new State스테이지10(context);
                     return;
                 }
@@ -88,13 +84,13 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "LimitTimer")) {
-                    context.SetUserValue(triggerID: 900001, key: "Fail", value: 1);
+                    context.SetUserValue(triggerId: 900001, key: "Fail", value: 1);
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {101})) {
-                    context.SetUserValue(triggerID: 900001, key: "Nextmonster", value: 1);
+                if (context.MonsterDead(arg1: new[] {101})) {
+                    context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     context.State = new State종료(context);
                     return;
                 }
@@ -127,13 +123,13 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "LimitTimer")) {
-                    context.SetUserValue(triggerID: 900001, key: "Fail", value: 1);
+                    context.SetUserValue(triggerId: 900001, key: "Fail", value: 1);
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {102})) {
-                    context.SetUserValue(triggerID: 900001, key: "Nextmonster", value: 1);
+                if (context.MonsterDead(arg1: new[] {102})) {
+                    context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     context.State = new State종료(context);
                     return;
                 }
@@ -166,13 +162,13 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "LimitTimer")) {
-                    context.SetUserValue(triggerID: 900001, key: "Fail", value: 1);
+                    context.SetUserValue(triggerId: 900001, key: "Fail", value: 1);
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {103})) {
-                    context.SetUserValue(triggerID: 900001, key: "Nextmonster", value: 1);
+                if (context.MonsterDead(arg1: new[] {103})) {
+                    context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     context.State = new State종료(context);
                     return;
                 }
@@ -209,8 +205,8 @@ namespace Maple2.Trigger._83000002_colosseum {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {104})) {
-                    context.SetUserValue(triggerID: 900001, key: "Nextmonster", value: 1);
+                if (context.MonsterDead(arg1: new[] {104})) {
+                    context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     context.State = new State종료(context);
                     return;
                 }
@@ -247,8 +243,8 @@ namespace Maple2.Trigger._83000002_colosseum {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {105})) {
-                    context.SetUserValue(triggerID: 900001, key: "Nextmonster", value: 1);
+                if (context.MonsterDead(arg1: new[] {105})) {
+                    context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     context.State = new State종료(context);
                     return;
                 }
@@ -285,8 +281,8 @@ namespace Maple2.Trigger._83000002_colosseum {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {106})) {
-                    context.SetUserValue(triggerID: 900001, key: "Nextmonster", value: 1);
+                if (context.MonsterDead(arg1: new[] {106})) {
+                    context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     context.State = new State종료(context);
                     return;
                 }
@@ -323,8 +319,8 @@ namespace Maple2.Trigger._83000002_colosseum {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {107})) {
-                    context.SetUserValue(triggerID: 900001, key: "Nextmonster", value: 1);
+                if (context.MonsterDead(arg1: new[] {107})) {
+                    context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     context.State = new State종료(context);
                     return;
                 }
@@ -361,8 +357,8 @@ namespace Maple2.Trigger._83000002_colosseum {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {108})) {
-                    context.SetUserValue(triggerID: 900001, key: "Nextmonster", value: 1);
+                if (context.MonsterDead(arg1: new[] {108})) {
+                    context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     context.State = new State종료(context);
                     return;
                 }
@@ -399,8 +395,8 @@ namespace Maple2.Trigger._83000002_colosseum {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {109})) {
-                    context.SetUserValue(triggerID: 900001, key: "Nextmonster", value: 1);
+                if (context.MonsterDead(arg1: new[] {109})) {
+                    context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     context.State = new State종료(context);
                     return;
                 }
@@ -437,8 +433,8 @@ namespace Maple2.Trigger._83000002_colosseum {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {110})) {
-                    context.SetUserValue(triggerID: 900001, key: "Nextmonster", value: 1);
+                if (context.MonsterDead(arg1: new[] {110})) {
+                    context.SetUserValue(triggerId: 900001, key: "Nextmonster", value: 1);
                     context.State = new State종료(context);
                     return;
                 }

@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._52020008_qd {
     public static class _52020008_main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State감지(context);
-
-        private class State감지 : TriggerState {
+        public class State감지 : TriggerState {
             internal State감지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {9991}, arg2: false);
+                context.SetSkill(arg1: new[] {9991}, arg2: false);
                 context.SetVisibleBreakableObject(
-                    arg1: new int[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {6001, 6002}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {7001, 7002}, arg2: false);
-                context.SetBreakable(arg1: new int[] {6001, 6002}, arg2: false);
-                context.SetBreakable(arg1: new int[] {7001, 7002}, arg2: false);
+                    arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {6001, 6002}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {7001, 7002}, arg2: false);
+                context.SetBreakable(arg1: new[] {6001, 6002}, arg2: false);
+                context.SetBreakable(arg1: new[] {7001, 7002}, arg2: false);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false);
                 context.SetAgent(arg1: "9001", arg2: true);
                 context.SetAgent(arg1: "9002", arg2: true);
@@ -47,7 +43,7 @@ namespace Maple2.Trigger._52020008_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {901})) {
+                if (context.UserDetected(arg1: new[] {901})) {
                     context.State = new State연출카메라1(context);
                     return;
                 }
@@ -61,9 +57,9 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "연출종료", arg2: "exit");
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
-                context.CreateMonster(arg1: new int[] {103}, arg2: false, arg3: 30000);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {103}, arg2: false, arg3: 30000);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 503, arg2: true);
@@ -179,8 +175,8 @@ namespace Maple2.Trigger._52020008_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 501, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11003660, arg3: "이제 어떻게 하실려나?", arg4: 3);
-                context.CreateMonster(arg1: new int[] {201, 202, 203, 204, 205, 206, 207}, arg2: false);
-                context.CreateMonster(arg1: new int[] {104, 105, 106}, arg2: false);
+                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 207}, arg2: false);
+                context.CreateMonster(arg1: new[] {104, 105, 106}, arg2: false);
             }
 
             public override void Execute() {
@@ -231,9 +227,9 @@ namespace Maple2.Trigger._52020008_qd {
             internal State연출카메라1_레지스탕스등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {9991}, arg2: true);
+                context.SetSkill(arg1: new[] {9991}, arg2: true);
                 context.SetNpcRotation(arg1: 103, arg2: 270);
-                context.DestroyMonster(arg1: new int[] {101, 102});
+                context.DestroyMonster(arg1: new[] {101, 102});
             }
 
             public override void Execute() {
@@ -270,11 +266,11 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 504, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new int[] {6001, 6002}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new int[] {7001, 7002}, arg2: true);
-                context.SetBreakable(arg1: new int[] {6001, 6002}, arg2: true);
-                context.SetBreakable(arg1: new int[] {7001, 7002}, arg2: true);
-                context.FaceEmotion(spawnPointID: 103, emotionName: "Trigger_bore1");
+                context.SetVisibleBreakableObject(arg1: new[] {6001, 6002}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {7001, 7002}, arg2: true);
+                context.SetBreakable(arg1: new[] {6001, 6002}, arg2: true);
+                context.SetBreakable(arg1: new[] {7001, 7002}, arg2: true);
+                context.FaceEmotion(spawnPointId: 103, emotionName: "Trigger_bore1");
                 context.SetConversation(arg1: 2, arg2: 11003660, arg3: "아으... 귀찮아.", arg4: 3);
             }
 
@@ -292,8 +288,8 @@ namespace Maple2.Trigger._52020008_qd {
             internal State연출카메라1_세리하대사4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.InitNpcRotation(arg1: new int[] {103});
-                context.FaceEmotion(spawnPointID: 103, emotionName: "Trigger_bore2");
+                context.InitNpcRotation(arg1: new[] {103});
+                context.FaceEmotion(spawnPointId: 103, emotionName: "Trigger_bore2");
                 context.SetConversation(arg1: 2, arg2: 11003660, arg3: "왕녀는 또 어디갔어!! 환장하겠네!!", arg4: 3);
             }
 
@@ -312,10 +308,10 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 502, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new int[] {6001, 6002}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {7001, 7002}, arg2: false);
-                context.SetBreakable(arg1: new int[] {6001, 6002}, arg2: false);
-                context.SetBreakable(arg1: new int[] {7001, 7002}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {6001, 6002}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {7001, 7002}, arg2: false);
+                context.SetBreakable(arg1: new[] {6001, 6002}, arg2: false);
+                context.SetBreakable(arg1: new[] {7001, 7002}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003661, arg3: "왕녀는 우리가 접수하겠다. 얘들아 처리해라!", arg4: 3);
             }
 
@@ -375,15 +371,15 @@ namespace Maple2.Trigger._52020008_qd {
             internal State연출종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {9991}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new int[] {6001, 6002}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {7001, 7002}, arg2: false);
-                context.SetBreakable(arg1: new int[] {6001, 6002}, arg2: false);
-                context.SetBreakable(arg1: new int[] {7001, 7002}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.SetSkill(arg1: new[] {9991}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {6001, 6002}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {7001, 7002}, arg2: false);
+                context.SetBreakable(arg1: new[] {6001, 6002}, arg2: false);
+                context.SetBreakable(arg1: new[] {7001, 7002}, arg2: false);
+                context.DestroyMonster(arg1: new[] {-1});
                 context.SetVisibleBreakableObject(
-                    arg1: new int[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009}, arg2: false);
-                context.SetBreakable(arg1: new int[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009},
+                    arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009}, arg2: false);
+                context.SetBreakable(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009},
                     arg2: false);
                 context.CameraReset(interpolationTime: 0.1f);
                 context.SetProductionUI(arg1: 0);
@@ -432,8 +428,8 @@ namespace Maple2.Trigger._52020008_qd {
             internal StateNPC생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "세리하를 추적하세요.", arg3: new int[] {5000});
-                context.CreateMonster(arg1: new int[] {211, 212, 213, 214, 215, 216, 217});
+                context.SetEventUI(arg1: 1, arg2: "세리하를 추적하세요.", arg3: 5000);
+                context.CreateMonster(arg1: new[] {211, 212, 213, 214, 215, 216, 217});
             }
 
             public override void Execute() {
@@ -455,7 +451,7 @@ namespace Maple2.Trigger._52020008_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {902})) {
+                if (context.UserDetected(arg1: new[] {902})) {
                     context.State = new State계단전투1(context);
                     return;
                 }
@@ -468,11 +464,11 @@ namespace Maple2.Trigger._52020008_qd {
             internal State계단전투1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {221}, arg2: true);
+                context.CreateMonster(arg1: new[] {221}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {903})) {
+                if (context.UserDetected(arg1: new[] {903})) {
                     context.State = new State계단전투2(context);
                     return;
                 }
@@ -485,11 +481,11 @@ namespace Maple2.Trigger._52020008_qd {
             internal State계단전투2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {222}, arg2: true);
+                context.CreateMonster(arg1: new[] {222}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {211, 212, 213, 214, 215, 216, 217, 221, 222})) {
+                if (context.MonsterDead(arg1: new[] {211, 212, 213, 214, 215, 216, 217, 221, 222})) {
                     context.State = new State포탈활성화(context);
                     return;
                 }

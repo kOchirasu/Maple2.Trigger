@@ -1,17 +1,13 @@
-using System;
-
 namespace Maple2.Trigger._80000011_bonus {
     public static class _exp_ball {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State입장(context);
-
-        private class State입장 : TriggerState {
+        public class State입장 : TriggerState {
             internal State입장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
-                    context.CreateItem(arg1: new int[] {9001});
+                if (context.UserDetected(arg1: new[] {101})) {
+                    context.CreateItem(arg1: new[] {9001});
                     context.State = new State5초(context);
                     return;
                 }
@@ -29,7 +25,7 @@ namespace Maple2.Trigger._80000011_bonus {
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.CreateItem(arg1: new int[] {9001});
+                    context.CreateItem(arg1: new[] {9001});
                     context.State = new State10초(context);
                     return;
                 }
@@ -47,7 +43,7 @@ namespace Maple2.Trigger._80000011_bonus {
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.CreateItem(arg1: new int[] {9001});
+                    context.CreateItem(arg1: new[] {9001});
                     context.State = new State15초(context);
                     return;
                 }
@@ -65,7 +61,7 @@ namespace Maple2.Trigger._80000011_bonus {
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.CreateItem(arg1: new int[] {9001});
+                    context.CreateItem(arg1: new[] {9001});
                     context.State = new State20초(context);
                     return;
                 }
@@ -83,7 +79,7 @@ namespace Maple2.Trigger._80000011_bonus {
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.CreateItem(arg1: new int[] {9001});
+                    context.CreateItem(arg1: new[] {9001});
                     context.State = new State25초(context);
                     return;
                 }
@@ -101,7 +97,7 @@ namespace Maple2.Trigger._80000011_bonus {
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.CreateItem(arg1: new int[] {9001});
+                    context.CreateItem(arg1: new[] {9001});
                     context.State = new State완료(context);
                     return;
                 }

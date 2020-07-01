@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._52000133_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statestart(context);
-
-        private class Statestart : TriggerState {
+        public class Statestart : TriggerState {
             internal Statestart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101, 111, 112});
+                context.DestroyMonster(arg1: new[] {101, 111, 112});
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new State퀘스트조건체크(context);
                     return;
                 }
@@ -28,85 +24,85 @@ namespace Maple2.Trigger._52000133_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001599},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001599},
                     arg3: new byte[] {3})) {
                     context.State = new State빈집(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001599},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001599},
                     arg3: new byte[] {2})) {
                     context.State = new State예민한아노스(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001599},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001599},
                     arg3: new byte[] {1})) {
                     context.State = new State예민한아노스(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001598},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001598},
                     arg3: new byte[] {3})) {
                     context.State = new State예민한아노스(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001598},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001598},
                     arg3: new byte[] {2})) {
                     context.State = new State예민한아노스_연출준비(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001584},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001584},
                     arg3: new byte[] {2})) {
                     context.State = new State케이틀린첫만남(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001584},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001584},
                     arg3: new byte[] {1})) {
                     context.State = new State케이틀린첫만남(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001583},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001583},
                     arg3: new byte[] {3})) {
                     context.State = new State케이틀린첫만남(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001583},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001583},
                     arg3: new byte[] {2})) {
                     context.State = new State케이틀린첫만남(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001583},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001583},
                     arg3: new byte[] {1})) {
                     context.State = new State케이틀린첫만남(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001582},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001582},
                     arg3: new byte[] {3})) {
                     context.State = new State케이틀린첫만남(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001582},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001582},
                     arg3: new byte[] {2})) {
                     context.State = new State케이틀린첫만남_연출시작(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001582},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001582},
                     arg3: new byte[] {1})) {
                     context.State = new State빈집(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001581},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001581},
                     arg3: new byte[] {3})) {
                     context.State = new State빈집(context);
                     return;
@@ -120,7 +116,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal State케이틀린첫만남(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101});
+                context.CreateMonster(arg1: new[] {101});
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -138,8 +134,8 @@ namespace Maple2.Trigger._52000133_qd {
             internal State케이틀린첫만남_연출시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
-                context.CreateMonster(arg1: new int[] {101});
+                context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
+                context.CreateMonster(arg1: new[] {101});
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.MoveUser(arg1: 52000133, arg2: 1);
@@ -159,7 +155,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal State전경스케치01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -177,7 +173,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal State전경스케치02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 0, illustID: "0", msg: "$52000133_QD__MAIN__0$", duration: 2000,
+                context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000133_QD__MAIN__0$", duration: 2000,
                     align: "left");
                 context.SetSceneSkip(arg1: "케이틀린첫만남_스킵완료", arg2: "nextState");
             }
@@ -196,7 +192,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal State전경스케치03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC01");
             }
 
@@ -214,8 +210,8 @@ namespace Maple2.Trigger._52000133_qd {
             internal State전경스케치04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003254, illustID: "Caitlyn_normal", msg: "$52000133_QD__MAIN__1$",
+                context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003254, illustId: "Caitlyn_normal", msg: "$52000133_QD__MAIN__1$",
                     duration: 3000, align: "center");
             }
 
@@ -233,8 +229,8 @@ namespace Maple2.Trigger._52000133_qd {
             internal State전경스케치05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
-                context.AddBalloonTalk(spawnPointID: 101, msg: "$52000133_QD__MAIN__2$", duration: 3000, delayTick: 0);
+                context.CameraSelectPath(arg1: new[] {8004}, arg2: false);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$52000133_QD__MAIN__2$", duration: 3000, delayTick: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Bore_A", arg3: 3000f);
             }
 
@@ -252,7 +248,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal State전경스케치06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8010}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8010}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC02");
             }
 
@@ -310,7 +306,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal State예민한아노스(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {111, 113});
+                context.CreateMonster(arg1: new[] {111, 113});
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -328,7 +324,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal State예민한아노스_연출준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {111});
+                context.CreateMonster(arg1: new[] {111});
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.MoveUser(arg1: 52000133, arg2: 11);
@@ -348,7 +344,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal State예민한아노스_연출시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8100}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8100}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -366,8 +362,8 @@ namespace Maple2.Trigger._52000133_qd {
             internal State케이틀린대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8101}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003258, illustID: "Caitlyn_normal", msg: "$52000133_QD__MAIN__5$",
+                context.CameraSelectPath(arg1: new[] {8101}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003258, illustId: "Caitlyn_normal", msg: "$52000133_QD__MAIN__5$",
                     duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Bore_A", arg3: 4600f);
                 context.MoveUserPath(arg1: "2_MS2PatrolData_PC01");
@@ -388,8 +384,8 @@ namespace Maple2.Trigger._52000133_qd {
             internal StatePC대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8120}, arg2: false);
-                context.AddCinematicTalk(npcID: 0, illustID: "0", msg: "$52000133_QD__MAIN__6$", duration: 3000);
+                context.CameraSelectPath(arg1: new[] {8120}, arg2: false);
+                context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000133_QD__MAIN__6$", duration: 3000);
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 2000f);
                 context.MoveUserPath(arg1: "2_MS2PatrolData_PC02");
             }
@@ -408,7 +404,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal State케이틀린대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003258, illustID: "Caitlyn_normal", msg: "$52000133_QD__MAIN__7$",
+                context.AddCinematicTalk(npcId: 11003258, illustId: "Caitlyn_normal", msg: "$52000133_QD__MAIN__7$",
                     duration: 3000, align: "right");
                 context.MoveNpc(arg1: 111, arg2: "2_MS2PatrolData_Katelyn01");
             }
@@ -427,7 +423,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal StatePC대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 0, illustID: "0", msg: "$52000133_QD__MAIN__8$", duration: 3000,
+                context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000133_QD__MAIN__8$", duration: 3000,
                     align: "right");
                 context.MoveUserPath(arg1: "2_MS2PatrolData_PC03");
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 2000f);
@@ -447,9 +443,9 @@ namespace Maple2.Trigger._52000133_qd {
             internal State케이틀린대사03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8110}, arg2: false);
-                context.CreateMonster(arg1: new int[] {112});
-                context.AddCinematicTalk(npcID: 11003258, illustID: "Caitlyn_normal", msg: "$52000133_QD__MAIN__9$",
+                context.CameraSelectPath(arg1: new[] {8110}, arg2: false);
+                context.CreateMonster(arg1: new[] {112});
+                context.AddCinematicTalk(npcId: 11003258, illustId: "Caitlyn_normal", msg: "$52000133_QD__MAIN__9$",
                     duration: 4000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Talk_A", arg3: 8200f);
             }
@@ -468,8 +464,8 @@ namespace Maple2.Trigger._52000133_qd {
             internal State아노스걸어나옴(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8140}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003259, illustID: "Anos_normal", msg: "$52000133_QD__MAIN__10$",
+                context.CameraSelectPath(arg1: new[] {8140}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003259, illustId: "Anos_normal", msg: "$52000133_QD__MAIN__10$",
                     duration: 3000, align: "left");
                 context.MoveNpc(arg1: 112, arg2: "2_MS2PatrolData_Anos01");
             }
@@ -488,7 +484,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal State아노스대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003259, illustID: "Anos_normal", msg: "$52000133_QD__MAIN__11$",
+                context.AddCinematicTalk(npcId: 11003259, illustId: "Anos_normal", msg: "$52000133_QD__MAIN__11$",
                     duration: 3000, align: "left");
                 context.MoveNpc(arg1: 111, arg2: "2_MS2PatrolData_Katelyn02");
                 context.SetNpcEmotionLoop(arg1: 112, arg2: "Talk_A", arg3: 3600f);
@@ -508,7 +504,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal StatePC대사03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 0, illustID: "0", msg: "$52000133_QD__MAIN__12$", align: "center",
+                context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000133_QD__MAIN__12$", align: "center",
                     duration: 3000);
                 context.SetPcEmotionLoop(arg1: "Emotion_Hello_A", arg2: 2000f);
             }
@@ -527,7 +523,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal State아노스대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003259, illustID: "Anos_normal", msg: "$52000133_QD__MAIN__13$",
+                context.AddCinematicTalk(npcId: 11003259, illustId: "Anos_normal", msg: "$52000133_QD__MAIN__13$",
                     duration: 3000, align: "left");
                 context.SetNpcEmotionLoop(arg1: 112, arg2: "ChatUp_A", arg3: 7000f);
             }
@@ -546,8 +542,8 @@ namespace Maple2.Trigger._52000133_qd {
             internal StatePC대사04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8131}, arg2: false);
-                context.AddCinematicTalk(npcID: 0, illustID: "0", msg: "$52000133_QD__MAIN__14$", duration: 3000,
+                context.CameraSelectPath(arg1: new[] {8131}, arg2: false);
+                context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000133_QD__MAIN__14$", duration: 3000,
                     align: "right");
                 context.SetPcEmotionSequence(arg1: "Emotion_Surprise_A");
             }
@@ -566,7 +562,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal State아노스대사03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003259, illustID: "Anos_normal", msg: "$52000133_QD__MAIN__15$",
+                context.AddCinematicTalk(npcId: 11003259, illustId: "Anos_normal", msg: "$52000133_QD__MAIN__15$",
                     duration: 3000, align: "left");
                 context.SetNpcEmotionLoop(arg1: 112, arg2: "Bore_A", arg3: 8100f);
             }
@@ -585,8 +581,8 @@ namespace Maple2.Trigger._52000133_qd {
             internal State케이틀린대사04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8132}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003258, illustID: "Caitlyn_normal", msg: "$52000133_QD__MAIN__16$",
+                context.CameraSelectPath(arg1: new[] {8132}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003258, illustId: "Caitlyn_normal", msg: "$52000133_QD__MAIN__16$",
                     duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Talk_A", arg3: 12000f);
             }
@@ -605,7 +601,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal State아노스대사04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003259, illustID: "Anos_normal", msg: "$52000133_QD__MAIN__17$",
+                context.AddCinematicTalk(npcId: 11003259, illustId: "Anos_normal", msg: "$52000133_QD__MAIN__17$",
                     duration: 3000, align: "left");
                 context.SetNpcEmotionLoop(arg1: 112, arg2: "Bore_B", arg3: 9500f);
             }
@@ -624,8 +620,8 @@ namespace Maple2.Trigger._52000133_qd {
             internal State아노스대사05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8133}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003259, illustID: "Anos_normal", msg: "$52000133_QD__MAIN__18$",
+                context.CameraSelectPath(arg1: new[] {8133}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003259, illustId: "Anos_normal", msg: "$52000133_QD__MAIN__18$",
                     duration: 3000, align: "left");
                 context.SetNpcEmotionLoop(arg1: 112, arg2: "Talk_A", arg3: 6300f);
             }
@@ -644,7 +640,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal State케이틀린대사05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003258, illustID: "Caitlyn_normal", msg: "$52000133_QD__MAIN__19$",
+                context.AddCinematicTalk(npcId: 11003258, illustId: "Caitlyn_normal", msg: "$52000133_QD__MAIN__19$",
                     duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Bore_B", arg3: 7900f);
             }
@@ -663,7 +659,7 @@ namespace Maple2.Trigger._52000133_qd {
             internal State케이틀린대사06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003258, illustID: "Caitlyn_normal", msg: "$52000133_QD__MAIN__20$",
+                context.AddCinematicTalk(npcId: 11003258, illustId: "Caitlyn_normal", msg: "$52000133_QD__MAIN__20$",
                     duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Talk_A", arg3: 6800f);
             }
@@ -682,8 +678,8 @@ namespace Maple2.Trigger._52000133_qd {
             internal State아노스대사06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8140}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003259, illustID: "Anos_serious", msg: "$52000133_QD__MAIN__21$",
+                context.CameraSelectPath(arg1: new[] {8140}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003259, illustId: "Anos_serious", msg: "$52000133_QD__MAIN__21$",
                     duration: 3000, align: "left");
                 context.SetNpcEmotionLoop(arg1: 112, arg2: "Bore_A", arg3: 5800f);
             }
@@ -702,8 +698,8 @@ namespace Maple2.Trigger._52000133_qd {
             internal State아노스대사07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8140}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003259, illustID: "Anos_serious", msg: "$52000133_QD__MAIN__22$",
+                context.CameraSelectPath(arg1: new[] {8140}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003259, illustId: "Anos_serious", msg: "$52000133_QD__MAIN__22$",
                     duration: 3000, align: "left");
                 context.SetSceneSkip();
             }
@@ -725,8 +721,8 @@ namespace Maple2.Trigger._52000133_qd {
                 context.CameraReset(interpolationTime: 2.0f);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 4);
-                context.CreateMonster(arg1: new int[] {113});
-                context.DestroyMonster(arg1: new int[] {112});
+                context.CreateMonster(arg1: new[] {113});
+                context.DestroyMonster(arg1: new[] {112});
                 context.MoveUser(arg1: 52000133, arg2: 13);
             }
 

@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02010029_bf {
     public static class _triggercube_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3001, 3002, 3003}, arg2: false);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State발판(context);
                     return;
                 }
@@ -25,11 +21,11 @@ namespace Maple2.Trigger._02010029_bf {
             internal State발판(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3001, 3002, 3003}, arg2: true);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003}, arg2: true);
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {101})) {
+                if (!context.UserDetected(arg1: new[] {101})) {
                     context.State = new State발판숨김(context);
                     return;
                 }

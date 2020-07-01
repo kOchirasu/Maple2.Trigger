@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._52010020_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7001}, arg2: false);
+                context.SetEffect(arg1: new[] {7001}, arg2: false);
                 context.SetProductionUI(arg1: 2);
                 context.SetProductionUI(arg1: 4);
-                context.CreateMonster(arg1: new int[] {101, 102});
+                context.CreateMonster(arg1: new[] {101, 102});
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {701})) {
+                if (context.UserDetected(arg1: new[] {701})) {
                     context.State = new StateEvent_Ready(context);
                     return;
                 }
@@ -83,16 +79,16 @@ namespace Maple2.Trigger._52010020_qd {
             internal StateEvent_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7001}, arg2: true);
+                context.SetEffect(arg1: new[] {7001}, arg2: true);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2004");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2001");
                 context.MoveUser(arg1: 52010020, arg2: 1, arg3: 701);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.CreateMonster(arg1: new int[] {103});
+                context.CreateMonster(arg1: new[] {103});
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2003");
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: false);
                 context.SetTimer(arg1: "4", arg2: 4);
             }
 

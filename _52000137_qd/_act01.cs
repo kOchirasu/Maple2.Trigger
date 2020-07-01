@@ -1,36 +1,32 @@
-using System;
-
 namespace Maple2.Trigger._52000137_qd {
     public static class _act01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {7000}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {101, 102, 103, 104, 105, 201, 202, 203, 301, 900, 910, 920});
-                context.SetEffect(arg1: new int[] {5100}, arg2: false);
-                context.SetEffect(arg1: new int[] {5101}, arg2: false);
-                context.SetEffect(arg1: new int[] {5200}, arg2: false);
-                context.SetEffect(arg1: new int[] {5300}, arg2: false);
-                context.SetEffect(arg1: new int[] {5400}, arg2: false);
-                context.SetEffect(arg1: new int[] {5401}, arg2: false);
-                context.SetEffect(arg1: new int[] {5500}, arg2: false);
-                context.SetEffect(arg1: new int[] {5501}, arg2: false);
-                context.SetEffect(arg1: new int[] {5600}, arg2: true);
+                context.SetSkill(arg1: new[] {7000}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 201, 202, 203, 301, 900, 910, 920});
+                context.SetEffect(arg1: new[] {5100}, arg2: false);
+                context.SetEffect(arg1: new[] {5101}, arg2: false);
+                context.SetEffect(arg1: new[] {5200}, arg2: false);
+                context.SetEffect(arg1: new[] {5300}, arg2: false);
+                context.SetEffect(arg1: new[] {5400}, arg2: false);
+                context.SetEffect(arg1: new[] {5401}, arg2: false);
+                context.SetEffect(arg1: new[] {5500}, arg2: false);
+                context.SetEffect(arg1: new[] {5501}, arg2: false);
+                context.SetEffect(arg1: new[] {5600}, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
                 context.SetUserValue(key: "PatosTired", value: 0);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001604},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001604},
                     arg3: new byte[] {1})) {
                     context.State = new StateLodingDelay01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001604},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001604},
                     arg3: new byte[] {2})) {
                     context.State = new StateQuit02(context);
                     return;
@@ -44,9 +40,9 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateLodingDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101, 201, 910, 920}, arg2: true);
-                context.SetEffect(arg1: new int[] {5100}, arg2: true);
-                context.SetEffect(arg1: new int[] {5101}, arg2: true);
+                context.CreateMonster(arg1: new[] {101, 201, 910, 920}, arg2: true);
+                context.SetEffect(arg1: new[] {5100}, arg2: true);
+                context.SetEffect(arg1: new[] {5101}, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
@@ -138,8 +134,8 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateAsimovTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003283, msg: "$52000137_QD__ACT01__0$", duration: 5000,
-                    align: "center", illustID: "0");
+                context.AddCinematicTalk(npcId: 11003283, msg: "$52000137_QD__ACT01__0$", duration: 5000,
+                    align: "center", illustId: "0");
                 context.SetSceneSkip(arg1: "DarkAnosTalk01CSkip", arg2: "nextState");
                 context.SetSkip(arg1: "AsimovTalk01Skip");
             }
@@ -193,7 +189,7 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateAnosTruning01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5500}, arg2: true);
+                context.SetEffect(arg1: new[] {5500}, arg2: true);
             }
 
             public override void Execute() {
@@ -210,8 +206,8 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateAnosTruning02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101});
-                context.CreateMonster(arg1: new int[] {102}, arg2: true);
+                context.DestroyMonster(arg1: new[] {101});
+                context.CreateMonster(arg1: new[] {102}, arg2: true);
             }
 
             public override void Execute() {
@@ -228,8 +224,8 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateAnosTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003289, msg: "$52000137_QD__ACT01__1$", duration: 4000,
-                    align: "center", illustID: "0");
+                context.AddCinematicTalk(npcId: 11003289, msg: "$52000137_QD__ACT01__1$", duration: 4000,
+                    align: "center", illustId: "0");
                 context.SetSkip(arg1: "AnosTalk01Skip");
             }
 
@@ -300,8 +296,8 @@ namespace Maple2.Trigger._52000137_qd {
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 4000f);
-                context.AddCinematicTalk(npcID: 0, msg: "$52000137_QD__ACT01__2$", duration: 4000, align: "center",
-                    illustID: "0");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000137_QD__ACT01__2$", duration: 4000, align: "center",
+                    illustId: "0");
                 context.SetSkip(arg1: "PCTalk01Skip");
             }
 
@@ -338,10 +334,10 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateAsimovTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003283, msg: "$52000137_QD__ACT01__3$", duration: 4000,
-                    align: "center", illustID: "Asimov_normal");
-                context.DestroyMonster(arg1: new int[] {102});
-                context.CreateMonster(arg1: new int[] {103}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003283, msg: "$52000137_QD__ACT01__3$", duration: 4000,
+                    align: "center", illustId: "Asimov_normal");
+                context.DestroyMonster(arg1: new[] {102});
+                context.CreateMonster(arg1: new[] {103}, arg2: false);
                 context.SetSkip(arg1: "AsimovTalk02Skip");
             }
 
@@ -377,8 +373,8 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateAsimovTalk03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003283, msg: "$52000137_QD__ACT01__4$", duration: 5000,
-                    align: "center", illustID: "Asimov_normal");
+                context.AddCinematicTalk(npcId: 11003283, msg: "$52000137_QD__ACT01__4$", duration: 5000,
+                    align: "center", illustId: "Asimov_normal");
                 context.SetSkip(arg1: "AsimovTalk03Skip");
             }
 
@@ -448,8 +444,8 @@ namespace Maple2.Trigger._52000137_qd {
             internal StatePCTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 0, msg: "$52000137_QD__ACT01__5$", duration: 5000, align: "center",
-                    illustID: "0");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000137_QD__ACT01__5$", duration: 5000, align: "center",
+                    illustId: "0");
                 context.SetSkip(arg1: "PCTalk02Skip");
             }
 
@@ -485,8 +481,8 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateCameraChange04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {103});
-                context.CreateMonster(arg1: new int[] {104}, arg2: false);
+                context.DestroyMonster(arg1: new[] {103});
+                context.CreateMonster(arg1: new[] {104}, arg2: false);
                 context.CameraSelect(arg1: 605, arg2: true);
             }
 
@@ -505,8 +501,8 @@ namespace Maple2.Trigger._52000137_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 104, arg2: "Attack_Idle_A,Attack_Idle_A");
-                context.AddCinematicTalk(npcID: 11003285, msg: "$52000137_QD__ACT01__6$", duration: 3000,
-                    align: "center", illustID: "Patos_normal");
+                context.AddCinematicTalk(npcId: 11003285, msg: "$52000137_QD__ACT01__6$", duration: 3000,
+                    align: "center", illustId: "Patos_normal");
                 context.SetSkip(arg1: "DarkAnosTalk01Skip");
             }
 
@@ -559,10 +555,10 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateDarkAnosAttackAsimov02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5200}, arg2: true);
-                context.DestroyMonster(arg1: new int[] {201, 910, 920});
-                context.CreateMonster(arg1: new int[] {202}, arg2: false);
-                context.SetEffect(arg1: new int[] {5501}, arg2: true);
+                context.SetEffect(arg1: new[] {5200}, arg2: true);
+                context.DestroyMonster(arg1: new[] {201, 910, 920});
+                context.CreateMonster(arg1: new[] {202}, arg2: false);
+                context.SetEffect(arg1: new[] {5501}, arg2: true);
             }
 
             public override void Execute() {
@@ -579,9 +575,9 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateDarkAnosAttackAsimov03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5500}, arg2: false);
-                context.SetEffect(arg1: new int[] {5101}, arg2: false);
-                context.SetEffect(arg1: new int[] {5100}, arg2: false);
+                context.SetEffect(arg1: new[] {5500}, arg2: false);
+                context.SetEffect(arg1: new[] {5101}, arg2: false);
+                context.SetEffect(arg1: new[] {5100}, arg2: false);
             }
 
             public override void Execute() {
@@ -600,7 +596,7 @@ namespace Maple2.Trigger._52000137_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 611, arg2: true);
                 context.MoveUserPath(arg1: "MS2PatrolData_1003");
-                context.AddBalloonTalk(spawnPointID: 0, msg: "$52000137_QD__ACT01__7$", duration: 2000,
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000137_QD__ACT01__7$", duration: 2000,
                     delayTick: 1000);
             }
 
@@ -621,7 +617,7 @@ namespace Maple2.Trigger._52000137_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetEffect(arg1: new int[] {5501}, arg2: false);
+                context.SetEffect(arg1: new[] {5501}, arg2: false);
             }
 
             public override void Execute() {
@@ -656,8 +652,8 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateAsimovTalk04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003283, msg: "$52000137_QD__ACT01__8$", duration: 5000,
-                    align: "center", illustID: "Asimov_normal");
+                context.AddCinematicTalk(npcId: 11003283, msg: "$52000137_QD__ACT01__8$", duration: 5000,
+                    align: "center", illustId: "Asimov_normal");
                 context.SetSkip(arg1: "AsimovTalk04Skip");
             }
 
@@ -712,8 +708,8 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateAsimovFaint02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {202});
-                context.CreateMonster(arg1: new int[] {203}, arg2: false);
+                context.DestroyMonster(arg1: new[] {202});
+                context.CreateMonster(arg1: new[] {203}, arg2: false);
                 context.CameraSelect(arg1: 613, arg2: true);
             }
 
@@ -782,8 +778,8 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateDarkAnosTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003285, msg: "$52000137_QD__ACT01__9$", duration: 5000,
-                    align: "center", illustID: "Patos_normal");
+                context.AddCinematicTalk(npcId: 11003285, msg: "$52000137_QD__ACT01__9$", duration: 5000,
+                    align: "center", illustId: "Patos_normal");
                 context.SetSkip(arg1: "DarkAnosTalk02Skip");
             }
 
@@ -820,8 +816,8 @@ namespace Maple2.Trigger._52000137_qd {
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 4000f);
-                context.AddCinematicTalk(npcID: 0, msg: "$52000137_QD__ACT01__10$", duration: 5000, align: "center",
-                    illustID: "0");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000137_QD__ACT01__10$", duration: 5000, align: "center",
+                    illustId: "0");
                 context.SetSceneSkip();
             }
 
@@ -858,8 +854,8 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateDarkAnosTalk03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003285, msg: "$52000137_QD__ACT01__11$", duration: 4000,
-                    align: "center", illustID: "Patos_normal");
+                context.AddCinematicTalk(npcId: 11003285, msg: "$52000137_QD__ACT01__11$", duration: 4000,
+                    align: "center", illustId: "Patos_normal");
             }
 
             public override void Execute() {
@@ -879,18 +875,18 @@ namespace Maple2.Trigger._52000137_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.DestroyMonster(arg1: new int[] {101});
-                context.DestroyMonster(arg1: new int[] {102});
-                context.DestroyMonster(arg1: new int[] {103});
-                context.DestroyMonster(arg1: new int[] {201, 910, 920});
-                context.CreateMonster(arg1: new int[] {202}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {202});
-                context.CreateMonster(arg1: new int[] {203}, arg2: false);
-                context.SetEffect(arg1: new int[] {5500}, arg2: false);
-                context.SetEffect(arg1: new int[] {5501}, arg2: false);
-                context.SetEffect(arg1: new int[] {5100}, arg2: false);
-                context.SetEffect(arg1: new int[] {5101}, arg2: false);
-                context.SetEffect(arg1: new int[] {5200}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101});
+                context.DestroyMonster(arg1: new[] {102});
+                context.DestroyMonster(arg1: new[] {103});
+                context.DestroyMonster(arg1: new[] {201, 910, 920});
+                context.CreateMonster(arg1: new[] {202}, arg2: false);
+                context.DestroyMonster(arg1: new[] {202});
+                context.CreateMonster(arg1: new[] {203}, arg2: false);
+                context.SetEffect(arg1: new[] {5500}, arg2: false);
+                context.SetEffect(arg1: new[] {5501}, arg2: false);
+                context.SetEffect(arg1: new[] {5100}, arg2: false);
+                context.SetEffect(arg1: new[] {5101}, arg2: false);
+                context.SetEffect(arg1: new[] {5200}, arg2: false);
                 context.SetPcEmotionSequence(arg1: "Attack_Idle_A");
                 context.RemoveCinematicTalk();
             }
@@ -946,17 +942,17 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateDarkAnosBattle02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {104});
-                context.CreateMonster(arg1: new int[] {900}, arg2: false);
+                context.DestroyMonster(arg1: new[] {104});
+                context.CreateMonster(arg1: new[] {900}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "PatosTired", value: 1)) {
+                if (context.GetUserValue(key: "PatosTired") == 1) {
                     context.State = new StateDarkAnosDown01(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {900})) {
+                if (context.MonsterDead(arg1: new[] {900})) {
                     context.State = new StateDarkAnosDown01(context);
                     return;
                 }
@@ -988,8 +984,8 @@ namespace Maple2.Trigger._52000137_qd {
             internal StatePositionArrange01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {900});
-                context.CreateMonster(arg1: new int[] {105}, arg2: false);
+                context.DestroyMonster(arg1: new[] {900});
+                context.CreateMonster(arg1: new[] {105}, arg2: false);
                 context.MoveUser(arg1: 52000137, arg2: 10, arg3: 9900);
                 context.CameraSelect(arg1: 620, arg2: true);
             }
@@ -1026,7 +1022,7 @@ namespace Maple2.Trigger._52000137_qd {
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_2000");
-                context.AddBalloonTalk(spawnPointID: 0, msg: "$52000137_QD__ACT01__12$", duration: 2000,
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000137_QD__ACT01__12$", duration: 2000,
                     delayTick: 500);
             }
 
@@ -1044,7 +1040,7 @@ namespace Maple2.Trigger._52000137_qd {
             internal StatePCBalloonTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 0, msg: "$52000137_QD__ACT01__13$", duration: 3000, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000137_QD__ACT01__13$", duration: 3000, delayTick: 0);
             }
 
             public override void Execute() {
@@ -1080,7 +1076,7 @@ namespace Maple2.Trigger._52000137_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 622, arg2: true);
-                context.CreateMonster(arg1: new int[] {301}, arg2: false);
+                context.CreateMonster(arg1: new[] {301}, arg2: false);
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_301");
             }
 
@@ -1098,7 +1094,7 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateKanduraApp02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 0, msg: "$52000137_QD__ACT01__14$", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000137_QD__ACT01__14$", duration: 2000, delayTick: 0);
             }
 
             public override void Execute() {
@@ -1150,7 +1146,7 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateKanduraAttack02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {7000}, arg2: true);
+                context.SetSkill(arg1: new[] {7000}, arg2: true);
             }
 
             public override void Execute() {
@@ -1222,8 +1218,8 @@ namespace Maple2.Trigger._52000137_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_302");
-                context.AddCinematicTalk(npcID: 11003287, msg: "$52000137_QD__ACT01__15$", duration: 4000,
-                    align: "center", illustID: "Kandura_normal");
+                context.AddCinematicTalk(npcId: 11003287, msg: "$52000137_QD__ACT01__15$", duration: 4000,
+                    align: "center", illustId: "Kandura_normal");
                 context.SetSceneSkip(arg1: "ShowCaption04Skip", arg2: "exit");
                 context.SetSkip(arg1: "KanduraTalk01Skip");
             }
@@ -1260,8 +1256,8 @@ namespace Maple2.Trigger._52000137_qd {
             internal StatePCTalk04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 0, msg: "$52000137_QD__ACT01__16$", duration: 4000, align: "center",
-                    illustID: "0");
+                context.AddCinematicTalk(npcId: 0, msg: "$52000137_QD__ACT01__16$", duration: 4000, align: "center",
+                    illustId: "0");
                 context.SetSkip(arg1: "PCTalk04Skip");
             }
 
@@ -1315,8 +1311,8 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateKanduraTalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003287, msg: "$52000137_QD__ACT01__17$", duration: 4000,
-                    align: "center", illustID: "Kandura_normal");
+                context.AddCinematicTalk(npcId: 11003287, msg: "$52000137_QD__ACT01__17$", duration: 4000,
+                    align: "center", illustId: "Kandura_normal");
                 context.SetSkip(arg1: "KanduraTalk02Skip");
             }
 
@@ -1370,8 +1366,8 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateKanduraReadyToDisapp02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5300}, arg2: true);
-                context.SetEffect(arg1: new int[] {5400}, arg2: true);
+                context.SetEffect(arg1: new[] {5300}, arg2: true);
+                context.SetEffect(arg1: new[] {5400}, arg2: true);
             }
 
             public override void Execute() {
@@ -1388,9 +1384,9 @@ namespace Maple2.Trigger._52000137_qd {
             internal StateKanduraReadyToDisapp03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5400}, arg2: false);
-                context.SetEffect(arg1: new int[] {5401}, arg2: true);
-                context.DestroyMonster(arg1: new int[] {105, 301});
+                context.SetEffect(arg1: new[] {5400}, arg2: false);
+                context.SetEffect(arg1: new[] {5401}, arg2: true);
+                context.DestroyMonster(arg1: new[] {105, 301});
             }
 
             public override void Execute() {

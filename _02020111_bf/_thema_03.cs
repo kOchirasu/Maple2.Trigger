@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02020111_bf {
     public static class _thema_03 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {1004})) {
+                if (context.UserDetected(arg1: new[] {1004})) {
                     context.State = new State소환준비(context);
                     return;
                 }
@@ -38,16 +34,16 @@ namespace Maple2.Trigger._02020111_bf {
             internal State몬스터등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {161, 162, 163, 164, 165, 166});
+                context.CreateMonster(arg1: new[] {161, 162, 163, 164, 165, 166});
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "monster_die", value: 1)) {
+                if (context.GetUserValue(key: "monster_die") == 1) {
                     context.State = new State몬스터소멸(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {161, 162, 163, 164, 165, 166})) {
+                if (context.MonsterDead(arg1: new[] {161, 162, 163, 164, 165, 166})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -62,7 +58,7 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "monster_die", value: 1)) {
+                if (context.GetUserValue(key: "monster_die") == 1) {
                     context.State = new State몬스터소멸(context);
                     return;
                 }
@@ -80,11 +76,11 @@ namespace Maple2.Trigger._02020111_bf {
             internal State몬스터소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {161, 162, 163, 164, 165, 166});
+                context.DestroyMonster(arg1: new[] {161, 162, 163, 164, 165, 166});
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "SkillBreakFail", value: 1)) {
+                if (context.GetUserValue(key: "SkillBreakFail") == 1) {
                     context.State = new State시작(context);
                     return;
                 }

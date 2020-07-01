@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02020004_bf {
     public static class _100004_timeevent_triggervalue {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._02020004_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "EventStart", value: 1)) {
+                if (context.GetUserValue(key: "EventStart") == 1) {
                     context.State = new StatePuzzleOn(context);
                     return;
                 }
@@ -26,11 +22,11 @@ namespace Maple2.Trigger._02020004_bf {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "EventStart", value: 0);
-                context.SetUserValue(triggerID: 14000, key: "TimeEventOn", value: 1);
+                context.SetUserValue(triggerId: 14000, key: "TimeEventOn", value: 1);
             }
 
             public override void Execute() {
-                if (context.WaitSecondsUserValue(key: "TimeEventLifeTime")) {
+                if (context.WaitTick(context.GetUserValue(key: "TimeEventLifeTime"))) {
                     context.State = new StatePuzzleOff(context);
                     return;
                 }
@@ -43,7 +39,7 @@ namespace Maple2.Trigger._02020004_bf {
             internal StatePuzzleOff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 14000, key: "TimeEventOn", value: 0);
+                context.SetUserValue(triggerId: 14000, key: "TimeEventOn", value: 0);
             }
 
             public override void Execute() {

@@ -1,11 +1,8 @@
-using System;
 using System.Numerics;
 
 namespace Maple2.Trigger._99999908 {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {

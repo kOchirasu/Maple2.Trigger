@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._82000002_survival {
     public static class _07_hidepartyui {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateSetting(context);
-
-        private class StateSetting : TriggerState {
+        public class StateSetting : TriggerState {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -29,7 +25,7 @@ namespace Maple2.Trigger._82000002_survival {
                     return;
                 }
 
-                if (context.UserValue(key: "HidePartyUI", value: 1)) {
+                if (context.GetUserValue(key: "HidePartyUI") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }

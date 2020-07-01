@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._99999911 {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State최초(context);
-
-        private class State최초 : TriggerState {
+        public class State최초 : TriggerState {
             internal State최초(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 701, arg2: 1)) {
+                if (context.GetUserCount(boxId: 701) == 1) {
                     context.State = new State시작조건체크(context);
                     return;
                 }
@@ -30,7 +26,7 @@ namespace Maple2.Trigger._99999911 {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 701, arg2: 20)) {
+                if (context.GetUserCount(boxId: 701) == 20) {
                     context.State = new State어나운스0(context);
                     return;
                 }
@@ -43,7 +39,7 @@ namespace Maple2.Trigger._99999911 {
             internal State어나운스0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$99999911__MAIN__0$", arg3: new int[] {4000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$99999911__MAIN__0$", arg3: 4000, arg4: "0");
             }
 
             public override void Execute() {
@@ -65,7 +61,7 @@ namespace Maple2.Trigger._99999911 {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 5500)) {
-                    context.SetMesh(arg1: new int[] {301, 302, 303}, arg2: false, arg3: 12, arg4: 0);
+                    context.SetMesh(arg1: new[] {301, 302, 303}, arg2: false, arg3: 12, arg4: 0);
                     context.SetAchievement(arg1: 101, arg2: "trigger", arg3: "dailyquest_start");
                     context.State = new Stateidle(context);
                     return;
@@ -79,26 +75,26 @@ namespace Maple2.Trigger._99999911 {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: true, arg3: 1);
-                context.CreateMonster(arg1: new int[] {102}, arg2: true, arg3: 2);
-                context.CreateMonster(arg1: new int[] {103}, arg2: true, arg3: 3);
-                context.CreateMonster(arg1: new int[] {104}, arg2: true, arg3: 4);
-                context.CreateMonster(arg1: new int[] {105}, arg2: true, arg3: 5);
-                context.CreateMonster(arg1: new int[] {106}, arg2: true, arg3: 6);
-                context.CreateMonster(arg1: new int[] {107}, arg2: true, arg3: 7);
-                context.CreateMonster(arg1: new int[] {108}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {301}, arg2: true, arg3: 1);
-                context.CreateMonster(arg1: new int[] {302}, arg2: true, arg3: 2);
-                context.CreateMonster(arg1: new int[] {303}, arg2: true, arg3: 3);
-                context.CreateMonster(arg1: new int[] {304}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {305}, arg2: true, arg3: 1);
-                context.CreateMonster(arg1: new int[] {306}, arg2: true, arg3: 2);
-                context.CreateMonster(arg1: new int[] {307}, arg2: true, arg3: 3);
-                context.CreateMonster(arg1: new int[] {308}, arg2: true, arg3: 0);
-                context.CreateMonster(arg1: new int[] {309}, arg2: true, arg3: 1);
-                context.CreateMonster(arg1: new int[] {310}, arg2: true, arg3: 2);
-                context.CreateMonster(arg1: new int[] {311}, arg2: true, arg3: 3);
-                context.CreateMonster(arg1: new int[] {312}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {101}, arg2: true, arg3: 1);
+                context.CreateMonster(arg1: new[] {102}, arg2: true, arg3: 2);
+                context.CreateMonster(arg1: new[] {103}, arg2: true, arg3: 3);
+                context.CreateMonster(arg1: new[] {104}, arg2: true, arg3: 4);
+                context.CreateMonster(arg1: new[] {105}, arg2: true, arg3: 5);
+                context.CreateMonster(arg1: new[] {106}, arg2: true, arg3: 6);
+                context.CreateMonster(arg1: new[] {107}, arg2: true, arg3: 7);
+                context.CreateMonster(arg1: new[] {108}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {301}, arg2: true, arg3: 1);
+                context.CreateMonster(arg1: new[] {302}, arg2: true, arg3: 2);
+                context.CreateMonster(arg1: new[] {303}, arg2: true, arg3: 3);
+                context.CreateMonster(arg1: new[] {304}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {305}, arg2: true, arg3: 1);
+                context.CreateMonster(arg1: new[] {306}, arg2: true, arg3: 2);
+                context.CreateMonster(arg1: new[] {307}, arg2: true, arg3: 3);
+                context.CreateMonster(arg1: new[] {308}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {309}, arg2: true, arg3: 1);
+                context.CreateMonster(arg1: new[] {310}, arg2: true, arg3: 2);
+                context.CreateMonster(arg1: new[] {311}, arg2: true, arg3: 3);
+                context.CreateMonster(arg1: new[] {312}, arg2: true, arg3: 0);
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
@@ -116,7 +112,7 @@ namespace Maple2.Trigger._99999911 {
             internal StateRound1_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 991104, key: "Round_02", value: 1);
+                context.SetUserValue(triggerId: 991104, key: "Round_02", value: 1);
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 

@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000251_bf {
     public static class _end {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
@@ -19,7 +15,7 @@ namespace Maple2.Trigger._02000251_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 7);
-                context.SetEventUI(arg1: 1, arg2: "$02000251_BF__END__0$", arg3: new int[] {5000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000251_BF__END__0$", arg3: 5000, arg4: "0");
             }
 
             public override void Execute() {
@@ -37,7 +33,7 @@ namespace Maple2.Trigger._02000251_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 7);
-                context.SetEventUI(arg1: 1, arg2: "$02000251_BF__END__1$", arg3: new int[] {5000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000251_BF__END__1$", arg3: 5000, arg4: "0");
             }
 
             public override void Execute() {
@@ -55,7 +51,7 @@ namespace Maple2.Trigger._02000251_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 7);
-                context.SetEventUI(arg1: 1, arg2: "$02000251_BF__END__2$", arg3: new int[] {5000});
+                context.SetEventUI(arg1: 1, arg2: "$02000251_BF__END__2$", arg3: 5000);
             }
 
             public override void Execute() {

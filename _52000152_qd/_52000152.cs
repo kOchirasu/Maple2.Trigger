@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52000152_qd {
     public static class _52000152 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -14,7 +10,7 @@ namespace Maple2.Trigger._52000152_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new State영상재생(context);
                     return;
                 }
@@ -30,7 +26,7 @@ namespace Maple2.Trigger._52000152_qd {
                 context.SetOnetimeEffect(id: 1, enable: true,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "jobChangeStory.swf", movieID: 1);
+                context.PlaySceneMovie(fileName: "jobChangeStory.swf", movieId: 1);
             }
 
             public override void Execute() {
@@ -75,7 +71,7 @@ namespace Maple2.Trigger._52000152_qd {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_Walk");
-                context.CameraSelectPath(arg1: new int[] {4000, 4001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4000, 4001}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -93,7 +89,7 @@ namespace Maple2.Trigger._52000152_qd {
             internal State묘지전경씬02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4002, 4003, 4004, 4005}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4002, 4003, 4004, 4005}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52000152_QD__52000152__0$",
                     desc: "$52000152_QD__52000152__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
                     duration: 5000, scale: 2.5f);
@@ -174,14 +170,14 @@ namespace Maple2.Trigger._52000152_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.AddBalloonTalk(spawnPointID: 0, msg: "$52000152_QD__52000152__2$", duration: 6000,
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000152_QD__52000152__2$", duration: 6000,
                     delayTick: 1000);
-                context.ShowGuideSummary(entityID: 25201521, textID: 25201521, duration: 10000);
-                context.CreateMonster(arg1: new int[] {2000}, arg2: false);
+                context.ShowGuideSummary(entityId: 25201521, textId: 25201521, duration: 10000);
+                context.CreateMonster(arg1: new[] {2000}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002328},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002328},
                     arg3: new byte[] {3})) {
                     context.State = new State제니아등장01(context);
                     return;
@@ -195,12 +191,12 @@ namespace Maple2.Trigger._52000152_qd {
             internal State제니아등장01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {2001}, arg2: false);
+                context.CreateMonster(arg1: new[] {2001}, arg2: false);
                 context.MoveNpc(arg1: 2001, arg2: "MS2PatrolData_xeniaMove");
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002332},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002332},
                     arg3: new byte[] {3})) {
                     context.State = new State수련장이동01(context);
                     return;

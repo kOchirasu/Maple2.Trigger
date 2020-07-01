@@ -1,25 +1,21 @@
-using System;
-
 namespace Maple2.Trigger._52100303_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016,
                         3017, 3018, 3019, 3020, 3021, 3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029, 3030, 3031, 3032,
                         3033, 3034, 3035, 3036, 3037, 3038, 3039, 3040, 3041, 3042, 3043, 3044, 3045, 3046, 3047, 3048,
                         3049, 3050, 3051, 3052, 3053, 3054, 3055, 3056, 3057, 3058, 3059, 3060, 3061, 3062, 3063, 3064,
                         3065, 3066
                     }, arg2: false);
-                context.SetMesh(arg1: new int[] {4002, 4003, 4004}, arg2: false);
+                context.SetMesh(arg1: new[] {4002, 4003, 4004}, arg2: false);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015, 5016,
                         5017, 5018, 5019, 5020, 5021, 5022, 5023, 5024, 5025, 5026, 5027, 5028, 5029, 5030, 5031, 5032,
                         5033, 5034, 5035, 5036, 5037, 5038, 5039, 5040, 5041, 5042, 5043, 5044, 5045, 5046, 5047, 5048,
@@ -33,7 +29,7 @@ namespace Maple2.Trigger._52100303_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {901})) {
+                if (context.UserDetected(arg1: new[] {901})) {
                     context.State = new State티마이온등장(context);
                     return;
                 }
@@ -46,15 +42,15 @@ namespace Maple2.Trigger._52100303_qd {
             internal State티마이온등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcID: 11004715, illust: "Eone_serious",
+                context.SideNpcTalk(type: "talk", npcId: 11004715, illust: "Eone_serious",
                     script: "$52100303_QD__MAIN__0$", duration: 3000);
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101})) {
+                if (context.MonsterDead(arg1: new[] {101})) {
                     context.SetAchievement(arg2: "trigger", arg3: "KillTimaion");
-                    context.DestroyMonster(arg1: new int[] {111});
+                    context.DestroyMonster(arg1: new[] {111});
                     context.State = new State종료대기(context);
                     return;
                 }
@@ -67,7 +63,7 @@ namespace Maple2.Trigger._52100303_qd {
             internal State종료대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcID: 11004715, illust: "Eone_normal",
+                context.SideNpcTalk(type: "talk", npcId: 11004715, illust: "Eone_normal",
                     script: "$52100303_QD__MAIN__1$", duration: 3000);
             }
 

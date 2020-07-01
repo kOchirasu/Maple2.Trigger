@@ -1,27 +1,23 @@
-using System;
-
 namespace Maple2.Trigger._52000070_qd {
     public static class _trap01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new int[] {4000}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {4000}, arg2: false);
-                context.SetMesh(arg1: new int[] {3100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {4100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {4200}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetBreakable(arg1: new[] {4000}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
+                context.SetMesh(arg1: new[] {3100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {4100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {4200}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 3000, arg2: true, arg3: "Closed");
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetEffect(arg1: new int[] {6000}, arg2: false);
-                context.SetEffect(arg1: new int[] {6100}, arg2: false);
+                context.SetEffect(arg1: new[] {6000}, arg2: false);
+                context.SetEffect(arg1: new[] {6100}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002677},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002677},
                     arg3: new byte[] {1})) {
                     context.State = new StateLoadingDelay01(context);
                     return;
@@ -72,10 +68,10 @@ namespace Maple2.Trigger._52000070_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 601, arg2: true);
-                context.SetMesh(arg1: new int[] {4200}, arg2: false, arg3: 100, arg4: 0, arg5: 3f);
-                context.SetBreakable(arg1: new int[] {4000}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new int[] {4000}, arg2: true);
-                context.SetEffect(arg1: new int[] {6000}, arg2: true);
+                context.SetMesh(arg1: new[] {4200}, arg2: false, arg3: 100, arg4: 0, arg5: 3f);
+                context.SetBreakable(arg1: new[] {4000}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: true);
+                context.SetEffect(arg1: new[] {6000}, arg2: true);
             }
 
             public override void Execute() {
@@ -93,7 +89,7 @@ namespace Maple2.Trigger._52000070_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 3000, arg2: true, arg3: "Opened");
-                context.SetEffect(arg1: new int[] {6100}, arg2: true);
+                context.SetEffect(arg1: new[] {6100}, arg2: true);
             }
 
             public override void Execute() {
@@ -110,7 +106,7 @@ namespace Maple2.Trigger._52000070_qd {
             internal StateBoardSlide02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {4100}, arg2: true, arg3: 800, arg4: 0, arg5: 3f);
+                context.SetMesh(arg1: new[] {4100}, arg2: true, arg3: 800, arg4: 0, arg5: 3f);
             }
 
             public override void Execute() {
@@ -127,11 +123,11 @@ namespace Maple2.Trigger._52000070_qd {
             internal StateEnemyNpcWalkIn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6000}, arg2: false);
-                context.SetBreakable(arg1: new int[] {4000}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {4000}, arg2: false);
+                context.SetEffect(arg1: new[] {6000}, arg2: false);
+                context.SetBreakable(arg1: new[] {4000}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_1000");
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101");
             }
 
@@ -150,7 +146,7 @@ namespace Maple2.Trigger._52000070_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 602, arg2: true);
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_102");
             }
 
@@ -168,7 +164,7 @@ namespace Maple2.Trigger._52000070_qd {
             internal StateEnemyNpcWalkIn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {103}, arg2: false);
+                context.CreateMonster(arg1: new[] {103}, arg2: false);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_103");
             }
 
@@ -186,7 +182,7 @@ namespace Maple2.Trigger._52000070_qd {
             internal StateEnemyNpcWalkIn04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {104}, arg2: false);
+                context.CreateMonster(arg1: new[] {104}, arg2: false);
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_104");
                 context.CameraSelect(arg1: 603, arg2: true);
             }
@@ -284,12 +280,12 @@ namespace Maple2.Trigger._52000070_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1.0f);
-                context.DestroyMonster(arg1: new int[] {101, 102, 103, 104});
-                context.CreateMonster(arg1: new int[] {901, 902, 903, 904}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101, 102, 103, 104});
+                context.CreateMonster(arg1: new[] {901, 902, 903, 904}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {901, 902, 903, 904})) {
+                if (context.MonsterDead(arg1: new[] {901, 902, 903, 904})) {
                     context.State = new StateBattleEnd01(context);
                     return;
                 }
@@ -356,7 +352,7 @@ namespace Maple2.Trigger._52000070_qd {
             internal StateFriendNpcWalkIn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201, 202, 203, 204}, arg2: false);
+                context.CreateMonster(arg1: new[] {201, 202, 203, 204}, arg2: false);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201");
                 context.MoveNpc(arg1: 202, arg2: "MS2PatrolData_202");
                 context.MoveNpc(arg1: 203, arg2: "MS2PatrolData_203");
@@ -529,7 +525,7 @@ namespace Maple2.Trigger._52000070_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002677},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002677},
                     arg3: new byte[] {2})) {
                     context.State = new StateMoveToComplete(context);
                     return;

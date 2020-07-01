@@ -1,14 +1,10 @@
-using System;
-
 namespace Maple2.Trigger._02000064_tw_triatown02 {
     public static class _massive_door_3 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State오픈대기중(context);
-
-        private class State오픈대기중 : TriggerState {
+        public class State오픈대기중 : TriggerState {
             internal State오픈대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {11, 12, 13}, arg2: true);
+                context.SetMesh(arg1: new[] {11, 12, 13}, arg2: true);
                 context.SetActor(arg1: 1, arg2: true, arg3: "Eff_MassiveEvent_Bridge_Opened");
                 context.SetActor(arg1: 2, arg2: true, arg3: "Eff_MassiveEvent_Bridge_Opened");
                 context.SetActor(arg1: 3, arg2: true, arg3: "Eff_MassiveEvent_Door_Closed");

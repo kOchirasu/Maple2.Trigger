@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52100056_qd {
     public static class _99_bossspawn {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._52100056_qd {
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new State룸체크(context);
                     return;
                 }
@@ -45,7 +41,7 @@ namespace Maple2.Trigger._52100056_qd {
             internal State던전시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {900, 901}, arg2: false);
+                context.CreateMonster(arg1: new[] {900, 901}, arg2: false);
             }
 
             public override void Execute() {
@@ -62,7 +58,7 @@ namespace Maple2.Trigger._52100056_qd {
             internal State퀘스트던전시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {910, 911}, arg2: false);
+                context.CreateMonster(arg1: new[] {910, 911}, arg2: false);
             }
 
             public override void Execute() {
@@ -81,7 +77,7 @@ namespace Maple2.Trigger._52100056_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {910, 911})) {
+                if (context.MonsterDead(arg1: new[] {910, 911})) {
                     context.State = new StateQuestClear(context);
                     return;
                 }
@@ -94,11 +90,11 @@ namespace Maple2.Trigger._52100056_qd {
             internal StateBossBattle01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 100, key: "CheckDualKill", value: 1);
+                context.SetUserValue(triggerId: 100, key: "CheckDualKill", value: 1);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {900, 901})) {
+                if (context.MonsterDead(arg1: new[] {900, 901})) {
                     context.State = new StateBossBattle02(context);
                     return;
                 }
@@ -111,7 +107,7 @@ namespace Maple2.Trigger._52100056_qd {
             internal StateBossBattle02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {900, 901});
+                context.DestroyMonster(arg1: new[] {900, 901});
                 context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "Madracan02");
                 context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "Madracan_Q02");
             }

@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._99999905 {
     public static class _score01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {604}, arg2: false);
+                context.SetEffect(arg1: new[] {604}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000413}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000413}, arg2: 0)) {
                     context.State = new State점수(context);
                     return;
                 }
@@ -26,7 +22,7 @@ namespace Maple2.Trigger._99999905 {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetEffect(arg1: new int[] {604}, arg2: true);
+                context.SetEffect(arg1: new[] {604}, arg2: true);
             }
 
             public override void Execute() {

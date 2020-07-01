@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._52000065_qd {
     public static class _tutorial {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {1000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {2000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {2000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 20, arg2: false, arg3: false, arg4: false);
@@ -23,7 +19,7 @@ namespace Maple2.Trigger._52000065_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9002})) {
+                if (context.UserDetected(arg1: new[] {9002})) {
                     context.State = new State영상준비_01(context);
                     return;
                 }
@@ -56,7 +52,7 @@ namespace Maple2.Trigger._52000065_qd {
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
                 context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
-                context.PlaySceneMovie(fileName: @"common\Common_Opening.usm", movieID: 1);
+                context.PlaySceneMovie(fileName: @"common\Common_Opening.usm", movieId: 1);
             }
 
             public override void Execute() {
@@ -96,11 +92,11 @@ namespace Maple2.Trigger._52000065_qd {
             internal State몬스터소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101})) {
+                if (context.MonsterDead(arg1: new[] {101})) {
                     context.State = new State해제(context);
                     return;
                 }
@@ -113,61 +109,61 @@ namespace Maple2.Trigger._52000065_qd {
             internal State해제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {1000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {2000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.GuideEvent(eventID: 260);
+                context.SetMesh(arg1: new[] {1000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {2000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.GuideEvent(eventId: 260);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001}, arg2: 90)) {
+                if (context.UserDetected(arg1: new[] {9001}, arg2: 90)) {
                     context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                     context.StartTutorial();
                 }
 
-                if (context.UserDetected(arg1: new int[] {9001}, arg2: 110)) {
+                if (context.UserDetected(arg1: new[] {9001}, arg2: 110)) {
                     context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                     context.StartTutorial();
                 }
 
-                if (context.UserDetected(arg1: new int[] {9001}, arg2: 100)) {
+                if (context.UserDetected(arg1: new[] {9001}, arg2: 100)) {
                     context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                     context.StartTutorial();
                 }
 
-                if (context.UserDetected(arg1: new int[] {9001}, arg2: 1)) {
+                if (context.UserDetected(arg1: new[] {9001}, arg2: 1)) {
                     context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                     context.StartTutorial();
                 }
 
-                if (context.UserDetected(arg1: new int[] {9001}, arg2: 10)) {
+                if (context.UserDetected(arg1: new[] {9001}, arg2: 10)) {
                     context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: true);
                 }
 
-                if (context.UserDetected(arg1: new int[] {9001}, arg2: 20)) {
+                if (context.UserDetected(arg1: new[] {9001}, arg2: 20)) {
                     context.SetPortal(arg1: 20, arg2: true, arg3: true, arg4: true);
                 }
 
-                if (context.UserDetected(arg1: new int[] {9001}, arg2: 30)) {
+                if (context.UserDetected(arg1: new[] {9001}, arg2: 30)) {
                     context.SetPortal(arg1: 30, arg2: true, arg3: true, arg4: true);
                 }
 
-                if (context.UserDetected(arg1: new int[] {9001}, arg2: 40)) {
+                if (context.UserDetected(arg1: new[] {9001}, arg2: 40)) {
                     context.SetPortal(arg1: 40, arg2: true, arg3: true, arg4: true);
                 }
 
-                if (context.UserDetected(arg1: new int[] {9001}, arg2: 50)) {
+                if (context.UserDetected(arg1: new[] {9001}, arg2: 50)) {
                     context.SetPortal(arg1: 50, arg2: true, arg3: true, arg4: true);
                 }
 
-                if (context.UserDetected(arg1: new int[] {9001}, arg2: 60)) {
+                if (context.UserDetected(arg1: new[] {9001}, arg2: 60)) {
                     context.SetPortal(arg1: 60, arg2: true, arg3: true, arg4: true);
                 }
 
-                if (context.UserDetected(arg1: new int[] {9001}, arg2: 70)) {
+                if (context.UserDetected(arg1: new[] {9001}, arg2: 70)) {
                     context.SetPortal(arg1: 70, arg2: true, arg3: true, arg4: true);
                 }
 
-                if (context.UserDetected(arg1: new int[] {9001}, arg2: 80)) {
+                if (context.UserDetected(arg1: new[] {9001}, arg2: 80)) {
                     context.SetPortal(arg1: 80, arg2: true, arg3: true, arg4: true);
                 }
             }

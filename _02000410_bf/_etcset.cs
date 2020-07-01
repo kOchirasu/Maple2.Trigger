@@ -2,15 +2,13 @@ using System;
 
 namespace Maple2.Trigger._02000410_bf {
     public static class _etcset {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 750, arg2: 1)) {
+                if (context.GetUserCount(boxId: 750) == 1) {
                     context.State = new State타이머(context);
                     return;
                 }
@@ -26,7 +24,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 28000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$02000410_BF__BARRICADE_GIVEUP_0$", arg3: new int[] {5000});
+                    context.SetEventUI(arg1: 1, arg2: "$02000410_BF__BARRICADE_GIVEUP_0$", arg3: 5000);
                     context.DungeonEnableGiveUp(isEnable: true);
                     context.State = new State입구포탈제거(context);
                     return;
@@ -58,10 +56,10 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckNpcDamage(spawnPointID: 102, damageRate: 1.0f)) {
-                    context.AddBuff(arg1: new int[] {102}, arg2: 50004522, arg3: 1, arg4: true);
-                    context.DungeonMissionComplete(feature: "DungeonRankBalance_01", missionID: 24090004);
-                    context.DungeonMissionComplete(feature: "DungeonRankBalance_02", missionID: 24090014);
+                if (Math.Abs(context.GetNpcDamageRate(spawnPointId: 102) - 1.0) < 0.00001f) {
+                    context.AddBuff(arg1: new[] {102}, arg2: 50004522, arg3: 1, arg4: true);
+                    context.DungeonMissionComplete(feature: "DungeonRankBalance_01", missionId: 24090004);
+                    context.DungeonMissionComplete(feature: "DungeonRankBalance_02", missionId: 24090014);
                     context.State = new State메시지알림(context);
                     return;
                 }
@@ -74,7 +72,7 @@ namespace Maple2.Trigger._02000410_bf {
             internal State메시지알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20041005, textID: 20041005);
+                context.ShowGuideSummary(entityId: 20041005, textId: 20041005);
             }
 
             public override void Execute() {
@@ -85,7 +83,7 @@ namespace Maple2.Trigger._02000410_bf {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20041005);
+                context.HideGuideSummary(entityId: 20041005);
             }
         }
 

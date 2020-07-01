@@ -1,23 +1,19 @@
-using System;
-
 namespace Maple2.Trigger._52000002_qd {
     public static class _sheep_02 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {612}, arg2: false);
+                context.SetEffect(arg1: new[] {612}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000613}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000613}, arg2: 0)) {
                     context.State = new StateNPC교체(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {101})) {
+                if (!context.UserDetected(arg1: new[] {101})) {
                     context.State = new StateNPC소멸(context);
                     return;
                 }
@@ -31,8 +27,8 @@ namespace Maple2.Trigger._52000002_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000613}, arg2: 2);
-                context.CreateMonster(arg1: new int[] {1092});
+                context.SetInteractObject(arg1: new[] {10000613}, arg2: 2);
+                context.CreateMonster(arg1: new[] {1092});
             }
 
             public override void Execute() {
@@ -41,7 +37,7 @@ namespace Maple2.Trigger._52000002_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {101})) {
+                if (!context.UserDetected(arg1: new[] {101})) {
                     context.State = new StateNPC소멸(context);
                     return;
                 }
@@ -56,7 +52,7 @@ namespace Maple2.Trigger._52000002_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "6", arg2: 6);
                 context.MoveNpc(arg1: 1092, arg2: "MS2PatrolData_1092");
-                context.SetEffect(arg1: new int[] {612}, arg2: true);
+                context.SetEffect(arg1: new[] {612}, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 1092, arg3: "$52000002_QD__SHEEP_02__0$", arg4: 2);
             }
 
@@ -66,7 +62,7 @@ namespace Maple2.Trigger._52000002_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {101})) {
+                if (!context.UserDetected(arg1: new[] {101})) {
                     context.State = new StateNPC소멸(context);
                     return;
                 }
@@ -79,7 +75,7 @@ namespace Maple2.Trigger._52000002_qd {
             internal StateNPC소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1092});
+                context.DestroyMonster(arg1: new[] {1092});
             }
 
             public override void Execute() {

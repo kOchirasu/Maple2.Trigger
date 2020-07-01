@@ -1,23 +1,19 @@
-using System;
-
 namespace Maple2.Trigger._02100002_bf {
     public static class _105_mobspawn_pink {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "Gauge", value: 0);
                 context.SetUserValue(key: "StopSpawn", value: 0);
                 context.SetUserValue(key: "SpawnHold", value: 0);
-                context.DestroyMonster(arg1: new int[] {50100, 50075, 50050, 50025, 50001, 51001, 51002, 51003});
-                context.SetEffect(arg1: new int[] {5105}, arg2: false);
-                context.SetEffect(arg1: new int[] {5205}, arg2: false);
+                context.DestroyMonster(arg1: new[] {50100, 50075, 50050, 50025, 50001, 51001, 51002, 51003});
+                context.SetEffect(arg1: new[] {5105}, arg2: false);
+                context.SetEffect(arg1: new[] {5205}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Gauge", value: 100)) {
+                if (context.GetUserValue(key: "Gauge") == 100) {
                     context.State = new StateGauge100_Normal(context);
                     return;
                 }
@@ -30,8 +26,8 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateGauge100_Normal(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5105}, arg2: true);
-                context.CreateMonster(arg1: new int[] {50100}, arg2: false);
+                context.SetEffect(arg1: new[] {5105}, arg2: true);
+                context.CreateMonster(arg1: new[] {50100}, arg2: false);
             }
 
             public override void Execute() {
@@ -40,17 +36,17 @@ namespace Maple2.Trigger._02100002_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "SpawnHold", value: 1)) {
+                if (context.GetUserValue(key: "SpawnHold") == 1) {
                     context.State = new StateSpawnHold(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Gauge", value: 75)) {
+                if (context.GetUserValue(key: "Gauge") == 75) {
                     context.State = new StateGauge75_Normal(context);
                     return;
                 }
 
-                if (context.UserValue(key: "StopSpawn", value: 1)) {
+                if (context.GetUserValue(key: "StopSpawn") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -63,8 +59,8 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateGauge75_Normal(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5105}, arg2: true);
-                context.CreateMonster(arg1: new int[] {50075}, arg2: false);
+                context.SetEffect(arg1: new[] {5105}, arg2: true);
+                context.CreateMonster(arg1: new[] {50075}, arg2: false);
             }
 
             public override void Execute() {
@@ -73,22 +69,22 @@ namespace Maple2.Trigger._02100002_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "SpawnHold", value: 1)) {
+                if (context.GetUserValue(key: "SpawnHold") == 1) {
                     context.State = new StateSpawnHold(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Gauge", value: 100)) {
+                if (context.GetUserValue(key: "Gauge") == 100) {
                     context.State = new StateGauge100_Normal(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Gauge", value: 50)) {
+                if (context.GetUserValue(key: "Gauge") == 50) {
                     context.State = new StateGauge50_Normal(context);
                     return;
                 }
 
-                if (context.UserValue(key: "StopSpawn", value: 1)) {
+                if (context.GetUserValue(key: "StopSpawn") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -101,8 +97,8 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateGauge50_Normal(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5105}, arg2: true);
-                context.CreateMonster(arg1: new int[] {50050}, arg2: false);
+                context.SetEffect(arg1: new[] {5105}, arg2: true);
+                context.CreateMonster(arg1: new[] {50050}, arg2: false);
             }
 
             public override void Execute() {
@@ -111,22 +107,22 @@ namespace Maple2.Trigger._02100002_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "SpawnHold", value: 1)) {
+                if (context.GetUserValue(key: "SpawnHold") == 1) {
                     context.State = new StateSpawnHold(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Gauge", value: 75)) {
+                if (context.GetUserValue(key: "Gauge") == 75) {
                     context.State = new StateGauge75_Normal(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Gauge", value: 25)) {
+                if (context.GetUserValue(key: "Gauge") == 25) {
                     context.State = new StateGauge25_Normal(context);
                     return;
                 }
 
-                if (context.UserValue(key: "StopSpawn", value: 1)) {
+                if (context.GetUserValue(key: "StopSpawn") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -139,8 +135,8 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateGauge25_Normal(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5105}, arg2: true);
-                context.CreateMonster(arg1: new int[] {50025}, arg2: false);
+                context.SetEffect(arg1: new[] {5105}, arg2: true);
+                context.CreateMonster(arg1: new[] {50025}, arg2: false);
             }
 
             public override void Execute() {
@@ -149,22 +145,22 @@ namespace Maple2.Trigger._02100002_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "SpawnHold", value: 1)) {
+                if (context.GetUserValue(key: "SpawnHold") == 1) {
                     context.State = new StateSpawnHold(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Gauge", value: 50)) {
+                if (context.GetUserValue(key: "Gauge") == 50) {
                     context.State = new StateGauge50_Normal(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Gauge", value: 1)) {
+                if (context.GetUserValue(key: "Gauge") == 1) {
                     context.State = new StateGauge1_Normal(context);
                     return;
                 }
 
-                if (context.UserValue(key: "StopSpawn", value: 1)) {
+                if (context.GetUserValue(key: "StopSpawn") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -177,8 +173,8 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateGauge1_Normal(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5105}, arg2: true);
-                context.CreateMonster(arg1: new int[] {50001}, arg2: false);
+                context.SetEffect(arg1: new[] {5105}, arg2: true);
+                context.CreateMonster(arg1: new[] {50001}, arg2: false);
             }
 
             public override void Execute() {
@@ -187,17 +183,17 @@ namespace Maple2.Trigger._02100002_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "SpawnHold", value: 1)) {
+                if (context.GetUserValue(key: "SpawnHold") == 1) {
                     context.State = new StateSpawnHold(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Gauge", value: 25)) {
+                if (context.GetUserValue(key: "Gauge") == 25) {
                     context.State = new StateGauge25_Normal(context);
                     return;
                 }
 
-                if (context.UserValue(key: "StopSpawn", value: 1)) {
+                if (context.GetUserValue(key: "StopSpawn") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -212,12 +208,12 @@ namespace Maple2.Trigger._02100002_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "SpawnHold", value: 0)) {
+                if (context.GetUserValue(key: "SpawnHold") == 0) {
                     context.State = new StateBackToGaugeState(context);
                     return;
                 }
 
-                if (context.UserValue(key: "StopSpawn", value: 1)) {
+                if (context.GetUserValue(key: "StopSpawn") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -270,8 +266,8 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateSpawn_Eater(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5205}, arg2: true);
-                context.CreateMonster(arg1: new int[] {51001}, arg2: false);
+                context.SetEffect(arg1: new[] {5205}, arg2: true);
+                context.CreateMonster(arg1: new[] {51001}, arg2: false);
             }
 
             public override void Execute() {
@@ -288,8 +284,8 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateSpawn_Runner(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5205}, arg2: true);
-                context.CreateMonster(arg1: new int[] {51002}, arg2: false);
+                context.SetEffect(arg1: new[] {5205}, arg2: true);
+                context.CreateMonster(arg1: new[] {51002}, arg2: false);
             }
 
             public override void Execute() {
@@ -308,27 +304,27 @@ namespace Maple2.Trigger._02100002_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Gauge", value: 100)) {
+                if (context.GetUserValue(key: "Gauge") == 100) {
                     context.State = new StateGauge100_Normal(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Gauge", value: 75)) {
+                if (context.GetUserValue(key: "Gauge") == 75) {
                     context.State = new StateGauge75_Normal(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Gauge", value: 50)) {
+                if (context.GetUserValue(key: "Gauge") == 50) {
                     context.State = new StateGauge50_Normal(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Gauge", value: 25)) {
+                if (context.GetUserValue(key: "Gauge") == 25) {
                     context.State = new StateGauge25_Normal(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Gauge", value: 1)) {
+                if (context.GetUserValue(key: "Gauge") == 1) {
                     context.State = new StateGauge1_Normal(context);
                     return;
                 }
@@ -341,7 +337,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {50100, 50075, 50050, 50025, 50001, 51001, 51002, 51003});
+                context.DestroyMonster(arg1: new[] {50100, 50075, 50050, 50025, 50001, 51001, 51002, 51003});
             }
 
             public override void Execute() { }

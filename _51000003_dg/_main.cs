@@ -1,17 +1,13 @@
-using System;
-
 namespace Maple2.Trigger._51000003_dg {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateIdle(context);
-
-        private class StateIdle : TriggerState {
+        public class StateIdle : TriggerState {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7999}, arg2: false);
+                context.SetEffect(arg1: new[] {7999}, arg2: false);
                 context.SetPortal(arg1: 8, arg2: false, arg3: false, arg4: false);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016,
                         6017, 6018, 6019, 6020, 6021, 6022, 6023, 6024, 6025, 6026, 6027, 6028, 6029, 6030, 6031, 6032,
                         6033, 6034, 6035, 6036, 6037, 6038, 6039, 6040, 6041, 6042, 6043, 6044, 6045, 6046, 6047, 6048,
@@ -21,7 +17,7 @@ namespace Maple2.Trigger._51000003_dg {
                         6097, 6098, 6099, 6100
                     }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         6201, 6202, 6203, 6204, 6205, 6206, 6207, 6208, 6209, 6210, 6211, 6212, 6213, 6214, 6215, 6216,
                         6217, 6218, 6219, 6220, 6221, 6222, 6223, 6224, 6225, 6226, 6227, 6228, 6229, 6230, 6231, 6232,
                         6233, 6234, 6235, 6236, 6237, 6238, 6239, 6240, 6241, 6242, 6243, 6244, 6245, 6246, 6247, 6248,
@@ -33,14 +29,14 @@ namespace Maple2.Trigger._51000003_dg {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 701, arg2: 1)) {
+                if (context.GetUserCount(boxId: 701) == 1) {
                     context.State = new StateTutorial(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new int[] {501, 502, 503, 504, 505, 506, 507, 508, 509}, arg2: true,
+                context.CreateMonster(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509}, arg2: true,
                     arg3: 0);
             }
         }
@@ -49,10 +45,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateTutorial(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7998}, arg2: true);
+                context.SetEffect(arg1: new[] {7998}, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8100, 8101, 8104, 8106, 8103, 8105, 8107, 8108}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8100, 8101, 8104, 8106, 8103, 8105, 8107, 8108}, arg2: false);
             }
 
             public override void Execute() {
@@ -87,16 +83,16 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 51000003, arg2: 1, arg3: 701);
-                context.SetEffect(arg1: new int[] {7998}, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {8005, 8001, 8002}, arg2: false);
-                context.SetUserValue(triggerID: 991109, key: "Tutorial", value: 0);
+                context.SetEffect(arg1: new[] {7998}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8005, 8001, 8002}, arg2: false);
+                context.SetUserValue(triggerId: 991109, key: "Tutorial", value: 0);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.SetProductionUI(arg1: 7);
                 context.ArcadeBoomBoomOcean(type: "StartGame", lifeCount: 20);
                 context.ShowCountUI(text: "$51000003_DG__MAIN__0$", stage: 0, count: 5);
-                context.SetUserValue(triggerID: 991103, key: "Fail", value: 1);
-                context.AddBuff(arg1: new int[] {701}, arg2: 70000087, arg3: 1, arg5: false);
+                context.SetUserValue(triggerId: 991103, key: "Fail", value: 1);
+                context.AddBuff(arg1: new[] {701}, arg2: 70000087, arg3: 1, arg5: false);
             }
 
             public override void Execute() {
@@ -107,7 +103,7 @@ namespace Maple2.Trigger._51000003_dg {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {501, 502, 503, 504, 505, 506, 507, 508, 509});
+                context.DestroyMonster(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509});
             }
         }
 
@@ -119,7 +115,7 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "boomocean_start");
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "arcade_startcheck");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111, 6112, 6113, 6114, 6115, 6116,
                         6117, 6118, 6119, 6120, 6121, 6122, 6123, 6124, 6125, 6126, 6127, 6128, 6129, 6130, 6131, 6132,
                         6133, 6134, 6135, 6136, 6137, 6138, 6139, 6140, 6141, 6142, 6143, 6144, 6145, 6146, 6147, 6148,
@@ -158,7 +154,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 991107, key: "Round_01", value: 1);
+                context.SetUserValue(triggerId: 991107, key: "Round_01", value: 1);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 1, roundDuration: 1500, timeScoreRate: 1033);
                 context.PlaySystemSoundInBox(arg2: "System_Fruit_Throw_Loop_01");
             }
@@ -169,7 +165,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -182,7 +178,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 991107, key: "Round_02", value: 1);
+                context.SetUserValue(triggerId: 991107, key: "Round_02", value: 1);
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 1);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 2, roundDuration: 20000, timeScoreRate: 1033);
             }
@@ -193,7 +189,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -206,8 +202,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 991111, key: "Round_01", value: 1);
-                context.SetUserValue(triggerID: 991107, key: "Round_03", value: 1);
+                context.SetUserValue(triggerId: 991111, key: "Round_01", value: 1);
+                context.SetUserValue(triggerId: 991107, key: "Round_03", value: 1);
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 2);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 3, roundDuration: 20000, timeScoreRate: 1033);
             }
@@ -218,7 +214,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -233,10 +229,10 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002, 8003}, arg2: false);
-                context.SetEffect(arg1: new int[] {7999}, arg2: true);
-                context.SetUserValue(triggerID: 991120, key: "Round_01", value: 1);
-                context.SetUserValue(triggerID: 991107, key: "Round_04", value: 1);
+                context.CameraSelectPath(arg1: new[] {8002, 8003}, arg2: false);
+                context.SetEffect(arg1: new[] {7999}, arg2: true);
+                context.SetUserValue(triggerId: 991120, key: "Round_01", value: 1);
+                context.SetUserValue(triggerId: 991107, key: "Round_04", value: 1);
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 3);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 4, roundDuration: 20000, timeScoreRate: 1550);
             }
@@ -247,14 +243,14 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.SetEffect(arg1: new int[] {7999}, arg2: false);
+                context.SetEffect(arg1: new[] {7999}, arg2: false);
             }
         }
 
@@ -264,7 +260,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 4);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 5, roundDuration: 20000, timeScoreRate: 1550);
-                context.SetUserValue(triggerID: 991104, key: "Round_01", value: 1);
+                context.SetUserValue(triggerId: 991104, key: "Round_01", value: 1);
             }
 
             public override void Execute() {
@@ -273,7 +269,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -296,7 +292,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -311,8 +307,8 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 6);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 7, roundDuration: 20000, timeScoreRate: 2067);
-                context.SetUserValue(triggerID: 991105, key: "Round_00", value: 1);
-                context.SetUserValue(triggerID: 991102, key: "Treasure_box", value: 1);
+                context.SetUserValue(triggerId: 991105, key: "Round_00", value: 1);
+                context.SetUserValue(triggerId: 991102, key: "Treasure_box", value: 1);
             }
 
             public override void Execute() {
@@ -321,7 +317,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -336,7 +332,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 7);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 8, roundDuration: 20000, timeScoreRate: 2067);
-                context.SetUserValue(triggerID: 991121, key: "Round_01", value: 1);
+                context.SetUserValue(triggerId: 991121, key: "Round_01", value: 1);
             }
 
             public override void Execute() {
@@ -345,7 +341,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -360,7 +356,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 8);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 9, roundDuration: 20000, timeScoreRate: 2067);
-                context.SetUserValue(triggerID: 991122, key: "Round_01", value: 1);
+                context.SetUserValue(triggerId: 991122, key: "Round_01", value: 1);
             }
 
             public override void Execute() {
@@ -369,7 +365,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -386,9 +382,9 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 9);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 10, roundDuration: 20000, timeScoreRate: 2583);
-                context.SetEffect(arg1: new int[] {7999}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: false);
-                context.SetUserValue(triggerID: 991106, key: "Round_01", value: 1);
+                context.SetEffect(arg1: new[] {7999}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {8003, 8004}, arg2: false);
+                context.SetUserValue(triggerId: 991106, key: "Round_01", value: 1);
             }
 
             public override void Execute() {
@@ -407,7 +403,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 10);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 11, roundDuration: 20000, timeScoreRate: 2583);
-                context.SetUserValue(triggerID: 991106, key: "Round_02", value: 1);
+                context.SetUserValue(triggerId: 991106, key: "Round_02", value: 1);
             }
 
             public override void Execute() {
@@ -416,7 +412,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -431,7 +427,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 11);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 12, roundDuration: 20000, timeScoreRate: 2583);
-                context.SetUserValue(triggerID: 991106, key: "Round_03", value: 1);
+                context.SetUserValue(triggerId: 991106, key: "Round_03", value: 1);
             }
 
             public override void Execute() {
@@ -440,7 +436,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -455,8 +451,8 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 12);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 13, roundDuration: 20000, timeScoreRate: 3100);
-                context.SetUserValue(triggerID: 991106, key: "Round_04", value: 1);
-                context.SetUserValue(triggerID: 991105, key: "Round_01", value: 1);
+                context.SetUserValue(triggerId: 991106, key: "Round_04", value: 1);
+                context.SetUserValue(triggerId: 991105, key: "Round_01", value: 1);
             }
 
             public override void Execute() {
@@ -465,7 +461,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -480,8 +476,8 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 13);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 14, roundDuration: 20000, timeScoreRate: 3100);
-                context.SetUserValue(triggerID: 991123, key: "Round_01", value: 1);
-                context.SetUserValue(triggerID: 991108, key: "Round_03", value: 1);
+                context.SetUserValue(triggerId: 991123, key: "Round_01", value: 1);
+                context.SetUserValue(triggerId: 991108, key: "Round_03", value: 1);
             }
 
             public override void Execute() {
@@ -490,7 +486,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -513,7 +509,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -530,8 +526,8 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 15);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 16, roundDuration: 20000, timeScoreRate: 1350);
-                context.SetUserValue(triggerID: 991123, key: "Round_02", value: 1);
-                context.SetUserValue(triggerID: 991105, key: "Round_02", value: 1);
+                context.SetUserValue(triggerId: 991123, key: "Round_02", value: 1);
+                context.SetUserValue(triggerId: 991105, key: "Round_02", value: 1);
             }
 
             public override void Execute() {
@@ -540,7 +536,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -555,7 +551,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 16);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 17, roundDuration: 20000, timeScoreRate: 1350);
-                context.SetUserValue(triggerID: 991106, key: "Round_05", value: 1);
+                context.SetUserValue(triggerId: 991106, key: "Round_05", value: 1);
             }
 
             public override void Execute() {
@@ -564,7 +560,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -579,8 +575,8 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 17);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 18, roundDuration: 20000, timeScoreRate: 1350);
-                context.SetUserValue(triggerID: 991123, key: "Round_03", value: 1);
-                context.SetUserValue(triggerID: 991122, key: "Round_02", value: 1);
+                context.SetUserValue(triggerId: 991123, key: "Round_03", value: 1);
+                context.SetUserValue(triggerId: 991122, key: "Round_02", value: 1);
             }
 
             public override void Execute() {
@@ -589,7 +585,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -604,7 +600,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 18);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 19, roundDuration: 20000, timeScoreRate: 1125);
-                context.SetUserValue(triggerID: 991107, key: "Round_06", value: 1);
+                context.SetUserValue(triggerId: 991107, key: "Round_06", value: 1);
             }
 
             public override void Execute() {
@@ -613,7 +609,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -628,7 +624,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.ArcadeBoomBoomOcean(type: "ClearRound", round: 19);
                 context.ArcadeBoomBoomOcean(type: "StartRound", round: 20, roundDuration: 20000, timeScoreRate: 1125);
-                context.SetUserValue(triggerID: 991123, key: "Round_04", value: 1);
+                context.SetUserValue(triggerId: 991123, key: "Round_04", value: 1);
             }
 
             public override void Execute() {
@@ -637,7 +633,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -660,7 +656,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -683,7 +679,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -706,7 +702,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -729,7 +725,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -752,7 +748,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -770,7 +766,7 @@ namespace Maple2.Trigger._51000003_dg {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }

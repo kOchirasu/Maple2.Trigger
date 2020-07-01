@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000314_bf {
     public static class _guide {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {112})) {
+                if (context.UserDetected(arg1: new[] {112})) {
                     context.State = new State타이어가이드(context);
                     return;
                 }
@@ -23,12 +19,12 @@ namespace Maple2.Trigger._02000314_bf {
             internal State타이어가이드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003141, textID: 20003141, duration: 5000);
+                context.ShowGuideSummary(entityId: 20003141, textId: 20003141, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {113})) {
+                if (context.UserDetected(arg1: new[] {113})) {
                     context.State = new State타이어가이드2(context);
                     return;
                 }
@@ -41,7 +37,7 @@ namespace Maple2.Trigger._02000314_bf {
             internal State타이어가이드2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003141, textID: 20003141, duration: 5000);
+                context.ShowGuideSummary(entityId: 20003141, textId: 20003141, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 

@@ -1,32 +1,28 @@
-using System;
-
 namespace Maple2.Trigger._02000481_bf {
     public static class _01_enter {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3002, 3003, 3004, 3006, 3007, 3008}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3002, 3003, 3004, 3006, 3007, 3008}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 0f);
-                context.SetMesh(arg1: new int[] {3005, 3008}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3100}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.DestroyMonster(arg1: new int[] {102, 202});
-                context.DestroyMonster(arg1: new int[] {300, 301});
-                context.DestroyMonster(arg1: new int[] {900, 901, 910, 911, 912, 913, 920, 921, 922});
-                context.CreateMonster(arg1: new int[] {101, 201}, arg2: false);
-                context.SetMesh(arg1: new int[] {3202, 3203}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3200, 3201}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3300, 3301, 3302, 3303}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetBreakable(arg1: new int[] {4000, 4001, 4002, 4003}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {4000, 4001, 4002, 4003}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10002025}, arg2: 0);
+                context.SetMesh(arg1: new[] {3005, 3008}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3100}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.DestroyMonster(arg1: new[] {102, 202});
+                context.DestroyMonster(arg1: new[] {300, 301});
+                context.DestroyMonster(arg1: new[] {900, 901, 910, 911, 912, 913, 920, 921, 922});
+                context.CreateMonster(arg1: new[] {101, 201}, arg2: false);
+                context.SetMesh(arg1: new[] {3202, 3203}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3200, 3201}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetBreakable(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10002025}, arg2: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "start", value: 1)) {
+                if (context.GetUserValue(key: "start") == 1) {
                     context.State = new StateDungeonStart(context);
                     return;
                 }
@@ -39,7 +35,7 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {300, 301}, arg2: true);
+                context.CreateMonster(arg1: new[] {300, 301}, arg2: true);
             }
 
             public override void Execute() {
@@ -134,7 +130,7 @@ namespace Maple2.Trigger._02000481_bf {
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000481_BF__01_ENTER__2$", arg4: 2, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 201, arg3: "$02000481_BF__01_ENTER__3$", arg4: 2, arg5: 0);
-                context.SetUserValue(triggerID: 2, key: "MobSpawn", value: 1);
+                context.SetUserValue(triggerId: 2, key: "MobSpawn", value: 1);
             }
 
             public override void Execute() {
@@ -151,10 +147,10 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateNpcChange01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBalloonTalk(spawnPointID: 101);
-                context.RemoveBalloonTalk(spawnPointID: 201);
-                context.DestroyMonster(arg1: new int[] {101, 201});
-                context.CreateMonster(arg1: new int[] {102, 202}, arg2: false);
+                context.RemoveBalloonTalk(spawnPointId: 101);
+                context.RemoveBalloonTalk(spawnPointId: 201);
+                context.DestroyMonster(arg1: new[] {101, 201});
+                context.CreateMonster(arg1: new[] {102, 202}, arg2: false);
             }
 
             public override void Execute() {
@@ -174,12 +170,12 @@ namespace Maple2.Trigger._02000481_bf {
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000481_BF__01_ENTER__4$", arg4: 3, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 202, arg3: "$02000481_BF__01_ENTER__5$", arg4: 2, arg5: 1);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039501, textID: 20039501, duration: 4000);
-                context.SetInteractObject(arg1: new int[] {10002025}, arg2: 1);
+                context.ShowGuideSummary(entityId: 20039501, textId: 20039501, duration: 4000);
+                context.SetInteractObject(arg1: new[] {10002025}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10002025}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002025}, arg2: 0)) {
                     context.State = new StateGratingOpen01(context);
                     return;
                 }
@@ -193,10 +189,10 @@ namespace Maple2.Trigger._02000481_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039502, textID: 20039502, duration: 4000);
-                context.SetMesh(arg1: new int[] {3300, 3301, 3302, 3303}, arg2: false, arg3: 500, arg4: 0, arg5: 0f);
-                context.SetBreakable(arg1: new int[] {4000, 4001, 4002, 4003}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new int[] {4000, 4001, 4002, 4003}, arg2: true);
+                context.ShowGuideSummary(entityId: 20039502, textId: 20039502, duration: 4000);
+                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303}, arg2: false, arg3: 500, arg4: 0, arg5: 0f);
+                context.SetBreakable(arg1: new[] {4000, 4001, 4002, 4003}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003}, arg2: true);
             }
 
             public override void Execute() {
@@ -213,9 +209,9 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateGratingOpen02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {910}, arg2: false);
-                context.SetMesh(arg1: new int[] {3100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3200, 3201}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(arg1: new[] {910}, arg2: false);
+                context.SetMesh(arg1: new[] {3100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3200, 3201}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -232,13 +228,13 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateGratingOpen03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new int[] {4000, 4001, 4002, 4003}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {4000, 4001, 4002, 4003}, arg2: false);
-                context.CreateMonster(arg1: new int[] {911, 912, 913}, arg2: false);
+                context.SetBreakable(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false);
+                context.CreateMonster(arg1: new[] {911, 912, 913}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9100})) {
+                if (context.UserDetected(arg1: new[] {9100})) {
                     context.State = new StateMobSpawn_Hallway01(context);
                     return;
                 }
@@ -252,12 +248,12 @@ namespace Maple2.Trigger._02000481_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039503, textID: 20039503, duration: 4000);
-                context.CreateMonster(arg1: new int[] {920}, arg2: false);
+                context.ShowGuideSummary(entityId: 20039503, textId: 20039503, duration: 4000);
+                context.CreateMonster(arg1: new[] {920}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9200})) {
+                if (context.UserDetected(arg1: new[] {9200})) {
                     context.State = new StateMobSpawn_Hallway02(context);
                     return;
                 }
@@ -270,11 +266,11 @@ namespace Maple2.Trigger._02000481_bf {
             internal StateMobSpawn_Hallway02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {921, 922}, arg2: false);
+                context.CreateMonster(arg1: new[] {921, 922}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9300})) {
+                if (context.UserDetected(arg1: new[] {9300})) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -288,7 +284,7 @@ namespace Maple2.Trigger._02000481_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039504, textID: 20039504, duration: 4000);
+                context.ShowGuideSummary(entityId: 20039504, textId: 20039504, duration: 4000);
             }
 
             public override void Execute() { }

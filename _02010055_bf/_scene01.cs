@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02010055_bf {
     public static class _scene01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {699}, arg2: false);
+                context.SetEffect(arg1: new[] {699}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {105})) {
+                if (context.UserDetected(arg1: new[] {105})) {
                     context.State = new State바르칸트대사(context);
                     return;
                 }
@@ -28,7 +24,7 @@ namespace Maple2.Trigger._02010055_bf {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.SetEffect(arg1: new int[] {699}, arg2: true);
+                context.SetEffect(arg1: new[] {699}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 23000068, arg3: "$02010055_BF__SCENE01__0$", arg4: 4);
                 context.SetSkip(arg1: "바르칸트대사2스킵");
             }
@@ -66,7 +62,7 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.SetEffect(arg1: new int[] {699}, arg2: true);
+                context.SetEffect(arg1: new[] {699}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 23000068, arg3: "$02010055_BF__SCENE01__1$", arg4: 4);
                 context.SetSkip(arg1: "종료준비");
             }

@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000177_bf {
     public static class _guide {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateguide(context);
-
-        private class Stateguide : TriggerState {
+        public class Stateguide : TriggerState {
             internal Stateguide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 702, arg2: 1)) {
+                if (context.GetUserCount(boxId: 702) == 1) {
                     context.State = new StateGuide_Climb(context);
                     return;
                 }
@@ -24,11 +20,11 @@ namespace Maple2.Trigger._02000177_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20001771, textID: 20001771, duration: 4000);
+                context.ShowGuideSummary(entityId: 20001771, textId: 20001771, duration: 4000);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 703, arg2: 1)) {
+                if (context.GetUserCount(boxId: 703) == 1) {
                     context.State = new StateGuide_Climb_02(context);
                     return;
                 }
@@ -42,7 +38,7 @@ namespace Maple2.Trigger._02000177_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20001771, textID: 20001771, duration: 4000);
+                context.ShowGuideSummary(entityId: 20001771, textId: 20001771, duration: 4000);
             }
 
             public override void Execute() { }

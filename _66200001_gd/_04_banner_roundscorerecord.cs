@@ -1,30 +1,26 @@
-using System;
-
 namespace Maple2.Trigger._66200001_gd {
     public static class _04_banner_roundscorerecord {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {999}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {1000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {1100}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {1001, 1002, 1003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {1100, 1101, 1102, 1103}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {999}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1100}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1001, 1002, 1003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1100, 1101, 1102, 1103}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new StateEnter(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.SetMesh(arg1: new int[] {1000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {1100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1100}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
         }
 
@@ -32,17 +28,17 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateEnter(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValueFromGuildVsGameScore(teamID: 1, key: "BlueteamScore");
-                context.UserValueToNumberMesh(key: "BlueteamScore", startMeshID: 1000, digitCount: 1);
-                context.SetUserValueFromGuildVsGameScore(teamID: 2, key: "RedteamScore");
-                context.UserValueToNumberMesh(key: "RedteamScore", startMeshID: 1100, digitCount: 1);
+                context.SetUserValueFromGuildVsGameScore(teamId: 1, key: "BlueteamScore");
+                context.UserValueToNumberMesh(key: "BlueteamScore", startMeshId: 1000, digitCount: 1);
+                context.SetUserValueFromGuildVsGameScore(teamId: 2, key: "RedteamScore");
+                context.UserValueToNumberMesh(key: "RedteamScore", startMeshId: 1100, digitCount: 1);
                 context.SetUserValue(key: "RoundScoreRecord", value: 0);
                 context.SetUserValue(key: "BlueteamScore", value: 0);
                 context.SetUserValue(key: "RedteamScore", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RoundScoreRecord", value: 1)) {
+                if (context.GetUserValue(key: "RoundScoreRecord") == 1) {
                     context.State = new StateR01BannerUpdate(context);
                     return;
                 }
@@ -55,15 +51,15 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR01BannerUpdate(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValueFromGuildVsGameScore(teamID: 1, key: "BlueteamScore");
-                context.UserValueToNumberMesh(key: "BlueteamScore", startMeshID: 1000, digitCount: 1);
-                context.SetUserValueFromGuildVsGameScore(teamID: 2, key: "RedteamScore");
-                context.UserValueToNumberMesh(key: "RedteamScore", startMeshID: 1100, digitCount: 1);
+                context.SetUserValueFromGuildVsGameScore(teamId: 1, key: "BlueteamScore");
+                context.UserValueToNumberMesh(key: "BlueteamScore", startMeshId: 1000, digitCount: 1);
+                context.SetUserValueFromGuildVsGameScore(teamId: 2, key: "RedteamScore");
+                context.UserValueToNumberMesh(key: "RedteamScore", startMeshId: 1100, digitCount: 1);
                 context.SetUserValue(key: "RoundScoreRecord", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RoundScoreRecord", value: 2)) {
+                if (context.GetUserValue(key: "RoundScoreRecord") == 2) {
                     context.State = new StateR02BannerUpdate(context);
                     return;
                 }
@@ -76,15 +72,15 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR02BannerUpdate(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValueFromGuildVsGameScore(teamID: 1, key: "BlueteamScore");
-                context.UserValueToNumberMesh(key: "BlueteamScore", startMeshID: 1000, digitCount: 1);
-                context.SetUserValueFromGuildVsGameScore(teamID: 2, key: "RedteamScore");
-                context.UserValueToNumberMesh(key: "RedteamScore", startMeshID: 1100, digitCount: 1);
+                context.SetUserValueFromGuildVsGameScore(teamId: 1, key: "BlueteamScore");
+                context.UserValueToNumberMesh(key: "BlueteamScore", startMeshId: 1000, digitCount: 1);
+                context.SetUserValueFromGuildVsGameScore(teamId: 2, key: "RedteamScore");
+                context.UserValueToNumberMesh(key: "RedteamScore", startMeshId: 1100, digitCount: 1);
                 context.SetUserValue(key: "RoundScoreRecord", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RoundScoreRecord", value: 3)) {
+                if (context.GetUserValue(key: "RoundScoreRecord") == 3) {
                     context.State = new StateR03BannerUpdate(context);
                     return;
                 }
@@ -97,25 +93,25 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR03BannerUpdate(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValueFromGuildVsGameScore(teamID: 1, key: "BlueteamScore");
-                context.UserValueToNumberMesh(key: "BlueteamScore", startMeshID: 1000, digitCount: 1);
-                context.SetUserValueFromGuildVsGameScore(teamID: 2, key: "RedteamScore");
-                context.UserValueToNumberMesh(key: "RedteamScore", startMeshID: 1100, digitCount: 1);
+                context.SetUserValueFromGuildVsGameScore(teamId: 1, key: "BlueteamScore");
+                context.UserValueToNumberMesh(key: "BlueteamScore", startMeshId: 1000, digitCount: 1);
+                context.SetUserValueFromGuildVsGameScore(teamId: 2, key: "RedteamScore");
+                context.UserValueToNumberMesh(key: "RedteamScore", startMeshId: 1100, digitCount: 1);
                 context.SetUserValue(key: "RoundScoreRecord", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "BlueteamScore", value: 3)) {
+                if (context.GetUserValue(key: "BlueteamScore") == 3) {
                     context.State = new StateBlueTeamWin(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RedteamScore", value: 3)) {
+                if (context.GetUserValue(key: "RedteamScore") == 3) {
                     context.State = new StateRedTeamWin(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundScoreRecord", value: 4)) {
+                if (context.GetUserValue(key: "RoundScoreRecord") == 4) {
                     context.State = new StateR04BannerUpdate(context);
                     return;
                 }
@@ -128,25 +124,25 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR04BannerUpdate(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValueFromGuildVsGameScore(teamID: 1, key: "BlueteamScore");
-                context.UserValueToNumberMesh(key: "BlueteamScore", startMeshID: 1000, digitCount: 1);
-                context.SetUserValueFromGuildVsGameScore(teamID: 2, key: "RedteamScore");
-                context.UserValueToNumberMesh(key: "RedteamScore", startMeshID: 1100, digitCount: 1);
+                context.SetUserValueFromGuildVsGameScore(teamId: 1, key: "BlueteamScore");
+                context.UserValueToNumberMesh(key: "BlueteamScore", startMeshId: 1000, digitCount: 1);
+                context.SetUserValueFromGuildVsGameScore(teamId: 2, key: "RedteamScore");
+                context.UserValueToNumberMesh(key: "RedteamScore", startMeshId: 1100, digitCount: 1);
                 context.SetUserValue(key: "RoundScoreRecord", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "BlueteamScore", value: 3)) {
+                if (context.GetUserValue(key: "BlueteamScore") == 3) {
                     context.State = new StateBlueTeamWin(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RedteamScore", value: 3)) {
+                if (context.GetUserValue(key: "RedteamScore") == 3) {
                     context.State = new StateRedTeamWin(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundScoreRecord", value: 5)) {
+                if (context.GetUserValue(key: "RoundScoreRecord") == 5) {
                     context.State = new StateR05BannerUpdate(context);
                     return;
                 }
@@ -159,25 +155,25 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateR05BannerUpdate(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValueFromGuildVsGameScore(teamID: 1, key: "BlueteamScore");
-                context.UserValueToNumberMesh(key: "BlueteamScore", startMeshID: 1000, digitCount: 1);
-                context.SetUserValueFromGuildVsGameScore(teamID: 2, key: "RedteamScore");
-                context.UserValueToNumberMesh(key: "RedteamScore", startMeshID: 1100, digitCount: 1);
+                context.SetUserValueFromGuildVsGameScore(teamId: 1, key: "BlueteamScore");
+                context.UserValueToNumberMesh(key: "BlueteamScore", startMeshId: 1000, digitCount: 1);
+                context.SetUserValueFromGuildVsGameScore(teamId: 2, key: "RedteamScore");
+                context.UserValueToNumberMesh(key: "RedteamScore", startMeshId: 1100, digitCount: 1);
                 context.SetUserValue(key: "RoundScoreRecord", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "BlueteamScore", value: 3)) {
+                if (context.GetUserValue(key: "BlueteamScore") == 3) {
                     context.State = new StateBlueTeamWin(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RedteamScore", value: 3)) {
+                if (context.GetUserValue(key: "RedteamScore") == 3) {
                     context.State = new StateRedTeamWin(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundScoreRecord", value: 5)) {
+                if (context.GetUserValue(key: "RoundScoreRecord") == 5) {
                     context.State = new StateEndGame(context);
                     return;
                 }
@@ -190,7 +186,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateBlueTeamWin(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "WinnerTeam", value: 1);
+                context.SetUserValue(triggerId: 1, key: "WinnerTeam", value: 1);
             }
 
             public override void Execute() { }
@@ -202,7 +198,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateRedTeamWin(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "WinnerTeam", value: 2);
+                context.SetUserValue(triggerId: 1, key: "WinnerTeam", value: 2);
             }
 
             public override void Execute() { }

@@ -1,11 +1,8 @@
-using System;
 using System.Numerics;
 
 namespace Maple2.Trigger._52000138_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -52,7 +49,7 @@ namespace Maple2.Trigger._52000138_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {701})) {
+                if (context.UserDetected(arg1: new[] {701})) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -69,9 +66,9 @@ namespace Maple2.Trigger._52000138_qd {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/Sound/Eff_ Object_Train_alert.xml");
                 context.SetAmbientLight(arg1: new Vector3(0f, 0f, 0f));
                 context.SetAmbientLight(arg1: new Vector3(1f, 1f, 1f));
-                context.AddBuff(arg1: new int[] {701}, arg2: 99910230, arg3: 1, arg4: false, arg5: true);
-                context.AddBuff(arg1: new int[] {701}, arg2: 99910230, arg3: 1, arg4: false, arg5: false);
-                context.CreateMonster(arg1: new int[] {101});
+                context.AddBuff(arg1: new[] {701}, arg2: 99910230, arg3: 1, arg4: false, arg5: true);
+                context.AddBuff(arg1: new[] {701}, arg2: 99910230, arg3: 1, arg4: false, arg5: false);
+                context.CreateMonster(arg1: new[] {101});
             }
 
             public override void Execute() {
@@ -88,7 +85,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal Stateact1_wave1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$52000138_QD__MAIN__0$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$52000138_QD__MAIN__0$", arg3: 3000, arg4: "0");
                 context.SetActor(arg1: 1001, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetActor(arg1: 1002, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetActor(arg1: 1003, arg2: true, arg3: "sf_quest_light_A01_On");
@@ -118,7 +115,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal Stateact1_wave2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {102});
+                context.CreateMonster(arg1: new[] {102});
             }
 
             public override void Execute() {
@@ -153,7 +150,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal Stateact1_wave2_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {104});
+                context.CreateMonster(arg1: new[] {104});
             }
 
             public override void Execute() {
@@ -188,7 +185,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal Stateact1_wave3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {103, 105});
+                context.CreateMonster(arg1: new[] {103, 105});
             }
 
             public override void Execute() {
@@ -210,7 +207,7 @@ namespace Maple2.Trigger._52000138_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {702})) {
+                if (context.UserDetected(arg1: new[] {702})) {
                     context.State = new Stateready_1(context);
                     return;
                 }
@@ -223,7 +220,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal Stateready_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {110, 111});
+                context.CreateMonster(arg1: new[] {110, 111});
             }
 
             public override void Execute() {
@@ -269,7 +266,7 @@ namespace Maple2.Trigger._52000138_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4004, arg2: true, arg3: "Opened");
-                context.CreateMonster(arg1: new int[] {106, 107});
+                context.CreateMonster(arg1: new[] {106, 107});
             }
 
             public override void Execute() {
@@ -304,7 +301,7 @@ namespace Maple2.Trigger._52000138_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4005, arg2: true, arg3: "Opened");
-                context.CreateMonster(arg1: new int[] {108, 109});
+                context.CreateMonster(arg1: new[] {108, 109});
             }
 
             public override void Execute() {
@@ -323,7 +320,7 @@ namespace Maple2.Trigger._52000138_qd {
             public override void OnEnter() {
                 context.SetActor(arg1: 4006, arg2: true, arg3: "Opened");
                 context.SetConversation(arg1: 1, arg2: 109, arg3: "$52000138_QD__MAIN__8$", arg4: 3, arg5: 3);
-                context.CreateMonster(arg1: new int[] {112});
+                context.CreateMonster(arg1: new[] {112});
             }
 
             public override void Execute() {
@@ -344,7 +341,7 @@ namespace Maple2.Trigger._52000138_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {703})) {
+                if (context.UserDetected(arg1: new[] {703})) {
                     context.State = new Stateready_2(context);
                     return;
                 }
@@ -357,7 +354,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal Stateready_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {113});
+                context.CreateMonster(arg1: new[] {113});
             }
 
             public override void Execute() {
@@ -401,7 +398,7 @@ namespace Maple2.Trigger._52000138_qd {
             internal Stateact3_wave2_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {114, 115, 120, 121});
+                context.CreateMonster(arg1: new[] {114, 115, 120, 121});
             }
 
             public override void Execute() {
@@ -419,7 +416,7 @@ namespace Maple2.Trigger._52000138_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 114, arg3: "$52000138_QD__MAIN__11$", arg4: 2, arg5: 2);
-                context.CreateMonster(arg1: new int[] {116, 117, 118, 119});
+                context.CreateMonster(arg1: new[] {116, 117, 118, 119});
             }
 
             public override void Execute() {
@@ -440,7 +437,7 @@ namespace Maple2.Trigger._52000138_qd {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {
+                if (context.MonsterDead(arg1: new[] {
                     101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120,
                     121, 122, 123
                 })) {
@@ -458,8 +455,8 @@ namespace Maple2.Trigger._52000138_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CreateMonster(arg1: new int[] {122});
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
+                context.CreateMonster(arg1: new[] {122});
+                context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
                 context.SetSceneSkip(arg1: "endready", arg2: "exit");
             }
 
@@ -541,7 +538,7 @@ namespace Maple2.Trigger._52000138_qd {
             }
 
             public override void OnExit() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
             }
         }
 

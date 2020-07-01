@@ -1,31 +1,27 @@
-using System;
-
 namespace Maple2.Trigger._61000008_me {
     public static class _08_cheerupskill {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "CheerUpTimer", value: 1)) {
+                if (context.GetUserValue(key: "CheerUpTimer") == 1) {
                     context.State = new StateCheerUpTimer_30(context);
                     return;
                 }
 
-                if (context.UserValue(key: "CheerUpTimer", value: 2)) {
+                if (context.GetUserValue(key: "CheerUpTimer") == 2) {
                     context.State = new StateCheerUpTimer_20(context);
                     return;
                 }
 
-                if (context.UserValue(key: "CheerUpTimer", value: 3)) {
+                if (context.GetUserValue(key: "CheerUpTimer") == 3) {
                     context.State = new StateCheerUpTimer_15(context);
                     return;
                 }
 
-                if (context.UserValue(key: "CheerUpTimer", value: 4)) {
+                if (context.GetUserValue(key: "CheerUpTimer") == 4) {
                     context.State = new StateCheerUpTimer_10(context);
                     return;
                 }
@@ -106,7 +102,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGiveCheerUp(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {9001}, arg2: 70000086, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {9001}, arg2: 70000086, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {

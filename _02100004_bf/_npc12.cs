@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02100004_bf {
     public static class _npc12 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State소환대기(context);
                     return;
                 }
@@ -23,11 +19,11 @@ namespace Maple2.Trigger._02100004_bf {
             internal State소환대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 999992, key: "NpcSpawned12", value: 0);
+                context.SetUserValue(triggerId: 999992, key: "NpcSpawned12", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "NpcSpawn12", value: 1)) {
+                if (context.GetUserValue(key: "NpcSpawn12") == 1) {
                     context.State = new State소환(context);
                     return;
                 }
@@ -40,8 +36,8 @@ namespace Maple2.Trigger._02100004_bf {
             internal State소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 999992, key: "NpcSpawned12", value: 1);
-                context.CreateMonster(arg1: new int[] {2012}, arg2: true);
+                context.SetUserValue(triggerId: 999992, key: "NpcSpawned12", value: 1);
+                context.CreateMonster(arg1: new[] {2012}, arg2: true);
             }
 
             public override void Execute() {

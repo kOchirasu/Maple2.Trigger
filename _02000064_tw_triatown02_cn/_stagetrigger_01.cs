@@ -1,15 +1,10 @@
-using System;
-
 namespace Maple2.Trigger._02000064_tw_triatown02_cn {
     public static class _stagetrigger_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context =>
-            new StateKickMusicAudience(context);
-
-        private class StateKickMusicAudience : TriggerState {
+        public class StateKickMusicAudience : TriggerState {
             internal StateKickMusicAudience(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.KickMusicAudience(targetBoxID: 101, targetPortalID: 802);
+                context.KickMusicAudience(targetBoxId: 101, targetPortalId: 802);
             }
 
             public override void Execute() {

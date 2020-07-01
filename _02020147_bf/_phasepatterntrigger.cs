@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02020147_bf {
     public static class _phasepatterntrigger {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -13,7 +9,7 @@ namespace Maple2.Trigger._02020147_bf {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 601, arg2: 1)) {
+                if (context.GetUserCount(boxId: 601) == 1) {
                     context.State = new State보스3마리_페이즈전환계산(context);
                     return;
                 }
@@ -28,7 +24,7 @@ namespace Maple2.Trigger._02020147_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "PhaseSumTotal", value: 3, @operator: "GreaterEqual")) {
+                if (context.GetUserValue(key: "PhaseSumTotal") >= 3) {
                     context.State = new State보스3마리_페이즈전환실행_2페이즈(context);
                     return;
                 }
@@ -45,7 +41,7 @@ namespace Maple2.Trigger._02020147_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "PhaseSumTotal", value: 6, @operator: "GreaterEqual")) {
+                if (context.GetUserValue(key: "PhaseSumTotal") >= 6) {
                     context.State = new State보스3마리_페이즈전환실행_3페이즈(context);
                     return;
                 }

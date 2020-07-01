@@ -1,24 +1,20 @@
-using System;
-
 namespace Maple2.Trigger._52000051_qd {
     public static class _01_main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3500, 3501}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3010, 3011, 3012, 3013}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3014}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3030}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3500, 3501}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3010, 3011, 3012, 3013}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3014}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3030}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 4001, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 4002, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 4000, arg2: true, arg3: "or_fi_struc_stonegate_A01_off");
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new int[] {5000}, arg2: false);
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
-                context.SetEffect(arg1: new int[] {5004}, arg2: false);
+                context.SetEffect(arg1: new[] {5000}, arg2: false);
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetEffect(arg1: new[] {5004}, arg2: false);
                 context.SetAgent(arg1: "8000", arg2: true);
                 context.SetAgent(arg1: "8001", arg2: true);
                 context.SetAgent(arg1: "8002", arg2: true);
@@ -26,11 +22,11 @@ namespace Maple2.Trigger._52000051_qd {
                 context.SetUserValue(key: "FindLotus", value: 0);
                 context.SetUserValue(key: "PuzzleSolved", value: 0);
                 context.SetUserValue(key: "PatrolEnd", value: 0);
-                context.CreateMonster(arg1: new int[] {900}, arg2: false);
+                context.CreateMonster(arg1: new[] {900}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9000, arg2: 1)) {
+                if (context.GetUserCount(boxId: 9000) == 1) {
                     context.State = new StateLodingDelay01(context);
                     return;
                 }
@@ -64,12 +60,12 @@ namespace Maple2.Trigger._52000051_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818,
                         819, 820, 821, 822, 823, 824, 825, 826
                     }, arg2: false);
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         950, 951, 952, 953, 955, 956, 957, 958, 959, 962, 963, 964, 967, 970, 974, 975, 976, 977, 978,
                         980, 981, 982
                     }, arg2: false);
@@ -91,7 +87,7 @@ namespace Maple2.Trigger._52000051_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CreateMonster(arg1: new int[] {100, 200}, arg2: false);
+                context.CreateMonster(arg1: new[] {100, 200}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_1000");
             }
 
@@ -241,7 +237,7 @@ namespace Maple2.Trigger._52000051_qd {
                 context.CameraSelect(arg1: 601, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.SetUserValue(triggerID: 9, key: "FindLotus", value: 1);
+                context.SetUserValue(triggerId: 9, key: "FindLotus", value: 1);
             }
 
             public override void Execute() {
@@ -260,7 +256,7 @@ namespace Maple2.Trigger._52000051_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001022}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001022}, arg2: 0)) {
                     context.State = new StateNpcMonologue02(context);
                     return;
                 }
@@ -292,8 +288,8 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateNpcPatrol01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3014}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetUserValue(triggerID: 10, key: "PatrolStart", value: 1);
+                context.SetMesh(arg1: new[] {3014}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetUserValue(triggerId: 10, key: "PatrolStart", value: 1);
             }
 
             public override void Execute() {
@@ -310,16 +306,16 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateNpcPatrol02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$52000051_QD__01_MAIN__5$", arg3: new int[] {5000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$52000051_QD__01_MAIN__5$", arg3: 5000, arg4: "0");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "PatrolEnd", value: 1)) {
+                if (context.GetUserValue(key: "PatrolEnd") == 1) {
                     context.State = new StateNpcPatrol03(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {900})) {
+                if (context.MonsterDead(arg1: new[] {900})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
@@ -334,12 +330,12 @@ namespace Maple2.Trigger._52000051_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9400, arg2: new int[] {202})) {
+                if (context.NpcDetected(arg1: 9400, arg2: new[] {202})) {
                     context.State = new StateNpcPatrol04(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {900})) {
+                if (context.MonsterDead(arg1: new[] {900})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
@@ -354,12 +350,12 @@ namespace Maple2.Trigger._52000051_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9400, arg2: 1)) {
+                if (context.GetUserCount(boxId: 9400) == 1) {
                     context.State = new StateFoundTotem01(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {900})) {
+                if (context.MonsterDead(arg1: new[] {900})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
@@ -372,9 +368,9 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateNpcChange01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101, 201});
-                context.DestroyMonster(arg1: new int[] {102, 202});
-                context.CreateMonster(arg1: new int[] {105, 205}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101, 201});
+                context.DestroyMonster(arg1: new[] {102, 202});
+                context.CreateMonster(arg1: new[] {105, 205}, arg2: false);
             }
 
             public override void Execute() {
@@ -391,12 +387,12 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateNpcChange02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101, 201});
-                context.DestroyMonster(arg1: new int[] {102, 202});
-                context.DestroyMonster(arg1: new int[] {103, 203});
-                context.CreateMonster(arg1: new int[] {105, 205}, arg2: false);
-                context.RemoveBalloonTalk(spawnPointID: 203);
-                context.RemoveBalloonTalk(spawnPointID: 103);
+                context.DestroyMonster(arg1: new[] {101, 201});
+                context.DestroyMonster(arg1: new[] {102, 202});
+                context.DestroyMonster(arg1: new[] {103, 203});
+                context.CreateMonster(arg1: new[] {105, 205}, arg2: false);
+                context.RemoveBalloonTalk(spawnPointId: 203);
+                context.RemoveBalloonTalk(spawnPointId: 103);
             }
 
             public override void Execute() {
@@ -413,9 +409,9 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateFoundTotem01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101, 201});
-                context.DestroyMonster(arg1: new int[] {102, 202});
-                context.CreateMonster(arg1: new int[] {103, 203}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101, 201});
+                context.DestroyMonster(arg1: new[] {102, 202});
+                context.CreateMonster(arg1: new[] {103, 203}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 203, arg3: "$02000376_BF__01_MAIN__3$", arg4: 3, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 103, arg3: "$02000376_BF__01_MAIN__4$", arg4: 3, arg5: 2);
             }
@@ -426,7 +422,7 @@ namespace Maple2.Trigger._52000051_qd {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {900})) {
+                if (context.MonsterDead(arg1: new[] {900})) {
                     context.State = new StateNpcChange02(context);
                     return;
                 }
@@ -441,19 +437,19 @@ namespace Maple2.Trigger._52000051_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {900})) {
+                if (context.MonsterDead(arg1: new[] {900})) {
                     context.State = new StateRemoveTotem02(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {101, 201});
-                context.DestroyMonster(arg1: new int[] {102, 202});
-                context.DestroyMonster(arg1: new int[] {103, 203});
-                context.CreateMonster(arg1: new int[] {105, 205}, arg2: false);
-                context.RemoveBalloonTalk(spawnPointID: 203);
-                context.RemoveBalloonTalk(spawnPointID: 103);
+                context.DestroyMonster(arg1: new[] {101, 201});
+                context.DestroyMonster(arg1: new[] {102, 202});
+                context.DestroyMonster(arg1: new[] {103, 203});
+                context.CreateMonster(arg1: new[] {105, 205}, arg2: false);
+                context.RemoveBalloonTalk(spawnPointId: 203);
+                context.RemoveBalloonTalk(spawnPointId: 103);
             }
         }
 
@@ -461,7 +457,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateRemoveTotem02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {102, 202});
+                context.DestroyMonster(arg1: new[] {102, 202});
                 context.MoveNpc(arg1: 950, arg2: "MS2PatrolData_850");
                 context.MoveNpc(arg1: 951, arg2: "MS2PatrolData_851");
                 context.MoveNpc(arg1: 952, arg2: "MS2PatrolData_852");
@@ -500,7 +496,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateRemoveTotem03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {102, 202});
+                context.DestroyMonster(arg1: new[] {102, 202});
                 context.ChangeMonster(arg1: 950, arg2: 850);
                 context.ChangeMonster(arg1: 951, arg2: 851);
                 context.ChangeMonster(arg1: 952, arg2: 852);
@@ -544,10 +540,10 @@ namespace Maple2.Trigger._52000051_qd {
                 context.SetConversation(arg1: 1, arg2: 205, arg3: "$52000051_QD__01_MAIN__9$", arg4: 3, arg5: 1);
                 context.MoveNpc(arg1: 105, arg2: "MS2PatrolData_106");
                 context.MoveNpc(arg1: 205, arg2: "MS2PatrolData_206");
-                context.SetMesh(arg1: new int[] {3500, 3501}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3500, 3501}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 4002, arg2: true, arg3: "Opened");
                 context.SetActor(arg1: 4001, arg2: true, arg3: "Opened");
-                context.SetEffect(arg1: new int[] {5004}, arg2: true);
+                context.SetEffect(arg1: new[] {5004}, arg2: true);
                 context.SetAgent(arg1: "8000", arg2: false);
                 context.SetAgent(arg1: "8001", arg2: false);
                 context.SetAgent(arg1: "8002", arg2: false);
@@ -574,7 +570,7 @@ namespace Maple2.Trigger._52000051_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9500, arg2: new int[] {105})) {
+                if (context.NpcDetected(arg1: 9500, arg2: new[] {105})) {
                     context.State = new StateFoundGate02(context);
                     return;
                 }
@@ -591,7 +587,7 @@ namespace Maple2.Trigger._52000051_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9501, arg2: new int[] {105})) {
+                if (context.NpcDetected(arg1: 9501, arg2: new[] {105})) {
                     context.State = new StateShadowApp01(context);
                     return;
                 }
@@ -605,7 +601,7 @@ namespace Maple2.Trigger._52000051_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 205, arg3: "$52000051_QD__01_MAIN__12$", arg4: 2, arg5: 0);
-                context.CreateMonster(arg1: new int[] {901, 903, 905}, arg2: false);
+                context.CreateMonster(arg1: new[] {901, 903, 905}, arg2: false);
             }
 
             public override void Execute() {
@@ -622,11 +618,11 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateShadowApp02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {105, 205});
-                context.CreateMonster(arg1: new int[] {106, 206}, arg2: false);
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$52000051_QD__01_MAIN__13$", arg3: new int[] {3000}, arg4: "0");
-                context.CreateMonster(arg1: new int[] {914, 916, 918}, arg2: false);
+                context.DestroyMonster(arg1: new[] {105, 205});
+                context.CreateMonster(arg1: new[] {106, 206}, arg2: false);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "$52000051_QD__01_MAIN__13$", arg3: 3000, arg4: "0");
+                context.CreateMonster(arg1: new[] {914, 916, 918}, arg2: false);
             }
 
             public override void Execute() {
@@ -643,7 +639,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateShadowApp03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {921, 926, 928}, arg2: false);
+                context.CreateMonster(arg1: new[] {921, 926, 928}, arg2: false);
             }
 
             public override void Execute() {
@@ -662,7 +658,7 @@ namespace Maple2.Trigger._52000051_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {
+                if (context.MonsterDead(arg1: new[] {
                     901, 902, 903, 904, 905, 906, 907, 908, 911, 912, 913, 914, 915, 916, 917, 918, 921, 922, 923, 924,
                     925, 926, 927, 928, 931, 932, 933, 934, 935, 936, 937, 938
                 })) {
@@ -672,8 +668,8 @@ namespace Maple2.Trigger._52000051_qd {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {106, 206});
-                context.CreateMonster(arg1: new int[] {104, 204}, arg2: false);
+                context.DestroyMonster(arg1: new[] {106, 206});
+                context.CreateMonster(arg1: new[] {104, 204}, arg2: false);
             }
         }
 
@@ -681,7 +677,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateStartPuzzle01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4, key: "PuzzleStart", value: 1);
+                context.SetUserValue(triggerId: 4, key: "PuzzleStart", value: 1);
                 context.SetConversation(arg1: 1, arg2: 104, arg3: "$52000051_QD__01_MAIN__14$", arg4: 2, arg5: 0);
             }
 
@@ -699,8 +695,8 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateStartPuzzle02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$52000051_QD__01_MAIN__15$", arg3: new int[] {5000}, arg4: "0");
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "$52000051_QD__01_MAIN__15$", arg3: 5000, arg4: "0");
             }
 
             public override void Execute() {
@@ -719,7 +715,7 @@ namespace Maple2.Trigger._52000051_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "PuzzleSolved", value: 1)) {
+                if (context.GetUserValue(key: "PuzzleSolved") == 1) {
                     context.State = new StateGateOpen01(context);
                     return;
                 }
@@ -732,7 +728,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateGateOpen01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {5001}, arg2: true);
             }
 
             public override void Execute() {
@@ -754,7 +750,7 @@ namespace Maple2.Trigger._52000051_qd {
                 context.SetConversation(arg1: 1, arg2: 104, arg3: "$52000051_QD__01_MAIN__16$", arg4: 2, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 204, arg3: "$52000051_QD__01_MAIN__17$", arg4: 2, arg5: 2);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "or_fi_struc_stonegate_A01_on");
-                context.SetMesh(arg1: new int[] {3030}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3030}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
             }
 
@@ -790,7 +786,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {104, 204});
+                context.DestroyMonster(arg1: new[] {104, 204});
             }
 
             public override void Execute() { }

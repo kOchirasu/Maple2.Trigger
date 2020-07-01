@@ -1,29 +1,25 @@
-using System;
-
 namespace Maple2.Trigger._02020068_bf {
     public static class _12000_minipuzzle_tracingfoothold {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ResetTimer(arg1: "1");
                 context.ResetTimer(arg1: "2");
-                context.SetInteractObject(arg1: new int[] {12000082}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {12000083}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {12000225}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {12000075}, arg2: 2);
-                context.SetMesh(arg1: new int[] {12001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {12002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {12003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {12000082}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000083}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000225}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000075}, arg2: 2);
+                context.SetMesh(arg1: new[] {12001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {12002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {12003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 12201, arg2: false, arg3: "Interaction_luminous_A01_on");
                 context.SetActor(arg1: 12202, arg2: false, arg3: "Interaction_luminous_A01_on");
-                context.SetEffect(arg1: new int[] {12100}, arg2: false);
+                context.SetEffect(arg1: new[] {12100}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "TimeEventOn", value: 1)) {
+                if (context.GetUserValue(key: "TimeEventOn") == 1) {
                     context.State = new StateSettingDelay(context);
                     return;
                 }
@@ -51,11 +47,11 @@ namespace Maple2.Trigger._02020068_bf {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {12000075}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000075}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000075}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000075}, arg2: 0)) {
                     context.SetTimer(arg1: "1", arg2: 120, arg3: true, arg4: false, arg5: 0);
                     context.State = new StateTracingFootHold_Start_Delay(context);
                     return;
@@ -84,12 +80,12 @@ namespace Maple2.Trigger._02020068_bf {
             internal StateTracingFootHold_Play01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {12001}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
-                context.SetInteractObject(arg1: new int[] {12000082}, arg2: 1);
+                context.SetMesh(arg1: new[] {12001}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
+                context.SetInteractObject(arg1: new[] {12000082}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000082}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000082}, arg2: 0)) {
                     context.State = new StateTracingFootHold_Play01_Delay(context);
                     return;
                 }
@@ -108,7 +104,7 @@ namespace Maple2.Trigger._02020068_bf {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 12201, arg2: true, arg3: "Interaction_luminous_A01_on");
-                context.SetInteractObject(arg1: new int[] {12000082}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000082}, arg2: 2);
             }
 
             public override void Execute() {
@@ -130,12 +126,12 @@ namespace Maple2.Trigger._02020068_bf {
             internal StateTracingFootHold_Play02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {12002}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
-                context.SetInteractObject(arg1: new int[] {12000083}, arg2: 1);
+                context.SetMesh(arg1: new[] {12002}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
+                context.SetInteractObject(arg1: new[] {12000083}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000083}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000083}, arg2: 0)) {
                     context.State = new StateTracingFootHold_Play02_Delay(context);
                     return;
                 }
@@ -154,7 +150,7 @@ namespace Maple2.Trigger._02020068_bf {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 12202, arg2: true, arg3: "Interaction_luminous_A01_on");
-                context.SetInteractObject(arg1: new int[] {12000083}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000083}, arg2: 2);
             }
 
             public override void Execute() {
@@ -171,21 +167,21 @@ namespace Maple2.Trigger._02020068_bf {
             internal StateTracingFootHold_Success(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {120001}, arg2: 71001022, arg3: 1, arg4: false, arg5: false);
-                context.SetEffect(arg1: new int[] {12100}, arg2: true);
-                context.SetMesh(arg1: new int[] {12003}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
-                context.SetInteractObject(arg1: new int[] {12000225}, arg2: 1);
+                context.AddBuff(arg1: new[] {120001}, arg2: 71001022, arg3: 1, arg4: false, arg5: false);
+                context.SetEffect(arg1: new[] {12100}, arg2: true);
+                context.SetMesh(arg1: new[] {12003}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
+                context.SetInteractObject(arg1: new[] {12000225}, arg2: 1);
                 context.SetTimer(arg1: "2", arg2: 60, arg3: true, arg4: false, arg5: 0);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000225}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000225}, arg2: 0)) {
                     context.State = new StateTracingFootHold_SuccessDelay(context);
                     return;
                 }
 
                 if (context.TimeExpired(arg1: "2")) {
-                    context.SetInteractObject(arg1: new int[] {12000225}, arg2: 2);
+                    context.SetInteractObject(arg1: new[] {12000225}, arg2: 2);
                     context.State = new StateResetTimer(context);
                     return;
                 }
@@ -198,7 +194,7 @@ namespace Maple2.Trigger._02020068_bf {
             internal StateTracingFootHold_SuccessDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 12000, key: "TimeEventOn", value: 0);
+                context.SetUserValue(triggerId: 12000, key: "TimeEventOn", value: 0);
             }
 
             public override void Execute() {

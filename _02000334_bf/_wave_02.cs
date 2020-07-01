@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000334_bf {
     public static class _wave_02 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기시간(context);
-
-        private class State대기시간 : TriggerState {
+        public class State대기시간 : TriggerState {
             internal State대기시간(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 90099, arg2: new int[] {151})) {
+                if (context.NpcDetected(arg1: 90099, arg2: new[] {151})) {
                     context.State = new State1차타이머(context);
                     return;
                 }
@@ -90,7 +86,7 @@ namespace Maple2.Trigger._02000334_bf {
             internal State1번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {111}, arg2: true);
+                context.CreateMonster(arg1: new[] {111}, arg2: true);
             }
 
             public override void Execute() {
@@ -107,7 +103,7 @@ namespace Maple2.Trigger._02000334_bf {
             internal State2번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {112}, arg2: true);
+                context.CreateMonster(arg1: new[] {112}, arg2: true);
             }
 
             public override void Execute() {
@@ -124,7 +120,7 @@ namespace Maple2.Trigger._02000334_bf {
             internal State3번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {113}, arg2: true);
+                context.CreateMonster(arg1: new[] {113}, arg2: true);
             }
 
             public override void Execute() {
@@ -141,7 +137,7 @@ namespace Maple2.Trigger._02000334_bf {
             internal State4번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {114}, arg2: true);
+                context.CreateMonster(arg1: new[] {114}, arg2: true);
             }
 
             public override void Execute() {
@@ -158,7 +154,7 @@ namespace Maple2.Trigger._02000334_bf {
             internal State5번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {115}, arg2: true);
+                context.CreateMonster(arg1: new[] {115}, arg2: true);
             }
 
             public override void Execute() {
@@ -175,7 +171,7 @@ namespace Maple2.Trigger._02000334_bf {
             internal State6번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {111}, arg2: true);
+                context.CreateMonster(arg1: new[] {111}, arg2: true);
             }
 
             public override void Execute() {
@@ -192,7 +188,7 @@ namespace Maple2.Trigger._02000334_bf {
             internal State7번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {114}, arg2: true);
+                context.CreateMonster(arg1: new[] {114}, arg2: true);
             }
 
             public override void Execute() {
@@ -209,7 +205,7 @@ namespace Maple2.Trigger._02000334_bf {
             internal State8번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {115}, arg2: true);
+                context.CreateMonster(arg1: new[] {115}, arg2: true);
             }
 
             public override void Execute() {

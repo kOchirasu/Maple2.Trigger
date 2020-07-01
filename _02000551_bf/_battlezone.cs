@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000551_bf {
     public static class _battlezone {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new State트리거작동시작(context);
                     return;
                 }
@@ -25,92 +21,92 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 13, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 13, arg2: new[] {101})) {
                     context.State = new State중앙전투판신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 12, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 12, arg2: new[] {101})) {
                     context.State = new State12시전투판신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 3, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 3, arg2: new[] {101})) {
                     context.State = new State3시전투판신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 6, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 6, arg2: new[] {101})) {
                     context.State = new State6시전투판신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 9, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 9, arg2: new[] {101})) {
                     context.State = new State9시전투판신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 122, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 122, arg2: new[] {101})) {
                     context.State = new State봄컨셉도로신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 45, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 45, arg2: new[] {101})) {
                     context.State = new State여름컨셉도로신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 78, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 78, arg2: new[] {101})) {
                     context.State = new State가을컨셉도로신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 1011, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 1011, arg2: new[] {101})) {
                     context.State = new State겨울컨셉도로신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 13, arg2: new int[] {102})) {
+                if (context.NpcDetected(arg1: 13, arg2: new[] {102})) {
                     context.State = new State중앙전투판신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 12, arg2: new int[] {102})) {
+                if (context.NpcDetected(arg1: 12, arg2: new[] {102})) {
                     context.State = new State12시전투판신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 3, arg2: new int[] {102})) {
+                if (context.NpcDetected(arg1: 3, arg2: new[] {102})) {
                     context.State = new State3시전투판신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 6, arg2: new int[] {102})) {
+                if (context.NpcDetected(arg1: 6, arg2: new[] {102})) {
                     context.State = new State6시전투판신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 9, arg2: new int[] {102})) {
+                if (context.NpcDetected(arg1: 9, arg2: new[] {102})) {
                     context.State = new State9시전투판신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 122, arg2: new int[] {102})) {
+                if (context.NpcDetected(arg1: 122, arg2: new[] {102})) {
                     context.State = new State봄컨셉도로신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 45, arg2: new int[] {102})) {
+                if (context.NpcDetected(arg1: 45, arg2: new[] {102})) {
                     context.State = new State여름컨셉도로신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 78, arg2: new int[] {102})) {
+                if (context.NpcDetected(arg1: 78, arg2: new[] {102})) {
                     context.State = new State가을컨셉도로신호(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 1011, arg2: new int[] {102})) {
+                if (context.NpcDetected(arg1: 1011, arg2: new[] {102})) {
                     context.State = new State겨울컨셉도로신호(context);
                     return;
                 }

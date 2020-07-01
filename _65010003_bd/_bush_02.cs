@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._65010003_bd {
     public static class _bush_02 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._65010003_bd {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 1001002, arg2: 1, arg3: "Equal")) {
+                if (context.GetUserCount(boxId: 1001002) == 1) {
                     context.State = new State버프발동(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._65010003_bd {
             internal State버프발동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {1001002}, arg2: 70000075, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {1001002}, arg2: 70000075, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -34,12 +30,12 @@ namespace Maple2.Trigger._65010003_bd {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 1001002, arg2: 1, arg3: "Greater")) {
+                if (context.GetUserCount(boxId: 1001002) > 1) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {1001002})) {
+                if (!context.UserDetected(arg1: new[] {1001002})) {
                     context.State = new State대기(context);
                     return;
                 }

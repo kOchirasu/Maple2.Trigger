@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52000169_qd {
     public static class _52000169 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -14,7 +10,7 @@ namespace Maple2.Trigger._52000169_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new State전경씬01(context);
                     return;
                 }
@@ -27,14 +23,14 @@ namespace Maple2.Trigger._52000169_qd {
             internal State전경씬01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {500}, arg2: false);
-                context.CreateMonster(arg1: new int[] {501}, arg2: false);
-                context.CreateMonster(arg1: new int[] {502}, arg2: false);
+                context.CreateMonster(arg1: new[] {500}, arg2: false);
+                context.CreateMonster(arg1: new[] {501}, arg2: false);
+                context.CreateMonster(arg1: new[] {502}, arg2: false);
                 context.MoveUser(arg1: 52000169, arg2: 50);
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {4000, 4001, 4002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4000, 4001, 4002}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -113,11 +109,11 @@ namespace Maple2.Trigger._52000169_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.ShowGuideSummary(entityID: 52001691, textID: 52001691, duration: 10000);
+                context.ShowGuideSummary(entityId: 52001691, textId: 52001691, duration: 10000);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002376},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002376},
                     arg3: new byte[] {3})) {
                     context.State = new State프론티어재단으로01(context);
                     return;

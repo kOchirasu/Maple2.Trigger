@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._66000003_gd {
     public static class _enter {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시간표확인(context);
-
-        private class State시간표확인 : TriggerState {
+        public class State시간표확인 : TriggerState {
             internal State시간표확인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetTimer(arg1: "60", arg2: 30, arg3: false, arg4: true);
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 101, arg2: 10)) {
+                if (context.GetUserCount(boxId: 101) == 10) {
                     context.State = new State어나운스0(context);
                     return;
                 }
@@ -36,12 +32,12 @@ namespace Maple2.Trigger._66000003_gd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 101, arg2: 2)) {
+                if (context.GetUserCount(boxId: 101) == 2) {
                     context.State = new State어나운스0(context);
                     return;
                 }
 
-                if (!context.CountUsers(arg1: 101, arg2: 2)) {
+                if (context.GetUserCount(boxId: 101) != 2) {
                     context.State = new State비김(context);
                     return;
                 }
@@ -55,7 +51,7 @@ namespace Maple2.Trigger._66000003_gd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "6", arg2: 6, arg3: false);
-                context.SetEventUI(arg1: 1, arg2: "$66000003_GD__ENTER__0$", arg3: new int[] {6000}, arg4: "101");
+                context.SetEventUI(arg1: 1, arg2: "$66000003_GD__ENTER__0$", arg3: 6000, arg4: "101");
             }
 
             public override void Execute() {
@@ -73,7 +69,7 @@ namespace Maple2.Trigger._66000003_gd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3, arg3: false);
-                context.SetEventUI(arg1: 1, arg2: "$65000001_BD__ENTER__1$", arg3: new int[] {3000}, arg4: "101");
+                context.SetEventUI(arg1: 1, arg2: "$65000001_BD__ENTER__1$", arg3: 3000, arg4: "101");
             }
 
             public override void Execute() {
@@ -128,7 +124,7 @@ namespace Maple2.Trigger._66000003_gd {
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.SetEventUI(arg1: 5, arg2: "$65000001_BD__ENTER__2$", arg3: new int[] {3000}, arg4: "0");
+                    context.SetEventUI(arg1: 5, arg2: "$65000001_BD__ENTER__2$", arg3: 3000, arg4: "0");
                     context.State = new State완료(context);
                     return;
                 }
@@ -143,7 +139,7 @@ namespace Maple2.Trigger._66000003_gd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "6", arg2: 6);
                 context.SetEventUI(arg1: 0, arg2: "0,0");
-                context.SetEventUI(arg1: 3, arg2: "$65000001_BD__ENTER__3$", arg3: new int[] {5000}, arg4: "102");
+                context.SetEventUI(arg1: 3, arg2: "$65000001_BD__ENTER__3$", arg3: 5000, arg4: "102");
             }
 
             public override void Execute() {

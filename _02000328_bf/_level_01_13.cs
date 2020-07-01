@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000328_bf {
     public static class _level_01_13 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
@@ -23,9 +19,9 @@ namespace Maple2.Trigger._02000328_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(IDs: new int[] {5113}, isVisible: false);
+                context.SetCube(ids: new[] {5113}, isVisible: false);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         32301, 32302, 32303, 32304, 32305, 32306, 32307, 32308, 32309, 32310, 32311, 32312, 32313,
                         32314, 32315, 32316, 32317, 32318, 32319, 32320, 32321, 32322, 32323, 32324, 32325, 32326,
                         32327, 32328, 32329, 32330, 32331, 32332, 32333, 32334, 32335, 32336, 32337, 32338, 32339,
@@ -35,16 +31,16 @@ namespace Maple2.Trigger._02000328_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {10015})) {
+                if (context.MonsterDead(arg1: new[] {10015})) {
                     context.SetMesh(
-                        arg1: new int[] {
+                        arg1: new[] {
                             32301, 32302, 32303, 32304, 32305, 32306, 32307, 32308, 32309, 32310, 32311, 32312, 32313,
                             32314, 32315, 32316, 32317, 32318, 32319, 32320, 32321, 32322, 32323, 32324, 32325, 32326,
                             32327, 32328, 32329, 32330, 32331, 32332, 32333, 32334, 32335, 32336, 32337, 32338, 32339,
                             32340, 32341, 32342, 32343, 32344, 32345
                         }, arg2: true, arg3: 0, arg4: 100, arg5: 1f);
                     context.SetMesh(
-                        arg1: new int[] {
+                        arg1: new[] {
                             42101, 42102, 42103, 42104, 42105, 42106, 42107, 42108, 42109, 42110, 42111, 42112, 42113,
                             42114, 42115, 42116, 42117, 42118, 42119, 42120, 42121, 42122, 42123, 42124, 42125, 42126,
                             42127, 42128, 42129, 42130, 42131, 42132, 42133, 42134, 42135, 42136, 42137, 42138, 42139,

@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._99999908 {
     public static class _view {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
@@ -23,7 +19,7 @@ namespace Maple2.Trigger._99999908 {
             internal Statebuff_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 99910221, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 99910221, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -40,7 +36,7 @@ namespace Maple2.Trigger._99999908 {
             internal Statebuff_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 99910221, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 99910221, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -57,7 +53,7 @@ namespace Maple2.Trigger._99999908 {
             internal Statebuff_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 99910221, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 99910221, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -74,7 +70,7 @@ namespace Maple2.Trigger._99999908 {
             internal Statebuff_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 99910221, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 99910221, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -91,15 +87,15 @@ namespace Maple2.Trigger._99999908 {
             internal Statebuff_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {
+                context.DestroyMonster(arg1: new[] {
                     101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120
                 });
                 context.SpawnNpcRange(
-                    rangeID: new int[] {
+                    rangeId: new[] {
                         101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119,
                         120
                     }, isAutoTargeting: false, randomPickCount: 3, score: 100);
-                context.AddBuff(arg1: new int[] {701}, arg2: 99910221, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 99910221, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {

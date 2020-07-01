@@ -1,31 +1,27 @@
-using System;
-
 namespace Maple2.Trigger._52020024_qd {
     public static class _52020024_main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State감지(context);
-
-        private class State감지 : TriggerState {
+        public class State감지 : TriggerState {
             internal State감지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 99990002, key: "TimerStart", value: 0);
-                context.SetUserValue(triggerID: 99990003, key: "FinalPhase", value: 0);
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
+                context.SetUserValue(triggerId: 99990002, key: "TimerStart", value: 0);
+                context.SetUserValue(triggerId: 99990003, key: "FinalPhase", value: 0);
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
                 context.SetActor(arg1: 10001, arg2: true, arg3: "ks_quest_movewall_A02_off");
                 context.SetActor(arg1: 10002, arg2: true, arg3: "ks_quest_movewall_A02_off");
                 context.SetActor(arg1: 10003, arg2: true, arg3: "ks_quest_fusiondevice_A01_off");
-                context.SetMesh(arg1: new int[] {1001}, arg2: true);
-                context.SetMesh(arg1: new int[] {2001}, arg2: true);
+                context.SetMesh(arg1: new[] {1001}, arg2: true);
+                context.SetMesh(arg1: new[] {2001}, arg2: true);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetInteractObject(arg1: new int[] {10002006}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10002007}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10002008}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10002009}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10002006}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10002007}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10002008}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10002009}, arg2: 2);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {901})) {
+                if (context.UserDetected(arg1: new[] {901})) {
                     context.State = new State1차전투감지(context);
                     return;
                 }
@@ -40,7 +36,7 @@ namespace Maple2.Trigger._52020024_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {902})) {
+                if (context.UserDetected(arg1: new[] {902})) {
                     context.State = new State1차전투(context);
                     return;
                 }
@@ -53,12 +49,12 @@ namespace Maple2.Trigger._52020024_qd {
             internal State1차전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "방 안을 수색하세요", arg3: new int[] {5000}, arg4: "0");
-                context.CreateMonster(arg1: new int[] {101, 102, 103}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "방 안을 수색하세요", arg3: 5000, arg4: "0");
+                context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101, 102, 103}, arg2: false)) {
+                if (context.MonsterDead(arg1: new[] {101, 102, 103}, arg2: false)) {
                     context.State = new State1번레버활성화(context);
                     return;
                 }
@@ -71,12 +67,12 @@ namespace Maple2.Trigger._52020024_qd {
             internal State1번레버활성화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10002006}, arg2: 1);
-                context.AddBalloonTalk(spawnPointID: 0, msg: "파편 융합 장치 전원을 찾아야해", duration: 3000, delayTick: 0);
+                context.SetInteractObject(arg1: new[] {10002006}, arg2: 1);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "파편 융합 장치 전원을 찾아야해", duration: 3000, delayTick: 0);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10002006}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002006}, arg2: 0)) {
                     context.State = new State2차전투감지(context);
                     return;
                 }
@@ -89,13 +85,13 @@ namespace Maple2.Trigger._52020024_qd {
             internal State2차전투감지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {1001}, arg2: false, arg3: 500);
+                context.SetMesh(arg1: new[] {1001}, arg2: false, arg3: 500);
                 context.SetActor(arg1: 10001, arg2: true, arg3: "ks_quest_movewall_A02_start");
-                context.AddBalloonTalk(spawnPointID: 0, msg: "헐... 대박...", duration: 3000, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "헐... 대박...", duration: 3000, delayTick: 0);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {903})) {
+                if (context.UserDetected(arg1: new[] {903})) {
                     context.State = new State2차전투(context);
                     return;
                 }
@@ -108,11 +104,11 @@ namespace Maple2.Trigger._52020024_qd {
             internal State2차전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {111, 112}, arg2: true);
+                context.CreateMonster(arg1: new[] {111, 112}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {111, 112}, arg2: false)) {
+                if (context.MonsterDead(arg1: new[] {111, 112}, arg2: false)) {
                     context.State = new State2번레버활성화(context);
                     return;
                 }
@@ -125,12 +121,12 @@ namespace Maple2.Trigger._52020024_qd {
             internal State2번레버활성화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 0, msg: "여기엔 없는것 같네", duration: 3000, delayTick: 0);
-                context.SetInteractObject(arg1: new int[] {10002007}, arg2: 1);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "여기엔 없는것 같네", duration: 3000, delayTick: 0);
+                context.SetInteractObject(arg1: new[] {10002007}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10002007}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002007}, arg2: 0)) {
                     context.State = new State3차전투감지(context);
                     return;
                 }
@@ -143,12 +139,12 @@ namespace Maple2.Trigger._52020024_qd {
             internal State3차전투감지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {2001}, arg2: false, arg3: 500);
+                context.SetMesh(arg1: new[] {2001}, arg2: false, arg3: 500);
                 context.SetActor(arg1: 10002, arg2: true, arg3: "ks_quest_movewall_A02_start");
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {904})) {
+                if (context.UserDetected(arg1: new[] {904})) {
                     context.State = new State3차전투(context);
                     return;
                 }
@@ -161,11 +157,11 @@ namespace Maple2.Trigger._52020024_qd {
             internal State3차전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {121, 122}, arg2: true);
+                context.CreateMonster(arg1: new[] {121, 122}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {121, 122}, arg2: false)) {
+                if (context.MonsterDead(arg1: new[] {121, 122}, arg2: false)) {
                     context.State = new State3번레버활성화(context);
                     return;
                 }
@@ -178,11 +174,11 @@ namespace Maple2.Trigger._52020024_qd {
             internal State3번레버활성화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10002008}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10002008}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10002008}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002008}, arg2: 0)) {
                     context.State = new State파편모으기(context);
                     return;
                 }
@@ -195,13 +191,13 @@ namespace Maple2.Trigger._52020024_qd {
             internal State파편모으기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10002009}, arg2: 1);
-                context.AddBalloonTalk(spawnPointID: 0, msg: "중앙으로 가보자!", duration: 3000, delayTick: 0);
-                context.SetEventUI(arg1: 1, arg2: "융합장치 전원 활성화.", arg3: new int[] {5000}, arg4: "0");
+                context.SetInteractObject(arg1: new[] {10002009}, arg2: 1);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "중앙으로 가보자!", duration: 3000, delayTick: 0);
+                context.SetEventUI(arg1: 1, arg2: "융합장치 전원 활성화.", arg3: 5000, arg4: "0");
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10002009}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002009}, arg2: 0)) {
                     context.State = new State파이널전투(context);
                     return;
                 }
@@ -215,17 +211,17 @@ namespace Maple2.Trigger._52020024_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 10003, arg2: true, arg3: "ks_quest_fusiondevice_A01_on");
-                context.SetUserValue(triggerID: 99990002, key: "TimerStart", value: 1);
-                context.SetUserValue(triggerID: 99990003, key: "FinalPhase", value: 1);
+                context.SetUserValue(triggerId: 99990002, key: "TimerStart", value: 1);
+                context.SetUserValue(triggerId: 99990003, key: "FinalPhase", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "TimerStart", value: 2)) {
+                if (context.GetUserValue(key: "TimerStart") == 2) {
                     context.State = new State파편합성완료(context);
                     return;
                 }
 
-                if (context.UserValue(key: "FinalPhase", value: 2)) {
+                if (context.GetUserValue(key: "FinalPhase") == 2) {
                     context.State = new State파편합성완료(context);
                     return;
                 }
@@ -239,7 +235,7 @@ namespace Maple2.Trigger._52020024_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 10003, arg2: true, arg3: "ks_quest_fusiondevice_A01_off");
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.DestroyMonster(arg1: new[] {-1});
             }
 
             public override void Execute() {
@@ -258,7 +254,7 @@ namespace Maple2.Trigger._52020024_qd {
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "카메라_종료", arg2: "exit");
                 context.MoveUser(arg1: 52020024, arg2: 2);
-                context.CreateMonster(arg1: new int[] {201}, arg2: false);
+                context.CreateMonster(arg1: new[] {201}, arg2: false);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_Michael");
                 context.CameraSelect(arg1: 501, arg2: true);
                 context.SetProductionUI(arg1: 1);
@@ -335,7 +331,7 @@ namespace Maple2.Trigger._52020024_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "으아아악!!!", arg4: 2);
                 context.CameraSelect(arg1: 504, arg2: true);
-                context.SetSkill(arg1: new int[] {1}, arg2: true);
+                context.SetSkill(arg1: new[] {1}, arg2: true);
             }
 
             public override void Execute() {

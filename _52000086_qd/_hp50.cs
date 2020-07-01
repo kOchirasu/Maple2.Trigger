@@ -1,28 +1,24 @@
-using System;
-
 namespace Maple2.Trigger._52000086_qd {
     public static class _hp50 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State퀘스트체크50100300_2(context);
-
-        private class State퀘스트체크50100300_2 : TriggerState {
+        public class State퀘스트체크50100300_2 : TriggerState {
             internal State퀘스트체크50100300_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50100300},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100300},
                     arg3: new byte[] {3})) {
                     context.State = new State던전종료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50100300},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100300},
                     arg3: new byte[] {2})) {
                     context.State = new State던전종료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50100300},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100300},
                     arg3: new byte[] {1})) {
                     context.State = new State대기(context);
                     return;
@@ -38,19 +34,19 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50100310},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100310},
                     arg3: new byte[] {3})) {
                     context.State = new State던전종료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50100310},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100310},
                     arg3: new byte[] {2})) {
                     context.State = new State던전종료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50100310},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100310},
                     arg3: new byte[] {1})) {
                     context.State = new State대기(context);
                     return;
@@ -66,19 +62,19 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50100311},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100311},
                     arg3: new byte[] {3})) {
                     context.State = new State던전종료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50100311},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100311},
                     arg3: new byte[] {2})) {
                     context.State = new State던전종료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50100311},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100311},
                     arg3: new byte[] {1})) {
                     context.State = new State대기(context);
                     return;
@@ -92,13 +88,13 @@ namespace Maple2.Trigger._52000086_qd {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new int[] {4000}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {4000}, arg2: false);
+                context.SetBreakable(arg1: new[] {4000}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
                 context.SetPortal(arg1: 91, arg2: false, arg3: false, arg4: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "hp50", value: 1)) {
+                if (context.GetUserValue(key: "hp50") == 1) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -114,7 +110,7 @@ namespace Maple2.Trigger._52000086_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 4);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CreateMonster(arg1: new int[] {1007, 1008}, arg2: false);
+                context.CreateMonster(arg1: new[] {1007, 1008}, arg2: false);
                 context.MoveUser(arg1: 52000086, arg2: 30);
                 context.CameraSelect(arg1: 313, arg2: true);
             }
@@ -154,7 +150,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State에르다대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003069, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__0$",
+                context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__0$",
                     align: "right", duration: 5000);
             }
 
@@ -173,9 +169,9 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 315, arg2: true);
-                context.AddCinematicTalk(npcID: 11003075, illustID: "SnowKing_normal", msg: "$52000086_QD__HP50__1$",
+                context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", msg: "$52000086_QD__HP50__1$",
                     align: "left", duration: 3000);
-                context.AddCinematicTalk(npcID: 11003075, illustID: "SnowKing_normal", msg: "$52000086_QD__HP50__2$",
+                context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", msg: "$52000086_QD__HP50__2$",
                     align: "left", duration: 2000);
             }
 
@@ -195,7 +191,7 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 316, arg2: true);
                 context.VisibleMyPc(isVisible: false);
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__3$",
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__3$",
                     align: "right", duration: 3000);
             }
 
@@ -213,9 +209,9 @@ namespace Maple2.Trigger._52000086_qd {
             internal State비에른대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003075, illustID: "SnowKing_normal", msg: "$52000086_QD__HP50__4$",
+                context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", msg: "$52000086_QD__HP50__4$",
                     align: "left", duration: 4000);
-                context.AddCinematicTalk(npcID: 11003075, illustID: "SnowKing_normal", msg: "$52000086_QD__HP50__5$",
+                context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", msg: "$52000086_QD__HP50__5$",
                     align: "left", duration: 5000);
             }
 
@@ -252,9 +248,9 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: true);
                 context.CameraSelect(arg1: 317, arg2: true);
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__6$",
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__6$",
                     align: "right", duration: 4000);
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__7$",
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__7$",
                     align: "right", duration: 4000);
             }
 
@@ -273,7 +269,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 318, arg2: true);
-                context.AddCinematicTalk(npcID: 11003075, illustID: "SnowKing_normal", msg: "$52000086_QD__HP50__8$",
+                context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", msg: "$52000086_QD__HP50__8$",
                     align: "left", duration: 2000);
             }
 
@@ -292,7 +288,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 317, arg2: true);
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__9$",
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__9$",
                     align: "right", duration: 2000);
             }
 
@@ -311,7 +307,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 312, arg2: true);
-                context.AddCinematicTalk(npcID: 11003075, illustID: "SnowKing_normal", msg: "$52000086_QD__HP50__10$",
+                context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", msg: "$52000086_QD__HP50__10$",
                     align: "right", duration: 5000);
             }
 
@@ -330,9 +326,9 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 318, arg2: true);
-                context.AddCinematicTalk(npcID: 11003075, illustID: "SnowKing_normal", msg: "$52000086_QD__HP50__11$",
+                context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", msg: "$52000086_QD__HP50__11$",
                     align: "left", duration: 4000);
-                context.AddCinematicTalk(npcID: 11003075, illustID: "SnowKing_normal", msg: "$52000086_QD__HP50__12$",
+                context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", msg: "$52000086_QD__HP50__12$",
                     align: "left", duration: 4000);
             }
 
@@ -351,7 +347,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 317, arg2: true);
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__13$",
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__13$",
                     align: "right", duration: 2000);
             }
 
@@ -369,11 +365,11 @@ namespace Maple2.Trigger._52000086_qd {
             internal State에르다대사06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1008});
-                context.SetVisibleBreakableObject(arg1: new int[] {4000}, arg2: true);
-                context.AddCinematicTalk(npcID: 11003075, illustID: "SnowKing_normal", msg: "$52000086_QD__HP50__14$",
+                context.DestroyMonster(arg1: new[] {1008});
+                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: true);
+                context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", msg: "$52000086_QD__HP50__14$",
                     align: "left", duration: 2000);
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__15$",
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__15$",
                     align: "right", duration: 5000);
             }
 
@@ -392,13 +388,13 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 319, arg2: true);
-                context.CreateMonster(arg1: new int[] {1009}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {4000}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__16$",
+                context.CreateMonster(arg1: new[] {1009}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__16$",
                     align: "right", duration: 3000);
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__17$",
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__17$",
                     align: "right", duration: 5000);
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__18$",
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__18$",
                     align: "right", duration: 5000);
             }
 
@@ -435,9 +431,9 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1007, arg2: "MS2PatrolData_1007A");
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__19$",
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__19$",
                     align: "right", duration: 4000);
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__20$",
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__20$",
                     align: "right", duration: 4000);
             }
 
@@ -476,12 +472,12 @@ namespace Maple2.Trigger._52000086_qd {
                 context.VisibleMyPc(isVisible: true);
                 context.SetAiExtraData(key: "getBack", value: 1);
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.DestroyMonster(arg1: new int[] {1007, 1008, 1009});
-                context.CreateMonster(arg1: new int[] {2098}, arg2: false);
+                context.DestroyMonster(arg1: new[] {1007, 1008, 1009});
+                context.CreateMonster(arg1: new[] {2098}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.AddBuff(arg1: new int[] {199}, arg2: 70000115, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {199}, arg2: 70000115, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -500,7 +496,7 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2099})) {
+                if (context.MonsterDead(arg1: new[] {2099})) {
                     context.State = new State사망연출대기(context);
                     return;
                 }
@@ -529,9 +525,9 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000086, arg2: 40);
-                context.DestroyMonster(arg1: new int[] {2099});
-                context.DestroyMonster(arg1: new int[] {2098});
-                context.CreateMonster(arg1: new int[] {1101, 1102}, arg2: false);
+                context.DestroyMonster(arg1: new[] {2099});
+                context.DestroyMonster(arg1: new[] {2098});
+                context.CreateMonster(arg1: new[] {1101, 1102}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 1102, arg2: "Stun_A", arg3: 999999999999f);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 4);
@@ -573,7 +569,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State에르다대사10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__21$",
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__21$",
                     align: "right", duration: 5000);
             }
 
@@ -592,7 +588,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 322, arg2: true);
-                context.AddCinematicTalk(npcID: 11003075, illustID: "SnowKing_normal", msg: "$52000086_QD__HP50__22$",
+                context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", msg: "$52000086_QD__HP50__22$",
                     align: "left", duration: 3000);
             }
 
@@ -610,7 +606,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State에르다대사11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__23$",
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__23$",
                     align: "right", duration: 2000);
             }
 
@@ -629,9 +625,9 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 323, arg2: true);
-                context.AddCinematicTalk(npcID: 11003075, illustID: "SnowKing_normal", msg: "$52000086_QD__HP50__24$",
+                context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", msg: "$52000086_QD__HP50__24$",
                     align: "left", duration: 4000);
-                context.AddCinematicTalk(npcID: 11003075, illustID: "SnowKing_normal", msg: "$52000086_QD__HP50__25$",
+                context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", msg: "$52000086_QD__HP50__25$",
                     align: "left", duration: 2000);
             }
 
@@ -649,7 +645,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State비에른대사12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003075, illustID: "SnowKing_normal", msg: "$52000086_QD__HP50__26$",
+                context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", msg: "$52000086_QD__HP50__26$",
                     align: "left", duration: 4000);
             }
 
@@ -667,7 +663,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State에르다대사12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__27$",
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__27$",
                     align: "right", duration: 3000);
             }
 
@@ -687,7 +683,7 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 322, arg2: true);
                 context.SetNpcEmotionLoop(arg1: 1102, arg2: "Idle_A", arg3: 999999999999f);
-                context.AddCinematicTalk(npcID: 11003075, illustID: "SnowKing_normal", msg: "$52000086_QD__HP50__28$",
+                context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", msg: "$52000086_QD__HP50__28$",
                     align: "left", duration: 5000);
             }
 
@@ -707,7 +703,7 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 324, arg2: true);
                 context.MoveNpc(arg1: 1102, arg2: "MS2PatrolData_1102A");
-                context.AddCinematicTalk(npcID: 11003075, illustID: "SnowKing_normal", msg: "$52000086_QD__HP50__29$",
+                context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", msg: "$52000086_QD__HP50__29$",
                     align: "left", duration: 3000);
             }
 
@@ -726,7 +722,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 325, arg2: true);
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__30$",
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__30$",
                     align: "right", duration: 3000);
             }
 
@@ -761,7 +757,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State에르다대사13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__32$",
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__32$",
                     align: "right", duration: 3000);
             }
 
@@ -779,7 +775,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State에르다대사131(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003074, illustID: "SnowQueen_normal", msg: "$52000086_QD__HP50__33$",
+                context.AddCinematicTalk(npcId: 11003074, illustId: "SnowQueen_normal", msg: "$52000086_QD__HP50__33$",
                     align: "right", duration: 3000);
             }
 
@@ -833,8 +829,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnEnter() {
                 context.SetSkip();
                 context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.DestroyMonster(arg1: new int[] {1101, 1102});
-                context.CreateMonster(arg1: new int[] {10000, 10001, 10002});
+                context.DestroyMonster(arg1: new[] {1101, 1102});
+                context.CreateMonster(arg1: new[] {10000, 10001, 10002});
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
@@ -855,7 +851,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State던전종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.DestroyMonster(arg1: new[] {-1});
                 context.SetPortal(arg1: 91, arg2: false, arg3: false, arg4: false);
                 context.MoveUser(arg1: 52000086, arg2: 30);
             }
@@ -875,18 +871,18 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4002, arg2: true, arg3: "Opened");
-                context.SetMesh(arg1: new int[] {3102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 4002, arg2: true, arg3: "Opened");
-                context.SetMesh(arg1: new int[] {3102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3102}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 4003, arg2: true, arg3: "Opened");
-                context.SetMesh(arg1: new int[] {3103}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3103}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 4004, arg2: true, arg3: "Opened");
-                context.SetMesh(arg1: new int[] {3104}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetBreakable(arg1: new int[] {4000}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {4000}, arg2: false);
+                context.SetMesh(arg1: new[] {3104}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetBreakable(arg1: new[] {4000}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
                 context.MoveUser(arg1: 52000086, arg2: 30);
-                context.DestroyMonster(arg1: new int[] {1101, 1102});
-                context.CreateMonster(arg1: new int[] {10000, 10001, 10002});
+                context.DestroyMonster(arg1: new[] {1101, 1102});
+                context.CreateMonster(arg1: new[] {10000, 10001, 10002});
             }
 
             public override void Execute() {

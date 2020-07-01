@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000334_bf {
     public static class _guide {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기시간(context);
-
-        private class State대기시간 : TriggerState {
+        public class State대기시간 : TriggerState {
             internal State대기시간(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 90099, arg2: new int[] {150})) {
+                if (context.NpcDetected(arg1: 90099, arg2: new[] {150})) {
                     context.State = new State1차타이머(context);
                     return;
                 }
@@ -41,13 +37,13 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 101, textID: 20000010);
-                context.SetEffect(arg1: new int[] {90021}, arg2: true);
+                context.ShowGuideSummary(entityId: 101, textId: 20000010);
+                context.SetEffect(arg1: new[] {90021}, arg2: true);
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 90001, arg2: new int[] {301})) {
+                if (context.NpcDetected(arg1: 90001, arg2: new[] {301})) {
                     context.State = new State2차타이머(context);
                     return;
                 }
@@ -59,7 +55,7 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 101);
+                context.HideGuideSummary(entityId: 101);
             }
         }
 
@@ -69,7 +65,7 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 90001, arg2: new int[] {301})) {
+                if (context.NpcDetected(arg1: 90001, arg2: new[] {301})) {
                     context.State = new State2차타이머(context);
                     return;
                 }
@@ -101,12 +97,12 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {90100})) {
+                if (context.UserDetected(arg1: new[] {90100})) {
                     context.State = new State오스칼_배웅(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {190})) {
+                if (context.MonsterDead(arg1: new[] {190})) {
                     context.State = new State가이드_02_02(context);
                     return;
                 }
@@ -121,7 +117,7 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {90100})) {
+                if (context.UserDetected(arg1: new[] {90100})) {
                     context.State = new State오스칼_배웅(context);
                     return;
                 }

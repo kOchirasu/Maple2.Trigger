@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._52000050_qd {
     public static class _main_03 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1001, 1002, 2001}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 1002, 2001}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {10003042},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {10003042},
                     arg3: new byte[] {2})) {
                     context.State = new State연출시작(context);
                     return;
@@ -29,7 +25,7 @@ namespace Maple2.Trigger._52000050_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.AddBuff(arg1: new int[] {199}, arg2: 70000095, arg3: 1);
+                context.AddBuff(arg1: new[] {199}, arg2: 70000095, arg3: 1);
             }
 
             public override void Execute() {
@@ -154,9 +150,9 @@ namespace Maple2.Trigger._52000050_qd {
             internal State연출종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {2001});
-                context.CreateMonster(arg1: new int[] {2002}, arg2: false);
-                context.AddBuff(arg1: new int[] {199}, arg2: 70000096, arg3: 1);
+                context.DestroyMonster(arg1: new[] {2001});
+                context.CreateMonster(arg1: new[] {2002}, arg2: false);
+                context.AddBuff(arg1: new[] {199}, arg2: 70000096, arg3: 1);
                 context.MoveUser(arg1: 52000046, arg2: 2);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);

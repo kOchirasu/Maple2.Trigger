@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52000013_qd {
     public static class _patrol {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -13,7 +9,7 @@ namespace Maple2.Trigger._52000013_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new State어린벨라등장(context);
                     return;
                 }
@@ -27,7 +23,7 @@ namespace Maple2.Trigger._52000013_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "10", arg2: 1);
-                context.CreateMonster(arg1: new int[] {5000}, arg2: false);
+                context.CreateMonster(arg1: new[] {5000}, arg2: false);
             }
 
             public override void Execute() {
@@ -48,7 +44,7 @@ namespace Maple2.Trigger._52000013_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9001, arg2: new int[] {5000})) {
+                if (context.NpcDetected(arg1: 9001, arg2: new[] {5000})) {
                     context.State = new State어린벨라대화01(context);
                     return;
                 }
@@ -83,7 +79,7 @@ namespace Maple2.Trigger._52000013_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9002, arg2: new int[] {5000})) {
+                if (context.NpcDetected(arg1: 9002, arg2: new[] {5000})) {
                     context.State = new State어린벨라대화02(context);
                     return;
                 }
@@ -118,7 +114,7 @@ namespace Maple2.Trigger._52000013_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9003, arg2: new int[] {5000})) {
+                if (context.NpcDetected(arg1: 9003, arg2: new[] {5000})) {
                     context.State = new State카메라연출01(context);
                     return;
                 }
@@ -134,11 +130,11 @@ namespace Maple2.Trigger._52000013_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetTimer(arg1: "12", arg2: 6);
-                context.CameraSelectPath(arg1: new int[] {901}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {901}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9004, arg2: new int[] {5000})) {
+                if (context.NpcDetected(arg1: 9004, arg2: new[] {5000})) {
                     context.State = new State카메라연출02(context);
                     return;
                 }
@@ -153,7 +149,7 @@ namespace Maple2.Trigger._52000013_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "13", arg2: 12);
                 context.SetActor(arg1: 6000, arg2: true, arg3: "Idle_A");
-                context.CameraSelectPath(arg1: new int[] {902, 903}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {902, 903}, arg2: false);
             }
 
             public override void Execute() {
@@ -189,9 +185,9 @@ namespace Maple2.Trigger._52000013_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "15", arg2: 1);
-                context.DestroyMonster(arg1: new int[] {5000});
+                context.DestroyMonster(arg1: new[] {5000});
                 context.SetActor(arg1: 6000, arg2: false, arg3: "Idle_A");
-                context.CreateMonster(arg1: new int[] {6001}, arg2: false);
+                context.CreateMonster(arg1: new[] {6001}, arg2: false);
             }
 
             public override void Execute() {
@@ -213,7 +209,7 @@ namespace Maple2.Trigger._52000013_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.MoveNpc(arg1: 6001, arg2: "MS2PatrolData_2001");
-                context.CameraSelectPath(arg1: new int[] {904, 905}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {904, 905}, arg2: false);
             }
 
             public override void Execute() {
@@ -252,7 +248,7 @@ namespace Maple2.Trigger._52000013_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {10000}, arg2: new int[] {10002611},
+                if (context.QuestUserDetected(arg1: new[] {10000}, arg2: new[] {10002611},
                     arg3: new byte[] {3})) {
                     context.State = new State강제이동(context);
                     return;
@@ -285,7 +281,7 @@ namespace Maple2.Trigger._52000013_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "20", arg2: 10);
-                context.DestroyMonster(arg1: new int[] {6001});
+                context.DestroyMonster(arg1: new[] {6001});
             }
 
             public override void Execute() {

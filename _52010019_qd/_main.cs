@@ -1,14 +1,10 @@
-using System;
-
 namespace Maple2.Trigger._52010019_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101, 102, 103});
+                context.CreateMonster(arg1: new[] {101, 102, 103});
             }
 
             public override void Execute() { }

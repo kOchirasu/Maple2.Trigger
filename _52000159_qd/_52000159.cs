@@ -1,34 +1,30 @@
-using System;
-
 namespace Maple2.Trigger._52000159_qd {
     public static class _52000159 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statewait_01(context);
-
-        private class Statewait_01 : TriggerState {
+        public class Statewait_01 : TriggerState {
             internal Statewait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002735},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002735},
                     arg3: new byte[] {2})) {
                     context.State = new State정리_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002736},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002736},
                     arg3: new byte[] {2})) {
                     context.State = new State정리_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002737},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002737},
                     arg3: new byte[] {2})) {
                     context.State = new State정리_01(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {2001}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {2001}, arg2: 0)) {
                     context.State = new Statewait_01_1(context);
                     return;
                 }
@@ -80,8 +76,8 @@ namespace Maple2.Trigger._52000159_qd {
             internal State어쌔신과거_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {4003, 4004}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4003, 4004}, arg2: false);
             }
 
             public override void Execute() {
@@ -118,7 +114,7 @@ namespace Maple2.Trigger._52000159_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcID: 0, msg: "$52000159_QD__52000159__1$", duration: 4000);
+                context.AddCinematicTalk(npcId: 0, msg: "$52000159_QD__52000159__1$", duration: 4000);
                 context.MoveUserPath(arg1: "MS2PatrolData_3001");
             }
 
@@ -136,10 +132,10 @@ namespace Maple2.Trigger._52000159_qd {
             internal State어쌔신과거_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 0, msg: "$52000159_QD__52000159__2$", duration: 3000);
-                context.AddCinematicTalk(npcID: 0, msg: "$52000159_QD__52000159__3$", duration: 3000);
-                context.AddCinematicTalk(npcID: 0, msg: "$52000159_QD__52000159__4$", duration: 3000);
-                context.AddCinematicTalk(npcID: 0, msg: "$52000159_QD__52000159__5$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, msg: "$52000159_QD__52000159__2$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, msg: "$52000159_QD__52000159__3$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, msg: "$52000159_QD__52000159__4$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, msg: "$52000159_QD__52000159__5$", duration: 3000);
             }
 
             public override void Execute() {
@@ -156,9 +152,9 @@ namespace Maple2.Trigger._52000159_qd {
             internal State어쌔신과거_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4005}, arg2: false);
-                context.AddCinematicTalk(npcID: 0, msg: "$52000159_QD__52000159__6$", duration: 3000);
-                context.AddCinematicTalk(npcID: 0, msg: "$52000159_QD__52000159__7$", duration: 3000);
+                context.CameraSelectPath(arg1: new[] {4005}, arg2: false);
+                context.AddCinematicTalk(npcId: 0, msg: "$52000159_QD__52000159__6$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, msg: "$52000159_QD__52000159__7$", duration: 3000);
             }
 
             public override void Execute() {
@@ -176,8 +172,8 @@ namespace Maple2.Trigger._52000159_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.AddCinematicTalk(npcID: 0, msg: "$52000159_QD__52000159__8$", duration: 3000);
-                context.AddCinematicTalk(npcID: 0, msg: "$52000159_QD__52000159__9$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, msg: "$52000159_QD__52000159__8$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, msg: "$52000159_QD__52000159__9$", duration: 3000);
             }
 
             public override void Execute() {
@@ -232,19 +228,19 @@ namespace Maple2.Trigger._52000159_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {4006}, arg2: false);
-                context.CreateMonster(arg1: new int[] {103}, arg2: false);
-                context.SetEffect(arg1: new int[] {5001}, arg2: true);
-                context.CreateMonster(arg1: new int[] {105}, arg2: false);
-                context.SetEffect(arg1: new int[] {5002}, arg2: true);
-                context.CreateMonster(arg1: new int[] {106}, arg2: false);
-                context.SetEffect(arg1: new int[] {5003}, arg2: true);
-                context.CreateMonster(arg1: new int[] {107}, arg2: false);
-                context.SetEffect(arg1: new int[] {5004}, arg2: true);
-                context.CreateMonster(arg1: new int[] {108}, arg2: false);
-                context.SetEffect(arg1: new int[] {5005}, arg2: true);
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
-                context.SetEffect(arg1: new int[] {5006}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {4006}, arg2: false);
+                context.CreateMonster(arg1: new[] {103}, arg2: false);
+                context.SetEffect(arg1: new[] {5001}, arg2: true);
+                context.CreateMonster(arg1: new[] {105}, arg2: false);
+                context.SetEffect(arg1: new[] {5002}, arg2: true);
+                context.CreateMonster(arg1: new[] {106}, arg2: false);
+                context.SetEffect(arg1: new[] {5003}, arg2: true);
+                context.CreateMonster(arg1: new[] {107}, arg2: false);
+                context.SetEffect(arg1: new[] {5004}, arg2: true);
+                context.CreateMonster(arg1: new[] {108}, arg2: false);
+                context.SetEffect(arg1: new[] {5005}, arg2: true);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.SetEffect(arg1: new[] {5006}, arg2: true);
                 context.MoveUser(arg1: 52000159, arg2: 2);
             }
 
@@ -297,19 +293,19 @@ namespace Maple2.Trigger._52000159_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
-                context.CreateMonster(arg1: new int[] {104}, arg2: false);
-                context.CreateMonster(arg1: new int[] {109}, arg2: false);
-                context.CreateMonster(arg1: new int[] {110}, arg2: false);
-                context.CreateMonster(arg1: new int[] {111}, arg2: false);
-                context.CreateMonster(arg1: new int[] {112}, arg2: false);
-                context.CreateMonster(arg1: new int[] {113}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {101}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {103}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {105}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {106}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {107}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {108}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {104}, arg2: false);
+                context.CreateMonster(arg1: new[] {109}, arg2: false);
+                context.CreateMonster(arg1: new[] {110}, arg2: false);
+                context.CreateMonster(arg1: new[] {111}, arg2: false);
+                context.CreateMonster(arg1: new[] {112}, arg2: false);
+                context.CreateMonster(arg1: new[] {113}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101}, arg2: false);
+                context.DestroyMonster(arg1: new[] {103}, arg2: false);
+                context.DestroyMonster(arg1: new[] {105}, arg2: false);
+                context.DestroyMonster(arg1: new[] {106}, arg2: false);
+                context.DestroyMonster(arg1: new[] {107}, arg2: false);
+                context.DestroyMonster(arg1: new[] {108}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }
@@ -332,19 +328,19 @@ namespace Maple2.Trigger._52000159_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002735},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002735},
                     arg3: new byte[] {2})) {
                     context.State = new State남자의죽음_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002736},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002736},
                     arg3: new byte[] {2})) {
                     context.State = new State남자의죽음_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002737},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002737},
                     arg3: new byte[] {2})) {
                     context.State = new State남자의죽음_01(context);
                     return;
@@ -376,7 +372,7 @@ namespace Maple2.Trigger._52000159_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
-                context.CameraSelectPath(arg1: new int[] {4007}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4007}, arg2: false);
             }
 
             public override void Execute() {
@@ -413,7 +409,7 @@ namespace Maple2.Trigger._52000159_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 104, arg2: "Attack_01_B");
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Dead_B", arg3: 9000000000000f);
-                context.SetEffect(arg1: new int[] {5007}, arg2: true);
+                context.SetEffect(arg1: new[] {5007}, arg2: true);
             }
 
             public override void Execute() {
@@ -467,10 +463,10 @@ namespace Maple2.Trigger._52000159_qd {
             internal State남자의죽음_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {102}, arg2: false);
-                context.CreateMonster(arg1: new int[] {114}, arg2: false);
+                context.DestroyMonster(arg1: new[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {114}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 114, arg2: "Dead_B", arg3: 9000000000000f);
-                context.CreateMonster(arg1: new int[] {115}, arg2: false);
+                context.CreateMonster(arg1: new[] {115}, arg2: false);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
@@ -494,7 +490,7 @@ namespace Maple2.Trigger._52000159_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002737},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002737},
                     arg3: new byte[] {2})) {
                     context.State = new State쉐도클로표창_01(context);
                     return;
@@ -525,7 +521,7 @@ namespace Maple2.Trigger._52000159_qd {
             internal State쉐도클로표창_01_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4009}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4009}, arg2: false);
                 context.VisibleMyPc(isVisible: false);
                 context.SetProductionUI(arg1: 1);
             }
@@ -563,7 +559,7 @@ namespace Maple2.Trigger._52000159_qd {
             internal State쉐도클로표창_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4008}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4008}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 104, arg2: "Attack_01_B", arg3: 80000f);
                 context.SetTimeScale(enable: true, startScale: 0.1f, endScale: 0.1f, duration: 10.0f, interpolator: 1);
             }

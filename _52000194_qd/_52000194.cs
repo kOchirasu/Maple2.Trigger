@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000194_qd {
     public static class _52000194 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {10003427},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003427},
                     arg3: new byte[] {2})) {
                     context.State = new StateWait_02(context);
                     return;
@@ -45,7 +41,7 @@ namespace Maple2.Trigger._52000194_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: @"common\unconsciousEmpress.usm", movieID: 1);
+                context.PlaySceneMovie(fileName: @"common\unconsciousEmpress.usm", movieId: 1);
             }
 
             public override void Execute() {
@@ -86,7 +82,7 @@ namespace Maple2.Trigger._52000194_qd {
             internal State시공의균열_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52000194_QD__52000194__0$",
                     desc: "$52000194_QD__52000194__1$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
                     duration: 5000, scale: 2.5f);

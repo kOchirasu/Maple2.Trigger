@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000312_bf {
     public static class _bossspawn_99 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -39,12 +35,12 @@ namespace Maple2.Trigger._02000312_bf {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.CreateMonster(arg1: new int[] {99}, arg2: false);
+                context.CreateMonster(arg1: new[] {99}, arg2: false);
                 context.MoveNpc(arg1: 99, arg2: "MS2PatrolData_99");
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State종료체크(context);
                     return;
                 }
@@ -57,7 +53,7 @@ namespace Maple2.Trigger._02000312_bf {
             internal State종료체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {99});
+                context.DestroyMonster(arg1: new[] {99});
             }
 
             public override void Execute() {

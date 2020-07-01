@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._02010060_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {6001}, arg2: false);
-                context.SetMesh(arg1: new int[] {6002}, arg2: false);
-                context.SetMesh(arg1: new int[] {6003}, arg2: false);
+                context.SetMesh(arg1: new[] {6001}, arg2: false);
+                context.SetMesh(arg1: new[] {6002}, arg2: false);
+                context.SetMesh(arg1: new[] {6003}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 700, arg2: 1)) {
+                if (context.GetUserCount(boxId: 700) == 1) {
                     context.State = new StateReady_Idle(context);
                     return;
                 }

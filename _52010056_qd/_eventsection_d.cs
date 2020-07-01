@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52010056_qd {
     public static class _eventsection_d {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateIdle(context);
-
-        private class StateIdle : TriggerState {
+        public class StateIdle : TriggerState {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 2005, arg2: new int[] {999})) {
+                if (context.NpcDetected(arg1: 2005, arg2: new[] {999})) {
                     context.State = new State연출준비(context);
                     return;
                 }
@@ -41,7 +37,7 @@ namespace Maple2.Trigger._52010056_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
-                context.CameraSelectPath(arg1: new int[] {4006}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4006}, arg2: false);
             }
 
             public override void Execute() {
@@ -61,7 +57,7 @@ namespace Maple2.Trigger._52010056_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetNpcEmotionSequence(arg1: 999, arg2: "Attack_01_B");
-                context.AddCinematicTalk(npcID: 11003816, msg: "$52010056_QD__EventSection_D__0$", duration: 3727);
+                context.AddCinematicTalk(npcId: 11003816, msg: "$52010056_QD__EventSection_D__0$", duration: 3727);
             }
 
             public override void Execute() {
@@ -72,21 +68,21 @@ namespace Maple2.Trigger._52010056_qd {
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new int[] {901}, arg2: true);
-                context.CreateMonster(arg1: new int[] {902}, arg2: true);
-                context.CreateMonster(arg1: new int[] {903}, arg2: true);
-                context.CreateMonster(arg1: new int[] {904}, arg2: true);
-                context.CreateMonster(arg1: new int[] {905}, arg2: true);
-                context.CreateMonster(arg1: new int[] {906}, arg2: true);
-                context.CreateMonster(arg1: new int[] {907}, arg2: true);
-                context.CreateMonster(arg1: new int[] {908}, arg2: true);
-                context.CreateMonster(arg1: new int[] {909}, arg2: true);
-                context.CreateMonster(arg1: new int[] {910}, arg2: true);
-                context.CreateMonster(arg1: new int[] {911}, arg2: true);
-                context.CreateMonster(arg1: new int[] {912}, arg2: true);
-                context.CreateMonster(arg1: new int[] {913}, arg2: true);
-                context.CreateMonster(arg1: new int[] {914}, arg2: true);
-                context.CreateMonster(arg1: new int[] {915}, arg2: true);
+                context.CreateMonster(arg1: new[] {901}, arg2: true);
+                context.CreateMonster(arg1: new[] {902}, arg2: true);
+                context.CreateMonster(arg1: new[] {903}, arg2: true);
+                context.CreateMonster(arg1: new[] {904}, arg2: true);
+                context.CreateMonster(arg1: new[] {905}, arg2: true);
+                context.CreateMonster(arg1: new[] {906}, arg2: true);
+                context.CreateMonster(arg1: new[] {907}, arg2: true);
+                context.CreateMonster(arg1: new[] {908}, arg2: true);
+                context.CreateMonster(arg1: new[] {909}, arg2: true);
+                context.CreateMonster(arg1: new[] {910}, arg2: true);
+                context.CreateMonster(arg1: new[] {911}, arg2: true);
+                context.CreateMonster(arg1: new[] {912}, arg2: true);
+                context.CreateMonster(arg1: new[] {913}, arg2: true);
+                context.CreateMonster(arg1: new[] {914}, arg2: true);
+                context.CreateMonster(arg1: new[] {915}, arg2: true);
                 context.ChangeMonster(arg1: 999, arg2: 901);
             }
         }
@@ -95,7 +91,7 @@ namespace Maple2.Trigger._52010056_qd {
             internal State크림슨스피어_출동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4007}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4007}, arg2: false);
             }
 
             public override void Execute() {

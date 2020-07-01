@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02000224_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new State퀘스트조건체크(context);
                     return;
                 }
@@ -27,49 +23,49 @@ namespace Maple2.Trigger._02000224_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001562},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001562},
                     arg3: new byte[] {2})) {
                     context.State = new State다음맵으로(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001562},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001562},
                     arg3: new byte[] {1})) {
                     context.State = new State연출준비00(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001561},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001561},
                     arg3: new byte[] {3})) {
                     context.State = new State아르마노있음(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001561},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001561},
                     arg3: new byte[] {2})) {
                     context.State = new State아르마노있음(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001561},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001561},
                     arg3: new byte[] {1})) {
                     context.State = new State아르마노있음(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001560},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001560},
                     arg3: new byte[] {3})) {
                     context.State = new State아르마노있음(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001560},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001560},
                     arg3: new byte[] {2})) {
                     context.State = new State아르마노있음(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001560},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001560},
                     arg3: new byte[] {1})) {
                     context.State = new State기본상태(context);
                     return;
@@ -85,7 +81,7 @@ namespace Maple2.Trigger._02000224_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new State퀘스트조건체크(context);
                     return;
                 }
@@ -100,13 +96,13 @@ namespace Maple2.Trigger._02000224_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001562},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001562},
                     arg3: new byte[] {1})) {
                     context.State = new State연출준비(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001562},
+                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001562},
                     arg3: new byte[] {1})) {
                     context.State = new State퀘스트조건체크(context);
                     return;
@@ -125,8 +121,8 @@ namespace Maple2.Trigger._02000224_bf {
             internal State다음맵으로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101});
-                context.CreateMonster(arg1: new int[] {104}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101});
+                context.CreateMonster(arg1: new[] {104}, arg2: false);
             }
 
             public override void Execute() {
@@ -163,7 +159,7 @@ namespace Maple2.Trigger._02000224_bf {
             internal State연출준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {103}, arg2: false);
+                context.CreateMonster(arg1: new[] {103}, arg2: false);
                 context.MoveUser(arg1: 02000224, arg2: 10);
             }
 
@@ -181,7 +177,7 @@ namespace Maple2.Trigger._02000224_bf {
             internal State티니에등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetConversation(arg1: 2, arg2: 11003243, arg3: "$02000224_BF__MAIN__18$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Bore_C", arg3: 3000f);
@@ -201,7 +197,7 @@ namespace Maple2.Trigger._02000224_bf {
             internal State티니에이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_girl01");
                 context.SetConversation(arg1: 2, arg2: 11003243, arg3: "$02000224_BF__MAIN__0$", arg4: 4, arg5: 0);
             }
@@ -220,7 +216,7 @@ namespace Maple2.Trigger._02000224_bf {
             internal State아르마노대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003242, arg3: "$02000224_BF__MAIN__1$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4000f);
                 context.SetSkip(arg1: "아르마노대사01_skip");
@@ -258,7 +254,7 @@ namespace Maple2.Trigger._02000224_bf {
             internal State티니에대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003243, arg3: "$02000224_BF__MAIN__2$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Talk_A", arg3: 4000f);
                 context.SetSkip(arg1: "티니에대사01_skip");
@@ -296,7 +292,7 @@ namespace Maple2.Trigger._02000224_bf {
             internal State아르마노대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_girl02");
                 context.SetConversation(arg1: 2, arg2: 11003242, arg3: "$02000224_BF__MAIN__3$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4000f);
@@ -335,7 +331,7 @@ namespace Maple2.Trigger._02000224_bf {
             internal State티니에대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8004}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003243, arg3: "$02000224_BF__MAIN__4$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Talk_A", arg3: 4000f);
                 context.SetSkip(arg1: "티니에대사02_skip");
@@ -429,7 +425,7 @@ namespace Maple2.Trigger._02000224_bf {
             internal State아르마노대사03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003242, arg3: "$02000224_BF__MAIN__7$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4000f);
                 context.SetSkip(arg1: "아르마노대사03_skip");
@@ -504,7 +500,7 @@ namespace Maple2.Trigger._02000224_bf {
             internal State아르마노대사04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003242, arg3: "$02000224_BF__MAIN__9$", arg4: 4, arg5: 0);
                 context.SetSkip(arg1: "아르마노대사04_skip");
             }
@@ -541,7 +537,7 @@ namespace Maple2.Trigger._02000224_bf {
             internal State아르마노대사05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4000f);
                 context.SetConversation(arg1: 2, arg2: 11003242, arg3: "$02000224_BF__MAIN__10$", arg4: 3, arg5: 0);
                 context.SetSkip(arg1: "아르마노대사05_skip");
@@ -579,7 +575,7 @@ namespace Maple2.Trigger._02000224_bf {
             internal State아르마노탈주(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_boy01");
             }
 
@@ -598,7 +594,7 @@ namespace Maple2.Trigger._02000224_bf {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_girl03");
-                context.DestroyMonster(arg1: new int[] {101});
+                context.DestroyMonster(arg1: new[] {101});
                 context.SetConversation(arg1: 2, arg2: 11003243, arg3: "$02000224_BF__MAIN__11$", arg4: 4, arg5: 0);
             }
 
@@ -616,7 +612,7 @@ namespace Maple2.Trigger._02000224_bf {
             internal State티니에대사06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC01");
                 context.SetConversation(arg1: 2, arg2: 11003243, arg3: "$02000224_BF__MAIN__12$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Bore_C", arg3: 4000f);
@@ -783,8 +779,8 @@ namespace Maple2.Trigger._02000224_bf {
             internal State아르마노말썽_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101, 103});
-                context.CreateMonster(arg1: new int[] {104}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101, 103});
+                context.CreateMonster(arg1: new[] {104}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 4);
             }

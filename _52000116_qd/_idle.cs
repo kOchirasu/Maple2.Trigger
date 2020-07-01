@@ -1,14 +1,10 @@
-using System;
-
 namespace Maple2.Trigger._52000116_qd {
     public static class _idle {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101});
+                context.CreateMonster(arg1: new[] {101});
             }
 
             public override void Execute() {
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._52000116_qd {
             internal Statenelftalk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000116_QD__IDLE__0$", arg4: 3, arg5: 0);
+                context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000116_QD__IdLE__0$", arg4: 3, arg5: 0);
             }
 
             public override void Execute() {

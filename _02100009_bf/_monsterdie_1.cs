@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02100009_bf {
     public static class _monsterdie_1 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State유저감지(context);
-
-        private class State유저감지 : TriggerState {
+        public class State유저감지 : TriggerState {
             internal State유저감지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {1000049}, arg2: false);
+                context.SetSkill(arg1: new[] {1000049}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -27,7 +23,7 @@ namespace Maple2.Trigger._02100009_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {100000001})) {
+                if (context.MonsterDead(arg1: new[] {100000001})) {
                     context.State = new State버프(context);
                     return;
                 }
@@ -40,8 +36,8 @@ namespace Maple2.Trigger._02100009_bf {
             internal State버프(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {100000002}, arg2: 50000217, arg3: 1, arg4: true, arg5: false);
-                context.SetSkill(arg1: new int[] {1000049}, arg2: true);
+                context.AddBuff(arg1: new[] {100000002}, arg2: 50000217, arg3: 1, arg4: true, arg5: false);
+                context.SetSkill(arg1: new[] {1000049}, arg2: true);
             }
 
             public override void Execute() {

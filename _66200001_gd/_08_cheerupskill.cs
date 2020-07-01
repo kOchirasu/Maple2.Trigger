@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._66200001_gd {
     public static class _08_cheerupskill {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "CheerUpTimer", value: 1)) {
+                if (context.GetUserValue(key: "CheerUpTimer") == 1) {
                     context.State = new StateCheerUpTimer_20(context);
                     return;
                 }
@@ -40,7 +36,7 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateGiveCheerUp(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {9001}, arg2: 70000086, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {9001}, arg2: 70000086, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {

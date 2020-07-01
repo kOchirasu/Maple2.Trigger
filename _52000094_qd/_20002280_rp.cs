@@ -1,22 +1,18 @@
-using System;
-
 namespace Maple2.Trigger._52000094_qd {
     public static class _20002280_rp {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9100}, arg2: new int[] {50100550},
+                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {50100550},
                     arg3: new byte[] {3})) {
                     context.State = new State연출시작(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9100}, arg2: new int[] {20002280},
+                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {20002280},
                     arg3: new byte[] {3})) {
                     context.State = new State연출시작(context);
                     return;
@@ -30,14 +26,14 @@ namespace Maple2.Trigger._52000094_qd {
             internal State연출시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3003, 3004}, arg2: false);
+                context.SetMesh(arg1: new[] {3003, 3004}, arg2: false);
                 context.SetLocalCamera(cameraId: 302, enable: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 300, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SpawnNpcRange(rangeID: new int[] {1001, 1002, 1003, 1004, 1005}, isAutoTargeting: false);
-                context.SpawnNpcRange(rangeID: new int[] {2101, 2102, 2103, 2104, 2105, 2106, 2107},
+                context.SpawnNpcRange(rangeId: new[] {1001, 1002, 1003, 1004, 1005}, isAutoTargeting: false);
+                context.SpawnNpcRange(rangeId: new[] {2101, 2102, 2103, 2104, 2105, 2106, 2107},
                     isAutoTargeting: false);
             }
 
@@ -56,7 +52,7 @@ namespace Maple2.Trigger._52000094_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000094, arg2: 99);
-                context.AddBuff(arg1: new int[] {9100}, arg2: 99910170, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {9100}, arg2: 99910170, arg3: 1, arg4: false, arg5: false);
                 context.SetProductionUI(arg1: 9, arg2: "$52000094_QD__20002280_RP__0$");
             }
 
@@ -74,7 +70,7 @@ namespace Maple2.Trigger._52000094_qd {
             internal State블랙아이대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3003, 3004}, arg2: true);
+                context.SetMesh(arg1: new[] {3003, 3004}, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -100,11 +96,11 @@ namespace Maple2.Trigger._52000094_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 25200941, textID: 25200941, duration: 4000);
+                context.ShowGuideSummary(entityId: 25200941, textId: 25200941, duration: 4000);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2101, 2102, 2103, 2104, 2105, 2106, 2107})) {
+                if (context.MonsterDead(arg1: new[] {2101, 2102, 2103, 2104, 2105, 2106, 2107})) {
                     context.State = new State데블린소환(context);
                     return;
                 }
@@ -125,7 +121,7 @@ namespace Maple2.Trigger._52000094_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.CreateMonster(arg1: new int[] {2199}, arg2: false);
+                context.CreateMonster(arg1: new[] {2199}, arg2: false);
             }
 
             public override void Execute() {
@@ -143,14 +139,14 @@ namespace Maple2.Trigger._52000094_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 25200942, textID: 25200942, duration: 4000);
+                context.ShowGuideSummary(entityId: 25200942, textId: 25200942, duration: 4000);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraSelect(arg1: 300, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2199})) {
+                if (context.MonsterDead(arg1: new[] {2199})) {
                     context.State = new State미션완료(context);
                     return;
                 }
@@ -163,8 +159,8 @@ namespace Maple2.Trigger._52000094_qd {
             internal State미션완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {2101, 2102, 2103, 2104, 2105, 2106, 2107});
-                context.SetEventUI(arg1: 7, arg2: "$52000094_QD__20002280_RP__2$", arg3: new int[] {3000}, arg4: "0");
+                context.DestroyMonster(arg1: new[] {2101, 2102, 2103, 2104, 2105, 2106, 2107});
+                context.SetEventUI(arg1: 7, arg2: "$52000094_QD__20002280_RP__2$", arg3: 3000, arg4: "0");
                 context.SetLocalCamera(cameraId: 302, enable: true);
             }
 
@@ -205,8 +201,8 @@ namespace Maple2.Trigger._52000094_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CreateMonster(arg1: new int[] {2200}, arg2: true);
-                context.CreateMonster(arg1: new int[] {2201}, arg2: true);
+                context.CreateMonster(arg1: new[] {2200}, arg2: true);
+                context.CreateMonster(arg1: new[] {2201}, arg2: true);
                 context.RemoveBuff(arg1: 9100, arg2: 99910170);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetAchievement(arg1: 9100, arg2: "trigger", arg3: "BlackEyeRpClear");

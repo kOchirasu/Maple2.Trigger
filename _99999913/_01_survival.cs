@@ -1,48 +1,44 @@
-using System;
-
 namespace Maple2.Trigger._99999913 {
     public static class _01_survival {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateSetting(context);
-
-        private class StateSetting : TriggerState {
+        public class StateSetting : TriggerState {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {4000, 4100, 4200, 4300, 4400, 4500, 4600, 4700, 4800}, arg2: false);
-                context.SetMesh(arg1: new int[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007}, arg2: true, arg3: 0,
+                context.SetEffect(arg1: new[] {4000, 4100, 4200, 4300, 4400, 4500, 4600, 4700, 4800}, arg2: false);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107}, arg2: true, arg3: 0,
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: true, arg3: 0,
+                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307}, arg2: true, arg3: 0,
+                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407}, arg2: true, arg3: 0,
+                context.SetMesh(arg1: new[] {3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507}, arg2: true, arg3: 0,
+                context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607}, arg2: true, arg3: 0,
+                context.SetMesh(arg1: new[] {3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3700, 3701, 3702, 3703, 3704, 3705, 3706, 3707}, arg2: true, arg3: 0,
+                context.SetMesh(arg1: new[] {3700, 3701, 3702, 3703, 3704, 3705, 3706, 3707}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3800, 3801, 3802, 3803, 3804, 3805, 3806, 3807}, arg2: true, arg3: 0,
+                context.SetMesh(arg1: new[] {3800, 3801, 3802, 3803, 3804, 3805, 3806, 3807}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new int[] {11000037}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {11000039}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {11000037}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {11000039}, arg2: 1);
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 20001, arg2: false);
                 context.SightRange(enable: true, range: 3);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new StateWait01(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.SetEffect(arg1: new int[] {4000, 4100, 4200, 4300, 4400, 4500, 4600, 4700, 4800}, arg2: true);
+                context.SetEffect(arg1: new[] {4000, 4100, 4200, 4300, 4400, 4500, 4600, 4700, 4800}, arg2: true);
             }
         }
 
@@ -51,7 +47,7 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 60, arg3: true, arg4: true, arg5: -80);
-                context.SetEventUI(arg1: 1, arg2: @"잠시 기다려주세요.\n잠시 후 경기 시작점이 결정됩니다.", arg3: new int[] {4000},
+                context.SetEventUI(arg1: 1, arg2: @"잠시 기다려주세요.\n잠시 후 경기 시작점이 결정됩니다.", arg3: 4000,
                     arg4: "0");
                 context.WriteLog(arg1: "Survival", arg3: "Waiting_Start");
             }
@@ -97,12 +93,12 @@ namespace Maple2.Trigger._99999913 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9000, arg2: 20, arg3: "Less")) {
+                if (context.GetUserCount(boxId: 9000) < 20) {
                     context.State = new StateGameCancel01(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9000, arg2: 20, arg3: "GreaterEqual")) {
+                if (context.GetUserCount(boxId: 9000) >= 20) {
                     context.State = new StateStartPositionRandomPick(context);
                     return;
                 }
@@ -116,7 +112,7 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() {
                 context.ResetTimer(arg1: "1");
-                context.SetEventUI(arg1: 1, arg2: "시작점으로 이동합니다.", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "시작점으로 이동합니다.", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() {
@@ -180,7 +176,7 @@ namespace Maple2.Trigger._99999913 {
             }
 
             public override void OnExit() {
-                context.SetUserValue(triggerID: 2, key: "SetRide", value: 1);
+                context.SetUserValue(triggerId: 2, key: "SetRide", value: 1);
             }
         }
 
@@ -199,7 +195,7 @@ namespace Maple2.Trigger._99999913 {
             }
 
             public override void OnExit() {
-                context.SetUserValue(triggerID: 2, key: "SetRide", value: 2);
+                context.SetUserValue(triggerId: 2, key: "SetRide", value: 2);
             }
         }
 
@@ -218,7 +214,7 @@ namespace Maple2.Trigger._99999913 {
             }
 
             public override void OnExit() {
-                context.SetUserValue(triggerID: 2, key: "SetRide", value: 3);
+                context.SetUserValue(triggerId: 2, key: "SetRide", value: 3);
             }
         }
 
@@ -237,7 +233,7 @@ namespace Maple2.Trigger._99999913 {
             }
 
             public override void OnExit() {
-                context.SetUserValue(triggerID: 2, key: "SetRide", value: 4);
+                context.SetUserValue(triggerId: 2, key: "SetRide", value: 4);
             }
         }
 
@@ -256,7 +252,7 @@ namespace Maple2.Trigger._99999913 {
             }
 
             public override void OnExit() {
-                context.SetUserValue(triggerID: 2, key: "SetRide", value: 5);
+                context.SetUserValue(triggerId: 2, key: "SetRide", value: 5);
             }
         }
 
@@ -275,7 +271,7 @@ namespace Maple2.Trigger._99999913 {
             }
 
             public override void OnExit() {
-                context.SetUserValue(triggerID: 2, key: "SetRide", value: 6);
+                context.SetUserValue(triggerId: 2, key: "SetRide", value: 6);
             }
         }
 
@@ -294,7 +290,7 @@ namespace Maple2.Trigger._99999913 {
             }
 
             public override void OnExit() {
-                context.SetUserValue(triggerID: 2, key: "SetRide", value: 7);
+                context.SetUserValue(triggerId: 2, key: "SetRide", value: 7);
             }
         }
 
@@ -313,7 +309,7 @@ namespace Maple2.Trigger._99999913 {
             }
 
             public override void OnExit() {
-                context.SetUserValue(triggerID: 2, key: "SetRide", value: 8);
+                context.SetUserValue(triggerId: 2, key: "SetRide", value: 8);
             }
         }
 
@@ -322,7 +318,7 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: @"space 키를 누르면  수레에 탈 수 있습니다.\nspace 키를 다시 누르면 수레에서 내립니다.",
-                    arg3: new int[] {3000}, arg4: "0");
+                    arg3: 3000, arg4: "0");
             }
 
             public override void Execute() {
@@ -340,7 +336,7 @@ namespace Maple2.Trigger._99999913 {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: @"경기를 곧 시작합니다!\n경기 시작과 함께 수레가 출발합니다!", arg3: new int[] {4000},
+                context.SetEventUI(arg1: 1, arg2: @"경기를 곧 시작합니다!\n경기 시작과 함께 수레가 출발합니다!", arg3: 4000,
                     arg4: "0");
                 context.CreateFieldGame(type: "MapleSurvive");
             }
@@ -376,30 +372,30 @@ namespace Maple2.Trigger._99999913 {
             internal StateAreaOpen(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 5, key: "RareBoxOnCount", value: 1);
-                context.SetUserValue(triggerID: 2, key: "StartPatrol", value: 1);
+                context.SetUserValue(triggerId: 5, key: "RareBoxOnCount", value: 1);
+                context.SetUserValue(triggerId: 2, key: "StartPatrol", value: 1);
                 context.SetSound(arg1: 20000, arg2: true);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetUserValue(triggerID: 4, key: "InvincibleOff", value: 1);
-                context.AddBuff(arg1: new int[] {9000}, arg2: 71000053, arg3: 1, arg4: false, arg5: false);
-                context.SetEffect(arg1: new int[] {4000, 4100, 4200, 4300, 4400, 4500, 4600, 4700, 4800}, arg2: false);
-                context.SetMesh(arg1: new int[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007}, arg2: false,
+                context.SetUserValue(triggerId: 4, key: "InvincibleOff", value: 1);
+                context.AddBuff(arg1: new[] {9000}, arg2: 71000053, arg3: 1, arg4: false, arg5: false);
+                context.SetEffect(arg1: new[] {4000, 4100, 4200, 4300, 4400, 4500, 4600, 4700, 4800}, arg2: false);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007}, arg2: false,
                     arg3: 1000, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107}, arg2: false,
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107}, arg2: false,
                     arg3: 1000, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: false,
+                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: false,
                     arg3: 1000, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307}, arg2: false,
+                context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307}, arg2: false,
                     arg3: 1000, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407}, arg2: false,
+                context.SetMesh(arg1: new[] {3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407}, arg2: false,
                     arg3: 1000, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507}, arg2: false,
+                context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507}, arg2: false,
                     arg3: 1000, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607}, arg2: false,
+                context.SetMesh(arg1: new[] {3600, 3601, 3602, 3603, 3604, 3605, 3606, 3607}, arg2: false,
                     arg3: 1000, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {3700, 3701, 3702, 3703, 3704, 3705, 3706, 3707}, arg2: false,
+                context.SetMesh(arg1: new[] {3700, 3701, 3702, 3703, 3704, 3705, 3706, 3707}, arg2: false,
                     arg3: 1000, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {3800, 3801, 3802, 3803, 3804, 3805, 3806, 3807}, arg2: false,
+                context.SetMesh(arg1: new[] {3800, 3801, 3802, 3803, 3804, 3805, 3806, 3807}, arg2: false,
                     arg3: 1000, arg4: 0, arg5: 2f);
                 context.WriteLog(arg1: "Survival", arg3: "Start");
             }
@@ -420,12 +416,12 @@ namespace Maple2.Trigger._99999913 {
             public override void OnEnter() {
                 context.SetSound(arg1: 20000, arg2: false);
                 context.SetSound(arg1: 20001, arg2: true);
-                context.SetUserValue(triggerID: 3, key: "StormStart", value: 1);
+                context.SetUserValue(triggerId: 3, key: "StormStart", value: 1);
                 context.WriteLog(arg1: "Survival", arg3: "StormStart");
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {9000})) {
+                if (!context.UserDetected(arg1: new[] {9000})) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -438,11 +434,11 @@ namespace Maple2.Trigger._99999913 {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {11000037}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {11000039}, arg2: 0);
-                context.SetUserValue(triggerID: 5, key: "RareBoxOff", value: 1);
+                context.SetInteractObject(arg1: new[] {11000037}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {11000039}, arg2: 0);
+                context.SetUserValue(triggerId: 5, key: "RareBoxOff", value: 1);
                 context.WriteLog(arg1: "Survival", arg3: "Trigger_End");
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.DestroyMonster(arg1: new[] {-1});
             }
 
             public override void Execute() { }
@@ -454,7 +450,7 @@ namespace Maple2.Trigger._99999913 {
             internal StateGameCancel01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "참가자 부족으로 인해 경기를 취소합니다.", arg3: new int[] {4000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "참가자 부족으로 인해 경기를 취소합니다.", arg3: 4000, arg4: "0");
             }
 
             public override void Execute() {
@@ -471,7 +467,7 @@ namespace Maple2.Trigger._99999913 {
             internal StateGameCancel02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "잠시 후 원래 있던 곳으로 돌아갑니다.", arg3: new int[] {4000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "잠시 후 원래 있던 곳으로 돌아갑니다.", arg3: 4000, arg4: "0");
             }
 
             public override void Execute() {
@@ -488,9 +484,9 @@ namespace Maple2.Trigger._99999913 {
             internal StateGameCancel03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {11000037}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {11000039}, arg2: 0);
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.SetInteractObject(arg1: new[] {11000037}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {11000039}, arg2: 0);
+                context.DestroyMonster(arg1: new[] {-1});
                 context.MoveUser(arg1: 0, arg2: 0);
             }
 

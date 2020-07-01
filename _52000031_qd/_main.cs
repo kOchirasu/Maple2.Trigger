@@ -1,73 +1,69 @@
-using System;
-
 namespace Maple2.Trigger._52000031_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3100, 3200}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3100, 3200}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(
-                    arg1: new int[]
+                    arg1: new[]
                         {3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115},
                     arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(
-                    arg1: new int[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212},
+                    arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212},
                     arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
-                context.SetEffect(arg1: new int[] {603}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {603}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101}, arg2: 90)) {
+                if (context.UserDetected(arg1: new[] {101}, arg2: 90)) {
                     context.State = new State연출시작(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {101}, arg2: 10)) {
+                if (context.UserDetected(arg1: new[] {101}, arg2: 10)) {
                     context.State = new State연출시작10(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {101}, arg2: 01)) {
+                if (context.UserDetected(arg1: new[] {101}, arg2: 01)) {
                     context.State = new State연출시작10(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {101}, arg2: 20)) {
+                if (context.UserDetected(arg1: new[] {101}, arg2: 20)) {
                     context.State = new State연출시작20(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {101}, arg2: 30)) {
+                if (context.UserDetected(arg1: new[] {101}, arg2: 30)) {
                     context.State = new State연출시작30(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {101}, arg2: 40)) {
+                if (context.UserDetected(arg1: new[] {101}, arg2: 40)) {
                     context.State = new State연출시작40(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {101}, arg2: 50)) {
+                if (context.UserDetected(arg1: new[] {101}, arg2: 50)) {
                     context.State = new State연출시작50(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {101}, arg2: 60)) {
+                if (context.UserDetected(arg1: new[] {101}, arg2: 60)) {
                     context.State = new State연출시작60(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {101}, arg2: 70)) {
+                if (context.UserDetected(arg1: new[] {101}, arg2: 70)) {
                     context.State = new State연출시작50(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {101}, arg2: 80)) {
+                if (context.UserDetected(arg1: new[] {101}, arg2: 80)) {
                     context.State = new State연출시작60(context);
                     return;
                 }
@@ -82,7 +78,7 @@ namespace Maple2.Trigger._52000031_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 2001, 2002
                     }, arg2: true);
                 context.SetProductionUI(arg1: 1);
@@ -109,7 +105,7 @@ namespace Maple2.Trigger._52000031_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 2001, 2002
                     }, arg2: true);
                 context.SetProductionUI(arg1: 1);
@@ -136,7 +132,7 @@ namespace Maple2.Trigger._52000031_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 2001, 2002
                     }, arg2: true);
                 context.SetProductionUI(arg1: 1);
@@ -163,12 +159,12 @@ namespace Maple2.Trigger._52000031_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 2001, 2002
                     }, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetEffect(arg1: new int[] {602}, arg2: true);
+                context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000032, arg3: "$52000031_QD__MAIN__3$", arg4: 5, arg5: 0);
             }
 
@@ -191,7 +187,7 @@ namespace Maple2.Trigger._52000031_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 2001, 2002
                     }, arg2: true);
                 context.SetProductionUI(arg1: 1);
@@ -218,7 +214,7 @@ namespace Maple2.Trigger._52000031_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 2001, 2002
                     }, arg2: true);
                 context.SetProductionUI(arg1: 1);
@@ -245,7 +241,7 @@ namespace Maple2.Trigger._52000031_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 2001, 2002
                     }, arg2: true);
                 context.SetProductionUI(arg1: 1);
@@ -272,7 +268,7 @@ namespace Maple2.Trigger._52000031_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 2001, 2002
                     }, arg2: true);
                 context.SetProductionUI(arg1: 1);
@@ -299,7 +295,7 @@ namespace Maple2.Trigger._52000031_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 2001, 2002
                     }, arg2: true);
                 context.SetProductionUI(arg1: 1);
@@ -329,14 +325,14 @@ namespace Maple2.Trigger._52000031_qd {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2001})) {
+                if (context.MonsterDead(arg1: new[] {2001})) {
                     context.State = new State2차전투(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {2002});
+                context.DestroyMonster(arg1: new[] {2002});
             }
         }
 
@@ -344,18 +340,18 @@ namespace Maple2.Trigger._52000031_qd {
             internal State2차전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {2003, 2004}, arg2: true);
+                context.CreateMonster(arg1: new[] {2003, 2004}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2003})) {
+                if (context.MonsterDead(arg1: new[] {2003})) {
                     context.State = new State렌듀비앙대사02(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {2004});
+                context.DestroyMonster(arg1: new[] {2004});
                 context.CameraSelect(arg1: 302, arg2: false);
             }
         }
@@ -364,13 +360,13 @@ namespace Maple2.Trigger._52000031_qd {
             internal State렌듀비앙대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3100, 3200}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3100, 3200}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(
-                    arg1: new int[]
+                    arg1: new[]
                         {3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115},
                     arg2: true, arg3: 0, arg4: 100, arg5: 1f);
                 context.SetMesh(
-                    arg1: new int[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212},
+                    arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212},
                     arg2: true, arg3: 0, arg4: 100, arg5: 1f);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
@@ -392,7 +388,7 @@ namespace Maple2.Trigger._52000031_qd {
             internal State유페리아대사_기타음성1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {603}, arg2: true);
+                context.SetEffect(arg1: new[] {603}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001564, arg3: "$52000031_QD__MAIN__11$", arg4: 3, arg5: 0);
             }
 
@@ -410,7 +406,7 @@ namespace Maple2.Trigger._52000031_qd {
             internal State이슈라외침01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: true);
+                context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000031_QD__MAIN__12$", arg4: 2, arg5: 0);
             }
 

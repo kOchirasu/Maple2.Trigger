@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000187_bf {
     public static class _trigger_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {101}, arg2: new int[] {20001281},
+                if (context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {20001281},
                     arg3: new byte[] {2})) {
                     context.State = new State몹리젠(context);
                     return;
@@ -24,11 +20,11 @@ namespace Maple2.Trigger._02000187_bf {
             internal State몹리젠(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201, 202, 203, 204, 205, 206});
+                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205, 206});
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {201, 202, 203, 204, 205, 206})) {
+                if (context.MonsterDead(arg1: new[] {201, 202, 203, 204, 205, 206})) {
                     context.State = new State쿨타임(context);
                     return;
                 }

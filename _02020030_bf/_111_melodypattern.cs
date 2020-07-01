@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02020030_bf {
     public static class _111_melodypattern {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -13,7 +9,7 @@ namespace Maple2.Trigger._02020030_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "PatternPick", value: 1)) {
+                if (context.GetUserValue(key: "PatternPick") == 1) {
                     context.State = new StateMelodyPlay01_Start(context);
                     return;
                 }
@@ -28,7 +24,7 @@ namespace Maple2.Trigger._02020030_bf {
             internal StateMelodyPlay01_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {11204}, arg2: true);
+                context.SetEffect(arg1: new[] {11204}, arg2: true);
                 context.SetActor(arg1: 11004, arg2: true, arg3: "ks_quest_musical_B01_green");
             }
 
@@ -63,7 +59,7 @@ namespace Maple2.Trigger._02020030_bf {
             internal StateMelodyPlay02_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {11205}, arg2: true);
+                context.SetEffect(arg1: new[] {11205}, arg2: true);
                 context.SetActor(arg1: 11005, arg2: true, arg3: "ks_quest_musical_B01_blue");
             }
 
@@ -98,7 +94,7 @@ namespace Maple2.Trigger._02020030_bf {
             internal StateMelodyPlay03_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {11206}, arg2: true);
+                context.SetEffect(arg1: new[] {11206}, arg2: true);
                 context.SetActor(arg1: 11006, arg2: true, arg3: "ks_quest_musical_B01_navy");
             }
 
@@ -133,7 +129,7 @@ namespace Maple2.Trigger._02020030_bf {
             internal StateMelodyPlay04_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {11207}, arg2: true);
+                context.SetEffect(arg1: new[] {11207}, arg2: true);
                 context.SetActor(arg1: 11007, arg2: true, arg3: "ks_quest_musical_B01_purple");
             }
 
@@ -168,7 +164,7 @@ namespace Maple2.Trigger._02020030_bf {
             internal StateMelodyPlay05_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {11208}, arg2: true);
+                context.SetEffect(arg1: new[] {11208}, arg2: true);
                 context.SetActor(arg1: 11008, arg2: true, arg3: "ks_quest_musical_B01_pink");
             }
 
@@ -211,66 +207,66 @@ namespace Maple2.Trigger._02020030_bf {
                 context.SetActor(arg1: 11106, arg2: false, arg3: "ks_quest_musical_A01_off");
                 context.SetActor(arg1: 11107, arg2: false, arg3: "ks_quest_musical_A01_off");
                 context.SetActor(arg1: 11108, arg2: false, arg3: "ks_quest_musical_A01_off");
-                context.SetInteractObject(arg1: new int[] {12000058}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {12000059}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {12000060}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {12000061}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {12000062}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {12000063}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {12000064}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {12000065}, arg2: 1);
-                context.SetUserValue(triggerID: 11001, key: "PlayC", value: 1);
-                context.SetUserValue(triggerID: 11002, key: "PlayD", value: 1);
-                context.SetUserValue(triggerID: 11003, key: "PlayE", value: 1);
-                context.SetUserValue(triggerID: 11004, key: "PlayF", value: 1);
-                context.SetUserValue(triggerID: 11005, key: "PlayG", value: 1);
-                context.SetUserValue(triggerID: 11006, key: "PlayA", value: 1);
-                context.SetUserValue(triggerID: 11007, key: "PlayB", value: 1);
-                context.SetUserValue(triggerID: 11008, key: "PlayHighC", value: 1);
+                context.SetInteractObject(arg1: new[] {12000058}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000059}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000060}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000061}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000062}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000063}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000064}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000065}, arg2: 1);
+                context.SetUserValue(triggerId: 11001, key: "PlayC", value: 1);
+                context.SetUserValue(triggerId: 11002, key: "PlayD", value: 1);
+                context.SetUserValue(triggerId: 11003, key: "PlayE", value: 1);
+                context.SetUserValue(triggerId: 11004, key: "PlayF", value: 1);
+                context.SetUserValue(triggerId: 11005, key: "PlayG", value: 1);
+                context.SetUserValue(triggerId: 11006, key: "PlayA", value: 1);
+                context.SetUserValue(triggerId: 11007, key: "PlayB", value: 1);
+                context.SetUserValue(triggerId: 11008, key: "PlayHighC", value: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000058}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000058}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000059}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000059}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000060}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000060}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000061}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000061}, arg2: 0)) {
                     context.State = new StateCheckAnswer01_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000062}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000062}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000063}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000063}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000064}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000064}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000065}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000065}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
@@ -290,14 +286,14 @@ namespace Maple2.Trigger._02020030_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.SetInteractObject(arg1: new int[] {12000061}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000061}, arg2: 1);
             }
         }
 
@@ -307,47 +303,47 @@ namespace Maple2.Trigger._02020030_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000058}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000058}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000059}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000059}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000060}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000060}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000061}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000061}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000062}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000062}, arg2: 0)) {
                     context.State = new StateCheckAnswer02_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000063}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000063}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000064}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000064}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000065}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000065}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
@@ -367,14 +363,14 @@ namespace Maple2.Trigger._02020030_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.SetInteractObject(arg1: new int[] {12000062}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000062}, arg2: 1);
             }
         }
 
@@ -384,47 +380,47 @@ namespace Maple2.Trigger._02020030_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000058}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000058}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000059}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000059}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000060}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000060}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000061}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000061}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000062}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000062}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000063}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000063}, arg2: 0)) {
                     context.State = new StateCheckAnswer03_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000064}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000064}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000065}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000065}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
@@ -444,14 +440,14 @@ namespace Maple2.Trigger._02020030_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.SetInteractObject(arg1: new int[] {12000063}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000063}, arg2: 1);
             }
         }
 
@@ -461,47 +457,47 @@ namespace Maple2.Trigger._02020030_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000058}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000058}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000059}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000059}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000060}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000060}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000061}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000061}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000062}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000062}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000063}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000063}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000064}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000064}, arg2: 0)) {
                     context.State = new StateCheckAnswer04_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000065}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000065}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
@@ -521,14 +517,14 @@ namespace Maple2.Trigger._02020030_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.SetInteractObject(arg1: new int[] {12000064}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000064}, arg2: 1);
             }
         }
 
@@ -538,47 +534,47 @@ namespace Maple2.Trigger._02020030_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000058}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000058}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000059}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000059}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000060}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000060}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000061}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000061}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000062}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000062}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000063}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000063}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000064}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000064}, arg2: 0)) {
                     context.State = new StateAnswerIsWrong_Delay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000065}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000065}, arg2: 0)) {
                     context.State = new StateCheckAnswer05_Delay(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
@@ -593,7 +589,7 @@ namespace Maple2.Trigger._02020030_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
@@ -605,7 +601,7 @@ namespace Maple2.Trigger._02020030_bf {
             }
 
             public override void OnExit() {
-                context.SetInteractObject(arg1: new int[] {12000065}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000065}, arg2: 1);
             }
         }
 
@@ -613,27 +609,27 @@ namespace Maple2.Trigger._02020030_bf {
             internal StateAnswerIsRight(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 11001, key: "PlayC", value: 0);
-                context.SetUserValue(triggerID: 11002, key: "PlayD", value: 0);
-                context.SetUserValue(triggerID: 11003, key: "PlayE", value: 0);
-                context.SetUserValue(triggerID: 11004, key: "PlayF", value: 0);
-                context.SetUserValue(triggerID: 11005, key: "PlayG", value: 0);
-                context.SetUserValue(triggerID: 11006, key: "PlayA", value: 0);
-                context.SetUserValue(triggerID: 11007, key: "PlayB", value: 0);
-                context.SetUserValue(triggerID: 11008, key: "PlayHighC", value: 0);
-                context.SetUserValue(triggerID: 11000, key: "AnswerIsRight", value: 1);
-                context.SetInteractObject(arg1: new int[] {12000058}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000059}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000060}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000061}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000062}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000063}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000064}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000065}, arg2: 0);
+                context.SetUserValue(triggerId: 11001, key: "PlayC", value: 0);
+                context.SetUserValue(triggerId: 11002, key: "PlayD", value: 0);
+                context.SetUserValue(triggerId: 11003, key: "PlayE", value: 0);
+                context.SetUserValue(triggerId: 11004, key: "PlayF", value: 0);
+                context.SetUserValue(triggerId: 11005, key: "PlayG", value: 0);
+                context.SetUserValue(triggerId: 11006, key: "PlayA", value: 0);
+                context.SetUserValue(triggerId: 11007, key: "PlayB", value: 0);
+                context.SetUserValue(triggerId: 11008, key: "PlayHighC", value: 0);
+                context.SetUserValue(triggerId: 11000, key: "AnswerIsRight", value: 1);
+                context.SetInteractObject(arg1: new[] {12000058}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000059}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000060}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000061}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000062}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000063}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000064}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000065}, arg2: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
@@ -646,15 +642,15 @@ namespace Maple2.Trigger._02020030_bf {
             internal StateAnswerIsWrong_Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 11001, key: "PlayC", value: 0);
-                context.SetUserValue(triggerID: 11001, key: "PlayC", value: 0);
-                context.SetUserValue(triggerID: 11002, key: "PlayD", value: 0);
-                context.SetUserValue(triggerID: 11003, key: "PlayE", value: 0);
-                context.SetUserValue(triggerID: 11004, key: "PlayF", value: 0);
-                context.SetUserValue(triggerID: 11005, key: "PlayG", value: 0);
-                context.SetUserValue(triggerID: 11006, key: "PlayA", value: 0);
-                context.SetUserValue(triggerID: 11007, key: "PlayB", value: 0);
-                context.SetUserValue(triggerID: 11008, key: "PlayHighC", value: 0);
+                context.SetUserValue(triggerId: 11001, key: "PlayC", value: 0);
+                context.SetUserValue(triggerId: 11001, key: "PlayC", value: 0);
+                context.SetUserValue(triggerId: 11002, key: "PlayD", value: 0);
+                context.SetUserValue(triggerId: 11003, key: "PlayE", value: 0);
+                context.SetUserValue(triggerId: 11004, key: "PlayF", value: 0);
+                context.SetUserValue(triggerId: 11005, key: "PlayG", value: 0);
+                context.SetUserValue(triggerId: 11006, key: "PlayA", value: 0);
+                context.SetUserValue(triggerId: 11007, key: "PlayB", value: 0);
+                context.SetUserValue(triggerId: 11008, key: "PlayHighC", value: 0);
             }
 
             public override void Execute() {
@@ -663,7 +659,7 @@ namespace Maple2.Trigger._02020030_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
@@ -676,24 +672,24 @@ namespace Maple2.Trigger._02020030_bf {
             internal StateAnswerIsWrong(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 11000, key: "AnswerIsWrong", value: 1);
-                context.SetInteractObject(arg1: new int[] {12000058}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000059}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000060}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000061}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000062}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000063}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000064}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000065}, arg2: 0);
+                context.SetUserValue(triggerId: 11000, key: "AnswerIsWrong", value: 1);
+                context.SetInteractObject(arg1: new[] {12000058}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000059}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000060}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000061}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000062}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000063}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000064}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000065}, arg2: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 0)) {
+                if (context.GetUserValue(key: "Reset") == 0) {
                     context.State = new StateMelodyPlay01_ReStartDelay01(context);
                     return;
                 }
@@ -708,7 +704,7 @@ namespace Maple2.Trigger._02020030_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
@@ -726,7 +722,7 @@ namespace Maple2.Trigger._02020030_bf {
             internal StateMelodyPlay01_ReStartDelay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {4301}, arg2: true);
+                context.SetEffect(arg1: new[] {4301}, arg2: true);
                 context.SetActor(arg1: 11001, arg2: true, arg3: "ks_quest_musical_B01_red");
                 context.SetActor(arg1: 11002, arg2: true, arg3: "ks_quest_musical_B01_orange");
                 context.SetActor(arg1: 11003, arg2: true, arg3: "ks_quest_musical_B01_yellow");
@@ -738,7 +734,7 @@ namespace Maple2.Trigger._02020030_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
@@ -767,7 +763,7 @@ namespace Maple2.Trigger._02020030_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateResetDelay(context);
                     return;
                 }

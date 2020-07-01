@@ -1,28 +1,24 @@
-using System;
-
 namespace Maple2.Trigger._52000188_qd {
     public static class _52000188 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statewait_01(context);
-
-        private class Statewait_01 : TriggerState {
+        public class Statewait_01 : TriggerState {
             internal Statewait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002794},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002794},
                     arg3: new byte[] {2})) {
                     context.State = new State바베니로_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002793},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793},
                     arg3: new byte[] {2})) {
                     context.State = new State컷씬준비(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {2001}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {2001}, arg2: 0)) {
                     context.State = new Statewait_01_02(context);
                     return;
                 }
@@ -73,7 +69,7 @@ namespace Maple2.Trigger._52000188_qd {
             internal State동굴도착_01_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_3001");
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
             }
@@ -93,7 +89,7 @@ namespace Maple2.Trigger._52000188_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcID: 0, msg: "$52000188_QD__52000188__0$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, msg: "$52000188_QD__52000188__0$", duration: 3000);
             }
 
             public override void Execute() {
@@ -171,7 +167,7 @@ namespace Maple2.Trigger._52000188_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002793},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793},
                     arg3: new byte[] {2})) {
                     context.State = new State컷씬준비(context);
                     return;
@@ -206,67 +202,67 @@ namespace Maple2.Trigger._52000188_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002793}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
                     arg4: 10)) {
                     context.State = new State나이트컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002793}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
                     arg4: 20)) {
                     context.State = new State버서커컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002793}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
                     arg4: 30)) {
                     context.State = new State위자드컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002793}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
                     arg4: 40)) {
                     context.State = new State프리스트컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002793}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
                     arg4: 50)) {
                     context.State = new State레인저컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002793}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
                     arg4: 60)) {
                     context.State = new State헤비거너컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002793}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
                     arg4: 70)) {
                     context.State = new State시프컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002793}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
                     arg4: 80)) {
                     context.State = new State어쌔신컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002793}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
                     arg4: 90)) {
                     context.State = new State룬블컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002793}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
                     arg4: 100)) {
                     context.State = new State스커컷씬(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002793}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2},
                     arg4: 110)) {
                     context.State = new State소바컷씬(context);
                     return;
@@ -281,7 +277,7 @@ namespace Maple2.Trigger._52000188_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "MasterSkill_knight.swf", movieID: 1);
+                context.PlaySceneMovie(fileName: "MasterSkill_knight.swf", movieId: 1);
             }
 
             public override void Execute() {
@@ -304,7 +300,7 @@ namespace Maple2.Trigger._52000188_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "MasterSkill_berserker.swf", movieID: 2);
+                context.PlaySceneMovie(fileName: "MasterSkill_berserker.swf", movieId: 2);
             }
 
             public override void Execute() {
@@ -327,7 +323,7 @@ namespace Maple2.Trigger._52000188_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "MasterSkill_wizard.swf", movieID: 3);
+                context.PlaySceneMovie(fileName: "MasterSkill_wizard.swf", movieId: 3);
             }
 
             public override void Execute() {
@@ -350,7 +346,7 @@ namespace Maple2.Trigger._52000188_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "MasterSkill_priest.swf", movieID: 4);
+                context.PlaySceneMovie(fileName: "MasterSkill_priest.swf", movieId: 4);
             }
 
             public override void Execute() {
@@ -373,7 +369,7 @@ namespace Maple2.Trigger._52000188_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "MasterSkill_ranger.swf", movieID: 5);
+                context.PlaySceneMovie(fileName: "MasterSkill_ranger.swf", movieId: 5);
             }
 
             public override void Execute() {
@@ -396,7 +392,7 @@ namespace Maple2.Trigger._52000188_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "MasterSkill_heavy.swf", movieID: 6);
+                context.PlaySceneMovie(fileName: "MasterSkill_heavy.swf", movieId: 6);
             }
 
             public override void Execute() {
@@ -419,7 +415,7 @@ namespace Maple2.Trigger._52000188_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "MasterSkill_thief.swf", movieID: 7);
+                context.PlaySceneMovie(fileName: "MasterSkill_thief.swf", movieId: 7);
             }
 
             public override void Execute() {
@@ -442,7 +438,7 @@ namespace Maple2.Trigger._52000188_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "MasterSkill_Assassin.swf", movieID: 8);
+                context.PlaySceneMovie(fileName: "MasterSkill_Assassin.swf", movieId: 8);
             }
 
             public override void Execute() {
@@ -465,7 +461,7 @@ namespace Maple2.Trigger._52000188_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "MasterSkill_RBlader.swf", movieID: 9);
+                context.PlaySceneMovie(fileName: "MasterSkill_RBlader.swf", movieId: 9);
             }
 
             public override void Execute() {
@@ -488,7 +484,7 @@ namespace Maple2.Trigger._52000188_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "MasterSkill_striker.swf", movieID: 10);
+                context.PlaySceneMovie(fileName: "MasterSkill_striker.swf", movieId: 10);
             }
 
             public override void Execute() {
@@ -511,7 +507,7 @@ namespace Maple2.Trigger._52000188_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "MasterSkill_soul.swf", movieID: 11);
+                context.PlaySceneMovie(fileName: "MasterSkill_soul.swf", movieId: 11);
             }
 
             public override void Execute() {
@@ -556,7 +552,7 @@ namespace Maple2.Trigger._52000188_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002794},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002794},
                     arg3: new byte[] {2})) {
                     context.State = new State바베니로_01(context);
                     return;

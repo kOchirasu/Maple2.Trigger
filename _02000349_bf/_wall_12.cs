@@ -1,22 +1,18 @@
-using System;
-
 namespace Maple2.Trigger._02000349_bf {
     public static class _wall_12 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State벽재생(context);
-
-        private class State벽재생 : TriggerState {
+        public class State벽재생 : TriggerState {
             internal State벽재생(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         31201, 31202, 31203, 31204, 31205, 31206, 31207, 31208, 31209, 31210, 31211, 31212, 31213,
                         31214, 31215, 31216, 31217, 31218, 31219, 31220, 31221
                     }, arg2: true, arg3: 0, arg4: 10, arg5: 3f);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {112})) {
+                if (context.UserDetected(arg1: new[] {112})) {
                     context.State = new State벽삭제(context);
                     return;
                 }
@@ -30,14 +26,14 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         31201, 31202, 31203, 31204, 31205, 31206, 31207, 31208, 31209, 31210, 31211, 31212, 31213,
                         31214, 31215, 31216, 31217, 31218, 31219, 31220, 31221
                     }, arg2: false, arg3: 0, arg4: 10, arg5: 3f);
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {112})) {
+                if (!context.UserDetected(arg1: new[] {112})) {
                     context.State = new State딜레이(context);
                     return;
                 }

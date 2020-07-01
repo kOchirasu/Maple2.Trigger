@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._02000282_bf {
     public static class _heal08 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {708}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10000247}, arg2: 1);
+                context.SetSkill(arg1: new[] {708}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10000247}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000247}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000247}, arg2: 0)) {
                     context.State = new State스킬작동(context);
                     return;
                 }
@@ -26,13 +22,13 @@ namespace Maple2.Trigger._02000282_bf {
             internal State스킬작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {708}, arg2: true);
+                context.SetSkill(arg1: new[] {708}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.SetSkill(arg1: new int[] {708}, arg2: false);
+                    context.SetSkill(arg1: new[] {708}, arg2: false);
                     context.State = new State대기(context);
                     return;
                 }

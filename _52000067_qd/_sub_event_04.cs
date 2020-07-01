@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._52000067_qd {
     public static class _sub_event_04 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {759}, arg2: true);
+                context.CreateMonster(arg1: new[] {759}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 706, arg2: 1)) {
+                if (context.GetUserCount(boxId: 706) == 1) {
                     context.State = new Stateready(context);
                     return;
                 }

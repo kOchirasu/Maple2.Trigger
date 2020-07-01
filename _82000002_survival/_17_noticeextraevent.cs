@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._82000002_survival {
     public static class _17_noticeextraevent {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateSetting(context);
-
-        private class StateSetting : TriggerState {
+        public class StateSetting : TriggerState {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._82000002_survival {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "NoticeExtraEvent", value: 1)) {
+                if (context.GetUserValue(key: "NoticeExtraEvent") == 1) {
                     context.State = new StateNoticeExtraEvent01(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateNoticeExtraEvent01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 28200000, textID: 28200000, duration: 3000);
+                context.ShowGuideSummary(entityId: 28200000, textId: 28200000, duration: 3000);
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
             }
 
@@ -44,7 +40,7 @@ namespace Maple2.Trigger._82000002_survival {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Completion_01");
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__17_NoticeExtraEvent__0$");
             }
 
@@ -62,7 +58,7 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateNoticeExtraEvent03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 28200001, textID: 28200001, duration: 5000);
+                context.ShowGuideSummary(entityId: 28200001, textId: 28200001, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
             }
 

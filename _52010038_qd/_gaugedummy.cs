@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52010038_qd {
     public static class _gaugedummy {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "GaugeStart", value: 1)) {
+                if (context.GetUserValue(key: "GaugeStart") == 1) {
                     context.State = new State생성(context);
                     return;
                 }
@@ -23,7 +19,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {4000}, arg2: false);
+                context.CreateMonster(arg1: new[] {4000}, arg2: false);
             }
 
             public override void Execute() {
@@ -32,7 +28,7 @@ namespace Maple2.Trigger._52010038_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "GaugeClosed", value: 1)) {
+                if (context.GetUserValue(key: "GaugeClosed") == 1) {
                     context.State = new State종료(context);
                     return;
                 }

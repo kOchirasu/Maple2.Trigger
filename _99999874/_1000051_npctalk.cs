@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._99999874 {
     public static class _1000051_npctalk {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "NPCTalk", value: 1)) {
+                if (context.GetUserValue(key: "NPCTalk") == 1) {
                     context.State = new StateNPCTalkOnWait(context);
                     return;
                 }
@@ -38,7 +34,7 @@ namespace Maple2.Trigger._99999874 {
             internal StateNPCTalkOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 15401, msg: "쳇!! 요즘 애들은 너무 인사성이 없어!!", duration: 3000,
+                context.AddBalloonTalk(spawnPointId: 15401, msg: "쳇!! 요즘 애들은 너무 인사성이 없어!!", duration: 3000,
                     delayTick: 0);
             }
 
@@ -63,7 +59,7 @@ namespace Maple2.Trigger._99999874 {
                     return;
                 }
 
-                if (context.UserValue(key: "NPCTalk", value: 0)) {
+                if (context.GetUserValue(key: "NPCTalk") == 0) {
                     // context.State = new StateNPCTalkOff(context);
                     return;
                 }
@@ -76,7 +72,7 @@ namespace Maple2.Trigger._99999874 {
             internal StatePortalOff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBalloonTalk(spawnPointID: 15401);
+                context.RemoveBalloonTalk(spawnPointId: 15401);
             }
 
             public override void Execute() {

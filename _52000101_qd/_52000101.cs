@@ -1,41 +1,37 @@
-using System;
-
 namespace Maple2.Trigger._52000101_qd {
     public static class _52000101 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetPortal(arg1: 1000, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new int[] {5304}, arg2: false);
-                context.SetEffect(arg1: new int[] {5305}, arg2: false);
-                context.SetEffect(arg1: new int[] {5306}, arg2: false);
-                context.SetEffect(arg1: new int[] {5307}, arg2: false);
-                context.SetEffect(arg1: new int[] {5308}, arg2: false);
-                context.SetEffect(arg1: new int[] {5309}, arg2: false);
-                context.SetEffect(arg1: new int[] {5310}, arg2: false);
-                context.SetEffect(arg1: new int[] {5311}, arg2: false);
-                context.SetEffect(arg1: new int[] {5312}, arg2: false);
-                context.SetEffect(arg1: new int[] {5313}, arg2: false);
-                context.SetEffect(arg1: new int[] {5314}, arg2: false);
-                context.SetEffect(arg1: new int[] {5315}, arg2: false);
-                context.SetEffect(arg1: new int[] {5316}, arg2: false);
-                context.SetEffect(arg1: new int[] {5317}, arg2: false);
-                context.SetEffect(arg1: new int[] {5318}, arg2: false);
-                context.SetEffect(arg1: new int[] {5319}, arg2: false);
-                context.SetEffect(arg1: new int[] {5320}, arg2: false);
-                context.SetEffect(arg1: new int[] {5321}, arg2: false);
-                context.SetEffect(arg1: new int[] {5322}, arg2: false);
+                context.SetEffect(arg1: new[] {5304}, arg2: false);
+                context.SetEffect(arg1: new[] {5305}, arg2: false);
+                context.SetEffect(arg1: new[] {5306}, arg2: false);
+                context.SetEffect(arg1: new[] {5307}, arg2: false);
+                context.SetEffect(arg1: new[] {5308}, arg2: false);
+                context.SetEffect(arg1: new[] {5309}, arg2: false);
+                context.SetEffect(arg1: new[] {5310}, arg2: false);
+                context.SetEffect(arg1: new[] {5311}, arg2: false);
+                context.SetEffect(arg1: new[] {5312}, arg2: false);
+                context.SetEffect(arg1: new[] {5313}, arg2: false);
+                context.SetEffect(arg1: new[] {5314}, arg2: false);
+                context.SetEffect(arg1: new[] {5315}, arg2: false);
+                context.SetEffect(arg1: new[] {5316}, arg2: false);
+                context.SetEffect(arg1: new[] {5317}, arg2: false);
+                context.SetEffect(arg1: new[] {5318}, arg2: false);
+                context.SetEffect(arg1: new[] {5319}, arg2: false);
+                context.SetEffect(arg1: new[] {5320}, arg2: false);
+                context.SetEffect(arg1: new[] {5321}, arg2: false);
+                context.SetEffect(arg1: new[] {5322}, arg2: false);
                 context.MoveUser(arg1: 52000101, arg2: 1010);
                 context.SetProductionUI(arg1: 1);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {4000})) {
+                if (context.UserDetected(arg1: new[] {4000})) {
                     context.State = new State영상재생(context);
                     return;
                 }
@@ -49,7 +45,7 @@ namespace Maple2.Trigger._52000101_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: @"common\JobIntro_Wizard.usm", movieID: 1);
+                context.PlaySceneMovie(fileName: @"common\JobIntro_Wizard.usm", movieId: 1);
             }
 
             public override void Execute() {
@@ -74,7 +70,7 @@ namespace Maple2.Trigger._52000101_qd {
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {1100, 1101}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {1100, 1101}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -172,32 +168,32 @@ namespace Maple2.Trigger._52000101_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetEffect(arg1: new int[] {5304}, arg2: true);
-                context.SetEffect(arg1: new int[] {5305}, arg2: true);
-                context.SetEffect(arg1: new int[] {5306}, arg2: true);
-                context.SetEffect(arg1: new int[] {5307}, arg2: true);
-                context.SetEffect(arg1: new int[] {5308}, arg2: true);
-                context.SetEffect(arg1: new int[] {5309}, arg2: true);
-                context.SetEffect(arg1: new int[] {5310}, arg2: true);
-                context.SetEffect(arg1: new int[] {5311}, arg2: true);
-                context.SetEffect(arg1: new int[] {5312}, arg2: true);
-                context.SetEffect(arg1: new int[] {5313}, arg2: true);
-                context.SetEffect(arg1: new int[] {5314}, arg2: true);
-                context.SetEffect(arg1: new int[] {5315}, arg2: true);
-                context.SetEffect(arg1: new int[] {5316}, arg2: true);
-                context.SetEffect(arg1: new int[] {5317}, arg2: true);
-                context.SetEffect(arg1: new int[] {5318}, arg2: true);
-                context.SetEffect(arg1: new int[] {5319}, arg2: true);
-                context.SetEffect(arg1: new int[] {5320}, arg2: true);
-                context.SetEffect(arg1: new int[] {5321}, arg2: true);
-                context.SetEffect(arg1: new int[] {5322}, arg2: true);
-                context.AddBalloonTalk(spawnPointID: 0, msg: "$52000101_QD__52000101__2$", duration: 6000,
+                context.SetEffect(arg1: new[] {5304}, arg2: true);
+                context.SetEffect(arg1: new[] {5305}, arg2: true);
+                context.SetEffect(arg1: new[] {5306}, arg2: true);
+                context.SetEffect(arg1: new[] {5307}, arg2: true);
+                context.SetEffect(arg1: new[] {5308}, arg2: true);
+                context.SetEffect(arg1: new[] {5309}, arg2: true);
+                context.SetEffect(arg1: new[] {5310}, arg2: true);
+                context.SetEffect(arg1: new[] {5311}, arg2: true);
+                context.SetEffect(arg1: new[] {5312}, arg2: true);
+                context.SetEffect(arg1: new[] {5313}, arg2: true);
+                context.SetEffect(arg1: new[] {5314}, arg2: true);
+                context.SetEffect(arg1: new[] {5315}, arg2: true);
+                context.SetEffect(arg1: new[] {5316}, arg2: true);
+                context.SetEffect(arg1: new[] {5317}, arg2: true);
+                context.SetEffect(arg1: new[] {5318}, arg2: true);
+                context.SetEffect(arg1: new[] {5319}, arg2: true);
+                context.SetEffect(arg1: new[] {5320}, arg2: true);
+                context.SetEffect(arg1: new[] {5321}, arg2: true);
+                context.SetEffect(arg1: new[] {5322}, arg2: true);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000101_QD__52000101__2$", duration: 6000,
                     delayTick: 1000);
-                context.ShowGuideSummary(entityID: 25201011, textID: 25201011, duration: 10000);
+                context.ShowGuideSummary(entityId: 25201011, textId: 25201011, duration: 10000);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {4001})) {
+                if (context.UserDetected(arg1: new[] {4001})) {
                     context.State = new State케이틀린등장씬01(context);
                     return;
                 }
@@ -213,7 +209,7 @@ namespace Maple2.Trigger._52000101_qd {
                 context.SetOnetimeEffect(id: 1, enable: true,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
-                context.CreateMonster(arg1: new int[] {200}, arg2: false);
+                context.CreateMonster(arg1: new[] {200}, arg2: false);
             }
 
             public override void Execute() {
@@ -234,7 +230,7 @@ namespace Maple2.Trigger._52000101_qd {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_caitCome");
-                context.CameraSelectPath(arg1: new int[] {1002, 1003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {1002, 1003}, arg2: false);
             }
 
             public override void Execute() {
@@ -251,7 +247,7 @@ namespace Maple2.Trigger._52000101_qd {
             internal State케이틀린등장씬03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1004, 1005}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {1004, 1005}, arg2: false);
             }
 
             public override void Execute() {
@@ -344,37 +340,37 @@ namespace Maple2.Trigger._52000101_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1.0f);
-                context.SetEffect(arg1: new int[] {5304}, arg2: false);
-                context.SetEffect(arg1: new int[] {5305}, arg2: false);
-                context.SetEffect(arg1: new int[] {5306}, arg2: false);
-                context.SetEffect(arg1: new int[] {5307}, arg2: false);
-                context.SetEffect(arg1: new int[] {5308}, arg2: false);
-                context.SetEffect(arg1: new int[] {5309}, arg2: false);
-                context.SetEffect(arg1: new int[] {5310}, arg2: false);
-                context.SetEffect(arg1: new int[] {5311}, arg2: false);
-                context.SetEffect(arg1: new int[] {5312}, arg2: false);
-                context.SetEffect(arg1: new int[] {5313}, arg2: false);
-                context.SetEffect(arg1: new int[] {5314}, arg2: false);
-                context.SetEffect(arg1: new int[] {5315}, arg2: false);
-                context.SetEffect(arg1: new int[] {5316}, arg2: false);
-                context.SetEffect(arg1: new int[] {5317}, arg2: false);
-                context.SetEffect(arg1: new int[] {5318}, arg2: false);
-                context.SetEffect(arg1: new int[] {5319}, arg2: false);
-                context.SetEffect(arg1: new int[] {5320}, arg2: false);
-                context.SetEffect(arg1: new int[] {5321}, arg2: false);
-                context.SetEffect(arg1: new int[] {5322}, arg2: false);
-                context.FaceEmotion(spawnPointID: 200);
-                context.ShowGuideSummary(entityID: 25201012, textID: 25201012, duration: 10000);
+                context.SetEffect(arg1: new[] {5304}, arg2: false);
+                context.SetEffect(arg1: new[] {5305}, arg2: false);
+                context.SetEffect(arg1: new[] {5306}, arg2: false);
+                context.SetEffect(arg1: new[] {5307}, arg2: false);
+                context.SetEffect(arg1: new[] {5308}, arg2: false);
+                context.SetEffect(arg1: new[] {5309}, arg2: false);
+                context.SetEffect(arg1: new[] {5310}, arg2: false);
+                context.SetEffect(arg1: new[] {5311}, arg2: false);
+                context.SetEffect(arg1: new[] {5312}, arg2: false);
+                context.SetEffect(arg1: new[] {5313}, arg2: false);
+                context.SetEffect(arg1: new[] {5314}, arg2: false);
+                context.SetEffect(arg1: new[] {5315}, arg2: false);
+                context.SetEffect(arg1: new[] {5316}, arg2: false);
+                context.SetEffect(arg1: new[] {5317}, arg2: false);
+                context.SetEffect(arg1: new[] {5318}, arg2: false);
+                context.SetEffect(arg1: new[] {5319}, arg2: false);
+                context.SetEffect(arg1: new[] {5320}, arg2: false);
+                context.SetEffect(arg1: new[] {5321}, arg2: false);
+                context.SetEffect(arg1: new[] {5322}, arg2: false);
+                context.FaceEmotion(spawnPointId: 200);
+                context.ShowGuideSummary(entityId: 25201012, textId: 25201012, duration: 10000);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {4001}, arg2: new int[] {20002286},
+                if (context.QuestUserDetected(arg1: new[] {4001}, arg2: new[] {20002286},
                     arg3: new byte[] {3})) {
                     context.State = new State케이틀린화남01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {4001}, arg2: new int[] {20002286},
+                if (context.QuestUserDetected(arg1: new[] {4001}, arg2: new[] {20002286},
                     arg3: new byte[] {2})) {
                     context.State = new State케이틀린화남01(context);
                     return;
@@ -412,8 +408,8 @@ namespace Maple2.Trigger._52000101_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.AddCinematicTalk(npcID: 0, msg: "$52000101_QD__52000101__5$", duration: 4000, align: "right");
-                context.CameraSelectPath(arg1: new int[] {1006, 1007}, arg2: false);
+                context.AddCinematicTalk(npcId: 0, msg: "$52000101_QD__52000101__5$", duration: 4000, align: "right");
+                context.CameraSelectPath(arg1: new[] {1006, 1007}, arg2: false);
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_caitTurn");
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_Run");
             }
@@ -432,7 +428,7 @@ namespace Maple2.Trigger._52000101_qd {
             internal State케이틀린화남03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003146, msg: "$52000101_QD__52000101__6$", duration: 4000,
+                context.AddCinematicTalk(npcId: 11003146, msg: "$52000101_QD__52000101__6$", duration: 4000,
                     align: "right");
                 context.SetOnetimeEffect(id: 3000946, enable: true,
                     path: @"BG/Common/Sound/Eff_Caitlyn_IntroQuest_03000946.xml");
@@ -452,9 +448,9 @@ namespace Maple2.Trigger._52000101_qd {
             internal State케이틀린화남04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.FaceEmotion(spawnPointID: 200, emotionName: "UpSet");
-                context.CameraSelectPath(arg1: new int[] {1008, 1009}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003146, msg: "$52000101_QD__52000101__7$", duration: 4000,
+                context.FaceEmotion(spawnPointId: 200, emotionName: "UpSet");
+                context.CameraSelectPath(arg1: new[] {1008, 1009}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003146, msg: "$52000101_QD__52000101__7$", duration: 4000,
                     align: "right");
                 context.SetOnetimeEffect(id: 3000947, enable: true,
                     path: @"BG/Common/Sound/Eff_Caitlyn_IntroQuest_03000947.xml");
@@ -474,8 +470,8 @@ namespace Maple2.Trigger._52000101_qd {
             internal State케이틀린화남05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1200}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003146, msg: "$52000101_QD__52000101__8$", duration: 4000,
+                context.CameraSelectPath(arg1: new[] {1200}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003146, msg: "$52000101_QD__52000101__8$", duration: 4000,
                     align: "right");
                 context.SetOnetimeEffect(id: 3000948, enable: true,
                     path: @"BG/Common/Sound/Eff_Caitlyn_IntroQuest_03000948.xml");

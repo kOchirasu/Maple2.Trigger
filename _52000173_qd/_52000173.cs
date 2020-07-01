@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000173_qd {
     public static class _52000173 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statewait_01(context);
-
-        private class Statewait_01 : TriggerState {
+        public class Statewait_01 : TriggerState {
             internal Statewait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {2001})) {
+                if (context.UserDetected(arg1: new[] {2001})) {
                     context.State = new Statewait_01_준비(context);
                     return;
                 }
@@ -42,9 +38,9 @@ namespace Maple2.Trigger._52000173_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.MoveUser(arg1: 52000173, arg2: 1);
-                context.CameraSelectPath(arg1: new int[] {401, 402}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {401, 402}, arg2: false);
             }
 
             public override void Execute() {
@@ -162,7 +158,7 @@ namespace Maple2.Trigger._52000173_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002770},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002770},
                     arg3: new byte[] {3})) {
                     context.State = new State이동2_01(context);
                     return;

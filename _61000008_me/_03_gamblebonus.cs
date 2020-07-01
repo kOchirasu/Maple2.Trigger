@@ -1,53 +1,49 @@
-using System;
-
 namespace Maple2.Trigger._61000008_me {
     public static class _03_gamblebonus {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {8001}, arg2: false);
+                context.SetEffect(arg1: new[] {8001}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "GamblePass", value: 22)) {
+                if (context.GetUserValue(key: "GamblePass") == 22) {
                     context.State = new StateGambleBonusDelay01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "GamblePass", value: 23)) {
+                if (context.GetUserValue(key: "GamblePass") == 23) {
                     context.State = new StateGambleBonusDelay01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "GamblePass", value: 32)) {
+                if (context.GetUserValue(key: "GamblePass") == 32) {
                     context.State = new StateGambleBonusDelay01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "GamblePass", value: 33)) {
+                if (context.GetUserValue(key: "GamblePass") == 33) {
                     context.State = new StateGambleBonusDelay01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "JackpotPass", value: 22)) {
+                if (context.GetUserValue(key: "JackpotPass") == 22) {
                     context.State = new StateJackpotBonusDelay01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "JackpotPass", value: 23)) {
+                if (context.GetUserValue(key: "JackpotPass") == 23) {
                     context.State = new StateJackpotBonusDelay01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "JackpotPass", value: 32)) {
+                if (context.GetUserValue(key: "JackpotPass") == 32) {
                     context.State = new StateJackpotBonusDelay01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "JackpotPass", value: 33)) {
+                if (context.GetUserValue(key: "JackpotPass") == 33) {
                     context.State = new StateJackpotBonusDelay01(context);
                     return;
                 }
@@ -60,7 +56,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGambleBonusDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "GambleSuccess", value: 1);
+                context.SetUserValue(triggerId: 1, key: "GambleSuccess", value: 1);
             }
 
             public override void Execute() {
@@ -77,7 +73,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGambleBonusDelay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {8001}, arg2: true);
+                context.SetEffect(arg1: new[] {8001}, arg2: true);
             }
 
             public override void Execute() {
@@ -111,7 +107,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateJackpotBonusDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "GambleSuccess", value: 1);
+                context.SetUserValue(triggerId: 1, key: "GambleSuccess", value: 1);
             }
 
             public override void Execute() {
@@ -128,7 +124,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateJackpotBonusDelay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {8001}, arg2: true);
+                context.SetEffect(arg1: new[] {8001}, arg2: true);
             }
 
             public override void Execute() {
@@ -162,7 +158,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {8001}, arg2: false);
+                context.SetEffect(arg1: new[] {8001}, arg2: false);
                 context.SetUserValue(key: "GamblePass", value: 0);
             }
 

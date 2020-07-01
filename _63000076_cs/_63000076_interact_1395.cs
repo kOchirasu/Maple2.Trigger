@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._63000076_cs {
     public static class _63000076_interact_1395 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State준비(context);
-
-        private class State준비 : TriggerState {
+        public class State준비 : TriggerState {
             internal State준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {116}, arg2: false);
-                context.CreateMonster(arg1: new int[] {117}, arg2: false);
+                context.CreateMonster(arg1: new[] {116}, arg2: false);
+                context.CreateMonster(arg1: new[] {117}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001395}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001395}, arg2: 0)) {
                     context.State = new State1395화난요정_01(context);
                     return;
                 }
@@ -26,14 +22,14 @@ namespace Maple2.Trigger._63000076_cs {
             internal State1395화난요정_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {116});
-                context.DestroyMonster(arg1: new int[] {117});
-                context.CreateMonster(arg1: new int[] {216}, arg2: true);
-                context.CreateMonster(arg1: new int[] {217}, arg2: true);
+                context.DestroyMonster(arg1: new[] {116});
+                context.DestroyMonster(arg1: new[] {117});
+                context.CreateMonster(arg1: new[] {216}, arg2: true);
+                context.CreateMonster(arg1: new[] {217}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {216, 217})) {
+                if (context.MonsterDead(arg1: new[] {216, 217})) {
                     context.State = new State1395화난요정_02(context);
                     return;
                 }
@@ -61,8 +57,8 @@ namespace Maple2.Trigger._63000076_cs {
             internal State1395화난요정_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {116}, arg2: false);
-                context.CreateMonster(arg1: new int[] {117}, arg2: false);
+                context.CreateMonster(arg1: new[] {116}, arg2: false);
+                context.CreateMonster(arg1: new[] {117}, arg2: false);
             }
 
             public override void Execute() {

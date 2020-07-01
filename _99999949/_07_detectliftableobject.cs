@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._99999949 {
     public static class _07_detectliftableobject {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5007}, arg2: false);
+                context.SetEffect(arg1: new[] {5007}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9061})) {
+                if (context.UserDetected(arg1: new[] {9061})) {
                     context.State = new StateGuide(context);
                     return;
                 }
@@ -25,11 +21,11 @@ namespace Maple2.Trigger._99999949 {
             internal StateGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DebugString(@string: "7번 영역에 들어가면 DetectLiftableObject 트리거가 발동됩니다.");
+                context.DebugString(message: "7번 영역에 들어가면 DetectLiftableObject 트리거가 발동됩니다.");
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9060})) {
+                if (context.UserDetected(arg1: new[] {9060})) {
                     context.State = new StateReady01(context);
                     return;
                 }
@@ -42,7 +38,7 @@ namespace Maple2.Trigger._99999949 {
             internal StateReady01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DebugString(@string: "DetectLiftableObject 2초 후에 시작됩니다.");
+                context.DebugString(message: "DetectLiftableObject 2초 후에 시작됩니다.");
             }
 
             public override void Execute() {
@@ -59,7 +55,7 @@ namespace Maple2.Trigger._99999949 {
             internal StateReady02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$99999949__07_DETECTLIFTABLEOBJECT__0$", arg3: new int[] {3000},
+                context.SetEventUI(arg1: 1, arg2: "$99999949__07_DETECTLIFTABLEOBJECT__0$", arg3: 3000,
                     arg4: "0");
             }
 
@@ -77,7 +73,7 @@ namespace Maple2.Trigger._99999949 {
             internal StateQuizRandom01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5007}, arg2: true);
+                context.SetEffect(arg1: new[] {5007}, arg2: true);
             }
 
             public override void Execute() {
@@ -99,12 +95,12 @@ namespace Maple2.Trigger._99999949 {
             internal StateAnswerIsWood01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$99999949__07_DETECTLIFTABLEOBJECT__1$", arg3: new int[] {2000},
+                context.SetEventUI(arg1: 1, arg2: "$99999949__07_DETECTLIFTABLEOBJECT__1$", arg3: 2000,
                     arg4: "0");
             }
 
             public override void Execute() {
-                if (context.DetectLiftableObject(triggerBoxIDs: new int[] {9062}, itemID: 0)) {
+                if (context.DetectLiftableObject(triggerBoxIds: new[] {9062}, itemId: 0)) {
                     context.State = new StateCheckAnswerWood01(context);
                     return;
                 }
@@ -117,16 +113,16 @@ namespace Maple2.Trigger._99999949 {
             internal StateCheckAnswerWood01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5007}, arg2: false);
+                context.SetEffect(arg1: new[] {5007}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.DetectLiftableObject(triggerBoxIDs: new int[] {9062}, itemID: 30000377)) {
+                if (context.DetectLiftableObject(triggerBoxIds: new[] {9062}, itemId: 30000377)) {
                     context.State = new StateRightAnswerWood01(context);
                     return;
                 }
 
-                if (!context.DetectLiftableObject(triggerBoxIDs: new int[] {9062}, itemID: 30000377)) {
+                if (!context.DetectLiftableObject(triggerBoxIds: new[] {9062}, itemId: 30000377)) {
                     context.State = new StateWrongAnswerWood01(context);
                     return;
                 }
@@ -139,7 +135,7 @@ namespace Maple2.Trigger._99999949 {
             internal StateRightAnswerWood01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$99999949__07_DETECTLIFTABLEOBJECT__2$", arg3: new int[] {3000},
+                context.SetEventUI(arg1: 1, arg2: "$99999949__07_DETECTLIFTABLEOBJECT__2$", arg3: 3000,
                     arg4: "0");
             }
 
@@ -157,7 +153,7 @@ namespace Maple2.Trigger._99999949 {
             internal StateWrongAnswerWood01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$99999949__07_DETECTLIFTABLEOBJECT__3$", arg3: new int[] {3000},
+                context.SetEventUI(arg1: 1, arg2: "$99999949__07_DETECTLIFTABLEOBJECT__3$", arg3: 3000,
                     arg4: "0");
             }
 
@@ -175,12 +171,12 @@ namespace Maple2.Trigger._99999949 {
             internal StateAnswerIsRock01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$99999949__07_DETECTLIFTABLEOBJECT__4$", arg3: new int[] {2000},
+                context.SetEventUI(arg1: 1, arg2: "$99999949__07_DETECTLIFTABLEOBJECT__4$", arg3: 2000,
                     arg4: "0");
             }
 
             public override void Execute() {
-                if (context.DetectLiftableObject(triggerBoxIDs: new int[] {9062}, itemID: 0)) {
+                if (context.DetectLiftableObject(triggerBoxIds: new[] {9062}, itemId: 0)) {
                     context.State = new StateCheckAnswerRock01(context);
                     return;
                 }
@@ -193,16 +189,16 @@ namespace Maple2.Trigger._99999949 {
             internal StateCheckAnswerRock01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5007}, arg2: false);
+                context.SetEffect(arg1: new[] {5007}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.DetectLiftableObject(triggerBoxIDs: new int[] {9062}, itemID: 30000440)) {
+                if (context.DetectLiftableObject(triggerBoxIds: new[] {9062}, itemId: 30000440)) {
                     context.State = new StateRightAnswerRock01(context);
                     return;
                 }
 
-                if (!context.DetectLiftableObject(triggerBoxIDs: new int[] {9062}, itemID: 30000440)) {
+                if (!context.DetectLiftableObject(triggerBoxIds: new[] {9062}, itemId: 30000440)) {
                     context.State = new StateWrongAnswerRock01(context);
                     return;
                 }
@@ -215,7 +211,7 @@ namespace Maple2.Trigger._99999949 {
             internal StateRightAnswerRock01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$99999949__07_DETECTLIFTABLEOBJECT__5$", arg3: new int[] {3000},
+                context.SetEventUI(arg1: 1, arg2: "$99999949__07_DETECTLIFTABLEOBJECT__5$", arg3: 3000,
                     arg4: "0");
             }
 
@@ -233,7 +229,7 @@ namespace Maple2.Trigger._99999949 {
             internal StateWrongAnswerRock01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$99999949__07_DETECTLIFTABLEOBJECT__6$", arg3: new int[] {3000},
+                context.SetEventUI(arg1: 1, arg2: "$99999949__07_DETECTLIFTABLEOBJECT__6$", arg3: 3000,
                     arg4: "0");
             }
 
@@ -253,7 +249,7 @@ namespace Maple2.Trigger._99999949 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.DetectLiftableObject(triggerBoxIDs: new int[] {9062}, itemID: 0)) {
+                if (!context.DetectLiftableObject(triggerBoxIds: new[] {9062}, itemId: 0)) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -266,7 +262,7 @@ namespace Maple2.Trigger._99999949 {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DebugString(@string: "3초 후에 트리거가 리셋됩니다. 7번 영역 밖으로 나가세요.");
+                context.DebugString(message: "3초 후에 트리거가 리셋됩니다. 7번 영역 밖으로 나가세요.");
             }
 
             public override void Execute() {

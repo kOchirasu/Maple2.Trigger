@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._99999942 {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateNone(context);
-
-        private class StateNone : TriggerState {
+        public class StateNone : TriggerState {
             internal StateNone(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -13,14 +9,14 @@ namespace Maple2.Trigger._99999942 {
                 context.FieldGameConstant(key: "WaitPlayTick", value: "5000");
                 context.FieldGameConstant(key: "ResizeWaitTick", value: "15000,15000,15000,15000");
                 context.FieldGameConstant(key: "ResizeWarningTick", value: "5000,5000,5000,5000");
-                context.FieldGameConstant(key: "SkillSetID", value: "99930047");
+                context.FieldGameConstant(key: "SkillSetId", value: "99930047");
                 context.FieldGameConstant(key: "MinPlayer", value: "2");
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "WaitUser", value: 1)) {
+                if (context.GetUserValue(key: "WaitUser") == 1) {
                     context.State = new State유저대기중(context);
                     return;
                 }
@@ -37,12 +33,12 @@ namespace Maple2.Trigger._99999942 {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "MoveUser", value: 1)) {
+                if (context.GetUserValue(key: "MoveUser") == 1) {
                     context.State = new State유저이동(context);
                     return;
                 }
 
-                if (context.UserValue(key: "End", value: 1)) {
+                if (context.GetUserValue(key: "End") == 1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -60,7 +56,7 @@ namespace Maple2.Trigger._99999942 {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Play", value: 1)) {
+                if (context.GetUserValue(key: "Play") == 1) {
                     context.State = new State게임시작(context);
                     return;
                 }
@@ -75,7 +71,7 @@ namespace Maple2.Trigger._99999942 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "PlayRound1", value: 1)) {
+                if (context.GetUserValue(key: "PlayRound1") == 1) {
                     context.State = new State라운드1(context);
                     return;
                 }
@@ -90,12 +86,12 @@ namespace Maple2.Trigger._99999942 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "PlayRound2", value: 1)) {
+                if (context.GetUserValue(key: "PlayRound2") == 1) {
                     context.State = new State라운드2(context);
                     return;
                 }
 
-                if (context.UserValue(key: "End", value: 1)) {
+                if (context.GetUserValue(key: "End") == 1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -109,19 +105,19 @@ namespace Maple2.Trigger._99999942 {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
                         27, 28
                     }, arg2: false, arg3: 2, arg4: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "PlayRound3", value: 1)) {
+                if (context.GetUserValue(key: "PlayRound3") == 1) {
                     context.State = new State라운드3(context);
                     return;
                 }
 
-                if (context.UserValue(key: "End", value: 1)) {
+                if (context.GetUserValue(key: "End") == 1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -135,17 +131,17 @@ namespace Maple2.Trigger._99999942 {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48},
+                    arg1: new[] {29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48},
                     arg2: false, arg3: 2, arg4: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "PlayRound4", value: 1)) {
+                if (context.GetUserValue(key: "PlayRound4") == 1) {
                     context.State = new State라운드4(context);
                     return;
                 }
 
-                if (context.UserValue(key: "End", value: 1)) {
+                if (context.GetUserValue(key: "End") == 1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -158,12 +154,12 @@ namespace Maple2.Trigger._99999942 {
             internal State라운드4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60}, arg2: false, arg3: 2,
+                context.SetMesh(arg1: new[] {49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60}, arg2: false, arg3: 2,
                     arg4: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "End", value: 1)) {
+                if (context.GetUserValue(key: "End") == 1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -177,7 +173,7 @@ namespace Maple2.Trigger._99999942 {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
                         27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
                         51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64

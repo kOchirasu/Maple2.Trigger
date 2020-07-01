@@ -1,11 +1,8 @@
-using System;
 using System.Numerics;
 
 namespace Maple2.Trigger._02020142_bf {
     public static class _setlighttest {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State전투체크(context);
-
-        private class State전투체크 : TriggerState {
+        public class State전투체크 : TriggerState {
             internal State전투체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -14,7 +11,7 @@ namespace Maple2.Trigger._02020142_bf {
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new State트리거시작(context);
                     return;
                 }
@@ -31,12 +28,12 @@ namespace Maple2.Trigger._02020142_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "TestSetLight", value: 1)) {
+                if (context.GetUserValue(key: "TestSetLight") == 1) {
                     context.State = new State어둠조명설정(context);
                     return;
                 }
 
-                if (context.UserValue(key: "TestSetLight", value: 2)) {
+                if (context.GetUserValue(key: "TestSetLight") == 2) {
                     context.State = new State밝은조명설정(context);
                     return;
                 }
@@ -49,7 +46,7 @@ namespace Maple2.Trigger._02020142_bf {
             internal State어둠조명설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {301}, arg2: true);
+                context.SetEffect(arg1: new[] {301}, arg2: true);
                 context.SetAmbientLight(arg1: new Vector3(45f, 21f, 28f));
                 context.SetDirectionalLight(arg1: new Vector3(16f, 30f, 29f), arg2: new Vector3(130f, 130f, 130f));
                 context.SetPortal(arg1: 4401, arg2: true, arg3: true, arg4: true);
@@ -70,14 +67,14 @@ namespace Maple2.Trigger._02020142_bf {
             internal State밝은조명설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {301}, arg2: false);
+                context.SetEffect(arg1: new[] {301}, arg2: false);
                 context.SetAmbientLight(arg1: new Vector3(255f, 140f, 172f));
                 context.SetDirectionalLight(arg1: new Vector3(146f, 221f, 218f), arg2: new Vector3(130f, 130f, 130f));
                 context.ChangeBackground(dds: "BG_Turka_A.dds");
                 context.SetPortal(arg1: 4401, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 4403, arg2: true, arg3: true, arg4: true);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013,
                         10014, 10015, 10016, 10017, 10018, 10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026,
                         10027, 10028, 10029, 10030, 10031, 10032, 10033, 10034, 10035, 10036, 10037, 10038, 10039,
@@ -107,7 +104,7 @@ namespace Maple2.Trigger._02020142_bf {
                         10339, 10340, 10341, 10342, 10343, 10344, 10345, 10346, 10347, 10348, 10349
                     }, arg2: true, arg3: 1, arg4: 1, arg5: 0.5f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         15001, 15002, 15003, 15004, 15005, 15006, 15007, 15008, 15009, 15010, 15011, 15012, 15013,
                         15014, 15015, 15016, 15017, 15018, 15019, 15020, 15021, 15022, 15023, 15024, 15025, 15026,
                         15027, 15028, 15029, 15030, 15031, 15032, 15033, 15034, 15035, 15036, 15037, 15038, 15039,
@@ -146,7 +143,7 @@ namespace Maple2.Trigger._02020142_bf {
                         15456, 15457, 15458, 15459, 15460, 15461, 15462, 15463, 15464, 15465, 15466, 15467
                     }, arg2: true, arg3: 1, arg4: 1, arg5: 0.5f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         20001, 20002, 20003, 20004, 20005, 20006, 20007, 20008, 20009, 20010, 20011, 20012, 20013,
                         20014, 20015, 20016, 20017, 20018, 20019, 20020, 20021, 20022, 20023, 20024, 20025, 20026,
                         20027, 20028, 20029, 20030, 20031, 20032, 20033, 20034, 20035, 20036, 20037, 20038, 20039,
@@ -166,7 +163,7 @@ namespace Maple2.Trigger._02020142_bf {
                         20209, 20210, 20211, 20212, 20213, 20214, 20215
                     }, arg2: true, arg3: 1, arg4: 1, arg5: 0.5f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         23001, 23002, 23003, 23004, 23005, 23006, 23007, 23008, 23009, 23010, 23011, 23012, 23013,
                         23014, 23015, 23016, 23017, 23018, 23019, 23020, 23021, 23022, 23023, 23024, 23025, 23026,
                         23027, 23028, 23029, 23030, 23031, 23032, 23033, 23034, 23035, 23036, 23037, 23038, 23039,
@@ -186,7 +183,7 @@ namespace Maple2.Trigger._02020142_bf {
                         23209, 23210, 23211, 23212, 23213, 23214, 23215
                     }, arg2: true, arg3: 1, arg4: 1, arg5: 0.5f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         26001, 26002, 26003, 26004, 26005, 26006, 26007, 26008, 26009, 26010, 26011, 26012, 26013,
                         26014, 26015, 26016, 26017, 26018, 26019, 26020, 26021, 26022, 26023, 26024, 26025, 26026,
                         26027, 26028, 26029, 26030, 26031, 26032, 26033, 26034, 26035, 26036, 26037, 26038, 26039,
@@ -206,7 +203,7 @@ namespace Maple2.Trigger._02020142_bf {
                         26209, 26210, 26211, 26212, 26213, 26214, 26215
                     }, arg2: true, arg3: 1, arg4: 1, arg5: 0.5f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         30001, 30002, 30003, 30004, 30005, 30006, 30007, 30008, 30009, 30010, 30011, 30012, 30013,
                         30014, 30015, 30016, 30017, 30018, 30019, 30020, 30021, 30022, 30023, 30024, 30025, 30026,
                         30027, 30028, 30029, 30030, 30031, 30032, 30033, 30034, 30035, 30036, 30037, 30038, 30039,
@@ -241,7 +238,7 @@ namespace Maple2.Trigger._02020142_bf {
                         30404, 30405, 30406, 30407, 30408, 30409, 30410, 30411, 30412, 30413
                     }, arg2: true, arg3: 1, arg4: 1, arg5: 0.5f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         35001, 35002, 35003, 35004, 35005, 35006, 35007, 35008, 35009, 35010, 35011, 35012, 35013,
                         35014, 35015, 35016, 35017, 35018, 35019, 35020, 35021, 35022, 35023, 35024, 35025, 35026,
                         35027, 35028, 35029, 35030, 35031, 35032, 35033, 35034, 35035, 35036, 35037, 35038, 35039,

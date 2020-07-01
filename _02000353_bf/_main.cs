@@ -1,29 +1,26 @@
-using System;
 using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000353_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
-                context.SetEffect(arg1: new int[] {5002}, arg2: false);
-                context.SetEffect(arg1: new int[] {5003}, arg2: false);
-                context.SetEffect(arg1: new int[] {5004}, arg2: false);
-                context.SetEffect(arg1: new int[] {6001}, arg2: false);
-                context.SetEffect(arg1: new int[] {6002}, arg2: false);
-                context.SetEffect(arg1: new int[] {6003}, arg2: false);
-                context.SetEffect(arg1: new int[] {6004}, arg2: false);
-                context.SetEffect(arg1: new int[] {6101}, arg2: false);
-                context.SetEffect(arg1: new int[] {6301}, arg2: false);
-                context.SetEffect(arg1: new int[] {6302}, arg2: false);
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetEffect(arg1: new[] {5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5003}, arg2: false);
+                context.SetEffect(arg1: new[] {5004}, arg2: false);
+                context.SetEffect(arg1: new[] {6001}, arg2: false);
+                context.SetEffect(arg1: new[] {6002}, arg2: false);
+                context.SetEffect(arg1: new[] {6003}, arg2: false);
+                context.SetEffect(arg1: new[] {6004}, arg2: false);
+                context.SetEffect(arg1: new[] {6101}, arg2: false);
+                context.SetEffect(arg1: new[] {6301}, arg2: false);
+                context.SetEffect(arg1: new[] {6302}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 701, arg2: 1)) {
+                if (context.GetUserCount(boxId: 701) == 1) {
                     context.State =
                         new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
@@ -37,7 +34,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {2001, 2002, 2003, 2004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -69,7 +66,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State시작_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5004}, arg2: true);
+                context.SetEffect(arg1: new[] {5004}, arg2: true);
                 context.SetTimer(arg1: "2", arg2: 2, arg4: false);
             }
 
@@ -87,12 +84,12 @@ namespace Maple2.Trigger._02000353_bf {
             internal State시작_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {901, 902, 903}, arg2: false, arg4: 0, arg5: 10f);
-                context.SetSkill(arg1: new int[] {2020}, arg2: true);
+                context.SetMesh(arg1: new[] {901, 902, 903}, arg2: false, arg4: 0, arg5: 10f);
+                context.SetSkill(arg1: new[] {2020}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 702, arg2: 1)) {
+                if (context.GetUserCount(boxId: 702) == 1) {
                     context.State = new State시작_05(context);
                     return;
                 }
@@ -106,33 +103,33 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 101, textID: 40010);
-                context.SetEffect(arg1: new int[] {6001}, arg2: true);
-                context.SetEffect(arg1: new int[] {6002}, arg2: true);
-                context.SetEffect(arg1: new int[] {6003}, arg2: true);
-                context.SetEffect(arg1: new int[] {6004}, arg2: true);
-                context.SetEffect(arg1: new int[] {6101}, arg2: true);
+                context.ShowGuideSummary(entityId: 101, textId: 40010);
+                context.SetEffect(arg1: new[] {6001}, arg2: true);
+                context.SetEffect(arg1: new[] {6002}, arg2: true);
+                context.SetEffect(arg1: new[] {6003}, arg2: true);
+                context.SetEffect(arg1: new[] {6004}, arg2: true);
+                context.SetEffect(arg1: new[] {6101}, arg2: true);
                 context.SetActor(arg1: 3001, arg2: false, arg3: "Dmg_A");
                 context.SetActor(arg1: 3002, arg2: false, arg3: "Dmg_A");
                 context.SetActor(arg1: 3003, arg2: false, arg3: "Dmg_A");
                 context.SetActor(arg1: 3004, arg2: false, arg3: "Dmg_A");
                 context.SetActor(arg1: 3101, arg2: false, arg3: "Dmg_A");
-                context.CreateMonster(arg1: new int[] {11, 12, 13, 14, 15}, arg2: false);
+                context.CreateMonster(arg1: new[] {11, 12, 13, 14, 15}, arg2: false);
                 context.CreateMonster(
-                    arg1: new int[]
+                    arg1: new[]
                         {101, 102, 103, 104, 105, 106, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118},
                     arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {11, 12, 13, 14, 15})) {
+                if (context.MonsterDead(arg1: new[] {11, 12, 13, 14, 15})) {
                     context.State = new State관문_01_개방전(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 101);
+                context.HideGuideSummary(entityId: 101);
             }
         }
 
@@ -140,7 +137,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_01_개방전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000353_BF__MAIN__2$", arg3: new int[] {2000});
+                context.SetEventUI(arg1: 1, arg2: "$02000353_BF__MAIN__2$", arg3: 2000);
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
@@ -179,7 +176,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_01_개방_이벤트_00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {5001}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -197,8 +194,8 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_01_개방_이벤트_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {2001}, arg2: true);
-                context.SetSkill(arg1: new int[] {2002}, arg2: true);
+                context.SetSkill(arg1: new[] {2001}, arg2: true);
+                context.SetSkill(arg1: new[] {2002}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -216,7 +213,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_01_개방_이벤트_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {2003}, arg2: true);
+                context.SetSkill(arg1: new[] {2003}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -234,7 +231,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_01_개방_이벤트_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {2004}, arg2: true);
+                context.SetSkill(arg1: new[] {2004}, arg2: true);
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
@@ -256,10 +253,10 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_02_스킵(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {2001}, arg2: true);
-                context.SetSkill(arg1: new int[] {2002}, arg2: true);
-                context.SetSkill(arg1: new int[] {2003}, arg2: true);
-                context.SetSkill(arg1: new int[] {2004}, arg2: true);
+                context.SetSkill(arg1: new[] {2001}, arg2: true);
+                context.SetSkill(arg1: new[] {2002}, arg2: true);
+                context.SetSkill(arg1: new[] {2003}, arg2: true);
+                context.SetSkill(arg1: new[] {2004}, arg2: true);
                 context.SetSkip();
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetProductionUI(arg1: 0);
@@ -283,18 +280,18 @@ namespace Maple2.Trigger._02000353_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
                 context.CameraSelect(arg1: 8001, arg2: false);
-                context.ShowGuideSummary(entityID: 103, textID: 40011);
+                context.ShowGuideSummary(entityId: 103, textId: 40011);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 703, arg2: 1)) {
+                if (context.GetUserCount(boxId: 703) == 1) {
                     context.State = new State관문_02_시작_02(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 103);
+                context.HideGuideSummary(entityId: 103);
             }
         }
 
@@ -302,28 +299,28 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_02_시작_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6005}, arg2: true);
-                context.SetEffect(arg1: new int[] {6006}, arg2: true);
-                context.SetEffect(arg1: new int[] {6007}, arg2: true);
-                context.SetEffect(arg1: new int[] {6008}, arg2: true);
+                context.SetEffect(arg1: new[] {6005}, arg2: true);
+                context.SetEffect(arg1: new[] {6006}, arg2: true);
+                context.SetEffect(arg1: new[] {6007}, arg2: true);
+                context.SetEffect(arg1: new[] {6008}, arg2: true);
                 context.SetActor(arg1: 3005, arg2: false, arg3: "Dmg_A");
                 context.SetActor(arg1: 3006, arg2: false, arg3: "Dmg_A");
                 context.SetActor(arg1: 3007, arg2: false, arg3: "Dmg_A");
                 context.SetActor(arg1: 3008, arg2: false, arg3: "Dmg_A");
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 101, textID: 40010);
-                context.CreateMonster(arg1: new int[] {21, 22, 23, 24, 25, 26, 27}, arg2: false);
+                context.ShowGuideSummary(entityId: 101, textId: 40010);
+                context.CreateMonster(arg1: new[] {21, 22, 23, 24, 25, 26, 27}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {21, 22, 23, 24, 25, 26, 27})) {
+                if (context.MonsterDead(arg1: new[] {21, 22, 23, 24, 25, 26, 27})) {
                     context.State = new State관문_02_개방전(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 101);
+                context.HideGuideSummary(entityId: 101);
             }
         }
 
@@ -331,7 +328,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_02_개방전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000353_BF__MAIN__3$", arg3: new int[] {2000});
+                context.SetEventUI(arg1: 1, arg2: "$02000353_BF__MAIN__3$", arg3: 2000);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -349,7 +346,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_02_개방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5002}, arg2: true);
+                context.SetEffect(arg1: new[] {5002}, arg2: true);
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
@@ -367,7 +364,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_02_개방_이벤트_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {2006}, arg2: true);
+                context.SetSkill(arg1: new[] {2006}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -385,7 +382,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_02_개방_이벤트_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {2007}, arg2: true);
+                context.SetSkill(arg1: new[] {2007}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -403,7 +400,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_02_개방_이벤트_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {2008}, arg2: true);
+                context.SetSkill(arg1: new[] {2008}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -422,18 +419,18 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 103, textID: 40011);
+                context.ShowGuideSummary(entityId: 103, textId: 40011);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 704, arg2: 1)) {
+                if (context.GetUserCount(boxId: 704) == 1) {
                     context.State = new State관문_03_시작_02(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 103);
+                context.HideGuideSummary(entityId: 103);
             }
         }
 
@@ -442,23 +439,23 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 101, textID: 40010);
-                context.SetEffect(arg1: new int[] {6301}, arg2: true);
-                context.SetEffect(arg1: new int[] {6302}, arg2: true);
+                context.ShowGuideSummary(entityId: 101, textId: 40010);
+                context.SetEffect(arg1: new[] {6301}, arg2: true);
+                context.SetEffect(arg1: new[] {6302}, arg2: true);
                 context.SetActor(arg1: 3301, arg2: false, arg3: "Dmg_A");
                 context.SetActor(arg1: 3302, arg2: false, arg3: "Dmg_A");
-                context.CreateMonster(arg1: new int[] {31, 32, 33}, arg2: false);
+                context.CreateMonster(arg1: new[] {31, 32, 33}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {31, 32, 33})) {
+                if (context.MonsterDead(arg1: new[] {31, 32, 33})) {
                     context.State = new State관문_03_개방전(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 101);
+                context.HideGuideSummary(entityId: 101);
             }
         }
 
@@ -466,7 +463,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_03_개방전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000353_BF__MAIN__4$", arg3: new int[] {2000});
+                context.SetEventUI(arg1: 1, arg2: "$02000353_BF__MAIN__4$", arg3: 2000);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -484,7 +481,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_03_개방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5003}, arg2: true);
+                context.SetEffect(arg1: new[] {5003}, arg2: true);
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
@@ -502,7 +499,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_03_개방_이벤트_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {2009}, arg2: true);
+                context.SetSkill(arg1: new[] {2009}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -520,7 +517,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_03_개방_이벤트_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {2010}, arg2: true);
+                context.SetSkill(arg1: new[] {2010}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -538,7 +535,7 @@ namespace Maple2.Trigger._02000353_bf {
             internal State관문_03_개방_이벤트_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {2011}, arg2: true);
+                context.SetSkill(arg1: new[] {2011}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -557,9 +554,9 @@ namespace Maple2.Trigger._02000353_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 103, textID: 40009);
-                context.SetMesh(arg1: new int[] {6006}, arg2: false, arg4: 0, arg5: 10f);
-                context.SetMesh(arg1: new int[] {6007}, arg2: true, arg4: 0, arg5: 10f);
+                context.ShowGuideSummary(entityId: 103, textId: 40009);
+                context.SetMesh(arg1: new[] {6006}, arg2: false, arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {6007}, arg2: true, arg4: 0, arg5: 10f);
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
             }
 

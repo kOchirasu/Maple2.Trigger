@@ -1,17 +1,14 @@
-using System;
 using System.Numerics;
 
 namespace Maple2.Trigger._02000498_bf {
     public static class _stage_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작연출_6(context);
-
-        private class State시작연출_6 : TriggerState {
+        public class State시작연출_6 : TriggerState {
             internal State시작연출_6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {100})) {
+                if (context.UserDetected(arg1: new[] {100})) {
                     context.State = new State페이드아웃(context);
                     return;
                 }
@@ -41,9 +38,9 @@ namespace Maple2.Trigger._02000498_bf {
             internal State페이드아웃_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "곧 새로운 차원으로 당신을 안내 합니다.", arg3: new int[] {3000});
-                context.SetEffect(arg1: new int[] {500}, arg2: true);
-                context.SetEffect(arg1: new int[] {501}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "곧 새로운 차원으로 당신을 안내 합니다.", arg3: 3000);
+                context.SetEffect(arg1: new[] {500}, arg2: true);
+                context.SetEffect(arg1: new[] {501}, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_3sec.xml");
             }
 
@@ -98,7 +95,7 @@ namespace Maple2.Trigger._02000498_bf {
             internal State시작대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {100010}, arg2: 70000103, arg3: 1);
+                context.AddBuff(arg1: new[] {100010}, arg2: 70000103, arg3: 1);
             }
 
             public override void Execute() {

@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._65000003_bd {
     public static class _seagull_04 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {2004}, arg2: false);
+                context.CreateMonster(arg1: new[] {2004}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {10504})) {
+                if (context.UserDetected(arg1: new[] {10504})) {
                     context.State = new State이동(context);
                     return;
                 }

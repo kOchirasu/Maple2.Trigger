@@ -1,14 +1,10 @@
-using System;
-
 namespace Maple2.Trigger._02000013_bf {
     public static class _im_542 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000542}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000542}, arg2: 1);
             }
 
             public override void Execute() {
@@ -19,7 +15,7 @@ namespace Maple2.Trigger._02000013_bf {
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new int[] {101});
+                context.CreateMonster(arg1: new[] {101});
             }
         }
 
@@ -29,15 +25,15 @@ namespace Maple2.Trigger._02000013_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000542}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000542}, arg2: 0)) {
                     context.State = new State시간텀(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {101});
-                context.CreateMonster(arg1: new int[] {1101});
+                context.DestroyMonster(arg1: new[] {101});
+                context.CreateMonster(arg1: new[] {1101});
             }
         }
 
@@ -68,7 +64,7 @@ namespace Maple2.Trigger._02000013_bf {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 542, arg2: new int[] {1101})) {
+                if (context.NpcDetected(arg1: 542, arg2: new[] {1101})) {
                     context.State = new StateNPC소멸(context);
                     return;
                 }
@@ -81,9 +77,9 @@ namespace Maple2.Trigger._02000013_bf {
             internal StateNPC소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1101});
+                context.DestroyMonster(arg1: new[] {1101});
                 context.SetTimer(arg1: "1", arg2: 20);
-                context.RemoveBalloonTalk(spawnPointID: 1101);
+                context.RemoveBalloonTalk(spawnPointId: 1101);
             }
 
             public override void Execute() {

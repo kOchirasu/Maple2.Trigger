@@ -1,23 +1,19 @@
-using System;
-
 namespace Maple2.Trigger._52000124_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001},
-                    arg2: new int[] {60100105, 60100106, 60100107, 60100108, 60100109, 60100110},
+                if (context.QuestUserDetected(arg1: new[] {2001},
+                    arg2: new[] {60100105, 60100106, 60100107, 60100108, 60100109, 60100110},
                     arg3: new byte[] {2})) {
                     context.State = new Stateready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {60100110},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100110},
                     arg3: new byte[] {3})) {
                     context.State = new Statedelnpc(context);
                     return;
@@ -34,8 +30,8 @@ namespace Maple2.Trigger._52000124_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
-                context.DestroyMonster(arg1: new int[] {201});
-                context.CreateMonster(arg1: new int[] {202}, arg2: true);
+                context.DestroyMonster(arg1: new[] {201});
+                context.CreateMonster(arg1: new[] {202}, arg2: true);
             }
 
             public override void Execute() {
@@ -87,9 +83,9 @@ namespace Maple2.Trigger._52000124_qd {
             internal Statescene_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Talk_A");
-                context.AddCinematicTalk(npcID: 11003195, msg: "$52000124_QD__MAIN__0$", duration: 2000,
+                context.AddCinematicTalk(npcId: 11003195, msg: "$52000124_QD__MAIN__0$", duration: 2000,
                     align: "right");
                 context.SetSceneSkip(arg1: "scene_07", arg2: "exit");
             }
@@ -109,7 +105,7 @@ namespace Maple2.Trigger._52000124_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Talk_A");
-                context.AddCinematicTalk(npcID: 11003195, msg: "$52000124_QD__MAIN__1$", duration: 2000,
+                context.AddCinematicTalk(npcId: 11003195, msg: "$52000124_QD__MAIN__1$", duration: 2000,
                     align: "right");
             }
 
@@ -127,8 +123,8 @@ namespace Maple2.Trigger._52000124_qd {
             internal Statescene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
-                context.AddCinematicTalk(npcID: 11000069, msg: "$52000124_QD__MAIN__2$", duration: 2000, align: "left");
+                context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
+                context.AddCinematicTalk(npcId: 11000069, msg: "$52000124_QD__MAIN__2$", duration: 2000, align: "left");
             }
 
             public override void Execute() {
@@ -145,9 +141,9 @@ namespace Maple2.Trigger._52000124_qd {
             internal Statescene_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4004}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
                 context.MoveNpc(arg1: 202, arg2: "MS2PatrolData_3001");
-                context.AddCinematicTalk(npcID: 11003195, msg: "$52000124_QD__MAIN__3$", duration: 3000, align: "left");
+                context.AddCinematicTalk(npcId: 11003195, msg: "$52000124_QD__MAIN__3$", duration: 3000, align: "left");
             }
 
             public override void Execute() {
@@ -164,9 +160,9 @@ namespace Maple2.Trigger._52000124_qd {
             internal Statescene_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4005}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4005}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Sit_down_A", arg3: 999999999999f);
-                context.AddCinematicTalk(npcID: 11000069, msg: "$52000124_QD__MAIN__4$", duration: 3000,
+                context.AddCinematicTalk(npcId: 11000069, msg: "$52000124_QD__MAIN__4$", duration: 3000,
                     align: "right");
             }
 
@@ -184,8 +180,8 @@ namespace Maple2.Trigger._52000124_qd {
             internal Statescene_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003195, msg: "$52000124_QD__MAIN__5$", duration: 3000, align: "left");
+                context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003195, msg: "$52000124_QD__MAIN__5$", duration: 3000, align: "left");
             }
 
             public override void Execute() {
@@ -220,8 +216,8 @@ namespace Maple2.Trigger._52000124_qd {
             internal Stateend(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
-                context.DestroyMonster(arg1: new int[] {202});
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.DestroyMonster(arg1: new[] {202});
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraReset(interpolationTime: 1.0f);
                 context.SetProductionUI(arg1: 0);
@@ -229,7 +225,7 @@ namespace Maple2.Trigger._52000124_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {60100110},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100110},
                     arg3: new byte[] {2})) {
                     context.State = new Statewarptalk(context);
                     return;
@@ -243,7 +239,7 @@ namespace Maple2.Trigger._52000124_qd {
             internal Statewarptalk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 201, msg: "$52000124_QD__MAIN__6$", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 201, msg: "$52000124_QD__MAIN__6$", duration: 2000, delayTick: 0);
             }
 
             public override void Execute() {
@@ -272,7 +268,7 @@ namespace Maple2.Trigger._52000124_qd {
             internal Statedelnpc(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {201, 202});
+                context.DestroyMonster(arg1: new[] {201, 202});
             }
 
             public override void Execute() { }

@@ -1,22 +1,18 @@
-using System;
-
 namespace Maple2.Trigger._52000096_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statestart(context);
-
-        private class Statestart : TriggerState {
+        public class Statestart : TriggerState {
             internal Statestart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001514},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001514},
                     arg3: new byte[] {1})) {
                     context.State = new State몹소환01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50100040},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50100040},
                     arg3: new byte[] {1})) {
                     context.State = new State몹소환01(context);
                     return;
@@ -32,11 +28,11 @@ namespace Maple2.Trigger._52000096_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1001}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1002}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1003}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1004}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001}, arg2: false);
+                context.CreateMonster(arg1: new[] {1002}, arg2: false);
+                context.CreateMonster(arg1: new[] {1003}, arg2: false);
+                context.CreateMonster(arg1: new[] {1004}, arg2: false);
             }
 
             public override void Execute() {
@@ -121,7 +117,7 @@ namespace Maple2.Trigger._52000096_qd {
             internal State시점이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
             }
 
             public override void Execute() {
@@ -176,7 +172,7 @@ namespace Maple2.Trigger._52000096_qd {
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_01");
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.DestroyMonster(arg1: new[] {-1});
             }
 
             public override void Execute() {
@@ -193,10 +189,10 @@ namespace Maple2.Trigger._52000096_qd {
             internal State몬스터재스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1001}, arg2: true);
-                context.CreateMonster(arg1: new int[] {1002}, arg2: true);
-                context.CreateMonster(arg1: new int[] {1003}, arg2: true);
-                context.CreateMonster(arg1: new int[] {1004}, arg2: true);
+                context.CreateMonster(arg1: new[] {1001}, arg2: true);
+                context.CreateMonster(arg1: new[] {1002}, arg2: true);
+                context.CreateMonster(arg1: new[] {1003}, arg2: true);
+                context.CreateMonster(arg1: new[] {1004}, arg2: true);
             }
 
             public override void Execute() {

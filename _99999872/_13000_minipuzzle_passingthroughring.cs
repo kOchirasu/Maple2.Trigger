@@ -1,33 +1,29 @@
-using System;
-
 namespace Maple2.Trigger._99999872 {
     public static class _13000_minipuzzle_passingthroughring {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {13001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {13011}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {13002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {13012}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {13003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {13013}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMeshAnimation(arg1: new int[] {13011}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new int[] {13012}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new int[] {13013}, arg2: false, arg3: 0, arg4: 0);
-                context.SetInteractObject(arg1: new int[] {12000068}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {12000076}, arg2: 2);
-                context.SetEffect(arg1: new int[] {13101}, arg2: false);
-                context.SetEffect(arg1: new int[] {13102}, arg2: false);
-                context.SetEffect(arg1: new int[] {13103}, arg2: false);
-                context.SetEffect(arg1: new int[] {13200}, arg2: false);
-                context.SetMesh(arg1: new int[] {13300}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {13001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {13011}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {13002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {13012}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {13003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {13013}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMeshAnimation(arg1: new[] {13011}, arg2: false, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(arg1: new[] {13012}, arg2: false, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(arg1: new[] {13013}, arg2: false, arg3: 0, arg4: 0);
+                context.SetInteractObject(arg1: new[] {12000068}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000076}, arg2: 2);
+                context.SetEffect(arg1: new[] {13101}, arg2: false);
+                context.SetEffect(arg1: new[] {13102}, arg2: false);
+                context.SetEffect(arg1: new[] {13103}, arg2: false);
+                context.SetEffect(arg1: new[] {13200}, arg2: false);
+                context.SetMesh(arg1: new[] {13300}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "TimeEventOn", value: 1)) {
+                if (context.GetUserValue(key: "TimeEventOn") == 1) {
                     context.State = new StateSettingDelay(context);
                     return;
                 }
@@ -47,7 +43,7 @@ namespace Maple2.Trigger._99999872 {
                     return;
                 }
 
-                if (context.UserValue(key: "EventStart", value: 0)) {
+                if (context.GetUserValue(key: "EventStart") == 0) {
                     context.State = new StateWait(context);
                     return;
                 }
@@ -60,17 +56,17 @@ namespace Maple2.Trigger._99999872 {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {12000076}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000076}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000076}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000076}, arg2: 0)) {
                     context.SetTimer(arg1: "1", arg2: 90, arg3: true, arg4: false, arg5: 0);
                     context.State = new StatePassingThroughRing_Start_Delay(context);
                     return;
                 }
 
-                if (context.UserValue(key: "TimeEventOn", value: 0)) {
+                if (context.GetUserValue(key: "TimeEventOn") == 0) {
                     context.State = new StateWait(context);
                     return;
                 }
@@ -98,11 +94,11 @@ namespace Maple2.Trigger._99999872 {
             internal StatePassingThroughRing_Play01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {13001}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
+                context.SetMesh(arg1: new[] {13001}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
             }
 
             public override void Execute() {
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxID: 13401, additionalEffectID: 71001031,
+                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 13401, additionalEffectId: 71001031,
                     level: true)) {
                     context.State = new StatePassingThroughRing_Play01_Delay(context);
                     return;
@@ -121,10 +117,10 @@ namespace Maple2.Trigger._99999872 {
             internal StatePassingThroughRing_Play01_Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {13001}, arg2: false, arg3: 1, arg4: 0, arg5: 1f);
-                context.SetMesh(arg1: new int[] {13011}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
-                context.SetMeshAnimation(arg1: new int[] {13011}, arg2: true, arg3: 0, arg4: 0);
-                context.SetEffect(arg1: new int[] {13101}, arg2: true);
+                context.SetMesh(arg1: new[] {13001}, arg2: false, arg3: 1, arg4: 0, arg5: 1f);
+                context.SetMesh(arg1: new[] {13011}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
+                context.SetMeshAnimation(arg1: new[] {13011}, arg2: true, arg3: 0, arg4: 0);
+                context.SetEffect(arg1: new[] {13101}, arg2: true);
             }
 
             public override void Execute() {
@@ -146,11 +142,11 @@ namespace Maple2.Trigger._99999872 {
             internal StatePassingThroughRing_Play02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {13002}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
+                context.SetMesh(arg1: new[] {13002}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
             }
 
             public override void Execute() {
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxID: 13402, additionalEffectID: 71001031,
+                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 13402, additionalEffectId: 71001031,
                     level: true)) {
                     context.State = new StatePassingThroughRing_Play02_Delay(context);
                     return;
@@ -169,10 +165,10 @@ namespace Maple2.Trigger._99999872 {
             internal StatePassingThroughRing_Play02_Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {13002}, arg2: false, arg3: 1, arg4: 0, arg5: 1f);
-                context.SetMesh(arg1: new int[] {13012}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
-                context.SetMeshAnimation(arg1: new int[] {13012}, arg2: true, arg3: 0, arg4: 0);
-                context.SetEffect(arg1: new int[] {13102}, arg2: true);
+                context.SetMesh(arg1: new[] {13002}, arg2: false, arg3: 1, arg4: 0, arg5: 1f);
+                context.SetMesh(arg1: new[] {13012}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
+                context.SetMeshAnimation(arg1: new[] {13012}, arg2: true, arg3: 0, arg4: 0);
+                context.SetEffect(arg1: new[] {13102}, arg2: true);
             }
 
             public override void Execute() {
@@ -194,11 +190,11 @@ namespace Maple2.Trigger._99999872 {
             internal StatePassingThroughRing_Play03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {13003}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
+                context.SetMesh(arg1: new[] {13003}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
             }
 
             public override void Execute() {
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxID: 13403, additionalEffectID: 71001031,
+                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 13403, additionalEffectId: 71001031,
                     level: true)) {
                     context.State = new StatePassingThroughRing_Play03_Delay(context);
                     return;
@@ -217,10 +213,10 @@ namespace Maple2.Trigger._99999872 {
             internal StatePassingThroughRing_Play03_Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {13003}, arg2: false, arg3: 1, arg4: 0, arg5: 1f);
-                context.SetMesh(arg1: new int[] {13013}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
-                context.SetMeshAnimation(arg1: new int[] {13013}, arg2: true, arg3: 0, arg4: 0);
-                context.SetEffect(arg1: new int[] {13103}, arg2: true);
+                context.SetMesh(arg1: new[] {13003}, arg2: false, arg3: 1, arg4: 0, arg5: 1f);
+                context.SetMesh(arg1: new[] {13013}, arg2: true, arg3: 0, arg4: 0, arg5: 1f);
+                context.SetMeshAnimation(arg1: new[] {13013}, arg2: true, arg3: 0, arg4: 0);
+                context.SetEffect(arg1: new[] {13103}, arg2: true);
             }
 
             public override void Execute() {
@@ -237,15 +233,15 @@ namespace Maple2.Trigger._99999872 {
             internal StatePassingThroughRing_Success(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {130001}, arg2: 71001032, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {130001}, arg2: 71001032, arg3: 1, arg4: false, arg5: false);
                 context.SetTimer(arg1: "10", arg2: 61, arg3: true, arg4: false, arg5: 0);
-                context.SetEffect(arg1: new int[] {13200}, arg2: true);
-                context.SetMesh(arg1: new int[] {13300}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new int[] {12000068}, arg2: 1);
+                context.SetEffect(arg1: new[] {13200}, arg2: true);
+                context.SetMesh(arg1: new[] {13300}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {12000068}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000068}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000068}, arg2: 0)) {
                     context.State = new StatePassingThroughRing_SuccessDelay(context);
                     return;
                 }
@@ -263,7 +259,7 @@ namespace Maple2.Trigger._99999872 {
             internal StatePassingThroughRing_SuccessDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 13000, key: "TimeEventOn", value: 0);
+                context.SetUserValue(triggerId: 13000, key: "TimeEventOn", value: 0);
             }
 
             public override void Execute() {

@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02020120_bf {
     public static class _portalstage06boss {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -13,7 +9,7 @@ namespace Maple2.Trigger._02020120_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199})) {
+                if (context.UserDetected(arg1: new[] {199})) {
                     context.State = new State스테이지6_시작(context);
                     return;
                 }
@@ -28,17 +24,17 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Stage06", value: 11)) {
+                if (context.GetUserValue(key: "Stage06") == 11) {
                     context.State = new State스테이지6_왼쪽_가운데진행(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Stage06", value: 21)) {
+                if (context.GetUserValue(key: "Stage06") == 21) {
                     context.State = new State스테이지6_가운데_가운데진행(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Stage06", value: 31)) {
+                if (context.GetUserValue(key: "Stage06") == 31) {
                     context.State = new State스테이지6_오른쪽_가운데진행(context);
                     return;
                 }
@@ -107,7 +103,7 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "DungeonReset", value: 1)) {
+                if (context.GetUserValue(key: "DungeonReset") == 1) {
                     context.State = new StateReady(context);
                     return;
                 }

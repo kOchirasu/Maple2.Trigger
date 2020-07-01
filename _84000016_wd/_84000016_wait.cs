@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._84000016_wd {
     public static class _84000016_wait {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State초기화(context);
-
-        private class State초기화 : TriggerState {
+        public class State초기화 : TriggerState {
             internal State초기화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -81,7 +77,7 @@ namespace Maple2.Trigger._84000016_wd {
             internal State대기01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 28400131, textID: 28400131);
+                context.ShowGuideSummary(entityId: 28400131, textId: 28400131);
             }
 
             public override void Execute() {
@@ -97,7 +93,7 @@ namespace Maple2.Trigger._84000016_wd {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 28400131);
+                context.HideGuideSummary(entityId: 28400131);
             }
         }
 
@@ -105,12 +101,12 @@ namespace Maple2.Trigger._84000016_wd {
             internal State둘다입장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 28400133, textID: 28400133);
+                context.ShowGuideSummary(entityId: 28400133, textId: 28400133);
                 context.SetUserValue(key: "StartWedding", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "StartWedding", value: 1)) {
+                if (context.GetUserValue(key: "StartWedding") == 1) {
                     context.State = new State결혼확인띄우기(context);
                     return;
                 }
@@ -122,7 +118,7 @@ namespace Maple2.Trigger._84000016_wd {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 28400133);
+                context.HideGuideSummary(entityId: 28400133);
             }
         }
 
@@ -131,7 +127,7 @@ namespace Maple2.Trigger._84000016_wd {
 
             public override void OnEnter() {
                 context.WeddingMutualAgree(agreeType: "startActing");
-                context.SetUserValue(triggerID: 4002, key: "Weddingceremonystartsready", value: 1);
+                context.SetUserValue(triggerId: 4002, key: "Weddingceremonystartsready", value: 1);
             }
 
             public override void Execute() {
@@ -180,7 +176,7 @@ namespace Maple2.Trigger._84000016_wd {
             internal State강퇴안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 28400132, textID: 28400132);
+                context.ShowGuideSummary(entityId: 28400132, textId: 28400132);
                 context.WeddingBroken();
             }
 
@@ -198,7 +194,7 @@ namespace Maple2.Trigger._84000016_wd {
             internal State강퇴(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 28400132);
+                context.HideGuideSummary(entityId: 28400132);
                 context.MoveUser(arg1: 0, arg2: 0);
             }
 
@@ -211,11 +207,11 @@ namespace Maple2.Trigger._84000016_wd {
             internal State결혼식연출진행중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4001, key: "Weddingceremonystarts", value: 1);
+                context.SetUserValue(triggerId: 4001, key: "Weddingceremonystarts", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Weddingceremonyfail", value: 1)) {
+                if (context.GetUserValue(key: "Weddingceremonyfail") == 1) {
                     context.SetUserValue(key: "Weddingceremonyfail", value: 0);
                     context.State = new State위치세팅(context);
                     return;

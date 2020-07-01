@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000068_qd {
     public static class _tria_seige {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199})) {
+                if (context.UserDetected(arg1: new[] {199})) {
                     context.State = new State퀘스트분기(context);
                     return;
                 }
@@ -37,34 +33,34 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetActor(arg1: 16010, arg2: false, arg3: "Idle_A");
                 context.SetActor(arg1: 16011, arg2: false, arg3: "Idle_A");
                 context.SetActor(arg1: 16012, arg2: false, arg3: "Stun_A");
-                context.SetInteractObject(arg1: new int[] {10001074}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001075}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001076}, arg2: 2);
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
-                context.SetEffect(arg1: new int[] {603}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10001074}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001075}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001076}, arg2: 2);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {603}, arg2: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015,
                         5016
                     }, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {20002264},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {20002264},
                     arg3: new byte[] {3})) {
                     context.State = new State재접속유저케어(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {20002263},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {20002263},
                     arg3: new byte[] {3})) {
                     context.State = new State조디사망연출(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {20002263},
+                if (!context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {20002263},
                     arg3: new byte[] {3})) {
                     context.State = new State침공이벤트시작(context);
                     return;
@@ -79,15 +75,15 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012,
                         10013, 10014, 10015, 10016, 10017, 10018, 10019, 10020, 10021, 10022, 10023
                     }, arg2: false);
                 context.CreateMonster(
-                    arg1: new int[] {10024, 10025, 10026, 10027, 10028, 10029, 10030, 10031, 10032, 10033, 10034},
+                    arg1: new[] {10024, 10025, 10026, 10027, 10028, 10029, 10030, 10031, 10032, 10033, 10034},
                     arg2: false);
                 context.SetVisibleBreakableObject(
-                    arg1: new int[] {5000, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012},
+                    arg1: new[] {5000, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012},
                     arg2: false);
                 context.SetSound(arg1: 90000, arg2: true);
             }
@@ -139,7 +135,7 @@ namespace Maple2.Trigger._52000068_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199})) {
+                if (context.UserDetected(arg1: new[] {199})) {
                     context.State = new State연출트리거로고고(context);
                     return;
                 }
@@ -152,7 +148,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State연출트리거로고고(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 99999201, key: "tria_seige", value: 1);
+                context.SetUserValue(triggerId: 99999201, key: "tria_seige", value: 1);
             }
 
             public override void Execute() { }
@@ -164,8 +160,8 @@ namespace Maple2.Trigger._52000068_qd {
             internal State침공이벤트시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(arg1: new int[] {701}, arg2: false);
+                context.SetMesh(arg1: new[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetSkill(arg1: new[] {701}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
@@ -190,26 +186,26 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetAgent(arg1: "8017", arg2: false);
                 context.SetAgent(arg1: "8018", arg2: false);
                 context.SetAgent(arg1: "8019", arg2: false);
-                context.CreateMonster(arg1: new int[] {1001, 2001, 2002}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 2001, 2002}, arg2: false);
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015,
                         4016, 4017, 4018, 4019, 4020, 4021, 4022, 4023, 4024, 4025, 4026
                     }, arg2: false);
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         4100, 4101, 4102, 4103, 4104, 4105, 4106, 4107, 4108, 4109, 4110, 4111, 4112, 4113, 4114, 4115,
                         4116, 4117, 4118, 4119, 4120, 4121, 4122, 4123, 4124
                     }, arg2: false);
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015,
                         5016
                     }, arg2: true);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199})) {
+                if (context.UserDetected(arg1: new[] {199})) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -420,7 +416,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State연출종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {199}, arg2: 70000109, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {199}, arg2: 70000109, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 304, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
@@ -438,7 +434,7 @@ namespace Maple2.Trigger._52000068_qd {
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State임무01(context);
                     return;
                 }
@@ -453,10 +449,10 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetInteractObject(arg1: new int[] {10001074}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10001075}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10001076}, arg2: 1);
-                context.AddBuff(arg1: new int[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
+                context.SetInteractObject(arg1: new[] {10001074}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001075}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001076}, arg2: 1);
+                context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 305, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000068_QD__TRIA_SEIGE__5$", arg4: 4);
                 context.SetSceneSkip(arg1: "임무01반응대기");
@@ -485,12 +481,12 @@ namespace Maple2.Trigger._52000068_qd {
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001074, 10001075, 10001076}, arg2: 2)) {
+                if (context.ObjectInteracted(arg1: new[] {10001074, 10001075, 10001076}, arg2: 2)) {
                     context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52000068_QD__TRIA_SEIGE__6$", arg4: 4,
                         arg5: 0);
-                    context.CreateItem(arg1: new int[]
+                    context.CreateItem(arg1: new[]
                         {9000, 9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012});
-                    context.AddBuff(arg1: new int[] {199}, arg2: 70000058, arg3: 1, arg4: false, arg5: false);
+                    context.AddBuff(arg1: new[] {199}, arg2: 70000058, arg3: 1, arg4: false, arg5: false);
                     context.State = new State임무02대기(context);
                     return;
                 }
@@ -535,10 +531,10 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetAgent(arg1: "8017", arg2: true);
                 context.SetAgent(arg1: "8018", arg2: true);
                 context.SetAgent(arg1: "8019", arg2: true);
-                context.AddBuff(arg1: new int[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 306, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001838, arg3: "$52000068_QD__TRIA_SEIGE__7$", arg4: 4);
-                context.CreateMonster(arg1: new int[] {1101, 1102, 1103, 1104}, arg2: false, arg3: 6000);
+                context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104}, arg2: false, arg3: 6000);
                 context.MoveNpc(arg1: 1101, arg2: "MS2PatrolData_1101");
                 context.MoveNpc(arg1: 1102, arg2: "MS2PatrolData_1102");
                 context.MoveNpc(arg1: 1103, arg2: "MS2PatrolData_1103");
@@ -594,9 +590,9 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetAgent(arg1: "8017", arg2: false);
                 context.SetAgent(arg1: "8018", arg2: false);
                 context.SetAgent(arg1: "8019", arg2: false);
-                context.SetEffect(arg1: new int[] {602}, arg2: true);
+                context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.CameraSelect(arg1: 307, arg2: true);
-                context.CreateMonster(arg1: new int[] {2003}, arg2: false);
+                context.CreateMonster(arg1: new[] {2003}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001838, arg3: "$52000068_QD__TRIA_SEIGE__8$", arg4: 4);
                 context.SetNpcEmotionSequence(arg1: 2003, arg2: "AttackReady_A");
                 context.SetSceneSkip(arg1: "임무02종료대기");
@@ -622,7 +618,7 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetProductionUI(arg1: 2);
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
                 context.CameraSelect(arg1: 307, arg2: false);
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {602}, arg2: false);
             }
 
             public override void Execute() {
@@ -631,7 +627,7 @@ namespace Maple2.Trigger._52000068_qd {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {2003})) {
+                if (context.MonsterDead(arg1: new[] {2003})) {
                     context.State = new State임무02종료(context);
                     return;
                 }
@@ -647,13 +643,13 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 309, arg2: true);
-                context.AddBuff(arg1: new int[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
-                context.DestroyMonster(arg1: new int[] {2001});
-                context.CreateMonster(arg1: new int[] {2004}, arg2: false);
+                context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
+                context.DestroyMonster(arg1: new[] {2001});
+                context.CreateMonster(arg1: new[] {2004}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "SetSkillA", value: 1)) {
+                if (context.GetUserValue(key: "SetSkillA") == 1) {
                     context.State = new State데블린카메라이동(context);
                     return;
                 }
@@ -670,7 +666,7 @@ namespace Maple2.Trigger._52000068_qd {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "SetSkillB", value: 1)) {
+                if (context.GetUserValue(key: "SetSkillB") == 1) {
                     context.State = new State벽파괴대기(context);
                     return;
                 }
@@ -698,14 +694,14 @@ namespace Maple2.Trigger._52000068_qd {
             internal State벽파괴(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {2101, 2102, 2103, 2104}, arg2: false, arg3: 6000);
+                context.CreateMonster(arg1: new[] {2101, 2102, 2103, 2104}, arg2: false, arg3: 6000);
                 context.MoveNpc(arg1: 2101, arg2: "MS2PatrolData_air");
                 context.MoveNpc(arg1: 2102, arg2: "MS2PatrolData_air");
                 context.MoveNpc(arg1: 2103, arg2: "MS2PatrolData_air");
                 context.MoveNpc(arg1: 2104, arg2: "MS2PatrolData_air");
                 context.CameraSelect(arg1: 308, arg2: true);
-                context.SetEffect(arg1: new int[] {603}, arg2: true);
-                context.SetSkill(arg1: new int[] {701}, arg2: true);
+                context.SetEffect(arg1: new[] {603}, arg2: true);
+                context.SetSkill(arg1: new[] {701}, arg2: true);
             }
 
             public override void Execute() {
@@ -722,7 +718,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal State조디대화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: true);
+                context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001838, arg3: "$52000068_QD__TRIA_SEIGE__9$", arg4: 4);
                 context.SetSceneSkip(arg1: "대사스킵용02");
             }
@@ -781,9 +777,9 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetSceneSkip();
                 context.RemoveCinematicTalk();
                 context.SetPortal(arg1: 2, arg2: false, arg3: true, arg4: true);
-                context.DestroyMonster(arg1: new int[] {2101, 2102, 2103, 2104});
-                context.SetEffect(arg1: new int[] {601}, arg2: true);
-                context.SetEffect(arg1: new int[] {603}, arg2: false);
+                context.DestroyMonster(arg1: new[] {2101, 2102, 2103, 2104});
+                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.SetEffect(arg1: new[] {603}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.RemoveBuff(arg1: 199, arg2: 70000107);

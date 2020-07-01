@@ -1,27 +1,24 @@
-using System;
 using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000380_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001064}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001064}, arg2: 2);
                 context.SetActor(arg1: 4001, arg2: true, arg3: "ry_functobj_door_A01_Off");
                 context.SetActor(arg1: 4003, arg2: true, arg3: "ry_functobj_door_A01_On");
                 context.SetActor(arg1: 4007, arg2: true, arg3: "ry_functobj_door_A01_On");
-                context.SetMesh(arg1: new int[] {2001, 2002, 2003, 2004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {2005, 2006, 2007, 2008}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {2010, 2011, 2012}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {2020, 2021, 2022, 2023}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {2005, 2006, 2007, 2008}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {2010, 2011, 2012}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {2020, 2021, 2022, 2023}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 701, arg2: 1)) {
+                if (context.GetUserCount(boxId: 701) == 1) {
                     context.State =
                         new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
@@ -35,7 +32,7 @@ namespace Maple2.Trigger._02000380_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {2001, 2002, 2003, 2004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -54,8 +51,8 @@ namespace Maple2.Trigger._02000380_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8001, 8002, 8003}, arg2: true);
-                context.CreateMonster(arg1: new int[] {101});
+                context.CameraSelectPath(arg1: new[] {8001, 8002, 8003}, arg2: true);
+                context.CreateMonster(arg1: new[] {101});
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000380_BF__MAIN__0$", arg4: 3, arg5: 0);
                 context.SetConversation(arg1: 2, arg2: 11001836, arg3: "$02000380_BF__MAIN__1$", arg4: 3);
             }
@@ -110,8 +107,8 @@ namespace Maple2.Trigger._02000380_bf {
             internal StateStart_03_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003801, textID: 20003801, duration: 5000);
-                context.SetMesh(arg1: new int[] {2001, 2002, 2003, 2004}, arg2: false, arg3: 0, arg4: 10, arg5: 10f);
+                context.ShowGuideSummary(entityId: 20003801, textId: 20003801, duration: 5000);
+                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004}, arg2: false, arg3: 0, arg4: 10, arg5: 10f);
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000380_BF__MAIN__4$", arg4: 2, arg5: 0);
             }
 
@@ -133,7 +130,7 @@ namespace Maple2.Trigger._02000380_bf {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 702, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 702, arg2: new[] {101})) {
                     context.State = new StateStart_05(context);
                     return;
                 }
@@ -198,8 +195,8 @@ namespace Maple2.Trigger._02000380_bf {
             internal StateStart_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 110, textID: 40009, duration: 5000);
-                context.SetMesh(arg1: new int[] {2010, 2011, 2012}, arg2: false, arg3: 0, arg4: 10, arg5: 10f);
+                context.ShowGuideSummary(entityId: 110, textId: 40009, duration: 5000);
+                context.SetMesh(arg1: new[] {2010, 2011, 2012}, arg2: false, arg3: 0, arg4: 10, arg5: 10f);
             }
 
             public override void Execute() {
@@ -274,7 +271,7 @@ namespace Maple2.Trigger._02000380_bf {
             }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 1, value: true)) {
+                if (context.GetDungeonVariable(id: 1) == true) {
                     context.State = new StateStart_09_02(context);
                     return;
                 }
@@ -289,14 +286,14 @@ namespace Maple2.Trigger._02000380_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 703, arg2: 1)) {
+                if (context.GetUserCount(boxId: 703) == 1) {
                     context.State = new StateRound_2_03(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.SetMesh(arg1: new int[] {2005, 2006, 2007, 2008}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {2005, 2006, 2007, 2008}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
@@ -379,7 +376,7 @@ namespace Maple2.Trigger._02000380_bf {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 705, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 705, arg2: new[] {101})) {
                     context.State = new StateRound_2_08(context);
                     return;
                 }
@@ -426,8 +423,8 @@ namespace Maple2.Trigger._02000380_bf {
             internal StateRound_2_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 110, textID: 40009, duration: 5000);
-                context.SetMesh(arg1: new int[] {2013, 2014, 2015}, arg2: false, arg3: 0, arg4: 10, arg5: 10f);
+                context.ShowGuideSummary(entityId: 110, textId: 40009, duration: 5000);
+                context.SetMesh(arg1: new[] {2013, 2014, 2015}, arg2: false, arg3: 0, arg4: 10, arg5: 10f);
             }
 
             public override void Execute() {
@@ -484,7 +481,7 @@ namespace Maple2.Trigger._02000380_bf {
             }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 2, value: true)) {
+                if (context.GetDungeonVariable(id: 2) == true) {
                     context.State = new StateRound_2_12(context);
                     return;
                 }
@@ -499,14 +496,14 @@ namespace Maple2.Trigger._02000380_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 703, arg2: 1)) {
+                if (context.GetUserCount(boxId: 703) == 1) {
                     context.State = new StateRound_3_02(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.SetMesh(arg1: new int[] {2005, 2006, 2007, 2008}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {2005, 2006, 2007, 2008}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
                 context.SetPortal(arg1: 21, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 22, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 23, arg2: true, arg3: false, arg4: false);
@@ -540,7 +537,7 @@ namespace Maple2.Trigger._02000380_bf {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 706, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 706, arg2: new[] {101})) {
                     context.State = new StateRound_3_04(context);
                     return;
                 }
@@ -570,9 +567,9 @@ namespace Maple2.Trigger._02000380_bf {
             internal StateClear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003802, textID: 20003802);
-                context.DestroyMonster(arg1: new int[] {101});
-                context.CreateMonster(arg1: new int[] {199});
+                context.ShowGuideSummary(entityId: 20003802, textId: 20003802);
+                context.DestroyMonster(arg1: new[] {101});
+                context.CreateMonster(arg1: new[] {199});
                 context.SetPortal(arg1: 5, arg2: true, arg3: true, arg4: true);
             }
 

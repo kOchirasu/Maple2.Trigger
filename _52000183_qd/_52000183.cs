@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52000183_qd {
     public static class _52000183 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -14,7 +10,7 @@ namespace Maple2.Trigger._52000183_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new State영상재생(context);
                     return;
                 }
@@ -27,18 +23,18 @@ namespace Maple2.Trigger._52000183_qd {
             internal State영상재생(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {500}, arg2: false);
-                context.CreateMonster(arg1: new int[] {501}, arg2: false);
-                context.CreateMonster(arg1: new int[] {502}, arg2: false);
-                context.CreateMonster(arg1: new int[] {503}, arg2: false);
-                context.CreateMonster(arg1: new int[] {504}, arg2: false);
-                context.CreateMonster(arg1: new int[] {505}, arg2: false);
-                context.CreateMonster(arg1: new int[] {506}, arg2: false);
-                context.CreateMonster(arg1: new int[] {507}, arg2: false);
-                context.CreateMonster(arg1: new int[] {508}, arg2: false);
-                context.CreateMonster(arg1: new int[] {509}, arg2: false);
+                context.CreateMonster(arg1: new[] {500}, arg2: false);
+                context.CreateMonster(arg1: new[] {501}, arg2: false);
+                context.CreateMonster(arg1: new[] {502}, arg2: false);
+                context.CreateMonster(arg1: new[] {503}, arg2: false);
+                context.CreateMonster(arg1: new[] {504}, arg2: false);
+                context.CreateMonster(arg1: new[] {505}, arg2: false);
+                context.CreateMonster(arg1: new[] {506}, arg2: false);
+                context.CreateMonster(arg1: new[] {507}, arg2: false);
+                context.CreateMonster(arg1: new[] {508}, arg2: false);
+                context.CreateMonster(arg1: new[] {509}, arg2: false);
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "jobChange_priest.swf", movieID: 1);
+                context.PlaySceneMovie(fileName: "jobChange_priest.swf", movieId: 1);
             }
 
             public override void Execute() {
@@ -64,7 +60,7 @@ namespace Maple2.Trigger._52000183_qd {
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
                 context.SetOnetimeEffect(id: 30, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
-                context.CameraSelectPath(arg1: new int[] {4000, 4001, 4002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4000, 4001, 4002}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -172,11 +168,11 @@ namespace Maple2.Trigger._52000183_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.ShowGuideSummary(entityID: 52001831, textID: 52001831, duration: 10000);
+                context.ShowGuideSummary(entityId: 52001831, textId: 52001831, duration: 10000);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002341},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002341},
                     arg3: new byte[] {3})) {
                     context.State = new State전직이펙트_01(context);
                     return;
@@ -213,7 +209,7 @@ namespace Maple2.Trigger._52000183_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002342},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002342},
                     arg3: new byte[] {3})) {
                     context.State = new State가브란트퇴장01(context);
                     return;
@@ -231,7 +227,7 @@ namespace Maple2.Trigger._52000183_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9002, arg2: new int[] {509})) {
+                if (context.NpcDetected(arg1: 9002, arg2: new[] {509})) {
                     context.State = new StateNPC소멸(context);
                     return;
                 }
@@ -244,11 +240,11 @@ namespace Maple2.Trigger._52000183_qd {
             internal StateNPC소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {509});
+                context.DestroyMonster(arg1: new[] {509});
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002343},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002343},
                     arg3: new byte[] {3})) {
                     context.State = new State전원퇴장01(context);
                     return;
@@ -282,17 +278,17 @@ namespace Maple2.Trigger._52000183_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000183, arg2: 81);
-                context.DestroyMonster(arg1: new int[] {500});
-                context.DestroyMonster(arg1: new int[] {501});
-                context.DestroyMonster(arg1: new int[] {502});
-                context.DestroyMonster(arg1: new int[] {502});
-                context.DestroyMonster(arg1: new int[] {503});
-                context.DestroyMonster(arg1: new int[] {504});
-                context.DestroyMonster(arg1: new int[] {505});
-                context.DestroyMonster(arg1: new int[] {506});
-                context.DestroyMonster(arg1: new int[] {507});
-                context.DestroyMonster(arg1: new int[] {508});
-                context.DestroyMonster(arg1: new int[] {509});
+                context.DestroyMonster(arg1: new[] {500});
+                context.DestroyMonster(arg1: new[] {501});
+                context.DestroyMonster(arg1: new[] {502});
+                context.DestroyMonster(arg1: new[] {502});
+                context.DestroyMonster(arg1: new[] {503});
+                context.DestroyMonster(arg1: new[] {504});
+                context.DestroyMonster(arg1: new[] {505});
+                context.DestroyMonster(arg1: new[] {506});
+                context.DestroyMonster(arg1: new[] {507});
+                context.DestroyMonster(arg1: new[] {508});
+                context.DestroyMonster(arg1: new[] {509});
             }
 
             public override void Execute() {
@@ -311,14 +307,14 @@ namespace Maple2.Trigger._52000183_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 10, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.ShowGuideSummary(entityID: 52001832, textID: 52001832, duration: 10000);
-                context.CreateMonster(arg1: new int[] {510}, arg2: false);
+                context.ShowGuideSummary(entityId: 52001832, textId: 52001832, duration: 10000);
+                context.CreateMonster(arg1: new[] {510}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002345},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002345},
                     arg3: new byte[] {3})) {
                     context.State = new State프론티아재단으로01(context);
                     return;

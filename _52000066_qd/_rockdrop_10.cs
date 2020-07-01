@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._52000066_qd {
     public static class _rockdrop_10 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {8000}, arg2: false);
-                context.SetSkill(arg1: new int[] {8001}, arg2: false);
-                context.SetEffect(arg1: new int[] {7000}, arg2: false);
-                context.SetEffect(arg1: new int[] {7001}, arg2: false);
+                context.SetSkill(arg1: new[] {8000}, arg2: false);
+                context.SetSkill(arg1: new[] {8001}, arg2: false);
+                context.SetEffect(arg1: new[] {7000}, arg2: false);
+                context.SetEffect(arg1: new[] {7001}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new StateRockDrop01(context);
                     return;
                 }
@@ -28,7 +24,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateRockDrop01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7000}, arg2: true);
+                context.SetEffect(arg1: new[] {7000}, arg2: true);
             }
 
             public override void Execute() {
@@ -45,7 +41,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateRockDrop02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {8000}, arg2: true);
+                context.SetSkill(arg1: new[] {8000}, arg2: true);
             }
 
             public override void Execute() {
@@ -62,7 +58,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateRockDrop11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7001}, arg2: true);
+                context.SetEffect(arg1: new[] {7001}, arg2: true);
             }
 
             public override void Execute() {
@@ -79,7 +75,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateRockDrop12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {8001}, arg2: true);
+                context.SetSkill(arg1: new[] {8001}, arg2: true);
             }
 
             public override void Execute() {
@@ -96,7 +92,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateRockDrop21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7000}, arg2: true);
+                context.SetEffect(arg1: new[] {7000}, arg2: true);
             }
 
             public override void Execute() {
@@ -113,7 +109,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateRockDrop22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {8000}, arg2: true);
+                context.SetSkill(arg1: new[] {8000}, arg2: true);
             }
 
             public override void Execute() {
@@ -130,10 +126,10 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {8000}, arg2: false);
-                context.SetSkill(arg1: new int[] {8001}, arg2: false);
-                context.SetEffect(arg1: new int[] {7000}, arg2: false);
-                context.SetEffect(arg1: new int[] {7001}, arg2: false);
+                context.SetSkill(arg1: new[] {8000}, arg2: false);
+                context.SetSkill(arg1: new[] {8001}, arg2: false);
+                context.SetEffect(arg1: new[] {7000}, arg2: false);
+                context.SetEffect(arg1: new[] {7001}, arg2: false);
             }
 
             public override void Execute() {

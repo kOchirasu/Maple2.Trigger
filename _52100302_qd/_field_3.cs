@@ -1,42 +1,38 @@
-using System;
-
 namespace Maple2.Trigger._52100302_qd {
     public static class _field_3 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {12000513}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {12000514}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {12000515}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {12000516}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {12000517}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {12000518}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000513}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000514}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000515}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000516}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000517}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000518}, arg2: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Block", value: 1)) {
-                    context.SetUserValue(triggerID: 900004, key: "Block", value: 0);
+                if (context.GetUserValue(key: "Block") == 1) {
+                    context.SetUserValue(triggerId: 900004, key: "Block", value: 0);
                     context.State = new StateArriveBlock_1(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Block", value: 2)) {
-                    context.SetUserValue(triggerID: 900004, key: "Block", value: 0);
+                if (context.GetUserValue(key: "Block") == 2) {
+                    context.SetUserValue(triggerId: 900004, key: "Block", value: 0);
                     context.State = new StateArriveBlock_2(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Block", value: 3)) {
-                    context.SetUserValue(triggerID: 900004, key: "Block", value: 0);
+                if (context.GetUserValue(key: "Block") == 3) {
+                    context.SetUserValue(triggerId: 900004, key: "Block", value: 0);
                     context.State = new StateArriveBlock_3(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Block", value: 4)) {
-                    context.SetUserValue(triggerID: 900004, key: "Block", value: 0);
+                if (context.GetUserValue(key: "Block") == 4) {
+                    context.SetUserValue(triggerId: 900004, key: "Block", value: 0);
                     context.State = new StateArriveBlock_4(context);
                     return;
                 }
@@ -51,7 +47,7 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9004})) {
+                if (context.UserDetected(arg1: new[] {9004})) {
                     context.State = new StateArriveBlock_Delay_1(context);
                     return;
                 }
@@ -67,26 +63,26 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.CreateMonster(arg1: new int[] {2004}, arg2: false);
+                    context.CreateMonster(arg1: new[] {2004}, arg2: false);
                     context.State = new StateBlock_1(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1110, 1303, 1304, 1309, 1310, 1311, 1312, 1313, 1314})) {
+                if (context.MonsterDead(arg1: new[] {1110, 1303, 1304, 1309, 1310, 1311, 1312, 1313, 1314})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new int[] {12000513}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1114}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1115}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1116}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
+                    context.SetInteractObject(arg1: new[] {12000513}, arg2: 1);
+                    context.CreateMonster(arg1: new[] {1114}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1115}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1116}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
                         arg2: false);
-                    context.CreateMonster(arg1: new int[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
+                    context.CreateMonster(arg1: new[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
                         arg2: false);
-                    context.CreateMonster(arg1: new int[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
+                    context.CreateMonster(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
                         arg2: false);
-                    context.EnableSpawnPointPc(spawnPointID: 106, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointID: 108, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointID: 109, isEnable: true);
+                    context.EnableSpawnPointPc(spawnPointId: 106, isEnable: false);
+                    context.EnableSpawnPointPc(spawnPointId: 108, isEnable: false);
+                    context.EnableSpawnPointPc(spawnPointId: 109, isEnable: true);
                     context.State = new StateCableOn_13(context);
                     return;
                 }
@@ -101,21 +97,21 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {1110, 1303, 1304, 1309, 1310, 1311, 1312, 1313, 1314})) {
+                if (context.MonsterDead(arg1: new[] {1110, 1303, 1304, 1309, 1310, 1311, 1312, 1313, 1314})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new int[] {12000513}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1114}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1115}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1116}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
+                    context.SetInteractObject(arg1: new[] {12000513}, arg2: 1);
+                    context.CreateMonster(arg1: new[] {1114}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1115}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1116}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
                         arg2: false);
-                    context.CreateMonster(arg1: new int[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
+                    context.CreateMonster(arg1: new[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
                         arg2: false);
-                    context.CreateMonster(arg1: new int[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
+                    context.CreateMonster(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
                         arg2: false);
-                    context.EnableSpawnPointPc(spawnPointID: 106, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointID: 108, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointID: 109, isEnable: true);
+                    context.EnableSpawnPointPc(spawnPointId: 106, isEnable: false);
+                    context.EnableSpawnPointPc(spawnPointId: 108, isEnable: false);
+                    context.EnableSpawnPointPc(spawnPointId: 109, isEnable: true);
                     context.State = new StateCableOn_13(context);
                     return;
                 }
@@ -130,7 +126,7 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9005})) {
+                if (context.UserDetected(arg1: new[] {9005})) {
                     context.State = new StateArriveBlock_Delay_2(context);
                     return;
                 }
@@ -146,27 +142,27 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.CreateMonster(arg1: new int[] {2005}, arg2: false);
+                    context.CreateMonster(arg1: new[] {2005}, arg2: false);
                     context.State = new StateBlock_2(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1111, 1301, 1302, 1321, 1322, 1323, 1324, 1325, 1326})) {
+                if (context.MonsterDead(arg1: new[] {1111, 1301, 1302, 1321, 1322, 1323, 1324, 1325, 1326})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new int[] {12000514}, arg2: 1);
-                    context.SetInteractObject(arg1: new int[] {12000515}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1114}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1115}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1116}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
+                    context.SetInteractObject(arg1: new[] {12000514}, arg2: 1);
+                    context.SetInteractObject(arg1: new[] {12000515}, arg2: 1);
+                    context.CreateMonster(arg1: new[] {1114}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1115}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1116}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
                         arg2: false);
-                    context.CreateMonster(arg1: new int[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
+                    context.CreateMonster(arg1: new[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
                         arg2: false);
-                    context.CreateMonster(arg1: new int[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
+                    context.CreateMonster(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
                         arg2: false);
-                    context.EnableSpawnPointPc(spawnPointID: 106, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointID: 107, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointID: 110, isEnable: true);
+                    context.EnableSpawnPointPc(spawnPointId: 106, isEnable: false);
+                    context.EnableSpawnPointPc(spawnPointId: 107, isEnable: false);
+                    context.EnableSpawnPointPc(spawnPointId: 110, isEnable: true);
                     context.State = new StateCableOn_14_15(context);
                     return;
                 }
@@ -181,22 +177,22 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {1111, 1301, 1302, 1321, 1322, 1323, 1324, 1325, 1326})) {
+                if (context.MonsterDead(arg1: new[] {1111, 1301, 1302, 1321, 1322, 1323, 1324, 1325, 1326})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new int[] {12000514}, arg2: 1);
-                    context.SetInteractObject(arg1: new int[] {12000515}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1114}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1115}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1116}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
+                    context.SetInteractObject(arg1: new[] {12000514}, arg2: 1);
+                    context.SetInteractObject(arg1: new[] {12000515}, arg2: 1);
+                    context.CreateMonster(arg1: new[] {1114}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1115}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1116}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
                         arg2: false);
-                    context.CreateMonster(arg1: new int[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
+                    context.CreateMonster(arg1: new[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
                         arg2: false);
-                    context.CreateMonster(arg1: new int[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
+                    context.CreateMonster(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
                         arg2: false);
-                    context.EnableSpawnPointPc(spawnPointID: 106, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointID: 107, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointID: 110, isEnable: true);
+                    context.EnableSpawnPointPc(spawnPointId: 106, isEnable: false);
+                    context.EnableSpawnPointPc(spawnPointId: 107, isEnable: false);
+                    context.EnableSpawnPointPc(spawnPointId: 110, isEnable: true);
                     context.State = new StateCableOn_14_15(context);
                     return;
                 }
@@ -211,7 +207,7 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9006})) {
+                if (context.UserDetected(arg1: new[] {9006})) {
                     context.State = new StateArriveBlock_Delay_3(context);
                     return;
                 }
@@ -227,26 +223,26 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.CreateMonster(arg1: new int[] {2006}, arg2: false);
+                    context.CreateMonster(arg1: new[] {2006}, arg2: false);
                     context.State = new StateBlock_3(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1112, 1307, 1308, 1327, 1328, 1329, 1330, 1331, 1332})) {
+                if (context.MonsterDead(arg1: new[] {1112, 1307, 1308, 1327, 1328, 1329, 1330, 1331, 1332})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new int[] {12000516}, arg2: 1);
-                    context.SetInteractObject(arg1: new int[] {12000517}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1114}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1115}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1116}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
+                    context.SetInteractObject(arg1: new[] {12000516}, arg2: 1);
+                    context.SetInteractObject(arg1: new[] {12000517}, arg2: 1);
+                    context.CreateMonster(arg1: new[] {1114}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1115}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1116}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
                         arg2: false);
-                    context.CreateMonster(arg1: new int[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
+                    context.CreateMonster(arg1: new[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
                         arg2: false);
-                    context.CreateMonster(arg1: new int[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
+                    context.CreateMonster(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
                         arg2: false);
-                    context.EnableSpawnPointPc(spawnPointID: 107, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointID: 111, isEnable: true);
+                    context.EnableSpawnPointPc(spawnPointId: 107, isEnable: false);
+                    context.EnableSpawnPointPc(spawnPointId: 111, isEnable: true);
                     context.State = new StateCableOn_16_17(context);
                     return;
                 }
@@ -261,21 +257,21 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {1112, 1307, 1308, 1327, 1328, 1329, 1330, 1331, 1332})) {
+                if (context.MonsterDead(arg1: new[] {1112, 1307, 1308, 1327, 1328, 1329, 1330, 1331, 1332})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new int[] {12000516}, arg2: 1);
-                    context.SetInteractObject(arg1: new int[] {12000517}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1114}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1115}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1116}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
+                    context.SetInteractObject(arg1: new[] {12000516}, arg2: 1);
+                    context.SetInteractObject(arg1: new[] {12000517}, arg2: 1);
+                    context.CreateMonster(arg1: new[] {1114}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1115}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1116}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
                         arg2: false);
-                    context.CreateMonster(arg1: new int[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
+                    context.CreateMonster(arg1: new[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
                         arg2: false);
-                    context.CreateMonster(arg1: new int[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
+                    context.CreateMonster(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
                         arg2: false);
-                    context.EnableSpawnPointPc(spawnPointID: 107, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointID: 111, isEnable: true);
+                    context.EnableSpawnPointPc(spawnPointId: 107, isEnable: false);
+                    context.EnableSpawnPointPc(spawnPointId: 111, isEnable: true);
                     context.State = new StateCableOn_16_17(context);
                     return;
                 }
@@ -290,7 +286,7 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9007})) {
+                if (context.UserDetected(arg1: new[] {9007})) {
                     context.State = new StateArriveBlock_Delay_4(context);
                     return;
                 }
@@ -306,25 +302,25 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.CreateMonster(arg1: new int[] {2007}, arg2: false);
+                    context.CreateMonster(arg1: new[] {2007}, arg2: false);
                     context.State = new StateBlock_4(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1113, 1305, 1306, 1315, 1316, 1317, 1318, 1319, 1320})) {
+                if (context.MonsterDead(arg1: new[] {1113, 1305, 1306, 1315, 1316, 1317, 1318, 1319, 1320})) {
                     context.SetAiExtraData(key: "BossDie", value: 2);
-                    context.SetInteractObject(arg1: new int[] {12000518}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1114}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1115}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1116}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
+                    context.SetInteractObject(arg1: new[] {12000518}, arg2: 1);
+                    context.CreateMonster(arg1: new[] {1114}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1115}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1116}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
                         arg2: false);
-                    context.CreateMonster(arg1: new int[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
+                    context.CreateMonster(arg1: new[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
                         arg2: false);
-                    context.CreateMonster(arg1: new int[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
+                    context.CreateMonster(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
                         arg2: false);
-                    context.EnableSpawnPointPc(spawnPointID: 108, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointID: 112, isEnable: true);
+                    context.EnableSpawnPointPc(spawnPointId: 108, isEnable: false);
+                    context.EnableSpawnPointPc(spawnPointId: 112, isEnable: true);
                     context.State = new StateCableOn_18(context);
                     return;
                 }
@@ -339,20 +335,20 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {1113, 1305, 1306, 1315, 1316, 1317, 1318, 1319, 1320})) {
-                    context.DestroyMonster(arg1: new int[] {2007}, arg2: false);
-                    context.SetInteractObject(arg1: new int[] {12000518}, arg2: 1);
-                    context.CreateMonster(arg1: new int[] {1114}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1115}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1116}, arg2: false);
-                    context.CreateMonster(arg1: new int[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
+                if (context.MonsterDead(arg1: new[] {1113, 1305, 1306, 1315, 1316, 1317, 1318, 1319, 1320})) {
+                    context.DestroyMonster(arg1: new[] {2007}, arg2: false);
+                    context.SetInteractObject(arg1: new[] {12000518}, arg2: 1);
+                    context.CreateMonster(arg1: new[] {1114}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1115}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1116}, arg2: false);
+                    context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410},
                         arg2: false);
-                    context.CreateMonster(arg1: new int[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
+                    context.CreateMonster(arg1: new[] {1411, 1412, 1413, 1414, 1415, 1416, 1417, 1418, 1419, 1420},
                         arg2: false);
-                    context.CreateMonster(arg1: new int[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
+                    context.CreateMonster(arg1: new[] {1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430},
                         arg2: false);
-                    context.EnableSpawnPointPc(spawnPointID: 108, isEnable: false);
-                    context.EnableSpawnPointPc(spawnPointID: 112, isEnable: true);
+                    context.EnableSpawnPointPc(spawnPointId: 108, isEnable: false);
+                    context.EnableSpawnPointPc(spawnPointId: 112, isEnable: true);
                     context.State = new StateCableOn_18(context);
                     return;
                 }
@@ -367,10 +363,10 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000513}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new int[] {12000513}, arg2: 0);
+                if (context.ObjectInteracted(arg1: new[] {12000513}, arg2: 0)) {
+                    context.SetInteractObject(arg1: new[] {12000513}, arg2: 0);
                     context.SetMesh(
-                        arg1: new int[]
+                        arg1: new[]
                             {1110001, 1110002, 1110003, 1110004, 1110005, 1110006, 1110007, 1110008, 1110009, 1110010},
                         arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateCableDelay_13(context);
@@ -387,23 +383,23 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000514}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new int[] {12000514}, arg2: 0);
-                    context.SetInteractObject(arg1: new int[] {12000515}, arg2: 0);
+                if (context.ObjectInteracted(arg1: new[] {12000514}, arg2: 0)) {
+                    context.SetInteractObject(arg1: new[] {12000514}, arg2: 0);
+                    context.SetInteractObject(arg1: new[] {12000515}, arg2: 0);
                     context.SetMesh(
-                        arg1: new int[]
+                        arg1: new[]
                             {1120001, 1120002, 1120003, 1120004, 1120005, 1120006, 1120007, 1120008, 1120009, 1120010},
                         arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateCableDelay_14(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000515}, arg2: 0)) {
-                    context.SetVisibleBreakableObject(arg1: new int[] {1016}, arg2: false);
-                    context.SetInteractObject(arg1: new int[] {12000514}, arg2: 0);
-                    context.SetInteractObject(arg1: new int[] {12000515}, arg2: 0);
+                if (context.ObjectInteracted(arg1: new[] {12000515}, arg2: 0)) {
+                    context.SetVisibleBreakableObject(arg1: new[] {1016}, arg2: false);
+                    context.SetInteractObject(arg1: new[] {12000514}, arg2: 0);
+                    context.SetInteractObject(arg1: new[] {12000515}, arg2: 0);
                     context.SetMesh(
-                        arg1: new int[]
+                        arg1: new[]
                             {1130001, 1130002, 1130003, 1130004, 1130005, 1130006, 1130007, 1130008, 1130009, 1130010},
                         arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateCableDelay_15(context);
@@ -420,22 +416,22 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000516}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new int[] {12000516}, arg2: 0);
-                    context.SetInteractObject(arg1: new int[] {12000517}, arg2: 0);
+                if (context.ObjectInteracted(arg1: new[] {12000516}, arg2: 0)) {
+                    context.SetInteractObject(arg1: new[] {12000516}, arg2: 0);
+                    context.SetInteractObject(arg1: new[] {12000517}, arg2: 0);
                     context.SetMesh(
-                        arg1: new int[]
+                        arg1: new[]
                             {1140001, 1140002, 1140003, 1140004, 1140005, 1140006, 1140007, 1140008, 1140009, 1140010},
                         arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateCableDelay_16(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000517}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new int[] {12000516}, arg2: 0);
-                    context.SetInteractObject(arg1: new int[] {12000517}, arg2: 0);
+                if (context.ObjectInteracted(arg1: new[] {12000517}, arg2: 0)) {
+                    context.SetInteractObject(arg1: new[] {12000516}, arg2: 0);
+                    context.SetInteractObject(arg1: new[] {12000517}, arg2: 0);
                     context.SetMesh(
-                        arg1: new int[]
+                        arg1: new[]
                             {1150001, 1150002, 1150003, 1150004, 1150005, 1150006, 1150007, 1150008, 1150009, 1150010},
                         arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateCableDelay_17(context);
@@ -452,10 +448,10 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000518}, arg2: 0)) {
-                    context.SetInteractObject(arg1: new int[] {12000518}, arg2: 0);
+                if (context.ObjectInteracted(arg1: new[] {12000518}, arg2: 0)) {
+                    context.SetInteractObject(arg1: new[] {12000518}, arg2: 0);
                     context.SetMesh(
-                        arg1: new int[]
+                        arg1: new[]
                             {1160001, 1160002, 1160003, 1160004, 1160005, 1160006, 1160007, 1160008, 1160009, 1160010},
                         arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateCableDelay_18(context);
@@ -473,7 +469,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__0$", arg3: new int[] {3000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__0$", arg3: 3000);
                     context.State = new StateCableDelay_13_2(context);
                     return;
                 }
@@ -489,7 +485,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__1$", arg3: new int[] {3000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__1$", arg3: 3000);
                     context.State = new StateCableDelay_14_2(context);
                     return;
                 }
@@ -505,7 +501,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__2$", arg3: new int[] {3000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__2$", arg3: 3000);
                     context.State = new StateCableDelay_15_2(context);
                     return;
                 }
@@ -521,7 +517,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__3$", arg3: new int[] {3000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__3$", arg3: 3000);
                     context.State = new StateCableDelay_16_2(context);
                     return;
                 }
@@ -537,7 +533,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__4$", arg3: new int[] {3000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__4$", arg3: 3000);
                     context.State = new StateCableDelay_17_2(context);
                     return;
                 }
@@ -553,7 +549,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__5$", arg3: new int[] {3000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__5$", arg3: 3000);
                     context.State = new StateCableDelay_18_2(context);
                     return;
                 }
@@ -569,7 +565,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__6$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__6$", arg3: 1000);
                     context.State = new StateCableDelay_13_3(context);
                     return;
                 }
@@ -585,7 +581,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__7$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__7$", arg3: 1000);
                     context.State = new StateCableDelay_14_3(context);
                     return;
                 }
@@ -601,7 +597,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__8$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__8$", arg3: 1000);
                     context.State = new StateCableDelay_15_3(context);
                     return;
                 }
@@ -617,7 +613,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__9$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__9$", arg3: 1000);
                     context.State = new StateCableDelay_16_3(context);
                     return;
                 }
@@ -633,7 +629,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__10$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__10$", arg3: 1000);
                     context.State = new StateCableDelay_17_3(context);
                     return;
                 }
@@ -649,7 +645,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__11$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__11$", arg3: 1000);
                     context.State = new StateCableDelay_18_3(context);
                     return;
                 }
@@ -665,7 +661,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__12$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__12$", arg3: 1000);
                     context.State = new StateCableDelay_13_4(context);
                     return;
                 }
@@ -681,7 +677,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__13$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__13$", arg3: 1000);
                     context.State = new StateCableDelay_14_4(context);
                     return;
                 }
@@ -697,7 +693,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__14$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__14$", arg3: 1000);
                     context.State = new StateCableDelay_15_4(context);
                     return;
                 }
@@ -713,7 +709,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__15$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__15$", arg3: 1000);
                     context.State = new StateCableDelay_16_4(context);
                     return;
                 }
@@ -729,7 +725,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__16$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__16$", arg3: 1000);
                     context.State = new StateCableDelay_17_4(context);
                     return;
                 }
@@ -745,7 +741,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__17$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__17$", arg3: 1000);
                     context.State = new StateCableDelay_18_4(context);
                     return;
                 }
@@ -761,7 +757,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__18$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__18$", arg3: 1000);
                     context.State = new StateCableDelay_13_5(context);
                     return;
                 }
@@ -777,7 +773,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__19$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__19$", arg3: 1000);
                     context.State = new StateCableDelay_14_5(context);
                     return;
                 }
@@ -793,7 +789,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__20$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__20$", arg3: 1000);
                     context.State = new StateCableDelay_15_5(context);
                     return;
                 }
@@ -809,7 +805,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__21$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__21$", arg3: 1000);
                     context.State = new StateCableDelay_16_5(context);
                     return;
                 }
@@ -825,7 +821,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__22$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__22$", arg3: 1000);
                     context.State = new StateCableDelay_17_5(context);
                     return;
                 }
@@ -841,7 +837,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__23$", arg3: new int[] {1000});
+                    context.SetEventUI(arg1: 1, arg2: "$52100302_QD__FIELD_3__23$", arg3: 1000);
                     context.State = new StateCableDelay_18_5(context);
                     return;
                 }
@@ -857,7 +853,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new int[] {1013}, arg2: true);
+                    context.SetBreakable(arg1: new[] {1013}, arg2: true);
                     context.State = new StateCableOff_13(context);
                     return;
                 }
@@ -873,7 +869,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new int[] {1014}, arg2: true);
+                    context.SetBreakable(arg1: new[] {1014}, arg2: true);
                     context.State = new StateCableOff_14(context);
                     return;
                 }
@@ -889,7 +885,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new int[] {1015}, arg2: true);
+                    context.SetBreakable(arg1: new[] {1015}, arg2: true);
                     context.State = new StateCableOff_15(context);
                     return;
                 }
@@ -905,7 +901,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new int[] {1016}, arg2: true);
+                    context.SetBreakable(arg1: new[] {1016}, arg2: true);
                     context.State = new StateCableOff_16(context);
                     return;
                 }
@@ -921,7 +917,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new int[] {1017}, arg2: true);
+                    context.SetBreakable(arg1: new[] {1017}, arg2: true);
                     context.State = new StateCableOff_17(context);
                     return;
                 }
@@ -937,7 +933,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetBreakable(arg1: new int[] {1018}, arg2: true);
+                    context.SetBreakable(arg1: new[] {1018}, arg2: true);
                     context.State = new StateCableOff_18(context);
                     return;
                 }
@@ -953,7 +949,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.SetUserValue(triggerID: 900005, key: "Block", value: 1);
+                    context.SetUserValue(triggerId: 900005, key: "Block", value: 1);
                     context.State = new StateEnd_03(context);
                     return;
                 }
@@ -969,7 +965,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.SetUserValue(triggerID: 900005, key: "Block", value: 1);
+                    context.SetUserValue(triggerId: 900005, key: "Block", value: 1);
                     context.State = new StateEnd_03(context);
                     return;
                 }
@@ -985,7 +981,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.SetUserValue(triggerID: 900005, key: "Block", value: 2);
+                    context.SetUserValue(triggerId: 900005, key: "Block", value: 2);
                     context.State = new StateEnd_03(context);
                     return;
                 }
@@ -1001,7 +997,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.SetUserValue(triggerID: 900005, key: "Block", value: 1);
+                    context.SetUserValue(triggerId: 900005, key: "Block", value: 1);
                     context.State = new StateEnd_03(context);
                     return;
                 }
@@ -1017,7 +1013,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.SetUserValue(triggerID: 900005, key: "Block", value: 2);
+                    context.SetUserValue(triggerId: 900005, key: "Block", value: 2);
                     context.State = new StateEnd_03(context);
                     return;
                 }
@@ -1033,7 +1029,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.SetUserValue(triggerID: 900005, key: "Block", value: 3);
+                    context.SetUserValue(triggerId: 900005, key: "Block", value: 3);
                     context.State = new StateEnd_03(context);
                     return;
                 }

@@ -1,23 +1,19 @@
-using System;
-
 namespace Maple2.Trigger._02000290_bf {
     public static class _wind {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {701}, arg2: false);
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
-                context.SetEffect(arg1: new int[] {603}, arg2: false);
-                context.SetEffect(arg1: new int[] {604}, arg2: false);
-                context.SetEffect(arg1: new int[] {605}, arg2: false);
+                context.SetSkill(arg1: new[] {701}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {603}, arg2: false);
+                context.SetEffect(arg1: new[] {604}, arg2: false);
+                context.SetEffect(arg1: new[] {605}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {102})) {
+                if (context.UserDetected(arg1: new[] {102})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -32,7 +28,7 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103})) {
+                if (context.UserDetected(arg1: new[] {103})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -62,14 +58,14 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103})) {
+                if (context.UserDetected(arg1: new[] {103})) {
                     context.State = new State종료(context);
                     return;
                 }
 
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.SetEffect(arg1: new int[] {601}, arg2: true);
-                    context.ShowGuideSummary(entityID: 20002906, textID: 20002906);
+                    context.SetEffect(arg1: new[] {601}, arg2: true);
+                    context.ShowGuideSummary(entityId: 20002906, textId: 20002906);
                     context.State = new State스킬발동(context);
                     return;
                 }
@@ -84,14 +80,14 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103})) {
+                if (context.UserDetected(arg1: new[] {103})) {
                     context.State = new State종료(context);
                     return;
                 }
 
                 if (context.WaitTick(waitTick: 6000)) {
-                    context.SetEffect(arg1: new int[] {601}, arg2: true);
-                    context.ShowGuideSummary(entityID: 20002906, textID: 20002906);
+                    context.SetEffect(arg1: new[] {601}, arg2: true);
+                    context.ShowGuideSummary(entityId: 20002906, textId: 20002906);
                     context.State = new State스킬발동(context);
                     return;
                 }
@@ -106,14 +102,14 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103})) {
+                if (context.UserDetected(arg1: new[] {103})) {
                     context.State = new State종료(context);
                     return;
                 }
 
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.SetEffect(arg1: new int[] {601}, arg2: true);
-                    context.ShowGuideSummary(entityID: 20002906, textID: 20002906);
+                    context.SetEffect(arg1: new[] {601}, arg2: true);
+                    context.ShowGuideSummary(entityId: 20002906, textId: 20002906);
                     context.State = new State스킬발동(context);
                     return;
                 }
@@ -128,18 +124,18 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103})) {
+                if (context.UserDetected(arg1: new[] {103})) {
                     context.State = new State종료(context);
                     return;
                 }
 
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.HideGuideSummary(entityID: 20002906);
-                    context.SetEffect(arg1: new int[] {602}, arg2: true);
-                    context.SetEffect(arg1: new int[] {603}, arg2: true);
-                    context.SetEffect(arg1: new int[] {604}, arg2: true);
-                    context.SetEffect(arg1: new int[] {605}, arg2: true);
-                    context.SetSkill(arg1: new int[] {701}, arg2: true);
+                    context.HideGuideSummary(entityId: 20002906);
+                    context.SetEffect(arg1: new[] {602}, arg2: true);
+                    context.SetEffect(arg1: new[] {603}, arg2: true);
+                    context.SetEffect(arg1: new[] {604}, arg2: true);
+                    context.SetEffect(arg1: new[] {605}, arg2: true);
+                    context.SetSkill(arg1: new[] {701}, arg2: true);
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -152,7 +148,7 @@ namespace Maple2.Trigger._02000290_bf {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 20002906);
+                context.HideGuideSummary(entityId: 20002906);
             }
 
             public override void Execute() { }

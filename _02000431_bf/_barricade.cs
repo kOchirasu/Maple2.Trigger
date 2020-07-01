@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._02000431_bf {
     public static class _barricade {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {80000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {80001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {80002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {80003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {80000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {80001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {80002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {80003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new StateCheckUser04_GuildRaid(context);
                     return;
                 }
@@ -32,12 +28,12 @@ namespace Maple2.Trigger._02000431_bf {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 701, arg2: 4, arg3: "GreaterEqual")) {
+                if (context.GetUserCount(boxId: 701) >= 4) {
                     context.State = new StateMaxCount04_Start(context);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 701, arg2: 4, arg3: "Less")) {
+                if (context.GetUserCount(boxId: 701) < 4) {
                     context.State = new StateMaxCount04_Wait(context);
                     return;
                 }
@@ -50,11 +46,11 @@ namespace Maple2.Trigger._02000431_bf {
             internal StateMaxCount04_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 40012, textID: 40012, duration: 3000);
+                context.ShowGuideSummary(entityId: 40012, textId: 40012, duration: 3000);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 701, arg2: 4, arg3: "GreaterEqual")) {
+                if (context.GetUserCount(boxId: 701) >= 4) {
                     context.State = new StateMaxCount04_Start(context);
                     return;
                 }
@@ -109,14 +105,14 @@ namespace Maple2.Trigger._02000431_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 99999101, key: "start", value: 1);
-                context.SetEffect(arg1: new int[] {70001}, arg2: false);
-                context.SetEffect(arg1: new int[] {70002}, arg2: false);
-                context.SetEffect(arg1: new int[] {70003}, arg2: false);
-                context.SetMesh(arg1: new int[] {80000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {80001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {80002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {80003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetUserValue(triggerId: 99999101, key: "start", value: 1);
+                context.SetEffect(arg1: new[] {70001}, arg2: false);
+                context.SetEffect(arg1: new[] {70002}, arg2: false);
+                context.SetEffect(arg1: new[] {70003}, arg2: false);
+                context.SetMesh(arg1: new[] {80000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {80001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {80002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {80003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -135,7 +131,7 @@ namespace Maple2.Trigger._02000431_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {706})) {
+                if (context.UserDetected(arg1: new[] {706})) {
                     context.State = new State카운트(context);
                     return;
                 }
@@ -148,7 +144,7 @@ namespace Maple2.Trigger._02000431_bf {
             internal State카운트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000431_BF__BARRICADE__0$", arg3: new int[] {3000});
+                context.SetEventUI(arg1: 1, arg2: "$02000431_BF__BARRICADE__0$", arg3: 3000);
             }
 
             public override void Execute() {
@@ -165,13 +161,13 @@ namespace Maple2.Trigger._02000431_bf {
             internal State차단(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {80000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {80001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {80002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {80003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new int[] {70001}, arg2: true);
-                context.SetEffect(arg1: new int[] {70002}, arg2: true);
-                context.SetEffect(arg1: new int[] {70003}, arg2: true);
+                context.SetMesh(arg1: new[] {80000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {80001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {80002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {80003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {70001}, arg2: true);
+                context.SetEffect(arg1: new[] {70002}, arg2: true);
+                context.SetEffect(arg1: new[] {70003}, arg2: true);
             }
 
             public override void Execute() {

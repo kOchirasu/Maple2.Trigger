@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52000170_qd {
     public static class _52000170 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -14,7 +10,7 @@ namespace Maple2.Trigger._52000170_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new State영상재생(context);
                     return;
                 }
@@ -30,7 +26,7 @@ namespace Maple2.Trigger._52000170_qd {
                 context.SetOnetimeEffect(id: 1, enable: true,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "jobChangeStory.swf", movieID: 1);
+                context.PlaySceneMovie(fileName: "jobChangeStory.swf", movieId: 1);
             }
 
             public override void Execute() {
@@ -75,7 +71,7 @@ namespace Maple2.Trigger._52000170_qd {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveUserPath(arg1: "MS2PatrolData_PC");
-                context.CameraSelectPath(arg1: new int[] {4000, 4001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4000, 4001}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -170,17 +166,17 @@ namespace Maple2.Trigger._52000170_qd {
             internal StateQuit02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {400}, arg2: false);
+                context.CreateMonster(arg1: new[] {400}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.AddBalloonTalk(spawnPointID: 0, msg: "$52000170_QD__52000170__2$", duration: 6000,
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000170_QD__52000170__2$", duration: 6000,
                     delayTick: 1000);
-                context.ShowGuideSummary(entityID: 52001701, textID: 52001701, duration: 10000);
+                context.ShowGuideSummary(entityId: 52001701, textId: 52001701, duration: 10000);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002378},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002378},
                     arg3: new byte[] {3})) {
                     context.State = new State바사라등장01(context);
                     return;
@@ -194,13 +190,13 @@ namespace Maple2.Trigger._52000170_qd {
             internal State바사라등장01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {401}, arg2: false);
+                context.CreateMonster(arg1: new[] {401}, arg2: false);
                 context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_basara");
-                context.ShowGuideSummary(entityID: 52001702, textID: 52001702, duration: 10000);
+                context.ShowGuideSummary(entityId: 52001702, textId: 52001702, duration: 10000);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002381},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002381},
                     arg3: new byte[] {3})) {
                     context.State = new State수련장이동01(context);
                     return;

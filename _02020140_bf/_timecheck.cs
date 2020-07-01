@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02020140_bf {
     public static class _timecheck {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new State던전시간체크(context);
                     return;
                 }
@@ -40,7 +36,7 @@ namespace Maple2.Trigger._02020140_bf {
                     return;
                 }
 
-                if (context.DungeonCheckState(checkState: "Fail")) {
+                if (context.GetDungeonState() == "Fail") {
                     context.State = new State던전실패(context);
                     return;
                 }
@@ -55,7 +51,7 @@ namespace Maple2.Trigger._02020140_bf {
             public override void OnEnter() {
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.DestroyMonster(arg1: new[] {-1});
                 context.SetPortal(arg1: 41, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 42, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 43, arg2: true, arg3: true, arg4: true);

@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._02000393_bf {
     public static class _vip_dungeon_main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new int[] {601, 602, 603}, arg2: false);
+                context.SetEffect(arg1: new[] {601, 602, 603}, arg2: false);
                 context.MoveUser(arg1: 02000393, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10001083}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10001084}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10001085}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001083}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001084}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001085}, arg2: 1);
                 context.CameraSelect(arg1: 299, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
@@ -22,7 +18,7 @@ namespace Maple2.Trigger._02000393_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199})) {
+                if (context.UserDetected(arg1: new[] {199})) {
                     context.State = new State이벤트시작(context);
                     return;
                 }
@@ -54,28 +50,28 @@ namespace Maple2.Trigger._02000393_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.ShowGuideSummary(entityID: 20003851, textID: 20003851);
+                context.ShowGuideSummary(entityId: 20003851, textId: 20003851);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001083}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001083}, arg2: 0)) {
                     context.State = new State천둥선택(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {10001084}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001084}, arg2: 0)) {
                     context.State = new State알론선택(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {10001085}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001085}, arg2: 0)) {
                     context.State = new State오스칼선택(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20003851);
+                context.HideGuideSummary(entityId: 20003851);
                 context.MoveUser(arg1: 02000393, arg2: 2);
             }
         }
@@ -84,8 +80,8 @@ namespace Maple2.Trigger._02000393_bf {
             internal State천둥선택(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: true);
-                context.AddBuff(arg1: new int[] {199}, arg2: 99910090, arg3: 1, arg4: false, arg5: false);
+                context.SetEffect(arg1: new[] {601}, arg2: true);
+                context.AddBuff(arg1: new[] {199}, arg2: 99910090, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 311, arg2: true);
             }
 
@@ -103,8 +99,8 @@ namespace Maple2.Trigger._02000393_bf {
             internal State알론선택(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {602}, arg2: true);
-                context.AddBuff(arg1: new int[] {199}, arg2: 99910100, arg3: 1, arg4: false, arg5: false);
+                context.SetEffect(arg1: new[] {602}, arg2: true);
+                context.AddBuff(arg1: new[] {199}, arg2: 99910100, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 312, arg2: true);
             }
 
@@ -122,8 +118,8 @@ namespace Maple2.Trigger._02000393_bf {
             internal State오스칼선택(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {603}, arg2: true);
-                context.AddBuff(arg1: new int[] {199}, arg2: 99910110, arg3: 1, arg4: false, arg5: false);
+                context.SetEffect(arg1: new[] {603}, arg2: true);
+                context.AddBuff(arg1: new[] {199}, arg2: 99910110, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 313, arg2: true);
             }
 
@@ -161,7 +157,7 @@ namespace Maple2.Trigger._02000393_bf {
             internal State게임시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.WidgetAction(arg1: "ScoreBoard", arg2: "SetScore", arg3: "0", desc: "점수 강제 설정");
+                context.WidgetAction(arg1: "ScoreBoard", arg2: "SetScore", arg3: "0"); // 점수 강제 설정
                 context.ShowCountUI(text: "$02000385_BF__VIP_DUNGEON_MAIN__0$", stage: 1, count: 3);
                 context.SetEventUI(arg1: 0, arg2: "1,5");
                 context.CameraSelect(arg1: 302, arg2: true);
@@ -181,7 +177,7 @@ namespace Maple2.Trigger._02000393_bf {
             internal State1라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9991001, key: "round1start", value: 1);
+                context.SetUserValue(triggerId: 9991001, key: "round1start", value: 1);
                 context.SetTimer(arg1: "30", arg2: 30, arg3: false, arg4: true, arg5: 80);
             }
 
@@ -217,7 +213,7 @@ namespace Maple2.Trigger._02000393_bf {
             internal State2라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9991001, key: "round2start", value: 1);
+                context.SetUserValue(triggerId: 9991001, key: "round2start", value: 1);
                 context.SetTimer(arg1: "30", arg2: 30, arg3: false, arg4: true, arg5: 80);
             }
 
@@ -253,7 +249,7 @@ namespace Maple2.Trigger._02000393_bf {
             internal State3라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9991001, key: "round3start", value: 1);
+                context.SetUserValue(triggerId: 9991001, key: "round3start", value: 1);
                 context.SetTimer(arg1: "30", arg2: 30, arg3: false, arg4: true, arg5: 80);
             }
 
@@ -289,7 +285,7 @@ namespace Maple2.Trigger._02000393_bf {
             internal State4라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9991001, key: "round4start", value: 1);
+                context.SetUserValue(triggerId: 9991001, key: "round4start", value: 1);
                 context.SetTimer(arg1: "30", arg2: 30, arg3: false, arg4: true, arg5: 80);
             }
 
@@ -325,7 +321,7 @@ namespace Maple2.Trigger._02000393_bf {
             internal State5라운드시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9991001, key: "round5start", value: 1);
+                context.SetUserValue(triggerId: 9991001, key: "round5start", value: 1);
                 context.SetTimer(arg1: "30", arg2: 30, arg3: false, arg4: true, arg5: 80);
             }
 
@@ -362,7 +358,7 @@ namespace Maple2.Trigger._02000393_bf {
             internal State정산(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {0});
+                context.DestroyMonster(arg1: new[] {0});
                 context.WidgetAction(arg1: "ScoreBoard", arg2: "CloseBoard");
                 context.RemoveBuff(arg1: 199, arg2: 99910090);
                 context.RemoveBuff(arg1: 199, arg2: 99910100);
@@ -370,15 +366,15 @@ namespace Maple2.Trigger._02000393_bf {
             }
 
             public override void Execute() {
-                if (context.WidgetCondition(arg1: "ScoreBoard", arg2: "Compare", arg3: ">=,1500",
-                    desc: "비교 연산 (연산자,대상값)")) {
+                // "비교 연산 (연산자,대상값)"
+                if (context.WidgetCondition(arg1: "ScoreBoard", arg2: "Compare", arg3: ">=,1500")) {
                     context.DebugString(value: "1500점 이상");
                     context.State = new State보상(context);
                     return;
                 }
 
-                if (context.WidgetCondition(arg1: "ScoreBoard", arg2: "Compare", arg3: ">=,1000",
-                    desc: "비교 연산 (연산자,대상값)")) {
+                // "비교 연산 (연산자,대상값)"
+                if (context.WidgetCondition(arg1: "ScoreBoard", arg2: "Compare", arg3: ">=,1000")) {
                     context.DebugString(value: "1000점 이상");
                     context.State = new State보상(context);
                     return;

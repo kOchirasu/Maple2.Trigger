@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52010033_qd {
     public static class _main_quest10003078 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {10003078},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003078},
                     arg3: new byte[] {2})) {
                     context.State = new State유저감지(context);
                     return;
@@ -48,10 +44,10 @@ namespace Maple2.Trigger._52010033_qd {
                 context.SetSceneSkip(arg1: "나메드들어옴02", arg2: "exit");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {4002}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003420, msg: "$52010033_QD__MAIN_QUEST10003078__0$", duration: 4000);
-                context.AddCinematicTalk(npcID: 11003389, msg: "$52010033_QD__MAIN_QUEST10003078__1$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11003420, msg: "$52010033_QD__MAIN_QUEST10003078__2$", duration: 2000);
+                context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003420, msg: "$52010033_QD__MAIN_QUEST10003078__0$", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003389, msg: "$52010033_QD__MAIN_QUEST10003078__1$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003420, msg: "$52010033_QD__MAIN_QUEST10003078__2$", duration: 2000);
             }
 
             public override void Execute() {
@@ -70,18 +66,18 @@ namespace Maple2.Trigger._52010033_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {4002, 4001}, arg2: false);
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {4002, 4001}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.ShowCaption(type: "VerticalCaption", title: "$52010033_QD__MAIN_QUEST10003078__3$",
                     desc: "$52010033_QD__MAIN_QUEST10003078__4$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f,
                     duration: 5000, scale: 2f);
-                context.AddCinematicTalk(npcID: 11003389, msg: "$52010033_QD__MAIN_QUEST10003078__5$", duration: 5000);
-                context.AddCinematicTalk(npcID: 11003389, msg: "$52010033_QD__MAIN_QUEST10003078__6$", duration: 4500);
-                context.AddCinematicTalk(npcID: 11003420, msg: "$52010033_QD__MAIN_QUEST10003078__7$", duration: 2000);
-                context.AddCinematicTalk(npcID: 11003389, msg: "$52010033_QD__MAIN_QUEST10003078__8$", duration: 3000);
-                context.AddCinematicTalk(npcID: 0, msg: "$52010033_QD__MAIN_QUEST10003078__9$", duration: 2000);
-                context.AddCinematicTalk(npcID: 11003389, msg: "$52010033_QD__MAIN_QUEST10003078__10$", duration: 4000);
+                context.AddCinematicTalk(npcId: 11003389, msg: "$52010033_QD__MAIN_QUEST10003078__5$", duration: 5000);
+                context.AddCinematicTalk(npcId: 11003389, msg: "$52010033_QD__MAIN_QUEST10003078__6$", duration: 4500);
+                context.AddCinematicTalk(npcId: 11003420, msg: "$52010033_QD__MAIN_QUEST10003078__7$", duration: 2000);
+                context.AddCinematicTalk(npcId: 11003389, msg: "$52010033_QD__MAIN_QUEST10003078__8$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, msg: "$52010033_QD__MAIN_QUEST10003078__9$", duration: 2000);
+                context.AddCinematicTalk(npcId: 11003389, msg: "$52010033_QD__MAIN_QUEST10003078__10$", duration: 4000);
             }
 
             public override void Execute() {

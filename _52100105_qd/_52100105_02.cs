@@ -1,22 +1,18 @@
-using System;
-
 namespace Maple2.Trigger._52100105_qd {
     public static class _52100105_02 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statewait_01(context);
-
-        private class Statewait_01 : TriggerState {
+        public class Statewait_01 : TriggerState {
             internal Statewait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2002}, arg2: new int[] {50101030},
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {50101030},
                     arg3: new byte[] {3})) {
                     context.State = new Statewait_03(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2002}, arg2: new int[] {50101020},
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {50101020},
                     arg3: new byte[] {2})) {
                     context.State = new Statewait_03(context);
                     return;

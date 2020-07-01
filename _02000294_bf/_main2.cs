@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._02000294_bf {
     public static class _main2 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {10001});
-                context.DestroyMonster(arg1: new int[] {10002});
-                context.DestroyMonster(arg1: new int[] {10003});
-                context.DestroyMonster(arg1: new int[] {10004});
+                context.DestroyMonster(arg1: new[] {10001});
+                context.DestroyMonster(arg1: new[] {10002});
+                context.DestroyMonster(arg1: new[] {10003});
+                context.DestroyMonster(arg1: new[] {10004});
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Battle_01", value: 1)) {
+                if (context.GetUserValue(key: "Battle_01") == 1) {
                     context.State = new State트리거01진행(context);
                     return;
                 }
@@ -28,10 +24,10 @@ namespace Maple2.Trigger._02000294_bf {
             internal State트리거01진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {10001}, arg2: false);
-                context.CreateMonster(arg1: new int[] {10002}, arg2: false);
-                context.CreateMonster(arg1: new int[] {10003}, arg2: false);
-                context.CreateMonster(arg1: new int[] {10004}, arg2: false);
+                context.CreateMonster(arg1: new[] {10001}, arg2: false);
+                context.CreateMonster(arg1: new[] {10002}, arg2: false);
+                context.CreateMonster(arg1: new[] {10003}, arg2: false);
+                context.CreateMonster(arg1: new[] {10004}, arg2: false);
             }
 
             public override void Execute() {

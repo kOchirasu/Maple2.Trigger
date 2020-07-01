@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._02000471_bf {
     public static class _magic_04 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2040315, key: "10002022clear", value: 0);
-                context.SetUserValue(triggerID: 2040319, key: "10002022clear", value: 0);
-                context.SetUserValue(triggerID: 2040322, key: "10002022clear", value: 0);
+                context.SetUserValue(triggerId: 2040315, key: "10002022clear", value: 0);
+                context.SetUserValue(triggerId: 2040319, key: "10002022clear", value: 0);
+                context.SetUserValue(triggerId: 2040322, key: "10002022clear", value: 0);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10002022}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002022}, arg2: 0)) {
                     context.State = new StateReady(context);
                     return;
                 }
@@ -27,15 +23,15 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7004}, arg2: false);
-                context.SetMesh(arg1: new int[] {1104}, arg2: false, arg3: 0, arg4: 200, arg5: 15f);
-                context.SetMesh(arg1: new int[] {1204}, arg2: true, arg3: 0, arg4: 200, arg5: 15f);
-                context.CreateMonster(arg1: new int[] {204}, arg2: false);
-                context.AddBuff(arg1: new int[] {204}, arg2: 70002031, arg3: 1, arg4: true, arg5: false);
+                context.SetEffect(arg1: new[] {7004}, arg2: false);
+                context.SetMesh(arg1: new[] {1104}, arg2: false, arg3: 0, arg4: 200, arg5: 15f);
+                context.SetMesh(arg1: new[] {1204}, arg2: true, arg3: 0, arg4: 200, arg5: 15f);
+                context.CreateMonster(arg1: new[] {204}, arg2: false);
+                context.AddBuff(arg1: new[] {204}, arg2: 70002031, arg3: 1, arg4: true, arg5: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {204})) {
+                if (context.MonsterDead(arg1: new[] {204})) {
                     context.State = new StateEvent_04(context);
                     return;
                 }
@@ -48,11 +44,11 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateEvent_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2040315, key: "10002022clear", value: 1);
-                context.SetUserValue(triggerID: 2040319, key: "10002022clear", value: 1);
-                context.SetUserValue(triggerID: 2040322, key: "10002022clear", value: 1);
+                context.SetUserValue(triggerId: 2040315, key: "10002022clear", value: 1);
+                context.SetUserValue(triggerId: 2040319, key: "10002022clear", value: 1);
+                context.SetUserValue(triggerId: 2040322, key: "10002022clear", value: 1);
                 context.SetAchievement(arg1: 714, arg2: "trigger", arg3: "Hauntedmansion");
-                context.CreateMonster(arg1: new int[] {144}, arg2: false);
+                context.CreateMonster(arg1: new[] {144}, arg2: false);
             }
 
             public override void Execute() {
@@ -107,7 +103,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateEvent_04_d(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {144});
+                context.DestroyMonster(arg1: new[] {144});
             }
 
             public override void Execute() { }

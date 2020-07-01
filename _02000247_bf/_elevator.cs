@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._02000247_bf {
     public static class _elevator {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016,
                         1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032,
                         1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048,
@@ -19,7 +15,7 @@ namespace Maple2.Trigger._02000247_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {401})) {
+                if (context.UserDetected(arg1: new[] {401})) {
                     context.State = new State엘리베이터00(context);
                     return;
                 }
@@ -34,12 +30,12 @@ namespace Maple2.Trigger._02000247_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {402})) {
+                if (context.UserDetected(arg1: new[] {402})) {
                     context.State = new State엘리베이터01(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {999})) {
+                if (!context.UserDetected(arg1: new[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -54,12 +50,12 @@ namespace Maple2.Trigger._02000247_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {403})) {
+                if (context.UserDetected(arg1: new[] {403})) {
                     context.State = new State엘리베이터02(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {999})) {
+                if (!context.UserDetected(arg1: new[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -74,32 +70,32 @@ namespace Maple2.Trigger._02000247_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {404})) {
+                if (context.UserDetected(arg1: new[] {404})) {
                     context.State = new State엘리베이터03(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {401})) {
+                if (!context.UserDetected(arg1: new[] {401})) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {402})) {
+                if (!context.UserDetected(arg1: new[] {402})) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {403})) {
+                if (!context.UserDetected(arg1: new[] {403})) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {404})) {
+                if (!context.UserDetected(arg1: new[] {404})) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {999})) {
+                if (!context.UserDetected(arg1: new[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -113,9 +109,9 @@ namespace Maple2.Trigger._02000247_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 10);
-                context.SetMesh(arg1: new int[] {301, 302, 303, 304}, arg2: false);
+                context.SetMesh(arg1: new[] {301, 302, 303, 304}, arg2: false);
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016,
                         1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032,
                         1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048,
@@ -130,7 +126,7 @@ namespace Maple2.Trigger._02000247_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {999})) {
+                if (!context.UserDetected(arg1: new[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }

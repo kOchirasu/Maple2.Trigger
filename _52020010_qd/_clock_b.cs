@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._52020010_qd {
     public static class _clock_b {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateIdle(context);
-
-        private class StateIdle : TriggerState {
+        public class StateIdle : TriggerState {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5003}, arg2: false);
-                context.SetEffect(arg1: new int[] {5004}, arg2: false);
-                context.SetEffect(arg1: new int[] {5005}, arg2: false);
-                context.SetEffect(arg1: new int[] {5006}, arg2: false);
+                context.SetEffect(arg1: new[] {5003}, arg2: false);
+                context.SetEffect(arg1: new[] {5004}, arg2: false);
+                context.SetEffect(arg1: new[] {5005}, arg2: false);
+                context.SetEffect(arg1: new[] {5006}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {2003})) {
+                if (context.UserDetected(arg1: new[] {2003})) {
                     context.State = new StateReady(context);
                     return;
                 }
@@ -30,7 +26,7 @@ namespace Maple2.Trigger._52020010_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001272}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001272}, arg2: 0)) {
                     context.State = new StateEvent_Start(context);
                     return;
                 }
@@ -43,10 +39,10 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5003}, arg2: true);
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
-                context.CreateMonster(arg1: new int[] {202}, arg2: true);
-                context.CreateMonster(arg1: new int[] {203}, arg2: true);
+                context.SetEffect(arg1: new[] {5003}, arg2: true);
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.CreateMonster(arg1: new[] {202}, arg2: true);
+                context.CreateMonster(arg1: new[] {203}, arg2: true);
             }
 
             public override void Execute() {
@@ -63,9 +59,9 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5004}, arg2: true);
+                context.SetEffect(arg1: new[] {5004}, arg2: true);
                 context.MoveNpc(arg1: 203, arg2: "MS2PatrolData_3001");
-                context.AddBalloonTalk(spawnPointID: 203, msg: "와! 쾅쾅한다!", duration: 2500, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 203, msg: "와! 쾅쾅한다!", duration: 2500, delayTick: 0);
             }
 
             public override void Execute() {
@@ -82,7 +78,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 202, msg: "여보... 우리 어쩌면 좋아요?", duration: 2800, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 202, msg: "여보... 우리 어쩌면 좋아요?", duration: 2800, delayTick: 0);
             }
 
             public override void Execute() {
@@ -99,8 +95,8 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 201, msg: "일이 이렇게 되어버릴 줄은...", duration: 2800, delayTick: 0);
-                context.AddBalloonTalk(spawnPointID: 202, msg: "우리 도망 못가는거죠?", duration: 2800, delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 201, msg: "일이 이렇게 되어버릴 줄은...", duration: 2800, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 202, msg: "우리 도망 못가는거죠?", duration: 2800, delayTick: 1000);
             }
 
             public override void Execute() {
@@ -117,9 +113,9 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5005}, arg2: true);
-                context.AddBalloonTalk(spawnPointID: 203, msg: "쾅쾅! 쾅쾅!", duration: 2000, delayTick: 0);
-                context.AddBalloonTalk(spawnPointID: 201, msg: "난 대체 무얼 위해...", duration: 2800, delayTick: 0);
+                context.SetEffect(arg1: new[] {5005}, arg2: true);
+                context.AddBalloonTalk(spawnPointId: 203, msg: "쾅쾅! 쾅쾅!", duration: 2000, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 201, msg: "난 대체 무얼 위해...", duration: 2800, delayTick: 0);
             }
 
             public override void Execute() {
@@ -136,8 +132,8 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 202, msg: "여보!", duration: 2800, delayTick: 0);
-                context.AddBalloonTalk(spawnPointID: 201, msg: "!!!", duration: 2000, delayTick: 1000);
+                context.AddBalloonTalk(spawnPointId: 202, msg: "여보!", duration: 2800, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 201, msg: "!!!", duration: 2000, delayTick: 1000);
             }
 
             public override void Execute() {
@@ -154,7 +150,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 201, msg: "여보, 내 딸... 모두 미안하오...", duration: 2000,
+                context.AddBalloonTalk(spawnPointId: 201, msg: "여보, 내 딸... 모두 미안하오...", duration: 2000,
                     delayTick: 1000);
             }
 
@@ -172,8 +168,8 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5006}, arg2: true);
-                context.AddBalloonTalk(spawnPointID: 202, msg: "여보...", duration: 2000, delayTick: 1000);
+                context.SetEffect(arg1: new[] {5006}, arg2: true);
+                context.AddBalloonTalk(spawnPointId: 202, msg: "여보...", duration: 2000, delayTick: 1000);
             }
 
             public override void Execute() {
@@ -190,13 +186,13 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_End(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5003}, arg2: false);
-                context.SetEffect(arg1: new int[] {5004}, arg2: false);
-                context.SetEffect(arg1: new int[] {5005}, arg2: false);
-                context.SetEffect(arg1: new int[] {5006}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {201});
-                context.DestroyMonster(arg1: new int[] {202});
-                context.DestroyMonster(arg1: new int[] {203});
+                context.SetEffect(arg1: new[] {5003}, arg2: false);
+                context.SetEffect(arg1: new[] {5004}, arg2: false);
+                context.SetEffect(arg1: new[] {5005}, arg2: false);
+                context.SetEffect(arg1: new[] {5006}, arg2: false);
+                context.DestroyMonster(arg1: new[] {201});
+                context.DestroyMonster(arg1: new[] {202});
+                context.DestroyMonster(arg1: new[] {203});
             }
 
             public override void Execute() { }

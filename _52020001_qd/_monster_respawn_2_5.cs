@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52020001_qd {
     public static class _monster_respawn_2_5 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State체력조건(context);
-
-        private class State체력조건 : TriggerState {
+        public class State체력조건 : TriggerState {
             internal State체력조건(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "respawn", value: 1)) {
+                if (context.GetUserValue(key: "respawn") == 1) {
                     context.State = new State몬스터사망(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {6000034})) {
+                if (context.MonsterDead(arg1: new[] {6000034})) {
                     context.State = new State몬스터생성(context);
                     return;
                 }
@@ -38,7 +34,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State몬스터생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {6000034}, arg2: false);
+                context.CreateMonster(arg1: new[] {6000034}, arg2: false);
             }
 
             public override void Execute() {

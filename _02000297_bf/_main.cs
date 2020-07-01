@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._02000297_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {6100});
-                context.DestroyMonster(arg1: new int[] {6200});
+                context.DestroyMonster(arg1: new[] {6100});
+                context.DestroyMonster(arg1: new[] {6200});
                 context.SetAgent(arg1: "101", arg2: false);
                 context.SetAgent(arg1: "102", arg2: false);
                 context.SetAgent(arg1: "103", arg2: false);
@@ -28,7 +24,7 @@ namespace Maple2.Trigger._02000297_bf {
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new StateLoadingDelay01(context);
                     return;
                 }
@@ -43,7 +39,7 @@ namespace Maple2.Trigger._02000297_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "BattleStart", value: 1)) {
+                if (context.GetUserValue(key: "BattleStart") == 1) {
                     context.State = new StateLoadingDelay02(context);
                     return;
                 }
@@ -71,8 +67,8 @@ namespace Maple2.Trigger._02000297_bf {
             internal StateBossBattle01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9000}, arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: "$02000297_BF__MAIN__0$", arg3: new int[] {5000}, arg4: "0");
+                context.PlaySystemSoundInBox(arg1: new[] {9000}, arg2: "System_ShowGuideSummary_01");
+                context.SetEventUI(arg1: 1, arg2: "$02000297_BF__MAIN__0$", arg3: 5000, arg4: "0");
                 context.SetAgent(arg1: "101", arg2: true);
                 context.SetAgent(arg1: "102", arg2: true);
                 context.SetAgent(arg1: "103", arg2: true);
@@ -103,11 +99,11 @@ namespace Maple2.Trigger._02000297_bf {
             internal StateBossBattle02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {6100});
+                context.DestroyMonster(arg1: new[] {6100});
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {6200})) {
+                if (context.MonsterDead(arg1: new[] {6200})) {
                     context.State = new StateQuit(context);
                     return;
                 }

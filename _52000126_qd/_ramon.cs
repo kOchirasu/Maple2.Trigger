@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000126_qd {
     public static class _ramon {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {60100205},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100205},
                     arg3: new byte[] {2})) {
                     context.State = new Statefadein(context);
                     return;
@@ -44,7 +40,7 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "end", arg2: "exit");
-                context.CameraSelectPath(arg1: new int[] {4101}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4101}, arg2: false);
             }
 
             public override void Execute() {
@@ -79,7 +75,7 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Idle_A");
-                context.CameraSelectPath(arg1: new int[] {4101, 4102}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4101, 4102}, arg2: false);
             }
 
             public override void Execute() {
@@ -97,7 +93,7 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Idle_A");
-                context.CameraSelectPath(arg1: new int[] {4102, 4103}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4102, 4103}, arg2: false);
             }
 
             public override void Execute() {
@@ -117,7 +113,7 @@ namespace Maple2.Trigger._52000126_qd {
                 context.SetOnetimeEffect(id: 1, enable: true,
                     path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Bore_A");
-                context.AddCinematicTalk(npcID: 11003209, msg: "$52000126_QD__RAMON__0$", duration: 2000,
+                context.AddCinematicTalk(npcId: 11003209, msg: "$52000126_QD__RAMON__0$", duration: 2000,
                     align: "Left");
             }
 

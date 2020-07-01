@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02020030_bf {
     public static class _11006_playa {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._02020030_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "PlayA", value: 1)) {
+                if (context.GetUserValue(key: "PlayA") == 1) {
                     context.State = new StateActorOff(context);
                     return;
                 }
@@ -29,12 +25,12 @@ namespace Maple2.Trigger._02020030_bf {
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000063}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000063}, arg2: 0)) {
                     context.State = new StateActorOn(context);
                     return;
                 }
 
-                if (context.UserValue(key: "PlayA", value: 0)) {
+                if (context.GetUserValue(key: "PlayA") == 0) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
@@ -56,7 +52,7 @@ namespace Maple2.Trigger._02020030_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "PlayA", value: 0)) {
+                if (context.GetUserValue(key: "PlayA") == 0) {
                     context.State = new StateResetDelay(context);
                     return;
                 }
@@ -78,7 +74,7 @@ namespace Maple2.Trigger._02020030_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "PlayA", value: 0)) {
+                if (context.GetUserValue(key: "PlayA") == 0) {
                     context.State = new StateWait(context);
                     return;
                 }

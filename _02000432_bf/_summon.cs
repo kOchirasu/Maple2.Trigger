@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000432_bf {
     public static class _summon {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State룸체크(context);
-
-        private class State룸체크 : TriggerState {
+        public class State룸체크 : TriggerState {
             internal State룸체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
@@ -44,12 +40,12 @@ namespace Maple2.Trigger._02000432_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2001})) {
+                if (context.MonsterDead(arg1: new[] {2001})) {
                     context.State = new State셀린사망(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {2002})) {
+                if (context.MonsterDead(arg1: new[] {2002})) {
                     context.State = new State피리스사망(context);
                     return;
                 }
@@ -63,11 +59,11 @@ namespace Maple2.Trigger._02000432_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 2002, arg3: "$02000432_BF__SUMMON__1$", arg4: 4, arg5: 0);
-                context.AddBuff(arg1: new int[] {2002}, arg2: 40500011, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(arg1: new[] {2002}, arg2: 40500011, arg3: 1, arg4: true, arg5: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2002})) {
+                if (context.MonsterDead(arg1: new[] {2002})) {
                     context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "SirenDualKill");
                     context.State = new State종료(context);
                     return;
@@ -86,14 +82,14 @@ namespace Maple2.Trigger._02000432_bf {
             internal State피리스사망(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {603}, arg2: true);
+                context.SetEffect(arg1: new[] {603}, arg2: true);
                 context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "BigSisterFirst");
                 context.SetConversation(arg1: 1, arg2: 2001, arg3: "$02000432_BF__SUMMON__0$", arg4: 4, arg5: 0);
-                context.AddBuff(arg1: new int[] {2001}, arg2: 40500011, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(arg1: new[] {2001}, arg2: 40500011, arg3: 1, arg4: true, arg5: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2001})) {
+                if (context.MonsterDead(arg1: new[] {2001})) {
                     context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "SirenDualKill");
                     context.State = new State종료(context);
                     return;

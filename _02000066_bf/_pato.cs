@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000066_bf {
     public static class _pato {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 103, arg2: new int[] {1299})) {
+                if (context.NpcDetected(arg1: 103, arg2: new[] {1299})) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -23,14 +19,14 @@ namespace Maple2.Trigger._02000066_bf {
             internal State연출시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {103}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {103}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CreateMonster(arg1: new int[] {1601}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1602}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1603}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1604}, arg2: false);
+                context.CreateMonster(arg1: new[] {1601}, arg2: false);
+                context.CreateMonster(arg1: new[] {1602}, arg2: false);
+                context.CreateMonster(arg1: new[] {1603}, arg2: false);
+                context.CreateMonster(arg1: new[] {1604}, arg2: false);
                 context.SetSkip(arg1: "연출종료");
             }
 

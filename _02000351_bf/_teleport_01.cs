@@ -1,23 +1,19 @@
-using System;
-
 namespace Maple2.Trigger._02000351_bf {
     public static class _teleport_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {705}, arg2: 1)) {
+                if (context.UserDetected(arg1: new[] {705}, arg2: 1)) {
                     context.State = new Statestart_sound(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.SetEffect(arg1: new int[] {9000005}, arg2: true);
+                context.SetEffect(arg1: new[] {9000005}, arg2: true);
             }
         }
 
@@ -36,7 +32,7 @@ namespace Maple2.Trigger._02000351_bf {
             }
 
             public override void OnExit() {
-                context.SetEffect(arg1: new int[] {9000005}, arg2: false);
+                context.SetEffect(arg1: new[] {9000005}, arg2: false);
             }
         }
     }

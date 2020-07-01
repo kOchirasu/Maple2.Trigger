@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52020016_qd {
     public static class _monster_spawn_1_3 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State체력조건(context);
-
-        private class State체력조건 : TriggerState {
+        public class State체력조건 : TriggerState {
             internal State체력조건(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "respawn_phase_1", value: 1)) {
+                if (context.GetUserValue(key: "respawn_phase_1") == 1) {
                     context.State = new State전투페이즈(context);
                     return;
                 }
@@ -23,16 +19,16 @@ namespace Maple2.Trigger._52020016_qd {
             internal State전투페이즈(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {4000005}, arg2: false);
+                context.CreateMonster(arg1: new[] {4000005}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {4000005})) {
+                if (context.MonsterDead(arg1: new[] {4000005})) {
                     context.State = new State몬스터리젠(context);
                     return;
                 }
 
-                if (context.UserValue(key: "respawn_phase_1_end", value: 1)) {
+                if (context.GetUserValue(key: "respawn_phase_1_end") == 1) {
                     context.State = new State끝(context);
                     return;
                 }
@@ -45,16 +41,16 @@ namespace Maple2.Trigger._52020016_qd {
             internal State몬스터리젠(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {4000007}, arg2: false);
+                context.CreateMonster(arg1: new[] {4000007}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {4000007})) {
+                if (context.MonsterDead(arg1: new[] {4000007})) {
                     context.State = new State전투페이즈(context);
                     return;
                 }
 
-                if (context.UserValue(key: "respawn_phase_1_end", value: 1)) {
+                if (context.GetUserValue(key: "respawn_phase_1_end") == 1) {
                     context.State = new State끝(context);
                     return;
                 }
@@ -67,8 +63,8 @@ namespace Maple2.Trigger._52020016_qd {
             internal State끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {4000005}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {4000007}, arg2: false);
+                context.DestroyMonster(arg1: new[] {4000005}, arg2: false);
+                context.DestroyMonster(arg1: new[] {4000007}, arg2: false);
             }
 
             public override void Execute() {

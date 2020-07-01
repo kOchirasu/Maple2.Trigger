@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52010058_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9010, arg2: 2)) {
+                if (context.GetUserCount(boxId: 9010) == 2) {
                     context.State = new State성공연출시작(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._52010058_qd {
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
                 context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
-                context.PlaySceneMovie(fileName: @"common\WorldInvasionScene6.usm", movieID: 1);
+                context.PlaySceneMovie(fileName: @"common\WorldInvasionScene6.usm", movieId: 1);
             }
 
             public override void Execute() {

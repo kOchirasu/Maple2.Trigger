@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._65000003_bd {
     public static class _pvp {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._65000003_bd {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 104, arg2: 20)) {
+                if (context.GetUserCount(boxId: 104) == 20) {
                     context.State = new StatePvP(context);
                     return;
                 }
@@ -36,12 +32,12 @@ namespace Maple2.Trigger._65000003_bd {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 104, arg2: 2)) {
+                if (context.GetUserCount(boxId: 104) == 2) {
                     context.State = new StatePvP(context);
                     return;
                 }
 
-                if (!context.CountUsers(arg1: 104, arg2: 2)) {
+                if (context.GetUserCount(boxId: 104) != 2) {
                     context.State = new State비김(context);
                     return;
                 }
@@ -56,7 +52,7 @@ namespace Maple2.Trigger._65000003_bd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1, arg3: false);
                 context.SetAchievement(arg1: 104, arg2: "trigger", arg3: "dailyquest_start");
-                context.GiveGuildExp(boxID: false, type: 2);
+                context.GiveGuildExp(boxId: false, type: 2);
                 context.SetPvpZone(arg1: 104, arg2: 3, arg3: 600, arg4: 90001002, arg5: 3,
                     arg6: new byte[] {1, 2, 101, 102, 103});
             }
@@ -77,7 +73,7 @@ namespace Maple2.Trigger._65000003_bd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {105})) {
+                if (context.UserDetected(arg1: new[] {105})) {
                     context.State = new StatePvP종료(context);
                     return;
                 }
@@ -127,7 +123,7 @@ namespace Maple2.Trigger._65000003_bd {
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.SetEventUI(arg1: 5, arg2: "$65000002_BD__PVP__5$", arg3: new int[] {3000}, arg4: "0");
+                    context.SetEventUI(arg1: 5, arg2: "$65000002_BD__PVP__5$", arg3: 3000, arg4: "0");
                     context.State = new State완료(context);
                     return;
                 }

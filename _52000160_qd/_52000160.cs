@@ -1,28 +1,24 @@
-using System;
-
 namespace Maple2.Trigger._52000160_qd {
     public static class _52000160 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statewait_01(context);
-
-        private class Statewait_01 : TriggerState {
+        public class Statewait_01 : TriggerState {
             internal Statewait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002742},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002742},
                     arg3: new byte[] {3})) {
                     context.State = new State떠난다_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002743},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002743},
                     arg3: new byte[] {3})) {
                     context.State = new State프론티아재단으로_01(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {2001}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {2001}, arg2: 0)) {
                     context.State = new State전직컷씬01(context);
                     return;
                 }
@@ -36,7 +32,7 @@ namespace Maple2.Trigger._52000160_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "jobChange_Assassin.swf", movieID: 1);
+                context.PlaySceneMovie(fileName: "jobChange_Assassin.swf", movieId: 1);
             }
 
             public override void Execute() {
@@ -112,7 +108,7 @@ namespace Maple2.Trigger._52000160_qd {
             internal State다크윈드도착_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_3001");
             }
 
@@ -209,7 +205,7 @@ namespace Maple2.Trigger._52000160_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002742},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002742},
                     arg3: new byte[] {2})) {
                     context.State = new State전직이펙트_01(context);
                     return;
@@ -261,7 +257,7 @@ namespace Maple2.Trigger._52000160_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002743},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002743},
                     arg3: new byte[] {3})) {
                     context.State = new State프론티아재단으로_01(context);
                     return;

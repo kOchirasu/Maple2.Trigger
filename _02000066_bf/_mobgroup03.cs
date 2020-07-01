@@ -1,25 +1,21 @@
-using System;
-
 namespace Maple2.Trigger._02000066_bf {
     public static class _mobgroup03 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1501});
-                context.DestroyMonster(arg1: new int[] {1502});
-                context.DestroyMonster(arg1: new int[] {1503});
-                context.DestroyMonster(arg1: new int[] {1504});
-                context.DestroyMonster(arg1: new int[] {1505});
-                context.DestroyMonster(arg1: new int[] {1506});
-                context.DestroyMonster(arg1: new int[] {1507});
-                context.DestroyMonster(arg1: new int[] {1508});
+                context.DestroyMonster(arg1: new[] {1501});
+                context.DestroyMonster(arg1: new[] {1502});
+                context.DestroyMonster(arg1: new[] {1503});
+                context.DestroyMonster(arg1: new[] {1504});
+                context.DestroyMonster(arg1: new[] {1505});
+                context.DestroyMonster(arg1: new[] {1506});
+                context.DestroyMonster(arg1: new[] {1507});
+                context.DestroyMonster(arg1: new[] {1508});
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103})) {
+                if (context.UserDetected(arg1: new[] {103})) {
                     context.State = new State대기시간(context);
                     return;
                 }
@@ -34,62 +30,62 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {900})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {900})) {
                     context.State = new State1차타이머(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {901})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {901})) {
                     context.State = new State2차타이머(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {902})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {902})) {
                     context.State = new State3차타이머(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {904})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {904})) {
                     context.State = new State4차타이머(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {905})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {905})) {
                     context.State = new State5차타이머(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {906})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {906})) {
                     context.State = new State6차타이머(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {908})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {908})) {
                     context.State = new State7차타이머(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {909})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {909})) {
                     context.State = new State8차타이머(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {910})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {910})) {
                     context.State = new State9차타이머(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {912})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {912})) {
                     context.State = new State10차타이머(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {913})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {913})) {
                     context.State = new State11차타이머(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {914})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {914})) {
                     context.State = new State12차타이머(context);
                     return;
                 }
@@ -103,18 +99,18 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "14", arg2: 14);
-                context.CreateMonster(arg1: new int[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501}, arg2: false);
+                context.CreateMonster(arg1: new[] {1502}, arg2: false);
+                context.CreateMonster(arg1: new[] {1503}, arg2: false);
+                context.CreateMonster(arg1: new[] {1504}, arg2: false);
+                context.CreateMonster(arg1: new[] {1505}, arg2: false);
+                context.CreateMonster(arg1: new[] {1506}, arg2: false);
+                context.CreateMonster(arg1: new[] {1507}, arg2: false);
+                context.CreateMonster(arg1: new[] {1508}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {900})) {
+                if (context.MonsterDead(arg1: new[] {900})) {
                     context.State = new State대기시간(context);
                     return;
                 }
@@ -133,18 +129,18 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "6", arg2: 6);
-                context.CreateMonster(arg1: new int[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501}, arg2: false);
+                context.CreateMonster(arg1: new[] {1502}, arg2: false);
+                context.CreateMonster(arg1: new[] {1503}, arg2: false);
+                context.CreateMonster(arg1: new[] {1504}, arg2: false);
+                context.CreateMonster(arg1: new[] {1505}, arg2: false);
+                context.CreateMonster(arg1: new[] {1506}, arg2: false);
+                context.CreateMonster(arg1: new[] {1507}, arg2: false);
+                context.CreateMonster(arg1: new[] {1508}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {901})) {
+                if (context.MonsterDead(arg1: new[] {901})) {
                     context.State = new State대기시간(context);
                     return;
                 }
@@ -163,18 +159,18 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11", arg2: 11);
-                context.CreateMonster(arg1: new int[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501}, arg2: false);
+                context.CreateMonster(arg1: new[] {1502}, arg2: false);
+                context.CreateMonster(arg1: new[] {1503}, arg2: false);
+                context.CreateMonster(arg1: new[] {1504}, arg2: false);
+                context.CreateMonster(arg1: new[] {1505}, arg2: false);
+                context.CreateMonster(arg1: new[] {1506}, arg2: false);
+                context.CreateMonster(arg1: new[] {1507}, arg2: false);
+                context.CreateMonster(arg1: new[] {1508}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {902})) {
+                if (context.MonsterDead(arg1: new[] {902})) {
                     context.State = new State소멸(context);
                     return;
                 }
@@ -193,18 +189,18 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11", arg2: 11);
-                context.CreateMonster(arg1: new int[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501}, arg2: false);
+                context.CreateMonster(arg1: new[] {1502}, arg2: false);
+                context.CreateMonster(arg1: new[] {1503}, arg2: false);
+                context.CreateMonster(arg1: new[] {1504}, arg2: false);
+                context.CreateMonster(arg1: new[] {1505}, arg2: false);
+                context.CreateMonster(arg1: new[] {1506}, arg2: false);
+                context.CreateMonster(arg1: new[] {1507}, arg2: false);
+                context.CreateMonster(arg1: new[] {1508}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {904})) {
+                if (context.MonsterDead(arg1: new[] {904})) {
                     context.State = new State대기시간(context);
                     return;
                 }
@@ -223,18 +219,18 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 5);
-                context.CreateMonster(arg1: new int[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501}, arg2: false);
+                context.CreateMonster(arg1: new[] {1502}, arg2: false);
+                context.CreateMonster(arg1: new[] {1503}, arg2: false);
+                context.CreateMonster(arg1: new[] {1504}, arg2: false);
+                context.CreateMonster(arg1: new[] {1505}, arg2: false);
+                context.CreateMonster(arg1: new[] {1506}, arg2: false);
+                context.CreateMonster(arg1: new[] {1507}, arg2: false);
+                context.CreateMonster(arg1: new[] {1508}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {905})) {
+                if (context.MonsterDead(arg1: new[] {905})) {
                     context.State = new State대기시간(context);
                     return;
                 }
@@ -253,18 +249,18 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "10", arg2: 10);
-                context.CreateMonster(arg1: new int[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501}, arg2: false);
+                context.CreateMonster(arg1: new[] {1502}, arg2: false);
+                context.CreateMonster(arg1: new[] {1503}, arg2: false);
+                context.CreateMonster(arg1: new[] {1504}, arg2: false);
+                context.CreateMonster(arg1: new[] {1505}, arg2: false);
+                context.CreateMonster(arg1: new[] {1506}, arg2: false);
+                context.CreateMonster(arg1: new[] {1507}, arg2: false);
+                context.CreateMonster(arg1: new[] {1508}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {906})) {
+                if (context.MonsterDead(arg1: new[] {906})) {
                     context.State = new State소멸(context);
                     return;
                 }
@@ -283,18 +279,18 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11", arg2: 11);
-                context.CreateMonster(arg1: new int[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501}, arg2: false);
+                context.CreateMonster(arg1: new[] {1502}, arg2: false);
+                context.CreateMonster(arg1: new[] {1503}, arg2: false);
+                context.CreateMonster(arg1: new[] {1504}, arg2: false);
+                context.CreateMonster(arg1: new[] {1505}, arg2: false);
+                context.CreateMonster(arg1: new[] {1506}, arg2: false);
+                context.CreateMonster(arg1: new[] {1507}, arg2: false);
+                context.CreateMonster(arg1: new[] {1508}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {908})) {
+                if (context.MonsterDead(arg1: new[] {908})) {
                     context.State = new State대기시간(context);
                     return;
                 }
@@ -313,18 +309,18 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 5);
-                context.CreateMonster(arg1: new int[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501}, arg2: false);
+                context.CreateMonster(arg1: new[] {1502}, arg2: false);
+                context.CreateMonster(arg1: new[] {1503}, arg2: false);
+                context.CreateMonster(arg1: new[] {1504}, arg2: false);
+                context.CreateMonster(arg1: new[] {1505}, arg2: false);
+                context.CreateMonster(arg1: new[] {1506}, arg2: false);
+                context.CreateMonster(arg1: new[] {1507}, arg2: false);
+                context.CreateMonster(arg1: new[] {1508}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {909})) {
+                if (context.MonsterDead(arg1: new[] {909})) {
                     context.State = new State대기시간(context);
                     return;
                 }
@@ -343,18 +339,18 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "10", arg2: 10);
-                context.CreateMonster(arg1: new int[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501}, arg2: false);
+                context.CreateMonster(arg1: new[] {1502}, arg2: false);
+                context.CreateMonster(arg1: new[] {1503}, arg2: false);
+                context.CreateMonster(arg1: new[] {1504}, arg2: false);
+                context.CreateMonster(arg1: new[] {1505}, arg2: false);
+                context.CreateMonster(arg1: new[] {1506}, arg2: false);
+                context.CreateMonster(arg1: new[] {1507}, arg2: false);
+                context.CreateMonster(arg1: new[] {1508}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {910})) {
+                if (context.MonsterDead(arg1: new[] {910})) {
                     context.State = new State소멸(context);
                     return;
                 }
@@ -373,18 +369,18 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "14", arg2: 14);
-                context.CreateMonster(arg1: new int[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501}, arg2: false);
+                context.CreateMonster(arg1: new[] {1502}, arg2: false);
+                context.CreateMonster(arg1: new[] {1503}, arg2: false);
+                context.CreateMonster(arg1: new[] {1504}, arg2: false);
+                context.CreateMonster(arg1: new[] {1505}, arg2: false);
+                context.CreateMonster(arg1: new[] {1506}, arg2: false);
+                context.CreateMonster(arg1: new[] {1507}, arg2: false);
+                context.CreateMonster(arg1: new[] {1508}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {912})) {
+                if (context.MonsterDead(arg1: new[] {912})) {
                     context.State = new State대기시간(context);
                     return;
                 }
@@ -403,18 +399,18 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "7", arg2: 7);
-                context.CreateMonster(arg1: new int[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501}, arg2: false);
+                context.CreateMonster(arg1: new[] {1502}, arg2: false);
+                context.CreateMonster(arg1: new[] {1503}, arg2: false);
+                context.CreateMonster(arg1: new[] {1504}, arg2: false);
+                context.CreateMonster(arg1: new[] {1505}, arg2: false);
+                context.CreateMonster(arg1: new[] {1506}, arg2: false);
+                context.CreateMonster(arg1: new[] {1507}, arg2: false);
+                context.CreateMonster(arg1: new[] {1508}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {913})) {
+                if (context.MonsterDead(arg1: new[] {913})) {
                     context.State = new State대기시간(context);
                     return;
                 }
@@ -433,18 +429,18 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "13", arg2: 13);
-                context.CreateMonster(arg1: new int[] {1501}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1502}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1503}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1504}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1505}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1506}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1507}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1508}, arg2: false);
+                context.CreateMonster(arg1: new[] {1501}, arg2: false);
+                context.CreateMonster(arg1: new[] {1502}, arg2: false);
+                context.CreateMonster(arg1: new[] {1503}, arg2: false);
+                context.CreateMonster(arg1: new[] {1504}, arg2: false);
+                context.CreateMonster(arg1: new[] {1505}, arg2: false);
+                context.CreateMonster(arg1: new[] {1506}, arg2: false);
+                context.CreateMonster(arg1: new[] {1507}, arg2: false);
+                context.CreateMonster(arg1: new[] {1508}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {914})) {
+                if (context.MonsterDead(arg1: new[] {914})) {
                     context.State = new State소멸(context);
                     return;
                 }
@@ -462,14 +458,14 @@ namespace Maple2.Trigger._02000066_bf {
             internal State소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1501});
-                context.DestroyMonster(arg1: new int[] {1502});
-                context.DestroyMonster(arg1: new int[] {1503});
-                context.DestroyMonster(arg1: new int[] {1504});
-                context.DestroyMonster(arg1: new int[] {1505});
-                context.DestroyMonster(arg1: new int[] {1506});
-                context.DestroyMonster(arg1: new int[] {1507});
-                context.DestroyMonster(arg1: new int[] {1508});
+                context.DestroyMonster(arg1: new[] {1501});
+                context.DestroyMonster(arg1: new[] {1502});
+                context.DestroyMonster(arg1: new[] {1503});
+                context.DestroyMonster(arg1: new[] {1504});
+                context.DestroyMonster(arg1: new[] {1505});
+                context.DestroyMonster(arg1: new[] {1506});
+                context.DestroyMonster(arg1: new[] {1507});
+                context.DestroyMonster(arg1: new[] {1508});
             }
 
             public override void Execute() {

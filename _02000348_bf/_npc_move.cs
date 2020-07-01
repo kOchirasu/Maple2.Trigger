@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000348_bf {
     public static class _npc_move {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 60004, arg2: 1)) {
+                if (context.GetUserCount(boxId: 60004) == 1) {
                     context.State = new Statestart(context);
                     return;
                 }
@@ -44,7 +40,7 @@ namespace Maple2.Trigger._02000348_bf {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 60003, arg2: new int[] {102})) {
+                if (context.NpcDetected(arg1: 60003, arg2: new[] {102})) {
                     context.State = new Stateend(context);
                     return;
                 }
@@ -62,7 +58,7 @@ namespace Maple2.Trigger._02000348_bf {
             internal Stateend(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {102});
+                context.DestroyMonster(arg1: new[] {102});
             }
 
             public override void Execute() { }

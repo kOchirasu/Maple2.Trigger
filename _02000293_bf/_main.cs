@@ -1,39 +1,36 @@
-using System;
 using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000293_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {
+                context.DestroyMonster(arg1: new[] {
                     2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
                     2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2028, 2029, 2030, 2031, 2032, 2033, 2034,
                     2035, 2036
                 });
-                context.DestroyMonster(arg1: new int[] {25000, 25001, 25002, 25003, 25004, 25005, 25006, 25007, 25008});
-                context.SetInteractObject(arg1: new int[] {10000509}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000504}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000505}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000520}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000521}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000522}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000523}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000524}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000529}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000530}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000531}, arg2: 0);
+                context.DestroyMonster(arg1: new[] {25000, 25001, 25002, 25003, 25004, 25005, 25006, 25007, 25008});
+                context.SetInteractObject(arg1: new[] {10000509}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000504}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000505}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000520}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000521}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000522}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000523}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000524}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000529}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000530}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000531}, arg2: 0);
                 context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: true);
-                context.SetMesh(arg1: new int[] {510000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: true, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {510000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: true, arg3: 0, arg4: 0,
                     arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new StateLoadingDelay(context);
                     return;
                 }
@@ -85,7 +82,7 @@ namespace Maple2.Trigger._02000293_bf {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraSelect(arg1: 600, arg2: false);
-                context.SetMesh(arg1: new int[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: false, arg3: 0, arg4: 100,
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006}, arg2: false, arg3: 0, arg4: 100,
                     arg5: 2f);
                 context.SetSkip();
             }
@@ -104,9 +101,9 @@ namespace Maple2.Trigger._02000293_bf {
             internal State준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20002931, textID: 20002931);
+                context.ShowGuideSummary(entityId: 20002931, textId: 20002931);
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
                         2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025
                     }, arg2: false);
@@ -146,16 +143,16 @@ namespace Maple2.Trigger._02000293_bf {
             internal State1번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000523}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000505}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000509}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000520}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000521}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000522}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000523}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000505}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000509}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000520}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000521}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000522}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000523}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000523}, arg2: 0)) {
                     context.State = new State1번아이템(context);
                     return;
                 }
@@ -168,17 +165,17 @@ namespace Maple2.Trigger._02000293_bf {
             internal State1번아이템(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 20002931);
-                context.CreateMonster(arg1: new int[] {25000}, arg2: false);
+                context.HideGuideSummary(entityId: 20002931);
+                context.CreateMonster(arg1: new[] {25000}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 25000, arg3: "$02000293_BF__MAIN__1$", arg4: 2);
-                context.CreateItem(arg1: new int[] {500001});
-                context.ShowGuideSummary(entityID: 20002932, textID: 20002932);
+                context.CreateItem(arg1: new[] {500001});
+                context.ShowGuideSummary(entityId: 20002932, textId: 20002932);
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                 context.SetTimer(arg1: "181", arg2: 181);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000509}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000509}, arg2: 0)) {
                     context.State = new State소멸대기(context);
                     return;
                 }
@@ -196,16 +193,16 @@ namespace Maple2.Trigger._02000293_bf {
             internal State2번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000504}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000524}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000509}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000520}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000521}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000522}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000504}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000524}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000509}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000520}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000521}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000522}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000524}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000524}, arg2: 0)) {
                     context.State = new State2번아이템(context);
                     return;
                 }
@@ -218,17 +215,17 @@ namespace Maple2.Trigger._02000293_bf {
             internal State2번아이템(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 20002931);
-                context.CreateMonster(arg1: new int[] {25001}, arg2: false);
+                context.HideGuideSummary(entityId: 20002931);
+                context.CreateMonster(arg1: new[] {25001}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 25001, arg3: "$02000293_BF__MAIN__3$", arg4: 2);
-                context.CreateItem(arg1: new int[] {500002});
-                context.ShowGuideSummary(entityID: 20002932, textID: 20002932);
+                context.CreateItem(arg1: new[] {500002});
+                context.ShowGuideSummary(entityId: 20002932, textId: 20002932);
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                 context.SetTimer(arg1: "181", arg2: 181);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000509}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000509}, arg2: 0)) {
                     context.State = new State소멸대기(context);
                     return;
                 }
@@ -246,16 +243,16 @@ namespace Maple2.Trigger._02000293_bf {
             internal State3번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000504}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000505}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000509}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000529}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000521}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000522}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000504}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000505}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000509}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000529}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000521}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000522}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000529}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000529}, arg2: 0)) {
                     context.State = new State3번아이템(context);
                     return;
                 }
@@ -268,17 +265,17 @@ namespace Maple2.Trigger._02000293_bf {
             internal State3번아이템(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 20002931);
-                context.CreateMonster(arg1: new int[] {25006}, arg2: false);
+                context.HideGuideSummary(entityId: 20002931);
+                context.CreateMonster(arg1: new[] {25006}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 25006, arg3: "$02000293_BF__MAIN__13$", arg4: 2);
-                context.CreateItem(arg1: new int[] {500007});
-                context.ShowGuideSummary(entityID: 20002932, textID: 20002932);
+                context.CreateItem(arg1: new[] {500007});
+                context.ShowGuideSummary(entityId: 20002932, textId: 20002932);
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                 context.SetTimer(arg1: "181", arg2: 181);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000509}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000509}, arg2: 0)) {
                     context.State = new State소멸대기(context);
                     return;
                 }
@@ -296,16 +293,16 @@ namespace Maple2.Trigger._02000293_bf {
             internal State4번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000504}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000505}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000509}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000520}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000530}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000522}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000504}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000505}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000509}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000520}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000530}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000522}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000530}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000530}, arg2: 0)) {
                     context.State = new State4번아이템(context);
                     return;
                 }
@@ -318,17 +315,17 @@ namespace Maple2.Trigger._02000293_bf {
             internal State4번아이템(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 20002931);
-                context.CreateMonster(arg1: new int[] {25007}, arg2: false);
+                context.HideGuideSummary(entityId: 20002931);
+                context.CreateMonster(arg1: new[] {25007}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 25007, arg3: "$02000293_BF__MAIN__15$", arg4: 2);
-                context.CreateItem(arg1: new int[] {500008});
-                context.ShowGuideSummary(entityID: 20002932, textID: 20002932);
+                context.CreateItem(arg1: new[] {500008});
+                context.ShowGuideSummary(entityId: 20002932, textId: 20002932);
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                 context.SetTimer(arg1: "181", arg2: 181);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000509}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000509}, arg2: 0)) {
                     context.State = new State소멸대기(context);
                     return;
                 }
@@ -346,16 +343,16 @@ namespace Maple2.Trigger._02000293_bf {
             internal State5번생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000504}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000505}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000509}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000520}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000521}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000531}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000504}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000505}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000509}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000520}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000521}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000531}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000531}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000531}, arg2: 0)) {
                     context.State = new State5번아이템(context);
                     return;
                 }
@@ -368,17 +365,17 @@ namespace Maple2.Trigger._02000293_bf {
             internal State5번아이템(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 20002931);
-                context.CreateMonster(arg1: new int[] {25008}, arg2: false);
+                context.HideGuideSummary(entityId: 20002931);
+                context.CreateMonster(arg1: new[] {25008}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 25008, arg3: "$02000293_BF__MAIN__17$", arg4: 2);
-                context.CreateItem(arg1: new int[] {500009});
-                context.ShowGuideSummary(entityID: 20002932, textID: 20002932);
+                context.CreateItem(arg1: new[] {500009});
+                context.ShowGuideSummary(entityId: 20002932, textId: 20002932);
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                 context.SetTimer(arg1: "181", arg2: 181);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000509}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000509}, arg2: 0)) {
                     context.State = new State소멸대기(context);
                     return;
                 }
@@ -396,7 +393,7 @@ namespace Maple2.Trigger._02000293_bf {
             internal State소멸대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {510000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {510000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -413,13 +410,13 @@ namespace Maple2.Trigger._02000293_bf {
             internal State소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 20002932);
-                context.DestroyMonster(arg1: new int[] {
+                context.HideGuideSummary(entityId: 20002932);
+                context.DestroyMonster(arg1: new[] {
                     2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
                     2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2028, 2029, 2030, 2031, 2032, 2033, 2034,
                     2035, 2036
                 });
-                context.DestroyMonster(arg1: new int[] {25000, 25001, 25002, 25003, 25004, 25005, 25006, 25007, 25008});
+                context.DestroyMonster(arg1: new[] {25000, 25001, 25002, 25003, 25004, 25005, 25006, 25007, 25008});
             }
 
             public override void Execute() {
@@ -436,8 +433,8 @@ namespace Maple2.Trigger._02000293_bf {
             internal State소멸2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 20002932);
-                context.DestroyMonster(arg1: new int[] {
+                context.HideGuideSummary(entityId: 20002932);
+                context.DestroyMonster(arg1: new[] {
                     2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
                     2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2028, 2029, 2030, 2031, 2032, 2033, 2034,
                     2035, 2036

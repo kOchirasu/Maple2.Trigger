@@ -1,23 +1,19 @@
-using System;
-
 namespace Maple2.Trigger._02000543_bf {
     public static class _mob_1_1 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "WaveStart", value: 1)) {
+                if (context.GetUserValue(key: "WaveStart") == 1) {
                     context.State = new State생성(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new int[] {101, 102}, arg2: true);
+                context.CreateMonster(arg1: new[] {101, 102}, arg2: true);
             }
         }
 
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._02000543_bf {
             internal State생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101, 102}, arg2: true);
+                context.CreateMonster(arg1: new[] {101, 102}, arg2: true);
             }
 
             public override void Execute() {
@@ -34,7 +30,7 @@ namespace Maple2.Trigger._02000543_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "WaveEnd", value: 1)) {
+                if (context.GetUserValue(key: "WaveEnd") == 1) {
                     context.State = new State종료(context);
                     return;
                 }

@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._02000499_bf {
     public static class _event_b {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {105}, arg2: false);
-                context.CreateMonster(arg1: new int[] {106}, arg2: false);
-                context.CreateMonster(arg1: new int[] {107}, arg2: false);
-                context.CreateMonster(arg1: new int[] {108}, arg2: false);
-                context.SetEffect(arg1: new int[] {5005}, arg2: false);
-                context.SetEffect(arg1: new int[] {5006}, arg2: false);
-                context.SetEffect(arg1: new int[] {5007}, arg2: false);
-                context.SetEffect(arg1: new int[] {5008}, arg2: false);
+                context.CreateMonster(arg1: new[] {105}, arg2: false);
+                context.CreateMonster(arg1: new[] {106}, arg2: false);
+                context.CreateMonster(arg1: new[] {107}, arg2: false);
+                context.CreateMonster(arg1: new[] {108}, arg2: false);
+                context.SetEffect(arg1: new[] {5005}, arg2: false);
+                context.SetEffect(arg1: new[] {5006}, arg2: false);
+                context.SetEffect(arg1: new[] {5007}, arg2: false);
+                context.SetEffect(arg1: new[] {5008}, arg2: false);
             }
 
             public override void Execute() {
@@ -39,7 +35,7 @@ namespace Maple2.Trigger._02000499_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {105, 106, 107, 108})) {
+                if (context.MonsterDead(arg1: new[] {105, 106, 107, 108})) {
                     context.State = new StateCompleteEffect(context);
                     return;
                 }
@@ -52,10 +48,10 @@ namespace Maple2.Trigger._02000499_bf {
             internal StateCompleteEffect(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5005}, arg2: true);
-                context.SetEffect(arg1: new int[] {5006}, arg2: true);
-                context.SetEffect(arg1: new int[] {5007}, arg2: true);
-                context.SetEffect(arg1: new int[] {5008}, arg2: true);
+                context.SetEffect(arg1: new[] {5005}, arg2: true);
+                context.SetEffect(arg1: new[] {5006}, arg2: true);
+                context.SetEffect(arg1: new[] {5007}, arg2: true);
+                context.SetEffect(arg1: new[] {5008}, arg2: true);
             }
 
             public override void Execute() {

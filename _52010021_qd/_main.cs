@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._52010021_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7001}, arg2: false);
-                context.CreateMonster(arg1: new int[] {101, 102, 103});
+                context.SetEffect(arg1: new[] {7001}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 102, 103});
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {40002540},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002540},
                     arg3: new byte[] {3})) {
                     context.State = new StateEvent_01_Idle(context);
                     return;
@@ -31,7 +27,7 @@ namespace Maple2.Trigger._52010021_qd {
                 context.SetProductionUI(arg1: 3);
                 context.MoveUser(arg1: 52010021, arg2: 3, arg3: 701);
                 context.SetTimer(arg1: "2", arg2: 2);
-                context.SetEffect(arg1: new int[] {7001}, arg2: true);
+                context.SetEffect(arg1: new[] {7001}, arg2: true);
             }
 
             public override void Execute() {
@@ -49,7 +45,7 @@ namespace Maple2.Trigger._52010021_qd {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.CreateMonster(arg1: new int[] {104});
+                context.CreateMonster(arg1: new[] {104});
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_2001");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2002");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2004");
@@ -92,7 +88,7 @@ namespace Maple2.Trigger._52010021_qd {
             internal StateEnding(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2012");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2014");
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2013");

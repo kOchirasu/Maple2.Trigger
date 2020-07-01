@@ -1,23 +1,19 @@
-using System;
-
 namespace Maple2.Trigger._99999841 {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetDungeonVariable(varID: 1, value: false);
-                context.SetUserValue(triggerID: 99990002, key: "Team2Battle", value: 0);
-                context.SetUserValue(triggerID: 99990003, key: "Start", value: 0);
-                context.SetUserValue(triggerID: 99990004, key: "Start", value: 0);
-                context.SetUserValue(triggerID: 99990005, key: "Start", value: 0);
-                context.SetUserValue(triggerID: 99990015, key: "Start", value: 0);
+                context.SetDungeonVariable(varId: 1, value: false);
+                context.SetUserValue(triggerId: 99990002, key: "Team2Battle", value: 0);
+                context.SetUserValue(triggerId: 99990003, key: "Start", value: 0);
+                context.SetUserValue(triggerId: 99990004, key: "Start", value: 0);
+                context.SetUserValue(triggerId: 99990005, key: "Start", value: 0);
+                context.SetUserValue(triggerId: 99990015, key: "Start", value: 0);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9001, arg2: 3, arg3: "Equal")) {
+                if (context.GetUserCount(boxId: 9001) == 3) {
                     context.State = new State세팅(context);
                     return;
                 }
@@ -30,7 +26,7 @@ namespace Maple2.Trigger._99999841 {
             internal State세팅(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "잠시 후 경기가 시작됩니다.", arg3: new int[] {5000});
+                context.SetEventUI(arg1: 1, arg2: "잠시 후 경기가 시작됩니다.", arg3: 5000);
             }
 
             public override void Execute() {
@@ -47,13 +43,13 @@ namespace Maple2.Trigger._99999841 {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetDungeonVariable(varID: 1, value: true);
-                context.SetEventUI(arg1: 1, arg2: @"경기 시작!\n당신은 B팀입니다.", arg3: new int[] {3000});
-                context.SetUserValue(triggerID: 99990002, key: "Team2Battle", value: 1);
-                context.SetUserValue(triggerID: 99990003, key: "Start", value: 1);
-                context.SetUserValue(triggerID: 99990004, key: "Start", value: 1);
-                context.SetUserValue(triggerID: 99990005, key: "Start", value: 1);
-                context.SetUserValue(triggerID: 99990015, key: "Start", value: 1);
+                context.SetDungeonVariable(varId: 1, value: true);
+                context.SetEventUI(arg1: 1, arg2: @"경기 시작!\n당신은 B팀입니다.", arg3: 3000);
+                context.SetUserValue(triggerId: 99990002, key: "Team2Battle", value: 1);
+                context.SetUserValue(triggerId: 99990003, key: "Start", value: 1);
+                context.SetUserValue(triggerId: 99990004, key: "Start", value: 1);
+                context.SetUserValue(triggerId: 99990005, key: "Start", value: 1);
+                context.SetUserValue(triggerId: 99990015, key: "Start", value: 1);
             }
 
             public override void Execute() {
@@ -72,16 +68,16 @@ namespace Maple2.Trigger._99999841 {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1,
                     arg2: @"검은 군단을 해치우고 자원을 획득하세요.\n획득한 자원을 20개 모아서 보스를 불러내세요.\n한번에 최대 9개의 자원을 들 수 있습니다.",
-                    arg3: new int[] {4000});
+                    arg3: 4000);
             }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 2, value: true)) {
+                if (context.GetDungeonVariable(id: 2) == true) {
                     context.State = new StateA팀승리(context);
                     return;
                 }
 
-                if (context.DungeonVariable(varID: 3, value: true)) {
+                if (context.GetDungeonVariable(id: 3) == true) {
                     context.State = new StateB팀승리(context);
                     return;
                 }
@@ -94,7 +90,7 @@ namespace Maple2.Trigger._99999841 {
             internal StateA팀승리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "A팀이 승리했습니다!", arg3: new int[] {4000});
+                context.SetEventUI(arg1: 1, arg2: "A팀이 승리했습니다!", arg3: 4000);
             }
 
             public override void Execute() {
@@ -111,7 +107,7 @@ namespace Maple2.Trigger._99999841 {
             internal StateB팀승리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "B팀이 승리했습니다!", arg3: new int[] {4000});
+                context.SetEventUI(arg1: 1, arg2: "B팀이 승리했습니다!", arg3: 4000);
             }
 
             public override void Execute() {
@@ -128,14 +124,14 @@ namespace Maple2.Trigger._99999841 {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 99990002, key: "Team2Battle", value: 0);
-                context.SetUserValue(triggerID: 99990003, key: "Start", value: 0);
-                context.SetUserValue(triggerID: 99990004, key: "Start", value: 0);
-                context.SetUserValue(triggerID: 99990005, key: "Start", value: 0);
-                context.SetInteractObject(arg1: new int[] {10002179}, arg2: 0, arg3: false);
-                context.SetInteractObject(arg1: new int[] {10002180}, arg2: 0, arg3: false);
-                context.SetInteractObject(arg1: new int[] {10002181}, arg2: 0, arg3: false);
-                context.SetInteractObject(arg1: new int[] {10002182}, arg2: 0, arg3: false);
+                context.SetUserValue(triggerId: 99990002, key: "Team2Battle", value: 0);
+                context.SetUserValue(triggerId: 99990003, key: "Start", value: 0);
+                context.SetUserValue(triggerId: 99990004, key: "Start", value: 0);
+                context.SetUserValue(triggerId: 99990005, key: "Start", value: 0);
+                context.SetInteractObject(arg1: new[] {10002179}, arg2: 0, arg3: false);
+                context.SetInteractObject(arg1: new[] {10002180}, arg2: 0, arg3: false);
+                context.SetInteractObject(arg1: new[] {10002181}, arg2: 0, arg3: false);
+                context.SetInteractObject(arg1: new[] {10002182}, arg2: 0, arg3: false);
             }
 
             public override void Execute() { }

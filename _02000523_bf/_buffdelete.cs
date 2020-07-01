@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000523_bf {
     public static class _buffdelete {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new State기본셋팅(context);
                     return;
                 }
@@ -43,7 +39,7 @@ namespace Maple2.Trigger._02000523_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "BuffDeleteOk", value: 1)) {
+                if (context.GetUserValue(key: "BuffDeleteOk") == 1) {
                     context.State = new State트리거작동02대기중(context);
                     return;
                 }
@@ -73,7 +69,7 @@ namespace Maple2.Trigger._02000523_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "MonsterMany", value: 0)) {
+                if (context.GetUserValue(key: "MonsterMany") == 0) {
                     context.State = new State버프제거(context);
                     return;
                 }
@@ -86,7 +82,7 @@ namespace Maple2.Trigger._02000523_bf {
             internal State버프제거(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {900}, arg2: 50001098, arg3: 1, arg4: true);
+                context.AddBuff(arg1: new[] {900}, arg2: 50001098, arg3: 1, arg4: true);
                 context.SetUserValue(key: "BuffDeleteOk", value: 0);
             }
 

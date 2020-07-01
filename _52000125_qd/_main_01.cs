@@ -1,17 +1,13 @@
-using System;
-
 namespace Maple2.Trigger._52000125_qd {
     public static class _main_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001},
-                    arg2: new int[] {60100190, 60100191, 60100192, 60100193, 60100194, 60100195},
+                if (context.QuestUserDetected(arg1: new[] {2001},
+                    arg2: new[] {60100190, 60100191, 60100192, 60100193, 60100194, 60100195},
                     arg3: new byte[] {2})) {
                     context.State = new Stateready(context);
                     return;
@@ -46,11 +42,11 @@ namespace Maple2.Trigger._52000125_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {4006}, arg2: false);
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {4006}, arg2: false);
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
                 context.MoveUser(arg1: 52000125, arg2: 6001);
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Clap_A");
-                context.AddCinematicTalk(npcID: 11003205, msg: "$52000125_QD__MAIN_01__0$", duration: 3000,
+                context.AddCinematicTalk(npcId: 11003205, msg: "$52000125_QD__MAIN_01__0$", duration: 3000,
                     align: "center");
                 context.SetSceneSkip(arg1: "scene_08", arg2: "exit");
             }
@@ -70,7 +66,7 @@ namespace Maple2.Trigger._52000125_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "ChatUp");
-                context.AddCinematicTalk(npcID: 11003205, msg: "$52000125_QD__MAIN_01__1$", duration: 1000,
+                context.AddCinematicTalk(npcId: 11003205, msg: "$52000125_QD__MAIN_01__1$", duration: 1000,
                     align: "center");
             }
 
@@ -88,7 +84,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal Statescene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003208, msg: "$52000125_QD__MAIN_01__2$", duration: 2000,
+                context.AddCinematicTalk(npcId: 11003208, msg: "$52000125_QD__MAIN_01__2$", duration: 2000,
                     align: "center");
             }
 
@@ -106,8 +102,8 @@ namespace Maple2.Trigger._52000125_qd {
             internal Statescene_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003205, msg: "$52000125_QD__MAIN_01__3$", duration: 3000,
+                context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003205, msg: "$52000125_QD__MAIN_01__3$", duration: 3000,
                     align: "center");
             }
 
@@ -125,7 +121,7 @@ namespace Maple2.Trigger._52000125_qd {
             internal Statescene_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003, 4004, 4005}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4003, 4004, 4005}, arg2: false);
             }
 
             public override void Execute() {
@@ -177,8 +173,8 @@ namespace Maple2.Trigger._52000125_qd {
             internal Statescene_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {201});
-                context.CreateMonster(arg1: new int[] {202}, arg2: true);
+                context.DestroyMonster(arg1: new[] {201});
+                context.CreateMonster(arg1: new[] {202}, arg2: true);
             }
 
             public override void Execute() {
@@ -203,7 +199,7 @@ namespace Maple2.Trigger._52000125_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {60100195},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100195},
                     arg3: new byte[] {2})) {
                     context.State = new Stateeventtalk_start(context);
                     return;
@@ -234,7 +230,7 @@ namespace Maple2.Trigger._52000125_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_3003");
                 context.MoveNpc(arg1: 202, arg2: "MS2PatrolData_3004");
-                context.AddBalloonTalk(spawnPointID: 102, msg: "$52000125_QD__MAIN_01__4$", duration: 2000,
+                context.AddBalloonTalk(spawnPointId: 102, msg: "$52000125_QD__MAIN_01__4$", duration: 2000,
                     delayTick: 0);
             }
 
@@ -253,7 +249,7 @@ namespace Maple2.Trigger._52000125_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "ChatUp_A");
-                context.AddBalloonTalk(spawnPointID: 202, msg: "$52000125_QD__MAIN_01__5$", duration: 2000,
+                context.AddBalloonTalk(spawnPointId: 202, msg: "$52000125_QD__MAIN_01__5$", duration: 2000,
                     delayTick: 0);
             }
 
@@ -272,7 +268,7 @@ namespace Maple2.Trigger._52000125_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Talk_A");
-                context.AddBalloonTalk(spawnPointID: 202, msg: "$52000125_QD__MAIN_01__6$", duration: 2000,
+                context.AddBalloonTalk(spawnPointId: 202, msg: "$52000125_QD__MAIN_01__6$", duration: 2000,
                     delayTick: 0);
             }
 
@@ -291,7 +287,7 @@ namespace Maple2.Trigger._52000125_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "ChatUp_A");
-                context.AddBalloonTalk(spawnPointID: 202, msg: "$52000125_QD__MAIN_01__7$", duration: 2000,
+                context.AddBalloonTalk(spawnPointId: 202, msg: "$52000125_QD__MAIN_01__7$", duration: 2000,
                     delayTick: 0);
             }
 
@@ -310,7 +306,7 @@ namespace Maple2.Trigger._52000125_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Idle_A");
-                context.AddBalloonTalk(spawnPointID: 102, msg: "$52000125_QD__MAIN_01__8$", duration: 2000,
+                context.AddBalloonTalk(spawnPointId: 102, msg: "$52000125_QD__MAIN_01__8$", duration: 2000,
                     delayTick: 0);
             }
 
@@ -329,7 +325,7 @@ namespace Maple2.Trigger._52000125_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Idle_A");
-                context.AddBalloonTalk(spawnPointID: 202, msg: "$52000125_QD__MAIN_01__9$", duration: 2000,
+                context.AddBalloonTalk(spawnPointId: 202, msg: "$52000125_QD__MAIN_01__9$", duration: 2000,
                     delayTick: 0);
             }
 

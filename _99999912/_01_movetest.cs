@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._99999912 {
     public static class _01_movetest {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateInit(context);
-
-        private class StateInit : TriggerState {
+        public class StateInit : TriggerState {
             internal StateInit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -13,7 +9,7 @@ namespace Maple2.Trigger._99999912 {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9000, arg2: 1, arg3: ">=", userTagID: 1)) {
+                if (context.GetUserCount(boxId: 9000, userTagId: 1) >= 1) {
                     context.State = new StateWait(context);
                     return;
                 }
@@ -26,13 +22,13 @@ namespace Maple2.Trigger._99999912 {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001129}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10001130}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10001131}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001129}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001130}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001131}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001129}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001129}, arg2: 0)) {
                     context.State = new StateMove01(context);
                     return;
                 }
@@ -45,24 +41,24 @@ namespace Maple2.Trigger._99999912 {
             internal StateMove01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DebugString(@string: "강제이동 트리거가 발동됩니다.");
+                context.DebugString(message: "강제이동 트리거가 발동됩니다.");
                 context.MoveToPortal(userTagId: 1, portalId: 1);
                 context.MoveToPortal(userTagId: 2, portalId: 2);
-                context.ShowEventResult(type: "notice", text: @"1팀 안녕?\n줄바꿈확인", duration: 3000, userTagID: 1);
-                context.ShowEventResult(type: "notice", text: @"2팀 안녕?\n줄바꿈확인", duration: 3000, userTagID: 2);
-                context.PlaySystemSoundByUserTag(userTagID: 1, soundKey: "System_ShowGuideSummary_01");
-                context.PlaySystemSoundByUserTag(userTagID: 2, soundKey: "System_PartTimeJob_Right_01");
-                context.GuildVsGameScoreByUser(triggerBoxID: 9000, score: true,
+                context.ShowEventResult(type: "notice", text: @"1팀 안녕?\n줄바꿈확인", duration: 3000, userTagId: 1);
+                context.ShowEventResult(type: "notice", text: @"2팀 안녕?\n줄바꿈확인", duration: 3000, userTagId: 2);
+                context.PlaySystemSoundByUserTag(userTagId: 1, soundKey: "System_ShowGuideSummary_01");
+                context.PlaySystemSoundByUserTag(userTagId: 2, soundKey: "System_PartTimeJob_Right_01");
+                context.GuildVsGameScoreByUser(triggerBoxId: 9000, score: true,
                     desc: "9000 트리거 박스 안의 유저수가 많은 팀에 1점을 추가한다.");
-                context.GuildVsGameGiveReward(type: "exp", teamID: 1, isWin: "true", desc: "길드 경험치를 지급한다.");
-                context.GuildVsGameGiveReward(type: "fund", teamID: 1, isWin: "true", desc: "길드 기금을 지급한다.");
-                context.GuildVsGameGiveContribution(teamID: 1, isWin: "true", desc: "길드 기여도를 지급한다.");
-                context.GuildVsGameGiveReward(type: "exp", teamID: 2, isWin: "false", desc: "길드 경험치를 지급한다.");
-                context.GuildVsGameGiveReward(type: "fund", teamID: 2, isWin: "false", desc: "길드 기금을 지급한다.");
-                context.GuildVsGameGiveContribution(teamID: 2, isWin: "false", desc: "길드 기여도를 지급한다.");
+                context.GuildVsGameGiveReward(type: "exp", teamId: 1, isWin: true, desc: "길드 경험치를 지급한다.");
+                context.GuildVsGameGiveReward(type: "fund", teamId: 1, isWin: true, desc: "길드 기금을 지급한다.");
+                context.GuildVsGameGiveContribution(teamId: 1, isWin: true, desc: "길드 기여도를 지급한다.");
+                context.GuildVsGameGiveReward(type: "exp", teamId: 2, isWin: false, desc: "길드 경험치를 지급한다.");
+                context.GuildVsGameGiveReward(type: "fund", teamId: 2, isWin: false, desc: "길드 기금을 지급한다.");
+                context.GuildVsGameGiveContribution(teamId: 2, isWin: false, desc: "길드 기여도를 지급한다.");
                 context.GuildVsGameResult(desc: "결과창을 출력");
                 context.GuildVsGameLogResult(desc: "로그를 남긴다");
-                context.GuildVsGameLogWonByDefault(teamID: 1, desc: "1팀의 부전승 보상 로그를 남긴다.");
+                context.GuildVsGameLogWonByDefault(teamId: 1, desc: "1팀의 부전승 보상 로그를 남긴다.");
             }
 
             public override void Execute() {
@@ -81,20 +77,20 @@ namespace Maple2.Trigger._99999912 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.GuildVsGameScoredTeam(teamID: 1)) {
-                    context.DebugString(@string: "1팀이 득점 했습니다");
+                if (context.GuildVsGameScoredTeam(teamId: 1)) {
+                    context.DebugString(message: "1팀이 득점 했습니다");
                     context.State = new StateReset(context);
                     return;
                 }
 
-                if (context.GuildVsGameScoredTeam(teamID: 2)) {
-                    context.DebugString(@string: "2팀이 득점 했습니다");
+                if (context.GuildVsGameScoredTeam(teamId: 2)) {
+                    context.DebugString(message: "2팀이 득점 했습니다");
                     context.State = new StateReset(context);
                     return;
                 }
 
-                if (context.GuildVsGameScoredTeam(teamID: 0)) {
-                    context.DebugString(@string: "아직 득점한 팀이 없습니다.");
+                if (context.GuildVsGameScoredTeam(teamId: 0)) {
+                    context.DebugString(message: "아직 득점한 팀이 없습니다.");
                     context.State = new StateReset(context);
                     return;
                 }
@@ -107,7 +103,7 @@ namespace Maple2.Trigger._99999912 {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DebugString(@string: "트리거 초기화");
+                context.DebugString(message: "트리거 초기화");
             }
 
             public override void Execute() {

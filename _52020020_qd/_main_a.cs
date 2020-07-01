@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52020020_qd {
     public static class _main_a {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateIdle(context);
-
-        private class StateIdle : TriggerState {
+        public class StateIdle : TriggerState {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,13 +8,13 @@ namespace Maple2.Trigger._52020020_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {60200130},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200130},
                     arg3: new byte[] {2})) {
                     context.State = new Stateready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {60200130},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200130},
                     arg3: new byte[] {3})) {
                     context.State = new Stateend(context);
                     return;
@@ -52,7 +48,7 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateMonologue_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 0, msg: "으으.......", duration: 2500, align: "Right");
+                context.AddCinematicTalk(npcId: 0, msg: "으으.......", duration: 2500, align: "Right");
                 context.SetSceneSkip(arg1: "end", arg2: "exit");
             }
 
@@ -70,7 +66,7 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateMonologue_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 0, msg: "도대체 무슨 일이 일어난 거지?", duration: 2500, align: "Right");
+                context.AddCinematicTalk(npcId: 0, msg: "도대체 무슨 일이 일어난 거지?", duration: 2500, align: "Right");
             }
 
             public override void Execute() {
@@ -87,7 +83,7 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateMonologue_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 0, msg: ".......", duration: 3000, align: "Right");
+                context.AddCinematicTalk(npcId: 0, msg: ".......", duration: 3000, align: "Right");
             }
 
             public override void Execute() {
@@ -107,7 +103,7 @@ namespace Maple2.Trigger._52020020_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetPcEmotionLoop(arg1: "Sit_Ground_Idle_A", arg2: 3000f);
-                context.AddCinematicTalk(npcID: 0, msg: "잠깐! 여기는?!", duration: 3000, align: "Right");
+                context.AddCinematicTalk(npcId: 0, msg: "잠깐! 여기는?!", duration: 3000, align: "Right");
                 context.SetSceneSkip();
             }
 

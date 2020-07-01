@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52010018_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {100}, arg2: new int[] {10002852},
+                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {10002852},
                     arg3: new byte[] {1})) {
                     context.State = new StateNPC이동(context);
                     return;
@@ -27,7 +23,7 @@ namespace Maple2.Trigger._52010018_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.CreateMonster(arg1: new int[] {1002, 1003, 1004, 1006}, arg2: false);
+                context.CreateMonster(arg1: new[] {1002, 1003, 1004, 1006}, arg2: false);
             }
 
             public override void Execute() {
@@ -51,12 +47,12 @@ namespace Maple2.Trigger._52010018_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {1002})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {1002})) {
                     context.State = new State둔바대사01(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {1003})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {1003})) {
                     context.State = new State둔바대사01(context);
                     return;
                 }
@@ -127,7 +123,7 @@ namespace Maple2.Trigger._52010018_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 103, arg2: new int[] {1006})) {
+                if (context.NpcDetected(arg1: 103, arg2: new[] {1006})) {
                     context.State = new State동영상재생대기(context);
                     return;
                 }
@@ -157,7 +153,7 @@ namespace Maple2.Trigger._52010018_qd {
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
                 context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
-                context.PlaySceneMovie(fileName: "awaken.swf", movieID: 1);
+                context.PlaySceneMovie(fileName: "awaken.swf", movieId: 1);
             }
 
             public override void Execute() {
@@ -190,8 +186,8 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 100, arg2: "trigger", arg3: "ChangeMika");
-                context.DestroyMonster(arg1: new int[] {1006});
-                context.CreateMonster(arg1: new int[] {1005}, arg2: false);
+                context.DestroyMonster(arg1: new[] {1006});
+                context.CreateMonster(arg1: new[] {1005}, arg2: false);
             }
 
             public override void Execute() { }

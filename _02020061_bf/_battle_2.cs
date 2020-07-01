@@ -1,22 +1,18 @@
-using System;
-
 namespace Maple2.Trigger._02020061_bf {
     public static class _battle_2 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 99990001, key: "ObjectClear", value: 0);
-                context.SetUserValue(triggerID: 99990004, key: "ObjectStart", value: 0);
-                context.SetUserValue(triggerID: 99990005, key: "ObjectStart", value: 0);
-                context.SetUserValue(triggerID: 99990006, key: "ObjectStart", value: 0);
-                context.SetUserValue(triggerID: 99990007, key: "ObjectStart", value: 0);
+                context.SetUserValue(triggerId: 99990001, key: "ObjectClear", value: 0);
+                context.SetUserValue(triggerId: 99990004, key: "ObjectStart", value: 0);
+                context.SetUserValue(triggerId: 99990005, key: "ObjectStart", value: 0);
+                context.SetUserValue(triggerId: 99990006, key: "ObjectStart", value: 0);
+                context.SetUserValue(triggerId: 99990007, key: "ObjectStart", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ObjectPhase", value: 1)) {
+                if (context.GetUserValue(key: "ObjectPhase") == 1) {
                     context.State = new State오브젝트소환(context);
                     return;
                 }
@@ -29,20 +25,20 @@ namespace Maple2.Trigger._02020061_bf {
             internal State오브젝트소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {711, 712, 713, 714}, arg2: false);
-                context.SetUserValue(triggerID: 99990004, key: "ObjectStart", value: 1);
-                context.SetUserValue(triggerID: 99990005, key: "ObjectStart", value: 1);
-                context.SetUserValue(triggerID: 99990006, key: "ObjectStart", value: 1);
-                context.SetUserValue(triggerID: 99990007, key: "ObjectStart", value: 1);
+                context.CreateMonster(arg1: new[] {711, 712, 713, 714}, arg2: false);
+                context.SetUserValue(triggerId: 99990004, key: "ObjectStart", value: 1);
+                context.SetUserValue(triggerId: 99990005, key: "ObjectStart", value: 1);
+                context.SetUserValue(triggerId: 99990006, key: "ObjectStart", value: 1);
+                context.SetUserValue(triggerId: 99990007, key: "ObjectStart", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ObjectPhase", value: 2)) {
+                if (context.GetUserValue(key: "ObjectPhase") == 2) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {701})) {
+                if (context.MonsterDead(arg1: new[] {701})) {
                     context.State = new State오브젝트소환_클리어(context);
                     return;
                 }
@@ -60,17 +56,17 @@ namespace Maple2.Trigger._02020061_bf {
             internal State대사용_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcID: 11001813, illust: "Turka_normal", duration: 5000,
+                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000,
                     script: "$02020061_BF__BATTLE_2__0$");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ObjectPhase", value: 2)) {
+                if (context.GetUserValue(key: "ObjectPhase") == 2) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {701})) {
+                if (context.MonsterDead(arg1: new[] {701})) {
                     context.State = new State오브젝트소환_클리어(context);
                     return;
                 }
@@ -88,17 +84,17 @@ namespace Maple2.Trigger._02020061_bf {
             internal State대사용_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcID: 11003536, illust: "Neirin_surprise", duration: 5000,
+                context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000,
                     script: "$02020061_BF__BATTLE_2__1$");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ObjectPhase", value: 2)) {
+                if (context.GetUserValue(key: "ObjectPhase") == 2) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {701})) {
+                if (context.MonsterDead(arg1: new[] {701})) {
                     context.State = new State오브젝트소환_클리어(context);
                     return;
                 }
@@ -116,17 +112,17 @@ namespace Maple2.Trigger._02020061_bf {
             internal State대사용_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcID: 11003533, illust: "Bliche_normal", duration: 5000,
+                context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000,
                     script: "$02020061_BF__BATTLE_2__2$");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ObjectPhase", value: 2)) {
+                if (context.GetUserValue(key: "ObjectPhase") == 2) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {701})) {
+                if (context.MonsterDead(arg1: new[] {701})) {
                     context.State = new State오브젝트소환_클리어(context);
                     return;
                 }
@@ -139,11 +135,11 @@ namespace Maple2.Trigger._02020061_bf {
             internal State오브젝트소환_클리어(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 99990001, key: "ObjectClear", value: 1);
-                context.SetUserValue(triggerID: 99990004, key: "ObjectStart", value: 0);
-                context.SetUserValue(triggerID: 99990005, key: "ObjectStart", value: 0);
-                context.SetUserValue(triggerID: 99990006, key: "ObjectStart", value: 0);
-                context.SetUserValue(triggerID: 99990007, key: "ObjectStart", value: 0);
+                context.SetUserValue(triggerId: 99990001, key: "ObjectClear", value: 1);
+                context.SetUserValue(triggerId: 99990004, key: "ObjectStart", value: 0);
+                context.SetUserValue(triggerId: 99990005, key: "ObjectStart", value: 0);
+                context.SetUserValue(triggerId: 99990006, key: "ObjectStart", value: 0);
+                context.SetUserValue(triggerId: 99990007, key: "ObjectStart", value: 0);
             }
 
             public override void Execute() { }

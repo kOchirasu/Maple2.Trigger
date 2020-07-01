@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52000027_qd {
     public static class _meetrookie_job90_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -19,13 +15,13 @@ namespace Maple2.Trigger._52000027_qd {
                 context.SetAgent(arg1: "8203", arg2: true);
                 context.SetAgent(arg1: "8204", arg2: true);
                 context.SetAgent(arg1: "8205", arg2: true);
-                context.CreateMonster(arg1: new int[] {901, 902, 903, 911, 912}, arg2: false);
+                context.CreateMonster(arg1: new[] {901, 902, 903, 911, 912}, arg2: false);
                 context.SetLadder(arg1: 4000, arg2: false, arg3: false, arg4: 2);
                 context.SetLadder(arg1: 4001, arg2: false, arg3: false, arg4: 2);
-                context.SetMesh(arg1: new int[] {8900, 8901, 8902, 8903}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {8001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {8002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {8003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {8900, 8901, 8902, 8903}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {8001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {8002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {8003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 7000, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 7001, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 7100, arg2: true, arg3: "Closed");
@@ -38,20 +34,20 @@ namespace Maple2.Trigger._52000027_qd {
                 context.SetActor(arg1: 7203, arg2: true, arg3: "Idle_A");
                 context.SetActor(arg1: 7204, arg2: false, arg3: "Down_Idle_B");
                 context.SetActor(arg1: 7300, arg2: true, arg3: "Closed");
-                context.SetBreakable(arg1: new int[] {6201, 6202, 6203}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {6201, 6202, 6203}, arg2: false);
-                context.SetMesh(arg1: new int[] {8500}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new int[] {10000420}, arg2: 0);
-                context.SetEffect(arg1: new int[] {6100}, arg2: false);
-                context.SetEffect(arg1: new int[] {6200}, arg2: false);
-                context.SetEffect(arg1: new int[] {6300}, arg2: false);
-                context.SetEffect(arg1: new int[] {6400}, arg2: false);
-                context.SetEffect(arg1: new int[] {6401}, arg2: false);
-                context.SetEffect(arg1: new int[] {6500}, arg2: false);
+                context.SetBreakable(arg1: new[] {6201, 6202, 6203}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {6201, 6202, 6203}, arg2: false);
+                context.SetMesh(arg1: new[] {8500}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {10000420}, arg2: 0);
+                context.SetEffect(arg1: new[] {6100}, arg2: false);
+                context.SetEffect(arg1: new[] {6200}, arg2: false);
+                context.SetEffect(arg1: new[] {6300}, arg2: false);
+                context.SetEffect(arg1: new[] {6400}, arg2: false);
+                context.SetEffect(arg1: new[] {6401}, arg2: false);
+                context.SetEffect(arg1: new[] {6500}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {20002243}, arg3: new byte[] {1},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {20002243}, arg3: new byte[] {1},
                     arg4: 90)) {
                     context.State = new State1차전투대기(context);
                     return;
@@ -65,7 +61,7 @@ namespace Maple2.Trigger._52000027_qd {
             internal State1차전투대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25200271, textID: 25200271);
+                context.ShowGuideSummary(entityId: 25200271, textId: 25200271);
             }
 
             public override void Execute() {
@@ -84,14 +80,14 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {901, 902, 903})) {
+                if (context.MonsterDead(arg1: new[] {901, 902, 903})) {
                     context.State = new State1차전투종료(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 25200271);
+                context.HideGuideSummary(entityId: 25200271);
             }
         }
 
@@ -116,7 +112,7 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.CameraSelect(arg1: 600, arg2: true);
             }
 
@@ -195,9 +191,9 @@ namespace Maple2.Trigger._52000027_qd {
             internal State사다리생성02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {8001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {8001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1012");
-                context.CameraSelectPath(arg1: new int[] {600, 601}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {600, 601}, arg2: true);
             }
 
             public override void Execute() {
@@ -215,7 +211,7 @@ namespace Maple2.Trigger._52000027_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 7300, arg2: true, arg3: "Opened");
-                context.SetEffect(arg1: new int[] {6100}, arg2: true);
+                context.SetEffect(arg1: new[] {6100}, arg2: true);
             }
 
             public override void Execute() {
@@ -255,7 +251,7 @@ namespace Maple2.Trigger._52000027_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new State루키이동01(context);
                     return;
                 }
@@ -286,8 +282,8 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키이동02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101});
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101});
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__MEETROOKIE01__3$", arg4: 3, arg5: 1);
             }
 
@@ -306,8 +302,8 @@ namespace Maple2.Trigger._52000027_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 7000, arg2: true, arg3: "Opened");
-                context.SetEffect(arg1: new int[] {6200}, arg2: true);
-                context.SetMesh(arg1: new int[] {8002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {6200}, arg2: true);
+                context.SetMesh(arg1: new[] {8002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -348,7 +344,7 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {911, 912})) {
+                if (context.MonsterDead(arg1: new[] {911, 912})) {
                     context.State = new State루키이동10(context);
                     return;
                 }
@@ -366,7 +362,7 @@ namespace Maple2.Trigger._52000027_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9101, arg2: new int[] {102})) {
+                if (context.NpcDetected(arg1: 9101, arg2: new[] {102})) {
                     context.State = new State루키이동11(context);
                     return;
                 }
@@ -381,7 +377,7 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9002})) {
+                if (context.UserDetected(arg1: new[] {9002})) {
                     context.State = new State상황연출01(context);
                     return;
                 }
@@ -547,8 +543,8 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() {
                 context.SetUserValue(key: "TrapOpen", value: 0);
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$52000027_QD__MEETROOKIE01__8$", arg4: 3, arg5: 1);
-                context.ShowGuideSummary(entityID: 25200272, textID: 25200272);
-                context.SetUserValue(triggerID: 2, key: "SetLever", value: 1);
+                context.ShowGuideSummary(entityId: 25200272, textId: 25200272);
+                context.SetUserValue(triggerId: 2, key: "SetLever", value: 1);
             }
 
             public override void Execute() {
@@ -567,14 +563,14 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "TrapOpen", value: 1)) {
+                if (context.GetUserValue(key: "TrapOpen") == 1) {
                     context.State = new State함정연출01(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 25200272);
+                context.HideGuideSummary(entityId: 25200272);
             }
         }
 
@@ -619,9 +615,9 @@ namespace Maple2.Trigger._52000027_qd {
             internal State함정연출03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new int[] {6201, 6202, 6203}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new int[] {6201, 6202, 6203}, arg2: true);
-                context.SetEffect(arg1: new int[] {6500}, arg2: true);
+                context.SetBreakable(arg1: new[] {6201, 6202, 6203}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {6201, 6202, 6203}, arg2: true);
+                context.SetEffect(arg1: new[] {6500}, arg2: true);
                 context.SetActor(arg1: 7201, arg2: false, arg3: "Idle_A");
                 context.SetActor(arg1: 7202, arg2: false, arg3: "Idle_A");
                 context.SetActor(arg1: 7203, arg2: false, arg3: "Idle_A");
@@ -629,9 +625,9 @@ namespace Maple2.Trigger._52000027_qd {
                 context.SetActor(arg1: 7101, arg2: true, arg3: "Opened");
                 context.SetActor(arg1: 7102, arg2: true, arg3: "Opened");
                 context.SetActor(arg1: 7103, arg2: true, arg3: "Opened");
-                context.SetMesh(arg1: new int[] {8900, 8901, 8902, 8903}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new int[] {6400}, arg2: true);
-                context.SetEffect(arg1: new int[] {6401}, arg2: true);
+                context.SetMesh(arg1: new[] {8900, 8901, 8902, 8903}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {6400}, arg2: true);
+                context.SetEffect(arg1: new[] {6401}, arg2: true);
             }
 
             public override void Execute() {
@@ -651,7 +647,7 @@ namespace Maple2.Trigger._52000027_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraSelect(arg1: 800, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {6201, 6202, 6203}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {6201, 6202, 6203}, arg2: false);
             }
 
             public override void Execute() {
@@ -668,10 +664,10 @@ namespace Maple2.Trigger._52000027_qd {
             internal State루키이동20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25200273, textID: 25200273, duration: 4000);
+                context.ShowGuideSummary(entityId: 25200273, textId: 25200273, duration: 4000);
                 context.SetActor(arg1: 7001, arg2: true, arg3: "Opened");
-                context.SetEffect(arg1: new int[] {6300}, arg2: true);
-                context.SetMesh(arg1: new int[] {8003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {6300}, arg2: true);
+                context.SetMesh(arg1: new[] {8003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetAgent(arg1: "8200", arg2: false);
                 context.SetAgent(arg1: "8201", arg2: false);
                 context.SetAgent(arg1: "8202", arg2: false);
@@ -681,7 +677,7 @@ namespace Maple2.Trigger._52000027_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9004})) {
+                if (context.UserDetected(arg1: new[] {9004})) {
                     context.State = new State루키이동21(context);
                     return;
                 }
@@ -714,7 +710,7 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9102, arg2: new int[] {102})) {
+                if (context.NpcDetected(arg1: 9102, arg2: new[] {102})) {
                     context.State = new State루키이동23(context);
                     return;
                 }
@@ -729,7 +725,7 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9003})) {
+                if (context.UserDetected(arg1: new[] {9003})) {
                     context.State = new State루키미션01(context);
                     return;
                 }
@@ -784,8 +780,8 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__12$", arg4: 4,
                     arg5: 0);
-                context.SetMesh(arg1: new int[] {8500}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new int[] {10000420}, arg2: 1);
+                context.SetMesh(arg1: new[] {8500}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {10000420}, arg2: 1);
                 context.SetSkip(arg1: "루키미션04");
             }
 
@@ -826,7 +822,7 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {20002243},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {20002243},
                     arg3: new byte[] {2})) {
                     context.State = new State미션완료02(context);
                     return;

@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._65000002_bd {
     public static class _buffskill {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103})) {
+                if (context.UserDetected(arg1: new[] {103})) {
                     context.State = new State2초대기(context);
                     return;
                 }
@@ -40,13 +36,13 @@ namespace Maple2.Trigger._65000002_bd {
             internal State스킬랜덤(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: true);
+                context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.PlaySystemSoundInBox(arg2: "BD_Buffskill_00");
-                context.ShowGuideSummary(entityID: 26500202, textID: 26500202, duration: 3000);
+                context.ShowGuideSummary(entityId: 26500202, textId: 26500202, duration: 3000);
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {103})) {
+                if (!context.UserDetected(arg1: new[] {103})) {
                     context.State = new State초기화(context);
                     return;
                 }
@@ -74,13 +70,13 @@ namespace Maple2.Trigger._65000002_bd {
             internal StateA스킬작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {7001}, arg2: true);
+                context.SetSkill(arg1: new[] {7001}, arg2: true);
                 context.SetTimer(arg1: "60", arg2: 60);
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "60")) {
-                    context.SetSkill(arg1: new int[] {7001}, arg2: false);
+                    context.SetSkill(arg1: new[] {7001}, arg2: false);
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -93,13 +89,13 @@ namespace Maple2.Trigger._65000002_bd {
             internal StateB스킬작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {7002}, arg2: true);
+                context.SetSkill(arg1: new[] {7002}, arg2: true);
                 context.SetTimer(arg1: "60", arg2: 60);
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "60")) {
-                    context.SetSkill(arg1: new int[] {7002}, arg2: false);
+                    context.SetSkill(arg1: new[] {7002}, arg2: false);
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -112,13 +108,13 @@ namespace Maple2.Trigger._65000002_bd {
             internal StateC스킬작동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {7003}, arg2: true);
+                context.SetSkill(arg1: new[] {7003}, arg2: true);
                 context.SetTimer(arg1: "60", arg2: 60);
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "60")) {
-                    context.SetSkill(arg1: new int[] {7003}, arg2: false);
+                    context.SetSkill(arg1: new[] {7003}, arg2: false);
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -132,9 +128,9 @@ namespace Maple2.Trigger._65000002_bd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {7001}, arg2: false);
-                context.SetSkill(arg1: new int[] {7002}, arg2: false);
-                context.SetSkill(arg1: new int[] {7003}, arg2: false);
+                context.SetSkill(arg1: new[] {7001}, arg2: false);
+                context.SetSkill(arg1: new[] {7002}, arg2: false);
+                context.SetSkill(arg1: new[] {7003}, arg2: false);
             }
 
             public override void Execute() {

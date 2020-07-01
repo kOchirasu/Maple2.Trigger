@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02010051_bf {
     public static class _eventtimer {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9003})) {
+                if (context.UserDetected(arg1: new[] {9003})) {
                     context.State = new State시간체크(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "timercheck", value: 1)) {
+                if (context.GetUserValue(key: "timercheck") == 1) {
                     context.State = new State업적이벤트(context);
                     return;
                 }
@@ -52,7 +48,7 @@ namespace Maple2.Trigger._02010051_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State종료(context);
                     return;
                 }

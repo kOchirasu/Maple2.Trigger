@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._02000011_bf {
     public static class _move {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2, arg3: false);
-                context.SetBreakable(arg1: new int[] {7000}, arg2: false);
+                context.SetBreakable(arg1: new[] {7000}, arg2: false);
             }
 
             public override void Execute() {
@@ -26,11 +22,11 @@ namespace Maple2.Trigger._02000011_bf {
             internal State반응대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000361}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000361}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000361}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000361}, arg2: 0)) {
                     context.State = new State이동(context);
                     return;
                 }
@@ -44,7 +40,7 @@ namespace Maple2.Trigger._02000011_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "6", arg2: 6, arg3: false);
-                context.SetBreakable(arg1: new int[] {7000}, arg2: true);
+                context.SetBreakable(arg1: new[] {7000}, arg2: true);
             }
 
             public override void Execute() {

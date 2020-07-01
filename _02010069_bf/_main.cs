@@ -1,29 +1,26 @@
-using System;
 using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02010069_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateSetting(context);
-
-        private class StateSetting : TriggerState {
+        public class StateSetting : TriggerState {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19},
+                context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19},
                     arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new int[] {33000}, arg2: false);
-                context.SetEffect(arg1: new int[] {34001}, arg2: false);
-                context.SetEffect(arg1: new int[] {34002}, arg2: false);
-                context.SetEffect(arg1: new int[] {34022}, arg2: false);
-                context.SetEffect(arg1: new int[] {34023}, arg2: false);
+                context.SetEffect(arg1: new[] {33000}, arg2: false);
+                context.SetEffect(arg1: new[] {34001}, arg2: false);
+                context.SetEffect(arg1: new[] {34002}, arg2: false);
+                context.SetEffect(arg1: new[] {34022}, arg2: false);
+                context.SetEffect(arg1: new[] {34023}, arg2: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
-                context.SetInteractObject(arg1: new int[] {10000817}, arg2: 0);
-                context.DestroyMonster(arg1: new int[] {44441, 44442, 44443});
+                context.SetInteractObject(arg1: new[] {10000817}, arg2: 0);
+                context.DestroyMonster(arg1: new[] {44441, 44442, 44443});
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new StateLoadingDelay(context);
                     return;
                 }
@@ -52,13 +49,13 @@ namespace Maple2.Trigger._02010069_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {101}, arg2: "System_ShowGuideSummary_01");
-                context.SetInteractObject(arg1: new int[] {10000817}, arg2: 1);
-                context.ShowGuideSummary(entityID: 20100691, textID: 20100691, duration: 10000);
+                context.PlaySystemSoundInBox(arg1: new[] {101}, arg2: "System_ShowGuideSummary_01");
+                context.SetInteractObject(arg1: new[] {10000817}, arg2: 1);
+                context.ShowGuideSummary(entityId: 20100691, textId: 20100691, duration: 10000);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000817}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000817}, arg2: 0)) {
                     context.State = new State1차어나운스(context);
                     return;
                 }
@@ -73,9 +70,9 @@ namespace Maple2.Trigger._02010069_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.HideGuideSummary(entityID: 20100691);
-                context.SetEffect(arg1: new int[] {32000}, arg2: true);
-                context.SetEffect(arg1: new int[] {34001}, arg2: true);
+                context.HideGuideSummary(entityId: 20100691);
+                context.SetEffect(arg1: new[] {32000}, arg2: true);
+                context.SetEffect(arg1: new[] {34001}, arg2: true);
             }
 
             public override void Execute() {
@@ -92,15 +89,15 @@ namespace Maple2.Trigger._02010069_bf {
             internal State2차어나운스(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {33000}, arg2: true);
-                context.SetMesh(arg1: new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19},
+                context.SetEffect(arg1: new[] {33000}, arg2: true);
+                context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19},
                     arg2: false, arg3: 200, arg4: 50, arg5: 0f);
                 context.MoveUser(arg1: 02010069, arg2: 3);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {999997})) {
-                    context.CreateMonster(arg1: new int[] {44441, 44442, 44443}, arg2: false);
+                if (context.UserDetected(arg1: new[] {999997})) {
+                    context.CreateMonster(arg1: new[] {44441, 44442, 44443}, arg2: false);
                     context.State = new State연출1(context);
                     return;
                 }
@@ -207,8 +204,8 @@ namespace Maple2.Trigger._02010069_bf {
                 context.SetProductionUI(arg1: 4);
                 context.SetProductionUI(arg1: 5);
                 context.SetProductionUI(arg1: 6);
-                context.SetEffect(arg1: new int[] {34022}, arg2: true);
-                context.SetEffect(arg1: new int[] {34023}, arg2: true);
+                context.SetEffect(arg1: new[] {34022}, arg2: true);
+                context.SetEffect(arg1: new[] {34023}, arg2: true);
             }
 
             public override void Execute() {
@@ -246,8 +243,8 @@ namespace Maple2.Trigger._02010069_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.SetEffect(arg1: new int[] {34022}, arg2: false);
-                context.SetEffect(arg1: new int[] {34023}, arg2: false);
+                context.SetEffect(arg1: new[] {34022}, arg2: false);
+                context.SetEffect(arg1: new[] {34023}, arg2: false);
             }
 
             public override void Execute() { }

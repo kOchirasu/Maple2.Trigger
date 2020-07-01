@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._02000397_bf {
     public static class _04_hallwaybattle {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3800, 3900}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3800, 3900}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 20, arg2: false, arg3: false, arg4: false);
-                context.SetInteractObject(arg1: new int[] {10001147}, arg2: 0);
-                context.DestroyMonster(arg1: new int[] {901, 902, 903});
+                context.SetInteractObject(arg1: new[] {10001147}, arg2: 0);
+                context.DestroyMonster(arg1: new[] {901, 902, 903});
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9300})) {
+                if (context.UserDetected(arg1: new[] {9300})) {
                     context.State = new StateLoadingDelay(context);
                     return;
                 }
@@ -28,7 +24,7 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateLoadingDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {901, 902, 903}, arg2: false);
+                context.CreateMonster(arg1: new[] {901, 902, 903}, arg2: false);
             }
 
             public override void Execute() {
@@ -67,9 +63,9 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateMobTrapOn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 5, key: "MobWave", value: 1);
+                context.SetUserValue(triggerId: 5, key: "MobWave", value: 1);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039704, textID: 20039704, duration: 2000);
+                context.ShowGuideSummary(entityId: 20039704, textId: 20039704, duration: 2000);
             }
 
             public override void Execute() {
@@ -86,7 +82,7 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateMobTrapOn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 6, key: "BlockEnable", value: 1);
+                context.SetUserValue(triggerId: 6, key: "BlockEnable", value: 1);
             }
 
             public override void Execute() {
@@ -104,12 +100,12 @@ namespace Maple2.Trigger._02000397_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039705, textID: 20039705);
-                context.SetInteractObject(arg1: new int[] {10001147}, arg2: 1);
+                context.ShowGuideSummary(entityId: 20039705, textId: 20039705);
+                context.SetInteractObject(arg1: new[] {10001147}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001147}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001147}, arg2: 0)) {
                     context.State = new StatePortalOn(context);
                     return;
                 }
@@ -122,7 +118,7 @@ namespace Maple2.Trigger._02000397_bf {
             internal StatePortalOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 20039705);
+                context.HideGuideSummary(entityId: 20039705);
                 context.SetPortal(arg1: 20, arg2: true, arg3: true, arg4: false);
             }
 

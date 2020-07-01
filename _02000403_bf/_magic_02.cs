@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._02000403_bf {
     public static class _magic_02 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1711, 1712, 1713, 1714, 1715, 1716,
                         1717, 1718, 1719, 1720, 1721, 1722, 1723, 1724, 1725, 1726, 1727, 1728, 1729, 1730, 1731, 1732,
                         1733, 1734, 1735, 1736, 1737, 1738, 1739, 1740, 1741, 1742, 1743, 1744, 1745, 1746, 1747, 1748,
@@ -21,7 +17,7 @@ namespace Maple2.Trigger._02000403_bf {
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000032}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000032}, arg2: 0)) {
                     context.State = new StateReady(context);
                     return;
                 }
@@ -34,14 +30,14 @@ namespace Maple2.Trigger._02000403_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7002}, arg2: false);
-                context.SetMesh(arg1: new int[] {1102}, arg2: false, arg3: 0, arg4: 200, arg5: 15f);
-                context.SetMesh(arg1: new int[] {1202}, arg2: true, arg3: 0, arg4: 200, arg5: 15f);
-                context.CreateMonster(arg1: new int[] {202}, arg2: false);
+                context.SetEffect(arg1: new[] {7002}, arg2: false);
+                context.SetMesh(arg1: new[] {1102}, arg2: false, arg3: 0, arg4: 200, arg5: 15f);
+                context.SetMesh(arg1: new[] {1202}, arg2: true, arg3: 0, arg4: 200, arg5: 15f);
+                context.CreateMonster(arg1: new[] {202}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {202})) {
+                if (context.MonsterDead(arg1: new[] {202})) {
                     context.State = new StateEvent_02(context);
                     return;
                 }
@@ -55,9 +51,9 @@ namespace Maple2.Trigger._02000403_bf {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 712, arg2: "trigger", arg3: "Hauntedmansion");
-                context.CreateMonster(arg1: new int[] {1121, 1122}, arg2: false);
+                context.CreateMonster(arg1: new[] {1121, 1122}, arg2: false);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1711, 1712, 1713, 1714, 1715, 1716,
                         1717, 1718, 1719, 1720, 1721, 1722, 1723, 1724, 1725, 1726, 1727, 1728, 1729, 1730, 1731, 1732,
                         1733, 1734, 1735, 1736, 1737, 1738, 1739, 1740, 1741, 1742, 1743, 1744, 1745, 1746, 1747, 1748,
@@ -101,7 +97,7 @@ namespace Maple2.Trigger._02000403_bf {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1711, 1712, 1713, 1714, 1715, 1716,
                         1717, 1718, 1719, 1720, 1721, 1722, 1723, 1724, 1725, 1726, 1727, 1728, 1729, 1730, 1731, 1732,
                         1733, 1734, 1735, 1736, 1737, 1738, 1739, 1740, 1741, 1742, 1743, 1744, 1745, 1746, 1747, 1748,
@@ -110,7 +106,7 @@ namespace Maple2.Trigger._02000403_bf {
                         1781, 1782, 1783, 1784, 1785, 1786, 1787, 1788, 1789, 1790, 1791, 1792, 1793, 1794, 1795, 1796,
                         1797, 1798, 1799
                     }, arg2: false, arg3: 0, arg4: 200, arg5: 35f);
-                context.DestroyMonster(arg1: new int[] {1121, 1122});
+                context.DestroyMonster(arg1: new[] {1121, 1122});
             }
 
             public override void Execute() { }

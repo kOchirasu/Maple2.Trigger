@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._02020065_bf {
     public static class _battle_3_monsterspawn {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 99990001, key: "Battle_3_Clear", value: 0);
-                context.StartCombineSpawn(groupId: new int[] {505}, isStart: "false");
-                context.StartCombineSpawn(groupId: new int[] {506}, isStart: "false");
-                context.StartCombineSpawn(groupId: new int[] {507}, isStart: "false");
-                context.StartCombineSpawn(groupId: new int[] {508}, isStart: "false");
-                context.StartCombineSpawn(groupId: new int[] {509}, isStart: "false");
+                context.SetUserValue(triggerId: 99990001, key: "Battle_3_Clear", value: 0);
+                context.StartCombineSpawn(groupId: new[] {505}, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {506}, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {507}, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {508}, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {509}, isStart: false);
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
                 context.ResetTimer(arg1: "1");
@@ -23,7 +19,7 @@ namespace Maple2.Trigger._02020065_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Battle_3_SpawnStart", value: 1)) {
+                if (context.GetUserValue(key: "Battle_3_SpawnStart") == 1) {
                     context.State = new State스폰_1_SE(context);
                     return;
                 }
@@ -42,7 +38,7 @@ namespace Maple2.Trigger._02020065_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -63,11 +59,11 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SetTimer(arg1: "1", arg2: 60, arg3: true);
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
-                context.StartCombineSpawn(groupId: new int[] {505}, isStart: "true");
+                context.StartCombineSpawn(groupId: new[] {505}, isStart: true);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -90,7 +86,7 @@ namespace Maple2.Trigger._02020065_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -111,7 +107,7 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SetTimer(arg1: "2", arg2: 60, arg3: true);
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
-                context.StartCombineSpawn(groupId: new int[] {506}, isStart: "true");
+                context.StartCombineSpawn(groupId: new[] {506}, isStart: true);
             }
 
             public override void Execute() {
@@ -120,7 +116,7 @@ namespace Maple2.Trigger._02020065_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -138,7 +134,7 @@ namespace Maple2.Trigger._02020065_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -159,7 +155,7 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SetTimer(arg1: "3", arg2: 60, arg3: true);
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
-                context.StartCombineSpawn(groupId: new int[] {507}, isStart: "true");
+                context.StartCombineSpawn(groupId: new[] {507}, isStart: true);
             }
 
             public override void Execute() {
@@ -168,7 +164,7 @@ namespace Maple2.Trigger._02020065_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -186,7 +182,7 @@ namespace Maple2.Trigger._02020065_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -207,7 +203,7 @@ namespace Maple2.Trigger._02020065_bf {
                 context.SetTimer(arg1: "4", arg2: 60, arg3: true);
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
-                context.StartCombineSpawn(groupId: new int[] {508}, isStart: "true");
+                context.StartCombineSpawn(groupId: new[] {508}, isStart: true);
             }
 
             public override void Execute() {
@@ -216,7 +212,7 @@ namespace Maple2.Trigger._02020065_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -234,7 +230,7 @@ namespace Maple2.Trigger._02020065_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -252,14 +248,14 @@ namespace Maple2.Trigger._02020065_bf {
             internal State스폰_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new int[] {509}, isStart: "true");
+                context.StartCombineSpawn(groupId: new[] {509}, isStart: true);
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/Sound/Eff_System_Dark_Intro_Chord_01.xml");
                 context.ScoreBoardRemove();
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Battle_3_SpawnStart", value: 0)) {
+                if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
                     context.State = new State대기(context);
                     return;
                 }

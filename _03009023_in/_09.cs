@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._03009023_in {
     public static class _09 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000241}, arg2: 1);
-                context.CreateMonster(arg1: new int[] {109}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000241}, arg2: 1);
+                context.CreateMonster(arg1: new[] {109}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000241}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000241}, arg2: 0)) {
                     context.State = new StateNPC이동(context);
                     return;
                 }
@@ -27,8 +23,8 @@ namespace Maple2.Trigger._03009023_in {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 5);
-                context.DestroyMonster(arg1: new int[] {109});
-                context.CreateMonster(arg1: new int[] {209}, arg2: true);
+                context.DestroyMonster(arg1: new[] {109});
+                context.CreateMonster(arg1: new[] {209}, arg2: true);
                 context.MoveNpc(arg1: 209, arg2: "MS2PatrolData_209");
                 context.SetConversation(arg1: 1, arg2: 209, arg3: "$03009023_IN__09__0$", arg4: 4, arg5: 1);
             }
@@ -47,7 +43,7 @@ namespace Maple2.Trigger._03009023_in {
             internal StateNPC소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {209});
+                context.DestroyMonster(arg1: new[] {209});
                 context.SetTimer(arg1: "1", arg2: 10);
             }
 

@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._99999876 {
     public static class _17000_minipuzzle_chatchupnpc {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "ChangeNpc", value: 0);
-                context.DestroyMonster(arg1: new int[] {17101, 17102});
+                context.DestroyMonster(arg1: new[] {17101, 17102});
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new StateSettingDelay(context);
                     return;
                 }
@@ -41,11 +37,11 @@ namespace Maple2.Trigger._99999876 {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {17101}, arg2: false);
+                context.CreateMonster(arg1: new[] {17101}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ChangeNpc", value: 1)) {
+                if (context.GetUserValue(key: "ChangeNpc") == 1) {
                     context.State = new StateChatchUpNpc(context);
                     return;
                 }
@@ -77,7 +73,7 @@ namespace Maple2.Trigger._99999876 {
 
             public override void OnEnter() {
                 context.ResetTimer(arg1: "1");
-                context.DestroyMonster(arg1: new int[] {17101, 17102});
+                context.DestroyMonster(arg1: new[] {17101, 17102});
             }
 
             public override void Execute() {

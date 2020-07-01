@@ -1,28 +1,24 @@
-using System;
-
 namespace Maple2.Trigger._02000163_bf {
     public static class _01_trigger {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101});
-                context.SetEffect(arg1: new int[] {201}, arg2: true);
-                context.SetEffect(arg1: new int[] {202}, arg2: true);
-                context.SetEffect(arg1: new int[] {203}, arg2: true);
-                context.SetEffect(arg1: new int[] {204}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000079}, arg2: 1);
+                context.CreateMonster(arg1: new[] {101});
+                context.SetEffect(arg1: new[] {201}, arg2: true);
+                context.SetEffect(arg1: new[] {202}, arg2: true);
+                context.SetEffect(arg1: new[] {203}, arg2: true);
+                context.SetEffect(arg1: new[] {204}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000079}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000079}, arg2: 0)) {
-                    context.DestroyMonster(arg1: new int[] {101});
-                    context.SetEffect(arg1: new int[] {201}, arg2: false);
-                    context.SetEffect(arg1: new int[] {202}, arg2: false);
-                    context.SetEffect(arg1: new int[] {203}, arg2: false);
-                    context.SetEffect(arg1: new int[] {204}, arg2: false);
+                if (context.ObjectInteracted(arg1: new[] {10000079}, arg2: 0)) {
+                    context.DestroyMonster(arg1: new[] {101});
+                    context.SetEffect(arg1: new[] {201}, arg2: false);
+                    context.SetEffect(arg1: new[] {202}, arg2: false);
+                    context.SetEffect(arg1: new[] {203}, arg2: false);
+                    context.SetEffect(arg1: new[] {204}, arg2: false);
                     context.State = new State매킨생성(context);
                     return;
                 }
@@ -35,7 +31,7 @@ namespace Maple2.Trigger._02000163_bf {
             internal State매킨생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {102});
+                context.CreateMonster(arg1: new[] {102});
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -58,7 +54,7 @@ namespace Maple2.Trigger._02000163_bf {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 301, arg2: new int[] {102})) {
+                if (context.NpcDetected(arg1: 301, arg2: new[] {102})) {
                     context.State = new State매킨이동302(context);
                     return;
                 }
@@ -71,7 +67,7 @@ namespace Maple2.Trigger._02000163_bf {
             internal State매킨이동302(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateItem(arg1: new int[] {201}, arg2: 0, arg3: 10000079);
+                context.CreateItem(arg1: new[] {201}, arg2: 0, arg3: 10000079);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -91,7 +87,7 @@ namespace Maple2.Trigger._02000163_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 304, arg2: new int[] {102})) {
+                if (context.NpcDetected(arg1: 304, arg2: new[] {102})) {
                     context.State = new State트리거초기화(context);
                     return;
                 }
@@ -104,7 +100,7 @@ namespace Maple2.Trigger._02000163_bf {
             internal State트리거초기화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {102});
+                context.DestroyMonster(arg1: new[] {102});
                 context.SetTimer(arg1: "1", arg2: 60);
             }
 

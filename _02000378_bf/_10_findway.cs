@@ -1,24 +1,20 @@
-using System;
-
 namespace Maple2.Trigger._02000378_bf {
     public static class _10_findway {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {4030}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3010}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3110}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMeshAnimation(arg1: new int[] {3010}, arg2: true, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new int[] {3110}, arg2: false, arg3: 0, arg4: 0);
-                context.SetEffect(arg1: new int[] {5210}, arg2: false);
+                context.SetMesh(arg1: new[] {4030}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3010}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3110}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMeshAnimation(arg1: new[] {3010}, arg2: true, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(arg1: new[] {3110}, arg2: false, arg3: 0, arg4: 0);
+                context.SetEffect(arg1: new[] {5210}, arg2: false);
                 context.SetUserValue(key: "FindWay", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "FindWay", value: 1)) {
+                if (context.GetUserValue(key: "FindWay") == 1) {
                     context.State = new StateReadyToWalkIn_FromPortal(context);
                     return;
                 }
@@ -31,9 +27,9 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateReadyToWalkIn_FromPortal(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {4030}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetUserValue(triggerID: 1310, key: "RouteSelected", value: 1);
-                context.SetUserValue(triggerID: 2310, key: "RouteSelected", value: 1);
+                context.SetMesh(arg1: new[] {4030}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetUserValue(triggerId: 1310, key: "RouteSelected", value: 1);
+                context.SetUserValue(triggerId: 2310, key: "RouteSelected", value: 1);
             }
 
             public override void Execute() {
@@ -44,8 +40,8 @@ namespace Maple2.Trigger._02000378_bf {
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new int[] {110}, arg2: false);
-                context.CreateMonster(arg1: new int[] {2010}, arg2: false);
+                context.CreateMonster(arg1: new[] {110}, arg2: false);
+                context.CreateMonster(arg1: new[] {2010}, arg2: false);
             }
         }
 
@@ -64,7 +60,7 @@ namespace Maple2.Trigger._02000378_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {110});
+                context.DestroyMonster(arg1: new[] {110});
             }
         }
 
@@ -72,13 +68,13 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateRound10_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1010}, arg2: false);
+                context.CreateMonster(arg1: new[] {1010}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 1010, arg3: "$02000378_BF__10_FINDWAY__4$", arg4: 3, arg5: 2);
-                context.SetUserValue(triggerID: 910, key: "MobWaveStart", value: 1);
+                context.SetUserValue(triggerId: 910, key: "MobWaveStart", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "10RoundSuccess", value: 1)) {
+                if (context.GetUserValue(key: "10RoundSuccess") == 1) {
                     context.State = new StateRound10_Sucess01(context);
                     return;
                 }
@@ -92,13 +88,13 @@ namespace Maple2.Trigger._02000378_bf {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 2010, arg2: "MS2PatrolData_2010");
-                context.DestroyMonster(arg1: new int[] {1010});
-                context.CreateMonster(arg1: new int[] {110}, arg2: false);
-                context.SetMesh(arg1: new int[] {3010}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3110}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMeshAnimation(arg1: new int[] {3010}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new int[] {3110}, arg2: true, arg3: 0, arg4: 0);
-                context.SetEffect(arg1: new int[] {5210}, arg2: true);
+                context.DestroyMonster(arg1: new[] {1010});
+                context.CreateMonster(arg1: new[] {110}, arg2: false);
+                context.SetMesh(arg1: new[] {3010}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3110}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMeshAnimation(arg1: new[] {3010}, arg2: false, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(arg1: new[] {3110}, arg2: true, arg3: 0, arg4: 0);
+                context.SetEffect(arg1: new[] {5210}, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 110, arg3: "$02000378_BF__10_FINDWAY__5$", arg4: 2, arg5: 1);
             }
 
@@ -116,8 +112,8 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateRound10_RouteSelect(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {2010});
-                context.CreateMonster(arg1: new int[] {210}, arg2: false);
+                context.DestroyMonster(arg1: new[] {2010});
+                context.CreateMonster(arg1: new[] {210}, arg2: false);
             }
 
             public override void Execute() {
@@ -139,8 +135,8 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateRound10_PickRoute_Left(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1310, key: "MakeTrue", value: 1);
-                context.SetUserValue(triggerID: 2310, key: "MakeFalse", value: 1);
+                context.SetUserValue(triggerId: 1310, key: "MakeTrue", value: 1);
+                context.SetUserValue(triggerId: 2310, key: "MakeFalse", value: 1);
             }
 
             public override void Execute() {
@@ -159,7 +155,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 110, arg2: "MS2PatrolData_17");
                 context.MoveNpc(arg1: 210, arg2: "MS2PatrolData_27");
-                context.SetUserValue(triggerID: 12, key: "FindWay", value: 1);
+                context.SetUserValue(triggerId: 12, key: "FindWay", value: 1);
             }
 
             public override void Execute() {
@@ -176,8 +172,8 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateRound10_PickRoute_Right(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1310, key: "MakeFalse", value: 1);
-                context.SetUserValue(triggerID: 2310, key: "MakeTrue", value: 1);
+                context.SetUserValue(triggerId: 1310, key: "MakeFalse", value: 1);
+                context.SetUserValue(triggerId: 2310, key: "MakeTrue", value: 1);
             }
 
             public override void Execute() {
@@ -196,7 +192,7 @@ namespace Maple2.Trigger._02000378_bf {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 110, arg2: "MS2PatrolData_18");
                 context.MoveNpc(arg1: 210, arg2: "MS2PatrolData_28");
-                context.SetUserValue(triggerID: 12, key: "FindWay", value: 1);
+                context.SetUserValue(triggerId: 12, key: "FindWay", value: 1);
             }
 
             public override void Execute() {
@@ -213,7 +209,7 @@ namespace Maple2.Trigger._02000378_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {110, 210});
+                context.DestroyMonster(arg1: new[] {110, 210});
             }
 
             public override void Execute() { }

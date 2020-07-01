@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000429_bf {
     public static class _popupcinema {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 750, arg2: 1)) {
+                if (context.GetUserCount(boxId: 750) == 1) {
                     context.State = new State시작연출준비(context);
                     return;
                 }
@@ -38,7 +34,7 @@ namespace Maple2.Trigger._02000429_bf {
             internal State전투시작01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11003536, illust: "Bliche_nomal", duration: 5000,
+                context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 5000,
                     script: "$02000410_BF__PopUpCinema__0$", voice: @"ko/Npc/00002157");
             }
 
@@ -57,7 +53,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "movie", usm: @"Common/WorldInvasionScene1.usm", duration: 0);
-                context.SideNpcTalk(npcID: 11003536, illust: "Neirin_normal", duration: 5000,
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000,
                     script: "$02000410_BF__PopUpCinema__1$", voice: @"ko/Npc/00002166");
             }
 
@@ -75,7 +71,7 @@ namespace Maple2.Trigger._02000429_bf {
             internal State전투시작03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11003536, illust: "infernog_nomal", duration: 8900,
+                context.SideNpcTalk(npcId: 11003536, illust: "infernog_nomal", duration: 8900,
                     script: "$02000410_BF__PopUpCinema__2$", voice: @"ko/Monster/60000724");
             }
 
@@ -93,7 +89,7 @@ namespace Maple2.Trigger._02000429_bf {
             internal State전투시작04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11003536, illust: "infernog_nomal", duration: 6000,
+                context.SideNpcTalk(npcId: 11003536, illust: "infernog_nomal", duration: 6000,
                     script: "$02000410_BF__PopUpCinema__3$", voice: @"ko/Monster/60000725");
             }
 
@@ -111,12 +107,12 @@ namespace Maple2.Trigger._02000429_bf {
             internal State전투시작05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11003536, illust: "tristan_normal", duration: 6500,
+                context.SideNpcTalk(npcId: 11003536, illust: "tristan_normal", duration: 6500,
                     script: "$02000410_BF__PopUpCinema__4$", voice: @"ko/Npc/00002172");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "WorldInvasionScene", value: 2)) {
+                if (context.GetUserValue(key: "WorldInvasionScene") == 2) {
                     context.State = new State두번째팝업영상출력(context);
                     return;
                 }
@@ -130,7 +126,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "movie", usm: @"Common/WorldInvasionScene2.usm", duration: 0);
-                context.SideNpcTalk(npcID: 11003536, illust: "Neirin_normal", duration: 5000,
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000,
                     script: "$02000410_BF__PopUpCinema__5$", voice: @"ko/Npc/00002178");
             }
 
@@ -148,12 +144,12 @@ namespace Maple2.Trigger._02000429_bf {
             internal State두번째팝업영상출력02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11003536, illust: "Bliche_nomal", duration: 5000,
+                context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 5000,
                     script: "$02000410_BF__PopUpCinema__6$", voice: @"ko/Npc/00002173");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "WorldInvasionScene", value: 3)) {
+                if (context.GetUserValue(key: "WorldInvasionScene") == 3) {
                     context.State = new State세번째팝업영상출력(context);
                     return;
                 }
@@ -166,7 +162,7 @@ namespace Maple2.Trigger._02000429_bf {
             internal State세번째팝업영상출력(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11003536, illust: "Neirin_normal", duration: 5000,
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000,
                     script: "$02000410_BF__PopUpCinema__7$", voice: @"ko/Npc/00002179");
                 context.SideNpcTalk(type: "movie", usm: @"Common/WorldInvasionScene3.usm", duration: 0);
             }
@@ -185,7 +181,7 @@ namespace Maple2.Trigger._02000429_bf {
             internal State세번째팝업영상출력02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11003536, illust: "Bliche_nomal", duration: 5000,
+                context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 5000,
                     script: "$02000410_BF__PopUpCinema__8$", voice: @"ko/Npc/00002174");
             }
 
@@ -203,7 +199,7 @@ namespace Maple2.Trigger._02000429_bf {
             internal State세번째팝업영상출력03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11003536, illust: "Neirin_normal", duration: 5000,
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000,
                     script: "$02000410_BF__PopUpCinema__9$", voice: @"ko/Npc/00002180");
             }
 
@@ -221,12 +217,12 @@ namespace Maple2.Trigger._02000429_bf {
             internal State세번째팝업영상출력04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11003536, illust: "Bliche_nomal", duration: 5000,
+                context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 5000,
                     script: "$02000410_BF__PopUpCinema__10$", voice: @"ko/Npc/00002175");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "WorldInvasionScene", value: 4)) {
+                if (context.GetUserValue(key: "WorldInvasionScene") == 4) {
                     context.State = new State네번째팝업영상출력(context);
                     return;
                 }
@@ -240,7 +236,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "movie", usm: @"Common/WorldInvasionScene4.usm", duration: 0);
-                context.SideNpcTalk(npcID: 11003536, illust: "Neirin_normal", duration: 5000,
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000,
                     script: "$02000410_BF__PopUpCinema__11$", voice: @"ko/Npc/00002181");
             }
 
@@ -258,7 +254,7 @@ namespace Maple2.Trigger._02000429_bf {
             internal State네번째팝업영상출력02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11003536, illust: "Bliche_nomal", duration: 5000,
+                context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 5000,
                     script: "$02000410_BF__PopUpCinema__12$", voice: @"ko/Npc/00002176");
             }
 

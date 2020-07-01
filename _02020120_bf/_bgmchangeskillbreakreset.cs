@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02020120_bf {
     public static class _bgmchangeskillbreakreset {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -14,7 +10,7 @@ namespace Maple2.Trigger._02020120_bf {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 299, arg2: 1)) {
+                if (context.GetUserCount(boxId: 299) == 1) {
                     context.State = new State던전시간작동대기(context);
                     return;
                 }
@@ -29,12 +25,12 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 399, arg2: 1)) {
+                if (context.GetUserCount(boxId: 399) == 1) {
                     context.State = new State스킬브레이크신호대기_BGM교체(context);
                     return;
                 }
 
-                if (context.UserValue(key: "BgmChangeTriggerCancel", value: 1)) {
+                if (context.GetUserValue(key: "BgmChangeTriggerCancel") == 1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -51,7 +47,7 @@ namespace Maple2.Trigger._02020120_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "SkillBreakStart", value: 1, @operator: "GreaterEqual")) {
+                if (context.GetUserValue(key: "SkillBreakStart") >= 1) {
                     context.State = new State스킬브레이크로직작동(context);
                     return;
                 }
@@ -100,7 +96,7 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "DungeonReset", value: 1)) {
+                if (context.GetUserValue(key: "DungeonReset") == 1) {
                     context.State = new StateReady(context);
                     return;
                 }

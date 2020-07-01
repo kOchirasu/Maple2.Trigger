@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._65000002_bd {
     public static class _pvp {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시간표확인(context);
-
-        private class State시간표확인 : TriggerState {
+        public class State시간표확인 : TriggerState {
             internal State시간표확인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetTimer(arg1: "60", arg2: 60, arg3: false, arg4: true);
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {602}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 102, arg2: 10)) {
+                if (context.GetUserCount(boxId: 102) == 10) {
                     context.State = new State어나운스0(context);
                     return;
                 }
@@ -37,12 +33,12 @@ namespace Maple2.Trigger._65000002_bd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 102, arg2: 2)) {
+                if (context.GetUserCount(boxId: 102) == 2) {
                     context.State = new State어나운스0(context);
                     return;
                 }
 
-                if (!context.CountUsers(arg1: 102, arg2: 2)) {
+                if (context.GetUserCount(boxId: 102) != 2) {
                     context.State = new State비김(context);
                     return;
                 }
@@ -57,7 +53,7 @@ namespace Maple2.Trigger._65000002_bd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "6", arg2: 6, arg3: false);
                 context.PlaySystemSoundInBox(arg2: "BD_PVP_00");
-                context.SetEventUI(arg1: 1, arg2: "$65000002_BD__PVP__0$", arg3: new int[] {6000});
+                context.SetEventUI(arg1: 1, arg2: "$65000002_BD__PVP__0$", arg3: 6000);
             }
 
             public override void Execute() {
@@ -76,7 +72,7 @@ namespace Maple2.Trigger._65000002_bd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "6", arg2: 6, arg3: false);
                 context.PlaySystemSoundInBox(arg2: "BD_PVP_01");
-                context.SetEventUI(arg1: 1, arg2: "$65000002_BD__PVP__1$", arg3: new int[] {6000});
+                context.SetEventUI(arg1: 1, arg2: "$65000002_BD__PVP__1$", arg3: 6000);
             }
 
             public override void Execute() {
@@ -95,7 +91,7 @@ namespace Maple2.Trigger._65000002_bd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "6", arg2: 6, arg3: false);
                 context.PlaySystemSoundInBox(arg2: "BD_PVP_02");
-                context.SetEventUI(arg1: 1, arg2: "$65000002_BD__PVP__2$", arg3: new int[] {6000}, arg4: "101");
+                context.SetEventUI(arg1: 1, arg2: "$65000002_BD__PVP__2$", arg3: 6000, arg4: "101");
             }
 
             public override void Execute() {
@@ -114,8 +110,8 @@ namespace Maple2.Trigger._65000002_bd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3, arg3: false);
                 context.PlaySystemSoundInBox(arg2: "BD_PVP_03");
-                context.SetEventUI(arg1: 1, arg2: "$65000002_BD__PVP__3$", arg3: new int[] {3000});
-                context.SetEffect(arg1: new int[] {601}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "$65000002_BD__PVP__3$", arg3: 3000);
+                context.SetEffect(arg1: new[] {601}, arg2: true);
             }
 
             public override void Execute() {
@@ -133,9 +129,9 @@ namespace Maple2.Trigger._65000002_bd {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 101, arg2: "trigger", arg3: "dailyquest_start");
-                context.GiveGuildExp(boxID: false, type: 2);
-                context.AddBuff(arg1: new int[] {101}, arg2: 70000088, arg3: 1, arg4: false, arg5: false);
-                context.AddBuff(arg1: new int[] {101}, arg2: 70000089, arg3: 1, arg4: false, arg5: false);
+                context.GiveGuildExp(boxId: false, type: 2);
+                context.AddBuff(arg1: new[] {101}, arg2: 70000088, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {101}, arg2: 70000089, arg3: 1, arg4: false, arg5: false);
                 context.SetTimer(arg1: "1", arg2: 1, arg3: false);
             }
 
@@ -171,8 +167,8 @@ namespace Maple2.Trigger._65000002_bd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "4", arg2: 4, arg3: false);
                 context.PlaySystemSoundInBox(arg2: "BD_PVP_04");
-                context.SetEventUI(arg1: 1, arg2: "$65000002_BD__PVP__4$", arg3: new int[] {3000}, arg4: "101");
-                context.SetEffect(arg1: new int[] {602}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "$65000002_BD__PVP__4$", arg3: 3000, arg4: "101");
+                context.SetEffect(arg1: new[] {602}, arg2: true);
             }
 
             public override void Execute() {
@@ -194,7 +190,7 @@ namespace Maple2.Trigger._65000002_bd {
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.SetEventUI(arg1: 5, arg2: "$65000002_BD__PVP__5$", arg3: new int[] {3000}, arg4: "0");
+                    context.SetEventUI(arg1: 5, arg2: "$65000002_BD__PVP__5$", arg3: 3000, arg4: "0");
                     context.State = new State완료(context);
                     return;
                 }

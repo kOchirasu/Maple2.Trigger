@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000163_qd {
     public static class _52000163 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statewait_01(context);
-
-        private class Statewait_01 : TriggerState {
+        public class Statewait_01 : TriggerState {
             internal Statewait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {2001}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {2001}, arg2: 0)) {
                     context.State = new State전직컷씬01(context);
                     return;
                 }
@@ -24,9 +20,9 @@ namespace Maple2.Trigger._52000163_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "jobChange_berserker.swf", movieID: 1);
+                context.PlaySceneMovie(fileName: "jobChange_berserker.swf", movieId: 1);
                 context.SetProductionUI(arg1: 1);
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
             public override void Execute() {
@@ -48,7 +44,7 @@ namespace Maple2.Trigger._52000163_qd {
             internal State리엔원경_01_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003, 4004}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4003, 4004}, arg2: false);
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
             }
 
@@ -162,7 +158,7 @@ namespace Maple2.Trigger._52000163_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002750},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002750},
                     arg3: new byte[] {3})) {
                     context.State = new State전직이펙트_01(context);
                     return;
@@ -214,7 +210,7 @@ namespace Maple2.Trigger._52000163_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002753},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002753},
                     arg3: new byte[] {3})) {
                     context.State = new State프론티아재단으로_01(context);
                     return;

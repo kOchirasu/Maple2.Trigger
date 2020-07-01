@@ -1,34 +1,30 @@
-using System;
-
 namespace Maple2.Trigger._52000126_qd {
     public static class _main_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {60100210},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100210},
                     arg3: new byte[] {2})) {
                     context.State = new Stateready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {60100210},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100210},
                     arg3: new byte[] {3})) {
                     context.State = new Stateready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {60100215},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100215},
                     arg3: new byte[] {1})) {
                     context.State = new Stateready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {60100215},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60100215},
                     arg3: new byte[] {2})) {
                     context.State = new Stateready(context);
                     return;
@@ -46,7 +42,7 @@ namespace Maple2.Trigger._52000126_qd {
                 context.SetSound(arg1: 7002, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
                 context.SetSceneSkip(arg1: "endwaiting", arg2: "exit");
             }
 
@@ -65,7 +61,7 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_3001");
-                context.AddBalloonTalk(spawnPointID: 201, msg: "$52000126_QD__MAIN_01__0$", duration: 7000,
+                context.AddBalloonTalk(spawnPointId: 201, msg: "$52000126_QD__MAIN_01__0$", duration: 7000,
                     delayTick: 1);
             }
 
@@ -84,7 +80,7 @@ namespace Maple2.Trigger._52000126_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Clap_A");
-                context.AddBalloonTalk(spawnPointID: 201, msg: "$52000126_QD__MAIN_01__1$", duration: 3000,
+                context.AddBalloonTalk(spawnPointId: 201, msg: "$52000126_QD__MAIN_01__1$", duration: 3000,
                     delayTick: 0);
             }
 
@@ -102,7 +98,7 @@ namespace Maple2.Trigger._52000126_qd {
             internal Stateendtalk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 201, msg: "$52000126_QD__MAIN_01__2$", duration: 3000,
+                context.AddBalloonTalk(spawnPointId: 201, msg: "$52000126_QD__MAIN_01__2$", duration: 3000,
                     delayTick: 0);
             }
 
@@ -123,8 +119,8 @@ namespace Maple2.Trigger._52000126_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
-                context.DestroyMonster(arg1: new int[] {201});
-                context.CreateMonster(arg1: new int[] {202}, arg2: true);
+                context.DestroyMonster(arg1: new[] {201});
+                context.CreateMonster(arg1: new[] {202}, arg2: true);
             }
 
             public override void Execute() {

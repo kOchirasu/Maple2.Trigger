@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02020027_bf {
     public static class _stun_1 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {1001})) {
+                if (context.UserDetected(arg1: new[] {1001})) {
                     context.State = new State전투시작(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._02020027_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "summon_3_1", value: 1)) {
+                if (context.GetUserValue(key: "summon_3_1") == 1) {
                     context.State = new State버프(context);
                     return;
                 }
@@ -107,7 +103,7 @@ namespace Maple2.Trigger._02020027_bf {
             internal State버프_제거(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {201}, arg2: 62000002, arg3: 1, arg4: true);
+                context.AddBuff(arg1: new[] {201}, arg2: 62000002, arg3: 1, arg4: true);
             }
 
             public override void Execute() {

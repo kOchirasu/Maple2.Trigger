@@ -1,22 +1,18 @@
-using System;
-
 namespace Maple2.Trigger._52100105_qd {
     public static class _52100105_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statewait_01(context);
-
-        private class Statewait_01 : TriggerState {
+        public class Statewait_01 : TriggerState {
             internal Statewait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {50101020},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50101020},
                     arg3: new byte[] {2})) {
                     context.State = new Statewait_03(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2002}, arg2: new int[] {50101030},
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {50101030},
                     arg3: new byte[] {3})) {
                     context.State = new State장치가동_04(context);
                     return;
@@ -48,13 +44,13 @@ namespace Maple2.Trigger._52100105_qd {
             internal State투르카_클라디아(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
-                context.CreateMonster(arg1: new int[] {103}, arg2: false);
-                context.CreateMonster(arg1: new int[] {104}, arg2: false);
-                context.CreateMonster(arg1: new int[] {105}, arg2: false);
-                context.CreateMonster(arg1: new int[] {106}, arg2: false);
-                context.CreateMonster(arg1: new int[] {107}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {103}, arg2: false);
+                context.CreateMonster(arg1: new[] {104}, arg2: false);
+                context.CreateMonster(arg1: new[] {105}, arg2: false);
+                context.CreateMonster(arg1: new[] {106}, arg2: false);
+                context.CreateMonster(arg1: new[] {107}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.VisibleMyPc(isVisible: false);
             }
@@ -75,7 +71,7 @@ namespace Maple2.Trigger._52100105_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
             }
 
             public override void Execute() {
@@ -92,13 +88,13 @@ namespace Maple2.Trigger._52100105_qd {
             internal State투르카_클라디아_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcID: 11004430, illustID: "Turka_normal", align: "right",
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: "right",
                     msg: "$52100105_QD__52100105_01__0$", duration: 4000);
-                context.AddCinematicTalk(npcID: 11004430, illustID: "Turka_normal", align: "right",
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: "right",
                     msg: "$52100105_QD__52100105_01__1$", duration: 4000);
-                context.AddCinematicTalk(npcID: 11004430, illustID: "Turka_normal", align: "right",
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: "right",
                     msg: "$52100105_QD__52100105_01__2$", duration: 4000);
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
             }
@@ -117,12 +113,12 @@ namespace Maple2.Trigger._52100105_qd {
             internal State투르카_클라디아_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
-                context.AddCinematicTalk(npcID: 11004392, illustID: "cladia_normal", align: "left",
+                context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004392, illustId: "cladia_normal", align: "left",
                     msg: "$52100105_QD__52100105_01__3$", duration: 3500);
-                context.AddCinematicTalk(npcID: 11004392, illustID: "cladia_normal", align: "left",
+                context.AddCinematicTalk(npcId: 11004392, illustId: "cladia_normal", align: "left",
                     msg: "$52100105_QD__52100105_01__4$", duration: 3500);
-                context.AddCinematicTalk(npcID: 11004430, illustID: "Turka_normal", align: "right",
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: "right",
                     msg: "$52100105_QD__52100105_01__5$", duration: 4000);
             }
 
@@ -140,8 +136,8 @@ namespace Maple2.Trigger._52100105_qd {
             internal State투르카_클라디아_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4004}, arg2: false);
-                context.AddCinematicTalk(npcID: 11004430, illustID: "Turka_normal", align: "left",
+                context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: "left",
                     msg: "$52100105_QD__52100105_01__6$", duration: 5000);
             }
 
@@ -159,10 +155,10 @@ namespace Maple2.Trigger._52100105_qd {
             internal State장치가동_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4007}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4007}, arg2: false);
                 context.SetNpcRotation(arg1: 102, arg2: 270);
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Bore_A");
-                context.AddCinematicTalk(npcID: 11004430, illustID: "Turka_normal", align: "left",
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: "left",
                     msg: "$52100105_QD__52100105_01__7$", duration: 3000);
             }
 
@@ -180,7 +176,7 @@ namespace Maple2.Trigger._52100105_qd {
             internal State장치가동_01_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4005}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4005}, arg2: false);
             }
 
             public override void Execute() {
@@ -215,7 +211,7 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.CameraSelectPath(arg1: new int[] {4006}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4006}, arg2: false);
             }
 
             public override void Execute() {
@@ -235,7 +231,7 @@ namespace Maple2.Trigger._52100105_qd {
                 context.SetNpcRotation(arg1: 102, arg2: 360);
                 context.SetOnetimeEffect(id: 101, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Quest_Attack_A", arg3: 5000f);
-                context.AddCinematicTalk(npcID: 11004392, illustID: "cladia_normal", align: "right",
+                context.AddCinematicTalk(npcId: 11004392, illustId: "cladia_normal", align: "right",
                     msg: "$52100105_QD__52100105_01__8$", duration: 3000);
             }
 
@@ -253,7 +249,7 @@ namespace Maple2.Trigger._52100105_qd {
             internal State장치가동_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4002, 4008}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4002, 4008}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Quest_Effect_A", arg3: 12000f);
                 context.SetSceneSkip();
             }
@@ -308,13 +304,13 @@ namespace Maple2.Trigger._52100105_qd {
             internal State정리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101});
-                context.DestroyMonster(arg1: new int[] {102});
-                context.DestroyMonster(arg1: new int[] {103});
-                context.DestroyMonster(arg1: new int[] {104});
-                context.DestroyMonster(arg1: new int[] {105});
-                context.DestroyMonster(arg1: new int[] {106});
-                context.DestroyMonster(arg1: new int[] {107});
+                context.DestroyMonster(arg1: new[] {101});
+                context.DestroyMonster(arg1: new[] {102});
+                context.DestroyMonster(arg1: new[] {103});
+                context.DestroyMonster(arg1: new[] {104});
+                context.DestroyMonster(arg1: new[] {105});
+                context.DestroyMonster(arg1: new[] {106});
+                context.DestroyMonster(arg1: new[] {107});
                 context.VisibleMyPc(isVisible: true);
                 context.MoveUser(arg1: 52100110, arg2: 1);
             }

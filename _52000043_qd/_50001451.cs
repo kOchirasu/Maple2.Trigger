@@ -1,25 +1,21 @@
-using System;
-
 namespace Maple2.Trigger._52000043_qd {
     public static class _50001451 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작조건(context);
-
-        private class State시작조건 : TriggerState {
+        public class State시작조건 : TriggerState {
             internal State시작조건(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {602}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50001451},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50001451},
                     arg3: new byte[] {1})) {
                     context.State = new State연출시작(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50001451},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50001451},
                     arg3: new byte[] {2})) {
                     context.State = new StateNPC만배치(context);
                     return;
@@ -33,9 +29,9 @@ namespace Maple2.Trigger._52000043_qd {
             internal StateNPC만배치(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1001, 2001}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 2001}, arg2: false);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015,
                         3016, 3017
                     }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -58,9 +54,9 @@ namespace Maple2.Trigger._52000043_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.CreateMonster(arg1: new int[] {1001, 2001}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 2001}, arg2: false);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015,
                         3016, 3017
                     }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -205,7 +201,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타대사03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: true);
+                context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001451__3$", arg4: 4);
                 context.SetSkip(arg1: "준타대사03스킵");
             }
@@ -224,7 +220,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타대사03스킵(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
                 context.RemoveCinematicTalk();
                 context.SetSkip();
             }
@@ -279,7 +275,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타대사04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {602}, arg2: true);
+                context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000043_QD__50001451__5$", arg4: 2);
                 context.SetSkip(arg1: "준타대사04스킵");
             }
@@ -298,7 +294,7 @@ namespace Maple2.Trigger._52000043_qd {
             internal State준타대사04스킵(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {602}, arg2: false);
                 context.RemoveCinematicTalk();
                 context.SetSkip();
             }

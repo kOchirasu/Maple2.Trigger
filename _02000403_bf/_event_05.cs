@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000403_bf {
     public static class _event_05 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statenone(context);
-
-        private class Statenone : TriggerState {
+        public class Statenone : TriggerState {
             internal Statenone(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {706})) {
+                if (context.UserDetected(arg1: new[] {706})) {
                     context.State = new Stateidle(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._02000403_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {121, 154, 122, 156, 110})) {
+                if (context.MonsterDead(arg1: new[] {121, 154, 122, 156, 110})) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -39,7 +35,7 @@ namespace Maple2.Trigger._02000403_bf {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 706, arg2: "trigger", arg3: "Hauntedmansion");
-                context.CreateMonster(arg1: new int[] {1110, 1111, 1112, 1113}, arg2: false);
+                context.CreateMonster(arg1: new[] {1110, 1111, 1112, 1113}, arg2: false);
             }
 
             public override void Execute() {
@@ -76,7 +72,7 @@ namespace Maple2.Trigger._02000403_bf {
             internal Stateexit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1110, 1111, 1112, 1113});
+                context.DestroyMonster(arg1: new[] {1110, 1111, 1112, 1113});
             }
 
             public override void Execute() { }

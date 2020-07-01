@@ -1,132 +1,128 @@
-using System;
-
 namespace Maple2.Trigger._52000074_qd {
     public static class _questnpcspawn01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101, 201}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 201}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002679},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002679},
                     arg3: new byte[] {3})) {
                     context.State = new StateNpcRemove01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002679},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002679},
                     arg3: new byte[] {2})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002679},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002679},
                     arg3: new byte[] {1})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002678},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002678},
                     arg3: new byte[] {3})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002678},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002678},
                     arg3: new byte[] {2})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002678},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002678},
                     arg3: new byte[] {1})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002677},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002677},
                     arg3: new byte[] {3})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002677},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002677},
                     arg3: new byte[] {2})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002677},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002677},
                     arg3: new byte[] {1})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002676},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002676},
                     arg3: new byte[] {3})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002676},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002676},
                     arg3: new byte[] {2})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002676},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002676},
                     arg3: new byte[] {1})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002675},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002675},
                     arg3: new byte[] {3})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002675},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002675},
                     arg3: new byte[] {2})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002675},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002675},
                     arg3: new byte[] {1})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002674},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002674},
                     arg3: new byte[] {3})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002674},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002674},
                     arg3: new byte[] {2})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002674},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002674},
                     arg3: new byte[] {1})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002673},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002673},
                     arg3: new byte[] {3})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002673},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002673},
                     arg3: new byte[] {2})) {
                     context.State = new StateNpcTalk01(context);
                     return;
@@ -140,7 +136,7 @@ namespace Maple2.Trigger._52000074_qd {
             internal StateNpcRemove01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101, 201});
+                context.DestroyMonster(arg1: new[] {101, 201});
             }
 
             public override void Execute() { }
@@ -152,8 +148,8 @@ namespace Maple2.Trigger._52000074_qd {
             internal StateNpcChange01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101});
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101});
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
             public override void Execute() { }
@@ -165,8 +161,8 @@ namespace Maple2.Trigger._52000074_qd {
             internal StateNpcTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101});
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101});
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
             public override void Execute() {

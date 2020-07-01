@@ -1,14 +1,10 @@
-using System;
-
 namespace Maple2.Trigger._02020028_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State전투시작(context);
-
-        private class State전투시작 : TriggerState {
+        public class State전투시작 : TriggerState {
             internal State전투시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201});
+                context.CreateMonster(arg1: new[] {201});
             }
 
             public override void Execute() { }
@@ -20,9 +16,9 @@ namespace Maple2.Trigger._02020028_bf {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 24120001, illustID: "Neirin_normal", msg: "$02020028_BF__main__0$",
+                context.AddCinematicTalk(npcId: 24120001, illustId: "Neirin_normal", msg: "$02020028_BF__main__0$",
                     duration: 5000, align: "left");
-                context.AddCinematicTalk(npcID: 24120001, illustID: "Neirin_normal", msg: "$02020028_BF__main__1$",
+                context.AddCinematicTalk(npcId: 24120001, illustId: "Neirin_normal", msg: "$02020028_BF__main__1$",
                     duration: 5000, align: "left");
             }
 

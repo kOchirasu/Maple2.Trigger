@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._02000410_bf {
     public static class _mapskilldebuff {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {444}, arg2: false);
-                context.SetSkill(arg1: new int[] {666}, arg2: false);
+                context.SetSkill(arg1: new[] {444}, arg2: false);
+                context.SetSkill(arg1: new[] {666}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 750, arg2: 1)) {
+                if (context.GetUserCount(boxId: 750) == 1) {
                     context.State = new State전투시작(context);
                     return;
                 }
@@ -28,12 +24,12 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.DungeonCheckPlayTime(playSeconds: 600)) {
+                if (context.GetDungeonPlayTime() == 600) {
                     context.State = new State1단계_70000103(context);
                     return;
                 }
 
-                if (!context.NpcDetected(arg1: 700, arg2: new int[] {0})) {
+                if (!context.NpcDetected(arg1: 700, arg2: new[] {0})) {
                     context.State = new State스킬끄기(context);
                     return;
                 }
@@ -46,16 +42,16 @@ namespace Maple2.Trigger._02000410_bf {
             internal State1단계_70000103(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {444}, arg2: true);
+                context.SetSkill(arg1: new[] {444}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.DungeonCheckPlayTime(playSeconds: 780)) {
+                if (context.GetDungeonPlayTime() == 780) {
                     context.State = new State2단계_70000104(context);
                     return;
                 }
 
-                if (!context.NpcDetected(arg1: 700, arg2: new int[] {0})) {
+                if (!context.NpcDetected(arg1: 700, arg2: new[] {0})) {
                     context.State = new State스킬끄기(context);
                     return;
                 }
@@ -68,16 +64,16 @@ namespace Maple2.Trigger._02000410_bf {
             internal State2단계_70000104(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {666}, arg2: true);
+                context.SetSkill(arg1: new[] {666}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.DungeonCheckPlayTime(playSeconds: 900)) {
+                if (context.GetDungeonPlayTime() == 900) {
                     context.State = new State스킬끄기(context);
                     return;
                 }
 
-                if (!context.NpcDetected(arg1: 700, arg2: new int[] {0})) {
+                if (!context.NpcDetected(arg1: 700, arg2: new[] {0})) {
                     context.State = new State스킬끄기(context);
                     return;
                 }
@@ -90,9 +86,9 @@ namespace Maple2.Trigger._02000410_bf {
             internal State스킬끄기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {444}, arg2: false);
-                context.SetSkill(arg1: new int[] {666}, arg2: false);
-                context.AddBuff(arg1: new int[] {750}, arg2: 50004524, arg3: 1, arg4: false);
+                context.SetSkill(arg1: new[] {444}, arg2: false);
+                context.SetSkill(arg1: new[] {666}, arg2: false);
+                context.AddBuff(arg1: new[] {750}, arg2: 50004524, arg3: 1, arg4: false);
             }
 
             public override void Execute() {

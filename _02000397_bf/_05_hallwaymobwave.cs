@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._02000397_bf {
     public static class _05_hallwaymobwave {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateSetting(context);
-
-        private class StateSetting : TriggerState {
+        public class StateSetting : TriggerState {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {930, 931, 932, 933});
+                context.DestroyMonster(arg1: new[] {930, 931, 932, 933});
                 context.SetUserValue(key: "MobWave", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "MobWave", value: 1)) {
+                if (context.GetUserValue(key: "MobWave") == 1) {
                     context.State = new StateMobSpawn01(context);
                     return;
                 }
@@ -26,7 +22,7 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateMobSpawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {930}, arg2: false);
+                context.CreateMonster(arg1: new[] {930}, arg2: false);
             }
 
             public override void Execute() {
@@ -43,7 +39,7 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateMobSpawn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {931}, arg2: false);
+                context.CreateMonster(arg1: new[] {931}, arg2: false);
             }
 
             public override void Execute() {
@@ -60,7 +56,7 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateMobSpawn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {932}, arg2: false);
+                context.CreateMonster(arg1: new[] {932}, arg2: false);
             }
 
             public override void Execute() {
@@ -77,7 +73,7 @@ namespace Maple2.Trigger._02000397_bf {
             internal StateMobSpawn04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {933}, arg2: false);
+                context.CreateMonster(arg1: new[] {933}, arg2: false);
             }
 
             public override void Execute() { }

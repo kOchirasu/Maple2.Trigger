@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._63000029_cs {
     public static class _safety03 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._63000029_cs {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "SafetyStart", value: 1)) {
+                if (context.GetUserValue(key: "SafetyStart") == 1) {
                     context.State = new StateEnter01(context);
                     return;
                 }
@@ -27,7 +23,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9200})) {
+                if (context.UserDetected(arg1: new[] {9200})) {
                     context.State = new StatePCTeleport01(context);
                     return;
                 }
@@ -59,7 +55,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9200})) {
+                if (context.UserDetected(arg1: new[] {9200})) {
                     context.State = new StateEnter01(context);
                     return;
                 }

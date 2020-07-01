@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02020146_bf {
     public static class _bossspawn {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new State기본셋팅(context);
                     return;
                 }
@@ -29,7 +25,7 @@ namespace Maple2.Trigger._02020146_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199})) {
+                if (context.UserDetected(arg1: new[] {199})) {
                     context.State = new State보스등장이벤트대기(context);
                     return;
                 }
@@ -42,7 +38,7 @@ namespace Maple2.Trigger._02020146_bf {
             internal State보스등장이벤트대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {99}, arg2: false);
+                context.CreateMonster(arg1: new[] {99}, arg2: false);
             }
 
             public override void Execute() {
@@ -59,7 +55,7 @@ namespace Maple2.Trigger._02020146_bf {
             internal State연출대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcID: 23000113, illust: "Ishura_Dark_Idle",
+                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle",
                     script: "$02020120_BF__BOSSSPAWN__0$", duration: 4000, voice: @"ko/Npc/00002192");
             }
 
@@ -81,7 +77,7 @@ namespace Maple2.Trigger._02020146_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State종료딜레이(context);
                     return;
                 }
@@ -111,7 +107,7 @@ namespace Maple2.Trigger._02020146_bf {
             internal State마무리연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcID: 23000113, illust: "Ishura_Dark_Idle",
+                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle",
                     script: "$02020120_BF__BOSSSPAWN__2$", duration: 6576, voice: @"ko/Npc/00002194");
             }
 

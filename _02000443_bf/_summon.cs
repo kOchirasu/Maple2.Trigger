@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000443_bf {
     public static class _summon {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statespecial_1_1(context);
-
-        private class Statespecial_1_1 : TriggerState {
+        public class Statespecial_1_1 : TriggerState {
             internal Statespecial_1_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "special_1", value: 1)) {
+                if (context.GetUserValue(key: "special_1") == 1) {
                     context.State = new Statespecial_1_2(context);
                     return;
                 }
@@ -44,7 +40,7 @@ namespace Maple2.Trigger._02000443_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "special_2", value: 1)) {
+                if (context.GetUserValue(key: "special_2") == 1) {
                     context.State = new Statespecial_2_2(context);
                     return;
                 }
@@ -78,7 +74,7 @@ namespace Maple2.Trigger._02000443_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "special_3", value: 1)) {
+                if (context.GetUserValue(key: "special_3") == 1) {
                     context.State = new Statespecial_3_2(context);
                     return;
                 }
@@ -112,7 +108,7 @@ namespace Maple2.Trigger._02000443_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "special_4", value: 1)) {
+                if (context.GetUserValue(key: "special_4") == 1) {
                     context.State = new Statespecial_4_2(context);
                     return;
                 }
@@ -146,7 +142,7 @@ namespace Maple2.Trigger._02000443_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "special_5", value: 1)) {
+                if (context.GetUserValue(key: "special_5") == 1) {
                     context.State = new Statespecial_5_2(context);
                     return;
                 }

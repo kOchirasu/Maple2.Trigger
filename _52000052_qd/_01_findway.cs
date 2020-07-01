@@ -1,30 +1,26 @@
-using System;
-
 namespace Maple2.Trigger._52000052_qd {
     public static class _01_findway {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212},
+                    arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212},
                     arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: true, arg3: 0,
+                context.SetMesh(arg1: new[] {4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {4100, 4101, 4102, 4103, 4104, 4105, 4106}, arg2: false, arg3: 0,
+                context.SetMesh(arg1: new[] {4100, 4101, 4102, 4103, 4104, 4105, 4106}, arg2: false, arg3: 0,
                     arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMeshAnimation(arg1: new int[] {3001}, arg2: true, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new int[] {3101}, arg2: false, arg3: 0, arg4: 0);
-                context.SetEffect(arg1: new int[] {5201}, arg2: false);
-                context.SetEffect(arg1: new int[] {5000}, arg2: false);
+                context.SetMesh(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMeshAnimation(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(arg1: new[] {3101}, arg2: false, arg3: 0, arg4: 0);
+                context.SetEffect(arg1: new[] {5201}, arg2: false);
+                context.SetEffect(arg1: new[] {5000}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9000, arg2: 1)) {
+                if (context.GetUserCount(boxId: 9000) == 1) {
                     context.State = new StateLodingDelay01(context);
                     return;
                 }
@@ -37,7 +33,7 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateLodingDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {100, 200}, arg2: false);
+                context.CreateMonster(arg1: new[] {100, 200}, arg2: false);
             }
 
             public override void Execute() {
@@ -134,8 +130,8 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateReadyToWalkIn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1301, key: "RouteSelected", value: 1);
-                context.SetUserValue(triggerID: 2301, key: "RouteSelected", value: 1);
+                context.SetUserValue(triggerId: 1301, key: "RouteSelected", value: 1);
+                context.SetUserValue(triggerId: 2301, key: "RouteSelected", value: 1);
             }
 
             public override void Execute() {
@@ -164,7 +160,7 @@ namespace Maple2.Trigger._52000052_qd {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {100, 200});
+                context.DestroyMonster(arg1: new[] {100, 200});
             }
         }
 
@@ -172,13 +168,13 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateRound01_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1001}, arg2: false);
-                context.CreateMonster(arg1: new int[] {2001}, arg2: false);
-                context.SetUserValue(triggerID: 901, key: "MobWaveStart", value: 1);
+                context.CreateMonster(arg1: new[] {1001}, arg2: false);
+                context.CreateMonster(arg1: new[] {2001}, arg2: false);
+                context.SetUserValue(triggerId: 901, key: "MobWaveStart", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "01RoundSuccess", value: 1)) {
+                if (context.GetUserValue(key: "01RoundSuccess") == 1) {
                     context.State = new StateRound01_Sucess(context);
                     return;
                 }
@@ -192,13 +188,13 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 2001, arg2: "MS2PatrolData_2001");
-                context.DestroyMonster(arg1: new int[] {1001});
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
-                context.SetEffect(arg1: new int[] {5201}, arg2: true);
-                context.SetMesh(arg1: new int[] {3001}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3101}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMeshAnimation(arg1: new int[] {3001}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new int[] {3101}, arg2: true, arg3: 0, arg4: 0);
+                context.DestroyMonster(arg1: new[] {1001});
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.SetEffect(arg1: new[] {5201}, arg2: true);
+                context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3101}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMeshAnimation(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(arg1: new[] {3101}, arg2: true, arg3: 0, arg4: 0);
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$52000052_QD__01_FINDWAY__3$", arg4: 2, arg5: 1);
             }
 
@@ -216,8 +212,8 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateRound01_RouteSelect(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {2001});
-                context.CreateMonster(arg1: new int[] {201}, arg2: false);
+                context.DestroyMonster(arg1: new[] {2001});
+                context.CreateMonster(arg1: new[] {201}, arg2: false);
             }
 
             public override void Execute() {
@@ -239,8 +235,8 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateRound01_PickRoute_Left(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1301, key: "MakeTrue", value: 1);
-                context.SetUserValue(triggerID: 2301, key: "MakeFalse", value: 1);
+                context.SetUserValue(triggerId: 1301, key: "MakeTrue", value: 1);
+                context.SetUserValue(triggerId: 2301, key: "MakeFalse", value: 1);
             }
 
             public override void Execute() {
@@ -257,7 +253,7 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateGoToRound02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2, key: "FindWay", value: 1);
+                context.SetUserValue(triggerId: 2, key: "FindWay", value: 1);
             }
 
             public override void Execute() {
@@ -274,8 +270,8 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateRound01_PickRoute_Right(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1301, key: "MakeFalse", value: 1);
-                context.SetUserValue(triggerID: 2301, key: "MakeTrue", value: 1);
+                context.SetUserValue(triggerId: 1301, key: "MakeFalse", value: 1);
+                context.SetUserValue(triggerId: 2301, key: "MakeTrue", value: 1);
             }
 
             public override void Execute() {
@@ -292,7 +288,7 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateGoToRound03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3, key: "FindWay", value: 1);
+                context.SetUserValue(triggerId: 3, key: "FindWay", value: 1);
             }
 
             public override void Execute() {

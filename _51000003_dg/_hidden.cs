@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._51000003_dg {
     public static class _hidden {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateStart(context);
-
-        private class StateStart : TriggerState {
+        public class StateStart : TriggerState {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
@@ -19,7 +15,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 99, arg2: false, arg3: false, arg4: false);
-                context.SetEventUI(arg1: 1, arg2: "$51000003_DG__HIDDEN__0$", arg3: new int[] {4000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$51000003_DG__HIdDEN__0$", arg3: 4000, arg4: "0");
             }
 
             public override void Execute() {
@@ -36,7 +32,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateHidden_ready_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$51000003_DG__HIDDEN__1$", arg3: new int[] {4000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$51000003_DG__HIdDEN__1$", arg3: 4000, arg4: "0");
             }
 
             public override void Execute() {
@@ -53,7 +49,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateHidden_ready_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 0, arg2: "6,6", arg3: new int[] {0}, arg4: "0");
+                context.SetEventUI(arg1: 0, arg2: "6,6", arg3: 0, arg4: "0");
                 context.CameraSelect(arg1: 8002, arg2: true);
             }
 
@@ -89,11 +85,11 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateHidden_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 991104, key: "Round_06", value: 1);
-                context.SetUserValue(triggerID: 991105, key: "Round_06", value: 1);
-                context.SetUserValue(triggerID: 991106, key: "Round_06", value: 1);
-                context.SetUserValue(triggerID: 991107, key: "Round_06", value: 1);
-                context.SetUserValue(triggerID: 991108, key: "Round_06", value: 1);
+                context.SetUserValue(triggerId: 991104, key: "Round_06", value: 1);
+                context.SetUserValue(triggerId: 991105, key: "Round_06", value: 1);
+                context.SetUserValue(triggerId: 991106, key: "Round_06", value: 1);
+                context.SetUserValue(triggerId: 991107, key: "Round_06", value: 1);
+                context.SetUserValue(triggerId: 991108, key: "Round_06", value: 1);
                 context.SetTimer(arg1: "150", arg2: 150, arg4: true);
             }
 

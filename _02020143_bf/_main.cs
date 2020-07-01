@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02020143_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new State기본셋팅(context);
                     return;
                 }
@@ -27,19 +23,19 @@ namespace Maple2.Trigger._02020143_bf {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {10003330},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003330},
                     arg3: new byte[] {2})) {
                     context.State = new State이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {10003330},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003330},
                     arg3: new byte[] {3})) {
                     context.State = new State이동(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {102})) {
+                if (context.UserDetected(arg1: new[] {102})) {
                     context.State = new State보스등장준비(context);
                     return;
                 }
@@ -52,8 +48,8 @@ namespace Maple2.Trigger._02020143_bf {
             internal State보스등장준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {301}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.AddBuff(arg1: new int[] {102}, arg2: 50000554, arg3: 1, arg4: false, arg5: false);
+                context.SetMesh(arg1: new[] {301}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.AddBuff(arg1: new[] {102}, arg2: 50000554, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -70,7 +66,7 @@ namespace Maple2.Trigger._02020143_bf {
             internal State보스등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {99}, arg2: false);
+                context.CreateMonster(arg1: new[] {99}, arg2: false);
             }
 
             public override void Execute() {
@@ -89,7 +85,7 @@ namespace Maple2.Trigger._02020143_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State연출딜레이(context);
                     return;
                 }
@@ -99,7 +95,7 @@ namespace Maple2.Trigger._02020143_bf {
                     return;
                 }
 
-                if (context.DungeonCheckState(checkState: "Fail")) {
+                if (context.GetDungeonState() == "Fail") {
                     context.State = new State던전실패(context);
                     return;
                 }
@@ -114,7 +110,7 @@ namespace Maple2.Trigger._02020143_bf {
             public override void OnEnter() {
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.DestroyMonster(arg1: new[] {-1});
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
             }
 
@@ -200,7 +196,7 @@ namespace Maple2.Trigger._02020143_bf {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: @"common\Kritias_03.usm", movieID: 1);
+                context.PlaySceneMovie(fileName: @"common\Kritias_03.usm", movieId: 1);
                 context.SetSceneSkip();
             }
 
@@ -225,7 +221,7 @@ namespace Maple2.Trigger._02020143_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {10003330},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003330},
                     arg3: new byte[] {2})) {
                     context.State = new State이동(context);
                     return;

@@ -1,5 +1,3 @@
-using System;
-
 namespace Maple2.Trigger._dungeon_common {
     public static class _checkuser10_guildraid {
         public class StateCheckUser10_GuildRaid : TriggerState {
@@ -15,12 +13,12 @@ namespace Maple2.Trigger._dungeon_common {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9900, arg2: 10, arg3: "GreaterEqual")) {
+                if (context.GetUserCount(boxId: 9900) >= 10) {
                     context.State = new StateMaxCount10_Start(context, startDungeon);
                     return;
                 }
 
-                if (context.CountUsers(arg1: 9900, arg2: 10, arg3: "Less")) {
+                if (context.GetUserCount(boxId: 9900) < 10) {
                     context.State = new StateMaxCount10_Wait(context, startDungeon);
                     return;
                 }
@@ -38,11 +36,11 @@ namespace Maple2.Trigger._dungeon_common {
             }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 40012, textID: 40012, duration: 3000);
+                context.ShowGuideSummary(entityId: 40012, textId: 40012, duration: 3000);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9900, arg2: 10, arg3: "GreaterEqual")) {
+                if (context.GetUserCount(boxId: 9900) >= 10) {
                     context.State = new StateMaxCount10_Start(context, startDungeon);
                     return;
                 }

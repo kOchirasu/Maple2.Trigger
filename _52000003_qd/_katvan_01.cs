@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000003_qd {
     public static class _katvan_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {100}, arg2: new int[] {50001743},
+                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {50001743},
                     arg3: new byte[] {1})) {
                     context.State = new State카트반생성(context);
                     return;
@@ -24,7 +20,7 @@ namespace Maple2.Trigger._52000003_qd {
             internal State카트반생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {102});
+                context.CreateMonster(arg1: new[] {102});
             }
 
             public override void Execute() {
@@ -62,7 +58,7 @@ namespace Maple2.Trigger._52000003_qd {
             internal State대화시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: true);
+                context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000003_QD__KATVAN_01__0$", arg4: 3);
             }
 
@@ -80,7 +76,7 @@ namespace Maple2.Trigger._52000003_qd {
             internal State카트반대사1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {603}, arg2: true);
+                context.SetEffect(arg1: new[] {603}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001024, arg3: "$52000003_QD__KATVAN_01__1$", arg4: 5);
             }
 
@@ -98,7 +94,7 @@ namespace Maple2.Trigger._52000003_qd {
             internal State카트반대사2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {604}, arg2: true);
+                context.SetEffect(arg1: new[] {604}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001024, arg3: "$52000003_QD__KATVAN_01__2$", arg4: 5);
             }
 
@@ -110,7 +106,7 @@ namespace Maple2.Trigger._52000003_qd {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {102});
+                context.DestroyMonster(arg1: new[] {102});
             }
         }
 
@@ -118,7 +114,7 @@ namespace Maple2.Trigger._52000003_qd {
             internal State레논대사1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {602}, arg2: true);
+                context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000003_QD__KATVAN_01__3$", arg4: 2);
             }
 
@@ -172,7 +168,7 @@ namespace Maple2.Trigger._52000003_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 4);
                 context.CameraReset(interpolationTime: 0.5f);
-                context.DestroyMonster(arg1: new int[] {102});
+                context.DestroyMonster(arg1: new[] {102});
             }
 
             public override void Execute() {

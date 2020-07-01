@@ -1,27 +1,23 @@
-using System;
-
 namespace Maple2.Trigger._02000303_bf {
     public static class _object_03 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000596}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000597}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000598}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000599}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000600}, arg2: 0);
-                context.SetEffect(arg1: new int[] {60596}, arg2: false);
-                context.SetEffect(arg1: new int[] {60597}, arg2: false);
-                context.SetEffect(arg1: new int[] {60598}, arg2: false);
-                context.SetEffect(arg1: new int[] {60599}, arg2: false);
-                context.SetEffect(arg1: new int[] {60600}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10000596}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000597}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000598}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000599}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000600}, arg2: 0);
+                context.SetEffect(arg1: new[] {60596}, arg2: false);
+                context.SetEffect(arg1: new[] {60597}, arg2: false);
+                context.SetEffect(arg1: new[] {60598}, arg2: false);
+                context.SetEffect(arg1: new[] {60599}, arg2: false);
+                context.SetEffect(arg1: new[] {60600}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State생성랜덤(context);
                     return;
                 }
@@ -69,13 +65,13 @@ namespace Maple2.Trigger._02000303_bf {
             internal State생성01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {60596}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000596}, arg2: 1);
+                context.SetEffect(arg1: new[] {60596}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000596}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000596}, arg2: 0)) {
-                    context.SetEffect(arg1: new int[] {60596}, arg2: false);
+                if (context.ObjectInteracted(arg1: new[] {10000596}, arg2: 0)) {
+                    context.SetEffect(arg1: new[] {60596}, arg2: false);
                     context.State = new State종료(context);
                     return;
                 }
@@ -88,13 +84,13 @@ namespace Maple2.Trigger._02000303_bf {
             internal State생성02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {60597}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000597}, arg2: 1);
+                context.SetEffect(arg1: new[] {60597}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000597}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000597}, arg2: 0)) {
-                    context.SetEffect(arg1: new int[] {60597}, arg2: false);
+                if (context.ObjectInteracted(arg1: new[] {10000597}, arg2: 0)) {
+                    context.SetEffect(arg1: new[] {60597}, arg2: false);
                     context.State = new State종료(context);
                     return;
                 }
@@ -107,13 +103,13 @@ namespace Maple2.Trigger._02000303_bf {
             internal State생성03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {60598}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000598}, arg2: 1);
+                context.SetEffect(arg1: new[] {60598}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000598}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000598}, arg2: 0)) {
-                    context.SetEffect(arg1: new int[] {60598}, arg2: false);
+                if (context.ObjectInteracted(arg1: new[] {10000598}, arg2: 0)) {
+                    context.SetEffect(arg1: new[] {60598}, arg2: false);
                     context.State = new State종료(context);
                     return;
                 }
@@ -126,13 +122,13 @@ namespace Maple2.Trigger._02000303_bf {
             internal State생성04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {60599}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000599}, arg2: 1);
+                context.SetEffect(arg1: new[] {60599}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000599}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000599}, arg2: 0)) {
-                    context.SetEffect(arg1: new int[] {60599}, arg2: false);
+                if (context.ObjectInteracted(arg1: new[] {10000599}, arg2: 0)) {
+                    context.SetEffect(arg1: new[] {60599}, arg2: false);
                     context.State = new State종료(context);
                     return;
                 }
@@ -145,13 +141,13 @@ namespace Maple2.Trigger._02000303_bf {
             internal State생성05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {60600}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10000600}, arg2: 1);
+                context.SetEffect(arg1: new[] {60600}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10000600}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000600}, arg2: 0)) {
-                    context.SetEffect(arg1: new int[] {60600}, arg2: false);
+                if (context.ObjectInteracted(arg1: new[] {10000600}, arg2: 0)) {
+                    context.SetEffect(arg1: new[] {60600}, arg2: false);
                     context.State = new State종료(context);
                     return;
                 }

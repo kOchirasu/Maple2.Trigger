@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02020141_bf {
     public static class _playerdropheal {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new State트리거시작(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {102})) {
+                if (context.UserDetected(arg1: new[] {102})) {
                     context.State = new State드랍지점회복(context);
                     return;
                 }
@@ -38,7 +34,7 @@ namespace Maple2.Trigger._02020141_bf {
             internal State드랍지점회복(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {102}, arg2: 50000554, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {102}, arg2: 50000554, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {

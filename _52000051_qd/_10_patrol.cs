@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52000051_qd {
     public static class _10_patrol {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._52000051_qd {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "PatrolStart", value: 1)) {
+                if (context.GetUserValue(key: "PatrolStart") == 1) {
                     context.State = new StateDelay01(context);
                     return;
                 }
@@ -40,12 +36,12 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateNpcChange01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {100, 200});
-                context.CreateMonster(arg1: new int[] {101, 201}, arg2: false);
+                context.DestroyMonster(arg1: new[] {100, 200});
+                context.CreateMonster(arg1: new[] {101, 201}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9301, arg2: 1)) {
+                if (context.GetUserCount(boxId: 9301) == 1) {
                     context.State = new StatePatrol01(context);
                     return;
                 }
@@ -63,7 +59,7 @@ namespace Maple2.Trigger._52000051_qd {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9302, arg2: 1)) {
+                if (context.GetUserCount(boxId: 9302) == 1) {
                     context.State = new StatePatrol02(context);
                     return;
                 }
@@ -81,7 +77,7 @@ namespace Maple2.Trigger._52000051_qd {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9303, arg2: 1)) {
+                if (context.GetUserCount(boxId: 9303) == 1) {
                     context.State = new StatePatrol03(context);
                     return;
                 }
@@ -99,7 +95,7 @@ namespace Maple2.Trigger._52000051_qd {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9304, arg2: 1)) {
+                if (context.GetUserCount(boxId: 9304) == 1) {
                     context.State = new StatePatrol04(context);
                     return;
                 }
@@ -117,7 +113,7 @@ namespace Maple2.Trigger._52000051_qd {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9305, arg2: 1)) {
+                if (context.GetUserCount(boxId: 9305) == 1) {
                     context.State = new StatePatrol05Air(context);
                     return;
                 }
@@ -149,9 +145,9 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateNpcChange02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101, 201});
-                context.CreateMonster(arg1: new int[] {102, 202}, arg2: false);
-                context.RemoveBalloonTalk(spawnPointID: 201);
+                context.DestroyMonster(arg1: new[] {101, 201});
+                context.CreateMonster(arg1: new[] {102, 202}, arg2: false);
+                context.RemoveBalloonTalk(spawnPointId: 201);
             }
 
             public override void Execute() {
@@ -168,7 +164,7 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "PatrolEnd", value: 1);
+                context.SetUserValue(triggerId: 1, key: "PatrolEnd", value: 1);
             }
 
             public override void Execute() { }

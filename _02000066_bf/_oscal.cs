@@ -1,17 +1,13 @@
-using System;
-
 namespace Maple2.Trigger._02000066_bf {
     public static class _oscal {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "randomTalk", value: 1)) {
-                    context.CreateMonster(arg1: new int[] {5003}, arg2: false);
+                if (context.GetUserValue(key: "randomTalk") == 1) {
+                    context.CreateMonster(arg1: new[] {5003}, arg2: false);
                     context.State = new State전투대기(context);
                     return;
                 }
@@ -26,7 +22,7 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterInCombat(arg1: new int[] {5003})) {
+                if (context.MonsterInCombat(arg1: new[] {5003})) {
                     context.State = new State말풍선랜덤(context);
                     return;
                 }

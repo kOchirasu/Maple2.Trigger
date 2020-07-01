@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000400_bf {
     public static class _100_dualkill {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State룸체크(context);
-
-        private class State룸체크 : TriggerState {
+        public class State룸체크 : TriggerState {
             internal State룸체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
@@ -27,7 +23,7 @@ namespace Maple2.Trigger._02000400_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "CheckDualKill", value: 1)) {
+                if (context.GetUserValue(key: "CheckDualKill") == 1) {
                     context.State = new StateCheckDualKill(context);
                     return;
                 }
@@ -42,12 +38,12 @@ namespace Maple2.Trigger._02000400_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {900})) {
+                if (context.MonsterDead(arg1: new[] {900})) {
                     context.State = new StateLionBlueDead(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {901})) {
+                if (context.MonsterDead(arg1: new[] {901})) {
                     context.State = new StateLionRedDead(context);
                     return;
                 }
@@ -62,7 +58,7 @@ namespace Maple2.Trigger._02000400_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {901})) {
+                if (context.MonsterDead(arg1: new[] {901})) {
                     context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "ChangeLionDualKill");
                     context.State = new StateQuit(context);
                     return;
@@ -83,7 +79,7 @@ namespace Maple2.Trigger._02000400_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {900})) {
+                if (context.MonsterDead(arg1: new[] {900})) {
                     context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "ChangeLionDualKill");
                     context.State = new StateQuit(context);
                     return;

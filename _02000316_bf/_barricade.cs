@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._02000316_bf {
     public static class _barricade {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319,
                         320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338,
                         339, 340, 341, 342, 343, 344, 345, 346, 347, 348
@@ -17,7 +13,7 @@ namespace Maple2.Trigger._02000316_bf {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 11, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 11, arg2: new[] {101})) {
                     context.State = new State카운트(context);
                     return;
                 }
@@ -48,7 +44,7 @@ namespace Maple2.Trigger._02000316_bf {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319,
                         320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338,
                         339, 340, 341, 342, 343, 344, 345, 346, 347, 348
@@ -56,12 +52,12 @@ namespace Maple2.Trigger._02000316_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101})) {
+                if (context.MonsterDead(arg1: new[] {101})) {
                     context.State = new State차단해제(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {11})) {
+                if (!context.UserDetected(arg1: new[] {11})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -75,7 +71,7 @@ namespace Maple2.Trigger._02000316_bf {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319,
                         320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338,
                         339, 340, 341, 342, 343, 344, 345, 346, 347, 348
@@ -83,7 +79,7 @@ namespace Maple2.Trigger._02000316_bf {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {11})) {
+                if (!context.UserDetected(arg1: new[] {11})) {
                     context.State = new State대기(context);
                     return;
                 }

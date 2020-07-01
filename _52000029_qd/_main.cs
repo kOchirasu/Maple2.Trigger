@@ -1,24 +1,20 @@
-using System;
-
 namespace Maple2.Trigger._52000029_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
-                context.SetEffect(arg1: new int[] {603}, arg2: false);
-                context.SetEffect(arg1: new int[] {604}, arg2: false);
-                context.SetEffect(arg1: new int[] {605}, arg2: false);
-                context.SetEffect(arg1: new int[] {606}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {603}, arg2: false);
+                context.SetEffect(arg1: new[] {604}, arg2: false);
+                context.SetEffect(arg1: new[] {605}, arg2: false);
+                context.SetEffect(arg1: new[] {606}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -32,12 +28,12 @@ namespace Maple2.Trigger._52000029_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.CreateMonster(arg1: new int[] {1001, 2001}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1002}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1003}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1004}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1005}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1006}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 2001}, arg2: false);
+                context.CreateMonster(arg1: new[] {1002}, arg2: false);
+                context.CreateMonster(arg1: new[] {1003}, arg2: false);
+                context.CreateMonster(arg1: new[] {1004}, arg2: false);
+                context.CreateMonster(arg1: new[] {1005}, arg2: false);
+                context.CreateMonster(arg1: new[] {1006}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
             }
@@ -73,7 +69,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal State유페리아대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {608}, arg2: true);
+                context.SetEffect(arg1: new[] {608}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001564, arg3: "$52000029_QD__MAIN__1$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002_1");
             }
@@ -92,7 +88,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: true);
+                context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.CameraSelect(arg1: 3022, arg2: true);
                 context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_1001_A");
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002_A");
@@ -166,8 +162,8 @@ namespace Maple2.Trigger._52000029_qd {
             internal State이펙트연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {2001}, arg2: 71000003, arg3: 1, arg4: true, arg5: false);
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
+                context.AddBuff(arg1: new[] {2001}, arg2: 71000003, arg3: 1, arg4: true, arg5: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
             }
 
             public override void Execute() {
@@ -202,7 +198,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal State이슈라대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {602}, arg2: true);
+                context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000029_QD__MAIN__2$", arg4: 2, arg5: 0);
             }
 
@@ -274,17 +270,17 @@ namespace Maple2.Trigger._52000029_qd {
             internal State이슈라추격(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1001, 1002, 1004, 1005, 1006});
-                context.CreateMonster(arg1: new int[] {1007}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1008}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1009}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1010}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1011}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1101}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1102}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1104}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1105}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1106}, arg2: false);
+                context.DestroyMonster(arg1: new[] {1001, 1002, 1004, 1005, 1006});
+                context.CreateMonster(arg1: new[] {1007}, arg2: false);
+                context.CreateMonster(arg1: new[] {1008}, arg2: false);
+                context.CreateMonster(arg1: new[] {1009}, arg2: false);
+                context.CreateMonster(arg1: new[] {1010}, arg2: false);
+                context.CreateMonster(arg1: new[] {1011}, arg2: false);
+                context.CreateMonster(arg1: new[] {1101}, arg2: false);
+                context.CreateMonster(arg1: new[] {1102}, arg2: false);
+                context.CreateMonster(arg1: new[] {1104}, arg2: false);
+                context.CreateMonster(arg1: new[] {1105}, arg2: false);
+                context.CreateMonster(arg1: new[] {1106}, arg2: false);
             }
 
             public override void Execute() {
@@ -341,7 +337,7 @@ namespace Maple2.Trigger._52000029_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 307, arg2: true);
-                context.SetEffect(arg1: new int[] {607}, arg2: true);
+                context.SetEffect(arg1: new[] {607}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000032, arg3: "$52000029_QD__MAIN__5$", arg4: 4, arg5: 0);
             }
 
@@ -376,7 +372,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal State유페리아대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {609}, arg2: true);
+                context.SetEffect(arg1: new[] {609}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001564, arg3: "$52000029_QD__MAIN__7$", arg4: 4, arg5: 0);
             }
 
@@ -395,7 +391,7 @@ namespace Maple2.Trigger._52000029_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 308, arg2: true);
-                context.SetEffect(arg1: new int[] {603}, arg2: true);
+                context.SetEffect(arg1: new[] {603}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000029_QD__MAIN__8$", arg4: 2, arg5: 0);
             }
 
@@ -413,7 +409,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal State이슈라대사03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {604}, arg2: true);
+                context.SetEffect(arg1: new[] {604}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000029_QD__MAIN__9$", arg4: 11, arg5: 0);
             }
 
@@ -433,7 +429,7 @@ namespace Maple2.Trigger._52000029_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 306, arg2: true);
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003_D");
-                context.SetEffect(arg1: new int[] {605}, arg2: true);
+                context.SetEffect(arg1: new[] {605}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000029_QD__MAIN__10$", arg4: 6, arg5: 0);
             }
 
@@ -485,7 +481,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal State렌듀비앙캐스팅(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {1007}, arg2: 71000004, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(arg1: new[] {1007}, arg2: 71000004, arg3: 1, arg4: true, arg5: false);
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003_C");
                 context.CameraSelect(arg1: 309, arg2: true);
             }
@@ -521,7 +517,7 @@ namespace Maple2.Trigger._52000029_qd {
             internal State이슈라대사05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {606}, arg2: true);
+                context.SetEffect(arg1: new[] {606}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000029_QD__MAIN__12$", arg4: 3, arg5: 0);
             }
 

@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02020120_bf {
     public static class _portalstage04 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -13,7 +9,7 @@ namespace Maple2.Trigger._02020120_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199})) {
+                if (context.UserDetected(arg1: new[] {199})) {
                     context.State = new State스테이지4_시작(context);
                     return;
                 }
@@ -28,32 +24,32 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Stage04", value: 11)) {
+                if (context.GetUserValue(key: "Stage04") == 11) {
                     context.State = new State스테이지4_왼쪽_왼쪽진행(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Stage04", value: 12)) {
+                if (context.GetUserValue(key: "Stage04") == 12) {
                     context.State = new State스테이지4_왼쪽_왼쪽가운데진행(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Stage04", value: 21)) {
+                if (context.GetUserValue(key: "Stage04") == 21) {
                     context.State = new State스테이지4_가운데_왼쪽가운데진행(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Stage04", value: 22)) {
+                if (context.GetUserValue(key: "Stage04") == 22) {
                     context.State = new State스테이지4_가운데_오른쪽가운데진행(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Stage04", value: 31)) {
+                if (context.GetUserValue(key: "Stage04") == 31) {
                     context.State = new State스테이지4_오른쪽_오른쪽가운데진행(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Stage04", value: 32)) {
+                if (context.GetUserValue(key: "Stage04") == 32) {
                     context.State = new State스테이지4_오른쪽_오른쪽진행(context);
                     return;
                 }
@@ -170,7 +166,7 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "DungeonReset", value: 1)) {
+                if (context.GetUserValue(key: "DungeonReset") == 1) {
                     context.State = new StateReady(context);
                     return;
                 }

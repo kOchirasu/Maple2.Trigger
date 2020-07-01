@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._84000004_wd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작_타이머설정(context);
-
-        private class State시작_타이머설정 : TriggerState {
+        public class State시작_타이머설정 : TriggerState {
             internal State시작_타이머설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -46,7 +42,7 @@ namespace Maple2.Trigger._84000004_wd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "exitstudio", value: 1)) {
+                if (context.GetUserValue(key: "exitstudio") == 1) {
                     context.State = new State강제퇴장준비(context);
                     return;
                 }
@@ -64,7 +60,7 @@ namespace Maple2.Trigger._84000004_wd {
             internal State강퇴안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 28400138);
+                context.ShowGuideSummary(entityId: 28400138);
             }
 
             public override void Execute() {
@@ -81,7 +77,7 @@ namespace Maple2.Trigger._84000004_wd {
             internal State강제퇴장준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 28400138);
+                context.HideGuideSummary(entityId: 28400138);
             }
 
             public override void Execute() {

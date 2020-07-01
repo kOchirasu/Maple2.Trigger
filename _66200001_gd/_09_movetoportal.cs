@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._66200001_gd {
     public static class _09_movetoportal {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -13,7 +9,7 @@ namespace Maple2.Trigger._66200001_gd {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "MoveToTeamPortal", value: 1)) {
+                if (context.GetUserValue(key: "MoveToTeamPortal") == 1) {
                     context.State = new StateMoveUserbyTag(context);
                     return;
                 }
@@ -28,17 +24,17 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() {
                 context.MoveToPortal(boxId: 9900, userTagId: 1, portalId: 11);
                 context.MoveToPortal(boxId: 9900, userTagId: 2, portalId: 12);
-                context.SetUserValue(triggerID: 11, key: "BannerCheckIn", value: 1);
-                context.SetUserValue(triggerID: 13, key: "BannerCheckIn", value: 1);
+                context.SetUserValue(triggerId: 11, key: "BannerCheckIn", value: 1);
+                context.SetUserValue(triggerId: 13, key: "BannerCheckIn", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9900})) {
+                if (context.UserDetected(arg1: new[] {9900})) {
                     context.State = new StateMoveUserbyTag(context);
                     return;
                 }
 
-                if (context.UserValue(key: "MoveToTeamPortal", value: 2)) {
+                if (context.GetUserValue(key: "MoveToTeamPortal") == 2) {
                     context.State = new StateQuitDelay(context);
                     return;
                 }

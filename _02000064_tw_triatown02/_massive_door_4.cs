@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000064_tw_triatown02 {
     public static class _massive_door_4 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State클로즈대기중(context);
-
-        private class State클로즈대기중 : TriggerState {
+        public class State클로즈대기중 : TriggerState {
             internal State클로즈대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }

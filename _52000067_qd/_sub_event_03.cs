@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._52000067_qd {
     public static class _sub_event_03 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {591, 592}, arg2: true);
+                context.CreateMonster(arg1: new[] {591, 592}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 705, arg2: 1)) {
+                if (context.GetUserCount(boxId: 705) == 1) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Stateready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {537, 538, 539}, arg2: true);
+                context.CreateMonster(arg1: new[] {537, 538, 539}, arg2: true);
                 context.SetNpcEmotionLoop(arg1: 591, arg2: "Emotion_Failure_Idle_A", arg3: 600000f);
                 context.SetNpcEmotionLoop(arg1: 592, arg2: "Emotion_Failure_Idle_A", arg3: 600000f);
                 context.SetConversation(arg1: 1, arg2: 591, arg3: "$52000067_QD__SUB_EVENT_03__0$", arg4: 3, arg5: 0);
@@ -33,7 +29,7 @@ namespace Maple2.Trigger._52000067_qd {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {537, 538, 539})) {
+                if (context.MonsterDead(arg1: new[] {537, 538, 539})) {
                     context.State = new Stateend(context);
                     return;
                 }

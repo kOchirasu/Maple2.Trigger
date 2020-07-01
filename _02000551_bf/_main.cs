@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000551_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new State기본셋팅(context);
                     return;
                 }
@@ -55,12 +51,12 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.DungeonID(dungeonID: 23050003)) {
+                if (context.GetDungeonId() == 23050003) {
                     context.State = new State쉬운난이도보스등장(context);
                     return;
                 }
 
-                if (context.DungeonID(dungeonID: 23051003)) {
+                if (context.GetDungeonId() == 23051003) {
                     context.State = new State여려움난이도보스등장(context);
                     return;
                 }
@@ -78,7 +74,7 @@ namespace Maple2.Trigger._02000551_bf {
             internal State여려움난이도보스등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
             public override void Execute() {
@@ -95,7 +91,7 @@ namespace Maple2.Trigger._02000551_bf {
             internal State쉬운난이도보스등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
             public override void Execute() {
@@ -112,7 +108,7 @@ namespace Maple2.Trigger._02000551_bf {
             internal State일러스트대화창(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcID: 23000101, illust: "BlackBean_Smile",
+                context.SideNpcTalk(type: "talk", npcId: 23000101, illust: "BlackBean_Smile",
                     script: "$02000551_BF__BOSSSPAWN__0$", duration: 7000);
             }
 
@@ -134,12 +130,12 @@ namespace Maple2.Trigger._02000551_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "GuideMessage", value: 1)) {
+                if (context.GetUserValue(key: "GuideMessage") == 1) {
                     context.State = new State메시지출력(context);
                     return;
                 }
 
-                if (context.UserValue(key: "NextPortal", value: 1)) {
+                if (context.GetUserValue(key: "NextPortal") == 1) {
                     context.State = new State다음진행딜레이(context);
                     return;
                 }
@@ -149,7 +145,7 @@ namespace Maple2.Trigger._02000551_bf {
                     return;
                 }
 
-                if (context.DungeonCheckState(checkState: "Fail")) {
+                if (context.GetDungeonState() == "Fail") {
                     context.State = new State던전실패(context);
                     return;
                 }
@@ -162,7 +158,7 @@ namespace Maple2.Trigger._02000551_bf {
             internal State메시지출력(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 29200007, textID: 29200007, duration: 7000);
+                context.ShowGuideSummary(entityId: 29200007, textId: 29200007, duration: 7000);
             }
 
             public override void Execute() {
@@ -181,7 +177,7 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnEnter() {
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.DestroyMonster(arg1: new[] {-1});
             }
 
             public override void Execute() {

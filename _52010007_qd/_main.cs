@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._52010007_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1001}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {100}, arg2: new int[] {10002834},
+                if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {10002834},
                     arg3: new byte[] {1})) {
                     context.State = new StateNPC이동(context);
                     return;
@@ -29,7 +25,7 @@ namespace Maple2.Trigger._52010007_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.CreateMonster(arg1: new int[] {1002, 1003, 1004}, arg2: false);
+                context.CreateMonster(arg1: new[] {1002, 1003, 1004}, arg2: false);
             }
 
             public override void Execute() {
@@ -52,12 +48,12 @@ namespace Maple2.Trigger._52010007_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {1002})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {1002})) {
                     context.State = new State둔바대사01(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {1003})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {1003})) {
                     context.State = new State둔바대사01(context);
                     return;
                 }
@@ -232,7 +228,7 @@ namespace Maple2.Trigger._52010007_qd {
             internal State둔바이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1002});
+                context.DestroyMonster(arg1: new[] {1002});
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003_C");
                 context.SetConversation(arg1: 1, arg2: 1003, arg3: "$52010007_QD__MAIN__7$", arg4: 2, arg5: 0);
             }
@@ -253,7 +249,7 @@ namespace Maple2.Trigger._52010007_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.DestroyMonster(arg1: new int[] {1003, 1004});
+                context.DestroyMonster(arg1: new[] {1003, 1004});
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52010007_QD__MAIN__8$", arg4: 4);
             }
 

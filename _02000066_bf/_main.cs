@@ -1,42 +1,39 @@
-using System;
 using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000066_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
-                context.SetEffect(arg1: new int[] {603}, arg2: false);
-                context.SetEffect(arg1: new int[] {604}, arg2: false);
-                context.SetEffect(arg1: new int[] {605}, arg2: false);
-                context.SetEffect(arg1: new int[] {606}, arg2: false);
-                context.SetEffect(arg1: new int[] {607}, arg2: false);
-                context.SetEffect(arg1: new int[] {608}, arg2: false);
-                context.SetEffect(arg1: new int[] {609}, arg2: false);
-                context.SetEffect(arg1: new int[] {610}, arg2: false);
-                context.SetEffect(arg1: new int[] {611}, arg2: false);
-                context.SetEffect(arg1: new int[] {612}, arg2: false);
-                context.SetEffect(arg1: new int[] {613}, arg2: false);
-                context.SetEffect(arg1: new int[] {614}, arg2: false);
-                context.SetEffect(arg1: new int[] {615}, arg2: false);
-                context.SetEffect(arg1: new int[] {616}, arg2: false);
-                context.SetEffect(arg1: new int[] {617}, arg2: false);
-                context.SetEffect(arg1: new int[] {618}, arg2: false);
-                context.SetEffect(arg1: new int[] {619}, arg2: false);
-                context.SetEffect(arg1: new int[] {620}, arg2: false);
-                context.SetEffect(arg1: new int[] {6003}, arg2: false);
+                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {603}, arg2: false);
+                context.SetEffect(arg1: new[] {604}, arg2: false);
+                context.SetEffect(arg1: new[] {605}, arg2: false);
+                context.SetEffect(arg1: new[] {606}, arg2: false);
+                context.SetEffect(arg1: new[] {607}, arg2: false);
+                context.SetEffect(arg1: new[] {608}, arg2: false);
+                context.SetEffect(arg1: new[] {609}, arg2: false);
+                context.SetEffect(arg1: new[] {610}, arg2: false);
+                context.SetEffect(arg1: new[] {611}, arg2: false);
+                context.SetEffect(arg1: new[] {612}, arg2: false);
+                context.SetEffect(arg1: new[] {613}, arg2: false);
+                context.SetEffect(arg1: new[] {614}, arg2: false);
+                context.SetEffect(arg1: new[] {615}, arg2: false);
+                context.SetEffect(arg1: new[] {616}, arg2: false);
+                context.SetEffect(arg1: new[] {617}, arg2: false);
+                context.SetEffect(arg1: new[] {618}, arg2: false);
+                context.SetEffect(arg1: new[] {619}, arg2: false);
+                context.SetEffect(arg1: new[] {620}, arg2: false);
+                context.SetEffect(arg1: new[] {6003}, arg2: false);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.CreateMonster(arg1: new int[] {99}, arg2: false);
-                context.SetMesh(arg1: new int[] {9001}, arg2: true);
+                context.CreateMonster(arg1: new[] {99}, arg2: false);
+                context.SetMesh(arg1: new[] {9001}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103})) {
+                if (context.UserDetected(arg1: new[] {103})) {
                     context.State =
                         new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
@@ -52,36 +49,36 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.DungeonMaxUserCount(value: 4)) {
+                if (context.GetDungeonMaxUserCount() == 4) {
                     context.State = new State연출시작(context);
                     return;
                 }
 
-                if (context.DungeonMaxUserCount(value: 3)) {
-                    context.SetUserValue(triggerID: 9995001, key: "randomTalk", value: 1);
+                if (context.GetDungeonMaxUserCount() == 3) {
+                    context.SetUserValue(triggerId: 9995001, key: "randomTalk", value: 1);
                     context.State = new State연출시작(context);
                     return;
                 }
 
-                if (context.DungeonMaxUserCount(value: 2)) {
-                    context.SetUserValue(triggerID: 9995002, key: "randomTalk", value: 1);
-                    context.SetUserValue(triggerID: 9995003, key: "randomTalk", value: 1);
+                if (context.GetDungeonMaxUserCount() == 2) {
+                    context.SetUserValue(triggerId: 9995002, key: "randomTalk", value: 1);
+                    context.SetUserValue(triggerId: 9995003, key: "randomTalk", value: 1);
                     context.State = new State연출시작(context);
                     return;
                 }
 
-                if (context.DungeonMaxUserCount(value: 1)) {
-                    context.SetUserValue(triggerID: 9995001, key: "randomTalk", value: 1);
-                    context.SetUserValue(triggerID: 9995002, key: "randomTalk", value: 1);
-                    context.SetUserValue(triggerID: 9995003, key: "randomTalk", value: 1);
+                if (context.GetDungeonMaxUserCount() == 1) {
+                    context.SetUserValue(triggerId: 9995001, key: "randomTalk", value: 1);
+                    context.SetUserValue(triggerId: 9995002, key: "randomTalk", value: 1);
+                    context.SetUserValue(triggerId: 9995003, key: "randomTalk", value: 1);
                     context.State = new State연출시작(context);
                     return;
                 }
 
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetUserValue(triggerID: 9995001, key: "randomTalk", value: 1);
-                    context.SetUserValue(triggerID: 9995002, key: "randomTalk", value: 1);
-                    context.SetUserValue(triggerID: 9995003, key: "randomTalk", value: 1);
+                    context.SetUserValue(triggerId: 9995001, key: "randomTalk", value: 1);
+                    context.SetUserValue(triggerId: 9995002, key: "randomTalk", value: 1);
+                    context.SetUserValue(triggerId: 9995003, key: "randomTalk", value: 1);
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -115,7 +112,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg2: true);
-                context.AddCinematicTalk(npcID: 11000032, illustID: "Anos_serious", msg: "$02000066_BF__MAIN__4$",
+                context.AddCinematicTalk(npcId: 11000032, illustId: "Anos_serious", msg: "$02000066_BF__MAIN__4$",
                     duration: 5000, align: "center");
                 context.SetSkip(arg1: "1차어나운스03");
             }
@@ -134,7 +131,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State1차어나운스02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11000032, illustID: "Anos_serious", msg: "$02000066_BF__MAIN__5$",
+                context.AddCinematicTalk(npcId: 11000032, illustId: "Anos_serious", msg: "$02000066_BF__MAIN__5$",
                     duration: 5000, align: "center");
                 context.SetSkip(arg1: "1차어나운스03");
             }
@@ -176,7 +173,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "120", arg2: 120, arg3: false, arg4: true, arg5: 0);
-                context.CreateMonster(arg1: new int[] {900}, arg2: false);
+                context.CreateMonster(arg1: new[] {900}, arg2: false);
             }
 
             public override void Execute() {
@@ -185,54 +182,54 @@ namespace Maple2.Trigger._02000066_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State1차웨이브실패(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {1001});
-                context.DestroyMonster(arg1: new int[] {1002});
-                context.DestroyMonster(arg1: new int[] {1003});
-                context.DestroyMonster(arg1: new int[] {1004});
-                context.DestroyMonster(arg1: new int[] {1005});
-                context.DestroyMonster(arg1: new int[] {1006});
-                context.DestroyMonster(arg1: new int[] {1007});
-                context.DestroyMonster(arg1: new int[] {1008});
-                context.DestroyMonster(arg1: new int[] {1101});
-                context.DestroyMonster(arg1: new int[] {1102});
-                context.DestroyMonster(arg1: new int[] {1103});
-                context.DestroyMonster(arg1: new int[] {1104});
-                context.DestroyMonster(arg1: new int[] {1105});
-                context.DestroyMonster(arg1: new int[] {1106});
-                context.DestroyMonster(arg1: new int[] {1107});
-                context.DestroyMonster(arg1: new int[] {1108});
-                context.DestroyMonster(arg1: new int[] {1201});
-                context.DestroyMonster(arg1: new int[] {1202});
-                context.DestroyMonster(arg1: new int[] {1203});
-                context.DestroyMonster(arg1: new int[] {1204});
-                context.DestroyMonster(arg1: new int[] {1205});
-                context.DestroyMonster(arg1: new int[] {1206});
-                context.DestroyMonster(arg1: new int[] {1207});
-                context.DestroyMonster(arg1: new int[] {1208});
-                context.DestroyMonster(arg1: new int[] {1299});
-                context.DestroyMonster(arg1: new int[] {1301});
-                context.DestroyMonster(arg1: new int[] {1302});
-                context.DestroyMonster(arg1: new int[] {1303});
-                context.DestroyMonster(arg1: new int[] {1304});
-                context.DestroyMonster(arg1: new int[] {1305});
-                context.DestroyMonster(arg1: new int[] {1306});
-                context.DestroyMonster(arg1: new int[] {1307});
-                context.DestroyMonster(arg1: new int[] {1308});
-                context.DestroyMonster(arg1: new int[] {1401});
-                context.DestroyMonster(arg1: new int[] {1402});
-                context.DestroyMonster(arg1: new int[] {1403});
-                context.DestroyMonster(arg1: new int[] {1404});
-                context.DestroyMonster(arg1: new int[] {1601});
-                context.DestroyMonster(arg1: new int[] {1602});
-                context.DestroyMonster(arg1: new int[] {1603});
-                context.DestroyMonster(arg1: new int[] {1604});
+                context.DestroyMonster(arg1: new[] {1001});
+                context.DestroyMonster(arg1: new[] {1002});
+                context.DestroyMonster(arg1: new[] {1003});
+                context.DestroyMonster(arg1: new[] {1004});
+                context.DestroyMonster(arg1: new[] {1005});
+                context.DestroyMonster(arg1: new[] {1006});
+                context.DestroyMonster(arg1: new[] {1007});
+                context.DestroyMonster(arg1: new[] {1008});
+                context.DestroyMonster(arg1: new[] {1101});
+                context.DestroyMonster(arg1: new[] {1102});
+                context.DestroyMonster(arg1: new[] {1103});
+                context.DestroyMonster(arg1: new[] {1104});
+                context.DestroyMonster(arg1: new[] {1105});
+                context.DestroyMonster(arg1: new[] {1106});
+                context.DestroyMonster(arg1: new[] {1107});
+                context.DestroyMonster(arg1: new[] {1108});
+                context.DestroyMonster(arg1: new[] {1201});
+                context.DestroyMonster(arg1: new[] {1202});
+                context.DestroyMonster(arg1: new[] {1203});
+                context.DestroyMonster(arg1: new[] {1204});
+                context.DestroyMonster(arg1: new[] {1205});
+                context.DestroyMonster(arg1: new[] {1206});
+                context.DestroyMonster(arg1: new[] {1207});
+                context.DestroyMonster(arg1: new[] {1208});
+                context.DestroyMonster(arg1: new[] {1299});
+                context.DestroyMonster(arg1: new[] {1301});
+                context.DestroyMonster(arg1: new[] {1302});
+                context.DestroyMonster(arg1: new[] {1303});
+                context.DestroyMonster(arg1: new[] {1304});
+                context.DestroyMonster(arg1: new[] {1305});
+                context.DestroyMonster(arg1: new[] {1306});
+                context.DestroyMonster(arg1: new[] {1307});
+                context.DestroyMonster(arg1: new[] {1308});
+                context.DestroyMonster(arg1: new[] {1401});
+                context.DestroyMonster(arg1: new[] {1402});
+                context.DestroyMonster(arg1: new[] {1403});
+                context.DestroyMonster(arg1: new[] {1404});
+                context.DestroyMonster(arg1: new[] {1601});
+                context.DestroyMonster(arg1: new[] {1602});
+                context.DestroyMonster(arg1: new[] {1603});
+                context.DestroyMonster(arg1: new[] {1604});
             }
         }
 
@@ -240,9 +237,9 @@ namespace Maple2.Trigger._02000066_bf {
             internal State1차웨이브실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {613}, arg2: true);
-                context.SetEventUI(arg1: 5, arg2: "$02000066_BF__MAIN__7$", arg3: new int[] {3000}, arg4: "0");
-                context.DestroyMonster(arg1: new int[] {900});
+                context.SetEffect(arg1: new[] {613}, arg2: true);
+                context.SetEventUI(arg1: 5, arg2: "$02000066_BF__MAIN__7$", arg3: 3000, arg4: "0");
+                context.DestroyMonster(arg1: new[] {900});
             }
 
             public override void Execute() {
@@ -259,9 +256,9 @@ namespace Maple2.Trigger._02000066_bf {
             internal State1차웨이브성공(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20000662, textID: 20000662);
+                context.ShowGuideSummary(entityId: 20000662, textId: 20000662);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.DestroyMonster(arg1: new int[] {900});
+                context.DestroyMonster(arg1: new[] {900});
             }
 
             public override void Execute() {
@@ -270,14 +267,14 @@ namespace Maple2.Trigger._02000066_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State1차웨이브실패(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20000662);
+                context.HideGuideSummary(entityId: 20000662);
             }
         }
 
@@ -285,7 +282,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal State2차어나운스01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20000665, textID: 20000665, duration: 7000);
+                context.ShowGuideSummary(entityId: 20000665, textId: 20000665, duration: 7000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
@@ -295,14 +292,14 @@ namespace Maple2.Trigger._02000066_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State1차웨이브실패(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20000665);
+                context.HideGuideSummary(entityId: 20000665);
             }
         }
 
@@ -320,7 +317,7 @@ namespace Maple2.Trigger._02000066_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State1차웨이브실패(context);
                     return;
                 }
@@ -334,7 +331,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "120", arg2: 120, arg3: false, arg4: true);
-                context.CreateMonster(arg1: new int[] {901}, arg2: false);
+                context.CreateMonster(arg1: new[] {901}, arg2: false);
             }
 
             public override void Execute() {
@@ -343,54 +340,54 @@ namespace Maple2.Trigger._02000066_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State2차웨이브실패(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {1001});
-                context.DestroyMonster(arg1: new int[] {1002});
-                context.DestroyMonster(arg1: new int[] {1003});
-                context.DestroyMonster(arg1: new int[] {1004});
-                context.DestroyMonster(arg1: new int[] {1005});
-                context.DestroyMonster(arg1: new int[] {1006});
-                context.DestroyMonster(arg1: new int[] {1007});
-                context.DestroyMonster(arg1: new int[] {1008});
-                context.DestroyMonster(arg1: new int[] {1101});
-                context.DestroyMonster(arg1: new int[] {1102});
-                context.DestroyMonster(arg1: new int[] {1103});
-                context.DestroyMonster(arg1: new int[] {1104});
-                context.DestroyMonster(arg1: new int[] {1105});
-                context.DestroyMonster(arg1: new int[] {1106});
-                context.DestroyMonster(arg1: new int[] {1107});
-                context.DestroyMonster(arg1: new int[] {1108});
-                context.DestroyMonster(arg1: new int[] {1201});
-                context.DestroyMonster(arg1: new int[] {1202});
-                context.DestroyMonster(arg1: new int[] {1203});
-                context.DestroyMonster(arg1: new int[] {1204});
-                context.DestroyMonster(arg1: new int[] {1205});
-                context.DestroyMonster(arg1: new int[] {1206});
-                context.DestroyMonster(arg1: new int[] {1207});
-                context.DestroyMonster(arg1: new int[] {1208});
-                context.DestroyMonster(arg1: new int[] {1299});
-                context.DestroyMonster(arg1: new int[] {1301});
-                context.DestroyMonster(arg1: new int[] {1302});
-                context.DestroyMonster(arg1: new int[] {1303});
-                context.DestroyMonster(arg1: new int[] {1304});
-                context.DestroyMonster(arg1: new int[] {1305});
-                context.DestroyMonster(arg1: new int[] {1306});
-                context.DestroyMonster(arg1: new int[] {1307});
-                context.DestroyMonster(arg1: new int[] {1308});
-                context.DestroyMonster(arg1: new int[] {1401});
-                context.DestroyMonster(arg1: new int[] {1402});
-                context.DestroyMonster(arg1: new int[] {1403});
-                context.DestroyMonster(arg1: new int[] {1404});
-                context.DestroyMonster(arg1: new int[] {1601});
-                context.DestroyMonster(arg1: new int[] {1602});
-                context.DestroyMonster(arg1: new int[] {1603});
-                context.DestroyMonster(arg1: new int[] {1604});
+                context.DestroyMonster(arg1: new[] {1001});
+                context.DestroyMonster(arg1: new[] {1002});
+                context.DestroyMonster(arg1: new[] {1003});
+                context.DestroyMonster(arg1: new[] {1004});
+                context.DestroyMonster(arg1: new[] {1005});
+                context.DestroyMonster(arg1: new[] {1006});
+                context.DestroyMonster(arg1: new[] {1007});
+                context.DestroyMonster(arg1: new[] {1008});
+                context.DestroyMonster(arg1: new[] {1101});
+                context.DestroyMonster(arg1: new[] {1102});
+                context.DestroyMonster(arg1: new[] {1103});
+                context.DestroyMonster(arg1: new[] {1104});
+                context.DestroyMonster(arg1: new[] {1105});
+                context.DestroyMonster(arg1: new[] {1106});
+                context.DestroyMonster(arg1: new[] {1107});
+                context.DestroyMonster(arg1: new[] {1108});
+                context.DestroyMonster(arg1: new[] {1201});
+                context.DestroyMonster(arg1: new[] {1202});
+                context.DestroyMonster(arg1: new[] {1203});
+                context.DestroyMonster(arg1: new[] {1204});
+                context.DestroyMonster(arg1: new[] {1205});
+                context.DestroyMonster(arg1: new[] {1206});
+                context.DestroyMonster(arg1: new[] {1207});
+                context.DestroyMonster(arg1: new[] {1208});
+                context.DestroyMonster(arg1: new[] {1299});
+                context.DestroyMonster(arg1: new[] {1301});
+                context.DestroyMonster(arg1: new[] {1302});
+                context.DestroyMonster(arg1: new[] {1303});
+                context.DestroyMonster(arg1: new[] {1304});
+                context.DestroyMonster(arg1: new[] {1305});
+                context.DestroyMonster(arg1: new[] {1306});
+                context.DestroyMonster(arg1: new[] {1307});
+                context.DestroyMonster(arg1: new[] {1308});
+                context.DestroyMonster(arg1: new[] {1401});
+                context.DestroyMonster(arg1: new[] {1402});
+                context.DestroyMonster(arg1: new[] {1403});
+                context.DestroyMonster(arg1: new[] {1404});
+                context.DestroyMonster(arg1: new[] {1601});
+                context.DestroyMonster(arg1: new[] {1602});
+                context.DestroyMonster(arg1: new[] {1603});
+                context.DestroyMonster(arg1: new[] {1604});
             }
         }
 
@@ -398,8 +395,8 @@ namespace Maple2.Trigger._02000066_bf {
             internal State2차웨이브실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 5, arg2: "$02000066_BF__MAIN__11$", arg3: new int[] {3000}, arg4: "0");
-                context.DestroyMonster(arg1: new int[] {901});
+                context.SetEventUI(arg1: 5, arg2: "$02000066_BF__MAIN__11$", arg3: 3000, arg4: "0");
+                context.DestroyMonster(arg1: new[] {901});
             }
 
             public override void Execute() {
@@ -416,13 +413,13 @@ namespace Maple2.Trigger._02000066_bf {
             internal State2차웨이브성공(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20000662, textID: 20000662);
+                context.ShowGuideSummary(entityId: 20000662, textId: 20000662);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.DestroyMonster(arg1: new int[] {901});
+                context.DestroyMonster(arg1: new[] {901});
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State2차웨이브실패(context);
                     return;
                 }
@@ -434,7 +431,7 @@ namespace Maple2.Trigger._02000066_bf {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20000662);
+                context.HideGuideSummary(entityId: 20000662);
             }
         }
 
@@ -442,12 +439,12 @@ namespace Maple2.Trigger._02000066_bf {
             internal State3차어나운스01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20000665, textID: 20000665, duration: 7000);
+                context.ShowGuideSummary(entityId: 20000665, textId: 20000665, duration: 7000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State2차웨이브실패(context);
                     return;
                 }
@@ -459,7 +456,7 @@ namespace Maple2.Trigger._02000066_bf {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20000665);
+                context.HideGuideSummary(entityId: 20000665);
             }
         }
 
@@ -472,7 +469,7 @@ namespace Maple2.Trigger._02000066_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State2차웨이브실패(context);
                     return;
                 }
@@ -491,7 +488,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "120", arg2: 120, arg3: false, arg4: true);
-                context.CreateMonster(arg1: new int[] {902}, arg2: false);
+                context.CreateMonster(arg1: new[] {902}, arg2: false);
             }
 
             public override void Execute() {
@@ -500,54 +497,54 @@ namespace Maple2.Trigger._02000066_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State3차웨이브실패(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {1001});
-                context.DestroyMonster(arg1: new int[] {1002});
-                context.DestroyMonster(arg1: new int[] {1003});
-                context.DestroyMonster(arg1: new int[] {1004});
-                context.DestroyMonster(arg1: new int[] {1005});
-                context.DestroyMonster(arg1: new int[] {1006});
-                context.DestroyMonster(arg1: new int[] {1007});
-                context.DestroyMonster(arg1: new int[] {1008});
-                context.DestroyMonster(arg1: new int[] {1101});
-                context.DestroyMonster(arg1: new int[] {1102});
-                context.DestroyMonster(arg1: new int[] {1103});
-                context.DestroyMonster(arg1: new int[] {1104});
-                context.DestroyMonster(arg1: new int[] {1105});
-                context.DestroyMonster(arg1: new int[] {1106});
-                context.DestroyMonster(arg1: new int[] {1107});
-                context.DestroyMonster(arg1: new int[] {1108});
-                context.DestroyMonster(arg1: new int[] {1201});
-                context.DestroyMonster(arg1: new int[] {1202});
-                context.DestroyMonster(arg1: new int[] {1203});
-                context.DestroyMonster(arg1: new int[] {1204});
-                context.DestroyMonster(arg1: new int[] {1205});
-                context.DestroyMonster(arg1: new int[] {1206});
-                context.DestroyMonster(arg1: new int[] {1207});
-                context.DestroyMonster(arg1: new int[] {1208});
-                context.DestroyMonster(arg1: new int[] {1299});
-                context.DestroyMonster(arg1: new int[] {1301});
-                context.DestroyMonster(arg1: new int[] {1302});
-                context.DestroyMonster(arg1: new int[] {1303});
-                context.DestroyMonster(arg1: new int[] {1304});
-                context.DestroyMonster(arg1: new int[] {1305});
-                context.DestroyMonster(arg1: new int[] {1306});
-                context.DestroyMonster(arg1: new int[] {1307});
-                context.DestroyMonster(arg1: new int[] {1308});
-                context.DestroyMonster(arg1: new int[] {1401});
-                context.DestroyMonster(arg1: new int[] {1402});
-                context.DestroyMonster(arg1: new int[] {1403});
-                context.DestroyMonster(arg1: new int[] {1404});
-                context.DestroyMonster(arg1: new int[] {1601});
-                context.DestroyMonster(arg1: new int[] {1602});
-                context.DestroyMonster(arg1: new int[] {1603});
-                context.DestroyMonster(arg1: new int[] {1604});
+                context.DestroyMonster(arg1: new[] {1001});
+                context.DestroyMonster(arg1: new[] {1002});
+                context.DestroyMonster(arg1: new[] {1003});
+                context.DestroyMonster(arg1: new[] {1004});
+                context.DestroyMonster(arg1: new[] {1005});
+                context.DestroyMonster(arg1: new[] {1006});
+                context.DestroyMonster(arg1: new[] {1007});
+                context.DestroyMonster(arg1: new[] {1008});
+                context.DestroyMonster(arg1: new[] {1101});
+                context.DestroyMonster(arg1: new[] {1102});
+                context.DestroyMonster(arg1: new[] {1103});
+                context.DestroyMonster(arg1: new[] {1104});
+                context.DestroyMonster(arg1: new[] {1105});
+                context.DestroyMonster(arg1: new[] {1106});
+                context.DestroyMonster(arg1: new[] {1107});
+                context.DestroyMonster(arg1: new[] {1108});
+                context.DestroyMonster(arg1: new[] {1201});
+                context.DestroyMonster(arg1: new[] {1202});
+                context.DestroyMonster(arg1: new[] {1203});
+                context.DestroyMonster(arg1: new[] {1204});
+                context.DestroyMonster(arg1: new[] {1205});
+                context.DestroyMonster(arg1: new[] {1206});
+                context.DestroyMonster(arg1: new[] {1207});
+                context.DestroyMonster(arg1: new[] {1208});
+                context.DestroyMonster(arg1: new[] {1299});
+                context.DestroyMonster(arg1: new[] {1301});
+                context.DestroyMonster(arg1: new[] {1302});
+                context.DestroyMonster(arg1: new[] {1303});
+                context.DestroyMonster(arg1: new[] {1304});
+                context.DestroyMonster(arg1: new[] {1305});
+                context.DestroyMonster(arg1: new[] {1306});
+                context.DestroyMonster(arg1: new[] {1307});
+                context.DestroyMonster(arg1: new[] {1308});
+                context.DestroyMonster(arg1: new[] {1401});
+                context.DestroyMonster(arg1: new[] {1402});
+                context.DestroyMonster(arg1: new[] {1403});
+                context.DestroyMonster(arg1: new[] {1404});
+                context.DestroyMonster(arg1: new[] {1601});
+                context.DestroyMonster(arg1: new[] {1602});
+                context.DestroyMonster(arg1: new[] {1603});
+                context.DestroyMonster(arg1: new[] {1604});
             }
         }
 
@@ -555,8 +552,8 @@ namespace Maple2.Trigger._02000066_bf {
             internal State3차웨이브실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 5, arg2: "$02000066_BF__MAIN__15$", arg3: new int[] {3000}, arg4: "0");
-                context.DestroyMonster(arg1: new int[] {902});
+                context.SetEventUI(arg1: 5, arg2: "$02000066_BF__MAIN__15$", arg3: 3000, arg4: "0");
+                context.DestroyMonster(arg1: new[] {902});
             }
 
             public override void Execute() {
@@ -573,28 +570,28 @@ namespace Maple2.Trigger._02000066_bf {
             internal State3차웨이브성공(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 7, arg2: "$02000066_BF__MAIN__33$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 7, arg2: "$02000066_BF__MAIN__33$", arg3: 3000, arg4: "0");
                 context.SetEventUI(arg1: 0, arg2: "0,0");
-                context.SetEffect(arg1: new int[] {6003}, arg2: true);
-                context.ShowGuideSummary(entityID: 20000662, textID: 20000662);
+                context.SetEffect(arg1: new[] {6003}, arg2: true);
+                context.ShowGuideSummary(entityId: 20000662, textId: 20000662);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetAchievement(arg1: 103, arg2: "trigger", arg3: "EdgeofSpirits");
-                context.DestroyMonster(arg1: new int[] {902});
-                context.SetMesh(arg1: new int[] {9001}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {99});
+                context.DestroyMonster(arg1: new[] {902});
+                context.SetMesh(arg1: new[] {9001}, arg2: false);
+                context.DestroyMonster(arg1: new[] {99});
                 context.SetNpcEmotionLoop(arg1: 99, arg2: "Attack_Idle_A", arg3: 999999999999f);
             }
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SetEffect(arg1: new int[] {6003}, arg2: false);
+                    context.SetEffect(arg1: new[] {6003}, arg2: false);
                     context.State = new State3차승리연출랜덤(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20000662);
+                context.HideGuideSummary(entityId: 20000662);
             }
         }
 
@@ -745,11 +742,11 @@ namespace Maple2.Trigger._02000066_bf {
             internal State분기점(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {612}, arg2: true);
+                context.SetEffect(arg1: new[] {612}, arg2: true);
                 context.DungeonClear();
                 context.SetAchievement(arg1: 103, arg2: "trigger", arg3: "ClearLifeForest");
-                context.SetUserValue(triggerID: 10003067, key: "woodsoflife", value: 1);
-                context.CreateMonster(arg1: new int[] {907}, arg2: false);
+                context.SetUserValue(triggerId: 10003067, key: "woodsoflife", value: 1);
+                context.CreateMonster(arg1: new[] {907}, arg2: false);
                 context.MoveUser(arg1: 02000066, arg2: 3, arg3: 103);
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
@@ -757,9 +754,9 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.ShowGuideSummary(entityID: 20000666, textID: 20000666);
-                    context.SetEffect(arg1: new int[] {620}, arg2: true);
-                    context.DestroyMonster(arg1: new int[] {907});
+                    context.ShowGuideSummary(entityId: 20000666, textId: 20000666);
+                    context.SetEffect(arg1: new[] {620}, arg2: true);
+                    context.DestroyMonster(arg1: new[] {907});
                     context.State = new State완료(context);
                     return;
                 }

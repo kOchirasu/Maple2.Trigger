@@ -1,25 +1,21 @@
-using System;
-
 namespace Maple2.Trigger._52010038_qd {
     public static class _heal_1 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001258}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001259}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001260}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001261}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001262}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001263}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001264}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001265}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001258}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001259}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001260}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001261}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001262}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001263}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001264}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001265}, arg2: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "WoundStart", value: 1)) {
+                if (context.GetUserValue(key: "WoundStart") == 1) {
                     context.State = new State랜덤조건(context);
                     return;
                 }
@@ -74,8 +70,8 @@ namespace Maple2.Trigger._52010038_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "WoundEnd", value: 1)) {
-                    context.SetUserValue(triggerID: 993001, key: "WoundStart", value: 0);
+                if (context.GetUserValue(key: "WoundEnd") == 1) {
+                    context.SetUserValue(triggerId: 993001, key: "WoundStart", value: 0);
                     context.State = new State대기(context);
                     return;
                 }
@@ -90,7 +86,7 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001258}, arg2: 1)) {
+                if (context.ObjectInteracted(arg1: new[] {10001258}, arg2: 1)) {
                     context.State = new State랜덤조건(context);
                     return;
                 }
@@ -108,7 +104,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State10001258생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001258}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001258}, arg2: 1);
             }
 
             public override void Execute() {
@@ -117,8 +113,8 @@ namespace Maple2.Trigger._52010038_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "WoundEnd", value: 1)) {
-                    context.SetUserValue(triggerID: 993001, key: "WoundStart", value: 0);
+                if (context.GetUserValue(key: "WoundEnd") == 1) {
+                    context.SetUserValue(triggerId: 993001, key: "WoundStart", value: 0);
                     context.State = new State대기(context);
                     return;
                 }
@@ -133,7 +129,7 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001259}, arg2: 1)) {
+                if (context.ObjectInteracted(arg1: new[] {10001259}, arg2: 1)) {
                     context.State = new State랜덤조건(context);
                     return;
                 }
@@ -151,7 +147,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State10001259생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001259}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001259}, arg2: 1);
             }
 
             public override void Execute() {
@@ -160,8 +156,8 @@ namespace Maple2.Trigger._52010038_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "WoundEnd", value: 1)) {
-                    context.SetUserValue(triggerID: 993001, key: "WoundStart", value: 0);
+                if (context.GetUserValue(key: "WoundEnd") == 1) {
+                    context.SetUserValue(triggerId: 993001, key: "WoundStart", value: 0);
                     context.State = new State대기(context);
                     return;
                 }
@@ -176,7 +172,7 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001260}, arg2: 1)) {
+                if (context.ObjectInteracted(arg1: new[] {10001260}, arg2: 1)) {
                     context.State = new State랜덤조건(context);
                     return;
                 }
@@ -194,7 +190,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State10001260생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001260}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001260}, arg2: 1);
             }
 
             public override void Execute() {
@@ -203,8 +199,8 @@ namespace Maple2.Trigger._52010038_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "WoundEnd", value: 1)) {
-                    context.SetUserValue(triggerID: 993001, key: "WoundStart", value: 0);
+                if (context.GetUserValue(key: "WoundEnd") == 1) {
+                    context.SetUserValue(triggerId: 993001, key: "WoundStart", value: 0);
                     context.State = new State대기(context);
                     return;
                 }
@@ -219,7 +215,7 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001261}, arg2: 1)) {
+                if (context.ObjectInteracted(arg1: new[] {10001261}, arg2: 1)) {
                     context.State = new State랜덤조건(context);
                     return;
                 }
@@ -237,7 +233,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State10001261생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001261}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001261}, arg2: 1);
             }
 
             public override void Execute() {
@@ -246,8 +242,8 @@ namespace Maple2.Trigger._52010038_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "WoundEnd", value: 1)) {
-                    context.SetUserValue(triggerID: 993001, key: "WoundStart", value: 0);
+                if (context.GetUserValue(key: "WoundEnd") == 1) {
+                    context.SetUserValue(triggerId: 993001, key: "WoundStart", value: 0);
                     context.State = new State대기(context);
                     return;
                 }
@@ -262,7 +258,7 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001262}, arg2: 1)) {
+                if (context.ObjectInteracted(arg1: new[] {10001262}, arg2: 1)) {
                     context.State = new State랜덤조건(context);
                     return;
                 }
@@ -280,7 +276,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State10001262생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001262}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001262}, arg2: 1);
             }
 
             public override void Execute() {
@@ -289,8 +285,8 @@ namespace Maple2.Trigger._52010038_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "WoundEnd", value: 1)) {
-                    context.SetUserValue(triggerID: 993001, key: "WoundStart", value: 0);
+                if (context.GetUserValue(key: "WoundEnd") == 1) {
+                    context.SetUserValue(triggerId: 993001, key: "WoundStart", value: 0);
                     context.State = new State대기(context);
                     return;
                 }
@@ -305,7 +301,7 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001263}, arg2: 1)) {
+                if (context.ObjectInteracted(arg1: new[] {10001263}, arg2: 1)) {
                     context.State = new State랜덤조건(context);
                     return;
                 }
@@ -323,7 +319,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State10001263생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001263}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001263}, arg2: 1);
             }
 
             public override void Execute() {
@@ -332,8 +328,8 @@ namespace Maple2.Trigger._52010038_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "WoundEnd", value: 1)) {
-                    context.SetUserValue(triggerID: 993001, key: "WoundStart", value: 0);
+                if (context.GetUserValue(key: "WoundEnd") == 1) {
+                    context.SetUserValue(triggerId: 993001, key: "WoundStart", value: 0);
                     context.State = new State대기(context);
                     return;
                 }
@@ -348,7 +344,7 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001264}, arg2: 1)) {
+                if (context.ObjectInteracted(arg1: new[] {10001264}, arg2: 1)) {
                     context.State = new State랜덤조건(context);
                     return;
                 }
@@ -366,7 +362,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State10001264생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001264}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001264}, arg2: 1);
             }
 
             public override void Execute() {
@@ -375,8 +371,8 @@ namespace Maple2.Trigger._52010038_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "WoundEnd", value: 1)) {
-                    context.SetUserValue(triggerID: 993001, key: "WoundStart", value: 0);
+                if (context.GetUserValue(key: "WoundEnd") == 1) {
+                    context.SetUserValue(triggerId: 993001, key: "WoundStart", value: 0);
                     context.State = new State대기(context);
                     return;
                 }
@@ -391,7 +387,7 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001265}, arg2: 1)) {
+                if (context.ObjectInteracted(arg1: new[] {10001265}, arg2: 1)) {
                     context.State = new State랜덤조건(context);
                     return;
                 }
@@ -409,7 +405,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State10001265생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001265}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001265}, arg2: 1);
             }
 
             public override void Execute() {
@@ -418,8 +414,8 @@ namespace Maple2.Trigger._52010038_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "WoundEnd", value: 1)) {
-                    context.SetUserValue(triggerID: 993001, key: "WoundStart", value: 0);
+                if (context.GetUserValue(key: "WoundEnd") == 1) {
+                    context.SetUserValue(triggerId: 993001, key: "WoundStart", value: 0);
                     context.State = new State대기(context);
                     return;
                 }

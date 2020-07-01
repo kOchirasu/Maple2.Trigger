@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000347_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,14 +8,14 @@ namespace Maple2.Trigger._02000347_bf {
                 context.SetLadder(arg1: 9002, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 9003, arg2: false, arg3: false, arg4: 0);
                 context.SetPortal(arg1: 4, arg2: false, arg3: false, arg4: false);
-                context.SetInteractObject(arg1: new int[] {10000787}, arg2: 0);
-                context.SetMesh(arg1: new int[] {6001, 6011}, arg2: true);
-                context.SetMesh(arg1: new int[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010},
+                context.SetInteractObject(arg1: new[] {10000787}, arg2: 0);
+                context.SetMesh(arg1: new[] {6001, 6011}, arg2: true);
+                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010},
                     arg2: false);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 60001, arg2: 1)) {
+                if (context.GetUserCount(boxId: 60001) == 1) {
                     context.State = new State오브젝티브_01(context);
                     return;
                 }
@@ -49,9 +45,9 @@ namespace Maple2.Trigger._02000347_bf {
             internal State오브젝티브_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: true);
                 context.SetProductionUI(arg1: 1);
-                context.CreateMonster(arg1: new int[] {101}, arg2: true);
+                context.CreateMonster(arg1: new[] {101}, arg2: true);
                 context.SetProductionUI(arg1: 3, arg2: "$02000347_BF__MAIN1__0$");
                 context.SetTimer(arg1: "5", arg2: 5, arg4: false);
             }
@@ -98,7 +94,7 @@ namespace Maple2.Trigger._02000347_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101})) {
+                if (context.MonsterDead(arg1: new[] {101})) {
                     context.State = new State클리어(context);
                     return;
                 }
@@ -112,11 +108,11 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
-                context.SetEventUI(arg1: 7, arg2: "$02000347_BF__MAIN1__1$", arg3: new int[] {3000});
-                context.SetMesh(arg1: new int[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010},
+                context.SetEventUI(arg1: 7, arg2: "$02000347_BF__MAIN1__1$", arg3: 3000);
+                context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010},
                     arg2: true, arg4: 0, arg5: 10f);
-                context.SetMesh(arg1: new int[] {6011}, arg2: false, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new int[] {10000787}, arg2: 1);
+                context.SetMesh(arg1: new[] {6011}, arg2: false, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {10000787}, arg2: 1);
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
@@ -134,7 +130,7 @@ namespace Maple2.Trigger._02000347_bf {
             internal State클리어_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 110, textID: 40009);
+                context.ShowGuideSummary(entityId: 110, textId: 40009);
             }
 
             public override void Execute() { }

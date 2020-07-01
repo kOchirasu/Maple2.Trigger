@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000199_qd {
     public static class _52000199_2 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statestart(context);
-
-        private class Statestart : TriggerState {
+        public class Statestart : TriggerState {
             internal Statestart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {10003448},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003448},
                     arg3: new byte[] {2})) {
                     context.State = new StateCameraEffect01(context);
                     return;
@@ -62,8 +58,8 @@ namespace Maple2.Trigger._52000199_qd {
             public override void OnEnter() {
                 context.SetVisibleUI(uiName: "MessengerBrowser,GroupMessengerBrowser,HighlightGameMenu",
                     visible: false);
-                context.AddBuff(arg1: new int[] {2001}, arg2: 99910403, arg3: 1, arg4: false, arg5: true);
-                context.AddBuff(arg1: new int[] {2001}, arg2: 99910403, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {2001}, arg2: 99910403, arg3: 1, arg4: false, arg5: true);
+                context.AddBuff(arg1: new[] {2001}, arg2: 99910403, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {

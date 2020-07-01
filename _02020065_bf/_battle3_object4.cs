@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02020065_bf {
     public static class _battle3_object4 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {814}, arg2: false);
+                context.DestroyMonster(arg1: new[] {814}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Battle3_TurretSpawn_4", value: 1)) {
+                if (context.GetUserValue(key: "Battle3_TurretSpawn_4") == 1) {
                     context.State = new State터렛_활성화(context);
                     return;
                 }
@@ -25,21 +21,21 @@ namespace Maple2.Trigger._02020065_bf {
             internal State터렛_활성화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {814}, arg2: false);
+                context.CreateMonster(arg1: new[] {814}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Battle3_TurretSpawn_4", value: 0)) {
+                if (context.GetUserValue(key: "Battle3_TurretSpawn_4") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {814})) {
+                if (context.MonsterDead(arg1: new[] {814})) {
                     context.State = new State터렛_비활성화(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {801})) {
+                if (context.MonsterDead(arg1: new[] {801})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -54,12 +50,12 @@ namespace Maple2.Trigger._02020065_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Battle3_TurretSpawn_4", value: 0)) {
+                if (context.GetUserValue(key: "Battle3_TurretSpawn_4") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {801})) {
+                if (context.MonsterDead(arg1: new[] {801})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -72,11 +68,11 @@ namespace Maple2.Trigger._02020065_bf {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {814}, arg2: false);
+                context.DestroyMonster(arg1: new[] {814}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Battle3_TurretSpawn_4", value: 1)) {
+                if (context.GetUserValue(key: "Battle3_TurretSpawn_4") == 1) {
                     context.State = new State대기(context);
                     return;
                 }

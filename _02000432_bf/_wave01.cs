@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._02000432_bf {
     public static class _wave01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "wave01", value: 1)) {
+                if (context.GetUserValue(key: "wave01") == 1) {
                     context.State = new State소환(context);
                     return;
                 }
 
-                if (context.UserValue(key: "EndDungeon", value: 1)) {
+                if (context.GetUserValue(key: "EndDungeon") == 1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -28,7 +24,7 @@ namespace Maple2.Trigger._02000432_bf {
             internal State소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SpawnNpcRange(rangeID: new int[] {1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909},
+                context.SpawnNpcRange(rangeId: new[] {1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909},
                     isAutoTargeting: true, randomPickCount: 3);
             }
 
@@ -38,7 +34,7 @@ namespace Maple2.Trigger._02000432_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "EndDungeon", value: 1)) {
+                if (context.GetUserValue(key: "EndDungeon") == 1) {
                     context.State = new State종료(context);
                     return;
                 }

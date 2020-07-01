@@ -1,30 +1,26 @@
-using System;
-
 namespace Maple2.Trigger._52000155_qd {
     public static class _52000155 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statewait_01(context);
-
-        private class Statewait_01 : TriggerState {
+        public class Statewait_01 : TriggerState {
             internal Statewait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5001, 5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2002}, arg2: new int[] {40002728},
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002728},
                     arg3: new byte[] {3})) {
                     context.State = new State전직하러_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2002}, arg2: new int[] {40002725},
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002725},
                     arg3: new byte[] {3})) {
                     context.State = new State가이드_01(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {2002})) {
+                if (context.UserDetected(arg1: new[] {2002})) {
                     context.State = new Statewait_02(context);
                     return;
                 }
@@ -57,11 +53,11 @@ namespace Maple2.Trigger._52000155_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
-                context.CreateMonster(arg1: new int[] {108}, arg2: false);
-                context.CreateMonster(arg1: new int[] {109}, arg2: false);
-                context.CreateMonster(arg1: new int[] {110}, arg2: false);
+                context.CreateMonster(arg1: new[] {108}, arg2: false);
+                context.CreateMonster(arg1: new[] {109}, arg2: false);
+                context.CreateMonster(arg1: new[] {110}, arg2: false);
                 context.MoveUser(arg1: 52000155, arg2: 6001);
-                context.CameraSelectPath(arg1: new int[] {4003, 4004}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4003, 4004}, arg2: false);
             }
 
             public override void Execute() {
@@ -160,7 +156,7 @@ namespace Maple2.Trigger._52000155_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2002}, arg2: new int[] {40002725},
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002725},
                     arg3: new byte[] {2})) {
                     context.State = new State만취상태(context);
                     return;
@@ -194,10 +190,10 @@ namespace Maple2.Trigger._52000155_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
-                context.CreateMonster(arg1: new int[] {105}, arg2: false);
-                context.CreateMonster(arg1: new int[] {106}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {108});
-                context.DestroyMonster(arg1: new int[] {109});
+                context.CreateMonster(arg1: new[] {105}, arg2: false);
+                context.CreateMonster(arg1: new[] {106}, arg2: false);
+                context.DestroyMonster(arg1: new[] {108});
+                context.DestroyMonster(arg1: new[] {109});
                 context.SetNpcEmotionLoop(arg1: 105, arg2: "Down_Idle_A", arg3: 90000000f);
                 context.SetNpcEmotionLoop(arg1: 106, arg2: "Down_Idle_A", arg3: 90000000f);
                 context.MoveUser(arg1: 52000155, arg2: 6002);
@@ -241,7 +237,7 @@ namespace Maple2.Trigger._52000155_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2002}, arg2: new int[] {40002726},
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002726},
                     arg3: new byte[] {2})) {
                     context.State = new State가이드_01(context);
                     return;
@@ -255,14 +251,14 @@ namespace Maple2.Trigger._52000155_qd {
             internal State가이드_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5001, 5002}, arg2: true);
-                context.DestroyMonster(arg1: new int[] {110});
-                context.CreateMonster(arg1: new int[] {107}, arg2: false);
-                context.ShowGuideSummary(entityID: 25201551, textID: 25201551, duration: 10000);
+                context.SetEffect(arg1: new[] {5001, 5002}, arg2: true);
+                context.DestroyMonster(arg1: new[] {110});
+                context.CreateMonster(arg1: new[] {107}, arg2: false);
+                context.ShowGuideSummary(entityId: 25201551, textId: 25201551, duration: 10000);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2002}, arg2: new int[] {40002727},
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002727},
                     arg3: new byte[] {2})) {
                     context.State = new State가이드_02(context);
                     return;
@@ -276,11 +272,11 @@ namespace Maple2.Trigger._52000155_qd {
             internal State가이드_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5001, 5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2002}, arg2: new int[] {40002728},
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002728},
                     arg3: new byte[] {2})) {
                     context.State = new State전직하러_01(context);
                     return;

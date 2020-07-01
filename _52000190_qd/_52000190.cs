@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000190_qd {
     public static class _52000190 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {10003420},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003420},
                     arg3: new byte[] {2})) {
                     context.State = new StateWait_02(context);
                     return;
@@ -45,7 +41,7 @@ namespace Maple2.Trigger._52000190_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "the_empress_of_a_dungeon.swf", movieID: 1);
+                context.PlaySceneMovie(fileName: "the_empress_of_a_dungeon.swf", movieId: 1);
             }
 
             public override void Execute() {

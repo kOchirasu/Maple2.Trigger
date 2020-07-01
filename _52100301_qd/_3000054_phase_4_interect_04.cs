@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._52100301_qd {
     public static class _3000054_phase_4_interect_04 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {200027, 200028}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10003114}, arg2: 2);
+                context.SetEffect(arg1: new[] {200027, 200028}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10003114}, arg2: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Phase_4_Interect_04", value: 1)) {
+                if (context.GetUserValue(key: "Phase_4_Interect_04") == 1) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -33,7 +29,7 @@ namespace Maple2.Trigger._52100301_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "Phase_4_Interect_04", value: 0)) {
+                if (context.GetUserValue(key: "Phase_4_Interect_04") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -46,17 +42,17 @@ namespace Maple2.Trigger._52100301_qd {
             internal State인터렉트_설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {200027, 200028}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10003114}, arg2: 1);
+                context.SetEffect(arg1: new[] {200027, 200028}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10003114}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10003114}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10003114}, arg2: 0)) {
                     context.State = new State인터렉트_동작(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Phase_4_Interect_04", value: 0)) {
+                if (context.GetUserValue(key: "Phase_4_Interect_04") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -69,8 +65,8 @@ namespace Maple2.Trigger._52100301_qd {
             internal State인터렉트_동작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {200027, 200028}, arg2: false);
-                context.SetAiExtraData(key: "Phase_4_Sub_Bomb_4", value: 1, isModify: "false");
+                context.SetEffect(arg1: new[] {200027, 200028}, arg2: false);
+                context.SetAiExtraData(key: "Phase_4_Sub_Bomb_4", value: 1, isModify: false);
             }
 
             public override void Execute() {
@@ -79,7 +75,7 @@ namespace Maple2.Trigger._52100301_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "Phase_4_Interect_04", value: 0)) {
+                if (context.GetUserValue(key: "Phase_4_Interect_04") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -92,7 +88,7 @@ namespace Maple2.Trigger._52100301_qd {
             internal State인터렉트_리셋(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetAiExtraData(key: "Phase_4_Sub_Bomb_4", value: 0, isModify: "false");
+                context.SetAiExtraData(key: "Phase_4_Sub_Bomb_4", value: 0, isModify: false);
             }
 
             public override void Execute() {
@@ -101,7 +97,7 @@ namespace Maple2.Trigger._52100301_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "Phase_4_Interect_04", value: 0)) {
+                if (context.GetUserValue(key: "Phase_4_Interect_04") == 0) {
                     context.State = new State대기(context);
                     return;
                 }

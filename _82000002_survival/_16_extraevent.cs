@@ -1,14 +1,10 @@
-using System;
-
 namespace Maple2.Trigger._82000002_survival {
     public static class _16_extraevent {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateSetting(context);
-
-        private class StateSetting : TriggerState {
+        public class StateSetting : TriggerState {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {9000}, arg2: 70001101, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {9000}, arg2: 70001101, arg3: 1, arg4: false, arg5: false);
                 context.SetGravity(gravity: 0f);
                 context.RemoveBuff(arg1: 9000, arg2: 71000075);
                 context.RemoveBuff(arg1: 9000, arg2: 71000052);
@@ -19,12 +15,12 @@ namespace Maple2.Trigger._82000002_survival {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ExtraEventTestOn", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventTestOn") == 1) {
                     context.State = new StateExtraEventOn(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventCheck", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventCheck") == 1) {
                     context.State = new StateExtraEventOccurrenceProbability(context);
                     return;
                 }
@@ -49,7 +45,7 @@ namespace Maple2.Trigger._82000002_survival {
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -64,7 +60,7 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -94,40 +90,40 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateRelicLeft05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 11, key: "RelicMobSpawn", value: 1);
-                context.SetUserValue(triggerID: 12, key: "RelicMobSpawn", value: 1);
-                context.SetUserValue(triggerID: 13, key: "RelicMobSpawn", value: 1);
-                context.SetUserValue(triggerID: 14, key: "RelicMobSpawn", value: 1);
-                context.SetUserValue(triggerID: 15, key: "RelicMobSpawn", value: 1);
+                context.SetUserValue(triggerId: 11, key: "RelicMobSpawn", value: 1);
+                context.SetUserValue(triggerId: 12, key: "RelicMobSpawn", value: 1);
+                context.SetUserValue(triggerId: 13, key: "RelicMobSpawn", value: 1);
+                context.SetUserValue(triggerId: 14, key: "RelicMobSpawn", value: 1);
+                context.SetUserValue(triggerId: 15, key: "RelicMobSpawn", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobRedDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
                     context.State = new StateRelicLeft04_NoRed(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobSkyblueDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
                     context.State = new StateRelicLeft04_NoSkyblue(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreenDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
                     context.State = new StateRelicLeft04_NoGreen(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobYellowDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
                     context.State = new StateRelicLeft04_NoYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreyDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
                     context.State = new StateRelicLeft04_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -136,8 +132,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200002, textID: 28200002, duration: 4000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200002, textId: 28200002, duration: 4000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__0$");
             }
         }
@@ -150,27 +146,27 @@ namespace Maple2.Trigger._82000002_survival {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobSkyblueDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
                     context.State = new StateRelicLeft03_NoRed_NoSkyblue(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreenDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
                     context.State = new StateRelicLeft03_NoRed_NoGreen(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobYellowDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
                     context.State = new StateRelicLeft03_NoRed_NoYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreyDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
                     context.State = new StateRelicLeft03_NoRed_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -179,8 +175,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200003, textID: 28200003, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200003, textId: 28200003, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__1$");
             }
         }
@@ -191,27 +187,27 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobRedDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
                     context.State = new StateRelicLeft03_NoRed_NoSkyblue(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreenDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
                     context.State = new StateRelicLeft03_NoSkyblue_NoGreen(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobYellowDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
                     context.State = new StateRelicLeft03_NoSkyblue_NoYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreyDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
                     context.State = new StateRelicLeft03_NoSkyblue_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -220,8 +216,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200003, textID: 28200003, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200003, textId: 28200003, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__1$");
             }
         }
@@ -232,27 +228,27 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobRedDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
                     context.State = new StateRelicLeft03_NoRed_NoGreen(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobSkyblueDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
                     context.State = new StateRelicLeft03_NoSkyblue_NoGreen(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobYellowDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
                     context.State = new StateRelicLeft03_NoGreen_NoYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreyDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
                     context.State = new StateRelicLeft03_NoGreen_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -261,8 +257,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200003, textID: 28200003, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200003, textId: 28200003, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__1$");
             }
         }
@@ -273,27 +269,27 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobRedDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
                     context.State = new StateRelicLeft03_NoRed_NoYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobSkyblueDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
                     context.State = new StateRelicLeft03_NoSkyblue_NoYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreenDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
                     context.State = new StateRelicLeft03_NoGreen_NoYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreyDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
                     context.State = new StateRelicLeft03_NoYellow_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -302,8 +298,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200003, textID: 28200003, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200003, textId: 28200003, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__1$");
             }
         }
@@ -314,27 +310,27 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobRedDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
                     context.State = new StateRelicLeft03_NoRed_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobSkyblueDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
                     context.State = new StateRelicLeft03_NoSkyblue_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreenDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
                     context.State = new StateRelicLeft03_NoGreen_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobYellowDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
                     context.State = new StateRelicLeft03_NoYellow_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -343,8 +339,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200003, textID: 28200003, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200003, textId: 28200003, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__1$");
             }
         }
@@ -357,22 +353,22 @@ namespace Maple2.Trigger._82000002_survival {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobGreenDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoGreen(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobYellowDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreyDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -381,8 +377,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200004, textId: 28200004, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
         }
@@ -393,22 +389,22 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobSkyblueDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoGreen(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobYellowDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoGreen_NoYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreyDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoGreen_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -417,8 +413,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200004, textId: 28200004, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
         }
@@ -429,22 +425,22 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobSkyblueDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreenDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoGreen_NoYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreyDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoYellow_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -453,8 +449,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200004, textId: 28200004, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
         }
@@ -465,22 +461,22 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobSkyblueDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreenDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoGreen_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobYellowDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoYellow_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -489,8 +485,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200004, textId: 28200004, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
         }
@@ -501,22 +497,22 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobRedDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoGreen(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobYellowDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
                     context.State = new StateRelicLeft02_NoSkyblue_NoGreen_NoYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreyDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
                     context.State = new StateRelicLeft02_NoSkyblue_NoGreen_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -525,8 +521,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200004, textId: 28200004, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
         }
@@ -537,22 +533,22 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobRedDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreenDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
                     context.State = new StateRelicLeft02_NoSkyblue_NoGreen_NoYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreyDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
                     context.State = new StateRelicLeft02_NoSkyblue_NoYellow_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -561,8 +557,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200004, textId: 28200004, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
         }
@@ -573,22 +569,22 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobRedDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoSkyblue_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreenDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
                     context.State = new StateRelicLeft02_NoSkyblue_NoGreen_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobYellowDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
                     context.State = new StateRelicLeft02_NoSkyblue_NoYellow_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -597,8 +593,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200004, textId: 28200004, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
         }
@@ -609,22 +605,22 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobRedDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoGreen_NoYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobSkyblueDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
                     context.State = new StateRelicLeft02_NoSkyblue_NoGreen_NoYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreyDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
                     context.State = new StateRelicLeft02_NoGreen_NoYellow_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -633,8 +629,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200004, textId: 28200004, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
         }
@@ -645,22 +641,22 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobRedDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoGreen_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobSkyblueDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
                     context.State = new StateRelicLeft02_NoSkyblue_NoGreen_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobYellowDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
                     context.State = new StateRelicLeft02_NoGreen_NoYellow_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -669,8 +665,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200004, textId: 28200004, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
         }
@@ -681,22 +677,22 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobRedDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
                     context.State = new StateRelicLeft02_NoRed_NoYellow_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobSkyblueDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
                     context.State = new StateRelicLeft02_NoSkyblue_NoYellow_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreenDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
                     context.State = new StateRelicLeft02_NoGreen_NoYellow_NoGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -705,8 +701,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200004, textID: 28200004, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200004, textId: 28200004, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__2$");
             }
         }
@@ -719,17 +715,17 @@ namespace Maple2.Trigger._82000002_survival {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobYellowDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
                     context.State = new StateRelicLeft01_OnlyGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreyDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
                     context.State = new StateRelicLeft01_OnlyYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -738,8 +734,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200005, textId: 28200005, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
         }
@@ -750,17 +746,17 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobGreenDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
                     context.State = new StateRelicLeft01_OnlyGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreyDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
                     context.State = new StateRelicLeft01_OnlyGreen(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -769,8 +765,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200005, textId: 28200005, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
         }
@@ -781,17 +777,17 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobGreenDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
                     context.State = new StateRelicLeft01_OnlyYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobYellowDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
                     context.State = new StateRelicLeft01_OnlyGreen(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -800,8 +796,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200005, textId: 28200005, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
         }
@@ -812,17 +808,17 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobSkyblueDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
                     context.State = new StateRelicLeft01_OnlyGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreyDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
                     context.State = new StateRelicLeft01_OnlySkyblue(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -831,8 +827,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200005, textId: 28200005, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
         }
@@ -843,17 +839,17 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobSkyblueDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
                     context.State = new StateRelicLeft01_OnlyYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobYellowDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
                     context.State = new StateRelicLeft01_OnlySkyblue(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -862,8 +858,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200005, textId: 28200005, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
         }
@@ -874,17 +870,17 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobSkyblueDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
                     context.State = new StateRelicLeft01_OnlyGreen(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreenDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
                     context.State = new StateRelicLeft01_OnlySkyblue(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -893,8 +889,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200005, textId: 28200005, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
         }
@@ -905,17 +901,17 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobRedDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
                     context.State = new StateRelicLeft01_OnlyGrey(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreyDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
                     context.State = new StateRelicLeft01_OnlyRed(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -924,8 +920,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200005, textId: 28200005, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
         }
@@ -936,17 +932,17 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobRedDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
                     context.State = new StateRelicLeft01_OnlyYellow(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobYellowDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
                     context.State = new StateRelicLeft01_OnlyRed(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -955,8 +951,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200005, textId: 28200005, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
         }
@@ -967,17 +963,17 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobRedDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
                     context.State = new StateRelicLeft01_OnlyGreen(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobGreenDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
                     context.State = new StateRelicLeft01_OnlyRed(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -986,8 +982,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200005, textId: 28200005, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
         }
@@ -998,17 +994,17 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobRedDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
                     context.State = new StateRelicLeft01_OnlySkyblue(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RelicMobSkyblueDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
                     context.State = new StateRelicLeft01_OnlyRed(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -1017,8 +1013,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200005, textID: 28200005, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200005, textId: 28200005, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__3$");
             }
         }
@@ -1031,12 +1027,12 @@ namespace Maple2.Trigger._82000002_survival {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobRedDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobRedDie") == 1) {
                     context.State = new StateExtraEventRandomDelay01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -1045,8 +1041,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200006, textID: 28200006, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200006, textId: 28200006, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__4$");
             }
         }
@@ -1057,12 +1053,12 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobSkyblueDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobSkyblueDie") == 1) {
                     context.State = new StateExtraEventRandomDelay01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -1071,8 +1067,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200006, textID: 28200006, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200006, textId: 28200006, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__4$");
             }
         }
@@ -1083,12 +1079,12 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobGreenDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreenDie") == 1) {
                     context.State = new StateExtraEventRandomDelay01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -1097,8 +1093,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200006, textID: 28200006, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200006, textId: 28200006, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__4$");
             }
         }
@@ -1109,12 +1105,12 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobYellowDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobYellowDie") == 1) {
                     context.State = new StateExtraEventRandomDelay01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -1123,8 +1119,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200006, textID: 28200006, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200006, textId: 28200006, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__4$");
             }
         }
@@ -1135,12 +1131,12 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RelicMobGreyDie", value: 1)) {
+                if (context.GetUserValue(key: "RelicMobGreyDie") == 1) {
                     context.State = new StateExtraEventRandomDelay01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -1149,8 +1145,8 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Die_01");
-                context.ShowGuideSummary(entityID: 28200006, textID: 28200006, duration: 3000);
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.ShowGuideSummary(entityId: 28200006, textId: 28200006, duration: 3000);
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 5000, script: "$82000002_survival__16_ExtraEvent__4$");
             }
         }
@@ -1166,7 +1162,7 @@ namespace Maple2.Trigger._82000002_survival {
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -1180,7 +1176,7 @@ namespace Maple2.Trigger._82000002_survival {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Message_01");
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 8000, script: "$82000002_survival__16_ExtraEvent__5$");
             }
 
@@ -1190,7 +1186,7 @@ namespace Maple2.Trigger._82000002_survival {
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -1204,7 +1200,7 @@ namespace Maple2.Trigger._82000002_survival {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Popup_UI_01");
-                context.ShowGuideSummary(entityID: 28200007, textID: 28200007, duration: 4000);
+                context.ShowGuideSummary(entityId: 28200007, textId: 28200007, duration: 4000);
                 context.WriteLog(arg1: "Survival", arg3: "MokumEventStart");
             }
 
@@ -1214,7 +1210,7 @@ namespace Maple2.Trigger._82000002_survival {
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -1254,7 +1250,7 @@ namespace Maple2.Trigger._82000002_survival {
                     return;
                 }
 
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -1269,14 +1265,14 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() {
                 context.WriteLog(arg1: "Survival", arg3: "MokumEvent_01");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Completion_01");
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 8000, script: "$82000002_survival__16_ExtraEvent__6$");
-                context.AddBuff(arg1: new int[] {9000}, arg2: 71000075, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {9000}, arg2: 71000075, arg3: 1, arg4: false, arg5: false);
                 context.SetGravity(gravity: 30f);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -1292,13 +1288,13 @@ namespace Maple2.Trigger._82000002_survival {
                 context.WriteLog(arg1: "Survival", arg3: "MokumEvent_02");
                 context.RemoveBuff(arg1: 9000, arg2: 71000052);
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Completion_01");
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 8000, script: "$82000002_survival__16_ExtraEvent__7$");
-                context.AddBuff(arg1: new int[] {9000}, arg2: 71000052, arg3: 2, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {9000}, arg2: 71000052, arg3: 2, arg4: false, arg5: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -1313,20 +1309,20 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() {
                 context.WriteLog(arg1: "Survival", arg3: "MokumEvent_03");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Completion_01");
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 8000, script: "$82000002_survival__16_ExtraEvent__8$");
-                context.SetUserValue(triggerID: 10, key: "BattleRidingOnCount", value: 1);
+                context.SetUserValue(triggerId: 10, key: "BattleRidingOnCount", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.SetUserValue(triggerID: 10, key: "BattleRidingOff", value: 1);
+                context.SetUserValue(triggerId: 10, key: "BattleRidingOff", value: 1);
             }
         }
 
@@ -1336,13 +1332,13 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() {
                 context.WriteLog(arg1: "Survival", arg3: "MokumEvent_04");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Completion_01");
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 8000, script: "$82000002_survival__16_ExtraEvent__9$");
-                context.AddBuff(arg1: new int[] {9000}, arg2: 71000076, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {9000}, arg2: 71000076, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -1357,10 +1353,10 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() {
                 context.WriteLog(arg1: "Survival", arg3: "MokumEvent_05");
                 context.PlaySystemSoundInBox(arg2: "System_Mokum_Completion_01");
-                context.SideNpcTalk(npcID: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
+                context.SideNpcTalk(npcId: 21001019, type: "talkbottom", illust: "MushroomRichPorter_normal",
                     duration: 8000, script: "$82000002_survival__16_ExtraEvent__10$");
                 context.StartCombineSpawn(
-                    groupId: new int[] {
+                    groupId: new[] {
                         355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373,
                         374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392,
                         393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411,
@@ -1368,22 +1364,22 @@ namespace Maple2.Trigger._82000002_survival {
                         431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449,
                         450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468,
                         469, 470, 471, 472, 473, 474, 475, 476, 477
-                    }, isStart: "false");
+                    }, isStart: false);
                 context.StartCombineSpawn(
-                    groupId: new int[] {
+                    groupId: new[] {
                         10000342, 10000343, 10000344, 10000345, 10000346, 10000347, 10000348, 10000349, 10000350,
                         10000351, 10000352, 10000353, 10000354, 10000355, 10000356, 10000357, 10000358, 10000359,
                         10000360, 10000361, 10000362, 10000363, 10000364, 10000365, 10000366, 10000367, 10000368,
                         10000369, 10000370, 10000371, 10000372, 10000373, 10000374, 10000375, 10000376, 10000377,
                         10000378, 10000379, 10000380, 10000381
-                    }, isStart: "false");
+                    }, isStart: false);
                 context.StartCombineSpawn(
-                    groupId: new int[] {
+                    groupId: new[] {
                         319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337,
                         338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354
-                    }, isStart: "false");
+                    }, isStart: false);
                 context.StartCombineSpawn(
-                    groupId: new int[] {
+                    groupId: new[] {
                         10000382, 10000383, 10000384, 10000385, 10000386, 10000387, 10000388, 10000389, 10000390,
                         10000391, 10000392, 10000393, 10000394, 10000395, 10000396, 10000397, 10000398, 10000399,
                         10000400, 10000401, 10000402, 10000403, 10000404, 10000405, 10000406, 10000407, 10000408,
@@ -1398,14 +1394,14 @@ namespace Maple2.Trigger._82000002_survival {
                         10000481, 10000482, 10000483, 10000484, 10000485, 10000486, 10000487, 10000488, 10000489,
                         10000490, 10000491, 10000492, 10000493, 10000494, 10000495, 10000496, 10000497, 10000498,
                         10000499, 10000500, 10000501, 10000502, 10000503, 10000504, 10000505, 10000506
-                    }, isStart: "false");
-                context.SetUserValue(triggerID: 5, key: "RareBoxOff", value: 1);
-                context.SetUserValue(triggerID: 8, key: "RareMobOff", value: 1);
-                context.SetUserValue(triggerID: 9, key: "NormaBoxOff", value: 1);
+                    }, isStart: false);
+                context.SetUserValue(triggerId: 5, key: "RareBoxOff", value: 1);
+                context.SetUserValue(triggerId: 8, key: "RareMobOff", value: 1);
+                context.SetUserValue(triggerId: 9, key: "NormaBoxOff", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ExtraEventOff", value: 1)) {
+                if (context.GetUserValue(key: "ExtraEventOff") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -1418,11 +1414,11 @@ namespace Maple2.Trigger._82000002_survival {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 11, key: "RelicMobRemove", value: 1);
-                context.SetUserValue(triggerID: 12, key: "RelicMobRemove", value: 1);
-                context.SetUserValue(triggerID: 13, key: "RelicMobRemove", value: 1);
-                context.SetUserValue(triggerID: 14, key: "RelicMobRemove", value: 1);
-                context.SetUserValue(triggerID: 15, key: "RelicMobRemove", value: 1);
+                context.SetUserValue(triggerId: 11, key: "RelicMobRemove", value: 1);
+                context.SetUserValue(triggerId: 12, key: "RelicMobRemove", value: 1);
+                context.SetUserValue(triggerId: 13, key: "RelicMobRemove", value: 1);
+                context.SetUserValue(triggerId: 14, key: "RelicMobRemove", value: 1);
+                context.SetUserValue(triggerId: 15, key: "RelicMobRemove", value: 1);
             }
 
             public override void Execute() { }

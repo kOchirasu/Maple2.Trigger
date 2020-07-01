@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000461_bf {
     public static class _boss_recall {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {2099})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {2099})) {
                     context.State = new State발신(context);
                     return;
                 }

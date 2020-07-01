@@ -1,40 +1,36 @@
-using System;
-
 namespace Maple2.Trigger._02000441_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {85000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {85000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CreateMonster(arg1: new int[] {301, 302, 303, 304, 305}, arg2: true);
+                context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305}, arg2: true);
                 context.SetActor(arg1: 3001, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 3002, arg2: true, arg3: "Closed");
-                context.SetInteractObject(arg1: new int[] {10001096}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10001097}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001098}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001096}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10001097}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001098}, arg2: 2);
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809, 1810, 1811, 1812, 1813, 1814, 1815, 1816,
                         1817, 1818, 1819, 1820, 1821
                     }, arg2: false);
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1830, 1831, 1832, 1833, 1834, 1835, 1836, 1837, 1838, 1839, 1840, 1841, 1842, 1843, 1844, 1845,
                         1846, 1847, 1848, 1849, 1850
                     }, arg2: false);
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1851, 1852, 1853, 1854, 1855, 1856, 1857, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866,
                         1867, 1868, 1869, 1870, 1871
                     }, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "start", value: 1)) {
+                if (context.GetUserValue(key: "start") == 1) {
                     context.State = new StateQuestDungeonStart(context);
                     return;
                 }
@@ -66,8 +62,8 @@ namespace Maple2.Trigger._02000441_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
-                context.CreateMonster(arg1: new int[] {102}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: true);
             }
 
             public override void Execute() {
@@ -84,7 +80,7 @@ namespace Maple2.Trigger._02000441_bf {
             internal Statemermaid_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: true);
+                context.CreateMonster(arg1: new[] {101}, arg2: true);
                 context.SetSkip(arg1: "scene_04");
             }
 
@@ -160,7 +156,7 @@ namespace Maple2.Trigger._02000441_bf {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Attack_01_A");
-                context.SetMesh(arg1: new int[] {7001, 7002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {7001, 7002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 3001, arg2: true, arg3: "Opening");
             }
 
@@ -199,11 +195,11 @@ namespace Maple2.Trigger._02000441_bf {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetLocalCamera(cameraId: 8100, enable: true);
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809, 1810, 1811, 1812, 1813, 1814, 1815, 1816,
                         1817, 1818, 1819, 1820, 1821
                     }, arg2: true);
-                context.SetEffect(arg1: new int[] {7101}, arg2: true);
+                context.SetEffect(arg1: new[] {7101}, arg2: true);
                 context.SetSkip();
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
@@ -212,7 +208,7 @@ namespace Maple2.Trigger._02000441_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {703})) {
+                if (context.UserDetected(arg1: new[] {703})) {
                     context.State = new Statebattle_01(context);
                     return;
                 }
@@ -228,11 +224,11 @@ namespace Maple2.Trigger._02000441_bf {
                 context.SetLocalCamera(cameraId: 8100, enable: true);
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000441_BF__MAIN__7$", arg4: 2, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000441_BF__MAIN__8$", arg4: 2, arg5: 1);
-                context.CreateMonster(arg1: new int[] {201, 202, 203, 204}, arg2: true);
+                context.CreateMonster(arg1: new[] {201, 202, 203, 204}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {201, 202})) {
+                if (context.MonsterDead(arg1: new[] {201, 202})) {
                     context.State = new Statebattle_01_2(context);
                     return;
                 }
@@ -245,12 +241,12 @@ namespace Maple2.Trigger._02000441_bf {
             internal Statebattle_01_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {20101, 20202, 20303, 20404, 20505, 20606, 20708, 20408},
+                context.CreateMonster(arg1: new[] {20101, 20202, 20303, 20404, 20505, 20606, 20708, 20408},
                     arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {20101, 20202, 20303, 20404, 20505, 20606, 20708, 20408})) {
+                if (context.MonsterDead(arg1: new[] {20101, 20202, 20303, 20404, 20505, 20606, 20708, 20408})) {
                     context.State = new Statebattle_02(context);
                     return;
                 }
@@ -272,7 +268,7 @@ namespace Maple2.Trigger._02000441_bf {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 704, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 704, arg2: new[] {101})) {
                     context.State = new Stateopen_door_ready(context);
                     return;
                 }
@@ -301,7 +297,7 @@ namespace Maple2.Trigger._02000441_bf {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2007");
-                context.SetMesh(arg1: new int[] {7003, 7004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {7003, 7004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 3002, arg2: true, arg3: "Opening");
             }
 
@@ -329,11 +325,11 @@ namespace Maple2.Trigger._02000441_bf {
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000441_BF__MAIN__10$", arg4: 2, arg5: 1);
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000441_BF__MAIN__11$", arg4: 2, arg5: 0);
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1830, 1831, 1832, 1833, 1834, 1835, 1836, 1837, 1838, 1839, 1840, 1841, 1842, 1843, 1844, 1845,
                         1846, 1847, 1848, 1849, 1850
                     }, arg2: true);
-                context.SetEffect(arg1: new int[] {7102}, arg2: true);
+                context.SetEffect(arg1: new[] {7102}, arg2: true);
             }
 
             public override void Execute() {
@@ -352,7 +348,7 @@ namespace Maple2.Trigger._02000441_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {707})) {
+                if (context.UserDetected(arg1: new[] {707})) {
                     context.State = new Stateopen_door_03_3(context);
                     return;
                 }
@@ -365,12 +361,12 @@ namespace Maple2.Trigger._02000441_bf {
             internal Stateopen_door_03_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {205, 206, 207, 208, 209}, arg2: true);
-                context.SetUserValue(triggerID: 2038806, key: "monster_respawn", value: 1);
+                context.CreateMonster(arg1: new[] {205, 206, 207, 208, 209}, arg2: true);
+                context.SetUserValue(triggerId: 2038806, key: "monster_respawn", value: 1);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {209})) {
+                if (context.MonsterDead(arg1: new[] {209})) {
                     context.State = new Statebattle_03(context);
                     return;
                 }
@@ -385,11 +381,11 @@ namespace Maple2.Trigger._02000441_bf {
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000441_BF__MAIN__12$", arg4: 2, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000441_BF__MAIN__13$", arg4: 2, arg5: 2);
-                context.SetInteractObject(arg1: new int[] {10001096}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001096}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001096}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001096}, arg2: 0)) {
                     context.State = new Statebattle_04(context);
                     return;
                 }
@@ -402,9 +398,9 @@ namespace Maple2.Trigger._02000441_bf {
             internal Statebattle_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7103}, arg2: true);
+                context.SetEffect(arg1: new[] {7103}, arg2: true);
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1851, 1852, 1853, 1854, 1855, 1856, 1857, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866,
                         1867, 1868, 1869, 1870, 1871
                     }, arg2: true);
@@ -431,7 +427,7 @@ namespace Maple2.Trigger._02000441_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {705})) {
+                if (context.UserDetected(arg1: new[] {705})) {
                     context.State = new Stateship_01(context);
                     return;
                 }
@@ -449,7 +445,7 @@ namespace Maple2.Trigger._02000441_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {706})) {
+                if (context.UserDetected(arg1: new[] {706})) {
                     context.State = new Stateship_01_1(context);
                     return;
                 }
@@ -464,15 +460,15 @@ namespace Maple2.Trigger._02000441_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {301, 302, 303, 304, 305})) {
+                if (context.MonsterDead(arg1: new[] {301, 302, 303, 304, 305})) {
                     context.State = new Stateship_01_2(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new int[] {401, 402}, arg2: true);
-                context.SetUserValue(triggerID: 2038805, key: "monster_buff", value: 1);
+                context.CreateMonster(arg1: new[] {401, 402}, arg2: true);
+                context.SetUserValue(triggerId: 2038805, key: "monster_buff", value: 1);
             }
         }
 
@@ -482,7 +478,7 @@ namespace Maple2.Trigger._02000441_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {401, 402})) {
+                if (context.MonsterDead(arg1: new[] {401, 402})) {
                     context.State = new Stateship_02(context);
                     return;
                 }
@@ -495,13 +491,13 @@ namespace Maple2.Trigger._02000441_bf {
             internal Stateship_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001097}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10001098}, arg2: 1);
-                context.SetEventUI(arg1: 1, arg2: "$02000441_BF__MAIN__18$", arg3: new int[] {3000});
+                context.SetInteractObject(arg1: new[] {10001097}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001098}, arg2: 1);
+                context.SetEventUI(arg1: 1, arg2: "$02000441_BF__MAIN__18$", arg3: 3000);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001097}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001097}, arg2: 0)) {
                     context.State = new Stateship_03(context);
                     return;
                 }
@@ -516,7 +512,7 @@ namespace Maple2.Trigger._02000441_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001098}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001098}, arg2: 0)) {
                     context.State = new Stateship_end(context);
                     return;
                 }
@@ -549,9 +545,9 @@ namespace Maple2.Trigger._02000441_bf {
             internal Stateending(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7104}, arg2: true);
+                context.SetEffect(arg1: new[] {7104}, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {8003, 8004, 8005, 8006}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8003, 8004, 8005, 8006}, arg2: false);
             }
 
             public override void Execute() {
@@ -622,11 +618,11 @@ namespace Maple2.Trigger._02000441_bf {
             internal Stateend(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7101}, arg2: false);
-                context.SetEffect(arg1: new int[] {7102}, arg2: false);
-                context.SetEffect(arg1: new int[] {7103}, arg2: false);
-                context.SetEffect(arg1: new int[] {7104}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {101, 102});
+                context.SetEffect(arg1: new[] {7101}, arg2: false);
+                context.SetEffect(arg1: new[] {7102}, arg2: false);
+                context.SetEffect(arg1: new[] {7103}, arg2: false);
+                context.SetEffect(arg1: new[] {7104}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101, 102});
             }
 
             public override void Execute() { }

@@ -1,17 +1,14 @@
-using System;
 using System.Numerics;
 
 namespace Maple2.Trigger._52020040_qd {
     public static class _52020040 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statewait_01(context);
-
-        private class Statewait_01 : TriggerState {
+        public class Statewait_01 : TriggerState {
             internal Statewait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {2001})) {
+                if (context.UserDetected(arg1: new[] {2001})) {
                     context.State = new Statewait_02(context);
                     return;
                 }
@@ -27,7 +24,7 @@ namespace Maple2.Trigger._52020040_qd {
                 context.SetOnetimeEffect(id: 1, enable: true,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetEffect(arg1: new int[] {6000}, arg2: false);
+                context.SetEffect(arg1: new[] {6000}, arg2: false);
             }
 
             public override void Execute() {
@@ -44,11 +41,11 @@ namespace Maple2.Trigger._52020040_qd {
             internal Statewait_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
-                context.CreateMonster(arg1: new int[] {103}, arg2: false);
-                context.CreateMonster(arg1: new int[] {104}, arg2: false);
-                context.CreateMonster(arg1: new int[] {105}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {103}, arg2: false);
+                context.CreateMonster(arg1: new[] {104}, arg2: false);
+                context.CreateMonster(arg1: new[] {105}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.MoveUser(arg1: 52020040, arg2: 1);
             }
@@ -69,7 +66,7 @@ namespace Maple2.Trigger._52020040_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
             }
 
             public override void Execute() {
@@ -86,14 +83,14 @@ namespace Maple2.Trigger._52020040_qd {
             internal State크리티아스로_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4003, 4004, 4005}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4003, 4004, 4005}, arg2: false);
                 context.SetProductionUI(arg1: 3);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_B", arg3: 99999999999f);
-                context.AddCinematicTalk(npcID: 11004434, illustID: "Bliche_normal", align: "left",
+                context.AddCinematicTalk(npcId: 11004434, illustId: "Bliche_normal", align: "left",
                     msg: "$52020040_QD__52020040__0$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004437, illustID: "Neirin_smile", align: "right",
+                context.AddCinematicTalk(npcId: 11004437, illustId: "Neirin_smile", align: "right",
                     msg: "$52020040_QD__52020040__1$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004434, illustID: "Bliche_normal", align: "left",
+                context.AddCinematicTalk(npcId: 11004434, illustId: "Bliche_normal", align: "left",
                     msg: "$52020040_QD__52020040__2$", duration: 3000);
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
             }
@@ -112,7 +109,7 @@ namespace Maple2.Trigger._52020040_qd {
             internal State크리티아스로_02_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4006}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4006}, arg2: false);
                 context.ShowCaption(type: "HorizonCaption", title: "$52020040_QD__52020040__3$", align: "bottomLeft",
                     offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
             }
@@ -131,12 +128,12 @@ namespace Maple2.Trigger._52020040_qd {
             internal State크리티아스로_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4007}, arg2: false);
-                context.AddCinematicTalk(npcID: 11004436, illustID: "Schatten_smile", align: "left",
+                context.CameraSelectPath(arg1: new[] {4007}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004436, illustId: "Schatten_smile", align: "left",
                     msg: "$52020040_QD__52020040__4$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004438, illustID: "Mason_closeEye", align: "right",
+                context.AddCinematicTalk(npcId: 11004438, illustId: "Mason_closeEye", align: "right",
                     msg: "$52020040_QD__52020040__5$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004435, illustID: "Conder_smile", align: "left",
+                context.AddCinematicTalk(npcId: 11004435, illustId: "Conder_smile", align: "left",
                     msg: "$52020040_QD__52020040__6$", duration: 3000);
             }
 
@@ -156,7 +153,7 @@ namespace Maple2.Trigger._52020040_qd {
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(232f, 92f, 53f));
                 context.SetDirectionalLight(arg1: new Vector3(41f, 21f, 18f), arg2: new Vector3(130f, 130f, 130f));
-                context.AddCinematicTalk(npcID: 11004435, illustID: "Conder_normal", align: "left",
+                context.AddCinematicTalk(npcId: 11004435, illustId: "Conder_normal", align: "left",
                     msg: "$52020040_QD__52020040__7$", duration: 2500);
             }
 
@@ -174,7 +171,7 @@ namespace Maple2.Trigger._52020040_qd {
             internal State경보(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6000}, arg2: true);
+                context.SetEffect(arg1: new[] {6000}, arg2: true);
                 context.SetActor(arg1: 201, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetActor(arg1: 202, arg2: true, arg3: "sf_quest_light_A01_On");
                 context.SetActor(arg1: 203, arg2: true, arg3: "sf_quest_light_A01_On");
@@ -199,22 +196,22 @@ namespace Maple2.Trigger._52020040_qd {
             internal State경보_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4008}, arg2: false);
-                context.AddCinematicTalk(npcID: 11004437, illustID: "Neirin_surprise", align: "left",
+                context.CameraSelectPath(arg1: new[] {4008}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004437, illustId: "Neirin_surprise", align: "left",
                     msg: "$52020040_QD__52020040__8$", duration: 2500);
-                context.AddCinematicTalk(npcID: 11004437, illustID: "Neirin_surprise", align: "left",
+                context.AddCinematicTalk(npcId: 11004437, illustId: "Neirin_surprise", align: "left",
                     msg: "$52020040_QD__52020040__9$", duration: 2800);
-                context.AddCinematicTalk(npcID: 11004434, illustID: "Bliche_normal", align: "right",
+                context.AddCinematicTalk(npcId: 11004434, illustId: "Bliche_normal", align: "right",
                     msg: "$52020040_QD__52020040__10$", duration: 2800);
-                context.AddCinematicTalk(npcID: 11004437, illustID: "Neirin_surprise", align: "left",
+                context.AddCinematicTalk(npcId: 11004437, illustId: "Neirin_surprise", align: "left",
                     msg: "$52020040_QD__52020040__11$", duration: 2800);
-                context.AddCinematicTalk(npcID: 11004434, illustID: "Bliche_normal", align: "right",
+                context.AddCinematicTalk(npcId: 11004434, illustId: "Bliche_normal", align: "right",
                     msg: "$52020040_QD__52020040__12$", duration: 2400);
-                context.AddCinematicTalk(npcID: 11004437, illustID: "Neirin_surprise", align: "left",
+                context.AddCinematicTalk(npcId: 11004437, illustId: "Neirin_surprise", align: "left",
                     msg: "$52020040_QD__52020040__13$", duration: 2800);
-                context.AddCinematicTalk(npcID: 11004434, illustID: "Bliche_mad", align: "right",
+                context.AddCinematicTalk(npcId: 11004434, illustId: "Bliche_mad", align: "right",
                     msg: "$52020040_QD__52020040__14$", duration: 2800);
-                context.AddCinematicTalk(npcID: 11004437, illustID: "Neirin_surprise", align: "left",
+                context.AddCinematicTalk(npcId: 11004437, illustId: "Neirin_surprise", align: "left",
                     msg: "$52020040_QD__52020040__15$", duration: 2400);
             }
 
@@ -232,11 +229,11 @@ namespace Maple2.Trigger._52020040_qd {
             internal State경보_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4009, 4010}, arg2: false);
-                context.SetEffect(arg1: new int[] {6000}, arg2: false);
-                context.AddCinematicTalk(npcID: 11004440, msg: "$52020040_QD__52020040__16$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004440, msg: "$52020040_QD__52020040__17$", duration: 5000);
-                context.AddCinematicTalk(npcID: 11004440, msg: "$52020040_QD__52020040__18$", duration: 2600);
+                context.CameraSelectPath(arg1: new[] {4009, 4010}, arg2: false);
+                context.SetEffect(arg1: new[] {6000}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004440, msg: "$52020040_QD__52020040__16$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004440, msg: "$52020040_QD__52020040__17$", duration: 5000);
+                context.AddCinematicTalk(npcId: 11004440, msg: "$52020040_QD__52020040__18$", duration: 2600);
             }
 
             public override void Execute() {
@@ -264,7 +261,7 @@ namespace Maple2.Trigger._52020040_qd {
                 context.SetActor(arg1: 206, arg2: true, arg3: "sf_quest_light_A01_Off");
                 context.SetActor(arg1: 207, arg2: true, arg3: "sf_quest_light_A01_Off");
                 context.SetActor(arg1: 208, arg2: true, arg3: "sf_quest_light_A01_Off");
-                context.AddCinematicTalk(npcID: 11004435, illustID: "Conder_normal", align: "right",
+                context.AddCinematicTalk(npcId: 11004435, illustId: "Conder_normal", align: "right",
                     msg: "$52020040_QD__52020040__19$", duration: 3000);
             }
 
@@ -314,34 +311,34 @@ namespace Maple2.Trigger._52020040_qd {
             internal State경보끝_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4012}, arg2: false);
-                context.AddCinematicTalk(npcID: 11004437, illustID: "Neirin_surprise", align: "left",
+                context.CameraSelectPath(arg1: new[] {4012}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004437, illustId: "Neirin_surprise", align: "left",
                     msg: "$52020040_QD__52020040__20$", duration: 2800);
-                context.AddCinematicTalk(npcID: 11004437, illustID: "Neirin_surprise", align: "left",
+                context.AddCinematicTalk(npcId: 11004437, illustId: "Neirin_surprise", align: "left",
                     msg: "$52020040_QD__52020040__21$", duration: 2800);
-                context.AddCinematicTalk(npcID: 11004437, illustID: "Neirin_surprise", align: "left",
+                context.AddCinematicTalk(npcId: 11004437, illustId: "Neirin_surprise", align: "left",
                     msg: "$52020040_QD__52020040__22$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004434, illustID: "Bliche_normal", align: "right",
+                context.AddCinematicTalk(npcId: 11004434, illustId: "Bliche_normal", align: "right",
                     msg: "$52020040_QD__52020040__23$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004434, illustID: "Bliche_normal", align: "right",
+                context.AddCinematicTalk(npcId: 11004434, illustId: "Bliche_normal", align: "right",
                     msg: "$52020040_QD__52020040__24$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004437, illustID: "Neirin_surprise", align: "left",
+                context.AddCinematicTalk(npcId: 11004437, illustId: "Neirin_surprise", align: "left",
                     msg: "$52020040_QD__52020040__25$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004435, illustID: "Conder_normal", align: "right",
+                context.AddCinematicTalk(npcId: 11004435, illustId: "Conder_normal", align: "right",
                     msg: "$52020040_QD__52020040__26$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004436, illustID: "Schatten_surprise", align: "left",
+                context.AddCinematicTalk(npcId: 11004436, illustId: "Schatten_surprise", align: "left",
                     msg: "$52020040_QD__52020040__27$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004435, illustID: "Conder_normal", align: "right",
+                context.AddCinematicTalk(npcId: 11004435, illustId: "Conder_normal", align: "right",
                     msg: "$52020040_QD__52020040__28$", duration: 2500);
-                context.AddCinematicTalk(npcID: 11004438, illustID: "Mason_normal", align: "left",
+                context.AddCinematicTalk(npcId: 11004438, illustId: "Mason_normal", align: "left",
                     msg: "$52020040_QD__52020040__29$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004434, illustID: "Bliche_normal", align: "right",
+                context.AddCinematicTalk(npcId: 11004434, illustId: "Bliche_normal", align: "right",
                     msg: "$52020040_QD__52020040__30$", duration: 2500);
-                context.AddCinematicTalk(npcID: 11004434, illustID: "Bliche_normal", align: "right",
+                context.AddCinematicTalk(npcId: 11004434, illustId: "Bliche_normal", align: "right",
                     msg: "$52020040_QD__52020040__31$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004438, illustID: "Mason_normal", align: "left",
+                context.AddCinematicTalk(npcId: 11004438, illustId: "Mason_normal", align: "left",
                     msg: "$52020040_QD__52020040__32$", duration: 3000);
-                context.AddCinematicTalk(npcID: 0, msg: "$52020040_QD__52020040__33$", duration: 2500);
+                context.AddCinematicTalk(npcId: 0, msg: "$52020040_QD__52020040__33$", duration: 2500);
             }
 
             public override void Execute() {
@@ -358,25 +355,25 @@ namespace Maple2.Trigger._52020040_qd {
             internal State경보끝_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4011, 4013}, arg2: false);
-                context.AddCinematicTalk(npcID: 11004438, illustID: "Mason_normal", msg: "$52020040_QD__52020040__34$",
+                context.CameraSelectPath(arg1: new[] {4011, 4013}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004438, illustId: "Mason_normal", msg: "$52020040_QD__52020040__34$",
                     align: "left", duration: 3000);
-                context.AddCinematicTalk(npcID: 0, msg: "$52020040_QD__52020040__35$", duration: 3000);
-                context.AddCinematicTalk(npcID: 0, msg: "$52020040_QD__52020040__36$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004436, illustID: "Schatten_surprise", align: "left",
+                context.AddCinematicTalk(npcId: 0, msg: "$52020040_QD__52020040__35$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, msg: "$52020040_QD__52020040__36$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004436, illustId: "Schatten_surprise", align: "left",
                     msg: "$52020040_QD__52020040__37$", duration: 3500);
-                context.AddCinematicTalk(npcID: 11004437, illustID: "Neirin_normal", align: "right",
+                context.AddCinematicTalk(npcId: 11004437, illustId: "Neirin_normal", align: "right",
                     msg: "$52020040_QD__52020040__38$", duration: 3000);
-                context.AddCinematicTalk(npcID: 0, msg: "$52020040_QD__52020040__39$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004434, illustID: "Bliche_closeEye", align: "left",
+                context.AddCinematicTalk(npcId: 0, msg: "$52020040_QD__52020040__39$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004434, illustId: "Bliche_closeEye", align: "left",
                     msg: "$52020040_QD__52020040__40$", duration: 2800);
-                context.AddCinematicTalk(npcID: 11004437, illustID: "Neirin_normal", align: "right",
+                context.AddCinematicTalk(npcId: 11004437, illustId: "Neirin_normal", align: "right",
                     msg: "$52020040_QD__52020040__41$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004434, illustID: "Bliche_closeEye", align: "left",
+                context.AddCinematicTalk(npcId: 11004434, illustId: "Bliche_closeEye", align: "left",
                     msg: "$52020040_QD__52020040__42$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004434, illustID: "Bliche_normal", align: "left",
+                context.AddCinematicTalk(npcId: 11004434, illustId: "Bliche_normal", align: "left",
                     msg: "$52020040_QD__52020040__43$", duration: 3000);
-                context.AddCinematicTalk(npcID: 0, msg: "$52020040_QD__52020040__44$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, msg: "$52020040_QD__52020040__44$", duration: 3000);
                 context.SetSceneSkip();
             }
 

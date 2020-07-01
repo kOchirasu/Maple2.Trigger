@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000316_bf {
     public static class _bossspawn {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._02000316_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {10})) {
+                if (context.UserDetected(arg1: new[] {10})) {
                     context.State = new State몹생성(context);
                     return;
                 }
@@ -25,11 +21,11 @@ namespace Maple2.Trigger._02000316_bf {
             internal State몹생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: true);
+                context.CreateMonster(arg1: new[] {101}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101})) {
+                if (context.MonsterDead(arg1: new[] {101})) {
                     context.State = new State포털(context);
                     return;
                 }

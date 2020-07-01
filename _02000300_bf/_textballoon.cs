@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._02000300_bf {
     public static class _textballoon {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterInCombat(arg1: new int[] {1099})) {
+                if (context.MonsterInCombat(arg1: new[] {1099})) {
                     context.State = new State랜덤대화(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1099})) {
+                if (context.MonsterDead(arg1: new[] {1099})) {
                     context.State = new State종료대화(context);
                     return;
                 }
@@ -50,7 +46,7 @@ namespace Maple2.Trigger._02000300_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1099})) {
+                if (context.MonsterDead(arg1: new[] {1099})) {
                     context.State = new State종료대화(context);
                     return;
                 }
@@ -72,7 +68,7 @@ namespace Maple2.Trigger._02000300_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1099})) {
+                if (context.MonsterDead(arg1: new[] {1099})) {
                     context.State = new State종료대화(context);
                     return;
                 }
@@ -94,7 +90,7 @@ namespace Maple2.Trigger._02000300_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1099})) {
+                if (context.MonsterDead(arg1: new[] {1099})) {
                     context.State = new State종료대화(context);
                     return;
                 }
@@ -116,7 +112,7 @@ namespace Maple2.Trigger._02000300_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1099})) {
+                if (context.MonsterDead(arg1: new[] {1099})) {
                     context.State = new State종료대화(context);
                     return;
                 }
@@ -138,7 +134,7 @@ namespace Maple2.Trigger._02000300_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1099})) {
+                if (context.MonsterDead(arg1: new[] {1099})) {
                     context.State = new State종료대화(context);
                     return;
                 }

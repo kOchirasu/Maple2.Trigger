@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52000171_qd {
     public static class _52000171 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -14,7 +10,7 @@ namespace Maple2.Trigger._52000171_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new State영상재생(context);
                     return;
                 }
@@ -27,10 +23,10 @@ namespace Maple2.Trigger._52000171_qd {
             internal State영상재생(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {401}, arg2: false);
+                context.CreateMonster(arg1: new[] {401}, arg2: false);
                 context.MoveUser(arg1: 52000171, arg2: 6);
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "jobChange_striker.swf", movieID: 1);
+                context.PlaySceneMovie(fileName: "jobChange_striker.swf", movieId: 1);
             }
 
             public override void Execute() {
@@ -57,7 +53,7 @@ namespace Maple2.Trigger._52000171_qd {
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetPcEmotionLoop(arg1: "Push_A", arg2: 10000f, arg3: true);
                 context.SetNpcEmotionLoop(arg1: 401, arg2: "Down_Idle_A", arg3: 10000f);
-                context.CameraSelectPath(arg1: new int[] {4000, 4001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4000, 4001}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -137,11 +133,11 @@ namespace Maple2.Trigger._52000171_qd {
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_basara");
-                context.ShowGuideSummary(entityID: 52001702, textID: 52001702, duration: 10000);
+                context.ShowGuideSummary(entityId: 52001702, textId: 52001702, duration: 10000);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002382},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002382},
                     arg3: new byte[] {3})) {
                     context.State = new State전직이펙트_01(context);
                     return;
@@ -193,7 +189,7 @@ namespace Maple2.Trigger._52000171_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002385},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002385},
                     arg3: new byte[] {3})) {
                     context.State = new State프론티아재단으로01(context);
                     return;

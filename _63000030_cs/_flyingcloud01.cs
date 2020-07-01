@@ -1,38 +1,34 @@
-using System;
-
 namespace Maple2.Trigger._63000030_cs {
     public static class _flyingcloud01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: false);
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
-                context.SetEffect(arg1: new int[] {5002}, arg2: false);
-                context.SetEffect(arg1: new int[] {5100}, arg2: false);
-                context.SetEffect(arg1: new int[] {5200}, arg2: false);
-                context.SetEffect(arg1: new int[] {5201}, arg2: false);
-                context.SetEffect(arg1: new int[] {5202}, arg2: false);
-                context.SetEffect(arg1: new int[] {5203}, arg2: false);
-                context.SetEffect(arg1: new int[] {5204}, arg2: false);
-                context.SetEffect(arg1: new int[] {5205}, arg2: false);
-                context.SetEffect(arg1: new int[] {5300}, arg2: false);
-                context.SetEffect(arg1: new int[] {5400}, arg2: false);
-                context.SetEffect(arg1: new int[] {6000}, arg2: false);
-                context.SetEffect(arg1: new int[] {6001}, arg2: false);
-                context.SetEffect(arg1: new int[] {6002}, arg2: false);
-                context.SetEffect(arg1: new int[] {6003}, arg2: false);
-                context.SetEffect(arg1: new int[] {6004}, arg2: false);
-                context.SetEffect(arg1: new int[] {6005}, arg2: false);
-                context.SetEffect(arg1: new int[] {6100}, arg2: false);
-                context.SetEffect(arg1: new int[] {6101}, arg2: false);
-                context.SetEffect(arg1: new int[] {6102}, arg2: false);
-                context.SetEffect(arg1: new int[] {6103}, arg2: false);
-                context.SetEffect(arg1: new int[] {6104}, arg2: false);
-                context.SetEffect(arg1: new int[] {6105}, arg2: false);
-                context.SetEffect(arg1: new int[] {6106}, arg2: false);
+                context.SetEffect(arg1: new[] {5000}, arg2: false);
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetEffect(arg1: new[] {5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5100}, arg2: false);
+                context.SetEffect(arg1: new[] {5200}, arg2: false);
+                context.SetEffect(arg1: new[] {5201}, arg2: false);
+                context.SetEffect(arg1: new[] {5202}, arg2: false);
+                context.SetEffect(arg1: new[] {5203}, arg2: false);
+                context.SetEffect(arg1: new[] {5204}, arg2: false);
+                context.SetEffect(arg1: new[] {5205}, arg2: false);
+                context.SetEffect(arg1: new[] {5300}, arg2: false);
+                context.SetEffect(arg1: new[] {5400}, arg2: false);
+                context.SetEffect(arg1: new[] {6000}, arg2: false);
+                context.SetEffect(arg1: new[] {6001}, arg2: false);
+                context.SetEffect(arg1: new[] {6002}, arg2: false);
+                context.SetEffect(arg1: new[] {6003}, arg2: false);
+                context.SetEffect(arg1: new[] {6004}, arg2: false);
+                context.SetEffect(arg1: new[] {6005}, arg2: false);
+                context.SetEffect(arg1: new[] {6100}, arg2: false);
+                context.SetEffect(arg1: new[] {6101}, arg2: false);
+                context.SetEffect(arg1: new[] {6102}, arg2: false);
+                context.SetEffect(arg1: new[] {6103}, arg2: false);
+                context.SetEffect(arg1: new[] {6104}, arg2: false);
+                context.SetEffect(arg1: new[] {6105}, arg2: false);
+                context.SetEffect(arg1: new[] {6106}, arg2: false);
                 context.SetAgent(arg1: "8000", arg2: true);
                 context.SetAgent(arg1: "8001", arg2: true);
                 context.SetAgent(arg1: "8002", arg2: true);
@@ -46,14 +42,14 @@ namespace Maple2.Trigger._63000030_cs {
                 context.SetAgent(arg1: "8010", arg2: true);
                 context.SetAgent(arg1: "8011", arg2: true);
                 context.SetAgent(arg1: "8012", arg2: true);
-                context.SetInteractObject(arg1: new int[] {10001010}, arg2: 0);
-                context.SetBreakable(arg1: new int[] {4000}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {4000}, arg2: false);
-                context.SetMesh(arg1: new int[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {10001010}, arg2: 0);
+                context.SetBreakable(arg1: new[] {4000}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: false);
+                context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new StateEnter01(context);
                     return;
                 }
@@ -72,25 +68,25 @@ namespace Maple2.Trigger._63000030_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {90000455},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000455},
                     arg3: new byte[] {1})) {
                     context.State = new StateQuestOnGiong21(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {90000454},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000454},
                     arg3: new byte[] {3})) {
                     context.State = new StateQuestOnGiong11(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {90000454},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000454},
                     arg3: new byte[] {2})) {
                     context.State = new StateQuestOnGiong01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {90000453},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000453},
                     arg3: new byte[] {3})) {
                     context.State = new StateDelay01(context);
                     return;
@@ -122,7 +118,7 @@ namespace Maple2.Trigger._63000030_cs {
                 context.SetAgent(arg1: "8010", arg2: false);
                 context.SetAgent(arg1: "8011", arg2: false);
                 context.SetAgent(arg1: "8012", arg2: false);
-                context.CreateMonster(arg1: new int[] {104, 204}, arg2: false);
+                context.CreateMonster(arg1: new[] {104, 204}, arg2: false);
                 context.MoveUser(arg1: 63000030, arg2: 11, arg3: 9900);
             }
 
@@ -171,7 +167,7 @@ namespace Maple2.Trigger._63000030_cs {
                 context.SetAgent(arg1: "8010", arg2: false);
                 context.SetAgent(arg1: "8011", arg2: false);
                 context.SetAgent(arg1: "8012", arg2: false);
-                context.CreateMonster(arg1: new int[] {103, 203}, arg2: false);
+                context.CreateMonster(arg1: new[] {103, 203}, arg2: false);
             }
 
             public override void Execute() {
@@ -219,7 +215,7 @@ namespace Maple2.Trigger._63000030_cs {
                 context.SetAgent(arg1: "8010", arg2: false);
                 context.SetAgent(arg1: "8011", arg2: false);
                 context.SetAgent(arg1: "8012", arg2: false);
-                context.CreateMonster(arg1: new int[] {103, 203}, arg2: false);
+                context.CreateMonster(arg1: new[] {103, 203}, arg2: false);
             }
 
             public override void Execute() {
@@ -254,7 +250,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931},
+                context.CreateMonster(arg1: new[] {920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931},
                     arg2: false);
             }
 
@@ -291,7 +287,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateLookAround02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101, 201}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 201}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101");
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201");
             }
@@ -347,7 +343,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateLookAround05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6100}, arg2: true);
+                context.SetEffect(arg1: new[] {6100}, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 201, arg3: "$63000030_CS__FLYINGCLOUD01__1$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 920, arg2: "MS2PatrolData_920");
                 context.MoveNpc(arg1: 923, arg2: "MS2PatrolData_923");
@@ -423,8 +419,8 @@ namespace Maple2.Trigger._63000030_cs {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.DestroyMonster(arg1: new int[] {101, 201});
-                context.CreateMonster(arg1: new int[] {102, 202}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101, 201});
+                context.CreateMonster(arg1: new[] {102, 202}, arg2: false);
                 context.CameraSelect(arg1: 500, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
@@ -457,19 +453,19 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateBattleStart01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 10037010, textID: 10037010);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.ShowGuideSummary(entityId: 10037010, textId: 10037010);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931})) {
+                if (context.MonsterDead(arg1: new[] {920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931})) {
                     context.State = new StateBattleEnd01(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 10037010);
+                context.HideGuideSummary(entityId: 10037010);
             }
         }
 
@@ -497,8 +493,8 @@ namespace Maple2.Trigger._63000030_cs {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 63000030, arg2: 10, arg3: 9900);
-                context.DestroyMonster(arg1: new int[] {102, 202});
-                context.CreateMonster(arg1: new int[] {103, 203}, arg2: false);
+                context.DestroyMonster(arg1: new[] {102, 202});
+                context.CreateMonster(arg1: new[] {103, 203}, arg2: false);
                 context.CameraSelect(arg1: 501, arg2: true);
             }
 
@@ -535,7 +531,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateDialogue01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6101}, arg2: true);
+                context.SetEffect(arg1: new[] {6101}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 203, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000030_CS__FLYINGCLOUD01__2$", arg4: 7);
             }
@@ -572,7 +568,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateDialogue02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6000}, arg2: true);
+                context.SetEffect(arg1: new[] {6000}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000030_CS__FLYINGCLOUD01__3$", arg4: 6);
             }
@@ -609,7 +605,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateDialogue03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6001}, arg2: true);
+                context.SetEffect(arg1: new[] {6001}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000030_CS__FLYINGCLOUD01__4$", arg4: 6);
             }
@@ -646,7 +642,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateDialogue04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6102}, arg2: true);
+                context.SetEffect(arg1: new[] {6102}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 203, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000030_CS__FLYINGCLOUD01__5$", arg4: 6);
             }
@@ -683,7 +679,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateDialogue05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6002}, arg2: true);
+                context.SetEffect(arg1: new[] {6002}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000030_CS__FLYINGCLOUD01__6$", arg4: 6);
             }
@@ -720,7 +716,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateDialogue06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6003}, arg2: true);
+                context.SetEffect(arg1: new[] {6003}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000030_CS__FLYINGCLOUD01__7$", arg4: 6);
             }
@@ -757,7 +753,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateDialogue07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6103}, arg2: true);
+                context.SetEffect(arg1: new[] {6103}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 203, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000030_CS__FLYINGCLOUD01__8$", arg4: 5);
             }
@@ -828,7 +824,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateDialogue09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6104}, arg2: true);
+                context.SetEffect(arg1: new[] {6104}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 203, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000030_CS__FLYINGCLOUD01__10$", arg4: 8);
             }
@@ -865,7 +861,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateDialogue10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6004}, arg2: true);
+                context.SetEffect(arg1: new[] {6004}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000030_CS__FLYINGCLOUD01__11$", arg4: 5);
                 context.SetSceneSkip();
@@ -907,12 +903,12 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateFirstQuestStart01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 10030160, textID: 10030160);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.ShowGuideSummary(entityId: 10030160, textId: 10030160);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {90000454},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000454},
                     arg3: new byte[] {2})) {
                     context.State = new StateFirstQuestEnd01(context);
                     return;
@@ -920,7 +916,7 @@ namespace Maple2.Trigger._63000030_cs {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 10030160);
+                context.HideGuideSummary(entityId: 10030160);
             }
         }
 
@@ -928,12 +924,12 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateFirstQuestEnd01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 10031010, textID: 10031010);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.ShowGuideSummary(entityId: 10031010, textId: 10031010);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {90000454},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000454},
                     arg3: new byte[] {3})) {
                     context.State = new StateSecondQuestStart01(context);
                     return;
@@ -941,7 +937,7 @@ namespace Maple2.Trigger._63000030_cs {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 10031010);
+                context.HideGuideSummary(entityId: 10031010);
             }
         }
 
@@ -949,12 +945,12 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateSecondQuestStart01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 10031020, textID: 10031020);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.ShowGuideSummary(entityId: 10031020, textId: 10031020);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {90000455},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000455},
                     arg3: new byte[] {1})) {
                     context.State = new StatePatrolWhileTalking01(context);
                     return;
@@ -962,7 +958,7 @@ namespace Maple2.Trigger._63000030_cs {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 10031020);
+                context.HideGuideSummary(entityId: 10031020);
             }
         }
 
@@ -989,8 +985,8 @@ namespace Maple2.Trigger._63000030_cs {
             internal StatePatrolWhileTalking02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {103, 203});
-                context.CreateMonster(arg1: new int[] {104, 204}, arg2: false);
+                context.DestroyMonster(arg1: new[] {103, 203});
+                context.CreateMonster(arg1: new[] {104, 204}, arg2: false);
                 context.MoveUser(arg1: 63000030, arg2: 11, arg3: 9900);
             }
 
@@ -1067,8 +1063,8 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateShadowApp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5400}, arg2: true);
-                context.CreateMonster(arg1: new int[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949}, arg2: false);
+                context.SetEffect(arg1: new[] {5400}, arg2: true);
+                context.CreateMonster(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949}, arg2: false);
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.MoveNpc(arg1: 204, arg2: "MS2PatrolData_204");
             }
@@ -1088,7 +1084,7 @@ namespace Maple2.Trigger._63000030_cs {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_104");
-                context.SetEffect(arg1: new int[] {6105}, arg2: true);
+                context.SetEffect(arg1: new[] {6105}, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 204, arg3: "$63000030_CS__FLYINGCLOUD01__17$", arg4: 2, arg5: 0);
             }
 
@@ -1159,7 +1155,7 @@ namespace Maple2.Trigger._63000030_cs {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 204, arg2: "MS2PatrolData_205");
-                context.SetEffect(arg1: new int[] {6106}, arg2: true);
+                context.SetEffect(arg1: new[] {6106}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000030_CS__FLYINGCLOUD01__19$", arg4: 4);
             }
 
@@ -1196,7 +1192,7 @@ namespace Maple2.Trigger._63000030_cs {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_105");
-                context.SetEffect(arg1: new int[] {6005}, arg2: true);
+                context.SetEffect(arg1: new[] {6005}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000030_CS__FLYINGCLOUD01__20$", arg4: 5);
             }
 
@@ -1219,7 +1215,7 @@ namespace Maple2.Trigger._63000030_cs {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
-                context.SetEffect(arg1: new int[] {5400}, arg2: false);
+                context.SetEffect(arg1: new[] {5400}, arg2: false);
             }
 
             public override void Execute() {
@@ -1237,12 +1233,12 @@ namespace Maple2.Trigger._63000030_cs {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 63000030, arg2: 20, arg3: 9900);
-                context.DestroyMonster(arg1: new int[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949});
-                context.CreateMonster(arg1: new int[] {910, 911, 912, 913, 914, 915, 916, 917, 918, 919}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {104, 204});
-                context.CreateMonster(arg1: new int[] {105, 205}, arg2: false);
+                context.DestroyMonster(arg1: new[] {940, 941, 942, 943, 944, 945, 946, 947, 948, 949});
+                context.CreateMonster(arg1: new[] {910, 911, 912, 913, 914, 915, 916, 917, 918, 919}, arg2: false);
+                context.DestroyMonster(arg1: new[] {104, 204});
+                context.CreateMonster(arg1: new[] {105, 205}, arg2: false);
                 context.CameraSelect(arg1: 602, arg2: true);
-                context.SetUserValue(triggerID: 3, key: "SafetyStart", value: 1);
+                context.SetUserValue(triggerId: 3, key: "SafetyStart", value: 1);
             }
 
             public override void Execute() {
@@ -1261,7 +1257,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetUserValue(triggerID: 2, key: "PushStart", value: 1);
+                context.SetUserValue(triggerId: 2, key: "PushStart", value: 1);
             }
 
             public override void Execute() {
@@ -1279,29 +1275,29 @@ namespace Maple2.Trigger._63000030_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 602, arg2: false);
-                context.SetEffect(arg1: new int[] {5001}, arg2: true);
-                context.SetEffect(arg1: new int[] {5200}, arg2: true);
-                context.SetEffect(arg1: new int[] {5201}, arg2: true);
-                context.SetEffect(arg1: new int[] {5202}, arg2: true);
-                context.SetEffect(arg1: new int[] {5203}, arg2: true);
-                context.SetEffect(arg1: new int[] {5204}, arg2: true);
-                context.SetEffect(arg1: new int[] {5205}, arg2: true);
-                context.SetEffect(arg1: new int[] {5100}, arg2: true);
+                context.SetEffect(arg1: new[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {5200}, arg2: true);
+                context.SetEffect(arg1: new[] {5201}, arg2: true);
+                context.SetEffect(arg1: new[] {5202}, arg2: true);
+                context.SetEffect(arg1: new[] {5203}, arg2: true);
+                context.SetEffect(arg1: new[] {5204}, arg2: true);
+                context.SetEffect(arg1: new[] {5205}, arg2: true);
+                context.SetEffect(arg1: new[] {5100}, arg2: true);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 10037020, textID: 10037020);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.ShowGuideSummary(entityId: 10037020, textId: 10037020);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateGotoTria02(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 10037020);
+                context.HideGuideSummary(entityId: 10037020);
             }
         }
 
@@ -1309,29 +1305,29 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateGotoTria02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5002}, arg2: true);
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 10037030, textID: 10037030);
-                context.SetInteractObject(arg1: new int[] {10001010}, arg2: 1);
+                context.SetEffect(arg1: new[] {5002}, arg2: true);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.ShowGuideSummary(entityId: 10037030, textId: 10037030);
+                context.SetInteractObject(arg1: new[] {10001010}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001010}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001010}, arg2: 0)) {
                     context.State = new StateTakeOffFlyingCloud01(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 10037030);
-                context.SetEffect(arg1: new int[] {5100}, arg2: false);
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
-                context.SetEffect(arg1: new int[] {5200}, arg2: false);
-                context.SetEffect(arg1: new int[] {5201}, arg2: false);
-                context.SetEffect(arg1: new int[] {5202}, arg2: false);
-                context.SetEffect(arg1: new int[] {5203}, arg2: false);
-                context.SetEffect(arg1: new int[] {5204}, arg2: false);
-                context.SetEffect(arg1: new int[] {5205}, arg2: false);
+                context.HideGuideSummary(entityId: 10037030);
+                context.SetEffect(arg1: new[] {5100}, arg2: false);
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetEffect(arg1: new[] {5200}, arg2: false);
+                context.SetEffect(arg1: new[] {5201}, arg2: false);
+                context.SetEffect(arg1: new[] {5202}, arg2: false);
+                context.SetEffect(arg1: new[] {5203}, arg2: false);
+                context.SetEffect(arg1: new[] {5204}, arg2: false);
+                context.SetEffect(arg1: new[] {5205}, arg2: false);
             }
         }
 
@@ -1342,9 +1338,9 @@ namespace Maple2.Trigger._63000030_cs {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 4);
-                context.SetVisibleBreakableObject(arg1: new int[] {4000}, arg2: true);
-                context.SetBreakable(arg1: new int[] {4000}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10001010}, arg2: 2);
+                context.SetVisibleBreakableObject(arg1: new[] {4000}, arg2: true);
+                context.SetBreakable(arg1: new[] {4000}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10001010}, arg2: 2);
             }
 
             public override void Execute() {
@@ -1361,8 +1357,8 @@ namespace Maple2.Trigger._63000030_cs {
             internal StateTakeOffFlyingCloud02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5300}, arg2: true);
-                context.SetMesh(arg1: new int[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {5300}, arg2: true);
+                context.SetMesh(arg1: new[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.MoveUser(arg1: 63000030, arg2: 30, arg3: 9900);
                 context.CameraSelect(arg1: 700, arg2: true);
             }
@@ -1405,7 +1401,7 @@ namespace Maple2.Trigger._63000030_cs {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {9900})) {
+                if (!context.UserDetected(arg1: new[] {9900})) {
                     context.State = new StateQuit(context);
                     return;
                 }

@@ -1,28 +1,24 @@
-using System;
-
 namespace Maple2.Trigger._63000039_cs {
     public static class _40002641 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 201, arg2: true, arg3: "sf_fi_funct_darkdoor_A01_off");
-                context.SetMesh(arg1: new int[] {3000, 3001, 3002}, arg2: true);
-                context.SetMesh(arg1: new int[] {3003, 3004, 3005}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10001025}, arg2: 0);
-                context.CreateMonster(arg1: new int[] {1001, 1002, 1003, 1004, 1005}, arg2: false);
+                context.SetMesh(arg1: new[] {3000, 3001, 3002}, arg2: true);
+                context.SetMesh(arg1: new[] {3003, 3004, 3005}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10001025}, arg2: 0);
+                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {40002641},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {40002641},
                     arg3: new byte[] {1})) {
                     context.State = new StateNPC말풍선(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {40002641},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {40002641},
                     arg3: new byte[] {2})) {
                     context.State = new State유저이동(context);
                     return;
@@ -53,13 +49,13 @@ namespace Maple2.Trigger._63000039_cs {
             internal State오브젝트반응대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001025}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001025}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001025}, arg2: 0)) {
-                    context.SetMesh(arg1: new int[] {3000, 3001, 3002}, arg2: false);
-                    context.SetMesh(arg1: new int[] {3003, 3004, 3005}, arg2: true);
+                if (context.ObjectInteracted(arg1: new[] {10001025}, arg2: 0)) {
+                    context.SetMesh(arg1: new[] {3000, 3001, 3002}, arg2: false);
+                    context.SetMesh(arg1: new[] {3003, 3004, 3005}, arg2: true);
                     context.State = new StateNPC를이동(context);
                     return;
                 }
@@ -138,7 +134,7 @@ namespace Maple2.Trigger._63000039_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {40002641},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {40002641},
                     arg3: new byte[] {2})) {
                     context.State = new State유저이동(context);
                     return;

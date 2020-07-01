@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02020019_bf {
     public static class _02020019_timer {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Timer", value: 1)) {
+                if (context.GetUserValue(key: "Timer") == 1) {
                     context.State = new State타이머시작(context);
                     return;
                 }
@@ -47,7 +43,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "TimerReset", value: 1)) {
+                if (context.GetUserValue(key: "TimerReset") == 1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -61,7 +57,7 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override void OnEnter() {
                 context.ResetTimer(arg1: "BattleTimer");
-                context.SetUserValue(triggerID: 99990002, key: "Timer", value: 2);
+                context.SetUserValue(triggerId: 99990002, key: "Timer", value: 2);
             }
 
             public override void Execute() { }

@@ -1,67 +1,63 @@
-using System;
-
 namespace Maple2.Trigger._02000254_bf {
     public static class _scene01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101});
-                context.CreateMonster(arg1: new int[] {107});
-                context.SetMesh(arg1: new int[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
-                context.SetEffect(arg1: new int[] {603}, arg2: false);
-                context.SetEffect(arg1: new int[] {604}, arg2: false);
-                context.SetEffect(arg1: new int[] {605}, arg2: false);
-                context.SetEffect(arg1: new int[] {606}, arg2: false);
-                context.SetEffect(arg1: new int[] {607}, arg2: false);
-                context.SetEffect(arg1: new int[] {608}, arg2: false);
-                context.SetEffect(arg1: new int[] {401}, arg2: false);
-                context.SetEffect(arg1: new int[] {402}, arg2: false);
-                context.SetEffect(arg1: new int[] {403}, arg2: false);
-                context.SetEffect(arg1: new int[] {404}, arg2: false);
-                context.SetEffect(arg1: new int[] {405}, arg2: false);
-                context.SetEffect(arg1: new int[] {406}, arg2: false);
-                context.SetEffect(arg1: new int[] {407}, arg2: false);
-                context.SetEffect(arg1: new int[] {408}, arg2: false);
-                context.SetEffect(arg1: new int[] {409}, arg2: false);
-                context.SetEffect(arg1: new int[] {410}, arg2: false);
-                context.SetEffect(arg1: new int[] {411}, arg2: false);
-                context.SetEffect(arg1: new int[] {412}, arg2: false);
-                context.SetEffect(arg1: new int[] {413}, arg2: false);
-                context.SetEffect(arg1: new int[] {414}, arg2: false);
-                context.SetEffect(arg1: new int[] {415}, arg2: false);
-                context.SetEffect(arg1: new int[] {416}, arg2: false);
-                context.SetEffect(arg1: new int[] {417}, arg2: false);
-                context.SetEffect(arg1: new int[] {418}, arg2: false);
-                context.SetEffect(arg1: new int[] {419}, arg2: false);
-                context.SetEffect(arg1: new int[] {420}, arg2: false);
-                context.SetEffect(arg1: new int[] {421}, arg2: false);
-                context.SetEffect(arg1: new int[] {422}, arg2: false);
-                context.SetEffect(arg1: new int[] {423}, arg2: false);
-                context.SetEffect(arg1: new int[] {424}, arg2: false);
-                context.SetEffect(arg1: new int[] {425}, arg2: false);
-                context.SetEffect(arg1: new int[] {426}, arg2: false);
-                context.SetEffect(arg1: new int[] {427}, arg2: false);
-                context.SetEffect(arg1: new int[] {428}, arg2: false);
-                context.SetEffect(arg1: new int[] {429}, arg2: false);
-                context.SetEffect(arg1: new int[] {430}, arg2: false);
-                context.SetEffect(arg1: new int[] {431}, arg2: false);
-                context.SetEffect(arg1: new int[] {432}, arg2: false);
-                context.SetEffect(arg1: new int[] {433}, arg2: false);
-                context.SetEffect(arg1: new int[] {434}, arg2: false);
-                context.SetEffect(arg1: new int[] {435}, arg2: false);
-                context.SetEffect(arg1: new int[] {436}, arg2: false);
-                context.SetEffect(arg1: new int[] {437}, arg2: false);
-                context.SetEffect(arg1: new int[] {438}, arg2: false);
+                context.CreateMonster(arg1: new[] {101});
+                context.CreateMonster(arg1: new[] {107});
+                context.SetMesh(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3002}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {603}, arg2: false);
+                context.SetEffect(arg1: new[] {604}, arg2: false);
+                context.SetEffect(arg1: new[] {605}, arg2: false);
+                context.SetEffect(arg1: new[] {606}, arg2: false);
+                context.SetEffect(arg1: new[] {607}, arg2: false);
+                context.SetEffect(arg1: new[] {608}, arg2: false);
+                context.SetEffect(arg1: new[] {401}, arg2: false);
+                context.SetEffect(arg1: new[] {402}, arg2: false);
+                context.SetEffect(arg1: new[] {403}, arg2: false);
+                context.SetEffect(arg1: new[] {404}, arg2: false);
+                context.SetEffect(arg1: new[] {405}, arg2: false);
+                context.SetEffect(arg1: new[] {406}, arg2: false);
+                context.SetEffect(arg1: new[] {407}, arg2: false);
+                context.SetEffect(arg1: new[] {408}, arg2: false);
+                context.SetEffect(arg1: new[] {409}, arg2: false);
+                context.SetEffect(arg1: new[] {410}, arg2: false);
+                context.SetEffect(arg1: new[] {411}, arg2: false);
+                context.SetEffect(arg1: new[] {412}, arg2: false);
+                context.SetEffect(arg1: new[] {413}, arg2: false);
+                context.SetEffect(arg1: new[] {414}, arg2: false);
+                context.SetEffect(arg1: new[] {415}, arg2: false);
+                context.SetEffect(arg1: new[] {416}, arg2: false);
+                context.SetEffect(arg1: new[] {417}, arg2: false);
+                context.SetEffect(arg1: new[] {418}, arg2: false);
+                context.SetEffect(arg1: new[] {419}, arg2: false);
+                context.SetEffect(arg1: new[] {420}, arg2: false);
+                context.SetEffect(arg1: new[] {421}, arg2: false);
+                context.SetEffect(arg1: new[] {422}, arg2: false);
+                context.SetEffect(arg1: new[] {423}, arg2: false);
+                context.SetEffect(arg1: new[] {424}, arg2: false);
+                context.SetEffect(arg1: new[] {425}, arg2: false);
+                context.SetEffect(arg1: new[] {426}, arg2: false);
+                context.SetEffect(arg1: new[] {427}, arg2: false);
+                context.SetEffect(arg1: new[] {428}, arg2: false);
+                context.SetEffect(arg1: new[] {429}, arg2: false);
+                context.SetEffect(arg1: new[] {430}, arg2: false);
+                context.SetEffect(arg1: new[] {431}, arg2: false);
+                context.SetEffect(arg1: new[] {432}, arg2: false);
+                context.SetEffect(arg1: new[] {433}, arg2: false);
+                context.SetEffect(arg1: new[] {434}, arg2: false);
+                context.SetEffect(arg1: new[] {435}, arg2: false);
+                context.SetEffect(arg1: new[] {436}, arg2: false);
+                context.SetEffect(arg1: new[] {437}, arg2: false);
+                context.SetEffect(arg1: new[] {438}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 901, arg2: 1)) {
+                if (context.GetUserCount(boxId: 901) == 1) {
                     context.State = new State연출시작딜레이(context);
                     return;
                 }
@@ -112,9 +108,9 @@ namespace Maple2.Trigger._02000254_bf {
             internal State대화시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {401}, arg2: false);
+                context.SetEffect(arg1: new[] {401}, arg2: false);
                 context.SetTimer(arg1: "1", arg2: 6);
-                context.AddCinematicTalk(npcID: 11000074, illustID: "Karl_closeEye", msg: "$02000254_BF__SCENE01__0$",
+                context.AddCinematicTalk(npcId: 11000074, illustId: "Karl_closeEye", msg: "$02000254_BF__SCENE01__0$",
                     duration: 6000, align: "center");
             }
 
@@ -169,7 +165,7 @@ namespace Maple2.Trigger._02000254_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 5);
-                context.AddCinematicTalk(npcID: 11000074, illustID: "Karl_closeEye", msg: "$02000254_BF__SCENE01__3$",
+                context.AddCinematicTalk(npcId: 11000074, illustId: "Karl_closeEye", msg: "$02000254_BF__SCENE01__3$",
                     duration: 5000, align: "center");
             }
 
@@ -188,7 +184,7 @@ namespace Maple2.Trigger._02000254_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 5);
-                context.AddCinematicTalk(npcID: 11000074, illustID: "Karl_closeEye", msg: "$02000254_BF__SCENE01__4$",
+                context.AddCinematicTalk(npcId: 11000074, illustId: "Karl_closeEye", msg: "$02000254_BF__SCENE01__4$",
                     duration: 5000, align: "center");
             }
 
@@ -259,7 +255,7 @@ namespace Maple2.Trigger._02000254_bf {
             internal State벨라이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1");
             }
 
@@ -278,7 +274,7 @@ namespace Maple2.Trigger._02000254_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
-                context.CameraSelectPath(arg1: new int[] {301}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {301}, arg2: true);
             }
 
             public override void Execute() {
@@ -301,7 +297,7 @@ namespace Maple2.Trigger._02000254_bf {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 902, arg2: 1)) {
+                if (context.GetUserCount(boxId: 902) == 1) {
                     context.State = new State쿠당탕(context);
                     return;
                 }
@@ -314,45 +310,45 @@ namespace Maple2.Trigger._02000254_bf {
             internal State쿠당탕(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101});
-                context.CreateMonster(arg1: new int[] {102});
-                context.SetEffect(arg1: new int[] {402}, arg2: true);
-                context.SetEffect(arg1: new int[] {403}, arg2: true);
-                context.SetEffect(arg1: new int[] {404}, arg2: true);
-                context.SetEffect(arg1: new int[] {405}, arg2: true);
-                context.SetEffect(arg1: new int[] {406}, arg2: true);
-                context.SetEffect(arg1: new int[] {407}, arg2: true);
-                context.SetEffect(arg1: new int[] {408}, arg2: true);
-                context.SetEffect(arg1: new int[] {409}, arg2: true);
-                context.SetEffect(arg1: new int[] {410}, arg2: true);
-                context.SetEffect(arg1: new int[] {411}, arg2: true);
-                context.SetEffect(arg1: new int[] {412}, arg2: true);
-                context.SetEffect(arg1: new int[] {413}, arg2: true);
-                context.SetEffect(arg1: new int[] {414}, arg2: true);
-                context.SetEffect(arg1: new int[] {415}, arg2: true);
-                context.SetEffect(arg1: new int[] {416}, arg2: true);
-                context.SetEffect(arg1: new int[] {417}, arg2: true);
-                context.SetEffect(arg1: new int[] {418}, arg2: true);
-                context.SetEffect(arg1: new int[] {419}, arg2: true);
-                context.SetEffect(arg1: new int[] {420}, arg2: true);
-                context.SetEffect(arg1: new int[] {421}, arg2: true);
-                context.SetEffect(arg1: new int[] {422}, arg2: true);
-                context.SetEffect(arg1: new int[] {423}, arg2: true);
-                context.SetEffect(arg1: new int[] {424}, arg2: true);
-                context.SetEffect(arg1: new int[] {425}, arg2: true);
-                context.SetEffect(arg1: new int[] {426}, arg2: true);
-                context.SetEffect(arg1: new int[] {427}, arg2: true);
-                context.SetEffect(arg1: new int[] {428}, arg2: true);
-                context.SetEffect(arg1: new int[] {429}, arg2: true);
-                context.SetEffect(arg1: new int[] {430}, arg2: true);
-                context.SetEffect(arg1: new int[] {431}, arg2: true);
-                context.SetEffect(arg1: new int[] {432}, arg2: true);
-                context.SetEffect(arg1: new int[] {433}, arg2: true);
-                context.SetEffect(arg1: new int[] {434}, arg2: true);
-                context.SetEffect(arg1: new int[] {435}, arg2: true);
-                context.SetEffect(arg1: new int[] {436}, arg2: true);
-                context.SetEffect(arg1: new int[] {437}, arg2: true);
-                context.SetEffect(arg1: new int[] {438}, arg2: true);
+                context.DestroyMonster(arg1: new[] {101});
+                context.CreateMonster(arg1: new[] {102});
+                context.SetEffect(arg1: new[] {402}, arg2: true);
+                context.SetEffect(arg1: new[] {403}, arg2: true);
+                context.SetEffect(arg1: new[] {404}, arg2: true);
+                context.SetEffect(arg1: new[] {405}, arg2: true);
+                context.SetEffect(arg1: new[] {406}, arg2: true);
+                context.SetEffect(arg1: new[] {407}, arg2: true);
+                context.SetEffect(arg1: new[] {408}, arg2: true);
+                context.SetEffect(arg1: new[] {409}, arg2: true);
+                context.SetEffect(arg1: new[] {410}, arg2: true);
+                context.SetEffect(arg1: new[] {411}, arg2: true);
+                context.SetEffect(arg1: new[] {412}, arg2: true);
+                context.SetEffect(arg1: new[] {413}, arg2: true);
+                context.SetEffect(arg1: new[] {414}, arg2: true);
+                context.SetEffect(arg1: new[] {415}, arg2: true);
+                context.SetEffect(arg1: new[] {416}, arg2: true);
+                context.SetEffect(arg1: new[] {417}, arg2: true);
+                context.SetEffect(arg1: new[] {418}, arg2: true);
+                context.SetEffect(arg1: new[] {419}, arg2: true);
+                context.SetEffect(arg1: new[] {420}, arg2: true);
+                context.SetEffect(arg1: new[] {421}, arg2: true);
+                context.SetEffect(arg1: new[] {422}, arg2: true);
+                context.SetEffect(arg1: new[] {423}, arg2: true);
+                context.SetEffect(arg1: new[] {424}, arg2: true);
+                context.SetEffect(arg1: new[] {425}, arg2: true);
+                context.SetEffect(arg1: new[] {426}, arg2: true);
+                context.SetEffect(arg1: new[] {427}, arg2: true);
+                context.SetEffect(arg1: new[] {428}, arg2: true);
+                context.SetEffect(arg1: new[] {429}, arg2: true);
+                context.SetEffect(arg1: new[] {430}, arg2: true);
+                context.SetEffect(arg1: new[] {431}, arg2: true);
+                context.SetEffect(arg1: new[] {432}, arg2: true);
+                context.SetEffect(arg1: new[] {433}, arg2: true);
+                context.SetEffect(arg1: new[] {434}, arg2: true);
+                context.SetEffect(arg1: new[] {435}, arg2: true);
+                context.SetEffect(arg1: new[] {436}, arg2: true);
+                context.SetEffect(arg1: new[] {437}, arg2: true);
+                context.SetEffect(arg1: new[] {438}, arg2: true);
             }
 
             public override void Execute() {
@@ -372,7 +368,7 @@ namespace Maple2.Trigger._02000254_bf {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.CameraSelectPath(arg1: new int[] {301}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {301}, arg2: true);
             }
 
             public override void Execute() {
@@ -389,7 +385,7 @@ namespace Maple2.Trigger._02000254_bf {
             internal State스킵벨라이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1");
             }
 
@@ -409,7 +405,7 @@ namespace Maple2.Trigger._02000254_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 902, arg2: 1)) {
+                if (context.GetUserCount(boxId: 902) == 1) {
                     context.State = new State스킵쿠당탕(context);
                     return;
                 }
@@ -422,45 +418,45 @@ namespace Maple2.Trigger._02000254_bf {
             internal State스킵쿠당탕(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101});
-                context.CreateMonster(arg1: new int[] {102});
-                context.SetEffect(arg1: new int[] {402}, arg2: true);
-                context.SetEffect(arg1: new int[] {403}, arg2: true);
-                context.SetEffect(arg1: new int[] {404}, arg2: true);
-                context.SetEffect(arg1: new int[] {405}, arg2: true);
-                context.SetEffect(arg1: new int[] {406}, arg2: true);
-                context.SetEffect(arg1: new int[] {407}, arg2: true);
-                context.SetEffect(arg1: new int[] {408}, arg2: true);
-                context.SetEffect(arg1: new int[] {409}, arg2: true);
-                context.SetEffect(arg1: new int[] {410}, arg2: true);
-                context.SetEffect(arg1: new int[] {411}, arg2: true);
-                context.SetEffect(arg1: new int[] {412}, arg2: true);
-                context.SetEffect(arg1: new int[] {413}, arg2: true);
-                context.SetEffect(arg1: new int[] {414}, arg2: true);
-                context.SetEffect(arg1: new int[] {415}, arg2: true);
-                context.SetEffect(arg1: new int[] {416}, arg2: true);
-                context.SetEffect(arg1: new int[] {417}, arg2: true);
-                context.SetEffect(arg1: new int[] {418}, arg2: true);
-                context.SetEffect(arg1: new int[] {419}, arg2: true);
-                context.SetEffect(arg1: new int[] {420}, arg2: true);
-                context.SetEffect(arg1: new int[] {421}, arg2: true);
-                context.SetEffect(arg1: new int[] {422}, arg2: true);
-                context.SetEffect(arg1: new int[] {423}, arg2: true);
-                context.SetEffect(arg1: new int[] {424}, arg2: true);
-                context.SetEffect(arg1: new int[] {425}, arg2: true);
-                context.SetEffect(arg1: new int[] {426}, arg2: true);
-                context.SetEffect(arg1: new int[] {427}, arg2: true);
-                context.SetEffect(arg1: new int[] {428}, arg2: true);
-                context.SetEffect(arg1: new int[] {429}, arg2: true);
-                context.SetEffect(arg1: new int[] {430}, arg2: true);
-                context.SetEffect(arg1: new int[] {431}, arg2: true);
-                context.SetEffect(arg1: new int[] {432}, arg2: true);
-                context.SetEffect(arg1: new int[] {433}, arg2: true);
-                context.SetEffect(arg1: new int[] {434}, arg2: true);
-                context.SetEffect(arg1: new int[] {435}, arg2: true);
-                context.SetEffect(arg1: new int[] {436}, arg2: true);
-                context.SetEffect(arg1: new int[] {437}, arg2: true);
-                context.SetEffect(arg1: new int[] {438}, arg2: true);
+                context.DestroyMonster(arg1: new[] {101});
+                context.CreateMonster(arg1: new[] {102});
+                context.SetEffect(arg1: new[] {402}, arg2: true);
+                context.SetEffect(arg1: new[] {403}, arg2: true);
+                context.SetEffect(arg1: new[] {404}, arg2: true);
+                context.SetEffect(arg1: new[] {405}, arg2: true);
+                context.SetEffect(arg1: new[] {406}, arg2: true);
+                context.SetEffect(arg1: new[] {407}, arg2: true);
+                context.SetEffect(arg1: new[] {408}, arg2: true);
+                context.SetEffect(arg1: new[] {409}, arg2: true);
+                context.SetEffect(arg1: new[] {410}, arg2: true);
+                context.SetEffect(arg1: new[] {411}, arg2: true);
+                context.SetEffect(arg1: new[] {412}, arg2: true);
+                context.SetEffect(arg1: new[] {413}, arg2: true);
+                context.SetEffect(arg1: new[] {414}, arg2: true);
+                context.SetEffect(arg1: new[] {415}, arg2: true);
+                context.SetEffect(arg1: new[] {416}, arg2: true);
+                context.SetEffect(arg1: new[] {417}, arg2: true);
+                context.SetEffect(arg1: new[] {418}, arg2: true);
+                context.SetEffect(arg1: new[] {419}, arg2: true);
+                context.SetEffect(arg1: new[] {420}, arg2: true);
+                context.SetEffect(arg1: new[] {421}, arg2: true);
+                context.SetEffect(arg1: new[] {422}, arg2: true);
+                context.SetEffect(arg1: new[] {423}, arg2: true);
+                context.SetEffect(arg1: new[] {424}, arg2: true);
+                context.SetEffect(arg1: new[] {425}, arg2: true);
+                context.SetEffect(arg1: new[] {426}, arg2: true);
+                context.SetEffect(arg1: new[] {427}, arg2: true);
+                context.SetEffect(arg1: new[] {428}, arg2: true);
+                context.SetEffect(arg1: new[] {429}, arg2: true);
+                context.SetEffect(arg1: new[] {430}, arg2: true);
+                context.SetEffect(arg1: new[] {431}, arg2: true);
+                context.SetEffect(arg1: new[] {432}, arg2: true);
+                context.SetEffect(arg1: new[] {433}, arg2: true);
+                context.SetEffect(arg1: new[] {434}, arg2: true);
+                context.SetEffect(arg1: new[] {435}, arg2: true);
+                context.SetEffect(arg1: new[] {436}, arg2: true);
+                context.SetEffect(arg1: new[] {437}, arg2: true);
+                context.SetEffect(arg1: new[] {438}, arg2: true);
             }
 
             public override void Execute() {
@@ -558,8 +554,8 @@ namespace Maple2.Trigger._02000254_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetEffect(arg1: new int[] {401}, arg2: true);
-                context.DestroyMonster(arg1: new int[] {102});
+                context.SetEffect(arg1: new[] {401}, arg2: true);
+                context.DestroyMonster(arg1: new[] {102});
             }
 
             public override void Execute() {
@@ -578,8 +574,8 @@ namespace Maple2.Trigger._02000254_bf {
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 3);
                 context.CameraSelect(arg1: 303, arg2: true);
-                context.CreateMonster(arg1: new int[] {106});
-                context.CreateMonster(arg1: new int[] {103});
+                context.CreateMonster(arg1: new[] {106});
+                context.CreateMonster(arg1: new[] {103});
             }
 
             public override void Execute() {
@@ -597,7 +593,7 @@ namespace Maple2.Trigger._02000254_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
-                context.CameraSelectPath(arg1: new int[] {303}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {303}, arg2: true);
             }
 
             public override void Execute() {
@@ -616,7 +612,7 @@ namespace Maple2.Trigger._02000254_bf {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: false);
                 context.CameraSelect(arg1: 303, arg2: false);
-                context.SetMesh(arg1: new int[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }

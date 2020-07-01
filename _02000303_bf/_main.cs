@@ -1,24 +1,20 @@
-using System;
-
 namespace Maple2.Trigger._02000303_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3005}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new int[] {13000008}, arg2: 2);
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10000585}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000575, 10000576, 10000577, 10000578}, arg2: 1);
-                context.CreateMonster(arg1: new int[] {2001}, arg2: false);
+                context.SetMesh(arg1: new[] {3005}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {13000008}, arg2: 2);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10000585}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000575, 10000576, 10000577, 10000578}, arg2: 1);
+                context.CreateMonster(arg1: new[] {2001}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State연출시작딜레이(context);
                     return;
                 }
@@ -69,13 +65,13 @@ namespace Maple2.Trigger._02000303_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.CreateMonster(arg1: new int[] {1001, 1002, 1003, 1004, 1005, 1006, 1007}, arg2: false);
-                context.ShowGuideSummary(entityID: 20003031, textID: 20003031, duration: 5000);
+                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007}, arg2: false);
+                context.ShowGuideSummary(entityId: 20003031, textId: 20003031, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000575, 10000576, 10000577, 10000578}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000575, 10000576, 10000577, 10000578}, arg2: 0)) {
                     context.State = new State또다른연출시작(context);
                     return;
                 }
@@ -108,8 +104,8 @@ namespace Maple2.Trigger._02000303_bf {
             internal State연출이펙트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3005}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetEffect(arg1: new int[] {602}, arg2: true);
+                context.SetMesh(arg1: new[] {3005}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.SetSkip(arg1: "또다른연출종료");
             }
 
@@ -164,9 +160,9 @@ namespace Maple2.Trigger._02000303_bf {
             internal State또다른연출종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {2001});
+                context.DestroyMonster(arg1: new[] {2001});
                 context.CameraSelect(arg1: 302, arg2: false);
-                context.SetMesh(arg1: new int[] {3005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }
@@ -185,14 +181,14 @@ namespace Maple2.Trigger._02000303_bf {
             internal State이동대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000585}, arg2: 1);
-                context.ShowGuideSummary(entityID: 20002999, textID: 20002999);
+                context.SetInteractObject(arg1: new[] {10000585}, arg2: 1);
+                context.ShowGuideSummary(entityId: 20002999, textId: 20002999);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000585}, arg2: 0)) {
-                    context.HideGuideSummary(entityID: 20002999);
+                if (context.ObjectInteracted(arg1: new[] {10000585}, arg2: 0)) {
+                    context.HideGuideSummary(entityId: 20002999);
                     context.State = new State이동(context);
                     return;
                 }
@@ -205,7 +201,7 @@ namespace Maple2.Trigger._02000303_bf {
             internal State이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: true);
+                context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.SetTimer(arg1: "4", arg2: 4);
                 context.ShowCountUI(text: "$02000303_BF__MAIN__3$", stage: 1, count: 3);
             }

@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._84000021_wd {
     public static class _84000021_moveguest {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State초기화(context);
-
-        private class State초기화 : TriggerState {
+        public class State초기화 : TriggerState {
             internal State초기화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -33,7 +29,7 @@ namespace Maple2.Trigger._84000021_wd {
                     return;
                 }
 
-                if (context.UserValue(key: "Weddingceremonystartsready", value: 1)) {
+                if (context.GetUserValue(key: "Weddingceremonystartsready") == 1) {
                     context.SetUserValue(key: "Weddingceremonystartsready", value: 0);
                     context.State = new State새로운하객있는지감지(context);
                     return;
@@ -54,7 +50,7 @@ namespace Maple2.Trigger._84000021_wd {
                     return;
                 }
 
-                if (context.UserValue(key: "Weddingceremonyfail", value: 1)) {
+                if (context.GetUserValue(key: "Weddingceremonyfail") == 1) {
                     context.SetUserValue(key: "Weddingceremonyfail", value: 0);
                     context.State = new State시작(context);
                     return;

@@ -1,66 +1,62 @@
-using System;
-
 namespace Maple2.Trigger._61000008_me {
     public static class _06_danceguide {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "DanceGuide", value: 1)) {
+                if (context.GetUserValue(key: "DanceGuide") == 1) {
                     context.State = new StateDanceGuideP1_Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DanceGuide", value: 2)) {
+                if (context.GetUserValue(key: "DanceGuide") == 2) {
                     context.State = new StateDanceGuideP2_Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DanceGuide", value: 3)) {
+                if (context.GetUserValue(key: "DanceGuide") == 3) {
                     context.State = new StateDanceGuideP3_01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DanceGuide", value: 41)) {
+                if (context.GetUserValue(key: "DanceGuide") == 41) {
                     context.State = new StateDanceGuideP41_01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DanceGuide", value: 42)) {
+                if (context.GetUserValue(key: "DanceGuide") == 42) {
                     context.State = new StateDanceGuideP42_01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DanceGuide", value: 51)) {
+                if (context.GetUserValue(key: "DanceGuide") == 51) {
                     context.State = new StateDanceGuideP51_01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DanceGuide", value: 52)) {
+                if (context.GetUserValue(key: "DanceGuide") == 52) {
                     context.State = new StateDanceGuideP52_01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DanceGuide", value: 61)) {
+                if (context.GetUserValue(key: "DanceGuide") == 61) {
                     context.State = new StateDanceGuideP61_01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DanceGuide", value: 62)) {
+                if (context.GetUserValue(key: "DanceGuide") == 62) {
                     context.State = new StateDanceGuideP62_01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DanceGuide", value: 71)) {
+                if (context.GetUserValue(key: "DanceGuide") == 71) {
                     context.State = new StateDanceGuideP71_01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DanceGuide", value: 72)) {
+                if (context.GetUserValue(key: "DanceGuide") == 72) {
                     context.State = new StateDanceGuideP72_01(context);
                     return;
                 }
@@ -113,7 +109,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP11_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100801, textID: 26100801, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 4000);
             }
 
             public override void Execute() {
@@ -130,7 +126,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP11_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100802, textID: 26100802, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 4000);
             }
 
             public override void Execute() {
@@ -147,7 +143,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP12_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100801, textID: 26100801, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 4000);
             }
 
             public override void Execute() {
@@ -164,7 +160,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP12_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100803, textID: 26100803, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 4000);
             }
 
             public override void Execute() {
@@ -181,7 +177,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP21_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100801, textID: 26100801, duration: 5000);
+                context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 5000);
             }
 
             public override void Execute() {
@@ -198,7 +194,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP21_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100802, textID: 26100802, duration: 5000);
+                context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 5000);
             }
 
             public override void Execute() {
@@ -215,7 +211,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP22_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100801, textID: 26100801, duration: 5000);
+                context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 5000);
             }
 
             public override void Execute() {
@@ -232,7 +228,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP22_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100803, textID: 26100803, duration: 5000);
+                context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 5000);
             }
 
             public override void Execute() {
@@ -249,7 +245,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP3_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100801, textID: 26100801, duration: 5000);
+                context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 5000);
             }
 
             public override void Execute() {
@@ -266,7 +262,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP3_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100802, textID: 26100802, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 4000);
             }
 
             public override void Execute() {
@@ -283,7 +279,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP3_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100803, textID: 26100803, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 4000);
             }
 
             public override void Execute() {
@@ -300,7 +296,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP41_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100801, textID: 26100801, duration: 6000);
+                context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 6000);
             }
 
             public override void Execute() {
@@ -317,7 +313,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP42_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100802, textID: 26100802, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 4000);
             }
 
             public override void Execute() {
@@ -334,7 +330,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP42_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100803, textID: 26100803, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 4000);
             }
 
             public override void Execute() {
@@ -351,7 +347,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP51_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100801, textID: 26100801, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 4000);
             }
 
             public override void Execute() {
@@ -368,7 +364,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP51_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100803, textID: 26100803, duration: 4000);
+                context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 4000);
             }
 
             public override void Execute() {
@@ -385,7 +381,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP52_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100802, textID: 26100802, duration: 6000);
+                context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 6000);
             }
 
             public override void Execute() {
@@ -402,7 +398,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP61_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100801, textID: 26100801, duration: 5000);
+                context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 5000);
             }
 
             public override void Execute() {
@@ -419,7 +415,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP61_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100802, textID: 26100802, duration: 5000);
+                context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 5000);
             }
 
             public override void Execute() {
@@ -436,7 +432,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP62_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100803, textID: 26100803, duration: 6000);
+                context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 6000);
             }
 
             public override void Execute() {
@@ -453,7 +449,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP71_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100801, textID: 26100801, duration: 6000);
+                context.ShowGuideSummary(entityId: 26100801, textId: 26100801, duration: 6000);
             }
 
             public override void Execute() {
@@ -470,7 +466,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP72_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100803, textID: 26100803, duration: 5000);
+                context.ShowGuideSummary(entityId: 26100803, textId: 26100803, duration: 5000);
             }
 
             public override void Execute() {
@@ -487,7 +483,7 @@ namespace Maple2.Trigger._61000008_me {
             internal StateDanceGuideP72_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26100802, textID: 26100802, duration: 5000);
+                context.ShowGuideSummary(entityId: 26100802, textId: 26100802, duration: 5000);
             }
 
             public override void Execute() {

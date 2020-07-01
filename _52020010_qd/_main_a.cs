@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._52020010_qd {
     public static class _main_a {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateIdle(context);
-
-        private class StateIdle : TriggerState {
+        public class StateIdle : TriggerState {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
                 context.SetActor(arg1: 8001, arg2: false, arg3: "Event_01_A");
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {60200045},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200045},
                     arg3: new byte[] {2})) {
                     context.State = new StateEvent_01(context);
                     return;
@@ -27,7 +23,7 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
             }
 
             public override void Execute() {
@@ -44,8 +40,8 @@ namespace Maple2.Trigger._52020010_qd {
             internal StateEvent_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 0, msg: "!!!", duration: 1000, delayTick: 0);
-                context.SetEffect(arg1: new int[] {5001}, arg2: true);
+                context.AddBalloonTalk(spawnPointId: 0, msg: "!!!", duration: 1000, delayTick: 0);
+                context.SetEffect(arg1: new[] {5001}, arg2: true);
                 context.SetActor(arg1: 8001, arg2: true, arg3: "Event_03_A");
             }
 

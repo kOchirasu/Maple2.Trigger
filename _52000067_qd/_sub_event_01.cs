@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._52000067_qd {
     public static class _sub_event_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {751}, arg2: true);
+                context.CreateMonster(arg1: new[] {751}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 703, arg2: 1)) {
+                if (context.GetUserCount(boxId: 703) == 1) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -51,7 +47,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal Statestart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {757, 758, 761, 762}, arg2: true);
+                context.CreateMonster(arg1: new[] {757, 758, 761, 762}, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 757, arg3: "$52000067_QD__SUB_EVENT_01__10$", arg4: 3, arg5: 2);
                 context.SetConversation(arg1: 1, arg2: 758, arg3: "$52000067_QD__SUB_EVENT_01__11$", arg4: 3, arg5: 3);
                 context.SetConversation(arg1: 1, arg2: 762, arg3: "$52000067_QD__SUB_EVENT_01__12$", arg4: 3, arg5: 2);

@@ -1,26 +1,22 @@
-using System;
-
 namespace Maple2.Trigger._61000008_me {
     public static class _color_7320 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "Color32", value: 10);
-                context.SetMesh(arg1: new int[] {832}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {932}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {1032}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {832}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {932}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1032}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ColorStart", value: 1)) {
+                if (context.GetUserValue(key: "ColorStart") == 1) {
                     context.State = new StateYellowBefore(context);
                     return;
                 }
 
-                if (context.UserValue(key: "ColorStart", value: 6)) {
+                if (context.GetUserValue(key: "ColorStart") == 6) {
                     context.State = new StateRedBefore(context);
                     return;
                 }
@@ -33,33 +29,33 @@ namespace Maple2.Trigger._61000008_me {
             internal StateYellowBefore(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {832}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {932}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {1032}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {832}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {932}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1032}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Color32", value: 2)) {
+                if (context.GetUserValue(key: "Color32") == 2) {
                     context.State = new StateGreenAfter(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 3)) {
+                if (context.GetUserValue(key: "Color32") == 3) {
                     // context.State = new StateYellowtoRed(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 4)) {
+                if (context.GetUserValue(key: "Color32") == 4) {
                     context.State = new StateClear(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 0)) {
+                if (context.GetUserValue(key: "Color32") == 0) {
                     context.State = new StateReset(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 5)) {
+                if (context.GetUserValue(key: "Color32") == 5) {
                     context.State = new StateRegen(context);
                     return;
                 }
@@ -72,33 +68,33 @@ namespace Maple2.Trigger._61000008_me {
             internal StateRedBefore(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {1032}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {932}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {832}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1032}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {932}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {832}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Color32", value: 1)) {
+                if (context.GetUserValue(key: "Color32") == 1) {
                     context.State = new StateYellowAfter(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 2)) {
+                if (context.GetUserValue(key: "Color32") == 2) {
                     context.State = new StateGreenAfter(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 4)) {
+                if (context.GetUserValue(key: "Color32") == 4) {
                     context.State = new StateClear(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 0)) {
+                if (context.GetUserValue(key: "Color32") == 0) {
                     context.State = new StateReset(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 5)) {
+                if (context.GetUserValue(key: "Color32") == 5) {
                     context.State = new StateRegen(context);
                     return;
                 }
@@ -111,31 +107,31 @@ namespace Maple2.Trigger._61000008_me {
             internal StateGreenAfter(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {932}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {932}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Color32", value: 1)) {
+                if (context.GetUserValue(key: "Color32") == 1) {
                     context.State = new StateYellowAfter(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 3)) {
+                if (context.GetUserValue(key: "Color32") == 3) {
                     context.State = new StateRedAfter(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 4)) {
+                if (context.GetUserValue(key: "Color32") == 4) {
                     context.State = new StateClear(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 0)) {
+                if (context.GetUserValue(key: "Color32") == 0) {
                     context.State = new StateReset(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 5)) {
+                if (context.GetUserValue(key: "Color32") == 5) {
                     context.State = new StateRegen(context);
                     return;
                 }
@@ -148,33 +144,33 @@ namespace Maple2.Trigger._61000008_me {
             internal StateYellowAfter(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {832}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {932}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {1032}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {832}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {932}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1032}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Color32", value: 2)) {
+                if (context.GetUserValue(key: "Color32") == 2) {
                     context.State = new StateGreenAfter(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 3)) {
+                if (context.GetUserValue(key: "Color32") == 3) {
                     context.State = new StateRedAfter(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 4)) {
+                if (context.GetUserValue(key: "Color32") == 4) {
                     context.State = new StateClear(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 0)) {
+                if (context.GetUserValue(key: "Color32") == 0) {
                     context.State = new StateReset(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 5)) {
+                if (context.GetUserValue(key: "Color32") == 5) {
                     context.State = new StateRegen(context);
                     return;
                 }
@@ -187,33 +183,33 @@ namespace Maple2.Trigger._61000008_me {
             internal StateRedAfter(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {1032}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {932}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {832}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1032}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {932}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {832}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Color32", value: 1)) {
+                if (context.GetUserValue(key: "Color32") == 1) {
                     context.State = new StateYellowAfter(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 2)) {
+                if (context.GetUserValue(key: "Color32") == 2) {
                     context.State = new StateGreenAfter(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 4)) {
+                if (context.GetUserValue(key: "Color32") == 4) {
                     context.State = new StateClear(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 0)) {
+                if (context.GetUserValue(key: "Color32") == 0) {
                     context.State = new StateReset(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Color32", value: 5)) {
+                if (context.GetUserValue(key: "Color32") == 5) {
                     context.State = new StateRegen(context);
                     return;
                 }
@@ -226,13 +222,13 @@ namespace Maple2.Trigger._61000008_me {
             internal StateClear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {932}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {832}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {1032}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {932}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {832}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {1032}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Color32", value: 5)) {
+                if (context.GetUserValue(key: "Color32") == 5) {
                     context.State = new StateRegen(context);
                     return;
                 }
@@ -246,9 +242,9 @@ namespace Maple2.Trigger._61000008_me {
 
             public override void OnEnter() {
                 context.SetUserValue(key: "ColorStart", value: 0);
-                context.SetMesh(arg1: new int[] {832}, arg2: true, arg3: 400, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {932}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {1032}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {832}, arg2: true, arg3: 400, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {932}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1032}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -269,7 +265,7 @@ namespace Maple2.Trigger._61000008_me {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Color32", value: 5)) {
+                if (context.GetUserValue(key: "Color32") == 5) {
                     context.State = new StateWait(context);
                     return;
                 }

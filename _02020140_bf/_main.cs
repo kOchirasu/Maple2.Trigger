@@ -1,22 +1,19 @@
-using System;
 using System.Numerics;
 
 namespace Maple2.Trigger._02020140_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(45f, 21f, 28f));
                 context.SetDirectionalLight(arg1: new Vector3(16f, 30f, 29f), arg2: new Vector3(130f, 130f, 130f));
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919,
                         920, 921, 922, 923, 924
                     }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new int[] {301}, arg2: true);
+                context.SetEffect(arg1: new[] {301}, arg2: true);
                 context.SetUserValue(key: "1PhaseSpawnStart", value: 0);
                 context.SetUserValue(key: "2PhaseSpawnStart", value: 0);
                 context.SetPortal(arg1: 108, arg2: false, arg3: false, arg4: false);
@@ -40,7 +37,7 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetPortal(arg1: 9238, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 9328, arg2: false, arg3: false, arg4: false);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967,
                         968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986,
                         987, 988, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999
@@ -56,7 +53,7 @@ namespace Maple2.Trigger._02020140_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {99})) {
+                if (context.UserDetected(arg1: new[] {99})) {
                     context.State = new State연출용보스등장(context);
                     return;
                 }
@@ -69,7 +66,7 @@ namespace Maple2.Trigger._02020140_bf {
             internal State연출용보스등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {100}, arg2: false);
+                context.CreateMonster(arg1: new[] {100}, arg2: false);
             }
 
             public override void Execute() {
@@ -86,7 +83,7 @@ namespace Maple2.Trigger._02020140_bf {
             internal State투르카대사연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 23000120, illust: "Turka_normal", duration: 9000,
+                context.SideNpcTalk(npcId: 23000120, illust: "Turka_normal", duration: 9000,
                     script: "$02020140_BF__PopUpCinema__0$");
             }
 
@@ -106,7 +103,7 @@ namespace Maple2.Trigger._02020140_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "1PhaseSpawnStart", value: 1)) {
+                if (context.GetUserValue(key: "1PhaseSpawnStart") == 1) {
                     context.State = new State1페이즈보스등장(context);
                     return;
                 }
@@ -116,7 +113,7 @@ namespace Maple2.Trigger._02020140_bf {
                     return;
                 }
 
-                if (context.DungeonCheckState(checkState: "Fail")) {
+                if (context.GetDungeonState() == "Fail") {
                     context.State = new State던전실패(context);
                     return;
                 }
@@ -129,7 +126,7 @@ namespace Maple2.Trigger._02020140_bf {
             internal State1페이즈보스등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
             public override void Execute() {
@@ -143,7 +140,7 @@ namespace Maple2.Trigger._02020140_bf {
                     return;
                 }
 
-                if (context.DungeonCheckState(checkState: "Fail")) {
+                if (context.GetDungeonState() == "Fail") {
                     context.State = new State던전실패(context);
                     return;
                 }
@@ -160,7 +157,7 @@ namespace Maple2.Trigger._02020140_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "2PhaseSpawnStart", value: 1)) {
+                if (context.GetUserValue(key: "2PhaseSpawnStart") == 1) {
                     context.State = new State1페이즈전투완료_2페이즈투르카등장(context);
                     return;
                 }
@@ -170,7 +167,7 @@ namespace Maple2.Trigger._02020140_bf {
                     return;
                 }
 
-                if (context.DungeonCheckState(checkState: "Fail")) {
+                if (context.GetDungeonState() == "Fail") {
                     context.State = new State던전실패(context);
                     return;
                 }
@@ -183,7 +180,7 @@ namespace Maple2.Trigger._02020140_bf {
             internal State1페이즈전투완료_2페이즈투르카등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
                 context.RemoveBuff(arg1: 98, arg2: 50004418);
             }
 
@@ -198,7 +195,7 @@ namespace Maple2.Trigger._02020140_bf {
                     return;
                 }
 
-                if (context.DungeonCheckState(checkState: "Fail")) {
+                if (context.GetDungeonState() == "Fail") {
                     context.State = new State던전실패(context);
                     return;
                 }
@@ -211,14 +208,14 @@ namespace Maple2.Trigger._02020140_bf {
             internal State졸구간시작연출딜레이(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {301}, arg2: false);
+                context.SetEffect(arg1: new[] {301}, arg2: false);
                 context.SetAmbientLight(arg1: new Vector3(255f, 140f, 172f));
                 context.SetDirectionalLight(arg1: new Vector3(146f, 221f, 218f), arg2: new Vector3(130f, 130f, 130f));
                 context.ChangeBackground(dds: "BG_Turka_D.dds");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "StageOpen", value: 1)) {
+                if (context.GetUserValue(key: "StageOpen") == 1) {
                     context.State = new State최초졸구간몬스터등장(context);
                     return;
                 }
@@ -235,12 +232,12 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetUserValue(key: "TriggerMesh12", value: 0);
                 context.SetUserValue(key: "TriggerMesh13", value: 0);
                 context.CreateMonster(
-                    arg1: new int[]
+                    arg1: new[]
                         {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 1115},
                     arg2: false);
-                context.CreateMonster(arg1: new int[] {1201, 1202, 1203, 1204, 1205}, arg2: false);
+                context.CreateMonster(arg1: new[] {1201, 1202, 1203, 1204, 1205}, arg2: false);
                 context.CreateMonster(
-                    arg1: new int[] {1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313},
+                    arg1: new[] {1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313},
                     arg2: false);
             }
 
@@ -286,47 +283,47 @@ namespace Maple2.Trigger._02020140_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "TriggerMesh11", value: 0)) {
+                if (context.GetUserValue(key: "TriggerMesh11") == 0) {
                     context.State = new State두번째왼쪽진행01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "TriggerMesh12", value: 0)) {
+                if (context.GetUserValue(key: "TriggerMesh12") == 0) {
                     context.State = new State두번째가운데진행01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "TriggerMesh13", value: 0)) {
+                if (context.GetUserValue(key: "TriggerMesh13") == 0) {
                     context.State = new State두번째오른쪽진행01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "TriggerMesh22", value: 0)) {
+                if (context.GetUserValue(key: "TriggerMesh22") == 0) {
                     context.State = new State세번째가운데진행01(context);
                     return;
                 }
 
-                if (context.UserValue(key: "TriggerMesh21", value: 0)) {
+                if (context.GetUserValue(key: "TriggerMesh21") == 0) {
                     context.State = new State왼쪽지점보스방가는포탈생성(context);
                     return;
                 }
 
-                if (context.UserValue(key: "TriggerMesh32", value: 0)) {
+                if (context.GetUserValue(key: "TriggerMesh32") == 0) {
                     context.State = new State가운데지점보스방가는포탈생성(context);
                     return;
                 }
 
-                if (context.UserValue(key: "TriggerMesh23", value: 0)) {
+                if (context.GetUserValue(key: "TriggerMesh23") == 0) {
                     context.State = new State오른쪽지점보스방가는포탈생성(context);
                     return;
                 }
 
-                if (context.UserValue(key: "2PhaseStartOk", value: 1)) {
+                if (context.GetUserValue(key: "2PhaseStartOk") == 1) {
                     context.State = new State모든졸구간지형과포탈생성(context);
                     return;
                 }
 
-                if (context.UserValue(key: "TurkaTwoPhaseEnd", value: 1)) {
+                if (context.GetUserValue(key: "TurkaTwoPhaseEnd") == 1) {
                     context.State = new State이맵에서진행끝내고다음맵으로이동(context);
                     return;
                 }
@@ -336,7 +333,7 @@ namespace Maple2.Trigger._02020140_bf {
                     return;
                 }
 
-                if (context.DungeonCheckState(checkState: "Fail")) {
+                if (context.GetDungeonState() == "Fail") {
                     context.State = new State던전실패(context);
                     return;
                 }
@@ -352,7 +349,7 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetUserValue(key: "TriggerMesh11", value: -1);
                 context.SetUserValue(key: "TriggerMesh21", value: 0);
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116,
                         2117, 2118, 2119, 2120
                     }, arg2: false);
@@ -391,7 +388,7 @@ namespace Maple2.Trigger._02020140_bf {
             public override void OnEnter() {
                 context.SetUserValue(key: "TriggerMesh12", value: -1);
                 context.SetUserValue(key: "TriggerMesh22", value: 0);
-                context.CreateMonster(arg1: new int[] {2201, 2202, 2203, 2204, 2205}, arg2: false);
+                context.CreateMonster(arg1: new[] {2201, 2202, 2203, 2204, 2205}, arg2: false);
             }
 
             public override void Execute() {
@@ -427,7 +424,7 @@ namespace Maple2.Trigger._02020140_bf {
             public override void OnEnter() {
                 context.SetUserValue(key: "TriggerMesh22", value: -1);
                 context.SetUserValue(key: "TriggerMesh32", value: 0);
-                context.CreateMonster(arg1: new int[] {3201, 3202, 3203, 3204, 3205}, arg2: false);
+                context.CreateMonster(arg1: new[] {3201, 3202, 3203, 3204, 3205}, arg2: false);
             }
 
             public override void Execute() {
@@ -464,7 +461,7 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetUserValue(key: "TriggerMesh13", value: -1);
                 context.SetUserValue(key: "TriggerMesh23", value: 0);
                 context.CreateMonster(
-                    arg1: new int[]
+                    arg1: new[]
                         {2301, 2302, 2303, 2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315},
                     arg2: false);
             }
@@ -557,8 +554,8 @@ namespace Maple2.Trigger._02020140_bf {
             internal State2페이즈복격진행_안내메시지출력(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {91}, arg2: true);
-                context.ShowGuideSummary(entityID: 29200003, textID: 29200003);
+                context.SetSkill(arg1: new[] {91}, arg2: true);
+                context.ShowGuideSummary(entityId: 29200003, textId: 29200003);
             }
 
             public override void Execute() {
@@ -569,7 +566,7 @@ namespace Maple2.Trigger._02020140_bf {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 29200003);
+                context.HideGuideSummary(entityId: 29200003);
             }
         }
 
@@ -588,14 +585,14 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetPortal(arg1: 318, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 428, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 338, arg2: true, arg3: true, arg4: true);
-                context.DestroyMonster(arg1: new int[] {
+                context.DestroyMonster(arg1: new[] {
                     1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 1115, 2101,
                     2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117,
                     2118, 2119, 2120
                 });
-                context.DestroyMonster(arg1: new int[]
+                context.DestroyMonster(arg1: new[]
                     {1201, 1202, 1203, 1204, 1205, 2201, 2202, 2203, 2204, 2205, 3201, 3202, 3203, 3204, 3205});
-                context.DestroyMonster(arg1: new int[] {
+                context.DestroyMonster(arg1: new[] {
                     1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313, 2301, 2302, 2303,
                     2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315
                 });
@@ -629,14 +626,14 @@ namespace Maple2.Trigger._02020140_bf {
                 context.SetPortal(arg1: 428, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 338, arg2: true, arg3: true, arg4: true);
                 context.SetSound(arg1: 140140, arg2: true);
-                context.DestroyMonster(arg1: new int[] {
+                context.DestroyMonster(arg1: new[] {
                     1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 1115, 2101,
                     2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117,
                     2118, 2119, 2120
                 });
-                context.DestroyMonster(arg1: new int[]
+                context.DestroyMonster(arg1: new[]
                     {1201, 1202, 1203, 1204, 1205, 2201, 2202, 2203, 2204, 2205, 3201, 3202, 3203, 3204, 3205});
-                context.DestroyMonster(arg1: new int[] {
+                context.DestroyMonster(arg1: new[] {
                     1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311, 1312, 1313, 2301, 2302, 2303,
                     2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2314, 2315
                 });
@@ -653,7 +650,7 @@ namespace Maple2.Trigger._02020140_bf {
                     return;
                 }
 
-                if (context.DungeonCheckState(checkState: "Fail")) {
+                if (context.GetDungeonState() == "Fail") {
                     context.State = new State던전실패(context);
                     return;
                 }
@@ -668,7 +665,7 @@ namespace Maple2.Trigger._02020140_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {97})) {
+                if (context.UserDetected(arg1: new[] {97})) {
                     context.State = new State종료안내메시지(context);
                     return;
                 }
@@ -681,9 +678,9 @@ namespace Maple2.Trigger._02020140_bf {
             internal State종료안내메시지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {92}, arg2: true);
-                context.DestroyMonster(arg1: new int[] {-1});
-                context.ShowGuideSummary(entityID: 29200004, textID: 29200004);
+                context.SetSkill(arg1: new[] {92}, arg2: true);
+                context.DestroyMonster(arg1: new[] {-1});
+                context.ShowGuideSummary(entityId: 29200004, textId: 29200004);
             }
 
             public override void Execute() {
@@ -694,7 +691,7 @@ namespace Maple2.Trigger._02020140_bf {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 29200004);
+                context.HideGuideSummary(entityId: 29200004);
             }
         }
 
@@ -714,7 +711,7 @@ namespace Maple2.Trigger._02020140_bf {
                     return;
                 }
 
-                if (context.DungeonCheckState(checkState: "Fail")) {
+                if (context.GetDungeonState() == "Fail") {
                     context.State = new State던전실패(context);
                     return;
                 }
@@ -729,7 +726,7 @@ namespace Maple2.Trigger._02020140_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {97})) {
+                if (context.UserDetected(arg1: new[] {97})) {
                     context.State = new State종료안내메시지_다시출력(context);
                     return;
                 }
@@ -742,7 +739,7 @@ namespace Maple2.Trigger._02020140_bf {
             internal State종료안내메시지_다시출력(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 29200004, textID: 29200004);
+                context.ShowGuideSummary(entityId: 29200004, textId: 29200004);
             }
 
             public override void Execute() {
@@ -756,14 +753,14 @@ namespace Maple2.Trigger._02020140_bf {
                     return;
                 }
 
-                if (context.DungeonCheckState(checkState: "Fail")) {
+                if (context.GetDungeonState() == "Fail") {
                     context.State = new State던전실패(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 29200004);
+                context.HideGuideSummary(entityId: 29200004);
             }
         }
 
@@ -773,7 +770,7 @@ namespace Maple2.Trigger._02020140_bf {
             public override void OnEnter() {
                 context.DungeonSetEndTime();
                 context.DungeonCloseTimer();
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.DestroyMonster(arg1: new[] {-1});
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
             }
 

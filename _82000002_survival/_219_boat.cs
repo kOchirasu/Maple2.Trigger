@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._82000002_survival {
     public static class _219_boat {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateBoatPatrol(context);
-
-        private class StateBoatPatrol : TriggerState {
+        public class StateBoatPatrol : TriggerState {
             internal StateBoatPatrol(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {

@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._52010067_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State연출01(context);
-
-        private class State연출01 : TriggerState {
+        public class State연출01 : TriggerState {
             internal State연출01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.VisibleMyPc(isVisible: false);
                     context.SetProductionUI(arg1: 1);
-                    context.SetEffect(arg1: new int[] {9010}, arg2: false);
+                    context.SetEffect(arg1: new[] {9010}, arg2: false);
                     context.State = new State연출브릿지(context);
                     return;
                 }
@@ -28,13 +24,13 @@ namespace Maple2.Trigger._52010067_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {700}, arg2: new int[] {20002290},
+                if (context.QuestUserDetected(arg1: new[] {700}, arg2: new[] {20002290},
                     arg3: new byte[] {2})) {
                     context.State = new State조준씬01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {700}, arg2: new int[] {20002290},
+                if (context.QuestUserDetected(arg1: new[] {700}, arg2: new[] {20002290},
                     arg3: new byte[] {3})) {
                     context.State = new State피격씬01(context);
                     return;
@@ -48,7 +44,7 @@ namespace Maple2.Trigger._52010067_qd {
             internal State조준씬01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {200}, arg2: false);
+                context.CreateMonster(arg1: new[] {200}, arg2: false);
             }
 
             public override void Execute() {
@@ -83,7 +79,7 @@ namespace Maple2.Trigger._52010067_qd {
             internal State연출02_c(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2000, 2001, 2002, 2003, 2004}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {2000, 2001, 2002, 2003, 2004}, arg2: false);
             }
 
             public override void Execute() {
@@ -100,7 +96,7 @@ namespace Maple2.Trigger._52010067_qd {
             internal State연출03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2005, 2006, 2007, 2008, 2009, 2010, 2011}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {2005, 2006, 2007, 2008, 2009, 2010, 2011}, arg2: false);
             }
 
             public override void Execute() {
@@ -117,7 +113,7 @@ namespace Maple2.Trigger._52010067_qd {
             internal State연출04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {2012}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {2012}, arg2: false);
             }
 
             public override void Execute() {
@@ -194,8 +190,8 @@ namespace Maple2.Trigger._52010067_qd {
             internal State피격씬02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {9010}, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {3004, 3005}, arg2: false);
+                context.SetEffect(arg1: new[] {9010}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {3004, 3005}, arg2: false);
             }
 
             public override void Execute() {
@@ -212,7 +208,7 @@ namespace Maple2.Trigger._52010067_qd {
             internal State피격씬03_a(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {3000, 3001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {3000, 3001}, arg2: false);
             }
 
             public override void Execute() {
@@ -229,7 +225,7 @@ namespace Maple2.Trigger._52010067_qd {
             internal State피격씬03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {3002, 3003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {3002, 3003}, arg2: false);
                 context.SetTimeScale(enable: true, startScale: 0.1f, endScale: 0.1f, duration: 3.5f, interpolator: 1);
             }
 

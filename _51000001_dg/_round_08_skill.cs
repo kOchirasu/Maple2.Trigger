@@ -1,22 +1,18 @@
-using System;
-
 namespace Maple2.Trigger._51000001_dg {
     public static class _round_08_skill {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3801}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3802}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3803}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3804}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3805}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3801}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3802}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3803}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3804}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3805}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {108})) {
+                if (context.UserDetected(arg1: new[] {108})) {
                     context.State = new State지역랜덤(context);
                     return;
                 }
@@ -31,37 +27,37 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {108})) {
+                if (!context.UserDetected(arg1: new[] {108})) {
                     context.State = new State종료(context);
                     return;
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.SetMesh(arg1: new int[] {3801}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(arg1: new[] {3801}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateA지역(context);
                     return;
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.SetMesh(arg1: new int[] {3802}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(arg1: new[] {3802}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateB지역(context);
                     return;
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.SetMesh(arg1: new int[] {3803}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(arg1: new[] {3803}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateC지역(context);
                     return;
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.SetMesh(arg1: new int[] {3804}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(arg1: new[] {3804}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateD지역(context);
                     return;
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    context.SetMesh(arg1: new int[] {3805}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                    context.SetMesh(arg1: new[] {3805}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                     context.State = new StateE지역(context);
                     return;
                 }
@@ -76,7 +72,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {10801})) {
+                if (context.UserDetected(arg1: new[] {10801})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -91,7 +87,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {10802})) {
+                if (context.UserDetected(arg1: new[] {10802})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -106,7 +102,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {10803})) {
+                if (context.UserDetected(arg1: new[] {10803})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -121,7 +117,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {10804})) {
+                if (context.UserDetected(arg1: new[] {10804})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -136,7 +132,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {10805})) {
+                if (context.UserDetected(arg1: new[] {10805})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -153,31 +149,31 @@ namespace Maple2.Trigger._51000001_dg {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {108})) {
+                if (!context.UserDetected(arg1: new[] {108})) {
                     context.State = new State종료(context);
                     return;
                 }
 
                 if (context.RandomCondition(arg1: 40f)) {
-                    context.AddBuff(arg1: new int[] {199}, arg2: 49179051, arg3: 1, arg4: false, arg5: false);
+                    context.AddBuff(arg1: new[] {199}, arg2: 49179051, arg3: 1, arg4: false, arg5: false);
                     context.State = new State대기시간(context);
                     return;
                 }
 
                 if (context.RandomCondition(arg1: 30f)) {
-                    context.AddBuff(arg1: new int[] {199}, arg2: 70000085, arg3: 1, arg5: false);
+                    context.AddBuff(arg1: new[] {199}, arg2: 70000085, arg3: 1, arg5: false);
                     context.State = new State대기시간(context);
                     return;
                 }
 
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.AddBuff(arg1: new int[] {199}, arg2: 49179061, arg3: 1, arg4: false, arg5: false);
+                    context.AddBuff(arg1: new[] {199}, arg2: 49179061, arg3: 1, arg4: false, arg5: false);
                     context.State = new State대기시간(context);
                     return;
                 }
 
                 if (context.RandomCondition(arg1: 15f)) {
-                    context.AddBuff(arg1: new int[] {199}, arg2: 49179071, arg3: 1, arg4: false, arg5: false);
+                    context.AddBuff(arg1: new[] {199}, arg2: 49179071, arg3: 1, arg4: false, arg5: false);
                     context.State = new State대기시간(context);
                     return;
                 }
@@ -190,11 +186,11 @@ namespace Maple2.Trigger._51000001_dg {
             internal State대기시간(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3801}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3802}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3803}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3804}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3805}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3801}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3802}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3803}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3804}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3805}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {

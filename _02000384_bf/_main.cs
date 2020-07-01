@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._02000384_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateready(context);
-
-        private class Stateready : TriggerState {
+        public class Stateready : TriggerState {
             internal Stateready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {6001}, arg2: false);
-                context.SetMesh(arg1: new int[] {6002}, arg2: false);
-                context.SetMesh(arg1: new int[] {6003}, arg2: false);
-                context.SetMesh(arg1: new int[] {6004}, arg2: false);
+                context.SetMesh(arg1: new[] {6001}, arg2: false);
+                context.SetMesh(arg1: new[] {6002}, arg2: false);
+                context.SetMesh(arg1: new[] {6003}, arg2: false);
+                context.SetMesh(arg1: new[] {6004}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {701})) {
+                if (context.UserDetected(arg1: new[] {701})) {
                     context.State = new StateroomCheck(context);
                     return;
                 }
@@ -50,12 +46,12 @@ namespace Maple2.Trigger._02000384_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.DungeonLevel(level: 2)) {
+                if (context.GetDungeonLevel() == 2) {
                     context.State = new Stateraid(context);
                     return;
                 }
 
-                if (context.DungeonLevel(level: 3)) {
+                if (context.GetDungeonLevel() == 3) {
                     context.State = new Statechaos_raid(context);
                     return;
                 }
@@ -68,11 +64,11 @@ namespace Maple2.Trigger._02000384_bf {
             internal Stateraid(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {401}, arg2: false);
+                context.CreateMonster(arg1: new[] {401}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ExitPortal", value: 1)) {
+                if (context.GetUserValue(key: "ExitPortal") == 1) {
                     context.State = new Stateend(context);
                     return;
                 }
@@ -85,11 +81,11 @@ namespace Maple2.Trigger._02000384_bf {
             internal Statechaos_raid(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {402}, arg2: false);
+                context.CreateMonster(arg1: new[] {402}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ExitPortal", value: 1)) {
+                if (context.GetUserValue(key: "ExitPortal") == 1) {
                     context.State = new Stateend(context);
                     return;
                 }
@@ -103,7 +99,7 @@ namespace Maple2.Trigger._02000384_bf {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915,
                         1916, 1917
                     }, arg2: true);
@@ -197,7 +193,7 @@ namespace Maple2.Trigger._02000384_bf {
                 context.SetLadder(arg1: 1516, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 1517, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 1518, arg2: true, arg3: true, arg4: 2);
-                context.SetMesh(arg1: new int[] {1800, 1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809},
+                context.SetMesh(arg1: new[] {1800, 1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809},
                     arg2: true);
                 context.SetLadder(arg1: 1601, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 1602, arg2: true, arg3: true, arg4: 2);
@@ -217,17 +213,17 @@ namespace Maple2.Trigger._02000384_bf {
                 context.SetLadder(arg1: 1616, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 1617, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 1618, arg2: true, arg3: true, arg4: 2);
-                context.CreateMonster(arg1: new int[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 511}, arg2: false);
-                context.CreateMonster(arg1: new int[] {403}, arg2: false);
+                context.CreateMonster(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 511}, arg2: false);
+                context.CreateMonster(arg1: new[] {403}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ExitPortal", value: 1)) {
+                if (context.GetUserValue(key: "ExitPortal") == 1) {
                     context.State = new Statequest_end(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {720})) {
+                if (context.UserDetected(arg1: new[] {720})) {
                     context.State = new StatenpcSpawn(context);
                     return;
                 }
@@ -240,11 +236,11 @@ namespace Maple2.Trigger._02000384_bf {
             internal StatenpcSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {510}, arg2: false);
+                context.CreateMonster(arg1: new[] {510}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ExitPortal", value: 1)) {
+                if (context.GetUserValue(key: "ExitPortal") == 1) {
                     context.State = new Statequest_end(context);
                     return;
                 }
@@ -272,7 +268,7 @@ namespace Maple2.Trigger._02000384_bf {
             internal Statequest_end(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 7, arg2: "$02000384_BF__MAIN__0$", arg3: new int[] {5000}, arg4: "0");
+                context.SetEventUI(arg1: 7, arg2: "$02000384_BF__MAIN__0$", arg3: 5000, arg4: "0");
                 context.SetConversation(arg1: 1, arg2: 510, arg3: "$02000384_BF__MAIN__1$", arg4: 2, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 510, arg3: "$02000384_BF__MAIN__2$", arg4: 2, arg5: 2);
                 context.SetAchievement(arg1: 90000, arg2: "trigger", arg3: "Madracan_Q03");

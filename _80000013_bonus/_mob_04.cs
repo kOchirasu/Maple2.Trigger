@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._80000013_bonus {
     public static class _mob_04 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {701})) {
+                if (context.UserDetected(arg1: new[] {701})) {
                     context.State = new Statestart(context);
                     return;
                 }
@@ -23,11 +19,11 @@ namespace Maple2.Trigger._80000013_bonus {
             internal Statestart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {104}, arg2: false);
+                context.CreateMonster(arg1: new[] {104}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {104})) {
+                if (context.MonsterDead(arg1: new[] {104})) {
                     context.State = new Statewait(context);
                     return;
                 }
@@ -42,7 +38,7 @@ namespace Maple2.Trigger._80000013_bonus {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {701})) {
+                if (!context.UserDetected(arg1: new[] {701})) {
                     context.State = new Statestart(context);
                     return;
                 }

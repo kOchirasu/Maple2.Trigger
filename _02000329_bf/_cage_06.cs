@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._02000329_bf {
     public static class _cage_06 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6806}, arg2: false);
+                context.SetEffect(arg1: new[] {6806}, arg2: false);
                 context.SetActor(arg1: 206, arg2: true, arg3: "Closed");
-                context.CreateMonster(arg1: new int[] {1006, 1106}, arg2: false);
+                context.CreateMonster(arg1: new[] {1006, 1106}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {1106})) {
+                if (context.MonsterDead(arg1: new[] {1106})) {
                     context.State = new State닭생성(context);
                     return;
                 }
@@ -29,8 +25,8 @@ namespace Maple2.Trigger._02000329_bf {
             public override void OnEnter() {
                 context.SetActor(arg1: 206, arg2: true, arg3: "Opened");
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetEffect(arg1: new int[] {606}, arg2: false);
-                context.SetEffect(arg1: new int[] {6806}, arg2: true);
+                context.SetEffect(arg1: new[] {606}, arg2: false);
+                context.SetEffect(arg1: new[] {6806}, arg2: true);
             }
 
             public override void Execute() {
@@ -65,7 +61,7 @@ namespace Maple2.Trigger._02000329_bf {
             internal State닭소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1006});
+                context.DestroyMonster(arg1: new[] {1006});
             }
 
             public override void Execute() { }

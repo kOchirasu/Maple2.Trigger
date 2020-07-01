@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02020201_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._02020201_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {901})) {
+                if (context.UserDetected(arg1: new[] {901})) {
                     context.State = new State페이카등장(context);
                     return;
                 }
@@ -25,13 +21,13 @@ namespace Maple2.Trigger._02020201_bf {
             internal State페이카등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
-                context.SideNpcTalk(type: "talk", npcID: 11001813, illust: "Turka_normal", duration: 5000,
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000,
                     script: "$02020201_BF__MAIN__0$");
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101})) {
+                if (context.MonsterDead(arg1: new[] {101})) {
                     context.State = new State제단파괴(context);
                     return;
                 }
@@ -44,10 +40,10 @@ namespace Maple2.Trigger._02020201_bf {
             internal State제단파괴(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcID: 11001813, illust: "Turka_normal", duration: 5000,
+                context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000,
                     script: "$02020201_BF__MAIN__1$");
-                context.AddBalloonTalk(spawnPointID: 101, msg: "$02020201_BF__MAIN__2$", duration: 3000, delayTick: 0);
-                context.DestroyMonster(arg1: new int[] {201, 202, 203});
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$02020201_BF__MAIN__2$", duration: 3000, delayTick: 0);
+                context.DestroyMonster(arg1: new[] {201, 202, 203});
             }
 
             public override void Execute() {

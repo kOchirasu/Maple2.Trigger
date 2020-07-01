@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000498_bf {
     public static class _debuff_03 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {104})) {
+                if (context.UserDetected(arg1: new[] {104})) {
                     context.State = new State버프(context);
                     return;
                 }
@@ -24,7 +20,7 @@ namespace Maple2.Trigger._02000498_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3600", arg2: 3600);
-                context.AddBuff(arg1: new int[] {104}, arg2: 70000071, arg3: 3, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {104}, arg2: 70000071, arg3: 3, arg4: false, arg5: false);
             }
 
             public override void Execute() {

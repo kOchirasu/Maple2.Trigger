@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52020020_qd {
     public static class _main_c {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {60200145},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200145},
                     arg3: new byte[] {1})) {
                     context.State = new Stateready(context);
                     return;
@@ -24,7 +20,7 @@ namespace Maple2.Trigger._52020020_qd {
             internal Stateready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 201, msg: "전 밖에서 기다리고 있겠습니다.", duration: 2500, delayTick: 0);
+                context.AddBalloonTalk(spawnPointId: 201, msg: "전 밖에서 기다리고 있겠습니다.", duration: 2500, delayTick: 0);
             }
 
             public override void Execute() {
@@ -58,7 +54,7 @@ namespace Maple2.Trigger._52020020_qd {
             internal Stateout(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {201});
+                context.DestroyMonster(arg1: new[] {201});
             }
 
             public override void Execute() { }

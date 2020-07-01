@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._02000521_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateready(context);
-
-        private class Stateready : TriggerState {
+        public class Stateready : TriggerState {
             internal Stateready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {6001}, arg2: false);
-                context.SetMesh(arg1: new int[] {6002}, arg2: false);
-                context.SetMesh(arg1: new int[] {6003}, arg2: false);
-                context.SetMesh(arg1: new int[] {6004}, arg2: false);
+                context.SetMesh(arg1: new[] {6001}, arg2: false);
+                context.SetMesh(arg1: new[] {6002}, arg2: false);
+                context.SetMesh(arg1: new[] {6003}, arg2: false);
+                context.SetMesh(arg1: new[] {6004}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {702})) {
+                if (context.UserDetected(arg1: new[] {702})) {
                     context.State = new Statechaos_raid(context);
                     return;
                 }
@@ -28,11 +24,11 @@ namespace Maple2.Trigger._02000521_bf {
             internal Statechaos_raid(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {402}, arg2: false);
+                context.CreateMonster(arg1: new[] {402}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ExitPortal", value: 1)) {
+                if (context.GetUserValue(key: "ExitPortal") == 1) {
                     context.State = new Stateend(context);
                     return;
                 }

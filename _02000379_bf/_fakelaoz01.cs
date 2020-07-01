@@ -1,36 +1,32 @@
-using System;
-
 namespace Maple2.Trigger._02000379_bf {
     public static class _fakelaoz01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new int[] {5000}, arg2: false);
-                context.SetEffect(arg1: new int[] {5100}, arg2: false);
-                context.SetEffect(arg1: new int[] {5200}, arg2: false);
-                context.SetEffect(arg1: new int[] {5300}, arg2: false);
-                context.SetMesh(arg1: new int[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMeshAnimation(arg1: new int[] {3000}, arg2: true, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new int[] {3001}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new int[] {3002}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMesh(arg1: new int[] {3100, 3101, 3102, 3103, 3104, 3105, 3106}, arg2: true, arg3: 0,
+                context.SetEffect(arg1: new[] {5000}, arg2: false);
+                context.SetEffect(arg1: new[] {5100}, arg2: false);
+                context.SetEffect(arg1: new[] {5200}, arg2: false);
+                context.SetEffect(arg1: new[] {5300}, arg2: false);
+                context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMeshAnimation(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(arg1: new[] {3002}, arg2: false, arg3: 0, arg4: 0);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3200, 3201, 3202, 3203, 3204, 3205, 3206}, arg2: true, arg3: 0,
+                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315,
                         3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323
                     }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(arg1: new int[] {2000}, arg2: false);
-                context.SetSkill(arg1: new int[] {2001}, arg2: false);
-                context.SetSkill(arg1: new int[] {2002}, arg2: false);
+                context.SetSkill(arg1: new[] {2000}, arg2: false);
+                context.SetSkill(arg1: new[] {2001}, arg2: false);
+                context.SetSkill(arg1: new[] {2002}, arg2: false);
                 context.SetAgent(arg1: "8000", arg2: true);
                 context.SetAgent(arg1: "8001", arg2: true);
                 context.SetAgent(arg1: "8002", arg2: true);
@@ -46,7 +42,7 @@ namespace Maple2.Trigger._02000379_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new StateLodingDelay01(context);
                     return;
                 }
@@ -78,8 +74,8 @@ namespace Maple2.Trigger._02000379_bf {
             internal StateLodingDelay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101, 201, 301}, arg2: false);
-                context.CreateMonster(arg1: new int[] {910, 911, 912, 920, 921, 922}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 201, 301}, arg2: false);
+                context.CreateMonster(arg1: new[] {910, 911, 912, 920, 921, 922}, arg2: false);
             }
 
             public override void Execute() {
@@ -202,7 +198,7 @@ namespace Maple2.Trigger._02000379_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateCollapseBridge01(context);
                     return;
                 }
@@ -220,8 +216,8 @@ namespace Maple2.Trigger._02000379_bf {
             internal StateCollapseBridge01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {2000}, arg2: true);
-                context.SetEffect(arg1: new int[] {5100}, arg2: true);
+                context.SetSkill(arg1: new[] {2000}, arg2: true);
+                context.SetEffect(arg1: new[] {5100}, arg2: true);
             }
 
             public override void Execute() {
@@ -238,7 +234,7 @@ namespace Maple2.Trigger._02000379_bf {
             internal StateCollapseBridge02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {2001}, arg2: true);
+                context.SetSkill(arg1: new[] {2001}, arg2: true);
             }
 
             public override void Execute() {
@@ -255,7 +251,7 @@ namespace Maple2.Trigger._02000379_bf {
             internal StateCollapseBridge03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {2002}, arg2: true);
+                context.SetSkill(arg1: new[] {2002}, arg2: true);
             }
 
             public override void Execute() {
@@ -365,7 +361,7 @@ namespace Maple2.Trigger._02000379_bf {
             internal StateFakeLaozApp02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5200}, arg2: true);
+                context.SetEffect(arg1: new[] {5200}, arg2: true);
             }
 
             public override void Execute() {
@@ -382,8 +378,8 @@ namespace Maple2.Trigger._02000379_bf {
             internal StateFakeLaozApp03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101, 201});
-                context.CreateMonster(arg1: new int[] {102, 202, 900}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101, 201});
+                context.CreateMonster(arg1: new[] {102, 202, 900}, arg2: false);
                 context.SetSkip(arg1: "FakeLaozApp04");
             }
 
@@ -434,12 +430,12 @@ namespace Maple2.Trigger._02000379_bf {
             internal StateKanduraDisapp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2, key: "SpyKandura", value: 1);
-                context.DestroyMonster(arg1: new int[] {301});
+                context.SetUserValue(triggerId: 2, key: "SpyKandura", value: 1);
+                context.DestroyMonster(arg1: new[] {301});
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {900})) {
+                if (context.MonsterDead(arg1: new[] {900})) {
                     context.State = new StateKanduraDisapp02(context);
                     return;
                 }
@@ -467,14 +463,14 @@ namespace Maple2.Trigger._02000379_bf {
             internal StateFakeLaozDie01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3000}, arg2: false, arg3: 200, arg4: 0, arg5: 5f);
-                context.SetMesh(arg1: new int[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 5f);
-                context.SetMeshAnimation(arg1: new int[] {3000}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new int[] {3001}, arg2: true, arg3: 200, arg4: 0);
-                context.SetUserValue(triggerID: 2, key: "SpyKandura", value: 2);
-                context.DestroyMonster(arg1: new int[] {900, 910, 911, 912, 920, 921, 922});
-                context.DestroyMonster(arg1: new int[] {102, 202});
-                context.CreateMonster(arg1: new int[] {103, 203}, arg2: false);
+                context.SetMesh(arg1: new[] {3000}, arg2: false, arg3: 200, arg4: 0, arg5: 5f);
+                context.SetMesh(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 5f);
+                context.SetMeshAnimation(arg1: new[] {3000}, arg2: false, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(arg1: new[] {3001}, arg2: true, arg3: 200, arg4: 0);
+                context.SetUserValue(triggerId: 2, key: "SpyKandura", value: 2);
+                context.DestroyMonster(arg1: new[] {900, 910, 911, 912, 920, 921, 922});
+                context.DestroyMonster(arg1: new[] {102, 202});
+                context.CreateMonster(arg1: new[] {103, 203}, arg2: false);
             }
 
             public override void Execute() {
@@ -491,14 +487,14 @@ namespace Maple2.Trigger._02000379_bf {
             internal StateLampLightUp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5300}, arg2: true);
+                context.SetEffect(arg1: new[] {5300}, arg2: true);
                 context.SetRandomMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315,
                         3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323
                     }, arg2: true, arg3: 24, arg4: 100, arg5: 70);
-                context.SetMesh(arg1: new int[] {3202, 3203, 3204}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3100, 3101, 3102, 3103, 3104, 3105, 3106}, arg2: false, arg3: 0,
+                context.SetMesh(arg1: new[] {3202, 3203, 3204}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106}, arg2: false, arg3: 0,
                     arg4: 0, arg5: 0f);
                 context.CameraSelect(arg1: 700, arg2: true);
                 context.SetProductionUI(arg1: 1);

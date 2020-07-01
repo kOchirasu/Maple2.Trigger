@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._02000245_bf {
     public static class _trigger_03 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116,
                         2117, 2118, 2119, 2120, 2121, 2122, 2123, 2124, 2125, 2126, 2127, 2128, 2129, 2130, 2131, 2132,
                         2133, 2134, 2135, 2136, 2137, 2138, 2139, 2140, 2141, 2142, 2143, 2144, 2145, 2146, 2147, 2148,
@@ -21,7 +17,7 @@ namespace Maple2.Trigger._02000245_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {203})) {
+                if (context.UserDetected(arg1: new[] {203})) {
                     context.State = new State벽삭제(context);
                     return;
                 }
@@ -35,7 +31,7 @@ namespace Maple2.Trigger._02000245_bf {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116,
                         2117, 2118, 2119, 2120, 2121, 2122, 2123, 2124, 2125, 2126, 2127, 2128, 2129, 2130, 2131, 2132,
                         2133, 2134, 2135, 2136, 2137, 2138, 2139, 2140, 2141, 2142, 2143, 2144, 2145, 2146, 2147, 2148,
@@ -45,13 +41,13 @@ namespace Maple2.Trigger._02000245_bf {
                         2197, 2198, 2199
                     }, arg2: false);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20002451, textID: 20002451);
+                context.ShowGuideSummary(entityId: 20002451, textId: 20002451);
                 context.SetTimer(arg1: "3", arg2: 3, arg3: false);
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.HideGuideSummary(entityID: 20002451);
+                    context.HideGuideSummary(entityId: 20002451);
                     context.State = new State안내02(context);
                     return;
                 }
@@ -65,13 +61,13 @@ namespace Maple2.Trigger._02000245_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20002452, textID: 20002452);
+                context.ShowGuideSummary(entityId: 20002452, textId: 20002452);
                 context.SetTimer(arg1: "3", arg2: 3, arg3: false);
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.HideGuideSummary(entityID: 20002452);
+                    context.HideGuideSummary(entityId: 20002452);
                     context.State = new State벽재생(context);
                     return;
                 }

@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._02020101_bf {
     public static class _gimmick2 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Plant", value: 1)) {
+                if (context.GetUserValue(key: "Plant") == 1) {
                     context.State = new State몬스터소환(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {101})) {
+                if (context.MonsterDead(arg1: new[] {101})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -28,11 +24,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal State몬스터소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {301, 302, 303, 304}, arg2: false);
+                context.CreateMonster(arg1: new[] {301, 302, 303, 304}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101})) {
+                if (context.MonsterDead(arg1: new[] {101})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -50,11 +46,11 @@ namespace Maple2.Trigger._02020101_bf {
             internal State힌트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020101_BF__GIMMICK2__0$", arg3: new int[] {3000});
+                context.SetEventUI(arg1: 1, arg2: "$02020101_BF__GIMMICK2__0$", arg3: 3000);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101})) {
+                if (context.MonsterDead(arg1: new[] {101})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -74,7 +70,7 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101})) {
+                if (context.MonsterDead(arg1: new[] {101})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -84,9 +80,9 @@ namespace Maple2.Trigger._02020101_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {301, 302, 303, 304})) {
-                    context.SetUserValue(triggerID: 900009, key: "Seed", value: 1);
-                    context.SetUserValue(triggerID: 900004, key: "Plant", value: 0);
+                if (context.MonsterDead(arg1: new[] {301, 302, 303, 304})) {
+                    context.SetUserValue(triggerId: 900009, key: "Seed", value: 1);
+                    context.SetUserValue(triggerId: 900004, key: "Plant", value: 0);
                     context.State = new State대기(context);
                     return;
                 }
@@ -99,9 +95,9 @@ namespace Maple2.Trigger._02020101_bf {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {301, 302, 303, 304}, arg2: false);
-                context.SetUserValue(triggerID: 900004, key: "Plant", value: 0);
-                context.SetUserValue(triggerID: 900009, key: "Seed", value: 0);
+                context.DestroyMonster(arg1: new[] {301, 302, 303, 304}, arg2: false);
+                context.SetUserValue(triggerId: 900004, key: "Plant", value: 0);
+                context.SetUserValue(triggerId: 900009, key: "Seed", value: 0);
             }
 
             public override void Execute() {

@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02020061_bf {
     public static class _boss_monsterspawn {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new int[] {482}, isStart: "false");
+                context.StartCombineSpawn(groupId: new[] {482}, isStart: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "MonsterSpawn", value: 1)) {
+                if (context.GetUserValue(key: "MonsterSpawn") == 1) {
                     context.State = new State스폰(context);
                     return;
                 }
@@ -25,11 +21,11 @@ namespace Maple2.Trigger._02020061_bf {
             internal State스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new int[] {482}, isStart: "true");
+                context.StartCombineSpawn(groupId: new[] {482}, isStart: true);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "MonsterSpawn", value: 0)) {
+                if (context.GetUserValue(key: "MonsterSpawn") == 0) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -42,7 +38,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new int[] {482}, isStart: "false");
+                context.StartCombineSpawn(groupId: new[] {482}, isStart: false);
             }
 
             public override void Execute() { }

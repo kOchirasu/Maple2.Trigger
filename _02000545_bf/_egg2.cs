@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000545_bf {
     public static class _egg2 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {702}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {702}, arg2: 0)) {
                     context.State = new State아르키아체력(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._02000545_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckNpcHp(compare: "lowerEqual", value: 30, spawnPointId: 102, isRelative: "true")) {
+                if (context.GetNpcHpRate(spawnPointId: 102) <= 0.30f) {
                     context.State = new State알메쉬생성(context);
                     return;
                 }
@@ -38,24 +34,24 @@ namespace Maple2.Trigger._02000545_bf {
             internal State알메쉬생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 23300010, illust: "ArakiaDark_normal", duration: 4000,
+                context.SideNpcTalk(npcId: 23300010, illust: "ArakiaDark_normal", duration: 4000,
                     script: "$02000545_BF__EGG2__0$");
-                context.SetMesh(arg1: new int[] {2150, 2151}, arg2: true);
-                context.CreateMonster(arg1: new int[] {505, 507}, arg2: true);
+                context.SetMesh(arg1: new[] {2150, 2151}, arg2: true);
+                context.CreateMonster(arg1: new[] {505, 507}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {505})) {
+                if (context.MonsterDead(arg1: new[] {505})) {
                     context.State = new State알파괴1(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {507})) {
+                if (context.MonsterDead(arg1: new[] {507})) {
                     context.State = new State알파괴2(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {505, 507})) {
+                if (context.MonsterDead(arg1: new[] {505, 507})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -68,17 +64,17 @@ namespace Maple2.Trigger._02000545_bf {
             internal State알파괴1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {2150}, arg2: false);
+                context.SetMesh(arg1: new[] {2150}, arg2: false);
                 context.SetAiExtraData(key: "phase", value: 1);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {507})) {
+                if (context.MonsterDead(arg1: new[] {507})) {
                     context.State = new State알파괴2(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {505, 507})) {
+                if (context.MonsterDead(arg1: new[] {505, 507})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -91,17 +87,17 @@ namespace Maple2.Trigger._02000545_bf {
             internal State알파괴2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {2151}, arg2: false);
+                context.SetMesh(arg1: new[] {2151}, arg2: false);
                 context.SetAiExtraData(key: "phase", value: 1);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {505})) {
+                if (context.MonsterDead(arg1: new[] {505})) {
                     context.State = new State알파괴1(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {505, 507})) {
+                if (context.MonsterDead(arg1: new[] {505, 507})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -114,7 +110,7 @@ namespace Maple2.Trigger._02000545_bf {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {2150, 2151}, arg2: false);
+                context.SetMesh(arg1: new[] {2150, 2151}, arg2: false);
             }
 
             public override void Execute() { }

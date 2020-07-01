@@ -1,30 +1,26 @@
-using System;
-
 namespace Maple2.Trigger._99999841 {
     public static class _debuffmob {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetDungeonVariable(varID: 811, value: false);
-                context.SetDungeonVariable(varID: 812, value: false);
-                context.SetDungeonVariable(varID: 813, value: false);
+                context.SetDungeonVariable(varId: 811, value: false);
+                context.SetDungeonVariable(varId: 812, value: false);
+                context.SetDungeonVariable(varId: 813, value: false);
             }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 2, value: true)) {
+                if (context.GetDungeonVariable(id: 2) == true) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.DungeonVariable(varID: 3, value: true)) {
+                if (context.GetDungeonVariable(id: 3) == true) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Start", value: 1)) {
+                if (context.GetUserValue(key: "Start") == 1) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -41,12 +37,12 @@ namespace Maple2.Trigger._99999841 {
             }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 2, value: true)) {
+                if (context.GetDungeonVariable(id: 2) == true) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.DungeonVariable(varID: 3, value: true)) {
+                if (context.GetDungeonVariable(id: 3) == true) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -65,16 +61,16 @@ namespace Maple2.Trigger._99999841 {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: @"디버프 몬스터가 생성되었습니다.\n몬스터를 처치하면 상대팀에 디버프를 겁니다.",
-                    arg3: new int[] {5000});
+                    arg3: 5000);
             }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 2, value: true)) {
+                if (context.GetDungeonVariable(id: 2) == true) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.DungeonVariable(varID: 3, value: true)) {
+                if (context.GetDungeonVariable(id: 3) == true) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -102,23 +98,23 @@ namespace Maple2.Trigger._99999841 {
             internal StateA지역(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {801}, arg2: false);
+                context.CreateMonster(arg1: new[] {801}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 2, value: true)) {
+                if (context.GetDungeonVariable(id: 2) == true) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.DungeonVariable(varID: 3, value: true)) {
+                if (context.GetDungeonVariable(id: 3) == true) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {801})) {
-                    context.SetEventUI(arg1: 1, arg2: "상대팀에 이동속도 감소 디버프를 겁니다.", arg3: new int[] {5000});
-                    context.SetDungeonVariable(varID: 811, value: true);
+                if (context.MonsterDead(arg1: new[] {801})) {
+                    context.SetEventUI(arg1: 1, arg2: "상대팀에 이동속도 감소 디버프를 겁니다.", arg3: 5000);
+                    context.SetDungeonVariable(varId: 811, value: true);
                     context.State = new State딜레이(context);
                     return;
                 }
@@ -131,23 +127,23 @@ namespace Maple2.Trigger._99999841 {
             internal StateB지역(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {802}, arg2: false);
+                context.CreateMonster(arg1: new[] {802}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 2, value: true)) {
+                if (context.GetDungeonVariable(id: 2) == true) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.DungeonVariable(varID: 3, value: true)) {
+                if (context.GetDungeonVariable(id: 3) == true) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {802})) {
-                    context.SetEventUI(arg1: 1, arg2: "상대팀에 공격력 감소 디버프를 겁니다.", arg3: new int[] {5000});
-                    context.SetDungeonVariable(varID: 812, value: true);
+                if (context.MonsterDead(arg1: new[] {802})) {
+                    context.SetEventUI(arg1: 1, arg2: "상대팀에 공격력 감소 디버프를 겁니다.", arg3: 5000);
+                    context.SetDungeonVariable(varId: 812, value: true);
                     context.State = new State딜레이(context);
                     return;
                 }
@@ -160,23 +156,23 @@ namespace Maple2.Trigger._99999841 {
             internal StateC지역(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {803}, arg2: false);
+                context.CreateMonster(arg1: new[] {803}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 2, value: true)) {
+                if (context.GetDungeonVariable(id: 2) == true) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.DungeonVariable(varID: 3, value: true)) {
+                if (context.GetDungeonVariable(id: 3) == true) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {803})) {
-                    context.SetEventUI(arg1: 1, arg2: "상대팀에 체력 감소 디버프를 겁니다.", arg3: new int[] {5000});
-                    context.SetDungeonVariable(varID: 813, value: true);
+                if (context.MonsterDead(arg1: new[] {803})) {
+                    context.SetEventUI(arg1: 1, arg2: "상대팀에 체력 감소 디버프를 겁니다.", arg3: 5000);
+                    context.SetDungeonVariable(varId: 813, value: true);
                     context.State = new State딜레이(context);
                     return;
                 }
@@ -193,20 +189,20 @@ namespace Maple2.Trigger._99999841 {
             }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 2, value: true)) {
+                if (context.GetDungeonVariable(id: 2) == true) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.DungeonVariable(varID: 3, value: true)) {
+                if (context.GetDungeonVariable(id: 3) == true) {
                     context.State = new State종료(context);
                     return;
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    context.SetDungeonVariable(varID: 811, value: false);
-                    context.SetDungeonVariable(varID: 812, value: false);
-                    context.SetDungeonVariable(varID: 813, value: false);
+                    context.SetDungeonVariable(varId: 811, value: false);
+                    context.SetDungeonVariable(varId: 812, value: false);
+                    context.SetDungeonVariable(varId: 813, value: false);
                     context.State = new State대기(context);
                     return;
                 }

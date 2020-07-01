@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02020011_bf {
     public static class _block {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3000, 3001}, arg2: true, arg5: 5f);
+                context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg5: 5f);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State딜레이(context);
                     return;
                 }
@@ -40,11 +36,11 @@ namespace Maple2.Trigger._02020011_bf {
             internal State사라짐(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3000, 3001}, arg2: false, arg5: 5f);
+                context.SetMesh(arg1: new[] {3000, 3001}, arg2: false, arg5: 5f);
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {101})) {
+                if (!context.UserDetected(arg1: new[] {101})) {
                     context.State = new State딜레이2(context);
                     return;
                 }

@@ -1,24 +1,20 @@
-using System;
-
 namespace Maple2.Trigger._02000492_bf {
     public static class _mob_04 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(arg1: new int[] {7401}, arg2: false);
+                context.SetMesh(arg1: new[] {3004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetSkill(arg1: new[] {7401}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {1001})) {
+                if (context.UserDetected(arg1: new[] {1001})) {
                     context.State = new State전투01(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {1002})) {
+                if (context.UserDetected(arg1: new[] {1002})) {
                     context.State = new State전투01(context);
                     return;
                 }
@@ -31,11 +27,11 @@ namespace Maple2.Trigger._02000492_bf {
             internal State전투01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {401, 411}, arg2: false);
+                context.CreateMonster(arg1: new[] {401, 411}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {401, 411})) {
+                if (context.MonsterDead(arg1: new[] {401, 411})) {
                     context.State = new State전투02(context);
                     return;
                 }
@@ -48,11 +44,11 @@ namespace Maple2.Trigger._02000492_bf {
             internal State전투02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {402}, arg2: false);
+                context.CreateMonster(arg1: new[] {402}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {402})) {
+                if (context.MonsterDead(arg1: new[] {402})) {
                     context.State = new State종료(context);
                     return;
                 }

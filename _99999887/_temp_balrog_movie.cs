@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._99999887 {
     public static class _temp_balrog_movie {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,14 +8,14 @@ namespace Maple2.Trigger._99999887 {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {100})) {
+                if (context.UserDetected(arg1: new[] {100})) {
                     context.State = new State연출시작(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.CameraSelectPath(arg1: new int[] {101, 102}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {101, 102}, arg2: false);
             }
         }
 

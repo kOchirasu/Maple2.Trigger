@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._51000006_dg {
     public static class _fail {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stategameset(context);
-
-        private class Stategameset : TriggerState {
+        public class Stategameset : TriggerState {
             internal Stategameset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._51000006_dg {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Fail", value: 1)) {
+                if (context.GetUserValue(key: "Fail") == 1) {
                     context.State = new StateFail_condition(context);
                     return;
                 }
@@ -27,7 +23,7 @@ namespace Maple2.Trigger._51000006_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateFail(context);
                     return;
                 }
@@ -44,7 +40,7 @@ namespace Maple2.Trigger._51000006_dg {
                 context.WriteLog(arg1: "ThreeTwoOne_log", arg2: 9001, arg3: "char_event",
                     arg5: "BlackbeanThreeTwoOnegameover");
                 context.SetTimer(arg1: "10", arg2: 10, arg4: true);
-                context.CameraSelectPath(arg1: new int[] {8011, 8010}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8011, 8010}, arg2: false);
                 context.ArcadeThreeTwoOne(type: "EndGame");
             }
 

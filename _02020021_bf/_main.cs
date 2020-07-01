@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02020021_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State입장(context);
-
-        private class State입장 : TriggerState {
+        public class State입장 : TriggerState {
             internal State입장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -16,16 +12,16 @@ namespace Maple2.Trigger._02020021_bf {
                 context.SetAgent(arg1: "9006", arg2: true);
                 context.SetAgent(arg1: "9007", arg2: true);
                 context.SetAgent(arg1: "9008", arg2: true);
-                context.SetUserValue(triggerID: 99990002, key: "battlesetting", value: 0);
-                context.SetUserValue(triggerID: 99990003, key: "Timer", value: 0);
-                context.SetUserValue(triggerID: 99990004, key: "SpecialTimer", value: 0);
-                context.SetUserValue(triggerID: 99990002, key: "SpecialTimer", value: 0);
+                context.SetUserValue(triggerId: 99990002, key: "battlesetting", value: 0);
+                context.SetUserValue(triggerId: 99990003, key: "Timer", value: 0);
+                context.SetUserValue(triggerId: 99990004, key: "SpecialTimer", value: 0);
+                context.SetUserValue(triggerId: 99990002, key: "SpecialTimer", value: 0);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {901})) {
+                if (context.UserDetected(arg1: new[] {901})) {
                     context.State = new State카메라_시작(context);
                     return;
                 }
@@ -39,7 +35,7 @@ namespace Maple2.Trigger._02020021_bf {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "카메라_종료", arg2: "exit");
-                context.CreateMonster(arg1: new int[] {202}, arg2: false);
+                context.CreateMonster(arg1: new[] {202}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
             }
@@ -58,7 +54,7 @@ namespace Maple2.Trigger._02020021_bf {
             internal State카메라_캡션(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {501, 502}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {501, 502}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$02020021_BF__main__3$",
                     desc: "$02020021_BF__main__4$", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f,
                     duration: 4000, scale: 2f);
@@ -78,8 +74,8 @@ namespace Maple2.Trigger._02020021_bf {
             internal State카메라_샤텐대사1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {503, 504}, arg2: false);
-                context.AddCinematicTalk(npcID: 23200085, illustID: "Schatten_normal", msg: "$02020021_BF__main__0$",
+                context.CameraSelectPath(arg1: new[] {503, 504}, arg2: false);
+                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", msg: "$02020021_BF__main__0$",
                     duration: 4000, align: "left");
             }
 
@@ -97,7 +93,7 @@ namespace Maple2.Trigger._02020021_bf {
             internal State카메라_샤텐대사2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 23200085, illustID: "Schatten_normal", msg: "$02020021_BF__main__1$",
+                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", msg: "$02020021_BF__main__1$",
                     duration: 4000, align: "left");
             }
 
@@ -115,8 +111,8 @@ namespace Maple2.Trigger._02020021_bf {
             internal State카메라_샤텐대사3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {505, 506}, arg2: false);
-                context.AddCinematicTalk(npcID: 23200085, illustID: "Schatten_normal", msg: "$02020021_BF__main__2$",
+                context.CameraSelectPath(arg1: new[] {505, 506}, arg2: false);
+                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", msg: "$02020021_BF__main__2$",
                     duration: 4000, align: "left");
             }
 
@@ -134,8 +130,8 @@ namespace Maple2.Trigger._02020021_bf {
             internal State카메라_샤텐대사4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {507, 508}, arg2: false);
-                context.AddCinematicTalk(npcID: 23200085, illustID: "Schatten_normal", msg: "$02020021_BF__main__5$",
+                context.CameraSelectPath(arg1: new[] {507, 508}, arg2: false);
+                context.AddCinematicTalk(npcId: 23200085, illustId: "Schatten_normal", msg: "$02020021_BF__main__5$",
                     duration: 4000, align: "left");
                 context.SetSceneSkip();
             }
@@ -154,15 +150,15 @@ namespace Maple2.Trigger._02020021_bf {
             internal State카메라_종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {202});
-                context.CreateMonster(arg1: new int[] {201}, arg2: false);
+                context.DestroyMonster(arg1: new[] {202});
+                context.CreateMonster(arg1: new[] {201}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.1f);
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 901, arg2: new int[] {201}) && context.WaitTick(waitTick: 2000)) {
+                if (context.NpcDetected(arg1: 901, arg2: new[] {201}) && context.WaitTick(waitTick: 2000)) {
                     context.State = new State전투시작(context);
                     return;
                 }
@@ -184,13 +180,13 @@ namespace Maple2.Trigger._02020021_bf {
                 context.SetAgent(arg1: "9007", arg2: false);
                 context.SetAgent(arg1: "9008", arg2: false);
                 context.SetAiExtraData(key: "Start", value: 1);
-                context.SideNpcTalk(npcID: 23200085, illust: "Schatten_smile", duration: 5000,
+                context.SideNpcTalk(npcId: 23200085, illust: "Schatten_smile", duration: 5000,
                     script: "$02020021_BF__main__6$", voice: @"ko/Npc/00002248");
-                context.SetUserValue(triggerID: 99990002, key: "battlesetting", value: 1);
+                context.SetUserValue(triggerId: 99990002, key: "battlesetting", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "End", value: 1)) {
+                if (context.GetUserValue(key: "End") == 1) {
                     context.State = new State랭크체크대사(context);
                     return;
                 }
@@ -205,15 +201,15 @@ namespace Maple2.Trigger._02020021_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.DungeonFirstUserMissionScore(score: 1500, @operator: "GreaterEqual")) {
-                    context.SideNpcTalk(npcID: 23200085, illust: "Schatten_smile", duration: 5000,
+                if (context.GetDungeonFirstUserMissionScore() >= 1500) {
+                    context.SideNpcTalk(npcId: 23200085, illust: "Schatten_smile", duration: 5000,
                         script: "$02020021_BF__main__7$", voice: @"ko/Npc/00002082");
                     context.State = new State던전종료_A랭크이상(context);
                     return;
                 }
 
-                if (context.DungeonFirstUserMissionScore(score: 1500, @operator: "Less")) {
-                    context.SideNpcTalk(npcID: 23200085, illust: "Schatten_serious", duration: 5000,
+                if (context.GetDungeonFirstUserMissionScore() < 1500) {
+                    context.SideNpcTalk(npcId: 23200085, illust: "Schatten_serious", duration: 5000,
                         script: "$02020021_BF__main__8$", voice: @"ko/Npc/00002081");
                     context.State = new State던전종료_A랭크미만(context);
                     return;

@@ -1,29 +1,25 @@
-using System;
-
 namespace Maple2.Trigger._02000396_bf {
     public static class _01_enterthehall {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5004}, arg2: false);
+                context.SetEffect(arg1: new[] {5004}, arg2: false);
                 context.SetActor(arg1: 4004, arg2: true, arg3: "Closed");
                 context.SetLadder(arg1: 511, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 512, arg2: false, arg3: false, arg4: 0);
-                context.SetMesh(arg1: new int[] {3000, 3001, 3002, 3003, 3004, 3005, 3006}, arg2: true, arg3: 0,
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3007}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.DestroyMonster(arg1: new int[] {101, 102});
-                context.DestroyMonster(arg1: new int[] {901, 902, 903});
+                context.SetMesh(arg1: new[] {3007}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.DestroyMonster(arg1: new[] {101, 102});
+                context.DestroyMonster(arg1: new[] {901, 902, 903});
                 context.SetAgent(arg1: "8006,8007,8008,8009", arg2: true);
                 context.SetUserValue(key: "MobClear", value: 0);
                 context.SetUserValue(key: "FindWay", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new StateLoadingDelay(context);
                     return;
                 }
@@ -53,7 +49,7 @@ namespace Maple2.Trigger._02000396_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
             public override void Execute() {
@@ -93,7 +89,7 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateBlackeyeApp02Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBalloonTalk(spawnPointID: 101);
+                context.RemoveBalloonTalk(spawnPointId: 101);
                 context.SetSkip();
             }
 
@@ -130,7 +126,7 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateBlackeyeApp03Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBalloonTalk(spawnPointID: 101);
+                context.RemoveBalloonTalk(spawnPointId: 101);
                 context.SetSkip();
             }
 
@@ -151,7 +147,7 @@ namespace Maple2.Trigger._02000396_bf {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 601, arg2: true);
-                context.SetUserValue(triggerID: 2, key: "MobSpawn", value: 1);
+                context.SetUserValue(triggerId: 2, key: "MobSpawn", value: 1);
             }
 
             public override void Execute() {
@@ -170,7 +166,7 @@ namespace Maple2.Trigger._02000396_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CreateMonster(arg1: new int[] {901, 902, 903}, arg2: false);
+                context.CreateMonster(arg1: new[] {901, 902, 903}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 901, arg3: "$02000396_BF__01_ENTERTHEHALL__2$", arg4: 2,
                     arg5: 1);
                 context.SetConversation(arg1: 1, arg2: 902, arg3: "$02000396_BF__01_ENTERTHEHALL__3$", arg4: 2,
@@ -194,9 +190,9 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateEnemyApp03Skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBalloonTalk(spawnPointID: 901);
-                context.RemoveBalloonTalk(spawnPointID: 902);
-                context.RemoveBalloonTalk(spawnPointID: 903);
+                context.RemoveBalloonTalk(spawnPointId: 901);
+                context.RemoveBalloonTalk(spawnPointId: 902);
+                context.RemoveBalloonTalk(spawnPointId: 903);
                 context.SetSkip();
             }
 
@@ -275,16 +271,16 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateBlackeyeAction02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101});
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101});
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000396_BF__01_ENTERTHEHALL__6$", arg4: 3,
                     arg5: 1);
                 context.SetLadder(arg1: 511, arg2: true, arg3: true, arg4: 1);
                 context.SetLadder(arg1: 512, arg2: true, arg3: true, arg4: 1);
-                context.SetUserValue(triggerID: 2, key: "MobAttack", value: 1);
-                context.SetUserValue(triggerID: 10, key: "TrapOn", value: 1);
-                context.SetUserValue(triggerID: 11, key: "TrapOn", value: 1);
-                context.SetUserValue(triggerID: 12, key: "TrapOn", value: 1);
+                context.SetUserValue(triggerId: 2, key: "MobAttack", value: 1);
+                context.SetUserValue(triggerId: 10, key: "TrapOn", value: 1);
+                context.SetUserValue(triggerId: 11, key: "TrapOn", value: 1);
+                context.SetUserValue(triggerId: 12, key: "TrapOn", value: 1);
             }
 
             public override void Execute() {
@@ -302,11 +298,11 @@ namespace Maple2.Trigger._02000396_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039601, textID: 20039601, duration: 3000);
+                context.ShowGuideSummary(entityId: 20039601, textId: 20039601, duration: 3000);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "MobClear", value: 1)) {
+                if (context.GetUserValue(key: "MobClear") == 1) {
                     context.State = new StateMoveToUpstairs01(context);
                     return;
                 }
@@ -321,10 +317,10 @@ namespace Maple2.Trigger._02000396_bf {
             public override void OnEnter() {
                 context.SetAgent(arg1: "8006,8007,8008,8009", arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_102");
-                context.SetEffect(arg1: new int[] {5004}, arg2: true);
+                context.SetEffect(arg1: new[] {5004}, arg2: true);
                 context.SetActor(arg1: 4004, arg2: true, arg3: "Opened");
-                context.SetMesh(arg1: new int[] {3007}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetUserValue(triggerID: 3, key: "EnableLadder", value: 1);
+                context.SetMesh(arg1: new[] {3007}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetUserValue(triggerId: 3, key: "EnableLadder", value: 1);
             }
 
             public override void Execute() {
@@ -366,11 +362,11 @@ namespace Maple2.Trigger._02000396_bf {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039602, textID: 20039602, duration: 3000);
+                context.ShowGuideSummary(entityId: 20039602, textId: 20039602, duration: 3000);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9002})) {
+                if (context.UserDetected(arg1: new[] {9002})) {
                     context.State = new StateFindWayOut01(context);
                     return;
                 }
@@ -401,13 +397,13 @@ namespace Maple2.Trigger._02000396_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: "$02000396_BF__01_ENTERTHEHALL__8$", arg3: new int[] {4000},
+                context.SetEventUI(arg1: 1, arg2: "$02000396_BF__01_ENTERTHEHALL__8$", arg3: 4000,
                     arg4: "0");
-                context.SetUserValue(triggerID: 4, key: "SearchStart", value: 1);
+                context.SetUserValue(triggerId: 4, key: "SearchStart", value: 1);
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9100, arg2: new int[] {102})) {
+                if (context.NpcDetected(arg1: 9100, arg2: new[] {102})) {
                     context.State = new StateNpcMonologueRandom(context);
                     return;
                 }
@@ -460,7 +456,7 @@ namespace Maple2.Trigger._02000396_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "FindWay", value: 1)) {
+                if (context.GetUserValue(key: "FindWay") == 1) {
                     context.State = new StateNpcLeave01(context);
                     return;
                 }
@@ -483,7 +479,7 @@ namespace Maple2.Trigger._02000396_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "FindWay", value: 1)) {
+                if (context.GetUserValue(key: "FindWay") == 1) {
                     context.State = new StateNpcLeave01(context);
                     return;
                 }
@@ -506,7 +502,7 @@ namespace Maple2.Trigger._02000396_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "FindWay", value: 1)) {
+                if (context.GetUserValue(key: "FindWay") == 1) {
                     context.State = new StateNpcLeave01(context);
                     return;
                 }
@@ -529,7 +525,7 @@ namespace Maple2.Trigger._02000396_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "FindWay", value: 1)) {
+                if (context.GetUserValue(key: "FindWay") == 1) {
                     context.State = new StateNpcLeave01(context);
                     return;
                 }
@@ -542,8 +538,8 @@ namespace Maple2.Trigger._02000396_bf {
             internal StateNpcLeave01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBalloonTalk(spawnPointID: 102);
-                context.DestroyMonster(arg1: new int[] {102});
+                context.RemoveBalloonTalk(spawnPointId: 102);
+                context.DestroyMonster(arg1: new[] {102});
             }
 
             public override void Execute() { }

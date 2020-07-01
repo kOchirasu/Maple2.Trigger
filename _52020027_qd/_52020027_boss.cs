@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52020027_qd {
     public static class _52020027_boss {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State감지(context);
-
-        private class State감지 : TriggerState {
+        public class State감지 : TriggerState {
             internal State감지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Boss", value: 1)) {
+                if (context.GetUserValue(key: "Boss") == 1) {
                     context.State = new State1페이즈(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._52020027_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "SerihaAI", value: 1)) {
+                if (context.GetUserValue(key: "SerihaAI") == 1) {
                     context.State = new State도약(context);
                     return;
                 }
@@ -40,7 +36,7 @@ namespace Maple2.Trigger._52020027_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 903, arg2: new int[] {111})) {
+                if (context.NpcDetected(arg1: 903, arg2: new[] {111})) {
                     context.State = new State2페이즈(context);
                     return;
                 }
@@ -54,10 +50,10 @@ namespace Maple2.Trigger._52020027_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 111, arg3: "조심하는 게 좋을걸?", arg4: 4);
-                context.CreateMonster(arg1: new int[] {112}, arg2: true);
-                context.CreateMonster(arg1: new int[] {113}, arg2: true);
-                context.CreateMonster(arg1: new int[] {114}, arg2: true);
-                context.CreateMonster(arg1: new int[] {115}, arg2: true);
+                context.CreateMonster(arg1: new[] {112}, arg2: true);
+                context.CreateMonster(arg1: new[] {113}, arg2: true);
+                context.CreateMonster(arg1: new[] {114}, arg2: true);
+                context.CreateMonster(arg1: new[] {115}, arg2: true);
             }
 
             public override void Execute() {

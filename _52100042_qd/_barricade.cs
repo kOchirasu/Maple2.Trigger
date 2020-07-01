@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._52100042_qd {
     public static class _barricade {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateready(context);
-
-        private class Stateready : TriggerState {
+        public class Stateready : TriggerState {
             internal Stateready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1711, 1712, 1713, 1714, 1715, 1716,
                         1717, 1718, 1719, 1720, 1721, 1722, 1723, 1724, 1725, 1726, 1727, 1728, 1729, 1730, 1731, 1732,
                         1733, 1734, 1735, 1736, 1737, 1738, 1739, 1740, 1741, 1742, 1743, 1744, 1745, 1746, 1747, 1748,
@@ -21,7 +17,7 @@ namespace Maple2.Trigger._52100042_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {710})) {
+                if (context.UserDetected(arg1: new[] {710})) {
                     context.State = new Statechaos_raid(context);
                     return;
                 }
@@ -34,7 +30,7 @@ namespace Maple2.Trigger._52100042_qd {
             internal Statechaos_raid(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000384_BF__BARRICADE__0$", arg3: new int[] {3000});
+                context.SetEventUI(arg1: 1, arg2: "$02000384_BF__BARRICADE__0$", arg3: 3000);
             }
 
             public override void Execute() {
@@ -52,7 +48,7 @@ namespace Maple2.Trigger._52100042_qd {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1711, 1712, 1713, 1714, 1715, 1716,
                         1717, 1718, 1719, 1720, 1721, 1722, 1723, 1724, 1725, 1726, 1727, 1728, 1729, 1730, 1731, 1732,
                         1733, 1734, 1735, 1736, 1737, 1738, 1739, 1740, 1741, 1742, 1743, 1744, 1745, 1746, 1747, 1748,
@@ -64,7 +60,7 @@ namespace Maple2.Trigger._52100042_qd {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {402})) {
+                if (context.MonsterDead(arg1: new[] {402})) {
                     context.State = new Stateend(context);
                     return;
                 }

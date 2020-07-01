@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02000047_bf {
     public static class _03_rarebox_02 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {302}, arg2: false);
+                context.SetMesh(arg1: new[] {302}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {102})) {
+                if (context.UserDetected(arg1: new[] {102})) {
                     context.State = new State발판02(context);
                     return;
                 }
@@ -25,11 +21,11 @@ namespace Maple2.Trigger._02000047_bf {
             internal State발판02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {302}, arg2: true);
+                context.SetMesh(arg1: new[] {302}, arg2: true);
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {102})) {
+                if (!context.UserDetected(arg1: new[] {102})) {
                     context.State = new State발판02끝(context);
                     return;
                 }

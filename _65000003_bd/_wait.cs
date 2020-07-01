@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._65000003_bd {
     public static class _wait {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._65000003_bd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {104})) {
+                if (context.UserDetected(arg1: new[] {104})) {
                     context.State = new State어나운스01(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._65000003_bd {
             internal State어나운스01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26500301, textID: 26500301, duration: 4500);
+                context.ShowGuideSummary(entityId: 26500301, textId: 26500301, duration: 4500);
             }
 
             public override void Execute() {
@@ -34,7 +30,7 @@ namespace Maple2.Trigger._65000003_bd {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 104, arg2: 2)) {
+                if (context.GetUserCount(boxId: 104) == 2) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -46,7 +42,7 @@ namespace Maple2.Trigger._65000003_bd {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 26500301);
+                context.HideGuideSummary(entityId: 26500301);
             }
         }
 

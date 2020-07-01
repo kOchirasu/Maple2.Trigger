@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._52010064_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statestart(context);
-
-        private class Statestart : TriggerState {
+        public class Statestart : TriggerState {
             internal Statestart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: false);
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new State퀘스트조건체크(context);
                     return;
                 }
@@ -28,31 +24,31 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {91000073},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {91000073},
                     arg3: new byte[] {3})) {
                     context.State = new State돌아가(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {91000073},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {91000073},
                     arg3: new byte[] {2})) {
                     context.State = new StateCameraEffect01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {91000073},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {91000073},
                     arg3: new byte[] {1})) {
                     context.State = new StateCameraEffect01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {91000072},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {91000072},
                     arg3: new byte[] {3})) {
                     context.State = new State돌아가(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {91000073},
+                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {91000073},
                     arg3: new byte[] {1})) {
                     context.State = new State돌아가(context);
                     return;
@@ -90,7 +86,7 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {8000}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
             }
 
             public override void Execute() {
@@ -107,8 +103,8 @@ namespace Maple2.Trigger._52010064_qd {
             internal State트리스탄대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8010}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003842, illustID: "Tristan_normal", msg: "$52010064_QD__main__0$",
+                context.CameraSelectPath(arg1: new[] {8010}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", msg: "$52010064_QD__main__0$",
                     duration: 3000, align: "right");
             }
 
@@ -126,7 +122,7 @@ namespace Maple2.Trigger._52010064_qd {
             internal State트리스탄대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003842, illustID: "Tristan_normal", msg: "$52010064_QD__main__1$",
+                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", msg: "$52010064_QD__main__1$",
                     duration: 3000, align: "right");
             }
 
@@ -144,8 +140,8 @@ namespace Maple2.Trigger._52010064_qd {
             internal State트리스탄대사03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003842, illustID: "Tristan_normal", msg: "$52010064_QD__main__2$",
+                context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", msg: "$52010064_QD__main__2$",
                     duration: 3000, align: "right");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Tristan_walking");
             }
@@ -164,7 +160,7 @@ namespace Maple2.Trigger._52010064_qd {
             internal State트리스탄대사04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003842, illustID: "Tristan_normal", msg: "$52010064_QD__main__3$",
+                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", msg: "$52010064_QD__main__3$",
                     duration: 3000, align: "right");
             }
 
@@ -182,8 +178,8 @@ namespace Maple2.Trigger._52010064_qd {
             internal State트리스탄대사05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003842, illustID: "Tristan_normal", msg: "$52010064_QD__main__4$",
+                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", msg: "$52010064_QD__main__4$",
                     duration: 3000, align: "right");
             }
 
@@ -201,7 +197,7 @@ namespace Maple2.Trigger._52010064_qd {
             internal State트리스탄대사06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003842, illustID: "Tristan_normal", msg: "$52010064_QD__main__5$",
+                context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", msg: "$52010064_QD__main__5$",
                     duration: 3000, align: "right");
             }
 
@@ -219,7 +215,7 @@ namespace Maple2.Trigger._52010064_qd {
             internal State마무리줌아웃(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetSceneSkip();
             }

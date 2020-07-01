@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000066_bf {
     public static class _anos {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103})) {
+                if (context.UserDetected(arg1: new[] {103})) {
                     context.State = new StateNPC생성(context);
                     return;
                 }
@@ -23,7 +19,7 @@ namespace Maple2.Trigger._02000066_bf {
             internal StateNPC생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {98}, arg2: false);
+                context.CreateMonster(arg1: new[] {98}, arg2: false);
             }
 
             public override void Execute() {

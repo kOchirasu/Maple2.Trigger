@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._99999913 {
     public static class _03_storm {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._99999913 {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "StormStart", value: 1)) {
+                if (context.GetUserValue(key: "StormStart") == 1) {
                     context.State = new StateSetStorm(context);
                     return;
                 }

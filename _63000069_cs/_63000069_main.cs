@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._63000069_cs {
     public static class _63000069_main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statestandby(context);
-
-        private class Statestandby : TriggerState {
+        public class Statestandby : TriggerState {
             internal Statestandby(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CreateMonster(arg1: new int[] {101, 102, 103, 104, 105, 106, 107, 108, 109}, arg2: false);
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
-                context.SetMesh(arg1: new int[] {4001}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.SetMesh(arg1: new[] {4001}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_01_girl");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_02_man");
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_03_girlmaid");
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._63000069_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new Statequestcheck(context);
                     return;
                 }
@@ -38,24 +34,24 @@ namespace Maple2.Trigger._63000069_cs {
             internal Statequestcheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {150});
+                context.DestroyMonster(arg1: new[] {150});
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {30000356},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356},
                     arg3: new byte[] {3})) {
                     context.State = new Statefin(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {30000356},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356},
                     arg3: new byte[] {2})) {
                     context.State = new Statescene1_ready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {30000356},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356},
                     arg3: new byte[] {1})) {
                     context.State = new Statesearching_check(context);
                     return;
@@ -69,11 +65,11 @@ namespace Maple2.Trigger._63000069_cs {
             internal Statesearching_check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26300691, textID: 26300691);
+                context.ShowGuideSummary(entityId: 26300691, textId: 26300691);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {30000356},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356},
                     arg3: new byte[] {2})) {
                     context.State = new Statescene1_ready(context);
                     return;
@@ -88,7 +84,7 @@ namespace Maple2.Trigger._63000069_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.HideGuideSummary(entityID: 26300691, textID: 26300691);
+                context.HideGuideSummary(entityId: 26300691, textId: 26300691);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_03_girlmaid_out");
@@ -109,11 +105,11 @@ namespace Maple2.Trigger._63000069_cs {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 63000069, arg2: 11);
-                context.SetMesh(arg1: new int[] {4001}, arg2: true);
+                context.SetMesh(arg1: new[] {4001}, arg2: true);
             }
 
             public override void Execute() {
-                if (!context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {30000356},
+                if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {30000356},
                     arg3: new byte[] {2})) {
                     context.State = new Statequestcheck(context);
                     return;
@@ -134,7 +130,7 @@ namespace Maple2.Trigger._63000069_cs {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSceneSkip(arg1: "sceneskip", arg2: "exit");
-                context.CameraSelectPath(arg1: new int[] {8000, 8001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8000, 8001}, arg2: false);
             }
 
             public override void Execute() {
@@ -151,8 +147,8 @@ namespace Maple2.Trigger._63000069_cs {
             internal Statescene1_girlmonologue0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {150}, arg2: false);
-                context.SetEffect(arg1: new int[] {601}, arg2: true);
+                context.CreateMonster(arg1: new[] {150}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: true);
             }
 
             public override void Execute() {
@@ -170,8 +166,8 @@ namespace Maple2.Trigger._63000069_cs {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 150, arg2: "MS2PatrolData_50_marienne");
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
-                context.AddCinematicTalk(npcID: 11004308, msg: "$63000069_CS__63000069_MAIN__0$", duration: 3000);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004308, msg: "$63000069_CS__63000069_MAIN__0$", duration: 3000);
             }
 
             public override void Execute() {
@@ -188,9 +184,9 @@ namespace Maple2.Trigger._63000069_cs {
             internal Statescene1_girlmonologue2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004308, msg: "$63000069_CS__63000069_MAIN__1$", duration: 4500);
+                context.AddCinematicTalk(npcId: 11004308, msg: "$63000069_CS__63000069_MAIN__1$", duration: 4500);
                 context.SetNpcEmotionLoop(arg1: 150, arg2: "Talk_A", arg3: 4500f);
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
             }
 
             public override void Execute() {
@@ -207,7 +203,7 @@ namespace Maple2.Trigger._63000069_cs {
             internal Statescene1_girlmonologue3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004308, msg: "$63000069_CS__63000069_MAIN__2$", duration: 5500);
+                context.AddCinematicTalk(npcId: 11004308, msg: "$63000069_CS__63000069_MAIN__2$", duration: 5500);
                 context.SetNpcEmotionLoop(arg1: 150, arg2: "Bore_B", arg3: 5500f);
             }
 
@@ -225,8 +221,8 @@ namespace Maple2.Trigger._63000069_cs {
             internal Statescene1_girlrealize0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
-                context.AddCinematicTalk(npcID: 11004308, msg: "$63000069_CS__63000069_MAIN__3$", duration: 3000);
+                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004308, msg: "$63000069_CS__63000069_MAIN__3$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 150, arg2: "Damg_A", arg3: 100f);
             }
 
@@ -244,8 +240,8 @@ namespace Maple2.Trigger._63000069_cs {
             internal Statescene1_girlrealize1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
-                context.AddCinematicTalk(npcID: 11004308, msg: "$63000069_CS__63000069_MAIN__4$", duration: 4000);
+                context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004308, msg: "$63000069_CS__63000069_MAIN__4$", duration: 4000);
                 context.MoveUser(arg1: 63000069, arg2: 10);
                 context.MoveNpc(arg1: 150, arg2: "MS2PatrolData_51_marienne1");
             }
@@ -264,7 +260,7 @@ namespace Maple2.Trigger._63000069_cs {
             internal Statescene1_girlrealize2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004308, msg: "$63000069_CS__63000069_MAIN__5$", duration: 5000);
+                context.AddCinematicTalk(npcId: 11004308, msg: "$63000069_CS__63000069_MAIN__5$", duration: 5000);
                 context.SetNpcEmotionLoop(arg1: 150, arg2: "Talk_A", arg3: 4500f);
             }
 
@@ -282,9 +278,9 @@ namespace Maple2.Trigger._63000069_cs {
             internal Statescene1_girlmonologue5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004}, arg2: false);
-                context.AddCinematicTalk(npcID: 11004308, msg: "$63000069_CS__63000069_MAIN__6$", duration: 3500);
-                context.SetEffect(arg1: new int[] {602}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {8004}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004308, msg: "$63000069_CS__63000069_MAIN__6$", duration: 3500);
+                context.SetEffect(arg1: new[] {602}, arg2: true);
             }
 
             public override void Execute() {
@@ -302,7 +298,7 @@ namespace Maple2.Trigger._63000069_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetMesh(arg1: new int[] {4001}, arg2: false);
+                context.SetMesh(arg1: new[] {4001}, arg2: false);
                 context.SetSceneSkip();
             }
 
@@ -320,8 +316,8 @@ namespace Maple2.Trigger._63000069_cs {
             internal Statesceneskip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {150});
-                context.SetMesh(arg1: new int[] {4001}, arg2: false);
+                context.DestroyMonster(arg1: new[] {150});
+                context.SetMesh(arg1: new[] {4001}, arg2: false);
                 context.MoveUser(arg1: 63000069, arg2: 10);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 4);
@@ -342,8 +338,8 @@ namespace Maple2.Trigger._63000069_cs {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1.0f);
-                context.DestroyMonster(arg1: new int[] {150});
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
+                context.DestroyMonster(arg1: new[] {150});
+                context.SetEffect(arg1: new[] {602}, arg2: false);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_03_girlmaid");
             }
 

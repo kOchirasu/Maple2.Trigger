@@ -1,14 +1,10 @@
-using System;
-
 namespace Maple2.Trigger._80000003_bonus {
     public static class _t1_congratulation {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {200}, arg2: false);
+                context.SetEffect(arg1: new[] {200}, arg2: false);
             }
 
             public override void Execute() {
@@ -40,7 +36,7 @@ namespace Maple2.Trigger._80000003_bonus {
             internal State축하1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {200}, arg2: true);
+                context.SetEffect(arg1: new[] {200}, arg2: true);
             }
 
             public override void Execute() {

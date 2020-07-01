@@ -1,23 +1,19 @@
-using System;
-
 namespace Maple2.Trigger._02000298_bf {
     public static class _mob_06 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103})) {
-                    context.CreateMonster(arg1: new int[] {1006}, arg2: false);
+                if (context.UserDetected(arg1: new[] {103})) {
+                    context.CreateMonster(arg1: new[] {1006}, arg2: false);
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {104})) {
-                    context.CreateMonster(arg1: new int[] {1006}, arg2: false);
+                if (context.UserDetected(arg1: new[] {104})) {
+                    context.CreateMonster(arg1: new[] {1006}, arg2: false);
                     context.State = new State종료(context);
                     return;
                 }

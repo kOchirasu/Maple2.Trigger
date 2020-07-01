@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._52010013_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101, 102, 103});
+                context.CreateMonster(arg1: new[] {101, 102, 103});
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {10002797},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {10002797},
                     arg3: new byte[] {1})) {
                     context.State = new StateEvent_01(context);
                     return;
@@ -29,7 +25,7 @@ namespace Maple2.Trigger._52010013_qd {
                 context.CameraSelect(arg1: 8001, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CreateMonster(arg1: new int[] {104});
+                context.CreateMonster(arg1: new[] {104});
                 context.SetTimer(arg1: "3", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11001217, arg3: "$52010013_QD__MAIN__0$", arg4: 3);
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_1001");
@@ -37,7 +33,7 @@ namespace Maple2.Trigger._52010013_qd {
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new StateEvent_02_IDLE(context);
+                    context.State = new StateEvent_02_IdLE(context);
                     return;
                 }
             }
@@ -47,8 +43,8 @@ namespace Maple2.Trigger._52010013_qd {
             }
         }
 
-        private class StateEvent_02_IDLE : TriggerState {
-            internal StateEvent_02_IDLE(ITriggerContext context) : base(context) { }
+        private class StateEvent_02_IdLE : TriggerState {
+            internal StateEvent_02_IdLE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -68,13 +64,13 @@ namespace Maple2.Trigger._52010013_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 8002, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010013_QD__MAIN__1$", arg4: 5);
-                context.SetSkip(arg1: "Event_03_IDLE");
+                context.SetSkip(arg1: "Event_03_IdLE");
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new StateEvent_03_IDLE(context);
+                    context.State = new StateEvent_03_IdLE(context);
                     return;
                 }
             }
@@ -84,8 +80,8 @@ namespace Maple2.Trigger._52010013_qd {
             }
         }
 
-        private class StateEvent_03_IDLE : TriggerState {
-            internal StateEvent_03_IDLE(ITriggerContext context) : base(context) { }
+        private class StateEvent_03_IdLE : TriggerState {
+            internal StateEvent_03_IdLE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -104,13 +100,13 @@ namespace Maple2.Trigger._52010013_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010013_QD__MAIN__2$", arg4: 4);
-                context.SetSkip(arg1: "Event_04_IDLE");
+                context.SetSkip(arg1: "Event_04_IdLE");
                 context.SetTimer(arg1: "4", arg2: 4);
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new StateEvent_04_IDLE(context);
+                    context.State = new StateEvent_04_IdLE(context);
                     return;
                 }
             }
@@ -120,8 +116,8 @@ namespace Maple2.Trigger._52010013_qd {
             }
         }
 
-        private class StateEvent_04_IDLE : TriggerState {
-            internal StateEvent_04_IDLE(ITriggerContext context) : base(context) { }
+        private class StateEvent_04_IdLE : TriggerState {
+            internal StateEvent_04_IdLE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -141,12 +137,12 @@ namespace Maple2.Trigger._52010013_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010013_QD__MAIN__3$", arg4: 4);
                 context.SetTimer(arg1: "4", arg2: 4);
-                context.SetSkip(arg1: "Event_05_IDLE");
+                context.SetSkip(arg1: "Event_05_IdLE");
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new StateEvent_05_IDLE(context);
+                    context.State = new StateEvent_05_IdLE(context);
                     return;
                 }
             }
@@ -156,8 +152,8 @@ namespace Maple2.Trigger._52010013_qd {
             }
         }
 
-        private class StateEvent_05_IDLE : TriggerState {
-            internal StateEvent_05_IDLE(ITriggerContext context) : base(context) { }
+        private class StateEvent_05_IdLE : TriggerState {
+            internal StateEvent_05_IdLE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -177,12 +173,12 @@ namespace Maple2.Trigger._52010013_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010013_QD__MAIN__4$", arg4: 4);
                 context.SetTimer(arg1: "4", arg2: 4);
-                context.SetSkip(arg1: "Event_06_IDLE");
+                context.SetSkip(arg1: "Event_06_IdLE");
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new StateEvent_06_IDLE(context);
+                    context.State = new StateEvent_06_IdLE(context);
                     return;
                 }
             }
@@ -192,8 +188,8 @@ namespace Maple2.Trigger._52010013_qd {
             }
         }
 
-        private class StateEvent_06_IDLE : TriggerState {
-            internal StateEvent_06_IDLE(ITriggerContext context) : base(context) { }
+        private class StateEvent_06_IdLE : TriggerState {
+            internal StateEvent_06_IdLE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -213,12 +209,12 @@ namespace Maple2.Trigger._52010013_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010013_QD__MAIN__5$", arg4: 5);
                 context.SetTimer(arg1: "5", arg2: 5);
-                context.SetSkip(arg1: "Event_07_IDLE");
+                context.SetSkip(arg1: "Event_07_IdLE");
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    context.State = new StateEvent_07_IDLE(context);
+                    context.State = new StateEvent_07_IdLE(context);
                     return;
                 }
             }
@@ -228,8 +224,8 @@ namespace Maple2.Trigger._52010013_qd {
             }
         }
 
-        private class StateEvent_07_IDLE : TriggerState {
-            internal StateEvent_07_IDLE(ITriggerContext context) : base(context) { }
+        private class StateEvent_07_IdLE : TriggerState {
+            internal StateEvent_07_IdLE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -249,12 +245,12 @@ namespace Maple2.Trigger._52010013_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010013_QD__MAIN__6$", arg4: 4);
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.SetSkip(arg1: "Event_08_IDLE");
+                context.SetSkip(arg1: "Event_08_IdLE");
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.State = new StateEvent_08_IDLE(context);
+                    context.State = new StateEvent_08_IdLE(context);
                     return;
                 }
             }
@@ -264,8 +260,8 @@ namespace Maple2.Trigger._52010013_qd {
             }
         }
 
-        private class StateEvent_08_IDLE : TriggerState {
-            internal StateEvent_08_IDLE(ITriggerContext context) : base(context) { }
+        private class StateEvent_08_IdLE : TriggerState {
+            internal StateEvent_08_IdLE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -285,12 +281,12 @@ namespace Maple2.Trigger._52010013_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010013_QD__MAIN__7$", arg4: 4);
                 context.SetTimer(arg1: "4", arg2: 4);
-                context.SetSkip(arg1: "Event_09_IDLE");
+                context.SetSkip(arg1: "Event_09_IdLE");
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.State = new StateEvent_09_IDLE(context);
+                    context.State = new StateEvent_09_IdLE(context);
                     return;
                 }
             }
@@ -300,8 +296,8 @@ namespace Maple2.Trigger._52010013_qd {
             }
         }
 
-        private class StateEvent_09_IDLE : TriggerState {
-            internal StateEvent_09_IDLE(ITriggerContext context) : base(context) { }
+        private class StateEvent_09_IdLE : TriggerState {
+            internal StateEvent_09_IdLE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

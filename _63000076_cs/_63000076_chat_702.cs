@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._63000076_cs {
     public static class _63000076_chat_702 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State준비(context);
-
-        private class State준비 : TriggerState {
+        public class State준비 : TriggerState {
             internal State준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {702}, arg2: new int[] {30000375},
+                if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {30000375},
                     arg3: new byte[] {1})) {
                     context.State = new State702잡담_01(context);
                     return;
@@ -24,7 +20,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State702잡담_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 103, msg: "$63000076_CS__63000076_CHAT_702__0$", duration: 2000,
+                context.AddBalloonTalk(spawnPointId: 103, msg: "$63000076_CS__63000076_CHAT_702__0$", duration: 2000,
                     delayTick: 0);
             }
 
@@ -42,7 +38,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State702잡담_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 101, msg: "$63000076_CS__63000076_CHAT_702__1$", duration: 2500,
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$63000076_CS__63000076_CHAT_702__1$", duration: 2500,
                     delayTick: 0);
             }
 
@@ -60,7 +56,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State702잡담_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 102, msg: "$63000076_CS__63000076_CHAT_702__2$", duration: 3000,
+                context.AddBalloonTalk(spawnPointId: 102, msg: "$63000076_CS__63000076_CHAT_702__2$", duration: 3000,
                     delayTick: 0);
             }
 

@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000207_bf {
     public static class _arm04 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "ZakumArmDeath04", value: 1)) {
+                if (context.GetUserValue(key: "ZakumArmDeath04") == 1) {
                     context.State = new State트로피지급(context);
                     return;
                 }

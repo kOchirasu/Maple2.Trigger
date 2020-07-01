@@ -1,28 +1,24 @@
-using System;
-
 namespace Maple2.Trigger._02000375_bf {
     public static class _move {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetVisibleBreakableObject(
-                    arg1: new int[] {
+                    arg1: new[] {
                         7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015,
                         7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023
                     }, arg2: true);
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015,
                         7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023
                     }, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10001024}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001024}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001024}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001024}, arg2: 0)) {
                     context.State = new State이동(context);
                     return;
                 }
@@ -36,11 +32,11 @@ namespace Maple2.Trigger._02000375_bf {
 
             public override void OnEnter() {
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015,
                         7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023
                     }, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000375_BF__move__0$", arg3: new int[] {3000});
+                context.SetEventUI(arg1: 1, arg2: "$02000375_BF__move__0$", arg3: 3000);
             }
 
             public override void Execute() {
@@ -58,20 +54,20 @@ namespace Maple2.Trigger._02000375_bf {
 
             public override void OnEnter() {
                 context.SetVisibleBreakableObject(
-                    arg1: new int[] {
+                    arg1: new[] {
                         7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015,
                         7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023
                     }, arg2: false);
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015,
                         7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023
                     }, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10001024}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001024}, arg2: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "BattleEnd", value: 1)) {
+                if (context.GetUserValue(key: "BattleEnd") == 1) {
                     context.State = new State대기(context);
                     return;
                 }

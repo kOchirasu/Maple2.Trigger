@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52020001_qd {
     public static class _main_5 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {4})) {
+                if (context.UserDetected(arg1: new[] {4})) {
                     context.State = new State기다림(context);
                     return;
                 }
@@ -42,7 +38,7 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ShadowExpeditionReachPoint(point: 150)) {
+                if (context.GetShadowExpeditionPoints() >= 150) {
                     context.State = new State알림_1(context);
                     return;
                 }
@@ -55,7 +51,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State알림_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "에너지가 50%충전 되었습니다.", arg3: new int[] {4000});
+                context.SetEventUI(arg1: 1, arg2: "에너지가 50%충전 되었습니다.", arg3: 4000);
             }
 
             public override void Execute() {
@@ -66,10 +62,10 @@ namespace Maple2.Trigger._52020001_qd {
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new int[] {6000041}, arg2: false);
-                context.CreateMonster(arg1: new int[] {6000042}, arg2: false);
-                context.AddBuff(arg1: new int[] {6000041}, arg2: 49286001, arg3: 1, arg4: true);
-                context.AddBuff(arg1: new int[] {6000042}, arg2: 49286001, arg3: 1, arg4: true);
+                context.CreateMonster(arg1: new[] {6000041}, arg2: false);
+                context.CreateMonster(arg1: new[] {6000042}, arg2: false);
+                context.AddBuff(arg1: new[] {6000041}, arg2: 49286001, arg3: 1, arg4: true);
+                context.AddBuff(arg1: new[] {6000042}, arg2: 49286001, arg3: 1, arg4: true);
             }
         }
 
@@ -79,7 +75,7 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ShadowExpeditionReachPoint(point: 300)) {
+                if (context.GetShadowExpeditionPoints() >= 300) {
                     context.State = new State알림_5(context);
                     return;
                 }
@@ -94,7 +90,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State알림_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "에너지가 100%충전 되었습니다.", arg3: new int[] {4000});
+                context.SetEventUI(arg1: 1, arg2: "에너지가 100%충전 되었습니다.", arg3: 4000);
             }
 
             public override void Execute() {
@@ -111,7 +107,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State알림_6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "곧 최대 출력으로 돌진 합니다.", arg3: new int[] {3000});
+                context.SetEventUI(arg1: 1, arg2: "곧 최대 출력으로 돌진 합니다.", arg3: 3000);
             }
 
             public override void Execute() {
@@ -130,7 +126,7 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 4);
-                context.CameraSelectPath(arg1: new int[] {2000009}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {2000009}, arg2: false);
             }
 
             public override void Execute() {
@@ -148,7 +144,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: false);
-                context.CreateMonster(arg1: new int[] {7002}, arg2: true);
+                context.CreateMonster(arg1: new[] {7002}, arg2: true);
             }
 
             public override void Execute() {
@@ -185,7 +181,7 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 1);
-                context.CameraSelectPath(arg1: new int[] {2000013}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {2000013}, arg2: false);
             }
 
             public override void Execute() {
@@ -203,7 +199,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 0, arg3: "준비완료! 크리티아스로 돌진!", arg4: 3, arg5: 0);
-                context.SetAiExtraData(key: "wing", value: 1, boxID: 4);
+                context.SetAiExtraData(key: "wing", value: 1, boxId: 4);
             }
 
             public override void Execute() {

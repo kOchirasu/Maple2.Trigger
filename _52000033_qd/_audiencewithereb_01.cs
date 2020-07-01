@@ -1,23 +1,19 @@
-using System;
-
 namespace Maple2.Trigger._52000033_qd {
     public static class _audiencewithereb_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(
-                    arg1: new int[] {101, 201, 301, 401, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510},
+                    arg1: new[] {101, 201, 301, 401, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510},
                     arg2: false);
-                context.SetEffect(arg1: new int[] {5000}, arg2: false);
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
-                context.SetEffect(arg1: new int[] {5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5000}, arg2: false);
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetEffect(arg1: new[] {5002}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new StateLodingDelay01(context);
                     return;
                 }
@@ -36,19 +32,19 @@ namespace Maple2.Trigger._52000033_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001301},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001301},
                     arg3: new byte[] {3})) {
                     context.State = new StateQuestOngoing02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001300},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001300},
                     arg3: new byte[] {3})) {
                     context.State = new StateQuestOngoing01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001300},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001300},
                     arg3: new byte[] {2})) {
                     context.State = new StatePCWalkIn01(context);
                     return;
@@ -183,7 +179,7 @@ namespace Maple2.Trigger._52000033_qd {
                 context.SetNpcEmotionSequence(arg1: 508, arg2: "Bow_A");
                 context.SetNpcEmotionSequence(arg1: 509, arg2: "Bow_A");
                 context.SetNpcEmotionSequence(arg1: 510, arg2: "Bow_A");
-                context.SetEffect(arg1: new int[] {5002}, arg2: true);
+                context.SetEffect(arg1: new[] {5002}, arg2: true);
             }
 
             public override void Execute() {
@@ -294,7 +290,7 @@ namespace Maple2.Trigger._52000033_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {50001300},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001300},
                     arg3: new byte[] {3})) {
                     context.State = new StateSecondQuestCheck02(context);
                     return;
@@ -310,7 +306,7 @@ namespace Maple2.Trigger._52000033_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {50001301},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001301},
                     arg3: new byte[] {3})) {
                     context.State = new StatePCGoCenter01(context);
                     return;
@@ -411,8 +407,8 @@ namespace Maple2.Trigger._52000033_qd {
             internal StatePCSpotLighting01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.SetEffect(arg1: new int[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEffect(arg1: new[] {5001}, arg2: true);
             }
 
             public override void Execute() {
@@ -512,8 +508,8 @@ namespace Maple2.Trigger._52000033_qd {
             }
 
             public override void OnExit() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: false);
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
+                context.SetEffect(arg1: new[] {5000}, arg2: false);
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
             }
         }
 

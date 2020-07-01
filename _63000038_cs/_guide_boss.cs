@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._63000038_cs {
     public static class _guide_boss {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "BossGuide", value: 1)) {
+                if (context.GetUserValue(key: "BossGuide") == 1) {
                     context.State = new State가이드분기(context);
                     return;
                 }
@@ -25,12 +21,12 @@ namespace Maple2.Trigger._63000038_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199}, arg2: 100)) {
+                if (context.UserDetected(arg1: new[] {199}, arg2: 100)) {
                     context.State = new State가이드출력(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {199}, arg2: 110)) {
+                if (context.UserDetected(arg1: new[] {199}, arg2: 110)) {
                     context.State = new State퀘스트체크(context);
                     return;
                 }
@@ -45,7 +41,7 @@ namespace Maple2.Trigger._63000038_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {40002651},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {40002651},
                     arg3: new byte[] {1})) {
                     context.State = new State가이드출력(context);
                     return;
@@ -59,12 +55,12 @@ namespace Maple2.Trigger._63000038_cs {
             internal State가이드출력(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 26300384, textID: 26300384);
+                context.ShowGuideSummary(entityId: 26300384, textId: 26300384);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {105})) {
-                    context.HideGuideSummary(entityID: 26300384);
+                if (context.UserDetected(arg1: new[] {105})) {
+                    context.HideGuideSummary(entityId: 26300384);
                     context.State = new State종료(context);
                     return;
                 }

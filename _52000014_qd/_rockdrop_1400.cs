@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._52000014_qd {
     public static class _rockdrop_1400 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {1400}, arg2: false);
-                context.SetEffect(arg1: new int[] {1401}, arg2: false);
+                context.SetSkill(arg1: new[] {1400}, arg2: false);
+                context.SetEffect(arg1: new[] {1401}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new State낙하01준비(context);
                     return;
                 }
@@ -43,7 +39,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State낙하01시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {1401}, arg2: true);
+                context.SetEffect(arg1: new[] {1401}, arg2: true);
             }
 
             public override void Execute() {
@@ -61,7 +57,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 1);
-                context.SetSkill(arg1: new int[] {1400}, arg2: true);
+                context.SetSkill(arg1: new[] {1400}, arg2: true);
             }
 
             public override void Execute() {
@@ -79,8 +75,8 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 1);
-                context.SetSkill(arg1: new int[] {1400}, arg2: false);
-                context.SetEffect(arg1: new int[] {1401}, arg2: false);
+                context.SetSkill(arg1: new[] {1400}, arg2: false);
+                context.SetEffect(arg1: new[] {1401}, arg2: false);
             }
 
             public override void Execute() {

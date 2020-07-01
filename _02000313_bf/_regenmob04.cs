@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000313_bf {
     public static class _regenmob04 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 12, arg2: new int[] {91})) {
+                if (context.NpcDetected(arg1: 12, arg2: new[] {91})) {
                     context.State = new State소환몹등장(context);
                     return;
                 }
@@ -23,11 +19,11 @@ namespace Maple2.Trigger._02000313_bf {
             internal State소환몹등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101, 102});
+                context.CreateMonster(arg1: new[] {101, 102});
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101, 102})) {
+                if (context.MonsterDead(arg1: new[] {101, 102})) {
                     context.State = new State대기시간(context);
                     return;
                 }

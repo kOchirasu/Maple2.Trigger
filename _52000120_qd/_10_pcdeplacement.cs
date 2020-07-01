@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52000120_qd {
     public static class _10_pcdeplacement {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._52000120_qd {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "DefencePhase", value: 1)) {
+                if (context.GetUserValue(key: "DefencePhase") == 1) {
                     context.State = new StateDefencePhase01(context);
                     return;
                 }
@@ -27,12 +23,12 @@ namespace Maple2.Trigger._52000120_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9000, arg2: 1)) {
+                if (context.GetUserCount(boxId: 9000) == 1) {
                     context.State = new StateMoveToTheWall(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DefencePhase", value: 2)) {
+                if (context.GetUserValue(key: "DefencePhase") == 2) {
                     context.State = new StateDefencePhase02(context);
                     return;
                 }
@@ -54,7 +50,7 @@ namespace Maple2.Trigger._52000120_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "DefencePhase", value: 2)) {
+                if (context.GetUserValue(key: "DefencePhase") == 2) {
                     context.State = new StateDefencePhase02(context);
                     return;
                 }
@@ -69,12 +65,12 @@ namespace Maple2.Trigger._52000120_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9000, arg2: 1)) {
+                if (context.GetUserCount(boxId: 9000) == 1) {
                     context.State = new StateOutsideOfTheWall(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DefencePhase", value: 3)) {
+                if (context.GetUserValue(key: "DefencePhase") == 3) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -96,7 +92,7 @@ namespace Maple2.Trigger._52000120_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "DefencePhase", value: 3)) {
+                if (context.GetUserValue(key: "DefencePhase") == 3) {
                     context.State = new StateQuit(context);
                     return;
                 }

@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000314_bf {
     public static class _bossspawn {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -14,7 +10,7 @@ namespace Maple2.Trigger._02000314_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State딜레이(context);
                     return;
                 }
@@ -42,11 +38,11 @@ namespace Maple2.Trigger._02000314_bf {
             internal State보스등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003140, textID: 20003140, duration: 4000);
+                context.ShowGuideSummary(entityId: 20003140, textId: 20003140, duration: 4000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.AddBuff(arg1: new int[] {102}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
-                context.CreateMonster(arg1: new int[] {99}, arg2: false);
+                context.AddBuff(arg1: new[] {102}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
+                context.CreateMonster(arg1: new[] {99}, arg2: false);
                 context.SetSkip(arg1: "종료체크");
             }
 
@@ -69,7 +65,7 @@ namespace Maple2.Trigger._02000314_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State종료딜레이(context);
                     return;
                 }

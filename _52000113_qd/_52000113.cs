@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000113_qd {
     public static class _52000113 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateSTART(context);
-
-        private class StateSTART : TriggerState {
+        public class StateSTART : TriggerState {
             internal StateSTART(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {10011})) {
+                if (context.UserDetected(arg1: new[] {10011})) {
                     context.State = new State대기01(context);
                     return;
                 }
@@ -27,11 +23,11 @@ namespace Maple2.Trigger._52000113_qd {
                 context.SetOnetimeEffect(id: 1, enable: true,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SpawnNpcRange(
-                    rangeID: new int[] {
+                    rangeId: new[] {
                         202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220,
                         221
                     }, isAutoTargeting: false);
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.SetProductionUI(arg1: 1);
                 context.MoveNpc(arg1: 203, arg2: "MS2PatrolData_203");
                 context.MoveNpc(arg1: 204, arg2: "MS2PatrolData_204");
@@ -59,7 +55,7 @@ namespace Maple2.Trigger._52000113_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {1000, 1001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {1000, 1001}, arg2: false);
             }
 
             public override void Execute() {
@@ -76,7 +72,7 @@ namespace Maple2.Trigger._52000113_qd {
             internal Statecamera02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1002, 1003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {1002, 1003}, arg2: false);
             }
 
             public override void Execute() {
@@ -93,7 +89,7 @@ namespace Maple2.Trigger._52000113_qd {
             internal Statecamera03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1004, 1005}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {1004, 1005}, arg2: false);
                 context.MoveNpc(arg1: 208, arg2: "MS2PatrolData_Rogues_come");
             }
 
@@ -111,9 +107,9 @@ namespace Maple2.Trigger._52000113_qd {
             internal Statecamera04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1006, 1007}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {1006, 1007}, arg2: false);
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcID: 11003338, illustID: "0", msg: "$52000113_QD__52000113__0$",
+                context.AddCinematicTalk(npcId: 11003338, illustId: "0", msg: "$52000113_QD__52000113__0$",
                     duration: 4000, align: "right");
             }
 
@@ -131,8 +127,8 @@ namespace Maple2.Trigger._52000113_qd {
             internal Statecamera05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1008, 1009}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003185, illustID: "0", msg: "$52000113_QD__52000113__1$",
+                context.CameraSelectPath(arg1: new[] {1008, 1009}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003185, illustId: "0", msg: "$52000113_QD__52000113__1$",
                     duration: 4000, align: "right");
             }
 
@@ -150,8 +146,8 @@ namespace Maple2.Trigger._52000113_qd {
             internal Statecamera06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1010}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003185, illustID: "0", msg: "$52000113_QD__52000113__2$",
+                context.CameraSelectPath(arg1: new[] {1010}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003185, illustId: "0", msg: "$52000113_QD__52000113__2$",
                     duration: 4000, align: "right");
                 context.MoveNpc(arg1: 208, arg2: "MS2PatrolData_Rogues_out");
             }
@@ -170,8 +166,8 @@ namespace Maple2.Trigger._52000113_qd {
             internal Statecamera07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1011, 1012}, arg2: false);
-                context.AddCinematicTalk(npcID: 11003185, illustID: "0", msg: "$52000113_QD__52000113__3$",
+                context.CameraSelectPath(arg1: new[] {1011, 1012}, arg2: false);
+                context.AddCinematicTalk(npcId: 11003185, illustId: "0", msg: "$52000113_QD__52000113__3$",
                     duration: 5000, align: "right");
             }
 
@@ -189,7 +185,7 @@ namespace Maple2.Trigger._52000113_qd {
             internal Statecamera08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003185, illustID: "0", msg: "$52000113_QD__52000113__4$",
+                context.AddCinematicTalk(npcId: 11003185, illustId: "0", msg: "$52000113_QD__52000113__4$",
                     duration: 5000, align: "right");
             }
 

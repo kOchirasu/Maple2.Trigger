@@ -1,27 +1,23 @@
-using System;
-
 namespace Maple2.Trigger._52000090_qd {
     public static class _52000090_trigger {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {
+                context.DestroyMonster(arg1: new[] {
                     1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015,
                     1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029
                 });
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9100}, arg2: new int[] {50100470},
+                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {50100470},
                     arg3: new byte[] {1})) {
                     context.State = new State20002272진행중일때(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9100}, arg2: new int[] {20002272},
+                if (context.QuestUserDetected(arg1: new[] {9100}, arg2: new[] {20002272},
                     arg3: new byte[] {1})) {
                     context.State = new State20002272진행중일때(context);
                     return;
@@ -36,7 +32,7 @@ namespace Maple2.Trigger._52000090_qd {
 
             public override void OnEnter() {
                 context.SpawnNpcRange(
-                    rangeID: new int[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010},
+                    rangeId: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010},
                     isAutoTargeting: false);
             }
 
@@ -54,7 +50,7 @@ namespace Maple2.Trigger._52000090_qd {
             internal State20002272진행중일때02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SpawnNpcRange(rangeID: new int[] {1011, 1012, 1013, 1014, 1015}, isAutoTargeting: false);
+                context.SpawnNpcRange(rangeId: new[] {1011, 1012, 1013, 1014, 1015}, isAutoTargeting: false);
             }
 
             public override void Execute() {
@@ -71,7 +67,7 @@ namespace Maple2.Trigger._52000090_qd {
             internal State20002272진행중일때03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SpawnNpcRange(rangeID: new int[] {1016, 1017, 1018, 1019, 1020}, isAutoTargeting: false);
+                context.SpawnNpcRange(rangeId: new[] {1016, 1017, 1018, 1019, 1020}, isAutoTargeting: false);
             }
 
             public override void Execute() {
@@ -88,7 +84,7 @@ namespace Maple2.Trigger._52000090_qd {
             internal State20002272진행중일때04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SpawnNpcRange(rangeID: new int[] {1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029},
+                context.SpawnNpcRange(rangeId: new[] {1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029},
                     isAutoTargeting: false);
             }
 

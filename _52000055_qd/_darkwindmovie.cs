@@ -1,25 +1,21 @@
-using System;
-
 namespace Maple2.Trigger._52000055_qd {
     public static class _darkwindmovie {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
-                context.CreateMonster(arg1: new int[] {104}, arg2: false);
-                context.CreateMonster(arg1: new int[] {200}, arg2: false);
-                context.CreateMonster(arg1: new int[] {201}, arg2: false);
-                context.CreateMonster(arg1: new int[] {202}, arg2: false);
-                context.CreateMonster(arg1: new int[] {203}, arg2: false);
-                context.CreateMonster(arg1: new int[] {204}, arg2: false);
-                context.CreateMonster(arg1: new int[] {205}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {104}, arg2: false);
+                context.CreateMonster(arg1: new[] {200}, arg2: false);
+                context.CreateMonster(arg1: new[] {201}, arg2: false);
+                context.CreateMonster(arg1: new[] {202}, arg2: false);
+                context.CreateMonster(arg1: new[] {203}, arg2: false);
+                context.CreateMonster(arg1: new[] {204}, arg2: false);
+                context.CreateMonster(arg1: new[] {205}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {60100235},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {60100235},
                     arg3: new byte[] {1})) {
                     context.State = new Statestart(context);
                     return;
@@ -40,7 +36,7 @@ namespace Maple2.Trigger._52000055_qd {
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new StateCameraEffect01(context);
                     return;
                 }
@@ -182,7 +178,7 @@ namespace Maple2.Trigger._52000055_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {119, 120}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {119, 120}, arg2: true);
                 context.SetProductionUI(arg1: 3);
             }
 
@@ -228,7 +224,7 @@ namespace Maple2.Trigger._52000055_qd {
                 context.RemoveCinematicTalk();
                 context.SetOnetimeEffect(id: 11100102, enable: false,
                     path: @"BG/Common/Sound/Eff_Object_CityWar_SystemWarningAlarm_01.xml");
-                context.CameraSelectPath(arg1: new int[] {106, 128}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {106, 128}, arg2: true);
             }
 
             public override void Execute() {
@@ -265,7 +261,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.CameraSelectPath(arg1: new int[] {105, 127}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {105, 127}, arg2: true);
             }
 
             public override void Execute() {
@@ -302,7 +298,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.CameraSelectPath(arg1: new int[] {107, 129}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {107, 129}, arg2: true);
             }
 
             public override void Execute() {
@@ -337,7 +333,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.CameraSelectPath(arg1: new int[] {109, 110, 111}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {109, 110, 111}, arg2: true);
             }
 
             public override void Execute() {
@@ -430,7 +426,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 112, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {112, 113}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {112, 113}, arg2: true);
                 context.SetOnetimeEffect(id: 103, enable: true,
                     path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001879.xml");
                 context.SetConversation(arg1: 2, arg2: 11001897, arg3: "$52000055_QD__DARKWINDMOVIE__6$", arg4: 5);
@@ -468,7 +464,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 114, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {114, 115}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {114, 115}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000259, arg3: "$52000055_QD__DARKWINDMOVIE__7$", arg4: 5);
             }
 
@@ -521,7 +517,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.CameraSelectPath(arg1: new int[] {117, 118}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {117, 118}, arg2: true);
             }
 
             public override void Execute() {
@@ -594,7 +590,7 @@ namespace Maple2.Trigger._52000055_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 118, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {121, 122}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {121, 122}, arg2: true);
             }
 
             public override void Execute() {
@@ -665,7 +661,7 @@ namespace Maple2.Trigger._52000055_qd {
             internal StateCityWarfareTalk25(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {125, 126}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {125, 126}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000215, arg3: "$52000055_QD__DARKWINDMOVIE__12$", arg4: 5);
             }
 
@@ -702,7 +698,7 @@ namespace Maple2.Trigger._52000055_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 106, enable: true,
                     path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001882.xml");
-                context.CameraSelectPath(arg1: new int[] {123, 124}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {123, 124}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001897, arg3: "$52000055_QD__DARKWINDMOVIE__13$", arg4: 5);
             }
 

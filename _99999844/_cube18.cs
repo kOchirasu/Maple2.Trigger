@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._99999844 {
     public static class _cube18 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Cube", value: 1)) {
+                if (context.GetUserValue(key: "Cube") == 1) {
                     context.State = new State큐브18(context);
                     return;
                 }
@@ -23,7 +19,7 @@ namespace Maple2.Trigger._99999844 {
             internal State큐브18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {4033, 4034}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {4033, 4034}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -40,7 +36,7 @@ namespace Maple2.Trigger._99999844 {
             internal State큐브제거(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {4033, 4034}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {4033, 4034}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
@@ -49,14 +45,14 @@ namespace Maple2.Trigger._99999844 {
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {9004})) {
-                    context.SetUserValue(triggerID: 910018, key: "Cube", value: 0);
+                if (context.UserDetected(arg1: new[] {9004})) {
+                    context.SetUserValue(triggerId: 910018, key: "Cube", value: 0);
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {9005})) {
-                    context.SetUserValue(triggerID: 910018, key: "Cube", value: 0);
+                if (context.UserDetected(arg1: new[] {9005})) {
+                    context.SetUserValue(triggerId: 910018, key: "Cube", value: 0);
                     context.State = new State종료(context);
                     return;
                 }
@@ -70,7 +66,7 @@ namespace Maple2.Trigger._99999844 {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015, 4016,
                         4017, 4018, 4019, 4020, 4021, 4022, 4023, 4024, 4025, 4026, 4027, 4028, 4029, 4030, 4031, 4032,
                         4033, 4034, 4035, 4036, 4037, 4038, 4039, 4040

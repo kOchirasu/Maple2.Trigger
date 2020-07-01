@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._66200001_gd {
     public static class _03_removedropout {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9002})) {
+                if (context.UserDetected(arg1: new[] {9002})) {
                     context.State = new StateRemove(context);
                     return;
                 }
@@ -28,7 +24,7 @@ namespace Maple2.Trigger._66200001_gd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9002})) {
+                if (context.UserDetected(arg1: new[] {9002})) {
                     context.State = new StateRemove(context);
                     return;
                 }

@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000213_bf {
     public static class _regenmob25 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State소환몹등장(context);
                     return;
                 }
@@ -25,8 +21,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000261}, arg2: 1)) {
-                    context.CreateMonster(arg1: new int[] {1025}, arg2: false);
+                if (context.ObjectInteracted(arg1: new[] {10000261}, arg2: 1)) {
+                    context.CreateMonster(arg1: new[] {1025}, arg2: false);
                     context.State = new State소멸체크(context);
                     return;
                 }
@@ -41,17 +37,17 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000261}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000261}, arg2: 0)) {
                     context.State = new State소멸(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {10000261}, arg2: 2)) {
+                if (context.ObjectInteracted(arg1: new[] {10000261}, arg2: 2)) {
                     context.State = new State소멸(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1025})) {
+                if (context.MonsterDead(arg1: new[] {1025})) {
                     context.State = new State대기시간(context);
                     return;
                 }
@@ -83,7 +79,7 @@ namespace Maple2.Trigger._02000213_bf {
             internal State소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1025});
+                context.DestroyMonster(arg1: new[] {1025});
                 context.SetTimer(arg1: "1", arg2: 1200);
             }
 

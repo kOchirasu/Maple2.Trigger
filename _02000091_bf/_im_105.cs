@@ -1,14 +1,10 @@
-using System;
-
 namespace Maple2.Trigger._02000091_bf {
     public static class _im_105 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000536}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000536}, arg2: 1);
                 context.SetActor(arg1: 2105, arg2: true, arg3: "Idle_A");
             }
 
@@ -28,14 +24,14 @@ namespace Maple2.Trigger._02000091_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000536}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000536}, arg2: 0)) {
                     context.State = new StateNPC이동(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new int[] {105});
+                context.CreateMonster(arg1: new[] {105});
                 context.SetActor(arg1: 2105, arg2: false, arg3: "Idle_A");
             }
         }
@@ -48,7 +44,7 @@ namespace Maple2.Trigger._02000091_bf {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 1105, arg2: new int[] {105})) {
+                if (context.NpcDetected(arg1: 1105, arg2: new[] {105})) {
                     context.State = new StateNPC소멸(context);
                     return;
                 }
@@ -61,7 +57,7 @@ namespace Maple2.Trigger._02000091_bf {
             internal StateNPC소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {105});
+                context.DestroyMonster(arg1: new[] {105});
                 context.SetTimer(arg1: "105", arg2: 3);
             }
 

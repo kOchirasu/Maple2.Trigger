@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._52000076_qd {
     public static class _wall_13 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State벽재생(context);
-
-        private class State벽재생 : TriggerState {
+        public class State벽재생 : TriggerState {
             internal State벽재생(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         31301, 31302, 31303, 31304, 31305, 31306, 31307, 31308, 31309, 31310, 31311, 31312, 31313,
                         31314, 31315, 31316, 31317, 31318, 31319, 31320, 31321, 31322, 31323, 31324, 31325, 31326,
                         31327, 31328, 31329, 31330, 31331, 31332, 31333
@@ -17,7 +13,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {113})) {
+                if (context.UserDetected(arg1: new[] {113})) {
                     context.State = new State벽삭제(context);
                     return;
                 }
@@ -31,7 +27,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         31301, 31302, 31303, 31304, 31305, 31306, 31307, 31308, 31309, 31310, 31311, 31312, 31313,
                         31314, 31315, 31316, 31317, 31318, 31319, 31320, 31321, 31322, 31323, 31324, 31325, 31326,
                         31327, 31328, 31329, 31330, 31331, 31332, 31333
@@ -39,7 +35,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {113})) {
+                if (!context.UserDetected(arg1: new[] {113})) {
                     context.State = new State딜레이(context);
                     return;
                 }

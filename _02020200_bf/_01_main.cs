@@ -1,48 +1,44 @@
-using System;
-
 namespace Maple2.Trigger._02020200_bf {
     public static class _01_main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.EnableSpawnPointPc(spawnPointID: 0, isEnable: true);
-                context.EnableSpawnPointPc(spawnPointID: 1, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 2, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 3, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 0, isEnable: true);
+                context.EnableSpawnPointPc(spawnPointId: 1, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 2, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 3, isEnable: false);
                 context.SetEffect(
-                    arg1: new int[] {
+                    arg1: new[] {
                         10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013,
                         10014, 10015, 10016, 10017, 10018, 10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026, 10027
                     }, arg2: false);
-                context.SetEffect(arg1: new int[] {11001, 11002, 11003, 11004, 11005, 11006, 11007, 11008},
+                context.SetEffect(arg1: new[] {11001, 11002, 11003, 11004, 11005, 11006, 11007, 11008},
                     arg2: false);
-                context.SetEffect(arg1: new int[] {12001, 12002, 12003, 12004}, arg2: false);
+                context.SetEffect(arg1: new[] {12001, 12002, 12003, 12004}, arg2: false);
                 context.SetVisibleBreakableObject(
-                    arg1: new int[]
+                    arg1: new[]
                         {5010, 5011, 5012, 5013, 5014, 5110, 5111, 5112, 5113, 5114, 5210, 5211, 5212, 5213, 5214},
                     arg2: false);
                 context.SetBreakable(
-                    arg1: new int[]
+                    arg1: new[]
                         {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014},
                     arg2: false);
                 context.SetBreakable(
-                    arg1: new int[]
+                    arg1: new[]
                         {5101, 5102, 5103, 5104, 5105, 5106, 5107, 5108, 5109, 5110, 5111, 5112, 5113, 5114},
                     arg2: false);
                 context.SetBreakable(
-                    arg1: new int[]
+                    arg1: new[]
                         {5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209, 5210, 5211, 5212, 5213, 5214},
                     arg2: false);
-                context.SetInteractObject(arg1: new int[] {10002149}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10002150}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10002151}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10002152}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10002149}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10002150}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10002151}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10002152}, arg2: 0);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016,
                         1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032,
                         1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048,
@@ -51,18 +47,18 @@ namespace Maple2.Trigger._02020200_bf {
                         1081, 1082, 1083, 1084, 1085, 1086, 1087, 1088, 1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096
                     }, arg2: true);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 1115, 1116,
                         1117, 1118
                     }, arg2: true);
-                context.SetMesh(arg1: new int[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009}, arg2: true);
+                context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009}, arg2: true);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016,
                         3017, 3018, 3019, 3020, 3021, 3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029, 3030, 3031, 3032
                     }, arg2: true);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116,
                         3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132,
                         3133, 3134, 3135, 3136, 3137, 3138, 3139, 3140, 3141, 3142, 3143, 3144, 3145, 3146, 3147, 3148,
@@ -71,7 +67,7 @@ namespace Maple2.Trigger._02020200_bf {
                         3181, 3182, 3183, 3184, 3185, 3186, 3187, 3188
                     }, arg2: true);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216,
                         3217, 3218, 3219, 3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230, 3231, 3232,
                         3233, 3234, 3235, 3236, 3237, 3238, 3239, 3240, 3241, 3242, 3243, 3244, 3245, 3246, 3247, 3248,
@@ -80,7 +76,7 @@ namespace Maple2.Trigger._02020200_bf {
                         3281, 3282, 3283, 3284, 3285, 3286, 3287, 3288, 3289
                     }, arg2: true);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316,
                         3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325, 3326, 3327, 3328, 3329, 3330, 3331, 3332,
                         3333, 3334, 3335, 3336, 3337, 3338, 3339, 3340, 3341, 3342, 3343, 3344, 3345, 3346, 3347, 3348,
@@ -88,12 +84,12 @@ namespace Maple2.Trigger._02020200_bf {
                         3365, 3366, 3367, 3368, 3369, 3370, 3371, 3372, 3373, 3374, 3375
                     }, arg2: true);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015, 4016,
                         4017, 4018, 4019, 4020, 4021, 4022, 4023, 4024, 4025, 4026, 4027, 4028, 4029, 4030, 4031, 4032
                     }, arg2: false);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         4101, 4102, 4103, 4104, 4105, 4106, 4107, 4108, 4109, 4110, 4111, 4112, 4113, 4114, 4115, 4116,
                         4117, 4118, 4119, 4120, 4121, 4122, 4123, 4124, 4125, 4126, 4127, 4128, 4129, 4130, 4131, 4132,
                         4133, 4134, 4135, 4136, 4137, 4138, 4139, 4140, 4141, 4142, 4143, 4144, 4145, 4146, 4147, 4148,
@@ -102,7 +98,7 @@ namespace Maple2.Trigger._02020200_bf {
                         4181, 4182, 4183, 4184, 4185, 4186, 4187, 4188
                     }, arg2: false);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         4201, 4202, 4203, 4204, 4205, 4206, 4207, 4208, 4209, 4210, 4211, 4212, 4213, 4214, 4215, 4216,
                         4217, 4218, 4219, 4220, 4221, 4222, 4223, 4224, 4225, 4226, 4227, 4228, 4229, 4230, 4231, 4232,
                         4233, 4234, 4235, 4236, 4237, 4238, 4239, 4240, 4241, 4242, 4243, 4244, 4245, 4246, 4247, 4248,
@@ -111,28 +107,28 @@ namespace Maple2.Trigger._02020200_bf {
                         4281, 4282, 4283, 4284, 4285, 4286, 4287, 4288, 4289
                     }, arg2: false);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         4301, 4302, 4303, 4304, 4305, 4306, 4307, 4308, 4309, 4310, 4311, 4312, 4313, 4314, 4315, 4316,
                         4317, 4318, 4319, 4320, 4321, 4322, 4323, 4324, 4325, 4326, 4327, 4328, 4329, 4330, 4331, 4332,
                         4333, 4334, 4335, 4336, 4337, 4338, 4339, 4340, 4341, 4342, 4343, 4344, 4345, 4346, 4347, 4348,
                         4349, 4350, 4351, 4352, 4353, 4354, 4355, 4356, 4357, 4358, 4359, 4360, 4361, 4362, 4363, 4364,
                         4365, 4366, 4367, 4368, 4369, 4370, 4371, 4372, 4373, 4374, 4375
                     }, arg2: false);
-                context.SetMeshAnimation(arg1: new int[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009},
+                context.SetMeshAnimation(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009},
                     arg2: true);
-                context.SetUserValue(triggerID: 99990002, key: "BombOn", value: 0);
-                context.SetUserValue(triggerID: 99990003, key: "BombOn", value: 0);
-                context.SetUserValue(triggerID: 99990004, key: "BombOn", value: 0);
-                context.SetUserValue(triggerID: 99990005, key: "BombOn", value: 0);
-                context.SetUserValue(triggerID: 99990006, key: "BombOn", value: 0);
-                context.SetUserValue(triggerID: 99990007, key: "BombOn", value: 0);
-                context.SetUserValue(triggerID: 99990008, key: "BombOn", value: 0);
-                context.SetUserValue(triggerID: 99990009, key: "BombOn", value: 0);
-                context.SetUserValue(triggerID: 99990010, key: "BombOn", value: 0);
+                context.SetUserValue(triggerId: 99990002, key: "BombOn", value: 0);
+                context.SetUserValue(triggerId: 99990003, key: "BombOn", value: 0);
+                context.SetUserValue(triggerId: 99990004, key: "BombOn", value: 0);
+                context.SetUserValue(triggerId: 99990005, key: "BombOn", value: 0);
+                context.SetUserValue(triggerId: 99990006, key: "BombOn", value: 0);
+                context.SetUserValue(triggerId: 99990007, key: "BombOn", value: 0);
+                context.SetUserValue(triggerId: 99990008, key: "BombOn", value: 0);
+                context.SetUserValue(triggerId: 99990009, key: "BombOn", value: 0);
+                context.SetUserValue(triggerId: 99990010, key: "BombOn", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {901})) {
+                if (context.UserDetected(arg1: new[] {901})) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -147,7 +143,7 @@ namespace Maple2.Trigger._02020200_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {908})) {
+                if (context.UserDetected(arg1: new[] {908})) {
                     context.State = new State가이드메시지(context);
                     return;
                 }
@@ -160,12 +156,12 @@ namespace Maple2.Trigger._02020200_bf {
             internal State가이드메시지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {12001}, arg2: true);
-                context.ShowGuideSummary(entityID: 111, textID: 20110001);
+                context.SetEffect(arg1: new[] {12001}, arg2: true);
+                context.ShowGuideSummary(entityId: 111, textId: 20110001);
             }
 
             public override void Execute() {
-                if (context.DetectLiftableObject(triggerBoxIDs: new int[] {911}, itemID: 30001286)) {
+                if (context.DetectLiftableObject(triggerBoxIds: new[] {911}, itemId: 30001286)) {
                     context.State = new State엘리베이터_1(context);
                     return;
                 }
@@ -178,21 +174,21 @@ namespace Maple2.Trigger._02020200_bf {
             internal State엘리베이터_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointID: 0, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 1, isEnable: true);
-                context.SetEffect(arg1: new int[] {12001}, arg2: false);
-                context.HideGuideSummary(entityID: 111);
+                context.EnableSpawnPointPc(spawnPointId: 0, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 1, isEnable: true);
+                context.SetEffect(arg1: new[] {12001}, arg2: false);
+                context.HideGuideSummary(entityId: 111);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015, 4016,
                         4017, 4018, 4019, 4020, 4021, 4022, 4023, 4024, 4025, 4026, 4027, 4028, 4029, 4030, 4031, 4032
                     }, arg2: true, arg4: 80, arg5: 3f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016,
                         3017, 3018, 3019, 3020, 3021, 3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029, 3030, 3031, 3032
                     }, arg2: false, arg4: 80, arg5: 3f);
-                context.SetEffect(arg1: new int[] {11001}, arg2: true);
+                context.SetEffect(arg1: new[] {11001}, arg2: true);
             }
 
             public override void Execute() {
@@ -209,9 +205,9 @@ namespace Maple2.Trigger._02020200_bf {
             internal State엘리베이터_1_활성화_대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009},
+                context.SetEffect(arg1: new[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009},
                     arg2: true);
-                context.SetEffect(arg1: new int[] {11002}, arg2: true);
+                context.SetEffect(arg1: new[] {11002}, arg2: true);
             }
 
             public override void Execute() {
@@ -228,16 +224,16 @@ namespace Maple2.Trigger._02020200_bf {
             internal State엘리베이터_1_활성화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {4013, 4015, 4017, 4019, 4021}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {5010, 5011, 5012, 5013, 5014}, arg2: true);
+                context.SetMesh(arg1: new[] {4013, 4015, 4017, 4019, 4021}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {5010, 5011, 5012, 5013, 5014}, arg2: true);
                 context.SetBreakable(
-                    arg1: new int[]
+                    arg1: new[]
                         {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014},
                     arg2: true);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {902})) {
+                if (context.UserDetected(arg1: new[] {902})) {
                     context.State = new State2번방(context);
                     return;
                 }
@@ -250,17 +246,17 @@ namespace Maple2.Trigger._02020200_bf {
             internal State2번방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009},
+                context.SetEffect(arg1: new[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009},
                     arg2: false);
-                context.CreateMonster(arg1: new int[] {101, 102, 103, 104}, arg2: false);
-                context.SetMesh(arg1: new int[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109}, arg2: false);
-                context.SetUserValue(triggerID: 99990002, key: "BombOn", value: 1);
-                context.SetUserValue(triggerID: 99990003, key: "BombOn", value: 1);
-                context.SetUserValue(triggerID: 99990004, key: "BombOn", value: 1);
+                context.CreateMonster(arg1: new[] {101, 102, 103, 104}, arg2: false);
+                context.SetMesh(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109}, arg2: false);
+                context.SetUserValue(triggerId: 99990002, key: "BombOn", value: 1);
+                context.SetUserValue(triggerId: 99990003, key: "BombOn", value: 1);
+                context.SetUserValue(triggerId: 99990004, key: "BombOn", value: 1);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101, 102, 103, 104})) {
+                if (context.MonsterDead(arg1: new[] {101, 102, 103, 104})) {
                     context.State = new State2번방_클리어(context);
                     return;
                 }
@@ -273,21 +269,21 @@ namespace Maple2.Trigger._02020200_bf {
             internal State2번방_클리어(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {12002}, arg2: true);
-                context.SetUserValue(triggerID: 99990002, key: "BombOn", value: 2);
-                context.SetUserValue(triggerID: 99990003, key: "BombOn", value: 2);
-                context.SetUserValue(triggerID: 99990004, key: "BombOn", value: 2);
-                context.ShowGuideSummary(entityID: 111, textID: 20110001);
+                context.SetEffect(arg1: new[] {12002}, arg2: true);
+                context.SetUserValue(triggerId: 99990002, key: "BombOn", value: 2);
+                context.SetUserValue(triggerId: 99990003, key: "BombOn", value: 2);
+                context.SetUserValue(triggerId: 99990004, key: "BombOn", value: 2);
+                context.ShowGuideSummary(entityId: 111, textId: 20110001);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetRandomMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016,
                         1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032
                     }, arg2: false, arg3: 32, arg5: 50);
             }
 
             public override void Execute() {
-                if (context.DetectLiftableObject(triggerBoxIDs: new int[] {912}, itemID: 30001286)) {
+                if (context.DetectLiftableObject(triggerBoxIds: new[] {912}, itemId: 30001286)) {
                     context.State = new State엘리베이터_2(context);
                     return;
                 }
@@ -300,12 +296,12 @@ namespace Maple2.Trigger._02020200_bf {
             internal State엘리베이터_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointID: 1, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 2, isEnable: true);
-                context.SetEffect(arg1: new int[] {12002}, arg2: false);
-                context.HideGuideSummary(entityID: 111);
+                context.EnableSpawnPointPc(spawnPointId: 1, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 2, isEnable: true);
+                context.SetEffect(arg1: new[] {12002}, arg2: false);
+                context.HideGuideSummary(entityId: 111);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         4101, 4102, 4103, 4104, 4105, 4106, 4107, 4108, 4109, 4110, 4111, 4112, 4113, 4114, 4115, 4116,
                         4117, 4118, 4119, 4120, 4121, 4122, 4123, 4124, 4125, 4126, 4127, 4128, 4129, 4130, 4131, 4132,
                         4133, 4134, 4135, 4136, 4137, 4138, 4139, 4140, 4141, 4142, 4143, 4144, 4145, 4146, 4147, 4148,
@@ -314,7 +310,7 @@ namespace Maple2.Trigger._02020200_bf {
                         4181, 4182, 4183, 4184, 4185, 4186, 4187, 4188
                     }, arg2: true, arg4: 50, arg5: 3f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116,
                         3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132,
                         3133, 3134, 3135, 3136, 3137, 3138, 3139, 3140, 3141, 3142, 3143, 3144, 3145, 3146, 3147, 3148,
@@ -322,7 +318,7 @@ namespace Maple2.Trigger._02020200_bf {
                         3165, 3166, 3167, 3168, 3169, 3170, 3171, 3172, 3173, 3174, 3175, 3176, 3177, 3178, 3179, 3180,
                         3181, 3182, 3183, 3184, 3185, 3186, 3187, 3188
                     }, arg2: false, arg4: 50, arg5: 3f);
-                context.SetEffect(arg1: new int[] {11003}, arg2: true);
+                context.SetEffect(arg1: new[] {11003}, arg2: true);
             }
 
             public override void Execute() {
@@ -339,9 +335,9 @@ namespace Maple2.Trigger._02020200_bf {
             internal State엘리베이터_2_활성화_대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10010, 10011, 10012, 10013, 10014, 10015, 10016, 10017, 10018},
+                context.SetEffect(arg1: new[] {10010, 10011, 10012, 10013, 10014, 10015, 10016, 10017, 10018},
                     arg2: true);
-                context.SetEffect(arg1: new int[] {11004}, arg2: true);
+                context.SetEffect(arg1: new[] {11004}, arg2: true);
             }
 
             public override void Execute() {
@@ -358,16 +354,16 @@ namespace Maple2.Trigger._02020200_bf {
             internal State엘리베이터_2_활성화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {4133, 4135, 4137, 4139, 4141}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {5110, 5111, 5112, 5113, 5114}, arg2: true);
+                context.SetMesh(arg1: new[] {4133, 4135, 4137, 4139, 4141}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {5110, 5111, 5112, 5113, 5114}, arg2: true);
                 context.SetBreakable(
-                    arg1: new int[]
+                    arg1: new[]
                         {5101, 5102, 5103, 5104, 5105, 5106, 5107, 5108, 5109, 5110, 5111, 5112, 5113, 5114},
                     arg2: true);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {903})) {
+                if (context.UserDetected(arg1: new[] {903})) {
                     context.State = new State3번방(context);
                     return;
                 }
@@ -380,17 +376,17 @@ namespace Maple2.Trigger._02020200_bf {
             internal State3번방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10010, 10011, 10012, 10013, 10014, 10015, 10016, 10017, 10018},
+                context.SetEffect(arg1: new[] {10010, 10011, 10012, 10013, 10014, 10015, 10016, 10017, 10018},
                     arg2: false);
-                context.CreateMonster(arg1: new int[] {201, 202, 203, 204, 205}, arg2: false);
-                context.SetMesh(arg1: new int[] {1110, 1111, 1112, 1113, 1114, 1115, 1116, 1117, 1118}, arg2: false);
-                context.SetUserValue(triggerID: 99990005, key: "BombOn", value: 1);
-                context.SetUserValue(triggerID: 99990006, key: "BombOn", value: 1);
-                context.SetUserValue(triggerID: 99990007, key: "BombOn", value: 1);
+                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205}, arg2: false);
+                context.SetMesh(arg1: new[] {1110, 1111, 1112, 1113, 1114, 1115, 1116, 1117, 1118}, arg2: false);
+                context.SetUserValue(triggerId: 99990005, key: "BombOn", value: 1);
+                context.SetUserValue(triggerId: 99990006, key: "BombOn", value: 1);
+                context.SetUserValue(triggerId: 99990007, key: "BombOn", value: 1);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {201, 202, 203, 204, 205})) {
+                if (context.MonsterDead(arg1: new[] {201, 202, 203, 204, 205})) {
                     context.State = new State3번방_클리어(context);
                     return;
                 }
@@ -403,21 +399,21 @@ namespace Maple2.Trigger._02020200_bf {
             internal State3번방_클리어(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {12003}, arg2: true);
-                context.SetUserValue(triggerID: 99990005, key: "BombOn", value: 2);
-                context.SetUserValue(triggerID: 99990006, key: "BombOn", value: 2);
-                context.SetUserValue(triggerID: 99990007, key: "BombOn", value: 2);
-                context.ShowGuideSummary(entityID: 111, textID: 20110001);
+                context.SetEffect(arg1: new[] {12003}, arg2: true);
+                context.SetUserValue(triggerId: 99990005, key: "BombOn", value: 2);
+                context.SetUserValue(triggerId: 99990006, key: "BombOn", value: 2);
+                context.SetUserValue(triggerId: 99990007, key: "BombOn", value: 2);
+                context.ShowGuideSummary(entityId: 111, textId: 20110001);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetRandomMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1048,
                         1049, 1050, 1051, 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1059, 1060, 1061, 1062, 1063, 1064
                     }, arg2: false, arg3: 32, arg5: 50);
             }
 
             public override void Execute() {
-                if (context.DetectLiftableObject(triggerBoxIDs: new int[] {913}, itemID: 30001286)) {
+                if (context.DetectLiftableObject(triggerBoxIds: new[] {913}, itemId: 30001286)) {
                     context.State = new State엘리베이터_3(context);
                     return;
                 }
@@ -430,12 +426,12 @@ namespace Maple2.Trigger._02020200_bf {
             internal State엘리베이터_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointID: 2, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 3, isEnable: true);
-                context.SetEffect(arg1: new int[] {12003}, arg2: false);
-                context.HideGuideSummary(entityID: 111);
+                context.EnableSpawnPointPc(spawnPointId: 2, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 3, isEnable: true);
+                context.SetEffect(arg1: new[] {12003}, arg2: false);
+                context.HideGuideSummary(entityId: 111);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         4201, 4202, 4203, 4204, 4205, 4206, 4207, 4208, 4209, 4210, 4211, 4212, 4213, 4214, 4215, 4216,
                         4217, 4218, 4219, 4220, 4221, 4222, 4223, 4224, 4225, 4226, 4227, 4228, 4229, 4230, 4231, 4232,
                         4233, 4234, 4235, 4236, 4237, 4238, 4239, 4240, 4241, 4242, 4243, 4244, 4245, 4246, 4247, 4248,
@@ -444,7 +440,7 @@ namespace Maple2.Trigger._02020200_bf {
                         4281, 4282, 4283, 4284, 4285, 4286, 4287, 4288, 4289
                     }, arg2: true, arg4: 50, arg5: 3f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216,
                         3217, 3218, 3219, 3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230, 3231, 3232,
                         3233, 3234, 3235, 3236, 3237, 3238, 3239, 3240, 3241, 3242, 3243, 3244, 3245, 3246, 3247, 3248,
@@ -452,7 +448,7 @@ namespace Maple2.Trigger._02020200_bf {
                         3265, 3266, 3267, 3268, 3269, 3270, 3271, 3272, 3273, 3274, 3275, 3276, 3277, 3278, 3279, 3280,
                         3281, 3282, 3283, 3284, 3285, 3286, 3287, 3288, 3289
                     }, arg2: false, arg4: 50, arg5: 3f);
-                context.SetEffect(arg1: new int[] {11005}, arg2: true);
+                context.SetEffect(arg1: new[] {11005}, arg2: true);
             }
 
             public override void Execute() {
@@ -469,9 +465,9 @@ namespace Maple2.Trigger._02020200_bf {
             internal State엘리베이터_3_활성화_대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026, 10027},
+                context.SetEffect(arg1: new[] {10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026, 10027},
                     arg2: true);
-                context.SetEffect(arg1: new int[] {11006}, arg2: true);
+                context.SetEffect(arg1: new[] {11006}, arg2: true);
             }
 
             public override void Execute() {
@@ -488,16 +484,16 @@ namespace Maple2.Trigger._02020200_bf {
             internal State엘리베이터_3_활성화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {4232, 4234, 4236, 4238, 4240}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {5210, 5211, 5212, 5213, 5214}, arg2: true);
+                context.SetMesh(arg1: new[] {4232, 4234, 4236, 4238, 4240}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {5210, 5211, 5212, 5213, 5214}, arg2: true);
                 context.SetBreakable(
-                    arg1: new int[]
+                    arg1: new[]
                         {5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209, 5210, 5211, 5212, 5213, 5214},
                     arg2: true);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {904})) {
+                if (context.UserDetected(arg1: new[] {904})) {
                     context.State = new State4번방(context);
                     return;
                 }
@@ -510,16 +506,16 @@ namespace Maple2.Trigger._02020200_bf {
             internal State4번방(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026, 10027},
+                context.SetEffect(arg1: new[] {10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026, 10027},
                     arg2: false);
-                context.CreateMonster(arg1: new int[] {301, 302, 303, 304, 305}, arg2: false);
-                context.SetUserValue(triggerID: 99990008, key: "BombOn", value: 1);
-                context.SetUserValue(triggerID: 99990009, key: "BombOn", value: 1);
-                context.SetUserValue(triggerID: 99990010, key: "BombOn", value: 1);
+                context.CreateMonster(arg1: new[] {301, 302, 303, 304, 305}, arg2: false);
+                context.SetUserValue(triggerId: 99990008, key: "BombOn", value: 1);
+                context.SetUserValue(triggerId: 99990009, key: "BombOn", value: 1);
+                context.SetUserValue(triggerId: 99990010, key: "BombOn", value: 1);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {301, 302, 303, 304, 305})) {
+                if (context.MonsterDead(arg1: new[] {301, 302, 303, 304, 305})) {
                     context.State = new State4번방_클리어(context);
                     return;
                 }
@@ -532,21 +528,21 @@ namespace Maple2.Trigger._02020200_bf {
             internal State4번방_클리어(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {12004}, arg2: true);
-                context.SetUserValue(triggerID: 99990008, key: "BombOn", value: 2);
-                context.SetUserValue(triggerID: 99990009, key: "BombOn", value: 2);
-                context.SetUserValue(triggerID: 99990010, key: "BombOn", value: 2);
-                context.ShowGuideSummary(entityID: 111, textID: 20110001);
+                context.SetEffect(arg1: new[] {12004}, arg2: true);
+                context.SetUserValue(triggerId: 99990008, key: "BombOn", value: 2);
+                context.SetUserValue(triggerId: 99990009, key: "BombOn", value: 2);
+                context.SetUserValue(triggerId: 99990010, key: "BombOn", value: 2);
+                context.ShowGuideSummary(entityId: 111, textId: 20110001);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetRandomMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1065, 1066, 1067, 1068, 1069, 1070, 1071, 1072, 1073, 1074, 1075, 1076, 1077, 1078, 1079, 1080,
                         1081, 1082, 1083, 1084, 1085, 1086, 1087, 1088, 1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096
                     }, arg2: false, arg3: 32, arg5: 50);
             }
 
             public override void Execute() {
-                if (context.DetectLiftableObject(triggerBoxIDs: new int[] {914}, itemID: 30001286)) {
+                if (context.DetectLiftableObject(triggerBoxIds: new[] {914}, itemId: 30001286)) {
                     context.State = new State딜레이(context);
                     return;
                 }
@@ -559,10 +555,10 @@ namespace Maple2.Trigger._02020200_bf {
             internal State딜레이(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {12004}, arg2: false);
-                context.HideGuideSummary(entityID: 111);
+                context.SetEffect(arg1: new[] {12004}, arg2: false);
+                context.HideGuideSummary(entityId: 111);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         4301, 4302, 4303, 4304, 4305, 4306, 4307, 4308, 4309, 4310, 4311, 4312, 4313, 4314, 4315, 4316,
                         4317, 4318, 4319, 4320, 4321, 4322, 4323, 4324, 4325, 4326, 4327, 4328, 4329, 4330, 4331, 4332,
                         4333, 4334, 4335, 4336, 4337, 4338, 4339, 4340, 4341, 4342, 4343, 4344, 4345, 4346, 4347, 4348,
@@ -570,14 +566,14 @@ namespace Maple2.Trigger._02020200_bf {
                         4365, 4366, 4367, 4368, 4369, 4370, 4371, 4372, 4373, 4374, 4375
                     }, arg2: true, arg4: 50, arg5: 3f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316,
                         3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325, 3326, 3327, 3328, 3329, 3330, 3331, 3332,
                         3333, 3334, 3335, 3336, 3337, 3338, 3339, 3340, 3341, 3342, 3343, 3344, 3345, 3346, 3347, 3348,
                         3349, 3350, 3351, 3352, 3353, 3354, 3355, 3356, 3357, 3358, 3359, 3360, 3361, 3362, 3363, 3364,
                         3365, 3366, 3367, 3368, 3369, 3370, 3371, 3372, 3373, 3374, 3375
                     }, arg2: false, arg4: 50, arg5: 3f);
-                context.SetEffect(arg1: new int[] {11007}, arg2: true);
+                context.SetEffect(arg1: new[] {11007}, arg2: true);
             }
 
             public override void Execute() {
@@ -594,7 +590,7 @@ namespace Maple2.Trigger._02020200_bf {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {11008}, arg2: true);
+                context.SetEffect(arg1: new[] {11008}, arg2: true);
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
             }
 

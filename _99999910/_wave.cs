@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._99999910 {
     public static class _wave {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {701})) {
+                if (context.UserDetected(arg1: new[] {701})) {
                     // context.State = new Stateready(context);
                     return;
                 }
@@ -63,7 +59,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_a_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
             }
 
             public override void Execute() {
@@ -80,7 +76,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_a_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {202}, arg2: true);
+                context.CreateMonster(arg1: new[] {202}, arg2: true);
             }
 
             public override void Execute() {
@@ -97,7 +93,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_a_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {203}, arg2: true);
+                context.CreateMonster(arg1: new[] {203}, arg2: true);
             }
 
             public override void Execute() {
@@ -114,7 +110,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_a_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {204}, arg2: true);
+                context.CreateMonster(arg1: new[] {204}, arg2: true);
             }
 
             public override void Execute() {
@@ -131,7 +127,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_b_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {204}, arg2: true);
+                context.CreateMonster(arg1: new[] {204}, arg2: true);
             }
 
             public override void Execute() {
@@ -148,7 +144,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_b_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {203}, arg2: true);
+                context.CreateMonster(arg1: new[] {203}, arg2: true);
             }
 
             public override void Execute() {
@@ -165,7 +161,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_b_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {202}, arg2: true);
+                context.CreateMonster(arg1: new[] {202}, arg2: true);
             }
 
             public override void Execute() {
@@ -182,7 +178,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_b_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
             }
 
             public override void Execute() {
@@ -199,7 +195,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_c_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
             }
 
             public override void Execute() {
@@ -216,7 +212,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_c_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
             }
 
             public override void Execute() {
@@ -233,7 +229,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_c_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
             }
 
             public override void Execute() {
@@ -250,7 +246,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_c_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
             }
 
             public override void Execute() {
@@ -267,7 +263,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_d_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {204}, arg2: true);
+                context.CreateMonster(arg1: new[] {204}, arg2: true);
             }
 
             public override void Execute() {
@@ -284,7 +280,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_d_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {204}, arg2: true);
+                context.CreateMonster(arg1: new[] {204}, arg2: true);
             }
 
             public override void Execute() {
@@ -301,7 +297,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_d_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {204}, arg2: true);
+                context.CreateMonster(arg1: new[] {204}, arg2: true);
             }
 
             public override void Execute() {
@@ -318,7 +314,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_d_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {204}, arg2: true);
+                context.CreateMonster(arg1: new[] {204}, arg2: true);
             }
 
             public override void Execute() {
@@ -335,7 +331,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_e_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {205}, arg2: true);
+                context.CreateMonster(arg1: new[] {205}, arg2: true);
             }
 
             public override void Execute() {
@@ -352,7 +348,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_e_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {205}, arg2: true);
+                context.CreateMonster(arg1: new[] {205}, arg2: true);
             }
 
             public override void Execute() {
@@ -369,7 +365,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_e_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {205}, arg2: true);
+                context.CreateMonster(arg1: new[] {205}, arg2: true);
             }
 
             public override void Execute() {
@@ -386,7 +382,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_e_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {205}, arg2: true);
+                context.CreateMonster(arg1: new[] {205}, arg2: true);
             }
 
             public override void Execute() {
@@ -403,7 +399,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_f_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {205}, arg2: true);
+                context.CreateMonster(arg1: new[] {205}, arg2: true);
             }
 
             public override void Execute() {
@@ -420,7 +416,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_f_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {205}, arg2: true);
+                context.CreateMonster(arg1: new[] {205}, arg2: true);
             }
 
             public override void Execute() {
@@ -437,7 +433,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_f_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {205}, arg2: true);
+                context.CreateMonster(arg1: new[] {205}, arg2: true);
             }
 
             public override void Execute() {
@@ -454,7 +450,7 @@ namespace Maple2.Trigger._99999910 {
             internal Statepattern_f_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {205}, arg2: true);
+                context.CreateMonster(arg1: new[] {205}, arg2: true);
             }
 
             public override void Execute() {

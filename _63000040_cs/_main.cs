@@ -1,30 +1,26 @@
-using System;
-
 namespace Maple2.Trigger._63000040_cs {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateready(context);
-
-        private class Stateready : TriggerState {
+        public class Stateready : TriggerState {
             internal Stateready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101, 103, 104}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 103, 104}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {40002652},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002652},
                     arg3: new byte[] {3})) {
                     context.State = new Statestart_02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {40002652},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002652},
                     arg3: new byte[] {2})) {
                     context.State = new Statestart_02_ready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {40002652},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002652},
                     arg3: new byte[] {1})) {
                     context.State = new Statestart(context);
                     return;
@@ -38,12 +34,12 @@ namespace Maple2.Trigger._63000040_cs {
             internal Statestart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25200474, textID: 25200474);
-                context.SetEffect(arg1: new int[] {7001}, arg2: true);
+                context.ShowGuideSummary(entityId: 25200474, textId: 25200474);
+                context.SetEffect(arg1: new[] {7001}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {40002652},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002652},
                     arg3: new byte[] {2})) {
                     context.State = new Statestart_02_ready(context);
                     return;
@@ -57,12 +53,12 @@ namespace Maple2.Trigger._63000040_cs {
             internal Statestart_02_ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 25200474);
-                context.SetEffect(arg1: new int[] {7001}, arg2: false);
+                context.HideGuideSummary(entityId: 25200474);
+                context.SetEffect(arg1: new[] {7001}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {40002652},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002652},
                     arg3: new byte[] {3})) {
                     context.State = new Statestart_02(context);
                     return;
@@ -80,7 +76,7 @@ namespace Maple2.Trigger._63000040_cs {
                 context.SetProductionUI(arg1: 3);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2001");
                 context.MoveUserPath(arg1: "MS2PatrolData_2002");
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000040_CS__MAIN__0$", arg4: 5);
             }
 
@@ -155,7 +151,7 @@ namespace Maple2.Trigger._63000040_cs {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
+                    context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
                     context.State = new Statestart_07(context);
                     return;
                 }
@@ -183,7 +179,7 @@ namespace Maple2.Trigger._63000040_cs {
             internal Stateend(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {8003}, arg2: true);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }

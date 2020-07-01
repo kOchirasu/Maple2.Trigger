@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._52010009_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000866}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000880}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000915}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000866}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000880}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000915}, arg2: 0);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {20002091},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {20002091},
                     arg3: new byte[] {1})) {
                     context.State = new StateEvent_01_Idle(context);
                     return;
@@ -46,20 +42,20 @@ namespace Maple2.Trigger._52010009_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 110, textID: 40010);
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.ShowGuideSummary(entityId: 110, textId: 40010);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101})) {
+                if (context.MonsterDead(arg1: new[] {101})) {
                     context.State = new StateEvent_02(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 110);
-                context.SetInteractObject(arg1: new int[] {10000866}, arg2: 1);
+                context.HideGuideSummary(entityId: 110);
+                context.SetInteractObject(arg1: new[] {10000866}, arg2: 1);
             }
         }
 
@@ -68,19 +64,19 @@ namespace Maple2.Trigger._52010009_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 111, textID: 25201901);
+                context.ShowGuideSummary(entityId: 111, textId: 25201901);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000866}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000866}, arg2: 0)) {
                     context.State = new StateEvent_03(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 111);
-                context.CreateMonster(arg1: new int[] {111}, arg2: false);
+                context.HideGuideSummary(entityId: 111);
+                context.CreateMonster(arg1: new[] {111}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 111, arg3: "$52010009_QD__MAIN__0$", arg4: 3, arg5: 1);
                 context.MoveNpc(arg1: 111, arg2: "MS2PatrolData0_1001");
             }
@@ -91,20 +87,20 @@ namespace Maple2.Trigger._52010009_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 110, textID: 40010);
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.ShowGuideSummary(entityId: 110, textId: 40010);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {102})) {
+                if (context.MonsterDead(arg1: new[] {102})) {
                     context.State = new StateEvent_04(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 110);
-                context.SetInteractObject(arg1: new int[] {10000880}, arg2: 1);
+                context.HideGuideSummary(entityId: 110);
+                context.SetInteractObject(arg1: new[] {10000880}, arg2: 1);
             }
         }
 
@@ -113,19 +109,19 @@ namespace Maple2.Trigger._52010009_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 111, textID: 25201901);
+                context.ShowGuideSummary(entityId: 111, textId: 25201901);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000880}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000880}, arg2: 0)) {
                     context.State = new StateEvent_05(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 111);
-                context.CreateMonster(arg1: new int[] {112}, arg2: false);
+                context.HideGuideSummary(entityId: 111);
+                context.CreateMonster(arg1: new[] {112}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 112, arg3: "$52010009_QD__MAIN__1$", arg4: 3, arg5: 1);
                 context.MoveNpc(arg1: 112, arg2: "MS2PatrolData0_1001");
             }
@@ -136,20 +132,20 @@ namespace Maple2.Trigger._52010009_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 110, textID: 40010);
-                context.CreateMonster(arg1: new int[] {103}, arg2: false);
+                context.ShowGuideSummary(entityId: 110, textId: 40010);
+                context.CreateMonster(arg1: new[] {103}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {103})) {
+                if (context.MonsterDead(arg1: new[] {103})) {
                     context.State = new StateEvent_06(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 110);
-                context.SetInteractObject(arg1: new int[] {10000915}, arg2: 1);
+                context.HideGuideSummary(entityId: 110);
+                context.SetInteractObject(arg1: new[] {10000915}, arg2: 1);
             }
         }
 
@@ -158,19 +154,19 @@ namespace Maple2.Trigger._52010009_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 111, textID: 25201901);
+                context.ShowGuideSummary(entityId: 111, textId: 25201901);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000915}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000915}, arg2: 0)) {
                     context.State = new StateEnd(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 111);
-                context.CreateMonster(arg1: new int[] {113}, arg2: false);
+                context.HideGuideSummary(entityId: 111);
+                context.CreateMonster(arg1: new[] {113}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 113, arg3: "$52010009_QD__MAIN__2$", arg4: 3, arg5: 1);
                 context.MoveNpc(arg1: 113, arg2: "MS2PatrolData0_1001");
             }

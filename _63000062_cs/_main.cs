@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._63000062_cs {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State날짜체크(context);
-
-        private class State날짜체크 : TriggerState {
+        public class State날짜체크 : TriggerState {
             internal State날짜체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
@@ -28,8 +24,8 @@ namespace Maple2.Trigger._63000062_cs {
             internal State만남(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {111, 112});
-                context.CreateMonster(arg1: new int[] {121, 122}, arg2: false);
+                context.DestroyMonster(arg1: new[] {111, 112});
+                context.CreateMonster(arg1: new[] {121, 122}, arg2: false);
             }
 
             public override void Execute() {
@@ -46,8 +42,8 @@ namespace Maple2.Trigger._63000062_cs {
             internal State헤어짐(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {121, 122});
-                context.CreateMonster(arg1: new int[] {111, 112}, arg2: false);
+                context.DestroyMonster(arg1: new[] {121, 122});
+                context.CreateMonster(arg1: new[] {111, 112}, arg2: false);
             }
 
             public override void Execute() {

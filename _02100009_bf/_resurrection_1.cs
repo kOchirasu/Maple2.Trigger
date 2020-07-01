@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02100009_bf {
     public static class _resurrection_1 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State유저감지(context);
-
-        private class State유저감지 : TriggerState {
+        public class State유저감지 : TriggerState {
             internal State유저감지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State전투시작(context);
                     return;
                 }
@@ -23,11 +19,11 @@ namespace Maple2.Trigger._02100009_bf {
             internal State전투시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {100000001}, arg2: false);
+                context.CreateMonster(arg1: new[] {100000001}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterInCombat(arg1: new int[] {100000001})) {
+                if (context.MonsterInCombat(arg1: new[] {100000001})) {
                     context.State = new State버프(context);
                     return;
                 }
@@ -40,8 +36,8 @@ namespace Maple2.Trigger._02100009_bf {
             internal State버프(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {100000001}, arg2: 50000196, arg3: 1, arg4: true, arg5: false);
-                context.AddBuff(arg1: new int[] {100000001}, arg2: 50000200, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(arg1: new[] {100000001}, arg2: 50000196, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(arg1: new[] {100000001}, arg2: 50000200, arg3: 1, arg4: true, arg5: false);
             }
 
             public override void Execute() {
@@ -60,16 +56,16 @@ namespace Maple2.Trigger._02100009_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckNpcHp(spawnPointId: 100000001, compare: "lowerEqual", value: 5, isRelative: "true")) {
+                if (context.GetNpcHpRate(spawnPointId: 100000001) <= 0.5f) {
                     context.State = new State몬스터기절_2(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.AddBuff(arg1: new int[] {100000001}, arg2: 50000229, arg3: 1, arg4: true, arg5: false);
-                context.AddBuff(arg1: new int[] {100000001}, arg2: 50000207, arg3: 1, arg4: true, arg5: false);
-                context.AddBuff(arg1: new int[] {100000001}, arg2: 50000216, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(arg1: new[] {100000001}, arg2: 50000229, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(arg1: new[] {100000001}, arg2: 50000207, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(arg1: new[] {100000001}, arg2: 50000216, arg3: 1, arg4: true, arg5: false);
             }
         }
 
@@ -94,9 +90,9 @@ namespace Maple2.Trigger._02100009_bf {
             internal State몬스터부활(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {100000001}, arg2: 50000204, arg3: 1, arg4: true, arg5: false);
-                context.AddBuff(arg1: new int[] {100000001}, arg2: 50000196, arg3: 1, arg4: true, arg5: false);
-                context.AddBuff(arg1: new int[] {100000001}, arg2: 50000200, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(arg1: new[] {100000001}, arg2: 50000204, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(arg1: new[] {100000001}, arg2: 50000196, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(arg1: new[] {100000001}, arg2: 50000200, arg3: 1, arg4: true, arg5: false);
             }
 
             public override void Execute() {
@@ -115,14 +111,14 @@ namespace Maple2.Trigger._02100009_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckNpcHp(spawnPointId: 100000001, compare: "higher", value: 5, isRelative: "true")) {
+                if (context.GetNpcHpRate(spawnPointId: 100000001) > 0.5f) {
                     context.State = new State몬스터부활_2(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.AddBuff(arg1: new int[] {100000001}, arg2: 50000228, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(arg1: new[] {100000001}, arg2: 50000228, arg3: 1, arg4: true, arg5: false);
             }
         }
 

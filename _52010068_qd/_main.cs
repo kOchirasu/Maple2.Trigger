@@ -1,43 +1,39 @@
-using System;
-
 namespace Maple2.Trigger._52010068_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
-                context.SetEffect(arg1: new int[] {5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetEffect(arg1: new[] {5002}, arg2: false);
             }
 
             public override void Execute() {
-                if (!context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {20002391},
+                if (!context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {20002391},
                     arg3: new byte[] {3})) {
                     context.State = new State틴차이_준타_스폰01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {50100420},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420},
                     arg3: new byte[] {3})) {
                     context.State = new StateOrde_Out_Effect(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {50100420},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420},
                     arg3: new byte[] {2})) {
                     context.State = new StateOrde_Out_Effect(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {50100420},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420},
                     arg3: new byte[] {1})) {
                     context.State = new StateOrde_Out_Effect(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {50100400},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100400},
                     arg3: new byte[] {3})) {
                     context.State = new StateOrde_In_Effect(context);
                     return;
@@ -51,30 +47,30 @@ namespace Maple2.Trigger._52010068_qd {
             internal State틴차이_준타_스폰01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {102}, arg2: true);
-                context.CreateMonster(arg1: new int[] {103}, arg2: true);
+                context.CreateMonster(arg1: new[] {102}, arg2: true);
+                context.CreateMonster(arg1: new[] {103}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {50100420},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420},
                     arg3: new byte[] {3})) {
                     context.State = new StateOrde_Out_Effect(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {50100420},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420},
                     arg3: new byte[] {2})) {
                     context.State = new StateOrde_Out_Effect(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {50100420},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420},
                     arg3: new byte[] {1})) {
                     context.State = new StateOrde_Out_Effect(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {50100400},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100400},
                     arg3: new byte[] {3})) {
                     context.State = new StateOrde_In_Effect(context);
                     return;
@@ -90,7 +86,7 @@ namespace Maple2.Trigger._52010068_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetEffect(arg1: new int[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {5001}, arg2: true);
             }
 
             public override void Execute() {
@@ -107,7 +103,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal StateOrde_In(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: true);
+                context.CreateMonster(arg1: new[] {101}, arg2: true);
             }
 
             public override void Execute() {
@@ -125,9 +121,9 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 600, arg2: true);
-                context.SetEffect(arg1: new int[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {5001}, arg2: true);
                 context.SetNpcRotation(arg1: 101, arg2: -45);
-                context.AddCinematicTalk(npcID: 11004033, illustID: "Orde_normal", msg: "$52010068_QD__MAIN__0$",
+                context.AddCinematicTalk(npcId: 11004033, illustId: "Orde_normal", msg: "$52010068_QD__MAIN__0$",
                     align: "left");
             }
 
@@ -146,7 +142,7 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "IceSphere_A");
-                context.AddCinematicTalk(npcID: 11004033, illustID: "Orde_normal", msg: "$52010068_QD__MAIN__1$",
+                context.AddCinematicTalk(npcId: 11004033, illustId: "Orde_normal", msg: "$52010068_QD__MAIN__1$",
                     align: "left");
             }
 
@@ -187,19 +183,19 @@ namespace Maple2.Trigger._52010068_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {50100420},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420},
                     arg3: new byte[] {3})) {
                     context.State = new StateOrde_Out_Effect(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {50100420},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420},
                     arg3: new byte[] {2})) {
                     context.State = new StateOrde_Out_Effect(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {50100420},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100420},
                     arg3: new byte[] {1})) {
                     context.State = new StateOrde_Out_Effect(context);
                     return;
@@ -214,8 +210,8 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Wizard_Teleport_A");
-                context.AddBalloonTalk(spawnPointID: 101, msg: "$52010068_QD__MAIN__2$", duration: 2800, delayTick: 0);
-                context.SetEffect(arg1: new int[] {5002}, arg2: true);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$52010068_QD__MAIN__2$", duration: 2800, delayTick: 0);
+                context.SetEffect(arg1: new[] {5002}, arg2: true);
             }
 
             public override void Execute() {
@@ -232,8 +228,8 @@ namespace Maple2.Trigger._52010068_qd {
             internal StateOrde_Out(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101});
-                context.SetEffect(arg1: new int[] {5002}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101});
+                context.SetEffect(arg1: new[] {5002}, arg2: false);
             }
 
             public override void Execute() { }

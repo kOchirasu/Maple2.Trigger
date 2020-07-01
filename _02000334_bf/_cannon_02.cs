@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02000334_bf {
     public static class _cannon_02 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateIdle(context);
-
-        private class StateIdle : TriggerState {
+        public class StateIdle : TriggerState {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {98011}, arg2: false);
+                context.SetEffect(arg1: new[] {98011}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "cannon_02", value: 1)) {
+                if (context.GetUserValue(key: "cannon_02") == 1) {
                     context.State = new State마킹비표시(context);
                     return;
                 }
@@ -25,11 +21,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal State마킹비표시(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {98011}, arg2: false);
+                context.SetEffect(arg1: new[] {98011}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 90012, arg2: new int[] {190})) {
+                if (context.NpcDetected(arg1: 90012, arg2: new[] {190})) {
                     context.State = new State마킹표시(context);
                     return;
                 }
@@ -42,11 +38,11 @@ namespace Maple2.Trigger._02000334_bf {
             internal State마킹표시(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {98011}, arg2: true);
+                context.SetEffect(arg1: new[] {98011}, arg2: true);
             }
 
             public override void Execute() {
-                if (!context.NpcDetected(arg1: 90012, arg2: new int[] {190})) {
+                if (!context.NpcDetected(arg1: 90012, arg2: new[] {190})) {
                     context.State = new State마킹비표시(context);
                     return;
                 }

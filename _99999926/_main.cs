@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._99999926 {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateDungeonStart(context);
-
-        private class StateDungeonStart : TriggerState {
+        public class StateDungeonStart : TriggerState {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
@@ -18,11 +14,11 @@ namespace Maple2.Trigger._99999926 {
             internal StateBattle01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {421, 422, 423, 424, 425}, arg2: false);
+                context.CreateMonster(arg1: new[] {421, 422, 423, 424, 425}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {421, 422, 423, 424, 425})) {
+                if (context.MonsterDead(arg1: new[] {421, 422, 423, 424, 425})) {
                     context.State = new StateBattle02(context);
                     return;
                 }
@@ -35,11 +31,11 @@ namespace Maple2.Trigger._99999926 {
             internal StateBattle02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {411, 412, 413, 414, 415}, arg2: false);
+                context.CreateMonster(arg1: new[] {411, 412, 413, 414, 415}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {411, 412, 413, 414, 415})) {
+                if (context.MonsterDead(arg1: new[] {411, 412, 413, 414, 415})) {
                     context.State = new StateBattle03Random(context);
                     return;
                 }
@@ -72,12 +68,12 @@ namespace Maple2.Trigger._99999926 {
             internal StateBattle03A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {421, 422, 423, 424, 425}, arg2: false);
-                context.CreateMonster(arg1: new int[] {441}, arg2: false);
+                context.CreateMonster(arg1: new[] {421, 422, 423, 424, 425}, arg2: false);
+                context.CreateMonster(arg1: new[] {441}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {421, 422, 423, 424, 425})) {
+                if (context.MonsterDead(arg1: new[] {421, 422, 423, 424, 425})) {
                     context.State = new StateMevidicCinematic(context);
                     return;
                 }
@@ -90,12 +86,12 @@ namespace Maple2.Trigger._99999926 {
             internal StateBattle03B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {411, 412, 413, 414, 415}, arg2: false);
-                context.CreateMonster(arg1: new int[] {441}, arg2: false);
+                context.CreateMonster(arg1: new[] {411, 412, 413, 414, 415}, arg2: false);
+                context.CreateMonster(arg1: new[] {441}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {411, 412, 413, 414, 415})) {
+                if (context.MonsterDead(arg1: new[] {411, 412, 413, 414, 415})) {
                     context.State = new StateMevidicCinematic(context);
                     return;
                 }
@@ -108,12 +104,12 @@ namespace Maple2.Trigger._99999926 {
             internal StateMevidicCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {451}, arg2: false);
+                context.CreateMonster(arg1: new[] {451}, arg2: false);
                 context.MoveNpc(arg1: 451, arg2: "MS2PatrolData_701");
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 402, arg2: 1)) {
+                if (context.GetUserCount(boxId: 402) == 1) {
                     // context.State = new StateLoadingStart(context);
                     return;
                 }

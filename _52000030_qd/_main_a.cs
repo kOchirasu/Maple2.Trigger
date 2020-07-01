@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._52000030_qd {
     public static class _main_a {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {602}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101}, arg2: 80)) {
+                if (context.UserDetected(arg1: new[] {101}, arg2: 80)) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -28,10 +24,10 @@ namespace Maple2.Trigger._52000030_qd {
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
                 context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
-                context.PlaySceneMovie(fileName: "Nutaman_intro.swf", movieID: 1);
+                context.PlaySceneMovie(fileName: "Nutaman_intro.swf", movieId: 1);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(
-                    arg1: new int[]
+                    arg1: new[]
                         {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014},
                     arg2: false);
                 context.SetProductionUI(arg1: 1);
@@ -89,7 +85,7 @@ namespace Maple2.Trigger._52000030_qd {
 
             public override void Execute() {
                 if (context.NpcDetected(arg1: 102,
-                    arg2: new int[]
+                    arg2: new[]
                         {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014})) {
                     context.State = new State전투판으로이동(context);
                     return;
@@ -97,10 +93,10 @@ namespace Maple2.Trigger._52000030_qd {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[]
+                context.DestroyMonster(arg1: new[]
                     {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014});
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 2001, 2002
                     }, arg2: false);
                 context.SetProductionUI(arg1: 0);
@@ -117,14 +113,14 @@ namespace Maple2.Trigger._52000030_qd {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2001})) {
+                if (context.MonsterDead(arg1: new[] {2001})) {
                     context.State = new State2차전투(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {2002});
+                context.DestroyMonster(arg1: new[] {2002});
             }
         }
 
@@ -132,18 +128,18 @@ namespace Maple2.Trigger._52000030_qd {
             internal State2차전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {2003, 2004}, arg2: false);
+                context.CreateMonster(arg1: new[] {2003, 2004}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2003})) {
+                if (context.MonsterDead(arg1: new[] {2003})) {
                     context.State = new State이슈라대사02(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {2004});
+                context.DestroyMonster(arg1: new[] {2004});
             }
         }
 
@@ -173,11 +169,11 @@ namespace Maple2.Trigger._52000030_qd {
             internal State3차전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {2005}, arg2: false);
+                context.CreateMonster(arg1: new[] {2005}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2005})) {
+                if (context.MonsterDead(arg1: new[] {2005})) {
                     context.State = new State이슈라대사03(context);
                     return;
                 }

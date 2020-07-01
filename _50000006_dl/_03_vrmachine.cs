@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._50000006_dl {
     public static class _03_vrmachine {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "machineon", value: 0);
-                context.SetInteractObject(arg1: new int[] {10001246}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001246}, arg2: 2);
                 context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "machineon", value: 1)) {
+                if (context.GetUserValue(key: "machineon") == 1) {
                     context.State = new StateMachineOn(context);
                     return;
                 }
@@ -27,11 +23,11 @@ namespace Maple2.Trigger._50000006_dl {
             internal StateMachineOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001246}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001246}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001246}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001246}, arg2: 0)) {
                     context.State = new StatePortalOn(context);
                     return;
                 }
@@ -44,7 +40,7 @@ namespace Maple2.Trigger._50000006_dl {
             internal StatePortalOn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "DungeonRoomOpened", value: 1);
+                context.SetUserValue(triggerId: 1, key: "DungeonRoomOpened", value: 1);
                 context.SetPortal(arg1: 3, arg2: false, arg3: true, arg4: false);
             }
 
@@ -78,11 +74,11 @@ namespace Maple2.Trigger._50000006_dl {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
-                context.SetInteractObject(arg1: new int[] {10001246}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001246}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001246}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001246}, arg2: 0)) {
                     context.State = new StatePortalOn(context);
                     return;
                 }

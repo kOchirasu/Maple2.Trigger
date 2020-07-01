@@ -1,33 +1,29 @@
-using System;
-
 namespace Maple2.Trigger._52000192_qd {
     public static class _52000192 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statewait_01(context);
-
-        private class Statewait_01 : TriggerState {
+        public class Statewait_01 : TriggerState {
             internal Statewait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.SetEffect(arg1: new int[] {6001}, arg2: false);
-                context.SetEffect(arg1: new int[] {6002}, arg2: false);
-                context.SetEffect(arg1: new int[] {6003}, arg2: false);
-                context.SetEffect(arg1: new int[] {6004}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10001453}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001454}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001455}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001456}, arg2: 2);
+                context.SetEffect(arg1: new[] {6001}, arg2: false);
+                context.SetEffect(arg1: new[] {6002}, arg2: false);
+                context.SetEffect(arg1: new[] {6003}, arg2: false);
+                context.SetEffect(arg1: new[] {6004}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10001453}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001454}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001455}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001456}, arg2: 2);
                 context.SetPortal(arg1: 5003, arg2: false, arg3: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {10003423},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003423},
                     arg3: new byte[] {1})) {
                     context.State = new Statewait_01_02(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {10003423},
+                if (!context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003423},
                     arg3: new byte[] {1})) {
                     context.State = new State이동(context);
                     return;
@@ -61,9 +57,9 @@ namespace Maple2.Trigger._52000192_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.MoveUser(arg1: 52000192, arg2: 5001);
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
-                context.CreateMonster(arg1: new int[] {101});
-                context.CreateMonster(arg1: new int[] {102});
+                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
+                context.CreateMonster(arg1: new[] {101});
+                context.CreateMonster(arg1: new[] {102});
             }
 
             public override void Execute() {
@@ -100,9 +96,9 @@ namespace Maple2.Trigger._52000192_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcID: 11004785, msg: "$52000192_QD__52000192__0$", align: "left",
-                    illustID: "Ereb_surprise", duration: 4000);
-                context.CameraSelectPath(arg1: new int[] {4002, 4003}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004785, msg: "$52000192_QD__52000192__0$", align: "left",
+                    illustId: "Ereb_surprise", duration: 4000);
+                context.CameraSelectPath(arg1: new[] {4002, 4003}, arg2: false);
                 context.SetPcEmotionLoop(arg1: "Attack_Idle_A", arg2: 5000f);
             }
 
@@ -122,7 +118,7 @@ namespace Maple2.Trigger._52000192_qd {
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcID: 0, msg: "$52000192_QD__52000192__1$", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, msg: "$52000192_QD__52000192__1$", duration: 3000);
             }
 
             public override void Execute() {
@@ -139,9 +135,9 @@ namespace Maple2.Trigger._52000192_qd {
             internal State불난통로_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 0, msg: "$52000192_QD__52000192__2$", duration: 5000);
-                context.AddCinematicTalk(npcID: 11004787, msg: "$52000192_QD__52000192__3$", align: "left",
-                    illustID: "Baron_normal", duration: 4000);
+                context.AddCinematicTalk(npcId: 0, msg: "$52000192_QD__52000192__2$", duration: 5000);
+                context.AddCinematicTalk(npcId: 11004787, msg: "$52000192_QD__52000192__3$", align: "left",
+                    illustId: "Baron_normal", duration: 4000);
             }
 
             public override void Execute() {
@@ -195,12 +191,12 @@ namespace Maple2.Trigger._52000192_qd {
             internal State불끄기준비_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101});
-                context.DestroyMonster(arg1: new int[] {102});
-                context.CreateMonster(arg1: new int[] {103});
-                context.CreateMonster(arg1: new int[] {104});
-                context.SetEffect(arg1: new int[] {6001}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10001453}, arg2: 1);
+                context.DestroyMonster(arg1: new[] {101});
+                context.DestroyMonster(arg1: new[] {102});
+                context.CreateMonster(arg1: new[] {103});
+                context.CreateMonster(arg1: new[] {104});
+                context.SetEffect(arg1: new[] {6001}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10001453}, arg2: 1);
                 context.MoveUser(arg1: 52000192, arg2: 5002);
             }
 
@@ -219,14 +215,14 @@ namespace Maple2.Trigger._52000192_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SideNpcTalk(type: "talk", npcID: 11004787, illust: "Baron_normal",
+                context.SideNpcTalk(type: "talk", npcId: 11004787, illust: "Baron_normal",
                     script: "$52000192_QD__52000192__4$", duration: 3000);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001453}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001453}, arg2: 0)) {
                     context.State = new State불꺼라불꺼_02(context);
                     return;
                 }
@@ -240,16 +236,16 @@ namespace Maple2.Trigger._52000192_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
-                context.AddBalloonTalk(spawnPointID: 104, msg: "$52000192_QD__52000192__5$", duration: 4000);
-                context.SetEffect(arg1: new int[] {6021}, arg2: false);
-                context.SetEffect(arg1: new int[] {6005}, arg2: true);
-                context.SetEffect(arg1: new int[] {6006}, arg2: true);
-                context.SetEffect(arg1: new int[] {6007}, arg2: true);
-                context.SetEffect(arg1: new int[] {6008}, arg2: true);
-                context.CreateMonster(arg1: new int[] {201});
-                context.CreateMonster(arg1: new int[] {202});
-                context.CreateMonster(arg1: new int[] {203});
-                context.CreateMonster(arg1: new int[] {204});
+                context.AddBalloonTalk(spawnPointId: 104, msg: "$52000192_QD__52000192__5$", duration: 4000);
+                context.SetEffect(arg1: new[] {6021}, arg2: false);
+                context.SetEffect(arg1: new[] {6005}, arg2: true);
+                context.SetEffect(arg1: new[] {6006}, arg2: true);
+                context.SetEffect(arg1: new[] {6007}, arg2: true);
+                context.SetEffect(arg1: new[] {6008}, arg2: true);
+                context.CreateMonster(arg1: new[] {201});
+                context.CreateMonster(arg1: new[] {202});
+                context.CreateMonster(arg1: new[] {203});
+                context.CreateMonster(arg1: new[] {204});
             }
 
             public override void Execute() {
@@ -267,7 +263,7 @@ namespace Maple2.Trigger._52000192_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcID: 11004787, msg: "$52000192_QD__52000192__6$", illust: "Baron_normal",
+                context.AddCinematicTalk(npcId: 11004787, msg: "$52000192_QD__52000192__6$", illust: "Baron_normal",
                     align: "left", duration: 4000);
             }
 
@@ -290,7 +286,7 @@ namespace Maple2.Trigger._52000192_qd {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {201, 202, 203, 204})) {
+                if (context.MonsterDead(arg1: new[] {201, 202, 203, 204})) {
                     context.State = new State불꺼라불꺼_03(context);
                     return;
                 }
@@ -303,8 +299,8 @@ namespace Maple2.Trigger._52000192_qd {
             internal State불꺼라불꺼_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 104, msg: "$52000192_QD__52000192__7$", duration: 4000);
-                context.SetEffect(arg1: new int[] {6001}, arg2: false);
+                context.AddBalloonTalk(spawnPointId: 104, msg: "$52000192_QD__52000192__7$", duration: 4000);
+                context.SetEffect(arg1: new[] {6001}, arg2: false);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_3001");
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_3002");
             }
@@ -323,12 +319,12 @@ namespace Maple2.Trigger._52000192_qd {
             internal State불꺼라불꺼_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6002}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10001454}, arg2: 1);
+                context.SetEffect(arg1: new[] {6002}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10001454}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001454}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001454}, arg2: 0)) {
                     context.State = new State불꺼라불꺼_05(context);
                     return;
                 }
@@ -341,20 +337,20 @@ namespace Maple2.Trigger._52000192_qd {
             internal State불꺼라불꺼_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 104, msg: "$52000192_QD__52000192__8$", duration: 4000);
-                context.SetEffect(arg1: new int[] {6022}, arg2: false);
-                context.SetEffect(arg1: new int[] {6009}, arg2: true);
-                context.SetEffect(arg1: new int[] {6010}, arg2: true);
-                context.SetEffect(arg1: new int[] {6011}, arg2: true);
-                context.SetEffect(arg1: new int[] {6012}, arg2: true);
-                context.CreateMonster(arg1: new int[] {205});
-                context.CreateMonster(arg1: new int[] {206});
-                context.CreateMonster(arg1: new int[] {207});
-                context.CreateMonster(arg1: new int[] {208});
+                context.AddBalloonTalk(spawnPointId: 104, msg: "$52000192_QD__52000192__8$", duration: 4000);
+                context.SetEffect(arg1: new[] {6022}, arg2: false);
+                context.SetEffect(arg1: new[] {6009}, arg2: true);
+                context.SetEffect(arg1: new[] {6010}, arg2: true);
+                context.SetEffect(arg1: new[] {6011}, arg2: true);
+                context.SetEffect(arg1: new[] {6012}, arg2: true);
+                context.CreateMonster(arg1: new[] {205});
+                context.CreateMonster(arg1: new[] {206});
+                context.CreateMonster(arg1: new[] {207});
+                context.CreateMonster(arg1: new[] {208});
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {205, 206, 207, 208})) {
+                if (context.MonsterDead(arg1: new[] {205, 206, 207, 208})) {
                     context.State = new State불꺼라불꺼_06(context);
                     return;
                 }
@@ -367,8 +363,8 @@ namespace Maple2.Trigger._52000192_qd {
             internal State불꺼라불꺼_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 104, msg: "$52000192_QD__52000192__9$", duration: 4000);
-                context.SetEffect(arg1: new int[] {6002}, arg2: false);
+                context.AddBalloonTalk(spawnPointId: 104, msg: "$52000192_QD__52000192__9$", duration: 4000);
+                context.SetEffect(arg1: new[] {6002}, arg2: false);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_3003");
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_3004");
             }
@@ -387,12 +383,12 @@ namespace Maple2.Trigger._52000192_qd {
             internal State불꺼라불꺼_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6003}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10001455}, arg2: 1);
+                context.SetEffect(arg1: new[] {6003}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10001455}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001455}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001455}, arg2: 0)) {
                     context.State = new State불꺼라불꺼_08(context);
                     return;
                 }
@@ -405,20 +401,20 @@ namespace Maple2.Trigger._52000192_qd {
             internal State불꺼라불꺼_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 104, msg: "$52000192_QD__52000192__10$", duration: 4000);
-                context.SetEffect(arg1: new int[] {6023}, arg2: false);
-                context.SetEffect(arg1: new int[] {6013}, arg2: true);
-                context.SetEffect(arg1: new int[] {6014}, arg2: true);
-                context.SetEffect(arg1: new int[] {6015}, arg2: true);
-                context.SetEffect(arg1: new int[] {6016}, arg2: true);
-                context.CreateMonster(arg1: new int[] {209});
-                context.CreateMonster(arg1: new int[] {210});
-                context.CreateMonster(arg1: new int[] {211});
-                context.CreateMonster(arg1: new int[] {212});
+                context.AddBalloonTalk(spawnPointId: 104, msg: "$52000192_QD__52000192__10$", duration: 4000);
+                context.SetEffect(arg1: new[] {6023}, arg2: false);
+                context.SetEffect(arg1: new[] {6013}, arg2: true);
+                context.SetEffect(arg1: new[] {6014}, arg2: true);
+                context.SetEffect(arg1: new[] {6015}, arg2: true);
+                context.SetEffect(arg1: new[] {6016}, arg2: true);
+                context.CreateMonster(arg1: new[] {209});
+                context.CreateMonster(arg1: new[] {210});
+                context.CreateMonster(arg1: new[] {211});
+                context.CreateMonster(arg1: new[] {212});
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {209, 210, 211, 212})) {
+                if (context.MonsterDead(arg1: new[] {209, 210, 211, 212})) {
                     context.State = new State불꺼라불꺼_09(context);
                     return;
                 }
@@ -431,7 +427,7 @@ namespace Maple2.Trigger._52000192_qd {
             internal State불꺼라불꺼_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6003}, arg2: false);
+                context.SetEffect(arg1: new[] {6003}, arg2: false);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_3005");
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_3006");
             }
@@ -450,12 +446,12 @@ namespace Maple2.Trigger._52000192_qd {
             internal State불꺼라불꺼_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6004}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10001456}, arg2: 1);
+                context.SetEffect(arg1: new[] {6004}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10001456}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001456}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001456}, arg2: 0)) {
                     context.State = new State불꺼라불꺼_11(context);
                     return;
                 }
@@ -468,21 +464,21 @@ namespace Maple2.Trigger._52000192_qd {
             internal State불꺼라불꺼_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcID: 11004787, illust: "Baron_normal",
+                context.SideNpcTalk(type: "talk", npcId: 11004787, illust: "Baron_normal",
                     script: "$52000192_QD__52000192__11$", duration: 3000);
-                context.SetEffect(arg1: new int[] {6024}, arg2: false);
-                context.SetEffect(arg1: new int[] {6017}, arg2: true);
-                context.SetEffect(arg1: new int[] {6018}, arg2: true);
-                context.SetEffect(arg1: new int[] {6019}, arg2: true);
-                context.SetEffect(arg1: new int[] {6020}, arg2: true);
-                context.CreateMonster(arg1: new int[] {213});
-                context.CreateMonster(arg1: new int[] {214});
-                context.CreateMonster(arg1: new int[] {215});
-                context.CreateMonster(arg1: new int[] {216});
+                context.SetEffect(arg1: new[] {6024}, arg2: false);
+                context.SetEffect(arg1: new[] {6017}, arg2: true);
+                context.SetEffect(arg1: new[] {6018}, arg2: true);
+                context.SetEffect(arg1: new[] {6019}, arg2: true);
+                context.SetEffect(arg1: new[] {6020}, arg2: true);
+                context.CreateMonster(arg1: new[] {213});
+                context.CreateMonster(arg1: new[] {214});
+                context.CreateMonster(arg1: new[] {215});
+                context.CreateMonster(arg1: new[] {216});
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {213, 214, 215, 216})) {
+                if (context.MonsterDead(arg1: new[] {213, 214, 215, 216})) {
                     context.State = new State불꺼라불꺼_12(context);
                     return;
                 }
@@ -495,8 +491,8 @@ namespace Maple2.Trigger._52000192_qd {
             internal State불꺼라불꺼_12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 104, msg: "$52000192_QD__52000192__12$", duration: 3000);
-                context.SetEffect(arg1: new int[] {6004}, arg2: false);
+                context.AddBalloonTalk(spawnPointId: 104, msg: "$52000192_QD__52000192__12$", duration: 3000);
+                context.SetEffect(arg1: new[] {6004}, arg2: false);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_3007");
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_3008");
             }
@@ -519,8 +515,8 @@ namespace Maple2.Trigger._52000192_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetPcEmotionLoop(arg1: "Attack_Idle_A", arg2: 6000f);
-                context.AddCinematicTalk(npcID: 0, msg: "$52000192_QD__52000192__13$", duration: 3000);
-                context.AddCinematicTalk(npcID: 11004785, msg: "$52000192_QD__52000192__14$", illustID: "Ereb_surprise",
+                context.AddCinematicTalk(npcId: 0, msg: "$52000192_QD__52000192__13$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004785, msg: "$52000192_QD__52000192__14$", illustId: "Ereb_surprise",
                     duration: 4000);
             }
 

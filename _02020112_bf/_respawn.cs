@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02020112_bf {
     public static class _respawn {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -13,12 +9,12 @@ namespace Maple2.Trigger._02020112_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "respawn", value: 1)) {
+                if (context.GetUserValue(key: "respawn") == 1) {
                     context.State = new State스폰시작(context);
                     return;
                 }
 
-                if (context.UserValue(key: "respawn", value: 2)) {
+                if (context.GetUserValue(key: "respawn") == 2) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -31,12 +27,12 @@ namespace Maple2.Trigger._02020112_bf {
             internal State스폰시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020112_BF__RESPAWN__0$", arg3: new int[] {5000});
-                context.CreateMonster(arg1: new int[] {141, 142, 143, 144}, arg2: false);
+                context.SetEventUI(arg1: 1, arg2: "$02020112_BF__RESPAWN__0$", arg3: 5000);
+                context.CreateMonster(arg1: new[] {141, 142, 143, 144}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "respawn", value: 2)) {
+                if (context.GetUserValue(key: "respawn") == 2) {
                     context.State = new State종료(context);
                     return;
                 }

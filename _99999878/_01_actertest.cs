@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._99999878 {
     public static class _01_actertest {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 1000, arg2: true, arg3: "Closed");
-                context.SetBreakable(arg1: new int[] {2000}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {2000}, arg2: true);
+                context.SetBreakable(arg1: new[] {2000}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {2000}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new StateOpenDelay(context);
                     return;
                 }
@@ -43,8 +39,8 @@ namespace Maple2.Trigger._99999878 {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 1000, arg2: true, arg3: "Opened");
-                context.SetBreakable(arg1: new int[] {2000}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new int[] {2000}, arg2: true);
+                context.SetBreakable(arg1: new[] {2000}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {2000}, arg2: true);
             }
 
             public override void Execute() {
@@ -77,8 +73,8 @@ namespace Maple2.Trigger._99999878 {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 1000, arg2: false, arg3: "Opened");
-                context.SetBreakable(arg1: new int[] {2000}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {2000}, arg2: false);
+                context.SetBreakable(arg1: new[] {2000}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {2000}, arg2: false);
             }
 
             public override void Execute() {

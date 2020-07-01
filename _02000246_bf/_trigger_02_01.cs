@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02000246_bf {
     public static class _trigger_02_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {611, 612, 613, 614, 615, 616, 617, 618, 619});
+                context.DestroyMonster(arg1: new[] {611, 612, 613, 614, 615, 616, 617, 618, 619});
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {202})) {
+                if (context.UserDetected(arg1: new[] {202})) {
                     context.State = new State몹생성(context);
                     return;
                 }
@@ -25,12 +21,12 @@ namespace Maple2.Trigger._02000246_bf {
             internal State몹생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {611, 612, 613, 614, 615, 616, 617, 618, 619}, arg2: false);
+                context.CreateMonster(arg1: new[] {611, 612, 613, 614, 615, 616, 617, 618, 619}, arg2: false);
                 context.SetTimer(arg1: "1", arg2: 120);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {611, 612, 613, 614, 615, 616, 617, 618, 619})) {
+                if (context.MonsterDead(arg1: new[] {611, 612, 613, 614, 615, 616, 617, 618, 619})) {
                     context.State = new State통과(context);
                     return;
                 }

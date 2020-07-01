@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000006_qd {
     public static class _tutorial_06_1 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State엔터대기중(context);
-
-        private class State엔터대기중 : TriggerState {
+        public class State엔터대기중 : TriggerState {
             internal State엔터대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {100})) {
+                if (context.UserDetected(arg1: new[] {100})) {
                     context.State = new State연출세팅(context);
                     return;
                 }
@@ -62,7 +58,7 @@ namespace Maple2.Trigger._52000006_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.CreateMonster(arg1: new int[] {201}, arg2: false);
+                context.CreateMonster(arg1: new[] {201}, arg2: false);
                 context.SetProductionUI(arg1: 3, arg2: "$52000006_QD__TUTORIAL_06_1__1$");
             }
 
@@ -99,7 +95,7 @@ namespace Maple2.Trigger._52000006_qd {
             internal State연출끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {201});
+                context.DestroyMonster(arg1: new[] {201});
                 context.CameraSelect(arg1: 302, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);

@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._63000054_cs {
     public static class _01_portalevent {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {

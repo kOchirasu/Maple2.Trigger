@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52000091_qd {
     public static class _52000091_trigger {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State분기검사01(context);
-
-        private class State분기검사01 : TriggerState {
+        public class State분기검사01 : TriggerState {
             internal State분기검사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,109 +8,109 @@ namespace Maple2.Trigger._52000091_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100570},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100570},
                     arg3: new byte[] {3})) {
                     context.State = new State52000091로이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100570},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100570},
                     arg3: new byte[] {2})) {
                     context.State = new State52000091로이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100570},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100570},
                     arg3: new byte[] {1})) {
                     context.State = new State52000093로이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002282},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002282},
                     arg3: new byte[] {3})) {
                     context.State = new State20002282완료가능할때(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100570},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100570},
                     arg3: new byte[] {1})) {
                     context.State = new State분기검사02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100560},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100560},
                     arg3: new byte[] {3})) {
                     // context.State = new State52000095로이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100560},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100560},
                     arg3: new byte[] {3})) {
                     context.State = new State분기검사02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100560},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100560},
                     arg3: new byte[] {1})) {
                     context.State = new State52000094로이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100560},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100560},
                     arg3: new byte[] {1})) {
                     context.State = new State분기검사02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100550},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100550},
                     arg3: new byte[] {3})) {
                     context.State = new State52000094로이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100550},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100550},
                     arg3: new byte[] {3})) {
                     context.State = new State분기검사02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100520},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100520},
                     arg3: new byte[] {3})) {
                     context.State = new State52000099로이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100520},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100520},
                     arg3: new byte[] {3})) {
                     context.State = new State분기검사02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100520},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100520},
                     arg3: new byte[] {2})) {
                     context.State = new State52000099로이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100520},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100520},
                     arg3: new byte[] {2})) {
                     context.State = new State분기검사02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002282},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002282},
                     arg3: new byte[] {2})) {
                     context.State = new State20002282완료가능할때(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100570},
+                if (!context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100570},
                     arg3: new byte[] {2})) {
                     context.State = new State분기검사02(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002282},
+                if (!context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002282},
                     arg3: new byte[] {2})) {
                     context.State = new State분기검사02(context);
                     return;
@@ -130,127 +126,127 @@ namespace Maple2.Trigger._52000091_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100570},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100570},
                     arg3: new byte[] {3})) {
                     context.State = new State52000091로이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100570},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100570},
                     arg3: new byte[] {2})) {
                     // context.State = new State50100570완료가능할때(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100570},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100570},
                     arg3: new byte[] {1})) {
                     context.State = new State52000093로이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100560},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100560},
                     arg3: new byte[] {2})) {
                     context.State = new State완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002281},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002281},
                     arg3: new byte[] {2})) {
                     context.State = new State완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100560},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100560},
                     arg3: new byte[] {1})) {
                     context.State = new State완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002281},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002281},
                     arg3: new byte[] {1})) {
                     context.State = new State완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100560},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100560},
                     arg3: new byte[] {3})) {
                     context.State = new State완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002281},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002281},
                     arg3: new byte[] {3})) {
                     context.State = new State완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100550},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100550},
                     arg3: new byte[] {2})) {
                     context.State = new State52000099로이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002280},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002280},
                     arg3: new byte[] {2})) {
                     context.State = new State52000099로이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100550},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100550},
                     arg3: new byte[] {1})) {
                     context.State = new State52000099로이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002280},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002280},
                     arg3: new byte[] {1})) {
                     context.State = new State52000099로이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100550},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100550},
                     arg3: new byte[] {3})) {
                     context.State = new State완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002280},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002280},
                     arg3: new byte[] {3})) {
                     context.State = new State완료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100540},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100540},
                     arg3: new byte[] {3})) {
                     context.State = new State52000099로이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002279},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002279},
                     arg3: new byte[] {3})) {
                     context.State = new State52000099로이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100520},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100520},
                     arg3: new byte[] {2})) {
                     context.State = new State20002277완료가능할때(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002277},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002277},
                     arg3: new byte[] {2})) {
                     context.State = new State20002277완료가능할때(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100520},
+                if (!context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100520},
                     arg3: new byte[] {2})) {
                     context.State = new State완료(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002277},
+                if (!context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002277},
                     arg3: new byte[] {2})) {
                     context.State = new State완료(context);
                     return;
@@ -293,12 +289,12 @@ namespace Maple2.Trigger._52000091_qd {
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUser(arg1: 52000091, arg2: 99);
-                context.CreateMonster(arg1: new int[] {200}, arg2: true);
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
-                context.CreateMonster(arg1: new int[] {202}, arg2: true);
-                context.CreateMonster(arg1: new int[] {203}, arg2: true);
+                context.CreateMonster(arg1: new[] {200}, arg2: true);
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.CreateMonster(arg1: new[] {202}, arg2: true);
+                context.CreateMonster(arg1: new[] {203}, arg2: true);
                 context.SpawnNpcRange(
-                    rangeID: new int[] {
+                    rangeId: new[] {
                         210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228,
                         229, 230, 231, 232, 233, 234, 235, 236, 237
                     }, isAutoTargeting: false);
@@ -323,12 +319,12 @@ namespace Maple2.Trigger._52000091_qd {
                 context.SetProductionUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUser(arg1: 52000091, arg2: 99);
-                context.CreateMonster(arg1: new int[] {200}, arg2: true);
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
-                context.CreateMonster(arg1: new int[] {202}, arg2: true);
-                context.CreateMonster(arg1: new int[] {203}, arg2: true);
+                context.CreateMonster(arg1: new[] {200}, arg2: true);
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
+                context.CreateMonster(arg1: new[] {202}, arg2: true);
+                context.CreateMonster(arg1: new[] {203}, arg2: true);
                 context.SpawnNpcRange(
-                    rangeID: new int[] {
+                    rangeId: new[] {
                         210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228,
                         229, 230, 231, 232, 233, 234, 235, 236, 237
                     }, isAutoTargeting: false);
@@ -354,13 +350,13 @@ namespace Maple2.Trigger._52000091_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {50100580},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {50100580},
                     arg3: new byte[] {3})) {
                     context.State = new State마드리아쿠키01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002283},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002283},
                     arg3: new byte[] {3})) {
                     context.State = new State마드리아쿠키01(context);
                     return;
@@ -510,7 +506,7 @@ namespace Maple2.Trigger._52000091_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUser(arg1: 52000091, arg2: 99);
-                context.CreateMonster(arg1: new int[] {200}, arg2: true);
+                context.CreateMonster(arg1: new[] {200}, arg2: true);
                 context.SetNpcEmotionLoop(arg1: 200, arg2: "Stun_A", arg3: 18000f);
             }
 
@@ -544,7 +540,7 @@ namespace Maple2.Trigger._52000091_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {1000, 1001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {1000, 1001}, arg2: false);
             }
 
             public override void Execute() {
@@ -561,7 +557,7 @@ namespace Maple2.Trigger._52000091_qd {
             internal State마드라칸연출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1002, 1003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {1002, 1003}, arg2: false);
                 context.SetPcEmotionSequence(arg1: "Jump_Damg_A");
             }
 
@@ -579,7 +575,7 @@ namespace Maple2.Trigger._52000091_qd {
             internal State마드라칸연출03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {1004, 1008, 1009, 1010}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {1004, 1008, 1009, 1010}, arg2: false);
             }
 
             public override void Execute() {
@@ -628,7 +624,7 @@ namespace Maple2.Trigger._52000091_qd {
             internal State완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {200}, arg2: true);
+                context.CreateMonster(arg1: new[] {200}, arg2: true);
             }
 
             public override void Execute() { }

@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52100041_qd {
     public static class _magic_04 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10002075}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002075}, arg2: 0)) {
                     context.State = new StateReady(context);
                     return;
                 }
@@ -23,14 +19,14 @@ namespace Maple2.Trigger._52100041_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7004}, arg2: false);
-                context.SetMesh(arg1: new int[] {1104}, arg2: false, arg3: 0, arg4: 200, arg5: 15f);
-                context.SetMesh(arg1: new int[] {1204}, arg2: true, arg3: 0, arg4: 200, arg5: 15f);
-                context.CreateMonster(arg1: new int[] {204}, arg2: false);
+                context.SetEffect(arg1: new[] {7004}, arg2: false);
+                context.SetMesh(arg1: new[] {1104}, arg2: false, arg3: 0, arg4: 200, arg5: 15f);
+                context.SetMesh(arg1: new[] {1204}, arg2: true, arg3: 0, arg4: 200, arg5: 15f);
+                context.CreateMonster(arg1: new[] {204}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {204})) {
+                if (context.MonsterDead(arg1: new[] {204})) {
                     context.State = new StateEvent_04(context);
                     return;
                 }
@@ -43,7 +39,7 @@ namespace Maple2.Trigger._52100041_qd {
             internal StateEvent_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {144}, arg2: false);
+                context.CreateMonster(arg1: new[] {144}, arg2: false);
             }
 
             public override void Execute() {
@@ -98,7 +94,7 @@ namespace Maple2.Trigger._52100041_qd {
             internal StateEvent_04_d(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {144});
+                context.DestroyMonster(arg1: new[] {144});
             }
 
             public override void Execute() { }

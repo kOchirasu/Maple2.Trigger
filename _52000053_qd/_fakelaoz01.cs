@@ -1,42 +1,38 @@
-using System;
-
 namespace Maple2.Trigger._52000053_qd {
     public static class _fakelaoz01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new int[] {5000}, arg2: false);
-                context.SetEffect(arg1: new int[] {5100}, arg2: false);
-                context.SetEffect(arg1: new int[] {5200}, arg2: false);
-                context.SetEffect(arg1: new int[] {5300}, arg2: false);
-                context.SetEffect(arg1: new int[] {5400}, arg2: false);
-                context.SetEffect(arg1: new int[] {5500}, arg2: false);
-                context.SetEffect(arg1: new int[] {5501}, arg2: false);
-                context.SetEffect(arg1: new int[] {5502}, arg2: false);
-                context.SetEffect(arg1: new int[] {5600}, arg2: false);
-                context.SetMesh(arg1: new int[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMesh(arg1: new int[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
-                context.SetMeshAnimation(arg1: new int[] {3000}, arg2: true, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new int[] {3001}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new int[] {3002}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMesh(arg1: new int[] {3100, 3101, 3102, 3103, 3104, 3105, 3106}, arg2: true, arg3: 0,
+                context.SetEffect(arg1: new[] {5000}, arg2: false);
+                context.SetEffect(arg1: new[] {5100}, arg2: false);
+                context.SetEffect(arg1: new[] {5200}, arg2: false);
+                context.SetEffect(arg1: new[] {5300}, arg2: false);
+                context.SetEffect(arg1: new[] {5400}, arg2: false);
+                context.SetEffect(arg1: new[] {5500}, arg2: false);
+                context.SetEffect(arg1: new[] {5501}, arg2: false);
+                context.SetEffect(arg1: new[] {5502}, arg2: false);
+                context.SetEffect(arg1: new[] {5600}, arg2: false);
+                context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMesh(arg1: new[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 2f);
+                context.SetMeshAnimation(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(arg1: new[] {3002}, arg2: false, arg3: 0, arg4: 0);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: true, arg3: 0,
+                context.SetMesh(arg1: new[] {3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315,
                         3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323
                     }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkill(arg1: new int[] {2000}, arg2: false);
-                context.SetSkill(arg1: new int[] {2001}, arg2: false);
-                context.SetSkill(arg1: new int[] {2002}, arg2: false);
-                context.SetSkill(arg1: new int[] {2003}, arg2: false);
+                context.SetSkill(arg1: new[] {2000}, arg2: false);
+                context.SetSkill(arg1: new[] {2001}, arg2: false);
+                context.SetSkill(arg1: new[] {2002}, arg2: false);
+                context.SetSkill(arg1: new[] {2003}, arg2: false);
                 context.SetAgent(arg1: "8000", arg2: true);
                 context.SetAgent(arg1: "8001", arg2: true);
                 context.SetAgent(arg1: "8002", arg2: true);
@@ -52,7 +48,7 @@ namespace Maple2.Trigger._52000053_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new StateLodingDelay01(context);
                     return;
                 }
@@ -85,8 +81,8 @@ namespace Maple2.Trigger._52000053_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 500, arg2: true);
-                context.CreateMonster(arg1: new int[] {101, 201}, arg2: false);
-                context.CreateMonster(arg1: new int[] {910, 911, 912, 920, 921, 922}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 201}, arg2: false);
+                context.CreateMonster(arg1: new[] {910, 911, 912, 920, 921, 922}, arg2: false);
             }
 
             public override void Execute() {
@@ -318,7 +314,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraApp02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {301}, arg2: false);
+                context.CreateMonster(arg1: new[] {301}, arg2: false);
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_302");
             }
 
@@ -374,8 +370,8 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraApp04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101, 201});
-                context.CreateMonster(arg1: new int[] {104, 204}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101, 201});
+                context.CreateMonster(arg1: new[] {104, 204}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Event_A");
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$52000053_QD__FAKELAOZ01__7$", arg4: 5);
                 context.SetSkip(arg1: "KanduraApp04Skip");
@@ -416,8 +412,8 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateCollapseBridge01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {2000}, arg2: true);
-                context.SetEffect(arg1: new int[] {5100}, arg2: true);
+                context.SetSkill(arg1: new[] {2000}, arg2: true);
+                context.SetEffect(arg1: new[] {5100}, arg2: true);
             }
 
             public override void Execute() {
@@ -434,7 +430,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateCollapseBridge02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {2001}, arg2: true);
+                context.SetSkill(arg1: new[] {2001}, arg2: true);
             }
 
             public override void Execute() {
@@ -451,7 +447,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateCollapseBridge03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {2002}, arg2: true);
+                context.SetSkill(arg1: new[] {2002}, arg2: true);
             }
 
             public override void Execute() {
@@ -542,7 +538,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateFakeLaozApp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5200}, arg2: true);
+                context.SetEffect(arg1: new[] {5200}, arg2: true);
             }
 
             public override void Execute() {
@@ -559,7 +555,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateFakeLaozApp02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {900}, arg2: false);
+                context.CreateMonster(arg1: new[] {900}, arg2: false);
             }
 
             public override void Execute() {
@@ -688,8 +684,8 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateReachToLamp04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {104, 204});
-                context.CreateMonster(arg1: new int[] {102, 202}, arg2: false);
+                context.DestroyMonster(arg1: new[] {104, 204});
+                context.CreateMonster(arg1: new[] {102, 202}, arg2: false);
                 context.CameraSelect(arg1: 700, arg2: false);
             }
 
@@ -738,12 +734,12 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisapp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2, key: "SpyKandura", value: 1);
-                context.DestroyMonster(arg1: new int[] {301});
+                context.SetUserValue(triggerId: 2, key: "SpyKandura", value: 1);
+                context.DestroyMonster(arg1: new[] {301});
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {900})) {
+                if (context.MonsterDead(arg1: new[] {900})) {
                     context.State = new StateKanduraDisapp02(context);
                     return;
                 }
@@ -765,7 +761,7 @@ namespace Maple2.Trigger._52000053_qd {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {900, 910, 911, 912, 920, 921, 922});
+                context.DestroyMonster(arg1: new[] {900, 910, 911, 912, 920, 921, 922});
             }
         }
 
@@ -773,13 +769,13 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateFakeLaozDie01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3000}, arg2: false, arg3: 200, arg4: 0, arg5: 5f);
-                context.SetMesh(arg1: new int[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 5f);
-                context.SetMeshAnimation(arg1: new int[] {3000}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new int[] {3001}, arg2: true, arg3: 200, arg4: 0);
-                context.SetUserValue(triggerID: 2, key: "SpyKandura", value: 2);
-                context.DestroyMonster(arg1: new int[] {102, 202});
-                context.CreateMonster(arg1: new int[] {103, 203}, arg2: false);
+                context.SetMesh(arg1: new[] {3000}, arg2: false, arg3: 200, arg4: 0, arg5: 5f);
+                context.SetMesh(arg1: new[] {3001}, arg2: true, arg3: 0, arg4: 0, arg5: 5f);
+                context.SetMeshAnimation(arg1: new[] {3000}, arg2: false, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(arg1: new[] {3001}, arg2: true, arg3: 200, arg4: 0);
+                context.SetUserValue(triggerId: 2, key: "SpyKandura", value: 2);
+                context.DestroyMonster(arg1: new[] {102, 202});
+                context.CreateMonster(arg1: new[] {103, 203}, arg2: false);
             }
 
             public override void Execute() {
@@ -796,14 +792,14 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateLampLightUp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5300}, arg2: true);
+                context.SetEffect(arg1: new[] {5300}, arg2: true);
                 context.SetRandomMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315,
                         3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323
                     }, arg2: true, arg3: 24, arg4: 100, arg5: 70);
-                context.SetMesh(arg1: new int[] {3202, 3203, 3204}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3100, 3101, 3102, 3103, 3104, 3105, 3106}, arg2: false, arg3: 0,
+                context.SetMesh(arg1: new[] {3202, 3203, 3204}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106}, arg2: false, arg3: 0,
                     arg4: 0, arg5: 0f);
                 context.CameraSelect(arg1: 700, arg2: true);
                 context.SetProductionUI(arg1: 1);
@@ -937,7 +933,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateNpcWalkDown02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {302}, arg2: false);
+                context.CreateMonster(arg1: new[] {302}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 203, arg3: "$52000053_QD__FAKELAOZ01__17$", arg4: 3, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000053_QD__FAKELAOZ01__18$", arg4: 3, arg5: 3);
             }
@@ -956,10 +952,10 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateNpcWalkDown03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3002}, arg2: true, arg3: 0, arg4: 0, arg5: 5f);
-                context.SetMeshAnimation(arg1: new int[] {3001}, arg2: false, arg3: 0, arg4: 0);
-                context.SetMeshAnimation(arg1: new int[] {3002}, arg2: true, arg3: 200, arg4: 0);
+                context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3002}, arg2: true, arg3: 0, arg4: 0, arg5: 5f);
+                context.SetMeshAnimation(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0);
+                context.SetMeshAnimation(arg1: new[] {3002}, arg2: true, arg3: 200, arg4: 0);
             }
 
             public override void Execute() {
@@ -987,8 +983,8 @@ namespace Maple2.Trigger._52000053_qd {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {103, 203});
-                context.CreateMonster(arg1: new int[] {105, 205}, arg2: false);
+                context.DestroyMonster(arg1: new[] {103, 203});
+                context.CreateMonster(arg1: new[] {105, 205}, arg2: false);
             }
         }
 
@@ -1126,7 +1122,7 @@ namespace Maple2.Trigger._52000053_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$52000053_QD__FAKELAOZ01__22$", arg4: 5);
-                context.SetEffect(arg1: new int[] {5400}, arg2: true);
+                context.SetEffect(arg1: new[] {5400}, arg2: true);
                 context.SetSkip(arg1: "KanduraReadyToLeave03");
             }
 
@@ -1147,7 +1143,7 @@ namespace Maple2.Trigger._52000053_qd {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         840, 841, 842, 843, 844, 845, 846, 847, 848, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858,
                         859, 860, 861, 862, 863, 864, 865, 866, 867, 868, 869
                     }, arg2: false);
@@ -1168,7 +1164,7 @@ namespace Maple2.Trigger._52000053_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         870, 871, 872, 873, 874, 875, 876, 877, 878, 879, 880, 881, 882, 883, 884, 885, 886, 887, 888,
                         889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899
                     }, arg2: false);
@@ -1188,7 +1184,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateShadowApp02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {302});
+                context.DestroyMonster(arg1: new[] {302});
                 context.MoveNpc(arg1: 105, arg2: "MS2PatrolData_105");
                 context.MoveNpc(arg1: 205, arg2: "MS2PatrolData_205");
                 context.CameraSelect(arg1: 720, arg2: true);
@@ -1312,8 +1308,8 @@ namespace Maple2.Trigger._52000053_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$52000053_QD__FAKELAOZ01__27$", arg4: 4);
-                context.DestroyMonster(arg1: new int[] {105, 205});
-                context.CreateMonster(arg1: new int[] {106, 206}, arg2: false);
+                context.DestroyMonster(arg1: new[] {105, 205});
+                context.CreateMonster(arg1: new[] {106, 206}, arg2: false);
                 context.SetSkip(arg1: "RealLaozApp02");
             }
 
@@ -1333,9 +1329,9 @@ namespace Maple2.Trigger._52000053_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.CreateMonster(arg1: new int[] {400}, arg2: false);
+                context.CreateMonster(arg1: new[] {400}, arg2: false);
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958,
                         959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977,
                         978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989, 990, 991, 992, 993, 994, 995, 996,
@@ -1358,7 +1354,7 @@ namespace Maple2.Trigger._52000053_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 721, arg2: true);
-                context.DestroyMonster(arg1: new int[] {
+                context.DestroyMonster(arg1: new[] {
                     840, 841, 842, 843, 844, 845, 846, 847, 848, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858, 859,
                     860, 861, 862, 863, 864, 865, 866, 867, 868, 869, 870, 871, 872, 873, 874, 875, 876, 877, 878, 879,
                     880, 881, 882, 883, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899
@@ -1380,9 +1376,9 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateLaozKillAll01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5600}, arg2: true);
+                context.SetEffect(arg1: new[] {5600}, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 400, arg2: "Attack_01_D");
-                context.SetEffect(arg1: new int[] {5501}, arg2: true);
+                context.SetEffect(arg1: new[] {5501}, arg2: true);
             }
 
             public override void Execute() {
@@ -1399,9 +1395,9 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateLaozKillAll02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5500}, arg2: true);
-                context.SetEffect(arg1: new int[] {5502}, arg2: true);
-                context.SetSkill(arg1: new int[] {2003}, arg2: true);
+                context.SetEffect(arg1: new[] {5500}, arg2: true);
+                context.SetEffect(arg1: new[] {5502}, arg2: true);
+                context.SetSkill(arg1: new[] {2003}, arg2: true);
             }
 
             public override void Execute() {
@@ -1418,8 +1414,8 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateLaozKillAll03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5400}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {
+                context.SetEffect(arg1: new[] {5400}, arg2: false);
+                context.DestroyMonster(arg1: new[] {
                     940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959,
                     960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 978, 979,
                     980, 981, 982, 983, 984, 985, 986, 987, 988, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999
@@ -1477,8 +1473,8 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateQuestLaozApp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {400});
-                context.CreateMonster(arg1: new int[] {401}, arg2: false);
+                context.DestroyMonster(arg1: new[] {400});
+                context.CreateMonster(arg1: new[] {401}, arg2: false);
                 context.CameraSelect(arg1: 730, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
@@ -1502,7 +1498,7 @@ namespace Maple2.Trigger._52000053_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {10003058},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10003058},
                     arg3: new byte[] {1})) {
                     context.State = new StateTimeToLeave01(context);
                     return;

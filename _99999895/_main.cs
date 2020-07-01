@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._99999895 {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {901})) {
+                if (context.UserDetected(arg1: new[] {901})) {
                     context.State = new State딜레이(context);
                     return;
                 }
@@ -38,7 +34,7 @@ namespace Maple2.Trigger._99999895 {
             internal State몬스터스폰대기1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "첫 번째 상대가 곧 출현합니다. 전투 준비를 하세요!!", arg3: new int[] {3000});
+                context.SetEventUI(arg1: 1, arg2: "첫 번째 상대가 곧 출현합니다. 전투 준비를 하세요!!", arg3: 3000);
             }
 
             public override void Execute() {
@@ -55,7 +51,7 @@ namespace Maple2.Trigger._99999895 {
             internal State카운트1_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "3", arg3: new int[] {1000});
+                context.SetEventUI(arg1: 1, arg2: "3", arg3: 1000);
             }
 
             public override void Execute() {
@@ -72,7 +68,7 @@ namespace Maple2.Trigger._99999895 {
             internal State카운트1_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "2", arg3: new int[] {1000});
+                context.SetEventUI(arg1: 1, arg2: "2", arg3: 1000);
             }
 
             public override void Execute() {
@@ -89,7 +85,7 @@ namespace Maple2.Trigger._99999895 {
             internal State카운트1_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "1", arg3: new int[] {1000});
+                context.SetEventUI(arg1: 1, arg2: "1", arg3: 1000);
             }
 
             public override void Execute() {
@@ -106,8 +102,8 @@ namespace Maple2.Trigger._99999895 {
             internal State몬스터스폰1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "시작!!", arg3: new int[] {1000});
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.SetEventUI(arg1: 1, arg2: "시작!!", arg3: 1000);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
             public override void Execute() {
@@ -124,12 +120,12 @@ namespace Maple2.Trigger._99999895 {
             internal State스폰대사1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 101, msg: "네 마음가짐과 기량을 한 번 볼까?", duration: 3000);
+                context.AddBalloonTalk(spawnPointId: 101, msg: "네 마음가짐과 기량을 한 번 볼까?", duration: 3000);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101})) {
-                    context.AddBalloonTalk(spawnPointID: 101, msg: "너 따위 애송이에게 지다니...", duration: 3000);
+                if (context.MonsterDead(arg1: new[] {101})) {
+                    context.AddBalloonTalk(spawnPointId: 101, msg: "너 따위 애송이에게 지다니...", duration: 3000);
                     context.State = new State몬스터스폰대기2(context);
                     return;
                 }
@@ -143,7 +139,7 @@ namespace Maple2.Trigger._99999895 {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "첫 전투에서 승리하셨습니다. 잠시만 기다려주세요 다음전투가 기다리고 있습니다!!",
-                    arg3: new int[] {5000});
+                    arg3: 5000);
             }
 
             public override void Execute() {
@@ -160,7 +156,7 @@ namespace Maple2.Trigger._99999895 {
             internal State카운트2_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "3", arg3: new int[] {1000});
+                context.SetEventUI(arg1: 1, arg2: "3", arg3: 1000);
             }
 
             public override void Execute() {
@@ -177,7 +173,7 @@ namespace Maple2.Trigger._99999895 {
             internal State카운트2_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "2", arg3: new int[] {1000});
+                context.SetEventUI(arg1: 1, arg2: "2", arg3: 1000);
             }
 
             public override void Execute() {
@@ -194,7 +190,7 @@ namespace Maple2.Trigger._99999895 {
             internal State카운트2_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "1", arg3: new int[] {1000});
+                context.SetEventUI(arg1: 1, arg2: "1", arg3: 1000);
             }
 
             public override void Execute() {
@@ -211,8 +207,8 @@ namespace Maple2.Trigger._99999895 {
             internal State몬스터스폰2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "시작!!", arg3: new int[] {1000});
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.SetEventUI(arg1: 1, arg2: "시작!!", arg3: 1000);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
             public override void Execute() {
@@ -229,12 +225,12 @@ namespace Maple2.Trigger._99999895 {
             internal State스폰대사2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 102, msg: "와라!! 얼마나 성장했는지 보겠다!", duration: 3000);
+                context.AddBalloonTalk(spawnPointId: 102, msg: "와라!! 얼마나 성장했는지 보겠다!", duration: 3000);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {102})) {
-                    context.AddBalloonTalk(spawnPointID: 102, msg: "꽤 하는군. 즐거운 싸움이었다.", duration: 3000);
+                if (context.MonsterDead(arg1: new[] {102})) {
+                    context.AddBalloonTalk(spawnPointId: 102, msg: "꽤 하는군. 즐거운 싸움이었다.", duration: 3000);
                     context.State = new State몬스터스폰대기3(context);
                     return;
                 }
@@ -248,7 +244,7 @@ namespace Maple2.Trigger._99999895 {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "두 번째 전투에서 승리하셨습니다. 잠시만 기다려주세요 마지막 전투가 기다리고 있습니다!!",
-                    arg3: new int[] {5000});
+                    arg3: 5000);
             }
 
             public override void Execute() {
@@ -265,7 +261,7 @@ namespace Maple2.Trigger._99999895 {
             internal State카운트3_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "3", arg3: new int[] {1000});
+                context.SetEventUI(arg1: 1, arg2: "3", arg3: 1000);
             }
 
             public override void Execute() {
@@ -282,7 +278,7 @@ namespace Maple2.Trigger._99999895 {
             internal State카운트3_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "2", arg3: new int[] {1000});
+                context.SetEventUI(arg1: 1, arg2: "2", arg3: 1000);
             }
 
             public override void Execute() {
@@ -299,7 +295,7 @@ namespace Maple2.Trigger._99999895 {
             internal State카운트3_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "1", arg3: new int[] {1000});
+                context.SetEventUI(arg1: 1, arg2: "1", arg3: 1000);
             }
 
             public override void Execute() {
@@ -316,8 +312,8 @@ namespace Maple2.Trigger._99999895 {
             internal State몬스터스폰3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "시작!!", arg3: new int[] {1000});
-                context.CreateMonster(arg1: new int[] {103}, arg2: false);
+                context.SetEventUI(arg1: 1, arg2: "시작!!", arg3: 1000);
+                context.CreateMonster(arg1: new[] {103}, arg2: false);
             }
 
             public override void Execute() {
@@ -334,12 +330,12 @@ namespace Maple2.Trigger._99999895 {
             internal State스폰대사3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBalloonTalk(spawnPointID: 103, msg: "그동안 어떤 성과를 이루셨는지 보여주세요.", duration: 3000);
+                context.AddBalloonTalk(spawnPointId: 103, msg: "그동안 어떤 성과를 이루셨는지 보여주세요.", duration: 3000);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {103})) {
-                    context.AddBalloonTalk(spawnPointID: 103, msg: "좋은 실력입니다. 엘리넬 학생들에게 귀감이 될 분이시군요.", duration: 3000);
+                if (context.MonsterDead(arg1: new[] {103})) {
+                    context.AddBalloonTalk(spawnPointId: 103, msg: "좋은 실력입니다. 엘리넬 학생들에게 귀감이 될 분이시군요.", duration: 3000);
                     context.State = new State대사(context);
                     return;
                 }
@@ -367,7 +363,7 @@ namespace Maple2.Trigger._99999895 {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 7, arg2: "SUCCESS", arg3: new int[] {3000});
+                context.SetEventUI(arg1: 7, arg2: "SUCCESS", arg3: 3000);
             }
 
             public override void Execute() {
@@ -384,7 +380,7 @@ namespace Maple2.Trigger._99999895 {
             internal State안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "곧 다시 전투가 시작됩니다. 준비하세요!!", arg3: new int[] {3000});
+                context.SetEventUI(arg1: 1, arg2: "곧 다시 전투가 시작됩니다. 준비하세요!!", arg3: 3000);
             }
 
             public override void Execute() {

@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52000066_qd {
     public static class _chase01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -16,20 +12,20 @@ namespace Maple2.Trigger._52000066_qd {
                 context.SetLadder(arg1: 1005, arg2: false, arg3: false);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Closed");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025,
                         2026, 2027, 2028, 2029
                     }, arg2: true, arg3: 0, arg4: 0, arg5: 3f);
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
-                context.SetBreakable(arg1: new int[] {4100}, arg2: false);
-                context.SetBreakable(arg1: new int[] {4200}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {4100}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {4200}, arg2: false);
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetBreakable(arg1: new[] {4100}, arg2: false);
+                context.SetBreakable(arg1: new[] {4200}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4100}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4200}, arg2: false);
                 context.SetPortal(arg1: 2, arg2: true, arg3: false, arg4: false);
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new StateLodingDelay01(context);
                     return;
                 }
@@ -95,7 +91,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal State1stCameraGuide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101");
             }
 
@@ -132,9 +128,9 @@ namespace Maple2.Trigger._52000066_qd {
             internal State1stPhaseChase01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {101});
+                context.DestroyMonster(arg1: new[] {101});
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.SetEventUI(arg1: 1, arg2: "$52000066_QD__CHASE01__1$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$52000066_QD__CHASE01__1$", arg3: 3000, arg4: "0");
                 context.SetLadder(arg1: 1000, arg2: true, arg3: true);
                 context.SetLadder(arg1: 1001, arg2: true, arg3: true);
                 context.SetLadder(arg1: 1002, arg2: true, arg3: true);
@@ -144,7 +140,7 @@ namespace Maple2.Trigger._52000066_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9200})) {
+                if (context.UserDetected(arg1: new[] {9200})) {
                     context.State = new State2ndCameraGuide01(context);
                     return;
                 }
@@ -160,7 +156,7 @@ namespace Maple2.Trigger._52000066_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 601, arg2: true);
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_102");
             }
 
@@ -181,7 +177,7 @@ namespace Maple2.Trigger._52000066_qd {
                 context.MoveUser(arg1: 52000066, arg2: 40);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Opened");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025,
                         2026, 2027, 2028, 2029
                     }, arg2: false, arg3: 500, arg4: 50, arg5: 1f);
@@ -239,14 +235,14 @@ namespace Maple2.Trigger._52000066_qd {
             internal State2ndPhaseChase02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {102});
-                context.SetUserValue(triggerID: 2, key: "TrapLeverOn", value: 1);
+                context.DestroyMonster(arg1: new[] {102});
+                context.SetUserValue(triggerId: 2, key: "TrapLeverOn", value: 1);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 25200661, textID: 25200661, duration: 6000);
+                context.ShowGuideSummary(entityId: 25200661, textId: 25200661, duration: 6000);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9300})) {
+                if (context.UserDetected(arg1: new[] {9300})) {
                     context.State = new State3rdPhaseChase01(context);
                     return;
                 }
@@ -260,11 +256,11 @@ namespace Maple2.Trigger._52000066_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 25200662, textID: 25200662);
+                context.ShowGuideSummary(entityId: 25200662, textId: 25200662);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9400,9401,9402,9403,9404,9405,9406})) {
+                if (context.UserDetected(arg1: new[] {9400, 9401, 9402, 9403, 9404, 9405, 9406})) {
                     context.State = new State3rdCameraGuide01(context);
                     return;
                 }
@@ -277,12 +273,12 @@ namespace Maple2.Trigger._52000066_qd {
             internal State3rdCameraGuide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2, key: "TrapLeverOn", value: 2);
-                context.HideGuideSummary(entityID: 25200662);
-                context.SetBreakable(arg1: new int[] {4100}, arg2: true);
-                context.SetBreakable(arg1: new int[] {4200}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new int[] {4100}, arg2: true);
-                context.SetVisibleBreakableObject(arg1: new int[] {4200}, arg2: true);
+                context.SetUserValue(triggerId: 2, key: "TrapLeverOn", value: 2);
+                context.HideGuideSummary(entityId: 25200662);
+                context.SetBreakable(arg1: new[] {4100}, arg2: true);
+                context.SetBreakable(arg1: new[] {4200}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {4100}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {4200}, arg2: true);
             }
 
             public override void Execute() {
@@ -359,15 +355,15 @@ namespace Maple2.Trigger._52000066_qd {
             internal State4thTrainMove01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new int[] {4100}, arg2: false);
-                context.SetBreakable(arg1: new int[] {4200}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {4100}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {4200}, arg2: false);
-                context.SetUserValue(triggerID: 3, key: "TrainMove", value: 1);
+                context.SetBreakable(arg1: new[] {4100}, arg2: false);
+                context.SetBreakable(arg1: new[] {4200}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4100}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {4200}, arg2: false);
+                context.SetUserValue(triggerId: 3, key: "TrainMove", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9500,9501,9502})) {
+                if (context.UserDetected(arg1: new[] {9500, 9501, 9502})) {
                     context.State = new StateAgentEscape01(context);
                     return;
                 }
@@ -380,7 +376,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateAgentEscape01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {103}, arg2: false);
+                context.CreateMonster(arg1: new[] {103}, arg2: false);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_103");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
@@ -404,7 +400,7 @@ namespace Maple2.Trigger._52000066_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9600, arg2: new int[] {103})) {
+                if (context.NpcDetected(arg1: 9600, arg2: new[] {103})) {
                     context.State = new StateAgentEscape03(context);
                     return;
                 }
@@ -417,7 +413,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateAgentEscape03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateItem(arg1: new int[] {300}, arg5: 6000);
+                context.CreateItem(arg1: new[] {300}, arg5: 6000);
             }
 
             public override void Execute() {
@@ -434,7 +430,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateAgentEscape04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {103});
+                context.DestroyMonster(arg1: new[] {103});
                 context.CameraSelect(arg1: 603, arg2: false);
             }
 
@@ -474,7 +470,7 @@ namespace Maple2.Trigger._52000066_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {10001028},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {10001028},
                     arg3: new byte[] {2})) {
                     context.State = new StateQuit(context);
                     return;

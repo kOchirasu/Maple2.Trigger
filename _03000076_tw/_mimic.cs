@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._03000076_tw {
     public static class _mimic {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State알림(context);
                     return;
                 }
@@ -23,7 +19,7 @@ namespace Maple2.Trigger._03000076_tw {
             internal State알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 23000006, textID: 23000006, duration: 5000);
+                context.ShowGuideSummary(entityId: 23000006, textId: 23000006, duration: 5000);
             }
 
             public override void Execute() {

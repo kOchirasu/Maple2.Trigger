@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._99999911 {
     public static class _fail {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._99999911 {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 702, arg2: 1)) {
+                if (context.GetUserCount(boxId: 702) == 1) {
                     context.State = new Statefail_random(context);
                     return;
                 }

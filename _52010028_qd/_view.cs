@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52010028_qd {
     public static class _view {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State진동설정(context);
-
-        private class State진동설정 : TriggerState {
+        public class State진동설정 : TriggerState {
             internal State진동설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -13,17 +9,17 @@ namespace Maple2.Trigger._52010028_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {2003})) {
+                if (context.UserDetected(arg1: new[] {2003})) {
                     context.State = new State흔들흔들(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {2006})) {
+                if (context.UserDetected(arg1: new[] {2006})) {
                     context.State = new State흔들흔들(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {2007})) {
+                if (context.UserDetected(arg1: new[] {2007})) {
                     context.State = new State흔들흔들(context);
                     return;
                 }

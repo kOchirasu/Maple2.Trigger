@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._02000292_bf {
     public static class _npc5 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000624}, arg2: 1);
-                context.DestroyMonster(arg1: new int[] {1105});
+                context.SetInteractObject(arg1: new[] {10000624}, arg2: 1);
+                context.DestroyMonster(arg1: new[] {1105});
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000624}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000624}, arg2: 0)) {
                     context.State = new StateNPC대사(context);
                     return;
                 }
@@ -26,8 +22,8 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateNPC대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000624}, arg2: 2);
-                context.CreateMonster(arg1: new int[] {1105});
+                context.SetInteractObject(arg1: new[] {10000624}, arg2: 2);
+                context.CreateMonster(arg1: new[] {1105});
                 context.SetConversation(arg1: 1, arg2: 1105, arg3: "$02000292_BF__NPC5__0$", arg4: 2);
             }
 
@@ -62,7 +58,7 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateNPC소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1105});
+                context.DestroyMonster(arg1: new[] {1105});
             }
 
             public override void Execute() { }

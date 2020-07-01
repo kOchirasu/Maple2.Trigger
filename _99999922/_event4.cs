@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._99999922 {
     public static class _event4 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {2000});
+                context.DestroyMonster(arg1: new[] {2000});
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {999910})) {
+                if (context.UserDetected(arg1: new[] {999910})) {
                     context.State = new State진행1(context);
                     return;
                 }
@@ -29,7 +25,7 @@ namespace Maple2.Trigger._99999922 {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2000})) {
+                if (context.MonsterDead(arg1: new[] {2000})) {
                     context.State = new State진행2(context);
                     return;
                 }
@@ -42,7 +38,7 @@ namespace Maple2.Trigger._99999922 {
             internal State진행2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {999910}, arg2: 49179111, arg3: 1, arg5: true);
+                context.AddBuff(arg1: new[] {999910}, arg2: 49179111, arg3: 1, arg5: true);
                 context.SetTimer(arg1: "300", arg2: 3);
             }
 

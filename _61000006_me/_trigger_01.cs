@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._61000006_me {
     public static class _trigger_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State레버(context);
-
-        private class State레버 : TriggerState {
+        public class State레버 : TriggerState {
             internal State레버(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000223}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000214}, arg2: 1);
-                context.SetMesh(arg1: new int[] {307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319},
+                context.SetInteractObject(arg1: new[] {10000223}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000214}, arg2: 1);
+                context.SetMesh(arg1: new[] {307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319},
                     arg2: false);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000223}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000223}, arg2: 0)) {
                     context.State = new State다리01(context);
                     return;
                 }
@@ -29,7 +25,7 @@ namespace Maple2.Trigger._61000006_me {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetMesh(arg1: new int[] {307, 308}, arg2: true);
+                context.SetMesh(arg1: new[] {307, 308}, arg2: true);
             }
 
             public override void Execute() {
@@ -47,7 +43,7 @@ namespace Maple2.Trigger._61000006_me {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 1);
-                context.SetMesh(arg1: new int[] {309, 310, 311}, arg2: true);
+                context.SetMesh(arg1: new[] {309, 310, 311}, arg2: true);
             }
 
             public override void Execute() {
@@ -65,7 +61,7 @@ namespace Maple2.Trigger._61000006_me {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 1);
-                context.SetMesh(arg1: new int[] {312, 313, 314}, arg2: true);
+                context.SetMesh(arg1: new[] {312, 313, 314}, arg2: true);
             }
 
             public override void Execute() {
@@ -83,7 +79,7 @@ namespace Maple2.Trigger._61000006_me {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "4", arg2: 1);
-                context.SetMesh(arg1: new int[] {315, 316, 317}, arg2: true);
+                context.SetMesh(arg1: new[] {315, 316, 317}, arg2: true);
             }
 
             public override void Execute() {
@@ -101,7 +97,7 @@ namespace Maple2.Trigger._61000006_me {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 1);
-                context.SetMesh(arg1: new int[] {318, 319}, arg2: true);
+                context.SetMesh(arg1: new[] {318, 319}, arg2: true);
             }
 
             public override void Execute() {

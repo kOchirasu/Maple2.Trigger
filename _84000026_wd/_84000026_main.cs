@@ -1,11 +1,8 @@
-using System;
 using System.Numerics;
 
 namespace Maple2.Trigger._84000026_wd {
     public static class _84000026_main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State초기화(context);
-
-        private class State초기화 : TriggerState {
+        public class State초기화 : TriggerState {
             internal State초기화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -28,11 +25,11 @@ namespace Maple2.Trigger._84000026_wd {
 
             public override void OnEnter() {
                 context.LockMyPc(isLock: false);
-                context.HideGuideSummary(entityID: 28400140);
+                context.HideGuideSummary(entityId: 28400140);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Weddingceremonystarts", value: 1)) {
+                if (context.GetUserValue(key: "Weddingceremonystarts") == 1) {
                     context.SetUserValue(key: "Weddingceremonystarts", value: 0);
                     context.LockMyPc(isLock: true);
                     context.State = new State시작알림(context);
@@ -47,7 +44,7 @@ namespace Maple2.Trigger._84000026_wd {
             internal State시작알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 28400134, textID: 28400134);
+                context.ShowGuideSummary(entityId: 28400134, textId: 28400134);
             }
 
             public override void Execute() {
@@ -58,7 +55,7 @@ namespace Maple2.Trigger._84000026_wd {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 28400134);
+                context.HideGuideSummary(entityId: 28400134);
             }
         }
 
@@ -92,7 +89,7 @@ namespace Maple2.Trigger._84000026_wd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {8002, 8001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8002, 8001}, arg2: false);
             }
 
             public override void Execute() {
@@ -110,7 +107,7 @@ namespace Maple2.Trigger._84000026_wd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcID: 11004711, msg: "$84000026_WD__84000026_MAIN__0$", duration: 3500);
+                context.AddCinematicTalk(npcId: 11004711, msg: "$84000026_WD__84000026_MAIN__0$", duration: 3500);
             }
 
             public override void Execute() {
@@ -144,7 +141,7 @@ namespace Maple2.Trigger._84000026_wd {
             internal State세레나데(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
             public override void Execute() {
@@ -161,7 +158,7 @@ namespace Maple2.Trigger._84000026_wd {
             internal StateUI테스트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8007}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8007}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }
@@ -181,7 +178,7 @@ namespace Maple2.Trigger._84000026_wd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {8009}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8009}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -217,7 +214,7 @@ namespace Maple2.Trigger._84000026_wd {
             internal State입장01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004, 8005, 8011}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8004, 8005, 8011}, arg2: false);
                 context.WeddingUserToPatrol(patrolName: "MS2PatrolData_2001", entryType: "Groom", patrolIndex: 1);
                 context.WeddingUserToPatrol(patrolName: "MS2PatrolData_2002", entryType: "Bride", patrolIndex: 2);
             }
@@ -251,7 +248,7 @@ namespace Maple2.Trigger._84000026_wd {
             internal State카메라이동02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {102});
+                context.DestroyMonster(arg1: new[] {102});
             }
 
             public override void Execute() {
@@ -271,7 +268,7 @@ namespace Maple2.Trigger._84000026_wd {
                 context.SetProductionUI(arg1: 3);
                 context.WeddingSetUserRotation(entryType: "Groom", rotation: new Vector3(0f, 0f, 0f), immediate: true);
                 context.WeddingSetUserRotation(entryType: "Bride", rotation: new Vector3(0f, 0f, 0f), immediate: true);
-                context.AddCinematicTalk(npcID: 11004711, msg: "$84000026_WD__84000026_MAIN__1$", duration: 4000);
+                context.AddCinematicTalk(npcId: 11004711, msg: "$84000026_WD__84000026_MAIN__1$", duration: 4000);
             }
 
             public override void Execute() {
@@ -322,7 +319,7 @@ namespace Maple2.Trigger._84000026_wd {
             internal State탈주로중단(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004711, msg: "$84000026_WD__84000026_MAIN__2$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004711, msg: "$84000026_WD__84000026_MAIN__2$", duration: 3000);
             }
 
             public override void Execute() {
@@ -339,7 +336,7 @@ namespace Maple2.Trigger._84000026_wd {
             internal State탈주로중단선언(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004711, msg: "$84000026_WD__84000026_MAIN__3$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004711, msg: "$84000026_WD__84000026_MAIN__3$", duration: 3000);
             }
 
             public override void Execute() {
@@ -356,7 +353,7 @@ namespace Maple2.Trigger._84000026_wd {
             internal State미입력으로중단01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004711, msg: "$84000026_WD__84000026_MAIN__4$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004711, msg: "$84000026_WD__84000026_MAIN__4$", duration: 3000);
             }
 
             public override void Execute() {
@@ -373,7 +370,7 @@ namespace Maple2.Trigger._84000026_wd {
             internal State미입력으로중단선언(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004711, msg: "$84000026_WD__84000026_MAIN__5$", duration: 3000);
+                context.AddCinematicTalk(npcId: 11004711, msg: "$84000026_WD__84000026_MAIN__5$", duration: 3000);
             }
 
             public override void Execute() {
@@ -390,8 +387,8 @@ namespace Maple2.Trigger._84000026_wd {
             internal State탈주로중단선언리셋(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4002, key: "Weddingceremonyfail", value: 1);
-                context.SetUserValue(triggerID: 4000, key: "Weddingceremonyfail", value: 1);
+                context.SetUserValue(triggerId: 4002, key: "Weddingceremonyfail", value: 1);
+                context.SetUserValue(triggerId: 4000, key: "Weddingceremonyfail", value: 1);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
@@ -411,9 +408,9 @@ namespace Maple2.Trigger._84000026_wd {
             internal State성혼발표(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004711, msg: "$84000026_WD__84000026_MAIN__6$", duration: 2500);
+                context.AddCinematicTalk(npcId: 11004711, msg: "$84000026_WD__84000026_MAIN__6$", duration: 2500);
                 context.WeddingVowComplete();
-                context.SetUserValue(triggerID: 4002, key: "WeddingFinished", value: 1);
+                context.SetUserValue(triggerId: 4002, key: "WeddingFinished", value: 1);
                 context.WeddingSetUserLookAt(entryType: "Bride", lookAtEntryType: "Groom", immediate: true);
                 context.WeddingSetUserLookAt(entryType: "Groom", lookAtEntryType: "Bride", immediate: true);
             }
@@ -432,7 +429,7 @@ namespace Maple2.Trigger._84000026_wd {
             internal State환호성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8010}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8010}, arg2: false);
                 context.WeddingSetUserEmotion(entryType: "Bride", id: 4);
                 context.WeddingSetUserEmotion(entryType: "Groom", id: 4);
                 context.PlaySystemSoundInBox(arg2: "System_WeddingAudience_01");
@@ -493,9 +490,9 @@ namespace Maple2.Trigger._84000026_wd {
             internal State보상결혼상태체크실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4002, key: "Weddingceremonyfail", value: 1);
-                context.SetUserValue(triggerID: 4000, key: "Weddingceremonyfail", value: 1);
-                context.ShowGuideSummary(entityID: 28400140);
+                context.SetUserValue(triggerId: 4002, key: "Weddingceremonyfail", value: 1);
+                context.SetUserValue(triggerId: 4000, key: "Weddingceremonyfail", value: 1);
+                context.ShowGuideSummary(entityId: 28400140);
             }
 
             public override void Execute() {
@@ -512,7 +509,7 @@ namespace Maple2.Trigger._84000026_wd {
             internal State뒷풀이02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 28400135, textID: 28400135);
+                context.ShowGuideSummary(entityId: 28400135, textId: 28400135);
                 context.SetPortal(arg1: 99, arg2: true, arg3: true, arg4: true);
             }
 
@@ -524,7 +521,7 @@ namespace Maple2.Trigger._84000026_wd {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 28400135);
+                context.HideGuideSummary(entityId: 28400135);
             }
         }
 
@@ -532,19 +529,19 @@ namespace Maple2.Trigger._84000026_wd {
             internal State뒷풀이03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 28400136, textID: 28400136);
+                context.ShowGuideSummary(entityId: 28400136, textId: 28400136);
                 context.SetUserValue(key: "EndWedding", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "EndWedding", value: 1)) {
+                if (context.GetUserValue(key: "EndWedding") == 1) {
                     context.State = new State결혼종료확인(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 28400136);
+                context.HideGuideSummary(entityId: 28400136);
             }
         }
 
@@ -579,7 +576,7 @@ namespace Maple2.Trigger._84000026_wd {
             internal State종료알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 28400137, textID: 28400137);
+                context.ShowGuideSummary(entityId: 28400137, textId: 28400137);
             }
 
             public override void Execute() {
@@ -590,7 +587,7 @@ namespace Maple2.Trigger._84000026_wd {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 28400137);
+                context.HideGuideSummary(entityId: 28400137);
             }
         }
 

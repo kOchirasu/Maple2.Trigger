@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._99999949 {
     public static class _01_fadein {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: false);
+                context.SetEffect(arg1: new[] {5000}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new StateGuide(context);
                     return;
                 }
@@ -25,11 +21,11 @@ namespace Maple2.Trigger._99999949 {
             internal StateGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DebugString(@string: "1번 영역에 들어가면 화면 페이드인 트리거가 시작됩니다.");
+                context.DebugString(message: "1번 영역에 들어가면 화면 페이드인 트리거가 시작됩니다.");
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new Statefadein(context);
                     return;
                 }
@@ -42,10 +38,10 @@ namespace Maple2.Trigger._99999949 {
             internal Statefadein(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DebugString(@string: "fadein");
+                context.DebugString(message: "fadein");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
             }
 
             public override void Execute() {
@@ -62,10 +58,10 @@ namespace Maple2.Trigger._99999949 {
             internal Statefadeout(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DebugString(@string: "fadeout");
+                context.DebugString(message: "fadeout");
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.SetEffect(arg1: new int[] {5000}, arg2: false);
+                context.SetEffect(arg1: new[] {5000}, arg2: false);
             }
 
             public override void Execute() {
@@ -82,7 +78,7 @@ namespace Maple2.Trigger._99999949 {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DebugString(@string: "3초 후에 트리거가 리셋됩니다. 1번 영역 밖으로 나가세요.");
+                context.DebugString(message: "3초 후에 트리거가 리셋됩니다. 1번 영역 밖으로 나가세요.");
             }
 
             public override void Execute() {

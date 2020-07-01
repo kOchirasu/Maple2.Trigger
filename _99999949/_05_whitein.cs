@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._99999949 {
     public static class _05_whitein {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -16,7 +12,7 @@ namespace Maple2.Trigger._99999949 {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9041})) {
+                if (context.UserDetected(arg1: new[] {9041})) {
                     context.State = new StateGuide(context);
                     return;
                 }
@@ -29,11 +25,11 @@ namespace Maple2.Trigger._99999949 {
             internal StateGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DebugString(@string: "5번 영역에 들어가면 SetOnetimeEffect 트리거가 발동됩니다.");
+                context.DebugString(message: "5번 영역에 들어가면 SetOnetimeEffect 트리거가 발동됩니다.");
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9040})) {
+                if (context.UserDetected(arg1: new[] {9040})) {
                     context.State = new StateSetOnetimeEffectReady01(context);
                     return;
                 }
@@ -46,7 +42,7 @@ namespace Maple2.Trigger._99999949 {
             internal StateSetOnetimeEffectReady01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DebugString(@string: "SetOnetimeEffect 2초 후에 시작됩니다.");
+                context.DebugString(message: "SetOnetimeEffect 2초 후에 시작됩니다.");
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"UGC_Test/Eff_Tutorial_Sound_target.xml");
             }
 
@@ -83,7 +79,7 @@ namespace Maple2.Trigger._99999949 {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.DebugString(@string: "SetOnetimeEffect 재생");
+                context.DebugString(message: "SetOnetimeEffect 재생");
                 context.SetOnetimeEffect(id: 1, enable: true,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
                 context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
@@ -108,7 +104,7 @@ namespace Maple2.Trigger._99999949 {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");
                 context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
-                context.DebugString(@string: "5초 후에 트리거가 리셋됩니다. 5번 영역 밖으로 나가세요.");
+                context.DebugString(message: "5초 후에 트리거가 리셋됩니다. 5번 영역 밖으로 나가세요.");
             }
 
             public override void Execute() {

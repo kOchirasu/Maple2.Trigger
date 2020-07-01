@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000331_bf {
     public static class _defence17 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {99993})) {
+                if (context.UserDetected(arg1: new[] {99993})) {
                     context.State = new State전투시작(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9030, arg2: new int[] {999})) {
+                if (context.NpcDetected(arg1: 9030, arg2: new[] {999})) {
                     context.State = new State전투중(context);
                     return;
                 }
@@ -40,7 +36,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {999})) {
+                if (context.MonsterDead(arg1: new[] {999})) {
                     context.State = new State생존체크01(context);
                     return;
                 }
@@ -55,12 +51,12 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 99997, arg2: new int[] {601})) {
+                if (context.NpcDetected(arg1: 99997, arg2: new[] {601})) {
                     context.State = new State생존체크02(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {601})) {
+                if (context.MonsterDead(arg1: new[] {601})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -75,12 +71,12 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 99997, arg2: new int[] {602})) {
+                if (context.NpcDetected(arg1: 99997, arg2: new[] {602})) {
                     context.State = new State생존체크03(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {602})) {
+                if (context.MonsterDead(arg1: new[] {602})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -95,12 +91,12 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 99997, arg2: new int[] {603})) {
+                if (context.NpcDetected(arg1: 99997, arg2: new[] {603})) {
                     context.State = new State생존체크04(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {603})) {
+                if (context.MonsterDead(arg1: new[] {603})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -115,12 +111,12 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 99997, arg2: new int[] {604})) {
+                if (context.NpcDetected(arg1: 99997, arg2: new[] {604})) {
                     context.State = new State생존체크05(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {604})) {
+                if (context.MonsterDead(arg1: new[] {604})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -135,12 +131,12 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 99997, arg2: new int[] {605})) {
+                if (context.NpcDetected(arg1: 99997, arg2: new[] {605})) {
                     context.State = new State업적발생(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {605})) {
+                if (context.MonsterDead(arg1: new[] {605})) {
                     context.State = new State종료(context);
                     return;
                 }

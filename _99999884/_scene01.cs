@@ -1,23 +1,19 @@
-using System;
-
 namespace Maple2.Trigger._99999884 {
     public static class _scene01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {401}, arg2: false);
-                context.SetEffect(arg1: new int[] {402}, arg2: false);
-                context.SetEffect(arg1: new int[] {403}, arg2: false);
-                context.SetEffect(arg1: new int[] {404}, arg2: false);
+                context.SetEffect(arg1: new[] {401}, arg2: false);
+                context.SetEffect(arg1: new[] {402}, arg2: false);
+                context.SetEffect(arg1: new[] {403}, arg2: false);
+                context.SetEffect(arg1: new[] {404}, arg2: false);
                 context.SetActor(arg1: 405, arg2: false);
-                context.SetEffect(arg1: new int[] {406}, arg2: false);
+                context.SetEffect(arg1: new[] {406}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199})) {
+                if (context.UserDetected(arg1: new[] {199})) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -50,8 +46,8 @@ namespace Maple2.Trigger._99999884 {
             internal State벨라등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {202});
-                context.SetEffect(arg1: new int[] {401}, arg2: true);
+                context.CreateMonster(arg1: new[] {202});
+                context.SetEffect(arg1: new[] {401}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 4);
             }
 
@@ -69,7 +65,7 @@ namespace Maple2.Trigger._99999884 {
             internal State벨라대사1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {401}, arg2: false);
+                context.SetEffect(arg1: new[] {401}, arg2: false);
                 context.SetTimer(arg1: "1", arg2: 2);
                 context.SetConversation(arg1: 2, arg2: 11000057, arg3: "$99999884__SCENE01__0$", arg4: 2);
             }
@@ -106,9 +102,9 @@ namespace Maple2.Trigger._99999884 {
             internal State프레이와오스칼등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {203});
-                context.CreateMonster(arg1: new int[] {204});
-                context.SetEffect(arg1: new int[] {402}, arg2: true);
+                context.CreateMonster(arg1: new[] {203});
+                context.CreateMonster(arg1: new[] {204});
+                context.SetEffect(arg1: new[] {402}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -145,7 +141,7 @@ namespace Maple2.Trigger._99999884 {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
-                context.SetEffect(arg1: new int[] {402}, arg2: false);
+                context.SetEffect(arg1: new[] {402}, arg2: false);
                 context.MoveNpc(arg1: 202, arg2: "202_MS2PatrolData_Bella_TurnToFrey");
                 context.SetConversation(arg1: 1, arg2: 202, arg3: "$99999884__SCENE01__3$", arg4: 2);
             }
@@ -184,7 +180,7 @@ namespace Maple2.Trigger._99999884 {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetEffect(arg1: new int[] {402}, arg2: true);
+                context.SetEffect(arg1: new[] {402}, arg2: true);
             }
 
             public override void Execute() {
@@ -221,8 +217,8 @@ namespace Maple2.Trigger._99999884 {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetEffect(arg1: new int[] {402}, arg2: false);
-                context.SetEffect(arg1: new int[] {403}, arg2: true);
+                context.SetEffect(arg1: new[] {402}, arg2: false);
+                context.SetEffect(arg1: new[] {403}, arg2: true);
                 context.MoveNpc(arg1: 202, arg2: "202_MS2PatrolData_Bella_TurnToFrey");
                 context.SetConversation(arg1: 1, arg2: 202, arg3: "$99999884__SCENE01__6$", arg4: 2);
             }
@@ -260,9 +256,9 @@ namespace Maple2.Trigger._99999884 {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
-                context.DestroyMonster(arg1: new int[] {203});
-                context.SetEffect(arg1: new int[] {403}, arg2: false);
-                context.SetEffect(arg1: new int[] {406}, arg2: true);
+                context.DestroyMonster(arg1: new[] {203});
+                context.SetEffect(arg1: new[] {403}, arg2: false);
+                context.SetEffect(arg1: new[] {406}, arg2: true);
                 context.SetActor(arg1: 405, arg2: true, arg3: "Down_Idle_A");
                 context.MoveNpc(arg1: 204, arg2: "204_MS2PatrolData_Oskhal_MoveToFrey");
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$99999884__SCENE01__7$", arg4: 2);
@@ -320,7 +316,7 @@ namespace Maple2.Trigger._99999884 {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.CameraSelectPath(arg1: new int[] {302}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {302}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 

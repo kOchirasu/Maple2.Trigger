@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000179_qd {
     public static class _52000179 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statewait_01(context);
-
-        private class Statewait_01 : TriggerState {
+        public class Statewait_01 : TriggerState {
             internal Statewait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {2001}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {2001}, arg2: 0)) {
                     context.State = new Statewait_01_02(context);
                     return;
                 }
@@ -26,9 +22,9 @@ namespace Maple2.Trigger._52000179_qd {
                 context.SetOnetimeEffect(id: 1, enable: true,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
-                context.CreateMonster(arg1: new int[] {103}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {103}, arg2: false);
                 context.MoveUser(arg1: 52000179, arg2: 1);
             }
 
@@ -47,7 +43,7 @@ namespace Maple2.Trigger._52000179_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "jobChangeStory.swf", movieID: 1);
+                context.PlaySceneMovie(fileName: "jobChangeStory.swf", movieId: 1);
             }
 
             public override void Execute() {
@@ -72,7 +68,7 @@ namespace Maple2.Trigger._52000179_qd {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
             }
 
             public override void Execute() {
@@ -172,13 +168,13 @@ namespace Maple2.Trigger._52000179_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002757},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002757},
                     arg3: new byte[] {2})) {
                     context.State = new State퀘스트가이드_01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002757},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002757},
                     arg3: new byte[] {3})) {
                     context.State = new State케이틀린걱정(context);
                     return;
@@ -192,11 +188,11 @@ namespace Maple2.Trigger._52000179_qd {
             internal State퀘스트가이드_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25201791, textID: 25201791, duration: 10000);
+                context.ShowGuideSummary(entityId: 25201791, textId: 25201791, duration: 10000);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002757},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002757},
                     arg3: new byte[] {3})) {
                     context.State = new State케이틀린걱정(context);
                     return;
@@ -211,12 +207,12 @@ namespace Maple2.Trigger._52000179_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_3001");
-                context.AddBalloonTalk(spawnPointID: 101, msg: "$52000179_QD__52000179__1$", duration: 3000,
+                context.AddBalloonTalk(spawnPointId: 101, msg: "$52000179_QD__52000179__1$", duration: 3000,
                     delayTick: 0);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002758},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002758},
                     arg3: new byte[] {3})) {
                     context.State = new State이동_01(context);
                     return;

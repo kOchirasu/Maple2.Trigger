@@ -1,31 +1,27 @@
-using System;
-
 namespace Maple2.Trigger._02000386_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetGravity(gravity: 55f);
                 context.RemoveBuff(arg1: 701, arg2: 99910080);
-                context.CreateMonster(arg1: new int[] {101, 102, 103, 104}, arg2: true);
+                context.CreateMonster(arg1: new[] {101, 102, 103, 104}, arg2: true);
                 context.SetBreakable(
-                    arg1: new int[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012},
+                    arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012},
                     arg2: false);
                 context.SetBreakable(
-                    arg1: new int[] {1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024},
+                    arg1: new[] {1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024},
                     arg2: false);
-                context.SetBreakable(arg1: new int[] {1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032}, arg2: false);
+                context.SetBreakable(arg1: new[] {1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032}, arg2: false);
                 context.SetLocalCamera(cameraId: 8001, enable: true);
                 context.SetLocalCamera(cameraId: 8002, enable: false);
                 context.SetLocalCamera(cameraId: 8003, enable: false);
-                context.SetInteractObject(arg1: new int[] {10001087}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001087}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {701})) {
+                if (context.UserDetected(arg1: new[] {701})) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -54,12 +50,12 @@ namespace Maple2.Trigger._02000386_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20003861, textID: 20003861);
-                context.SetMesh(arg1: new int[] {3002, 3003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.ShowGuideSummary(entityId: 20003861, textId: 20003861);
+                context.SetMesh(arg1: new[] {3002, 3003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001087}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001087}, arg2: 0)) {
                     context.State = new Statemain(context);
                     return;
                 }
@@ -74,16 +70,16 @@ namespace Maple2.Trigger._02000386_bf {
             public override void OnEnter() {
                 context.CreateWidget(arg1: "ScoreBoard");
                 context.WidgetAction(arg1: "ScoreBoard", arg2: "OpenBoard", arg3: "1");
-                context.CreateMonster(arg1: new int[] {901}, arg2: true);
+                context.CreateMonster(arg1: new[] {901}, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 901, arg3: "$02000386_BF__MAIN__0$", arg4: 2, arg5: 5);
                 context.SetConversation(arg1: 1, arg2: 901, arg3: "$02000386_BF__MAIN__1$", arg4: 2, arg5: 7);
-                context.HideGuideSummary(entityID: 20003861);
-                context.SetMesh(arg1: new int[] {3002, 3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.HideGuideSummary(entityId: 20003861);
+                context.SetMesh(arg1: new[] {3002, 3003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetLocalCamera(cameraId: 8001, enable: false);
                 context.SetLocalCamera(cameraId: 8002, enable: true);
-                context.SetInteractObject(arg1: new int[] {10001087}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001087}, arg2: 2);
                 context.SpawnItemRange(
-                    rangeID: new int[] {
+                    rangeId: new[] {
                         201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219,
                         220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238,
                         239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257,
@@ -116,7 +112,7 @@ namespace Maple2.Trigger._02000386_bf {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 901, arg2: "MS2PatrolData_2001");
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015,
                         3016, 3017, 3018, 3019, 3020, 3021, 3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029, 3030, 3031,
                         3032, 3033, 3034, 3035, 3036, 3037, 3038, 3039, 3040, 3041, 3042, 3043, 3044, 3045, 3046, 3047,
@@ -182,24 +178,24 @@ namespace Maple2.Trigger._02000386_bf {
                         3992, 3993, 3994, 3995, 3996, 3997, 3998, 3999
                     }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetVisibleBreakableObject(
-                    arg1: new int[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012},
+                    arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012},
                     arg2: true);
                 context.SetVisibleBreakableObject(
-                    arg1: new int[] {1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024},
+                    arg1: new[] {1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024},
                     arg2: true);
-                context.SetVisibleBreakableObject(arg1: new int[] {1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032},
-                    arg2: true);
-                context.SetBreakable(
-                    arg1: new int[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012},
+                context.SetVisibleBreakableObject(arg1: new[] {1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032},
                     arg2: true);
                 context.SetBreakable(
-                    arg1: new int[] {1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024},
+                    arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012},
                     arg2: true);
-                context.SetBreakable(arg1: new int[] {1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032}, arg2: true);
+                context.SetBreakable(
+                    arg1: new[] {1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024},
+                    arg2: true);
+                context.SetBreakable(arg1: new[] {1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {702})) {
+                if (context.UserDetected(arg1: new[] {702})) {
                     context.State = new Statestart_02(context);
                     return;
                 }

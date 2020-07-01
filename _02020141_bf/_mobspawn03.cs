@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02020141_bf {
     public static class _mobspawn03 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new State보스등장때까지잠시대기(context);
                     return;
                 }
@@ -40,17 +36,17 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "MobSpawnStop", value: 4)) {
+                if (context.GetUserValue(key: "MobSpawnStop") == 4) {
                     context.State = new State졸몬스터제거작업(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State졸몬스터제거작업(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {10300})) {
+                if (context.UserDetected(arg1: new[] {10300})) {
                     context.State = new State졸몬스터등장대기중(context);
                     return;
                 }
@@ -80,17 +76,17 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "MobSpawnStop", value: 4)) {
+                if (context.GetUserValue(key: "MobSpawnStop") == 4) {
                     context.State = new State졸몬스터제거작업(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State졸몬스터제거작업(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {10300})) {
+                if (context.UserDetected(arg1: new[] {10300})) {
                     context.State = new State졸몬스터등장하기(context);
                     return;
                 }
@@ -108,7 +104,7 @@ namespace Maple2.Trigger._02020141_bf {
             internal State졸몬스터등장하기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {10301, 10302, 10303, 10304}, arg2: false);
+                context.CreateMonster(arg1: new[] {10301, 10302, 10303, 10304}, arg2: false);
             }
 
             public override void Execute() {
@@ -127,22 +123,22 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "MobSpawnStop", value: 4)) {
+                if (context.GetUserValue(key: "MobSpawnStop") == 4) {
                     context.State = new State졸몬스터제거작업(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State졸몬스터제거작업(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {10300})) {
+                if (context.UserDetected(arg1: new[] {10300})) {
                     context.State = new State졸몬스터리젠단계시작(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {10300})) {
+                if (!context.UserDetected(arg1: new[] {10300})) {
                     context.State = new State졸몬스터제거작동대기(context);
                     return;
                 }
@@ -157,12 +153,12 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {10300})) {
+                if (context.UserDetected(arg1: new[] {10300})) {
                     context.State = new State졸몬스터리젠대기중(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {10300})) {
+                if (!context.UserDetected(arg1: new[] {10300})) {
                     context.State = new State졸몬스터제거작동대기(context);
                     return;
                 }
@@ -177,17 +173,17 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "MobSpawnStop", value: 4)) {
+                if (context.GetUserValue(key: "MobSpawnStop") == 4) {
                     context.State = new State졸몬스터제거작업(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State졸몬스터제거작업(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {10300})) {
+                if (!context.UserDetected(arg1: new[] {10300})) {
                     context.State = new State졸몬스터제거작동대기(context);
                     return;
                 }
@@ -207,22 +203,22 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "MobSpawnStop", value: 4)) {
+                if (context.GetUserValue(key: "MobSpawnStop") == 4) {
                     context.State = new State졸몬스터제거작업(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State졸몬스터제거작업(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {10300})) {
+                if (context.UserDetected(arg1: new[] {10300})) {
                     context.State = new State졸몬스터등장하기(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {10300})) {
+                if (!context.UserDetected(arg1: new[] {10300})) {
                     context.State = new State졸몬스터제거작동대기(context);
                     return;
                 }
@@ -237,7 +233,7 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {10300})) {
+                if (context.UserDetected(arg1: new[] {10300})) {
                     context.State = new State트리거영역에계속있는지체크(context);
                     return;
                 }
@@ -255,16 +251,16 @@ namespace Maple2.Trigger._02020141_bf {
             internal State졸몬스터제거작업(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {10301, 10302, 10303, 10304});
+                context.DestroyMonster(arg1: new[] {10301, 10302, 10303, 10304});
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "MobSpawnStop", value: 4)) {
+                if (context.GetUserValue(key: "MobSpawnStop") == 4) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State종료(context);
                     return;
                 }

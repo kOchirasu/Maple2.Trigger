@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._63000036_cs {
     public static class _listen01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: false);
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
-                context.SetEffect(arg1: new int[] {5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5000}, arg2: false);
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetEffect(arg1: new[] {5002}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new StateEnter01(context);
                     return;
                 }
@@ -33,13 +29,13 @@ namespace Maple2.Trigger._63000036_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {90000455},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000455},
                     arg3: new byte[] {1})) {
                     context.State = new StateCameraWalk01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {90000455},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000455},
                     arg3: new byte[] {2})) {
                     context.State = new StateCameraWalk01(context);
                     return;
@@ -58,7 +54,7 @@ namespace Maple2.Trigger._63000036_cs {
             internal StateCameraWalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101, 102}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 102}, arg2: false);
                 context.CameraSelect(arg1: 500, arg2: true);
                 context.SetSceneSkip(arg1: "DialogueSkip03", arg2: "exit");
             }
@@ -112,7 +108,7 @@ namespace Maple2.Trigger._63000036_cs {
             internal StateDialogue01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001701, arg3: "$63000036_CS__LISTEN01__0$", arg4: 12);
             }
 
@@ -147,7 +143,7 @@ namespace Maple2.Trigger._63000036_cs {
             internal StateDialogue02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {5001}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000036_CS__LISTEN01__1$", arg4: 11);
                 context.SetSceneSkip();
             }
@@ -183,7 +179,7 @@ namespace Maple2.Trigger._63000036_cs {
             internal StateDialogue03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5002}, arg2: true);
+                context.SetEffect(arg1: new[] {5002}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000036_CS__LISTEN01__2$", arg4: 9);
             }
 
@@ -241,7 +237,7 @@ namespace Maple2.Trigger._63000036_cs {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {9900})) {
+                if (!context.UserDetected(arg1: new[] {9900})) {
                     context.State = new StateQuit(context);
                     return;
                 }

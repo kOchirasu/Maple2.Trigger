@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._52000014_qd {
     public static class _obstruct_4800 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {4800}, arg2: false);
-                context.SetEffect(arg1: new int[] {480}, arg2: true);
+                context.SetSkill(arg1: new[] {4800}, arg2: false);
+                context.SetEffect(arg1: new[] {480}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new State발동준비(context);
                     return;
                 }
@@ -44,7 +40,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 3);
-                context.SetSkill(arg1: new int[] {4800}, arg2: true);
+                context.SetSkill(arg1: new[] {4800}, arg2: true);
             }
 
             public override void Execute() {
@@ -62,7 +58,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 1);
-                context.SetSkill(arg1: new int[] {4800}, arg2: false);
+                context.SetSkill(arg1: new[] {4800}, arg2: false);
             }
 
             public override void Execute() {

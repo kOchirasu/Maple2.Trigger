@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._02020120_bf {
     public static class _bossspawn {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1920, 1921, 1922, 1923, 1924, 1925, 1926, 1927, 1928, 1929, 1930, 1931, 1932, 1933, 1934, 1935,
                         1936, 1937
                     }, arg2: false);
@@ -18,7 +14,7 @@ namespace Maple2.Trigger._02020120_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199})) {
+                if (context.UserDetected(arg1: new[] {199})) {
                     context.State = new State보스등장(context);
                     return;
                 }
@@ -32,20 +28,20 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override void OnEnter() {
                 context.DungeonResetTime(seconds: 720);
-                context.SideNpcTalk(type: "talk", npcID: 23000113, illust: "Ishura_Dark_Idle",
+                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle",
                     script: "$02020120_BF__BOSSSPAWN__0$", duration: 4000, voice: @"ko/Npc/00002192");
-                context.CreateMonster(arg1: new int[] {99}, arg2: false);
+                context.CreateMonster(arg1: new[] {99}, arg2: false);
                 context.SetPortal(arg1: 9901, arg2: false, arg3: false, arg4: false);
                 context.SetPortal(arg1: 9902, arg2: false, arg3: false, arg4: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "DungeonReset", value: 1)) {
+                if (context.GetUserValue(key: "DungeonReset") == 1) {
                     context.State = new State던전초기화진행(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State종료딜레이(context);
                     return;
                 }
@@ -55,7 +51,7 @@ namespace Maple2.Trigger._02020120_bf {
                     return;
                 }
 
-                if (context.DungeonCheckState(checkState: "Fail")) {
+                if (context.GetDungeonState() == "Fail") {
                     context.State = new State던전실패(context);
                     return;
                 }
@@ -70,9 +66,9 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnEnter() {
                 context.MoveUser(arg1: 02020120, arg2: 9903);
                 context.SetSound(arg1: 19601, arg2: true);
-                context.SideNpcTalk(type: "talk", npcID: 23000113, illust: "Ishura_Dark_smile",
+                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_smile",
                     script: "$02020120_BF__BOSSSPAWN__1$", duration: 7000, voice: @"ko/Npc/00002193");
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.DestroyMonster(arg1: new[] {-1});
             }
 
             public override void Execute() {
@@ -94,7 +90,7 @@ namespace Maple2.Trigger._02020120_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199})) {
+                if (context.UserDetected(arg1: new[] {199})) {
                     context.State = new State보스등장(context);
                     return;
                 }
@@ -107,14 +103,14 @@ namespace Maple2.Trigger._02020120_bf {
             internal State종료딜레이(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcID: 23000113, illust: "Ishura_Dark_Idle",
+                context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle",
                     script: "$02020120_BF__BOSSSPAWN__2$", duration: 6576, voice: @"ko/Npc/00002194");
             }
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    context.SetSkill(arg1: new int[] {2222}, arg2: false);
-                    context.SetSkill(arg1: new int[] {1212}, arg2: false);
+                    context.SetSkill(arg1: new[] {2222}, arg2: false);
+                    context.SetSkill(arg1: new[] {1212}, arg2: false);
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.DungeonClear();
                     context.DungeonSetEndTime();
@@ -131,13 +127,13 @@ namespace Maple2.Trigger._02020120_bf {
             internal State던전실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.DestroyMonster(arg1: new[] {-1});
             }
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.SetSkill(arg1: new int[] {2222}, arg2: false);
-                    context.SetSkill(arg1: new int[] {1212}, arg2: false);
+                    context.SetSkill(arg1: new[] {2222}, arg2: false);
+                    context.SetSkill(arg1: new[] {1212}, arg2: false);
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.DungeonFail();
                     context.State = new State종료(context);

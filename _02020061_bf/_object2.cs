@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._02020061_bf {
     public static class _object2 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5101}, arg2: false);
-                context.SetUserValue(triggerID: 99990014, key: "EliteSpawn", value: 0);
-                context.SetInteractObject(arg1: new int[] {12000085}, arg2: 2);
+                context.SetEffect(arg1: new[] {5101}, arg2: false);
+                context.SetUserValue(triggerId: 99990014, key: "EliteSpawn", value: 0);
+                context.SetInteractObject(arg1: new[] {12000085}, arg2: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ObjectStart", value: 1)) {
+                if (context.GetUserValue(key: "ObjectStart") == 1) {
                     context.State = new State레버2_체크(context);
                     return;
                 }
@@ -27,21 +23,21 @@ namespace Maple2.Trigger._02020061_bf {
             internal State레버2_체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {722}, arg2: false);
+                context.CreateMonster(arg1: new[] {722}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ObjectStart", value: 0)) {
+                if (context.GetUserValue(key: "ObjectStart") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {712})) {
+                if (context.MonsterDead(arg1: new[] {712})) {
                     context.State = new State레버2_발동(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {9012})) {
+                if (context.UserDetected(arg1: new[] {9012})) {
                     context.State = new State레버2_안내멘트(context);
                     return;
                 }
@@ -54,16 +50,16 @@ namespace Maple2.Trigger._02020061_bf {
             internal State레버2_안내멘트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020061_BF__OBJECT2__0$", arg3: new int[] {5000}, arg4: "9012");
+                context.SetEventUI(arg1: 1, arg2: "$02020061_BF__OBJECT2__0$", arg3: 5000, arg4: "9012");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ObjectStart", value: 0)) {
+                if (context.GetUserValue(key: "ObjectStart") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {712})) {
+                if (context.MonsterDead(arg1: new[] {712})) {
                     context.State = new State레버2_발동(context);
                     return;
                 }
@@ -76,23 +72,23 @@ namespace Maple2.Trigger._02020061_bf {
             internal State레버2_발동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5101}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {12000085}, arg2: 1);
-                context.SetEventUI(arg1: 1, arg2: "$02020061_BF__OBJECT2__1$", arg3: new int[] {5000}, arg4: "9012");
+                context.SetEffect(arg1: new[] {5101}, arg2: true);
+                context.SetInteractObject(arg1: new[] {12000085}, arg2: 1);
+                context.SetEventUI(arg1: 1, arg2: "$02020061_BF__OBJECT2__1$", arg3: 5000, arg4: "9012");
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ObjectStart", value: 0)) {
+                if (context.GetUserValue(key: "ObjectStart") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {701})) {
+                if (context.MonsterDead(arg1: new[] {701})) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000085}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000085}, arg2: 0)) {
                     context.State = new State레버2_몬스터등장(context);
                     return;
                 }
@@ -105,16 +101,16 @@ namespace Maple2.Trigger._02020061_bf {
             internal State레버2_몬스터등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 99990014, key: "EliteSpawn", value: 1);
+                context.SetUserValue(triggerId: 99990014, key: "EliteSpawn", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ObjectStart", value: 0)) {
+                if (context.GetUserValue(key: "ObjectStart") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {701})) {
+                if (context.MonsterDead(arg1: new[] {701})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -132,21 +128,21 @@ namespace Maple2.Trigger._02020061_bf {
             internal State레버2_재활성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {12000085}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000085}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ObjectStart", value: 0)) {
+                if (context.GetUserValue(key: "ObjectStart") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {701})) {
+                if (context.MonsterDead(arg1: new[] {701})) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000085}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000085}, arg2: 0)) {
                     context.State = new State레버2_재활성_대기(context);
                     return;
                 }
@@ -161,12 +157,12 @@ namespace Maple2.Trigger._02020061_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "ObjectStart", value: 0)) {
+                if (context.GetUserValue(key: "ObjectStart") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {701})) {
+                if (context.MonsterDead(arg1: new[] {701})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -184,10 +180,10 @@ namespace Maple2.Trigger._02020061_bf {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5101}, arg2: false);
-                context.SetUserValue(triggerID: 99990014, key: "EliteSpawn", value: 2);
-                context.DestroyMonster(arg1: new int[] {722}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {12000085}, arg2: 2);
+                context.SetEffect(arg1: new[] {5101}, arg2: false);
+                context.SetUserValue(triggerId: 99990014, key: "EliteSpawn", value: 2);
+                context.DestroyMonster(arg1: new[] {722}, arg2: false);
+                context.SetInteractObject(arg1: new[] {12000085}, arg2: 2);
             }
 
             public override void Execute() { }

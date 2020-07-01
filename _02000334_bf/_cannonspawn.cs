@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000334_bf {
     public static class _cannonspawn {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateIdle(context);
-
-        private class StateIdle : TriggerState {
+        public class StateIdle : TriggerState {
             internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "CannonSpawn", value: 1)) {
+                if (context.GetUserValue(key: "CannonSpawn") == 1) {
                     context.State = new StateCannonSpawn(context);
                     return;
                 }
@@ -42,24 +38,24 @@ namespace Maple2.Trigger._02000334_bf {
             internal StateCannonSpawn_start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 9999131, key: "cannon_01", value: 1);
-                context.SetUserValue(triggerID: 9999132, key: "cannon_02", value: 1);
-                context.SetUserValue(triggerID: 9999133, key: "cannon_03", value: 1);
-                context.CreateMonster(arg1: new int[] {301, 302, 303}, arg2: false);
+                context.SetUserValue(triggerId: 9999131, key: "cannon_01", value: 1);
+                context.SetUserValue(triggerId: 9999132, key: "cannon_02", value: 1);
+                context.SetUserValue(triggerId: 9999133, key: "cannon_03", value: 1);
+                context.CreateMonster(arg1: new[] {301, 302, 303}, arg2: false);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 102, textID: 20000020);
-                context.SetEffect(arg1: new int[] {90021}, arg2: true);
+                context.ShowGuideSummary(entityId: 102, textId: 20000020);
+                context.SetEffect(arg1: new[] {90021}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {190})) {
+                if (context.MonsterDead(arg1: new[] {190})) {
                     context.State = new StateClear(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 102);
+                context.HideGuideSummary(entityId: 102);
             }
         }
 

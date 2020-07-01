@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._02100002_bf {
     public static class _22_spawnholder_skyblue {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "ActivateHolder", value: 0);
                 context.SetUserValue(key: "DungeonQuit", value: 0);
-                context.SetInteractObject(arg1: new int[] {10001250}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001251}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10001250}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001251}, arg2: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ActivateHolder", value: 1)) {
+                if (context.GetUserValue(key: "ActivateHolder") == 1) {
                     context.State = new StateLoadingDelay(context);
                     return;
                 }
@@ -43,17 +39,17 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateSpawnStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001251}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10001250}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001251}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001250}, arg2: 2);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001251}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001251}, arg2: 0)) {
                     context.State = new StateStopDelay(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DungeonQuit", value: 1)) {
+                if (context.GetUserValue(key: "DungeonQuit") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -66,7 +62,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateStopDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 102, key: "SpawnHold", value: 1);
+                context.SetUserValue(triggerId: 102, key: "SpawnHold", value: 1);
             }
 
             public override void Execute() {
@@ -75,7 +71,7 @@ namespace Maple2.Trigger._02100002_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "DungeonQuit", value: 1)) {
+                if (context.GetUserValue(key: "DungeonQuit") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -88,17 +84,17 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateSpawnStop(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001251}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001250}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001251}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001250}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001250}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001250}, arg2: 0)) {
                     context.State = new StateStartDelay(context);
                     return;
                 }
 
-                if (context.UserValue(key: "DungeonQuit", value: 1)) {
+                if (context.GetUserValue(key: "DungeonQuit") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -111,7 +107,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateStartDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 102, key: "SpawnHold", value: 0);
+                context.SetUserValue(triggerId: 102, key: "SpawnHold", value: 0);
             }
 
             public override void Execute() {
@@ -120,7 +116,7 @@ namespace Maple2.Trigger._02100002_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "DungeonQuit", value: 1)) {
+                if (context.GetUserValue(key: "DungeonQuit") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -133,8 +129,8 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001250}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001251}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10001250}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001251}, arg2: 0);
             }
 
             public override void Execute() { }

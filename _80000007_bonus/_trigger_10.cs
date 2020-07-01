@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._80000007_bonus {
     public static class _trigger_10 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919,
                         920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938,
                         939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949
@@ -17,7 +13,7 @@ namespace Maple2.Trigger._80000007_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {159})) {
+                if (context.UserDetected(arg1: new[] {159})) {
                     context.State = new State벽삭제(context);
                     return;
                 }
@@ -31,7 +27,7 @@ namespace Maple2.Trigger._80000007_bonus {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919,
                         920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938,
                         939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949
@@ -54,7 +50,7 @@ namespace Maple2.Trigger._80000007_bonus {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {159})) {
+                if (!context.UserDetected(arg1: new[] {159})) {
                     context.State = new State대기(context);
                     return;
                 }

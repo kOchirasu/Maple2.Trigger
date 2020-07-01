@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02020065_bf {
     public static class _interactmachine_8 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -23,11 +19,11 @@ namespace Maple2.Trigger._02020065_bf {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10002160}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10002160}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10002160}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002160}, arg2: 0)) {
                     context.State = new State재활성대기(context);
                     return;
                 }
@@ -42,7 +38,7 @@ namespace Maple2.Trigger._02020065_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.CheckAnyUserAdditionalEffect(triggerBoxID: 9108, additionalEffectID: 99910370, level: true)
+                if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 9108, additionalEffectId: 99910370, level: true)
                 ) {
                     context.State = new State시작(context);
                     return;

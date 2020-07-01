@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._52010005_qd {
     public static class _act03 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State퀘스트조건03(context);
-
-        private class State퀘스트조건03 : TriggerState {
+        public class State퀘스트조건03 : TriggerState {
             internal State퀘스트조건03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000872}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000872}, arg2: 0);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {10002822},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002822},
                     arg3: new byte[] {1})) {
                     context.State = new StateQ3_딜레이01(context);
                     return;
@@ -46,11 +42,11 @@ namespace Maple2.Trigger._52010005_qd {
                 context.SetTimer(arg1: "20", arg2: 1);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CreateMonster(arg1: new int[] {601}, arg2: false);
+                context.CreateMonster(arg1: new[] {601}, arg2: false);
                 context.MoveNpc(arg1: 601, arg2: "MS2PatrolData_6010");
-                context.DestroyMonster(arg1: new int[] {401});
-                context.DestroyMonster(arg1: new int[] {101});
-                context.CreateMonster(arg1: new int[] {501}, arg2: false);
+                context.DestroyMonster(arg1: new[] {401});
+                context.DestroyMonster(arg1: new[] {101});
+                context.CreateMonster(arg1: new[] {501}, arg2: false);
             }
 
             public override void Execute() {
@@ -68,7 +64,7 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "21", arg2: 5);
-                context.CameraSelectPath(arg1: new int[] {2001, 2002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {2001, 2002}, arg2: false);
             }
 
             public override void Execute() {
@@ -87,7 +83,7 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 8003, arg2: new int[] {601})) {
+                if (context.NpcDetected(arg1: 8003, arg2: new[] {601})) {
                     context.State = new StateQ3_미카연출03(context);
                     return;
                 }
@@ -102,7 +98,7 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "22", arg2: 4);
                 context.MoveNpc(arg1: 601, arg2: "MS2PatrolData_6011");
-                context.CameraSelectPath(arg1: new int[] {2002, 2001}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {2002, 2001}, arg2: true);
             }
 
             public override void Execute() {
@@ -119,13 +115,13 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ3_미카연출04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000872}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000872}, arg2: 1);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000872}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000872}, arg2: 0)) {
                     context.State = new StateQ3_영상재생(context);
                     return;
                 }
@@ -140,7 +136,7 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
                 context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
-                context.PlaySceneMovie(fileName: "MemoryofDragon.swf", movieID: 1);
+                context.PlaySceneMovie(fileName: "MemoryofDragon.swf", movieId: 1);
             }
 
             public override void Execute() {
@@ -312,7 +308,7 @@ namespace Maple2.Trigger._52010005_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 8010, arg2: new int[] {601})) {
+                if (context.NpcDetected(arg1: 8010, arg2: new[] {601})) {
                     context.State = new StateQ3_미카퇴장04(context);
                     return;
                 }
@@ -325,7 +321,7 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ3_미카퇴장04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {601});
+                context.DestroyMonster(arg1: new[] {601});
                 context.SetTimer(arg1: "40", arg2: 1);
                 context.CameraSelect(arg1: 4001, arg2: false);
                 context.SetProductionUI(arg1: 0);
@@ -347,12 +343,12 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "Intothememory");
-                context.DestroyMonster(arg1: new int[] {501});
-                context.CreateMonster(arg1: new int[] {502}, arg2: false);
+                context.DestroyMonster(arg1: new[] {501});
+                context.CreateMonster(arg1: new[] {502}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {10002823},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002823},
                     arg3: new byte[] {2})) {
                     context.State = new StateQ3_유저퇴장01(context);
                     return;

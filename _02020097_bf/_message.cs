@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02020097_bf {
     public static class _message {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {10})) {
+                if (context.UserDetected(arg1: new[] {10})) {
                     context.State = new State대기상태(context);
                     return;
                 }
@@ -25,12 +21,12 @@ namespace Maple2.Trigger._02020097_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {12})) {
+                if (context.UserDetected(arg1: new[] {12})) {
                     context.State = new State경비병도움안내(context);
                     return;
                 }
 
-                if (context.UserValue(key: "StairsOk2nd", value: 1)) {
+                if (context.GetUserValue(key: "StairsOk2nd") == 1) {
                     context.State = new State트리거종료(context);
                     return;
                 }
@@ -43,7 +39,7 @@ namespace Maple2.Trigger._02020097_bf {
             internal State경비병도움안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 29200001, textID: 29200001);
+                context.ShowGuideSummary(entityId: 29200001, textId: 29200001);
             }
 
             public override void Execute() {
@@ -54,7 +50,7 @@ namespace Maple2.Trigger._02020097_bf {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 29200001);
+                context.HideGuideSummary(entityId: 29200001);
             }
         }
 

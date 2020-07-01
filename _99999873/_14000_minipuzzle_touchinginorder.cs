@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._99999873 {
     public static class _14000_minipuzzle_touchinginorder {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {12000069}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {12000077}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {12000088}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000089}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000090}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000091}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000092}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000069}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000077}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {12000088}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000089}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000090}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000091}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000092}, arg2: 0);
                 context.SetActor(arg1: 14011, arg2: false, arg3: "Interaction_luminous_A02_off");
                 context.SetActor(arg1: 14021, arg2: false, arg3: "Interaction_luminous_A02_off");
                 context.SetActor(arg1: 14022, arg2: false, arg3: "Interaction_luminous_A02_off");
@@ -30,13 +26,13 @@ namespace Maple2.Trigger._99999873 {
                 context.SetActor(arg1: 14053, arg2: false, arg3: "Interaction_luminous_A02_off");
                 context.SetActor(arg1: 14054, arg2: false, arg3: "Interaction_luminous_A02_off");
                 context.SetActor(arg1: 14055, arg2: false, arg3: "Interaction_luminous_A02_off");
-                context.SetEffect(arg1: new int[] {14200}, arg2: false);
-                context.SetEffect(arg1: new int[] {14201}, arg2: false);
-                context.SetEffect(arg1: new int[] {14202}, arg2: false);
+                context.SetEffect(arg1: new[] {14200}, arg2: false);
+                context.SetEffect(arg1: new[] {14201}, arg2: false);
+                context.SetEffect(arg1: new[] {14202}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "TimeEventOn", value: 1)) {
+                if (context.GetUserValue(key: "TimeEventOn") == 1) {
                     context.State = new StateSettingDelay(context);
                     return;
                 }
@@ -56,7 +52,7 @@ namespace Maple2.Trigger._99999873 {
                     return;
                 }
 
-                if (context.UserValue(key: "TimeEventOn", value: 0)) {
+                if (context.GetUserValue(key: "TimeEventOn") == 0) {
                     context.State = new StateWait(context);
                     return;
                 }
@@ -69,17 +65,17 @@ namespace Maple2.Trigger._99999873 {
             internal StateSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {12000077}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000077}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000077}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000077}, arg2: 0)) {
                     context.SetTimer(arg1: "1", arg2: 90, arg3: true, arg4: false, arg5: 0);
                     context.State = new StateTouchingInNumericalOrder_Start_Delay(context);
                     return;
                 }
 
-                if (context.UserValue(key: "TimeEventOn", value: 0)) {
+                if (context.GetUserValue(key: "TimeEventOn") == 0) {
                     context.State = new StateWait(context);
                     return;
                 }
@@ -107,12 +103,12 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_Play01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {14201}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {12000088}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {12000089}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {12000090}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {12000091}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {12000092}, arg2: 1);
+                context.SetEffect(arg1: new[] {14201}, arg2: true);
+                context.SetInteractObject(arg1: new[] {12000088}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000089}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000090}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000091}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {12000092}, arg2: 1);
                 context.SetActor(arg1: 14011, arg2: true, arg3: "Interaction_luminous_A02_off");
                 context.SetActor(arg1: 14021, arg2: true, arg3: "Interaction_luminous_A02_off");
                 context.SetActor(arg1: 14022, arg2: true, arg3: "Interaction_luminous_A02_off");
@@ -136,27 +132,27 @@ namespace Maple2.Trigger._99999873 {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000088}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000088}, arg2: 0)) {
                     context.State = new StateTouchingInNumericalOrder_Play02(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000089}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000089}, arg2: 0)) {
                     context.State = new StateTouchingInNumericalOrder_FailDelay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000090}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000090}, arg2: 0)) {
                     context.State = new StateTouchingInNumericalOrder_FailDelay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000091}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000091}, arg2: 0)) {
                     context.State = new StateTouchingInNumericalOrder_FailDelay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000092}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000092}, arg2: 0)) {
                     context.State = new StateTouchingInNumericalOrder_FailDelay(context);
                     return;
                 }
@@ -169,8 +165,8 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_Play02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {12000088}, arg2: 0);
-                context.SetEffect(arg1: new int[] {14201}, arg2: true);
+                context.SetInteractObject(arg1: new[] {12000088}, arg2: 0);
+                context.SetEffect(arg1: new[] {14201}, arg2: true);
                 context.SetActor(arg1: 14011, arg2: true, arg3: "Interaction_luminous_A02_on");
             }
 
@@ -180,22 +176,22 @@ namespace Maple2.Trigger._99999873 {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000089}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000089}, arg2: 0)) {
                     context.State = new StateTouchingInNumericalOrder_Play03(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000090}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000090}, arg2: 0)) {
                     context.State = new StateTouchingInNumericalOrder_FailDelay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000091}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000091}, arg2: 0)) {
                     context.State = new StateTouchingInNumericalOrder_FailDelay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000092}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000092}, arg2: 0)) {
                     context.State = new StateTouchingInNumericalOrder_FailDelay(context);
                     return;
                 }
@@ -208,8 +204,8 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_Play03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {12000089}, arg2: 0);
-                context.SetEffect(arg1: new int[] {14201}, arg2: true);
+                context.SetInteractObject(arg1: new[] {12000089}, arg2: 0);
+                context.SetEffect(arg1: new[] {14201}, arg2: true);
                 context.SetActor(arg1: 14021, arg2: true, arg3: "Interaction_luminous_A02_on");
                 context.SetActor(arg1: 14022, arg2: true, arg3: "Interaction_luminous_A02_on");
             }
@@ -220,17 +216,17 @@ namespace Maple2.Trigger._99999873 {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000090}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000090}, arg2: 0)) {
                     context.State = new StateTouchingInNumericalOrder_Play04(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000091}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000091}, arg2: 0)) {
                     context.State = new StateTouchingInNumericalOrder_FailDelay(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000092}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000092}, arg2: 0)) {
                     context.State = new StateTouchingInNumericalOrder_FailDelay(context);
                     return;
                 }
@@ -243,8 +239,8 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_Play04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {12000090}, arg2: 0);
-                context.SetEffect(arg1: new int[] {14201}, arg2: true);
+                context.SetInteractObject(arg1: new[] {12000090}, arg2: 0);
+                context.SetEffect(arg1: new[] {14201}, arg2: true);
                 context.SetActor(arg1: 14031, arg2: true, arg3: "Interaction_luminous_A02_on");
                 context.SetActor(arg1: 14032, arg2: true, arg3: "Interaction_luminous_A02_on");
                 context.SetActor(arg1: 14033, arg2: true, arg3: "Interaction_luminous_A02_on");
@@ -256,12 +252,12 @@ namespace Maple2.Trigger._99999873 {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000091}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000091}, arg2: 0)) {
                     context.State = new StateTouchingInNumericalOrder_Play05(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000092}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000092}, arg2: 0)) {
                     context.State = new StateTouchingInNumericalOrder_FailDelay(context);
                     return;
                 }
@@ -274,8 +270,8 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_Play05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {12000091}, arg2: 0);
-                context.SetEffect(arg1: new int[] {14201}, arg2: true);
+                context.SetInteractObject(arg1: new[] {12000091}, arg2: 0);
+                context.SetEffect(arg1: new[] {14201}, arg2: true);
                 context.SetActor(arg1: 14041, arg2: true, arg3: "Interaction_luminous_A02_on");
                 context.SetActor(arg1: 14042, arg2: true, arg3: "Interaction_luminous_A02_on");
                 context.SetActor(arg1: 14043, arg2: true, arg3: "Interaction_luminous_A02_on");
@@ -288,7 +284,7 @@ namespace Maple2.Trigger._99999873 {
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {12000092}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000092}, arg2: 0)) {
                     context.State = new StateTouchingInNumericalOrder_End(context);
                     return;
                 }
@@ -301,8 +297,8 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_End(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {12000092}, arg2: 0);
-                context.SetEffect(arg1: new int[] {14201}, arg2: true);
+                context.SetInteractObject(arg1: new[] {12000092}, arg2: 0);
+                context.SetEffect(arg1: new[] {14201}, arg2: true);
                 context.SetActor(arg1: 14051, arg2: true, arg3: "Interaction_luminous_A02_on");
                 context.SetActor(arg1: 14052, arg2: true, arg3: "Interaction_luminous_A02_on");
                 context.SetActor(arg1: 14053, arg2: true, arg3: "Interaction_luminous_A02_on");
@@ -325,13 +321,13 @@ namespace Maple2.Trigger._99999873 {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "10", arg2: 61, arg3: true, arg4: false, arg5: 0);
-                context.AddBuff(arg1: new int[] {140001}, arg2: 71001042, arg3: 1, arg4: false, arg5: false);
-                context.SetEffect(arg1: new int[] {14200}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {12000069}, arg2: 1);
+                context.AddBuff(arg1: new[] {140001}, arg2: 71001042, arg3: 1, arg4: false, arg5: false);
+                context.SetEffect(arg1: new[] {14200}, arg2: true);
+                context.SetInteractObject(arg1: new[] {12000069}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {12000069}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {12000069}, arg2: 0)) {
                     context.State = new StateTouchingInNumericalOrder_SuccessDelay(context);
                     return;
                 }
@@ -364,7 +360,7 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_Quit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 14000, key: "TimeEventOn", value: 0);
+                context.SetUserValue(triggerId: 14000, key: "TimeEventOn", value: 0);
                 context.ResetTimer(arg1: "1");
                 context.ResetTimer(arg1: "10");
             }
@@ -383,7 +379,7 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_FailDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {14202}, arg2: true);
+                context.SetEffect(arg1: new[] {14202}, arg2: true);
             }
 
             public override void Execute() {
@@ -397,7 +393,7 @@ namespace Maple2.Trigger._99999873 {
                     return;
                 }
 
-                if (context.UserValue(key: "TimeEventOn", value: 0)) {
+                if (context.GetUserValue(key: "TimeEventOn") == 0) {
                     context.State = new StateResetTimer(context);
                     return;
                 }
@@ -410,11 +406,11 @@ namespace Maple2.Trigger._99999873 {
             internal StateTouchingInNumericalOrder_Fail(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {12000088}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000089}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000090}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000091}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {12000092}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000088}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000089}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000090}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000091}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {12000092}, arg2: 0);
                 context.SetActor(arg1: 14011, arg2: false, arg3: "Interaction_luminous_A02_off");
                 context.SetActor(arg1: 14021, arg2: false, arg3: "Interaction_luminous_A02_off");
                 context.SetActor(arg1: 14022, arg2: false, arg3: "Interaction_luminous_A02_off");
@@ -443,7 +439,7 @@ namespace Maple2.Trigger._99999873 {
                     return;
                 }
 
-                if (context.UserValue(key: "TimeEventOn", value: 0)) {
+                if (context.GetUserValue(key: "TimeEventOn") == 0) {
                     context.State = new StateResetTimer(context);
                     return;
                 }

@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52010004_qd {
     public static class _battle01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,12 +8,12 @@ namespace Maple2.Trigger._52010004_qd {
                 context.SetAgent(arg1: "10001", arg2: false);
                 context.SetAgent(arg1: "10002", arg2: false);
                 context.SetAgent(arg1: "10003", arg2: false);
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
-                context.SetMesh(arg1: new int[] {7000, 7001, 7002, 7003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.SetMesh(arg1: new[] {7000, 7001, 7002, 7003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {10002800},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002800},
                     arg3: new byte[] {2})) {
                     context.State = new State둔바교체01(context);
                     return;
@@ -32,9 +28,9 @@ namespace Maple2.Trigger._52010004_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
-                context.SetMesh(arg1: new int[] {7000, 7001, 7002, 7003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.DestroyMonster(arg1: new int[] {101});
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.SetMesh(arg1: new[] {7000, 7001, 7002, 7003}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.DestroyMonster(arg1: new[] {101});
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
             public override void Execute() {
@@ -188,8 +184,8 @@ namespace Maple2.Trigger._52010004_qd {
                 context.SetAgent(arg1: "10001", arg2: true);
                 context.SetAgent(arg1: "10002", arg2: true);
                 context.SetAgent(arg1: "10003", arg2: true);
-                context.DestroyMonster(arg1: new int[] {102});
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
+                context.DestroyMonster(arg1: new[] {102});
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
             }
 
             public override void Execute() {
@@ -210,7 +206,7 @@ namespace Maple2.Trigger._52010004_qd {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {201})) {
+                if (context.MonsterDead(arg1: new[] {201})) {
                     context.State = new State둔바교체대기02(context);
                     return;
                 }
@@ -223,7 +219,7 @@ namespace Maple2.Trigger._52010004_qd {
             internal State둔바교체대기02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {7000, 7001, 7002, 7003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {7000, 7001, 7002, 7003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetTimer(arg1: "30", arg2: 3);
             }
 
@@ -241,8 +237,8 @@ namespace Maple2.Trigger._52010004_qd {
             internal State둔바교체02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {201});
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.DestroyMonster(arg1: new[] {201});
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
             public override void Execute() { }

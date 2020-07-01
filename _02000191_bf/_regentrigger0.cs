@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000191_bf {
     public static class _regentrigger0 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 100, arg2: new int[] {900})) {
+                if (context.NpcDetected(arg1: 100, arg2: new[] {900})) {
                     context.State = new State웜리젠91(context);
                     return;
                 }
@@ -23,11 +19,11 @@ namespace Maple2.Trigger._02000191_bf {
             internal State웜리젠91(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1, 2});
+                context.CreateMonster(arg1: new[] {1, 2});
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {1, 2})) {
+                if (context.MonsterDead(arg1: new[] {1, 2})) {
                     context.State = new State웜리젠91쿨타임(context);
                     return;
                 }

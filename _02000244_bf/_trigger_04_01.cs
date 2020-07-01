@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._02000244_bf {
     public static class _trigger_04_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {707, 708}, arg2: true);
-                context.DestroyMonster(arg1: new int[] {613, 614, 615, 616, 617, 618, 619, 620, 621});
+                context.SetMesh(arg1: new[] {707, 708}, arg2: true);
+                context.DestroyMonster(arg1: new[] {613, 614, 615, 616, 617, 618, 619, 620, 621});
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {204})) {
+                if (context.UserDetected(arg1: new[] {204})) {
                     context.State = new State몹생성(context);
                     return;
                 }
@@ -26,16 +22,16 @@ namespace Maple2.Trigger._02000244_bf {
             internal State몹생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {613, 614, 615, 616, 617, 618, 619, 620, 621}, arg2: false);
+                context.CreateMonster(arg1: new[] {613, 614, 615, 616, 617, 618, 619, 620, 621}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {613, 614, 615, 616, 617, 618, 619, 620, 621})) {
+                if (context.MonsterDead(arg1: new[] {613, 614, 615, 616, 617, 618, 619, 620, 621})) {
                     context.State = new State통과(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {10000301}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000301}, arg2: 0)) {
                     context.State = new State통과(context);
                     return;
                 }
@@ -48,7 +44,7 @@ namespace Maple2.Trigger._02000244_bf {
             internal State통과(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {707, 708}, arg2: false);
+                context.SetMesh(arg1: new[] {707, 708}, arg2: false);
                 context.SetTimer(arg1: "1", arg2: 180);
             }
 

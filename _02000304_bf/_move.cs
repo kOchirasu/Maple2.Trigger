@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02000304_bf {
     public static class _move {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State몬스터체크(context);
                     return;
                 }
@@ -27,7 +23,7 @@ namespace Maple2.Trigger._02000304_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterInCombat(arg1: new int[] {2001})) {
+                if (context.MonsterInCombat(arg1: new[] {2001})) {
                     context.State = new State카운트랜덤(context);
                     return;
                 }
@@ -74,7 +70,7 @@ namespace Maple2.Trigger._02000304_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2001})) {
+                if (context.MonsterDead(arg1: new[] {2001})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -96,7 +92,7 @@ namespace Maple2.Trigger._02000304_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2001})) {
+                if (context.MonsterDead(arg1: new[] {2001})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -118,7 +114,7 @@ namespace Maple2.Trigger._02000304_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2001})) {
+                if (context.MonsterDead(arg1: new[] {2001})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -140,7 +136,7 @@ namespace Maple2.Trigger._02000304_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2001})) {
+                if (context.MonsterDead(arg1: new[] {2001})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -158,13 +154,13 @@ namespace Maple2.Trigger._02000304_bf {
             internal State이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: true);
+                context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 2001, arg3: "$02000304_BF__MOVE__0$", arg4: 2);
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2001})) {
+                if (context.MonsterDead(arg1: new[] {2001})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -188,7 +184,7 @@ namespace Maple2.Trigger._02000304_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2001})) {
+                if (context.MonsterDead(arg1: new[] {2001})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -212,7 +208,7 @@ namespace Maple2.Trigger._02000304_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2001})) {
+                if (context.MonsterDead(arg1: new[] {2001})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -236,7 +232,7 @@ namespace Maple2.Trigger._02000304_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2001})) {
+                if (context.MonsterDead(arg1: new[] {2001})) {
                     context.State = new State종료(context);
                     return;
                 }

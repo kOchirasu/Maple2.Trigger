@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000181_qd {
     public static class _52000181 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statewait_01(context);
-
-        private class Statewait_01 : TriggerState {
+        public class Statewait_01 : TriggerState {
             internal Statewait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {2001}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {2001}, arg2: 0)) {
                     context.State = new Statewait_01_02(context);
                     return;
                 }
@@ -43,8 +39,8 @@ namespace Maple2.Trigger._52000181_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.MoveUser(arg1: 520001781, arg2: 1);
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
             }
 
             public override void Execute() {
@@ -159,13 +155,13 @@ namespace Maple2.Trigger._52000181_qd {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101}, arg2: false);
                 context.MoveUser(arg1: 52000181, arg2: 2);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {40002765},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002765},
                     arg3: new byte[] {3})) {
                     context.State = new State프론티아재단으로_01(context);
                     return;

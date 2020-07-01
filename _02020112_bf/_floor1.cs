@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._02020112_bf {
     public static class _floor1 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013,
                         10014, 10015, 10016, 10017, 10018, 10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026,
                         10027, 10028, 10029, 10030, 10031, 10032, 10033, 10034, 10035, 10036, 10037, 10038, 10039,
@@ -21,7 +17,7 @@ namespace Maple2.Trigger._02020112_bf {
                         10105, 10106, 10107
                     }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         11001, 11002, 11003, 11004, 11005, 11006, 11007, 11008, 11009, 11010, 11011, 11012, 11013,
                         11014, 11015, 11016, 11017, 11018, 11019, 11020, 11021, 11022, 11023, 11024, 11025, 11026,
                         11027, 11028, 11029, 11030, 11031, 11032, 11033, 11034, 11035, 11036, 11037, 11038, 11039,
@@ -35,7 +31,7 @@ namespace Maple2.Trigger._02020112_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "JumpFloor", value: 1)) {
+                if (context.GetUserValue(key: "JumpFloor") == 1) {
                     context.State = new State딜레이(context);
                     return;
                 }
@@ -64,7 +60,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013,
                         10014, 10015, 10016, 10017, 10018, 10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026,
                         10027, 10028, 10029, 10030, 10031, 10032, 10033, 10034, 10035, 10036, 10037, 10038, 10039,
@@ -78,7 +74,7 @@ namespace Maple2.Trigger._02020112_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Safe", value: 1)) {
+                if (context.GetUserValue(key: "Safe") == 1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -97,7 +93,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         11001, 11002, 11003, 11004, 11005, 11006, 11007, 11008, 11009, 11010, 11011, 11012, 11013,
                         11014, 11015, 11016, 11017, 11018, 11019, 11020, 11021, 11022, 11023, 11024, 11025, 11026,
                         11027, 11028, 11029, 11030, 11031, 11032, 11033, 11034, 11035, 11036, 11037, 11038, 11039,
@@ -111,7 +107,7 @@ namespace Maple2.Trigger._02020112_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Safe", value: 1)) {
+                if (context.GetUserValue(key: "Safe") == 1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -130,7 +126,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013,
                         10014, 10015, 10016, 10017, 10018, 10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026,
                         10027, 10028, 10029, 10030, 10031, 10032, 10033, 10034, 10035, 10036, 10037, 10038, 10039,
@@ -144,7 +140,7 @@ namespace Maple2.Trigger._02020112_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Safe", value: 1)) {
+                if (context.GetUserValue(key: "Safe") == 1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -163,7 +159,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013,
                         10014, 10015, 10016, 10017, 10018, 10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026,
                         10027, 10028, 10029, 10030, 10031, 10032, 10033, 10034, 10035, 10036, 10037, 10038, 10039,
@@ -177,7 +173,7 @@ namespace Maple2.Trigger._02020112_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Safe", value: 1)) {
+                if (context.GetUserValue(key: "Safe") == 1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -196,7 +192,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         11001, 11002, 11003, 11004, 11005, 11006, 11007, 11008, 11009, 11010, 11011, 11012, 11013,
                         11014, 11015, 11016, 11017, 11018, 11019, 11020, 11021, 11022, 11023, 11024, 11025, 11026,
                         11027, 11028, 11029, 11030, 11031, 11032, 11033, 11034, 11035, 11036, 11037, 11038, 11039,
@@ -210,7 +206,7 @@ namespace Maple2.Trigger._02020112_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Safe", value: 1)) {
+                if (context.GetUserValue(key: "Safe") == 1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -229,7 +225,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013,
                         10014, 10015, 10016, 10017, 10018, 10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026,
                         10027, 10028, 10029, 10030, 10031, 10032, 10033, 10034, 10035, 10036, 10037, 10038, 10039,
@@ -241,7 +237,7 @@ namespace Maple2.Trigger._02020112_bf {
                         10105, 10106, 10107, 10108
                     }, arg2: true, arg3: 0, arg4: 20, arg5: 3f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         11001, 11002, 11003, 11004, 11005, 11006, 11007, 11008, 11009, 11010, 11011, 11012, 11013,
                         11014, 11015, 11016, 11017, 11018, 11019, 11020, 11021, 11022, 11023, 11024, 11025, 11026,
                         11027, 11028, 11029, 11030, 11031, 11032, 11033, 11034, 11035, 11036, 11037, 11038, 11039,

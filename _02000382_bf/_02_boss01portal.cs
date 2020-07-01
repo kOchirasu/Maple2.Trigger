@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000382_bf {
     public static class _02_boss01portal {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._02000382_bf {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9900, arg2: new int[] {901})) {
+                if (context.NpcDetected(arg1: 9900, arg2: new[] {901})) {
                     context.State = new StateActionPortal01(context);
                     return;
                 }

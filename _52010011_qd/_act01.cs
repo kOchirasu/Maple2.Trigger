@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._52010011_qd {
     public static class _act01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: true);
-                context.SetEffect(arg1: new int[] {5000}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: true);
+                context.SetEffect(arg1: new[] {5000}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new State유저감지(context);
                     return;
                 }
@@ -45,7 +41,7 @@ namespace Maple2.Trigger._52010011_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {10002811},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002811},
                     arg3: new byte[] {2})) {
                     context.State = new State시작(context);
                     return;
@@ -492,7 +488,7 @@ namespace Maple2.Trigger._52010011_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetTimer(arg1: "21", arg2: 2);
-                context.CameraSelectPath(arg1: new int[] {601, 602}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {601, 602}, arg2: false);
             }
 
             public override void Execute() {
@@ -510,7 +506,7 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: @"common\KarKarIntro.usm", movieID: 1);
+                context.PlaySceneMovie(fileName: @"common\KarKarIntro.usm", movieId: 1);
             }
 
             public override void Execute() {
@@ -606,7 +602,7 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.CreateMonster(arg1: new int[] {1001}, arg2: true);
+                context.CreateMonster(arg1: new[] {1001}, arg2: true);
                 context.SetSkip(arg1: "대사_17_덴덴");
             }
 

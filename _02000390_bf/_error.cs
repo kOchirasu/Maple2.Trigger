@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000390_bf {
     public static class _error {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateready(context);
-
-        private class Stateready : TriggerState {
+        public class Stateready : TriggerState {
             internal Stateready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
@@ -30,12 +26,12 @@ namespace Maple2.Trigger._02000390_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Error", value: 1)) {
+                if (context.GetUserValue(key: "Error") == 1) {
                     context.State = new Stateend(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {702})) {
+                if (context.UserDetected(arg1: new[] {702})) {
                     context.State = new Stateerror(context);
                     return;
                 }
@@ -67,23 +63,23 @@ namespace Maple2.Trigger._02000390_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Error", value: 1)) {
+                if (context.GetUserValue(key: "Error") == 1) {
                     context.State = new Stateend(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {702})) {
+                if (context.UserDetected(arg1: new[] {702})) {
                     context.State = new Statequest_error(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {50001518},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518},
                     arg3: new byte[] {1})) {
                     context.State = new Stateend(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {50001517},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001517},
                     arg3: new byte[] {2})) {
                     context.State = new Stateend(context);
                     return;
@@ -106,13 +102,13 @@ namespace Maple2.Trigger._02000390_bf {
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {50001518},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518},
                     arg3: new byte[] {1})) {
                     context.State = new Stateend(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {50001517},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001517},
                     arg3: new byte[] {2})) {
                     context.State = new Stateend(context);
                     return;
@@ -126,7 +122,7 @@ namespace Maple2.Trigger._02000390_bf {
             internal Stateend(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {1001, 1002}, arg2: false);
+                context.SetMesh(arg1: new[] {1001, 1002}, arg2: false);
             }
 
             public override void Execute() { }

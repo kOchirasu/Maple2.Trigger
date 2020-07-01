@@ -1,24 +1,20 @@
-using System;
-
 namespace Maple2.Trigger._02000351_bf {
     public static class _lever_check {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State레버체크(context);
-
-        private class State레버체크 : TriggerState {
+        public class State레버체크 : TriggerState {
             internal State레버체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000819}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10000820}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000819}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000820}, arg2: 0);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000819}, arg2: 1)) {
+                if (context.ObjectInteracted(arg1: new[] {10000819}, arg2: 1)) {
                     context.State = new State레버체크2(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {10000820}, arg2: 1)) {
+                if (context.ObjectInteracted(arg1: new[] {10000820}, arg2: 1)) {
                     context.State = new State레버체크2(context);
                     return;
                 }
@@ -33,12 +29,12 @@ namespace Maple2.Trigger._02000351_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000820}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000820}, arg2: 0)) {
                     context.State = new State레버체크3_1개(context);
                     return;
                 }
 
-                if (context.ObjectInteracted(arg1: new int[] {10000819}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000819}, arg2: 0)) {
                     context.State = new State레버체크4_1개(context);
                     return;
                 }
@@ -53,7 +49,7 @@ namespace Maple2.Trigger._02000351_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000819}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000819}, arg2: 0)) {
                     context.State = new State레버체크완료(context);
                     return;
                 }
@@ -68,7 +64,7 @@ namespace Maple2.Trigger._02000351_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000820}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000820}, arg2: 0)) {
                     context.State = new State레버체크완료(context);
                     return;
                 }
@@ -99,7 +95,7 @@ namespace Maple2.Trigger._02000351_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);
-                context.SetMesh(arg1: new int[] {6005}, arg2: false, arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {6005}, arg2: false, arg4: 0, arg5: 10f);
             }
 
             public override void Execute() {
@@ -129,14 +125,14 @@ namespace Maple2.Trigger._02000351_bf {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 704, arg2: 1)) {
+                if (context.GetUserCount(boxId: 704) == 1) {
                     context.State = new State종료(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 113);
+                context.HideGuideSummary(entityId: 113);
             }
         }
 

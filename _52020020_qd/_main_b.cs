@@ -1,26 +1,22 @@
-using System;
-
 namespace Maple2.Trigger._52020020_qd {
     public static class _main_b {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
-                context.SetEffect(arg1: new int[] {5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetEffect(arg1: new[] {5002}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {60200135},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200135},
                     arg3: new byte[] {2})) {
                     context.State = new Stateready(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001},
-                    arg2: new int[] {60200135, 60200136, 60200137, 60200138, 60200139, 60200140},
+                if (context.QuestUserDetected(arg1: new[] {2001},
+                    arg2: new[] {60200135, 60200136, 60200137, 60200138, 60200139, 60200140},
                     arg3: new byte[] {3})) {
                     context.State = new StateEndReady(context);
                     return;
@@ -56,7 +52,7 @@ namespace Maple2.Trigger._52020020_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.AddCinematicTalk(npcID: 0, msg: "곧 알현식이 열린다고?", duration: 2500);
+                context.AddCinematicTalk(npcId: 0, msg: "곧 알현식이 열린다고?", duration: 2500);
                 context.SetPcEmotionLoop(arg1: "Object_React_H", arg2: 16000f);
                 context.SetSceneSkip(arg1: "EndReady", arg2: "exit");
             }
@@ -75,7 +71,7 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateMonologue_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 0, msg: "그럼 여기가 $map:02000001$$pp:라는,이라는$거야?", duration: 2500);
+                context.AddCinematicTalk(npcId: 0, msg: "그럼 여기가 $map:02000001$$pp:라는,이라는$거야?", duration: 2500);
             }
 
             public override void Execute() {
@@ -92,7 +88,7 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateMonologue_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 0, msg: "분명 알현식은 취소되었을텐데?", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, msg: "분명 알현식은 취소되었을텐데?", duration: 3000);
             }
 
             public override void Execute() {
@@ -111,7 +107,7 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateWalk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {5001}, arg2: true);
             }
 
             public override void Execute() {
@@ -128,7 +124,7 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateDoor(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5002}, arg2: true);
+                context.SetEffect(arg1: new[] {5002}, arg2: true);
             }
 
             public override void Execute() {
@@ -145,7 +141,7 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateEventTalk_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003590, msg: "앗! 일어나 계셨습니까?", duration: 2500);
+                context.AddCinematicTalk(npcId: 11003590, msg: "앗! 일어나 계셨습니까?", duration: 2500);
             }
 
             public override void Execute() {
@@ -162,7 +158,7 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateEventTalk_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 0, msg: "설마....", duration: 2500, align: "Right");
+                context.AddCinematicTalk(npcId: 0, msg: "설마....", duration: 2500, align: "Right");
                 context.SetSceneSkip();
             }
 
@@ -180,7 +176,7 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateEventTalk_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 0, msg: "설마.... 그럴리가 없어....", duration: 3000);
+                context.AddCinematicTalk(npcId: 0, msg: "설마.... 그럴리가 없어....", duration: 3000);
                 context.SetSceneSkip();
             }
 
@@ -201,7 +197,7 @@ namespace Maple2.Trigger._52020020_qd {
                 context.SetProductionUI(arg1: 4);
                 context.SetSound(arg1: 7001, arg2: true);
                 context.SetPcEmotionLoop(arg1: "Idle_A", arg2: 100f);
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
             }
 
             public override void Execute() {

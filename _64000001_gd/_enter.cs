@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._64000001_gd {
     public static class _enter {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StatePvP(context);
-
-        private class StatePvP : TriggerState {
+        public class StatePvP : TriggerState {
             internal StatePvP(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {701}, arg2: false);
-                context.SetEffect(arg1: new int[] {702}, arg2: false);
+                context.SetEffect(arg1: new[] {701}, arg2: false);
+                context.SetEffect(arg1: new[] {702}, arg2: false);
             }
 
             public override void Execute() {

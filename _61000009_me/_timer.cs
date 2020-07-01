@@ -1,14 +1,10 @@
-using System;
-
 namespace Maple2.Trigger._61000009_me {
     public static class _timer {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateready(context);
-
-        private class Stateready : TriggerState {
+        public class Stateready : TriggerState {
             internal Stateready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 100, textID: 40012);
+                context.ShowGuideSummary(entityId: 100, textId: 40012);
             }
 
             public override void Execute() {
@@ -17,7 +13,7 @@ namespace Maple2.Trigger._61000009_me {
                     return;
                 }
 
-                if (context.UserValue(key: "timer", value: 1)) {
+                if (context.GetUserValue(key: "timer") == 1) {
                     context.State = new StateReady_Idle(context);
                     return;
                 }
@@ -30,7 +26,7 @@ namespace Maple2.Trigger._61000009_me {
             internal StateReady_Idle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 100);
+                context.HideGuideSummary(entityId: 100);
                 context.SetTimer(arg1: "1200", arg2: 1200, arg3: false, arg4: true);
             }
 
@@ -48,7 +44,7 @@ namespace Maple2.Trigger._61000009_me {
             internal StateendGame(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 5, arg2: "$61000004_ME__TRIGGER_01__2$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 5, arg2: "$61000004_ME__TRIGGER_01__2$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() {

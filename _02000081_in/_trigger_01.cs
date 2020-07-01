@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._02000081_in {
     public static class _trigger_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000384}, arg2: 1);
-                context.DestroyMonster(arg1: new int[] {201});
-                context.SetMesh(arg1: new int[] {101, 102, 103, 104}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10000384}, arg2: 1);
+                context.DestroyMonster(arg1: new[] {201});
+                context.SetMesh(arg1: new[] {101, 102, 103, 104}, arg2: false);
                 context.SetActor(arg1: 501, arg2: true, arg3: "Opened");
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000384}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000384}, arg2: 0)) {
                     context.State = new State닫히기(context);
                     return;
                 }
@@ -28,7 +24,7 @@ namespace Maple2.Trigger._02000081_in {
             internal State닫히기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {101, 102, 103, 104}, arg2: true);
+                context.SetMesh(arg1: new[] {101, 102, 103, 104}, arg2: true);
                 context.SetActor(arg1: 501, arg2: true, arg3: "Closed");
                 context.SetTimer(arg1: "1", arg2: 2);
             }
@@ -47,12 +43,12 @@ namespace Maple2.Trigger._02000081_in {
             internal State토무등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {202}, arg2: true);
+                context.CreateMonster(arg1: new[] {202}, arg2: true);
                 context.MoveNpc(arg1: 202, arg2: "MS2PatrolData_202");
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 402, arg2: new int[] {202})) {
+                if (context.NpcDetected(arg1: 402, arg2: new[] {202})) {
                     context.State = new State토무대사(context);
                     return;
                 }
@@ -119,10 +115,10 @@ namespace Maple2.Trigger._02000081_in {
             internal State변신(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {202});
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
+                context.DestroyMonster(arg1: new[] {202});
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
                 context.SetActor(arg1: 501, arg2: true, arg3: "Opened");
-                context.SetMesh(arg1: new int[] {101, 102, 103, 104}, arg2: false);
+                context.SetMesh(arg1: new[] {101, 102, 103, 104}, arg2: false);
             }
 
             public override void Execute() {
@@ -141,12 +137,12 @@ namespace Maple2.Trigger._02000081_in {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {201})) {
+                if (context.MonsterDead(arg1: new[] {201})) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (!context.MonsterInCombat(arg1: new int[] {201})) {
+                if (!context.MonsterInCombat(arg1: new[] {201})) {
                     context.State = new State토무소멸(context);
                     return;
                 }
@@ -163,11 +159,11 @@ namespace Maple2.Trigger._02000081_in {
             }
 
             public override void Execute() {
-                if (context.MonsterInCombat(arg1: new int[] {201})) {
+                if (context.MonsterInCombat(arg1: new[] {201})) {
                     context.ResetTimer(arg1: "1");
                 }
 
-                if (context.MonsterDead(arg1: new int[] {201})) {
+                if (context.MonsterDead(arg1: new[] {201})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -194,7 +190,7 @@ namespace Maple2.Trigger._02000081_in {
                     return;
                 }
 
-                if (context.MonsterInCombat(arg1: new int[] {201})) {
+                if (context.MonsterInCombat(arg1: new[] {201})) {
                     context.State = new State토무소멸(context);
                     return;
                 }
@@ -209,13 +205,13 @@ namespace Maple2.Trigger._02000081_in {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterInCombat(arg1: new int[] {201})) {
+                if (context.MonsterInCombat(arg1: new[] {201})) {
                     context.State = new State토무소멸(context);
                     return;
                 }
 
-                if (!context.MonsterInCombat(arg1: new int[] {201})) {
-                    context.DestroyMonster(arg1: new int[] {201});
+                if (!context.MonsterInCombat(arg1: new[] {201})) {
+                    context.DestroyMonster(arg1: new[] {201});
                     context.State = new State대기(context);
                     return;
                 }

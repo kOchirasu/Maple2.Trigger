@@ -1,28 +1,24 @@
-using System;
-
 namespace Maple2.Trigger._52020001_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {40001}, arg2: false);
-                context.SetSkill(arg1: new int[] {6001}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10002001}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10002002}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10002003}, arg2: 2);
-                context.CreateMonster(arg1: new int[] {6000020}, arg2: false);
-                context.SetEffect(arg1: new int[] {10090}, arg2: false);
-                context.SetEffect(arg1: new int[] {10091}, arg2: false);
-                context.SetEffect(arg1: new int[] {10092}, arg2: false);
-                context.SetMesh(arg1: new int[] {80000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetSkill(arg1: new[] {40001}, arg2: false);
+                context.SetSkill(arg1: new[] {6001}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10002001}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10002002}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10002003}, arg2: 2);
+                context.CreateMonster(arg1: new[] {6000020}, arg2: false);
+                context.SetEffect(arg1: new[] {10090}, arg2: false);
+                context.SetEffect(arg1: new[] {10091}, arg2: false);
+                context.SetEffect(arg1: new[] {10092}, arg2: false);
+                context.SetMesh(arg1: new[] {80000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 14, arg2: false, arg3: false, arg4: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {5})) {
+                if (context.UserDetected(arg1: new[] {5})) {
                     context.State = new State인트로(context);
                     return;
                 }
@@ -70,7 +66,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State인트로_폭발_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10011}, arg2: true);
+                context.SetEffect(arg1: new[] {10011}, arg2: true);
             }
 
             public override void Execute() {
@@ -87,7 +83,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State인트로_폭발_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10012}, arg2: true);
+                context.SetEffect(arg1: new[] {10012}, arg2: true);
             }
 
             public override void Execute() {
@@ -104,7 +100,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State인트로_폭발_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10013}, arg2: true);
+                context.SetEffect(arg1: new[] {10013}, arg2: true);
             }
 
             public override void Execute() {
@@ -121,8 +117,8 @@ namespace Maple2.Trigger._52020001_qd {
             internal State인트로_폭발_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10014}, arg2: true);
-                context.SetSkill(arg1: new int[] {6001}, arg2: true);
+                context.SetEffect(arg1: new[] {10014}, arg2: true);
+                context.SetSkill(arg1: new[] {6001}, arg2: true);
             }
 
             public override void Execute() {
@@ -158,8 +154,8 @@ namespace Maple2.Trigger._52020001_qd {
             internal State알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: @"시간이 얼마 없습니다.\n폭격을 일삼는 에고웨폰들을 처치하며 크리티아스로 침투하세요.",
-                    arg3: new int[] {4000});
+                context.SetEventUI(arg1: 1,
+                    arg2: @"시간이 얼마 없습니다.\n폭격을 일삼는 에고웨폰들을 처치하며 크리티아스로 침투하세요.", arg3: 4000);
             }
 
             public override void Execute() {
@@ -178,7 +174,7 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {1})) {
+                if (context.UserDetected(arg1: new[] {1})) {
                     context.State = new State타이머시작(context);
                     return;
                 }
@@ -208,10 +204,10 @@ namespace Maple2.Trigger._52020001_qd {
             internal State몬스터출현_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {40001}, arg2: true);
-                context.CreateMonster(arg1: new int[] {6000001}, arg2: false);
-                context.CreateMonster(arg1: new int[] {6000002}, arg2: false);
-                context.CreateMonster(arg1: new int[] {6000003}, arg2: false);
+                context.SetSkill(arg1: new[] {40001}, arg2: true);
+                context.CreateMonster(arg1: new[] {6000001}, arg2: false);
+                context.CreateMonster(arg1: new[] {6000002}, arg2: false);
+                context.CreateMonster(arg1: new[] {6000003}, arg2: false);
             }
 
             public override void Execute() {
@@ -237,9 +233,9 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {6000001})
-                    && context.MonsterDead(arg1: new int[] {6000002})
-                    && context.MonsterDead(arg1: new int[] {6000003})) {
+                if (context.MonsterDead(arg1: new[] {6000001})
+                    && context.MonsterDead(arg1: new[] {6000002})
+                    && context.MonsterDead(arg1: new[] {6000003})) {
                     context.State = new State몬스터출현_2(context);
                     return;
                 }
@@ -257,9 +253,9 @@ namespace Maple2.Trigger._52020001_qd {
             internal State몬스터출현_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {6000004}, arg2: false);
-                context.CreateMonster(arg1: new int[] {6000005}, arg2: false);
-                context.CreateMonster(arg1: new int[] {6000006}, arg2: false);
+                context.CreateMonster(arg1: new[] {6000004}, arg2: false);
+                context.CreateMonster(arg1: new[] {6000005}, arg2: false);
+                context.CreateMonster(arg1: new[] {6000006}, arg2: false);
             }
 
             public override void Execute() {
@@ -283,9 +279,9 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {6000004})
-                    && context.MonsterDead(arg1: new int[] {6000005})
-                    && context.MonsterDead(arg1: new int[] {6000006})) {
+                if (context.MonsterDead(arg1: new[] {6000004})
+                    && context.MonsterDead(arg1: new[] {6000005})
+                    && context.MonsterDead(arg1: new[] {6000006})) {
                     context.State = new State스위치생성연출(context);
                     return;
                 }
@@ -304,7 +300,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.ResetTimer(arg1: "100");
-                context.DestroyMonster(arg1: new int[] {6100001});
+                context.DestroyMonster(arg1: new[] {6100001});
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 1);
             }
@@ -340,7 +336,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State생성_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10002001}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10002001}, arg2: 1);
             }
 
             public override void Execute() {
@@ -370,7 +366,7 @@ namespace Maple2.Trigger._52020001_qd {
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new int[] {6100001}, arg2: false);
+                context.CreateMonster(arg1: new[] {6100001}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "저 스위치를 한번 작동시켜 볼까?", arg4: 3, arg5: 0);
             }
         }
@@ -381,7 +377,7 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10002001}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002001}, arg2: 0)) {
                     context.State = new State연출시작_1(context);
                     return;
                 }
@@ -394,7 +390,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State연출시작_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {6100001});
+                context.DestroyMonster(arg1: new[] {6100001});
                 context.SetProductionUI(arg1: 3);
                 context.SetProductionUI(arg1: 1);
                 context.VisibleMyPc(isVisible: false);
@@ -431,7 +427,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State폭발배경연출_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10028}, arg2: true);
+                context.SetEffect(arg1: new[] {10028}, arg2: true);
             }
 
             public override void Execute() {
@@ -448,7 +444,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State폭발배경연출_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10029}, arg2: true);
+                context.SetEffect(arg1: new[] {10029}, arg2: true);
             }
 
             public override void Execute() {
@@ -465,7 +461,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State폭발_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10000}, arg2: true);
+                context.SetEffect(arg1: new[] {10000}, arg2: true);
             }
 
             public override void Execute() {
@@ -484,7 +480,7 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 2);
                 context.SetProductionUI(arg1: 0);
-                context.CameraSelectPath(arg1: new int[] {2000002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {2000002}, arg2: false);
             }
 
             public override void Execute() {
@@ -519,8 +515,8 @@ namespace Maple2.Trigger._52020001_qd {
             internal State폭발배경연출_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10023}, arg2: true);
-                context.SetSkill(arg1: new int[] {6002}, arg2: true);
+                context.SetEffect(arg1: new[] {10023}, arg2: true);
+                context.SetSkill(arg1: new[] {6002}, arg2: true);
             }
 
             public override void Execute() {
@@ -537,8 +533,8 @@ namespace Maple2.Trigger._52020001_qd {
             internal State폭발배경연출_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10024}, arg2: true);
-                context.SetSkill(arg1: new int[] {6002}, arg2: true);
+                context.SetEffect(arg1: new[] {10024}, arg2: true);
+                context.SetSkill(arg1: new[] {6002}, arg2: true);
             }
 
             public override void Execute() {
@@ -555,8 +551,8 @@ namespace Maple2.Trigger._52020001_qd {
             internal State폭발배경연출_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10025}, arg2: true);
-                context.SetSkill(arg1: new int[] {6002}, arg2: true);
+                context.SetEffect(arg1: new[] {10025}, arg2: true);
+                context.SetSkill(arg1: new[] {6002}, arg2: true);
             }
 
             public override void Execute() {
@@ -573,8 +569,8 @@ namespace Maple2.Trigger._52020001_qd {
             internal State맵폭발연출_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10021}, arg2: true);
-                context.SetSkill(arg1: new int[] {6002}, arg2: true);
+                context.SetEffect(arg1: new[] {10021}, arg2: true);
+                context.SetSkill(arg1: new[] {6002}, arg2: true);
             }
 
             public override void Execute() {
@@ -591,8 +587,8 @@ namespace Maple2.Trigger._52020001_qd {
             internal State폭발배경연출_6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10026}, arg2: true);
-                context.SetSkill(arg1: new int[] {6002}, arg2: true);
+                context.SetEffect(arg1: new[] {10026}, arg2: true);
+                context.SetSkill(arg1: new[] {6002}, arg2: true);
             }
 
             public override void Execute() {
@@ -609,8 +605,8 @@ namespace Maple2.Trigger._52020001_qd {
             internal State폭발배경연출_7(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10027}, arg2: true);
-                context.SetSkill(arg1: new int[] {6002}, arg2: true);
+                context.SetEffect(arg1: new[] {10027}, arg2: true);
+                context.SetSkill(arg1: new[] {6002}, arg2: true);
             }
 
             public override void Execute() {
@@ -627,8 +623,8 @@ namespace Maple2.Trigger._52020001_qd {
             internal State맵폭발연출_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10022}, arg2: true);
-                context.SetSkill(arg1: new int[] {6003}, arg2: true);
+                context.SetEffect(arg1: new[] {10022}, arg2: true);
+                context.SetSkill(arg1: new[] {6003}, arg2: true);
             }
 
             public override void Execute() {
@@ -660,12 +656,12 @@ namespace Maple2.Trigger._52020001_qd {
             internal State실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {10090}, arg2: true);
-                context.SetEffect(arg1: new int[] {10091}, arg2: true);
-                context.SetEffect(arg1: new int[] {10092}, arg2: true);
-                context.SetMesh(arg1: new int[] {80000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.DestroyMonster(arg1: new int[] {-1});
-                context.SetEventUI(arg1: 1, arg2: "미션에 실패하였습니다. 다시 재도전 해보세요.", arg3: new int[] {4000});
+                context.SetEffect(arg1: new[] {10090}, arg2: true);
+                context.SetEffect(arg1: new[] {10091}, arg2: true);
+                context.SetEffect(arg1: new[] {10092}, arg2: true);
+                context.SetMesh(arg1: new[] {80000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.DestroyMonster(arg1: new[] {-1});
+                context.SetEventUI(arg1: 1, arg2: "미션에 실패하였습니다. 다시 재도전 해보세요.", arg3: 4000);
                 context.MoveUser(arg1: 52020001, arg2: 99);
                 context.SetPortal(arg1: 14, arg2: true, arg3: true, arg4: false);
             }

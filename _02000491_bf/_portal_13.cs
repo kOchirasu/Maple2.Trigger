@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000491_bf {
     public static class _portal_13 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._02000491_bf {
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000995}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000995}, arg2: 0)) {
                     context.State = new State포털활성화(context);
                     return;
                 }
@@ -30,7 +26,7 @@ namespace Maple2.Trigger._02000491_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetInteractObject(arg1: new int[] {10000995}, arg2: 1);
+                    context.SetInteractObject(arg1: new[] {10000995}, arg2: 1);
                     context.State = new State대기(context);
                     return;
                 }

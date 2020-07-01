@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._02000066_bf {
     public static class _npc05 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {605}, arg2: false);
+                context.SetEffect(arg1: new[] {605}, arg2: false);
                 context.SetActor(arg1: 205, arg2: false, arg3: "Dead_A");
-                context.SetInteractObject(arg1: new int[] {10000373}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000373}, arg2: 0);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103})) {
+                if (context.UserDetected(arg1: new[] {103})) {
                     context.State = new StateNPC생성(context);
                     return;
                 }
@@ -28,8 +24,8 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.CreateMonster(arg1: new int[] {2005}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10000373}, arg2: 0);
+                context.CreateMonster(arg1: new[] {2005}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10000373}, arg2: 0);
             }
 
             public override void Execute() {
@@ -48,9 +44,9 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2005})) {
-                    context.SetEffect(arg1: new int[] {605}, arg2: true);
-                    context.ShowGuideSummary(entityID: 20000663, textID: 20000663);
+                if (context.MonsterDead(arg1: new[] {2005})) {
+                    context.SetEffect(arg1: new[] {605}, arg2: true);
+                    context.ShowGuideSummary(entityId: 20000663, textId: 20000663);
                     context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                     context.State = new StateNPC소멸(context);
                     return;
@@ -65,12 +61,12 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.DestroyMonster(arg1: new int[] {2005});
+                context.DestroyMonster(arg1: new[] {2005});
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.HideGuideSummary(entityID: 20000663);
+                    context.HideGuideSummary(entityId: 20000663);
                     context.State = new State오브젝트반응(context);
                     return;
                 }
@@ -84,11 +80,11 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 205, arg2: true, arg3: "Dead_A");
-                context.SetInteractObject(arg1: new int[] {10000373}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000373}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000373}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000373}, arg2: 0)) {
                     context.State = new State부활(context);
                     return;
                 }
@@ -102,7 +98,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.CreateMonster(arg1: new int[] {2005}, arg2: false);
+                context.CreateMonster(arg1: new[] {2005}, arg2: false);
             }
 
             public override void Execute() {
@@ -124,7 +120,7 @@ namespace Maple2.Trigger._02000066_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2005})) {
+                if (context.MonsterDead(arg1: new[] {2005})) {
                     context.State = new StateNPC생성조건(context);
                     return;
                 }

@@ -1,26 +1,22 @@
-using System;
-
 namespace Maple2.Trigger._52000037_qd {
     public static class _lookinto_soulbinder_12 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4000, arg2: false, arg3: "Dead_A");
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetInteractObject(arg1: new int[] {10000175}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000175}, arg2: 0);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {60100065}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100065}, arg3: new byte[] {2},
                     arg4: 110)) {
                     context.State = new State연출01조건(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {60100065}, arg3: new byte[] {3},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100065}, arg3: new byte[] {3},
                     arg4: 110)) {
                     context.State = new StateNPC만배치(context);
                     return;
@@ -40,8 +36,8 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Dead_A");
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10000175}, arg2: 1);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10000175}, arg2: 1);
             }
 
             public override void Execute() {
@@ -59,12 +55,12 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Dead_A");
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10000175}, arg2: 1);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10000175}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9300}, arg2: new int[] {60100065}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {9300}, arg2: new[] {60100065}, arg3: new byte[] {2},
                     arg4: 110)) {
                     context.State = new State연출01시작(context);
                     return;
@@ -190,7 +186,7 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9301}, arg2: new int[] {60100065}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {9301}, arg2: new[] {60100065}, arg3: new byte[] {2},
                     arg4: 110)) {
                     context.State = new StatePC말풍선07(context);
                     return;
@@ -226,7 +222,7 @@ namespace Maple2.Trigger._52000037_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9302}, arg2: new int[] {60100065}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {9302}, arg2: new[] {60100065}, arg3: new byte[] {2},
                     arg4: 110)) {
                     context.State = new State연출종료(context);
                     return;

@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000443_bf {
     public static class _error {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
@@ -23,7 +19,7 @@ namespace Maple2.Trigger._02000443_bf {
             internal Statebuff_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 49200002, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 49200002, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -32,7 +28,7 @@ namespace Maple2.Trigger._02000443_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "debuff", value: 1)) {
+                if (context.GetUserValue(key: "debuff") == 1) {
                     // context.State = new State끝(context);
                     return;
                 }
@@ -45,7 +41,7 @@ namespace Maple2.Trigger._02000443_bf {
             internal Statebuff_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 49200002, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 49200002, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {

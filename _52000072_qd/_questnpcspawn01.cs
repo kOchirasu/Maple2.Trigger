@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52000072_qd {
     public static class _questnpcspawn01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,67 +8,67 @@ namespace Maple2.Trigger._52000072_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002684},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002684},
                     arg3: new byte[] {2})) {
                     // context.State = new StateNpcRemove01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002684},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002684},
                     arg3: new byte[] {1})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002683},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002683},
                     arg3: new byte[] {3})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002683},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002683},
                     arg3: new byte[] {2})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002683},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002683},
                     arg3: new byte[] {1})) {
                     context.State = new StateNpcChange01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002682},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002682},
                     arg3: new byte[] {3})) {
                     context.State = new StateNpcChange02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002682},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002682},
                     arg3: new byte[] {2})) {
                     context.State = new StateNpcChange02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002682},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002682},
                     arg3: new byte[] {1})) {
                     context.State = new StateNpcChange02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002681},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002681},
                     arg3: new byte[] {3})) {
                     context.State = new StateNpcChange02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002681},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002681},
                     arg3: new byte[] {2})) {
                     context.State = new StateNpcChange02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {40002681},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {40002681},
                     arg3: new byte[] {1})) {
                     context.State = new StateSetCamera01(context);
                     return;
@@ -86,7 +82,7 @@ namespace Maple2.Trigger._52000072_qd {
             internal StateNpcChange01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201}, arg2: false);
+                context.CreateMonster(arg1: new[] {201}, arg2: false);
             }
 
             public override void Execute() { }
@@ -98,7 +94,7 @@ namespace Maple2.Trigger._52000072_qd {
             internal StateNpcChange02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
             }
 
             public override void Execute() { }
@@ -131,7 +127,7 @@ namespace Maple2.Trigger._52000072_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 600, arg2: true);
-                context.CreateMonster(arg1: new int[] {102, 301, 401}, arg2: false);
+                context.CreateMonster(arg1: new[] {102, 301, 401}, arg2: false);
             }
 
             public override void Execute() {
@@ -205,7 +201,7 @@ namespace Maple2.Trigger._52000072_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.DestroyMonster(arg1: new int[] {301, 401});
+                context.DestroyMonster(arg1: new[] {301, 401});
             }
 
             public override void Execute() {
@@ -222,8 +218,8 @@ namespace Maple2.Trigger._52000072_qd {
             internal StateActEnd02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {102});
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.DestroyMonster(arg1: new[] {102});
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 

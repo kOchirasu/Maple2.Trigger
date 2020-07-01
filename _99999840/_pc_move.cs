@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._99999840 {
     public static class _pc_move {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
@@ -20,12 +16,12 @@ namespace Maple2.Trigger._99999840 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 3, value: true)) {
+                if (context.GetDungeonVariable(id: 3) == true) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.CheckAnyUserAdditionalEffect(triggerBoxID: 9001, additionalEffectID: 70002541, level: true)
+                if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 9001, additionalEffectId: 70002541, level: true)
                 ) {
                     context.State = new State유저이동확률(context);
                     return;
@@ -41,7 +37,7 @@ namespace Maple2.Trigger._99999840 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 3, value: true)) {
+                if (context.GetDungeonVariable(id: 3) == true) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -73,7 +69,7 @@ namespace Maple2.Trigger._99999840 {
             }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 3, value: true)) {
+                if (context.GetDungeonVariable(id: 3) == true) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -95,7 +91,7 @@ namespace Maple2.Trigger._99999840 {
             }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 3, value: true)) {
+                if (context.GetDungeonVariable(id: 3) == true) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -117,7 +113,7 @@ namespace Maple2.Trigger._99999840 {
             }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 3, value: true)) {
+                if (context.GetDungeonVariable(id: 3) == true) {
                     context.State = new State종료(context);
                     return;
                 }

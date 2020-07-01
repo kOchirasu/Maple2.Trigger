@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000066_bf {
     public static class _q10003067 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._02000066_bf {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {103}, arg2: new int[] {50001642},
+                if (context.QuestUserDetected(arg1: new[] {103}, arg2: new[] {50001642},
                     arg3: new byte[] {2})) {
                     context.State = new State포털활성화(context);
                     return;
@@ -28,7 +24,7 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "woodsoflife", value: 1)) {
+                if (context.GetUserValue(key: "woodsoflife") == 1) {
                     // context.State = new State포털비활성화(context);
                     return;
                 }
@@ -41,11 +37,11 @@ namespace Maple2.Trigger._02000066_bf {
             internal State가이드활성화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.GuideEvent(eventID: 10003067);
+                context.GuideEvent(eventId: 10003067);
             }
 
             public override void Execute() {
-                if (context.WaitTick(arg1: 10000)) {
+                if (context.WaitTick(waitTick: 10000)) {
                     context.State = new State종료(context);
                     return;
                 }

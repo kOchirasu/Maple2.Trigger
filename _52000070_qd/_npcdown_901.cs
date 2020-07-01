@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000070_qd {
     public static class _npcdown_901 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9900, arg2: new int[] {901})) {
+                if (context.NpcDetected(arg1: 9900, arg2: new[] {901})) {
                     context.State = new StateNpcFight(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._52000070_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {901})) {
+                if (context.MonsterDead(arg1: new[] {901})) {
                     context.State = new StateNpcDown(context);
                     return;
                 }
@@ -38,7 +34,7 @@ namespace Maple2.Trigger._52000070_qd {
             internal StateNpcDown(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {301}, arg2: false);
+                context.CreateMonster(arg1: new[] {301}, arg2: false);
             }
 
             public override void Execute() { }

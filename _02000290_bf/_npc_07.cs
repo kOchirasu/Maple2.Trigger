@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._02000290_bf {
     public static class _npc_07 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6001}, arg2: false);
-                context.SetEffect(arg1: new int[] {6002}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10000464}, arg2: 1);
+                context.SetEffect(arg1: new[] {6001}, arg2: false);
+                context.SetEffect(arg1: new[] {6002}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10000464}, arg2: 1);
                 context.SetActor(arg1: 9007, arg2: true, arg3: "Down_Idle_A");
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000464}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000464}, arg2: 0)) {
                     context.State = new StateNPC대사(context);
                     return;
                 }
@@ -23,7 +19,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void OnExit() {
                 context.SetActor(arg1: 9007, arg2: false, arg3: "Down_Idle_A");
-                context.SetUserValue(triggerID: 9999995, key: "dungeonclear", value: 1);
+                context.SetUserValue(triggerId: 9999995, key: "dungeonclear", value: 1);
             }
         }
 
@@ -31,13 +27,13 @@ namespace Maple2.Trigger._02000290_bf {
             internal StateNPC대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {907});
+                context.CreateMonster(arg1: new[] {907});
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    context.SetEffect(arg1: new int[] {6001}, arg2: true);
+                    context.SetEffect(arg1: new[] {6001}, arg2: true);
                     context.SetConversation(arg1: 1, arg2: 907, arg3: "$02000290_BF__NPC_07__0$", arg4: 3);
                     context.State = new StateNPC이동(context);
                     return;
@@ -57,7 +53,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    context.SetEffect(arg1: new int[] {6002}, arg2: true);
+                    context.SetEffect(arg1: new[] {6002}, arg2: true);
                     context.SetConversation(arg1: 1, arg2: 907, arg3: "$02000290_BF__NPC_07__1$", arg4: 3);
                     context.State = new StateNPC소멸(context);
                     return;

@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000429_bf {
     public static class _event01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 750, arg2: 1)) {
+                if (context.GetUserCount(boxId: 750) == 1) {
                     context.State = new State전투시작잠시대기(context);
                     return;
                 }
@@ -38,7 +34,7 @@ namespace Maple2.Trigger._02000429_bf {
             internal State전투시작_인페르녹전함(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20041002, textID: 20041002);
+                context.ShowGuideSummary(entityId: 20041002, textId: 20041002);
             }
 
             public override void Execute() {
@@ -49,7 +45,7 @@ namespace Maple2.Trigger._02000429_bf {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20041002);
+                context.HideGuideSummary(entityId: 20041002);
             }
         }
 
@@ -59,7 +55,7 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "AirshipBalrogCrimsonBroken", value: 1)) {
+                if (context.GetUserValue(key: "AirshipBalrogCrimsonBroken") == 1) {
                     context.State = new State인페르녹전함파괴연출(context);
                     return;
                 }
@@ -72,8 +68,8 @@ namespace Maple2.Trigger._02000429_bf {
             internal State인페르녹전함파괴연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20041003, textID: 20041003);
-                context.SideNpcTalk(npcID: 11003536, illust: "Neirin_normal", duration: 5000,
+                context.ShowGuideSummary(entityId: 20041003, textId: 20041003);
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 5000,
                     script: "$02000410_BF__Event01__0$", voice: @"ko/Npc/00002167");
             }
 
@@ -91,7 +87,7 @@ namespace Maple2.Trigger._02000429_bf {
             internal State인페르녹전함파괴연출2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11003536, illust: "Bliche_nomal", duration: 5000,
+                context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 5000,
                     script: "$02000410_BF__Event01__1$", voice: @"ko/Npc/00002158");
             }
 
@@ -103,7 +99,7 @@ namespace Maple2.Trigger._02000429_bf {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20041003);
+                context.HideGuideSummary(entityId: 20041003);
             }
         }
 
@@ -113,7 +109,7 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "AirshipBalrogCrimsonFlameBroken", value: 1)) {
+                if (context.GetUserValue(key: "AirshipBalrogCrimsonFlameBroken") == 1) {
                     context.State = new State인페르녹전함파괴_인페르녹등장연출(context);
                     return;
                 }
@@ -126,8 +122,8 @@ namespace Maple2.Trigger._02000429_bf {
             internal State인페르녹전함파괴_인페르녹등장연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20041004, textID: 20041004);
-                context.SideNpcTalk(npcID: 11003536, illust: "Neirin_normal", duration: 4500,
+                context.ShowGuideSummary(entityId: 20041004, textId: 20041004);
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 4500,
                     script: "$02000410_BF__Event01__2$", voice: @"ko/Npc/00002168");
             }
 
@@ -139,7 +135,7 @@ namespace Maple2.Trigger._02000429_bf {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20041004);
+                context.HideGuideSummary(entityId: 20041004);
             }
         }
 
@@ -147,7 +143,7 @@ namespace Maple2.Trigger._02000429_bf {
             internal State인페르녹전함파괴_인페르녹등장연출2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11003536, illust: "Neirin_surprise", duration: 3800,
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 3800,
                     script: "$02000410_BF__Event01__3$", voice: @"ko/Npc/00002169");
             }
 
@@ -165,7 +161,7 @@ namespace Maple2.Trigger._02000429_bf {
             internal State인페르녹전함파괴_인페르녹등장연출3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11003536, illust: "Bliche_closeEye", duration: 5200,
+                context.SideNpcTalk(npcId: 11003536, illust: "Bliche_closeEye", duration: 5200,
                     script: "$02000410_BF__Event01__4$", voice: @"ko/Npc/00002159");
             }
 
@@ -183,7 +179,7 @@ namespace Maple2.Trigger._02000429_bf {
             internal State인페르녹전함파괴_인페르녹등장연출4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11003536, illust: "Neirin_surprise", duration: 5000,
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 5000,
                     script: "$02000410_BF__Event01__8$");
             }
 
@@ -201,7 +197,7 @@ namespace Maple2.Trigger._02000429_bf {
             internal State인페르녹전함파괴_인페르녹등장연출5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11003536, illust: "Neirin_surprise", duration: 5000,
+                context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 5000,
                     script: "$02000410_BF__Event01__9$");
             }
 
@@ -219,7 +215,7 @@ namespace Maple2.Trigger._02000429_bf {
             internal State인페르녹전함파괴_인페르녹등장연출6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 11003536, illust: "Bliche_nomal", duration: 5000,
+                context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 5000,
                     script: "$02000410_BF__Event01__7$");
             }
 
@@ -239,12 +235,12 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "BalrogMagicBursterBattlePhase", value: 1)) {
+                if (context.GetUserValue(key: "BalrogMagicBursterBattlePhase") == 1) {
                     // context.State = new State성공이벤트실행(context);
                     return;
                 }
 
-                if (context.UserValue(key: "BalrogMagicBursterBattlePhase", value: 1)) {
+                if (context.GetUserValue(key: "BalrogMagicBursterBattlePhase") == 1) {
                     // context.State = new State실패이벤트실행(context);
                     return;
                 }

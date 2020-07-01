@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000037_qd {
     public static class _runaway_soulbinder_13 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9400}, arg2: new int[] {50001411}, arg3: new byte[] {2},
+                if (context.QuestUserDetected(arg1: new[] {9400}, arg2: new[] {50001411}, arg3: new byte[] {2},
                     arg4: 110)) {
                     context.State = new State연출시작(context);
                     return;
@@ -166,7 +162,7 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateNPC등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {211, 212, 213}, arg2: false);
+                context.CreateMonster(arg1: new[] {211, 212, 213}, arg2: false);
                 context.CameraSelect(arg1: 604, arg2: true);
             }
 

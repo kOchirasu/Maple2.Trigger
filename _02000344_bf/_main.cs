@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000344_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,12 +8,12 @@ namespace Maple2.Trigger._02000344_bf {
                 context.SetActor(arg1: 8012, arg2: false, arg3: "Dead_A");
                 context.SetActor(arg1: 8013, arg2: false, arg3: "Dead_A");
                 context.SetActor(arg1: 8014, arg2: false, arg3: "Dead_A");
-                context.SetMesh(arg1: new int[] {6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109}, arg2: false,
+                context.SetMesh(arg1: new[] {6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109}, arg2: false,
                     arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {6001}, arg2: false);
-                context.SetMesh(arg1: new int[] {2001, 2002}, arg2: true, arg3: 1, arg4: 1);
+                context.SetMesh(arg1: new[] {6001}, arg2: false);
+                context.SetMesh(arg1: new[] {2001, 2002}, arg2: true, arg3: 1, arg4: 1);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         12001, 12002, 12003, 12004, 12005, 12006, 12007, 12008, 12009, 12010, 12011, 12012, 12013,
                         12014, 12015, 12016, 12017, 12018, 12019, 12020, 12021, 12022, 12023, 12024, 12025, 12026,
                         12027, 12028, 12029, 12030, 12031, 12032, 12033, 12034, 12035, 12036, 12037, 12038, 12039,
@@ -97,7 +93,7 @@ namespace Maple2.Trigger._02000344_bf {
                         12989, 12990, 12991, 12992, 12993, 12994, 12995, 12996, 12997, 12998, 12999
                     }, arg2: false, arg3: 0, arg4: 0);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         13001, 13002, 13003, 13004, 13005, 13006, 13007, 13008, 13009, 13010, 13011, 13012, 13013,
                         13014, 13015, 13016, 13017, 13018, 13019, 13020, 13021, 13022, 13023, 13024, 13025, 13026,
                         13027, 13028, 13029, 13030, 13031, 13032, 13033, 13034, 13035, 13036, 13037, 13038, 13039,
@@ -177,7 +173,7 @@ namespace Maple2.Trigger._02000344_bf {
                         13989, 13990, 13991, 13992, 13993, 13994, 13995, 13996, 13997, 13998, 13999
                     }, arg2: false, arg3: 0, arg4: 0);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         14001, 14002, 14003, 14004, 14005, 14006, 14007, 14008, 14009, 14010, 14011, 14012, 14013,
                         14014, 14015, 14016, 14017, 14018, 14019, 14020, 14021, 14022, 14023, 14024, 14025, 14026,
                         14027, 14028, 14029, 14030, 14031, 14032, 14033, 14034, 14035, 14036, 14037, 14038, 14039,
@@ -258,13 +254,13 @@ namespace Maple2.Trigger._02000344_bf {
                     }, arg2: false, arg3: 0, arg4: 0);
                 context.RemoveBuff(arg1: 702, arg2: 99910040);
                 context.RemoveBuff(arg1: 702, arg2: 70000106);
-                context.CreateMonster(arg1: new int[] {102}, arg2: true);
+                context.CreateMonster(arg1: new[] {102}, arg2: true);
                 context.SetPortal(arg1: 4, arg2: false, arg3: false, arg4: false);
-                context.SetInteractObject(arg1: new int[] {10000789}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10000789}, arg2: 0);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 702, arg2: 1)) {
+                if (context.GetUserCount(boxId: 702) == 1) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -294,7 +290,7 @@ namespace Maple2.Trigger._02000344_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 702, arg2: 1)) {
+                if (context.GetUserCount(boxId: 702) == 1) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -313,7 +309,7 @@ namespace Maple2.Trigger._02000344_bf {
                 context.MoveRandomUser(arg1: 02000344, arg2: 98, arg3: 60005, arg4: 1);
                 context.MoveRandomUser(arg1: 02000344, arg2: 97, arg3: 60005, arg4: 1);
                 context.MoveRandomUser(arg1: 02000344, arg2: 96, arg3: 60005, arg4: 1);
-                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8003, 8004}, arg2: false);
             }
 
             public override void Execute() {
@@ -330,7 +326,7 @@ namespace Maple2.Trigger._02000344_bf {
             internal Statestart_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004, 8005}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8004, 8005}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000344_BF__MAIN__0$", arg4: 2, arg5: 0);
                 context.SetConversation(arg1: 2, arg2: 11001376, arg3: "$02000344_BF__MAIN__1$", arg4: 3);
                 context.SetSkip(arg1: "start_game");
@@ -404,8 +400,8 @@ namespace Maple2.Trigger._02000344_bf {
             internal Statestart_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {702}, arg2: 70000106, arg3: 1);
-                context.CameraSelectPath(arg1: new int[] {8006, 8007, 8008, 8009}, arg2: false);
+                context.AddBuff(arg1: new[] {702}, arg2: 70000106, arg3: 1);
+                context.CameraSelectPath(arg1: new[] {8006, 8007, 8008, 8009}, arg2: false);
             }
 
             public override void Execute() {
@@ -456,10 +452,10 @@ namespace Maple2.Trigger._02000344_bf {
             internal Statestart_game(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {702}, arg2: 70000106, arg3: 1);
+                context.AddBuff(arg1: new[] {702}, arg2: 70000106, arg3: 1);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.CameraSelectPath(arg1: new int[] {8010}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {8010}, arg2: true);
                 context.ShowCountUI(text: "$02000344_BF__MAIN__10$", stage: 0, count: 3);
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
             }
@@ -493,9 +489,9 @@ namespace Maple2.Trigger._02000344_bf {
             internal Statestart_game_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__11$", arg3: new int[] {5000});
+                context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__11$", arg3: 5000);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         11001, 11002, 11003, 11004, 11005, 11006, 11007, 11008, 11009, 11010, 11011, 11012, 11013,
                         11014, 11015, 11016, 11017, 11018, 11019, 11020, 11021, 11022, 11023, 11024, 11025, 11026,
                         11027, 11028, 11029, 11030, 11031, 11032, 11033, 11034, 11035, 11036, 11037, 11038, 11039,
@@ -575,7 +571,7 @@ namespace Maple2.Trigger._02000344_bf {
                         11989, 11990, 11991, 11992, 11993, 11994, 11995, 11996, 11997, 11998, 11999
                     }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         12001, 12002, 12003, 12004, 12005, 12006, 12007, 12008, 12009, 12010, 12011, 12012, 12013,
                         12014, 12015, 12016, 12017, 12018, 12019, 12020, 12021, 12022, 12023, 12024, 12025, 12026,
                         12027, 12028, 12029, 12030, 12031, 12032, 12033, 12034, 12035, 12036, 12037, 12038, 12039,
@@ -670,13 +666,13 @@ namespace Maple2.Trigger._02000344_bf {
             internal Statestart_game_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003442, textID: 20003442, duration: 5000);
-                context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__12$", arg3: new int[] {3000});
-                context.CreateMonster(arg1: new int[] {201, 202, 203, 204}, arg2: true);
+                context.ShowGuideSummary(entityId: 20003442, textId: 20003442, duration: 5000);
+                context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__12$", arg3: 3000);
+                context.CreateMonster(arg1: new[] {201, 202, 203, 204}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {201, 202, 203, 204})) {
+                if (context.MonsterDead(arg1: new[] {201, 202, 203, 204})) {
                     context.State = new Statestart_game_04(context);
                     return;
                 }
@@ -704,10 +700,10 @@ namespace Maple2.Trigger._02000344_bf {
             internal Statestart_game_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003442, textID: 20003442, duration: 5000);
-                context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__13$", arg3: new int[] {3000});
+                context.ShowGuideSummary(entityId: 20003442, textId: 20003442, duration: 5000);
+                context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__13$", arg3: 3000);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         12001, 12002, 12003, 12004, 12005, 12006, 12007, 12008, 12009, 12010, 12011, 12012, 12013,
                         12014, 12015, 12016, 12017, 12018, 12019, 12020, 12021, 12022, 12023, 12024, 12025, 12026,
                         12027, 12028, 12029, 12030, 12031, 12032, 12033, 12034, 12035, 12036, 12037, 12038, 12039,
@@ -787,7 +783,7 @@ namespace Maple2.Trigger._02000344_bf {
                         12989, 12990, 12991, 12992, 12993, 12994, 12995, 12996, 12997, 12998, 12999
                     }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         13001, 13002, 13003, 13004, 13005, 13006, 13007, 13008, 13009, 13010, 13011, 13012, 13013,
                         13014, 13015, 13016, 13017, 13018, 13019, 13020, 13021, 13022, 13023, 13024, 13025, 13026,
                         13027, 13028, 13029, 13030, 13031, 13032, 13033, 13034, 13035, 13036, 13037, 13038, 13039,
@@ -882,11 +878,11 @@ namespace Maple2.Trigger._02000344_bf {
             internal Statestart_game_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {205, 206, 207, 208, 209, 210}, arg2: true);
+                context.CreateMonster(arg1: new[] {205, 206, 207, 208, 209, 210}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {205, 206, 207, 208, 209, 210})) {
+                if (context.MonsterDead(arg1: new[] {205, 206, 207, 208, 209, 210})) {
                     context.State = new Statestart_game_07(context);
                     return;
                 }
@@ -915,7 +911,7 @@ namespace Maple2.Trigger._02000344_bf {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         13001, 13002, 13003, 13004, 13005, 13006, 13007, 13008, 13009, 13010, 13011, 13012, 13013,
                         13014, 13015, 13016, 13017, 13018, 13019, 13020, 13021, 13022, 13023, 13024, 13025, 13026,
                         13027, 13028, 13029, 13030, 13031, 13032, 13033, 13034, 13035, 13036, 13037, 13038, 13039,
@@ -995,7 +991,7 @@ namespace Maple2.Trigger._02000344_bf {
                         13989, 13990, 13991, 13992, 13993, 13994, 13995, 13996, 13997, 13998, 13999
                     }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         11001, 11002, 11003, 11004, 11005, 11006, 11007, 11008, 11009, 11010, 11011, 11012, 11013,
                         11014, 11015, 11016, 11017, 11018, 11019, 11020, 11021, 11022, 11023, 11024, 11025, 11026,
                         11027, 11028, 11029, 11030, 11031, 11032, 11033, 11034, 11035, 11036, 11037, 11038, 11039,
@@ -1074,8 +1070,8 @@ namespace Maple2.Trigger._02000344_bf {
                         11976, 11977, 11978, 11979, 11980, 11981, 11982, 11983, 11984, 11985, 11986, 11987, 11988,
                         11989, 11990, 11991, 11992, 11993, 11994, 11995, 11996, 11997, 11998, 11999
                     }, arg2: true, arg3: 0, arg4: 0, arg5: 5f);
-                context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__14$", arg3: new int[] {3000});
-                context.SetMesh(arg1: new int[] {6001}, arg2: true, arg3: 0, arg4: 0, arg5: 10f);
+                context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__14$", arg3: 3000);
+                context.SetMesh(arg1: new[] {6001}, arg2: true, arg3: 0, arg4: 0, arg5: 10f);
             }
 
             public override void Execute() {
@@ -1092,20 +1088,20 @@ namespace Maple2.Trigger._02000344_bf {
             internal Statestart_game_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 20003443, textID: 20003443, duration: 5000);
-                context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__15$", arg3: new int[] {3000});
-                context.CreateMonster(arg1: new int[] {220}, arg2: true);
+                context.ShowGuideSummary(entityId: 20003443, textId: 20003443, duration: 5000);
+                context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__15$", arg3: 3000);
+                context.CreateMonster(arg1: new[] {220}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {220})) {
+                if (context.MonsterDead(arg1: new[] {220})) {
                     context.State = new Statestart_game_10(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.SetMesh(arg1: new int[] {6001}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
+                context.SetMesh(arg1: new[] {6001}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
             }
         }
 
@@ -1113,12 +1109,12 @@ namespace Maple2.Trigger._02000344_bf {
             internal Statestart_game_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__16$", arg3: new int[] {3000});
-                context.CreateMonster(arg1: new int[] {101, 221, 222}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__16$", arg3: 3000);
+                context.CreateMonster(arg1: new[] {101, 221, 222}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101})) {
+                if (context.MonsterDead(arg1: new[] {101})) {
                     context.State = new Statestart_game_11(context);
                     return;
                 }
@@ -1131,10 +1127,10 @@ namespace Maple2.Trigger._02000344_bf {
             internal Statestart_game_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {221, 222});
-                context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__17$", arg3: new int[] {3000});
+                context.DestroyMonster(arg1: new[] {221, 222});
+                context.SetEventUI(arg1: 1, arg2: "$02000344_BF__MAIN__17$", arg3: 3000);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         11001, 11002, 11003, 11004, 11005, 11006, 11007, 11008, 11009, 11010, 11011, 11012, 11013,
                         11014, 11015, 11016, 11017, 11018, 11019, 11020, 11021, 11022, 11023, 11024, 11025, 11026,
                         11027, 11028, 11029, 11030, 11031, 11032, 11033, 11034, 11035, 11036, 11037, 11038, 11039,
@@ -1214,7 +1210,7 @@ namespace Maple2.Trigger._02000344_bf {
                         11989, 11990, 11991, 11992, 11993, 11994, 11995, 11996, 11997, 11998, 11999
                     }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         14001, 14002, 14003, 14004, 14005, 14006, 14007, 14008, 14009, 14010, 14011, 14012, 14013,
                         14014, 14015, 14016, 14017, 14018, 14019, 14020, 14021, 14022, 14023, 14024, 14025, 14026,
                         14027, 14028, 14029, 14030, 14031, 14032, 14033, 14034, 14035, 14036, 14037, 14038, 14039,
@@ -1317,11 +1313,11 @@ namespace Maple2.Trigger._02000344_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8004, 8005}, arg2: false);
-                context.SetMesh(arg1: new int[] {6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109}, arg2: true,
+                context.CameraSelectPath(arg1: new[] {8004, 8005}, arg2: false);
+                context.SetMesh(arg1: new[] {6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109}, arg2: true,
                     arg4: 0, arg5: 10f);
-                context.SetMesh(arg1: new int[] {6110}, arg2: false, arg4: 0, arg5: 0f);
-                context.SetInteractObject(arg1: new int[] {10000787}, arg2: 1);
+                context.SetMesh(arg1: new[] {6110}, arg2: false, arg4: 0, arg5: 0f);
+                context.SetInteractObject(arg1: new[] {10000787}, arg2: 1);
                 context.SetTimer(arg1: "5", arg2: 5);
                 context.SetSkip(arg1: "클리어_03");
             }
@@ -1370,7 +1366,7 @@ namespace Maple2.Trigger._02000344_bf {
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {102});
+                context.DestroyMonster(arg1: new[] {102});
             }
         }
 
@@ -1381,9 +1377,9 @@ namespace Maple2.Trigger._02000344_bf {
                 context.DungeonClear();
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
                 context.SetAchievement(arg2: "trigger", arg3: "ClearTVProgram");
-                context.SetDungeonVariable(varID: 2, value: true);
-                context.ShowGuideSummary(entityID: 110, textID: 40009);
-                context.CameraSelectPath(arg1: new int[] {8010}, arg2: true);
+                context.SetDungeonVariable(varId: 2, value: true);
+                context.ShowGuideSummary(entityId: 110, textId: 40009);
+                context.CameraSelectPath(arg1: new[] {8010}, arg2: true);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
             }

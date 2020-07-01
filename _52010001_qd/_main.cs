@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._52010001_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000871}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10000910}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000871}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000910}, arg2: 1);
                 context.SetActor(arg1: 1001, arg2: true, arg3: "Down_Idle_A");
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000871, 10000910}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000871, 10000910}, arg2: 0)) {
                     context.State = new StateEvent_02(context);
                     return;
                 }
@@ -30,13 +26,13 @@ namespace Maple2.Trigger._52010001_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 1001, arg2: false, arg3: "Down_Idle_A");
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1001");
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$52010001_QD__MAIN__0$", arg4: 3, arg5: 2);
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 702, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 702, arg2: new[] {101})) {
                     context.State = new StateEvent_03(context);
                     return;
                 }
@@ -69,12 +65,12 @@ namespace Maple2.Trigger._52010001_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$52010001_QD__MAIN__2$", arg4: 3, arg5: 0);
-                context.SetInteractObject(arg1: new int[] {10000871}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000871}, arg2: 1);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1003");
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 703, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 703, arg2: new[] {101})) {
                     context.State = new StateEvent_04_02(context);
                     return;
                 }
@@ -124,13 +120,13 @@ namespace Maple2.Trigger._52010001_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$52010001_QD__MAIN__4$", arg4: 3, arg5: 3);
-                context.SetInteractObject(arg1: new int[] {10000910}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000910}, arg2: 1);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1005");
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 704, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 704, arg2: new[] {101})) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -144,7 +140,7 @@ namespace Maple2.Trigger._52010001_qd {
 
             public override void OnEnter() {
                 context.SetActor(arg1: 1001, arg2: true, arg3: "Down_Idle_A");
-                context.DestroyMonster(arg1: new int[] {101});
+                context.DestroyMonster(arg1: new[] {101});
             }
 
             public override void Execute() { }

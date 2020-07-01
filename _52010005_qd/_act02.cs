@@ -1,17 +1,13 @@
-using System;
-
 namespace Maple2.Trigger._52010005_qd {
     public static class _act02 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
-                    context.SetInteractObject(arg1: new int[] {10000872}, arg2: 0);
+                if (context.UserDetected(arg1: new[] {9000})) {
+                    context.SetInteractObject(arg1: new[] {10000872}, arg2: 0);
                     context.State = new State퀘스트조건02(context);
                     return;
                 }
@@ -26,7 +22,7 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {10002821},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002821},
                     arg3: new byte[] {2})) {
                     context.State = new StateQ2_미카등장01(context);
                     return;
@@ -40,7 +36,7 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ2_미카등장01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {401}, arg2: false);
+                context.CreateMonster(arg1: new[] {401}, arg2: false);
             }
 
             public override void Execute() {

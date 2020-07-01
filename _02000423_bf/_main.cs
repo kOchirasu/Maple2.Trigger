@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000423_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
@@ -25,17 +21,17 @@ namespace Maple2.Trigger._02000423_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "PortalHidden", value: 1)) {
+                if (context.GetUserValue(key: "PortalHidden") == 1) {
                     context.State = new State보스사냥후포탈생성(context);
                     return;
                 }
 
-                if (context.NpcDetected(arg1: 101, arg2: new int[] {100})) {
+                if (context.NpcDetected(arg1: 101, arg2: new[] {100})) {
                     context.State = new State포탈감추기(context);
                     return;
                 }
 
-                if (!context.NpcDetected(arg1: 101, arg2: new int[] {100})) {
+                if (!context.NpcDetected(arg1: 101, arg2: new[] {100})) {
                     context.State = new State디폴트포탈생성(context);
                     return;
                 }
@@ -93,7 +89,7 @@ namespace Maple2.Trigger._02000423_bf {
                 context.SetPortal(arg1: 13, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 14, arg2: true, arg3: true, arg4: true);
                 context.SetUserValue(key: "PortalHidden", value: 0);
-                context.ShowGuideSummary(entityID: 20043001, textID: 20043001);
+                context.ShowGuideSummary(entityId: 20043001, textId: 20043001);
             }
 
             public override void Execute() {
@@ -104,7 +100,7 @@ namespace Maple2.Trigger._02000423_bf {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 20043001);
+                context.HideGuideSummary(entityId: 20043001);
             }
         }
 

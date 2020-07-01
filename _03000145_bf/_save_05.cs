@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._03000145_bf {
     public static class _save_05 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State트리거초기화(context);
-
-        private class State트리거초기화 : TriggerState {
+        public class State트리거초기화 : TriggerState {
             internal State트리거초기화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "10", arg2: 1);
-                context.SetMesh(arg1: new int[] {5001}, arg2: false, arg5: 1f);
+                context.SetMesh(arg1: new[] {5001}, arg2: false, arg5: 1f);
             }
 
             public override void Execute() {
@@ -26,13 +22,13 @@ namespace Maple2.Trigger._03000145_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000471}, arg2: 1);
-                context.CreateMonster(arg1: new int[] {501}, arg2: false);
-                context.CreateMonster(arg1: new int[] {502}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10000471}, arg2: 1);
+                context.CreateMonster(arg1: new[] {501}, arg2: false);
+                context.CreateMonster(arg1: new[] {502}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000471}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000471}, arg2: 0)) {
                     context.State = new State문열림(context);
                     return;
                 }
@@ -46,11 +42,11 @@ namespace Maple2.Trigger._03000145_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetMesh(arg1: new int[] {5001}, arg2: true, arg5: 1f);
-                context.DestroyMonster(arg1: new int[] {501});
-                context.DestroyMonster(arg1: new int[] {502});
-                context.CreateMonster(arg1: new int[] {511}, arg2: false);
-                context.CreateMonster(arg1: new int[] {512}, arg2: false);
+                context.SetMesh(arg1: new[] {5001}, arg2: true, arg5: 1f);
+                context.DestroyMonster(arg1: new[] {501});
+                context.DestroyMonster(arg1: new[] {502});
+                context.CreateMonster(arg1: new[] {511}, arg2: false);
+                context.CreateMonster(arg1: new[] {512}, arg2: false);
             }
 
             public override void Execute() {
@@ -141,8 +137,8 @@ namespace Maple2.Trigger._03000145_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "7", arg2: 10);
-                context.DestroyMonster(arg1: new int[] {511});
-                context.DestroyMonster(arg1: new int[] {512});
+                context.DestroyMonster(arg1: new[] {511});
+                context.DestroyMonster(arg1: new[] {512});
             }
 
             public override void Execute() {

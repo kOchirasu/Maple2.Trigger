@@ -1,30 +1,26 @@
-using System;
-
 namespace Maple2.Trigger._52000157_qd {
     public static class _52000157 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statewait_01(context);
-
-        private class Statewait_01 : TriggerState {
+        public class Statewait_01 : TriggerState {
             internal Statewait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5001, 5002}, arg2: false);
+                context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2002}, arg2: new int[] {40002731},
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002731},
                     arg3: new byte[] {2})) {
                     context.State = new State이별준비(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2002}, arg2: new int[] {40002731},
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002731},
                     arg3: new byte[] {3})) {
                     context.State = new State프론티아재단으로_01(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: new int[] {2002})) {
+                if (context.UserDetected(arg1: new[] {2002})) {
                     context.State = new State전직컷씬01(context);
                     return;
                 }
@@ -38,8 +34,8 @@ namespace Maple2.Trigger._52000157_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "jobChange_thief.swf", movieID: 1);
-                context.CreateMonster(arg1: new int[] {107}, arg2: false);
+                context.PlaySceneMovie(fileName: "jobChange_thief.swf", movieId: 1);
+                context.CreateMonster(arg1: new[] {107}, arg2: false);
             }
 
             public override void Execute() {
@@ -63,7 +59,7 @@ namespace Maple2.Trigger._52000157_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2002}, arg2: new int[] {40002728},
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002728},
                     arg3: new byte[] {3})) {
                     context.State = new State전직이펙트_01(context);
                     return;
@@ -115,7 +111,7 @@ namespace Maple2.Trigger._52000157_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2002}, arg2: new int[] {40002731},
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002731},
                     arg3: new byte[] {2})) {
                     context.State = new State이별준비(context);
                     return;
@@ -148,12 +144,12 @@ namespace Maple2.Trigger._52000157_qd {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
-                context.DestroyMonster(arg1: new int[] {107});
-                context.DestroyMonster(arg1: new int[] {105});
-                context.DestroyMonster(arg1: new int[] {106});
-                context.CreateMonster(arg1: new int[] {110}, arg2: false);
-                context.CreateMonster(arg1: new int[] {109}, arg2: false);
-                context.CreateMonster(arg1: new int[] {108}, arg2: false);
+                context.DestroyMonster(arg1: new[] {107});
+                context.DestroyMonster(arg1: new[] {105});
+                context.DestroyMonster(arg1: new[] {106});
+                context.CreateMonster(arg1: new[] {110}, arg2: false);
+                context.CreateMonster(arg1: new[] {109}, arg2: false);
+                context.CreateMonster(arg1: new[] {108}, arg2: false);
                 context.MoveUser(arg1: 52000157, arg2: 6002);
             }
 
@@ -194,7 +190,7 @@ namespace Maple2.Trigger._52000157_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2002}, arg2: new int[] {40002731},
+                if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002731},
                     arg3: new byte[] {3})) {
                     context.State = new State프론티아재단으로_01(context);
                     return;

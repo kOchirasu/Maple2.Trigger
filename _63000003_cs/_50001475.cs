@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._63000003_cs {
     public static class _50001475 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1001, 1002}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 1002}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {101}, arg2: new int[] {50001475},
+                if (context.QuestUserDetected(arg1: new[] {101}, arg2: new[] {50001475},
                     arg3: new byte[] {3})) {
                     context.State = new State말풍선01(context);
                     return;

@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02020142_bf {
     public static class _setportal {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State전투체크(context);
-
-        private class State전투체크 : TriggerState {
+        public class State전투체크 : TriggerState {
             internal State전투체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new State대기99(context);
                     return;
                 }
@@ -51,7 +47,7 @@ namespace Maple2.Trigger._02020142_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "SetLight", value: 1)) {
+                if (context.GetUserValue(key: "SetLight") == 1) {
                     context.State = new State포탈생성(context);
                     return;
                 }

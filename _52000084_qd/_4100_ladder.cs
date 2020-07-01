@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52000084_qd {
     public static class _4100_ladder {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,11 +8,11 @@ namespace Maple2.Trigger._52000084_qd {
                 context.SetLadder(arg1: 4101, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 4102, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 4103, arg2: false, arg3: false, arg4: 0);
-                context.SetInteractObject(arg1: new int[] {10001128}, arg2: 0, arg4: false);
+                context.SetInteractObject(arg1: new[] {10001128}, arg2: 0, arg4: false);
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9200, arg2: new int[] {101})) {
+                if (context.NpcDetected(arg1: 9200, arg2: new[] {101})) {
                     context.State = new StatePCComeDown(context);
                     return;
                 }
@@ -31,7 +27,7 @@ namespace Maple2.Trigger._52000084_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9400})) {
+                if (context.UserDetected(arg1: new[] {9400})) {
                     context.State = new StateLadderOn(context);
                     return;
                 }

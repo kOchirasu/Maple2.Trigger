@@ -1,24 +1,20 @@
-using System;
-
 namespace Maple2.Trigger._63000028_cs {
     public static class _battle01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "Guide");
-                context.SetEffect(arg1: new int[] {5000}, arg2: false);
-                context.SetEffect(arg1: new int[] {5100}, arg2: false);
-                context.SetEffect(arg1: new int[] {6000}, arg2: false);
-                context.SetEffect(arg1: new int[] {6001}, arg2: false);
-                context.SetEffect(arg1: new int[] {6002}, arg2: false);
-                context.SetEffect(arg1: new int[] {6003}, arg2: false);
-                context.SetEffect(arg1: new int[] {6004}, arg2: false);
-                context.SetEffect(arg1: new int[] {6100}, arg2: false);
-                context.SetEffect(arg1: new int[] {6101}, arg2: false);
-                context.SetEffect(arg1: new int[] {6102}, arg2: false);
+                context.SetEffect(arg1: new[] {5000}, arg2: false);
+                context.SetEffect(arg1: new[] {5100}, arg2: false);
+                context.SetEffect(arg1: new[] {6000}, arg2: false);
+                context.SetEffect(arg1: new[] {6001}, arg2: false);
+                context.SetEffect(arg1: new[] {6002}, arg2: false);
+                context.SetEffect(arg1: new[] {6003}, arg2: false);
+                context.SetEffect(arg1: new[] {6004}, arg2: false);
+                context.SetEffect(arg1: new[] {6100}, arg2: false);
+                context.SetEffect(arg1: new[] {6101}, arg2: false);
+                context.SetEffect(arg1: new[] {6102}, arg2: false);
                 context.SetAgent(arg1: "8000", arg2: true);
                 context.SetAgent(arg1: "8001", arg2: true);
                 context.SetAgent(arg1: "8002", arg2: true);
@@ -41,11 +37,11 @@ namespace Maple2.Trigger._63000028_cs {
                 context.SetAgent(arg1: "8113", arg2: false);
                 context.SetAgent(arg1: "8114", arg2: false);
                 context.SetAgent(arg1: "8115", arg2: false);
-                context.SetSkill(arg1: new int[] {7000}, arg2: false);
+                context.SetSkill(arg1: new[] {7000}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new StateEnter01(context);
                     return;
                 }
@@ -60,25 +56,25 @@ namespace Maple2.Trigger._63000028_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {90000452},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000452},
                     arg3: new byte[] {1})) {
                     context.State = new StateQuestOnGoing21(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {90000451},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000451},
                     arg3: new byte[] {3})) {
                     context.State = new StateQuestOnGoing11(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {90000451},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000451},
                     arg3: new byte[] {2})) {
                     context.State = new StateQuestOnGoing01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {90000451},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {90000451},
                     arg3: new byte[] {1})) {
                     context.State = new StatePCWakeUp01(context);
                     return;
@@ -92,7 +88,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateQuestOnGoing01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {103, 202}, arg2: false);
+                context.CreateMonster(arg1: new[] {103, 202}, arg2: false);
             }
 
             public override void Execute() {
@@ -109,7 +105,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateQuestOnGoing11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {103, 202}, arg2: false);
+                context.CreateMonster(arg1: new[] {103, 202}, arg2: false);
             }
 
             public override void Execute() {
@@ -146,7 +142,7 @@ namespace Maple2.Trigger._63000028_cs {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 63000028, arg2: 11, arg3: 9900);
-                context.CreateMonster(arg1: new int[] {104, 203}, arg2: false);
+                context.CreateMonster(arg1: new[] {104, 203}, arg2: false);
                 context.CameraSelect(arg1: 600, arg2: true);
             }
 
@@ -203,7 +199,7 @@ namespace Maple2.Trigger._63000028_cs {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 500, arg2: true);
                 context.SetSceneSkip(arg1: "TinChaiTalk02_CSkip", arg2: "nextState");
-                context.CreateMonster(arg1: new int[] {101, 900, 901, 902}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 900, 901, 902}, arg2: false);
             }
 
             public override void Execute() {
@@ -308,7 +304,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateTinChaiTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6000}, arg2: true);
+                context.SetEffect(arg1: new[] {6000}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000028_CS__BATTLE01__2$", arg4: 5);
                 context.SetSceneSkip();
             }
@@ -402,8 +398,8 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateBattleStart01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 10035010, textID: 10035010);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.ShowGuideSummary(entityId: 10035010, textId: 10035010);
             }
 
             public override void Execute() {
@@ -420,18 +416,18 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateBattleStart02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.GuideEvent(eventID: 10035020);
+                context.GuideEvent(eventId: 10035020);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {900, 901, 902})) {
+                if (context.MonsterDead(arg1: new[] {900, 901, 902})) {
                     context.State = new StateBattleEnd01(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 10035010);
+                context.HideGuideSummary(entityId: 10035010);
             }
         }
 
@@ -439,7 +435,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateBattleEnd01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {900, 901, 902});
+                context.DestroyMonster(arg1: new[] {900, 901, 902});
             }
 
             public override void Execute() {
@@ -476,8 +472,8 @@ namespace Maple2.Trigger._63000028_cs {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 63000028, arg2: 10, arg3: 9900);
-                context.DestroyMonster(arg1: new int[] {101});
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.DestroyMonster(arg1: new[] {101});
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
             public override void Execute() {
@@ -561,7 +557,7 @@ namespace Maple2.Trigger._63000028_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 600, arg2: true);
-                context.SetEffect(arg1: new int[] {5100}, arg2: true);
+                context.SetEffect(arg1: new[] {5100}, arg2: true);
             }
 
             public override void Execute() {
@@ -578,7 +574,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateShadowWave03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {910, 911, 912, 913});
+                context.CreateMonster(arg1: new[] {910, 911, 912, 913});
                 context.MoveNpc(arg1: 910, arg2: "MS2PatrolData_910");
                 context.MoveNpc(arg1: 911, arg2: "MS2PatrolData_911");
                 context.MoveNpc(arg1: 912, arg2: "MS2PatrolData_912");
@@ -599,7 +595,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateShadowWave04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {920, 921, 922, 923, 924});
+                context.CreateMonster(arg1: new[] {920, 921, 922, 923, 924});
                 context.MoveNpc(arg1: 920, arg2: "MS2PatrolData_920");
                 context.MoveNpc(arg1: 921, arg2: "MS2PatrolData_921");
                 context.MoveNpc(arg1: 922, arg2: "MS2PatrolData_922");
@@ -640,7 +636,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateShadowWave06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {930, 931, 932, 933, 950, 951, 952, 953});
+                context.CreateMonster(arg1: new[] {930, 931, 932, 933, 950, 951, 952, 953});
                 context.MoveNpc(arg1: 930, arg2: "MS2PatrolData_930");
                 context.MoveNpc(arg1: 931, arg2: "MS2PatrolData_931");
                 context.MoveNpc(arg1: 932, arg2: "MS2PatrolData_932");
@@ -666,7 +662,7 @@ namespace Maple2.Trigger._63000028_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$63000028_CS__BATTLE01__4$", arg4: 3, arg5: 0);
-                context.CreateMonster(arg1: new int[] {940, 941, 942, 943, 944, 945, 960, 961, 962, 963, 964, 965});
+                context.CreateMonster(arg1: new[] {940, 941, 942, 943, 944, 945, 960, 961, 962, 963, 964, 965});
                 context.MoveNpc(arg1: 940, arg2: "MS2PatrolData_940");
                 context.MoveNpc(arg1: 941, arg2: "MS2PatrolData_941");
                 context.MoveNpc(arg1: 942, arg2: "MS2PatrolData_942");
@@ -698,7 +694,7 @@ namespace Maple2.Trigger._63000028_cs {
                 context.CameraSelect(arg1: 602, arg2: true);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Attack_Idle_A", arg3: 12000f);
                 context.SetPcEmotionLoop(arg1: "Orb_Attack_Idle_A", arg2: 12000f);
-                context.SetEffect(arg1: new int[] {6001}, arg2: true);
+                context.SetEffect(arg1: new[] {6001}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000028_CS__BATTLE01__5$", arg4: 5);
                 context.SetSkip(arg1: "TinChaiDesperate02");
             }
@@ -755,12 +751,12 @@ namespace Maple2.Trigger._63000028_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 700, arg2: true);
-                context.DestroyMonster(arg1: new int[] {
+                context.DestroyMonster(arg1: new[] {
                     910, 911, 912, 913, 920, 921, 922, 923, 924, 930, 931, 932, 933, 940, 941, 942, 943, 944, 945, 950,
                     951, 952, 953, 960, 961, 962, 963, 964, 965
                 });
                 context.CreateMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988,
                         989, 990, 991, 992, 993, 994, 995, 996, 997, 998
                     }, arg2: false);
@@ -810,7 +806,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateJuntaApp04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201}, arg2: false);
+                context.CreateMonster(arg1: new[] {201}, arg2: false);
             }
 
             public override void Execute() {
@@ -821,7 +817,7 @@ namespace Maple2.Trigger._63000028_cs {
             }
 
             public override void OnExit() {
-                context.SetSkill(arg1: new int[] {7000}, arg2: true);
+                context.SetSkill(arg1: new[] {7000}, arg2: true);
             }
         }
 
@@ -829,8 +825,8 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateJuntaTalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5100}, arg2: false);
-                context.SetEffect(arg1: new int[] {6100}, arg2: true);
+                context.SetEffect(arg1: new[] {5100}, arg2: false);
+                context.SetEffect(arg1: new[] {6100}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000028_CS__BATTLE01__6$", arg4: 4);
             }
 
@@ -848,7 +844,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateMeetJunta01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {
+                context.DestroyMonster(arg1: new[] {
                     970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989,
                     990, 991, 992, 993, 994, 995, 996, 997, 998
                 });
@@ -874,7 +870,7 @@ namespace Maple2.Trigger._63000028_cs {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 701, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Talk_A");
-                context.SetEffect(arg1: new int[] {6002}, arg2: true);
+                context.SetEffect(arg1: new[] {6002}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000028_CS__BATTLE01__7$", arg4: 5);
             }
 
@@ -911,7 +907,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateMeetJunta04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6101}, arg2: true);
+                context.SetEffect(arg1: new[] {6101}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000028_CS__BATTLE01__8$", arg4: 7);
             }
 
@@ -930,8 +926,8 @@ namespace Maple2.Trigger._63000028_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 701, arg2: true);
-                context.SetEffect(arg1: new int[] {5100}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {
+                context.SetEffect(arg1: new[] {5100}, arg2: false);
+                context.DestroyMonster(arg1: new[] {
                     910, 911, 912, 913, 920, 921, 922, 923, 924, 930, 931, 932, 933, 940, 941, 942, 943, 944, 945, 950,
                     951, 952, 953, 960, 961, 962, 963, 964, 965
                 });
@@ -952,12 +948,12 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateMeetJunta05_Cskip2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {
+                context.DestroyMonster(arg1: new[] {
                     970, 971, 972, 973, 974, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 986, 987, 988, 989,
                     990, 991, 992, 993, 994, 995, 996, 997, 998
                 });
-                context.DestroyMonster(arg1: new int[] {102, 201});
-                context.CreateMonster(arg1: new int[] {103, 202}, arg2: false);
+                context.DestroyMonster(arg1: new[] {102, 201});
+                context.CreateMonster(arg1: new[] {103, 202}, arg2: false);
             }
 
             public override void Execute() {
@@ -977,8 +973,8 @@ namespace Maple2.Trigger._63000028_cs {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.DestroyMonster(arg1: new int[] {102, 201});
-                context.CreateMonster(arg1: new int[] {103, 202}, arg2: false);
+                context.DestroyMonster(arg1: new[] {102, 201});
+                context.CreateMonster(arg1: new[] {103, 202}, arg2: false);
             }
 
             public override void Execute() {
@@ -1002,7 +998,7 @@ namespace Maple2.Trigger._63000028_cs {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {90000451},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000451},
                     arg3: new byte[] {2})) {
                     context.State = new StateFirstQuestEnd01(context);
                     return;
@@ -1016,12 +1012,12 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateFirstQuestEnd01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 10031010, textID: 10031010);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.ShowGuideSummary(entityId: 10031010, textId: 10031010);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {90000451},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000451},
                     arg3: new byte[] {3})) {
                     context.State = new StateSecondQuestStart01(context);
                     return;
@@ -1029,7 +1025,7 @@ namespace Maple2.Trigger._63000028_cs {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 10031010);
+                context.HideGuideSummary(entityId: 10031010);
             }
         }
 
@@ -1037,12 +1033,12 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateSecondQuestStart01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.ShowGuideSummary(entityID: 10031020, textID: 10031020);
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.ShowGuideSummary(entityId: 10031020, textId: 10031020);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {90000452},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000452},
                     arg3: new byte[] {1})) {
                     context.State = new StateDelay01(context);
                     return;
@@ -1050,7 +1046,7 @@ namespace Maple2.Trigger._63000028_cs {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 10031020);
+                context.HideGuideSummary(entityId: 10031020);
             }
         }
 
@@ -1093,8 +1089,8 @@ namespace Maple2.Trigger._63000028_cs {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 63000028, arg2: 12, arg3: 9900);
-                context.DestroyMonster(arg1: new int[] {103, 202});
-                context.CreateMonster(arg1: new int[] {104, 203}, arg2: false);
+                context.DestroyMonster(arg1: new[] {103, 202});
+                context.CreateMonster(arg1: new[] {104, 203}, arg2: false);
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.SetSceneSkip(arg1: "TimeToLeave05", arg2: "exit");
             }
@@ -1129,7 +1125,7 @@ namespace Maple2.Trigger._63000028_cs {
                 context.SetAgent(arg1: "8113", arg2: true);
                 context.SetAgent(arg1: "8114", arg2: true);
                 context.SetAgent(arg1: "8115", arg2: true);
-                context.CreateMonster(arg1: new int[] {910, 911, 912, 913});
+                context.CreateMonster(arg1: new[] {910, 911, 912, 913});
             }
 
             public override void Execute() {
@@ -1147,12 +1143,12 @@ namespace Maple2.Trigger._63000028_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 601, arg2: true);
-                context.SetEffect(arg1: new int[] {5100}, arg2: true);
-                context.SetEffect(arg1: new int[] {6003}, arg2: true);
+                context.SetEffect(arg1: new[] {5100}, arg2: true);
+                context.SetEffect(arg1: new[] {6003}, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 104, arg3: "$63000028_CS__BATTLE01__9$", arg4: 3, arg5: 1);
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_103");
                 context.MoveUserPath(arg1: "MS2PatrolData_1004");
-                context.CreateMonster(arg1: new int[] {920, 921, 922, 923, 924});
+                context.CreateMonster(arg1: new[] {920, 921, 922, 923, 924});
                 context.MoveNpc(arg1: 910, arg2: "MS2PatrolData_910");
                 context.MoveNpc(arg1: 911, arg2: "MS2PatrolData_911");
                 context.MoveNpc(arg1: 912, arg2: "MS2PatrolData_912");
@@ -1194,9 +1190,9 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateShadowWaveAgain05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6102}, arg2: true);
+                context.SetEffect(arg1: new[] {6102}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000028_CS__BATTLE01__10$", arg4: 4);
-                context.CreateMonster(arg1: new int[] {930, 931, 932, 933, 950, 951, 952, 953});
+                context.CreateMonster(arg1: new[] {930, 931, 932, 933, 950, 951, 952, 953});
                 context.MoveNpc(arg1: 930, arg2: "MS2PatrolData_930");
                 context.MoveNpc(arg1: 931, arg2: "MS2PatrolData_931");
                 context.MoveNpc(arg1: 932, arg2: "MS2PatrolData_932");
@@ -1221,7 +1217,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateShadowWaveAgain06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {940, 941, 942, 943, 944, 945, 960, 961, 962, 963, 964, 965});
+                context.CreateMonster(arg1: new[] {940, 941, 942, 943, 944, 945, 960, 961, 962, 963, 964, 965});
                 context.MoveNpc(arg1: 940, arg2: "MS2PatrolData_940");
                 context.MoveNpc(arg1: 941, arg2: "MS2PatrolData_941");
                 context.MoveNpc(arg1: 942, arg2: "MS2PatrolData_942");
@@ -1251,7 +1247,7 @@ namespace Maple2.Trigger._63000028_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 602, arg2: true);
-                context.SetEffect(arg1: new int[] {6004}, arg2: true);
+                context.SetEffect(arg1: new[] {6004}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000028_CS__BATTLE01__11$", arg4: 4);
                 context.SetSceneSkip();
             }
@@ -1323,7 +1319,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateTimeToLeave05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {104, 203});
+                context.DestroyMonster(arg1: new[] {104, 203});
             }
 
             public override void Execute() {
@@ -1346,7 +1342,7 @@ namespace Maple2.Trigger._63000028_cs {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {9900})) {
+                if (!context.UserDetected(arg1: new[] {9900})) {
                     context.State = new StateQuit(context);
                     return;
                 }

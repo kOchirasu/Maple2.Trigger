@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._52100300_qd {
     public static class _bombcontrol {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 99990001, key: "RandomBombEnd", value: 0);
-                context.StartCombineSpawn(groupId: new int[] {522}, isStart: "false");
-                context.StartCombineSpawn(groupId: new int[] {523}, isStart: "false");
-                context.StartCombineSpawn(groupId: new int[] {524}, isStart: "false");
+                context.SetUserValue(triggerId: 99990001, key: "RandomBombEnd", value: 0);
+                context.StartCombineSpawn(groupId: new[] {522}, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {523}, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {524}, isStart: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "RandomBomb", value: 1)) {
+                if (context.GetUserValue(key: "RandomBomb") == 1) {
                     context.State = new State포탑생성_1(context);
                     return;
                 }
@@ -28,12 +24,12 @@ namespace Maple2.Trigger._52100300_qd {
             internal State포탑생성_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {152}, arg2: true);
-                context.StartCombineSpawn(groupId: new int[] {524}, isStart: "true");
+                context.CreateMonster(arg1: new[] {152}, arg2: true);
+                context.StartCombineSpawn(groupId: new[] {524}, isStart: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {152})) {
+                if (context.MonsterDead(arg1: new[] {152})) {
                     context.State = new State포탑생성_2(context);
                     return;
                 }
@@ -46,7 +42,7 @@ namespace Maple2.Trigger._52100300_qd {
             internal State포탑생성_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new int[] {522}, isStart: "true");
+                context.StartCombineSpawn(groupId: new[] {522}, isStart: true);
             }
 
             public override void Execute() {
@@ -63,11 +59,11 @@ namespace Maple2.Trigger._52100300_qd {
             internal State포탑생성_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.StartCombineSpawn(groupId: new int[] {523}, isStart: "true");
+                context.StartCombineSpawn(groupId: new[] {523}, isStart: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {151, 152, 153, 154, 155, 156, 157, 158, 159})) {
+                if (context.MonsterDead(arg1: new[] {151, 152, 153, 154, 155, 156, 157, 158, 159})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -80,10 +76,10 @@ namespace Maple2.Trigger._52100300_qd {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 99990001, key: "RandomBombEnd", value: 1);
-                context.StartCombineSpawn(groupId: new int[] {522}, isStart: "false");
-                context.StartCombineSpawn(groupId: new int[] {523}, isStart: "false");
-                context.StartCombineSpawn(groupId: new int[] {524}, isStart: "false");
+                context.SetUserValue(triggerId: 99990001, key: "RandomBombEnd", value: 1);
+                context.StartCombineSpawn(groupId: new[] {522}, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {523}, isStart: false);
+                context.StartCombineSpawn(groupId: new[] {524}, isStart: false);
             }
 
             public override void Execute() { }

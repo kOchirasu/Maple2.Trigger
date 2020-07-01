@@ -1,43 +1,39 @@
-using System;
-
 namespace Maple2.Trigger._52000057_qd {
     public static class _guidescene_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1003}, arg2: false);
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
+                context.CreateMonster(arg1: new[] {1003}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {90000611},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000611},
                     arg3: new byte[] {2})) {
                     context.State = new State오필리아리젠(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {90000611},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000611},
                     arg3: new byte[] {1})) {
                     context.State = new State오필리아리젠(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {90000610},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000610},
                     arg3: new byte[] {3})) {
                     context.State = new State오필리아리젠상시(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {90000610},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000610},
                     arg3: new byte[] {2})) {
                     context.State = new State오필리아리젠상시(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {90000610},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000610},
                     arg3: new byte[] {1})) {
                     context.State = new State연출시작(context);
                     return;
@@ -54,8 +50,8 @@ namespace Maple2.Trigger._52000057_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.CreateMonster(arg1: new int[] {1001}, arg2: false);
-                context.SetEffect(arg1: new int[] {601}, arg2: true);
+                context.CreateMonster(arg1: new[] {1001}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: true);
             }
 
             public override void Execute() {
@@ -74,7 +70,7 @@ namespace Maple2.Trigger._52000057_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 198, arg2: new int[] {1001})) {
+                if (context.NpcDetected(arg1: 198, arg2: new[] {1001})) {
                     context.State = new State시네마틱대사01(context);
                     return;
                 }
@@ -87,9 +83,9 @@ namespace Maple2.Trigger._52000057_qd {
             internal State시네마틱대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetConversation(arg1: 2, arg2: 11001871, arg3: "$52000057_QD__GUIDESCENE_01__0$", arg4: 2,
+                context.SetConversation(arg1: 2, arg2: 11001871, arg3: "$52000057_QD__GUIdESCENE_01__0$", arg4: 2,
                     arg5: 0);
-                context.SetConversation(arg1: 2, arg2: 11001871, arg3: "$52000057_QD__GUIDESCENE_01__1$", arg4: 3,
+                context.SetConversation(arg1: 2, arg2: 11001871, arg3: "$52000057_QD__GUIdESCENE_01__1$", arg4: 3,
                     arg5: 0);
             }
 
@@ -128,7 +124,7 @@ namespace Maple2.Trigger._52000057_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {90000611},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000611},
                     arg3: new byte[] {1})) {
                     context.State = new State오필리아대사연출01(context);
                     return;
@@ -142,7 +138,7 @@ namespace Maple2.Trigger._52000057_qd {
             internal State오필리아리젠(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1002}, arg2: false);
+                context.CreateMonster(arg1: new[] {1002}, arg2: false);
             }
 
             public override void Execute() {
@@ -161,7 +157,7 @@ namespace Maple2.Trigger._52000057_qd {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.SetConversation(arg1: 2, arg2: 11001871, arg3: "$52000057_QD__GUIDESCENE_01__2$", arg4: 2,
+                context.SetConversation(arg1: 2, arg2: 11001871, arg3: "$52000057_QD__GUIdESCENE_01__2$", arg4: 2,
                     arg5: 0);
             }
 
@@ -179,7 +175,7 @@ namespace Maple2.Trigger._52000057_qd {
             internal StateSendSignalToGuide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.GuideEvent(eventID: 60660);
+                context.GuideEvent(eventId: 60660);
             }
 
             public override void Execute() {
@@ -196,11 +192,11 @@ namespace Maple2.Trigger._52000057_qd {
             internal State오필리아리젠상시(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1002}, arg2: false);
+                context.CreateMonster(arg1: new[] {1002}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {90000611},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000611},
                     arg3: new byte[] {1})) {
                     context.State = new State오필리아대사연출01(context);
                     return;

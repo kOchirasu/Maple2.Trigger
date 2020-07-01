@@ -1,14 +1,10 @@
-using System;
-
 namespace Maple2.Trigger._02000146_bf {
     public static class _ia_112 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000187}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000187}, arg2: 1);
                 context.SetActor(arg1: 212, arg2: true, arg3: "Attack_Idle_A");
             }
 
@@ -28,7 +24,7 @@ namespace Maple2.Trigger._02000146_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000187}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000187}, arg2: 0)) {
                     context.State = new StateNPC등장(context);
                     return;
                 }
@@ -36,7 +32,7 @@ namespace Maple2.Trigger._02000146_bf {
 
             public override void OnExit() {
                 context.SetActor(arg1: 212, arg2: false, arg3: "Attack_Idle_A");
-                context.CreateMonster(arg1: new int[] {412});
+                context.CreateMonster(arg1: new[] {412});
             }
         }
 
@@ -49,7 +45,7 @@ namespace Maple2.Trigger._02000146_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {412})) {
+                if (context.MonsterDead(arg1: new[] {412})) {
                     context.State = new State딜레이(context);
                     return;
                 }

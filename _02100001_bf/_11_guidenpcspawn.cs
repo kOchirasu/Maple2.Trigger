@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02100001_bf {
     public static class _11_guidenpcspawn {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {109});
+                context.DestroyMonster(arg1: new[] {109});
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9903})) {
+                if (context.UserDetected(arg1: new[] {9903})) {
                     context.State = new StateNpcSpawn(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateNpcSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {109}, arg2: false);
+                context.CreateMonster(arg1: new[] {109}, arg2: false);
             }
 
             public override void Execute() {
@@ -44,7 +40,7 @@ namespace Maple2.Trigger._02100001_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: new int[] {9903})) {
+                if (!context.UserDetected(arg1: new[] {9903})) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -57,7 +53,7 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {109});
+                context.DestroyMonster(arg1: new[] {109});
             }
 
             public override void Execute() { }

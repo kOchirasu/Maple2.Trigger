@@ -1,22 +1,18 @@
-using System;
-
 namespace Maple2.Trigger._52000052_qd {
     public static class _702_darknesstotem_02round {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[]
+                    arg1: new[]
                         {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313},
                     arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetUserValue(key: "TotemApp", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "TotemApp", value: 1)) {
+                if (context.GetUserValue(key: "TotemApp") == 1) {
                     context.State = new StateTotemApp01(context);
                     return;
                 }
@@ -29,13 +25,13 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateTotemApp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {2002});
-                context.CreateMonster(arg1: new int[] {2302}, arg2: false);
+                context.DestroyMonster(arg1: new[] {2002});
+                context.CreateMonster(arg1: new[] {2302}, arg2: false);
                 context.SetMesh(
-                    arg1: new int[]
+                    arg1: new[]
                         {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313},
                     arg2: true, arg3: 0, arg4: 0, arg5: 5f);
-                context.CreateMonster(arg1: new int[] {920}, arg2: false);
+                context.CreateMonster(arg1: new[] {920}, arg2: false);
             }
 
             public override void Execute() {
@@ -87,7 +83,7 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateDestoryTotem01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {2102}, arg2: false);
+                context.CreateMonster(arg1: new[] {2102}, arg2: false);
             }
 
             public override void Execute() {
@@ -104,9 +100,9 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateJuntaReturn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {920});
-                context.DestroyMonster(arg1: new int[] {2302});
-                context.DestroyMonster(arg1: new int[] {2102});
+                context.DestroyMonster(arg1: new[] {920});
+                context.DestroyMonster(arg1: new[] {2302});
+                context.DestroyMonster(arg1: new[] {2102});
             }
 
             public override void Execute() {
@@ -123,7 +119,7 @@ namespace Maple2.Trigger._52000052_qd {
             internal StateJuntaReturn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {2202}, arg2: false);
+                context.CreateMonster(arg1: new[] {2202}, arg2: false);
             }
 
             public override void Execute() {
@@ -141,7 +137,7 @@ namespace Maple2.Trigger._52000052_qd {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[]
+                    arg1: new[]
                         {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313},
                     arg2: false, arg3: 0, arg4: 0, arg5: 5f);
             }

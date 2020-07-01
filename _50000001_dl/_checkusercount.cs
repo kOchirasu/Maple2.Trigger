@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._50000001_dl {
     public static class _checkusercount {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateCheckUserCount(context);
-
-        private class StateCheckUserCount : TriggerState {
+        public class StateCheckUserCount : TriggerState {
             internal StateCheckUserCount(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -31,7 +27,7 @@ namespace Maple2.Trigger._50000001_dl {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
-                context.ShowGuideSummary(entityID: 25100203, textID: 25100203, duration: 3000);
+                context.ShowGuideSummary(entityId: 25100203, textId: 25100203, duration: 3000);
             }
 
             public override void Execute() {
@@ -48,7 +44,7 @@ namespace Maple2.Trigger._50000001_dl {
             internal StateDungeonStart02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25100203, textID: 25100203, duration: 3000);
+                context.ShowGuideSummary(entityId: 25100203, textId: 25100203, duration: 3000);
             }
 
             public override void Execute() {
@@ -65,7 +61,7 @@ namespace Maple2.Trigger._50000001_dl {
             internal StateWaitDungeon01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25100201, textID: 25100201, duration: 3000);
+                context.ShowGuideSummary(entityId: 25100201, textId: 25100201, duration: 3000);
             }
 
             public override void Execute() {
@@ -102,7 +98,7 @@ namespace Maple2.Trigger._50000001_dl {
             internal StateWaitDungeon03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25100202, textID: 25100202, duration: 3000);
+                context.ShowGuideSummary(entityId: 25100202, textId: 25100202, duration: 3000);
             }
 
             public override void Execute() {
@@ -139,7 +135,7 @@ namespace Maple2.Trigger._50000001_dl {
             internal StateWaitDungeon05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25100201, textID: 25100201, duration: 3000);
+                context.ShowGuideSummary(entityId: 25100201, textId: 25100201, duration: 3000);
             }
 
             public override void Execute() {
@@ -176,7 +172,7 @@ namespace Maple2.Trigger._50000001_dl {
             internal StateWaitDungeon07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25100202, textID: 25100202, duration: 3000);
+                context.ShowGuideSummary(entityId: 25100202, textId: 25100202, duration: 3000);
             }
 
             public override void Execute() {
@@ -213,7 +209,7 @@ namespace Maple2.Trigger._50000001_dl {
             internal StateWaitDungeon09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25100201, textID: 25100201, duration: 3000);
+                context.ShowGuideSummary(entityId: 25100201, textId: 25100201, duration: 3000);
             }
 
             public override void Execute() {
@@ -250,7 +246,7 @@ namespace Maple2.Trigger._50000001_dl {
             internal StateWaitDungeon11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 25100202, textID: 25100202, duration: 3000);
+                context.ShowGuideSummary(entityId: 25100202, textId: 25100202, duration: 3000);
             }
 
             public override void Execute() {

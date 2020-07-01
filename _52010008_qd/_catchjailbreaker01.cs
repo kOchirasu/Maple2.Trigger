@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._52010008_qd {
     public static class _catchjailbreaker01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {901, 902, 903, 904, 905, 906}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10000851}, arg2: 0);
-                context.SetMesh(arg1: new int[] {6000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(arg1: new[] {901, 902, 903, 904, 905, 906}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10000851}, arg2: 0);
+                context.SetMesh(arg1: new[] {6000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new State딜레이01(context);
                     return;
                 }
@@ -45,11 +41,11 @@ namespace Maple2.Trigger._52010008_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
-                context.ShowGuideSummary(entityID: 100, textID: 40010);
+                context.ShowGuideSummary(entityId: 100, textId: 40010);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {901, 902, 903, 904, 905, 906})) {
+                if (context.MonsterDead(arg1: new[] {901, 902, 903, 904, 905, 906})) {
                     context.State = new State죄수찾기01(context);
                     return;
                 }
@@ -62,12 +58,12 @@ namespace Maple2.Trigger._52010008_qd {
             internal State죄수찾기01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 100);
-                context.SetInteractObject(arg1: new int[] {10000851}, arg2: 1);
+                context.HideGuideSummary(entityId: 100);
+                context.SetInteractObject(arg1: new[] {10000851}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000851}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000851}, arg2: 0)) {
                     context.State = new State죄수등장01(context);
                     return;
                 }
@@ -80,9 +76,9 @@ namespace Maple2.Trigger._52010008_qd {
             internal State죄수등장01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {6000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {6000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetTimer(arg1: "11", arg2: 1);
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1010");
             }
 
@@ -101,7 +97,7 @@ namespace Maple2.Trigger._52010008_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "12", arg2: 2);
-                context.CreateMonster(arg1: new int[] {201}, arg2: false);
+                context.CreateMonster(arg1: new[] {201}, arg2: false);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_2010");
             }
 
@@ -120,7 +116,7 @@ namespace Maple2.Trigger._52010008_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "20", arg2: 1);
-                context.CreateMonster(arg1: new int[] {301}, arg2: false);
+                context.CreateMonster(arg1: new[] {301}, arg2: false);
                 context.CameraSelect(arg1: 601, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
@@ -271,8 +267,8 @@ namespace Maple2.Trigger._52010008_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 02010019, arg2: 2, arg3: 9000);
-                context.DestroyMonster(arg1: new int[] {101, 201, 301});
-                context.DestroyMonster(arg1: new int[] {901, 902, 903, 904, 905, 906});
+                context.DestroyMonster(arg1: new[] {101, 201, 301});
+                context.DestroyMonster(arg1: new[] {901, 902, 903, 904, 905, 906});
             }
 
             public override void Execute() { }

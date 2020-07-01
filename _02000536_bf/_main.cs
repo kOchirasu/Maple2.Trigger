@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._02000536_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.CreateMonster(arg1: new int[] {501, 502, 504, 505, 506, 507, 508, 509, 510, 511}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10003147}, arg2: 0);
-                context.SetMesh(arg1: new int[] {9999}, arg2: true);
+                context.CreateMonster(arg1: new[] {501, 502, 504, 505, 506, 507, 508, 509, 510, 511}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10003147}, arg2: 0);
+                context.SetMesh(arg1: new[] {9999}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {701}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {701}, arg2: 0)) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -33,7 +29,7 @@ namespace Maple2.Trigger._02000536_bf {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetSceneSkip();
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
 
             public override void Execute() {
@@ -51,7 +47,7 @@ namespace Maple2.Trigger._02000536_bf {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "전투시작", arg2: "nextState");
-                context.CameraSelectPath(arg1: new int[] {7000, 7003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {7000, 7003}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.ShowCaption(type: "VerticalCaption", title: "$02000536_BF__MAIN__0$",
                     desc: "$02000536_BF__MAIN__1$", align: "centerRight", offsetRateX: 0f, offsetRateY: 0f,
@@ -72,9 +68,9 @@ namespace Maple2.Trigger._02000536_bf {
             internal State하렌인사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {7003, 7001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {7003, 7001}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Bore_A", arg3: 5000f);
-                context.AddCinematicTalk(npcID: 23300001, msg: "$02000536_BF__MAIN__2$", align: "center",
+                context.AddCinematicTalk(npcId: 23300001, msg: "$02000536_BF__MAIN__2$", align: "center",
                     duration: 4000);
             }
 
@@ -93,7 +89,7 @@ namespace Maple2.Trigger._02000536_bf {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Attack_01_E,Attack_01_B");
-                context.AddCinematicTalk(npcID: 23300001, msg: "$02000536_BF__MAIN__3$", align: "center",
+                context.AddCinematicTalk(npcId: 23300001, msg: "$02000536_BF__MAIN__3$", align: "center",
                     duration: 4000);
             }
 
@@ -114,13 +110,13 @@ namespace Maple2.Trigger._02000536_bf {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1f);
-                context.SetEventUI(arg1: 1, arg2: "$02000536_BF__MAIN__4$", arg3: new int[] {3000});
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {102});
+                context.SetEventUI(arg1: 1, arg2: "$02000536_BF__MAIN__4$", arg3: 3000);
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
+                context.DestroyMonster(arg1: new[] {102});
             }
 
             public override void Execute() {
-                if (context.CheckNpcHp(compare: "lowerEqual", value: 70, spawnPointId: 101, isRelative: "true")) {
+                if (context.GetNpcHpRate(spawnPointId: 101) <= 0.70f) {
                     context.State = new State메이드군단을스폰(context);
                     return;
                 }
@@ -133,13 +129,13 @@ namespace Maple2.Trigger._02000536_bf {
             internal State메이드군단을스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {301, 302, 303, 304}, arg2: false);
-                context.SideNpcTalk(npcID: 23300001, illust: "Haren_serious", duration: 4000,
+                context.CreateMonster(arg1: new[] {301, 302, 303, 304}, arg2: false);
+                context.SideNpcTalk(npcId: 23300001, illust: "Haren_serious", duration: 4000,
                     script: "$02000536_BF__MAIN__5$");
             }
 
             public override void Execute() {
-                if (context.CheckNpcHp(compare: "lowerEqual", value: 50, spawnPointId: 101, isRelative: "true")) {
+                if (context.GetNpcHpRate(spawnPointId: 101) <= 0.50f) {
                     context.State = new State메이드군단을스폰2(context);
                     return;
                 }
@@ -152,11 +148,11 @@ namespace Maple2.Trigger._02000536_bf {
             internal State메이드군단을스폰2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {401, 402, 403, 404}, arg2: false);
+                context.CreateMonster(arg1: new[] {401, 402, 403, 404}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.CheckNpcHp(compare: "lowerEqual", value: 30, spawnPointId: 101, isRelative: "true")) {
+                if (context.GetNpcHpRate(spawnPointId: 101) <= 0.30f) {
                     context.State = new State몬스터사망체크(context);
                     return;
                 }
@@ -169,13 +165,13 @@ namespace Maple2.Trigger._02000536_bf {
             internal State몬스터사망체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 23300001, illust: "Haren_serious", duration: 4000,
+                context.SideNpcTalk(npcId: 23300001, illust: "Haren_serious", duration: 4000,
                     script: "$02000536_BF__MAIN__6$");
-                context.CreateMonster(arg1: new int[] {201, 202, 203, 204}, arg2: false);
+                context.CreateMonster(arg1: new[] {201, 202, 203, 204}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101})) {
+                if (context.MonsterDead(arg1: new[] {101})) {
                     context.State = new State던전클리어(context);
                     return;
                 }
@@ -188,10 +184,10 @@ namespace Maple2.Trigger._02000536_bf {
             internal State던전클리어(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(npcID: 23300001, illust: "Haren_serious", duration: 3000,
+                context.SideNpcTalk(npcId: 23300001, illust: "Haren_serious", duration: 3000,
                     script: "$02000536_BF__MAIN__8$");
-                context.SetMesh(arg1: new int[] {9999}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.SetMesh(arg1: new[] {9999}, arg2: false);
+                context.DestroyMonster(arg1: new[] {-1});
                 context.DungeonClear();
             }
 
@@ -209,7 +205,7 @@ namespace Maple2.Trigger._02000536_bf {
             internal State트리거완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.DestroyMonster(arg1: new[] {-1});
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
             }
 

@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02020009_bf {
     public static class _15001_pcfocetomove {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -13,7 +9,7 @@ namespace Maple2.Trigger._02020009_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "PortalOn", value: 1)) {
+                if (context.GetUserValue(key: "PortalOn") == 1) {
                     context.State = new StatePortalOn(context);
                     return;
                 }
@@ -30,7 +26,7 @@ namespace Maple2.Trigger._02020009_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "PortalOn", value: 2)) {
+                if (context.GetUserValue(key: "PortalOn") == 2) {
                     context.State = new StatePortalOff(context);
                     return;
                 }
@@ -47,7 +43,7 @@ namespace Maple2.Trigger._02020009_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "PortalOn", value: 0)) {
+                if (context.GetUserValue(key: "PortalOn") == 0) {
                     context.State = new StateWait(context);
                     return;
                 }

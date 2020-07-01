@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000283_bf {
     public static class _ladder {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,11 +8,11 @@ namespace Maple2.Trigger._02000283_bf {
                 context.SetLadder(arg1: 512, arg2: false, arg3: false);
                 context.SetLadder(arg1: 513, arg2: false, arg3: false);
                 context.SetLadder(arg1: 514, arg2: false, arg3: false);
-                context.SetInteractObject(arg1: new int[] {10000429}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10000429}, arg2: 2);
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {2001})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {2001})) {
                     context.State = new State반응대기(context);
                     return;
                 }
@@ -29,11 +25,11 @@ namespace Maple2.Trigger._02000283_bf {
             internal State반응대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000429}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000429}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000429}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000429}, arg2: 0)) {
                     context.State = new State사다리생성(context);
                     return;
                 }

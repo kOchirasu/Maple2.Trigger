@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._51000003_dg {
     public static class _item_716 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateSpawn_check(context);
-
-        private class StateSpawn_check : TriggerState {
+        public class StateSpawn_check : TriggerState {
             internal StateSpawn_check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7716}, arg2: false);
-                context.SetEffect(arg1: new int[] {7726}, arg2: false);
+                context.SetEffect(arg1: new[] {7716}, arg2: false);
+                context.SetEffect(arg1: new[] {7726}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "item_716_spawn", value: 1)) {
+                if (context.GetUserValue(key: "item_716_spawn") == 1) {
                     context.State = new StateSpawnItem(context);
                     return;
                 }
@@ -26,16 +22,16 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateSpawnItem(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7716}, arg2: true);
+                context.SetEffect(arg1: new[] {7716}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {726})) {
+                if (context.UserDetected(arg1: new[] {726})) {
                     context.State = new StateGetItem_Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "item_716_spawn", value: 0)) {
+                if (context.GetUserValue(key: "item_716_spawn") == 0) {
                     context.State = new StateSpawn_check(context);
                     return;
                 }
@@ -48,7 +44,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateDisable(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 991113, key: "item_716_spawn", value: 0);
+                context.SetUserValue(triggerId: 991113, key: "item_716_spawn", value: 0);
             }
 
             public override void Execute() {
@@ -66,8 +62,8 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "random_buff_box");
-                context.SetEffect(arg1: new int[] {7716}, arg2: false);
-                context.SetEffect(arg1: new int[] {7726}, arg2: true);
+                context.SetEffect(arg1: new[] {7716}, arg2: false);
+                context.SetEffect(arg1: new[] {7726}, arg2: true);
             }
 
             public override void Execute() {
@@ -104,7 +100,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateBuff_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 70000080, arg3: 1, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 70000080, arg3: 1, arg5: false);
             }
 
             public override void Execute() {
@@ -115,7 +111,7 @@ namespace Maple2.Trigger._51000003_dg {
             }
 
             public override void OnExit() {
-                context.SetUserValue(triggerID: 991113, key: "item_716_spawn", value: 0);
+                context.SetUserValue(triggerId: 991113, key: "item_716_spawn", value: 0);
             }
         }
 
@@ -123,7 +119,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateBuff_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 70000081, arg3: 1, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 70000081, arg3: 1, arg5: false);
             }
 
             public override void Execute() {
@@ -134,7 +130,7 @@ namespace Maple2.Trigger._51000003_dg {
             }
 
             public override void OnExit() {
-                context.SetUserValue(triggerID: 991113, key: "item_716_spawn", value: 0);
+                context.SetUserValue(triggerId: 991113, key: "item_716_spawn", value: 0);
             }
         }
 
@@ -142,7 +138,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateBuff_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 70000082, arg3: 1, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 70000082, arg3: 1, arg5: false);
             }
 
             public override void Execute() {
@@ -153,7 +149,7 @@ namespace Maple2.Trigger._51000003_dg {
             }
 
             public override void OnExit() {
-                context.SetUserValue(triggerID: 991113, key: "item_716_spawn", value: 0);
+                context.SetUserValue(triggerId: 991113, key: "item_716_spawn", value: 0);
             }
         }
 
@@ -161,7 +157,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateBuff_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 70000083, arg3: 1, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 70000083, arg3: 1, arg5: false);
             }
 
             public override void Execute() {
@@ -172,7 +168,7 @@ namespace Maple2.Trigger._51000003_dg {
             }
 
             public override void OnExit() {
-                context.SetUserValue(triggerID: 991113, key: "item_716_spawn", value: 0);
+                context.SetUserValue(triggerId: 991113, key: "item_716_spawn", value: 0);
             }
         }
 
@@ -180,7 +176,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateBuff_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 70000085, arg3: 1, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 70000085, arg3: 1, arg5: false);
             }
 
             public override void Execute() {
@@ -191,7 +187,7 @@ namespace Maple2.Trigger._51000003_dg {
             }
 
             public override void OnExit() {
-                context.SetUserValue(triggerID: 991113, key: "item_716_spawn", value: 0);
+                context.SetUserValue(triggerId: 991113, key: "item_716_spawn", value: 0);
             }
         }
     }

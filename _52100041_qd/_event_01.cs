@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52100041_qd {
     public static class _event_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {702})) {
+                if (context.UserDetected(arg1: new[] {702})) {
                     context.State = new StateReady(context);
                     return;
                 }
@@ -23,7 +19,7 @@ namespace Maple2.Trigger._52100041_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$52100041_QD__EVENT_01__0$", arg3: new int[] {3000});
+                context.SetEventUI(arg1: 1, arg2: "$52100041_QD__EVENT_01__0$", arg3: 3000);
             }
 
             public override void Execute() { }

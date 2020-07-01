@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52010039_qd {
     public static class _52010039 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9002})) {
+                if (context.UserDetected(arg1: new[] {9002})) {
                     context.State = new State영상재생_01(context);
                     return;
                 }
@@ -27,7 +23,7 @@ namespace Maple2.Trigger._52010039_qd {
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CreateWidget(arg1: "SceneMovie");
                 context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
-                context.PlaySceneMovie(fileName: @"common\SkyFortress_Intro.usm", movieID: 1);
+                context.PlaySceneMovie(fileName: @"common\SkyFortress_Intro.usm", movieId: 1);
             }
 
             public override void Execute() {
@@ -123,7 +119,7 @@ namespace Maple2.Trigger._52010039_qd {
                 context.ShowCaption(type: "VerticalCaption", title: "$52010039_QD__52010039__8$",
                     desc: "$52010039_QD__52010039__9$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f,
                     duration: 7000, scale: 2.5f);
-                context.CameraSelectPath(arg1: new int[] {1002, 1003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {1002, 1003}, arg2: false);
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "exit");
             }
 
@@ -200,12 +196,12 @@ namespace Maple2.Trigger._52010039_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.AddBalloonTalk(spawnPointID: 0, msg: "$52010039_QD__52010039__10$", duration: 6000,
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52010039_QD__52010039__10$", duration: 6000,
                     delayTick: 1000);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9002})) {
+                if (context.UserDetected(arg1: new[] {9002})) {
                     context.State = new State종료(context);
                     return;
                 }

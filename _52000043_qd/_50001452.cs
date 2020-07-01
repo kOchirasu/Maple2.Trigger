@@ -1,24 +1,20 @@
-using System;
-
 namespace Maple2.Trigger._52000043_qd {
     public static class _50001452 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State선행퀘스트체크(context);
-
-        private class State선행퀘스트체크 : TriggerState {
+        public class State선행퀘스트체크 : TriggerState {
             internal State선행퀘스트체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001017}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001018}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001019}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001020}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001021}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001017}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001018}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001019}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001020}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001021}, arg2: 2);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50001451},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50001451},
                     arg3: new byte[] {3})) {
-                    context.DestroyMonster(arg1: new int[] {1001, 2001});
+                    context.DestroyMonster(arg1: new[] {1001, 2001});
                     context.State = new State시작조건(context);
                     return;
                 }
@@ -31,26 +27,26 @@ namespace Maple2.Trigger._52000043_qd {
             internal State시작조건(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1001, 2001}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 2001}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50001452},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50001452},
                     arg3: new byte[] {1})) {
                     context.State = new State연출시작(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50001452},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50001452},
                     arg3: new byte[] {2})) {
-                    context.DestroyMonster(arg1: new int[] {1003, 2003});
+                    context.DestroyMonster(arg1: new[] {1003, 2003});
                     context.State = new StateNPC만배치(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50001452},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50001452},
                     arg3: new byte[] {3})) {
-                    context.DestroyMonster(arg1: new int[] {1003, 2003});
+                    context.DestroyMonster(arg1: new[] {1003, 2003});
                     context.State = new StateNPC만배치(context);
                     return;
                 }
@@ -63,26 +59,26 @@ namespace Maple2.Trigger._52000043_qd {
             internal StateNPC만배치(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1001, 2001});
-                context.CreateMonster(arg1: new int[] {1003, 2003}, arg2: false);
+                context.DestroyMonster(arg1: new[] {1001, 2001});
+                context.CreateMonster(arg1: new[] {1003, 2003}, arg2: false);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015,
                         3016, 3017
                     }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50001454},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50001454},
                     arg3: new byte[] {2})) {
-                    context.DestroyMonster(arg1: new int[] {1003, 2003});
+                    context.DestroyMonster(arg1: new[] {1003, 2003});
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50001454},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50001454},
                     arg3: new byte[] {3})) {
-                    context.DestroyMonster(arg1: new int[] {1003, 2003});
+                    context.DestroyMonster(arg1: new[] {1003, 2003});
                     context.State = new State종료(context);
                     return;
                 }
@@ -100,10 +96,10 @@ namespace Maple2.Trigger._52000043_qd {
             internal State연출시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1001, 2001});
-                context.CreateMonster(arg1: new int[] {1002, 2002}, arg2: false);
+                context.DestroyMonster(arg1: new[] {1001, 2001});
+                context.CreateMonster(arg1: new[] {1002, 2002}, arg2: false);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015,
                         3016, 3017
                     }, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -131,7 +127,7 @@ namespace Maple2.Trigger._52000043_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 101, arg2: new int[] {2002})) {
+                if (context.NpcDetected(arg1: 101, arg2: new[] {2002})) {
                     context.State = new State연출종료(context);
                     return;
                 }
@@ -149,13 +145,13 @@ namespace Maple2.Trigger._52000043_qd {
                 context.SetProductionUI(arg1: 2);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002B");
                 context.MoveNpc(arg1: 2002, arg2: "MS2PatrolData_2002B");
-                context.SetInteractObject(arg1: new int[] {10001017}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10001018}, arg2: 1);
-                context.SetInteractObject(arg1: new int[] {10001019}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001017}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001018}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001019}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001019}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001019}, arg2: 0)) {
                     context.State = new State부서짐연출(context);
                     return;
                 }
@@ -168,11 +164,11 @@ namespace Maple2.Trigger._52000043_qd {
             internal State부서짐연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10001017}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001018}, arg2: 2);
-                context.SetInteractObject(arg1: new int[] {10001020}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10001017}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001018}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10001020}, arg2: 1);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015,
                         3016, 3017
                     }, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
@@ -202,7 +198,7 @@ namespace Maple2.Trigger._52000043_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {199}, arg2: new int[] {50001452},
+                if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50001452},
                     arg3: new byte[] {2})) {
                     context.State = new StateNPC이동02(context);
                     return;
@@ -221,7 +217,7 @@ namespace Maple2.Trigger._52000043_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 102, arg2: new int[] {1002})) {
+                if (context.NpcDetected(arg1: 102, arg2: new[] {1002})) {
                     context.State = new StateNPC교체01(context);
                     return;
                 }
@@ -234,12 +230,12 @@ namespace Maple2.Trigger._52000043_qd {
             internal StateNPC교체01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1002});
-                context.CreateMonster(arg1: new int[] {1003}, arg2: false);
+                context.DestroyMonster(arg1: new[] {1002});
+                context.CreateMonster(arg1: new[] {1003}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 103, arg2: new int[] {2002})) {
+                if (context.NpcDetected(arg1: 103, arg2: new[] {2002})) {
                     context.State = new StateNPC교체02(context);
                     return;
                 }
@@ -252,8 +248,8 @@ namespace Maple2.Trigger._52000043_qd {
             internal StateNPC교체02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {2002});
-                context.CreateMonster(arg1: new int[] {2003}, arg2: false);
+                context.DestroyMonster(arg1: new[] {2002});
+                context.CreateMonster(arg1: new[] {2003}, arg2: false);
             }
 
             public override void Execute() {

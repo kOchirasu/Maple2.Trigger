@@ -1,17 +1,14 @@
-using System;
 using System.Numerics;
 
 namespace Maple2.Trigger._02020111_bf {
     public static class _summon_01_2 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {1001})) {
+                if (context.UserDetected(arg1: new[] {1001})) {
                     context.State = new State소환준비(context);
                     return;
                 }
@@ -26,7 +23,7 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Summon", value: 1)) {
+                if (context.GetUserValue(key: "Summon") == 1) {
                     context.State = new State몬스터등장(context);
                     return;
                 }
@@ -39,8 +36,8 @@ namespace Maple2.Trigger._02020111_bf {
             internal State몬스터등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 900005, key: "Lapenta_Attack_Guide", value: 1);
-                context.CreateMonster(arg1: new int[] {115, 116, 117, 118});
+                context.SetUserValue(triggerId: 900005, key: "Lapenta_Attack_Guide", value: 1);
+                context.CreateMonster(arg1: new[] {115, 116, 117, 118});
             }
 
             public override void Execute() {
@@ -62,7 +59,7 @@ namespace Maple2.Trigger._02020111_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Summon", value: 0)) {
+                if (context.GetUserValue(key: "Summon") == 0) {
                     context.State = new State시작(context);
                     return;
                 }

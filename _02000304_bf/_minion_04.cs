@@ -1,22 +1,18 @@
-using System;
-
 namespace Maple2.Trigger._02000304_bf {
     public static class _minion_04 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {114})) {
-                    context.CreateMonster(arg1: new int[] {1007, 1008}, arg2: false);
+                if (context.UserDetected(arg1: new[] {114})) {
+                    context.CreateMonster(arg1: new[] {1007, 1008}, arg2: false);
                     context.State = new State종료체크(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {2001})) {
+                if (context.MonsterDead(arg1: new[] {2001})) {
                     context.State = new State종료체크(context);
                     return;
                 }
@@ -31,13 +27,13 @@ namespace Maple2.Trigger._02000304_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {1007, 1008})) {
+                if (context.MonsterDead(arg1: new[] {1007, 1008})) {
                     context.State = new State대기시간(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {2001})) {
-                    context.DestroyMonster(arg1: new int[] {1007, 1008});
+                if (context.MonsterDead(arg1: new[] {2001})) {
+                    context.DestroyMonster(arg1: new[] {1007, 1008});
                     context.State = new State대기시간(context);
                     return;
                 }

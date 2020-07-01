@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02100009_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State유저감지(context);
-
-        private class State유저감지 : TriggerState {
+        public class State유저감지 : TriggerState {
             internal State유저감지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State타이머설정(context);
                     return;
                 }
@@ -44,8 +40,8 @@ namespace Maple2.Trigger._02100009_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {100000001})
-                    && context.MonsterDead(arg1: new int[] {100000002})) {
+                if (context.MonsterDead(arg1: new[] {100000001})
+                    && context.MonsterDead(arg1: new[] {100000002})) {
                     context.State = new State성공(context);
                     return;
                 }
@@ -74,7 +70,7 @@ namespace Maple2.Trigger._02100009_bf {
             }
 
             public override void OnExit() {
-                context.SetEventUI(arg1: 1, arg2: "$02100009_BF__text__0$", arg3: new int[] {4000});
+                context.SetEventUI(arg1: 1, arg2: "$02100009_BF__text__0$", arg3: 4000);
             }
         }
 
@@ -100,10 +96,10 @@ namespace Maple2.Trigger._02100009_bf {
             internal State성공_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {101}, arg2: 50000230, arg3: 1, arg4: false, arg5: false);
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.AddBuff(arg1: new[] {101}, arg2: 50000230, arg3: 1, arg4: false, arg5: false);
+                context.DestroyMonster(arg1: new[] {-1});
                 context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "Find02100009");
-                context.SetEventUI(arg1: 7, arg2: "$02100009_BF__MAIN__1$", arg3: new int[] {2000}, arg4: "0");
+                context.SetEventUI(arg1: 7, arg2: "$02100009_BF__MAIN__1$", arg3: 2000, arg4: "0");
                 context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "02100009_2");
             }
 
@@ -122,9 +118,9 @@ namespace Maple2.Trigger._02100009_bf {
             internal State실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {101}, arg2: 50000230, arg3: 1, arg4: false, arg5: false);
-                context.SetEventUI(arg1: 5, arg2: "$02100009_BF__MAIN__0$", arg3: new int[] {2000}, arg4: "0");
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.AddBuff(arg1: new[] {101}, arg2: 50000230, arg3: 1, arg4: false, arg5: false);
+                context.SetEventUI(arg1: 5, arg2: "$02100009_BF__MAIN__0$", arg3: 2000, arg4: "0");
+                context.DestroyMonster(arg1: new[] {-1});
                 context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
             }
 

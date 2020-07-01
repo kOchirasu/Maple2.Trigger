@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._80000015_bonus {
     public static class _skill_03 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {703}, arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {7301, 7302, 7303}, arg2: false);
-                context.SetBreakable(arg1: new int[] {7301, 7302, 7303}, arg2: false);
+                context.SetSkill(arg1: new[] {703}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {7301, 7302, 7303}, arg2: false);
+                context.SetBreakable(arg1: new[] {7301, 7302, 7303}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103})) {
+                if (context.UserDetected(arg1: new[] {103})) {
                     context.State = new State대기시간(context);
                     return;
                 }
@@ -27,7 +23,7 @@ namespace Maple2.Trigger._80000015_bonus {
             internal State대기시간(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetVisibleBreakableObject(arg1: new int[] {7301, 7302, 7303}, arg2: true);
+                context.SetVisibleBreakableObject(arg1: new[] {7301, 7302, 7303}, arg2: true);
             }
 
             public override void Execute() {
@@ -44,7 +40,7 @@ namespace Maple2.Trigger._80000015_bonus {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetBreakable(arg1: new int[] {7301, 7302, 7303}, arg2: true);
+                context.SetBreakable(arg1: new[] {7301, 7302, 7303}, arg2: true);
             }
 
             public override void Execute() {
@@ -61,8 +57,8 @@ namespace Maple2.Trigger._80000015_bonus {
             internal State스킬발동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {703}, arg2: true);
-                context.SetBreakable(arg1: new int[] {7301, 7302, 7303}, arg2: false);
+                context.SetSkill(arg1: new[] {703}, arg2: true);
+                context.SetBreakable(arg1: new[] {7301, 7302, 7303}, arg2: false);
             }
 
             public override void Execute() {

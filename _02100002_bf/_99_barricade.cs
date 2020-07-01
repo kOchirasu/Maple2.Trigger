@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02100002_bf {
     public static class _99_barricade {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -18,7 +14,7 @@ namespace Maple2.Trigger._02100002_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "PortalOn", value: 1)) {
+                if (context.GetUserValue(key: "PortalOn") == 1) {
                     context.State = new StatePortalOnDelay(context);
                     return;
                 }
@@ -53,7 +49,7 @@ namespace Maple2.Trigger._02100002_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "MissionStart", value: 1)) {
+                if (context.GetUserValue(key: "MissionStart") == 1) {
                     context.State = new StateCountDown(context);
                     return;
                 }
@@ -66,7 +62,7 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateCountDown(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02100002_BF__99_BARRICADE__0$", arg3: new int[] {3000});
+                context.SetEventUI(arg1: 1, arg2: "$02100002_BF__99_BARRICADE__0$", arg3: 3000);
             }
 
             public override void Execute() {
@@ -90,7 +86,7 @@ namespace Maple2.Trigger._02100002_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "DungeonClear", value: 1)) {
+                if (context.GetUserValue(key: "DungeonClear") == 1) {
                     context.State = new StateRelease(context);
                     return;
                 }

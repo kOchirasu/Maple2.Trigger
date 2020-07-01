@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02020141_bf {
     public static class _interactmesh10014100 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State최초시작(context);
-
-        private class State최초시작 : TriggerState {
+        public class State최초시작 : TriggerState {
             internal State최초시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10003154}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10003154}, arg2: 2);
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new State탈것_등장대기(context);
                     return;
                 }
@@ -52,7 +48,7 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RidingBattle", value: -1)) {
+                if (context.GetUserValue(key: "RidingBattle") == -1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -72,7 +68,7 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RidingBattle", value: -1)) {
+                if (context.GetUserValue(key: "RidingBattle") == -1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -92,7 +88,7 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RidingBattle", value: -1)) {
+                if (context.GetUserValue(key: "RidingBattle") == -1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -130,7 +126,7 @@ namespace Maple2.Trigger._02020141_bf {
             internal State탈것등장_성공(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {914100}, arg2: false);
+                context.CreateMonster(arg1: new[] {914100}, arg2: false);
             }
 
             public override void Execute() {
@@ -147,19 +143,18 @@ namespace Maple2.Trigger._02020141_bf {
             internal State탈것_등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020141_BF__INTERACTMESH_PHASE_3_INTERECT_01__0$",
-                    arg3: new int[] {5000});
-                context.SetInteractObject(arg1: new int[] {10003154}, arg2: 1);
-                context.DestroyMonster(arg1: new int[] {914100});
+                context.SetEventUI(arg1: 1, arg2: "$02020141_BF__INTERACTMESH_PHASE_3_INTERECT_01__0$", arg3: 5000);
+                context.SetInteractObject(arg1: new[] {10003154}, arg2: 1);
+                context.DestroyMonster(arg1: new[] {914100});
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10003154}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10003154}, arg2: 0)) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RidingBattle", value: -1)) {
+                if (context.GetUserValue(key: "RidingBattle") == -1) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -172,7 +167,7 @@ namespace Maple2.Trigger._02020141_bf {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10003154}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10003154}, arg2: 2);
             }
 
             public override void Execute() { }
@@ -184,7 +179,7 @@ namespace Maple2.Trigger._02020141_bf {
             internal State탈것등장_실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {914100}, arg2: false);
+                context.CreateMonster(arg1: new[] {914100}, arg2: false);
             }
 
             public override void Execute() {
@@ -201,7 +196,7 @@ namespace Maple2.Trigger._02020141_bf {
             internal State탈것등장_실패_최종종료처리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {914100});
+                context.DestroyMonster(arg1: new[] {914100});
             }
 
             public override void Execute() { }

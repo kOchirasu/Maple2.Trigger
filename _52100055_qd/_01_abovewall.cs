@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._52100055_qd {
     public static class _01_abovewall {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetInteractObject(arg1: new int[] {10002101}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10002102}, arg2: 0);
-                context.SetInteractObject(arg1: new int[] {10002103}, arg2: 0);
-                context.DestroyMonster(arg1: new int[] {901, 902, 903});
-                context.DestroyMonster(arg1: new int[] {910, 911, 912, 920, 921, 922, 930, 931, 932, 940, 941, 942});
+                context.SetInteractObject(arg1: new[] {10002101}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10002102}, arg2: 0);
+                context.SetInteractObject(arg1: new[] {10002103}, arg2: 0);
+                context.DestroyMonster(arg1: new[] {901, 902, 903});
+                context.DestroyMonster(arg1: new[] {910, 911, 912, 920, 921, 922, 930, 931, 932, 940, 941, 942});
                 context.SetLadder(arg1: 510, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 511, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 512, arg2: false, arg3: false, arg4: 0);
@@ -42,7 +38,7 @@ namespace Maple2.Trigger._52100055_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new StateLoadingDelay(context);
                     return;
                 }
@@ -71,11 +67,11 @@ namespace Maple2.Trigger._52100055_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039901, textID: 20039901, duration: 3000);
+                context.ShowGuideSummary(entityId: 20039901, textId: 20039901, duration: 3000);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9100})) {
+                if (context.UserDetected(arg1: new[] {9100})) {
                     context.State = new StateMobActorSpawn(context);
                     return;
                 }
@@ -88,7 +84,7 @@ namespace Maple2.Trigger._52100055_qd {
             internal StateMobActorSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {901, 902, 903}, arg2: false);
+                context.CreateMonster(arg1: new[] {901, 902, 903}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 901, arg3: "$52100055_QD__01_ABOVEWALL__0$", arg4: 2, arg5: 1);
                 context.SetConversation(arg1: 1, arg2: 902, arg3: "$52100055_QD__01_ABOVEWALL__0$", arg4: 2, arg5: 1);
                 context.SetConversation(arg1: 1, arg2: 903, arg3: "$52100055_QD__01_ABOVEWALL__0$", arg4: 2, arg5: 1);
@@ -108,12 +104,12 @@ namespace Maple2.Trigger._52100055_qd {
             internal StateBattle01Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {930, 931, 932}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10002101}, arg2: 1);
+                context.CreateMonster(arg1: new[] {930, 931, 932}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10002101}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10002101}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002101}, arg2: 0)) {
                     context.State = new StateBattle02Start(context);
                     return;
                 }
@@ -127,18 +123,18 @@ namespace Maple2.Trigger._52100055_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039902, textID: 20039902, duration: 3000);
+                context.ShowGuideSummary(entityId: 20039902, textId: 20039902, duration: 3000);
                 context.SetLadder(arg1: 510, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 511, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 512, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 513, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 514, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 520, arg2: true, arg3: true, arg4: 2);
-                context.CreateMonster(arg1: new int[] {910, 911, 912}, arg2: false);
+                context.CreateMonster(arg1: new[] {910, 911, 912}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9300})) {
+                if (context.UserDetected(arg1: new[] {9300})) {
                     context.State = new StateBattle03Start(context);
                     return;
                 }
@@ -151,13 +147,13 @@ namespace Maple2.Trigger._52100055_qd {
             internal StateBattle03Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2, key: "TireSpawn", value: 1);
-                context.CreateMonster(arg1: new int[] {920, 921, 922}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10002102}, arg2: 1);
+                context.SetUserValue(triggerId: 2, key: "TireSpawn", value: 1);
+                context.CreateMonster(arg1: new[] {920, 921, 922}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10002102}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10002102}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002102}, arg2: 0)) {
                     context.State = new StateRopeOn(context);
                     return;
                 }
@@ -181,11 +177,11 @@ namespace Maple2.Trigger._52100055_qd {
                 context.SetRope(arg1: 538, arg2: true, arg3: true, arg4: 2);
                 context.SetRope(arg1: 539, arg2: true, arg3: true, arg4: 2);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039906, textID: 20039906);
+                context.ShowGuideSummary(entityId: 20039906, textId: 20039906);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9200})) {
+                if (context.UserDetected(arg1: new[] {9200})) {
                     context.State = new StateBattle04Start(context);
                     return;
                 }
@@ -198,13 +194,13 @@ namespace Maple2.Trigger._52100055_qd {
             internal StateBattle04Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 20039906);
-                context.CreateMonster(arg1: new int[] {940, 941, 942}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10002103}, arg2: 1);
+                context.HideGuideSummary(entityId: 20039906);
+                context.CreateMonster(arg1: new[] {940, 941, 942}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10002103}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10002103}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10002103}, arg2: 0)) {
                     context.State = new StatePortalOn(context);
                     return;
                 }
@@ -227,7 +223,7 @@ namespace Maple2.Trigger._52100055_qd {
                 context.SetLadder(arg1: 527, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 528, arg2: true, arg3: true, arg4: 2);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20039804, textID: 20039804, duration: 5000);
+                context.ShowGuideSummary(entityId: 20039804, textId: 20039804, duration: 5000);
                 context.SetPortal(arg1: 2, arg2: false, arg3: true, arg4: false);
             }
 

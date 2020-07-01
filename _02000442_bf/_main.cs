@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02000442_bf {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointID: 11001, isEnable: true);
-                context.EnableSpawnPointPc(spawnPointID: 11002, isEnable: false);
-                context.CreateMonster(arg1: new int[] {101, 102}, arg2: true);
+                context.EnableSpawnPointPc(spawnPointId: 11001, isEnable: true);
+                context.EnableSpawnPointPc(spawnPointId: 11002, isEnable: false);
+                context.CreateMonster(arg1: new[] {101, 102}, arg2: true);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809, 1810, 1811, 1812, 1813, 1814, 1815, 1816,
                         1817, 1818, 1819, 1820, 1821, 1822, 1823, 1824, 1825, 1826, 1827, 1828, 1829, 1830, 1831, 1832,
                         1833, 1834, 1835, 1836, 1837, 1838, 1839, 1840, 1841, 1842, 1843, 1844, 1845, 1846, 1847, 1848,
@@ -27,15 +23,15 @@ namespace Maple2.Trigger._02000442_bf {
                         1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992,
                         1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000
                     }, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new int[] {7001}, arg2: false);
-                context.SetEffect(arg1: new int[] {7002}, arg2: false);
-                context.SetEffect(arg1: new int[] {7003}, arg2: false);
-                context.SetEffect(arg1: new int[] {7004}, arg2: false);
-                context.SetEffect(arg1: new int[] {7005}, arg2: false);
-                context.SetEffect(arg1: new int[] {7011}, arg2: false);
-                context.SetEffect(arg1: new int[] {7012}, arg2: false);
-                context.SetEffect(arg1: new int[] {7013}, arg2: false);
-                context.SetMesh(arg1: new int[] {3007, 3008, 3009}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {7001}, arg2: false);
+                context.SetEffect(arg1: new[] {7002}, arg2: false);
+                context.SetEffect(arg1: new[] {7003}, arg2: false);
+                context.SetEffect(arg1: new[] {7004}, arg2: false);
+                context.SetEffect(arg1: new[] {7005}, arg2: false);
+                context.SetEffect(arg1: new[] {7011}, arg2: false);
+                context.SetEffect(arg1: new[] {7012}, arg2: false);
+                context.SetEffect(arg1: new[] {7013}, arg2: false);
+                context.SetMesh(arg1: new[] {3007, 3008, 3009}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 3001, arg2: true, arg3: "Run_A");
                 context.SetActor(arg1: 3002, arg2: true, arg3: "Run_A");
                 context.SetActor(arg1: 3003, arg2: true, arg3: "Run_A");
@@ -46,16 +42,16 @@ namespace Maple2.Trigger._02000442_bf {
                 context.SetActor(arg1: 3102, arg2: false, arg3: "Run_A");
                 context.SetActor(arg1: 3103, arg2: false, arg3: "Run_A");
                 context.SetActor(arg1: 3104, arg2: false, arg3: "Run_A");
-                context.SetBreakable(arg1: new int[] {1801, 1802, 1803, 1804, 1805, 1806, 1807}, arg2: false);
+                context.SetBreakable(arg1: new[] {1801, 1802, 1803, 1804, 1805, 1806, 1807}, arg2: false);
                 context.SetLocalCamera(cameraId: 8100, enable: false);
                 context.SetLocalCamera(cameraId: 8101, enable: false);
-                context.SetMesh(arg1: new int[] {1001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {1990, 1991, 1992, 1993}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1990, 1991, 1992, 1993}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {701})) {
+                if (context.UserDetected(arg1: new[] {701})) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -71,7 +67,7 @@ namespace Maple2.Trigger._02000442_bf {
                 context.SetSkip(arg1: "start_ready");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Walk_A", arg3: 9999999999999999f);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Walk_A", arg3: 9999999999999999f);
-                context.CameraSelectPath(arg1: new int[] {8001, 8002, 8003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8001, 8002, 8003}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
@@ -147,14 +143,14 @@ namespace Maple2.Trigger._02000442_bf {
 
             public override void OnEnter() {
                 context.SetLocalCamera(cameraId: 8100, enable: true);
-                context.CreateMonster(arg1: new int[] {201, 202, 203, 204, 205}, arg2: false);
+                context.CreateMonster(arg1: new[] {201, 202, 203, 204, 205}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 201, arg3: "$02000442_BF__MAIN__2$", arg4: 2, arg5: 5);
                 context.SetConversation(arg1: 1, arg2: 202, arg3: "$02000442_BF__MAIN__3$", arg4: 2, arg5: 4);
                 context.SetConversation(arg1: 1, arg2: 204, arg3: "$02000442_BF__MAIN__4$", arg4: 2, arg5: 6);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {201, 202, 203, 204, 205})) {
+                if (context.MonsterDead(arg1: new[] {201, 202, 203, 204, 205})) {
                     context.State = new Statescene_02(context);
                     return;
                 }
@@ -167,12 +163,12 @@ namespace Maple2.Trigger._02000442_bf {
             internal Statescene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {206, 207, 208, 209}, arg2: false);
-                context.SetEventUI(arg1: 1, arg2: "$02000442_BF__MAIN__5$", arg3: new int[] {3000});
+                context.CreateMonster(arg1: new[] {206, 207, 208, 209}, arg2: false);
+                context.SetEventUI(arg1: 1, arg2: "$02000442_BF__MAIN__5$", arg3: 3000);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {206, 207, 208, 209})) {
+                if (context.MonsterDead(arg1: new[] {206, 207, 208, 209})) {
                     context.State = new Statescene_03(context);
                     return;
                 }
@@ -185,11 +181,11 @@ namespace Maple2.Trigger._02000442_bf {
             internal Statescene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {210, 211, 212, 213, 214}, arg2: false);
+                context.CreateMonster(arg1: new[] {210, 211, 212, 213, 214}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {210, 211, 212, 213, 214})) {
+                if (context.MonsterDead(arg1: new[] {210, 211, 212, 213, 214})) {
                     context.State = new Statescene_04(context);
                     return;
                 }
@@ -220,7 +216,7 @@ namespace Maple2.Trigger._02000442_bf {
                 context.SetSkip(arg1: "scene_07_ready");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8004, 8005, 8006}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8004, 8005, 8006}, arg2: false);
             }
 
             public override void Execute() {
@@ -317,9 +313,9 @@ namespace Maple2.Trigger._02000442_bf {
             internal Statescene_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {214}, arg2: false);
-                context.CreateMonster(arg1: new int[] {206, 207, 208}, arg2: false);
-                context.CreateMonster(arg1: new int[] {201, 202, 203}, arg2: false);
+                context.CreateMonster(arg1: new[] {214}, arg2: false);
+                context.CreateMonster(arg1: new[] {206, 207, 208}, arg2: false);
+                context.CreateMonster(arg1: new[] {201, 202, 203}, arg2: false);
             }
 
             public override void Execute() {
@@ -336,7 +332,7 @@ namespace Maple2.Trigger._02000442_bf {
             internal Stateboss_leftTurn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {302}, arg2: false);
+                context.CreateMonster(arg1: new[] {302}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: true,
                     path: @"BG\Common\Sound\Eff_Object_WaterJump_Splash_01.xml");
                 context.SetConversation(arg1: 1, arg2: 302, arg3: "$02000442_BF__MAIN__7$", arg4: 3, arg5: 0);
@@ -374,13 +370,13 @@ namespace Maple2.Trigger._02000442_bf {
             internal Stateboss_leftTurn_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7002}, arg2: true);
-                context.SetSkill(arg1: new int[] {30002}, arg2: true);
-                context.SetSkill(arg1: new int[] {30010}, arg2: true);
-                context.SetSkill(arg1: new int[] {30011}, arg2: true);
-                context.EnableSpawnPointPc(spawnPointID: 11002, isEnable: true);
-                context.EnableSpawnPointPc(spawnPointID: 11001, isEnable: false);
-                context.SetUserValue(triggerID: 10000002, key: "Error", value: 1);
+                context.SetEffect(arg1: new[] {7002}, arg2: true);
+                context.SetSkill(arg1: new[] {30002}, arg2: true);
+                context.SetSkill(arg1: new[] {30010}, arg2: true);
+                context.SetSkill(arg1: new[] {30011}, arg2: true);
+                context.EnableSpawnPointPc(spawnPointId: 11002, isEnable: true);
+                context.EnableSpawnPointPc(spawnPointId: 11001, isEnable: false);
+                context.SetUserValue(triggerId: 10000002, key: "Error", value: 1);
             }
 
             public override void Execute() {
@@ -397,7 +393,7 @@ namespace Maple2.Trigger._02000442_bf {
             internal Stateboss_leftTurn_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {215, 216, 217, 218}, arg2: false);
+                context.CreateMonster(arg1: new[] {215, 216, 217, 218}, arg2: false);
                 context.MoveNpc(arg1: 302, arg2: "MS2PatrolData_2004");
             }
 
@@ -415,7 +411,7 @@ namespace Maple2.Trigger._02000442_bf {
             internal Stateboss_leftTurn_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {302});
+                context.DestroyMonster(arg1: new[] {302});
             }
 
             public override void Execute() {
@@ -434,7 +430,7 @@ namespace Maple2.Trigger._02000442_bf {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 10, enable: true,
                     path: @"BG\Common\Sound\Eff_Object_WaterJump_Splash_01.xml");
-                context.CreateMonster(arg1: new int[] {301}, arg2: false);
+                context.CreateMonster(arg1: new[] {301}, arg2: false);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2003");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2003");
                 context.SetConversation(arg1: 1, arg2: 301, arg3: "$02000442_BF__MAIN__9$", arg4: 3, arg5: 0);
@@ -471,10 +467,10 @@ namespace Maple2.Trigger._02000442_bf {
             internal Stateboss_rightTurn_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7001}, arg2: true);
-                context.SetSkill(arg1: new int[] {30001}, arg2: true);
-                context.SetSkill(arg1: new int[] {30010}, arg2: true);
-                context.SetSkill(arg1: new int[] {30011}, arg2: true);
+                context.SetEffect(arg1: new[] {7001}, arg2: true);
+                context.SetSkill(arg1: new[] {30001}, arg2: true);
+                context.SetSkill(arg1: new[] {30010}, arg2: true);
+                context.SetSkill(arg1: new[] {30011}, arg2: true);
             }
 
             public override void Execute() {
@@ -491,7 +487,7 @@ namespace Maple2.Trigger._02000442_bf {
             internal Stateboss_rightTurn_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {219, 220, 222, 223}, arg2: false);
+                context.CreateMonster(arg1: new[] {219, 220, 222, 223}, arg2: false);
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_2004");
             }
 
@@ -509,9 +505,9 @@ namespace Maple2.Trigger._02000442_bf {
             internal Stateboss_rightTurn_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {301});
+                context.DestroyMonster(arg1: new[] {301});
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809, 1810, 1811, 1812, 1813, 1814, 1815, 1816,
                         1817, 1818, 1819, 1820, 1821, 1822, 1823, 1824, 1825, 1826, 1827, 1828, 1829, 1830, 1831, 1832,
                         1833, 1834, 1835, 1836, 1837, 1838, 1839, 1840, 1841, 1842, 1843, 1844, 1845, 1846, 1847, 1848,
@@ -546,7 +542,7 @@ namespace Maple2.Trigger._02000442_bf {
                     path: @"BG\Common\Sound\Eff_Object_WaterJump_Splash_01.xml");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2003");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2003");
-                context.CreateMonster(arg1: new int[] {305}, arg2: false);
+                context.CreateMonster(arg1: new[] {305}, arg2: false);
             }
 
             public override void Execute() {
@@ -565,7 +561,7 @@ namespace Maple2.Trigger._02000442_bf {
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 305, arg3: "$02000442_BF__MAIN__10$", arg4: 3, arg5: 0);
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209, 1210, 1211, 1212, 1213, 1214, 1215, 1216,
                         1217, 1218, 1219, 1220, 1221, 1222, 1223, 1224, 1225, 1226, 1227, 1228, 1229, 1230, 1231, 1232,
                         1233, 1234, 1235, 1236, 1237, 1238, 1239, 1240, 1241, 1242, 1243, 1244, 1245, 1246, 1247, 1248,
@@ -578,7 +574,7 @@ namespace Maple2.Trigger._02000442_bf {
                         1345, 1346, 1347, 1348, 1349, 1350, 1351, 1352, 1353, 1354
                     }, arg2: false);
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1356, 1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366, 1367, 1368, 1369, 1370, 1371,
                         1372, 1373, 1374, 1375, 1376, 1377, 1378, 1379, 1380, 1381, 1382, 1383, 1384, 1385, 1386, 1387,
                         1388, 1389, 1390, 1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399, 1400, 1401, 1402, 1403,
@@ -591,7 +587,7 @@ namespace Maple2.Trigger._02000442_bf {
                         1500, 1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508, 1509
                     }, arg2: false);
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1509, 1510, 1511, 1512, 1513, 1514, 1515, 1516, 1517, 1518, 1519, 1520, 1521, 1522, 1523, 1524,
                         1525, 1526, 1527, 1528, 1529, 1530, 1531, 1532, 1533, 1534, 1535, 1536, 1537, 1538, 1539, 1540,
                         1541, 1542, 1543, 1544, 1545, 1546, 1547, 1548, 1549, 1550, 1551, 1552, 1553, 1554, 1555, 1556,
@@ -604,7 +600,7 @@ namespace Maple2.Trigger._02000442_bf {
                         1653, 1654, 1655, 1656, 1657, 1658, 1659, 1660, 1661, 1662
                     }, arg2: false);
                 context.SetBreakable(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1662, 1663, 1664, 1665, 1666, 1667, 1668, 1669, 1670, 1671, 1672, 1673, 1674, 1675, 1676, 1677,
                         1678, 1679, 1680, 1681, 1682, 1683, 1684, 1685, 1686, 1687, 1688, 1689, 1690, 1691, 1692, 1693,
                         1694, 1695, 1696, 1697, 1698, 1699, 1700, 1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709,
@@ -633,10 +629,10 @@ namespace Maple2.Trigger._02000442_bf {
             internal Stateboss_leftTurn_b_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7005}, arg2: true);
-                context.SetSkill(arg1: new int[] {30005}, arg2: true);
-                context.SetSkill(arg1: new int[] {30010}, arg2: true);
-                context.SetSkill(arg1: new int[] {30011}, arg2: true);
+                context.SetEffect(arg1: new[] {7005}, arg2: true);
+                context.SetSkill(arg1: new[] {30005}, arg2: true);
+                context.SetSkill(arg1: new[] {30010}, arg2: true);
+                context.SetSkill(arg1: new[] {30011}, arg2: true);
             }
 
             public override void Execute() {
@@ -689,9 +685,9 @@ namespace Maple2.Trigger._02000442_bf {
             internal Stateboss_leftTurn_b_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {305});
-                context.DestroyMonster(arg1: new int[] {303, 101, 102});
-                context.CreateMonster(arg1: new int[] {103, 104}, arg2: false);
+                context.DestroyMonster(arg1: new[] {305});
+                context.DestroyMonster(arg1: new[] {303, 101, 102});
+                context.CreateMonster(arg1: new[] {103, 104}, arg2: false);
             }
 
             public override void Execute() {
@@ -709,12 +705,12 @@ namespace Maple2.Trigger._02000442_bf {
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "Ending_03_ready");
-                context.SetMesh(arg1: new int[] {1990, 1991, 1992, 1993}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1990, 1991, 1992, 1993}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 3101, arg2: true, arg3: "Idle_A");
                 context.SetActor(arg1: 3102, arg2: true, arg3: "Idle_A");
                 context.SetActor(arg1: 3103, arg2: true, arg3: "Idle_A");
                 context.SetActor(arg1: 3104, arg2: true, arg3: "Idle_A");
-                context.CameraSelectPath(arg1: new int[] {8007}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8007}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetConversation(arg1: 1, arg2: 104, arg3: "$02000442_BF__MAIN__11$", arg4: 2, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 103, arg3: "$02000442_BF__MAIN__12$", arg4: 2, arg5: 1);
@@ -778,14 +774,14 @@ namespace Maple2.Trigger._02000442_bf {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
-                context.SetEffect(arg1: new int[] {7001}, arg2: false);
-                context.SetEffect(arg1: new int[] {7002}, arg2: false);
-                context.SetEffect(arg1: new int[] {7003}, arg2: false);
-                context.SetEffect(arg1: new int[] {7004}, arg2: false);
-                context.SetEffect(arg1: new int[] {7005}, arg2: false);
-                context.SetEffect(arg1: new int[] {7011}, arg2: false);
-                context.SetEffect(arg1: new int[] {7012}, arg2: false);
-                context.SetEffect(arg1: new int[] {7013}, arg2: false);
+                context.SetEffect(arg1: new[] {7001}, arg2: false);
+                context.SetEffect(arg1: new[] {7002}, arg2: false);
+                context.SetEffect(arg1: new[] {7003}, arg2: false);
+                context.SetEffect(arg1: new[] {7004}, arg2: false);
+                context.SetEffect(arg1: new[] {7005}, arg2: false);
+                context.SetEffect(arg1: new[] {7011}, arg2: false);
+                context.SetEffect(arg1: new[] {7012}, arg2: false);
+                context.SetEffect(arg1: new[] {7013}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 104, arg3: "$02000442_BF__MAIN__17$", arg4: 2, arg5: 2);
                 context.SetConversation(arg1: 1, arg2: 103, arg3: "$02000442_BF__MAIN__13$", arg4: 2, arg5: 4);
                 context.SetConversation(arg1: 1, arg2: 104, arg3: "$02000442_BF__MAIN__14$", arg4: 2, arg5: 7);

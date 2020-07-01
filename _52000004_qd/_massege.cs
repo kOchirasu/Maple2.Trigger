@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._52000004_qd {
     public static class _massege {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103})) {
+                if (context.UserDetected(arg1: new[] {103})) {
                     context.State = new State메세지01(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {199})) {
+                if (!context.UserDetected(arg1: new[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -29,7 +25,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.ShowGuideSummary(entityID: 25200404, textID: 25200404);
+                context.ShowGuideSummary(entityId: 25200404, textId: 25200404);
             }
 
             public override void Execute() {
@@ -38,14 +34,14 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {199})) {
+                if (!context.UserDetected(arg1: new[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 25200404);
+                context.HideGuideSummary(entityId: 25200404);
             }
         }
 
@@ -54,7 +50,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.ShowGuideSummary(entityID: 25200405, textID: 25200405);
+                context.ShowGuideSummary(entityId: 25200405, textId: 25200405);
             }
 
             public override void Execute() {
@@ -63,14 +59,14 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {199})) {
+                if (!context.UserDetected(arg1: new[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 25200405);
+                context.HideGuideSummary(entityId: 25200405);
             }
         }
 
@@ -80,7 +76,7 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {104})) {
+                if (context.UserDetected(arg1: new[] {104})) {
                     context.State = new State메세지03(context);
                     return;
                 }
@@ -94,7 +90,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.ShowGuideSummary(entityID: 25200406, textID: 25200406);
+                context.ShowGuideSummary(entityId: 25200406, textId: 25200406);
             }
 
             public override void Execute() {
@@ -103,14 +99,14 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {199})) {
+                if (!context.UserDetected(arg1: new[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 25200406);
+                context.HideGuideSummary(entityId: 25200406);
             }
         }
 
@@ -120,7 +116,7 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {105})) {
+                if (context.UserDetected(arg1: new[] {105})) {
                     context.State = new State메세지04(context);
                     return;
                 }
@@ -134,7 +130,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.ShowGuideSummary(entityID: 25200407, textID: 25200407);
+                context.ShowGuideSummary(entityId: 25200407, textId: 25200407);
             }
 
             public override void Execute() {
@@ -143,14 +139,14 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {199})) {
+                if (!context.UserDetected(arg1: new[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 25200407);
+                context.HideGuideSummary(entityId: 25200407);
             }
         }
 
@@ -160,7 +156,7 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {106})) {
+                if (context.UserDetected(arg1: new[] {106})) {
                     context.State = new State메세지05(context);
                     return;
                 }
@@ -174,7 +170,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.ShowGuideSummary(entityID: 25200408, textID: 25200408);
+                context.ShowGuideSummary(entityId: 25200408, textId: 25200408);
             }
 
             public override void Execute() {
@@ -183,14 +179,14 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {199})) {
+                if (!context.UserDetected(arg1: new[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 25200408);
+                context.HideGuideSummary(entityId: 25200408);
             }
         }
 
@@ -200,7 +196,7 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {107})) {
+                if (context.UserDetected(arg1: new[] {107})) {
                     context.State = new State메세지06(context);
                     return;
                 }
@@ -214,7 +210,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.ShowGuideSummary(entityID: 25200409, textID: 25200409);
+                context.ShowGuideSummary(entityId: 25200409, textId: 25200409);
             }
 
             public override void Execute() {
@@ -223,14 +219,14 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: new int[] {199})) {
+                if (!context.UserDetected(arg1: new[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 25200409);
+                context.HideGuideSummary(entityId: 25200409);
             }
         }
 

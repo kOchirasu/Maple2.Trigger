@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02000066_bf {
     public static class _effect {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6001}, arg2: false);
+                context.SetEffect(arg1: new[] {6001}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 103, arg2: new int[] {99})) {
+                if (context.NpcDetected(arg1: 103, arg2: new[] {99})) {
                     context.State = new State이펙트생성(context);
                     return;
                 }
@@ -25,11 +21,11 @@ namespace Maple2.Trigger._02000066_bf {
             internal State이펙트생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {6001}, arg2: true);
+                context.SetEffect(arg1: new[] {6001}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {99})) {
+                if (context.MonsterDead(arg1: new[] {99})) {
                     context.State = new State이펙트소멸(context);
                     return;
                 }
@@ -43,7 +39,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "15", arg2: 15);
-                context.SetEffect(arg1: new int[] {6001}, arg2: false);
+                context.SetEffect(arg1: new[] {6001}, arg2: false);
             }
 
             public override void Execute() {

@@ -1,34 +1,31 @@
-using System;
 using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000252_bf {
     public static class _start {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {151, 152, 153, 154, 155, 156}, arg2: true);
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
-                context.SetEffect(arg1: new int[] {603}, arg2: false);
-                context.SetEffect(arg1: new int[] {8001}, arg2: false);
-                context.SetEffect(arg1: new int[] {8002}, arg2: false);
-                context.SetEffect(arg1: new int[] {8003}, arg2: false);
-                context.SetEffect(arg1: new int[] {8004}, arg2: false);
-                context.SetEffect(arg1: new int[] {8005}, arg2: false);
-                context.SetEffect(arg1: new int[] {8006}, arg2: false);
-                context.SetEffect(arg1: new int[] {8007}, arg2: false);
-                context.SetEffect(arg1: new int[] {8008}, arg2: false);
-                context.SetEffect(arg1: new int[] {8009}, arg2: false);
-                context.SetEffect(arg1: new int[] {8010}, arg2: false);
-                context.SetEffect(arg1: new int[] {8011}, arg2: false);
-                context.SetEffect(arg1: new int[] {8012}, arg2: false);
+                context.SetMesh(arg1: new[] {151, 152, 153, 154, 155, 156}, arg2: true);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {603}, arg2: false);
+                context.SetEffect(arg1: new[] {8001}, arg2: false);
+                context.SetEffect(arg1: new[] {8002}, arg2: false);
+                context.SetEffect(arg1: new[] {8003}, arg2: false);
+                context.SetEffect(arg1: new[] {8004}, arg2: false);
+                context.SetEffect(arg1: new[] {8005}, arg2: false);
+                context.SetEffect(arg1: new[] {8006}, arg2: false);
+                context.SetEffect(arg1: new[] {8007}, arg2: false);
+                context.SetEffect(arg1: new[] {8008}, arg2: false);
+                context.SetEffect(arg1: new[] {8009}, arg2: false);
+                context.SetEffect(arg1: new[] {8010}, arg2: false);
+                context.SetEffect(arg1: new[] {8011}, arg2: false);
+                context.SetEffect(arg1: new[] {8012}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new State로딩딜레이(context);
                     return;
                 }
@@ -57,7 +54,7 @@ namespace Maple2.Trigger._02000252_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 20002521);
+                context.HideGuideSummary(entityId: 20002521);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetTimer(arg1: "1", arg2: 1);
@@ -98,8 +95,8 @@ namespace Maple2.Trigger._02000252_bf {
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CameraSelectPath(arg1: new int[] {8801, 8802}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1001});
+                context.CameraSelectPath(arg1: new[] {8801, 8802}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001});
             }
 
             public override void Execute() {
@@ -191,22 +188,22 @@ namespace Maple2.Trigger._02000252_bf {
             internal State예고이펙트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8804}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {8804}, arg2: true);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.SetAchievement(arg1: 999, arg2: "trigger", arg3: "Bellafirst");
-                context.SetEffect(arg1: new int[] {8001}, arg2: true);
-                context.SetEffect(arg1: new int[] {8002}, arg2: true);
-                context.SetEffect(arg1: new int[] {8003}, arg2: true);
-                context.SetEffect(arg1: new int[] {8004}, arg2: true);
-                context.SetEffect(arg1: new int[] {8005}, arg2: true);
-                context.SetEffect(arg1: new int[] {8006}, arg2: true);
-                context.SetEffect(arg1: new int[] {8007}, arg2: true);
-                context.SetEffect(arg1: new int[] {8008}, arg2: true);
-                context.SetEffect(arg1: new int[] {8009}, arg2: true);
-                context.SetEffect(arg1: new int[] {8010}, arg2: true);
-                context.SetEffect(arg1: new int[] {8011}, arg2: true);
-                context.SetEffect(arg1: new int[] {8012}, arg2: true);
+                context.SetEffect(arg1: new[] {8001}, arg2: true);
+                context.SetEffect(arg1: new[] {8002}, arg2: true);
+                context.SetEffect(arg1: new[] {8003}, arg2: true);
+                context.SetEffect(arg1: new[] {8004}, arg2: true);
+                context.SetEffect(arg1: new[] {8005}, arg2: true);
+                context.SetEffect(arg1: new[] {8006}, arg2: true);
+                context.SetEffect(arg1: new[] {8007}, arg2: true);
+                context.SetEffect(arg1: new[] {8008}, arg2: true);
+                context.SetEffect(arg1: new[] {8009}, arg2: true);
+                context.SetEffect(arg1: new[] {8010}, arg2: true);
+                context.SetEffect(arg1: new[] {8011}, arg2: true);
+                context.SetEffect(arg1: new[] {8012}, arg2: true);
                 context.SetTimer(arg1: "2", arg2: 2);
             }
 
@@ -225,26 +222,26 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20002522, textID: 20002522);
-                context.SetMesh(arg1: new int[] {151, 152, 153, 154, 155, 156}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1051}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1052}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1053}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1054}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1055}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1056}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1057}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1058}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1059}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1060}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1061}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1062}, arg2: false);
+                context.ShowGuideSummary(entityId: 20002522, textId: 20002522);
+                context.SetMesh(arg1: new[] {151, 152, 153, 154, 155, 156}, arg2: false);
+                context.CreateMonster(arg1: new[] {1051}, arg2: false);
+                context.CreateMonster(arg1: new[] {1052}, arg2: false);
+                context.CreateMonster(arg1: new[] {1053}, arg2: false);
+                context.CreateMonster(arg1: new[] {1054}, arg2: false);
+                context.CreateMonster(arg1: new[] {1055}, arg2: false);
+                context.CreateMonster(arg1: new[] {1056}, arg2: false);
+                context.CreateMonster(arg1: new[] {1057}, arg2: false);
+                context.CreateMonster(arg1: new[] {1058}, arg2: false);
+                context.CreateMonster(arg1: new[] {1059}, arg2: false);
+                context.CreateMonster(arg1: new[] {1060}, arg2: false);
+                context.CreateMonster(arg1: new[] {1061}, arg2: false);
+                context.CreateMonster(arg1: new[] {1062}, arg2: false);
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    context.DestroyMonster(arg1: new int[] {1001});
+                    context.DestroyMonster(arg1: new[] {1001});
                     context.State = new State스킬시작대기2(context);
                     return;
                 }
@@ -258,18 +255,18 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);
-                context.SetEffect(arg1: new int[] {8001}, arg2: false);
-                context.SetEffect(arg1: new int[] {8002}, arg2: false);
-                context.SetEffect(arg1: new int[] {8003}, arg2: false);
-                context.SetEffect(arg1: new int[] {8004}, arg2: false);
-                context.SetEffect(arg1: new int[] {8005}, arg2: false);
-                context.SetEffect(arg1: new int[] {8006}, arg2: false);
-                context.SetEffect(arg1: new int[] {8007}, arg2: false);
-                context.SetEffect(arg1: new int[] {8008}, arg2: false);
-                context.SetEffect(arg1: new int[] {8009}, arg2: false);
-                context.SetEffect(arg1: new int[] {8010}, arg2: false);
-                context.SetEffect(arg1: new int[] {8011}, arg2: false);
-                context.SetEffect(arg1: new int[] {8012}, arg2: false);
+                context.SetEffect(arg1: new[] {8001}, arg2: false);
+                context.SetEffect(arg1: new[] {8002}, arg2: false);
+                context.SetEffect(arg1: new[] {8003}, arg2: false);
+                context.SetEffect(arg1: new[] {8004}, arg2: false);
+                context.SetEffect(arg1: new[] {8005}, arg2: false);
+                context.SetEffect(arg1: new[] {8006}, arg2: false);
+                context.SetEffect(arg1: new[] {8007}, arg2: false);
+                context.SetEffect(arg1: new[] {8008}, arg2: false);
+                context.SetEffect(arg1: new[] {8009}, arg2: false);
+                context.SetEffect(arg1: new[] {8010}, arg2: false);
+                context.SetEffect(arg1: new[] {8011}, arg2: false);
+                context.SetEffect(arg1: new[] {8012}, arg2: false);
             }
 
             public override void Execute() {
@@ -287,18 +284,18 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {515}, arg2: true);
-                context.SetSkill(arg1: new int[] {516}, arg2: true);
-                context.SetSkill(arg1: new int[] {517}, arg2: true);
-                context.SetSkill(arg1: new int[] {518}, arg2: true);
-                context.SetSkill(arg1: new int[] {519}, arg2: true);
-                context.SetSkill(arg1: new int[] {520}, arg2: true);
-                context.SetSkill(arg1: new int[] {521}, arg2: true);
-                context.SetSkill(arg1: new int[] {522}, arg2: true);
-                context.SetSkill(arg1: new int[] {523}, arg2: true);
-                context.SetSkill(arg1: new int[] {524}, arg2: true);
-                context.SetSkill(arg1: new int[] {525}, arg2: true);
-                context.SetSkill(arg1: new int[] {526}, arg2: true);
+                context.SetSkill(arg1: new[] {515}, arg2: true);
+                context.SetSkill(arg1: new[] {516}, arg2: true);
+                context.SetSkill(arg1: new[] {517}, arg2: true);
+                context.SetSkill(arg1: new[] {518}, arg2: true);
+                context.SetSkill(arg1: new[] {519}, arg2: true);
+                context.SetSkill(arg1: new[] {520}, arg2: true);
+                context.SetSkill(arg1: new[] {521}, arg2: true);
+                context.SetSkill(arg1: new[] {522}, arg2: true);
+                context.SetSkill(arg1: new[] {523}, arg2: true);
+                context.SetSkill(arg1: new[] {524}, arg2: true);
+                context.SetSkill(arg1: new[] {525}, arg2: true);
+                context.SetSkill(arg1: new[] {526}, arg2: true);
             }
 
             public override void Execute() {
@@ -315,18 +312,18 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬07대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {515}, arg2: false);
-                context.SetSkill(arg1: new int[] {516}, arg2: false);
-                context.SetSkill(arg1: new int[] {517}, arg2: false);
-                context.SetSkill(arg1: new int[] {518}, arg2: false);
-                context.SetSkill(arg1: new int[] {519}, arg2: false);
-                context.SetSkill(arg1: new int[] {520}, arg2: false);
-                context.SetSkill(arg1: new int[] {521}, arg2: false);
-                context.SetSkill(arg1: new int[] {522}, arg2: false);
-                context.SetSkill(arg1: new int[] {523}, arg2: false);
-                context.SetSkill(arg1: new int[] {524}, arg2: false);
-                context.SetSkill(arg1: new int[] {525}, arg2: false);
-                context.SetSkill(arg1: new int[] {526}, arg2: false);
+                context.SetSkill(arg1: new[] {515}, arg2: false);
+                context.SetSkill(arg1: new[] {516}, arg2: false);
+                context.SetSkill(arg1: new[] {517}, arg2: false);
+                context.SetSkill(arg1: new[] {518}, arg2: false);
+                context.SetSkill(arg1: new[] {519}, arg2: false);
+                context.SetSkill(arg1: new[] {520}, arg2: false);
+                context.SetSkill(arg1: new[] {521}, arg2: false);
+                context.SetSkill(arg1: new[] {522}, arg2: false);
+                context.SetSkill(arg1: new[] {523}, arg2: false);
+                context.SetSkill(arg1: new[] {524}, arg2: false);
+                context.SetSkill(arg1: new[] {525}, arg2: false);
+                context.SetSkill(arg1: new[] {526}, arg2: false);
             }
 
             public override void Execute() {
@@ -344,22 +341,22 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {564}, arg2: true);
-                context.SetSkill(arg1: new int[] {517}, arg2: true);
-                context.SetSkill(arg1: new int[] {518}, arg2: true);
-                context.SetSkill(arg1: new int[] {519}, arg2: true);
-                context.SetSkill(arg1: new int[] {520}, arg2: true);
-                context.SetSkill(arg1: new int[] {521}, arg2: true);
-                context.SetSkill(arg1: new int[] {522}, arg2: true);
-                context.SetSkill(arg1: new int[] {523}, arg2: true);
-                context.SetSkill(arg1: new int[] {524}, arg2: true);
-                context.SetSkill(arg1: new int[] {525}, arg2: true);
-                context.SetSkill(arg1: new int[] {526}, arg2: true);
-                context.SetSkill(arg1: new int[] {527}, arg2: true);
-                context.SetSkill(arg1: new int[] {528}, arg2: true);
-                context.SetSkill(arg1: new int[] {529}, arg2: true);
-                context.SetSkill(arg1: new int[] {530}, arg2: true);
-                context.SetSkill(arg1: new int[] {531}, arg2: true);
+                context.SetSkill(arg1: new[] {564}, arg2: true);
+                context.SetSkill(arg1: new[] {517}, arg2: true);
+                context.SetSkill(arg1: new[] {518}, arg2: true);
+                context.SetSkill(arg1: new[] {519}, arg2: true);
+                context.SetSkill(arg1: new[] {520}, arg2: true);
+                context.SetSkill(arg1: new[] {521}, arg2: true);
+                context.SetSkill(arg1: new[] {522}, arg2: true);
+                context.SetSkill(arg1: new[] {523}, arg2: true);
+                context.SetSkill(arg1: new[] {524}, arg2: true);
+                context.SetSkill(arg1: new[] {525}, arg2: true);
+                context.SetSkill(arg1: new[] {526}, arg2: true);
+                context.SetSkill(arg1: new[] {527}, arg2: true);
+                context.SetSkill(arg1: new[] {528}, arg2: true);
+                context.SetSkill(arg1: new[] {529}, arg2: true);
+                context.SetSkill(arg1: new[] {530}, arg2: true);
+                context.SetSkill(arg1: new[] {531}, arg2: true);
             }
 
             public override void Execute() {
@@ -376,22 +373,22 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬06대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {564}, arg2: false);
-                context.SetSkill(arg1: new int[] {517}, arg2: false);
-                context.SetSkill(arg1: new int[] {518}, arg2: false);
-                context.SetSkill(arg1: new int[] {519}, arg2: false);
-                context.SetSkill(arg1: new int[] {520}, arg2: false);
-                context.SetSkill(arg1: new int[] {521}, arg2: false);
-                context.SetSkill(arg1: new int[] {522}, arg2: false);
-                context.SetSkill(arg1: new int[] {523}, arg2: false);
-                context.SetSkill(arg1: new int[] {524}, arg2: false);
-                context.SetSkill(arg1: new int[] {525}, arg2: false);
-                context.SetSkill(arg1: new int[] {526}, arg2: false);
-                context.SetSkill(arg1: new int[] {527}, arg2: false);
-                context.SetSkill(arg1: new int[] {528}, arg2: false);
-                context.SetSkill(arg1: new int[] {529}, arg2: false);
-                context.SetSkill(arg1: new int[] {530}, arg2: false);
-                context.SetSkill(arg1: new int[] {531}, arg2: false);
+                context.SetSkill(arg1: new[] {564}, arg2: false);
+                context.SetSkill(arg1: new[] {517}, arg2: false);
+                context.SetSkill(arg1: new[] {518}, arg2: false);
+                context.SetSkill(arg1: new[] {519}, arg2: false);
+                context.SetSkill(arg1: new[] {520}, arg2: false);
+                context.SetSkill(arg1: new[] {521}, arg2: false);
+                context.SetSkill(arg1: new[] {522}, arg2: false);
+                context.SetSkill(arg1: new[] {523}, arg2: false);
+                context.SetSkill(arg1: new[] {524}, arg2: false);
+                context.SetSkill(arg1: new[] {525}, arg2: false);
+                context.SetSkill(arg1: new[] {526}, arg2: false);
+                context.SetSkill(arg1: new[] {527}, arg2: false);
+                context.SetSkill(arg1: new[] {528}, arg2: false);
+                context.SetSkill(arg1: new[] {529}, arg2: false);
+                context.SetSkill(arg1: new[] {530}, arg2: false);
+                context.SetSkill(arg1: new[] {531}, arg2: false);
             }
 
             public override void Execute() {
@@ -409,23 +406,23 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {565}, arg2: true);
-                context.SetSkill(arg1: new int[] {564}, arg2: true);
-                context.SetSkill(arg1: new int[] {522}, arg2: true);
-                context.SetSkill(arg1: new int[] {523}, arg2: true);
-                context.SetSkill(arg1: new int[] {524}, arg2: true);
-                context.SetSkill(arg1: new int[] {525}, arg2: true);
-                context.SetSkill(arg1: new int[] {526}, arg2: true);
-                context.SetSkill(arg1: new int[] {527}, arg2: true);
-                context.SetSkill(arg1: new int[] {528}, arg2: true);
-                context.SetSkill(arg1: new int[] {529}, arg2: true);
-                context.SetSkill(arg1: new int[] {530}, arg2: true);
-                context.SetSkill(arg1: new int[] {531}, arg2: true);
-                context.SetSkill(arg1: new int[] {532}, arg2: true);
-                context.SetSkill(arg1: new int[] {533}, arg2: true);
-                context.SetSkill(arg1: new int[] {534}, arg2: true);
-                context.SetSkill(arg1: new int[] {535}, arg2: true);
-                context.SetSkill(arg1: new int[] {536}, arg2: true);
+                context.SetSkill(arg1: new[] {565}, arg2: true);
+                context.SetSkill(arg1: new[] {564}, arg2: true);
+                context.SetSkill(arg1: new[] {522}, arg2: true);
+                context.SetSkill(arg1: new[] {523}, arg2: true);
+                context.SetSkill(arg1: new[] {524}, arg2: true);
+                context.SetSkill(arg1: new[] {525}, arg2: true);
+                context.SetSkill(arg1: new[] {526}, arg2: true);
+                context.SetSkill(arg1: new[] {527}, arg2: true);
+                context.SetSkill(arg1: new[] {528}, arg2: true);
+                context.SetSkill(arg1: new[] {529}, arg2: true);
+                context.SetSkill(arg1: new[] {530}, arg2: true);
+                context.SetSkill(arg1: new[] {531}, arg2: true);
+                context.SetSkill(arg1: new[] {532}, arg2: true);
+                context.SetSkill(arg1: new[] {533}, arg2: true);
+                context.SetSkill(arg1: new[] {534}, arg2: true);
+                context.SetSkill(arg1: new[] {535}, arg2: true);
+                context.SetSkill(arg1: new[] {536}, arg2: true);
             }
 
             public override void Execute() {
@@ -442,24 +439,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬05대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 20002522);
-                context.SetSkill(arg1: new int[] {565}, arg2: false);
-                context.SetSkill(arg1: new int[] {564}, arg2: false);
-                context.SetSkill(arg1: new int[] {522}, arg2: false);
-                context.SetSkill(arg1: new int[] {523}, arg2: false);
-                context.SetSkill(arg1: new int[] {524}, arg2: false);
-                context.SetSkill(arg1: new int[] {525}, arg2: false);
-                context.SetSkill(arg1: new int[] {526}, arg2: false);
-                context.SetSkill(arg1: new int[] {527}, arg2: false);
-                context.SetSkill(arg1: new int[] {528}, arg2: false);
-                context.SetSkill(arg1: new int[] {529}, arg2: false);
-                context.SetSkill(arg1: new int[] {530}, arg2: false);
-                context.SetSkill(arg1: new int[] {531}, arg2: false);
-                context.SetSkill(arg1: new int[] {532}, arg2: false);
-                context.SetSkill(arg1: new int[] {533}, arg2: false);
-                context.SetSkill(arg1: new int[] {534}, arg2: false);
-                context.SetSkill(arg1: new int[] {535}, arg2: false);
-                context.SetSkill(arg1: new int[] {536}, arg2: false);
+                context.HideGuideSummary(entityId: 20002522);
+                context.SetSkill(arg1: new[] {565}, arg2: false);
+                context.SetSkill(arg1: new[] {564}, arg2: false);
+                context.SetSkill(arg1: new[] {522}, arg2: false);
+                context.SetSkill(arg1: new[] {523}, arg2: false);
+                context.SetSkill(arg1: new[] {524}, arg2: false);
+                context.SetSkill(arg1: new[] {525}, arg2: false);
+                context.SetSkill(arg1: new[] {526}, arg2: false);
+                context.SetSkill(arg1: new[] {527}, arg2: false);
+                context.SetSkill(arg1: new[] {528}, arg2: false);
+                context.SetSkill(arg1: new[] {529}, arg2: false);
+                context.SetSkill(arg1: new[] {530}, arg2: false);
+                context.SetSkill(arg1: new[] {531}, arg2: false);
+                context.SetSkill(arg1: new[] {532}, arg2: false);
+                context.SetSkill(arg1: new[] {533}, arg2: false);
+                context.SetSkill(arg1: new[] {534}, arg2: false);
+                context.SetSkill(arg1: new[] {535}, arg2: false);
+                context.SetSkill(arg1: new[] {536}, arg2: false);
             }
 
             public override void Execute() {
@@ -477,24 +474,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {566}, arg2: true);
-                context.SetSkill(arg1: new int[] {567}, arg2: true);
-                context.SetSkill(arg1: new int[] {568}, arg2: true);
-                context.SetSkill(arg1: new int[] {565}, arg2: true);
-                context.SetSkill(arg1: new int[] {564}, arg2: true);
-                context.SetSkill(arg1: new int[] {527}, arg2: true);
-                context.SetSkill(arg1: new int[] {528}, arg2: true);
-                context.SetSkill(arg1: new int[] {529}, arg2: true);
-                context.SetSkill(arg1: new int[] {530}, arg2: true);
-                context.SetSkill(arg1: new int[] {531}, arg2: true);
-                context.SetSkill(arg1: new int[] {532}, arg2: true);
-                context.SetSkill(arg1: new int[] {533}, arg2: true);
-                context.SetSkill(arg1: new int[] {534}, arg2: true);
-                context.SetSkill(arg1: new int[] {535}, arg2: true);
-                context.SetSkill(arg1: new int[] {536}, arg2: true);
-                context.SetSkill(arg1: new int[] {537}, arg2: true);
-                context.SetSkill(arg1: new int[] {538}, arg2: true);
-                context.SetSkill(arg1: new int[] {539}, arg2: true);
+                context.SetSkill(arg1: new[] {566}, arg2: true);
+                context.SetSkill(arg1: new[] {567}, arg2: true);
+                context.SetSkill(arg1: new[] {568}, arg2: true);
+                context.SetSkill(arg1: new[] {565}, arg2: true);
+                context.SetSkill(arg1: new[] {564}, arg2: true);
+                context.SetSkill(arg1: new[] {527}, arg2: true);
+                context.SetSkill(arg1: new[] {528}, arg2: true);
+                context.SetSkill(arg1: new[] {529}, arg2: true);
+                context.SetSkill(arg1: new[] {530}, arg2: true);
+                context.SetSkill(arg1: new[] {531}, arg2: true);
+                context.SetSkill(arg1: new[] {532}, arg2: true);
+                context.SetSkill(arg1: new[] {533}, arg2: true);
+                context.SetSkill(arg1: new[] {534}, arg2: true);
+                context.SetSkill(arg1: new[] {535}, arg2: true);
+                context.SetSkill(arg1: new[] {536}, arg2: true);
+                context.SetSkill(arg1: new[] {537}, arg2: true);
+                context.SetSkill(arg1: new[] {538}, arg2: true);
+                context.SetSkill(arg1: new[] {539}, arg2: true);
             }
 
             public override void Execute() {
@@ -511,24 +508,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬04대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {566}, arg2: false);
-                context.SetSkill(arg1: new int[] {567}, arg2: false);
-                context.SetSkill(arg1: new int[] {568}, arg2: false);
-                context.SetSkill(arg1: new int[] {565}, arg2: false);
-                context.SetSkill(arg1: new int[] {564}, arg2: false);
-                context.SetSkill(arg1: new int[] {527}, arg2: false);
-                context.SetSkill(arg1: new int[] {528}, arg2: false);
-                context.SetSkill(arg1: new int[] {529}, arg2: false);
-                context.SetSkill(arg1: new int[] {530}, arg2: false);
-                context.SetSkill(arg1: new int[] {531}, arg2: false);
-                context.SetSkill(arg1: new int[] {532}, arg2: false);
-                context.SetSkill(arg1: new int[] {533}, arg2: false);
-                context.SetSkill(arg1: new int[] {534}, arg2: false);
-                context.SetSkill(arg1: new int[] {535}, arg2: false);
-                context.SetSkill(arg1: new int[] {536}, arg2: false);
-                context.SetSkill(arg1: new int[] {537}, arg2: false);
-                context.SetSkill(arg1: new int[] {538}, arg2: false);
-                context.SetSkill(arg1: new int[] {539}, arg2: false);
+                context.SetSkill(arg1: new[] {566}, arg2: false);
+                context.SetSkill(arg1: new[] {567}, arg2: false);
+                context.SetSkill(arg1: new[] {568}, arg2: false);
+                context.SetSkill(arg1: new[] {565}, arg2: false);
+                context.SetSkill(arg1: new[] {564}, arg2: false);
+                context.SetSkill(arg1: new[] {527}, arg2: false);
+                context.SetSkill(arg1: new[] {528}, arg2: false);
+                context.SetSkill(arg1: new[] {529}, arg2: false);
+                context.SetSkill(arg1: new[] {530}, arg2: false);
+                context.SetSkill(arg1: new[] {531}, arg2: false);
+                context.SetSkill(arg1: new[] {532}, arg2: false);
+                context.SetSkill(arg1: new[] {533}, arg2: false);
+                context.SetSkill(arg1: new[] {534}, arg2: false);
+                context.SetSkill(arg1: new[] {535}, arg2: false);
+                context.SetSkill(arg1: new[] {536}, arg2: false);
+                context.SetSkill(arg1: new[] {537}, arg2: false);
+                context.SetSkill(arg1: new[] {538}, arg2: false);
+                context.SetSkill(arg1: new[] {539}, arg2: false);
             }
 
             public override void Execute() {
@@ -546,24 +543,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {566}, arg2: false);
-                context.SetSkill(arg1: new int[] {567}, arg2: false);
-                context.SetSkill(arg1: new int[] {568}, arg2: false);
-                context.SetSkill(arg1: new int[] {565}, arg2: true);
-                context.SetSkill(arg1: new int[] {532}, arg2: true);
-                context.SetSkill(arg1: new int[] {533}, arg2: true);
-                context.SetSkill(arg1: new int[] {534}, arg2: true);
-                context.SetSkill(arg1: new int[] {535}, arg2: true);
-                context.SetSkill(arg1: new int[] {536}, arg2: true);
-                context.SetSkill(arg1: new int[] {537}, arg2: true);
-                context.SetSkill(arg1: new int[] {538}, arg2: true);
-                context.SetSkill(arg1: new int[] {539}, arg2: true);
-                context.SetSkill(arg1: new int[] {540}, arg2: true);
-                context.SetSkill(arg1: new int[] {541}, arg2: true);
-                context.SetSkill(arg1: new int[] {542}, arg2: true);
-                context.SetSkill(arg1: new int[] {543}, arg2: true);
-                context.SetSkill(arg1: new int[] {544}, arg2: true);
-                context.SetSkill(arg1: new int[] {545}, arg2: true);
+                context.SetSkill(arg1: new[] {566}, arg2: false);
+                context.SetSkill(arg1: new[] {567}, arg2: false);
+                context.SetSkill(arg1: new[] {568}, arg2: false);
+                context.SetSkill(arg1: new[] {565}, arg2: true);
+                context.SetSkill(arg1: new[] {532}, arg2: true);
+                context.SetSkill(arg1: new[] {533}, arg2: true);
+                context.SetSkill(arg1: new[] {534}, arg2: true);
+                context.SetSkill(arg1: new[] {535}, arg2: true);
+                context.SetSkill(arg1: new[] {536}, arg2: true);
+                context.SetSkill(arg1: new[] {537}, arg2: true);
+                context.SetSkill(arg1: new[] {538}, arg2: true);
+                context.SetSkill(arg1: new[] {539}, arg2: true);
+                context.SetSkill(arg1: new[] {540}, arg2: true);
+                context.SetSkill(arg1: new[] {541}, arg2: true);
+                context.SetSkill(arg1: new[] {542}, arg2: true);
+                context.SetSkill(arg1: new[] {543}, arg2: true);
+                context.SetSkill(arg1: new[] {544}, arg2: true);
+                context.SetSkill(arg1: new[] {545}, arg2: true);
             }
 
             public override void Execute() {
@@ -580,24 +577,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬03대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {566}, arg2: false);
-                context.SetSkill(arg1: new int[] {567}, arg2: false);
-                context.SetSkill(arg1: new int[] {568}, arg2: false);
-                context.SetSkill(arg1: new int[] {565}, arg2: false);
-                context.SetSkill(arg1: new int[] {532}, arg2: false);
-                context.SetSkill(arg1: new int[] {533}, arg2: false);
-                context.SetSkill(arg1: new int[] {534}, arg2: false);
-                context.SetSkill(arg1: new int[] {535}, arg2: false);
-                context.SetSkill(arg1: new int[] {536}, arg2: false);
-                context.SetSkill(arg1: new int[] {537}, arg2: false);
-                context.SetSkill(arg1: new int[] {538}, arg2: false);
-                context.SetSkill(arg1: new int[] {539}, arg2: false);
-                context.SetSkill(arg1: new int[] {540}, arg2: false);
-                context.SetSkill(arg1: new int[] {541}, arg2: false);
-                context.SetSkill(arg1: new int[] {542}, arg2: false);
-                context.SetSkill(arg1: new int[] {543}, arg2: false);
-                context.SetSkill(arg1: new int[] {544}, arg2: false);
-                context.SetSkill(arg1: new int[] {545}, arg2: false);
+                context.SetSkill(arg1: new[] {566}, arg2: false);
+                context.SetSkill(arg1: new[] {567}, arg2: false);
+                context.SetSkill(arg1: new[] {568}, arg2: false);
+                context.SetSkill(arg1: new[] {565}, arg2: false);
+                context.SetSkill(arg1: new[] {532}, arg2: false);
+                context.SetSkill(arg1: new[] {533}, arg2: false);
+                context.SetSkill(arg1: new[] {534}, arg2: false);
+                context.SetSkill(arg1: new[] {535}, arg2: false);
+                context.SetSkill(arg1: new[] {536}, arg2: false);
+                context.SetSkill(arg1: new[] {537}, arg2: false);
+                context.SetSkill(arg1: new[] {538}, arg2: false);
+                context.SetSkill(arg1: new[] {539}, arg2: false);
+                context.SetSkill(arg1: new[] {540}, arg2: false);
+                context.SetSkill(arg1: new[] {541}, arg2: false);
+                context.SetSkill(arg1: new[] {542}, arg2: false);
+                context.SetSkill(arg1: new[] {543}, arg2: false);
+                context.SetSkill(arg1: new[] {544}, arg2: false);
+                context.SetSkill(arg1: new[] {545}, arg2: false);
             }
 
             public override void Execute() {
@@ -615,24 +612,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {566}, arg2: true);
-                context.SetSkill(arg1: new int[] {567}, arg2: true);
-                context.SetSkill(arg1: new int[] {568}, arg2: true);
-                context.SetSkill(arg1: new int[] {537}, arg2: true);
-                context.SetSkill(arg1: new int[] {538}, arg2: true);
-                context.SetSkill(arg1: new int[] {539}, arg2: true);
-                context.SetSkill(arg1: new int[] {540}, arg2: true);
-                context.SetSkill(arg1: new int[] {541}, arg2: true);
-                context.SetSkill(arg1: new int[] {542}, arg2: true);
-                context.SetSkill(arg1: new int[] {543}, arg2: true);
-                context.SetSkill(arg1: new int[] {544}, arg2: true);
-                context.SetSkill(arg1: new int[] {545}, arg2: true);
-                context.SetSkill(arg1: new int[] {546}, arg2: true);
-                context.SetSkill(arg1: new int[] {547}, arg2: true);
-                context.SetSkill(arg1: new int[] {548}, arg2: true);
-                context.SetSkill(arg1: new int[] {549}, arg2: true);
-                context.SetSkill(arg1: new int[] {550}, arg2: true);
-                context.SetSkill(arg1: new int[] {551}, arg2: true);
+                context.SetSkill(arg1: new[] {566}, arg2: true);
+                context.SetSkill(arg1: new[] {567}, arg2: true);
+                context.SetSkill(arg1: new[] {568}, arg2: true);
+                context.SetSkill(arg1: new[] {537}, arg2: true);
+                context.SetSkill(arg1: new[] {538}, arg2: true);
+                context.SetSkill(arg1: new[] {539}, arg2: true);
+                context.SetSkill(arg1: new[] {540}, arg2: true);
+                context.SetSkill(arg1: new[] {541}, arg2: true);
+                context.SetSkill(arg1: new[] {542}, arg2: true);
+                context.SetSkill(arg1: new[] {543}, arg2: true);
+                context.SetSkill(arg1: new[] {544}, arg2: true);
+                context.SetSkill(arg1: new[] {545}, arg2: true);
+                context.SetSkill(arg1: new[] {546}, arg2: true);
+                context.SetSkill(arg1: new[] {547}, arg2: true);
+                context.SetSkill(arg1: new[] {548}, arg2: true);
+                context.SetSkill(arg1: new[] {549}, arg2: true);
+                context.SetSkill(arg1: new[] {550}, arg2: true);
+                context.SetSkill(arg1: new[] {551}, arg2: true);
             }
 
             public override void Execute() {
@@ -649,24 +646,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬02대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {566}, arg2: false);
-                context.SetSkill(arg1: new int[] {567}, arg2: false);
-                context.SetSkill(arg1: new int[] {568}, arg2: false);
-                context.SetSkill(arg1: new int[] {537}, arg2: false);
-                context.SetSkill(arg1: new int[] {538}, arg2: false);
-                context.SetSkill(arg1: new int[] {539}, arg2: false);
-                context.SetSkill(arg1: new int[] {540}, arg2: false);
-                context.SetSkill(arg1: new int[] {541}, arg2: false);
-                context.SetSkill(arg1: new int[] {542}, arg2: false);
-                context.SetSkill(arg1: new int[] {543}, arg2: false);
-                context.SetSkill(arg1: new int[] {544}, arg2: false);
-                context.SetSkill(arg1: new int[] {545}, arg2: false);
-                context.SetSkill(arg1: new int[] {546}, arg2: false);
-                context.SetSkill(arg1: new int[] {547}, arg2: false);
-                context.SetSkill(arg1: new int[] {548}, arg2: false);
-                context.SetSkill(arg1: new int[] {549}, arg2: false);
-                context.SetSkill(arg1: new int[] {550}, arg2: false);
-                context.SetSkill(arg1: new int[] {551}, arg2: false);
+                context.SetSkill(arg1: new[] {566}, arg2: false);
+                context.SetSkill(arg1: new[] {567}, arg2: false);
+                context.SetSkill(arg1: new[] {568}, arg2: false);
+                context.SetSkill(arg1: new[] {537}, arg2: false);
+                context.SetSkill(arg1: new[] {538}, arg2: false);
+                context.SetSkill(arg1: new[] {539}, arg2: false);
+                context.SetSkill(arg1: new[] {540}, arg2: false);
+                context.SetSkill(arg1: new[] {541}, arg2: false);
+                context.SetSkill(arg1: new[] {542}, arg2: false);
+                context.SetSkill(arg1: new[] {543}, arg2: false);
+                context.SetSkill(arg1: new[] {544}, arg2: false);
+                context.SetSkill(arg1: new[] {545}, arg2: false);
+                context.SetSkill(arg1: new[] {546}, arg2: false);
+                context.SetSkill(arg1: new[] {547}, arg2: false);
+                context.SetSkill(arg1: new[] {548}, arg2: false);
+                context.SetSkill(arg1: new[] {549}, arg2: false);
+                context.SetSkill(arg1: new[] {550}, arg2: false);
+                context.SetSkill(arg1: new[] {551}, arg2: false);
             }
 
             public override void Execute() {
@@ -684,24 +681,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {540}, arg2: true);
-                context.SetSkill(arg1: new int[] {541}, arg2: true);
-                context.SetSkill(arg1: new int[] {542}, arg2: true);
-                context.SetSkill(arg1: new int[] {543}, arg2: true);
-                context.SetSkill(arg1: new int[] {544}, arg2: true);
-                context.SetSkill(arg1: new int[] {545}, arg2: true);
-                context.SetSkill(arg1: new int[] {546}, arg2: true);
-                context.SetSkill(arg1: new int[] {547}, arg2: true);
-                context.SetSkill(arg1: new int[] {548}, arg2: true);
-                context.SetSkill(arg1: new int[] {549}, arg2: true);
-                context.SetSkill(arg1: new int[] {550}, arg2: true);
-                context.SetSkill(arg1: new int[] {551}, arg2: true);
-                context.SetSkill(arg1: new int[] {552}, arg2: true);
-                context.SetSkill(arg1: new int[] {553}, arg2: true);
-                context.SetSkill(arg1: new int[] {554}, arg2: true);
-                context.SetSkill(arg1: new int[] {555}, arg2: true);
-                context.SetSkill(arg1: new int[] {556}, arg2: true);
-                context.SetSkill(arg1: new int[] {557}, arg2: true);
+                context.SetSkill(arg1: new[] {540}, arg2: true);
+                context.SetSkill(arg1: new[] {541}, arg2: true);
+                context.SetSkill(arg1: new[] {542}, arg2: true);
+                context.SetSkill(arg1: new[] {543}, arg2: true);
+                context.SetSkill(arg1: new[] {544}, arg2: true);
+                context.SetSkill(arg1: new[] {545}, arg2: true);
+                context.SetSkill(arg1: new[] {546}, arg2: true);
+                context.SetSkill(arg1: new[] {547}, arg2: true);
+                context.SetSkill(arg1: new[] {548}, arg2: true);
+                context.SetSkill(arg1: new[] {549}, arg2: true);
+                context.SetSkill(arg1: new[] {550}, arg2: true);
+                context.SetSkill(arg1: new[] {551}, arg2: true);
+                context.SetSkill(arg1: new[] {552}, arg2: true);
+                context.SetSkill(arg1: new[] {553}, arg2: true);
+                context.SetSkill(arg1: new[] {554}, arg2: true);
+                context.SetSkill(arg1: new[] {555}, arg2: true);
+                context.SetSkill(arg1: new[] {556}, arg2: true);
+                context.SetSkill(arg1: new[] {557}, arg2: true);
             }
 
             public override void Execute() {
@@ -718,24 +715,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬01대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {540}, arg2: false);
-                context.SetSkill(arg1: new int[] {541}, arg2: false);
-                context.SetSkill(arg1: new int[] {542}, arg2: false);
-                context.SetSkill(arg1: new int[] {543}, arg2: false);
-                context.SetSkill(arg1: new int[] {544}, arg2: false);
-                context.SetSkill(arg1: new int[] {545}, arg2: false);
-                context.SetSkill(arg1: new int[] {546}, arg2: false);
-                context.SetSkill(arg1: new int[] {547}, arg2: false);
-                context.SetSkill(arg1: new int[] {548}, arg2: false);
-                context.SetSkill(arg1: new int[] {549}, arg2: false);
-                context.SetSkill(arg1: new int[] {550}, arg2: false);
-                context.SetSkill(arg1: new int[] {551}, arg2: false);
-                context.SetSkill(arg1: new int[] {552}, arg2: false);
-                context.SetSkill(arg1: new int[] {553}, arg2: false);
-                context.SetSkill(arg1: new int[] {554}, arg2: false);
-                context.SetSkill(arg1: new int[] {555}, arg2: false);
-                context.SetSkill(arg1: new int[] {556}, arg2: false);
-                context.SetSkill(arg1: new int[] {557}, arg2: false);
+                context.SetSkill(arg1: new[] {540}, arg2: false);
+                context.SetSkill(arg1: new[] {541}, arg2: false);
+                context.SetSkill(arg1: new[] {542}, arg2: false);
+                context.SetSkill(arg1: new[] {543}, arg2: false);
+                context.SetSkill(arg1: new[] {544}, arg2: false);
+                context.SetSkill(arg1: new[] {545}, arg2: false);
+                context.SetSkill(arg1: new[] {546}, arg2: false);
+                context.SetSkill(arg1: new[] {547}, arg2: false);
+                context.SetSkill(arg1: new[] {548}, arg2: false);
+                context.SetSkill(arg1: new[] {549}, arg2: false);
+                context.SetSkill(arg1: new[] {550}, arg2: false);
+                context.SetSkill(arg1: new[] {551}, arg2: false);
+                context.SetSkill(arg1: new[] {552}, arg2: false);
+                context.SetSkill(arg1: new[] {553}, arg2: false);
+                context.SetSkill(arg1: new[] {554}, arg2: false);
+                context.SetSkill(arg1: new[] {555}, arg2: false);
+                context.SetSkill(arg1: new[] {556}, arg2: false);
+                context.SetSkill(arg1: new[] {557}, arg2: false);
             }
 
             public override void Execute() {
@@ -753,24 +750,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {546}, arg2: true);
-                context.SetSkill(arg1: new int[] {547}, arg2: true);
-                context.SetSkill(arg1: new int[] {548}, arg2: true);
-                context.SetSkill(arg1: new int[] {549}, arg2: true);
-                context.SetSkill(arg1: new int[] {550}, arg2: true);
-                context.SetSkill(arg1: new int[] {551}, arg2: true);
-                context.SetSkill(arg1: new int[] {552}, arg2: true);
-                context.SetSkill(arg1: new int[] {553}, arg2: true);
-                context.SetSkill(arg1: new int[] {554}, arg2: true);
-                context.SetSkill(arg1: new int[] {555}, arg2: true);
-                context.SetSkill(arg1: new int[] {556}, arg2: true);
-                context.SetSkill(arg1: new int[] {557}, arg2: true);
-                context.SetSkill(arg1: new int[] {558}, arg2: true);
-                context.SetSkill(arg1: new int[] {559}, arg2: true);
-                context.SetSkill(arg1: new int[] {560}, arg2: true);
-                context.SetSkill(arg1: new int[] {561}, arg2: true);
-                context.SetSkill(arg1: new int[] {562}, arg2: true);
-                context.SetSkill(arg1: new int[] {563}, arg2: true);
+                context.SetSkill(arg1: new[] {546}, arg2: true);
+                context.SetSkill(arg1: new[] {547}, arg2: true);
+                context.SetSkill(arg1: new[] {548}, arg2: true);
+                context.SetSkill(arg1: new[] {549}, arg2: true);
+                context.SetSkill(arg1: new[] {550}, arg2: true);
+                context.SetSkill(arg1: new[] {551}, arg2: true);
+                context.SetSkill(arg1: new[] {552}, arg2: true);
+                context.SetSkill(arg1: new[] {553}, arg2: true);
+                context.SetSkill(arg1: new[] {554}, arg2: true);
+                context.SetSkill(arg1: new[] {555}, arg2: true);
+                context.SetSkill(arg1: new[] {556}, arg2: true);
+                context.SetSkill(arg1: new[] {557}, arg2: true);
+                context.SetSkill(arg1: new[] {558}, arg2: true);
+                context.SetSkill(arg1: new[] {559}, arg2: true);
+                context.SetSkill(arg1: new[] {560}, arg2: true);
+                context.SetSkill(arg1: new[] {561}, arg2: true);
+                context.SetSkill(arg1: new[] {562}, arg2: true);
+                context.SetSkill(arg1: new[] {563}, arg2: true);
             }
 
             public override void Execute() {
@@ -787,24 +784,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬00대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {546}, arg2: false);
-                context.SetSkill(arg1: new int[] {547}, arg2: false);
-                context.SetSkill(arg1: new int[] {548}, arg2: false);
-                context.SetSkill(arg1: new int[] {549}, arg2: false);
-                context.SetSkill(arg1: new int[] {550}, arg2: false);
-                context.SetSkill(arg1: new int[] {551}, arg2: false);
-                context.SetSkill(arg1: new int[] {552}, arg2: false);
-                context.SetSkill(arg1: new int[] {553}, arg2: false);
-                context.SetSkill(arg1: new int[] {554}, arg2: false);
-                context.SetSkill(arg1: new int[] {555}, arg2: false);
-                context.SetSkill(arg1: new int[] {556}, arg2: false);
-                context.SetSkill(arg1: new int[] {557}, arg2: false);
-                context.SetSkill(arg1: new int[] {558}, arg2: false);
-                context.SetSkill(arg1: new int[] {559}, arg2: false);
-                context.SetSkill(arg1: new int[] {560}, arg2: false);
-                context.SetSkill(arg1: new int[] {561}, arg2: false);
-                context.SetSkill(arg1: new int[] {562}, arg2: false);
-                context.SetSkill(arg1: new int[] {563}, arg2: false);
+                context.SetSkill(arg1: new[] {546}, arg2: false);
+                context.SetSkill(arg1: new[] {547}, arg2: false);
+                context.SetSkill(arg1: new[] {548}, arg2: false);
+                context.SetSkill(arg1: new[] {549}, arg2: false);
+                context.SetSkill(arg1: new[] {550}, arg2: false);
+                context.SetSkill(arg1: new[] {551}, arg2: false);
+                context.SetSkill(arg1: new[] {552}, arg2: false);
+                context.SetSkill(arg1: new[] {553}, arg2: false);
+                context.SetSkill(arg1: new[] {554}, arg2: false);
+                context.SetSkill(arg1: new[] {555}, arg2: false);
+                context.SetSkill(arg1: new[] {556}, arg2: false);
+                context.SetSkill(arg1: new[] {557}, arg2: false);
+                context.SetSkill(arg1: new[] {558}, arg2: false);
+                context.SetSkill(arg1: new[] {559}, arg2: false);
+                context.SetSkill(arg1: new[] {560}, arg2: false);
+                context.SetSkill(arg1: new[] {561}, arg2: false);
+                context.SetSkill(arg1: new[] {562}, arg2: false);
+                context.SetSkill(arg1: new[] {563}, arg2: false);
             }
 
             public override void Execute() {
@@ -822,24 +819,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {552}, arg2: true);
-                context.SetSkill(arg1: new int[] {553}, arg2: true);
-                context.SetSkill(arg1: new int[] {554}, arg2: true);
-                context.SetSkill(arg1: new int[] {555}, arg2: true);
-                context.SetSkill(arg1: new int[] {556}, arg2: true);
-                context.SetSkill(arg1: new int[] {557}, arg2: true);
-                context.SetSkill(arg1: new int[] {558}, arg2: true);
-                context.SetSkill(arg1: new int[] {559}, arg2: true);
-                context.SetSkill(arg1: new int[] {560}, arg2: true);
-                context.SetSkill(arg1: new int[] {561}, arg2: true);
-                context.SetSkill(arg1: new int[] {562}, arg2: true);
-                context.SetSkill(arg1: new int[] {563}, arg2: true);
-                context.SetSkill(arg1: new int[] {301}, arg2: true);
-                context.SetSkill(arg1: new int[] {302}, arg2: true);
-                context.SetSkill(arg1: new int[] {303}, arg2: true);
-                context.SetSkill(arg1: new int[] {304}, arg2: true);
-                context.SetSkill(arg1: new int[] {305}, arg2: true);
-                context.SetSkill(arg1: new int[] {306}, arg2: true);
+                context.SetSkill(arg1: new[] {552}, arg2: true);
+                context.SetSkill(arg1: new[] {553}, arg2: true);
+                context.SetSkill(arg1: new[] {554}, arg2: true);
+                context.SetSkill(arg1: new[] {555}, arg2: true);
+                context.SetSkill(arg1: new[] {556}, arg2: true);
+                context.SetSkill(arg1: new[] {557}, arg2: true);
+                context.SetSkill(arg1: new[] {558}, arg2: true);
+                context.SetSkill(arg1: new[] {559}, arg2: true);
+                context.SetSkill(arg1: new[] {560}, arg2: true);
+                context.SetSkill(arg1: new[] {561}, arg2: true);
+                context.SetSkill(arg1: new[] {562}, arg2: true);
+                context.SetSkill(arg1: new[] {563}, arg2: true);
+                context.SetSkill(arg1: new[] {301}, arg2: true);
+                context.SetSkill(arg1: new[] {302}, arg2: true);
+                context.SetSkill(arg1: new[] {303}, arg2: true);
+                context.SetSkill(arg1: new[] {304}, arg2: true);
+                context.SetSkill(arg1: new[] {305}, arg2: true);
+                context.SetSkill(arg1: new[] {306}, arg2: true);
             }
 
             public override void Execute() {
@@ -856,24 +853,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬0_5대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {552}, arg2: false);
-                context.SetSkill(arg1: new int[] {553}, arg2: false);
-                context.SetSkill(arg1: new int[] {554}, arg2: false);
-                context.SetSkill(arg1: new int[] {555}, arg2: false);
-                context.SetSkill(arg1: new int[] {556}, arg2: false);
-                context.SetSkill(arg1: new int[] {557}, arg2: false);
-                context.SetSkill(arg1: new int[] {558}, arg2: false);
-                context.SetSkill(arg1: new int[] {559}, arg2: false);
-                context.SetSkill(arg1: new int[] {560}, arg2: false);
-                context.SetSkill(arg1: new int[] {561}, arg2: false);
-                context.SetSkill(arg1: new int[] {562}, arg2: false);
-                context.SetSkill(arg1: new int[] {563}, arg2: false);
-                context.SetSkill(arg1: new int[] {301}, arg2: false);
-                context.SetSkill(arg1: new int[] {302}, arg2: false);
-                context.SetSkill(arg1: new int[] {303}, arg2: false);
-                context.SetSkill(arg1: new int[] {304}, arg2: false);
-                context.SetSkill(arg1: new int[] {305}, arg2: false);
-                context.SetSkill(arg1: new int[] {306}, arg2: false);
+                context.SetSkill(arg1: new[] {552}, arg2: false);
+                context.SetSkill(arg1: new[] {553}, arg2: false);
+                context.SetSkill(arg1: new[] {554}, arg2: false);
+                context.SetSkill(arg1: new[] {555}, arg2: false);
+                context.SetSkill(arg1: new[] {556}, arg2: false);
+                context.SetSkill(arg1: new[] {557}, arg2: false);
+                context.SetSkill(arg1: new[] {558}, arg2: false);
+                context.SetSkill(arg1: new[] {559}, arg2: false);
+                context.SetSkill(arg1: new[] {560}, arg2: false);
+                context.SetSkill(arg1: new[] {561}, arg2: false);
+                context.SetSkill(arg1: new[] {562}, arg2: false);
+                context.SetSkill(arg1: new[] {563}, arg2: false);
+                context.SetSkill(arg1: new[] {301}, arg2: false);
+                context.SetSkill(arg1: new[] {302}, arg2: false);
+                context.SetSkill(arg1: new[] {303}, arg2: false);
+                context.SetSkill(arg1: new[] {304}, arg2: false);
+                context.SetSkill(arg1: new[] {305}, arg2: false);
+                context.SetSkill(arg1: new[] {306}, arg2: false);
             }
 
             public override void Execute() {
@@ -891,24 +888,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {558}, arg2: true);
-                context.SetSkill(arg1: new int[] {559}, arg2: true);
-                context.SetSkill(arg1: new int[] {560}, arg2: true);
-                context.SetSkill(arg1: new int[] {561}, arg2: true);
-                context.SetSkill(arg1: new int[] {562}, arg2: true);
-                context.SetSkill(arg1: new int[] {563}, arg2: true);
-                context.SetSkill(arg1: new int[] {301}, arg2: true);
-                context.SetSkill(arg1: new int[] {302}, arg2: true);
-                context.SetSkill(arg1: new int[] {303}, arg2: true);
-                context.SetSkill(arg1: new int[] {304}, arg2: true);
-                context.SetSkill(arg1: new int[] {305}, arg2: true);
-                context.SetSkill(arg1: new int[] {306}, arg2: true);
-                context.SetSkill(arg1: new int[] {307}, arg2: true);
-                context.SetSkill(arg1: new int[] {308}, arg2: true);
-                context.SetSkill(arg1: new int[] {309}, arg2: true);
-                context.SetSkill(arg1: new int[] {310}, arg2: true);
-                context.SetSkill(arg1: new int[] {311}, arg2: true);
-                context.SetSkill(arg1: new int[] {312}, arg2: true);
+                context.SetSkill(arg1: new[] {558}, arg2: true);
+                context.SetSkill(arg1: new[] {559}, arg2: true);
+                context.SetSkill(arg1: new[] {560}, arg2: true);
+                context.SetSkill(arg1: new[] {561}, arg2: true);
+                context.SetSkill(arg1: new[] {562}, arg2: true);
+                context.SetSkill(arg1: new[] {563}, arg2: true);
+                context.SetSkill(arg1: new[] {301}, arg2: true);
+                context.SetSkill(arg1: new[] {302}, arg2: true);
+                context.SetSkill(arg1: new[] {303}, arg2: true);
+                context.SetSkill(arg1: new[] {304}, arg2: true);
+                context.SetSkill(arg1: new[] {305}, arg2: true);
+                context.SetSkill(arg1: new[] {306}, arg2: true);
+                context.SetSkill(arg1: new[] {307}, arg2: true);
+                context.SetSkill(arg1: new[] {308}, arg2: true);
+                context.SetSkill(arg1: new[] {309}, arg2: true);
+                context.SetSkill(arg1: new[] {310}, arg2: true);
+                context.SetSkill(arg1: new[] {311}, arg2: true);
+                context.SetSkill(arg1: new[] {312}, arg2: true);
             }
 
             public override void Execute() {
@@ -925,28 +922,28 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬08대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {341}, arg2: false);
-                context.SetSkill(arg1: new int[] {342}, arg2: false);
-                context.SetSkill(arg1: new int[] {343}, arg2: false);
-                context.SetSkill(arg1: new int[] {344}, arg2: false);
-                context.SetSkill(arg1: new int[] {345}, arg2: false);
-                context.SetSkill(arg1: new int[] {346}, arg2: false);
-                context.SetSkill(arg1: new int[] {347}, arg2: false);
-                context.SetSkill(arg1: new int[] {348}, arg2: false);
-                context.SetSkill(arg1: new int[] {349}, arg2: false);
-                context.SetSkill(arg1: new int[] {350}, arg2: false);
-                context.SetSkill(arg1: new int[] {351}, arg2: false);
-                context.SetSkill(arg1: new int[] {352}, arg2: false);
-                context.SetSkill(arg1: new int[] {353}, arg2: false);
-                context.SetSkill(arg1: new int[] {354}, arg2: false);
-                context.SetSkill(arg1: new int[] {355}, arg2: false);
-                context.SetSkill(arg1: new int[] {356}, arg2: false);
-                context.SetSkill(arg1: new int[] {357}, arg2: false);
-                context.SetSkill(arg1: new int[] {358}, arg2: false);
+                context.SetSkill(arg1: new[] {341}, arg2: false);
+                context.SetSkill(arg1: new[] {342}, arg2: false);
+                context.SetSkill(arg1: new[] {343}, arg2: false);
+                context.SetSkill(arg1: new[] {344}, arg2: false);
+                context.SetSkill(arg1: new[] {345}, arg2: false);
+                context.SetSkill(arg1: new[] {346}, arg2: false);
+                context.SetSkill(arg1: new[] {347}, arg2: false);
+                context.SetSkill(arg1: new[] {348}, arg2: false);
+                context.SetSkill(arg1: new[] {349}, arg2: false);
+                context.SetSkill(arg1: new[] {350}, arg2: false);
+                context.SetSkill(arg1: new[] {351}, arg2: false);
+                context.SetSkill(arg1: new[] {352}, arg2: false);
+                context.SetSkill(arg1: new[] {353}, arg2: false);
+                context.SetSkill(arg1: new[] {354}, arg2: false);
+                context.SetSkill(arg1: new[] {355}, arg2: false);
+                context.SetSkill(arg1: new[] {356}, arg2: false);
+                context.SetSkill(arg1: new[] {357}, arg2: false);
+                context.SetSkill(arg1: new[] {358}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000409}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000409}, arg2: 0)) {
                     context.State = new State굳음(context);
                     return;
                 }
@@ -981,24 +978,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬09대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {347}, arg2: false);
-                context.SetSkill(arg1: new int[] {348}, arg2: false);
-                context.SetSkill(arg1: new int[] {349}, arg2: false);
-                context.SetSkill(arg1: new int[] {350}, arg2: false);
-                context.SetSkill(arg1: new int[] {351}, arg2: false);
-                context.SetSkill(arg1: new int[] {352}, arg2: false);
-                context.SetSkill(arg1: new int[] {353}, arg2: false);
-                context.SetSkill(arg1: new int[] {354}, arg2: false);
-                context.SetSkill(arg1: new int[] {355}, arg2: false);
-                context.SetSkill(arg1: new int[] {356}, arg2: false);
-                context.SetSkill(arg1: new int[] {357}, arg2: false);
-                context.SetSkill(arg1: new int[] {358}, arg2: false);
-                context.SetSkill(arg1: new int[] {359}, arg2: false);
-                context.SetSkill(arg1: new int[] {360}, arg2: false);
-                context.SetSkill(arg1: new int[] {361}, arg2: false);
-                context.SetSkill(arg1: new int[] {362}, arg2: false);
-                context.SetSkill(arg1: new int[] {363}, arg2: false);
-                context.SetSkill(arg1: new int[] {364}, arg2: false);
+                context.SetSkill(arg1: new[] {347}, arg2: false);
+                context.SetSkill(arg1: new[] {348}, arg2: false);
+                context.SetSkill(arg1: new[] {349}, arg2: false);
+                context.SetSkill(arg1: new[] {350}, arg2: false);
+                context.SetSkill(arg1: new[] {351}, arg2: false);
+                context.SetSkill(arg1: new[] {352}, arg2: false);
+                context.SetSkill(arg1: new[] {353}, arg2: false);
+                context.SetSkill(arg1: new[] {354}, arg2: false);
+                context.SetSkill(arg1: new[] {355}, arg2: false);
+                context.SetSkill(arg1: new[] {356}, arg2: false);
+                context.SetSkill(arg1: new[] {357}, arg2: false);
+                context.SetSkill(arg1: new[] {358}, arg2: false);
+                context.SetSkill(arg1: new[] {359}, arg2: false);
+                context.SetSkill(arg1: new[] {360}, arg2: false);
+                context.SetSkill(arg1: new[] {361}, arg2: false);
+                context.SetSkill(arg1: new[] {362}, arg2: false);
+                context.SetSkill(arg1: new[] {363}, arg2: false);
+                context.SetSkill(arg1: new[] {364}, arg2: false);
             }
 
             public override void Execute() {
@@ -1016,24 +1013,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {353}, arg2: true);
-                context.SetSkill(arg1: new int[] {354}, arg2: true);
-                context.SetSkill(arg1: new int[] {355}, arg2: true);
-                context.SetSkill(arg1: new int[] {356}, arg2: true);
-                context.SetSkill(arg1: new int[] {357}, arg2: true);
-                context.SetSkill(arg1: new int[] {358}, arg2: true);
-                context.SetSkill(arg1: new int[] {359}, arg2: true);
-                context.SetSkill(arg1: new int[] {360}, arg2: true);
-                context.SetSkill(arg1: new int[] {361}, arg2: true);
-                context.SetSkill(arg1: new int[] {362}, arg2: true);
-                context.SetSkill(arg1: new int[] {363}, arg2: true);
-                context.SetSkill(arg1: new int[] {364}, arg2: true);
-                context.SetSkill(arg1: new int[] {365}, arg2: true);
-                context.SetSkill(arg1: new int[] {366}, arg2: true);
-                context.SetSkill(arg1: new int[] {367}, arg2: true);
-                context.SetSkill(arg1: new int[] {368}, arg2: true);
-                context.SetSkill(arg1: new int[] {369}, arg2: true);
-                context.SetSkill(arg1: new int[] {370}, arg2: true);
+                context.SetSkill(arg1: new[] {353}, arg2: true);
+                context.SetSkill(arg1: new[] {354}, arg2: true);
+                context.SetSkill(arg1: new[] {355}, arg2: true);
+                context.SetSkill(arg1: new[] {356}, arg2: true);
+                context.SetSkill(arg1: new[] {357}, arg2: true);
+                context.SetSkill(arg1: new[] {358}, arg2: true);
+                context.SetSkill(arg1: new[] {359}, arg2: true);
+                context.SetSkill(arg1: new[] {360}, arg2: true);
+                context.SetSkill(arg1: new[] {361}, arg2: true);
+                context.SetSkill(arg1: new[] {362}, arg2: true);
+                context.SetSkill(arg1: new[] {363}, arg2: true);
+                context.SetSkill(arg1: new[] {364}, arg2: true);
+                context.SetSkill(arg1: new[] {365}, arg2: true);
+                context.SetSkill(arg1: new[] {366}, arg2: true);
+                context.SetSkill(arg1: new[] {367}, arg2: true);
+                context.SetSkill(arg1: new[] {368}, arg2: true);
+                context.SetSkill(arg1: new[] {369}, arg2: true);
+                context.SetSkill(arg1: new[] {370}, arg2: true);
             }
 
             public override void Execute() {
@@ -1050,24 +1047,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬10대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {353}, arg2: false);
-                context.SetSkill(arg1: new int[] {354}, arg2: false);
-                context.SetSkill(arg1: new int[] {355}, arg2: false);
-                context.SetSkill(arg1: new int[] {356}, arg2: false);
-                context.SetSkill(arg1: new int[] {357}, arg2: false);
-                context.SetSkill(arg1: new int[] {358}, arg2: false);
-                context.SetSkill(arg1: new int[] {359}, arg2: false);
-                context.SetSkill(arg1: new int[] {360}, arg2: false);
-                context.SetSkill(arg1: new int[] {361}, arg2: false);
-                context.SetSkill(arg1: new int[] {362}, arg2: false);
-                context.SetSkill(arg1: new int[] {363}, arg2: false);
-                context.SetSkill(arg1: new int[] {364}, arg2: false);
-                context.SetSkill(arg1: new int[] {365}, arg2: false);
-                context.SetSkill(arg1: new int[] {366}, arg2: false);
-                context.SetSkill(arg1: new int[] {367}, arg2: false);
-                context.SetSkill(arg1: new int[] {368}, arg2: false);
-                context.SetSkill(arg1: new int[] {369}, arg2: false);
-                context.SetSkill(arg1: new int[] {370}, arg2: false);
+                context.SetSkill(arg1: new[] {353}, arg2: false);
+                context.SetSkill(arg1: new[] {354}, arg2: false);
+                context.SetSkill(arg1: new[] {355}, arg2: false);
+                context.SetSkill(arg1: new[] {356}, arg2: false);
+                context.SetSkill(arg1: new[] {357}, arg2: false);
+                context.SetSkill(arg1: new[] {358}, arg2: false);
+                context.SetSkill(arg1: new[] {359}, arg2: false);
+                context.SetSkill(arg1: new[] {360}, arg2: false);
+                context.SetSkill(arg1: new[] {361}, arg2: false);
+                context.SetSkill(arg1: new[] {362}, arg2: false);
+                context.SetSkill(arg1: new[] {363}, arg2: false);
+                context.SetSkill(arg1: new[] {364}, arg2: false);
+                context.SetSkill(arg1: new[] {365}, arg2: false);
+                context.SetSkill(arg1: new[] {366}, arg2: false);
+                context.SetSkill(arg1: new[] {367}, arg2: false);
+                context.SetSkill(arg1: new[] {368}, arg2: false);
+                context.SetSkill(arg1: new[] {369}, arg2: false);
+                context.SetSkill(arg1: new[] {370}, arg2: false);
             }
 
             public override void Execute() {
@@ -1085,24 +1082,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {359}, arg2: true);
-                context.SetSkill(arg1: new int[] {360}, arg2: true);
-                context.SetSkill(arg1: new int[] {361}, arg2: true);
-                context.SetSkill(arg1: new int[] {362}, arg2: true);
-                context.SetSkill(arg1: new int[] {363}, arg2: true);
-                context.SetSkill(arg1: new int[] {364}, arg2: true);
-                context.SetSkill(arg1: new int[] {365}, arg2: true);
-                context.SetSkill(arg1: new int[] {366}, arg2: true);
-                context.SetSkill(arg1: new int[] {367}, arg2: true);
-                context.SetSkill(arg1: new int[] {368}, arg2: true);
-                context.SetSkill(arg1: new int[] {369}, arg2: true);
-                context.SetSkill(arg1: new int[] {370}, arg2: true);
-                context.SetSkill(arg1: new int[] {371}, arg2: true);
-                context.SetSkill(arg1: new int[] {372}, arg2: true);
-                context.SetSkill(arg1: new int[] {373}, arg2: true);
-                context.SetSkill(arg1: new int[] {374}, arg2: true);
-                context.SetSkill(arg1: new int[] {375}, arg2: true);
-                context.SetSkill(arg1: new int[] {376}, arg2: true);
+                context.SetSkill(arg1: new[] {359}, arg2: true);
+                context.SetSkill(arg1: new[] {360}, arg2: true);
+                context.SetSkill(arg1: new[] {361}, arg2: true);
+                context.SetSkill(arg1: new[] {362}, arg2: true);
+                context.SetSkill(arg1: new[] {363}, arg2: true);
+                context.SetSkill(arg1: new[] {364}, arg2: true);
+                context.SetSkill(arg1: new[] {365}, arg2: true);
+                context.SetSkill(arg1: new[] {366}, arg2: true);
+                context.SetSkill(arg1: new[] {367}, arg2: true);
+                context.SetSkill(arg1: new[] {368}, arg2: true);
+                context.SetSkill(arg1: new[] {369}, arg2: true);
+                context.SetSkill(arg1: new[] {370}, arg2: true);
+                context.SetSkill(arg1: new[] {371}, arg2: true);
+                context.SetSkill(arg1: new[] {372}, arg2: true);
+                context.SetSkill(arg1: new[] {373}, arg2: true);
+                context.SetSkill(arg1: new[] {374}, arg2: true);
+                context.SetSkill(arg1: new[] {375}, arg2: true);
+                context.SetSkill(arg1: new[] {376}, arg2: true);
             }
 
             public override void Execute() {
@@ -1120,24 +1117,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 0);
-                context.SetSkill(arg1: new int[] {359}, arg2: false);
-                context.SetSkill(arg1: new int[] {360}, arg2: false);
-                context.SetSkill(arg1: new int[] {361}, arg2: false);
-                context.SetSkill(arg1: new int[] {362}, arg2: false);
-                context.SetSkill(arg1: new int[] {363}, arg2: false);
-                context.SetSkill(arg1: new int[] {364}, arg2: false);
-                context.SetSkill(arg1: new int[] {365}, arg2: false);
-                context.SetSkill(arg1: new int[] {366}, arg2: false);
-                context.SetSkill(arg1: new int[] {367}, arg2: false);
-                context.SetSkill(arg1: new int[] {368}, arg2: false);
-                context.SetSkill(arg1: new int[] {369}, arg2: false);
-                context.SetSkill(arg1: new int[] {370}, arg2: false);
-                context.SetSkill(arg1: new int[] {371}, arg2: false);
-                context.SetSkill(arg1: new int[] {372}, arg2: false);
-                context.SetSkill(arg1: new int[] {373}, arg2: false);
-                context.SetSkill(arg1: new int[] {374}, arg2: false);
-                context.SetSkill(arg1: new int[] {375}, arg2: false);
-                context.SetSkill(arg1: new int[] {376}, arg2: false);
+                context.SetSkill(arg1: new[] {359}, arg2: false);
+                context.SetSkill(arg1: new[] {360}, arg2: false);
+                context.SetSkill(arg1: new[] {361}, arg2: false);
+                context.SetSkill(arg1: new[] {362}, arg2: false);
+                context.SetSkill(arg1: new[] {363}, arg2: false);
+                context.SetSkill(arg1: new[] {364}, arg2: false);
+                context.SetSkill(arg1: new[] {365}, arg2: false);
+                context.SetSkill(arg1: new[] {366}, arg2: false);
+                context.SetSkill(arg1: new[] {367}, arg2: false);
+                context.SetSkill(arg1: new[] {368}, arg2: false);
+                context.SetSkill(arg1: new[] {369}, arg2: false);
+                context.SetSkill(arg1: new[] {370}, arg2: false);
+                context.SetSkill(arg1: new[] {371}, arg2: false);
+                context.SetSkill(arg1: new[] {372}, arg2: false);
+                context.SetSkill(arg1: new[] {373}, arg2: false);
+                context.SetSkill(arg1: new[] {374}, arg2: false);
+                context.SetSkill(arg1: new[] {375}, arg2: false);
+                context.SetSkill(arg1: new[] {376}, arg2: false);
             }
 
             public override void Execute() {
@@ -1155,24 +1152,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {365}, arg2: true);
-                context.SetSkill(arg1: new int[] {366}, arg2: true);
-                context.SetSkill(arg1: new int[] {367}, arg2: true);
-                context.SetSkill(arg1: new int[] {368}, arg2: true);
-                context.SetSkill(arg1: new int[] {369}, arg2: true);
-                context.SetSkill(arg1: new int[] {370}, arg2: true);
-                context.SetSkill(arg1: new int[] {371}, arg2: true);
-                context.SetSkill(arg1: new int[] {372}, arg2: true);
-                context.SetSkill(arg1: new int[] {373}, arg2: true);
-                context.SetSkill(arg1: new int[] {374}, arg2: true);
-                context.SetSkill(arg1: new int[] {375}, arg2: true);
-                context.SetSkill(arg1: new int[] {376}, arg2: true);
-                context.SetSkill(arg1: new int[] {377}, arg2: true);
-                context.SetSkill(arg1: new int[] {378}, arg2: true);
-                context.SetSkill(arg1: new int[] {379}, arg2: true);
-                context.SetSkill(arg1: new int[] {380}, arg2: true);
-                context.SetSkill(arg1: new int[] {381}, arg2: true);
-                context.SetSkill(arg1: new int[] {382}, arg2: true);
+                context.SetSkill(arg1: new[] {365}, arg2: true);
+                context.SetSkill(arg1: new[] {366}, arg2: true);
+                context.SetSkill(arg1: new[] {367}, arg2: true);
+                context.SetSkill(arg1: new[] {368}, arg2: true);
+                context.SetSkill(arg1: new[] {369}, arg2: true);
+                context.SetSkill(arg1: new[] {370}, arg2: true);
+                context.SetSkill(arg1: new[] {371}, arg2: true);
+                context.SetSkill(arg1: new[] {372}, arg2: true);
+                context.SetSkill(arg1: new[] {373}, arg2: true);
+                context.SetSkill(arg1: new[] {374}, arg2: true);
+                context.SetSkill(arg1: new[] {375}, arg2: true);
+                context.SetSkill(arg1: new[] {376}, arg2: true);
+                context.SetSkill(arg1: new[] {377}, arg2: true);
+                context.SetSkill(arg1: new[] {378}, arg2: true);
+                context.SetSkill(arg1: new[] {379}, arg2: true);
+                context.SetSkill(arg1: new[] {380}, arg2: true);
+                context.SetSkill(arg1: new[] {381}, arg2: true);
+                context.SetSkill(arg1: new[] {382}, arg2: true);
             }
 
             public override void Execute() {
@@ -1189,24 +1186,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬13대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {365}, arg2: false);
-                context.SetSkill(arg1: new int[] {366}, arg2: false);
-                context.SetSkill(arg1: new int[] {367}, arg2: false);
-                context.SetSkill(arg1: new int[] {368}, arg2: false);
-                context.SetSkill(arg1: new int[] {369}, arg2: false);
-                context.SetSkill(arg1: new int[] {370}, arg2: false);
-                context.SetSkill(arg1: new int[] {371}, arg2: false);
-                context.SetSkill(arg1: new int[] {372}, arg2: false);
-                context.SetSkill(arg1: new int[] {373}, arg2: false);
-                context.SetSkill(arg1: new int[] {374}, arg2: false);
-                context.SetSkill(arg1: new int[] {375}, arg2: false);
-                context.SetSkill(arg1: new int[] {376}, arg2: false);
-                context.SetSkill(arg1: new int[] {377}, arg2: false);
-                context.SetSkill(arg1: new int[] {378}, arg2: false);
-                context.SetSkill(arg1: new int[] {379}, arg2: false);
-                context.SetSkill(arg1: new int[] {380}, arg2: false);
-                context.SetSkill(arg1: new int[] {381}, arg2: false);
-                context.SetSkill(arg1: new int[] {382}, arg2: false);
+                context.SetSkill(arg1: new[] {365}, arg2: false);
+                context.SetSkill(arg1: new[] {366}, arg2: false);
+                context.SetSkill(arg1: new[] {367}, arg2: false);
+                context.SetSkill(arg1: new[] {368}, arg2: false);
+                context.SetSkill(arg1: new[] {369}, arg2: false);
+                context.SetSkill(arg1: new[] {370}, arg2: false);
+                context.SetSkill(arg1: new[] {371}, arg2: false);
+                context.SetSkill(arg1: new[] {372}, arg2: false);
+                context.SetSkill(arg1: new[] {373}, arg2: false);
+                context.SetSkill(arg1: new[] {374}, arg2: false);
+                context.SetSkill(arg1: new[] {375}, arg2: false);
+                context.SetSkill(arg1: new[] {376}, arg2: false);
+                context.SetSkill(arg1: new[] {377}, arg2: false);
+                context.SetSkill(arg1: new[] {378}, arg2: false);
+                context.SetSkill(arg1: new[] {379}, arg2: false);
+                context.SetSkill(arg1: new[] {380}, arg2: false);
+                context.SetSkill(arg1: new[] {381}, arg2: false);
+                context.SetSkill(arg1: new[] {382}, arg2: false);
             }
 
             public override void Execute() {
@@ -1224,24 +1221,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {371}, arg2: true);
-                context.SetSkill(arg1: new int[] {372}, arg2: true);
-                context.SetSkill(arg1: new int[] {373}, arg2: true);
-                context.SetSkill(arg1: new int[] {374}, arg2: true);
-                context.SetSkill(arg1: new int[] {375}, arg2: true);
-                context.SetSkill(arg1: new int[] {376}, arg2: true);
-                context.SetSkill(arg1: new int[] {377}, arg2: true);
-                context.SetSkill(arg1: new int[] {378}, arg2: true);
-                context.SetSkill(arg1: new int[] {379}, arg2: true);
-                context.SetSkill(arg1: new int[] {380}, arg2: true);
-                context.SetSkill(arg1: new int[] {381}, arg2: true);
-                context.SetSkill(arg1: new int[] {382}, arg2: true);
-                context.SetSkill(arg1: new int[] {383}, arg2: true);
-                context.SetSkill(arg1: new int[] {384}, arg2: true);
-                context.SetSkill(arg1: new int[] {385}, arg2: true);
-                context.SetSkill(arg1: new int[] {386}, arg2: true);
-                context.SetSkill(arg1: new int[] {387}, arg2: true);
-                context.SetSkill(arg1: new int[] {388}, arg2: true);
+                context.SetSkill(arg1: new[] {371}, arg2: true);
+                context.SetSkill(arg1: new[] {372}, arg2: true);
+                context.SetSkill(arg1: new[] {373}, arg2: true);
+                context.SetSkill(arg1: new[] {374}, arg2: true);
+                context.SetSkill(arg1: new[] {375}, arg2: true);
+                context.SetSkill(arg1: new[] {376}, arg2: true);
+                context.SetSkill(arg1: new[] {377}, arg2: true);
+                context.SetSkill(arg1: new[] {378}, arg2: true);
+                context.SetSkill(arg1: new[] {379}, arg2: true);
+                context.SetSkill(arg1: new[] {380}, arg2: true);
+                context.SetSkill(arg1: new[] {381}, arg2: true);
+                context.SetSkill(arg1: new[] {382}, arg2: true);
+                context.SetSkill(arg1: new[] {383}, arg2: true);
+                context.SetSkill(arg1: new[] {384}, arg2: true);
+                context.SetSkill(arg1: new[] {385}, arg2: true);
+                context.SetSkill(arg1: new[] {386}, arg2: true);
+                context.SetSkill(arg1: new[] {387}, arg2: true);
+                context.SetSkill(arg1: new[] {388}, arg2: true);
             }
 
             public override void Execute() {
@@ -1258,24 +1255,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬14대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {371}, arg2: false);
-                context.SetSkill(arg1: new int[] {372}, arg2: false);
-                context.SetSkill(arg1: new int[] {373}, arg2: false);
-                context.SetSkill(arg1: new int[] {374}, arg2: false);
-                context.SetSkill(arg1: new int[] {375}, arg2: false);
-                context.SetSkill(arg1: new int[] {376}, arg2: false);
-                context.SetSkill(arg1: new int[] {377}, arg2: false);
-                context.SetSkill(arg1: new int[] {378}, arg2: false);
-                context.SetSkill(arg1: new int[] {379}, arg2: false);
-                context.SetSkill(arg1: new int[] {380}, arg2: false);
-                context.SetSkill(arg1: new int[] {381}, arg2: false);
-                context.SetSkill(arg1: new int[] {382}, arg2: false);
-                context.SetSkill(arg1: new int[] {383}, arg2: false);
-                context.SetSkill(arg1: new int[] {384}, arg2: false);
-                context.SetSkill(arg1: new int[] {385}, arg2: false);
-                context.SetSkill(arg1: new int[] {386}, arg2: false);
-                context.SetSkill(arg1: new int[] {387}, arg2: false);
-                context.SetSkill(arg1: new int[] {388}, arg2: false);
+                context.SetSkill(arg1: new[] {371}, arg2: false);
+                context.SetSkill(arg1: new[] {372}, arg2: false);
+                context.SetSkill(arg1: new[] {373}, arg2: false);
+                context.SetSkill(arg1: new[] {374}, arg2: false);
+                context.SetSkill(arg1: new[] {375}, arg2: false);
+                context.SetSkill(arg1: new[] {376}, arg2: false);
+                context.SetSkill(arg1: new[] {377}, arg2: false);
+                context.SetSkill(arg1: new[] {378}, arg2: false);
+                context.SetSkill(arg1: new[] {379}, arg2: false);
+                context.SetSkill(arg1: new[] {380}, arg2: false);
+                context.SetSkill(arg1: new[] {381}, arg2: false);
+                context.SetSkill(arg1: new[] {382}, arg2: false);
+                context.SetSkill(arg1: new[] {383}, arg2: false);
+                context.SetSkill(arg1: new[] {384}, arg2: false);
+                context.SetSkill(arg1: new[] {385}, arg2: false);
+                context.SetSkill(arg1: new[] {386}, arg2: false);
+                context.SetSkill(arg1: new[] {387}, arg2: false);
+                context.SetSkill(arg1: new[] {388}, arg2: false);
             }
 
             public override void Execute() {
@@ -1293,25 +1290,25 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {377}, arg2: true);
-                context.SetSkill(arg1: new int[] {378}, arg2: true);
-                context.SetSkill(arg1: new int[] {379}, arg2: true);
-                context.SetSkill(arg1: new int[] {380}, arg2: true);
-                context.SetSkill(arg1: new int[] {381}, arg2: true);
-                context.SetSkill(arg1: new int[] {382}, arg2: true);
-                context.SetSkill(arg1: new int[] {383}, arg2: true);
-                context.SetSkill(arg1: new int[] {384}, arg2: true);
-                context.SetSkill(arg1: new int[] {385}, arg2: true);
-                context.SetSkill(arg1: new int[] {386}, arg2: true);
-                context.SetSkill(arg1: new int[] {387}, arg2: true);
-                context.SetSkill(arg1: new int[] {388}, arg2: true);
-                context.SetSkill(arg1: new int[] {389}, arg2: true);
-                context.SetSkill(arg1: new int[] {390}, arg2: true);
-                context.SetSkill(arg1: new int[] {391}, arg2: true);
-                context.SetSkill(arg1: new int[] {392}, arg2: true);
-                context.SetSkill(arg1: new int[] {393}, arg2: true);
-                context.SetSkill(arg1: new int[] {394}, arg2: true);
-                context.SetSkill(arg1: new int[] {395}, arg2: true);
+                context.SetSkill(arg1: new[] {377}, arg2: true);
+                context.SetSkill(arg1: new[] {378}, arg2: true);
+                context.SetSkill(arg1: new[] {379}, arg2: true);
+                context.SetSkill(arg1: new[] {380}, arg2: true);
+                context.SetSkill(arg1: new[] {381}, arg2: true);
+                context.SetSkill(arg1: new[] {382}, arg2: true);
+                context.SetSkill(arg1: new[] {383}, arg2: true);
+                context.SetSkill(arg1: new[] {384}, arg2: true);
+                context.SetSkill(arg1: new[] {385}, arg2: true);
+                context.SetSkill(arg1: new[] {386}, arg2: true);
+                context.SetSkill(arg1: new[] {387}, arg2: true);
+                context.SetSkill(arg1: new[] {388}, arg2: true);
+                context.SetSkill(arg1: new[] {389}, arg2: true);
+                context.SetSkill(arg1: new[] {390}, arg2: true);
+                context.SetSkill(arg1: new[] {391}, arg2: true);
+                context.SetSkill(arg1: new[] {392}, arg2: true);
+                context.SetSkill(arg1: new[] {393}, arg2: true);
+                context.SetSkill(arg1: new[] {394}, arg2: true);
+                context.SetSkill(arg1: new[] {395}, arg2: true);
             }
 
             public override void Execute() {
@@ -1328,25 +1325,25 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬15대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {377}, arg2: false);
-                context.SetSkill(arg1: new int[] {378}, arg2: false);
-                context.SetSkill(arg1: new int[] {379}, arg2: false);
-                context.SetSkill(arg1: new int[] {380}, arg2: false);
-                context.SetSkill(arg1: new int[] {381}, arg2: false);
-                context.SetSkill(arg1: new int[] {382}, arg2: false);
-                context.SetSkill(arg1: new int[] {383}, arg2: false);
-                context.SetSkill(arg1: new int[] {384}, arg2: false);
-                context.SetSkill(arg1: new int[] {385}, arg2: false);
-                context.SetSkill(arg1: new int[] {386}, arg2: false);
-                context.SetSkill(arg1: new int[] {387}, arg2: false);
-                context.SetSkill(arg1: new int[] {388}, arg2: false);
-                context.SetSkill(arg1: new int[] {389}, arg2: false);
-                context.SetSkill(arg1: new int[] {390}, arg2: false);
-                context.SetSkill(arg1: new int[] {391}, arg2: false);
-                context.SetSkill(arg1: new int[] {392}, arg2: false);
-                context.SetSkill(arg1: new int[] {393}, arg2: false);
-                context.SetSkill(arg1: new int[] {394}, arg2: false);
-                context.SetSkill(arg1: new int[] {395}, arg2: false);
+                context.SetSkill(arg1: new[] {377}, arg2: false);
+                context.SetSkill(arg1: new[] {378}, arg2: false);
+                context.SetSkill(arg1: new[] {379}, arg2: false);
+                context.SetSkill(arg1: new[] {380}, arg2: false);
+                context.SetSkill(arg1: new[] {381}, arg2: false);
+                context.SetSkill(arg1: new[] {382}, arg2: false);
+                context.SetSkill(arg1: new[] {383}, arg2: false);
+                context.SetSkill(arg1: new[] {384}, arg2: false);
+                context.SetSkill(arg1: new[] {385}, arg2: false);
+                context.SetSkill(arg1: new[] {386}, arg2: false);
+                context.SetSkill(arg1: new[] {387}, arg2: false);
+                context.SetSkill(arg1: new[] {388}, arg2: false);
+                context.SetSkill(arg1: new[] {389}, arg2: false);
+                context.SetSkill(arg1: new[] {390}, arg2: false);
+                context.SetSkill(arg1: new[] {391}, arg2: false);
+                context.SetSkill(arg1: new[] {392}, arg2: false);
+                context.SetSkill(arg1: new[] {393}, arg2: false);
+                context.SetSkill(arg1: new[] {394}, arg2: false);
+                context.SetSkill(arg1: new[] {395}, arg2: false);
             }
 
             public override void Execute() {
@@ -1364,26 +1361,26 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {383}, arg2: true);
-                context.SetSkill(arg1: new int[] {384}, arg2: true);
-                context.SetSkill(arg1: new int[] {385}, arg2: true);
-                context.SetSkill(arg1: new int[] {386}, arg2: true);
-                context.SetSkill(arg1: new int[] {387}, arg2: true);
-                context.SetSkill(arg1: new int[] {388}, arg2: true);
-                context.SetSkill(arg1: new int[] {389}, arg2: true);
-                context.SetSkill(arg1: new int[] {390}, arg2: true);
-                context.SetSkill(arg1: new int[] {391}, arg2: true);
-                context.SetSkill(arg1: new int[] {392}, arg2: true);
-                context.SetSkill(arg1: new int[] {393}, arg2: true);
-                context.SetSkill(arg1: new int[] {394}, arg2: true);
-                context.SetSkill(arg1: new int[] {395}, arg2: true);
-                context.SetSkill(arg1: new int[] {396}, arg2: true);
-                context.SetSkill(arg1: new int[] {397}, arg2: true);
-                context.SetSkill(arg1: new int[] {398}, arg2: true);
-                context.SetSkill(arg1: new int[] {399}, arg2: true);
-                context.SetSkill(arg1: new int[] {400}, arg2: true);
-                context.SetSkill(arg1: new int[] {401}, arg2: true);
-                context.SetSkill(arg1: new int[] {402}, arg2: true);
+                context.SetSkill(arg1: new[] {383}, arg2: true);
+                context.SetSkill(arg1: new[] {384}, arg2: true);
+                context.SetSkill(arg1: new[] {385}, arg2: true);
+                context.SetSkill(arg1: new[] {386}, arg2: true);
+                context.SetSkill(arg1: new[] {387}, arg2: true);
+                context.SetSkill(arg1: new[] {388}, arg2: true);
+                context.SetSkill(arg1: new[] {389}, arg2: true);
+                context.SetSkill(arg1: new[] {390}, arg2: true);
+                context.SetSkill(arg1: new[] {391}, arg2: true);
+                context.SetSkill(arg1: new[] {392}, arg2: true);
+                context.SetSkill(arg1: new[] {393}, arg2: true);
+                context.SetSkill(arg1: new[] {394}, arg2: true);
+                context.SetSkill(arg1: new[] {395}, arg2: true);
+                context.SetSkill(arg1: new[] {396}, arg2: true);
+                context.SetSkill(arg1: new[] {397}, arg2: true);
+                context.SetSkill(arg1: new[] {398}, arg2: true);
+                context.SetSkill(arg1: new[] {399}, arg2: true);
+                context.SetSkill(arg1: new[] {400}, arg2: true);
+                context.SetSkill(arg1: new[] {401}, arg2: true);
+                context.SetSkill(arg1: new[] {402}, arg2: true);
             }
 
             public override void Execute() {
@@ -1400,26 +1397,26 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬16대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {383}, arg2: false);
-                context.SetSkill(arg1: new int[] {384}, arg2: false);
-                context.SetSkill(arg1: new int[] {385}, arg2: false);
-                context.SetSkill(arg1: new int[] {386}, arg2: false);
-                context.SetSkill(arg1: new int[] {387}, arg2: false);
-                context.SetSkill(arg1: new int[] {388}, arg2: false);
-                context.SetSkill(arg1: new int[] {389}, arg2: false);
-                context.SetSkill(arg1: new int[] {390}, arg2: false);
-                context.SetSkill(arg1: new int[] {391}, arg2: false);
-                context.SetSkill(arg1: new int[] {392}, arg2: false);
-                context.SetSkill(arg1: new int[] {393}, arg2: false);
-                context.SetSkill(arg1: new int[] {394}, arg2: false);
-                context.SetSkill(arg1: new int[] {395}, arg2: false);
-                context.SetSkill(arg1: new int[] {396}, arg2: false);
-                context.SetSkill(arg1: new int[] {397}, arg2: false);
-                context.SetSkill(arg1: new int[] {398}, arg2: false);
-                context.SetSkill(arg1: new int[] {399}, arg2: false);
-                context.SetSkill(arg1: new int[] {400}, arg2: false);
-                context.SetSkill(arg1: new int[] {401}, arg2: false);
-                context.SetSkill(arg1: new int[] {402}, arg2: false);
+                context.SetSkill(arg1: new[] {383}, arg2: false);
+                context.SetSkill(arg1: new[] {384}, arg2: false);
+                context.SetSkill(arg1: new[] {385}, arg2: false);
+                context.SetSkill(arg1: new[] {386}, arg2: false);
+                context.SetSkill(arg1: new[] {387}, arg2: false);
+                context.SetSkill(arg1: new[] {388}, arg2: false);
+                context.SetSkill(arg1: new[] {389}, arg2: false);
+                context.SetSkill(arg1: new[] {390}, arg2: false);
+                context.SetSkill(arg1: new[] {391}, arg2: false);
+                context.SetSkill(arg1: new[] {392}, arg2: false);
+                context.SetSkill(arg1: new[] {393}, arg2: false);
+                context.SetSkill(arg1: new[] {394}, arg2: false);
+                context.SetSkill(arg1: new[] {395}, arg2: false);
+                context.SetSkill(arg1: new[] {396}, arg2: false);
+                context.SetSkill(arg1: new[] {397}, arg2: false);
+                context.SetSkill(arg1: new[] {398}, arg2: false);
+                context.SetSkill(arg1: new[] {399}, arg2: false);
+                context.SetSkill(arg1: new[] {400}, arg2: false);
+                context.SetSkill(arg1: new[] {401}, arg2: false);
+                context.SetSkill(arg1: new[] {402}, arg2: false);
             }
 
             public override void Execute() {
@@ -1437,27 +1434,27 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {389}, arg2: true);
-                context.SetSkill(arg1: new int[] {390}, arg2: true);
-                context.SetSkill(arg1: new int[] {391}, arg2: true);
-                context.SetSkill(arg1: new int[] {392}, arg2: true);
-                context.SetSkill(arg1: new int[] {393}, arg2: true);
-                context.SetSkill(arg1: new int[] {394}, arg2: true);
-                context.SetSkill(arg1: new int[] {395}, arg2: true);
-                context.SetSkill(arg1: new int[] {396}, arg2: true);
-                context.SetSkill(arg1: new int[] {397}, arg2: true);
-                context.SetSkill(arg1: new int[] {398}, arg2: true);
-                context.SetSkill(arg1: new int[] {399}, arg2: true);
-                context.SetSkill(arg1: new int[] {400}, arg2: true);
-                context.SetSkill(arg1: new int[] {401}, arg2: true);
-                context.SetSkill(arg1: new int[] {402}, arg2: true);
-                context.SetSkill(arg1: new int[] {403}, arg2: true);
-                context.SetSkill(arg1: new int[] {404}, arg2: true);
-                context.SetSkill(arg1: new int[] {405}, arg2: true);
-                context.SetSkill(arg1: new int[] {406}, arg2: true);
-                context.SetSkill(arg1: new int[] {407}, arg2: true);
-                context.SetSkill(arg1: new int[] {408}, arg2: true);
-                context.SetSkill(arg1: new int[] {409}, arg2: true);
+                context.SetSkill(arg1: new[] {389}, arg2: true);
+                context.SetSkill(arg1: new[] {390}, arg2: true);
+                context.SetSkill(arg1: new[] {391}, arg2: true);
+                context.SetSkill(arg1: new[] {392}, arg2: true);
+                context.SetSkill(arg1: new[] {393}, arg2: true);
+                context.SetSkill(arg1: new[] {394}, arg2: true);
+                context.SetSkill(arg1: new[] {395}, arg2: true);
+                context.SetSkill(arg1: new[] {396}, arg2: true);
+                context.SetSkill(arg1: new[] {397}, arg2: true);
+                context.SetSkill(arg1: new[] {398}, arg2: true);
+                context.SetSkill(arg1: new[] {399}, arg2: true);
+                context.SetSkill(arg1: new[] {400}, arg2: true);
+                context.SetSkill(arg1: new[] {401}, arg2: true);
+                context.SetSkill(arg1: new[] {402}, arg2: true);
+                context.SetSkill(arg1: new[] {403}, arg2: true);
+                context.SetSkill(arg1: new[] {404}, arg2: true);
+                context.SetSkill(arg1: new[] {405}, arg2: true);
+                context.SetSkill(arg1: new[] {406}, arg2: true);
+                context.SetSkill(arg1: new[] {407}, arg2: true);
+                context.SetSkill(arg1: new[] {408}, arg2: true);
+                context.SetSkill(arg1: new[] {409}, arg2: true);
             }
 
             public override void Execute() {
@@ -1474,27 +1471,27 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬17대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {389}, arg2: false);
-                context.SetSkill(arg1: new int[] {390}, arg2: false);
-                context.SetSkill(arg1: new int[] {391}, arg2: false);
-                context.SetSkill(arg1: new int[] {392}, arg2: false);
-                context.SetSkill(arg1: new int[] {393}, arg2: false);
-                context.SetSkill(arg1: new int[] {394}, arg2: false);
-                context.SetSkill(arg1: new int[] {395}, arg2: false);
-                context.SetSkill(arg1: new int[] {396}, arg2: false);
-                context.SetSkill(arg1: new int[] {397}, arg2: false);
-                context.SetSkill(arg1: new int[] {398}, arg2: false);
-                context.SetSkill(arg1: new int[] {399}, arg2: false);
-                context.SetSkill(arg1: new int[] {400}, arg2: false);
-                context.SetSkill(arg1: new int[] {401}, arg2: false);
-                context.SetSkill(arg1: new int[] {402}, arg2: false);
-                context.SetSkill(arg1: new int[] {403}, arg2: false);
-                context.SetSkill(arg1: new int[] {404}, arg2: false);
-                context.SetSkill(arg1: new int[] {405}, arg2: false);
-                context.SetSkill(arg1: new int[] {406}, arg2: false);
-                context.SetSkill(arg1: new int[] {407}, arg2: false);
-                context.SetSkill(arg1: new int[] {408}, arg2: false);
-                context.SetSkill(arg1: new int[] {409}, arg2: false);
+                context.SetSkill(arg1: new[] {389}, arg2: false);
+                context.SetSkill(arg1: new[] {390}, arg2: false);
+                context.SetSkill(arg1: new[] {391}, arg2: false);
+                context.SetSkill(arg1: new[] {392}, arg2: false);
+                context.SetSkill(arg1: new[] {393}, arg2: false);
+                context.SetSkill(arg1: new[] {394}, arg2: false);
+                context.SetSkill(arg1: new[] {395}, arg2: false);
+                context.SetSkill(arg1: new[] {396}, arg2: false);
+                context.SetSkill(arg1: new[] {397}, arg2: false);
+                context.SetSkill(arg1: new[] {398}, arg2: false);
+                context.SetSkill(arg1: new[] {399}, arg2: false);
+                context.SetSkill(arg1: new[] {400}, arg2: false);
+                context.SetSkill(arg1: new[] {401}, arg2: false);
+                context.SetSkill(arg1: new[] {402}, arg2: false);
+                context.SetSkill(arg1: new[] {403}, arg2: false);
+                context.SetSkill(arg1: new[] {404}, arg2: false);
+                context.SetSkill(arg1: new[] {405}, arg2: false);
+                context.SetSkill(arg1: new[] {406}, arg2: false);
+                context.SetSkill(arg1: new[] {407}, arg2: false);
+                context.SetSkill(arg1: new[] {408}, arg2: false);
+                context.SetSkill(arg1: new[] {409}, arg2: false);
             }
 
             public override void Execute() {
@@ -1512,27 +1509,27 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {396}, arg2: true);
-                context.SetSkill(arg1: new int[] {397}, arg2: true);
-                context.SetSkill(arg1: new int[] {398}, arg2: true);
-                context.SetSkill(arg1: new int[] {399}, arg2: true);
-                context.SetSkill(arg1: new int[] {400}, arg2: true);
-                context.SetSkill(arg1: new int[] {401}, arg2: true);
-                context.SetSkill(arg1: new int[] {402}, arg2: true);
-                context.SetSkill(arg1: new int[] {403}, arg2: true);
-                context.SetSkill(arg1: new int[] {404}, arg2: true);
-                context.SetSkill(arg1: new int[] {405}, arg2: true);
-                context.SetSkill(arg1: new int[] {406}, arg2: true);
-                context.SetSkill(arg1: new int[] {407}, arg2: true);
-                context.SetSkill(arg1: new int[] {408}, arg2: true);
-                context.SetSkill(arg1: new int[] {409}, arg2: true);
-                context.SetSkill(arg1: new int[] {410}, arg2: true);
-                context.SetSkill(arg1: new int[] {411}, arg2: true);
-                context.SetSkill(arg1: new int[] {412}, arg2: true);
-                context.SetSkill(arg1: new int[] {413}, arg2: true);
-                context.SetSkill(arg1: new int[] {414}, arg2: true);
-                context.SetSkill(arg1: new int[] {415}, arg2: true);
-                context.SetSkill(arg1: new int[] {416}, arg2: true);
+                context.SetSkill(arg1: new[] {396}, arg2: true);
+                context.SetSkill(arg1: new[] {397}, arg2: true);
+                context.SetSkill(arg1: new[] {398}, arg2: true);
+                context.SetSkill(arg1: new[] {399}, arg2: true);
+                context.SetSkill(arg1: new[] {400}, arg2: true);
+                context.SetSkill(arg1: new[] {401}, arg2: true);
+                context.SetSkill(arg1: new[] {402}, arg2: true);
+                context.SetSkill(arg1: new[] {403}, arg2: true);
+                context.SetSkill(arg1: new[] {404}, arg2: true);
+                context.SetSkill(arg1: new[] {405}, arg2: true);
+                context.SetSkill(arg1: new[] {406}, arg2: true);
+                context.SetSkill(arg1: new[] {407}, arg2: true);
+                context.SetSkill(arg1: new[] {408}, arg2: true);
+                context.SetSkill(arg1: new[] {409}, arg2: true);
+                context.SetSkill(arg1: new[] {410}, arg2: true);
+                context.SetSkill(arg1: new[] {411}, arg2: true);
+                context.SetSkill(arg1: new[] {412}, arg2: true);
+                context.SetSkill(arg1: new[] {413}, arg2: true);
+                context.SetSkill(arg1: new[] {414}, arg2: true);
+                context.SetSkill(arg1: new[] {415}, arg2: true);
+                context.SetSkill(arg1: new[] {416}, arg2: true);
             }
 
             public override void Execute() {
@@ -1549,27 +1546,27 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬18대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {396}, arg2: false);
-                context.SetSkill(arg1: new int[] {397}, arg2: false);
-                context.SetSkill(arg1: new int[] {398}, arg2: false);
-                context.SetSkill(arg1: new int[] {399}, arg2: false);
-                context.SetSkill(arg1: new int[] {400}, arg2: false);
-                context.SetSkill(arg1: new int[] {401}, arg2: false);
-                context.SetSkill(arg1: new int[] {402}, arg2: false);
-                context.SetSkill(arg1: new int[] {403}, arg2: false);
-                context.SetSkill(arg1: new int[] {404}, arg2: false);
-                context.SetSkill(arg1: new int[] {405}, arg2: false);
-                context.SetSkill(arg1: new int[] {406}, arg2: false);
-                context.SetSkill(arg1: new int[] {407}, arg2: false);
-                context.SetSkill(arg1: new int[] {408}, arg2: false);
-                context.SetSkill(arg1: new int[] {409}, arg2: false);
-                context.SetSkill(arg1: new int[] {410}, arg2: false);
-                context.SetSkill(arg1: new int[] {411}, arg2: false);
-                context.SetSkill(arg1: new int[] {412}, arg2: false);
-                context.SetSkill(arg1: new int[] {413}, arg2: false);
-                context.SetSkill(arg1: new int[] {414}, arg2: false);
-                context.SetSkill(arg1: new int[] {415}, arg2: false);
-                context.SetSkill(arg1: new int[] {416}, arg2: false);
+                context.SetSkill(arg1: new[] {396}, arg2: false);
+                context.SetSkill(arg1: new[] {397}, arg2: false);
+                context.SetSkill(arg1: new[] {398}, arg2: false);
+                context.SetSkill(arg1: new[] {399}, arg2: false);
+                context.SetSkill(arg1: new[] {400}, arg2: false);
+                context.SetSkill(arg1: new[] {401}, arg2: false);
+                context.SetSkill(arg1: new[] {402}, arg2: false);
+                context.SetSkill(arg1: new[] {403}, arg2: false);
+                context.SetSkill(arg1: new[] {404}, arg2: false);
+                context.SetSkill(arg1: new[] {405}, arg2: false);
+                context.SetSkill(arg1: new[] {406}, arg2: false);
+                context.SetSkill(arg1: new[] {407}, arg2: false);
+                context.SetSkill(arg1: new[] {408}, arg2: false);
+                context.SetSkill(arg1: new[] {409}, arg2: false);
+                context.SetSkill(arg1: new[] {410}, arg2: false);
+                context.SetSkill(arg1: new[] {411}, arg2: false);
+                context.SetSkill(arg1: new[] {412}, arg2: false);
+                context.SetSkill(arg1: new[] {413}, arg2: false);
+                context.SetSkill(arg1: new[] {414}, arg2: false);
+                context.SetSkill(arg1: new[] {415}, arg2: false);
+                context.SetSkill(arg1: new[] {416}, arg2: false);
             }
 
             public override void Execute() {
@@ -1587,26 +1584,26 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {403}, arg2: true);
-                context.SetSkill(arg1: new int[] {404}, arg2: true);
-                context.SetSkill(arg1: new int[] {405}, arg2: true);
-                context.SetSkill(arg1: new int[] {406}, arg2: true);
-                context.SetSkill(arg1: new int[] {407}, arg2: true);
-                context.SetSkill(arg1: new int[] {408}, arg2: true);
-                context.SetSkill(arg1: new int[] {409}, arg2: true);
-                context.SetSkill(arg1: new int[] {410}, arg2: true);
-                context.SetSkill(arg1: new int[] {411}, arg2: true);
-                context.SetSkill(arg1: new int[] {412}, arg2: true);
-                context.SetSkill(arg1: new int[] {413}, arg2: true);
-                context.SetSkill(arg1: new int[] {414}, arg2: true);
-                context.SetSkill(arg1: new int[] {415}, arg2: true);
-                context.SetSkill(arg1: new int[] {416}, arg2: true);
-                context.SetSkill(arg1: new int[] {417}, arg2: true);
-                context.SetSkill(arg1: new int[] {418}, arg2: true);
-                context.SetSkill(arg1: new int[] {419}, arg2: true);
-                context.SetSkill(arg1: new int[] {420}, arg2: true);
-                context.SetSkill(arg1: new int[] {421}, arg2: true);
-                context.SetSkill(arg1: new int[] {422}, arg2: true);
+                context.SetSkill(arg1: new[] {403}, arg2: true);
+                context.SetSkill(arg1: new[] {404}, arg2: true);
+                context.SetSkill(arg1: new[] {405}, arg2: true);
+                context.SetSkill(arg1: new[] {406}, arg2: true);
+                context.SetSkill(arg1: new[] {407}, arg2: true);
+                context.SetSkill(arg1: new[] {408}, arg2: true);
+                context.SetSkill(arg1: new[] {409}, arg2: true);
+                context.SetSkill(arg1: new[] {410}, arg2: true);
+                context.SetSkill(arg1: new[] {411}, arg2: true);
+                context.SetSkill(arg1: new[] {412}, arg2: true);
+                context.SetSkill(arg1: new[] {413}, arg2: true);
+                context.SetSkill(arg1: new[] {414}, arg2: true);
+                context.SetSkill(arg1: new[] {415}, arg2: true);
+                context.SetSkill(arg1: new[] {416}, arg2: true);
+                context.SetSkill(arg1: new[] {417}, arg2: true);
+                context.SetSkill(arg1: new[] {418}, arg2: true);
+                context.SetSkill(arg1: new[] {419}, arg2: true);
+                context.SetSkill(arg1: new[] {420}, arg2: true);
+                context.SetSkill(arg1: new[] {421}, arg2: true);
+                context.SetSkill(arg1: new[] {422}, arg2: true);
             }
 
             public override void Execute() {
@@ -1623,26 +1620,26 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬19대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {403}, arg2: false);
-                context.SetSkill(arg1: new int[] {404}, arg2: false);
-                context.SetSkill(arg1: new int[] {405}, arg2: false);
-                context.SetSkill(arg1: new int[] {406}, arg2: false);
-                context.SetSkill(arg1: new int[] {407}, arg2: false);
-                context.SetSkill(arg1: new int[] {408}, arg2: false);
-                context.SetSkill(arg1: new int[] {409}, arg2: false);
-                context.SetSkill(arg1: new int[] {410}, arg2: false);
-                context.SetSkill(arg1: new int[] {411}, arg2: false);
-                context.SetSkill(arg1: new int[] {412}, arg2: false);
-                context.SetSkill(arg1: new int[] {413}, arg2: false);
-                context.SetSkill(arg1: new int[] {414}, arg2: false);
-                context.SetSkill(arg1: new int[] {415}, arg2: false);
-                context.SetSkill(arg1: new int[] {416}, arg2: false);
-                context.SetSkill(arg1: new int[] {417}, arg2: false);
-                context.SetSkill(arg1: new int[] {418}, arg2: false);
-                context.SetSkill(arg1: new int[] {419}, arg2: false);
-                context.SetSkill(arg1: new int[] {420}, arg2: false);
-                context.SetSkill(arg1: new int[] {421}, arg2: false);
-                context.SetSkill(arg1: new int[] {422}, arg2: false);
+                context.SetSkill(arg1: new[] {403}, arg2: false);
+                context.SetSkill(arg1: new[] {404}, arg2: false);
+                context.SetSkill(arg1: new[] {405}, arg2: false);
+                context.SetSkill(arg1: new[] {406}, arg2: false);
+                context.SetSkill(arg1: new[] {407}, arg2: false);
+                context.SetSkill(arg1: new[] {408}, arg2: false);
+                context.SetSkill(arg1: new[] {409}, arg2: false);
+                context.SetSkill(arg1: new[] {410}, arg2: false);
+                context.SetSkill(arg1: new[] {411}, arg2: false);
+                context.SetSkill(arg1: new[] {412}, arg2: false);
+                context.SetSkill(arg1: new[] {413}, arg2: false);
+                context.SetSkill(arg1: new[] {414}, arg2: false);
+                context.SetSkill(arg1: new[] {415}, arg2: false);
+                context.SetSkill(arg1: new[] {416}, arg2: false);
+                context.SetSkill(arg1: new[] {417}, arg2: false);
+                context.SetSkill(arg1: new[] {418}, arg2: false);
+                context.SetSkill(arg1: new[] {419}, arg2: false);
+                context.SetSkill(arg1: new[] {420}, arg2: false);
+                context.SetSkill(arg1: new[] {421}, arg2: false);
+                context.SetSkill(arg1: new[] {422}, arg2: false);
             }
 
             public override void Execute() {
@@ -1660,25 +1657,25 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {410}, arg2: true);
-                context.SetSkill(arg1: new int[] {411}, arg2: true);
-                context.SetSkill(arg1: new int[] {412}, arg2: true);
-                context.SetSkill(arg1: new int[] {413}, arg2: true);
-                context.SetSkill(arg1: new int[] {414}, arg2: true);
-                context.SetSkill(arg1: new int[] {415}, arg2: true);
-                context.SetSkill(arg1: new int[] {416}, arg2: true);
-                context.SetSkill(arg1: new int[] {417}, arg2: true);
-                context.SetSkill(arg1: new int[] {418}, arg2: true);
-                context.SetSkill(arg1: new int[] {419}, arg2: true);
-                context.SetSkill(arg1: new int[] {420}, arg2: true);
-                context.SetSkill(arg1: new int[] {421}, arg2: true);
-                context.SetSkill(arg1: new int[] {422}, arg2: true);
-                context.SetSkill(arg1: new int[] {423}, arg2: true);
-                context.SetSkill(arg1: new int[] {424}, arg2: true);
-                context.SetSkill(arg1: new int[] {425}, arg2: true);
-                context.SetSkill(arg1: new int[] {426}, arg2: true);
-                context.SetSkill(arg1: new int[] {427}, arg2: true);
-                context.SetSkill(arg1: new int[] {428}, arg2: true);
+                context.SetSkill(arg1: new[] {410}, arg2: true);
+                context.SetSkill(arg1: new[] {411}, arg2: true);
+                context.SetSkill(arg1: new[] {412}, arg2: true);
+                context.SetSkill(arg1: new[] {413}, arg2: true);
+                context.SetSkill(arg1: new[] {414}, arg2: true);
+                context.SetSkill(arg1: new[] {415}, arg2: true);
+                context.SetSkill(arg1: new[] {416}, arg2: true);
+                context.SetSkill(arg1: new[] {417}, arg2: true);
+                context.SetSkill(arg1: new[] {418}, arg2: true);
+                context.SetSkill(arg1: new[] {419}, arg2: true);
+                context.SetSkill(arg1: new[] {420}, arg2: true);
+                context.SetSkill(arg1: new[] {421}, arg2: true);
+                context.SetSkill(arg1: new[] {422}, arg2: true);
+                context.SetSkill(arg1: new[] {423}, arg2: true);
+                context.SetSkill(arg1: new[] {424}, arg2: true);
+                context.SetSkill(arg1: new[] {425}, arg2: true);
+                context.SetSkill(arg1: new[] {426}, arg2: true);
+                context.SetSkill(arg1: new[] {427}, arg2: true);
+                context.SetSkill(arg1: new[] {428}, arg2: true);
             }
 
             public override void Execute() {
@@ -1695,25 +1692,25 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬20대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {410}, arg2: false);
-                context.SetSkill(arg1: new int[] {411}, arg2: false);
-                context.SetSkill(arg1: new int[] {412}, arg2: false);
-                context.SetSkill(arg1: new int[] {413}, arg2: false);
-                context.SetSkill(arg1: new int[] {414}, arg2: false);
-                context.SetSkill(arg1: new int[] {415}, arg2: false);
-                context.SetSkill(arg1: new int[] {416}, arg2: false);
-                context.SetSkill(arg1: new int[] {417}, arg2: false);
-                context.SetSkill(arg1: new int[] {418}, arg2: false);
-                context.SetSkill(arg1: new int[] {419}, arg2: false);
-                context.SetSkill(arg1: new int[] {420}, arg2: false);
-                context.SetSkill(arg1: new int[] {421}, arg2: false);
-                context.SetSkill(arg1: new int[] {422}, arg2: false);
-                context.SetSkill(arg1: new int[] {423}, arg2: false);
-                context.SetSkill(arg1: new int[] {424}, arg2: false);
-                context.SetSkill(arg1: new int[] {425}, arg2: false);
-                context.SetSkill(arg1: new int[] {426}, arg2: false);
-                context.SetSkill(arg1: new int[] {427}, arg2: false);
-                context.SetSkill(arg1: new int[] {428}, arg2: false);
+                context.SetSkill(arg1: new[] {410}, arg2: false);
+                context.SetSkill(arg1: new[] {411}, arg2: false);
+                context.SetSkill(arg1: new[] {412}, arg2: false);
+                context.SetSkill(arg1: new[] {413}, arg2: false);
+                context.SetSkill(arg1: new[] {414}, arg2: false);
+                context.SetSkill(arg1: new[] {415}, arg2: false);
+                context.SetSkill(arg1: new[] {416}, arg2: false);
+                context.SetSkill(arg1: new[] {417}, arg2: false);
+                context.SetSkill(arg1: new[] {418}, arg2: false);
+                context.SetSkill(arg1: new[] {419}, arg2: false);
+                context.SetSkill(arg1: new[] {420}, arg2: false);
+                context.SetSkill(arg1: new[] {421}, arg2: false);
+                context.SetSkill(arg1: new[] {422}, arg2: false);
+                context.SetSkill(arg1: new[] {423}, arg2: false);
+                context.SetSkill(arg1: new[] {424}, arg2: false);
+                context.SetSkill(arg1: new[] {425}, arg2: false);
+                context.SetSkill(arg1: new[] {426}, arg2: false);
+                context.SetSkill(arg1: new[] {427}, arg2: false);
+                context.SetSkill(arg1: new[] {428}, arg2: false);
             }
 
             public override void Execute() {
@@ -1731,24 +1728,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {417}, arg2: true);
-                context.SetSkill(arg1: new int[] {418}, arg2: true);
-                context.SetSkill(arg1: new int[] {419}, arg2: true);
-                context.SetSkill(arg1: new int[] {420}, arg2: true);
-                context.SetSkill(arg1: new int[] {421}, arg2: true);
-                context.SetSkill(arg1: new int[] {422}, arg2: true);
-                context.SetSkill(arg1: new int[] {423}, arg2: true);
-                context.SetSkill(arg1: new int[] {424}, arg2: true);
-                context.SetSkill(arg1: new int[] {425}, arg2: true);
-                context.SetSkill(arg1: new int[] {426}, arg2: true);
-                context.SetSkill(arg1: new int[] {427}, arg2: true);
-                context.SetSkill(arg1: new int[] {428}, arg2: true);
-                context.SetSkill(arg1: new int[] {429}, arg2: true);
-                context.SetSkill(arg1: new int[] {430}, arg2: true);
-                context.SetSkill(arg1: new int[] {431}, arg2: true);
-                context.SetSkill(arg1: new int[] {432}, arg2: true);
-                context.SetSkill(arg1: new int[] {433}, arg2: true);
-                context.SetSkill(arg1: new int[] {434}, arg2: true);
+                context.SetSkill(arg1: new[] {417}, arg2: true);
+                context.SetSkill(arg1: new[] {418}, arg2: true);
+                context.SetSkill(arg1: new[] {419}, arg2: true);
+                context.SetSkill(arg1: new[] {420}, arg2: true);
+                context.SetSkill(arg1: new[] {421}, arg2: true);
+                context.SetSkill(arg1: new[] {422}, arg2: true);
+                context.SetSkill(arg1: new[] {423}, arg2: true);
+                context.SetSkill(arg1: new[] {424}, arg2: true);
+                context.SetSkill(arg1: new[] {425}, arg2: true);
+                context.SetSkill(arg1: new[] {426}, arg2: true);
+                context.SetSkill(arg1: new[] {427}, arg2: true);
+                context.SetSkill(arg1: new[] {428}, arg2: true);
+                context.SetSkill(arg1: new[] {429}, arg2: true);
+                context.SetSkill(arg1: new[] {430}, arg2: true);
+                context.SetSkill(arg1: new[] {431}, arg2: true);
+                context.SetSkill(arg1: new[] {432}, arg2: true);
+                context.SetSkill(arg1: new[] {433}, arg2: true);
+                context.SetSkill(arg1: new[] {434}, arg2: true);
             }
 
             public override void Execute() {
@@ -1765,24 +1762,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬21대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {417}, arg2: false);
-                context.SetSkill(arg1: new int[] {418}, arg2: false);
-                context.SetSkill(arg1: new int[] {419}, arg2: false);
-                context.SetSkill(arg1: new int[] {420}, arg2: false);
-                context.SetSkill(arg1: new int[] {421}, arg2: false);
-                context.SetSkill(arg1: new int[] {422}, arg2: false);
-                context.SetSkill(arg1: new int[] {423}, arg2: false);
-                context.SetSkill(arg1: new int[] {424}, arg2: false);
-                context.SetSkill(arg1: new int[] {425}, arg2: false);
-                context.SetSkill(arg1: new int[] {426}, arg2: false);
-                context.SetSkill(arg1: new int[] {427}, arg2: false);
-                context.SetSkill(arg1: new int[] {428}, arg2: false);
-                context.SetSkill(arg1: new int[] {429}, arg2: false);
-                context.SetSkill(arg1: new int[] {430}, arg2: false);
-                context.SetSkill(arg1: new int[] {431}, arg2: false);
-                context.SetSkill(arg1: new int[] {432}, arg2: false);
-                context.SetSkill(arg1: new int[] {433}, arg2: false);
-                context.SetSkill(arg1: new int[] {434}, arg2: false);
+                context.SetSkill(arg1: new[] {417}, arg2: false);
+                context.SetSkill(arg1: new[] {418}, arg2: false);
+                context.SetSkill(arg1: new[] {419}, arg2: false);
+                context.SetSkill(arg1: new[] {420}, arg2: false);
+                context.SetSkill(arg1: new[] {421}, arg2: false);
+                context.SetSkill(arg1: new[] {422}, arg2: false);
+                context.SetSkill(arg1: new[] {423}, arg2: false);
+                context.SetSkill(arg1: new[] {424}, arg2: false);
+                context.SetSkill(arg1: new[] {425}, arg2: false);
+                context.SetSkill(arg1: new[] {426}, arg2: false);
+                context.SetSkill(arg1: new[] {427}, arg2: false);
+                context.SetSkill(arg1: new[] {428}, arg2: false);
+                context.SetSkill(arg1: new[] {429}, arg2: false);
+                context.SetSkill(arg1: new[] {430}, arg2: false);
+                context.SetSkill(arg1: new[] {431}, arg2: false);
+                context.SetSkill(arg1: new[] {432}, arg2: false);
+                context.SetSkill(arg1: new[] {433}, arg2: false);
+                context.SetSkill(arg1: new[] {434}, arg2: false);
             }
 
             public override void Execute() {
@@ -1800,24 +1797,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {423}, arg2: true);
-                context.SetSkill(arg1: new int[] {424}, arg2: true);
-                context.SetSkill(arg1: new int[] {425}, arg2: true);
-                context.SetSkill(arg1: new int[] {426}, arg2: true);
-                context.SetSkill(arg1: new int[] {427}, arg2: true);
-                context.SetSkill(arg1: new int[] {428}, arg2: true);
-                context.SetSkill(arg1: new int[] {429}, arg2: true);
-                context.SetSkill(arg1: new int[] {430}, arg2: true);
-                context.SetSkill(arg1: new int[] {431}, arg2: true);
-                context.SetSkill(arg1: new int[] {432}, arg2: true);
-                context.SetSkill(arg1: new int[] {433}, arg2: true);
-                context.SetSkill(arg1: new int[] {434}, arg2: true);
-                context.SetSkill(arg1: new int[] {435}, arg2: true);
-                context.SetSkill(arg1: new int[] {436}, arg2: true);
-                context.SetSkill(arg1: new int[] {437}, arg2: true);
-                context.SetSkill(arg1: new int[] {438}, arg2: true);
-                context.SetSkill(arg1: new int[] {439}, arg2: true);
-                context.SetSkill(arg1: new int[] {440}, arg2: true);
+                context.SetSkill(arg1: new[] {423}, arg2: true);
+                context.SetSkill(arg1: new[] {424}, arg2: true);
+                context.SetSkill(arg1: new[] {425}, arg2: true);
+                context.SetSkill(arg1: new[] {426}, arg2: true);
+                context.SetSkill(arg1: new[] {427}, arg2: true);
+                context.SetSkill(arg1: new[] {428}, arg2: true);
+                context.SetSkill(arg1: new[] {429}, arg2: true);
+                context.SetSkill(arg1: new[] {430}, arg2: true);
+                context.SetSkill(arg1: new[] {431}, arg2: true);
+                context.SetSkill(arg1: new[] {432}, arg2: true);
+                context.SetSkill(arg1: new[] {433}, arg2: true);
+                context.SetSkill(arg1: new[] {434}, arg2: true);
+                context.SetSkill(arg1: new[] {435}, arg2: true);
+                context.SetSkill(arg1: new[] {436}, arg2: true);
+                context.SetSkill(arg1: new[] {437}, arg2: true);
+                context.SetSkill(arg1: new[] {438}, arg2: true);
+                context.SetSkill(arg1: new[] {439}, arg2: true);
+                context.SetSkill(arg1: new[] {440}, arg2: true);
             }
 
             public override void Execute() {
@@ -1834,24 +1831,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬22대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {423}, arg2: false);
-                context.SetSkill(arg1: new int[] {424}, arg2: false);
-                context.SetSkill(arg1: new int[] {425}, arg2: false);
-                context.SetSkill(arg1: new int[] {426}, arg2: false);
-                context.SetSkill(arg1: new int[] {427}, arg2: false);
-                context.SetSkill(arg1: new int[] {428}, arg2: false);
-                context.SetSkill(arg1: new int[] {429}, arg2: false);
-                context.SetSkill(arg1: new int[] {430}, arg2: false);
-                context.SetSkill(arg1: new int[] {431}, arg2: false);
-                context.SetSkill(arg1: new int[] {432}, arg2: false);
-                context.SetSkill(arg1: new int[] {433}, arg2: false);
-                context.SetSkill(arg1: new int[] {434}, arg2: false);
-                context.SetSkill(arg1: new int[] {435}, arg2: false);
-                context.SetSkill(arg1: new int[] {436}, arg2: false);
-                context.SetSkill(arg1: new int[] {437}, arg2: false);
-                context.SetSkill(arg1: new int[] {438}, arg2: false);
-                context.SetSkill(arg1: new int[] {439}, arg2: false);
-                context.SetSkill(arg1: new int[] {440}, arg2: false);
+                context.SetSkill(arg1: new[] {423}, arg2: false);
+                context.SetSkill(arg1: new[] {424}, arg2: false);
+                context.SetSkill(arg1: new[] {425}, arg2: false);
+                context.SetSkill(arg1: new[] {426}, arg2: false);
+                context.SetSkill(arg1: new[] {427}, arg2: false);
+                context.SetSkill(arg1: new[] {428}, arg2: false);
+                context.SetSkill(arg1: new[] {429}, arg2: false);
+                context.SetSkill(arg1: new[] {430}, arg2: false);
+                context.SetSkill(arg1: new[] {431}, arg2: false);
+                context.SetSkill(arg1: new[] {432}, arg2: false);
+                context.SetSkill(arg1: new[] {433}, arg2: false);
+                context.SetSkill(arg1: new[] {434}, arg2: false);
+                context.SetSkill(arg1: new[] {435}, arg2: false);
+                context.SetSkill(arg1: new[] {436}, arg2: false);
+                context.SetSkill(arg1: new[] {437}, arg2: false);
+                context.SetSkill(arg1: new[] {438}, arg2: false);
+                context.SetSkill(arg1: new[] {439}, arg2: false);
+                context.SetSkill(arg1: new[] {440}, arg2: false);
             }
 
             public override void Execute() {
@@ -1869,24 +1866,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {429}, arg2: true);
-                context.SetSkill(arg1: new int[] {430}, arg2: true);
-                context.SetSkill(arg1: new int[] {431}, arg2: true);
-                context.SetSkill(arg1: new int[] {432}, arg2: true);
-                context.SetSkill(arg1: new int[] {433}, arg2: true);
-                context.SetSkill(arg1: new int[] {434}, arg2: true);
-                context.SetSkill(arg1: new int[] {435}, arg2: true);
-                context.SetSkill(arg1: new int[] {436}, arg2: true);
-                context.SetSkill(arg1: new int[] {437}, arg2: true);
-                context.SetSkill(arg1: new int[] {438}, arg2: true);
-                context.SetSkill(arg1: new int[] {439}, arg2: true);
-                context.SetSkill(arg1: new int[] {440}, arg2: true);
-                context.SetSkill(arg1: new int[] {441}, arg2: true);
-                context.SetSkill(arg1: new int[] {442}, arg2: true);
-                context.SetSkill(arg1: new int[] {443}, arg2: true);
-                context.SetSkill(arg1: new int[] {444}, arg2: true);
-                context.SetSkill(arg1: new int[] {445}, arg2: true);
-                context.SetSkill(arg1: new int[] {446}, arg2: true);
+                context.SetSkill(arg1: new[] {429}, arg2: true);
+                context.SetSkill(arg1: new[] {430}, arg2: true);
+                context.SetSkill(arg1: new[] {431}, arg2: true);
+                context.SetSkill(arg1: new[] {432}, arg2: true);
+                context.SetSkill(arg1: new[] {433}, arg2: true);
+                context.SetSkill(arg1: new[] {434}, arg2: true);
+                context.SetSkill(arg1: new[] {435}, arg2: true);
+                context.SetSkill(arg1: new[] {436}, arg2: true);
+                context.SetSkill(arg1: new[] {437}, arg2: true);
+                context.SetSkill(arg1: new[] {438}, arg2: true);
+                context.SetSkill(arg1: new[] {439}, arg2: true);
+                context.SetSkill(arg1: new[] {440}, arg2: true);
+                context.SetSkill(arg1: new[] {441}, arg2: true);
+                context.SetSkill(arg1: new[] {442}, arg2: true);
+                context.SetSkill(arg1: new[] {443}, arg2: true);
+                context.SetSkill(arg1: new[] {444}, arg2: true);
+                context.SetSkill(arg1: new[] {445}, arg2: true);
+                context.SetSkill(arg1: new[] {446}, arg2: true);
             }
 
             public override void Execute() {
@@ -1903,24 +1900,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬23대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {429}, arg2: false);
-                context.SetSkill(arg1: new int[] {430}, arg2: false);
-                context.SetSkill(arg1: new int[] {431}, arg2: false);
-                context.SetSkill(arg1: new int[] {432}, arg2: false);
-                context.SetSkill(arg1: new int[] {433}, arg2: false);
-                context.SetSkill(arg1: new int[] {434}, arg2: false);
-                context.SetSkill(arg1: new int[] {435}, arg2: false);
-                context.SetSkill(arg1: new int[] {436}, arg2: false);
-                context.SetSkill(arg1: new int[] {437}, arg2: false);
-                context.SetSkill(arg1: new int[] {438}, arg2: false);
-                context.SetSkill(arg1: new int[] {439}, arg2: false);
-                context.SetSkill(arg1: new int[] {440}, arg2: false);
-                context.SetSkill(arg1: new int[] {441}, arg2: false);
-                context.SetSkill(arg1: new int[] {442}, arg2: false);
-                context.SetSkill(arg1: new int[] {443}, arg2: false);
-                context.SetSkill(arg1: new int[] {444}, arg2: false);
-                context.SetSkill(arg1: new int[] {445}, arg2: false);
-                context.SetSkill(arg1: new int[] {446}, arg2: false);
+                context.SetSkill(arg1: new[] {429}, arg2: false);
+                context.SetSkill(arg1: new[] {430}, arg2: false);
+                context.SetSkill(arg1: new[] {431}, arg2: false);
+                context.SetSkill(arg1: new[] {432}, arg2: false);
+                context.SetSkill(arg1: new[] {433}, arg2: false);
+                context.SetSkill(arg1: new[] {434}, arg2: false);
+                context.SetSkill(arg1: new[] {435}, arg2: false);
+                context.SetSkill(arg1: new[] {436}, arg2: false);
+                context.SetSkill(arg1: new[] {437}, arg2: false);
+                context.SetSkill(arg1: new[] {438}, arg2: false);
+                context.SetSkill(arg1: new[] {439}, arg2: false);
+                context.SetSkill(arg1: new[] {440}, arg2: false);
+                context.SetSkill(arg1: new[] {441}, arg2: false);
+                context.SetSkill(arg1: new[] {442}, arg2: false);
+                context.SetSkill(arg1: new[] {443}, arg2: false);
+                context.SetSkill(arg1: new[] {444}, arg2: false);
+                context.SetSkill(arg1: new[] {445}, arg2: false);
+                context.SetSkill(arg1: new[] {446}, arg2: false);
             }
 
             public override void Execute() {
@@ -1938,24 +1935,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {435}, arg2: true);
-                context.SetSkill(arg1: new int[] {436}, arg2: true);
-                context.SetSkill(arg1: new int[] {437}, arg2: true);
-                context.SetSkill(arg1: new int[] {438}, arg2: true);
-                context.SetSkill(arg1: new int[] {439}, arg2: true);
-                context.SetSkill(arg1: new int[] {440}, arg2: true);
-                context.SetSkill(arg1: new int[] {441}, arg2: true);
-                context.SetSkill(arg1: new int[] {442}, arg2: true);
-                context.SetSkill(arg1: new int[] {443}, arg2: true);
-                context.SetSkill(arg1: new int[] {444}, arg2: true);
-                context.SetSkill(arg1: new int[] {445}, arg2: true);
-                context.SetSkill(arg1: new int[] {446}, arg2: true);
-                context.SetSkill(arg1: new int[] {447}, arg2: true);
-                context.SetSkill(arg1: new int[] {448}, arg2: true);
-                context.SetSkill(arg1: new int[] {449}, arg2: true);
-                context.SetSkill(arg1: new int[] {450}, arg2: true);
-                context.SetSkill(arg1: new int[] {451}, arg2: true);
-                context.SetSkill(arg1: new int[] {452}, arg2: true);
+                context.SetSkill(arg1: new[] {435}, arg2: true);
+                context.SetSkill(arg1: new[] {436}, arg2: true);
+                context.SetSkill(arg1: new[] {437}, arg2: true);
+                context.SetSkill(arg1: new[] {438}, arg2: true);
+                context.SetSkill(arg1: new[] {439}, arg2: true);
+                context.SetSkill(arg1: new[] {440}, arg2: true);
+                context.SetSkill(arg1: new[] {441}, arg2: true);
+                context.SetSkill(arg1: new[] {442}, arg2: true);
+                context.SetSkill(arg1: new[] {443}, arg2: true);
+                context.SetSkill(arg1: new[] {444}, arg2: true);
+                context.SetSkill(arg1: new[] {445}, arg2: true);
+                context.SetSkill(arg1: new[] {446}, arg2: true);
+                context.SetSkill(arg1: new[] {447}, arg2: true);
+                context.SetSkill(arg1: new[] {448}, arg2: true);
+                context.SetSkill(arg1: new[] {449}, arg2: true);
+                context.SetSkill(arg1: new[] {450}, arg2: true);
+                context.SetSkill(arg1: new[] {451}, arg2: true);
+                context.SetSkill(arg1: new[] {452}, arg2: true);
             }
 
             public override void Execute() {
@@ -1972,24 +1969,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬24대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {435}, arg2: false);
-                context.SetSkill(arg1: new int[] {436}, arg2: false);
-                context.SetSkill(arg1: new int[] {437}, arg2: false);
-                context.SetSkill(arg1: new int[] {438}, arg2: false);
-                context.SetSkill(arg1: new int[] {439}, arg2: false);
-                context.SetSkill(arg1: new int[] {440}, arg2: false);
-                context.SetSkill(arg1: new int[] {441}, arg2: false);
-                context.SetSkill(arg1: new int[] {442}, arg2: false);
-                context.SetSkill(arg1: new int[] {443}, arg2: false);
-                context.SetSkill(arg1: new int[] {444}, arg2: false);
-                context.SetSkill(arg1: new int[] {445}, arg2: false);
-                context.SetSkill(arg1: new int[] {446}, arg2: false);
-                context.SetSkill(arg1: new int[] {447}, arg2: false);
-                context.SetSkill(arg1: new int[] {448}, arg2: false);
-                context.SetSkill(arg1: new int[] {449}, arg2: false);
-                context.SetSkill(arg1: new int[] {450}, arg2: false);
-                context.SetSkill(arg1: new int[] {451}, arg2: false);
-                context.SetSkill(arg1: new int[] {452}, arg2: false);
+                context.SetSkill(arg1: new[] {435}, arg2: false);
+                context.SetSkill(arg1: new[] {436}, arg2: false);
+                context.SetSkill(arg1: new[] {437}, arg2: false);
+                context.SetSkill(arg1: new[] {438}, arg2: false);
+                context.SetSkill(arg1: new[] {439}, arg2: false);
+                context.SetSkill(arg1: new[] {440}, arg2: false);
+                context.SetSkill(arg1: new[] {441}, arg2: false);
+                context.SetSkill(arg1: new[] {442}, arg2: false);
+                context.SetSkill(arg1: new[] {443}, arg2: false);
+                context.SetSkill(arg1: new[] {444}, arg2: false);
+                context.SetSkill(arg1: new[] {445}, arg2: false);
+                context.SetSkill(arg1: new[] {446}, arg2: false);
+                context.SetSkill(arg1: new[] {447}, arg2: false);
+                context.SetSkill(arg1: new[] {448}, arg2: false);
+                context.SetSkill(arg1: new[] {449}, arg2: false);
+                context.SetSkill(arg1: new[] {450}, arg2: false);
+                context.SetSkill(arg1: new[] {451}, arg2: false);
+                context.SetSkill(arg1: new[] {452}, arg2: false);
             }
 
             public override void Execute() {
@@ -2007,24 +2004,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {441}, arg2: true);
-                context.SetSkill(arg1: new int[] {442}, arg2: true);
-                context.SetSkill(arg1: new int[] {443}, arg2: true);
-                context.SetSkill(arg1: new int[] {444}, arg2: true);
-                context.SetSkill(arg1: new int[] {445}, arg2: true);
-                context.SetSkill(arg1: new int[] {446}, arg2: true);
-                context.SetSkill(arg1: new int[] {447}, arg2: true);
-                context.SetSkill(arg1: new int[] {448}, arg2: true);
-                context.SetSkill(arg1: new int[] {449}, arg2: true);
-                context.SetSkill(arg1: new int[] {450}, arg2: true);
-                context.SetSkill(arg1: new int[] {451}, arg2: true);
-                context.SetSkill(arg1: new int[] {452}, arg2: true);
-                context.SetSkill(arg1: new int[] {453}, arg2: true);
-                context.SetSkill(arg1: new int[] {454}, arg2: true);
-                context.SetSkill(arg1: new int[] {455}, arg2: true);
-                context.SetSkill(arg1: new int[] {456}, arg2: true);
-                context.SetSkill(arg1: new int[] {457}, arg2: true);
-                context.SetSkill(arg1: new int[] {458}, arg2: true);
+                context.SetSkill(arg1: new[] {441}, arg2: true);
+                context.SetSkill(arg1: new[] {442}, arg2: true);
+                context.SetSkill(arg1: new[] {443}, arg2: true);
+                context.SetSkill(arg1: new[] {444}, arg2: true);
+                context.SetSkill(arg1: new[] {445}, arg2: true);
+                context.SetSkill(arg1: new[] {446}, arg2: true);
+                context.SetSkill(arg1: new[] {447}, arg2: true);
+                context.SetSkill(arg1: new[] {448}, arg2: true);
+                context.SetSkill(arg1: new[] {449}, arg2: true);
+                context.SetSkill(arg1: new[] {450}, arg2: true);
+                context.SetSkill(arg1: new[] {451}, arg2: true);
+                context.SetSkill(arg1: new[] {452}, arg2: true);
+                context.SetSkill(arg1: new[] {453}, arg2: true);
+                context.SetSkill(arg1: new[] {454}, arg2: true);
+                context.SetSkill(arg1: new[] {455}, arg2: true);
+                context.SetSkill(arg1: new[] {456}, arg2: true);
+                context.SetSkill(arg1: new[] {457}, arg2: true);
+                context.SetSkill(arg1: new[] {458}, arg2: true);
             }
 
             public override void Execute() {
@@ -2041,24 +2038,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬25대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {441}, arg2: false);
-                context.SetSkill(arg1: new int[] {442}, arg2: false);
-                context.SetSkill(arg1: new int[] {443}, arg2: false);
-                context.SetSkill(arg1: new int[] {444}, arg2: false);
-                context.SetSkill(arg1: new int[] {445}, arg2: false);
-                context.SetSkill(arg1: new int[] {446}, arg2: false);
-                context.SetSkill(arg1: new int[] {447}, arg2: false);
-                context.SetSkill(arg1: new int[] {448}, arg2: false);
-                context.SetSkill(arg1: new int[] {449}, arg2: false);
-                context.SetSkill(arg1: new int[] {450}, arg2: false);
-                context.SetSkill(arg1: new int[] {451}, arg2: false);
-                context.SetSkill(arg1: new int[] {452}, arg2: false);
-                context.SetSkill(arg1: new int[] {453}, arg2: false);
-                context.SetSkill(arg1: new int[] {454}, arg2: false);
-                context.SetSkill(arg1: new int[] {455}, arg2: false);
-                context.SetSkill(arg1: new int[] {456}, arg2: false);
-                context.SetSkill(arg1: new int[] {457}, arg2: false);
-                context.SetSkill(arg1: new int[] {458}, arg2: false);
+                context.SetSkill(arg1: new[] {441}, arg2: false);
+                context.SetSkill(arg1: new[] {442}, arg2: false);
+                context.SetSkill(arg1: new[] {443}, arg2: false);
+                context.SetSkill(arg1: new[] {444}, arg2: false);
+                context.SetSkill(arg1: new[] {445}, arg2: false);
+                context.SetSkill(arg1: new[] {446}, arg2: false);
+                context.SetSkill(arg1: new[] {447}, arg2: false);
+                context.SetSkill(arg1: new[] {448}, arg2: false);
+                context.SetSkill(arg1: new[] {449}, arg2: false);
+                context.SetSkill(arg1: new[] {450}, arg2: false);
+                context.SetSkill(arg1: new[] {451}, arg2: false);
+                context.SetSkill(arg1: new[] {452}, arg2: false);
+                context.SetSkill(arg1: new[] {453}, arg2: false);
+                context.SetSkill(arg1: new[] {454}, arg2: false);
+                context.SetSkill(arg1: new[] {455}, arg2: false);
+                context.SetSkill(arg1: new[] {456}, arg2: false);
+                context.SetSkill(arg1: new[] {457}, arg2: false);
+                context.SetSkill(arg1: new[] {458}, arg2: false);
             }
 
             public override void Execute() {
@@ -2076,24 +2073,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {447}, arg2: true);
-                context.SetSkill(arg1: new int[] {448}, arg2: true);
-                context.SetSkill(arg1: new int[] {449}, arg2: true);
-                context.SetSkill(arg1: new int[] {450}, arg2: true);
-                context.SetSkill(arg1: new int[] {451}, arg2: true);
-                context.SetSkill(arg1: new int[] {452}, arg2: true);
-                context.SetSkill(arg1: new int[] {453}, arg2: true);
-                context.SetSkill(arg1: new int[] {454}, arg2: true);
-                context.SetSkill(arg1: new int[] {455}, arg2: true);
-                context.SetSkill(arg1: new int[] {456}, arg2: true);
-                context.SetSkill(arg1: new int[] {457}, arg2: true);
-                context.SetSkill(arg1: new int[] {458}, arg2: true);
-                context.SetSkill(arg1: new int[] {459}, arg2: true);
-                context.SetSkill(arg1: new int[] {460}, arg2: true);
-                context.SetSkill(arg1: new int[] {461}, arg2: true);
-                context.SetSkill(arg1: new int[] {462}, arg2: true);
-                context.SetSkill(arg1: new int[] {463}, arg2: true);
-                context.SetSkill(arg1: new int[] {464}, arg2: true);
+                context.SetSkill(arg1: new[] {447}, arg2: true);
+                context.SetSkill(arg1: new[] {448}, arg2: true);
+                context.SetSkill(arg1: new[] {449}, arg2: true);
+                context.SetSkill(arg1: new[] {450}, arg2: true);
+                context.SetSkill(arg1: new[] {451}, arg2: true);
+                context.SetSkill(arg1: new[] {452}, arg2: true);
+                context.SetSkill(arg1: new[] {453}, arg2: true);
+                context.SetSkill(arg1: new[] {454}, arg2: true);
+                context.SetSkill(arg1: new[] {455}, arg2: true);
+                context.SetSkill(arg1: new[] {456}, arg2: true);
+                context.SetSkill(arg1: new[] {457}, arg2: true);
+                context.SetSkill(arg1: new[] {458}, arg2: true);
+                context.SetSkill(arg1: new[] {459}, arg2: true);
+                context.SetSkill(arg1: new[] {460}, arg2: true);
+                context.SetSkill(arg1: new[] {461}, arg2: true);
+                context.SetSkill(arg1: new[] {462}, arg2: true);
+                context.SetSkill(arg1: new[] {463}, arg2: true);
+                context.SetSkill(arg1: new[] {464}, arg2: true);
             }
 
             public override void Execute() {
@@ -2110,24 +2107,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬26대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {447}, arg2: false);
-                context.SetSkill(arg1: new int[] {448}, arg2: false);
-                context.SetSkill(arg1: new int[] {449}, arg2: false);
-                context.SetSkill(arg1: new int[] {450}, arg2: false);
-                context.SetSkill(arg1: new int[] {451}, arg2: false);
-                context.SetSkill(arg1: new int[] {452}, arg2: false);
-                context.SetSkill(arg1: new int[] {453}, arg2: false);
-                context.SetSkill(arg1: new int[] {454}, arg2: false);
-                context.SetSkill(arg1: new int[] {455}, arg2: false);
-                context.SetSkill(arg1: new int[] {456}, arg2: false);
-                context.SetSkill(arg1: new int[] {457}, arg2: false);
-                context.SetSkill(arg1: new int[] {458}, arg2: false);
-                context.SetSkill(arg1: new int[] {459}, arg2: false);
-                context.SetSkill(arg1: new int[] {460}, arg2: false);
-                context.SetSkill(arg1: new int[] {461}, arg2: false);
-                context.SetSkill(arg1: new int[] {462}, arg2: false);
-                context.SetSkill(arg1: new int[] {463}, arg2: false);
-                context.SetSkill(arg1: new int[] {464}, arg2: false);
+                context.SetSkill(arg1: new[] {447}, arg2: false);
+                context.SetSkill(arg1: new[] {448}, arg2: false);
+                context.SetSkill(arg1: new[] {449}, arg2: false);
+                context.SetSkill(arg1: new[] {450}, arg2: false);
+                context.SetSkill(arg1: new[] {451}, arg2: false);
+                context.SetSkill(arg1: new[] {452}, arg2: false);
+                context.SetSkill(arg1: new[] {453}, arg2: false);
+                context.SetSkill(arg1: new[] {454}, arg2: false);
+                context.SetSkill(arg1: new[] {455}, arg2: false);
+                context.SetSkill(arg1: new[] {456}, arg2: false);
+                context.SetSkill(arg1: new[] {457}, arg2: false);
+                context.SetSkill(arg1: new[] {458}, arg2: false);
+                context.SetSkill(arg1: new[] {459}, arg2: false);
+                context.SetSkill(arg1: new[] {460}, arg2: false);
+                context.SetSkill(arg1: new[] {461}, arg2: false);
+                context.SetSkill(arg1: new[] {462}, arg2: false);
+                context.SetSkill(arg1: new[] {463}, arg2: false);
+                context.SetSkill(arg1: new[] {464}, arg2: false);
             }
 
             public override void Execute() {
@@ -2145,24 +2142,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {453}, arg2: true);
-                context.SetSkill(arg1: new int[] {454}, arg2: true);
-                context.SetSkill(arg1: new int[] {455}, arg2: true);
-                context.SetSkill(arg1: new int[] {456}, arg2: true);
-                context.SetSkill(arg1: new int[] {457}, arg2: true);
-                context.SetSkill(arg1: new int[] {458}, arg2: true);
-                context.SetSkill(arg1: new int[] {459}, arg2: true);
-                context.SetSkill(arg1: new int[] {460}, arg2: true);
-                context.SetSkill(arg1: new int[] {461}, arg2: true);
-                context.SetSkill(arg1: new int[] {462}, arg2: true);
-                context.SetSkill(arg1: new int[] {463}, arg2: true);
-                context.SetSkill(arg1: new int[] {464}, arg2: true);
-                context.SetSkill(arg1: new int[] {465}, arg2: true);
-                context.SetSkill(arg1: new int[] {466}, arg2: true);
-                context.SetSkill(arg1: new int[] {467}, arg2: true);
-                context.SetSkill(arg1: new int[] {468}, arg2: true);
-                context.SetSkill(arg1: new int[] {469}, arg2: true);
-                context.SetSkill(arg1: new int[] {470}, arg2: true);
+                context.SetSkill(arg1: new[] {453}, arg2: true);
+                context.SetSkill(arg1: new[] {454}, arg2: true);
+                context.SetSkill(arg1: new[] {455}, arg2: true);
+                context.SetSkill(arg1: new[] {456}, arg2: true);
+                context.SetSkill(arg1: new[] {457}, arg2: true);
+                context.SetSkill(arg1: new[] {458}, arg2: true);
+                context.SetSkill(arg1: new[] {459}, arg2: true);
+                context.SetSkill(arg1: new[] {460}, arg2: true);
+                context.SetSkill(arg1: new[] {461}, arg2: true);
+                context.SetSkill(arg1: new[] {462}, arg2: true);
+                context.SetSkill(arg1: new[] {463}, arg2: true);
+                context.SetSkill(arg1: new[] {464}, arg2: true);
+                context.SetSkill(arg1: new[] {465}, arg2: true);
+                context.SetSkill(arg1: new[] {466}, arg2: true);
+                context.SetSkill(arg1: new[] {467}, arg2: true);
+                context.SetSkill(arg1: new[] {468}, arg2: true);
+                context.SetSkill(arg1: new[] {469}, arg2: true);
+                context.SetSkill(arg1: new[] {470}, arg2: true);
             }
 
             public override void Execute() {
@@ -2179,24 +2176,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬27대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {453}, arg2: false);
-                context.SetSkill(arg1: new int[] {454}, arg2: false);
-                context.SetSkill(arg1: new int[] {455}, arg2: false);
-                context.SetSkill(arg1: new int[] {456}, arg2: false);
-                context.SetSkill(arg1: new int[] {457}, arg2: false);
-                context.SetSkill(arg1: new int[] {458}, arg2: false);
-                context.SetSkill(arg1: new int[] {459}, arg2: false);
-                context.SetSkill(arg1: new int[] {460}, arg2: false);
-                context.SetSkill(arg1: new int[] {461}, arg2: false);
-                context.SetSkill(arg1: new int[] {462}, arg2: false);
-                context.SetSkill(arg1: new int[] {463}, arg2: false);
-                context.SetSkill(arg1: new int[] {464}, arg2: false);
-                context.SetSkill(arg1: new int[] {465}, arg2: false);
-                context.SetSkill(arg1: new int[] {466}, arg2: false);
-                context.SetSkill(arg1: new int[] {467}, arg2: false);
-                context.SetSkill(arg1: new int[] {468}, arg2: false);
-                context.SetSkill(arg1: new int[] {469}, arg2: false);
-                context.SetSkill(arg1: new int[] {470}, arg2: false);
+                context.SetSkill(arg1: new[] {453}, arg2: false);
+                context.SetSkill(arg1: new[] {454}, arg2: false);
+                context.SetSkill(arg1: new[] {455}, arg2: false);
+                context.SetSkill(arg1: new[] {456}, arg2: false);
+                context.SetSkill(arg1: new[] {457}, arg2: false);
+                context.SetSkill(arg1: new[] {458}, arg2: false);
+                context.SetSkill(arg1: new[] {459}, arg2: false);
+                context.SetSkill(arg1: new[] {460}, arg2: false);
+                context.SetSkill(arg1: new[] {461}, arg2: false);
+                context.SetSkill(arg1: new[] {462}, arg2: false);
+                context.SetSkill(arg1: new[] {463}, arg2: false);
+                context.SetSkill(arg1: new[] {464}, arg2: false);
+                context.SetSkill(arg1: new[] {465}, arg2: false);
+                context.SetSkill(arg1: new[] {466}, arg2: false);
+                context.SetSkill(arg1: new[] {467}, arg2: false);
+                context.SetSkill(arg1: new[] {468}, arg2: false);
+                context.SetSkill(arg1: new[] {469}, arg2: false);
+                context.SetSkill(arg1: new[] {470}, arg2: false);
             }
 
             public override void Execute() {
@@ -2214,25 +2211,25 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {459}, arg2: true);
-                context.SetSkill(arg1: new int[] {460}, arg2: true);
-                context.SetSkill(arg1: new int[] {461}, arg2: true);
-                context.SetSkill(arg1: new int[] {462}, arg2: true);
-                context.SetSkill(arg1: new int[] {463}, arg2: true);
-                context.SetSkill(arg1: new int[] {464}, arg2: true);
-                context.SetSkill(arg1: new int[] {465}, arg2: true);
-                context.SetSkill(arg1: new int[] {466}, arg2: true);
-                context.SetSkill(arg1: new int[] {467}, arg2: true);
-                context.SetSkill(arg1: new int[] {468}, arg2: true);
-                context.SetSkill(arg1: new int[] {469}, arg2: true);
-                context.SetSkill(arg1: new int[] {470}, arg2: true);
-                context.SetSkill(arg1: new int[] {471}, arg2: true);
-                context.SetSkill(arg1: new int[] {472}, arg2: true);
-                context.SetSkill(arg1: new int[] {473}, arg2: true);
-                context.SetSkill(arg1: new int[] {474}, arg2: true);
-                context.SetSkill(arg1: new int[] {475}, arg2: true);
-                context.SetSkill(arg1: new int[] {476}, arg2: true);
-                context.SetSkill(arg1: new int[] {477}, arg2: true);
+                context.SetSkill(arg1: new[] {459}, arg2: true);
+                context.SetSkill(arg1: new[] {460}, arg2: true);
+                context.SetSkill(arg1: new[] {461}, arg2: true);
+                context.SetSkill(arg1: new[] {462}, arg2: true);
+                context.SetSkill(arg1: new[] {463}, arg2: true);
+                context.SetSkill(arg1: new[] {464}, arg2: true);
+                context.SetSkill(arg1: new[] {465}, arg2: true);
+                context.SetSkill(arg1: new[] {466}, arg2: true);
+                context.SetSkill(arg1: new[] {467}, arg2: true);
+                context.SetSkill(arg1: new[] {468}, arg2: true);
+                context.SetSkill(arg1: new[] {469}, arg2: true);
+                context.SetSkill(arg1: new[] {470}, arg2: true);
+                context.SetSkill(arg1: new[] {471}, arg2: true);
+                context.SetSkill(arg1: new[] {472}, arg2: true);
+                context.SetSkill(arg1: new[] {473}, arg2: true);
+                context.SetSkill(arg1: new[] {474}, arg2: true);
+                context.SetSkill(arg1: new[] {475}, arg2: true);
+                context.SetSkill(arg1: new[] {476}, arg2: true);
+                context.SetSkill(arg1: new[] {477}, arg2: true);
             }
 
             public override void Execute() {
@@ -2249,25 +2246,25 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬28대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {459}, arg2: false);
-                context.SetSkill(arg1: new int[] {460}, arg2: false);
-                context.SetSkill(arg1: new int[] {461}, arg2: false);
-                context.SetSkill(arg1: new int[] {462}, arg2: false);
-                context.SetSkill(arg1: new int[] {463}, arg2: false);
-                context.SetSkill(arg1: new int[] {464}, arg2: false);
-                context.SetSkill(arg1: new int[] {465}, arg2: false);
-                context.SetSkill(arg1: new int[] {466}, arg2: false);
-                context.SetSkill(arg1: new int[] {467}, arg2: false);
-                context.SetSkill(arg1: new int[] {468}, arg2: false);
-                context.SetSkill(arg1: new int[] {469}, arg2: false);
-                context.SetSkill(arg1: new int[] {470}, arg2: false);
-                context.SetSkill(arg1: new int[] {471}, arg2: false);
-                context.SetSkill(arg1: new int[] {472}, arg2: false);
-                context.SetSkill(arg1: new int[] {473}, arg2: false);
-                context.SetSkill(arg1: new int[] {474}, arg2: false);
-                context.SetSkill(arg1: new int[] {475}, arg2: false);
-                context.SetSkill(arg1: new int[] {476}, arg2: false);
-                context.SetSkill(arg1: new int[] {477}, arg2: false);
+                context.SetSkill(arg1: new[] {459}, arg2: false);
+                context.SetSkill(arg1: new[] {460}, arg2: false);
+                context.SetSkill(arg1: new[] {461}, arg2: false);
+                context.SetSkill(arg1: new[] {462}, arg2: false);
+                context.SetSkill(arg1: new[] {463}, arg2: false);
+                context.SetSkill(arg1: new[] {464}, arg2: false);
+                context.SetSkill(arg1: new[] {465}, arg2: false);
+                context.SetSkill(arg1: new[] {466}, arg2: false);
+                context.SetSkill(arg1: new[] {467}, arg2: false);
+                context.SetSkill(arg1: new[] {468}, arg2: false);
+                context.SetSkill(arg1: new[] {469}, arg2: false);
+                context.SetSkill(arg1: new[] {470}, arg2: false);
+                context.SetSkill(arg1: new[] {471}, arg2: false);
+                context.SetSkill(arg1: new[] {472}, arg2: false);
+                context.SetSkill(arg1: new[] {473}, arg2: false);
+                context.SetSkill(arg1: new[] {474}, arg2: false);
+                context.SetSkill(arg1: new[] {475}, arg2: false);
+                context.SetSkill(arg1: new[] {476}, arg2: false);
+                context.SetSkill(arg1: new[] {477}, arg2: false);
             }
 
             public override void Execute() {
@@ -2285,26 +2282,26 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {465}, arg2: true);
-                context.SetSkill(arg1: new int[] {466}, arg2: true);
-                context.SetSkill(arg1: new int[] {467}, arg2: true);
-                context.SetSkill(arg1: new int[] {468}, arg2: true);
-                context.SetSkill(arg1: new int[] {469}, arg2: true);
-                context.SetSkill(arg1: new int[] {470}, arg2: true);
-                context.SetSkill(arg1: new int[] {471}, arg2: true);
-                context.SetSkill(arg1: new int[] {472}, arg2: true);
-                context.SetSkill(arg1: new int[] {473}, arg2: true);
-                context.SetSkill(arg1: new int[] {474}, arg2: true);
-                context.SetSkill(arg1: new int[] {475}, arg2: true);
-                context.SetSkill(arg1: new int[] {476}, arg2: true);
-                context.SetSkill(arg1: new int[] {477}, arg2: true);
-                context.SetSkill(arg1: new int[] {478}, arg2: true);
-                context.SetSkill(arg1: new int[] {479}, arg2: true);
-                context.SetSkill(arg1: new int[] {480}, arg2: true);
-                context.SetSkill(arg1: new int[] {481}, arg2: true);
-                context.SetSkill(arg1: new int[] {482}, arg2: true);
-                context.SetSkill(arg1: new int[] {483}, arg2: true);
-                context.SetSkill(arg1: new int[] {484}, arg2: true);
+                context.SetSkill(arg1: new[] {465}, arg2: true);
+                context.SetSkill(arg1: new[] {466}, arg2: true);
+                context.SetSkill(arg1: new[] {467}, arg2: true);
+                context.SetSkill(arg1: new[] {468}, arg2: true);
+                context.SetSkill(arg1: new[] {469}, arg2: true);
+                context.SetSkill(arg1: new[] {470}, arg2: true);
+                context.SetSkill(arg1: new[] {471}, arg2: true);
+                context.SetSkill(arg1: new[] {472}, arg2: true);
+                context.SetSkill(arg1: new[] {473}, arg2: true);
+                context.SetSkill(arg1: new[] {474}, arg2: true);
+                context.SetSkill(arg1: new[] {475}, arg2: true);
+                context.SetSkill(arg1: new[] {476}, arg2: true);
+                context.SetSkill(arg1: new[] {477}, arg2: true);
+                context.SetSkill(arg1: new[] {478}, arg2: true);
+                context.SetSkill(arg1: new[] {479}, arg2: true);
+                context.SetSkill(arg1: new[] {480}, arg2: true);
+                context.SetSkill(arg1: new[] {481}, arg2: true);
+                context.SetSkill(arg1: new[] {482}, arg2: true);
+                context.SetSkill(arg1: new[] {483}, arg2: true);
+                context.SetSkill(arg1: new[] {484}, arg2: true);
             }
 
             public override void Execute() {
@@ -2321,26 +2318,26 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬29대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {465}, arg2: false);
-                context.SetSkill(arg1: new int[] {466}, arg2: false);
-                context.SetSkill(arg1: new int[] {467}, arg2: false);
-                context.SetSkill(arg1: new int[] {468}, arg2: false);
-                context.SetSkill(arg1: new int[] {469}, arg2: false);
-                context.SetSkill(arg1: new int[] {470}, arg2: false);
-                context.SetSkill(arg1: new int[] {471}, arg2: false);
-                context.SetSkill(arg1: new int[] {472}, arg2: false);
-                context.SetSkill(arg1: new int[] {473}, arg2: false);
-                context.SetSkill(arg1: new int[] {474}, arg2: false);
-                context.SetSkill(arg1: new int[] {475}, arg2: false);
-                context.SetSkill(arg1: new int[] {476}, arg2: false);
-                context.SetSkill(arg1: new int[] {477}, arg2: false);
-                context.SetSkill(arg1: new int[] {478}, arg2: false);
-                context.SetSkill(arg1: new int[] {479}, arg2: false);
-                context.SetSkill(arg1: new int[] {480}, arg2: false);
-                context.SetSkill(arg1: new int[] {481}, arg2: false);
-                context.SetSkill(arg1: new int[] {482}, arg2: false);
-                context.SetSkill(arg1: new int[] {483}, arg2: false);
-                context.SetSkill(arg1: new int[] {484}, arg2: false);
+                context.SetSkill(arg1: new[] {465}, arg2: false);
+                context.SetSkill(arg1: new[] {466}, arg2: false);
+                context.SetSkill(arg1: new[] {467}, arg2: false);
+                context.SetSkill(arg1: new[] {468}, arg2: false);
+                context.SetSkill(arg1: new[] {469}, arg2: false);
+                context.SetSkill(arg1: new[] {470}, arg2: false);
+                context.SetSkill(arg1: new[] {471}, arg2: false);
+                context.SetSkill(arg1: new[] {472}, arg2: false);
+                context.SetSkill(arg1: new[] {473}, arg2: false);
+                context.SetSkill(arg1: new[] {474}, arg2: false);
+                context.SetSkill(arg1: new[] {475}, arg2: false);
+                context.SetSkill(arg1: new[] {476}, arg2: false);
+                context.SetSkill(arg1: new[] {477}, arg2: false);
+                context.SetSkill(arg1: new[] {478}, arg2: false);
+                context.SetSkill(arg1: new[] {479}, arg2: false);
+                context.SetSkill(arg1: new[] {480}, arg2: false);
+                context.SetSkill(arg1: new[] {481}, arg2: false);
+                context.SetSkill(arg1: new[] {482}, arg2: false);
+                context.SetSkill(arg1: new[] {483}, arg2: false);
+                context.SetSkill(arg1: new[] {484}, arg2: false);
             }
 
             public override void Execute() {
@@ -2358,26 +2355,26 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {471}, arg2: true);
-                context.SetSkill(arg1: new int[] {472}, arg2: true);
-                context.SetSkill(arg1: new int[] {473}, arg2: true);
-                context.SetSkill(arg1: new int[] {474}, arg2: true);
-                context.SetSkill(arg1: new int[] {475}, arg2: true);
-                context.SetSkill(arg1: new int[] {476}, arg2: true);
-                context.SetSkill(arg1: new int[] {477}, arg2: true);
-                context.SetSkill(arg1: new int[] {478}, arg2: true);
-                context.SetSkill(arg1: new int[] {479}, arg2: true);
-                context.SetSkill(arg1: new int[] {480}, arg2: true);
-                context.SetSkill(arg1: new int[] {481}, arg2: true);
-                context.SetSkill(arg1: new int[] {482}, arg2: true);
-                context.SetSkill(arg1: new int[] {483}, arg2: true);
-                context.SetSkill(arg1: new int[] {484}, arg2: true);
-                context.SetSkill(arg1: new int[] {485}, arg2: true);
-                context.SetSkill(arg1: new int[] {486}, arg2: true);
-                context.SetSkill(arg1: new int[] {487}, arg2: true);
-                context.SetSkill(arg1: new int[] {488}, arg2: true);
-                context.SetSkill(arg1: new int[] {489}, arg2: true);
-                context.SetSkill(arg1: new int[] {490}, arg2: true);
+                context.SetSkill(arg1: new[] {471}, arg2: true);
+                context.SetSkill(arg1: new[] {472}, arg2: true);
+                context.SetSkill(arg1: new[] {473}, arg2: true);
+                context.SetSkill(arg1: new[] {474}, arg2: true);
+                context.SetSkill(arg1: new[] {475}, arg2: true);
+                context.SetSkill(arg1: new[] {476}, arg2: true);
+                context.SetSkill(arg1: new[] {477}, arg2: true);
+                context.SetSkill(arg1: new[] {478}, arg2: true);
+                context.SetSkill(arg1: new[] {479}, arg2: true);
+                context.SetSkill(arg1: new[] {480}, arg2: true);
+                context.SetSkill(arg1: new[] {481}, arg2: true);
+                context.SetSkill(arg1: new[] {482}, arg2: true);
+                context.SetSkill(arg1: new[] {483}, arg2: true);
+                context.SetSkill(arg1: new[] {484}, arg2: true);
+                context.SetSkill(arg1: new[] {485}, arg2: true);
+                context.SetSkill(arg1: new[] {486}, arg2: true);
+                context.SetSkill(arg1: new[] {487}, arg2: true);
+                context.SetSkill(arg1: new[] {488}, arg2: true);
+                context.SetSkill(arg1: new[] {489}, arg2: true);
+                context.SetSkill(arg1: new[] {490}, arg2: true);
             }
 
             public override void Execute() {
@@ -2394,26 +2391,26 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬30대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {471}, arg2: false);
-                context.SetSkill(arg1: new int[] {472}, arg2: false);
-                context.SetSkill(arg1: new int[] {473}, arg2: false);
-                context.SetSkill(arg1: new int[] {474}, arg2: false);
-                context.SetSkill(arg1: new int[] {475}, arg2: false);
-                context.SetSkill(arg1: new int[] {476}, arg2: false);
-                context.SetSkill(arg1: new int[] {477}, arg2: false);
-                context.SetSkill(arg1: new int[] {478}, arg2: false);
-                context.SetSkill(arg1: new int[] {479}, arg2: false);
-                context.SetSkill(arg1: new int[] {480}, arg2: false);
-                context.SetSkill(arg1: new int[] {481}, arg2: false);
-                context.SetSkill(arg1: new int[] {482}, arg2: false);
-                context.SetSkill(arg1: new int[] {483}, arg2: false);
-                context.SetSkill(arg1: new int[] {484}, arg2: false);
-                context.SetSkill(arg1: new int[] {485}, arg2: false);
-                context.SetSkill(arg1: new int[] {486}, arg2: false);
-                context.SetSkill(arg1: new int[] {487}, arg2: false);
-                context.SetSkill(arg1: new int[] {488}, arg2: false);
-                context.SetSkill(arg1: new int[] {489}, arg2: false);
-                context.SetSkill(arg1: new int[] {490}, arg2: false);
+                context.SetSkill(arg1: new[] {471}, arg2: false);
+                context.SetSkill(arg1: new[] {472}, arg2: false);
+                context.SetSkill(arg1: new[] {473}, arg2: false);
+                context.SetSkill(arg1: new[] {474}, arg2: false);
+                context.SetSkill(arg1: new[] {475}, arg2: false);
+                context.SetSkill(arg1: new[] {476}, arg2: false);
+                context.SetSkill(arg1: new[] {477}, arg2: false);
+                context.SetSkill(arg1: new[] {478}, arg2: false);
+                context.SetSkill(arg1: new[] {479}, arg2: false);
+                context.SetSkill(arg1: new[] {480}, arg2: false);
+                context.SetSkill(arg1: new[] {481}, arg2: false);
+                context.SetSkill(arg1: new[] {482}, arg2: false);
+                context.SetSkill(arg1: new[] {483}, arg2: false);
+                context.SetSkill(arg1: new[] {484}, arg2: false);
+                context.SetSkill(arg1: new[] {485}, arg2: false);
+                context.SetSkill(arg1: new[] {486}, arg2: false);
+                context.SetSkill(arg1: new[] {487}, arg2: false);
+                context.SetSkill(arg1: new[] {488}, arg2: false);
+                context.SetSkill(arg1: new[] {489}, arg2: false);
+                context.SetSkill(arg1: new[] {490}, arg2: false);
             }
 
             public override void Execute() {
@@ -2431,25 +2428,25 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {478}, arg2: true);
-                context.SetSkill(arg1: new int[] {479}, arg2: true);
-                context.SetSkill(arg1: new int[] {480}, arg2: true);
-                context.SetSkill(arg1: new int[] {481}, arg2: true);
-                context.SetSkill(arg1: new int[] {482}, arg2: true);
-                context.SetSkill(arg1: new int[] {483}, arg2: true);
-                context.SetSkill(arg1: new int[] {484}, arg2: true);
-                context.SetSkill(arg1: new int[] {485}, arg2: true);
-                context.SetSkill(arg1: new int[] {486}, arg2: true);
-                context.SetSkill(arg1: new int[] {487}, arg2: true);
-                context.SetSkill(arg1: new int[] {488}, arg2: true);
-                context.SetSkill(arg1: new int[] {489}, arg2: true);
-                context.SetSkill(arg1: new int[] {490}, arg2: true);
-                context.SetSkill(arg1: new int[] {491}, arg2: true);
-                context.SetSkill(arg1: new int[] {492}, arg2: true);
-                context.SetSkill(arg1: new int[] {493}, arg2: true);
-                context.SetSkill(arg1: new int[] {494}, arg2: true);
-                context.SetSkill(arg1: new int[] {495}, arg2: true);
-                context.SetSkill(arg1: new int[] {496}, arg2: true);
+                context.SetSkill(arg1: new[] {478}, arg2: true);
+                context.SetSkill(arg1: new[] {479}, arg2: true);
+                context.SetSkill(arg1: new[] {480}, arg2: true);
+                context.SetSkill(arg1: new[] {481}, arg2: true);
+                context.SetSkill(arg1: new[] {482}, arg2: true);
+                context.SetSkill(arg1: new[] {483}, arg2: true);
+                context.SetSkill(arg1: new[] {484}, arg2: true);
+                context.SetSkill(arg1: new[] {485}, arg2: true);
+                context.SetSkill(arg1: new[] {486}, arg2: true);
+                context.SetSkill(arg1: new[] {487}, arg2: true);
+                context.SetSkill(arg1: new[] {488}, arg2: true);
+                context.SetSkill(arg1: new[] {489}, arg2: true);
+                context.SetSkill(arg1: new[] {490}, arg2: true);
+                context.SetSkill(arg1: new[] {491}, arg2: true);
+                context.SetSkill(arg1: new[] {492}, arg2: true);
+                context.SetSkill(arg1: new[] {493}, arg2: true);
+                context.SetSkill(arg1: new[] {494}, arg2: true);
+                context.SetSkill(arg1: new[] {495}, arg2: true);
+                context.SetSkill(arg1: new[] {496}, arg2: true);
             }
 
             public override void Execute() {
@@ -2466,25 +2463,25 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬31대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {478}, arg2: false);
-                context.SetSkill(arg1: new int[] {479}, arg2: false);
-                context.SetSkill(arg1: new int[] {480}, arg2: false);
-                context.SetSkill(arg1: new int[] {481}, arg2: false);
-                context.SetSkill(arg1: new int[] {482}, arg2: false);
-                context.SetSkill(arg1: new int[] {483}, arg2: false);
-                context.SetSkill(arg1: new int[] {484}, arg2: false);
-                context.SetSkill(arg1: new int[] {485}, arg2: false);
-                context.SetSkill(arg1: new int[] {486}, arg2: false);
-                context.SetSkill(arg1: new int[] {487}, arg2: false);
-                context.SetSkill(arg1: new int[] {488}, arg2: false);
-                context.SetSkill(arg1: new int[] {489}, arg2: false);
-                context.SetSkill(arg1: new int[] {490}, arg2: false);
-                context.SetSkill(arg1: new int[] {491}, arg2: false);
-                context.SetSkill(arg1: new int[] {492}, arg2: false);
-                context.SetSkill(arg1: new int[] {493}, arg2: false);
-                context.SetSkill(arg1: new int[] {494}, arg2: false);
-                context.SetSkill(arg1: new int[] {495}, arg2: false);
-                context.SetSkill(arg1: new int[] {496}, arg2: false);
+                context.SetSkill(arg1: new[] {478}, arg2: false);
+                context.SetSkill(arg1: new[] {479}, arg2: false);
+                context.SetSkill(arg1: new[] {480}, arg2: false);
+                context.SetSkill(arg1: new[] {481}, arg2: false);
+                context.SetSkill(arg1: new[] {482}, arg2: false);
+                context.SetSkill(arg1: new[] {483}, arg2: false);
+                context.SetSkill(arg1: new[] {484}, arg2: false);
+                context.SetSkill(arg1: new[] {485}, arg2: false);
+                context.SetSkill(arg1: new[] {486}, arg2: false);
+                context.SetSkill(arg1: new[] {487}, arg2: false);
+                context.SetSkill(arg1: new[] {488}, arg2: false);
+                context.SetSkill(arg1: new[] {489}, arg2: false);
+                context.SetSkill(arg1: new[] {490}, arg2: false);
+                context.SetSkill(arg1: new[] {491}, arg2: false);
+                context.SetSkill(arg1: new[] {492}, arg2: false);
+                context.SetSkill(arg1: new[] {493}, arg2: false);
+                context.SetSkill(arg1: new[] {494}, arg2: false);
+                context.SetSkill(arg1: new[] {495}, arg2: false);
+                context.SetSkill(arg1: new[] {496}, arg2: false);
             }
 
             public override void Execute() {
@@ -2502,24 +2499,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {485}, arg2: true);
-                context.SetSkill(arg1: new int[] {486}, arg2: true);
-                context.SetSkill(arg1: new int[] {487}, arg2: true);
-                context.SetSkill(arg1: new int[] {488}, arg2: true);
-                context.SetSkill(arg1: new int[] {489}, arg2: true);
-                context.SetSkill(arg1: new int[] {490}, arg2: true);
-                context.SetSkill(arg1: new int[] {491}, arg2: true);
-                context.SetSkill(arg1: new int[] {492}, arg2: true);
-                context.SetSkill(arg1: new int[] {493}, arg2: true);
-                context.SetSkill(arg1: new int[] {494}, arg2: true);
-                context.SetSkill(arg1: new int[] {495}, arg2: true);
-                context.SetSkill(arg1: new int[] {496}, arg2: true);
-                context.SetSkill(arg1: new int[] {497}, arg2: true);
-                context.SetSkill(arg1: new int[] {498}, arg2: true);
-                context.SetSkill(arg1: new int[] {499}, arg2: true);
-                context.SetSkill(arg1: new int[] {500}, arg2: true);
-                context.SetSkill(arg1: new int[] {501}, arg2: true);
-                context.SetSkill(arg1: new int[] {502}, arg2: true);
+                context.SetSkill(arg1: new[] {485}, arg2: true);
+                context.SetSkill(arg1: new[] {486}, arg2: true);
+                context.SetSkill(arg1: new[] {487}, arg2: true);
+                context.SetSkill(arg1: new[] {488}, arg2: true);
+                context.SetSkill(arg1: new[] {489}, arg2: true);
+                context.SetSkill(arg1: new[] {490}, arg2: true);
+                context.SetSkill(arg1: new[] {491}, arg2: true);
+                context.SetSkill(arg1: new[] {492}, arg2: true);
+                context.SetSkill(arg1: new[] {493}, arg2: true);
+                context.SetSkill(arg1: new[] {494}, arg2: true);
+                context.SetSkill(arg1: new[] {495}, arg2: true);
+                context.SetSkill(arg1: new[] {496}, arg2: true);
+                context.SetSkill(arg1: new[] {497}, arg2: true);
+                context.SetSkill(arg1: new[] {498}, arg2: true);
+                context.SetSkill(arg1: new[] {499}, arg2: true);
+                context.SetSkill(arg1: new[] {500}, arg2: true);
+                context.SetSkill(arg1: new[] {501}, arg2: true);
+                context.SetSkill(arg1: new[] {502}, arg2: true);
             }
 
             public override void Execute() {
@@ -2536,24 +2533,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State스킬32대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {485}, arg2: false);
-                context.SetSkill(arg1: new int[] {486}, arg2: false);
-                context.SetSkill(arg1: new int[] {487}, arg2: false);
-                context.SetSkill(arg1: new int[] {488}, arg2: false);
-                context.SetSkill(arg1: new int[] {489}, arg2: false);
-                context.SetSkill(arg1: new int[] {490}, arg2: false);
-                context.SetSkill(arg1: new int[] {491}, arg2: false);
-                context.SetSkill(arg1: new int[] {492}, arg2: false);
-                context.SetSkill(arg1: new int[] {493}, arg2: false);
-                context.SetSkill(arg1: new int[] {494}, arg2: false);
-                context.SetSkill(arg1: new int[] {495}, arg2: false);
-                context.SetSkill(arg1: new int[] {496}, arg2: false);
-                context.SetSkill(arg1: new int[] {497}, arg2: false);
-                context.SetSkill(arg1: new int[] {498}, arg2: false);
-                context.SetSkill(arg1: new int[] {499}, arg2: false);
-                context.SetSkill(arg1: new int[] {500}, arg2: false);
-                context.SetSkill(arg1: new int[] {501}, arg2: false);
-                context.SetSkill(arg1: new int[] {502}, arg2: false);
+                context.SetSkill(arg1: new[] {485}, arg2: false);
+                context.SetSkill(arg1: new[] {486}, arg2: false);
+                context.SetSkill(arg1: new[] {487}, arg2: false);
+                context.SetSkill(arg1: new[] {488}, arg2: false);
+                context.SetSkill(arg1: new[] {489}, arg2: false);
+                context.SetSkill(arg1: new[] {490}, arg2: false);
+                context.SetSkill(arg1: new[] {491}, arg2: false);
+                context.SetSkill(arg1: new[] {492}, arg2: false);
+                context.SetSkill(arg1: new[] {493}, arg2: false);
+                context.SetSkill(arg1: new[] {494}, arg2: false);
+                context.SetSkill(arg1: new[] {495}, arg2: false);
+                context.SetSkill(arg1: new[] {496}, arg2: false);
+                context.SetSkill(arg1: new[] {497}, arg2: false);
+                context.SetSkill(arg1: new[] {498}, arg2: false);
+                context.SetSkill(arg1: new[] {499}, arg2: false);
+                context.SetSkill(arg1: new[] {500}, arg2: false);
+                context.SetSkill(arg1: new[] {501}, arg2: false);
+                context.SetSkill(arg1: new[] {502}, arg2: false);
             }
 
             public override void Execute() {
@@ -2571,24 +2568,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {491}, arg2: true);
-                context.SetSkill(arg1: new int[] {492}, arg2: true);
-                context.SetSkill(arg1: new int[] {493}, arg2: true);
-                context.SetSkill(arg1: new int[] {494}, arg2: true);
-                context.SetSkill(arg1: new int[] {495}, arg2: true);
-                context.SetSkill(arg1: new int[] {496}, arg2: true);
-                context.SetSkill(arg1: new int[] {497}, arg2: true);
-                context.SetSkill(arg1: new int[] {498}, arg2: true);
-                context.SetSkill(arg1: new int[] {499}, arg2: true);
-                context.SetSkill(arg1: new int[] {500}, arg2: true);
-                context.SetSkill(arg1: new int[] {501}, arg2: true);
-                context.SetSkill(arg1: new int[] {502}, arg2: true);
-                context.SetSkill(arg1: new int[] {503}, arg2: true);
-                context.SetSkill(arg1: new int[] {504}, arg2: true);
-                context.SetSkill(arg1: new int[] {505}, arg2: true);
-                context.SetSkill(arg1: new int[] {506}, arg2: true);
-                context.SetSkill(arg1: new int[] {507}, arg2: true);
-                context.SetSkill(arg1: new int[] {508}, arg2: true);
+                context.SetSkill(arg1: new[] {491}, arg2: true);
+                context.SetSkill(arg1: new[] {492}, arg2: true);
+                context.SetSkill(arg1: new[] {493}, arg2: true);
+                context.SetSkill(arg1: new[] {494}, arg2: true);
+                context.SetSkill(arg1: new[] {495}, arg2: true);
+                context.SetSkill(arg1: new[] {496}, arg2: true);
+                context.SetSkill(arg1: new[] {497}, arg2: true);
+                context.SetSkill(arg1: new[] {498}, arg2: true);
+                context.SetSkill(arg1: new[] {499}, arg2: true);
+                context.SetSkill(arg1: new[] {500}, arg2: true);
+                context.SetSkill(arg1: new[] {501}, arg2: true);
+                context.SetSkill(arg1: new[] {502}, arg2: true);
+                context.SetSkill(arg1: new[] {503}, arg2: true);
+                context.SetSkill(arg1: new[] {504}, arg2: true);
+                context.SetSkill(arg1: new[] {505}, arg2: true);
+                context.SetSkill(arg1: new[] {506}, arg2: true);
+                context.SetSkill(arg1: new[] {507}, arg2: true);
+                context.SetSkill(arg1: new[] {508}, arg2: true);
             }
 
             public override void Execute() {
@@ -2606,24 +2603,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 0);
-                context.SetSkill(arg1: new int[] {491}, arg2: false);
-                context.SetSkill(arg1: new int[] {492}, arg2: false);
-                context.SetSkill(arg1: new int[] {493}, arg2: false);
-                context.SetSkill(arg1: new int[] {494}, arg2: false);
-                context.SetSkill(arg1: new int[] {495}, arg2: false);
-                context.SetSkill(arg1: new int[] {496}, arg2: false);
-                context.SetSkill(arg1: new int[] {497}, arg2: false);
-                context.SetSkill(arg1: new int[] {498}, arg2: false);
-                context.SetSkill(arg1: new int[] {499}, arg2: false);
-                context.SetSkill(arg1: new int[] {500}, arg2: false);
-                context.SetSkill(arg1: new int[] {501}, arg2: false);
-                context.SetSkill(arg1: new int[] {502}, arg2: false);
-                context.SetSkill(arg1: new int[] {503}, arg2: false);
-                context.SetSkill(arg1: new int[] {504}, arg2: false);
-                context.SetSkill(arg1: new int[] {505}, arg2: false);
-                context.SetSkill(arg1: new int[] {506}, arg2: false);
-                context.SetSkill(arg1: new int[] {507}, arg2: false);
-                context.SetSkill(arg1: new int[] {508}, arg2: false);
+                context.SetSkill(arg1: new[] {491}, arg2: false);
+                context.SetSkill(arg1: new[] {492}, arg2: false);
+                context.SetSkill(arg1: new[] {493}, arg2: false);
+                context.SetSkill(arg1: new[] {494}, arg2: false);
+                context.SetSkill(arg1: new[] {495}, arg2: false);
+                context.SetSkill(arg1: new[] {496}, arg2: false);
+                context.SetSkill(arg1: new[] {497}, arg2: false);
+                context.SetSkill(arg1: new[] {498}, arg2: false);
+                context.SetSkill(arg1: new[] {499}, arg2: false);
+                context.SetSkill(arg1: new[] {500}, arg2: false);
+                context.SetSkill(arg1: new[] {501}, arg2: false);
+                context.SetSkill(arg1: new[] {502}, arg2: false);
+                context.SetSkill(arg1: new[] {503}, arg2: false);
+                context.SetSkill(arg1: new[] {504}, arg2: false);
+                context.SetSkill(arg1: new[] {505}, arg2: false);
+                context.SetSkill(arg1: new[] {506}, arg2: false);
+                context.SetSkill(arg1: new[] {507}, arg2: false);
+                context.SetSkill(arg1: new[] {508}, arg2: false);
             }
 
             public override void Execute() {
@@ -2641,24 +2638,24 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkill(arg1: new int[] {497}, arg2: true);
-                context.SetSkill(arg1: new int[] {498}, arg2: true);
-                context.SetSkill(arg1: new int[] {499}, arg2: true);
-                context.SetSkill(arg1: new int[] {500}, arg2: true);
-                context.SetSkill(arg1: new int[] {501}, arg2: true);
-                context.SetSkill(arg1: new int[] {502}, arg2: true);
-                context.SetSkill(arg1: new int[] {503}, arg2: true);
-                context.SetSkill(arg1: new int[] {504}, arg2: true);
-                context.SetSkill(arg1: new int[] {505}, arg2: true);
-                context.SetSkill(arg1: new int[] {506}, arg2: true);
-                context.SetSkill(arg1: new int[] {507}, arg2: true);
-                context.SetSkill(arg1: new int[] {508}, arg2: true);
-                context.SetSkill(arg1: new int[] {509}, arg2: true);
-                context.SetSkill(arg1: new int[] {510}, arg2: true);
-                context.SetSkill(arg1: new int[] {511}, arg2: true);
-                context.SetSkill(arg1: new int[] {512}, arg2: true);
-                context.SetSkill(arg1: new int[] {513}, arg2: true);
-                context.SetSkill(arg1: new int[] {514}, arg2: true);
+                context.SetSkill(arg1: new[] {497}, arg2: true);
+                context.SetSkill(arg1: new[] {498}, arg2: true);
+                context.SetSkill(arg1: new[] {499}, arg2: true);
+                context.SetSkill(arg1: new[] {500}, arg2: true);
+                context.SetSkill(arg1: new[] {501}, arg2: true);
+                context.SetSkill(arg1: new[] {502}, arg2: true);
+                context.SetSkill(arg1: new[] {503}, arg2: true);
+                context.SetSkill(arg1: new[] {504}, arg2: true);
+                context.SetSkill(arg1: new[] {505}, arg2: true);
+                context.SetSkill(arg1: new[] {506}, arg2: true);
+                context.SetSkill(arg1: new[] {507}, arg2: true);
+                context.SetSkill(arg1: new[] {508}, arg2: true);
+                context.SetSkill(arg1: new[] {509}, arg2: true);
+                context.SetSkill(arg1: new[] {510}, arg2: true);
+                context.SetSkill(arg1: new[] {511}, arg2: true);
+                context.SetSkill(arg1: new[] {512}, arg2: true);
+                context.SetSkill(arg1: new[] {513}, arg2: true);
+                context.SetSkill(arg1: new[] {514}, arg2: true);
             }
 
             public override void Execute() {
@@ -2675,24 +2672,24 @@ namespace Maple2.Trigger._02000252_bf {
             internal State끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {497}, arg2: false);
-                context.SetSkill(arg1: new int[] {498}, arg2: false);
-                context.SetSkill(arg1: new int[] {499}, arg2: false);
-                context.SetSkill(arg1: new int[] {500}, arg2: false);
-                context.SetSkill(arg1: new int[] {501}, arg2: false);
-                context.SetSkill(arg1: new int[] {502}, arg2: false);
-                context.SetSkill(arg1: new int[] {503}, arg2: false);
-                context.SetSkill(arg1: new int[] {504}, arg2: false);
-                context.SetSkill(arg1: new int[] {505}, arg2: false);
-                context.SetSkill(arg1: new int[] {506}, arg2: false);
-                context.SetSkill(arg1: new int[] {507}, arg2: false);
-                context.SetSkill(arg1: new int[] {508}, arg2: false);
-                context.SetSkill(arg1: new int[] {509}, arg2: false);
-                context.SetSkill(arg1: new int[] {510}, arg2: false);
-                context.SetSkill(arg1: new int[] {511}, arg2: false);
-                context.SetSkill(arg1: new int[] {512}, arg2: false);
-                context.SetSkill(arg1: new int[] {513}, arg2: false);
-                context.SetSkill(arg1: new int[] {514}, arg2: false);
+                context.SetSkill(arg1: new[] {497}, arg2: false);
+                context.SetSkill(arg1: new[] {498}, arg2: false);
+                context.SetSkill(arg1: new[] {499}, arg2: false);
+                context.SetSkill(arg1: new[] {500}, arg2: false);
+                context.SetSkill(arg1: new[] {501}, arg2: false);
+                context.SetSkill(arg1: new[] {502}, arg2: false);
+                context.SetSkill(arg1: new[] {503}, arg2: false);
+                context.SetSkill(arg1: new[] {504}, arg2: false);
+                context.SetSkill(arg1: new[] {505}, arg2: false);
+                context.SetSkill(arg1: new[] {506}, arg2: false);
+                context.SetSkill(arg1: new[] {507}, arg2: false);
+                context.SetSkill(arg1: new[] {508}, arg2: false);
+                context.SetSkill(arg1: new[] {509}, arg2: false);
+                context.SetSkill(arg1: new[] {510}, arg2: false);
+                context.SetSkill(arg1: new[] {511}, arg2: false);
+                context.SetSkill(arg1: new[] {512}, arg2: false);
+                context.SetSkill(arg1: new[] {513}, arg2: false);
+                context.SetSkill(arg1: new[] {514}, arg2: false);
             }
 
             public override void Execute() { }

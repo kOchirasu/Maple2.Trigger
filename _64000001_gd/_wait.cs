@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._64000001_gd {
     public static class _wait {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시간표확인(context);
-
-        private class State시간표확인 : TriggerState {
+        public class State시간표확인 : TriggerState {
             internal State시간표확인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._64000001_gd {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 104, arg2: 6)) {
+                if (context.GetUserCount(boxId: 104) == 6) {
                     context.State = new State시작(context);
                     return;
                 }

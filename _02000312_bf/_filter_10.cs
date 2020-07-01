@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000312_bf {
     public static class _filter_10 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -19,7 +15,7 @@ namespace Maple2.Trigger._02000312_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new StateCheckStart(context);
                     return;
                 }
@@ -49,7 +45,7 @@ namespace Maple2.Trigger._02000312_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "1stTreeRemove", value: 1)) {
+                if (context.GetUserValue(key: "1stTreeRemove") == 1) {
                     context.State = new StateCheck02(context);
                     return;
                 }
@@ -69,7 +65,7 @@ namespace Maple2.Trigger._02000312_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "2ndTreeRemove", value: 1)) {
+                if (context.GetUserValue(key: "2ndTreeRemove") == 1) {
                     context.State = new StateCheck03(context);
                     return;
                 }
@@ -89,7 +85,7 @@ namespace Maple2.Trigger._02000312_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "3rdTreeRemove", value: 1)) {
+                if (context.GetUserValue(key: "3rdTreeRemove") == 1) {
                     context.State = new StateCheck04(context);
                     return;
                 }
@@ -109,7 +105,7 @@ namespace Maple2.Trigger._02000312_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "4thTreeRemove", value: 1)) {
+                if (context.GetUserValue(key: "4thTreeRemove") == 1) {
                     context.State = new StateCheck05(context);
                     return;
                 }
@@ -129,7 +125,7 @@ namespace Maple2.Trigger._02000312_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "5thTreeRemove", value: 1)) {
+                if (context.GetUserValue(key: "5thTreeRemove") == 1) {
                     context.State = new StateCheck06(context);
                     return;
                 }
@@ -149,7 +145,7 @@ namespace Maple2.Trigger._02000312_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "6thTreeRemove", value: 1)) {
+                if (context.GetUserValue(key: "6thTreeRemove") == 1) {
                     context.State = new StateCheck07(context);
                     return;
                 }
@@ -169,7 +165,7 @@ namespace Maple2.Trigger._02000312_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "7thTreeRemove", value: 1)) {
+                if (context.GetUserValue(key: "7thTreeRemove") == 1) {
                     context.State = new StateCheck08(context);
                     return;
                 }
@@ -189,7 +185,7 @@ namespace Maple2.Trigger._02000312_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "8thTreeRemove", value: 1)) {
+                if (context.GetUserValue(key: "8thTreeRemove") == 1) {
                     context.State = new StateBoardApp(context);
                     return;
                 }
@@ -207,8 +203,8 @@ namespace Maple2.Trigger._02000312_bf {
             internal StateBoardApp(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1, key: "BoardApp", value: 1);
-                context.SetUserValue(triggerID: 11, key: "MobWaveStop", value: 1);
+                context.SetUserValue(triggerId: 1, key: "BoardApp", value: 1);
+                context.SetUserValue(triggerId: 11, key: "MobWaveStop", value: 1);
             }
 
             public override void Execute() {

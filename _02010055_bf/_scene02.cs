@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02010055_bf {
     public static class _scene02 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {101})) {
+                if (context.UserDetected(arg1: new[] {101})) {
                     context.State = new State룸체크(context);
                     return;
                 }
@@ -45,12 +41,12 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.DungeonLevel(level: 2)) {
+                if (context.GetDungeonLevel() == 2) {
                     context.State = new State레이드대기(context);
                     return;
                 }
 
-                if (context.DungeonLevel(level: 3)) {
+                if (context.GetDungeonLevel() == 3) {
                     // context.State = new State카오스레이드(context);
                     return;
                 }
@@ -65,7 +61,7 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2299})) {
+                if (context.MonsterDead(arg1: new[] {2299})) {
                     context.State = new State영상준비(context);
                     return;
                 }
@@ -80,7 +76,7 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2099})) {
+                if (context.MonsterDead(arg1: new[] {2099})) {
                     context.State = new State영상준비(context);
                     return;
                 }
@@ -95,7 +91,7 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2199})) {
+                if (context.MonsterDead(arg1: new[] {2199})) {
                     context.State = new State영상준비(context);
                     return;
                 }
@@ -126,7 +122,7 @@ namespace Maple2.Trigger._02010055_bf {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 302, arg2: true);
-                context.CreateMonster(arg1: new int[] {1002, 1003, 1004}, arg2: false);
+                context.CreateMonster(arg1: new[] {1002, 1003, 1004}, arg2: false);
                 context.SetSkip(arg1: "NPC이동");
             }
 
@@ -208,7 +204,7 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    context.DestroyMonster(arg1: new int[] {1002, 1003, 1004});
+                    context.DestroyMonster(arg1: new[] {1002, 1003, 1004});
                     context.State = new State종료(context);
                     return;
                 }
@@ -223,7 +219,7 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetTimer(arg1: "21", arg2: 10);
-                context.CameraSelectPath(arg1: new int[] {601, 602}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {601, 602}, arg2: false);
             }
 
             public override void Execute() {
@@ -241,7 +237,7 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: @"common\KarKarBossEvent.usm", movieID: 1);
+                context.PlaySceneMovie(fileName: @"common\KarKarBossEvent.usm", movieId: 1);
             }
 
             public override void Execute() {

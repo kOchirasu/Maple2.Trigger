@@ -1,14 +1,10 @@
-using System;
-
 namespace Maple2.Trigger._99999985_plantest_08 {
     public static class _ia_107 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000006}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000006}, arg2: 1);
                 context.SetActor(arg1: 1071, arg2: true, arg3: "SOS_B");
             }
 
@@ -20,7 +16,7 @@ namespace Maple2.Trigger._99999985_plantest_08 {
             }
 
             public override void OnExit() {
-                context.CreateMonster(arg1: new int[] {303});
+                context.CreateMonster(arg1: new[] {303});
             }
         }
 
@@ -30,7 +26,7 @@ namespace Maple2.Trigger._99999985_plantest_08 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000006}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000006}, arg2: 0)) {
                     context.State = new StateNPC이동(context);
                     return;
                 }
@@ -38,8 +34,8 @@ namespace Maple2.Trigger._99999985_plantest_08 {
 
             public override void OnExit() {
                 context.SetActor(arg1: 1071, arg2: false, arg3: "SOS_B");
-                context.DestroyMonster(arg1: new int[] {303});
-                context.CreateMonster(arg1: new int[] {107});
+                context.DestroyMonster(arg1: new[] {303});
+                context.CreateMonster(arg1: new[] {107});
             }
         }
 
@@ -53,7 +49,7 @@ namespace Maple2.Trigger._99999985_plantest_08 {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 107, arg2: new int[] {107})) {
+                if (context.NpcDetected(arg1: 107, arg2: new[] {107})) {
                     context.State = new StateNPC소멸(context);
                     return;
                 }
@@ -66,7 +62,7 @@ namespace Maple2.Trigger._99999985_plantest_08 {
             internal StateNPC소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {107});
+                context.DestroyMonster(arg1: new[] {107});
                 context.SetTimer(arg1: "107", arg2: 3);
             }
 

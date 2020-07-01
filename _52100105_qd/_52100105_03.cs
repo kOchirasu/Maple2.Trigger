@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._52100105_qd {
     public static class _52100105_03 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {600}, arg2: false);
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {600}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {1000})) {
+                if (context.UserDetected(arg1: new[] {1000})) {
                     context.State = new State퀘스트체크(context);
                     return;
                 }
@@ -28,19 +24,19 @@ namespace Maple2.Trigger._52100105_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {1000}, arg2: new int[] {50101030},
+                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030},
                     arg3: new byte[] {3})) {
                     context.State = new State시작암전1(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {1000}, arg2: new int[] {50101030},
+                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030},
                     arg3: new byte[] {2})) {
                     context.State = new State연출끝(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {1000}, arg2: new int[] {50101030},
+                if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030},
                     arg3: new byte[] {1})) {
                     context.State = new State연출끝(context);
                     return;
@@ -54,8 +50,8 @@ namespace Maple2.Trigger._52100105_qd {
             internal State시작암전1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {600}, arg2: false);
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {600}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
                 context.VisibleMyPc(isVisible: false);
                 context.SetOnetimeEffect(id: 200, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetProductionUI(arg1: 1);
@@ -76,10 +72,10 @@ namespace Maple2.Trigger._52100105_qd {
             internal State컷신1_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: true);
+                context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.CreateWidget(arg1: "SceneMovie");
                 context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
-                context.PlaySceneMovie(fileName: "Kritias_EpicCutScene07_01.swf", movieID: 0);
+                context.PlaySceneMovie(fileName: "Kritias_EpicCutScene07_01.swf", movieId: 0);
             }
 
             public override void Execute() {
@@ -101,13 +97,13 @@ namespace Maple2.Trigger._52100105_qd {
             internal State몹소환1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {500}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1}, arg2: false);
-                context.CreateMonster(arg1: new int[] {400}, arg2: false);
-                context.CreateMonster(arg1: new int[] {401}, arg2: false);
-                context.CreateMonster(arg1: new int[] {402}, arg2: false);
-                context.CreateMonster(arg1: new int[] {403}, arg2: false);
-                context.CreateMonster(arg1: new int[] {404}, arg2: false);
+                context.CreateMonster(arg1: new[] {500}, arg2: false);
+                context.CreateMonster(arg1: new[] {1}, arg2: false);
+                context.CreateMonster(arg1: new[] {400}, arg2: false);
+                context.CreateMonster(arg1: new[] {401}, arg2: false);
+                context.CreateMonster(arg1: new[] {402}, arg2: false);
+                context.CreateMonster(arg1: new[] {403}, arg2: false);
+                context.CreateMonster(arg1: new[] {404}, arg2: false);
             }
 
             public override void Execute() {
@@ -144,12 +140,12 @@ namespace Maple2.Trigger._52100105_qd {
             internal State투르카대사1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {500}, arg2: false);
+                context.DestroyMonster(arg1: new[] {500}, arg2: false);
                 context.SetSceneSkip(arg1: "컷신3_1", arg2: "nextState");
-                context.CameraSelectPath(arg1: new int[] {700, 701}, arg2: false);
-                context.AddCinematicTalk(npcID: 11004430, illustID: "Turka_normal",
+                context.CameraSelectPath(arg1: new[] {700, 701}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal",
                     msg: "$52100105_QD__52100105_03__0$", duration: 6000, align: "Right");
-                context.AddCinematicTalk(npcID: 11004430, illustID: "Turka_normal",
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal",
                     msg: "$52100105_QD__52100105_03__1$", duration: 6000, align: "Right");
             }
 
@@ -167,7 +163,7 @@ namespace Maple2.Trigger._52100105_qd {
             internal State클라디아생성1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {500}, arg2: false);
+                context.CreateMonster(arg1: new[] {500}, arg2: false);
             }
 
             public override void Execute() {
@@ -185,7 +181,7 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 500, arg2: "PatrolData_500_1");
-                context.CameraSelectPath(arg1: new int[] {703, 704}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {703, 704}, arg2: false);
             }
 
             public override void Execute() {
@@ -203,9 +199,9 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 500, arg2: "Talk_A", arg3: 8666f);
-                context.AddCinematicTalk(npcID: 11004392, illustID: "cladia_normal",
+                context.AddCinematicTalk(npcId: 11004392, illustId: "cladia_normal",
                     msg: "$52100105_QD__52100105_03__2$", duration: 5000, align: "left");
-                context.AddCinematicTalk(npcID: 11004392, illustID: "cladia_angry",
+                context.AddCinematicTalk(npcId: 11004392, illustId: "cladia_angry",
                     msg: "$52100105_QD__52100105_03__3$", duration: 5000, align: "left");
             }
 
@@ -224,7 +220,7 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 705, arg2: true);
-                context.AddCinematicTalk(npcID: 11004430, illustID: "Turka_normal",
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal",
                     msg: "$52100105_QD__52100105_03__4$", duration: 3000, align: "Right");
                 context.SetNpcEmotionLoop(arg1: 400, arg2: "Bore_A", arg3: 1333f);
                 context.SetNpcEmotionLoop(arg1: 500, arg2: "Attack_Idle_A", arg3: 5333f);
@@ -266,14 +262,14 @@ namespace Maple2.Trigger._52100105_qd {
             internal State컷신3_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {401}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {402}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {403}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {404}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {500}, arg2: false);
+                context.DestroyMonster(arg1: new[] {401}, arg2: false);
+                context.DestroyMonster(arg1: new[] {402}, arg2: false);
+                context.DestroyMonster(arg1: new[] {403}, arg2: false);
+                context.DestroyMonster(arg1: new[] {404}, arg2: false);
+                context.DestroyMonster(arg1: new[] {500}, arg2: false);
                 context.CreateWidget(arg1: "SceneMovie");
                 context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
-                context.PlaySceneMovie(fileName: "Kritias_EpicCutScene07_02.swf", movieID: 1);
+                context.PlaySceneMovie(fileName: "Kritias_EpicCutScene07_02.swf", movieId: 1);
             }
 
             public override void Execute() {
@@ -295,7 +291,7 @@ namespace Maple2.Trigger._52100105_qd {
             internal State클라디아생성2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {500}, arg2: false);
+                context.CreateMonster(arg1: new[] {500}, arg2: false);
                 context.MoveNpc(arg1: 500, arg2: "PatrolData_500_1");
             }
 
@@ -321,7 +317,7 @@ namespace Maple2.Trigger._52100105_qd {
                 context.SetNpcEmotionLoop(arg1: 500, arg2: "Attack_Idle_A", arg3: 5333f);
                 context.SetNpcEmotionLoop(arg1: 400, arg2: "Damg_A", arg3: 5333f);
                 context.CameraSelect(arg1: 706, arg2: true);
-                context.AddCinematicTalk(npcID: 11004430, illustID: "Turka_Broken_Hood",
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_Broken_Hood",
                     msg: "$52100105_QD__52100105_03__5$", duration: 4000, align: "center");
             }
 
@@ -339,7 +335,7 @@ namespace Maple2.Trigger._52100105_qd {
             internal State투르카도망2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {600}, arg2: true);
+                context.SetEffect(arg1: new[] {600}, arg2: true);
             }
 
             public override void Execute() {
@@ -374,8 +370,8 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 707, arg2: true);
-                context.DestroyMonster(arg1: new int[] {500}, arg2: false);
-                context.AddCinematicTalk(npcID: 11004430, illustID: "Turka_Broken_Hood",
+                context.DestroyMonster(arg1: new[] {500}, arg2: false);
+                context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_Broken_Hood",
                     msg: "$52100105_QD__52100105_03__6$", duration: 5000, align: "center");
             }
 
@@ -411,8 +407,8 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override void OnEnter() {
                 context.SetSkip();
-                context.DestroyMonster(arg1: new int[] {-1}, arg2: false);
-                context.SetEffect(arg1: new int[] {600}, arg2: false);
+                context.DestroyMonster(arg1: new[] {-1}, arg2: false);
+                context.SetEffect(arg1: new[] {600}, arg2: false);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);

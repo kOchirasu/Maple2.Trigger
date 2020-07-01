@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._61000009_me {
     public static class _3round_effect {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "3Round_Effect", value: 1)) {
+                if (context.GetUserValue(key: "3Round_Effect") == 1) {
                     context.State = new StateSpawn_Start_Ready(context);
                     return;
                 }
@@ -23,7 +19,7 @@ namespace Maple2.Trigger._61000009_me {
             internal StateSpawn_Start_Ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {7999}, arg2: true);
+                context.SetEffect(arg1: new[] {7999}, arg2: true);
             }
 
             public override void Execute() {
@@ -40,7 +36,7 @@ namespace Maple2.Trigger._61000009_me {
             internal StateSkill_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {5021}, arg2: true);
+                context.SetSkill(arg1: new[] {5021}, arg2: true);
             }
 
             public override void Execute() {
@@ -57,7 +53,7 @@ namespace Maple2.Trigger._61000009_me {
             internal StateSkill_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {5022}, arg2: true);
+                context.SetSkill(arg1: new[] {5022}, arg2: true);
             }
 
             public override void Execute() {
@@ -74,7 +70,7 @@ namespace Maple2.Trigger._61000009_me {
             internal StateSkill_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {5023}, arg2: true);
+                context.SetSkill(arg1: new[] {5023}, arg2: true);
             }
 
             public override void Execute() {
@@ -91,7 +87,7 @@ namespace Maple2.Trigger._61000009_me {
             internal StateSkill_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkill(arg1: new int[] {5024}, arg2: true);
+                context.SetSkill(arg1: new[] {5024}, arg2: true);
             }
 
             public override void Execute() { }

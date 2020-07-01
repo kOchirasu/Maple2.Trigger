@@ -1,11 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._99999925 {
     public static class _laddercomplete {
-        public static readonly Func<ITriggerContext, TriggerState>
-            Start = context => new StateIsLadderComplete(context);
-
-        private class StateIsLadderComplete : TriggerState {
+        public class StateIsLadderComplete : TriggerState {
             internal StateIsLadderComplete(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -18,7 +13,7 @@ namespace Maple2.Trigger._99999925 {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "ladderComp", value: 1)) {
+                if (context.GetUserValue(key: "ladderComp") == 1) {
                     context.State = new StateladderComplete(context);
                     return;
                 }

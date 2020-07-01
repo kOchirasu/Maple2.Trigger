@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._63000042_cs {
     public static class _wakeup01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {102}, arg2: false);
+                context.CreateMonster(arg1: new[] {102}, arg2: false);
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001484},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001484},
                     arg3: new byte[] {2})) {
                     context.State = new StateLodingDelay00(context);
                     return;
@@ -64,8 +60,8 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateLodingDelay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {102});
-                context.CreateMonster(arg1: new int[] {101}, arg2: false);
+                context.DestroyMonster(arg1: new[] {102});
+                context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.CameraSelect(arg1: 500, arg2: true);
                 context.SetPcEmotionLoop(arg1: "Down_Idle_D", arg2: 6000f);
             }

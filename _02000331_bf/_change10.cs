@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000331_bf {
     public static class _change10 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9021, arg2: new int[] {601})) {
+                if (context.NpcDetected(arg1: 9021, arg2: new[] {601})) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9030, arg2: new int[] {990})) {
+                if (context.NpcDetected(arg1: 9030, arg2: new[] {990})) {
                     context.State = new State분기점(context);
                     return;
                 }
@@ -40,12 +36,12 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9030, arg2: new int[] {999})) {
+                if (context.NpcDetected(arg1: 9030, arg2: new[] {999})) {
                     context.State = new State보스전투(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {601})) {
+                if (context.MonsterDead(arg1: new[] {601})) {
                     context.State = new State교체딜레이(context);
                     return;
                 }
@@ -60,12 +56,12 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {999})) {
+                if (context.MonsterDead(arg1: new[] {999})) {
                     context.State = new State전투종료(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {601})) {
+                if (context.MonsterDead(arg1: new[] {601})) {
                     context.State = new State교체딜레이(context);
                     return;
                 }
@@ -80,7 +76,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9021, arg2: new int[] {601})) {
+                if (context.NpcDetected(arg1: 9021, arg2: new[] {601})) {
                     context.State = new State디펜스성공(context);
                     return;
                 }
@@ -118,11 +114,11 @@ namespace Maple2.Trigger._02000331_bf {
             internal State교체쓰러짐(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {611});
+                context.CreateMonster(arg1: new[] {611});
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9020, arg2: new int[] {600})) {
+                if (context.NpcDetected(arg1: 9020, arg2: new[] {600})) {
                     context.State = new State교체일어남(context);
                     return;
                 }

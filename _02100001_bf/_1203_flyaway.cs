@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02100001_bf {
     public static class _1203_flyaway {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._02100001_bf {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "FlyAway", value: 1)) {
+                if (context.GetUserValue(key: "FlyAway") == 1) {
                     context.State = new StateFlyAway(context);
                     return;
                 }
@@ -42,7 +38,7 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1203});
+                context.DestroyMonster(arg1: new[] {1203});
             }
 
             public override void Execute() {

@@ -1,22 +1,19 @@
-using System;
 using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000241_bf {
     public static class _timer {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {2001}, arg2: false);
-                context.SetEffect(arg1: new int[] {2002}, arg2: false);
-                context.SetEffect(arg1: new int[] {2003}, arg2: false);
-                context.SetMesh(arg1: new int[] {709, 710}, arg2: true);
+                context.SetEffect(arg1: new[] {2001}, arg2: false);
+                context.SetEffect(arg1: new[] {2002}, arg2: false);
+                context.SetEffect(arg1: new[] {2003}, arg2: false);
+                context.SetMesh(arg1: new[] {709, 710}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 205, arg2: 1)) {
+                if (context.GetUserCount(boxId: 205) == 1) {
                     context.State =
                         new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
@@ -32,7 +29,7 @@ namespace Maple2.Trigger._02000241_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {205})) {
+                if (context.UserDetected(arg1: new[] {205})) {
                     context.State = new State어나운스0(context);
                     return;
                 }
@@ -46,8 +43,8 @@ namespace Maple2.Trigger._02000241_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "88", arg2: 5, arg3: false);
-                context.SetEffect(arg1: new int[] {2001}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000241_BF__TIMER__0$", arg3: new int[] {5000}, arg4: "0");
+                context.SetEffect(arg1: new[] {2001}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "$02000241_BF__TIMER__0$", arg3: 5000, arg4: "0");
             }
 
             public override void Execute() {
@@ -65,8 +62,8 @@ namespace Maple2.Trigger._02000241_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "88", arg2: 5, arg3: false);
-                context.SetEffect(arg1: new int[] {2002}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000241_BF__TIMER__1$", arg3: new int[] {5000}, arg4: "0");
+                context.SetEffect(arg1: new[] {2002}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "$02000241_BF__TIMER__1$", arg3: 5000, arg4: "0");
             }
 
             public override void Execute() {
@@ -119,8 +116,8 @@ namespace Maple2.Trigger._02000241_bf {
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
-                context.SetEventUI(arg1: 1, arg2: "$02000241_BF__TIMER__4$", arg3: new int[] {5000}, arg4: "0");
-                context.SetMesh(arg1: new int[] {709, 710}, arg2: false);
+                context.SetEventUI(arg1: 1, arg2: "$02000241_BF__TIMER__4$", arg3: 5000, arg4: "0");
+                context.SetMesh(arg1: new[] {709, 710}, arg2: false);
                 context.SetTimer(arg1: "44", arg2: 6);
             }
 

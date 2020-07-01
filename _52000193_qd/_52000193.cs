@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000193_qd {
     public static class _52000193 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statestart(context);
-
-        private class Statestart : TriggerState {
+        public class Statestart : TriggerState {
             internal Statestart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {2001})) {
+                if (context.UserDetected(arg1: new[] {2001})) {
                     context.State = new StateCameraEffect01(context);
                     return;
                 }
@@ -41,7 +37,7 @@ namespace Maple2.Trigger._52000193_qd {
             internal StateCameraEffect02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {202});
+                context.CreateMonster(arg1: new[] {202});
                 context.VisibleMyPc(isVisible: false);
                 context.SetProductionUI(arg1: 1);
             }
@@ -62,25 +58,25 @@ namespace Maple2.Trigger._52000193_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {10003406},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003406},
                     arg3: new byte[] {2})) {
                     context.State = new StateCameraEffect02_02(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {10003407},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003407},
                     arg3: new byte[] {3})) {
                     context.State = new State이동(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {10003407},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003407},
                     arg3: new byte[] {2})) {
                     context.State = new State변신_02(context);
                     return;
                 }
 
-                if (!context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {10003407},
+                if (!context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003407},
                     arg3: new byte[] {2})) {
                     context.State = new State변신_02(context);
                     return;
@@ -132,7 +128,7 @@ namespace Maple2.Trigger._52000193_qd {
             internal StateCameraEffect03_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {4001, 4002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52000193_QD__52000193__1$", align: "bottomLeft",
                     offsetRateX: 0f, offsetRateY: 0f, duration: 5000, scale: 2.5f);
             }
@@ -169,12 +165,12 @@ namespace Maple2.Trigger._52000193_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.DestroyMonster(arg1: new int[] {201});
+                context.DestroyMonster(arg1: new[] {201});
                 context.VisibleMyPc(isVisible: true);
                 context.SetVisibleUI(uiName: "MessengerBrowser,GroupMessengerBrowser,HighlightGameMenu",
                     visible: false);
-                context.AddBuff(arg1: new int[] {2001}, arg2: 99910402, arg3: 1, arg4: false, arg5: true);
-                context.AddBuff(arg1: new int[] {2001}, arg2: 99910402, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {2001}, arg2: 99910402, arg3: 1, arg4: false, arg5: true);
+                context.AddBuff(arg1: new[] {2001}, arg2: 99910402, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -193,12 +189,12 @@ namespace Maple2.Trigger._52000193_qd {
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000193, arg2: 5002);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.DestroyMonster(arg1: new int[] {201});
+                context.DestroyMonster(arg1: new[] {201});
                 context.VisibleMyPc(isVisible: true);
                 context.SetVisibleUI(uiName: "MessengerBrowser,GroupMessengerBrowser,HighlightGameMenu",
                     visible: false);
-                context.AddBuff(arg1: new int[] {2001}, arg2: 99910402, arg3: 1, arg4: false, arg5: true);
-                context.AddBuff(arg1: new int[] {2001}, arg2: 99910402, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {2001}, arg2: 99910402, arg3: 1, arg4: false, arg5: true);
+                context.AddBuff(arg1: new[] {2001}, arg2: 99910402, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
@@ -239,7 +235,7 @@ namespace Maple2.Trigger._52000193_qd {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {2001}, arg2: new int[] {10003407},
+                if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003407},
                     arg3: new byte[] {3})) {
                     context.State = new State이동(context);
                     return;

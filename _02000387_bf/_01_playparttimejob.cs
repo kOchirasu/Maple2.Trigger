@@ -1,36 +1,33 @@
-using System;
 using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000387_bf {
     public static class _01_playparttimejob {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(arg1: new int[] {2000, 2001, 2002, 2003, 2004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {2005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {2006}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {2000, 2001, 2002, 2003, 2004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {2005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {2006}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(
-                    arg1: new int[] {2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031},
+                    arg1: new[] {2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031},
                     arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 4000, arg2: true, arg3: "ry_functobj_door_E01_off");
                 context.SetActor(arg1: 4001, arg2: true, arg3: "ry_functobj_door_E01_off");
                 context.SetActor(arg1: 4002, arg2: true, arg3: "ry_functobj_door_E01_off");
                 context.SetActor(arg1: 4003, arg2: true, arg3: "ry_functobj_door_E01_off");
-                context.SetEffect(arg1: new int[] {5000}, arg2: false);
-                context.SetEffect(arg1: new int[] {5101}, arg2: false);
-                context.SetEffect(arg1: new int[] {5102}, arg2: false);
-                context.SetEffect(arg1: new int[] {5103}, arg2: false);
-                context.SetEffect(arg1: new int[] {5104}, arg2: false);
-                context.SetEffect(arg1: new int[] {5105}, arg2: false);
-                context.SetEffect(arg1: new int[] {5106}, arg2: false);
+                context.SetEffect(arg1: new[] {5000}, arg2: false);
+                context.SetEffect(arg1: new[] {5101}, arg2: false);
+                context.SetEffect(arg1: new[] {5102}, arg2: false);
+                context.SetEffect(arg1: new[] {5103}, arg2: false);
+                context.SetEffect(arg1: new[] {5104}, arg2: false);
+                context.SetEffect(arg1: new[] {5105}, arg2: false);
+                context.SetEffect(arg1: new[] {5106}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new StateLoadingDelay(context);
                     return;
                 }
@@ -43,7 +40,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateLoadingDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {100}, arg2: false);
+                context.CreateMonster(arg1: new[] {100}, arg2: false);
             }
 
             public override void Execute() {
@@ -61,7 +58,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMiniGameAreaForHack(boxID: 9001);
+                context.SetMiniGameAreaForHack(boxId: 9001);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
             }
@@ -226,11 +223,11 @@ namespace Maple2.Trigger._02000387_bf {
             internal StatePCPlacement01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 10, key: "RandomPortalOn", value: 1);
+                context.SetUserValue(triggerId: 10, key: "RandomPortalOn", value: 1);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9005, arg2: 1, arg3: "Equal")) {
+                if (context.GetUserCount(boxId: 9005) == 1) {
                     context.State = new StatePCPlacement02(context);
                     return;
                 }
@@ -245,7 +242,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 9006, arg2: 3, arg3: "Equal")) {
+                if (context.GetUserCount(boxId: 9006) == 3) {
                     context.State = new StatePCPlacement03(context);
                     return;
                 }
@@ -277,7 +274,7 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetActor(arg1: 4001, arg2: true, arg3: "ry_functobj_door_E01_on");
                 context.SetActor(arg1: 4002, arg2: true, arg3: "ry_functobj_door_E01_on");
                 context.SetActor(arg1: 4003, arg2: true, arg3: "ry_functobj_door_E01_on");
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__4$", arg3: new int[] {3000},
+                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__4$", arg3: 3000,
                     arg4: "0");
             }
 
@@ -295,12 +292,12 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateR01Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__5$", arg3: new int[] {3000},
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__5$", arg3: 3000,
                     arg4: "0");
                 context.SetEventUI(arg1: 0, arg2: "1,3");
-                context.SetEffect(arg1: new int[] {5105}, arg2: true);
-                context.SetEffect(arg1: new int[] {5106}, arg2: true);
+                context.SetEffect(arg1: new[] {5105}, arg2: true);
+                context.SetEffect(arg1: new[] {5106}, arg2: true);
             }
 
             public override void Execute() {
@@ -462,7 +459,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.NpcDetected(arg1: 9007, arg2: new int[] {0})) {
+                if (!context.NpcDetected(arg1: 9007, arg2: new[] {0})) {
                     context.State = new StateR02StartDelay01(context);
                     return;
                 }
@@ -490,8 +487,8 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateR02Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__6$", arg3: new int[] {3000},
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__6$", arg3: 3000,
                     arg4: "0");
                 context.SetEventUI(arg1: 0, arg2: "2,3");
             }
@@ -833,7 +830,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.NpcDetected(arg1: 9007, arg2: new int[] {0})) {
+                if (!context.NpcDetected(arg1: 9007, arg2: new[] {0})) {
                     context.State = new StateR03StartDelay01(context);
                     return;
                 }
@@ -861,8 +858,8 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateR03Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5000}, arg2: true);
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__7$", arg3: new int[] {3000},
+                context.SetEffect(arg1: new[] {5000}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__7$", arg3: 3000,
                     arg4: "0");
                 context.SetEventUI(arg1: 0, arg2: "3,3");
             }
@@ -1347,7 +1344,7 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.NpcDetected(arg1: 9007, arg2: new int[] {0})) {
+                if (!context.NpcDetected(arg1: 9007, arg2: new[] {0})) {
                     context.State = new StateGameEndNotice01(context);
                     return;
                 }
@@ -1385,7 +1382,7 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetSkip();
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
-                context.SetUserValue(triggerID: 10, key: "DungeonClear", value: 1);
+                context.SetUserValue(triggerId: 10, key: "DungeonClear", value: 1);
             }
 
             public override void Execute() {
@@ -1437,7 +1434,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StatePCLeave01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__10$", arg3: new int[] {5000},
+                context.SetEventUI(arg1: 1, arg2: "$02000387_BF__01_PLAYPARTTIMEJOB__10$", arg3: 5000,
                     arg4: "0");
             }
 
@@ -1467,7 +1464,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup1001(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1001, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 1001, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1484,7 +1481,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup1005(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1005, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 1005, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1501,7 +1498,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup1009(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1009, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 1009, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1518,7 +1515,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup2002(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2002, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 2002, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1535,7 +1532,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup2006(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2006, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 2006, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1552,7 +1549,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup2010(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2010, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 2010, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1569,7 +1566,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup3003(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3003, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 3003, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1586,7 +1583,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup3007(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3007, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 3007, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1603,7 +1600,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup3011(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3011, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 3011, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1620,7 +1617,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup4004(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4004, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 4004, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1637,7 +1634,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup4008(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4008, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 4008, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1654,7 +1651,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup4012(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4012, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 4012, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1671,7 +1668,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup1101(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1101, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 1101, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1688,7 +1685,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup1105(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1105, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 1105, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1705,7 +1702,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup1109(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1109, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 1109, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1722,7 +1719,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup1113(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1113, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 1113, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1739,7 +1736,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup1117(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1117, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 1117, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1756,7 +1753,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup1121(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1121, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 1121, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1773,7 +1770,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup2102(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2102, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 2102, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1790,7 +1787,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup2106(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2106, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 2106, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1807,7 +1804,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup2110(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2110, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 2110, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1824,7 +1821,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup2114(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2114, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 2114, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1841,7 +1838,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup2118(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2118, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 2118, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1858,7 +1855,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup2122(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2122, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 2122, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1875,7 +1872,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup3103(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3103, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 3103, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1892,7 +1889,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup3107(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3107, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 3107, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1909,7 +1906,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup3111(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3111, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 3111, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1926,7 +1923,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup3115(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3115, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 3115, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1943,7 +1940,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup3119(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3119, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 3119, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1960,7 +1957,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup3123(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3123, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 3123, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1977,7 +1974,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup4104(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4104, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 4104, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -1994,7 +1991,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup4108(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4108, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 4108, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2011,7 +2008,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup4112(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4112, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 4112, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2028,7 +2025,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup4116(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4116, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 4116, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2045,7 +2042,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup4120(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4120, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 4120, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2062,7 +2059,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup4124(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4124, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 4124, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2079,7 +2076,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup1201(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1201, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 1201, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2096,7 +2093,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup1205(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1205, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 1205, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2113,7 +2110,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup1209(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1209, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 1209, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2130,7 +2127,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup1213(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1213, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 1213, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2147,7 +2144,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup1217(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1217, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 1217, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2164,7 +2161,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup1221(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1221, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 1221, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2181,7 +2178,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup1225(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 1225, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 1225, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2198,7 +2195,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup2202(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2202, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 2202, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2215,7 +2212,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup2206(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2206, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 2206, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2232,7 +2229,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup2210(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2210, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 2210, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2249,7 +2246,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup2214(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2214, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 2214, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2266,7 +2263,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup2218(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2218, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 2218, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2283,7 +2280,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup2222(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2222, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 2222, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2300,7 +2297,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup2226(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 2226, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 2226, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2317,7 +2314,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup3203(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3203, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 3203, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2334,7 +2331,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup3207(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3207, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 3207, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2351,7 +2348,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup3211(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3211, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 3211, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2368,7 +2365,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup3215(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3215, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 3215, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2385,7 +2382,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup3219(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3219, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 3219, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2402,7 +2399,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup3223(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3223, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 3223, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2419,7 +2416,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup3227(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 3227, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 3227, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2436,7 +2433,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup4204(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4204, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 4204, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2453,7 +2450,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup4208(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4208, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 4208, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2470,7 +2467,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup4212(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4212, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 4212, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2487,7 +2484,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup4216(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4216, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 4216, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2504,7 +2501,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup4220(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4220, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 4220, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2521,7 +2518,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup4224(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4224, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 4224, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2538,7 +2535,7 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateNpcGroup4228(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 4228, key: "CustomerEnter", value: 1);
+                context.SetUserValue(triggerId: 4228, key: "CustomerEnter", value: 1);
             }
 
             public override void Execute() {
@@ -2557,122 +2554,122 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "RoundCustomerRow", value: 10103)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 10103) {
                     context.State = new StateR01Customer02Row02Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 10202)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 10202) {
                     context.State = new StateR01Customer03Row04Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 10304)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 10304) {
                     context.State = new StateR01Customer04Row01Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 10401)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 10401) {
                     context.State = new StateR01End(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 20102)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 20102) {
                     context.State = new StateR02Customer02Row03Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 20203)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 20203) {
                     context.State = new StateR02Customer03Row01Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 20301)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 20301) {
                     context.State = new StateR02Customer04Row04Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 20404)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 20404) {
                     context.State = new StateR02Customer05Row02Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 20502)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 20502) {
                     context.State = new StateR02Customer06Row03Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 20603)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 20603) {
                     context.State = new StateR02Customer07Row01Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 20701)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 20701) {
                     context.State = new StateR02Customer08Row04Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 20804)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 20804) {
                     context.State = new StateR02End(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 30104)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 30104) {
                     context.State = new StateR03Customer02Row02Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 30202)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 30202) {
                     context.State = new StateR03Customer03Row03Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 30303)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 30303) {
                     context.State = new StateR03Customer04Row01Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 30401)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 30401) {
                     context.State = new StateR03Customer05Row02Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 30502)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 30502) {
                     context.State = new StateR03Customer06Row04Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 30604)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 30604) {
                     context.State = new StateR03Customer07Row03Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 30703)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 30703) {
                     context.State = new StateR03Customer08Row01Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 30801)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 30801) {
                     context.State = new StateR03Customer09Row01Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 30901)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 30901) {
                     context.State = new StateR03Customer10Row04Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 31004)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 31004) {
                     context.State = new StateR03Customer11Row02Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 31102)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 31102) {
                     context.State = new StateR03Customer12Row03Random(context);
                     return;
                 }
 
-                if (context.UserValue(key: "RoundCustomerRow", value: 31203)) {
+                if (context.GetUserValue(key: "RoundCustomerRow") == 31203) {
                     context.State = new StateR03End(context);
                     return;
                 }

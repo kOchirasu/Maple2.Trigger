@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._02000137_bf {
     public static class _ia_47 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000047}, arg2: 1);
-                context.CreateMonster(arg1: new int[] {147});
+                context.SetInteractObject(arg1: new[] {10000047}, arg2: 1);
+                context.CreateMonster(arg1: new[] {147});
             }
 
             public override void Execute() {
@@ -28,14 +24,14 @@ namespace Maple2.Trigger._02000137_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000047}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000047}, arg2: 0)) {
                     context.State = new StateNPC탈출(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.DestroyMonster(arg1: new int[] {147});
+                context.DestroyMonster(arg1: new[] {147});
             }
         }
 
@@ -43,14 +39,14 @@ namespace Maple2.Trigger._02000137_bf {
             internal StateNPC탈출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {148});
+                context.CreateMonster(arg1: new[] {148});
                 context.SetConversation(arg1: 1, arg2: 148, arg3: "$02000137_BF__IA_47__0$", arg4: 2);
                 context.SetTimer(arg1: "1", arg2: 5);
             }
 
             public override void Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    context.DestroyMonster(arg1: new int[] {148});
+                    context.DestroyMonster(arg1: new[] {148});
                     context.State = new State대기시간(context);
                     return;
                 }

@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._02000296_bf {
     public static class _release13 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {5011, 50111, 50112});
-                context.SetInteractObject(arg1: new int[] {10000503}, arg2: 1);
+                context.DestroyMonster(arg1: new[] {5011, 50111, 50112});
+                context.SetInteractObject(arg1: new[] {10000503}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000503}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000503}, arg2: 0)) {
                     context.State = new StateNpcSpawn01(context);
                     return;
                 }
@@ -26,7 +22,7 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateNpcSpawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {5011, 50111, 50112});
+                context.CreateMonster(arg1: new[] {5011, 50111, 50112});
             }
 
             public override void Execute() {
@@ -65,7 +61,7 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateNpcRemove01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {5011, 50111, 50112});
+                context.DestroyMonster(arg1: new[] {5011, 50111, 50112});
             }
 
             public override void Execute() { }

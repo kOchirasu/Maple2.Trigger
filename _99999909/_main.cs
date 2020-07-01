@@ -1,32 +1,28 @@
-using System;
-
 namespace Maple2.Trigger._99999909 {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101, 102, 103, 104}, arg2: true);
+                context.CreateMonster(arg1: new[] {101, 102, 103, 104}, arg2: true);
                 context.SetVisibleBreakableObject(
-                    arg1: new int[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012},
+                    arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012},
                     arg2: false);
                 context.SetVisibleBreakableObject(
-                    arg1: new int[] {1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024},
+                    arg1: new[] {1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024},
                     arg2: false);
-                context.SetVisibleBreakableObject(arg1: new int[] {1025, 1026, 1027, 1028, 1029, 1030}, arg2: false);
+                context.SetVisibleBreakableObject(arg1: new[] {1025, 1026, 1027, 1028, 1029, 1030}, arg2: false);
                 context.SetBreakable(
-                    arg1: new int[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012},
+                    arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012},
                     arg2: false);
                 context.SetBreakable(
-                    arg1: new int[] {1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024},
+                    arg1: new[] {1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024},
                     arg2: false);
-                context.SetBreakable(arg1: new int[] {1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032}, arg2: false);
+                context.SetBreakable(arg1: new[] {1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 701, arg2: 1)) {
+                if (context.GetUserCount(boxId: 701) == 1) {
                     context.State = new Statemain(context);
                     return;
                 }
@@ -39,26 +35,26 @@ namespace Maple2.Trigger._99999909 {
             internal Statemain(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 99910080, arg3: 1, arg4: false, arg5: false);
-                context.CreateItem(arg1: new int[] {
+                context.AddBuff(arg1: new[] {701}, arg2: 99910080, arg3: 1, arg4: false, arg5: false);
+                context.CreateItem(arg1: new[] {
                     201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220
                 });
-                context.CreateItem(arg1: new int[] {
+                context.CreateItem(arg1: new[] {
                     221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240
                 });
-                context.CreateItem(arg1: new int[] {
+                context.CreateItem(arg1: new[] {
                     241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260
                 });
                 context.SetVisibleBreakableObject(
-                    arg1: new int[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012},
+                    arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012},
                     arg2: true);
                 context.SetVisibleBreakableObject(
-                    arg1: new int[] {1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024},
+                    arg1: new[] {1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024},
                     arg2: true);
-                context.SetVisibleBreakableObject(arg1: new int[] {1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032},
+                context.SetVisibleBreakableObject(arg1: new[] {1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032},
                     arg2: true);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
                         2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032,
                         2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048,
@@ -140,7 +136,7 @@ namespace Maple2.Trigger._99999909 {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016,
                         2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032,
                         2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048,
@@ -286,16 +282,16 @@ namespace Maple2.Trigger._99999909 {
 
             public override void OnEnter() {
                 context.SetBreakable(
-                    arg1: new int[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012},
+                    arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012},
                     arg2: true);
                 context.SetBreakable(
-                    arg1: new int[] {1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024},
+                    arg1: new[] {1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024},
                     arg2: true);
-                context.SetBreakable(arg1: new int[] {1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032}, arg2: true);
+                context.SetBreakable(arg1: new[] {1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 702, arg2: 1)) {
+                if (context.GetUserCount(boxId: 702) == 1) {
                     context.State = new Statestart_02(context);
                     return;
                 }
@@ -308,7 +304,7 @@ namespace Maple2.Trigger._99999909 {
             internal Statestart_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 5, arg2: "$02000066_BF__MAIN__11$", arg3: new int[] {3000}, arg4: "0");
+                context.SetEventUI(arg1: 5, arg2: "$02000066_BF__MAIN__11$", arg3: 3000, arg4: "0");
             }
 
             public override void Execute() { }

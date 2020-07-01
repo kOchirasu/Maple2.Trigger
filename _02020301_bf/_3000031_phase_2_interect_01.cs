@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02020301_bf {
     public static class _3000031_phase_2_interect_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10003131}, arg2: 2);
+                context.SetInteractObject(arg1: new[] {10003131}, arg2: 2);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Phase_2_Interect_01", value: 1)) {
+                if (context.GetUserValue(key: "Phase_2_Interect_01") == 1) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -25,9 +21,9 @@ namespace Maple2.Trigger._02020301_bf {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcID: 11004205, illust: "ArcaneBlader_unfair",
+                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair",
                     script: "$02020301_BF__3000031_PHASE_2_INTERECT_01__0$", duration: 3176);
-                context.SideNpcTalk(type: "talk", npcID: 11004205, illust: "ArcaneBlader_unfair",
+                context.SideNpcTalk(type: "talk", npcId: 11004205, illust: "ArcaneBlader_unfair",
                     script: "$02020301_BF__3000031_PHASE_2_INTERECT_01__1$", duration: 3176);
             }
 
@@ -45,9 +41,8 @@ namespace Maple2.Trigger._02020301_bf {
             internal State인터렉트_설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020301_BF__3000031_PHASE_2_INTERECT_01__2$",
-                    arg3: new int[] {4000});
-                context.CreateMonster(arg1: new int[] {999}, arg2: false);
+                context.SetEventUI(arg1: 1, arg2: "$02020301_BF__3000031_PHASE_2_INTERECT_01__2$", arg3: 4000);
+                context.CreateMonster(arg1: new[] {999}, arg2: false);
             }
 
             public override void Execute() {
@@ -64,17 +59,17 @@ namespace Maple2.Trigger._02020301_bf {
             internal State탈것_등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10003131}, arg2: 1);
-                context.DestroyMonster(arg1: new int[] {999});
+                context.SetInteractObject(arg1: new[] {10003131}, arg2: 1);
+                context.DestroyMonster(arg1: new[] {999});
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10003131}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10003131}, arg2: 0)) {
                     context.State = new State인터렉트_동작(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Phase_2_Interect_01", value: 0)) {
+                if (context.GetUserValue(key: "Phase_2_Interect_01") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -94,7 +89,7 @@ namespace Maple2.Trigger._02020301_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "Phase_2_Interect_01", value: 0)) {
+                if (context.GetUserValue(key: "Phase_2_Interect_01") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -109,12 +104,12 @@ namespace Maple2.Trigger._02020301_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CheckNpcAdditionalEffect(spawnPointID: 101, additionalEffectID: 62100152, level: 1)) {
+                if (context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 62100152, level: 1)) {
                     context.State = new State리셋_대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Phase_2_Interect_01", value: 0)) {
+                if (context.GetUserValue(key: "Phase_2_Interect_01") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -134,7 +129,7 @@ namespace Maple2.Trigger._02020301_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "Phase_2_Interect_01", value: 0)) {
+                if (context.GetUserValue(key: "Phase_2_Interect_01") == 0) {
                     context.State = new State대기(context);
                     return;
                 }

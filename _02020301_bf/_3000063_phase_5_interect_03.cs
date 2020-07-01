@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._02020301_bf {
     public static class _3000063_phase_5_interect_03 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {200035, 200036}, arg2: false);
+                context.SetEffect(arg1: new[] {200035, 200036}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Phase_5_Interect_03", value: 1)) {
+                if (context.GetUserValue(key: "Phase_5_Interect_03") == 1) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -40,18 +36,18 @@ namespace Maple2.Trigger._02020301_bf {
             internal State인터렉트_설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {200035, 200036}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10003103}, arg2: 1);
-                context.SetVisibleBreakableObject(arg1: new int[] {5530}, arg2: false);
+                context.SetEffect(arg1: new[] {200035, 200036}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10003103}, arg2: 1);
+                context.SetVisibleBreakableObject(arg1: new[] {5530}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10003103}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10003103}, arg2: 0)) {
                     context.State = new State인터렉트_동작(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Phase_5_Interect_03", value: 0)) {
+                if (context.GetUserValue(key: "Phase_5_Interect_03") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -64,7 +60,7 @@ namespace Maple2.Trigger._02020301_bf {
             internal State인터렉트_동작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {200035, 200036}, arg2: false);
+                context.SetEffect(arg1: new[] {200035, 200036}, arg2: false);
             }
 
             public override void Execute() {
@@ -73,7 +69,7 @@ namespace Maple2.Trigger._02020301_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "Phase_5_Interect_03", value: 0)) {
+                if (context.GetUserValue(key: "Phase_5_Interect_03") == 0) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -93,7 +89,7 @@ namespace Maple2.Trigger._02020301_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "Phase_5_Interect_03", value: 0)) {
+                if (context.GetUserValue(key: "Phase_5_Interect_03") == 0) {
                     context.State = new State대기(context);
                     return;
                 }

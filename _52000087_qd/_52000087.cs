@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000087_qd {
     public static class _52000087 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {22651}, arg2: new int[] {10003370},
+                if (context.QuestUserDetected(arg1: new[] {22651}, arg2: new[] {10003370},
                     arg3: new byte[] {2})) {
                     context.State = new State보고시작준비_01(context);
                     return;
@@ -28,7 +24,7 @@ namespace Maple2.Trigger._52000087_qd {
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
                 context.MoveUser(arg1: 52000087, arg2: 6001);
-                context.CameraSelectPath(arg1: new int[] {4001}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
             }
 
             public override void Execute() {
@@ -47,7 +43,7 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {4002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_3001");
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
             }
@@ -67,7 +63,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 5000f);
-                context.CameraSelectPath(arg1: new int[] {4003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
             }
 
             public override void Execute() {
@@ -120,7 +116,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "Kritias_EpicCutScene_second_01.swf", movieID: 1);
+                context.PlaySceneMovie(fileName: "Kritias_EpicCutScene_second_01.swf", movieId: 1);
                 context.SetSceneSkip();
             }
 

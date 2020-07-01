@@ -1,22 +1,18 @@
-using System;
-
 namespace Maple2.Trigger._52010040_qd {
     public static class _52010040 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {91000013},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000013},
                     arg3: new byte[] {2})) {
                     context.State = new State도입부연출01(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {91000015},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000015},
                     arg3: new byte[] {3})) {
                     context.State = new State엔딩연출01(context);
                     return;
@@ -30,11 +26,11 @@ namespace Maple2.Trigger._52010040_qd {
             internal State도입부연출01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {200}, arg2: false);
-                context.CreateMonster(arg1: new int[] {300}, arg2: false);
-                context.CreateMonster(arg1: new int[] {301}, arg2: false);
-                context.CreateMonster(arg1: new int[] {302}, arg2: false);
-                context.CreateMonster(arg1: new int[] {303}, arg2: false);
+                context.CreateMonster(arg1: new[] {200}, arg2: false);
+                context.CreateMonster(arg1: new[] {300}, arg2: false);
+                context.CreateMonster(arg1: new[] {301}, arg2: false);
+                context.CreateMonster(arg1: new[] {302}, arg2: false);
+                context.CreateMonster(arg1: new[] {303}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: true,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
@@ -59,7 +55,7 @@ namespace Maple2.Trigger._52010040_qd {
                     duration: 7000, scale: 2.5f);
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.CameraSelectPath(arg1: new int[] {2000, 2001, 2002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {2000, 2001, 2002}, arg2: false);
             }
 
             public override void Execute() {
@@ -119,7 +115,7 @@ namespace Maple2.Trigger._52010040_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9002})) {
+                if (context.UserDetected(arg1: new[] {9002})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -142,7 +138,7 @@ namespace Maple2.Trigger._52010040_qd {
             internal State엔딩연출01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {200}, arg2: false);
+                context.CreateMonster(arg1: new[] {200}, arg2: false);
                 context.SetOnetimeEffect(id: 3, enable: true,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetProductionUI(arg1: 1);
@@ -166,9 +162,9 @@ namespace Maple2.Trigger._52010040_qd {
                 context.SetSceneSkip(arg1: "quit", arg2: "nextState");
                 context.SetOnetimeEffect(id: 3, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.AddCinematicTalk(npcID: 11003536, illustID: "Neirin_normal", msg: "$52010040_QD__52010040__2$",
+                context.AddCinematicTalk(npcId: 11003536, illustId: "Neirin_normal", msg: "$52010040_QD__52010040__2$",
                     duration: 6200, align: "right");
-                context.CameraSelectPath(arg1: new int[] {2012, 2013}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {2012, 2013}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_blicheCome");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_bliche_front");
             }
@@ -187,7 +183,7 @@ namespace Maple2.Trigger._52010040_qd {
             internal State엔딩연출03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003533, illustID: "Bliche_normal", msg: "$52010040_QD__52010040__3$",
+                context.AddCinematicTalk(npcId: 11003533, illustId: "Bliche_normal", msg: "$52010040_QD__52010040__3$",
                     duration: 4000, align: "right");
             }
 
@@ -205,9 +201,9 @@ namespace Maple2.Trigger._52010040_qd {
             internal State엔딩연출04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003533, illustID: "Bliche_normal", msg: "$52010040_QD__52010040__4$",
+                context.AddCinematicTalk(npcId: 11003533, illustId: "Bliche_normal", msg: "$52010040_QD__52010040__4$",
                     duration: 5400, align: "right");
-                context.CameraSelectPath(arg1: new int[] {2010, 2011, 2014}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {2010, 2011, 2014}, arg2: false);
             }
 
             public override void Execute() {
@@ -224,7 +220,7 @@ namespace Maple2.Trigger._52010040_qd {
             internal State엔딩연출05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003533, illustID: "Bliche_normal", msg: "$52010040_QD__52010040__5$",
+                context.AddCinematicTalk(npcId: 11003533, illustId: "Bliche_normal", msg: "$52010040_QD__52010040__5$",
                     duration: 4000, align: "right");
             }
 
@@ -242,7 +238,7 @@ namespace Maple2.Trigger._52010040_qd {
             internal State엔딩연출06_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11003533, illustID: "Bliche_normal", msg: "$52010040_QD__52010040__6$",
+                context.AddCinematicTalk(npcId: 11003533, illustId: "Bliche_normal", msg: "$52010040_QD__52010040__6$",
                     duration: 4000, align: "right");
             }
 

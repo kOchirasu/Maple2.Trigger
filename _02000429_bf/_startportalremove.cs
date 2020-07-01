@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000429_bf {
     public static class _startportalremove {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 750, arg2: 1)) {
+                if (context.GetUserCount(boxId: 750) == 1) {
                     context.State = new State시작지점포탈_우선생성(context);
                     return;
                 }
@@ -42,7 +38,7 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 770, arg2: 1)) {
+                if (context.GetUserCount(boxId: 770) == 1) {
                     context.State = new State시작지점포탈_제거알림메시지생성(context);
                     return;
                 }
@@ -60,7 +56,7 @@ namespace Maple2.Trigger._02000429_bf {
             internal State시작지점포탈_제거알림메시지생성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000428_BF__BARRICADE__0$", arg3: new int[] {3000});
+                context.SetEventUI(arg1: 1, arg2: "$02000428_BF__BARRICADE__0$", arg3: 3000);
             }
 
             public override void Execute() {

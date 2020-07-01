@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._02010040_bf {
     public static class _battlezone03 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 6, arg2: false, arg3: false, arg4: false);
-                context.SetEffect(arg1: new int[] {4301}, arg2: false);
-                context.SetEffect(arg1: new int[] {4302}, arg2: false);
-                context.SetEffect(arg1: new int[] {4303}, arg2: false);
-                context.SetMesh(arg1: new int[] {1300}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {1301}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {1302}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {4301}, arg2: false);
+                context.SetEffect(arg1: new[] {4302}, arg2: false);
+                context.SetEffect(arg1: new[] {4303}, arg2: false);
+                context.SetMesh(arg1: new[] {1300}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1301}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1302}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 2300, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 2301, arg2: true, arg3: "Closed");
                 context.SetActor(arg1: 2302, arg2: true, arg3: "Closed");
@@ -33,7 +29,7 @@ namespace Maple2.Trigger._02010040_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9300})) {
+                if (context.UserDetected(arg1: new[] {9300})) {
                     context.State = new State전투시작(context);
                     return;
                 }
@@ -46,11 +42,11 @@ namespace Maple2.Trigger._02010040_bf {
             internal State전투시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {501, 502, 601, 602, 701, 702}, arg2: false);
+                context.CreateMonster(arg1: new[] {501, 502, 601, 602, 701, 702}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {501, 502, 601, 602, 701, 702})) {
+                if (context.MonsterDead(arg1: new[] {501, 502, 601, 602, 701, 702})) {
                     context.State = new State문열기(context);
                     return;
                 }
@@ -63,12 +59,12 @@ namespace Maple2.Trigger._02010040_bf {
             internal State문열기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {1300}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {1301}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {1302}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetEffect(arg1: new int[] {4301}, arg2: true);
-                context.SetEffect(arg1: new int[] {4302}, arg2: true);
-                context.SetEffect(arg1: new int[] {4303}, arg2: true);
+                context.SetMesh(arg1: new[] {1300}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1301}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {1302}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetEffect(arg1: new[] {4301}, arg2: true);
+                context.SetEffect(arg1: new[] {4302}, arg2: true);
+                context.SetEffect(arg1: new[] {4303}, arg2: true);
                 context.SetActor(arg1: 2300, arg2: true, arg3: "Opened");
                 context.SetActor(arg1: 2301, arg2: true, arg3: "Opened");
                 context.SetActor(arg1: 2302, arg2: true, arg3: "Opened");

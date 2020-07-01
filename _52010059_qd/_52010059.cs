@@ -1,17 +1,13 @@
-using System;
-
 namespace Maple2.Trigger._52010059_qd {
     public static class _52010059 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201}, arg2: false);
-                context.CreateMonster(arg1: new int[] {202}, arg2: false);
-                context.CreateMonster(arg1: new int[] {203}, arg2: false);
-                context.CreateMonster(arg1: new int[] {204}, arg2: false);
+                context.CreateMonster(arg1: new[] {201}, arg2: false);
+                context.CreateMonster(arg1: new[] {202}, arg2: false);
+                context.CreateMonster(arg1: new[] {203}, arg2: false);
+                context.CreateMonster(arg1: new[] {204}, arg2: false);
                 context.SetActor(arg1: 501, arg2: true, arg3: "sf_quest_light_A01_Off");
                 context.SetActor(arg1: 502, arg2: true, arg3: "sf_quest_light_A01_Off");
                 context.SetActor(arg1: 503, arg2: true, arg3: "sf_quest_light_A01_Off");

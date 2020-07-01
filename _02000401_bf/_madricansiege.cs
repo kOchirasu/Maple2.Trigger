@@ -1,11 +1,8 @@
-using System;
 using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000401_bf {
     public static class _madricansiege {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -14,13 +11,13 @@ namespace Maple2.Trigger._02000401_bf {
                 context.SetAgent(arg1: "8201,8202,8203,8204,8205,8206", arg2: true);
                 context.CameraSelect(arg1: 300, arg2: true);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
-                context.SetMesh(arg1: new int[] {3000, 3001, 3002, 3003, 3004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3101, 3102, 3103, 3104, 3105}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: true, arg3: 0,
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
-                context.SetMesh(arg1: new int[] {3801, 3802, 3803, 3804}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.CreateMonster(arg1: new int[] {1001, 1002, 1003, 1004, 1005}, arg2: false);
-                context.CreateMonster(arg1: new int[] {2000, 2001}, arg2: false);
+                context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
+                context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005}, arg2: false);
+                context.CreateMonster(arg1: new[] {2000, 2001}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetActor(arg1: 201, arg2: false, arg3: "Dead_A");
                 context.SetActor(arg1: 202, arg2: false, arg3: "Dead_A");
@@ -35,7 +32,7 @@ namespace Maple2.Trigger._02000401_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {199})) {
+                if (context.UserDetected(arg1: new[] {199})) {
                     context.State =
                         new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
@@ -72,7 +69,7 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override void OnEnter() {
                 context.SetSkip();
-                context.SetMesh(arg1: new int[] {3000, 3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0,
+                context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0,
                     arg5: 5f);
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
@@ -99,8 +96,8 @@ namespace Maple2.Trigger._02000401_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2000, 2001})) {
-                    context.SetMesh(arg1: new int[] {3101, 3102, 3103, 3104, 3105}, arg2: false, arg3: 0, arg4: 0,
+                if (context.MonsterDead(arg1: new[] {2000, 2001})) {
+                    context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105}, arg2: false, arg3: 0, arg4: 0,
                         arg5: 5f);
                     context.SetAgent(arg1: "8101,8102,8103,8104,8105,8106", arg2: false);
                     context.MoveNpc(arg1: 1102, arg2: "MS2PatrolData_1001A");
@@ -117,18 +114,18 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override void OnEnter() {
                 context.SpawnNpcRange(
-                    rangeID: new int[] {
+                    rangeId: new[] {
                         2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021,
                         2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030
                     }, isAutoTargeting: false);
-                context.CreateMonster(arg1: new int[] {2002, 2003, 2004, 2005}, arg2: false);
-                context.SetUserValue(triggerID: 99999101, key: "cannon01", value: 1);
-                context.SetUserValue(triggerID: 99999099, key: "faction01", value: 1);
+                context.CreateMonster(arg1: new[] {2002, 2003, 2004, 2005}, arg2: false);
+                context.SetUserValue(triggerId: 99999101, key: "cannon01", value: 1);
+                context.SetUserValue(triggerId: 99999099, key: "faction01", value: 1);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2901})) {
-                    context.DestroyMonster(arg1: new int[] {2002});
+                if (context.MonsterDead(arg1: new[] {2901})) {
+                    context.DestroyMonster(arg1: new[] {2002});
                     context.ShadowExpedition(type: "OpenBossGauge", maxGaugePoint: 1000);
                     context.State = new State잠시대기(context);
                     return;
@@ -158,16 +155,16 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override void OnEnter() {
                 context.SetAgent(arg1: "8201,8202,8203,8204,8205,8206", arg2: false);
-                context.SetMesh(arg1: new int[] {3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: false, arg3: 0,
+                context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207}, arg2: false, arg3: 0,
                     arg4: 0, arg5: 5f);
-                context.SetUserValue(triggerID: 99999102, key: "cannon02", value: 1);
-                context.SetUserValue(triggerID: 99999103, key: "cannon03", value: 1);
-                context.SetUserValue(triggerID: 99999104, key: "cannon04", value: 1);
-                context.SetUserValue(triggerID: 99999105, key: "cannon05", value: 1);
+                context.SetUserValue(triggerId: 99999102, key: "cannon02", value: 1);
+                context.SetUserValue(triggerId: 99999103, key: "cannon03", value: 1);
+                context.SetUserValue(triggerId: 99999104, key: "cannon04", value: 1);
+                context.SetUserValue(triggerId: 99999105, key: "cannon05", value: 1);
             }
 
             public override void Execute() {
-                if (context.ShadowExpeditionReachPoint(point: 300)) {
+                if (context.GetShadowExpeditionPoints() >= 300) {
                     context.State = new State2차지원(context);
                     return;
                 }
@@ -180,11 +177,11 @@ namespace Maple2.Trigger._02000401_bf {
             internal State2차지원(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 99999098, key: "faction02", value: 1);
+                context.SetUserValue(triggerId: 99999098, key: "faction02", value: 1);
             }
 
             public override void Execute() {
-                if (context.ShadowExpeditionReachPoint(point: 600)) {
+                if (context.GetShadowExpeditionPoints() >= 600) {
                     context.State = new State3차지원(context);
                     return;
                 }
@@ -197,12 +194,12 @@ namespace Maple2.Trigger._02000401_bf {
             internal State3차지원(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {2031, 2032, 2033, 2034, 2035, 2036}, arg2: false);
-                context.SetUserValue(triggerID: 99999097, key: "faction03", value: 1);
+                context.CreateMonster(arg1: new[] {2031, 2032, 2033, 2034, 2035, 2036}, arg2: false);
+                context.SetUserValue(triggerId: 99999097, key: "faction03", value: 1);
             }
 
             public override void Execute() {
-                if (context.ShadowExpeditionReachPoint(point: 1000)) {
+                if (context.GetShadowExpeditionPoints() >= 1000) {
                     context.ShadowExpedition(type: "CloseBossGauge");
                     context.State = new State보스등장(context);
                     return;
@@ -216,12 +213,12 @@ namespace Maple2.Trigger._02000401_bf {
             internal State보스등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {2026, 2027, 2028, 2029, 2030}, arg2: false);
-                context.SetUserValue(triggerID: 99999096, key: "faction04", value: 1);
+                context.CreateMonster(arg1: new[] {2026, 2027, 2028, 2029, 2030}, arg2: false);
+                context.SetUserValue(triggerId: 99999096, key: "faction04", value: 1);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "bossSpawn", value: 1)) {
+                if (context.GetUserValue(key: "bossSpawn") == 1) {
                     context.State = new State던전종료대기(context);
                     return;
                 }
@@ -236,7 +233,7 @@ namespace Maple2.Trigger._02000401_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {2099})) {
+                if (context.MonsterDead(arg1: new[] {2099})) {
                     context.State = new State던전종료딜레이(context);
                     return;
                 }
@@ -278,18 +275,18 @@ namespace Maple2.Trigger._02000401_bf {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.MoveUser(arg1: 02000401, arg2: 3);
-                context.SetUserValue(triggerID: 99999099, key: "DungeonClear", value: 1);
-                context.SetUserValue(triggerID: 99999098, key: "DungeonClear", value: 1);
-                context.SetUserValue(triggerID: 99999097, key: "DungeonClear", value: 1);
-                context.SetUserValue(triggerID: 99999096, key: "DungeonClear", value: 1);
+                context.SetUserValue(triggerId: 99999099, key: "DungeonClear", value: 1);
+                context.SetUserValue(triggerId: 99999098, key: "DungeonClear", value: 1);
+                context.SetUserValue(triggerId: 99999097, key: "DungeonClear", value: 1);
+                context.SetUserValue(triggerId: 99999096, key: "DungeonClear", value: 1);
                 context.DestroyMonster(
-                    arg1: new int[] {
+                    arg1: new[] {
                         2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017,
                         2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033,
                         2034, 2035, 2036, 2099, 2901, 2902, 2903, 2904, 2905
                     }, arg2: false);
                 context.SpawnNpcRange(
-                    rangeID: new int[] {
+                    rangeId: new[] {
                         1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916,
                         1917, 1918, 1919
                     }, isAutoTargeting: false);
@@ -324,7 +321,7 @@ namespace Maple2.Trigger._02000401_bf {
             }
 
             public override void OnExit() {
-                context.SetMesh(arg1: new int[] {3801, 3802, 3803, 3804}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
+                context.SetMesh(arg1: new[] {3801, 3802, 3803, 3804}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
             }
         }
 

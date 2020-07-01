@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02020144_bf {
     public static class __main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._02020144_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {1001})) {
+                if (context.UserDetected(arg1: new[] {1001})) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -25,11 +21,11 @@ namespace Maple2.Trigger._02020144_bf {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.RemoveBuff(arg1: 1003, arg2: 70002151, arg3: "true");
+                context.RemoveBuff(arg1: 1003, arg2: 70002151, arg3: true);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {1002})) {
+                if (context.UserDetected(arg1: new[] {1002})) {
                     context.State = new State보스전_시작(context);
                     return;
                 }
@@ -42,9 +38,9 @@ namespace Maple2.Trigger._02020144_bf {
             internal State보스전_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SideNpcTalk(type: "talk", npcID: 23501001, illust: "Turned_Yuperia_normal",
+                context.SideNpcTalk(type: "talk", npcId: 23501001, illust: "Turned_Yuperia_normal",
                     script: "$02020101_BF__MAIN__0$", duration: 5670, voice: @"ko/Npc/00002206");
-                context.CreateMonster(arg1: new int[] {101});
+                context.CreateMonster(arg1: new[] {101});
             }
 
             public override void Execute() {
@@ -63,7 +59,7 @@ namespace Maple2.Trigger._02020144_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101})) {
+                if (context.MonsterDead(arg1: new[] {101})) {
                     context.State = new State보스전_성공(context);
                     return;
                 }
@@ -78,7 +74,7 @@ namespace Maple2.Trigger._02020144_bf {
             public override void OnEnter() {
                 context.SetAchievement(arg2: "trigger", arg3: "ClearGreenLapenta_Quest");
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
-                context.SideNpcTalk(type: "talk", npcID: 23501001, illust: "Turned_Yuperia_normal",
+                context.SideNpcTalk(type: "talk", npcId: 23501001, illust: "Turned_Yuperia_normal",
                     script: "$02020101_BF__MAIN__1$", duration: 7940, voice: @"ko/Npc/00002207");
             }
 
@@ -96,7 +92,7 @@ namespace Maple2.Trigger._02020144_bf {
             internal State종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {-1});
+                context.DestroyMonster(arg1: new[] {-1});
             }
 
             public override void Execute() { }

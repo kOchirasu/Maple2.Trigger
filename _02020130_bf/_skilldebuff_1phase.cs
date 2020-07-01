@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02020130_bf {
     public static class _skilldebuff_1phase {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateReady(context);
-
-        private class StateReady : TriggerState {
+        public class StateReady : TriggerState {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -14,7 +10,7 @@ namespace Maple2.Trigger._02020130_bf {
             }
 
             public override void Execute() {
-                if (context.CountUsers(arg1: 601, arg2: 1)) {
+                if (context.GetUserCount(boxId: 601) == 1) {
                     context.State = new State보스의저주디버프사용신호대기(context);
                     return;
                 }
@@ -29,17 +25,17 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "SkillDebuffCheck_1Phase", value: 1)) {
+                if (context.GetUserValue(key: "SkillDebuffCheck_1Phase") == 1) {
                     context.State = new State소환몹활성화될때까지잠시기다리기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "FirstBattleEnd", value: 1)) {
+                if (context.GetUserValue(key: "FirstBattleEnd") == 1) {
                     context.State = new State폭발저주디버프제거잠시대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "FirstBattleEnd", value: 99)) {
+                if (context.GetUserValue(key: "FirstBattleEnd") == 99) {
                     context.State = new State폭발저주디버프제거하고종료(context);
                     return;
                 }
@@ -69,17 +65,17 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "MonsterMany", value: 0)) {
+                if (context.GetUserValue(key: "MonsterMany") == 0) {
                     context.State = new State폭발저주디버프제거잠시대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "FirstBattleEnd", value: 1)) {
+                if (context.GetUserValue(key: "FirstBattleEnd") == 1) {
                     context.State = new State폭발저주디버프제거잠시대기(context);
                     return;
                 }
 
-                if (context.UserValue(key: "FirstBattleEnd", value: 99)) {
+                if (context.GetUserValue(key: "FirstBattleEnd") == 99) {
                     context.State = new State폭발저주디버프제거하고종료(context);
                     return;
                 }
@@ -110,7 +106,7 @@ namespace Maple2.Trigger._02020130_bf {
             internal State폭발저주디버프제거(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {601}, arg2: 50001413, arg3: 1, arg4: false);
+                context.AddBuff(arg1: new[] {601}, arg2: 50001413, arg3: 1, arg4: false);
             }
 
             public override void Execute() {
@@ -127,7 +123,7 @@ namespace Maple2.Trigger._02020130_bf {
             internal State폭발저주디버프제거하고종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {601}, arg2: 50001413, arg3: 1, arg4: false);
+                context.AddBuff(arg1: new[] {601}, arg2: 50001413, arg3: 1, arg4: false);
             }
 
             public override void Execute() {

@@ -1,11 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000390_bf {
     public static class _ai {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context =>
-            new StateIsDungeonRoomReady(context);
-
-        private class StateIsDungeonRoomReady : TriggerState {
+        public class StateIsDungeonRoomReady : TriggerState {
             internal StateIsDungeonRoomReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
@@ -29,11 +24,11 @@ namespace Maple2.Trigger._02000390_bf {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Ground", value: 1)) {
+                if (context.GetUserValue(key: "Ground") == 1) {
                     context.RemoveBuff(arg1: 701, arg2: 99910120);
                     context.State = new Stateready(context);
                     return;
@@ -44,7 +39,7 @@ namespace Maple2.Trigger._02000390_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "Ending", value: 1)) {
+                if (context.GetUserValue(key: "Ending") == 1) {
                     context.State = new StateEnding(context);
                     return;
                 }
@@ -57,11 +52,11 @@ namespace Maple2.Trigger._02000390_bf {
             internal Statebuff_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Ground", value: 1)) {
+                if (context.GetUserValue(key: "Ground") == 1) {
                     context.RemoveBuff(arg1: 701, arg2: 99910120);
                     context.State = new Stateready(context);
                     return;
@@ -72,7 +67,7 @@ namespace Maple2.Trigger._02000390_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "Ending", value: 1)) {
+                if (context.GetUserValue(key: "Ending") == 1) {
                     context.State = new StateEnding(context);
                     return;
                 }
@@ -85,23 +80,23 @@ namespace Maple2.Trigger._02000390_bf {
             internal StatequestIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {50001518},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518},
                     arg3: new byte[] {1})) {
                     context.State = new StateEnding(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {50001517},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001517},
                     arg3: new byte[] {2})) {
                     context.State = new StateEnding(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Ground", value: 1)) {
+                if (context.GetUserValue(key: "Ground") == 1) {
                     context.RemoveBuff(arg1: 701, arg2: 99910120);
                     context.State = new Stateready(context);
                     return;
@@ -112,7 +107,7 @@ namespace Maple2.Trigger._02000390_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "Ending", value: 1)) {
+                if (context.GetUserValue(key: "Ending") == 1) {
                     context.State = new StateEnding(context);
                     return;
                 }
@@ -125,17 +120,17 @@ namespace Maple2.Trigger._02000390_bf {
             internal StatequestIdle_buff_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
+                context.AddBuff(arg1: new[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {50001518},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518},
                     arg3: new byte[] {1})) {
                     context.State = new StateEnding(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Ground", value: 1)) {
+                if (context.GetUserValue(key: "Ground") == 1) {
                     context.RemoveBuff(arg1: 701, arg2: 99910120);
                     context.State = new Stateready(context);
                     return;
@@ -146,7 +141,7 @@ namespace Maple2.Trigger._02000390_bf {
                     return;
                 }
 
-                if (context.UserValue(key: "Ending", value: 1)) {
+                if (context.GetUserValue(key: "Ending") == 1) {
                     context.State = new StateEnding(context);
                     return;
                 }
@@ -159,24 +154,24 @@ namespace Maple2.Trigger._02000390_bf {
             internal Stateready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.EnableSpawnPointPc(spawnPointID: 11001, isEnable: false);
-                context.EnableSpawnPointPc(spawnPointID: 11002, isEnable: true);
+                context.EnableSpawnPointPc(spawnPointId: 11001, isEnable: false);
+                context.EnableSpawnPointPc(spawnPointId: 11002, isEnable: true);
                 context.RemoveBuff(arg1: 701, arg2: 99910120);
-                context.SetMesh(arg1: new int[] {1001, 1002}, arg2: false);
-                context.SetMesh(arg1: new int[] {1004, 1005, 1006}, arg2: false);
+                context.SetMesh(arg1: new[] {1001, 1002}, arg2: false);
+                context.SetMesh(arg1: new[] {1004, 1005, 1006}, arg2: false);
                 context.SetLocalCamera(cameraId: 8002, enable: true);
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000390_BF__AI__0$", arg4: 2, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000390_BF__AI__1$", arg4: 2, arg5: 2);
-                context.DestroyMonster(arg1: new int[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510});
+                context.DestroyMonster(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510});
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Ending", value: 1)) {
+                if (context.GetUserValue(key: "Ending") == 1) {
                     context.State = new StateEnding(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {201, 210})) {
+                if (context.MonsterDead(arg1: new[] {201, 210})) {
                     context.State = new StateEnding(context);
                     return;
                 }
@@ -190,10 +185,10 @@ namespace Maple2.Trigger._02000390_bf {
 
             public override void OnEnter() {
                 context.RemoveBuff(arg1: 701, arg2: 99910120);
-                context.SetEffect(arg1: new int[] {7001}, arg2: true);
+                context.SetEffect(arg1: new[] {7001}, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.DestroyMonster(arg1: new int[] {201, 210, 101, 102});
-                context.CreateMonster(arg1: new int[] {202, 103, 104}, arg2: true);
+                context.DestroyMonster(arg1: new[] {201, 210, 101, 102});
+                context.CreateMonster(arg1: new[] {202, 103, 104}, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
             }
@@ -213,8 +208,8 @@ namespace Maple2.Trigger._02000390_bf {
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "Ending_04");
-                context.DestroyMonster(arg1: new int[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510});
-                context.CameraSelectPath(arg1: new int[] {8101, 8102, 8103}, arg2: false);
+                context.DestroyMonster(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510});
+                context.CameraSelectPath(arg1: new[] {8101, 8102, 8103}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionLoop(arg1: 202, arg2: "Stun_A", arg3: 9000000f);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2008");
@@ -332,9 +327,9 @@ namespace Maple2.Trigger._02000390_bf {
             internal StatedungeonEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {1004, 1005, 1006}, arg2: false);
-                context.SetEffect(arg1: new int[] {7001}, arg2: false);
-                context.SetMesh(arg1: new int[] {1001, 1002}, arg2: false);
+                context.SetMesh(arg1: new[] {1004, 1005, 1006}, arg2: false);
+                context.SetEffect(arg1: new[] {7001}, arg2: false);
+                context.SetMesh(arg1: new[] {1001, 1002}, arg2: false);
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "clearalbanos");
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "ClearOceanKing");
@@ -342,7 +337,7 @@ namespace Maple2.Trigger._02000390_bf {
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {50001518},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518},
                     arg3: new byte[] {1})) {
                     context.State = new StateQuestEnd_warp(context);
                     return;
@@ -357,14 +352,14 @@ namespace Maple2.Trigger._02000390_bf {
 
             public override void OnEnter() {
                 context.RemoveBuff(arg1: 701, arg2: 99910120);
-                context.SetMesh(arg1: new int[] {1004, 1005, 1006}, arg2: false);
-                context.SetEffect(arg1: new int[] {7001}, arg2: false);
-                context.SetMesh(arg1: new int[] {1001, 1002}, arg2: false);
+                context.SetMesh(arg1: new[] {1004, 1005, 1006}, arg2: false);
+                context.SetEffect(arg1: new[] {7001}, arg2: false);
+                context.SetMesh(arg1: new[] {1001, 1002}, arg2: false);
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "clearalbanos");
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {50001518},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {50001518},
                     arg3: new byte[] {1})) {
                     context.State = new StateQuestEnd_warp(context);
                     return;

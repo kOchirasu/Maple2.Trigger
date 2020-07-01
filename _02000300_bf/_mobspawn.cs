@@ -1,21 +1,17 @@
-using System;
-
 namespace Maple2.Trigger._02000300_bf {
     public static class _mobspawn {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterInCombat(arg1: new int[] {1099})) {
+                if (context.MonsterInCombat(arg1: new[] {1099})) {
                     context.State = new State랜덤생성조건(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1099})) {
+                if (context.MonsterDead(arg1: new[] {1099})) {
                     context.State = new State소멸(context);
                     return;
                 }
@@ -67,7 +63,7 @@ namespace Maple2.Trigger._02000300_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1099})) {
+                if (context.MonsterDead(arg1: new[] {1099})) {
                     context.State = new State소멸(context);
                     return;
                 }
@@ -89,7 +85,7 @@ namespace Maple2.Trigger._02000300_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1099})) {
+                if (context.MonsterDead(arg1: new[] {1099})) {
                     context.State = new State소멸(context);
                     return;
                 }
@@ -111,7 +107,7 @@ namespace Maple2.Trigger._02000300_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1099})) {
+                if (context.MonsterDead(arg1: new[] {1099})) {
                     context.State = new State소멸(context);
                     return;
                 }
@@ -133,7 +129,7 @@ namespace Maple2.Trigger._02000300_bf {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1099})) {
+                if (context.MonsterDead(arg1: new[] {1099})) {
                     context.State = new State소멸(context);
                     return;
                 }
@@ -148,16 +144,16 @@ namespace Maple2.Trigger._02000300_bf {
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 1099, arg3: "$02000300_BF__MOBSPAWN__0$", arg4: 2);
                 context.SetConversation(arg1: 1, arg2: 1001, arg3: "$02000300_BF__MOBSPAWN__1$", arg4: 3);
-                context.CreateMonster(arg1: new int[] {1097, 1098}, arg2: true);
+                context.CreateMonster(arg1: new[] {1097, 1098}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {1097, 1098})) {
+                if (context.MonsterDead(arg1: new[] {1097, 1098})) {
                     context.State = new State랜덤생성조건(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1099})) {
+                if (context.MonsterDead(arg1: new[] {1099})) {
                     context.State = new State소멸(context);
                     return;
                 }
@@ -170,8 +166,8 @@ namespace Maple2.Trigger._02000300_bf {
             internal State소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1098});
-                context.DestroyMonster(arg1: new int[] {1097});
+                context.DestroyMonster(arg1: new[] {1098});
+                context.DestroyMonster(arg1: new[] {1097});
             }
 
             public override void Execute() { }

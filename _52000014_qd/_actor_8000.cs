@@ -1,19 +1,15 @@
-using System;
-
 namespace Maple2.Trigger._52000014_qd {
     public static class _actor_8000 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {8100}, arg2: false);
-                context.DestroyMonster(arg1: new int[] {800, 801});
+                context.SetEffect(arg1: new[] {8100}, arg2: false);
+                context.DestroyMonster(arg1: new[] {800, 801});
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9000})) {
+                if (context.UserDetected(arg1: new[] {9000})) {
                     context.State = new State약화01(context);
                     return;
                 }
@@ -26,11 +22,11 @@ namespace Maple2.Trigger._52000014_qd {
             internal State약화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {800}, arg2: false);
+                context.CreateMonster(arg1: new[] {800}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9002})) {
+                if (context.UserDetected(arg1: new[] {9002})) {
                     context.State = new State교체01(context);
                     return;
                 }
@@ -44,8 +40,8 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.DestroyMonster(arg1: new int[] {800});
-                context.CreateMonster(arg1: new int[] {801}, arg2: false);
+                context.DestroyMonster(arg1: new[] {800});
+                context.CreateMonster(arg1: new[] {801}, arg2: false);
                 context.MoveNpc(arg1: 801, arg2: "MS2PatrolData_801");
             }
 
@@ -81,7 +77,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 5);
-                context.SetEffect(arg1: new int[] {8100}, arg2: true);
+                context.SetEffect(arg1: new[] {8100}, arg2: true);
             }
 
             public override void Execute() {
@@ -98,7 +94,7 @@ namespace Maple2.Trigger._52000014_qd {
             internal State종료01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {8100}, arg2: false);
+                context.SetEffect(arg1: new[] {8100}, arg2: false);
             }
 
             public override void Execute() { }

@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52000053_qd {
     public static class _spykandura02 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -12,7 +8,7 @@ namespace Maple2.Trigger._52000053_qd {
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "SpyKandura", value: 1)) {
+                if (context.GetUserValue(key: "SpyKandura") == 1) {
                     context.State = new StateDelay01(context);
                     return;
                 }
@@ -32,7 +28,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -155,7 +151,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppRight01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {430}, arg2: false);
+                context.CreateMonster(arg1: new[] {430}, arg2: false);
             }
 
             public override void Execute() {
@@ -164,7 +160,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -177,7 +173,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppRight01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {430});
+                context.DestroyMonster(arg1: new[] {430});
             }
 
             public override void Execute() {
@@ -186,7 +182,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -199,7 +195,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppRight02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {431}, arg2: false);
+                context.CreateMonster(arg1: new[] {431}, arg2: false);
             }
 
             public override void Execute() {
@@ -208,7 +204,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -221,7 +217,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppRight02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {431});
+                context.DestroyMonster(arg1: new[] {431});
             }
 
             public override void Execute() {
@@ -230,7 +226,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -243,7 +239,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppRight03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {432}, arg2: false);
+                context.CreateMonster(arg1: new[] {432}, arg2: false);
             }
 
             public override void Execute() {
@@ -252,7 +248,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -265,7 +261,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppRight03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {432});
+                context.DestroyMonster(arg1: new[] {432});
             }
 
             public override void Execute() {
@@ -274,7 +270,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -287,7 +283,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppRight04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {433}, arg2: false);
+                context.CreateMonster(arg1: new[] {433}, arg2: false);
             }
 
             public override void Execute() {
@@ -296,7 +292,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -309,7 +305,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppRight04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {433});
+                context.DestroyMonster(arg1: new[] {433});
             }
 
             public override void Execute() {
@@ -318,7 +314,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -331,7 +327,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppRight05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {434}, arg2: false);
+                context.CreateMonster(arg1: new[] {434}, arg2: false);
             }
 
             public override void Execute() {
@@ -340,7 +336,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -353,7 +349,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppRight05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {434});
+                context.DestroyMonster(arg1: new[] {434});
             }
 
             public override void Execute() {
@@ -362,7 +358,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -375,7 +371,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppRight06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {435}, arg2: false);
+                context.CreateMonster(arg1: new[] {435}, arg2: false);
             }
 
             public override void Execute() {
@@ -384,7 +380,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -397,7 +393,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppRight06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {435});
+                context.DestroyMonster(arg1: new[] {435});
             }
 
             public override void Execute() {
@@ -406,7 +402,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -419,7 +415,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppCenter01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {420}, arg2: false);
+                context.CreateMonster(arg1: new[] {420}, arg2: false);
             }
 
             public override void Execute() {
@@ -428,7 +424,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -441,7 +437,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppCenter01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {420});
+                context.DestroyMonster(arg1: new[] {420});
             }
 
             public override void Execute() {
@@ -450,7 +446,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -463,7 +459,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppCenter02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {421}, arg2: false);
+                context.CreateMonster(arg1: new[] {421}, arg2: false);
             }
 
             public override void Execute() {
@@ -472,7 +468,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -485,7 +481,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppCenter02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {421});
+                context.DestroyMonster(arg1: new[] {421});
             }
 
             public override void Execute() {
@@ -494,7 +490,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -507,7 +503,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppCenter03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {422}, arg2: false);
+                context.CreateMonster(arg1: new[] {422}, arg2: false);
             }
 
             public override void Execute() {
@@ -516,7 +512,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -529,7 +525,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppCenter03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {422});
+                context.DestroyMonster(arg1: new[] {422});
             }
 
             public override void Execute() {
@@ -538,7 +534,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -551,7 +547,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppCenter04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {423}, arg2: false);
+                context.CreateMonster(arg1: new[] {423}, arg2: false);
             }
 
             public override void Execute() {
@@ -560,7 +556,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -573,7 +569,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppCenter04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {423});
+                context.DestroyMonster(arg1: new[] {423});
             }
 
             public override void Execute() {
@@ -582,7 +578,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -595,7 +591,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppLeft01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {410}, arg2: false);
+                context.CreateMonster(arg1: new[] {410}, arg2: false);
             }
 
             public override void Execute() {
@@ -604,7 +600,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -617,7 +613,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppLeft01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {410});
+                context.DestroyMonster(arg1: new[] {410});
             }
 
             public override void Execute() {
@@ -626,7 +622,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -639,7 +635,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppLeft02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {411}, arg2: false);
+                context.CreateMonster(arg1: new[] {411}, arg2: false);
             }
 
             public override void Execute() {
@@ -648,7 +644,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -661,7 +657,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppLeft02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {411});
+                context.DestroyMonster(arg1: new[] {411});
             }
 
             public override void Execute() {
@@ -670,7 +666,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -683,7 +679,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppLeft03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {412}, arg2: false);
+                context.CreateMonster(arg1: new[] {412}, arg2: false);
             }
 
             public override void Execute() {
@@ -692,7 +688,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -705,7 +701,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppLeft03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {412});
+                context.DestroyMonster(arg1: new[] {412});
             }
 
             public override void Execute() {
@@ -714,7 +710,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -727,7 +723,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppLeft04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {413}, arg2: false);
+                context.CreateMonster(arg1: new[] {413}, arg2: false);
             }
 
             public override void Execute() {
@@ -736,7 +732,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -749,7 +745,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppLeft04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {413});
+                context.DestroyMonster(arg1: new[] {413});
             }
 
             public override void Execute() {
@@ -758,7 +754,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -771,7 +767,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppLeft05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {414}, arg2: false);
+                context.CreateMonster(arg1: new[] {414}, arg2: false);
             }
 
             public override void Execute() {
@@ -780,7 +776,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -793,7 +789,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppLeft05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {414});
+                context.DestroyMonster(arg1: new[] {414});
             }
 
             public override void Execute() {
@@ -802,7 +798,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -815,7 +811,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraAppLeft06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {415}, arg2: false);
+                context.CreateMonster(arg1: new[] {415}, arg2: false);
             }
 
             public override void Execute() {
@@ -824,7 +820,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -837,7 +833,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateKanduraDisAppLeft06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {415});
+                context.DestroyMonster(arg1: new[] {415});
             }
 
             public override void Execute() {
@@ -846,7 +842,7 @@ namespace Maple2.Trigger._52000053_qd {
                     return;
                 }
 
-                if (context.UserValue(key: "SpyKandura", value: 2)) {
+                if (context.GetUserValue(key: "SpyKandura") == 2) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -859,7 +855,7 @@ namespace Maple2.Trigger._52000053_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[]
+                context.DestroyMonster(arg1: new[]
                     {410, 411, 412, 413, 414, 415, 420, 421, 422, 423, 430, 431, 432, 433, 434, 435});
                 context.SetUserValue(key: "SpyKandura", value: 0);
             }

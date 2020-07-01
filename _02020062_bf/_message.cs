@@ -1,23 +1,19 @@
-using System;
-
 namespace Maple2.Trigger._02020062_bf {
     public static class _message {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02020062_BF__MESSAGE__0$", arg3: new int[] {5000});
+                context.SetEventUI(arg1: 1, arg2: "$02020062_BF__MESSAGE__0$", arg3: 5000);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "FieldGameStart", value: 1)) {
+                if (context.GetUserValue(key: "FieldGameStart") == 1) {
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.UserValue(key: "FieldGameStart", value: 2)) {
+                if (context.GetUserValue(key: "FieldGameStart") == 2) {
                     context.State = new State종료(context);
                     return;
                 }

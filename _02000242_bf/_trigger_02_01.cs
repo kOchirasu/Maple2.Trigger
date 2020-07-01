@@ -1,15 +1,11 @@
-using System;
-
 namespace Maple2.Trigger._02000242_bf {
     public static class _trigger_02_01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {707, 708}, arg2: true);
-                context.DestroyMonster(arg1: new int[] {616, 617});
+                context.SetMesh(arg1: new[] {707, 708}, arg2: true);
+                context.DestroyMonster(arg1: new[] {616, 617});
             }
 
             public override void Execute() { }
@@ -21,11 +17,11 @@ namespace Maple2.Trigger._02000242_bf {
             internal State1차웨이브(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {616, 617}, arg2: true);
+                context.CreateMonster(arg1: new[] {616, 617}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {616, 617})) {
+                if (context.MonsterDead(arg1: new[] {616, 617})) {
                     context.State = new State1차딜레이(context);
                     return;
                 }
@@ -55,11 +51,11 @@ namespace Maple2.Trigger._02000242_bf {
             internal State2차웨이브(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {616, 617}, arg2: true);
+                context.CreateMonster(arg1: new[] {616, 617}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {616, 617})) {
+                if (context.MonsterDead(arg1: new[] {616, 617})) {
                     context.State = new State2차딜레이(context);
                     return;
                 }
@@ -89,11 +85,11 @@ namespace Maple2.Trigger._02000242_bf {
             internal State3차웨이브(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {616, 617}, arg2: true);
+                context.CreateMonster(arg1: new[] {616, 617}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {616, 617})) {
+                if (context.MonsterDead(arg1: new[] {616, 617})) {
                     context.State = new State3차딜레이(context);
                     return;
                 }

@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._66200001_gd {
     public static class _11_banner_thenumberofsurvivor {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "BannerCheckIn", value: 1)) {
+                if (context.GetUserValue(key: "BannerCheckIn") == 1) {
                     context.State = new StateBannerCheckIn(context);
                     return;
                 }
@@ -23,10 +19,10 @@ namespace Maple2.Trigger._66200001_gd {
             internal StateBannerCheckIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValueFromUserCount(triggerBoxID: 9001, key: "BannerNumberOfBlue", userTagID: 1);
-                context.UserValueToNumberMesh(key: "BannerNumberOfBlue", startMeshID: 700, digitCount: 2);
-                context.SetUserValueFromUserCount(triggerBoxID: 9001, key: "BannerNumberOfRed", userTagID: 2);
-                context.UserValueToNumberMesh(key: "BannerNumberOfRed", startMeshID: 1700, digitCount: 2);
+                context.SetUserValueFromUserCount(triggerBoxId: 9001, key: "BannerNumberOfBlue", userTagId: 1);
+                context.UserValueToNumberMesh(key: "BannerNumberOfBlue", startMeshId: 700, digitCount: 2);
+                context.SetUserValueFromUserCount(triggerBoxId: 9001, key: "BannerNumberOfRed", userTagId: 2);
+                context.UserValueToNumberMesh(key: "BannerNumberOfRed", startMeshId: 1700, digitCount: 2);
             }
 
             public override void Execute() {
@@ -47,7 +43,7 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "BannerCheckIn", value: 1)) {
+                if (context.GetUserValue(key: "BannerCheckIn") == 1) {
                     context.State = new StateBannerCheckIn(context);
                     return;
                 }

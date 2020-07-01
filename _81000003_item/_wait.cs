@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._81000003_item {
     public static class _wait {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetTimer(arg1: "60", arg2: 175, arg3: true, arg4: false, desc: "wait.xml 시작 타이머 설정");
+                context.SetTimer(arg1: "60", arg2: 175, arg3: true, arg4: false); // wait.xml 시작 타이머 설정
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {402})) {
+                if (context.UserDetected(arg1: new[] {402})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -26,8 +22,8 @@ namespace Maple2.Trigger._81000003_item {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "ME_001_Wait_00");
-                context.SetEffect(arg1: new int[] {610}, arg2: true);
-                context.ShowGuideSummary(entityID: 26100001, textID: 26100001);
+                context.SetEffect(arg1: new[] {610}, arg2: true);
+                context.ShowGuideSummary(entityId: 26100001, textId: 26100001);
             }
 
             public override void Execute() {
@@ -43,7 +39,7 @@ namespace Maple2.Trigger._81000003_item {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 26100001);
+                context.HideGuideSummary(entityId: 26100001);
             }
         }
 
@@ -52,7 +48,7 @@ namespace Maple2.Trigger._81000003_item {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "ME_001_Wait_00");
-                context.ShowGuideSummary(entityID: 26100002, textID: 26100002);
+                context.ShowGuideSummary(entityId: 26100002, textId: 26100002);
             }
 
             public override void Execute() {
@@ -68,7 +64,7 @@ namespace Maple2.Trigger._81000003_item {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 26100002);
+                context.HideGuideSummary(entityId: 26100002);
             }
         }
 

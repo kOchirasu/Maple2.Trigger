@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._51000003_dg {
     public static class _wave_projectile_04 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateRound_check(context);
-
-        private class StateRound_check : TriggerState {
+        public class StateRound_check : TriggerState {
             internal StateRound_check(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {421, 422, 423, 424, 425, 426, 427, 428, 429, 430});
+                context.DestroyMonster(arg1: new[] {421, 422, 423, 424, 425, 426, 427, 428, 429, 430});
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "Round_01", value: 1)) {
+                if (context.GetUserValue(key: "Round_01") == 1) {
                     context.State = new StateRound_01_Ready(context);
                     return;
                 }
@@ -75,7 +71,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_01_Random_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {216}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {216}, arg2: true, arg3: 0);
                 context.SetTimer(arg1: "9", arg2: 9);
             }
 
@@ -85,12 +81,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_01", value: 0)) {
+                if (context.GetUserValue(key: "Round_01") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -103,7 +99,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_01_Random_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {217}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {217}, arg2: true, arg3: 0);
                 context.SetTimer(arg1: "9", arg2: 9);
             }
 
@@ -113,12 +109,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_01", value: 0)) {
+                if (context.GetUserValue(key: "Round_01") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -131,7 +127,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_01_Random_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {218}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {218}, arg2: true, arg3: 0);
                 context.SetTimer(arg1: "9", arg2: 9);
             }
 
@@ -141,12 +137,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_01", value: 0)) {
+                if (context.GetUserValue(key: "Round_01") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -159,7 +155,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_01_Random_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {219}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {219}, arg2: true, arg3: 0);
                 context.SetTimer(arg1: "9", arg2: 9);
             }
 
@@ -169,12 +165,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_01", value: 0)) {
+                if (context.GetUserValue(key: "Round_01") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }
@@ -187,7 +183,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateRound_01_Random_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {220}, arg2: true, arg3: 0);
+                context.CreateMonster(arg1: new[] {220}, arg2: true, arg3: 0);
                 context.SetTimer(arg1: "9", arg2: 9);
             }
 
@@ -197,12 +193,12 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserValue(key: "Round_01", value: 0)) {
+                if (context.GetUserValue(key: "Round_01") == 0) {
                     context.State = new StateRound_check(context);
                     return;
                 }
 
-                if (context.UserValue(key: "Reset", value: 1)) {
+                if (context.GetUserValue(key: "Reset") == 1) {
                     context.State = new StateEnd(context);
                     return;
                 }

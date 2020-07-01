@@ -1,25 +1,21 @@
-using System;
-
 namespace Maple2.Trigger._52000081_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Statestart(context);
-
-        private class Statestart : TriggerState {
+        public class Statestart : TriggerState {
             internal Statestart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
                 context.SetProductionUI(arg1: 4);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50001532},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001532},
                     arg3: new byte[] {1})) {
                     context.State = new State연출01시작(context);
                     return;
                 }
 
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {50100230},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50100230},
                     arg3: new byte[] {1})) {
                     context.State = new State연출01시작(context);
                     return;
@@ -104,7 +100,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal State감옥이펙트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: true);
+                context.SetEffect(arg1: new[] {601}, arg2: true);
             }
 
             public override void Execute() {
@@ -123,16 +119,16 @@ namespace Maple2.Trigger._52000081_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000081_QD__MAIN__3$", arg4: 2, arg5: 0);
                 context.SetPcEmotionLoop(arg1: "Push_A", arg2: 15000f);
-                context.CreateMonster(arg1: new int[] {1001, 1003, 1004}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001, 1003, 1004}, arg2: false);
             }
 
             public override void Execute() {
-                if (!context.MonsterDead(arg1: new int[] {1001, 1003, 1004})) {
+                if (!context.MonsterDead(arg1: new[] {1001, 1003, 1004})) {
                     context.State = new State검사등장(context);
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {1001, 1003, 1004})) {
+                if (context.MonsterDead(arg1: new[] {1001, 1003, 1004})) {
                     context.State = new StatePC구출01(context);
                     return;
                 }
@@ -145,13 +141,13 @@ namespace Maple2.Trigger._52000081_qd {
             internal State검사등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8001}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
+                context.CreateMonster(arg1: new[] {1002}, arg2: false);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_NPC_01");
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {1001})) {
+                if (context.MonsterDead(arg1: new[] {1001})) {
                     context.State = new StatePC구출01(context);
                     return;
                 }
@@ -169,7 +165,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal State예비용00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1001, 1003, 1004});
+                context.DestroyMonster(arg1: new[] {1001, 1003, 1004});
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_NPC_02");
             }
 
@@ -204,7 +200,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal StatePC구출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_NPC_02_1");
             }
 
@@ -239,7 +235,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal StatePC구출04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {601}, arg2: false);
                 context.SetPcEmotionLoop(arg1: "Idle_A", arg2: 10000f);
             }
 
@@ -258,7 +254,7 @@ namespace Maple2.Trigger._52000081_qd {
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 1002, arg2: "Bore_A", arg3: 1500f);
-                context.AddCinematicTalk(npcID: 11004022, illustID: "11004022", msg: "$52000081_QD__MAIN__4$",
+                context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", msg: "$52000081_QD__MAIN__4$",
                     align: "left", duration: 3000);
             }
 
@@ -276,7 +272,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal State검사대화02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004022, illustID: "11004022", msg: "$52000081_QD__MAIN__5$",
+                context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", msg: "$52000081_QD__MAIN__5$",
                     align: "left", duration: 3000);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_NPC_03");
             }
@@ -295,7 +291,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal StatePC말풍선04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8004, 8005}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8004, 8005}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000081_QD__MAIN__6$", arg4: 3, arg5: 0);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_02");
             }
@@ -332,7 +328,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal State검사대화03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004022, illustID: "11004022", msg: "$52000081_QD__MAIN__17$",
+                context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", msg: "$52000081_QD__MAIN__17$",
                     align: "left", duration: 2000);
             }
 
@@ -401,7 +397,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal State검사대화04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004022, illustID: "11004022", msg: "$52000081_QD__MAIN__11$",
+                context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", msg: "$52000081_QD__MAIN__11$",
                     align: "left", duration: 3000);
             }
 
@@ -419,7 +415,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal State검사대화05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004022, illustID: "11004022", msg: "$52000081_QD__MAIN__12$",
+                context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", msg: "$52000081_QD__MAIN__12$",
                     align: "left", duration: 3000);
             }
 
@@ -437,7 +433,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal State검사대화06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004022, illustID: "11004022", msg: "$52000081_QD__MAIN__13$",
+                context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", msg: "$52000081_QD__MAIN__13$",
                     align: "left", duration: 3000);
             }
 
@@ -455,7 +451,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal State검사퇴장01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_NPC_05");
             }
 
@@ -473,7 +469,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal State검사대화07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004022, illustID: "11004022", msg: "$52000081_QD__MAIN__14$",
+                context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", msg: "$52000081_QD__MAIN__14$",
                     align: "left", duration: 3000);
             }
 
@@ -491,7 +487,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal State검사대화08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004022, illustID: "11004022", msg: "$52000081_QD__MAIN__15$",
+                context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", msg: "$52000081_QD__MAIN__15$",
                     align: "left", duration: 3000);
             }
 
@@ -509,7 +505,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal State검사대화09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcID: 11004022, illustID: "11004022", msg: "$52000081_QD__MAIN__16$",
+                context.AddCinematicTalk(npcId: 11004022, illustId: "11004022", msg: "$52000081_QD__MAIN__16$",
                     align: "left", duration: 3000);
             }
 
@@ -545,7 +541,7 @@ namespace Maple2.Trigger._52000081_qd {
             internal State연출종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1002});
+                context.DestroyMonster(arg1: new[] {1002});
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "meetarcaneblader1st");
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);

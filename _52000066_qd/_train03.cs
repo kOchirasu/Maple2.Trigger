@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._52000066_qd {
     public static class _train03 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
-                context.SetInteractObject(arg1: new int[] {10001072}, arg2: 1);
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.SetInteractObject(arg1: new[] {10001072}, arg2: 1);
                 context.SetUserValue(key: "TrainMove", value: 0);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "TrainMove", value: 1)) {
+                if (context.GetUserValue(key: "TrainMove") == 1) {
                     context.State = new State4thPhaseChase01(context);
                     return;
                 }
@@ -22,7 +18,7 @@ namespace Maple2.Trigger._52000066_qd {
 
             public override void OnExit() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 25200663, textID: 25200663);
+                context.ShowGuideSummary(entityId: 25200663, textId: 25200663);
             }
         }
 
@@ -30,11 +26,11 @@ namespace Maple2.Trigger._52000066_qd {
             internal State4thPhaseChase01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {5001}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001072}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001072}, arg2: 0)) {
                     context.State = new State4thPhaseChase02(context);
                     return;
                 }
@@ -47,9 +43,9 @@ namespace Maple2.Trigger._52000066_qd {
             internal State4thPhaseChase02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.HideGuideSummary(entityID: 25200663);
-                context.SetEffect(arg1: new int[] {5001}, arg2: false);
-                context.CreateMonster(arg1: new int[] {201}, arg2: false);
+                context.HideGuideSummary(entityId: 25200663);
+                context.SetEffect(arg1: new[] {5001}, arg2: false);
+                context.CreateMonster(arg1: new[] {201}, arg2: false);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_200");
             }
 
@@ -68,11 +64,11 @@ namespace Maple2.Trigger._52000066_qd {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 25200664, textID: 25200664);
+                context.ShowGuideSummary(entityId: 25200664, textId: 25200664);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9700})) {
+                if (context.UserDetected(arg1: new[] {9700})) {
                     context.State = new StateGetInTheTrain02(context);
                     return;
                 }
@@ -86,9 +82,9 @@ namespace Maple2.Trigger._52000066_qd {
 
             public override void OnEnter() {
                 context.SetLocalCamera(cameraId: 700, enable: true);
-                context.HideGuideSummary(entityID: 25200664);
+                context.HideGuideSummary(entityId: 25200664);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 25200665, textID: 25200665, duration: 2000);
+                context.ShowGuideSummary(entityId: 25200665, textId: 25200665, duration: 2000);
             }
 
             public override void Execute() {
@@ -139,7 +135,7 @@ namespace Maple2.Trigger._52000066_qd {
             internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {201});
+                context.DestroyMonster(arg1: new[] {201});
             }
 
             public override void Execute() {
@@ -150,8 +146,8 @@ namespace Maple2.Trigger._52000066_qd {
             }
 
             public override void OnExit() {
-                context.SetEffect(arg1: new int[] {5001}, arg2: true);
-                context.SetInteractObject(arg1: new int[] {10001072}, arg2: 1);
+                context.SetEffect(arg1: new[] {5001}, arg2: true);
+                context.SetInteractObject(arg1: new[] {10001072}, arg2: 1);
             }
         }
     }

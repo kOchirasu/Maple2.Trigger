@@ -1,27 +1,23 @@
-using System;
-
 namespace Maple2.Trigger._02000292_bf {
     public static class _battle01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {1001});
-                context.DestroyMonster(arg1: new int[] {1002});
-                context.DestroyMonster(arg1: new int[] {1003});
-                context.DestroyMonster(arg1: new int[] {1004});
-                context.DestroyMonster(arg1: new int[] {1005});
-                context.DestroyMonster(arg1: new int[] {2001});
-                context.DestroyMonster(arg1: new int[] {2002});
-                context.DestroyMonster(arg1: new int[] {2003});
-                context.DestroyMonster(arg1: new int[] {2004});
-                context.DestroyMonster(arg1: new int[] {2005});
+                context.DestroyMonster(arg1: new[] {1001});
+                context.DestroyMonster(arg1: new[] {1002});
+                context.DestroyMonster(arg1: new[] {1003});
+                context.DestroyMonster(arg1: new[] {1004});
+                context.DestroyMonster(arg1: new[] {1005});
+                context.DestroyMonster(arg1: new[] {2001});
+                context.DestroyMonster(arg1: new[] {2002});
+                context.DestroyMonster(arg1: new[] {2003});
+                context.DestroyMonster(arg1: new[] {2004});
+                context.DestroyMonster(arg1: new[] {2005});
             }
 
             public override void Execute() {
-                if (context.CheckUser()) {
+                if (context.GetUserCount() > 0) {
                     context.State = new StateMobSpawn01(context);
                     return;
                 }
@@ -34,15 +30,15 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateMobSpawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {1001}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1002}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1003}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1004}, arg2: false);
-                context.CreateMonster(arg1: new int[] {1005}, arg2: false);
+                context.CreateMonster(arg1: new[] {1001}, arg2: false);
+                context.CreateMonster(arg1: new[] {1002}, arg2: false);
+                context.CreateMonster(arg1: new[] {1003}, arg2: false);
+                context.CreateMonster(arg1: new[] {1004}, arg2: false);
+                context.CreateMonster(arg1: new[] {1005}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterInCombat(arg1: new int[] {1001, 1002, 1003, 1004, 1005})) {
+                if (context.MonsterInCombat(arg1: new[] {1001, 1002, 1003, 1004, 1005})) {
                     context.State = new StateMobBattle01(context);
                     return;
                 }
@@ -55,7 +51,7 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateMobBattle01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {5001}, arg2: true);
+                context.SetEffect(arg1: new[] {5001}, arg2: true);
                 context.ChangeMonster(arg1: 1001, arg2: 2001);
                 context.ChangeMonster(arg1: 1002, arg2: 2002);
                 context.ChangeMonster(arg1: 1003, arg2: 2003);
@@ -77,13 +73,13 @@ namespace Maple2.Trigger._02000292_bf {
             internal StateLadderOff01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.PlaySystemSoundInBox(arg1: new int[] {9001}, arg2: "System_ShowGuideSummary_01");
-                context.ShowGuideSummary(entityID: 20002925, textID: 20002925, duration: 3000);
-                context.SetInteractObject(arg1: new int[] {10001061}, arg2: 1);
+                context.PlaySystemSoundInBox(arg1: new[] {9001}, arg2: "System_ShowGuideSummary_01");
+                context.ShowGuideSummary(entityId: 20002925, textId: 20002925, duration: 3000);
+                context.SetInteractObject(arg1: new[] {10001061}, arg2: 1);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10001061}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10001061}, arg2: 0)) {
                     context.State = new StateLadderOn01(context);
                     return;
                 }

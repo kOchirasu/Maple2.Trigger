@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._52000176_qd {
     public static class _52000176 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -14,7 +10,7 @@ namespace Maple2.Trigger._52000176_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001})) {
+                if (context.UserDetected(arg1: new[] {9001})) {
                     context.State = new State영상재생(context);
                     return;
                 }
@@ -30,7 +26,7 @@ namespace Maple2.Trigger._52000176_qd {
                 context.SetOnetimeEffect(id: 1, enable: true,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CreateWidget(arg1: "SceneMovie");
-                context.PlaySceneMovie(fileName: "jobChangeStory.swf", movieID: 1);
+                context.PlaySceneMovie(fileName: "jobChangeStory.swf", movieId: 1);
             }
 
             public override void Execute() {
@@ -75,7 +71,7 @@ namespace Maple2.Trigger._52000176_qd {
                 context.SetOnetimeEffect(id: 1, enable: false,
                     path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveUserPath(arg1: "MS2PatrolData_pc");
-                context.CameraSelectPath(arg1: new int[] {4000, 4002, 4003}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {4000, 4002, 4003}, arg2: false);
                 context.SetProductionUI(arg1: 1);
             }
 
@@ -173,14 +169,14 @@ namespace Maple2.Trigger._52000176_qd {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
-                context.AddBalloonTalk(spawnPointID: 0, msg: "$52000176_QD__52000176__2$", duration: 6000,
+                context.AddBalloonTalk(spawnPointId: 0, msg: "$52000176_QD__52000176__2$", duration: 6000,
                     delayTick: 1000);
-                context.ShowGuideSummary(entityID: 52001761, textID: 52001761, duration: 10000);
-                context.CreateMonster(arg1: new int[] {400}, arg2: false);
+                context.ShowGuideSummary(entityId: 52001761, textId: 52001761, duration: 10000);
+                context.CreateMonster(arg1: new[] {400}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002359},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002359},
                     arg3: new byte[] {3})) {
                     context.State = new State하스터등장01(context);
                     return;
@@ -194,12 +190,12 @@ namespace Maple2.Trigger._52000176_qd {
             internal State하스터등장01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {401}, arg2: false);
+                context.CreateMonster(arg1: new[] {401}, arg2: false);
                 context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_haster");
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9001}, arg2: new int[] {20002363},
+                if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002363},
                     arg3: new byte[] {3})) {
                     context.State = new State수련장이동01(context);
                     return;

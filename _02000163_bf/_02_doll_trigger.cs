@@ -1,14 +1,10 @@
-using System;
-
 namespace Maple2.Trigger._02000163_bf {
     public static class _02_doll_trigger {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작(context);
-
-        private class State시작 : TriggerState {
+        public class State시작 : TriggerState {
             internal State시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetInteractObject(arg1: new int[] {10000102}, arg2: 1);
+                context.SetInteractObject(arg1: new[] {10000102}, arg2: 1);
             }
 
             public override void Execute() {
@@ -25,11 +21,11 @@ namespace Maple2.Trigger._02000163_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {401}, arg2: true);
+                context.SetMesh(arg1: new[] {401}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000102}, arg2: 0)) {
+                if (context.ObjectInteracted(arg1: new[] {10000102}, arg2: 0)) {
                     context.State = new State로봇사라짐(context);
                     return;
                 }
@@ -42,11 +38,11 @@ namespace Maple2.Trigger._02000163_bf {
             internal State로봇사라짐(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {401}, arg2: false);
+                context.SetMesh(arg1: new[] {401}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.ObjectInteracted(arg1: new int[] {10000102}, arg2: 1)) {
+                if (context.ObjectInteracted(arg1: new[] {10000102}, arg2: 1)) {
                     context.State = new State대기(context);
                     return;
                 }

@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._52010015_qd {
     public static class _act01 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201}, arg2: true);
+                context.CreateMonster(arg1: new[] {201}, arg2: true);
             }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9000}, arg2: new int[] {10002824},
+                if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002824},
                     arg3: new byte[] {2})) {
                     context.State = new State딜레이01(context);
                     return;
@@ -44,8 +40,8 @@ namespace Maple2.Trigger._52010015_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.DestroyMonster(arg1: new int[] {201});
-                context.CreateMonster(arg1: new int[] {202}, arg2: false);
+                context.DestroyMonster(arg1: new[] {201});
+                context.CreateMonster(arg1: new[] {202}, arg2: false);
             }
 
             public override void Execute() {
@@ -66,7 +62,7 @@ namespace Maple2.Trigger._52010015_qd {
             }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 8000, arg2: new int[] {202})) {
+                if (context.NpcDetected(arg1: 8000, arg2: new[] {202})) {
                     context.State = new State미카소멸01(context);
                     return;
                 }
@@ -79,7 +75,7 @@ namespace Maple2.Trigger._52010015_qd {
             internal State미카소멸01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {202});
+                context.DestroyMonster(arg1: new[] {202});
             }
 
             public override void Execute() { }

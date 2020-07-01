@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000047_qd {
     public static class _npcdown_506 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateWait(context);
-
-        private class StateWait : TriggerState {
+        public class StateWait : TriggerState {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.NpcDetected(arg1: 9900, arg2: new int[] {906})) {
+                if (context.NpcDetected(arg1: 9900, arg2: new[] {906})) {
                     context.State = new StateNpcFight(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._52000047_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {906})) {
+                if (context.MonsterDead(arg1: new[] {906})) {
                     context.State = new StateNpcDown(context);
                     return;
                 }
@@ -38,11 +34,11 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateNpcDown(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {516}, arg2: false);
+                context.CreateMonster(arg1: new[] {516}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserValue(key: "NpcRemove", value: 1)) {
+                if (context.GetUserValue(key: "NpcRemove") == 1) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -55,7 +51,7 @@ namespace Maple2.Trigger._52000047_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {516});
+                context.DestroyMonster(arg1: new[] {516});
                 context.SetUserValue(key: "NpcRemove", value: 0);
             }
 

@@ -1,17 +1,14 @@
-using System;
 using System.Numerics;
 
 namespace Maple2.Trigger._52000073_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {9900}, arg2: new int[] {60100115},
+                if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100115},
                     arg3: new byte[] {1})) {
                     context.State = new State레논등장(context);
                     return;
@@ -27,15 +24,15 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG\weather\Eff_monochrome_03.xml");
                 context.SetSound(arg1: 7001, arg2: true);
-                context.DestroyMonster(arg1: new int[] {101});
+                context.DestroyMonster(arg1: new[] {101});
                 context.VisibleMyPc(isVisible: false);
                 context.SetAmbientLight(arg1: new Vector3(0f, 0f, 0f));
                 context.SetAmbientLight(arg1: new Vector3(1f, 1f, 1f));
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
-                context.CreateMonster(arg1: new int[] {302});
-                context.CreateMonster(arg1: new int[] {301});
-                context.CameraSelectPath(arg1: new int[] {8001, 8002}, arg2: false);
+                context.CreateMonster(arg1: new[] {302});
+                context.CreateMonster(arg1: new[] {301});
+                context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: false);
                 context.SetSceneSkip(arg1: "다크윈드통로", arg2: "exit");
             }
 
@@ -53,7 +50,7 @@ namespace Maple2.Trigger._52000073_qd {
             internal State계단이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8003, 8004}, arg2: false);
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_2001");
                 context.SetConversation(arg1: 1, arg2: 301, arg3: "$52000073_QD__MAIN__0$", arg4: 3, arg5: 0);
             }
@@ -74,7 +71,7 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 301, arg3: "$52000073_QD__MAIN__1$", arg4: 2, arg5: 0);
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_2002");
-                context.CameraSelectPath(arg1: new int[] {8005}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8005}, arg2: false);
             }
 
             public override void Execute() {
@@ -109,7 +106,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override void OnEnter() {
                 context.SetSound(arg1: 7002, arg2: true);
-                context.CameraSelectPath(arg1: new int[] {8006}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8006}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 301, arg3: "$52000073_QD__MAIN__3$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 301, arg2: "Sit_down_A", arg3: 5000f);
             }
@@ -128,9 +125,9 @@ namespace Maple2.Trigger._52000073_qd {
             internal State현장목격(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8007}, arg2: false);
-                context.CreateMonster(arg1: new int[] {303});
-                context.CreateMonster(arg1: new int[] {304});
+                context.CameraSelectPath(arg1: new[] {8007}, arg2: false);
+                context.CreateMonster(arg1: new[] {303});
+                context.CreateMonster(arg1: new[] {304});
                 context.SetConversation(arg1: 1, arg2: 303, arg3: "$52000073_QD__MAIN__4$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 303, arg2: "Attack_Idle_A", arg3: 1500f);
                 context.SetNpcEmotionLoop(arg1: 304, arg2: "Attack_Idle_A", arg3: 1500f);
@@ -283,7 +280,7 @@ namespace Maple2.Trigger._52000073_qd {
             internal State레논탈출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {301});
+                context.DestroyMonster(arg1: new[] {301});
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -317,7 +314,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.CameraSelectPath(arg1: new int[] {8008}, arg2: false);
+                context.CameraSelectPath(arg1: new[] {8008}, arg2: false);
             }
 
             public override void Execute() {
@@ -334,7 +331,7 @@ namespace Maple2.Trigger._52000073_qd {
             internal State카트반등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {305});
+                context.CreateMonster(arg1: new[] {305});
             }
 
             public override void Execute() {
@@ -370,7 +367,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.AddCinematicTalk(npcID: 11001024, msg: "$52000073_QD__MAIN__14$", duration: 3000,
+                context.AddCinematicTalk(npcId: 11001024, msg: "$52000073_QD__MAIN__14$", duration: 3000,
                     align: "center");
                 context.SetSceneSkip();
             }
@@ -390,8 +387,8 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: true);
-                context.CreateMonster(arg1: new int[] {101});
-                context.DestroyMonster(arg1: new int[] {301, 302, 303, 304, 305});
+                context.CreateMonster(arg1: new[] {101});
+                context.DestroyMonster(arg1: new[] {301, 302, 303, 304, 305});
                 context.SetProductionUI(arg1: 2);
                 context.MoveUser(arg1: 52000138, arg2: 0);
             }

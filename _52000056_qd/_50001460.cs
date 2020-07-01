@@ -1,31 +1,27 @@
-using System;
-
 namespace Maple2.Trigger._52000056_qd {
     public static class _50001460 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {601}, arg2: false);
-                context.SetEffect(arg1: new int[] {602}, arg2: false);
-                context.SetEffect(arg1: new int[] {603}, arg2: false);
-                context.SetEffect(arg1: new int[] {604}, arg2: false);
-                context.SetEffect(arg1: new int[] {605}, arg2: false);
-                context.SetEffect(arg1: new int[] {606}, arg2: false);
-                context.SetEffect(arg1: new int[] {607}, arg2: false);
-                context.SetEffect(arg1: new int[] {608}, arg2: false);
-                context.SetEffect(arg1: new int[] {609}, arg2: false);
-                context.SetEffect(arg1: new int[] {610}, arg2: false);
-                context.SetEffect(arg1: new int[] {611}, arg2: false);
-                context.SetMesh(arg1: new int[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008}, arg2: true, arg3: 0,
+                context.SetEffect(arg1: new[] {601}, arg2: false);
+                context.SetEffect(arg1: new[] {602}, arg2: false);
+                context.SetEffect(arg1: new[] {603}, arg2: false);
+                context.SetEffect(arg1: new[] {604}, arg2: false);
+                context.SetEffect(arg1: new[] {605}, arg2: false);
+                context.SetEffect(arg1: new[] {606}, arg2: false);
+                context.SetEffect(arg1: new[] {607}, arg2: false);
+                context.SetEffect(arg1: new[] {608}, arg2: false);
+                context.SetEffect(arg1: new[] {609}, arg2: false);
+                context.SetEffect(arg1: new[] {610}, arg2: false);
+                context.SetEffect(arg1: new[] {611}, arg2: false);
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008}, arg2: true, arg3: 0,
                     arg4: 0, arg5: 0f);
                 context.SetGravity(gravity: -9.8f);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103,104,105,106})) {
+                if (context.UserDetected(arg1: new[] {103, 104, 105, 106})) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -75,7 +71,7 @@ namespace Maple2.Trigger._52000056_qd {
             internal State낙하준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008}, arg2: false, arg3: 0,
+                context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008}, arg2: false, arg3: 0,
                     arg4: 200, arg5: 2f);
                 context.SetGravity(gravity: -37f);
             }
@@ -150,17 +146,17 @@ namespace Maple2.Trigger._52000056_qd {
 
             public override void Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetEffect(arg1: new int[] {601}, arg2: true);
-                    context.SetEffect(arg1: new int[] {602}, arg2: true);
-                    context.SetEffect(arg1: new int[] {603}, arg2: true);
-                    context.SetEffect(arg1: new int[] {604}, arg2: true);
-                    context.SetEffect(arg1: new int[] {605}, arg2: true);
-                    context.SetEffect(arg1: new int[] {606}, arg2: true);
-                    context.SetEffect(arg1: new int[] {607}, arg2: true);
-                    context.SetEffect(arg1: new int[] {608}, arg2: true);
-                    context.SetEffect(arg1: new int[] {609}, arg2: true);
-                    context.SetEffect(arg1: new int[] {610}, arg2: true);
-                    context.SetEffect(arg1: new int[] {611}, arg2: true);
+                    context.SetEffect(arg1: new[] {601}, arg2: true);
+                    context.SetEffect(arg1: new[] {602}, arg2: true);
+                    context.SetEffect(arg1: new[] {603}, arg2: true);
+                    context.SetEffect(arg1: new[] {604}, arg2: true);
+                    context.SetEffect(arg1: new[] {605}, arg2: true);
+                    context.SetEffect(arg1: new[] {606}, arg2: true);
+                    context.SetEffect(arg1: new[] {607}, arg2: true);
+                    context.SetEffect(arg1: new[] {608}, arg2: true);
+                    context.SetEffect(arg1: new[] {609}, arg2: true);
+                    context.SetEffect(arg1: new[] {610}, arg2: true);
+                    context.SetEffect(arg1: new[] {611}, arg2: true);
                     context.SetProductionUI(arg1: 0);
                     context.SetProductionUI(arg1: 2);
                     context.SetGravity(gravity: -9.8f);
@@ -178,18 +174,18 @@ namespace Maple2.Trigger._52000056_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {102})) {
-                    context.SetEffect(arg1: new int[] {601}, arg2: false);
-                    context.SetEffect(arg1: new int[] {602}, arg2: false);
-                    context.SetEffect(arg1: new int[] {603}, arg2: false);
-                    context.SetEffect(arg1: new int[] {604}, arg2: false);
-                    context.SetEffect(arg1: new int[] {605}, arg2: false);
-                    context.SetEffect(arg1: new int[] {606}, arg2: false);
-                    context.SetEffect(arg1: new int[] {607}, arg2: false);
-                    context.SetEffect(arg1: new int[] {608}, arg2: false);
-                    context.SetEffect(arg1: new int[] {609}, arg2: false);
-                    context.SetEffect(arg1: new int[] {610}, arg2: false);
-                    context.SetEffect(arg1: new int[] {611}, arg2: false);
+                if (context.UserDetected(arg1: new[] {102})) {
+                    context.SetEffect(arg1: new[] {601}, arg2: false);
+                    context.SetEffect(arg1: new[] {602}, arg2: false);
+                    context.SetEffect(arg1: new[] {603}, arg2: false);
+                    context.SetEffect(arg1: new[] {604}, arg2: false);
+                    context.SetEffect(arg1: new[] {605}, arg2: false);
+                    context.SetEffect(arg1: new[] {606}, arg2: false);
+                    context.SetEffect(arg1: new[] {607}, arg2: false);
+                    context.SetEffect(arg1: new[] {608}, arg2: false);
+                    context.SetEffect(arg1: new[] {609}, arg2: false);
+                    context.SetEffect(arg1: new[] {610}, arg2: false);
+                    context.SetEffect(arg1: new[] {611}, arg2: false);
                     context.State = new State종료(context);
                     return;
                 }

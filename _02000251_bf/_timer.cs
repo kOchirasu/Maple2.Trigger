@@ -1,20 +1,16 @@
-using System;
-
 namespace Maple2.Trigger._02000251_bf {
     public static class _timer {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEffect(arg1: new int[] {3001}, arg2: false);
-                context.SetEffect(arg1: new int[] {3002}, arg2: false);
-                context.SetEffect(arg1: new int[] {3003}, arg2: false);
+                context.SetEffect(arg1: new[] {3001}, arg2: false);
+                context.SetEffect(arg1: new[] {3002}, arg2: false);
+                context.SetEffect(arg1: new[] {3003}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {202})) {
+                if (context.UserDetected(arg1: new[] {202})) {
                     context.State = new State초재기1(context);
                     return;
                 }
@@ -36,7 +32,7 @@ namespace Maple2.Trigger._02000251_bf {
                     return;
                 }
 
-                if (context.CountUsers(arg1: 202, arg2: 4)) {
+                if (context.GetUserCount(boxId: 202) == 4) {
                     context.State = new State초재기2(context);
                     return;
                 }
@@ -50,8 +46,8 @@ namespace Maple2.Trigger._02000251_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "99", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000251_BF__TIMER__0$", arg3: new int[] {3000}, arg4: "0");
-                context.SetEffect(arg1: new int[] {3001}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "$02000251_BF__TIMER__0$", arg3: 3000, arg4: "0");
+                context.SetEffect(arg1: new[] {3001}, arg2: true);
             }
 
             public override void Execute() {
@@ -69,8 +65,8 @@ namespace Maple2.Trigger._02000251_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "99", arg2: 5);
-                context.SetEventUI(arg1: 1, arg2: "$02000251_BF__TIMER__1$", arg3: new int[] {3000}, arg4: "0");
-                context.SetEffect(arg1: new int[] {3002}, arg2: true);
+                context.SetEventUI(arg1: 1, arg2: "$02000251_BF__TIMER__1$", arg3: 3000, arg4: "0");
+                context.SetEffect(arg1: new[] {3002}, arg2: true);
             }
 
             public override void Execute() {
@@ -87,7 +83,7 @@ namespace Maple2.Trigger._02000251_bf {
             internal State초재기3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "$02000251_BF__TIMER__2$", arg3: new int[] {5000}, arg4: "0");
+                context.SetEventUI(arg1: 1, arg2: "$02000251_BF__TIMER__2$", arg3: 5000, arg4: "0");
             }
 
             public override void Execute() {

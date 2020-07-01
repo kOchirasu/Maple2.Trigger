@@ -1,17 +1,13 @@
-using System;
-
 namespace Maple2.Trigger._02000471_bf {
     public static class _elite_05 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserValue(key: "10002023clear", value: 1)
-                    && context.UserValue(key: "SpawnCheck", value: 1)) {
+                if (context.GetUserValue(key: "10002023clear") != 1
+                    && context.GetUserValue(key: "SpawnCheck") == 1) {
                     context.State = new Statespawn(context);
                     return;
                 }
@@ -26,7 +22,7 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "Buff", value: 1)) {
+                if (context.GetUserValue(key: "Buff") == 1) {
                     context.State = new Statebuff(context);
                     return;
                 }
@@ -39,8 +35,8 @@ namespace Maple2.Trigger._02000471_bf {
             internal Statebuff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddBuff(arg1: new int[] {1999}, arg2: 70002041, arg3: 1, arg4: true, arg5: false);
-                context.AddBuff(arg1: new int[] {305}, arg2: 70002041, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(arg1: new[] {1999}, arg2: 70002041, arg3: 1, arg4: true, arg5: false);
+                context.AddBuff(arg1: new[] {305}, arg2: 70002041, arg3: 1, arg4: true, arg5: false);
             }
 
             public override void Execute() { }

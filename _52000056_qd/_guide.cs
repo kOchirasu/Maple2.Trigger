@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._52000056_qd {
     public static class _guide {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State가이드(context);
-
-        private class State가이드 : TriggerState {
+        public class State가이드 : TriggerState {
             internal State가이드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 10010001, textID: 10010001);
+                context.ShowGuideSummary(entityId: 10010001, textId: 10010001);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {103,104,105,106})) {
+                if (context.UserDetected(arg1: new[] {103, 104, 105, 106})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -24,7 +20,7 @@ namespace Maple2.Trigger._52000056_qd {
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 10010001);
+                context.HideGuideSummary(entityId: 10010001);
             }
         }
 

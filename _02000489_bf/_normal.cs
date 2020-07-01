@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02000489_bf {
     public static class _normal {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new StateroomCheck2(context);
-
-        private class StateroomCheck2 : TriggerState {
+        public class StateroomCheck2 : TriggerState {
             internal StateroomCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
@@ -23,13 +19,13 @@ namespace Maple2.Trigger._02000489_bf {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {101, 102, 103, 104, 105}, arg2: false);
+                context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105}, arg2: false);
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915,
                         1916, 1917
                     }, arg2: false);
-                context.SetMesh(arg1: new int[] {1800, 1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809},
+                context.SetMesh(arg1: new[] {1800, 1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809},
                     arg2: false);
                 context.SetLadder(arg1: 1101, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 1102, arg2: false, arg3: false, arg4: 0);
@@ -142,7 +138,7 @@ namespace Maple2.Trigger._02000489_bf {
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {101, 102, 103, 104, 105})) {
+                if (context.MonsterDead(arg1: new[] {101, 102, 103, 104, 105})) {
                     context.State = new Statestep_02(context);
                     return;
                 }
@@ -156,7 +152,7 @@ namespace Maple2.Trigger._02000489_bf {
 
             public override void OnEnter() {
                 context.SetMesh(
-                    arg1: new int[] {
+                    arg1: new[] {
                         1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915,
                         1916, 1917
                     }, arg2: true);
@@ -217,7 +213,7 @@ namespace Maple2.Trigger._02000489_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {702})) {
+                if (context.UserDetected(arg1: new[] {702})) {
                     context.State = new Statestep_03(context);
                     return;
                 }
@@ -230,11 +226,11 @@ namespace Maple2.Trigger._02000489_bf {
             internal Statestep_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {201, 202, 203}, arg2: false);
+                context.CreateMonster(arg1: new[] {201, 202, 203}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {201, 202, 203})) {
+                if (context.MonsterDead(arg1: new[] {201, 202, 203})) {
                     context.State = new Statestep_04(context);
                     return;
                 }
@@ -286,7 +282,7 @@ namespace Maple2.Trigger._02000489_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {703})) {
+                if (context.UserDetected(arg1: new[] {703})) {
                     context.State = new Statestep_05(context);
                     return;
                 }
@@ -299,11 +295,11 @@ namespace Maple2.Trigger._02000489_bf {
             internal Statestep_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {301, 302, 303}, arg2: false);
+                context.CreateMonster(arg1: new[] {301, 302, 303}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {301, 302, 303})) {
+                if (context.MonsterDead(arg1: new[] {301, 302, 303})) {
                     context.State = new Statestep_06(context);
                     return;
                 }
@@ -318,7 +314,7 @@ namespace Maple2.Trigger._02000489_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "LadderGoBossRoom", value: 1)) {
+                if (context.GetUserValue(key: "LadderGoBossRoom") == 1) {
                     context.State = new Statestep_07(context);
                     return;
                 }
@@ -331,7 +327,7 @@ namespace Maple2.Trigger._02000489_bf {
             internal Statestep_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetMesh(arg1: new int[] {1800, 1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809},
+                context.SetMesh(arg1: new[] {1800, 1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809},
                     arg2: true);
                 context.SetLadder(arg1: 1601, arg2: true, arg3: true, arg4: 2);
                 context.SetLadder(arg1: 1602, arg2: true, arg3: true, arg4: 2);

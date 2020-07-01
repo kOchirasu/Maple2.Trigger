@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._99999841 {
     public static class _badmob2 {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 99990004, key: "BadMob", value: 0);
+                context.SetUserValue(triggerId: 99990004, key: "BadMob", value: 0);
             }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 902, value: true)) {
+                if (context.GetDungeonVariable(id: 902) == true) {
                     context.State = new State몬스터스폰(context);
                     return;
                 }
@@ -25,11 +21,11 @@ namespace Maple2.Trigger._99999841 {
             internal State몬스터스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {992}, arg2: false);
+                context.CreateMonster(arg1: new[] {992}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {991, 992, 993})) {
+                if (context.MonsterDead(arg1: new[] {991, 992, 993})) {
                     context.State = new State신호쏴주기(context);
                     return;
                 }
@@ -42,7 +38,7 @@ namespace Maple2.Trigger._99999841 {
             internal State신호쏴주기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetUserValue(triggerID: 99990004, key: "BadMob", value: 1);
+                context.SetUserValue(triggerId: 99990004, key: "BadMob", value: 1);
             }
 
             public override void Execute() {
@@ -61,7 +57,7 @@ namespace Maple2.Trigger._99999841 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.DungeonVariable(varID: 902, value: false)) {
+                if (context.GetDungeonVariable(id: 902) == false) {
                     context.State = new State대기(context);
                     return;
                 }

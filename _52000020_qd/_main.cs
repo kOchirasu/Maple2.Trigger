@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._52000020_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new Stateidle(context);
-
-        private class Stateidle : TriggerState {
+        public class Stateidle : TriggerState {
             internal Stateidle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.QuestUserDetected(arg1: new int[] {701}, arg2: new int[] {60001022},
+                if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {60001022},
                     arg3: new byte[] {1})) {
                     context.State = new Statecamera_01(context);
                     return;
@@ -43,8 +39,8 @@ namespace Maple2.Trigger._52000020_qd {
             internal Statemonster_spawn_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 110, textID: 40010);
-                context.CreateMonster(arg1: new int[] {111, 112, 113, 114}, arg2: true);
+                context.ShowGuideSummary(entityId: 110, textId: 40010);
+                context.CreateMonster(arg1: new[] {111, 112, 113, 114}, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 111, arg3: "$52000020_QD__MAIN__2$", arg4: 5);
                 context.SetConversation(arg1: 1, arg2: 112, arg3: "$52000020_QD__MAIN__3$", arg4: 5);
                 context.SetTimer(arg1: "1", arg2: 1);
@@ -56,7 +52,7 @@ namespace Maple2.Trigger._52000020_qd {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {111, 112, 113, 114})) {
+                if (context.MonsterDead(arg1: new[] {111, 112, 113, 114})) {
                     context.State = new Statecamera_02(context);
                     return;
                 }
@@ -75,14 +71,14 @@ namespace Maple2.Trigger._52000020_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {111, 112, 113, 114})) {
+                if (context.MonsterDead(arg1: new[] {111, 112, 113, 114})) {
                     context.State = new Statecamera_02(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 110);
+                context.HideGuideSummary(entityId: 110);
             }
         }
 
@@ -93,7 +89,7 @@ namespace Maple2.Trigger._52000020_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.CameraSelectPath(arg1: new int[] {8003, 8004}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {8003, 8004}, arg2: true);
             }
 
             public override void Execute() {
@@ -110,8 +106,8 @@ namespace Maple2.Trigger._52000020_qd {
             internal Statemonster_spawn_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 110, textID: 40010);
-                context.CreateMonster(arg1: new int[] {121, 122, 123, 124, 125, 126}, arg2: true);
+                context.ShowGuideSummary(entityId: 110, textId: 40010);
+                context.CreateMonster(arg1: new[] {121, 122, 123, 124, 125, 126}, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 121, arg3: "$52000020_QD__MAIN__4$", arg4: 5);
                 context.SetConversation(arg1: 1, arg2: 124, arg3: "$52000020_QD__MAIN__5$", arg4: 5);
                 context.SetTimer(arg1: "1", arg2: 1);
@@ -123,7 +119,7 @@ namespace Maple2.Trigger._52000020_qd {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {121, 122, 123, 124, 125, 126})) {
+                if (context.MonsterDead(arg1: new[] {121, 122, 123, 124, 125, 126})) {
                     context.State = new Statecamera_03(context);
                     return;
                 }
@@ -142,14 +138,14 @@ namespace Maple2.Trigger._52000020_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {121, 122, 123, 124, 125, 126})) {
+                if (context.MonsterDead(arg1: new[] {121, 122, 123, 124, 125, 126})) {
                     context.State = new Statecamera_03(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 110);
+                context.HideGuideSummary(entityId: 110);
             }
         }
 
@@ -160,7 +156,7 @@ namespace Maple2.Trigger._52000020_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.CameraSelectPath(arg1: new int[] {8005, 8006}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {8005, 8006}, arg2: true);
             }
 
             public override void Execute() {
@@ -177,8 +173,8 @@ namespace Maple2.Trigger._52000020_qd {
             internal Statemonster_spawn_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowGuideSummary(entityID: 110, textID: 40010);
-                context.CreateMonster(arg1: new int[] {131, 132, 133, 134, 135, 136}, arg2: true);
+                context.ShowGuideSummary(entityId: 110, textId: 40010);
+                context.CreateMonster(arg1: new[] {131, 132, 133, 134, 135, 136}, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -188,7 +184,7 @@ namespace Maple2.Trigger._52000020_qd {
                     return;
                 }
 
-                if (context.MonsterDead(arg1: new int[] {131, 132, 133, 134, 135, 136})) {
+                if (context.MonsterDead(arg1: new[] {131, 132, 133, 134, 135, 136})) {
                     context.State = new Statecomplete(context);
                     return;
                 }
@@ -208,14 +204,14 @@ namespace Maple2.Trigger._52000020_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.MonsterDead(arg1: new int[] {131, 132, 133, 134, 135, 136})) {
+                if (context.MonsterDead(arg1: new[] {131, 132, 133, 134, 135, 136})) {
                     context.State = new Statecomplete(context);
                     return;
                 }
             }
 
             public override void OnExit() {
-                context.HideGuideSummary(entityID: 110);
+                context.HideGuideSummary(entityId: 110);
             }
         }
 

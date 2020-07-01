@@ -1,18 +1,14 @@
-using System;
-
 namespace Maple2.Trigger._52010060_qd {
     public static class _main {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DestroyMonster(arg1: new int[] {102});
+                context.DestroyMonster(arg1: new[] {102});
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {9001}, arg2: 0)) {
+                if (context.UserDetected(arg1: new[] {9001}, arg2: 0)) {
                     context.State = new State크림슨발록등장(context);
                     return;
                 }
@@ -25,7 +21,7 @@ namespace Maple2.Trigger._52010060_qd {
             internal State크림슨발록등장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CreateMonster(arg1: new int[] {102}, arg2: true);
+                context.CreateMonster(arg1: new[] {102}, arg2: true);
             }
 
             public override void Execute() {

@@ -1,10 +1,6 @@
-using System;
-
 namespace Maple2.Trigger._02020098_bf {
     public static class _portal {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State시작대기중(context);
-
-        private class State시작대기중 : TriggerState {
+        public class State시작대기중 : TriggerState {
             internal State시작대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
@@ -20,7 +16,7 @@ namespace Maple2.Trigger._02020098_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {10})) {
+                if (context.UserDetected(arg1: new[] {10})) {
                     context.State = new State포탈체크시작(context);
                     return;
                 }
@@ -50,12 +46,12 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "BossOnePhaseEnd", value: 1)) {
+                if (context.GetUserValue(key: "BossOnePhaseEnd") == 1) {
                     context.State = new State순간이동포탈OFF(context);
                     return;
                 }
 
-                if (context.UserValue(key: "BossDead", value: 1)) {
+                if (context.GetUserValue(key: "BossDead") == 1) {
                     context.State = new State나가기포탈생성잠시대기(context);
                     return;
                 }
@@ -104,22 +100,22 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserValue(key: "PhasePortar", value: 0)) {
+                if (context.GetUserValue(key: "PhasePortar") == 0) {
                     context.State = new State졸구간만포탈생성(context);
                     return;
                 }
 
-                if (context.UserValue(key: "PhasePortar", value: 1)) {
+                if (context.GetUserValue(key: "PhasePortar") == 1) {
                     context.State = new State1페이지전투판포탈생성(context);
                     return;
                 }
 
-                if (context.UserValue(key: "PhasePortar", value: 2)) {
+                if (context.GetUserValue(key: "PhasePortar") == 2) {
                     context.State = new State2페이지전투판포탈생성(context);
                     return;
                 }
 
-                if (context.UserValue(key: "PhasePortar", value: 3)) {
+                if (context.GetUserValue(key: "PhasePortar") == 3) {
                     context.State = new State3페이지전투판포탈생성(context);
                     return;
                 }

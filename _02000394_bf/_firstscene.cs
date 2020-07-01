@@ -1,16 +1,12 @@
-using System;
-
 namespace Maple2.Trigger._02000394_bf {
     public static class _firstscene {
-        public static readonly Func<ITriggerContext, TriggerState> Start = context => new State대기(context);
-
-        private class State대기 : TriggerState {
+        public class State대기 : TriggerState {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: new int[] {100})) {
+                if (context.UserDetected(arg1: new[] {100})) {
                     context.State = new State카메라연출01(context);
                     return;
                 }
@@ -42,7 +38,7 @@ namespace Maple2.Trigger._02000394_bf {
             internal State카메라연출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {3000, 3001, 3002, 3003}, arg2: true);
+                context.CameraSelectPath(arg1: new[] {3000, 3001, 3002, 3003}, arg2: true);
             }
 
             public override void Execute() {
