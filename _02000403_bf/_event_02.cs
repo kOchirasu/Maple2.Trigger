@@ -182,7 +182,7 @@ namespace Maple2.Trigger._02000403_bf {
             internal Statescene_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShadowExpedition(type: "OpenBossGauge", title: "$02000403_BF__EVENT_02__9$", maxGaugePoint: 1000);
+                context.ShadowExpeditionOpenBossGauge(title: "$02000403_BF__EVENT_02__9$", maxGaugePoint: 1000);
                 context.DestroyMonster(arg1: new[] {199});
                 context.CreateMonster(arg1: new[] {105, 106, 107, 108, 109, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 150, 151, 152, 153, 154, 155, 156}, arg2: false);
                 context.CameraReset(interpolationTime: 0.0f);

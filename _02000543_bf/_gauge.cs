@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000543_bf {
             internal State게이지시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShadowExpedition(type: "OpenBossGauge", title: "$02000543_BF__GAUGE__0$", maxGaugePoint: 1000);
+                context.ShadowExpeditionOpenBossGauge(title: "$02000543_BF__GAUGE__0$", maxGaugePoint: 1000);
             }
 
             public override TriggerState Execute() {
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02000543_bf {
             internal State성공(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShadowExpedition(type: "CloseBossGauge");
+                context.ShadowExpeditionCloseBossGauge();
                 context.DestroyMonster(arg1: new[] {-1});
                 context.SetUserValue(triggerId: 2001, key: "WaveEnd", value: 1);
                 context.SetUserValue(triggerId: 2003, key: "WaveEnd", value: 1);

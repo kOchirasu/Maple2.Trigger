@@ -72,7 +72,7 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetProductionUI(arg1: 0);
                 context.SetProductionUI(arg1: 2);
                 context.SetProductionUI(arg1: 7);
-                context.ArcadeBoomBoomOcean(type: "StartGame", lifeCount: 20);
+                context.ArcadeBoomBoomOceanStartGame(lifeCount: 20);
                 context.ShowCountUI(text: "$51000003_DG__MAIN__0$", stage: 0, count: 5);
                 context.SetUserValue(triggerId: 991103, key: "Fail", value: 1);
                 context.AddBuff(arg1: new[] {701}, arg2: 70000087, arg3: 1, arg5: false);
@@ -100,19 +100,19 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "arcade_startcheck");
                 context.SetMesh(arg1: new[] {6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111, 6112, 6113, 6114, 6115, 6116, 6117, 6118, 6119, 6120, 6121, 6122, 6123, 6124, 6125, 6126, 6127, 6128, 6129, 6130, 6131, 6132, 6133, 6134, 6135, 6136, 6137, 6138, 6139, 6140, 6141, 6142, 6143, 6144, 6145, 6146, 6147, 6148, 6149, 6150, 6151, 6152, 6153, 6154, 6155, 6156, 6157, 6158, 6159, 6160, 6161, 6162, 6163, 6164, 6165, 6166, 6167, 6168, 6169, 6170, 6171, 6172, 6173, 6174, 6175, 6176, 6177, 6178, 6179, 6180, 6181, 6182, 6183, 6184, 6185, 6186, 6187, 6188, 6189, 6190, 6191, 6192, 6193, 6194, 6195, 6196, 6197, 6198, 6199, 6200}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.RemoveBuff(arg1: 49179004, arg2: 0);
-                context.ArcadeBoomBoomOcean(type: "SetSkillScore", id: 49210001, score: -500);
-                context.ArcadeBoomBoomOcean(type: "SetSkillScore", id: 49210011, score: -500);
-                context.ArcadeBoomBoomOcean(type: "SetSkillScore", id: 49210021, score: -500);
-                context.ArcadeBoomBoomOcean(type: "SetSkillScore", id: 49210031, score: -500);
-                context.ArcadeBoomBoomOcean(type: "SetSkillScore", id: 49200021, score: -500);
-                context.ArcadeBoomBoomOcean(type: "SetSkillScore", id: 49200001, score: -500);
-                context.ArcadeBoomBoomOcean(type: "SetSkillScore", id: 49190012, score: -500);
-                context.ArcadeBoomBoomOcean(type: "SetSkillScore", id: 49190022, score: -500);
-                context.ArcadeBoomBoomOcean(type: "SetSkillScore", id: 70000080, score: 1000);
-                context.ArcadeBoomBoomOcean(type: "SetSkillScore", id: 70000081, score: 1000);
-                context.ArcadeBoomBoomOcean(type: "SetSkillScore", id: 70000082, score: 1000);
-                context.ArcadeBoomBoomOcean(type: "SetSkillScore", id: 70000083, score: 1000);
-                context.ArcadeBoomBoomOcean(type: "SetSkillScore", id: 70000085, score: 1000);
+                context.ArcadeBoomBoomOceanSetSkillScore(id: 49210001, score: -500);
+                context.ArcadeBoomBoomOceanSetSkillScore(id: 49210011, score: -500);
+                context.ArcadeBoomBoomOceanSetSkillScore(id: 49210021, score: -500);
+                context.ArcadeBoomBoomOceanSetSkillScore(id: 49210031, score: -500);
+                context.ArcadeBoomBoomOceanSetSkillScore(id: 49200021, score: -500);
+                context.ArcadeBoomBoomOceanSetSkillScore(id: 49200001, score: -500);
+                context.ArcadeBoomBoomOceanSetSkillScore(id: 49190012, score: -500);
+                context.ArcadeBoomBoomOceanSetSkillScore(id: 49190022, score: -500);
+                context.ArcadeBoomBoomOceanSetSkillScore(id: 70000080, score: 1000);
+                context.ArcadeBoomBoomOceanSetSkillScore(id: 70000081, score: 1000);
+                context.ArcadeBoomBoomOceanSetSkillScore(id: 70000082, score: 1000);
+                context.ArcadeBoomBoomOceanSetSkillScore(id: 70000083, score: 1000);
+                context.ArcadeBoomBoomOceanSetSkillScore(id: 70000085, score: 1000);
             }
 
             public override TriggerState Execute() {
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 991107, key: "Round_01", value: 1);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 1, roundDuration: 1500, timeScoreRate: 1033);
+                context.ArcadeBoomBoomOceanStartRound(round: 1, roundDuration: 1500, timeScoreRate: 1033);
                 context.PlaySystemSoundInBox(arg2: "System_Fruit_Throw_Loop_01");
             }
 
@@ -155,8 +155,8 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 991107, key: "Round_02", value: 1);
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 1);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 2, roundDuration: 20000, timeScoreRate: 1033);
+                context.ArcadeBoomBoomOceanClearRound(round: 1);
+                context.ArcadeBoomBoomOceanStartRound(round: 2, roundDuration: 20000, timeScoreRate: 1033);
             }
 
             public override TriggerState Execute() {
@@ -180,8 +180,8 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 991111, key: "Round_01", value: 1);
                 context.SetUserValue(triggerId: 991107, key: "Round_03", value: 1);
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 2);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 3, roundDuration: 20000, timeScoreRate: 1033);
+                context.ArcadeBoomBoomOceanClearRound(round: 2);
+                context.ArcadeBoomBoomOceanStartRound(round: 3, roundDuration: 20000, timeScoreRate: 1033);
             }
 
             public override TriggerState Execute() {
@@ -209,8 +209,8 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetEffect(arg1: new[] {7999}, arg2: true);
                 context.SetUserValue(triggerId: 991120, key: "Round_01", value: 1);
                 context.SetUserValue(triggerId: 991107, key: "Round_04", value: 1);
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 3);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 4, roundDuration: 20000, timeScoreRate: 1550);
+                context.ArcadeBoomBoomOceanClearRound(round: 3);
+                context.ArcadeBoomBoomOceanStartRound(round: 4, roundDuration: 20000, timeScoreRate: 1550);
             }
 
             public override TriggerState Execute() {
@@ -234,8 +234,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 4);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 5, roundDuration: 20000, timeScoreRate: 1550);
+                context.ArcadeBoomBoomOceanClearRound(round: 4);
+                context.ArcadeBoomBoomOceanStartRound(round: 5, roundDuration: 20000, timeScoreRate: 1550);
                 context.SetUserValue(triggerId: 991104, key: "Round_01", value: 1);
             }
 
@@ -258,8 +258,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 5);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 6, roundDuration: 20000, timeScoreRate: 1550);
+                context.ArcadeBoomBoomOceanClearRound(round: 5);
+                context.ArcadeBoomBoomOceanStartRound(round: 6, roundDuration: 20000, timeScoreRate: 1550);
             }
 
             public override TriggerState Execute() {
@@ -281,8 +281,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 6);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 7, roundDuration: 20000, timeScoreRate: 2067);
+                context.ArcadeBoomBoomOceanClearRound(round: 6);
+                context.ArcadeBoomBoomOceanStartRound(round: 7, roundDuration: 20000, timeScoreRate: 2067);
                 context.SetUserValue(triggerId: 991105, key: "Round_00", value: 1);
                 context.SetUserValue(triggerId: 991102, key: "Treasure_box", value: 1);
             }
@@ -306,8 +306,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 7);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 8, roundDuration: 20000, timeScoreRate: 2067);
+                context.ArcadeBoomBoomOceanClearRound(round: 7);
+                context.ArcadeBoomBoomOceanStartRound(round: 8, roundDuration: 20000, timeScoreRate: 2067);
                 context.SetUserValue(triggerId: 991121, key: "Round_01", value: 1);
             }
 
@@ -330,8 +330,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 8);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 9, roundDuration: 20000, timeScoreRate: 2067);
+                context.ArcadeBoomBoomOceanClearRound(round: 8);
+                context.ArcadeBoomBoomOceanStartRound(round: 9, roundDuration: 20000, timeScoreRate: 2067);
                 context.SetUserValue(triggerId: 991122, key: "Round_01", value: 1);
             }
 
@@ -356,8 +356,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 9);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 10, roundDuration: 20000, timeScoreRate: 2583);
+                context.ArcadeBoomBoomOceanClearRound(round: 9);
+                context.ArcadeBoomBoomOceanStartRound(round: 10, roundDuration: 20000, timeScoreRate: 2583);
                 context.SetEffect(arg1: new[] {7999}, arg2: true);
                 context.CameraSelectPath(arg1: new[] {8003, 8004}, arg2: false);
                 context.SetUserValue(triggerId: 991106, key: "Round_01", value: 1);
@@ -378,8 +378,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 10);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 11, roundDuration: 20000, timeScoreRate: 2583);
+                context.ArcadeBoomBoomOceanClearRound(round: 10);
+                context.ArcadeBoomBoomOceanStartRound(round: 11, roundDuration: 20000, timeScoreRate: 2583);
                 context.SetUserValue(triggerId: 991106, key: "Round_02", value: 1);
             }
 
@@ -402,8 +402,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 11);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 12, roundDuration: 20000, timeScoreRate: 2583);
+                context.ArcadeBoomBoomOceanClearRound(round: 11);
+                context.ArcadeBoomBoomOceanStartRound(round: 12, roundDuration: 20000, timeScoreRate: 2583);
                 context.SetUserValue(triggerId: 991106, key: "Round_03", value: 1);
             }
 
@@ -426,8 +426,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 12);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 13, roundDuration: 20000, timeScoreRate: 3100);
+                context.ArcadeBoomBoomOceanClearRound(round: 12);
+                context.ArcadeBoomBoomOceanStartRound(round: 13, roundDuration: 20000, timeScoreRate: 3100);
                 context.SetUserValue(triggerId: 991106, key: "Round_04", value: 1);
                 context.SetUserValue(triggerId: 991105, key: "Round_01", value: 1);
             }
@@ -451,8 +451,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 13);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 14, roundDuration: 20000, timeScoreRate: 3100);
+                context.ArcadeBoomBoomOceanClearRound(round: 13);
+                context.ArcadeBoomBoomOceanStartRound(round: 14, roundDuration: 20000, timeScoreRate: 3100);
                 context.SetUserValue(triggerId: 991123, key: "Round_01", value: 1);
                 context.SetUserValue(triggerId: 991108, key: "Round_03", value: 1);
             }
@@ -476,8 +476,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 14);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 15, roundDuration: 20000, timeScoreRate: 3100);
+                context.ArcadeBoomBoomOceanClearRound(round: 14);
+                context.ArcadeBoomBoomOceanStartRound(round: 15, roundDuration: 20000, timeScoreRate: 3100);
             }
 
             public override TriggerState Execute() {
@@ -501,8 +501,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 15);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 16, roundDuration: 20000, timeScoreRate: 1350);
+                context.ArcadeBoomBoomOceanClearRound(round: 15);
+                context.ArcadeBoomBoomOceanStartRound(round: 16, roundDuration: 20000, timeScoreRate: 1350);
                 context.SetUserValue(triggerId: 991123, key: "Round_02", value: 1);
                 context.SetUserValue(triggerId: 991105, key: "Round_02", value: 1);
             }
@@ -526,8 +526,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 16);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 17, roundDuration: 20000, timeScoreRate: 1350);
+                context.ArcadeBoomBoomOceanClearRound(round: 16);
+                context.ArcadeBoomBoomOceanStartRound(round: 17, roundDuration: 20000, timeScoreRate: 1350);
                 context.SetUserValue(triggerId: 991106, key: "Round_05", value: 1);
             }
 
@@ -550,8 +550,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 17);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 18, roundDuration: 20000, timeScoreRate: 1350);
+                context.ArcadeBoomBoomOceanClearRound(round: 17);
+                context.ArcadeBoomBoomOceanStartRound(round: 18, roundDuration: 20000, timeScoreRate: 1350);
                 context.SetUserValue(triggerId: 991123, key: "Round_03", value: 1);
                 context.SetUserValue(triggerId: 991122, key: "Round_02", value: 1);
             }
@@ -575,8 +575,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 18);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 19, roundDuration: 20000, timeScoreRate: 1125);
+                context.ArcadeBoomBoomOceanClearRound(round: 18);
+                context.ArcadeBoomBoomOceanStartRound(round: 19, roundDuration: 20000, timeScoreRate: 1125);
                 context.SetUserValue(triggerId: 991107, key: "Round_06", value: 1);
             }
 
@@ -599,8 +599,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 19);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 20, roundDuration: 20000, timeScoreRate: 1125);
+                context.ArcadeBoomBoomOceanClearRound(round: 19);
+                context.ArcadeBoomBoomOceanStartRound(round: 20, roundDuration: 20000, timeScoreRate: 1125);
                 context.SetUserValue(triggerId: 991123, key: "Round_04", value: 1);
             }
 
@@ -623,8 +623,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 20);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 21, roundDuration: 20000, timeScoreRate: 1125);
+                context.ArcadeBoomBoomOceanClearRound(round: 20);
+                context.ArcadeBoomBoomOceanStartRound(round: 21, roundDuration: 20000, timeScoreRate: 1125);
             }
 
             public override TriggerState Execute() {
@@ -646,8 +646,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 21);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 22, roundDuration: 20000, timeScoreRate: 900);
+                context.ArcadeBoomBoomOceanClearRound(round: 21);
+                context.ArcadeBoomBoomOceanStartRound(round: 22, roundDuration: 20000, timeScoreRate: 900);
             }
 
             public override TriggerState Execute() {
@@ -669,8 +669,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_23(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 22);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 23, roundDuration: 20000, timeScoreRate: 900);
+                context.ArcadeBoomBoomOceanClearRound(round: 22);
+                context.ArcadeBoomBoomOceanStartRound(round: 23, roundDuration: 20000, timeScoreRate: 900);
             }
 
             public override TriggerState Execute() {
@@ -692,8 +692,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_24(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 23);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 24, roundDuration: 20000, timeScoreRate: 900);
+                context.ArcadeBoomBoomOceanClearRound(round: 23);
+                context.ArcadeBoomBoomOceanStartRound(round: 24, roundDuration: 20000, timeScoreRate: 900);
             }
 
             public override TriggerState Execute() {
@@ -715,8 +715,8 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_25(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "ClearRound", round: 24);
-                context.ArcadeBoomBoomOcean(type: "StartRound", round: 25, roundDuration: 20000, timeScoreRate: 562);
+                context.ArcadeBoomBoomOceanClearRound(round: 24);
+                context.ArcadeBoomBoomOceanStartRound(round: 25, roundDuration: 20000, timeScoreRate: 562);
             }
 
             public override TriggerState Execute() {
@@ -738,7 +738,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateStep_26(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "EndGame");
+                context.ArcadeBoomBoomOceanEndGame();
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "boomocean_10min");
             }
 
@@ -757,7 +757,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeBoomBoomOcean(type: "EndGame");
+                context.ArcadeBoomBoomOceanEndGame();
             }
 
             public override TriggerState Execute() {

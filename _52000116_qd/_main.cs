@@ -348,7 +348,7 @@ namespace Maple2.Trigger._52000116_qd {
             internal Stateendready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000116_QD__MAIN__8$", desc: "$52000116_QD__MAIN__9$", align: "centerLeft", offsetRateX: -0.15f, duration: 4000);
+                context.ShowCaption(type: "NameCaption", scale: 2.3f, title: "$52000116_QD__MAIN__8$", desc: "$52000116_QD__MAIN__9$", align: "centerLeft", offsetRateX: -0.15f, duration: 4000);
                 context.SetSceneSkip();
             }
 

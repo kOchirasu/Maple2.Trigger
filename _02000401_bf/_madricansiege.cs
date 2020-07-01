@@ -115,7 +115,7 @@ namespace Maple2.Trigger._02000401_bf {
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2901})) {
                     context.DestroyMonster(arg1: new[] {2002});
-                    context.ShadowExpedition(type: "OpenBossGauge", maxGaugePoint: 1000);
+                    context.ShadowExpeditionOpenBossGauge(maxGaugePoint: 1000);
                     return new State잠시대기(context);
                 }
 
@@ -192,7 +192,7 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override TriggerState Execute() {
                 if (context.GetShadowExpeditionPoints() >= 1000) {
-                    context.ShadowExpedition(type: "CloseBossGauge");
+                    context.ShadowExpeditionCloseBossGauge();
                     return new State보스등장(context);
                 }
 

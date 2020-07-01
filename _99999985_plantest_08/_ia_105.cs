@@ -6,7 +6,7 @@ namespace Maple2.Trigger._99999985_plantest_08 {
             public override void OnEnter() {
                 context.DebugString(arg1: "환경음 테스트 트리거 입니다. 환경음을 켭니다. (HeavyRain)");
                 context.SetSound(arg1: 10001, arg2: true);
-                context.Weather(weatherType: "HeavyRain");
+                context.Weather(weatherType: 4); // HeavyRain
             }
 
             public override TriggerState Execute() {
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._99999985_plantest_08 {
             public override void OnEnter() {
                 context.DebugString(arg1: "환경음이 꺼집니다.");
                 context.SetSound(arg1: 10001, arg2: false);
-                context.Weather(weatherType: "None");
+                context.Weather(weatherType: 0); // None
             }
 
             public override TriggerState Execute() {

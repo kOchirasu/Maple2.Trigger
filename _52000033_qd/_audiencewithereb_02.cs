@@ -102,7 +102,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebintroduce(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000033_QD__AUDIENCEWITHEREB_02__18$", desc: "$52000033_QD__AUDIENCEWITHEREB_02__19$", align: "centerLeft", offsetRateX: -0.15f, duration: 3000);
+                context.ShowCaption(type: "NameCaption", scale: 2.3f, title: "$52000033_QD__AUDIENCEWITHEREB_02__18$", desc: "$52000033_QD__AUDIENCEWITHEREB_02__19$", align: "centerLeft", offsetRateX: -0.15f, duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -179,7 +179,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal Statekaltroduce(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000033_QD__AUDIENCEWITHEREB_02__20$", desc: "$52000033_QD__AUDIENCEWITHEREB_02__21$", align: "centerLeft", offsetRateX: -0.15f, duration: 3000);
+                context.ShowCaption(type: "NameCaption", scale: 2.3f, title: "$52000033_QD__AUDIENCEWITHEREB_02__20$", desc: "$52000033_QD__AUDIENCEWITHEREB_02__21$", align: "centerLeft", offsetRateX: -0.15f, duration: 3000);
             }
 
             public override TriggerState Execute() {

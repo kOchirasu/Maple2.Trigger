@@ -163,7 +163,7 @@ namespace Maple2.Trigger._51000005_dg {
                 context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "HyukiThreeTwoOne_start");
                 context.WriteLog(arg1: "ThreeTwoOne_log", arg2: 9000, arg3: "char_event", arg5: "HyukiThreeTwoOnegamestart");
-                context.ArcadeThreeTwoOne2(type: "StartGame", lifeCount: 5, initScore: 10000);
+                context.ArcadeThreeTwoOneStartGame(lifeCount: 5, initScore: 10000);
                 context.SetUserValue(triggerId: 4001, key: "Fail", value: 1);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$51000005_DG__51000005_MAIN__4$", duration: 3000);
                 context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_Start_01");
@@ -207,7 +207,7 @@ namespace Maple2.Trigger._51000005_dg {
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 1, textId: 26300736, duration: 3000);
-                context.ArcadeThreeTwoOne2(type: "StartRound", uiDuration: 4, round: true);
+                context.ArcadeThreeTwoOneStartRound(uiDuration: 4, round: 1);
                 context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_ArrowPopup_01");
             }
 
@@ -256,7 +256,7 @@ namespace Maple2.Trigger._51000005_dg {
             internal State01_좌로돌아(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeThreeTwoOne2(type: "ResultRound", resultDirection: 1);
+                context.ArcadeThreeTwoOneResultRound(resultDirection: 1);
                 context.SetNpcRotation(arg1: 101, arg2: 270);
                 context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_Turning_01");
             }
@@ -276,7 +276,7 @@ namespace Maple2.Trigger._51000005_dg {
             internal State02_뒤로돌아(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeThreeTwoOne2(type: "ResultRound", resultDirection: 2);
+                context.ArcadeThreeTwoOneResultRound(resultDirection: 2);
                 context.SetNpcRotation(arg1: 101, arg2: 180);
                 context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_Turning_01");
             }
@@ -296,7 +296,7 @@ namespace Maple2.Trigger._51000005_dg {
             internal State03_우로돌아(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeThreeTwoOne2(type: "ResultRound", resultDirection: 3);
+                context.ArcadeThreeTwoOneResultRound(resultDirection: 3);
                 context.SetNpcRotation(arg1: 101, arg2: 90);
                 context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_Turning_01");
             }
@@ -352,7 +352,7 @@ namespace Maple2.Trigger._51000005_dg {
             internal State결과정산(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeThreeTwoOne2(type: "ResultRound2", round: true);
+                context.ArcadeThreeTwoOneResultRound2(round: 1);
             }
 
             public override TriggerState Execute() {
@@ -370,7 +370,7 @@ namespace Maple2.Trigger._51000005_dg {
             internal State라운드결과(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeThreeTwoOne2(type: "ClearRound", round: true);
+                context.ArcadeThreeTwoOneClearRound(round: 1);
             }
 
             public override TriggerState Execute() {
@@ -388,7 +388,7 @@ namespace Maple2.Trigger._51000005_dg {
             internal State연출종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ArcadeThreeTwoOne2(type: "EndGame");
+                context.ArcadeThreeTwoOneEndGame();
                 context.MoveUser(arg1: 51000005, arg2: 44);
             }
 

@@ -537,7 +537,7 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetEffect(arg1: new[] {7307}, arg2: true);
                 context.AddCinematicTalk(npcId: 11001851, msg: "$63000041_CS__MAIN__23$", duration: 4000, align: "center");
                 context.SetOnetimeEffect(id: 1966, enable: true, path: @"BG/Common/Sound/Eff_Madria_Tutorial_01_00001966.xml");
-                context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$63000041_CS__MAIN__56$", desc: "$63000041_CS__MAIN__57$", align: "centerLeft", offsetRateX: -0.15f, duration: 4000);
+                context.ShowCaption(type: "NameCaption", scale: 2.3f, title: "$63000041_CS__MAIN__56$", desc: "$63000041_CS__MAIN__57$", align: "centerLeft", offsetRateX: -0.15f, duration: 4000);
             }
 
             public override TriggerState Execute() {

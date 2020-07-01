@@ -26,7 +26,7 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetUserValue(triggerId: 991002, key: "GaugeStart", value: 1);
                 context.SetUserValue(triggerId: 991003, key: "GaugeStart", value: 1);
                 context.SetUserValue(triggerId: 991004, key: "GaugeStart", value: 1);
-                context.ShadowExpedition(type: "OpenBossGauge", title: "$52010038_QD__gauge__2$", maxGaugePoint: 1000);
+                context.ShadowExpeditionOpenBossGauge(title: "$52010038_QD__gauge__2$", maxGaugePoint: 1000);
             }
 
             public override TriggerState Execute() {
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52010038_qd {
             }
 
             public override void OnExit() {
-                context.ShadowExpedition(type: "CloseBossGauge");
+                context.ShadowExpeditionCloseBossGauge();
                 context.SetUserValue(triggerId: 991001, key: "GaugeClosed", value: 1);
                 context.SetUserValue(triggerId: 991002, key: "GaugeClosed", value: 1);
                 context.SetUserValue(triggerId: 991003, key: "GaugeClosed", value: 1);

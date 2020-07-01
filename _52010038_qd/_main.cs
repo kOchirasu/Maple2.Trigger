@@ -6,7 +6,7 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() {
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
                 context.SetEffect(arg1: new[] {6299}, arg2: false);
-                context.ShadowExpedition(type: "CloseBossGauge");
+                context.ShadowExpeditionCloseBossGauge();
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 

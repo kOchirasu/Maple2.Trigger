@@ -21,7 +21,7 @@ namespace Maple2.Trigger._51000002_dg {
 
             public override void OnEnter() {
                 context.SetCube(ids: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015, 5016, 5017, 5018, 5019, 5020}, isVisible: true);
-                context.ArcadeBoomBoomOcean(type: "StartGame", lifeCount: 20);
+                context.ArcadeBoomBoomOceanStartGame(lifeCount: 20);
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.CreateMonster(arg1: new[] {99}, arg2: false);

@@ -278,7 +278,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override void OnExit() {
                 context.SetEventUI(arg1: 1, arg2: "미카엘이 조종하는 마리오네트 무리들을 처치하세요.", arg3: 4000);
-                context.ShadowExpedition(type: "OpenBossGauge", maxGaugePoint: 300, title: "몬스터 처치 달성");
+                context.ShadowExpeditionOpenBossGauge(maxGaugePoint: 300, title: "몬스터 처치 달성");
                 context.SetUserValue(triggerId: 901, key: "respawn_phase_1", value: 1);
                 context.SetUserValue(triggerId: 902, key: "respawn_phase_1", value: 1);
                 context.SetUserValue(triggerId: 903, key: "respawn_phase_1", value: 1);
@@ -306,7 +306,7 @@ namespace Maple2.Trigger._52020016_qd {
             internal State페이즈_2_준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShadowExpedition(type: "CloseBossGauge");
+                context.ShadowExpeditionCloseBossGauge();
                 context.SetUserValue(triggerId: 901, key: "respawn_phase_1_end", value: 1);
                 context.SetUserValue(triggerId: 902, key: "respawn_phase_1_end", value: 1);
                 context.SetUserValue(triggerId: 903, key: "respawn_phase_1_end", value: 1);

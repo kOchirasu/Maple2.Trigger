@@ -20,7 +20,7 @@ namespace Maple2.Trigger._52020001_qd {
             internal State기다림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShadowExpedition(type: "OpenBossGauge", maxGaugePoint: 300, title: "출력 에너지");
+                context.ShadowExpeditionOpenBossGauge(maxGaugePoint: 300, title: "출력 에너지");
             }
 
             public override TriggerState Execute() {

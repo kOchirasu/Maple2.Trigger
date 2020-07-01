@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000350_bf {
             internal State몹스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DarkStream(type: "SpawnMonster", spawnId: new[] {108002}, score: 8000);
+                context.DarkStreamSpawnMonster(spawnId: new[] {108002}, score: 8000);
             }
 
             public override TriggerState Execute() {

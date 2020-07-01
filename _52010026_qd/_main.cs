@@ -834,7 +834,7 @@ namespace Maple2.Trigger._52010026_qd {
                 context.SetOnetimeEffect(id: 103, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetOnetimeEffect(id: 997, enable: true, path: @"BG/sound/Eff_BossRegen_01.xml");
                 context.CreateMonster(arg1: new[] {131}, arg2: true, arg3: 0);
-                context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52010026_QD__MAIN__50$", desc: "$52010026_QD__MAIN__51$", align: "centerLeft", offsetRateX: -0.15f, duration: 4000);
+                context.ShowCaption(type: "NameCaption", scale: 2.3f, title: "$52010026_QD__MAIN__50$", desc: "$52010026_QD__MAIN__51$", align: "centerLeft", offsetRateX: -0.15f, duration: 4000);
                 context.SetOnetimeEffect(id: 103, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
             }
 

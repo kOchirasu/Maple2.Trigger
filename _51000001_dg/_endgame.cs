@@ -27,7 +27,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.PlaySystemSoundInBox(arg2: "System_Ending_Popup_01");
-                    context.ArcadeSpringFarm(type: "EndGame");
+                    context.ArcadeSpringFarmEndGame();
                     return new State진짜끝(context);
                 }
 

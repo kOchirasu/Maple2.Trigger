@@ -19,7 +19,7 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetEffect(arg1: new[] {2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116}, arg2: true);
                 context.SetMesh(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 1115, 1116, 1117, 1118, 1119, 1120, 1121, 1122, 1123, 1124, 1125, 1126, 1127, 1128, 1129, 1130, 1131, 1132, 1133, 1134, 1135, 1136, 1137, 1138, 1139, 1140, 1141, 1142, 1143, 1144, 1145, 1146, 1147, 1148}, arg2: true);
                 context.SetActor(arg1: 1901, arg2: true, arg3: "Idle_A");
-                context.ShadowExpedition(type: "CloseBossGauge");
+                context.ShadowExpeditionCloseBossGauge();
                 context.SetUserValue(triggerId: 99990002, key: "SpawnStart", value: 0);
                 context.SetUserValue(triggerId: 99990003, key: "ObjectPhase", value: 0);
                 context.SetUserValue(triggerId: 99990008, key: "BossPhase", value: 0);
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._02020062_bf {
                 context.SetEventUI(arg1: 0, arg2: "1,3");
                 context.SetEventUI(arg1: 1, arg2: "$02020062_BF__MAIN__2$", arg3: 5000);
                 context.SetTimer(arg1: "1", arg2: 180, arg3: true, arg4: true, arg5: 60);
-                context.ShadowExpedition(type: "OpenBossGauge", maxGaugePoint: 750);
+                context.ShadowExpeditionOpenBossGauge(maxGaugePoint: 750);
                 context.SetUserValue(triggerId: 99990002, key: "SpawnStart", value: 1);
                 context.SetActor(arg1: 1901, arg2: false, arg3: "Idle_A");
                 context.CreateMonster(arg1: new[] {701}, arg2: false);
@@ -152,7 +152,7 @@ namespace Maple2.Trigger._02020062_bf {
             public override void OnEnter() {
                 context.GiveRewardContent(rewardId: 31000001);
                 context.SetEventUI(arg1: 1, arg2: "$02020062_BF__MAIN__3$", arg3: 5000);
-                context.ShadowExpedition(type: "CloseBossGauge");
+                context.ShadowExpeditionCloseBossGauge();
                 context.SetEventUI(arg1: 0, arg2: "2,3");
                 context.ResetTimer(arg1: "1");
                 context.SetUserValue(triggerId: 99990003, key: "ObjectPhase", value: 1);

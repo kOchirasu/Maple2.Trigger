@@ -89,7 +89,7 @@ namespace Maple2.Trigger._99999883 {
             internal State04그림자원정대게이지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShadowExpedition(type: "OpenBossGauge", title: "$02000401_BF__MADRICANSIEGE_Gauge$", maxGaugePoint: 1000);
+                context.ShadowExpeditionOpenBossGauge(title: "$02000401_BF__MADRICANSIEGE_Gauge$", maxGaugePoint: 1000);
                 context.DebugString(message: "그림자원정대게이지테스트");
             }
 

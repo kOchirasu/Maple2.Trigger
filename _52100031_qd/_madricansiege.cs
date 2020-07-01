@@ -128,7 +128,7 @@ namespace Maple2.Trigger._52100031_qd {
             internal State다리건넘(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShadowExpedition(type: "OpenBossGauge", maxGaugePoint: 1000);
+                context.ShadowExpeditionOpenBossGauge(maxGaugePoint: 1000);
                 context.SetUserValue(triggerId: 99999102, key: "cannon02", value: 1);
                 context.SetUserValue(triggerId: 99999103, key: "cannon03", value: 1);
                 context.SetUserValue(triggerId: 99999104, key: "cannon04", value: 1);
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override TriggerState Execute() {
                 if (context.GetShadowExpeditionPoints() >= 1000) {
-                    context.ShadowExpedition(type: "CloseBossGauge");
+                    context.ShadowExpeditionCloseBossGauge();
                     return new State보스등장(context);
                 }
 

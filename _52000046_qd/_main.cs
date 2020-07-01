@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52000046_qd {
             internal Statescene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShowCaption(scale: 2.3f, type: "NameCaption", title: "$52000046_QD__MAIN__1$", desc: "$52000046_QD__MAIN__2$", align: "centerLeft", offsetRateX: -0.15f, duration: 4000);
+                context.ShowCaption(type: "NameCaption", scale: 2.3f, title: "$52000046_QD__MAIN__1$", desc: "$52000046_QD__MAIN__2$", align: "centerLeft", offsetRateX: -0.15f, duration: 4000);
             }
 
             public override TriggerState Execute() {

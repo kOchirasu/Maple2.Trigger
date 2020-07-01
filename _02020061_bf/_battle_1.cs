@@ -256,7 +256,7 @@ namespace Maple2.Trigger._02020061_bf {
             internal State오브젝트페이즈(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.ShadowExpedition(type: "CloseBossGauge");
+                context.ShadowExpeditionCloseBossGauge();
                 context.StartCombineSpawn(groupId: new[] {478}, isStart: false);
                 context.StartCombineSpawn(groupId: new[] {479}, isStart: false);
                 context.StartCombineSpawn(groupId: new[] {480}, isStart: false);

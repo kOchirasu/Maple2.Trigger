@@ -101,7 +101,7 @@ namespace Maple2.Trigger._02000350_bf {
             internal State유저감지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DarkStream(type: "StartGame", round: 30);
+                context.DarkStreamStartGame(round: 30);
                 context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.SetSkill(arg1: new[] {701}, arg2: true);
                 context.SetEffect(arg1: new[] {6010, 6011, 6012, 6013}, arg2: false);
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._02000350_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6110, 6111, 6112, 6113}, arg2: true);
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.DarkStream(type: "StartRound", round: 1, uiDuration: 3000, damagePenalty: 5);
+                context.DarkStreamStartRound(round: 1, uiDuration: 3000, damagePenalty: 5);
                 context.SetEventUI(arg1: 0, arg2: "1,5,1");
             }
 
@@ -144,12 +144,12 @@ namespace Maple2.Trigger._02000350_bf {
             internal State1라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DarkStream(type: "SpawnMonster", spawnId: new[] {101001}, score: 6000);
+                context.DarkStreamSpawnMonster(spawnId: new[] {101001}, score: 6000);
             }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101001})) {
-                    context.DarkStream(type: "ClearRound", round: 1);
+                    context.DarkStreamClearRound(round: 1);
                     context.SetAchievement(arg1: 101, arg2: "trigger", arg3: "1roundpass");
                     return new State2라운드대기(context);
                 }
@@ -164,7 +164,7 @@ namespace Maple2.Trigger._02000350_bf {
             internal State2라운드대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DarkStream(type: "StartRound", round: 2, uiDuration: 3000, damagePenalty: 5);
+                context.DarkStreamStartRound(round: 2, uiDuration: 3000, damagePenalty: 5);
                 context.SetTimer(arg1: "3", arg2: 3);
                 context.SetEventUI(arg1: 0, arg2: "2,5,1");
             }
@@ -184,12 +184,12 @@ namespace Maple2.Trigger._02000350_bf {
             internal State2라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DarkStream(type: "SpawnMonster", spawnId: new[] {102001}, score: 6000);
+                context.DarkStreamSpawnMonster(spawnId: new[] {102001}, score: 6000);
             }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {102001})) {
-                    context.DarkStream(type: "ClearRound", round: 2);
+                    context.DarkStreamClearRound(round: 2);
                     context.SetAchievement(arg1: 101, arg2: "trigger", arg3: "2roundpass");
                     return new State3라운드대기(context);
                 }
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._02000350_bf {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 0, arg2: "3,5,1");
-                context.DarkStream(type: "StartRound", round: 3, uiDuration: 3000, damagePenalty: 5);
+                context.DarkStreamStartRound(round: 3, uiDuration: 3000, damagePenalty: 5);
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
@@ -224,12 +224,12 @@ namespace Maple2.Trigger._02000350_bf {
             internal State3라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DarkStream(type: "SpawnMonster", spawnId: new[] {103001}, score: 16000);
+                context.DarkStreamSpawnMonster(spawnId: new[] {103001}, score: 16000);
             }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {103001})) {
-                    context.DarkStream(type: "ClearRound", round: 3);
+                    context.DarkStreamClearRound(round: 3);
                     context.SetAchievement(arg1: 101, arg2: "trigger", arg3: "3roundpass");
                     return new State4라운드대기(context);
                 }
@@ -246,7 +246,7 @@ namespace Maple2.Trigger._02000350_bf {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 0, arg2: "4,5,1");
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.DarkStream(type: "StartRound", round: 4, uiDuration: 3000, damagePenalty: 5);
+                context.DarkStreamStartRound(round: 4, uiDuration: 3000, damagePenalty: 5);
                 context.SetEventUI(arg1: 1, arg2: "$02000350_BF__MAIN__3$", arg3: 2000, arg4: "0");
             }
 
@@ -274,7 +274,7 @@ namespace Maple2.Trigger._02000350_bf {
                 if (context.TimeExpired(arg1: "30")) {
                     context.DestroyMonster(arg1: new[] {104099});
                     context.ResetTimer(arg1: "30");
-                    context.DarkStream(type: "ClearRound", round: 4);
+                    context.DarkStreamClearRound(round: 4);
                     context.SetAchievement(arg1: 101, arg2: "trigger", arg3: "4roundpass");
                     return new State5라운드대기(context);
                 }
@@ -291,7 +291,7 @@ namespace Maple2.Trigger._02000350_bf {
             public override void OnEnter() {
                 context.SetEventUI(arg1: 0, arg2: "5,5,1");
                 context.SetEffect(arg1: new[] {6101}, arg2: true);
-                context.DarkStream(type: "StartRound", round: 5, uiDuration: 3000, damagePenalty: 5);
+                context.DarkStreamStartRound(round: 5, uiDuration: 3000, damagePenalty: 5);
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
@@ -310,12 +310,12 @@ namespace Maple2.Trigger._02000350_bf {
             internal State5라운드(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.DarkStream(type: "SpawnMonster", spawnId: new[] {105001}, score: 135000);
+                context.DarkStreamSpawnMonster(spawnId: new[] {105001}, score: 135000);
             }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {105001})) {
-                    context.DarkStream(type: "ClearRound", round: 5);
+                    context.DarkStreamClearRound(round: 5);
                     context.SetAchievement(arg1: 101, arg2: "trigger", arg3: "5roundpass");
                     return new State바닥부심(context);
                 }
