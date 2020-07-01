@@ -1340,7 +1340,7 @@ namespace Maple2.Trigger._52000108_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10011")) {
+                if (context.UserDetected(arg1: new int[] {10011})) {
                     context.State = new State프로토콜해피12(context);
                     return;
                 }

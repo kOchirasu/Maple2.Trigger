@@ -12,7 +12,7 @@ namespace Maple2.Trigger._63000079_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "115")) {
+                if (context.UserDetected(arg1: new int[] {115})) {
                     context.State = new State발판15(context);
                     return;
                 }
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._63000079_cs {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "115")) {
+                if (!context.UserDetected(arg1: new int[] {115})) {
                     context.State = new State발판15끝(context);
                     return;
                 }

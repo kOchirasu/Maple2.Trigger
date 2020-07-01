@@ -15,7 +15,7 @@ namespace Maple2.Trigger._02000442_bf {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "702")) {
+                if (context.UserDetected(arg1: new int[] {702})) {
                     context.State = new Stateerror(context);
                     return;
                 }

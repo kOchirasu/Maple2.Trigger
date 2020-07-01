@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02000350_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "103")) {
+                if (context.UserDetected(arg1: new int[] {103})) {
                     context.State = new State시작대기(context);
                     return;
                 }

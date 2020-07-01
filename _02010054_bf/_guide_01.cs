@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "108")) {
+                if (context.UserDetected(arg1: new int[] {108})) {
                     context.State = new State가이드02(context);
                     return;
                 }
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "109")) {
+                if (context.UserDetected(arg1: new int[] {109})) {
                     context.State = new State반응대기02종료(context);
                     return;
                 }
@@ -240,7 +240,7 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "110")) {
+                if (context.UserDetected(arg1: new int[] {110})) {
                     context.SetEventUI(arg1: 1, arg2: "$02010054_BF__GUIDE_01__0$", arg3: new int[] {5000}, arg4: "0");
                     context.State = new State종료(context);
                     return;

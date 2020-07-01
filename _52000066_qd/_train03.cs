@@ -72,7 +72,7 @@ namespace Maple2.Trigger._52000066_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9700")) {
+                if (context.UserDetected(arg1: new int[] {9700})) {
                     context.State = new StateGetInTheTrain02(context);
                     return;
                 }

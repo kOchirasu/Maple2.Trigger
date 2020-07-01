@@ -19,7 +19,7 @@ namespace Maple2.Trigger._02000247_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "401")) {
+                if (context.UserDetected(arg1: new int[] {401})) {
                     context.State = new State엘리베이터00(context);
                     return;
                 }
@@ -34,12 +34,12 @@ namespace Maple2.Trigger._02000247_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "402")) {
+                if (context.UserDetected(arg1: new int[] {402})) {
                     context.State = new State엘리베이터01(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -54,12 +54,12 @@ namespace Maple2.Trigger._02000247_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "403")) {
+                if (context.UserDetected(arg1: new int[] {403})) {
                     context.State = new State엘리베이터02(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -74,32 +74,32 @@ namespace Maple2.Trigger._02000247_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "404")) {
+                if (context.UserDetected(arg1: new int[] {404})) {
                     context.State = new State엘리베이터03(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "401")) {
+                if (!context.UserDetected(arg1: new int[] {401})) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "402")) {
+                if (!context.UserDetected(arg1: new int[] {402})) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "403")) {
+                if (!context.UserDetected(arg1: new int[] {403})) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "404")) {
+                if (!context.UserDetected(arg1: new int[] {404})) {
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._02000247_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }

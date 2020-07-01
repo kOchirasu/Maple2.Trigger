@@ -11,7 +11,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2001", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {2001}, arg2: 0)) {
                     context.State = new State연출준비(context);
                     return;
                 }
@@ -200,7 +200,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "902")) {
+                if (context.UserDetected(arg1: new int[] {902})) {
                     context.MoveUserToPos(pos: new Vector3(300f, -225f, 1500f), rot: new Vector3(0f, 0f, 270f));
                     context.State = new State대화딜레이(context);
                     return;

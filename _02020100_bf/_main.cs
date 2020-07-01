@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02020100_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "901")) {
+                if (context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -360,7 +360,7 @@ namespace Maple2.Trigger._02020100_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "903")) {
+                if (context.UserDetected(arg1: new int[] {903})) {
                     context.State = new State발판1_활성화대기(context);
                     return;
                 }

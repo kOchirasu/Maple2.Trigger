@@ -30,7 +30,7 @@ namespace Maple2.Trigger._51000003_dg {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "701")) {
+                if (context.UserDetected(arg1: new int[] {701})) {
                     context.State = new Statebuff(context);
                     return;
                 }

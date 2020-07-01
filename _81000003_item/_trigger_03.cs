@@ -13,7 +13,7 @@ namespace Maple2.Trigger._81000003_item {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "402")) {
+                if (context.UserDetected(arg1: new int[] {402})) {
                     context.State = new State대기(context);
                     return;
                 }

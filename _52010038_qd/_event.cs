@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52010038_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "103")) {
+                if (context.UserDetected(arg1: new int[] {103})) {
                     context.State = new State이벤트시작(context);
                     return;
                 }
@@ -114,7 +114,7 @@ namespace Maple2.Trigger._52010038_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "105")) {
+                if (context.UserDetected(arg1: new int[] {105})) {
                     context.State = new State폭발시퀀스시작(context);
                     return;
                 }

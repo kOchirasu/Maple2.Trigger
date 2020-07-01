@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02020112_bf {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "931")) {
+                if (context.UserDetected(arg1: new int[] {931})) {
                     context.State = new State감지(context);
                     return;
                 }
@@ -50,10 +50,10 @@ namespace Maple2.Trigger._02020112_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "921", arg2: 0)
-                    && context.UserDetected(arg1: "922", arg2: 0)
-                    && context.UserDetected(arg1: "923", arg2: 0)
-                    && context.UserDetected(arg1: "924", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {921}, arg2: 0)
+                    && context.UserDetected(arg1: new int[] {922}, arg2: 0)
+                    && context.UserDetected(arg1: new int[] {923}, arg2: 0)
+                    && context.UserDetected(arg1: new int[] {924}, arg2: 0)) {
                     context.State = new State성공(context);
                     return;
                 }

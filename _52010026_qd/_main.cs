@@ -39,7 +39,7 @@ namespace Maple2.Trigger._52010026_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2001")) {
+                if (context.UserDetected(arg1: new int[] {2001})) {
                     context.State = new Stateblack(context);
                     return;
                 }
@@ -381,7 +381,7 @@ namespace Maple2.Trigger._52010026_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2101")) {
+                if (context.UserDetected(arg1: new int[] {2101})) {
                     context.State = new State두번째연출_black(context);
                     return;
                 }

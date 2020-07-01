@@ -40,7 +40,7 @@ namespace Maple2.Trigger._80000007_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "301")) {
+                if (context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._80000007_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9999")) {
+                if (context.UserDetected(arg1: new int[] {9999})) {
                     context.State = new State보상(context);
                     return;
                 }

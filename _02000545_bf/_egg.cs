@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02000545_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "702", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {702}, arg2: 0)) {
                     context.State = new State아르키아체력(context);
                     return;
                 }

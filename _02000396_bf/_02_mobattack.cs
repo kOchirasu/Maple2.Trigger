@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02000396_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateMobAttack01(context);
                     return;
                 }

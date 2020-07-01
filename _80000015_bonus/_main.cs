@@ -27,7 +27,7 @@ namespace Maple2.Trigger._80000015_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199")) {
+                if (context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State문열기(context);
                     return;
                 }
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._80000015_bonus {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "198") && context.UserDetected(arg1: "194")) {
+                if (context.UserDetected(arg1: new int[] {198}) && context.UserDetected(arg1: new int[] {194})) {
                     context.State = new State보스등장(context);
                     return;
                 }

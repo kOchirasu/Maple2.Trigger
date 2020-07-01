@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52020014_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "901")) {
+                if (context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State1차전투(context);
                     return;
                 }
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52020014_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "904")) {
+                if (context.UserDetected(arg1: new int[] {904})) {
                     context.State = new State2차전투(context);
                     return;
                 }
@@ -84,7 +84,7 @@ namespace Maple2.Trigger._52020014_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "907")) {
+                if (context.UserDetected(arg1: new int[] {907})) {
                     context.State = new State이펙트꺼주기(context);
                     return;
                 }
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._52020014_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "902")) {
+                if (context.UserDetected(arg1: new int[] {902})) {
                     context.State = new State3차전투(context);
                     return;
                 }
@@ -119,7 +119,7 @@ namespace Maple2.Trigger._52020014_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "903")) {
+                if (context.UserDetected(arg1: new int[] {903})) {
                     context.State = new State4차전투(context);
                     return;
                 }
@@ -173,7 +173,7 @@ namespace Maple2.Trigger._52020014_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "905")) {
+                if (context.UserDetected(arg1: new int[] {905})) {
                     context.State = new State레버힌트_카메라(context);
                     return;
                 }
@@ -233,7 +233,7 @@ namespace Maple2.Trigger._52020014_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "906")) {
+                if (context.UserDetected(arg1: new int[] {906})) {
                     context.State = new State이공간2차전투(context);
                     return;
                 }

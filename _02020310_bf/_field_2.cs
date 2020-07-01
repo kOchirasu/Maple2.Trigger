@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02020310_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.CreateMonster(arg1: new int[] {2001}, arg2: false);
                     context.State = new StateArriveBlock_Delay_1(context);
                     return;
@@ -216,7 +216,7 @@ namespace Maple2.Trigger._02020310_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9002")) {
+                if (context.UserDetected(arg1: new int[] {9002})) {
                     context.CreateMonster(arg1: new int[] {2002}, arg2: false);
                     context.State = new StateArriveBlock_Delay_2(context);
                     return;
@@ -387,7 +387,7 @@ namespace Maple2.Trigger._02020310_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9003")) {
+                if (context.UserDetected(arg1: new int[] {9003})) {
                     context.CreateMonster(arg1: new int[] {2003}, arg2: false);
                     context.State = new StateArriveBlock_Delay_3(context);
                     return;

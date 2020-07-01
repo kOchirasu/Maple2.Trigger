@@ -183,7 +183,7 @@ namespace Maple2.Trigger._52000198_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2002")) {
+                if (context.UserDetected(arg1: new int[] {2002})) {
                     context.State = new State도망쳐_03(context);
                     return;
                 }
@@ -202,7 +202,7 @@ namespace Maple2.Trigger._52000198_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2003")) {
+                if (context.UserDetected(arg1: new int[] {2003})) {
                     context.State = new State도망쳐_04(context);
                     return;
                 }
@@ -220,7 +220,7 @@ namespace Maple2.Trigger._52000198_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2004")) {
+                if (context.UserDetected(arg1: new int[] {2004})) {
                     context.State = new State도망쳐_05(context);
                     return;
                 }
@@ -239,7 +239,7 @@ namespace Maple2.Trigger._52000198_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2005")) {
+                if (context.UserDetected(arg1: new int[] {2005})) {
                     context.State = new State도망쳐_06(context);
                     return;
                 }
@@ -257,7 +257,7 @@ namespace Maple2.Trigger._52000198_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2006")) {
+                if (context.UserDetected(arg1: new int[] {2006})) {
                     context.State = new State도망쳐_07(context);
                     return;
                 }

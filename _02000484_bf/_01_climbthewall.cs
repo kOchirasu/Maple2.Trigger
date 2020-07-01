@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000484_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new StateLoadingDelay(context);
                     return;
                 }
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._02000484_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9100")) {
+                if (context.UserDetected(arg1: new int[] {9100})) {
                     context.State = new StateTerraceMobAttack01(context);
                     return;
                 }
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._02000484_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9150")) {
+                if (context.UserDetected(arg1: new int[] {9150})) {
                     context.State = new State2ndArrowGuide01(context);
                     return;
                 }
@@ -153,7 +153,7 @@ namespace Maple2.Trigger._02000484_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9200")) {
+                if (context.UserDetected(arg1: new int[] {9200})) {
                     context.State = new StateTowerUnderMobAttack01(context);
                     return;
                 }
@@ -235,7 +235,7 @@ namespace Maple2.Trigger._02000484_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9300")) {
+                if (context.UserDetected(arg1: new int[] {9300})) {
                     context.State = new StateGuideMoveToBridge01(context);
                     return;
                 }
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._02000484_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9400")) {
+                if (context.UserDetected(arg1: new int[] {9400})) {
                     context.State = new StateGuideMoveToBridge01_Guide(context);
                     return;
                 }
@@ -268,7 +268,7 @@ namespace Maple2.Trigger._02000484_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9350")) {
+                if (context.UserDetected(arg1: new int[] {9350})) {
                     context.State = new StateGuideMoveToBridge01End(context);
                     return;
                 }

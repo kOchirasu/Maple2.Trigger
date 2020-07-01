@@ -117,11 +117,11 @@ namespace Maple2.Trigger._02000328_bf {
                 context.CreateMonster(arg1: new int[] {1201, 1202, 1203, 1204, 1205}, arg2: false);
                 context.CreateMonster(arg1: new int[] {1301, 1302, 1303, 1304, 1305}, arg2: false);
                 context.CreateMonster(arg1: new int[] {1401, 1402, 1403, 1404, 1405}, arg2: false);
-                context.SetCube(IDs: new int[] {5001, 5002, 5003, 5004}, isVisible: "false");
+                context.SetCube(IDs: new int[] {5001, 5002, 5003, 5004}, isVisible: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "999998")) {
+                if (context.UserDetected(arg1: new int[] {999998})) {
                     context.State =
                         new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
@@ -196,12 +196,12 @@ namespace Maple2.Trigger._02000328_bf {
             internal State웨폰오브젝트대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(IDs: new int[] {5001, 5002, 5003, 5004}, isVisible: "true");
+                context.SetCube(IDs: new int[] {5001, 5002, 5003, 5004}, isVisible: true);
                 context.CreateMonster(arg1: new int[] {2001}, arg2: false);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "999997")) {
+                if (context.UserDetected(arg1: new int[] {999997})) {
                     context.SetEffect(arg1: new int[] {84002}, arg2: true);
                     context.SetConversation(arg1: 1, arg2: 2001, arg3: "$02000328_BF__MAIN__6$", arg4: 5, arg5: 0);
                     context.State = new State하층클리어대기(context);

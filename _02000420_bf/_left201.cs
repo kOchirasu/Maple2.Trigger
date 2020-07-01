@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02000420_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "201")) {
+                if (context.UserDetected(arg1: new int[] {201})) {
                     context.State = new State왼쪽지점견제(context);
                     return;
                 }
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000420_bf {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "201")) {
+                if (!context.UserDetected(arg1: new int[] {201})) {
                     context.State = new State왼쪽지점견제풀기(context);
                     return;
                 }

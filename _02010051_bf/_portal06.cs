@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02010051_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9002")) {
+                if (context.UserDetected(arg1: new int[] {9002})) {
                     context.State = new State입장딜레이01(context);
                     return;
                 }
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new State가이드준비(context);
                     return;
                 }

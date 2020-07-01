@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02000248_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "201")) {
+                if (context.UserDetected(arg1: new int[] {201})) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02000248_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._02000248_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -119,7 +119,7 @@ namespace Maple2.Trigger._02000248_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._02000248_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -165,7 +165,7 @@ namespace Maple2.Trigger._02000248_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -188,7 +188,7 @@ namespace Maple2.Trigger._02000248_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -211,7 +211,7 @@ namespace Maple2.Trigger._02000248_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -234,7 +234,7 @@ namespace Maple2.Trigger._02000248_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -257,7 +257,7 @@ namespace Maple2.Trigger._02000248_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._02000248_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -303,7 +303,7 @@ namespace Maple2.Trigger._02000248_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -326,7 +326,7 @@ namespace Maple2.Trigger._02000248_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -349,7 +349,7 @@ namespace Maple2.Trigger._02000248_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -373,7 +373,7 @@ namespace Maple2.Trigger._02000248_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "999")) {
+                if (!context.UserDetected(arg1: new int[] {999})) {
                     context.State = new State대기(context);
                     return;
                 }

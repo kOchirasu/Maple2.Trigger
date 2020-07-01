@@ -12,7 +12,7 @@ namespace Maple2.Trigger._82000001_survival {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new StateHidePartyUI(context);
                     return;
                 }

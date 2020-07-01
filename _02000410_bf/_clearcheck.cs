@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "700")) {
+                if (!context.UserDetected(arg1: new int[] {700})) {
                     context.State = new State전멸던전실패연출01(context);
                     return;
                 }

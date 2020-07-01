@@ -17,7 +17,7 @@ namespace Maple2.Trigger._80000010_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "301")) {
+                if (context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State완료(context);
                     return;
                 }

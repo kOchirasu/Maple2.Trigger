@@ -12,7 +12,7 @@ namespace Maple2.Trigger._02100001_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9400") && context.UserDetected(arg1: "9401")) {
+                if (context.UserDetected(arg1: new int[] {9400}) && context.UserDetected(arg1: new int[] {9401})) {
                     context.State = new StateBridgeOn(context);
                     return;
                 }

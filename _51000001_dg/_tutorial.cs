@@ -10,7 +10,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "100")) {
+                if (context.UserDetected(arg1: new int[] {100})) {
                     context.State = new State몬스터소환(context);
                     return;
                 }
@@ -32,7 +32,7 @@ namespace Maple2.Trigger._51000001_dg {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "!100")) {
+                if (!context.UserDetected(arg1: new int[] {100})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._51000001_dg {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "!100")) {
+                if (!context.UserDetected(arg1: new int[] {100})) {
                     context.State = new State종료(context);
                     return;
                 }

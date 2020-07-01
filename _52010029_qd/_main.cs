@@ -18,7 +18,7 @@ namespace Maple2.Trigger._52010029_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2001")) {
+                if (context.UserDetected(arg1: new int[] {2001})) {
                     context.State = new Stateblack(context);
                     return;
                 }

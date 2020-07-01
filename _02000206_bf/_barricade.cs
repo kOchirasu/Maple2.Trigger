@@ -55,7 +55,7 @@ namespace Maple2.Trigger._02000206_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "402")) {
+                if (!context.UserDetected(arg1: new int[] {402})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02000206_bf {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "402")) {
+                if (!context.UserDetected(arg1: new int[] {402})) {
                     context.State = new State대기(context);
                     return;
                 }

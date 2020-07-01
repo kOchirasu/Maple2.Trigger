@@ -18,17 +18,17 @@ namespace Maple2.Trigger._52100022_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateBoss01SpawnDelay(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "9002")) {
+                if (context.UserDetected(arg1: new int[] {9002})) {
                     context.State = new StateBoss02SpawnDelay(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "9003")) {
+                if (context.UserDetected(arg1: new int[] {9003})) {
                     context.State = new StateBoss03SpawnDelay(context);
                     return;
                 }

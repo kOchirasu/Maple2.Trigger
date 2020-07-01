@@ -212,7 +212,7 @@ namespace Maple2.Trigger._02000441_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "703")) {
+                if (context.UserDetected(arg1: new int[] {703})) {
                     context.State = new Statebattle_01(context);
                     return;
                 }
@@ -352,7 +352,7 @@ namespace Maple2.Trigger._02000441_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "707")) {
+                if (context.UserDetected(arg1: new int[] {707})) {
                     context.State = new Stateopen_door_03_3(context);
                     return;
                 }
@@ -431,7 +431,7 @@ namespace Maple2.Trigger._02000441_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "705")) {
+                if (context.UserDetected(arg1: new int[] {705})) {
                     context.State = new Stateship_01(context);
                     return;
                 }
@@ -449,7 +449,7 @@ namespace Maple2.Trigger._02000441_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "706")) {
+                if (context.UserDetected(arg1: new int[] {706})) {
                     context.State = new Stateship_01_1(context);
                     return;
                 }

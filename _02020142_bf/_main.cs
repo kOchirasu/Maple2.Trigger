@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02020142_bf {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "99")) {
+                if (context.UserDetected(arg1: new int[] {99})) {
                     context.State = new State연출용보스등장(context);
                     return;
                 }
@@ -548,7 +548,7 @@ namespace Maple2.Trigger._02020142_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "97")) {
+                if (context.UserDetected(arg1: new int[] {97})) {
                     context.State = new State종료안내메시지(context);
                     return;
                 }
@@ -599,7 +599,7 @@ namespace Maple2.Trigger._02020142_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "97")) {
+                if (context.UserDetected(arg1: new int[] {97})) {
                     context.State = new State종료안내메시지_다시출력(context);
                     return;
                 }

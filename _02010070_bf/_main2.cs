@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02010070_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "999993")) {
+                if (context.UserDetected(arg1: new int[] {999993})) {
                     context.State = new State대기시간안내01(context);
                     return;
                 }
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02010070_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "999983")) {
+                if (context.UserDetected(arg1: new int[] {999983})) {
                     context.State = new State시작1(context);
                     return;
                 }
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02010070_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "88123")) {
+                if (context.UserDetected(arg1: new int[] {88123})) {
                     context.State = new State시작112(context);
                     return;
                 }

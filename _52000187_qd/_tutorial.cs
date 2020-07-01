@@ -14,7 +14,7 @@ namespace Maple2.Trigger._52000187_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "90001")) {
+                if (context.UserDetected(arg1: new int[] {90001})) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._52000187_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "90002")) {
+                if (context.UserDetected(arg1: new int[] {90002})) {
                     context.State = new State환영(context);
                     return;
                 }
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._52000187_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "90003")) {
+                if (context.UserDetected(arg1: new int[] {90003})) {
                     context.SideNpcTalk(npcID: 29000403, illust: "Mushking_normal", duration: 4000,
                         script: "$52000187_QD__TUTORIAL__2$");
                     context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_lazy_1");
@@ -117,7 +117,7 @@ namespace Maple2.Trigger._52000187_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "90004")) {
+                if (context.UserDetected(arg1: new int[] {90004})) {
                     context.SideNpcTalk(npcID: 29000403, illust: "Mushking_normal", duration: 4000,
                         script: "$52000187_QD__TUTORIAL__3$");
                     context.State = new State머쉬킹대화4(context);
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._52000187_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "90005")) {
+                if (context.UserDetected(arg1: new int[] {90005})) {
                     context.State = new State모쿰소환(context);
                     return;
                 }

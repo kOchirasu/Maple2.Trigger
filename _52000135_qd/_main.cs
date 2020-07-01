@@ -163,7 +163,7 @@ namespace Maple2.Trigger._52000135_qd {
             internal State아노스대사03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.CameraSelectPath(arg1: new int[] {8002}, arg2: false);
+                context.CameraSelectPath(arg1: new int[] {8002}, arg2: true);
                 context.AddCinematicTalk(npcID: 11003251, illustID: "0", msg: "$52000135_QD__MAIN__2$", duration: 3000,
                     align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "ChatUp_A", arg3: 5400f);

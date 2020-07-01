@@ -71,7 +71,7 @@ namespace Maple2.Trigger._84000007_wd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new StateEntryDelay(context);
                     return;
                 }
@@ -1867,12 +1867,12 @@ namespace Maple2.Trigger._84000007_wd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateR02Ready(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "9001")) {
+                if (!context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateFireworks_Lose(context);
                     return;
                 }
@@ -2521,12 +2521,12 @@ namespace Maple2.Trigger._84000007_wd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateR03Ready(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "9001")) {
+                if (!context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateFireworks_Lose(context);
                     return;
                 }
@@ -3175,12 +3175,12 @@ namespace Maple2.Trigger._84000007_wd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateR04Ready(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "9001")) {
+                if (!context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateFireworks_Lose(context);
                     return;
                 }
@@ -4510,12 +4510,12 @@ namespace Maple2.Trigger._84000007_wd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateR05ReadyAfterGamble(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "9001")) {
+                if (!context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateFireworks_Lose(context);
                     return;
                 }
@@ -4787,12 +4787,12 @@ namespace Maple2.Trigger._84000007_wd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateR05Ready(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "9001")) {
+                if (!context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateFireworks_Lose(context);
                     return;
                 }
@@ -5440,12 +5440,12 @@ namespace Maple2.Trigger._84000007_wd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateGameWrapUp(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "9001")) {
+                if (!context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateFireworks_Lose(context);
                     return;
                 }

@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02000313_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "15")) {
+                if (context.UserDetected(arg1: new int[] {15})) {
                     context.State =
                         new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;
@@ -178,7 +178,7 @@ namespace Maple2.Trigger._02000313_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10102")) {
+                if (context.UserDetected(arg1: new int[] {10102})) {
                     context.State = new State2차전투딜레이(context);
                     return;
                 }
@@ -269,7 +269,7 @@ namespace Maple2.Trigger._02000313_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10103")) {
+                if (context.UserDetected(arg1: new int[] {10103})) {
                     context.State = new State3차전투딜레이(context);
                     return;
                 }

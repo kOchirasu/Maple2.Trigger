@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02020061_bf {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "9011")) {
+                if (context.UserDetected(arg1: new int[] {9011})) {
                     context.State = new State레버1_안내멘트(context);
                     return;
                 }

@@ -189,7 +189,7 @@ namespace Maple2.Trigger._52000039_qd {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "701", arg2: 110)) {
+                if (context.UserDetected(arg1: new int[] {701}, arg2: 110)) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
                     context.SetMesh(arg1: new int[] {6001}, arg2: false);
                     context.SetMesh(arg1: new int[] {6010}, arg2: false);

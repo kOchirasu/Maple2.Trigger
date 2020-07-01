@@ -19,7 +19,7 @@ namespace Maple2.Trigger._52100053_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9400")) {
+                if (context.UserDetected(arg1: new int[] {9400})) {
                     context.State = new StateLoadingDelay(context);
                     return;
                 }

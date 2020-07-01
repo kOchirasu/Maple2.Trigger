@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000538_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "801", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {801}, arg2: 0)) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000538_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "802", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {802}, arg2: 0)) {
                     context.State = new State방몬스터생성(context);
                     return;
                 }
@@ -129,7 +129,7 @@ namespace Maple2.Trigger._02000538_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "803", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {803}, arg2: 0)) {
                     context.State = new State세번째판몬스터생성(context);
                     return;
                 }
@@ -163,7 +163,7 @@ namespace Maple2.Trigger._02000538_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "804", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {804}, arg2: 0)) {
                     context.State = new State몬스터추가생성(context);
                     return;
                 }
@@ -254,7 +254,7 @@ namespace Maple2.Trigger._02000538_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "806", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {806}, arg2: 0)) {
                     context.State = new State엘리트소환(context);
                     return;
                 }

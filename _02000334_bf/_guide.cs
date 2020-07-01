@@ -101,7 +101,7 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "90100")) {
+                if (context.UserDetected(arg1: new int[] {90100})) {
                     context.State = new State오스칼_배웅(context);
                     return;
                 }
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "90100")) {
+                if (context.UserDetected(arg1: new int[] {90100})) {
                     context.State = new State오스칼_배웅(context);
                     return;
                 }

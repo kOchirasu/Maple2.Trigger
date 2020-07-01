@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02020025_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "902")) {
+                if (!context.UserDetected(arg1: new int[] {902})) {
                     context.State = new State전투_종료(context);
                     return;
                 }

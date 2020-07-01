@@ -24,32 +24,32 @@ namespace Maple2.Trigger._02000301_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "105")) {
+                if (context.UserDetected(arg1: new int[] {105})) {
                     context.State = new State경보(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "10501")) {
+                if (context.UserDetected(arg1: new int[] {10501})) {
                     context.State = new State경보(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "10502")) {
+                if (context.UserDetected(arg1: new int[] {10502})) {
                     context.State = new State경보(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "10503")) {
+                if (context.UserDetected(arg1: new int[] {10503})) {
                     context.State = new State경보(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "10504")) {
+                if (context.UserDetected(arg1: new int[] {10504})) {
                     context.State = new State경보(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "10505")) {
+                if (context.UserDetected(arg1: new int[] {10505})) {
                     context.State = new State경보(context);
                     return;
                 }

@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02000055_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "14")) {
+                if (context.UserDetected(arg1: new int[] {14})) {
                     context.State = new State보스등장(context);
                     return;
                 }

@@ -29,7 +29,7 @@ namespace Maple2.Trigger._02000537_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "701", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {701}, arg2: 0)) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02000537_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "702", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {702}, arg2: 0)) {
                     context.State = new State702시작(context);
                     return;
                 }
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._02000537_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "703", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {703}, arg2: 0)) {
                     context.State = new State703시작(context);
                     return;
                 }
@@ -195,7 +195,7 @@ namespace Maple2.Trigger._02000537_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "704", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {704}, arg2: 0)) {
                     context.State = new State704시작(context);
                     return;
                 }
@@ -251,7 +251,7 @@ namespace Maple2.Trigger._02000537_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "705", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {705}, arg2: 0)) {
                     context.State = new State705시작(context);
                     return;
                 }
@@ -306,7 +306,7 @@ namespace Maple2.Trigger._02000537_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "708", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {708}, arg2: 0)) {
                     context.State = new State버프걸어주기(context);
                     return;
                 }
@@ -325,7 +325,7 @@ namespace Maple2.Trigger._02000537_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "706", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {706}, arg2: 0)) {
                     context.State = new State706시작(context);
                     return;
                 }
@@ -365,7 +365,7 @@ namespace Maple2.Trigger._02000537_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "707", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {707}, arg2: 0)) {
                     context.State = new State707시작(context);
                     return;
                 }

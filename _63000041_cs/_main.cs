@@ -33,7 +33,7 @@ namespace Maple2.Trigger._63000041_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "702")) {
+                if (context.UserDetected(arg1: new int[] {702})) {
                     context.State = new State1_scene_ready(context);
                     return;
                 }

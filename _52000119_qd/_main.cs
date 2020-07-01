@@ -278,7 +278,7 @@ namespace Maple2.Trigger._52000119_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2002")) {
+                if (context.UserDetected(arg1: new int[] {2002})) {
                     context.State = new Statefadeout_03(context);
                     return;
                 }

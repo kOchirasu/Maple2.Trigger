@@ -12,7 +12,7 @@ namespace Maple2.Trigger._99999949 {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9051")) {
+                if (context.UserDetected(arg1: new int[] {9051})) {
                     context.AddEffectNif(spawnPointID: 11000064,
                         nifPath: @"Map\Royalcity\Indoor\ry_in_cubric_mat_A01.nif", isOutline: true, scale: 0.5f,
                         rotateZ: 45);

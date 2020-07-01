@@ -15,7 +15,7 @@ namespace Maple2.Trigger._52100042_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "701")) {
+                if (context.UserDetected(arg1: new int[] {701})) {
                     context.State = new StateroomCheck(context);
                     return;
                 }
@@ -227,7 +227,7 @@ namespace Maple2.Trigger._52100042_qd {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "720")) {
+                if (context.UserDetected(arg1: new int[] {720})) {
                     context.State = new StatenpcSpawn(context);
                     return;
                 }

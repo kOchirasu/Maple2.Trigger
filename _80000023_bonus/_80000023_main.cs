@@ -17,7 +17,7 @@ namespace Maple2.Trigger._80000023_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new State안내(context);
                     return;
                 }

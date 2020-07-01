@@ -54,7 +54,7 @@ namespace Maple2.Trigger._63000073_cs {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "701")) {
+                if (context.UserDetected(arg1: new int[] {701})) {
                     context.State = new State전투만(context);
                     return;
                 }

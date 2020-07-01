@@ -23,7 +23,7 @@ namespace Maple2.Trigger._52000065_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9002")) {
+                if (context.UserDetected(arg1: new int[] {9002})) {
                     context.State = new State영상준비_01(context);
                     return;
                 }
@@ -119,55 +119,55 @@ namespace Maple2.Trigger._52000065_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001", arg2: 90)) {
+                if (context.UserDetected(arg1: new int[] {9001}, arg2: 90)) {
                     context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                     context.StartTutorial();
                 }
 
-                if (context.UserDetected(arg1: "9001", arg2: 110)) {
+                if (context.UserDetected(arg1: new int[] {9001}, arg2: 110)) {
                     context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                     context.StartTutorial();
                 }
 
-                if (context.UserDetected(arg1: "9001", arg2: 100)) {
+                if (context.UserDetected(arg1: new int[] {9001}, arg2: 100)) {
                     context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                     context.StartTutorial();
                 }
 
-                if (context.UserDetected(arg1: "9001", arg2: 1)) {
+                if (context.UserDetected(arg1: new int[] {9001}, arg2: 1)) {
                     context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                     context.StartTutorial();
                 }
 
-                if (context.UserDetected(arg1: "9001", arg2: 10)) {
+                if (context.UserDetected(arg1: new int[] {9001}, arg2: 10)) {
                     context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: true);
                 }
 
-                if (context.UserDetected(arg1: "9001", arg2: 20)) {
+                if (context.UserDetected(arg1: new int[] {9001}, arg2: 20)) {
                     context.SetPortal(arg1: 20, arg2: true, arg3: true, arg4: true);
                 }
 
-                if (context.UserDetected(arg1: "9001", arg2: 30)) {
+                if (context.UserDetected(arg1: new int[] {9001}, arg2: 30)) {
                     context.SetPortal(arg1: 30, arg2: true, arg3: true, arg4: true);
                 }
 
-                if (context.UserDetected(arg1: "9001", arg2: 40)) {
+                if (context.UserDetected(arg1: new int[] {9001}, arg2: 40)) {
                     context.SetPortal(arg1: 40, arg2: true, arg3: true, arg4: true);
                 }
 
-                if (context.UserDetected(arg1: "9001", arg2: 50)) {
+                if (context.UserDetected(arg1: new int[] {9001}, arg2: 50)) {
                     context.SetPortal(arg1: 50, arg2: true, arg3: true, arg4: true);
                 }
 
-                if (context.UserDetected(arg1: "9001", arg2: 60)) {
+                if (context.UserDetected(arg1: new int[] {9001}, arg2: 60)) {
                     context.SetPortal(arg1: 60, arg2: true, arg3: true, arg4: true);
                 }
 
-                if (context.UserDetected(arg1: "9001", arg2: 70)) {
+                if (context.UserDetected(arg1: new int[] {9001}, arg2: 70)) {
                     context.SetPortal(arg1: 70, arg2: true, arg3: true, arg4: true);
                 }
 
-                if (context.UserDetected(arg1: "9001", arg2: 80)) {
+                if (context.UserDetected(arg1: new int[] {9001}, arg2: 80)) {
                     context.SetPortal(arg1: 80, arg2: true, arg3: true, arg4: true);
                 }
             }

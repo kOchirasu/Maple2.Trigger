@@ -13,7 +13,7 @@ namespace Maple2.Trigger._03000013_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "101")) {
+                if (context.UserDetected(arg1: new int[] {101})) {
                     context.CreateMonster(arg1: new int[] {2001}, arg2: false);
                     context.State = new State몬스터생성(context);
                     return;

@@ -20,12 +20,12 @@ namespace Maple2.Trigger._52000004_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199")) {
+                if (context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State던전시작(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -107,12 +107,12 @@ namespace Maple2.Trigger._52000004_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "100")) {
+                if (context.UserDetected(arg1: new int[] {100})) {
                     context.State = new State피자들기(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -158,12 +158,12 @@ namespace Maple2.Trigger._52000004_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "101")) {
+                if (context.UserDetected(arg1: new int[] {101})) {
                     context.State = new State엘리트스폰(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -189,7 +189,7 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -209,12 +209,12 @@ namespace Maple2.Trigger._52000004_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "102")) {
+                if (context.UserDetected(arg1: new int[] {102})) {
                     context.State = new StateNPC등장(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -235,7 +235,7 @@ namespace Maple2.Trigger._52000004_qd {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -276,7 +276,7 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -300,7 +300,7 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -323,7 +323,7 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }

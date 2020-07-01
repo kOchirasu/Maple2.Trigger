@@ -36,7 +36,7 @@ namespace Maple2.Trigger._02020062_bf {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "9012")) {
+                if (context.UserDetected(arg1: new int[] {9012})) {
                     context.SetEventUI(arg1: 1, arg2: "$02020062_BF__OBJECT2__0$", arg3: new int[] {5000},
                         arg4: "9012");
                     context.State = new State레버2_체크(context);

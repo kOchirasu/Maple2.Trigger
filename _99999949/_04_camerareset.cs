@@ -10,7 +10,7 @@ namespace Maple2.Trigger._99999949 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9031")) {
+                if (context.UserDetected(arg1: new int[] {9031})) {
                     context.State = new StateGuide(context);
                     return;
                 }
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._99999949 {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9030")) {
+                if (context.UserDetected(arg1: new int[] {9030})) {
                     context.State = new StateCameraReady(context);
                     return;
                 }

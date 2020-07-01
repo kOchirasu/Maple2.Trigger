@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02000304_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "111")) {
+                if (context.UserDetected(arg1: new int[] {111})) {
                     context.CreateMonster(arg1: new int[] {1001, 1002}, arg2: false);
                     context.State = new State종료체크(context);
                     return;

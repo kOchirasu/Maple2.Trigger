@@ -107,7 +107,7 @@ namespace Maple2.Trigger._99999931 {
                         101, 102, 103, 104, 105, 106, 107, 114, 115, 116, 118, 119, 121, 123, 126, 130, 131, 132, 133,
                         134, 135
                     }, arg2: false);
-                context.SetSkill(objectIDs: new int[] {801, 802, 803, 804, 805, 806, 807}, isEnable: true);
+                context.SetSkill(arg1: new int[] {801, 802, 803, 804, 805, 806, 807}, arg2: true);
                 context.SetSkill(arg1: new int[] {814}, arg2: true);
                 context.SetSkill(arg1: new int[] {815}, arg2: true);
                 context.SetSkill(arg1: new int[] {816}, arg2: true);

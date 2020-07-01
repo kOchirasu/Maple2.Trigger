@@ -17,7 +17,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "113")) {
+                if (context.UserDetected(arg1: new int[] {113})) {
                     context.State = new State벽삭제(context);
                     return;
                 }
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._52000076_qd {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "113")) {
+                if (!context.UserDetected(arg1: new int[] {113})) {
                     context.State = new State딜레이(context);
                     return;
                 }

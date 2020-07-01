@@ -12,7 +12,7 @@ namespace Maple2.Trigger._63000071_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new Stateopeningscene_start(context);
                     return;
                 }

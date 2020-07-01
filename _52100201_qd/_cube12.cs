@@ -49,13 +49,13 @@ namespace Maple2.Trigger._52100201_qd {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "9004")) {
+                if (context.UserDetected(arg1: new int[] {9004})) {
                     context.SetUserValue(triggerID: 910012, key: "Cube", value: 0);
                     context.State = new State종료(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "9005")) {
+                if (context.UserDetected(arg1: new int[] {9005})) {
                     context.SetUserValue(triggerID: 910012, key: "Cube", value: 0);
                     context.State = new State종료(context);
                     return;

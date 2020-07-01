@@ -43,7 +43,7 @@ namespace Maple2.Trigger._83000003_colosseum {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "902")) {
+                if (context.UserDetected(arg1: new int[] {902})) {
                     context.MoveUserToPos(pos: new Vector3(300f, -225f, 1500f), rot: new Vector3(0f, 0f, 270f));
                     context.State = new StateWaitRound1(context);
                     return;

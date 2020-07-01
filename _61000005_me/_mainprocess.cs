@@ -10,7 +10,7 @@ namespace Maple2.Trigger._61000005_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "196")) {
+                if (context.UserDetected(arg1: new int[] {196})) {
                     context.State = new State퍼즐대기중(context);
                     return;
                 }
@@ -254,7 +254,7 @@ namespace Maple2.Trigger._61000005_me {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "197,198,199")) {
+                if (!context.UserDetected(arg1: new int[] {197,198,199})) {
                     context.State = new State모두실패(context);
                     return;
                 }
@@ -269,7 +269,7 @@ namespace Maple2.Trigger._61000005_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "197,198,199")) {
+                if (context.UserDetected(arg1: new int[] {197,198,199})) {
                     context.State = new State퍼즐단계2대기(context);
                     return;
                 }
@@ -339,7 +339,7 @@ namespace Maple2.Trigger._61000005_me {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "197,198,199")) {
+                if (!context.UserDetected(arg1: new int[] {197,198,199})) {
                     context.State = new State모두실패(context);
                     return;
                 }
@@ -354,7 +354,7 @@ namespace Maple2.Trigger._61000005_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "197,198,199")) {
+                if (context.UserDetected(arg1: new int[] {197,198,199})) {
                     context.State = new State퍼즐단계3대기(context);
                     return;
                 }
@@ -422,7 +422,7 @@ namespace Maple2.Trigger._61000005_me {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "197,198,199")) {
+                if (!context.UserDetected(arg1: new int[] {197,198,199})) {
                     context.State = new State모두실패(context);
                     return;
                 }
@@ -437,7 +437,7 @@ namespace Maple2.Trigger._61000005_me {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "197,198,199")) {
+                if (context.UserDetected(arg1: new int[] {197,198,199})) {
                     context.SetMesh(
                         arg1: new int[] {
                             101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118,

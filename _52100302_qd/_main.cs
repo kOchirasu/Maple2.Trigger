@@ -283,7 +283,7 @@ namespace Maple2.Trigger._52100302_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "900")) {
+                if (context.UserDetected(arg1: new int[] {900})) {
                     context.State = new State카메라시작(context);
                     return;
                 }

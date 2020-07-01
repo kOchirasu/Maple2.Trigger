@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02100000_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "102")) {
+                if (context.UserDetected(arg1: new int[] {102})) {
                     context.State = new State몬스터등장(context);
                     return;
                 }

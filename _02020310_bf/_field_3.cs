@@ -51,7 +51,7 @@ namespace Maple2.Trigger._02020310_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9004")) {
+                if (context.UserDetected(arg1: new int[] {9004})) {
                     context.State = new StateArriveBlock_Delay_1(context);
                     return;
                 }
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._02020310_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9005")) {
+                if (context.UserDetected(arg1: new int[] {9005})) {
                     context.State = new StateArriveBlock_Delay_2(context);
                     return;
                 }
@@ -211,7 +211,7 @@ namespace Maple2.Trigger._02020310_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9006")) {
+                if (context.UserDetected(arg1: new int[] {9006})) {
                     context.State = new StateArriveBlock_Delay_3(context);
                     return;
                 }
@@ -290,7 +290,7 @@ namespace Maple2.Trigger._02020310_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9007")) {
+                if (context.UserDetected(arg1: new int[] {9007})) {
                     context.State = new StateArriveBlock_Delay_4(context);
                     return;
                 }

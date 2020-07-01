@@ -13,7 +13,7 @@ namespace Maple2.Trigger._52000167_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new State영상재생(context);
                     return;
                 }

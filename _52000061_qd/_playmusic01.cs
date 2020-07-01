@@ -115,7 +115,7 @@ namespace Maple2.Trigger._52000061_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new StatePCWalkInStage04(context);
                     return;
                 }

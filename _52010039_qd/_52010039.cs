@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52010039_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9002")) {
+                if (context.UserDetected(arg1: new int[] {9002})) {
                     context.State = new State영상재생_01(context);
                     return;
                 }
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._52010039_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9002")) {
+                if (context.UserDetected(arg1: new int[] {9002})) {
                     context.State = new State종료(context);
                     return;
                 }

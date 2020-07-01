@@ -20,7 +20,7 @@ namespace Maple2.Trigger._52100300_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "901")) {
+                if (context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -218,7 +218,7 @@ namespace Maple2.Trigger._52100300_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "902")) {
+                if (context.UserDetected(arg1: new int[] {902})) {
                     context.SetEventUI(arg1: 1, arg2: "$52100300_QD__MAIN__0$", arg3: new int[] {5000});
                     context.CreateMonster(arg1: new int[] {101, 102, 103}, arg2: false);
                     context.State = new State추가대사_01(context);
@@ -323,7 +323,7 @@ namespace Maple2.Trigger._52100300_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "903")) {
+                if (context.UserDetected(arg1: new int[] {903})) {
                     context.State = new State아르케온_탑승_가이드(context);
                     return;
                 }
@@ -340,7 +340,7 @@ namespace Maple2.Trigger._52100300_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "711")) {
+                if (context.UserDetected(arg1: new int[] {711})) {
                     context.State = new State레이저_패턴_시작(context);
                     return;
                 }
@@ -355,7 +355,7 @@ namespace Maple2.Trigger._52100300_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "904")) {
+                if (context.UserDetected(arg1: new int[] {904})) {
                     context.State = new State갈림길_전투(context);
                     return;
                 }
@@ -377,7 +377,7 @@ namespace Maple2.Trigger._52100300_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "905")) {
+                if (context.UserDetected(arg1: new int[] {905})) {
                     context.State = new State짜투리_전투(context);
                     return;
                 }
@@ -396,7 +396,7 @@ namespace Maple2.Trigger._52100300_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "911")) {
+                if (context.UserDetected(arg1: new int[] {911})) {
                     context.State = new State웨이브_시작(context);
                     return;
                 }
@@ -455,7 +455,7 @@ namespace Maple2.Trigger._52100300_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "921")) {
+                if (context.UserDetected(arg1: new int[] {921})) {
                     context.State = new State지뢰방_시작(context);
                     return;
                 }

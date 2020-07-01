@@ -23,12 +23,12 @@ namespace Maple2.Trigger._63000038_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199", arg2: 100)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 100)) {
                     context.State = new State퀘스트분기_스트라이커(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "199", arg2: 110)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 110)) {
                     context.State = new State퀘스트분기_소울바인더(context);
                     return;
                 }
@@ -148,14 +148,14 @@ namespace Maple2.Trigger._63000038_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199", arg2: 100)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 100)) {
                     context.CreateMonster(arg1: new int[] {1001}, arg2: false);
                     context.SetNpcEmotionLoop(arg1: 1001, arg2: "Attack_Idle_A", arg3: 9999999999f);
                     context.State = new State1차연출딜레이(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "199", arg2: 110)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 110)) {
                     context.CreateMonster(arg1: new int[] {11001}, arg2: false);
                     context.SetNpcEmotionLoop(arg1: 11001, arg2: "Attack_Idle_A", arg3: 9999999999f);
                     context.State = new State1차연출딜레이(context);
@@ -222,7 +222,7 @@ namespace Maple2.Trigger._63000038_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "102")) {
+                if (context.UserDetected(arg1: new int[] {102})) {
                     context.State = new State2차전투대기(context);
                     return;
                 }
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._63000038_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199", arg2: 100)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 100)) {
                     context.DestroyMonster(arg1: new int[] {1001});
                     context.CreateMonster(arg1: new int[] {1002}, arg2: false);
                     context.SetNpcEmotionLoop(arg1: 1002, arg2: "Attack_Idle_A", arg3: 9999999999f);
@@ -245,7 +245,7 @@ namespace Maple2.Trigger._63000038_cs {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "199", arg2: 110)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 110)) {
                     context.DestroyMonster(arg1: new int[] {11001});
                     context.CreateMonster(arg1: new int[] {11002}, arg2: false);
                     context.SetNpcEmotionLoop(arg1: 11002, arg2: "Attack_Idle_A", arg3: 9999999999f);
@@ -283,12 +283,12 @@ namespace Maple2.Trigger._63000038_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "103", arg2: 100)) {
+                if (context.UserDetected(arg1: new int[] {103}, arg2: 100)) {
                     context.State = new State2차연출시작(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "103", arg2: 110)) {
+                if (context.UserDetected(arg1: new int[] {103}, arg2: 110)) {
                     context.State = new State2차연출시작_소울바인더(context);
                     return;
                 }
@@ -907,12 +907,12 @@ namespace Maple2.Trigger._63000038_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199", arg2: 100)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 100)) {
                     context.State = new State3차연출종료(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "199", arg2: 110)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 110)) {
                     context.State = new StateNPC교체_소울바인더(context);
                     return;
                 }
@@ -983,7 +983,7 @@ namespace Maple2.Trigger._63000038_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199", arg2: 100)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 100)) {
                     context.DestroyMonster(arg1: new int[] {1002});
                     context.CreateMonster(arg1: new int[] {1003}, arg2: true);
                     context.State = new StateNPC소환(context);
@@ -1040,12 +1040,12 @@ namespace Maple2.Trigger._63000038_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199", arg2: 100)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 100)) {
                     context.State = new StateNPC원위치(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "199", arg2: 110)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 110)) {
                     context.State = new StateNPC원위치_소울바인더(context);
                     return;
                 }

@@ -18,7 +18,7 @@ namespace Maple2.Trigger._03000036_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "101")) {
+                if (context.UserDetected(arg1: new int[] {101})) {
                     context.SetInteractObject(arg1: new int[] {11000023}, arg2: 2);
                     context.State = new State1차웨이브대기(context);
                     return;

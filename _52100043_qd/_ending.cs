@@ -12,7 +12,7 @@ namespace Maple2.Trigger._52100043_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "720")) {
+                if (context.UserDetected(arg1: new int[] {720})) {
                     context.State = new StateEnding_Camera_1(context);
                     return;
                 }

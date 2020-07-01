@@ -10,7 +10,7 @@ namespace Maple2.Trigger._99999913 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new StateWaitSomeoneFall(context);
                     return;
                 }
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._99999913 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9100")) {
+                if (context.UserDetected(arg1: new int[] {9100})) {
                     context.State = new StateKillSomeoneFall(context);
                     return;
                 }
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._99999913 {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "9100")) {
+                if (!context.UserDetected(arg1: new int[] {9100})) {
                     context.State = new StateWaitSomeoneFall(context);
                     return;
                 }

@@ -12,7 +12,7 @@ namespace Maple2.Trigger._52000056_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "103,104,105,106")) {
+                if (context.UserDetected(arg1: new int[] {103,104,105,106})) {
                     context.State = new State종료(context);
                     return;
                 }

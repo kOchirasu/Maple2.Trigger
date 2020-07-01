@@ -123,7 +123,7 @@ namespace Maple2.Trigger._52000023_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new State유저이동03(context);
                     return;
                 }
@@ -258,7 +258,7 @@ namespace Maple2.Trigger._52000023_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9002")) {
+                if (context.UserDetected(arg1: new int[] {9002})) {
                     context.State = new State대화준비03(context);
                     return;
                 }

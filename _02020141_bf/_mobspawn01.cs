@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02020141_bf {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "10100")) {
+                if (context.UserDetected(arg1: new int[] {10100})) {
                     context.State = new State졸몬스터등장대기중(context);
                     return;
                 }
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._02020141_bf {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "10100")) {
+                if (context.UserDetected(arg1: new int[] {10100})) {
                     context.State = new State졸몬스터등장하기(context);
                     return;
                 }
@@ -137,12 +137,12 @@ namespace Maple2.Trigger._02020141_bf {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "10100")) {
+                if (context.UserDetected(arg1: new int[] {10100})) {
                     context.State = new State졸몬스터리젠단계시작(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "10100")) {
+                if (!context.UserDetected(arg1: new int[] {10100})) {
                     context.State = new State졸몬스터제거작동대기(context);
                     return;
                 }
@@ -157,12 +157,12 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10100")) {
+                if (context.UserDetected(arg1: new int[] {10100})) {
                     context.State = new State졸몬스터리젠대기중(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "10100")) {
+                if (!context.UserDetected(arg1: new int[] {10100})) {
                     context.State = new State졸몬스터제거작동대기(context);
                     return;
                 }
@@ -187,7 +187,7 @@ namespace Maple2.Trigger._02020141_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "10100")) {
+                if (!context.UserDetected(arg1: new int[] {10100})) {
                     context.State = new State졸몬스터제거작동대기(context);
                     return;
                 }
@@ -217,12 +217,12 @@ namespace Maple2.Trigger._02020141_bf {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "10100")) {
+                if (context.UserDetected(arg1: new int[] {10100})) {
                     context.State = new State졸몬스터등장하기(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "10100")) {
+                if (!context.UserDetected(arg1: new int[] {10100})) {
                     context.State = new State졸몬스터제거작동대기(context);
                     return;
                 }
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10100")) {
+                if (context.UserDetected(arg1: new int[] {10100})) {
                     context.State = new State트리거영역에계속있는지체크(context);
                     return;
                 }

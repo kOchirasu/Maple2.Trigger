@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2004")) {
+                if (context.UserDetected(arg1: new int[] {2004})) {
                     context.State = new State연출준비_A(context);
                     return;
                 }

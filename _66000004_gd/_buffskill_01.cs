@@ -12,7 +12,7 @@ namespace Maple2.Trigger._66000004_gd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10601")) {
+                if (context.UserDetected(arg1: new int[] {10601})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._66000004_gd {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "10601")) {
+                if (!context.UserDetected(arg1: new int[] {10601})) {
                     context.State = new State초기화(context);
                     return;
                 }

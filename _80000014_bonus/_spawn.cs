@@ -19,7 +19,7 @@ namespace Maple2.Trigger._80000014_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199")) {
+                if (context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State랜덤A(context);
                     return;
                 }
@@ -216,7 +216,7 @@ namespace Maple2.Trigger._80000014_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "112")) {
+                if (context.UserDetected(arg1: new int[] {112})) {
                     context.State = new State스폰2(context);
                     return;
                 }
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._80000014_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "113")) {
+                if (context.UserDetected(arg1: new int[] {113})) {
                     context.State = new State스폰3(context);
                     return;
                 }
@@ -255,7 +255,7 @@ namespace Maple2.Trigger._80000014_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "114")) {
+                if (context.UserDetected(arg1: new int[] {114})) {
                     context.State = new State스폰4(context);
                     return;
                 }
@@ -273,7 +273,7 @@ namespace Maple2.Trigger._80000014_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "115")) {
+                if (context.UserDetected(arg1: new int[] {115})) {
                     context.State = new State스폰5(context);
                     return;
                 }
@@ -293,7 +293,7 @@ namespace Maple2.Trigger._80000014_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "116")) {
+                if (context.UserDetected(arg1: new int[] {116})) {
                     context.State = new State스폰6(context);
                     return;
                 }

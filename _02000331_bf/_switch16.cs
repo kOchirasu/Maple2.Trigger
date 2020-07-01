@@ -14,7 +14,7 @@ namespace Maple2.Trigger._02000331_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new State첫번째전투종료(context);
                     return;
                 }
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new State딜레이02(context);
                     return;
                 }

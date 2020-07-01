@@ -14,7 +14,7 @@ namespace Maple2.Trigger._51000001_dg {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "101")) {
+                if (context.UserDetected(arg1: new int[] {101})) {
                     context.State = new State지역랜덤(context);
                     return;
                 }
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "101")) {
+                if (!context.UserDetected(arg1: new int[] {101})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10101")) {
+                if (context.UserDetected(arg1: new int[] {10101})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10102")) {
+                if (context.UserDetected(arg1: new int[] {10102})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10103")) {
+                if (context.UserDetected(arg1: new int[] {10103})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._51000001_dg {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "101")) {
+                if (!context.UserDetected(arg1: new int[] {101})) {
                     context.State = new State종료(context);
                     return;
                 }

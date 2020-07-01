@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000311_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "701")) {
+                if (context.UserDetected(arg1: new int[] {701})) {
                     context.State = new StateBuff_01(context);
                     return;
                 }
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02000311_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "701")) {
+                if (context.UserDetected(arg1: new int[] {701})) {
                     context.State = new StateBuff_01_Start(context);
                     return;
                 }

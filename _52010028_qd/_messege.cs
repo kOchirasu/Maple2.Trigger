@@ -10,37 +10,37 @@ namespace Maple2.Trigger._52010028_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2003")) {
+                if (context.UserDetected(arg1: new int[] {2003})) {
                     context.State = new Statemessege(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "2004")) {
+                if (context.UserDetected(arg1: new int[] {2004})) {
                     context.State = new Statemessege(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "2005")) {
+                if (context.UserDetected(arg1: new int[] {2005})) {
                     context.State = new Statemessege(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "2006")) {
+                if (context.UserDetected(arg1: new int[] {2006})) {
                     context.State = new Statemessege(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "2007")) {
+                if (context.UserDetected(arg1: new int[] {2007})) {
                     context.State = new Statemessege(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "2008")) {
+                if (context.UserDetected(arg1: new int[] {2008})) {
                     context.State = new Statemessege(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "2009")) {
+                if (context.UserDetected(arg1: new int[] {2009})) {
                     context.State = new Statemessege(context);
                     return;
                 }

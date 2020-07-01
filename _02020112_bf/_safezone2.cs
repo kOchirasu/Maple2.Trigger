@@ -13,7 +13,7 @@ namespace Maple2.Trigger._02020112_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "903")) {
+                if (context.UserDetected(arg1: new int[] {903})) {
                     context.State = new State안전장치_활성화(context);
                     return;
                 }

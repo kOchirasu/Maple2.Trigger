@@ -13,7 +13,7 @@ namespace Maple2.Trigger._02010054_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "1122")) {
+                if (context.UserDetected(arg1: new int[] {1122})) {
                     context.State = new State발판(context);
                     return;
                 }

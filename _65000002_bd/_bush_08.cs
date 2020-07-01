@@ -39,7 +39,7 @@ namespace Maple2.Trigger._65000002_bd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "1001008")) {
+                if (!context.UserDetected(arg1: new int[] {1001008})) {
                     context.State = new State대기(context);
                     return;
                 }

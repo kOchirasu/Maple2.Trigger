@@ -58,7 +58,7 @@ namespace Maple2.Trigger._52100201_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.SetInteractObject(arg1: new int[] {12000319}, arg2: 1);
                     context.State = new State루트생성_1(context);
                     return;
@@ -138,7 +138,7 @@ namespace Maple2.Trigger._52100201_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9002")) {
+                if (context.UserDetected(arg1: new int[] {9002})) {
                     context.SetInteractObject(arg1: new int[] {12000320}, arg2: 1);
                     context.State = new State루트생성_2(context);
                     return;
@@ -241,7 +241,7 @@ namespace Maple2.Trigger._52100201_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9003")) {
+                if (context.UserDetected(arg1: new int[] {9003})) {
                     context.EnableSpawnPointPc(spawnPointID: 0, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointID: 1, isEnable: true);
                     context.State = new State기믹2(context);
@@ -318,7 +318,7 @@ namespace Maple2.Trigger._52100201_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9005")) {
+                if (context.UserDetected(arg1: new int[] {9005})) {
                     context.DestroyMonster(arg1: new int[] {1001, 1002, 1003, 1004, 1005}, arg2: false);
                     context.State = new State대기(context);
                     return;

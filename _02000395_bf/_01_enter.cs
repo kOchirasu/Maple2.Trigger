@@ -255,7 +255,7 @@ namespace Maple2.Trigger._02000395_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9100")) {
+                if (context.UserDetected(arg1: new int[] {9100})) {
                     context.State = new StateMobSpawn_Hallway01(context);
                     return;
                 }
@@ -274,7 +274,7 @@ namespace Maple2.Trigger._02000395_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9200")) {
+                if (context.UserDetected(arg1: new int[] {9200})) {
                     context.State = new StateMobSpawn_Hallway02(context);
                     return;
                 }
@@ -291,7 +291,7 @@ namespace Maple2.Trigger._02000395_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9300")) {
+                if (context.UserDetected(arg1: new int[] {9300})) {
                     context.State = new StateQuit(context);
                     return;
                 }

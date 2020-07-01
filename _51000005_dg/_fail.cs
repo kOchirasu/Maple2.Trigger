@@ -27,7 +27,7 @@ namespace Maple2.Trigger._51000005_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateFail(context);
                     return;
                 }

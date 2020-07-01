@@ -529,46 +529,46 @@ namespace Maple2.Trigger._52000115_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199", arg2: 10)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 10)) {
                     context.State = new State기본종료(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "199", arg2: 20)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 20)) {
                     context.State = new State버서커리스항구01(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "199", arg2: 30)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 30)) {
                     context.State = new State트라이아도서관01(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "199", arg2: 40)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 40)) {
                     context.MoveUser(arg1: 52000139, arg2: 1);
                 }
 
-                if (context.UserDetected(arg1: "199", arg2: 50)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 50)) {
                     context.State = new State기본종료(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "199", arg2: 60)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 60)) {
                     context.State = new State기본종료(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "199", arg2: 70)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 70)) {
                     context.State = new State기본종료(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "199", arg2: 80)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 80)) {
                     context.State = new State기본종료(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "199", arg2: 90)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 90)) {
                     context.State = new State기본종료(context);
                     return;
                 }

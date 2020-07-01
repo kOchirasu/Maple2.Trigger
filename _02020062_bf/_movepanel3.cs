@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02020062_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9202")) {
+                if (context.UserDetected(arg1: new int[] {9202})) {
                     context.SetBreakable(arg1: new int[] {2200, 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208},
                         arg2: true);
                     context.State = new State대기(context);

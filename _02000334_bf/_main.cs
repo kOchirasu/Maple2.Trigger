@@ -216,7 +216,7 @@ namespace Maple2.Trigger._02000334_bf {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "99999")) {
+                if (context.UserDetected(arg1: new int[] {99999})) {
                     context.State = new State클리어(context);
                     return;
                 }
@@ -663,7 +663,7 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "90099")) {
+                if (context.UserDetected(arg1: new int[] {90099})) {
                     context.State = new State클리어_보상_02(context);
                     return;
                 }

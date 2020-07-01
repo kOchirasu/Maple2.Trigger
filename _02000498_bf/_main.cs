@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000498_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "100009")) {
+                if (context.UserDetected(arg1: new int[] {100009})) {
                     context.State = new State시작(context);
                     return;
                 }
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02000498_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "100001")) {
+                if (context.UserDetected(arg1: new int[] {100001})) {
                     context.State = new State시작연출(context);
                     return;
                 }
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._02000498_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "100002")) {
+                if (context.UserDetected(arg1: new int[] {100002})) {
                     context.State = new State시작연출_2(context);
                     return;
                 }
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._02000498_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "100003")) {
+                if (context.UserDetected(arg1: new int[] {100003})) {
                     context.State = new State시작연출_3(context);
                     return;
                 }
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._02000498_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "100004")) {
+                if (context.UserDetected(arg1: new int[] {100004})) {
                     context.State = new State시작연출_4(context);
                     return;
                 }
@@ -152,7 +152,7 @@ namespace Maple2.Trigger._02000498_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "100005")) {
+                if (context.UserDetected(arg1: new int[] {100005})) {
                     context.State = new State시작연출_5(context);
                     return;
                 }
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._02000498_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "100006")) {
+                if (context.UserDetected(arg1: new int[] {100006})) {
                     context.State = new State시작연출_6(context);
                     return;
                 }
@@ -188,7 +188,7 @@ namespace Maple2.Trigger._02000498_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "100007")) {
+                if (context.UserDetected(arg1: new int[] {100007})) {
                     context.State = new State시작연출_7(context);
                     return;
                 }
@@ -206,7 +206,7 @@ namespace Maple2.Trigger._02000498_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "100008")) {
+                if (context.UserDetected(arg1: new int[] {100008})) {
                     context.State = new State시작연출_8(context);
                     return;
                 }

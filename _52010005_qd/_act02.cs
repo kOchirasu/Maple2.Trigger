@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.SetInteractObject(arg1: new int[] {10000872}, arg2: 0);
                     context.State = new State퀘스트조건02(context);
                     return;

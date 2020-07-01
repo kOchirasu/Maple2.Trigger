@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52000111_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10011")) {
+                if (context.UserDetected(arg1: new int[] {10011})) {
                     context.State = new StateSTART(context);
                     return;
                 }
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._52000111_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10011")) {
+                if (context.UserDetected(arg1: new int[] {10011})) {
                     context.State = new State영상준비_01(context);
                     return;
                 }
@@ -324,7 +324,7 @@ namespace Maple2.Trigger._52000111_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10012")) {
+                if (context.UserDetected(arg1: new int[] {10012})) {
                     context.State = new State쉐도우클로등장씬01(context);
                     return;
                 }

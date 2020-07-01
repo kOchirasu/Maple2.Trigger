@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02020025_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "903")) {
+                if (context.UserDetected(arg1: new int[] {903})) {
                     context.State = new State지하배경(context);
                     return;
                 }
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02020025_bf {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "903")) {
+                if (!context.UserDetected(arg1: new int[] {903})) {
                     context.State = new State지상배경(context);
                     return;
                 }
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02020025_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "903")) {
+                if (context.UserDetected(arg1: new int[] {903})) {
                     context.State = new State지하배경(context);
                     return;
                 }

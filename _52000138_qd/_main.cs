@@ -52,7 +52,7 @@ namespace Maple2.Trigger._52000138_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "701")) {
+                if (context.UserDetected(arg1: new int[] {701})) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -210,7 +210,7 @@ namespace Maple2.Trigger._52000138_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "702")) {
+                if (context.UserDetected(arg1: new int[] {702})) {
                     context.State = new Stateready_1(context);
                     return;
                 }
@@ -344,7 +344,7 @@ namespace Maple2.Trigger._52000138_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "703")) {
+                if (context.UserDetected(arg1: new int[] {703})) {
                     context.State = new Stateready_2(context);
                     return;
                 }

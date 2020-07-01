@@ -31,7 +31,7 @@ namespace Maple2.Trigger._02000381_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9300")) {
+                if (context.UserDetected(arg1: new int[] {9300})) {
                     context.State = new StateLadderOn(context);
                     return;
                 }

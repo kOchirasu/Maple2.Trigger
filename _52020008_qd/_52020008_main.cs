@@ -47,7 +47,7 @@ namespace Maple2.Trigger._52020008_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "901")) {
+                if (context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State연출카메라1(context);
                     return;
                 }
@@ -455,7 +455,7 @@ namespace Maple2.Trigger._52020008_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "902")) {
+                if (context.UserDetected(arg1: new int[] {902})) {
                     context.State = new State계단전투1(context);
                     return;
                 }
@@ -472,7 +472,7 @@ namespace Maple2.Trigger._52020008_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "903")) {
+                if (context.UserDetected(arg1: new int[] {903})) {
                     context.State = new State계단전투2(context);
                     return;
                 }

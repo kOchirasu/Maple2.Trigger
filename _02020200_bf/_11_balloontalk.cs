@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02020200_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "905")) {
+                if (context.UserDetected(arg1: new int[] {905})) {
                     context.State = new State대사1(context);
                     return;
                 }
@@ -30,17 +30,17 @@ namespace Maple2.Trigger._02020200_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "921") && !context.MonsterDead(arg1: new int[] {205})) {
+                if (context.UserDetected(arg1: new int[] {921}) && !context.MonsterDead(arg1: new int[] {205})) {
                     context.State = new State대사2(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "922") && !context.MonsterDead(arg1: new int[] {205})) {
+                if (context.UserDetected(arg1: new int[] {922}) && !context.MonsterDead(arg1: new int[] {205})) {
                     context.State = new State대사2(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "923") && !context.MonsterDead(arg1: new int[] {205})) {
+                if (context.UserDetected(arg1: new int[] {923}) && !context.MonsterDead(arg1: new int[] {205})) {
                     context.State = new State대사2(context);
                     return;
                 }

@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000328_bf {
             internal State대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(IDs: new int[] {5115}, isVisible: "false");
+                context.SetCube(IDs: new int[] {5115}, isVisible: false);
                 context.SetMesh(
                     arg1: new int[] {
                         32501, 32502, 32503, 32504, 32505, 32506, 32507, 32508, 32509, 32510, 32511, 32512, 32513,
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000328_bf {
 
             public override void Execute() {
                 if (context.MonsterDead(arg1: new int[] {10015})) {
-                    context.SetCube(IDs: new int[] {5115}, isVisible: "true");
+                    context.SetCube(IDs: new int[] {5115}, isVisible: true);
                     context.SetMesh(
                         arg1: new int[] {
                             32501, 32502, 32503, 32504, 32505, 32506, 32507, 32508, 32509, 32510, 32511, 32512, 32513,

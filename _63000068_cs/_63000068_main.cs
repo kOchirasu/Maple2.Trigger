@@ -106,7 +106,7 @@ namespace Maple2.Trigger._63000068_cs {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "701")) {
+                if (context.UserDetected(arg1: new int[] {701})) {
                     context.State = new State몬스터등장_04(context);
                     return;
                 }

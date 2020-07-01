@@ -8,7 +8,7 @@ namespace Maple2.Trigger._02000248_bf {
             internal Stateready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(IDs: new int[] {2101, 2102, 2103, 2104, 2105}, isVisible: "true");
+                context.SetCube(IDs: new int[] {2101, 2102, 2103, 2104, 2105}, isVisible: true);
             }
 
             public override void Execute() { }
@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000248_bf {
             internal Stateobjectset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(IDs: new int[] {2101, 2102, 2103, 2104, 2105}, randomCount: 1, isVisible: "true");
+                context.SetCube(IDs: new int[] {2101, 2102, 2103, 2104, 2105}, randomCount: 1, isVisible: true);
             }
 
             public override void Execute() {

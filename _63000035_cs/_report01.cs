@@ -21,7 +21,7 @@ namespace Maple2.Trigger._63000035_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new StateEnter01(context);
                     return;
                 }
@@ -436,7 +436,7 @@ namespace Maple2.Trigger._63000035_cs {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "9900")) {
+                if (!context.UserDetected(arg1: new int[] {9900})) {
                     context.State = new StateQuit(context);
                     return;
                 }

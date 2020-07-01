@@ -15,13 +15,13 @@ namespace Maple2.Trigger._02000298_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "106")) {
+                if (context.UserDetected(arg1: new int[] {106})) {
                     context.CreateMonster(arg1: new int[] {1007}, arg2: false);
                     context.State = new State방호벽대기(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "107")) {
+                if (context.UserDetected(arg1: new int[] {107})) {
                     context.CreateMonster(arg1: new int[] {1007}, arg2: false);
                     context.State = new State방호벽대기(context);
                     return;

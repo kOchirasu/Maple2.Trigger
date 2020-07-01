@@ -13,17 +13,17 @@ namespace Maple2.Trigger._52010028_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2003")) {
+                if (context.UserDetected(arg1: new int[] {2003})) {
                     context.State = new State흔들흔들(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "2006")) {
+                if (context.UserDetected(arg1: new int[] {2006})) {
                     context.State = new State흔들흔들(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "2007")) {
+                if (context.UserDetected(arg1: new int[] {2007})) {
                     context.State = new State흔들흔들(context);
                     return;
                 }

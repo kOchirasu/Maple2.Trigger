@@ -19,7 +19,7 @@ namespace Maple2.Trigger._80000015_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199")) {
+                if (context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State랜덤A(context);
                     return;
                 }
@@ -216,7 +216,7 @@ namespace Maple2.Trigger._80000015_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "112")) {
+                if (context.UserDetected(arg1: new int[] {112})) {
                     context.State = new State스폰2(context);
                     return;
                 }
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._80000015_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "113")) {
+                if (context.UserDetected(arg1: new int[] {113})) {
                     context.State = new State스폰3(context);
                     return;
                 }
@@ -258,7 +258,7 @@ namespace Maple2.Trigger._80000015_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "114")) {
+                if (context.UserDetected(arg1: new int[] {114})) {
                     context.State = new State스폰4(context);
                     return;
                 }

@@ -16,7 +16,7 @@ namespace Maple2.Trigger._02010051_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new State음성연출(context);
                     return;
                 }
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10000")) {
+                if (context.UserDetected(arg1: new int[] {10000})) {
                     context.State = new State종료(context);
                     return;
                 }

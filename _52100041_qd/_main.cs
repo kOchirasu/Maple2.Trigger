@@ -40,7 +40,7 @@ namespace Maple2.Trigger._52100041_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "701")) {
+                if (context.UserDetected(arg1: new int[] {701})) {
                     context.State = new StateDungeonStart(context);
                     return;
                 }
@@ -55,7 +55,7 @@ namespace Maple2.Trigger._52100041_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "701")) {
+                if (context.UserDetected(arg1: new int[] {701})) {
                     context.State = new StateReady(context);
                     return;
                 }

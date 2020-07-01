@@ -34,7 +34,7 @@ namespace Maple2.Trigger._82000002_survival {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new StateWait_Talk01(context);
                     return;
                 }
@@ -248,42 +248,42 @@ namespace Maple2.Trigger._82000002_survival {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateStartPoint01_North(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "9002")) {
+                if (context.UserDetected(arg1: new int[] {9002})) {
                     context.State = new StateStartPoint02_South(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "9003")) {
+                if (context.UserDetected(arg1: new int[] {9003})) {
                     context.State = new StateStartPoint03_East(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "9004")) {
+                if (context.UserDetected(arg1: new int[] {9004})) {
                     context.State = new StateStartPoint04_West(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "9005")) {
+                if (context.UserDetected(arg1: new int[] {9005})) {
                     context.State = new StateStartPoint05_NorthWest(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "9006")) {
+                if (context.UserDetected(arg1: new int[] {9006})) {
                     context.State = new StateStartPoint06_NorthEast(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "9007")) {
+                if (context.UserDetected(arg1: new int[] {9007})) {
                     context.State = new StateStartPoint07_SouthWest(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "9008")) {
+                if (context.UserDetected(arg1: new int[] {9008})) {
                     context.State = new StateStartPoint08_SouthEast(context);
                     return;
                 }
@@ -602,7 +602,7 @@ namespace Maple2.Trigger._82000002_survival {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "9000")) {
+                if (!context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new StateQuit(context);
                     return;
                 }
@@ -696,7 +696,7 @@ namespace Maple2.Trigger._82000002_survival {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "9000")) {
+                if (!context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new StateQuit(context);
                     return;
                 }

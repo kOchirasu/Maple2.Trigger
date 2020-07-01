@@ -56,7 +56,7 @@ namespace Maple2.Trigger._52020026_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "901")) {
+                if (context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -231,7 +231,7 @@ namespace Maple2.Trigger._52020026_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "906")) {
+                if (context.UserDetected(arg1: new int[] {906})) {
                     context.State = new State5층_벽부수기(context);
                     return;
                 }
@@ -301,7 +301,7 @@ namespace Maple2.Trigger._52020026_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "907")) {
+                if (context.UserDetected(arg1: new int[] {907})) {
                     context.State = new State6층_벽부수기(context);
                     return;
                 }

@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "102")) {
+                if (context.UserDetected(arg1: new int[] {102})) {
                     context.State = new State드랍지점회복(context);
                     return;
                 }

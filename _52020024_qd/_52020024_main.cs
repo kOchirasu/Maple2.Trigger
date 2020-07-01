@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52020024_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "901")) {
+                if (context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State1차전투감지(context);
                     return;
                 }
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._52020024_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "902")) {
+                if (context.UserDetected(arg1: new int[] {902})) {
                     context.State = new State1차전투(context);
                     return;
                 }
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._52020024_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "903")) {
+                if (context.UserDetected(arg1: new int[] {903})) {
                     context.State = new State2차전투(context);
                     return;
                 }
@@ -148,7 +148,7 @@ namespace Maple2.Trigger._52020024_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "904")) {
+                if (context.UserDetected(arg1: new int[] {904})) {
                     context.State = new State3차전투(context);
                     return;
                 }

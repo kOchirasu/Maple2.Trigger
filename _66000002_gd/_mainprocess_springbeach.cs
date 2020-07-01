@@ -10,7 +10,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "302")) {
+                if (context.UserDetected(arg1: new int[] {302})) {
                     context.State = new State이벤트대기중(context);
                     return;
                 }
@@ -523,7 +523,7 @@ namespace Maple2.Trigger._66000002_gd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "301")) {
+                if (!context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State모두탈락(context);
                     return;
                 }
@@ -538,7 +538,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "301")) {
+                if (context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State한숨돌리기01(context);
                     return;
                 }
@@ -888,7 +888,7 @@ namespace Maple2.Trigger._66000002_gd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "301")) {
+                if (!context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State모두탈락(context);
                     return;
                 }
@@ -903,7 +903,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "301")) {
+                if (context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State한숨돌리기02(context);
                     return;
                 }
@@ -1253,7 +1253,7 @@ namespace Maple2.Trigger._66000002_gd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "301")) {
+                if (!context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State모두탈락(context);
                     return;
                 }
@@ -1268,7 +1268,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "301")) {
+                if (context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State한숨돌리기03(context);
                     return;
                 }
@@ -1618,7 +1618,7 @@ namespace Maple2.Trigger._66000002_gd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "301")) {
+                if (!context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State모두탈락(context);
                     return;
                 }
@@ -1633,7 +1633,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "301")) {
+                if (context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State한숨돌리기04(context);
                     return;
                 }
@@ -1908,7 +1908,7 @@ namespace Maple2.Trigger._66000002_gd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "301")) {
+                if (!context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State모두탈락(context);
                     return;
                 }
@@ -1923,7 +1923,7 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "301")) {
+                if (context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State한숨돌리기05(context);
                     return;
                 }

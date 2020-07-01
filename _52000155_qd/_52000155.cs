@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52000155_qd {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "2002")) {
+                if (context.UserDetected(arg1: new int[] {2002})) {
                     context.State = new Statewait_02(context);
                     return;
                 }

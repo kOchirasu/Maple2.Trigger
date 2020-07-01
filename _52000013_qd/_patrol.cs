@@ -13,7 +13,7 @@ namespace Maple2.Trigger._52000013_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new State어린벨라등장(context);
                     return;
                 }

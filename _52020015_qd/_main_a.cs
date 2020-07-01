@@ -265,7 +265,7 @@ namespace Maple2.Trigger._52020015_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2003")) {
+                if (context.UserDetected(arg1: new int[] {2003})) {
                     context.State = new StateMobSpawn_B(context);
                     return;
                 }

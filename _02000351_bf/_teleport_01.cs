@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02000351_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "705", arg2: 1)) {
+                if (context.UserDetected(arg1: new int[] {705}, arg2: 1)) {
                     context.State = new Statestart_sound(context);
                     return;
                 }

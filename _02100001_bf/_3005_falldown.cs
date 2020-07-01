@@ -12,7 +12,7 @@ namespace Maple2.Trigger._02100001_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9005")) {
+                if (context.UserDetected(arg1: new int[] {9005})) {
                     context.State = new StateRemoveMesh(context);
                     return;
                 }
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._02100001_bf {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "9005")) {
+                if (!context.UserDetected(arg1: new int[] {9005})) {
                     context.State = new StateWait(context);
                     return;
                 }

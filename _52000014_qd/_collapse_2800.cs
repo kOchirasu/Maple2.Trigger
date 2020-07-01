@@ -35,7 +35,7 @@ namespace Maple2.Trigger._52000014_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "92800")) {
+                if (context.UserDetected(arg1: new int[] {92800})) {
                     context.State = new State무너짐경고01(context);
                     return;
                 }
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._52000014_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "92801")) {
+                if (context.UserDetected(arg1: new int[] {92801})) {
                     context.State = new State무너짐경고02(context);
                     return;
                 }
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._52000014_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "92802")) {
+                if (context.UserDetected(arg1: new int[] {92802})) {
                     context.State = new State무너짐경고03(context);
                     return;
                 }
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._52000014_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "92803")) {
+                if (context.UserDetected(arg1: new int[] {92803})) {
                     context.State = new State무너짐경고04(context);
                     return;
                 }
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._52000014_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "92804")) {
+                if (context.UserDetected(arg1: new int[] {92804})) {
                     context.State = new State무너짐경고05(context);
                     return;
                 }
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._52000014_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9003")) {
+                if (context.UserDetected(arg1: new int[] {9003})) {
                     context.State = new State무너짐경고06(context);
                     return;
                 }

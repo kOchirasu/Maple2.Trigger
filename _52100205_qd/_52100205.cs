@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52100205_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2001")) {
+                if (context.UserDetected(arg1: new int[] {2001})) {
                     context.State = new StateCameraEffect01(context);
                     return;
                 }
@@ -217,7 +217,7 @@ namespace Maple2.Trigger._52100205_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2002")) {
+                if (context.UserDetected(arg1: new int[] {2002})) {
                     context.State = new State제시카_01(context);
                     return;
                 }

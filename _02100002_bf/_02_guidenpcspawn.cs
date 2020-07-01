@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02100002_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "9900")) {
+                if (!context.UserDetected(arg1: new int[] {9900})) {
                     context.State = new StateQuit(context);
                     return;
                 }

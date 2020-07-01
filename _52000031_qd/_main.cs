@@ -22,52 +22,52 @@ namespace Maple2.Trigger._52000031_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "101", arg2: 90)) {
+                if (context.UserDetected(arg1: new int[] {101}, arg2: 90)) {
                     context.State = new State연출시작(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "101", arg2: 10)) {
+                if (context.UserDetected(arg1: new int[] {101}, arg2: 10)) {
                     context.State = new State연출시작10(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "101", arg2: 01)) {
+                if (context.UserDetected(arg1: new int[] {101}, arg2: 01)) {
                     context.State = new State연출시작10(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "101", arg2: 20)) {
+                if (context.UserDetected(arg1: new int[] {101}, arg2: 20)) {
                     context.State = new State연출시작20(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "101", arg2: 30)) {
+                if (context.UserDetected(arg1: new int[] {101}, arg2: 30)) {
                     context.State = new State연출시작30(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "101", arg2: 40)) {
+                if (context.UserDetected(arg1: new int[] {101}, arg2: 40)) {
                     context.State = new State연출시작40(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "101", arg2: 50)) {
+                if (context.UserDetected(arg1: new int[] {101}, arg2: 50)) {
                     context.State = new State연출시작50(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "101", arg2: 60)) {
+                if (context.UserDetected(arg1: new int[] {101}, arg2: 60)) {
                     context.State = new State연출시작60(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "101", arg2: 70)) {
+                if (context.UserDetected(arg1: new int[] {101}, arg2: 70)) {
                     context.State = new State연출시작50(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "101", arg2: 80)) {
+                if (context.UserDetected(arg1: new int[] {101}, arg2: 80)) {
                     context.State = new State연출시작60(context);
                     return;
                 }

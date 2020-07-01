@@ -144,7 +144,7 @@ namespace Maple2.Trigger._52000066_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9200")) {
+                if (context.UserDetected(arg1: new int[] {9200})) {
                     context.State = new State2ndCameraGuide01(context);
                     return;
                 }
@@ -246,7 +246,7 @@ namespace Maple2.Trigger._52000066_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9300")) {
+                if (context.UserDetected(arg1: new int[] {9300})) {
                     context.State = new State3rdPhaseChase01(context);
                     return;
                 }
@@ -264,7 +264,7 @@ namespace Maple2.Trigger._52000066_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9400,9401,9402,9403,9404,9405,9406")) {
+                if (context.UserDetected(arg1: new int[] {9400,9401,9402,9403,9404,9405,9406})) {
                     context.State = new State3rdCameraGuide01(context);
                     return;
                 }
@@ -367,7 +367,7 @@ namespace Maple2.Trigger._52000066_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9500,9501,9502")) {
+                if (context.UserDetected(arg1: new int[] {9500,9501,9502})) {
                     context.State = new StateAgentEscape01(context);
                     return;
                 }

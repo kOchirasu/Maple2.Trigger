@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000290_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "104")) {
+                if (context.UserDetected(arg1: new int[] {104})) {
                     context.State = new State폭포안내(context);
                     return;
                 }

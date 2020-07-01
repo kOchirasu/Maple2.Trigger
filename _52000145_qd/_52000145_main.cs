@@ -50,7 +50,7 @@ namespace Maple2.Trigger._52000145_qd {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "701")) {
+                if (context.UserDetected(arg1: new int[] {701})) {
                     context.State = new State영상준비_01(context);
                     return;
                 }

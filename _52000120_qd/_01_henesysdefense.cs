@@ -41,7 +41,7 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetBreakable(arg1: new int[] {4000, 4001, 4002, 4003, 4004, 4005}, arg2: false);
                 context.SetVisibleBreakableObject(arg1: new int[] {4000, 4001, 4002, 4003, 4004, 4005}, arg2: false);
                 context.SetCube(IDs: new int[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010},
-                    isVisible: "false");
+                    isVisible: false);
                 context.SetLocalCamera(cameraId: 10000, enable: false);
                 context.SetLocalCamera(cameraId: 10001, enable: false);
                 context.SetAgent(arg1: "8001", arg2: false);
@@ -747,7 +747,7 @@ namespace Maple2.Trigger._52000120_qd {
             public override void OnEnter() {
                 context.SetLocalCamera(cameraId: 10000, enable: true);
                 context.SetCube(IDs: new int[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010},
-                    isVisible: "true");
+                    isVisible: true);
             }
 
             public override void Execute() {
@@ -1133,7 +1133,7 @@ namespace Maple2.Trigger._52000120_qd {
 
             public override void OnEnter() {
                 context.SetCube(IDs: new int[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010},
-                    isVisible: "false");
+                    isVisible: false);
                 context.DestroyMonster(arg1: new int[] {701, 702, 703, 704});
                 context.DestroyMonster(arg1: new int[] {710, 711, 712, 713});
                 context.CreateMonster(arg1: new int[] {300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310},

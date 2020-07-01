@@ -143,7 +143,7 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9100")) {
+                if (context.UserDetected(arg1: new int[] {9100})) {
                     context.State = new StateArcheon_OffDelay(context);
                     return;
                 }

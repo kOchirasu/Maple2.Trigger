@@ -135,7 +135,7 @@ namespace Maple2.Trigger._02000431_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "706")) {
+                if (context.UserDetected(arg1: new int[] {706})) {
                     context.State = new State카운트(context);
                     return;
                 }

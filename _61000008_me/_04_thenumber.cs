@@ -375,7 +375,7 @@ namespace Maple2.Trigger._61000008_me {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "9001")) {
+                if (!context.UserDetected(arg1: new int[] {9001})) {
                     context.SetUserValue(triggerID: 5, key: "BannerNumber", value: 00);
                     context.SetUserValue(triggerID: 5, key: "SetBanner", value: 1);
                     context.State = new StateReset(context);

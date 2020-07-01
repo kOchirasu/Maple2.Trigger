@@ -39,7 +39,7 @@ namespace Maple2.Trigger._63000067_cs {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "701")) {
+                if (context.UserDetected(arg1: new int[] {701})) {
                     context.State = new State종료_일반(context);
                     return;
                 }

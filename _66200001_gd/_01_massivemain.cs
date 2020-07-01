@@ -383,7 +383,7 @@ namespace Maple2.Trigger._66200001_gd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "9000")) {
+                if (!context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new StateLeaveAll(context);
                     return;
                 }

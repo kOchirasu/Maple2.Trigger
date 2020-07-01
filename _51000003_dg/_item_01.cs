@@ -124,7 +124,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "710")) {
+                if (!context.UserDetected(arg1: new int[] {710})) {
                     context.State = new Stateitem_710_spawn(context);
                     return;
                 }
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "711")) {
+                if (!context.UserDetected(arg1: new int[] {711})) {
                     context.State = new Stateitem_711_spawn(context);
                     return;
                 }
@@ -164,7 +164,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "712")) {
+                if (!context.UserDetected(arg1: new int[] {712})) {
                     context.State = new Stateitem_712_spawn(context);
                     return;
                 }
@@ -184,7 +184,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "713")) {
+                if (!context.UserDetected(arg1: new int[] {713})) {
                     context.State = new Stateitem_713_spawn(context);
                     return;
                 }
@@ -204,7 +204,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "714")) {
+                if (!context.UserDetected(arg1: new int[] {714})) {
                     context.State = new Stateitem_714_spawn(context);
                     return;
                 }
@@ -224,7 +224,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "715")) {
+                if (!context.UserDetected(arg1: new int[] {715})) {
                     context.State = new Stateitem_715_spawn(context);
                     return;
                 }
@@ -244,7 +244,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "716")) {
+                if (!context.UserDetected(arg1: new int[] {716})) {
                     context.State = new Stateitem_716_spawn(context);
                     return;
                 }
@@ -264,7 +264,7 @@ namespace Maple2.Trigger._51000003_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "717")) {
+                if (!context.UserDetected(arg1: new int[] {717})) {
                     context.State = new Stateitem_717_spawn(context);
                     return;
                 }

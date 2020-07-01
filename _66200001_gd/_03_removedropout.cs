@@ -10,7 +10,7 @@ namespace Maple2.Trigger._66200001_gd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9002")) {
+                if (context.UserDetected(arg1: new int[] {9002})) {
                     context.State = new StateRemove(context);
                     return;
                 }
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._66200001_gd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9002")) {
+                if (context.UserDetected(arg1: new int[] {9002})) {
                     context.State = new StateRemove(context);
                     return;
                 }

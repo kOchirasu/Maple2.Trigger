@@ -15,7 +15,7 @@ namespace Maple2.Trigger._51000001_dg {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "106")) {
+                if (context.UserDetected(arg1: new int[] {106})) {
                     context.State = new State지역랜덤(context);
                     return;
                 }
@@ -30,7 +30,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "106")) {
+                if (!context.UserDetected(arg1: new int[] {106})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -69,7 +69,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10601")) {
+                if (context.UserDetected(arg1: new int[] {10601})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -84,7 +84,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10602")) {
+                if (context.UserDetected(arg1: new int[] {10602})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10603")) {
+                if (context.UserDetected(arg1: new int[] {10603})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -114,7 +114,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10604")) {
+                if (context.UserDetected(arg1: new int[] {10604})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._51000001_dg {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "106")) {
+                if (!context.UserDetected(arg1: new int[] {106})) {
                     context.State = new State종료(context);
                     return;
                 }

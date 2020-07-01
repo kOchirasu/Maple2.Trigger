@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02000329_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "710")) {
+                if (context.UserDetected(arg1: new int[] {710})) {
                     context.State = new State사다리가이드(context);
                     return;
                 }

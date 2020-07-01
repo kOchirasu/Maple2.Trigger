@@ -120,7 +120,7 @@ namespace Maple2.Trigger._61000009_me {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "701")) {
+                if (context.UserDetected(arg1: new int[] {701})) {
                     context.State = new State1Round_Talk(context);
                     return;
                 }

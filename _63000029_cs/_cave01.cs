@@ -145,7 +145,7 @@ namespace Maple2.Trigger._63000029_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new StateEnter01(context);
                     return;
                 }
@@ -758,7 +758,7 @@ namespace Maple2.Trigger._63000029_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9003")) {
+                if (context.UserDetected(arg1: new int[] {9003})) {
                     context.State = new StateSecondQuestEnd01(context);
                     return;
                 }
@@ -2645,7 +2645,7 @@ namespace Maple2.Trigger._63000029_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9004")) {
+                if (context.UserDetected(arg1: new int[] {9004})) {
                     context.State = new StateGuideNextMap02(context);
                     return;
                 }
@@ -2768,7 +2768,7 @@ namespace Maple2.Trigger._63000029_cs {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "9900")) {
+                if (!context.UserDetected(arg1: new int[] {9900})) {
                     context.State = new StateQuit(context);
                     return;
                 }

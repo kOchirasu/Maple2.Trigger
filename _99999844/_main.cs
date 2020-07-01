@@ -55,7 +55,7 @@ namespace Maple2.Trigger._99999844 {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.SetInteractObject(arg1: new int[] {12000319}, arg2: 1);
                     context.State = new State루트생성_1(context);
                     return;
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._99999844 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9002")) {
+                if (context.UserDetected(arg1: new int[] {9002})) {
                     context.SetInteractObject(arg1: new int[] {12000320}, arg2: 1);
                     context.SetInteractObject(arg1: new int[] {12000320}, arg2: 1);
                     context.State = new State루트생성_2(context);
@@ -239,7 +239,7 @@ namespace Maple2.Trigger._99999844 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9003")) {
+                if (context.UserDetected(arg1: new int[] {9003})) {
                     context.State = new State기믹2(context);
                     return;
                 }
@@ -314,7 +314,7 @@ namespace Maple2.Trigger._99999844 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "905")) {
+                if (context.UserDetected(arg1: new int[] {905})) {
                     context.SetConversation(arg1: 1, arg2: 105, arg3: "웃기는군! 이동 할 수 있게 해줄게",
                         arg4: 4000);                     // context.State = new State다리생성카운트(context);
                     return;

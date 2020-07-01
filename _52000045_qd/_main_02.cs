@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52000045_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "701", arg2: 100)) {
+                if (context.UserDetected(arg1: new int[] {701}, arg2: 100)) {
                     context.SetActor(arg1: 5001, arg2: false, arg3: "Idle_A");
                     context.SetActor(arg1: 5002, arg2: false, arg3: "Idle_A");
                     context.SetActor(arg1: 5003, arg2: false, arg3: "Idle_A");

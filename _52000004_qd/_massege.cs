@@ -10,12 +10,12 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "103")) {
+                if (context.UserDetected(arg1: new int[] {103})) {
                     context.State = new State메세지01(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "104")) {
+                if (context.UserDetected(arg1: new int[] {104})) {
                     context.State = new State메세지03(context);
                     return;
                 }
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "105")) {
+                if (context.UserDetected(arg1: new int[] {105})) {
                     context.State = new State메세지04(context);
                     return;
                 }
@@ -143,7 +143,7 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -160,7 +160,7 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "106")) {
+                if (context.UserDetected(arg1: new int[] {106})) {
                     context.State = new State메세지05(context);
                     return;
                 }
@@ -183,7 +183,7 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -200,7 +200,7 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "107")) {
+                if (context.UserDetected(arg1: new int[] {107})) {
                     context.State = new State메세지06(context);
                     return;
                 }
@@ -223,7 +223,7 @@ namespace Maple2.Trigger._52000004_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "199")) {
+                if (!context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State종료(context);
                     return;
                 }

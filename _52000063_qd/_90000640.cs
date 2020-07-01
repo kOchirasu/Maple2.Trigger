@@ -19,7 +19,7 @@ namespace Maple2.Trigger._52000063_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199")) {
+                if (context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State퀘스트분기(context);
                     return;
                 }
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._52000063_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "102")) {
+                if (context.UserDetected(arg1: new int[] {102})) {
                     context.State = new State완료대기(context);
                     return;
                 }
@@ -300,7 +300,7 @@ namespace Maple2.Trigger._52000063_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "103")) {
+                if (context.UserDetected(arg1: new int[] {103})) {
                     context.State = new State완료알림케이대사(context);
                     return;
                 }

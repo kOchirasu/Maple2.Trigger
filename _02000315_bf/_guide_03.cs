@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02000315_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "502")) {
+                if (context.UserDetected(arg1: new int[] {502})) {
                     context.State = new State1stBridgeGuide(context);
                     return;
                 }
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._02000315_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "503")) {
+                if (context.UserDetected(arg1: new int[] {503})) {
                     context.State = new State2ndBattleGuide(context);
                     return;
                 }
@@ -97,7 +97,7 @@ namespace Maple2.Trigger._02000315_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "505")) {
+                if (context.UserDetected(arg1: new int[] {505})) {
                     context.State = new State2ndBridgeGuide(context);
                     return;
                 }
@@ -115,7 +115,7 @@ namespace Maple2.Trigger._02000315_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "506")) {
+                if (context.UserDetected(arg1: new int[] {506})) {
                     context.State = new State3rdBattleGuide(context);
                     return;
                 }
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._02000315_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "508")) {
+                if (context.UserDetected(arg1: new int[] {508})) {
                     context.State = new State3rdBridgeGuide(context);
                     return;
                 }
@@ -151,7 +151,7 @@ namespace Maple2.Trigger._02000315_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "402")) {
+                if (context.UserDetected(arg1: new int[] {402})) {
                     context.State = new StateQuit(context);
                     return;
                 }

@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52100060_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "1000")) {
+                if (context.UserDetected(arg1: new int[] {1000})) {
                     context.State = new Statenarration01(context);
                     return;
                 }

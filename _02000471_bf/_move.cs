@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000471_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "102")) {
+                if (context.UserDetected(arg1: new int[] {102})) {
                     context.State = new State보물상자(context);
                     return;
                 }
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02000471_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "105")) {
+                if (context.UserDetected(arg1: new int[] {105})) {
                     context.State = new State랜덤블록1(context);
                     return;
                 }
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._02000471_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "106")) {
+                if (context.UserDetected(arg1: new int[] {106})) {
                     context.State = new State랜덤블록2(context);
                     return;
                 }
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._02000471_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "107")) {
+                if (context.UserDetected(arg1: new int[] {107})) {
                     context.State = new State랜덤블록3(context);
                     return;
                 }
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._02000471_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "108")) {
+                if (context.UserDetected(arg1: new int[] {108})) {
                     context.State = new State랜덤블록4(context);
                     return;
                 }
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._02000471_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "109")) {
+                if (context.UserDetected(arg1: new int[] {109})) {
                     context.State = new State랜덤블록5(context);
                     return;
                 }
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._02000471_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "110")) {
+                if (context.UserDetected(arg1: new int[] {110})) {
                     // context.State = new State랜덤블록6(context);
                     return;
                 }

@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199")) {
+                if (context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State퀘스트분기(context);
                     return;
                 }
@@ -139,7 +139,7 @@ namespace Maple2.Trigger._52000068_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199")) {
+                if (context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State연출트리거로고고(context);
                     return;
                 }
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._52000068_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199")) {
+                if (context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -438,7 +438,7 @@ namespace Maple2.Trigger._52000068_qd {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "101")) {
+                if (context.UserDetected(arg1: new int[] {101})) {
                     context.State = new State임무01(context);
                     return;
                 }

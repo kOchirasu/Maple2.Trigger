@@ -10,7 +10,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "100")) {
+                if (context.UserDetected(arg1: new int[] {100})) {
                     context.AddBuff(arg1: new int[] {199}, arg2: 49179101, arg3: 1, arg5: false);
                     context.State = new State인트로(context);
                     return;
@@ -24,41 +24,41 @@ namespace Maple2.Trigger._51000001_dg {
             internal State인트로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(IDs: new int[] {5000, 5001, 5002, 5003}, isVisible: "false");
-                context.SetCube(IDs: new int[] {5101, 5102, 5103, 5104, 5105}, isVisible: "false");
+                context.SetCube(IDs: new int[] {5000, 5001, 5002, 5003}, isVisible: false);
+                context.SetCube(IDs: new int[] {5101, 5102, 5103, 5104, 5105}, isVisible: false);
                 context.SetCube(IDs: new int[] {5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209},
-                    isVisible: "false");
+                    isVisible: false);
                 context.SetCube(IDs: new int[] {5301, 5302, 5303, 5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311},
-                    isVisible: "false");
+                    isVisible: false);
                 context.SetCube(
                     IDs: new int[] {5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410, 5411, 5412, 5413, 5414},
-                    isVisible: "false");
+                    isVisible: false);
                 context.SetCube(IDs: new int[] {5501, 5502, 5503, 5504, 5505, 5506, 5507, 5508, 5509, 5510, 5511, 5512},
-                    isVisible: "false");
+                    isVisible: false);
                 context.SetCube(
                     IDs: new int[] {
                         5601, 5602, 5603, 5604, 5605, 5606, 5607, 5608, 5609, 5610, 5611, 5612, 5613, 5614, 5615, 5616,
                         5617, 5618, 5619, 5620, 5621
-                    }, isVisible: "false");
+                    }, isVisible: false);
                 context.SetCube(
                     IDs: new int[] {
                         5701, 5702, 5703, 5704, 5705, 5706, 5707, 5708, 5709, 5710, 5711, 5712, 5713, 5714, 5715, 5716,
                         5717, 5718, 5719, 5720, 5721
-                    }, isVisible: "false");
+                    }, isVisible: false);
                 context.SetCube(
                     IDs: new int[] {
                         5801, 5802, 5803, 5804, 5805, 5806, 5807, 5808, 5809, 5810, 5811, 5812, 5813, 5814, 5815, 5816,
                         5817, 5818, 5819, 5820, 5821, 5822
-                    }, isVisible: "false");
+                    }, isVisible: false);
                 context.SetCube(
                     IDs: new int[]
                         {5901, 5902, 5903, 5904, 5905, 5906, 5907, 5908, 5909, 5910, 5911, 5912, 5913, 5914, 5915},
-                    isVisible: "false");
+                    isVisible: false);
                 context.SetCube(
                     IDs: new int[] {
                         51001, 51002, 51003, 51004, 51005, 51006, 51007, 51008, 51009, 51010, 51011, 51012, 51013,
                         51014, 51015, 51016, 51017, 51018, 51019, 51020, 51021, 51022, 51023, 51024
-                    }, isVisible: "false");
+                    }, isVisible: false);
                 context.CameraSelect(arg1: 300, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3, arg2: "$51000001_DG__MAIN__0$");
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._51000001_dg {
             internal State튜토리얼시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetCube(IDs: new int[] {5000, 5001, 5002, 5003}, randomCount: 4, isVisible: "true");
+                context.SetCube(IDs: new int[] {5000, 5001, 5002, 5003}, randomCount: 4, isVisible: true);
                 context.ShowGuideSummary(entityID: 25100101, textID: 25100101, duration: 3000);
             }
 
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._51000001_dg {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "101")) {
+                if (context.UserDetected(arg1: new int[] {101})) {
                     context.State = new State1라운드카메라(context);
                     return;
                 }
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._51000001_dg {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "101")) {
+                if (context.UserDetected(arg1: new int[] {101})) {
                     context.State = new State1라운드카메라(context);
                     return;
                 }
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._51000001_dg {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "101")) {
+                if (context.UserDetected(arg1: new int[] {101})) {
                     context.State = new State1라운드카메라(context);
                     return;
                 }
@@ -153,7 +153,7 @@ namespace Maple2.Trigger._51000001_dg {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "101")) {
+                if (context.UserDetected(arg1: new int[] {101})) {
                     context.State = new State1라운드카메라(context);
                     return;
                 }
@@ -194,7 +194,7 @@ namespace Maple2.Trigger._51000001_dg {
                 context.HideGuideSummary(entityID: 25100102);
                 context.HideGuideSummary(entityID: 25100103);
                 context.HideGuideSummary(entityID: 25100104);
-                context.SetCube(IDs: new int[] {5101, 5102, 5103, 5104, 5105}, randomCount: 3, isVisible: "true");
+                context.SetCube(IDs: new int[] {5101, 5102, 5103, 5104, 5105}, randomCount: 3, isVisible: true);
                 context.ArcadeSpringFarm(type: "StartGame", lifeCount: 3);
                 context.ArcadeSpringFarm(type: "SetInteractScore", id: 19000022, score: 50);
                 context.ArcadeSpringFarm(type: "SetInteractScore", id: 11000013, score: 10000);
@@ -268,7 +268,7 @@ namespace Maple2.Trigger._51000001_dg {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "102")) {
+                if (context.UserDetected(arg1: new int[] {102})) {
                     context.State = new State2라운드카메라(context);
                     return;
                 }
@@ -305,7 +305,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() {
                 context.SetTimer(arg1: "100002", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
                 context.SetCube(IDs: new int[] {5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209}, randomCount: 5,
-                    isVisible: "true");
+                    isVisible: true);
                 context.ArcadeSpringFarm(type: "SpawnMonster", spawnID: new int[] {1101, 1102, 1103, 1104},
                     score: 5000);
                 context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 2, timeScoreType: "remain",
@@ -374,7 +374,7 @@ namespace Maple2.Trigger._51000001_dg {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "103")) {
+                if (context.UserDetected(arg1: new int[] {103})) {
                     context.State = new State3라운드카메라(context);
                     return;
                 }
@@ -411,7 +411,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() {
                 context.SetTimer(arg1: "100003", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
                 context.SetCube(IDs: new int[] {5301, 5302, 5303, 5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311},
-                    randomCount: 6, isVisible: "true");
+                    randomCount: 6, isVisible: true);
                 context.ArcadeSpringFarm(type: "SpawnMonster",
                     spawnID: new int[] {1201, 1202, 1203, 1204, 1205, 1206, 1207}, score: 5000);
                 context.ArcadeSpringFarm(type: "StartRound", uiDuration: 3000, round: 3, timeScoreType: "remain",
@@ -480,7 +480,7 @@ namespace Maple2.Trigger._51000001_dg {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "104")) {
+                if (context.UserDetected(arg1: new int[] {104})) {
                     context.State = new State4라운드카메라(context);
                     return;
                 }
@@ -517,7 +517,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() {
                 context.SetCube(
                     IDs: new int[] {5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410, 5411, 5412, 5413, 5414},
-                    randomCount: 7, isVisible: "true");
+                    randomCount: 7, isVisible: true);
                 context.SetTimer(arg1: "100004", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
                 context.ArcadeSpringFarm(type: "SpawnMonster",
                     spawnID: new int[] {1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308}, score: 5000);
@@ -587,7 +587,7 @@ namespace Maple2.Trigger._51000001_dg {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "105")) {
+                if (context.UserDetected(arg1: new int[] {105})) {
                     context.State = new State5라운드카메라(context);
                     return;
                 }
@@ -623,7 +623,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override void OnEnter() {
                 context.SetCube(IDs: new int[] {5501, 5502, 5503, 5504, 5505, 5506, 5507, 5508, 5509, 5510, 5511, 5512},
-                    randomCount: 6, isVisible: "true");
+                    randomCount: 6, isVisible: true);
                 context.SetTimer(arg1: "100005", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
                 context.ArcadeSpringFarm(type: "SpawnMonster", spawnID: new int[] {1401, 1402, 1403, 1404, 1405},
                     score: 5000);
@@ -693,7 +693,7 @@ namespace Maple2.Trigger._51000001_dg {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "106")) {
+                if (context.UserDetected(arg1: new int[] {106})) {
                     context.State = new State6라운드카메라(context);
                     return;
                 }
@@ -732,7 +732,7 @@ namespace Maple2.Trigger._51000001_dg {
                     IDs: new int[] {
                         5601, 5602, 5603, 5604, 5605, 5606, 5607, 5608, 5609, 5610, 5611, 5612, 5613, 5614, 5615, 5616,
                         5617, 5618, 5619, 5620, 5621
-                    }, randomCount: 10, isVisible: "true");
+                    }, randomCount: 10, isVisible: true);
                 context.SetTimer(arg1: "100006", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
                 context.ArcadeSpringFarm(type: "SpawnMonster",
                     spawnID: new int[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508, 1509, 1510}, score: 5000);
@@ -802,7 +802,7 @@ namespace Maple2.Trigger._51000001_dg {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "107")) {
+                if (context.UserDetected(arg1: new int[] {107})) {
                     context.State = new State7라운드카메라(context);
                     return;
                 }
@@ -841,7 +841,7 @@ namespace Maple2.Trigger._51000001_dg {
                     IDs: new int[] {
                         5701, 5702, 5703, 5704, 5705, 5706, 5707, 5708, 5709, 5710, 5711, 5712, 5713, 5714, 5715, 5716,
                         5717, 5718, 5719, 5720, 5721
-                    }, randomCount: 12, isVisible: "true");
+                    }, randomCount: 12, isVisible: true);
                 context.SetTimer(arg1: "100007", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
                 context.ArcadeSpringFarm(type: "SpawnMonster",
                     spawnID: new int[] {1601, 1602, 1603, 1604, 1605, 1606, 1607, 1608, 1609, 1610}, score: 5000);
@@ -911,7 +911,7 @@ namespace Maple2.Trigger._51000001_dg {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "108")) {
+                if (context.UserDetected(arg1: new int[] {108})) {
                     context.State = new State8라운드카메라(context);
                     return;
                 }
@@ -950,7 +950,7 @@ namespace Maple2.Trigger._51000001_dg {
                     IDs: new int[] {
                         5801, 5802, 5803, 5804, 5805, 5806, 5807, 5808, 5809, 5810, 5811, 5812, 5813, 5814, 5815, 5816,
                         5817, 5818, 5819, 5820, 5821, 5822
-                    }, randomCount: 12, isVisible: "true");
+                    }, randomCount: 12, isVisible: true);
                 context.SetTimer(arg1: "100008", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
                 context.ArcadeSpringFarm(type: "SpawnMonster",
                     spawnID: new int[] {1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1711}, score: 5000);
@@ -1021,7 +1021,7 @@ namespace Maple2.Trigger._51000001_dg {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "109")) {
+                if (context.UserDetected(arg1: new int[] {109})) {
                     context.State = new State9라운드카메라(context);
                     return;
                 }
@@ -1059,7 +1059,7 @@ namespace Maple2.Trigger._51000001_dg {
                 context.SetCube(
                     IDs: new int[]
                         {5901, 5902, 5903, 5904, 5905, 5906, 5907, 5908, 5909, 5910, 5911, 5912, 5913, 5914, 5915},
-                    randomCount: 8, isVisible: "true");
+                    randomCount: 8, isVisible: true);
                 context.SetTimer(arg1: "100009", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
                 context.ArcadeSpringFarm(type: "SpawnMonster",
                     spawnID: new int[]
@@ -1132,7 +1132,7 @@ namespace Maple2.Trigger._51000001_dg {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "110")) {
+                if (context.UserDetected(arg1: new int[] {110})) {
                     context.State = new State10라운드카메라(context);
                     return;
                 }
@@ -1171,7 +1171,7 @@ namespace Maple2.Trigger._51000001_dg {
                     IDs: new int[] {
                         51001, 51002, 51003, 51004, 51005, 51006, 51007, 51008, 51009, 51010, 51011, 51012, 51013,
                         51014, 51015, 51016, 51017, 51018, 51019, 51020, 51021, 51022, 51023, 51024
-                    }, randomCount: 6, isVisible: "true");
+                    }, randomCount: 6, isVisible: true);
                 context.SetTimer(arg1: "100010", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
                 context.ArcadeSpringFarm(type: "SpawnMonster", spawnID: new int[] {2001}, score: 10000);
                 context.ArcadeSpringFarm(type: "SpawnMonster", spawnID: new int[] {2002, 2003, 2004, 2005},

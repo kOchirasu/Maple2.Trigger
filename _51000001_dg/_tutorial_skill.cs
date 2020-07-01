@@ -13,7 +13,7 @@ namespace Maple2.Trigger._51000001_dg {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "100")) {
+                if (context.UserDetected(arg1: new int[] {100})) {
                     context.State = new State지역랜덤(context);
                     return;
                 }
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "100")) {
+                if (!context.UserDetected(arg1: new int[] {100})) {
                     context.State = new State종료(context);
                     return;
                 }
@@ -55,7 +55,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10001")) {
+                if (context.UserDetected(arg1: new int[] {10001})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10002")) {
+                if (context.UserDetected(arg1: new int[] {10002})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "100")) {
+                if (!context.UserDetected(arg1: new int[] {100})) {
                     context.State = new State종료(context);
                     return;
                 }

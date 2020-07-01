@@ -122,7 +122,7 @@ namespace Maple2.Trigger._99999925 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "403")) {
+                if (context.UserDetected(arg1: new int[] {403})) {
                     context.State = new StateBrokenCheck(context);
                     return;
                 }
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._99999925 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "404")) {
+                if (context.UserDetected(arg1: new int[] {404})) {
                     context.State = new StateBrokenCheck(context);
                     return;
                 }
@@ -152,7 +152,7 @@ namespace Maple2.Trigger._99999925 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "405")) {
+                if (context.UserDetected(arg1: new int[] {405})) {
                     context.State = new StateBrokenCheck(context);
                     return;
                 }
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._99999925 {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "401")) {
+                if (context.UserDetected(arg1: new int[] {401})) {
                     context.State = new StateBrokenWood(context);
                     return;
                 }

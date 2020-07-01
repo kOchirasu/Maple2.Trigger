@@ -51,7 +51,7 @@ namespace Maple2.Trigger._51000002_dg {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "102")) {
+                if (!context.UserDetected(arg1: new int[] {102})) {
                     context.State = new State대기(context);
                     return;
                 }
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._51000002_dg {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "102")) {
+                if (!context.UserDetected(arg1: new int[] {102})) {
                     context.State = new State대기(context);
                     return;
                 }

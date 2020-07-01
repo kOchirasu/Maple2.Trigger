@@ -59,7 +59,7 @@ namespace Maple2.Trigger._99999845 {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "900")) {
+                if (context.UserDetected(arg1: new int[] {900})) {
                     context.State = new StateLineStart(context);
                     return;
                 }

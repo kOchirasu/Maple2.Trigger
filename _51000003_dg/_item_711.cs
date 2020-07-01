@@ -30,7 +30,7 @@ namespace Maple2.Trigger._51000003_dg {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "721")) {
+                if (context.UserDetected(arg1: new int[] {721})) {
                     context.State = new StateGetItem_Random(context);
                     return;
                 }

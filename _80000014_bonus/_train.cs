@@ -16,7 +16,7 @@ namespace Maple2.Trigger._80000014_bonus {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "120")) {
+                if (context.UserDetected(arg1: new int[] {120})) {
                     context.State = new State생성(context);
                     return;
                 }

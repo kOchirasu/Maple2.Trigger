@@ -10,7 +10,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "301")) {
+                if (context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State퍼즐대기중(context);
                     return;
                 }
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._61000001_me_001 {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "301")) {
+                if (!context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State실패계단보이기(context);
                     return;
                 }
@@ -297,7 +297,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "301")) {
+                if (context.UserDetected(arg1: new int[] {301})) {
                     context.SetEventUI(arg1: 0, arg2: "2,5");
                     context.ShowCountUI(text: "$61000001_ME_001__MASSIVE00__4$", stage: 2, count: 5);
                     context.State = new State퍼즐단계2대기(context);
@@ -370,7 +370,7 @@ namespace Maple2.Trigger._61000001_me_001 {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "301")) {
+                if (!context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State실패계단보이기(context);
                     return;
                 }
@@ -387,7 +387,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "301")) {
+                if (context.UserDetected(arg1: new int[] {301})) {
                     context.SetEventUI(arg1: 0, arg2: "3,5");
                     context.ShowCountUI(text: "$61000001_ME_001__MASSIVE00__5$", stage: 3, count: 5);
                     context.State = new State퍼즐단계3대기(context);
@@ -460,7 +460,7 @@ namespace Maple2.Trigger._61000001_me_001 {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "301")) {
+                if (!context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State실패계단보이기(context);
                     return;
                 }
@@ -477,7 +477,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "301")) {
+                if (context.UserDetected(arg1: new int[] {301})) {
                     context.SetEventUI(arg1: 0, arg2: "4,5");
                     context.ShowCountUI(text: "$61000001_ME_001__MASSIVE00__6$", stage: 4, count: 5);
                     context.State = new State퍼즐단계4대기(context);
@@ -550,7 +550,7 @@ namespace Maple2.Trigger._61000001_me_001 {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "301")) {
+                if (!context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State실패계단보이기(context);
                     return;
                 }
@@ -567,7 +567,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "301")) {
+                if (context.UserDetected(arg1: new int[] {301})) {
                     context.SetEventUI(arg1: 0, arg2: "5,5");
                     context.ShowCountUI(text: "$61000001_ME_001__MASSIVE00__7$", stage: 5, count: 5);
                     context.State = new State퍼즐단계5대기(context);
@@ -632,7 +632,7 @@ namespace Maple2.Trigger._61000001_me_001 {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "301")) {
+                if (!context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State실패계단보이기(context);
                     return;
                 }
@@ -649,7 +649,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "301")) {
+                if (context.UserDetected(arg1: new int[] {301})) {
                     context.SetMesh(
                         arg1: new int[] {
                             1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
@@ -662,7 +662,7 @@ namespace Maple2.Trigger._61000001_me_001 {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "301")) {
+                if (!context.UserDetected(arg1: new int[] {301})) {
                     context.State = new State실패계단보이기(context);
                     return;
                 }

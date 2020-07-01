@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02010051_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9010")) {
+                if (context.UserDetected(arg1: new int[] {9010})) {
                     context.State = new State입장딜레이01(context);
                     return;
                 }

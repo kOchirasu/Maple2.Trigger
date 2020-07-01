@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State전투_종료(context);
                     return;
                 }
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State전투_종료(context);
                     return;
                 }
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State전투_종료(context);
                     return;
                 }
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State전투_종료(context);
                     return;
                 }
@@ -175,7 +175,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State전투_종료(context);
                     return;
                 }
@@ -206,7 +206,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State전투_종료(context);
                     return;
                 }
@@ -233,7 +233,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State전투_종료(context);
                     return;
                 }
@@ -262,7 +262,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State전투_종료(context);
                     return;
                 }
@@ -289,7 +289,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State전투_종료(context);
                     return;
                 }
@@ -320,7 +320,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State전투_종료(context);
                     return;
                 }
@@ -350,7 +350,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State전투_종료(context);
                     return;
                 }
@@ -379,7 +379,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State전투_종료(context);
                     return;
                 }
@@ -407,7 +407,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State전투_종료(context);
                     return;
                 }
@@ -439,7 +439,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State전투_종료(context);
                     return;
                 }
@@ -471,7 +471,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State전투_종료(context);
                     return;
                 }
@@ -526,7 +526,7 @@ namespace Maple2.Trigger._02020019_bf {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State전투_종료(context);
                     return;
                 }

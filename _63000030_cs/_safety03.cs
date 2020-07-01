@@ -27,7 +27,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9200")) {
+                if (context.UserDetected(arg1: new int[] {9200})) {
                     context.State = new StatePCTeleport01(context);
                     return;
                 }
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9200")) {
+                if (context.UserDetected(arg1: new int[] {9200})) {
                     context.State = new StateEnter01(context);
                     return;
                 }

@@ -500,7 +500,7 @@ namespace Maple2.Trigger._52010065_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "702")) {
+                if (context.UserDetected(arg1: new int[] {702})) {
                     context.State = new State용암건너기완료_01(context);
                     return;
                 }

@@ -14,7 +14,7 @@ namespace Maple2.Trigger._61000006_me {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "401")) {
+                if (context.UserDetected(arg1: new int[] {401})) {
                     context.State = new State끝(context);
                     return;
                 }

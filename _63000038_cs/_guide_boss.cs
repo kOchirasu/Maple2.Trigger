@@ -25,12 +25,12 @@ namespace Maple2.Trigger._63000038_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199", arg2: 100)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 100)) {
                     context.State = new State가이드출력(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "199", arg2: 110)) {
+                if (context.UserDetected(arg1: new int[] {199}, arg2: 110)) {
                     context.State = new State퀘스트체크(context);
                     return;
                 }
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._63000038_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "105")) {
+                if (context.UserDetected(arg1: new int[] {105})) {
                     context.HideGuideSummary(entityID: 26300384);
                     context.State = new State종료(context);
                     return;

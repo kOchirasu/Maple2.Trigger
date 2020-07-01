@@ -65,7 +65,7 @@ namespace Maple2.Trigger._52100001_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199")) {
+                if (context.UserDetected(arg1: new int[] {199})) {
                     context.State =
                         new _checkusercount.StateCheckUserCount(context, new StateDungeonStart(context));
                     return;

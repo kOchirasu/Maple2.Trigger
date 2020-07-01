@@ -17,7 +17,7 @@ namespace Maple2.Trigger._52000064_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "199")) {
+                if (context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State아이템생성(context);
                     return;
                 }
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._52000064_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "102")) {
+                if (context.UserDetected(arg1: new int[] {102})) {
                     context.State = new State완료(context);
                     return;
                 }

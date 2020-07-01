@@ -18,7 +18,7 @@ namespace Maple2.Trigger._52000002_qd {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "101")) {
+                if (!context.UserDetected(arg1: new int[] {101})) {
                     context.State = new State시작대기중(context);
                     return;
                 }
@@ -33,12 +33,12 @@ namespace Maple2.Trigger._52000002_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "103")) {
+                if (context.UserDetected(arg1: new int[] {103})) {
                     context.State = new State안내시작(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "101")) {
+                if (!context.UserDetected(arg1: new int[] {101})) {
                     context.State = new State시작대기중(context);
                     return;
                 }
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._52000002_qd {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "101")) {
+                if (!context.UserDetected(arg1: new int[] {101})) {
                     context.State = new State시작대기중(context);
                     return;
                 }

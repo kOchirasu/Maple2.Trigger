@@ -12,7 +12,7 @@ namespace Maple2.Trigger._99999905 {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "103")) {
+                if (context.UserDetected(arg1: new int[] {103})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }
@@ -30,7 +30,7 @@ namespace Maple2.Trigger._99999905 {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "103")) {
+                if (!context.UserDetected(arg1: new int[] {103})) {
                     context.State = new State초기화(context);
                     return;
                 }

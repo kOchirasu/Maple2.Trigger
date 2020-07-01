@@ -12,7 +12,7 @@ namespace Maple2.Trigger._02100001_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9903")) {
+                if (context.UserDetected(arg1: new int[] {9903})) {
                     context.State = new StateNpcSpawn(context);
                     return;
                 }
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02100001_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "9903")) {
+                if (!context.UserDetected(arg1: new int[] {9903})) {
                     context.State = new StateQuit(context);
                     return;
                 }

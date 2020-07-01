@@ -13,7 +13,7 @@ namespace Maple2.Trigger._02020311_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "801")) {
+                if (context.UserDetected(arg1: new int[] {801})) {
                     context.State = new State오브젝트체크(context);
                     return;
                 }
@@ -33,7 +33,7 @@ namespace Maple2.Trigger._02020311_bf {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "801")) {
+                if (context.UserDetected(arg1: new int[] {801})) {
                     context.State = new State오브젝트체크(context);
                     return;
                 }

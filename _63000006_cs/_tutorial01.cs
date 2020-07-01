@@ -66,7 +66,7 @@ namespace Maple2.Trigger._63000006_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new State영상준비_01(context);
                     return;
                 }
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._63000006_cs {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "9050,9051,9052,9053")) {
+                if (context.UserDetected(arg1: new int[] {9050,9051,9052,9053})) {
                     context.State = new State로딩딜레이(context);
                     return;
                 }
@@ -204,7 +204,7 @@ namespace Maple2.Trigger._63000006_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9050,9051,9052,9053")) {
+                if (context.UserDetected(arg1: new int[] {9050,9051,9052,9053})) {
                     context.State = new State로딩딜레이(context);
                     return;
                 }
@@ -287,7 +287,7 @@ namespace Maple2.Trigger._63000006_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "6001")) {
+                if (context.UserDetected(arg1: new int[] {6001})) {
                     context.State = new State움직이기02(context);
                     return;
                 }
@@ -306,7 +306,7 @@ namespace Maple2.Trigger._63000006_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "6000")) {
+                if (context.UserDetected(arg1: new int[] {6000})) {
                     context.State = new State이동완료01(context);
                     return;
                 }
@@ -621,7 +621,7 @@ namespace Maple2.Trigger._63000006_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9003")) {
+                if (context.UserDetected(arg1: new int[] {9003})) {
                     context.State = new State다리붕괴02(context);
                     return;
                 }
@@ -706,7 +706,7 @@ namespace Maple2.Trigger._63000006_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9004")) {
+                if (context.UserDetected(arg1: new int[] {9004})) {
                     context.State = new State수영안내01(context);
                     return;
                 }
@@ -824,7 +824,7 @@ namespace Maple2.Trigger._63000006_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9010,9011,9012,9013,9014,9015")) {
+                if (context.UserDetected(arg1: new int[] {9010,9011,9012,9013,9014,9015})) {
                     context.State = new State사다리유도01(context);
                     return;
                 }
@@ -844,7 +844,7 @@ namespace Maple2.Trigger._63000006_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9006")) {
+                if (context.UserDetected(arg1: new int[] {9006})) {
                     context.State = new State사다리유도02(context);
                     return;
                 }
@@ -865,7 +865,7 @@ namespace Maple2.Trigger._63000006_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9005")) {
+                if (context.UserDetected(arg1: new int[] {9005})) {
                     context.State = new State언덕유도01(context);
                     return;
                 }
@@ -893,7 +893,7 @@ namespace Maple2.Trigger._63000006_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9020")) {
+                if (context.UserDetected(arg1: new int[] {9020})) {
                     context.State = new State언덕유도02(context);
                     return;
                 }
@@ -913,7 +913,7 @@ namespace Maple2.Trigger._63000006_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9021")) {
+                if (context.UserDetected(arg1: new int[] {9021})) {
                     context.State = new State퀘스트수락유도01(context);
                     return;
                 }
@@ -1010,7 +1010,7 @@ namespace Maple2.Trigger._63000006_cs {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "9040")) {
+                if (!context.UserDetected(arg1: new int[] {9040})) {
                     context.State = new State맵이동완료(context);
                     return;
                 }

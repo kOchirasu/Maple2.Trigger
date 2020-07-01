@@ -180,7 +180,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "902")) {
+                if (context.UserDetected(arg1: new int[] {902})) {
                     context.SideNpcTalk(type: "talk", npcID: 11004288, illust: "nagi_switchon",
                         script: "$83000002_COLOSSEUM__ROUND2__6$", duration: 3000);
                     context.DestroyMonster(arg1: new int[] {102});
@@ -189,7 +189,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "904")) {
+                if (!context.UserDetected(arg1: new int[] {904})) {
                     context.SideNpcTalk(type: "talk", npcID: 11004288, illust: "nagi_switchon",
                         script: "$83000002_COLOSSEUM__ROUND2__7$", duration: 3000);
                     context.DestroyMonster(arg1: new int[] {102});

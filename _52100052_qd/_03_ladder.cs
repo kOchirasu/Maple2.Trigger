@@ -119,7 +119,7 @@ namespace Maple2.Trigger._52100052_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "504")) {
+                if (context.UserDetected(arg1: new int[] {504})) {
                     context.State = new State2ndBattle(context);
                     return;
                 }
@@ -163,7 +163,7 @@ namespace Maple2.Trigger._52100052_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "507")) {
+                if (context.UserDetected(arg1: new int[] {507})) {
                     context.State = new State3rdBattle(context);
                     return;
                 }
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._52100052_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "402")) {
+                if (context.UserDetected(arg1: new int[] {402})) {
                     context.State = new StateBossBattle01(context);
                     return;
                 }

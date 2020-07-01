@@ -10,7 +10,7 @@ namespace Maple2.Trigger._80000009_bonus {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "402")) {
+                if (context.UserDetected(arg1: new int[] {402})) {
                     context.CreateItem(arg1: new int[] {9001, 9002, 9003, 9004, 9005});
                     context.State = new State5초(context);
                     return;

@@ -35,7 +35,7 @@ namespace Maple2.Trigger._52100013_qd {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "702")) {
+                if (context.UserDetected(arg1: new int[] {702})) {
                     context.State = new Stateerror(context);
                     return;
                 }
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._52100013_qd {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "702")) {
+                if (context.UserDetected(arg1: new int[] {702})) {
                     context.State = new Statequest_error(context);
                     return;
                 }

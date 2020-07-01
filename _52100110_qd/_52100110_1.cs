@@ -10,12 +10,12 @@ namespace Maple2.Trigger._52100110_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "1000")) {
+                if (context.UserDetected(arg1: new int[] {1000})) {
                     context.State = new State52100110_1화이트박스생성(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "2000")) {
+                if (context.UserDetected(arg1: new int[] {2000})) {
                     context.State = new State52100110_1화이트박스생성(context);
                     return;
                 }

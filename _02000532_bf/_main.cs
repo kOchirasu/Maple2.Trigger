@@ -18,7 +18,7 @@ namespace Maple2.Trigger._02000532_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "701", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {701}, arg2: 0)) {
                     context.State = new Stateready(context);
                     return;
                 }
@@ -140,7 +140,7 @@ namespace Maple2.Trigger._02000532_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "702", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {702}, arg2: 0)) {
                     context.State = new State경계하기(context);
                     return;
                 }
@@ -318,7 +318,7 @@ namespace Maple2.Trigger._02000532_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "705", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {705}, arg2: 0)) {
                     context.State = new State길목에서나오는몬스터(context);
                     return;
                 }

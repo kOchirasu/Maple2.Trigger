@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52000193_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2001")) {
+                if (context.UserDetected(arg1: new int[] {2001})) {
                     context.State = new StateCameraEffect01(context);
                     return;
                 }

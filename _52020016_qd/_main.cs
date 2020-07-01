@@ -30,7 +30,7 @@ namespace Maple2.Trigger._52020016_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "103")) {
+                if (context.UserDetected(arg1: new int[] {103})) {
                     context.State = new State시작_2(context);
                     return;
                 }
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._52020016_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "101")) {
+                if (context.UserDetected(arg1: new int[] {101})) {
                     context.State = new State인트로(context);
                     return;
                 }
@@ -707,7 +707,7 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "104")) {
+                if (context.UserDetected(arg1: new int[] {104})) {
                     context.State = new State이동_4(context);
                     return;
                 }

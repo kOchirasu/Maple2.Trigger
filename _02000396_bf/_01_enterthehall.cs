@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000396_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new StateLoadingDelay(context);
                     return;
                 }
@@ -370,7 +370,7 @@ namespace Maple2.Trigger._02000396_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9002")) {
+                if (context.UserDetected(arg1: new int[] {9002})) {
                     context.State = new StateFindWayOut01(context);
                     return;
                 }

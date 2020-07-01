@@ -58,7 +58,7 @@ namespace Maple2.Trigger._52000037_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9200")) {
+                if (context.UserDetected(arg1: new int[] {9200})) {
                     context.State = new StateNextQuestStart01(context);
                     return;
                 }
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._52000037_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9200")) {
+                if (context.UserDetected(arg1: new int[] {9200})) {
                     context.State = new StateNextQuestStart01(context);
                     return;
                 }
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._52000037_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9100")) {
+                if (context.UserDetected(arg1: new int[] {9100})) {
                     context.State = new StateSayHi01(context);
                     return;
                 }

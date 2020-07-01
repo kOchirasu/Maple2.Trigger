@@ -33,7 +33,7 @@ namespace Maple2.Trigger._66200001_gd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9900")) {
+                if (context.UserDetected(arg1: new int[] {9900})) {
                     context.State = new StateMoveUserbyTag(context);
                     return;
                 }

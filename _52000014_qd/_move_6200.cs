@@ -12,7 +12,7 @@ namespace Maple2.Trigger._52000014_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9620")) {
+                if (context.UserDetected(arg1: new int[] {9620})) {
                     context.State = new State침몰01(context);
                     return;
                 }

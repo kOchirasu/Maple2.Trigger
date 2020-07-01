@@ -130,7 +130,7 @@ namespace Maple2.Trigger._52010051_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "101")) {
+                if (context.UserDetected(arg1: new int[] {101})) {
                     context.State = new State버프부여(context);
                     return;
                 }
@@ -152,7 +152,7 @@ namespace Maple2.Trigger._52010051_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9010")) {
+                if (context.UserDetected(arg1: new int[] {9010})) {
                     context.State = new State마법다리형성(context);
                     return;
                 }
@@ -177,7 +177,7 @@ namespace Maple2.Trigger._52010051_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9020")) {
+                if (context.UserDetected(arg1: new int[] {9020})) {
                     context.State = new State검마발록연출01(context);
                     return;
                 }

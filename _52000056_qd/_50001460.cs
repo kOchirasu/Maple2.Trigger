@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52000056_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "103,104,105,106")) {
+                if (context.UserDetected(arg1: new int[] {103,104,105,106})) {
                     context.State = new State연출시작(context);
                     return;
                 }
@@ -178,7 +178,7 @@ namespace Maple2.Trigger._52000056_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "102")) {
+                if (context.UserDetected(arg1: new int[] {102})) {
                     context.SetEffect(arg1: new int[] {601}, arg2: false);
                     context.SetEffect(arg1: new int[] {602}, arg2: false);
                     context.SetEffect(arg1: new int[] {603}, arg2: false);

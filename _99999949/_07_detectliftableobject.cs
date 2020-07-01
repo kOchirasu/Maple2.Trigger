@@ -12,7 +12,7 @@ namespace Maple2.Trigger._99999949 {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9061")) {
+                if (context.UserDetected(arg1: new int[] {9061})) {
                     context.State = new StateGuide(context);
                     return;
                 }
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._99999949 {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9060")) {
+                if (context.UserDetected(arg1: new int[] {9060})) {
                     context.State = new StateReady01(context);
                     return;
                 }

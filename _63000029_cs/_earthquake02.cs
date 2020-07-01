@@ -229,12 +229,12 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9900")) {
+                if (context.UserDetected(arg1: new int[] {9900})) {
                     context.State = new StateDelay01(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "9900")) {
+                if (!context.UserDetected(arg1: new int[] {9900})) {
                     context.State = new StateQuit(context);
                     return;
                 }

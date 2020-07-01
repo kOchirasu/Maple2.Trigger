@@ -9,13 +9,13 @@ namespace Maple2.Trigger._99999946 {
 
             public override void OnEnter() {
                 context.SetCube(IDs: new int[] {500, 501, 502, 503, 504, 505, 506, 507, 508, 509}, randomCount: 10,
-                    isVisible: "false");
+                    isVisible: false);
                 context.CreateMonster(arg1: new int[] {1001, 1002, 1003, 1004, 1005, 1006}, arg2: false);
                 context.CameraSelect(arg1: 301, arg2: true);
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "101")) {
+                if (context.UserDetected(arg1: new int[] {101})) {
                     context.State = new State시작대기(context);
                     return;
                 }

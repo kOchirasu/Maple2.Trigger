@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000241_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "402")) {
+                if (context.UserDetected(arg1: new int[] {402})) {
                     context.State = new State버튼눌림(context);
                     return;
                 }

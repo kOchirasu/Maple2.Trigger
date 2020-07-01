@@ -125,8 +125,7 @@ namespace Maple2.Trigger {
         public void SetCinematicIntro(string text = default);
         public void SetConversation(byte arg1 = default, int arg2 = default, string arg3 = default, int arg4 = default,
             byte arg5 = default, string align = default);
-        public void SetCube(int[] IDs = default, string isVisible = default, byte randomCount = default,
-            int[] arg1 = default, bool arg2 = default);
+        public void SetCube(int[] IDs = default, bool isVisible = default, byte randomCount = default);
         public void SetDirectionalLight(Vector3 arg1 = default, Vector3 arg2 = default);
         public void SetEffect(int[] arg1 = default, bool arg2 = default, int arg3 = default, byte arg4 = default);
         public void SetEventUI(byte arg1 = default, string arg2 = default, int[] arg3 = default, string arg4 = default);
@@ -162,8 +161,7 @@ namespace Maple2.Trigger {
             int arg5 = default);
         public void SetRope(int arg1 = default, bool arg2 = default, bool arg3 = default, byte arg4 = default);
         public void SetSceneSkip(string arg1 = default, string arg2 = default);
-        public void SetSkill(int[] arg1 = default, bool arg2 = default, int[] objectIDs = default,
-            bool isEnable = default);
+        public void SetSkill(int[] arg1 = default, bool arg2 = default);
         public void SetSkip(string arg1 = default);
         public void SetSound(int arg1 = default, bool arg2 = default);
         public void SetState(byte arg1 = default, string arg2 = default, bool arg3 = default);
@@ -272,7 +270,7 @@ namespace Maple2.Trigger {
         public bool ShadowExpeditionReachPoint(int point = default);
         public bool TimeExpired(string arg1 = default);
         // public bool True(bool arg1 = default);
-        public bool UserDetected(string arg1 = default, byte arg2 = default);
+        public bool UserDetected(int[] arg1 = default, byte arg2 = default);
         public bool UserValue(string key = default, int value = default, string @operator = default);
         public bool WaitAndResetTick(int waitTick = default);
         public bool WaitSecondsUserValue(string key = default, string desc = default);

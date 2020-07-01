@@ -99,7 +99,7 @@ namespace Maple2.Trigger._02010069_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "999997")) {
+                if (context.UserDetected(arg1: new int[] {999997})) {
                     context.CreateMonster(arg1: new int[] {44441, 44442, 44443}, arg2: false);
                     context.State = new State연출1(context);
                     return;

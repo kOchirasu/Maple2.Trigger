@@ -10,7 +10,7 @@ namespace Maple2.Trigger._63000006_cs {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new State다리흔들기준비(context);
                     return;
                 }
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._63000006_cs {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "9002")) {
+                if (context.UserDetected(arg1: new int[] {9002})) {
                     context.State = new State종료(context);
                     return;
                 }

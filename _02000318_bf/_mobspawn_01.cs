@@ -197,7 +197,7 @@ namespace Maple2.Trigger._02000318_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "103")) {
+                if (context.UserDetected(arg1: new int[] {103})) {
                     context.State = new StateBattle11(context);
                     return;
                 }
@@ -293,7 +293,7 @@ namespace Maple2.Trigger._02000318_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "104")) {
+                if (context.UserDetected(arg1: new int[] {104})) {
                     context.State = new StateQuit(context);
                     return;
                 }

@@ -50,7 +50,7 @@ namespace Maple2.Trigger._52000104_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10011")) {
+                if (context.UserDetected(arg1: new int[] {10011})) {
                     context.State = new State영상준비_01(context);
                     return;
                 }
@@ -267,7 +267,7 @@ namespace Maple2.Trigger._52000104_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "10012")) {
+                if (context.UserDetected(arg1: new int[] {10012})) {
                     context.State = new State리린과대화01(context);
                     return;
                 }

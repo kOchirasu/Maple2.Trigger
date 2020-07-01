@@ -14,22 +14,22 @@ namespace Maple2.Trigger._99999900 {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "901")) {
+                if (context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State중지버튼(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "900")) {
+                if (context.UserDetected(arg1: new int[] {900})) {
                     context.State = new State일부패턴시작(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "902")) {
+                if (context.UserDetected(arg1: new int[] {902})) {
                     context.State = new State모든패턴순차시작(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "903")) {
+                if (context.UserDetected(arg1: new int[] {903})) {
                     context.State = new State모든패턴랜덤시작(context);
                     return;
                 }
@@ -186,7 +186,7 @@ namespace Maple2.Trigger._99999900 {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "901")) {
+                if (context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State중지버튼(context);
                     return;
                 }
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._99999900 {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "901")) {
+                if (!context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State퍼즐단계대기(context);
                     return;
                 }

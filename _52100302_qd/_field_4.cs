@@ -42,7 +42,7 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9008")) {
+                if (context.UserDetected(arg1: new int[] {9008})) {
                     context.CreateMonster(arg1: new int[] {2008}, arg2: false);
                     context.State = new StateArriveBlock_Delay_1(context);
                     return;
@@ -187,7 +187,7 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9009")) {
+                if (context.UserDetected(arg1: new int[] {9009})) {
                     context.CreateMonster(arg1: new int[] {2009}, arg2: false);
                     context.State = new StateArriveBlock_Delay_2(context);
                     return;
@@ -324,7 +324,7 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9010")) {
+                if (context.UserDetected(arg1: new int[] {9010})) {
                     context.CreateMonster(arg1: new int[] {2010}, arg2: false);
                     context.State = new StateArriveBlock_Delay_3(context);
                     return;

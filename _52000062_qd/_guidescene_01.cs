@@ -50,7 +50,7 @@ namespace Maple2.Trigger._52000062_qd {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "199")) {
+                if (context.UserDetected(arg1: new int[] {199})) {
                     context.State = new State페르시카대사01(context);
                     return;
                 }
@@ -163,7 +163,7 @@ namespace Maple2.Trigger._52000062_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "198")) {
+                if (context.UserDetected(arg1: new int[] {198})) {
                     context.State = new State찬양NPC이동(context);
                     return;
                 }

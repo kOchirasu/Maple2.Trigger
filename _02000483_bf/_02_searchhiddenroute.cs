@@ -12,7 +12,7 @@ namespace Maple2.Trigger._02000483_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9100")) {
+                if (context.UserDetected(arg1: new int[] {9100})) {
                     context.State = new StateLoadingDelay(context);
                     return;
                 }

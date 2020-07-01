@@ -10,7 +10,7 @@ namespace Maple2.Trigger._99999896 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "101")) {
+                if (context.UserDetected(arg1: new int[] {101})) {
                     context.SetTimer(arg1: "1", arg2: 2);
                     context.CreateItem(arg1: new int[] {4, 5, 6, 7, 8, 9, 10, 11, 12});
                     context.SetEventUI(arg1: 1, arg2: "$99999896__02_COIN__0$", arg3: new int[] {2000});
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._99999896 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "102")) {
+                if (context.UserDetected(arg1: new int[] {102})) {
                     context.CreateItem(arg1: new int[] {13, 14, 15, 16, 17, 18, 19, 20, 21});
                     context.SetEventUI(arg1: 1, arg2: "$99999896__02_COIN__1$", arg3: new int[] {2000});
                     context.State = new State동전생성03(context);
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._99999896 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "103")) {
+                if (context.UserDetected(arg1: new int[] {103})) {
                     context.SetEventUI(arg1: 1, arg2: "$99999896__02_COIN__2$", arg3: new int[] {2000});
                     context.CreateItem(arg1: new int[] {22, 23, 24, 25, 26, 27, 28, 29, 30});
                     context.SetEventUI(arg1: 3, arg2: "$99999896__02_COIN__3$", arg3: new int[] {2000});

@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "3")) {
+                if (context.UserDetected(arg1: new int[] {3})) {
                     context.State = new State잠시기다림_1(context);
                     return;
                 }

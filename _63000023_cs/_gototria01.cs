@@ -35,7 +35,7 @@ namespace Maple2.Trigger._63000023_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new StateLodingDelay01(context);
                     return;
                 }
@@ -917,7 +917,7 @@ namespace Maple2.Trigger._63000023_cs {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9001")) {
+                if (context.UserDetected(arg1: new int[] {9001})) {
                     context.State = new StateGetCloseToTheCar02(context);
                     return;
                 }
@@ -1065,7 +1065,7 @@ namespace Maple2.Trigger._63000023_cs {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "9900")) {
+                if (!context.UserDetected(arg1: new int[] {9900})) {
                     context.State = new StateQuit(context);
                     return;
                 }

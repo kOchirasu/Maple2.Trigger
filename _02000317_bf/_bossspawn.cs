@@ -91,12 +91,12 @@ namespace Maple2.Trigger._02000317_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "105")) {
+                if (context.UserDetected(arg1: new int[] {105})) {
                     context.State = new StateStep_1_B_Ready(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "104")) {
+                if (context.UserDetected(arg1: new int[] {104})) {
                     context.State = new StateStep_2(context);
                     return;
                 }
@@ -131,12 +131,12 @@ namespace Maple2.Trigger._02000317_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "106")) {
+                if (context.UserDetected(arg1: new int[] {106})) {
                     context.State = new StateStep_1_C(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "104")) {
+                if (context.UserDetected(arg1: new int[] {104})) {
                     context.State = new StateStep_2(context);
                     return;
                 }
@@ -159,7 +159,7 @@ namespace Maple2.Trigger._02000317_bf {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "104")) {
+                if (context.UserDetected(arg1: new int[] {104})) {
                     context.State = new StateStep_2(context);
                     return;
                 }
@@ -176,12 +176,12 @@ namespace Maple2.Trigger._02000317_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "107")) {
+                if (context.UserDetected(arg1: new int[] {107})) {
                     context.State = new StateStep_1_D(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "104")) {
+                if (context.UserDetected(arg1: new int[] {104})) {
                     context.State = new StateStep_2(context);
                     return;
                 }
@@ -203,7 +203,7 @@ namespace Maple2.Trigger._02000317_bf {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "104")) {
+                if (context.UserDetected(arg1: new int[] {104})) {
                     context.State = new StateStep_2(context);
                     return;
                 }
@@ -220,7 +220,7 @@ namespace Maple2.Trigger._02000317_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "104")) {
+                if (context.UserDetected(arg1: new int[] {104})) {
                     context.State = new StateStep_2(context);
                     return;
                 }

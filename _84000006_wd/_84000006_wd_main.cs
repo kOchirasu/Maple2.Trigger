@@ -18,7 +18,7 @@ namespace Maple2.Trigger._84000006_wd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new StateEntryDelay(context);
                     return;
                 }

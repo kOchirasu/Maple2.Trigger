@@ -53,14 +53,14 @@ namespace Maple2.Trigger._02020062_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9201")) {
+                if (context.UserDetected(arg1: new int[] {9201})) {
                     context.SetBreakable(arg1: new int[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108},
                         arg2: true);
                     context.State = new State대기(context);
                     return;
                 }
 
-                if (context.UserDetected(arg1: "9204")) {
+                if (context.UserDetected(arg1: new int[] {9204})) {
                     context.SetBreakable(arg1: new int[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108},
                         arg2: true);
                     context.State = new State대기(context);
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._02020062_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "9204")) {
+                if (!context.UserDetected(arg1: new int[] {9204})) {
                     context.SetBreakable(arg1: new int[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108},
                         arg2: false);
                     context.State = new State발판이동(context);

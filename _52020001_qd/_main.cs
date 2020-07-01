@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52020001_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "5")) {
+                if (context.UserDetected(arg1: new int[] {5})) {
                     context.State = new State인트로(context);
                     return;
                 }
@@ -178,7 +178,7 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "1")) {
+                if (context.UserDetected(arg1: new int[] {1})) {
                     context.State = new State타이머시작(context);
                     return;
                 }

@@ -31,7 +31,7 @@ namespace Maple2.Trigger._02020112_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "901")) {
+                if (context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State중력방_대기(context);
                     return;
                 }
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "915")) {
+                if (context.UserDetected(arg1: new int[] {915})) {
                     context.State = new State중력방_발판(context);
                     return;
                 }
@@ -157,7 +157,7 @@ namespace Maple2.Trigger._02020112_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "932")) {
+                if (context.UserDetected(arg1: new int[] {932})) {
                     context.State = new State격리방_전투(context);
                     return;
                 }

@@ -34,7 +34,7 @@ namespace Maple2.Trigger._99999922 {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "1")) {
+                if (context.UserDetected(arg1: new int[] {1})) {
                     context.State = new State생성_1(context);
                     return;
                 }
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._99999922 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {2}, arg2: 0)) {
                     context.State = new State길막추가_1(context);
                     return;
                 }
@@ -270,7 +270,7 @@ namespace Maple2.Trigger._99999922 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "2", arg2: 0) && context.NpcDetected(arg1: 2, arg2: new int[] {101})) {
+                if (context.UserDetected(arg1: new int[] {2}, arg2: 0) && context.NpcDetected(arg1: 2, arg2: new int[] {101})) {
                     context.State = new State다리제거_1(context);
                     return;
                 }
@@ -381,7 +381,7 @@ namespace Maple2.Trigger._99999922 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "3", arg2: 0) && context.NpcDetected(arg1: 3, arg2: new int[] {101})) {
+                if (context.UserDetected(arg1: new int[] {3}, arg2: 0) && context.NpcDetected(arg1: 3, arg2: new int[] {101})) {
                     context.State = new State길막추가_2(context);
                     return;
                 }

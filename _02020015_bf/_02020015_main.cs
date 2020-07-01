@@ -32,11 +32,11 @@ namespace Maple2.Trigger._02020015_bf {
                         1333, 1334, 1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1347, 1348
                     }, arg2: true);
                 context.SetCube(
-                    arg1: new int[] {
+                    IDs: new int[] {
                         1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416,
                         1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432,
                         1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448
-                    }, arg2: false);
+                    }, isVisible: false);
                 context.SetUserValue(triggerID: 99990002, key: "Timer", value: 0);
                 context.SetLadder(arg1: 2001, arg2: false, arg3: false, arg4: 0);
                 context.SetLadder(arg1: 2002, arg2: false, arg3: false, arg4: 0);
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02020015_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "901")) {
+                if (context.UserDetected(arg1: new int[] {901})) {
                     context.State = new State엘리베이터(context);
                     return;
                 }
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02020015_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "902")) {
+                if (context.UserDetected(arg1: new int[] {902})) {
                     context.State = new State복도(context);
                     return;
                 }
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._02020015_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "902")) {
+                if (context.UserDetected(arg1: new int[] {902})) {
                     context.State = new State내부진입(context);
                     return;
                 }
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._02020015_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "903", arg2: 0)) {
+                if (context.UserDetected(arg1: new int[] {903}, arg2: 0)) {
                     context.State = new State발판생성(context);
                     return;
                 }
@@ -139,11 +139,11 @@ namespace Maple2.Trigger._02020015_bf {
                         1333, 1334, 1335, 1336, 1337, 1338, 1339, 1340, 1341, 1342, 1343, 1344, 1345, 1346, 1347, 1348
                     }, arg2: false);
                 context.SetCube(
-                    arg1: new int[] {
+                    IDs: new int[] {
                         1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 1414, 1415, 1416,
                         1417, 1418, 1419, 1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429, 1430, 1431, 1432,
                         1433, 1434, 1435, 1436, 1437, 1438, 1439, 1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448
-                    }, arg2: true);
+                    }, isVisible: true);
             }
 
             public override void Execute() {

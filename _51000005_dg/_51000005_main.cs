@@ -18,7 +18,7 @@ namespace Maple2.Trigger._51000005_dg {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new State인트로(context);
                     return;
                 }
@@ -142,12 +142,12 @@ namespace Maple2.Trigger._51000005_dg {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "9000")) {
+                if (context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new State게임시작_대기(context);
                     return;
                 }
 
-                if (!context.UserDetected(arg1: "9000")) {
+                if (!context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new State연출종료(context);
                     return;
                 }
@@ -191,7 +191,7 @@ namespace Maple2.Trigger._51000005_dg {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "9000")) {
+                if (!context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new State완전끝(context);
                     return;
                 }
@@ -215,7 +215,7 @@ namespace Maple2.Trigger._51000005_dg {
             }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "9000")) {
+                if (!context.UserDetected(arg1: new int[] {9000})) {
                     context.State = new State완전끝(context);
                     return;
                 }

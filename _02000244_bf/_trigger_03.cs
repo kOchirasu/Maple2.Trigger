@@ -21,7 +21,7 @@ namespace Maple2.Trigger._02000244_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "203")) {
+                if (context.UserDetected(arg1: new int[] {203})) {
                     context.State = new State벽삭제(context);
                     return;
                 }
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._02000244_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (!context.UserDetected(arg1: "203")) {
+                if (!context.UserDetected(arg1: new int[] {203})) {
                     context.State = new State대기(context);
                     return;
                 }

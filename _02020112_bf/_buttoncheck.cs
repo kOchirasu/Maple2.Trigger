@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02020112_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "911")) {
+                if (context.UserDetected(arg1: new int[] {911})) {
                     context.State = new State감지_1층(context);
                     return;
                 }
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._02020112_bf {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "912")) {
+                if (context.UserDetected(arg1: new int[] {912})) {
                     context.State = new State감지_2층(context);
                     return;
                 }
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._02020112_bf {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "913")) {
+                if (context.UserDetected(arg1: new int[] {913})) {
                     context.State = new State감지_3층(context);
                     return;
                 }
@@ -148,7 +148,7 @@ namespace Maple2.Trigger._02020112_bf {
                     return;
                 }
 
-                if (context.UserDetected(arg1: "914")) {
+                if (context.UserDetected(arg1: new int[] {914})) {
                     context.State = new State감지_4층(context);
                     return;
                 }

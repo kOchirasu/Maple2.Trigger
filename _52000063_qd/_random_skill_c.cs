@@ -33,7 +33,7 @@ namespace Maple2.Trigger._52000063_qd {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "113")) {
+                if (context.UserDetected(arg1: new int[] {113})) {
                     context.State = new State스킬랜덤(context);
                     return;
                 }

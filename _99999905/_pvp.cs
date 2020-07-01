@@ -125,7 +125,7 @@ namespace Maple2.Trigger._99999905 {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "105")) {
+                if (context.UserDetected(arg1: new int[] {105})) {
                     context.SetMesh(arg1: new int[] {3001, 3002, 3003, 4001, 4002, 4003}, arg2: false, arg3: 0, arg4: 0,
                         arg5: 0f);
                     context.State = new StatePvP종료(context);

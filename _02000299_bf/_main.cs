@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000299_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "104")) {
+                if (context.UserDetected(arg1: new int[] {104})) {
                     context.State = new State클리어체크(context);
                     return;
                 }
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._02000299_bf {
             }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "102")) {
+                if (context.UserDetected(arg1: new int[] {102})) {
                     context.State = new State클리어체크2(context);
                     return;
                 }
@@ -695,7 +695,7 @@ namespace Maple2.Trigger._02000299_bf {
             public override void OnEnter() { }
 
             public override void Execute() {
-                if (context.UserDetected(arg1: "104")) {
+                if (context.UserDetected(arg1: new int[] {104})) {
                     context.State = new State보스방이동준비(context);
                     return;
                 }
