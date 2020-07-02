@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52100301_qd {
     public static class _300006_phase_5 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._52100301_qd {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 3000051, key: "Phase_4_Interect_01", value: 0);
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State아르케온_등장(context);
+                    return new State아르케온_Appear(context);
                 }
 
                 return null;
@@ -59,8 +59,8 @@ namespace Maple2.Trigger._52100301_qd {
             public override void OnExit() { }
         }
 
-        private class State아르케온_등장 : TriggerState {
-            internal State아르케온_등장(ITriggerContext context) : base(context) { }
+        private class State아르케온_Appear : TriggerState {
+            internal State아르케온_Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "AI_Phase", value: 0);
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State아르케온_탈것_생성(context);
+                    return new State아르케온_탈것_Creation(context);
                 }
 
                 return null;
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._52100301_qd {
             public override void OnExit() { }
         }
 
-        private class State아르케온_탈것_생성 : TriggerState {
-            internal State아르케온_탈것_생성(ITriggerContext context) : base(context) { }
+        private class State아르케온_탈것_Creation : TriggerState {
+            internal State아르케온_탈것_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 3000061, key: "Phase_5_Interect_01", value: 1);

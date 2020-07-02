@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._63000006_cs {
     public static class _shake03 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5070}, arg2: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -18,22 +18,22 @@ namespace Maple2.Trigger._63000006_cs {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5070}, arg2: true);
             }
 
             public override TriggerState Execute() {
-                return new State간격랜덤(context);
+                return new State간격Random(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State간격랜덤 : TriggerState {
-            internal State간격랜덤(ITriggerContext context) : base(context) { }
+        private class State간격Random : TriggerState {
+            internal State간격Random(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -69,11 +69,11 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State초기화(context);
+                    return new StateReset(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {9002})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -91,11 +91,11 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State초기화(context);
+                    return new StateReset(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {9002})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -113,11 +113,11 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State초기화(context);
+                    return new StateReset(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {9002})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -135,11 +135,11 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    return new State초기화(context);
+                    return new StateReset(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {9002})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -148,22 +148,22 @@ namespace Maple2.Trigger._63000006_cs {
             public override void OnExit() { }
         }
 
-        private class State초기화 : TriggerState {
-            internal State초기화(ITriggerContext context) : base(context) { }
+        private class StateReset : TriggerState {
+            internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5070}, arg2: false);
             }
 
             public override TriggerState Execute() {
-                return new State시작(context);
+                return new StateStart(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5070}, arg2: false);

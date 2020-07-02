@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._52020033_qd {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    return new State퀘스트조건체크(context);
+                    return new StateQuest조건체크(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52020033_qd {
             public override void OnExit() { }
         }
 
-        private class State퀘스트조건체크 : TriggerState {
-            internal State퀘스트조건체크(ITriggerContext context) : base(context) { }
+        private class StateQuest조건체크 : TriggerState {
+            internal StateQuest조건체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._52020033_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -163,7 +163,7 @@ namespace Maple2.Trigger._52020033_qd {
                 }
 
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001751}, arg3: new byte[] {3})) {
-                    return new State퀘스트조건체크(context);
+                    return new StateQuest조건체크(context);
                 }
 
                 return null;
@@ -283,7 +283,7 @@ namespace Maple2.Trigger._52020033_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    // return new State전투시작01(context);
+                    // return new StateBattleStart01(context);
                     return null;
                 }
 
@@ -415,7 +415,7 @@ namespace Maple2.Trigger._52020033_qd {
             internal State부유도_탐색04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.AddCinematicTalk(npcId: 11003650, illustId: "Neirin_serious", msg: @"하지만 비상 탈출에 성공하신다면 크리티아스에 진입할 수는 있을 거예요.\n위험할 수도 있겠지만…", duration: 3000);
+                context.AddCinematicTalk(npcId: 11003650, illustId: "Neirin_serious", msg: @"하지만 비상 탈출에 Success하신다면 크리티아스에 진입할 수는 있을 거예요.\n위험할 수도 있겠지만…", duration: 3000);
             }
 
             public override TriggerState Execute() {
@@ -589,7 +589,7 @@ namespace Maple2.Trigger._52020033_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State최종맵이동(context);
+                    return new StateFinal맵이동(context);
                 }
 
                 return null;
@@ -598,8 +598,8 @@ namespace Maple2.Trigger._52020033_qd {
             public override void OnExit() { }
         }
 
-        private class State최종맵이동 : TriggerState {
-            internal State최종맵이동(ITriggerContext context) : base(context) { }
+        private class StateFinal맵이동 : TriggerState {
+            internal StateFinal맵이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52020001, arg2: 1);
@@ -608,7 +608,7 @@ namespace Maple2.Trigger._52020033_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State최종맵이동(context);
+                    return new StateFinal맵이동(context);
                 }
 
                 return null;
@@ -617,8 +617,8 @@ namespace Maple2.Trigger._52020033_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._63000006_cs {
     public static class _tutorial01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "Guide");
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._63000006_cs {
                 }
 
                 if (context.UserDetected(arg1: new[] {9050, 9051, 9052, 9053})) {
-                    return new State로딩딜레이(context);
+                    return new State로딩Delay(context);
                 }
 
                 return null;
@@ -157,7 +157,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9050, 9051, 9052, 9053})) {
-                    return new State로딩딜레이(context);
+                    return new State로딩Delay(context);
                 }
 
                 return null;
@@ -168,8 +168,8 @@ namespace Maple2.Trigger._63000006_cs {
             }
         }
 
-        private class State로딩딜레이 : TriggerState {
-            internal State로딩딜레이(ITriggerContext context) : base(context) { }
+        private class State로딩Delay : TriggerState {
+            internal State로딩Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
@@ -339,7 +339,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State미니맵가이드01(context);
+                    return new State미니맵Guide01(context);
                 }
 
                 return null;
@@ -352,8 +352,8 @@ namespace Maple2.Trigger._63000006_cs {
             }
         }
 
-        private class State미니맵가이드01 : TriggerState {
-            internal State미니맵가이드01(ITriggerContext context) : base(context) { }
+        private class State미니맵Guide01 : TriggerState {
+            internal State미니맵Guide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.GuideEvent(eventId: 10010010);
@@ -361,7 +361,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "Guide", arg2: "IsTriggerEvent", arg3: "10010020")) {
-                    return new State이슈라이동01(context);
+                    return new StateIshura이동01(context);
                 }
 
                 return null;
@@ -370,8 +370,8 @@ namespace Maple2.Trigger._63000006_cs {
             public override void OnExit() { }
         }
 
-        private class State이슈라이동01 : TriggerState {
-            internal State이슈라이동01(ITriggerContext context) : base(context) { }
+        private class StateIshura이동01 : TriggerState {
+            internal StateIshura이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "10", arg2: 3);
@@ -380,7 +380,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    return new State이슈라이동02(context);
+                    return new StateIshura이동02(context);
                 }
 
                 return null;
@@ -389,8 +389,8 @@ namespace Maple2.Trigger._63000006_cs {
             public override void OnExit() { }
         }
 
-        private class State이슈라이동02 : TriggerState {
-            internal State이슈라이동02(ITriggerContext context) : base(context) { }
+        private class StateIshura이동02 : TriggerState {
+            internal StateIshura이동02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11", arg2: 1);
@@ -399,7 +399,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11")) {
-                    return new State이슈라이동03(context);
+                    return new StateIshura이동03(context);
                 }
 
                 return null;
@@ -408,8 +408,8 @@ namespace Maple2.Trigger._63000006_cs {
             public override void OnExit() { }
         }
 
-        private class State이슈라이동03 : TriggerState {
-            internal State이슈라이동03(ITriggerContext context) : base(context) { }
+        private class StateIshura이동03 : TriggerState {
+            internal StateIshura이동03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "12", arg2: 4);
@@ -418,7 +418,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "12")) {
-                    return new State이슈라이동04(context);
+                    return new StateIshura이동04(context);
                 }
 
                 return null;
@@ -427,8 +427,8 @@ namespace Maple2.Trigger._63000006_cs {
             public override void OnExit() { }
         }
 
-        private class State이슈라이동04 : TriggerState {
-            internal State이슈라이동04(ITriggerContext context) : base(context) { }
+        private class StateIshura이동04 : TriggerState {
+            internal StateIshura이동04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "13", arg2: 4);
@@ -437,7 +437,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "13")) {
-                    return new State이슈라이동05(context);
+                    return new StateIshura이동05(context);
                 }
 
                 return null;
@@ -446,8 +446,8 @@ namespace Maple2.Trigger._63000006_cs {
             public override void OnExit() { }
         }
 
-        private class State이슈라이동05 : TriggerState {
-            internal State이슈라이동05(ITriggerContext context) : base(context) { }
+        private class StateIshura이동05 : TriggerState {
+            internal StateIshura이동05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "14", arg2: 4);
@@ -456,7 +456,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "14")) {
-                    return new State다리연출준비(context);
+                    return new State다리SetupCinematic(context);
                 }
 
                 return null;
@@ -465,8 +465,8 @@ namespace Maple2.Trigger._63000006_cs {
             public override void OnExit() { }
         }
 
-        private class State다리연출준비 : TriggerState {
-            internal State다리연출준비(ITriggerContext context) : base(context) { }
+        private class State다리SetupCinematic : TriggerState {
+            internal State다리SetupCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -538,7 +538,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 8005, arg2: new[] {101})) {
-                    return new State다리연출종료(context);
+                    return new State다리StopCinematic(context);
                 }
 
                 return null;
@@ -547,8 +547,8 @@ namespace Maple2.Trigger._63000006_cs {
             public override void OnExit() { }
         }
 
-        private class State다리연출종료 : TriggerState {
-            internal State다리연출종료(ITriggerContext context) : base(context) { }
+        private class State다리StopCinematic : TriggerState {
+            internal State다리StopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$63000006_CS__TUTORIAL01__8$", arg4: 3);
@@ -701,12 +701,12 @@ namespace Maple2.Trigger._63000006_cs {
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$63000006_CS__TUTORIAL01__10$", arg4: 3);
                 context.SetEffect(arg1: new[] {5065}, arg2: false);
                 context.SetEffect(arg1: new[] {5066}, arg2: true);
-                context.SetSkip(arg1: "이슈라교체");
+                context.SetSkip(arg1: "Ishura교체");
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "32")) {
-                    return new State이슈라교체(context);
+                    return new StateIshura교체(context);
                 }
 
                 return null;
@@ -717,8 +717,8 @@ namespace Maple2.Trigger._63000006_cs {
             }
         }
 
-        private class State이슈라교체 : TriggerState {
-            internal State이슈라교체(ITriggerContext context) : base(context) { }
+        private class StateIshura교체 : TriggerState {
+            internal StateIshura교체(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 10010030, textId: 10010030);
@@ -751,7 +751,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9010, 9011, 9012, 9013, 9014, 9015})) {
-                    return new State사다리유도01(context);
+                    return new StateLadder유도01(context);
                 }
 
                 return null;
@@ -762,8 +762,8 @@ namespace Maple2.Trigger._63000006_cs {
             }
         }
 
-        private class State사다리유도01 : TriggerState {
-            internal State사다리유도01(ITriggerContext context) : base(context) { }
+        private class StateLadder유도01 : TriggerState {
+            internal StateLadder유도01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 10010020, textId: 10010020);
@@ -772,7 +772,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9006})) {
-                    return new State사다리유도02(context);
+                    return new StateLadder유도02(context);
                 }
 
                 return null;
@@ -783,8 +783,8 @@ namespace Maple2.Trigger._63000006_cs {
             }
         }
 
-        private class State사다리유도02 : TriggerState {
-            internal State사다리유도02(ITriggerContext context) : base(context) { }
+        private class StateLadder유도02 : TriggerState {
+            internal StateLadder유도02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 10010040, textId: 10010040);
@@ -835,7 +835,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9021})) {
-                    return new State퀘스트수락유도01(context);
+                    return new StateQuest수락유도01(context);
                 }
 
                 return null;
@@ -846,8 +846,8 @@ namespace Maple2.Trigger._63000006_cs {
             }
         }
 
-        private class State퀘스트수락유도01 : TriggerState {
-            internal State퀘스트수락유도01(ITriggerContext context) : base(context) { }
+        private class StateQuest수락유도01 : TriggerState {
+            internal StateQuest수락유도01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 10010060, textId: 10010060);
@@ -856,7 +856,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9030}, arg2: new[] {90000410}, arg3: new byte[] {1})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 return null;
@@ -868,8 +868,8 @@ namespace Maple2.Trigger._63000006_cs {
             }
         }
 
-        private class State포털생성01 : TriggerState {
-            internal State포털생성01(ITriggerContext context) : base(context) { }
+        private class StatePortalCreation01 : TriggerState {
+            internal StatePortalCreation01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "35", arg2: 1);
@@ -881,7 +881,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "35")) {
-                    return new State이슈라퇴장01(context);
+                    return new StateIshura퇴장01(context);
                 }
 
                 return null;
@@ -890,8 +890,8 @@ namespace Maple2.Trigger._63000006_cs {
             public override void OnExit() { }
         }
 
-        private class State이슈라퇴장01 : TriggerState {
-            internal State이슈라퇴장01(ITriggerContext context) : base(context) { }
+        private class StateIshura퇴장01 : TriggerState {
+            internal StateIshura퇴장01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$63000006_CS__TUTORIAL01__11$", arg4: 3);
@@ -900,7 +900,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 8008, arg2: new[] {102})) {
-                    return new State이슈라퇴장02(context);
+                    return new StateIshura퇴장02(context);
                 }
 
                 return null;
@@ -911,8 +911,8 @@ namespace Maple2.Trigger._63000006_cs {
             }
         }
 
-        private class State이슈라퇴장02 : TriggerState {
-            internal State이슈라퇴장02(ITriggerContext context) : base(context) { }
+        private class StateIshura퇴장02 : TriggerState {
+            internal StateIshura퇴장02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {102});

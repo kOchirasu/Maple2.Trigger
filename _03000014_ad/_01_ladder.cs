@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._03000014_ad {
     public static class _01_ladder {
-        public class State유저감지 : TriggerState {
-            internal State유저감지(ITriggerContext context) : base(context) { }
+        public class StateUserDetection : TriggerState {
+            internal StateUserDetection(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000066}, arg2: 1);
@@ -20,7 +20,7 @@ namespace Maple2.Trigger._03000014_ad {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000066}, arg2: 0)) {
-                    return new State사다리생성101(context);
+                    return new StateLadderCreation101(context);
                 }
 
                 return null;
@@ -29,8 +29,8 @@ namespace Maple2.Trigger._03000014_ad {
             public override void OnExit() { }
         }
 
-        private class State사다리생성101 : TriggerState {
-            internal State사다리생성101(ITriggerContext context) : base(context) { }
+        private class StateLadderCreation101 : TriggerState {
+            internal StateLadderCreation101(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {201, 202}, arg2: true);
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._03000014_ad {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State사다리생성102(context);
+                    return new StateLadderCreation102(context);
                 }
 
                 return null;
@@ -50,8 +50,8 @@ namespace Maple2.Trigger._03000014_ad {
             public override void OnExit() { }
         }
 
-        private class State사다리생성102 : TriggerState {
-            internal State사다리생성102(ITriggerContext context) : base(context) { }
+        private class StateLadderCreation102 : TriggerState {
+            internal StateLadderCreation102(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {211, 212}, arg2: true);
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._03000014_ad {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State사다리생성111(context);
+                    return new StateLadderCreation111(context);
                 }
 
                 return null;
@@ -71,8 +71,8 @@ namespace Maple2.Trigger._03000014_ad {
             public override void OnExit() { }
         }
 
-        private class State사다리생성111 : TriggerState {
-            internal State사다리생성111(ITriggerContext context) : base(context) { }
+        private class StateLadderCreation111 : TriggerState {
+            internal StateLadderCreation111(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {221, 222}, arg2: true);
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._03000014_ad {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State사다리생성112(context);
+                    return new StateLadderCreation112(context);
                 }
 
                 return null;
@@ -92,8 +92,8 @@ namespace Maple2.Trigger._03000014_ad {
             public override void OnExit() { }
         }
 
-        private class State사다리생성112 : TriggerState {
-            internal State사다리생성112(ITriggerContext context) : base(context) { }
+        private class StateLadderCreation112 : TriggerState {
+            internal StateLadderCreation112(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {231, 232}, arg2: true);
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._03000014_ad {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State사다리생성121(context);
+                    return new StateLadderCreation121(context);
                 }
 
                 return null;
@@ -113,8 +113,8 @@ namespace Maple2.Trigger._03000014_ad {
             public override void OnExit() { }
         }
 
-        private class State사다리생성121 : TriggerState {
-            internal State사다리생성121(ITriggerContext context) : base(context) { }
+        private class StateLadderCreation121 : TriggerState {
+            internal StateLadderCreation121(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {241, 242}, arg2: true);
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._03000014_ad {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State유저감지(context);
+                    return new StateUserDetection(context);
                 }
 
                 return null;
@@ -134,8 +134,8 @@ namespace Maple2.Trigger._03000014_ad {
             public override void OnExit() { }
         }
 
-        private class State사다리생성122 : TriggerState {
-            internal State사다리생성122(ITriggerContext context) : base(context) { }
+        private class StateLadderCreation122 : TriggerState {
+            internal StateLadderCreation122(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 122, arg2: true, arg3: true);
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._03000014_ad {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State사다리생성131(context);
+                    return new StateLadderCreation131(context);
                 }
 
                 return null;
@@ -153,8 +153,8 @@ namespace Maple2.Trigger._03000014_ad {
             public override void OnExit() { }
         }
 
-        private class State사다리생성131 : TriggerState {
-            internal State사다리생성131(ITriggerContext context) : base(context) { }
+        private class StateLadderCreation131 : TriggerState {
+            internal StateLadderCreation131(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 131, arg2: true, arg3: true);
@@ -163,7 +163,7 @@ namespace Maple2.Trigger._03000014_ad {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State사다리생성132(context);
+                    return new StateLadderCreation132(context);
                 }
 
                 return null;
@@ -172,8 +172,8 @@ namespace Maple2.Trigger._03000014_ad {
             public override void OnExit() { }
         }
 
-        private class State사다리생성132 : TriggerState {
-            internal State사다리생성132(ITriggerContext context) : base(context) { }
+        private class StateLadderCreation132 : TriggerState {
+            internal StateLadderCreation132(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 132, arg2: true, arg3: true);
@@ -182,7 +182,7 @@ namespace Maple2.Trigger._03000014_ad {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State사다리생성141(context);
+                    return new StateLadderCreation141(context);
                 }
 
                 return null;
@@ -191,8 +191,8 @@ namespace Maple2.Trigger._03000014_ad {
             public override void OnExit() { }
         }
 
-        private class State사다리생성141 : TriggerState {
-            internal State사다리생성141(ITriggerContext context) : base(context) { }
+        private class StateLadderCreation141 : TriggerState {
+            internal StateLadderCreation141(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 141, arg2: true, arg3: true);
@@ -201,7 +201,7 @@ namespace Maple2.Trigger._03000014_ad {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State사다리생성142(context);
+                    return new StateLadderCreation142(context);
                 }
 
                 return null;
@@ -210,8 +210,8 @@ namespace Maple2.Trigger._03000014_ad {
             public override void OnExit() { }
         }
 
-        private class State사다리생성142 : TriggerState {
-            internal State사다리생성142(ITriggerContext context) : base(context) { }
+        private class StateLadderCreation142 : TriggerState {
+            internal StateLadderCreation142(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 142, arg2: true, arg3: true);
@@ -220,7 +220,7 @@ namespace Maple2.Trigger._03000014_ad {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State유저감지(context);
+                    return new StateUserDetection(context);
                 }
 
                 return null;

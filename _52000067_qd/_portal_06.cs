@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._52000067_qd {
     public static class _portal_06 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 702) == 1) {
-                    return new Stateportal(context);
+                    return new StatePortal(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52000067_qd {
             public override void OnExit() { }
         }
 
-        private class Stateportal : TriggerState {
-            internal Stateportal(ITriggerContext context) : base(context) { }
+        private class StatePortal : TriggerState {
+            internal StatePortal(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {806}, arg2: true);
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52000067_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {806})) {
-                    return new Stateportal_off(context);
+                    return new StatePortal_off(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._52000067_qd {
             public override void OnExit() { }
         }
 
-        private class Stateportal_off : TriggerState {
-            internal Stateportal_off(ITriggerContext context) : base(context) { }
+        private class StatePortal_off : TriggerState {
+            internal StatePortal_off(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 114, arg3: "$52000067_QD__PORTAL_06__0$", arg4: 3, arg5: 0);

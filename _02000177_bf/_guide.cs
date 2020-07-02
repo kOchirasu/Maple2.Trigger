@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000177_bf {
     public static class _guide {
-        public class Stateguide : TriggerState {
-            internal Stateguide(ITriggerContext context) : base(context) { }
+        public class StateGuide : TriggerState {
+            internal StateGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

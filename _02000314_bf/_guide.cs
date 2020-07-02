@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02000314_bf {
     public static class _guide {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {112})) {
-                    return new State타이어가이드(context);
+                    return new State타이어Guide(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000314_bf {
             public override void OnExit() { }
         }
 
-        private class State타이어가이드 : TriggerState {
-            internal State타이어가이드(ITriggerContext context) : base(context) { }
+        private class State타이어Guide : TriggerState {
+            internal State타이어Guide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003141, textId: 20003141, duration: 5000);
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02000314_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {113})) {
-                    return new State타이어가이드2(context);
+                    return new State타이어Guide2(context);
                 }
 
                 return null;
@@ -35,8 +35,8 @@ namespace Maple2.Trigger._02000314_bf {
             public override void OnExit() { }
         }
 
-        private class State타이어가이드2 : TriggerState {
-            internal State타이어가이드2(ITriggerContext context) : base(context) { }
+        private class State타이어Guide2 : TriggerState {
+            internal State타이어Guide2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003141, textId: 20003141, duration: 5000);
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02000314_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -54,8 +54,8 @@ namespace Maple2.Trigger._02000314_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

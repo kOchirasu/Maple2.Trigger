@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52100301_qd {
     public static class _300004_phase_3 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {200011, 200012, 200013, 200014, 200015, 200016, 200017, 200018}, arg2: false);
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State포탑_생성(context);
+                    return new State포탑_Creation(context);
                 }
 
                 return null;
@@ -71,8 +71,8 @@ namespace Maple2.Trigger._52100301_qd {
             public override void OnExit() { }
         }
 
-        private class State포탑_생성 : TriggerState {
-            internal State포탑_생성(ITriggerContext context) : base(context) { }
+        private class State포탑_Creation : TriggerState {
+            internal State포탑_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {512, 511}, arg2: true);
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State가이드(context);
+                    return new StateGuide(context);
                 }
 
                 return null;
@@ -91,8 +91,8 @@ namespace Maple2.Trigger._52100301_qd {
             public override void OnExit() { }
         }
 
-        private class State가이드 : TriggerState {
-            internal State가이드(ITriggerContext context) : base(context) { }
+        private class StateGuide : TriggerState {
+            internal StateGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$52100301_QD__300004_PHASE_3__2$", arg3: 4000);

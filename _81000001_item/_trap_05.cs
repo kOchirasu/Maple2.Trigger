@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._81000001_item {
     public static class _trap_05 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000130}, arg2: 1);
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._81000001_item {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "130")) {
                     context.SetMesh(arg1: new[] {801, 802, 803, 804, 805, 806}, arg2: true, arg3: 0, arg4: 0);
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;

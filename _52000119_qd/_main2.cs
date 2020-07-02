@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._52000119_qd {
     public static class _main2 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {60100060}, arg3: new byte[] {1})) {
-                    return new Statefadeout(context);
+                    return new StateFadeout(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statefadeout : TriggerState {
-            internal Statefadeout(ITriggerContext context) : base(context) { }
+        private class StateFadeout : TriggerState {
+            internal StateFadeout(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new Stateready(context);
+                    return new StateReady(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Stateready : TriggerState {
-            internal Stateready(ITriggerContext context) : base(context) { }
+        private class StateReady : TriggerState {
+            internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4006}, arg2: false);
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new Statefadein(context);
+                    return new StateFadein(context);
                 }
 
                 return null;
@@ -59,8 +59,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statefadein : TriggerState {
-            internal Statefadein(ITriggerContext context) : base(context) { }
+        private class StateFadein : TriggerState {
+            internal StateFadein(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4006, 4007}, arg2: false);
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new Statescene_01(context);
+                    return new StateScene_01(context);
                 }
 
                 return null;
@@ -80,8 +80,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_01 : TriggerState {
-            internal Statescene_01(ITriggerContext context) : base(context) { }
+        private class StateScene_01 : TriggerState {
+            internal StateScene_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4007, 4008}, arg2: false);
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new Statescene_02(context);
+                    return new StateScene_02(context);
                 }
 
                 return null;
@@ -101,8 +101,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_02 : TriggerState {
-            internal Statescene_02(ITriggerContext context) : base(context) { }
+        private class StateScene_02 : TriggerState {
+            internal StateScene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4008, 4013, 4014, 4015}, arg2: false);
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new Statescene_03(context);
+                    return new StateScene_03(context);
                 }
 
                 return null;
@@ -122,8 +122,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_03 : TriggerState {
-            internal Statescene_03(ITriggerContext context) : base(context) { }
+        private class StateScene_03 : TriggerState {
+            internal StateScene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 104, arg2: "Talk_A");
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new Statescene_04(context);
+                    return new StateScene_04(context);
                 }
 
                 return null;
@@ -143,8 +143,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_04 : TriggerState {
-            internal Statescene_04(ITriggerContext context) : base(context) { }
+        private class StateScene_04 : TriggerState {
+            internal StateScene_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4009}, arg2: false);
@@ -154,7 +154,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new Statescene_05(context);
+                    return new StateScene_05(context);
                 }
 
                 return null;
@@ -163,8 +163,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_05 : TriggerState {
-            internal Statescene_05(ITriggerContext context) : base(context) { }
+        private class StateScene_05 : TriggerState {
+            internal StateScene_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 104, arg2: "Talk_A");
@@ -173,7 +173,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new Statescene_06(context);
+                    return new StateScene_06(context);
                 }
 
                 return null;
@@ -182,8 +182,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_06 : TriggerState {
-            internal Statescene_06(ITriggerContext context) : base(context) { }
+        private class StateScene_06 : TriggerState {
+            internal StateScene_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
@@ -193,7 +193,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new Statescene_07(context);
+                    return new StateScene_07(context);
                 }
 
                 return null;
@@ -202,8 +202,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_07 : TriggerState {
-            internal Statescene_07(ITriggerContext context) : base(context) { }
+        private class StateScene_07 : TriggerState {
+            internal StateScene_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSound(arg1: 7001, arg2: true);
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new Statescene_08(context);
+                    return new StateScene_08(context);
                 }
 
                 return null;
@@ -222,8 +222,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_08 : TriggerState {
-            internal Statescene_08(ITriggerContext context) : base(context) { }
+        private class StateScene_08 : TriggerState {
+            internal StateScene_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4016}, arg2: false);
@@ -234,7 +234,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new Statescene_09(context);
+                    return new StateScene_09(context);
                 }
 
                 return null;
@@ -243,8 +243,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_09 : TriggerState {
-            internal Statescene_09(ITriggerContext context) : base(context) { }
+        private class StateScene_09 : TriggerState {
+            internal StateScene_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4016, 4017, 4018}, arg2: false);
@@ -254,7 +254,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new Statescene_10(context);
+                    return new StateScene_10(context);
                 }
 
                 return null;
@@ -263,8 +263,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_10 : TriggerState {
-            internal Statescene_10(ITriggerContext context) : base(context) { }
+        private class StateScene_10 : TriggerState {
+            internal StateScene_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4018}, arg2: false);
@@ -274,7 +274,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new Statescene_11(context);
+                    return new StateScene_11(context);
                 }
 
                 return null;
@@ -283,8 +283,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_11 : TriggerState {
-            internal Statescene_11(ITriggerContext context) : base(context) { }
+        private class StateScene_11 : TriggerState {
+            internal StateScene_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4019}, arg2: false);
@@ -295,7 +295,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new Statefadeout_01(context);
+                    return new StateFadeout_01(context);
                 }
 
                 return null;
@@ -304,8 +304,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statefadeout_01 : TriggerState {
-            internal Statefadeout_01(ITriggerContext context) : base(context) { }
+        private class StateFadeout_01 : TriggerState {
+            internal StateFadeout_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -321,7 +321,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new Statefadein_01(context);
+                    return new StateFadein_01(context);
                 }
 
                 return null;
@@ -330,8 +330,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statefadein_01 : TriggerState {
-            internal Statefadein_01(ITriggerContext context) : base(context) { }
+        private class StateFadein_01 : TriggerState {
+            internal StateFadein_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.5f);
@@ -341,7 +341,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new Statemsg(context);
+                    return new StateMsg(context);
                 }
 
                 return null;
@@ -350,8 +350,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statemsg : TriggerState {
-            internal Statemsg(ITriggerContext context) : base(context) { }
+        private class StateMsg : TriggerState {
+            internal StateMsg(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -361,7 +361,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {998})) {
-                    return new Statefadeout_02(context);
+                    return new StateFadeout_02(context);
                 }
 
                 return null;
@@ -370,8 +370,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Statefadeout_02 : TriggerState {
-            internal Statefadeout_02(ITriggerContext context) : base(context) { }
+        private class StateFadeout_02 : TriggerState {
+            internal StateFadeout_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSound(arg1: 7002, arg2: false);
@@ -383,7 +383,7 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new Stateend(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -392,8 +392,8 @@ namespace Maple2.Trigger._52000119_qd {
             public override void OnExit() { }
         }
 
-        private class Stateend : TriggerState {
-            internal Stateend(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.5f);

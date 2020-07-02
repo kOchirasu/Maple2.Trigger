@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020112_bf {
     public static class _jumproom {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: false);
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {921}, arg2: 0) && context.UserDetected(arg1: new[] {922}, arg2: 0) && context.UserDetected(arg1: new[] {923}, arg2: 0) && context.UserDetected(arg1: new[] {924}, arg2: 0)) {
-                    return new State성공(context);
+                    return new StateSuccess(context);
                 }
 
                 return null;
@@ -50,8 +50,8 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnExit() { }
         }
 
-        private class State성공 : TriggerState {
-            internal State성공(ITriggerContext context) : base(context) { }
+        private class StateSuccess : TriggerState {
+            internal StateSuccess(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990021, key: "Reconnect", value: 2);

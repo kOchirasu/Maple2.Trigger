@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._64000001_gd {
     public static class _ringout {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._64000001_gd {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
                     context.MoveUser(arg1: 64000001, arg2: 2, arg3: 105);
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

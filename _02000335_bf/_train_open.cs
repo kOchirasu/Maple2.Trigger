@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000335_bf {
     public static class _train_open {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6920}, arg2: false);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 709) == 1) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000335_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State벽제거(context);
+                    return new State벽Remove(context);
                 }
 
                 return null;
@@ -83,8 +83,8 @@ namespace Maple2.Trigger._02000335_bf {
             public override void OnExit() { }
         }
 
-        private class State벽제거 : TriggerState {
-            internal State벽제거(ITriggerContext context) : base(context) { }
+        private class State벽Remove : TriggerState {
+            internal State벽Remove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6920}, arg2: true);
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 701) == 1) {
-                    return new State몬스터등장(context);
+                    return new StateMonsterAppear(context);
                 }
 
                 return null;
@@ -104,8 +104,8 @@ namespace Maple2.Trigger._02000335_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터등장 : TriggerState {
-            internal State몬스터등장(ITriggerContext context) : base(context) { }
+        private class StateMonsterAppear : TriggerState {
+            internal StateMonsterAppear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {113}, arg2: true);

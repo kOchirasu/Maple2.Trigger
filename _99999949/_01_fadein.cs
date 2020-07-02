@@ -27,7 +27,7 @@ namespace Maple2.Trigger._99999949 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    return new Statefadein(context);
+                    return new StateFadein(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._99999949 {
             public override void OnExit() { }
         }
 
-        private class Statefadein : TriggerState {
-            internal Statefadein(ITriggerContext context) : base(context) { }
+        private class StateFadein : TriggerState {
+            internal StateFadein(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DebugString(message: "fadein");
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._99999949 {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    return new Statefadeout(context);
+                    return new StateFadeout(context);
                 }
 
                 return null;
@@ -57,8 +57,8 @@ namespace Maple2.Trigger._99999949 {
             public override void OnExit() { }
         }
 
-        private class Statefadeout : TriggerState {
-            internal Statefadeout(ITriggerContext context) : base(context) { }
+        private class StateFadeout : TriggerState {
+            internal StateFadeout(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DebugString(message: "fadeout");

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000109_in {
     public static class _main {
-        public class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {4001, 4002, 4003, 4004}, arg2: true);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000109_in {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    return new State퀘스트조건체크(context);
+                    return new StateQuest조건체크(context);
                 }
 
                 return null;
@@ -20,14 +20,14 @@ namespace Maple2.Trigger._02000109_in {
             public override void OnExit() { }
         }
 
-        private class State퀘스트조건체크 : TriggerState {
-            internal State퀘스트조건체크(ITriggerContext context) : base(context) { }
+        private class StateQuest조건체크 : TriggerState {
+            internal StateQuest조건체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001608}, arg3: new byte[] {3})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001608}, arg3: new byte[] {2})) {
@@ -51,15 +51,15 @@ namespace Maple2.Trigger._02000109_in {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {3})) {
-                    return new Statenpc스폰_대기(context);
+                    return new StateNpc스폰_대기(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {2})) {
-                    return new Statenpc스폰_대기(context);
+                    return new StateNpc스폰_대기(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {1})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -68,14 +68,14 @@ namespace Maple2.Trigger._02000109_in {
             public override void OnExit() { }
         }
 
-        private class State퀘스트진행체크 : TriggerState {
-            internal State퀘스트진행체크(ITriggerContext context) : base(context) { }
+        private class StateQuest진행체크 : TriggerState {
+            internal StateQuest진행체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001608}, arg3: new byte[] {3})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001608}, arg3: new byte[] {2})) {
@@ -102,15 +102,15 @@ namespace Maple2.Trigger._02000109_in {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {3})) {
-                    return new Statenpc스폰(context);
+                    return new StateNpc스폰(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {2})) {
-                    return new Statenpc스폰(context);
+                    return new StateNpc스폰(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {1})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -119,8 +119,8 @@ namespace Maple2.Trigger._02000109_in {
             public override void OnExit() { }
         }
 
-        private class Statenpc스폰_대기 : TriggerState {
-            internal Statenpc스폰_대기(ITriggerContext context) : base(context) { }
+        private class StateNpc스폰_대기 : TriggerState {
+            internal StateNpc스폰_대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._02000109_in {
                 }
 
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {1})) {
-                    return new State퀘스트진행체크(context);
+                    return new StateQuest진행체크(context);
                 }
 
                 return null;
@@ -141,8 +141,8 @@ namespace Maple2.Trigger._02000109_in {
             public override void OnExit() { }
         }
 
-        private class Statenpc스폰 : TriggerState {
-            internal Statenpc스폰(ITriggerContext context) : base(context) { }
+        private class StateNpc스폰 : TriggerState {
+            internal StateNpc스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -152,7 +152,7 @@ namespace Maple2.Trigger._02000109_in {
                 }
 
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {1})) {
-                    return new State퀘스트진행체크(context);
+                    return new StateQuest진행체크(context);
                 }
 
                 return null;
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._02000109_in {
                 }
 
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
-                    return new State퀘스트진행체크(context);
+                    return new StateQuest진행체크(context);
                 }
 
                 return null;
@@ -194,7 +194,7 @@ namespace Maple2.Trigger._02000109_in {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
@@ -217,7 +217,7 @@ namespace Maple2.Trigger._02000109_in {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
@@ -248,7 +248,7 @@ namespace Maple2.Trigger._02000109_in {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
@@ -283,7 +283,7 @@ namespace Maple2.Trigger._02000109_in {
                 }
 
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
-                    return new State퀘스트진행체크(context);
+                    return new StateQuest진행체크(context);
                 }
 
                 return null;
@@ -292,8 +292,8 @@ namespace Maple2.Trigger._02000109_in {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

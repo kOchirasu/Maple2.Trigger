@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000157_qd {
     public static class _52000157 {
-        public class Statewait_01 : TriggerState {
-            internal Statewait_01(ITriggerContext context) : base(context) { }
+        public class StateWait_01 : TriggerState {
+            internal StateWait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000317_bf {
     public static class _vehicle {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10001047}, arg2: 1);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02000317_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001047}, arg2: 0)) {
-                    return new Statehide(context);
+                    return new StateHide(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000317_bf {
             }
         }
 
-        private class Statehide : TriggerState {
-            internal Statehide(ITriggerContext context) : base(context) { }
+        private class StateHide : TriggerState {
+            internal StateHide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

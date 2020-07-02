@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52020030_qd {
     public static class _main30000334 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001, 5002, 5003}, arg2: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000334}, arg3: new byte[] {1})) {
-                    return new State연출시작(context);
+                    return new StateStartCinematic(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000334}, arg3: new byte[] {2})) {
@@ -22,8 +22,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State연출시작 : TriggerState {
-            internal State연출시작(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic : TriggerState {
+            internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");

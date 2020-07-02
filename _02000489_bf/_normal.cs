@@ -1,19 +1,19 @@
 namespace Maple2.Trigger._02000489_bf {
     public static class _normal {
-        public class StateroomCheck2 : TriggerState {
-            internal StateroomCheck2(ITriggerContext context) : base(context) { }
+        public class StateRoomCheck2 : TriggerState {
+            internal StateRoomCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                return new Stateidle(context);
+                return new StateIdle(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        private class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105}, arg2: false);
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._02000489_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103, 104, 105})) {
-                    return new Statestep_02(context);
+                    return new StateStep_02(context);
                 }
 
                 return null;
@@ -139,8 +139,8 @@ namespace Maple2.Trigger._02000489_bf {
             public override void OnExit() { }
         }
 
-        private class Statestep_02 : TriggerState {
-            internal Statestep_02(ITriggerContext context) : base(context) { }
+        private class StateStep_02 : TriggerState {
+            internal StateStep_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 1917}, arg2: true);
@@ -202,7 +202,7 @@ namespace Maple2.Trigger._02000489_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {702})) {
-                    return new Statestep_03(context);
+                    return new StateStep_03(context);
                 }
 
                 return null;
@@ -211,8 +211,8 @@ namespace Maple2.Trigger._02000489_bf {
             public override void OnExit() { }
         }
 
-        private class Statestep_03 : TriggerState {
-            internal Statestep_03(ITriggerContext context) : base(context) { }
+        private class StateStep_03 : TriggerState {
+            internal StateStep_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {201, 202, 203}, arg2: false);
@@ -220,7 +220,7 @@ namespace Maple2.Trigger._02000489_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {201, 202, 203})) {
-                    return new Statestep_04(context);
+                    return new StateStep_04(context);
                 }
 
                 return null;
@@ -229,8 +229,8 @@ namespace Maple2.Trigger._02000489_bf {
             public override void OnExit() { }
         }
 
-        private class Statestep_04 : TriggerState {
-            internal Statestep_04(ITriggerContext context) : base(context) { }
+        private class StateStep_04 : TriggerState {
+            internal StateStep_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 1401, arg2: true, arg3: true, arg4: 2);
@@ -273,7 +273,7 @@ namespace Maple2.Trigger._02000489_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {703})) {
-                    return new Statestep_05(context);
+                    return new StateStep_05(context);
                 }
 
                 return null;
@@ -282,8 +282,8 @@ namespace Maple2.Trigger._02000489_bf {
             public override void OnExit() { }
         }
 
-        private class Statestep_05 : TriggerState {
-            internal Statestep_05(ITriggerContext context) : base(context) { }
+        private class StateStep_05 : TriggerState {
+            internal StateStep_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {301, 302, 303}, arg2: false);
@@ -291,7 +291,7 @@ namespace Maple2.Trigger._02000489_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {301, 302, 303})) {
-                    return new Statestep_06(context);
+                    return new StateStep_06(context);
                 }
 
                 return null;
@@ -300,14 +300,14 @@ namespace Maple2.Trigger._02000489_bf {
             public override void OnExit() { }
         }
 
-        private class Statestep_06 : TriggerState {
-            internal Statestep_06(ITriggerContext context) : base(context) { }
+        private class StateStep_06 : TriggerState {
+            internal StateStep_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "LadderGoBossRoom") == 1) {
-                    return new Statestep_07(context);
+                    return new StateStep_07(context);
                 }
 
                 return null;
@@ -316,8 +316,8 @@ namespace Maple2.Trigger._02000489_bf {
             public override void OnExit() { }
         }
 
-        private class Statestep_07 : TriggerState {
-            internal Statestep_07(ITriggerContext context) : base(context) { }
+        private class StateStep_07 : TriggerState {
+            internal StateStep_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1800, 1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809}, arg2: true);

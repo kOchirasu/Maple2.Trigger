@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._61000006_me {
     public static class _wait {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "60", arg2: 60, arg3: true, arg4: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._61000006_me {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {402})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._61000006_me {
             public override void OnExit() { }
         }
 
-        private class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        private class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "ME_001_Wait_00");
@@ -29,15 +29,15 @@ namespace Maple2.Trigger._61000006_me {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 402) == 20) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State대기2(context);
+                    return new StateWait2(context);
                 }
 
                 if (context.TimeExpired(arg1: "60")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -48,8 +48,8 @@ namespace Maple2.Trigger._61000006_me {
             }
         }
 
-        private class State대기2 : TriggerState {
-            internal State대기2(ITriggerContext context) : base(context) { }
+        private class StateWait2 : TriggerState {
+            internal StateWait2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "ME_001_Wait_00");
@@ -58,15 +58,15 @@ namespace Maple2.Trigger._61000006_me {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 402) == 20) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.TimeExpired(arg1: "60")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._61000006_me {
             }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

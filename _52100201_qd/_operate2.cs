@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._52100201_qd {
     public static class _operate2 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "summon") == 1) {
-                    return new State몬스터소환(context);
+                    return new StateMonster소환(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52100201_qd {
             public override void OnExit() { }
         }
 
-        private class State몬스터소환 : TriggerState {
-            internal State몬스터소환(ITriggerContext context) : base(context) { }
+        private class StateMonster소환 : TriggerState {
+            internal StateMonster소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {206, 207}, arg2: false);
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._52100201_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "summon") == 2) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

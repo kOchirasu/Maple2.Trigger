@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000067_qd {
     public static class _sub_event_02 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7200}, arg2: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52000067_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 704) == 1) {
-                    return new Stateidle_02(context);
+                    return new StateIdle_02(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52000067_qd {
             public override void OnExit() { }
         }
 
-        private class Stateidle_02 : TriggerState {
-            internal Stateidle_02(ITriggerContext context) : base(context) { }
+        private class StateIdle_02 : TriggerState {
+            internal StateIdle_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {756, 755}, arg2: true);
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._52000067_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new Stateready(context);
+                    return new StateReady(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._52000067_qd {
             public override void OnExit() { }
         }
 
-        private class Stateready : TriggerState {
-            internal Stateready(ITriggerContext context) : base(context) { }
+        private class StateReady : TriggerState {
+            internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

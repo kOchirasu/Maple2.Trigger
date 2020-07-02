@@ -19,7 +19,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 2005, arg2: new[] {999})) {
-                    return new State연출준비(context);
+                    return new StateSetupCinematic(context);
                 }
 
                 return null;
@@ -28,8 +28,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State연출준비 : TriggerState {
-            internal State연출준비(ITriggerContext context) : base(context) { }
+        private class StateSetupCinematic : TriggerState {
+            internal StateSetupCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State연출종료(context);
+                    return new StateStopCinematic(context);
                 }
 
                 return null;
@@ -91,8 +91,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State연출종료 : TriggerState {
-            internal State연출종료(ITriggerContext context) : base(context) { }
+        private class StateStopCinematic : TriggerState {
+            internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);

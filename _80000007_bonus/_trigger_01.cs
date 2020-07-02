@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._80000007_bonus {
     public static class _trigger_01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetState(arg1: 1, arg2: "미로패턴01,미로패턴02", arg3: false);
@@ -12,7 +12,7 @@ namespace Maple2.Trigger._80000007_bonus {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {301})) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._80000007_bonus {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {99}, arg2: true);
@@ -32,7 +32,7 @@ namespace Maple2.Trigger._80000007_bonus {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 304, arg2: new[] {99})) {
-                    return new StateNPC소멸(context);
+                    return new StateNPCDestroy(context);
                 }
 
                 return null;
@@ -41,8 +41,8 @@ namespace Maple2.Trigger._80000007_bonus {
             public override void OnExit() { }
         }
 
-        private class StateNPC소멸 : TriggerState {
-            internal StateNPC소멸(ITriggerContext context) : base(context) { }
+        private class StateNPCDestroy : TriggerState {
+            internal StateNPCDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {99});
@@ -74,8 +74,8 @@ namespace Maple2.Trigger._80000007_bonus {
             public override void OnExit() { }
         }
 
-        private class State미로패턴01 : TriggerState {
-            internal State미로패턴01(ITriggerContext context) : base(context) { }
+        private class State미로Pattern01 : TriggerState {
+            internal State미로Pattern01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {101, 102, 104, 105, 106, 110, 111, 112, 113, 115, 116, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050, 2051, 2052, 2053, 2054, 2055, 2056, 2057, 2058, 2059, 2060, 2061, 2062, 2063, 2064, 2065, 2066, 2067, 2068, 2069, 2070, 2071, 2072, 2073, 2074, 2075, 2076, 2077, 2078, 2079, 2080, 2081, 2082, 2083, 2084, 2085, 2086, 2087, 2088, 2089, 2090, 2091, 2092, 2093, 2094}, arg2: false);
@@ -89,8 +89,8 @@ namespace Maple2.Trigger._80000007_bonus {
             public override void OnExit() { }
         }
 
-        private class State미로패턴02 : TriggerState {
-            internal State미로패턴02(ITriggerContext context) : base(context) { }
+        private class State미로Pattern02 : TriggerState {
+            internal State미로Pattern02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 115, 117}, arg2: false);

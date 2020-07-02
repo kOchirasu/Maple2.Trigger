@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._61000001_me_001 {
     public static class _massive00 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State시작대기(context);
+                    return new StateBeginWait(context);
                 }
 
                 return null;
@@ -104,8 +104,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
         }
 
-        private class State시작대기 : TriggerState {
-            internal State시작대기(ITriggerContext context) : base(context) { }
+        private class StateBeginWait : TriggerState {
+            internal StateBeginWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetState(arg1: 1, arg2: "퍼즐패턴10,퍼즐패턴11,퍼즐패턴12,퍼즐패턴13,퍼즐패턴14,퍼즐패턴15,퍼즐패턴16,퍼즐패턴17,퍼즐패턴18,퍼즐패턴19,퍼즐패턴20,퍼즐패턴21,퍼즐패턴22,퍼즐패턴23,퍼즐패턴24,퍼즐패턴25,퍼즐패턴26,퍼즐패턴27,퍼즐패턴28,퍼즐패턴29,퍼즐패턴30,퍼즐패턴31,퍼즐패턴32,퍼즐패턴33,퍼즐패턴34,퍼즐패턴35,퍼즐패턴36,퍼즐패턴37,퍼즐패턴38,퍼즐패턴39,퍼즐패턴40,퍼즐패턴41,퍼즐패턴42,퍼즐패턴43,퍼즐패턴44,퍼즐패턴45,퍼즐패턴46,퍼즐패턴47,퍼즐패턴48,퍼즐패턴49,퍼즐패턴50,퍼즐패턴51,퍼즐패턴52,퍼즐패턴53,퍼즐패턴54,퍼즐패턴55,퍼즐패턴56,퍼즐패턴57,퍼즐패턴58,퍼즐패턴59,퍼즐패턴60", arg3: true);
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State멘트0(context);
+                    return new StateMassiveEvent0(context);
                 }
 
                 return null;
@@ -136,8 +136,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
         }
 
-        private class State멘트0 : TriggerState {
-            internal State멘트0(ITriggerContext context) : base(context) { }
+        private class StateMassiveEvent0 : TriggerState {
+            internal StateMassiveEvent0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 5);
@@ -151,7 +151,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State멘트1(context);
+                    return new StateMassiveEvent1(context);
                 }
 
                 return null;
@@ -162,8 +162,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
         }
 
-        private class State멘트1 : TriggerState {
-            internal State멘트1(ITriggerContext context) : base(context) { }
+        private class StateMassiveEvent1 : TriggerState {
+            internal StateMassiveEvent1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 11);
@@ -173,7 +173,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State멘트2(context);
+                    return new StateMassiveEvent2(context);
                 }
 
                 return null;
@@ -184,8 +184,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
         }
 
-        private class State멘트2 : TriggerState {
-            internal State멘트2(ITriggerContext context) : base(context) { }
+        private class StateMassiveEvent2 : TriggerState {
+            internal StateMassiveEvent2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 10);
@@ -195,7 +195,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State멘트3(context);
+                    return new StateMassiveEvent3(context);
                 }
 
                 return null;
@@ -206,8 +206,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             }
         }
 
-        private class State멘트3 : TriggerState {
-            internal State멘트3(ITriggerContext context) : base(context) { }
+        private class StateMassiveEvent3 : TriggerState {
+            internal StateMassiveEvent3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 6);
@@ -627,7 +627,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {301})) {
                     context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true);
-                    return new State우승자카메라연출(context);
+                    return new State우승자Camera연출(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {301})) {
@@ -640,8 +640,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State우승자카메라연출 : TriggerState {
-            internal State우승자카메라연출(ITriggerContext context) : base(context) { }
+        private class State우승자Camera연출 : TriggerState {
+            internal State우승자Camera연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MiniGameCameraDirection(boxId: 301, cameraId: 901);
@@ -776,8 +776,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴10 : TriggerState {
-            internal State퍼즐패턴10(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern10 : TriggerState {
+            internal State퍼즐Pattern10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -791,8 +791,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴11 : TriggerState {
-            internal State퍼즐패턴11(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern11 : TriggerState {
+            internal State퍼즐Pattern11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -806,8 +806,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴12 : TriggerState {
-            internal State퍼즐패턴12(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern12 : TriggerState {
+            internal State퍼즐Pattern12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -821,8 +821,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴13 : TriggerState {
-            internal State퍼즐패턴13(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern13 : TriggerState {
+            internal State퍼즐Pattern13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -836,8 +836,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴14 : TriggerState {
-            internal State퍼즐패턴14(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern14 : TriggerState {
+            internal State퍼즐Pattern14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -851,8 +851,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴15 : TriggerState {
-            internal State퍼즐패턴15(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern15 : TriggerState {
+            internal State퍼즐Pattern15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -868,8 +868,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴16 : TriggerState {
-            internal State퍼즐패턴16(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern16 : TriggerState {
+            internal State퍼즐Pattern16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -883,8 +883,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴17 : TriggerState {
-            internal State퍼즐패턴17(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern17 : TriggerState {
+            internal State퍼즐Pattern17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -898,8 +898,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴18 : TriggerState {
-            internal State퍼즐패턴18(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern18 : TriggerState {
+            internal State퍼즐Pattern18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -914,8 +914,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴19 : TriggerState {
-            internal State퍼즐패턴19(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern19 : TriggerState {
+            internal State퍼즐Pattern19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -930,8 +930,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴20 : TriggerState {
-            internal State퍼즐패턴20(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern20 : TriggerState {
+            internal State퍼즐Pattern20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -946,8 +946,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴21 : TriggerState {
-            internal State퍼즐패턴21(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern21 : TriggerState {
+            internal State퍼즐Pattern21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -962,8 +962,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴22 : TriggerState {
-            internal State퍼즐패턴22(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern22 : TriggerState {
+            internal State퍼즐Pattern22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -978,8 +978,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴23 : TriggerState {
-            internal State퍼즐패턴23(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern23 : TriggerState {
+            internal State퍼즐Pattern23(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -994,8 +994,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴24 : TriggerState {
-            internal State퍼즐패턴24(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern24 : TriggerState {
+            internal State퍼즐Pattern24(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1012,8 +1012,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴25 : TriggerState {
-            internal State퍼즐패턴25(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern25 : TriggerState {
+            internal State퍼즐Pattern25(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1037,8 +1037,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴26 : TriggerState {
-            internal State퍼즐패턴26(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern26 : TriggerState {
+            internal State퍼즐Pattern26(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1061,8 +1061,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴27 : TriggerState {
-            internal State퍼즐패턴27(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern27 : TriggerState {
+            internal State퍼즐Pattern27(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1085,8 +1085,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴28 : TriggerState {
-            internal State퍼즐패턴28(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern28 : TriggerState {
+            internal State퍼즐Pattern28(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1137,8 +1137,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴29 : TriggerState {
-            internal State퍼즐패턴29(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern29 : TriggerState {
+            internal State퍼즐Pattern29(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1169,8 +1169,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴30 : TriggerState {
-            internal State퍼즐패턴30(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern30 : TriggerState {
+            internal State퍼즐Pattern30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1207,8 +1207,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴31 : TriggerState {
-            internal State퍼즐패턴31(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern31 : TriggerState {
+            internal State퍼즐Pattern31(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1245,8 +1245,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴32 : TriggerState {
-            internal State퍼즐패턴32(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern32 : TriggerState {
+            internal State퍼즐Pattern32(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1277,8 +1277,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴33 : TriggerState {
-            internal State퍼즐패턴33(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern33 : TriggerState {
+            internal State퍼즐Pattern33(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1301,8 +1301,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴34 : TriggerState {
-            internal State퍼즐패턴34(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern34 : TriggerState {
+            internal State퍼즐Pattern34(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1316,8 +1316,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴35 : TriggerState {
-            internal State퍼즐패턴35(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern35 : TriggerState {
+            internal State퍼즐Pattern35(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1331,8 +1331,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴36 : TriggerState {
-            internal State퍼즐패턴36(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern36 : TriggerState {
+            internal State퍼즐Pattern36(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1346,8 +1346,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴37 : TriggerState {
-            internal State퍼즐패턴37(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern37 : TriggerState {
+            internal State퍼즐Pattern37(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1361,8 +1361,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴38 : TriggerState {
-            internal State퍼즐패턴38(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern38 : TriggerState {
+            internal State퍼즐Pattern38(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1403,8 +1403,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴39 : TriggerState {
-            internal State퍼즐패턴39(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern39 : TriggerState {
+            internal State퍼즐Pattern39(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1465,8 +1465,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴40 : TriggerState {
-            internal State퍼즐패턴40(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern40 : TriggerState {
+            internal State퍼즐Pattern40(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1488,8 +1488,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴41 : TriggerState {
-            internal State퍼즐패턴41(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern41 : TriggerState {
+            internal State퍼즐Pattern41(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1505,8 +1505,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴42 : TriggerState {
-            internal State퍼즐패턴42(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern42 : TriggerState {
+            internal State퍼즐Pattern42(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1521,8 +1521,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴43 : TriggerState {
-            internal State퍼즐패턴43(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern43 : TriggerState {
+            internal State퍼즐Pattern43(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1553,8 +1553,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴44 : TriggerState {
-            internal State퍼즐패턴44(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern44 : TriggerState {
+            internal State퍼즐Pattern44(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1591,8 +1591,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴45 : TriggerState {
-            internal State퍼즐패턴45(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern45 : TriggerState {
+            internal State퍼즐Pattern45(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1614,8 +1614,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴46 : TriggerState {
-            internal State퍼즐패턴46(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern46 : TriggerState {
+            internal State퍼즐Pattern46(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1633,8 +1633,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴47 : TriggerState {
-            internal State퍼즐패턴47(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern47 : TriggerState {
+            internal State퍼즐Pattern47(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1653,8 +1653,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴48 : TriggerState {
-            internal State퍼즐패턴48(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern48 : TriggerState {
+            internal State퍼즐Pattern48(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1673,8 +1673,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴49 : TriggerState {
-            internal State퍼즐패턴49(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern49 : TriggerState {
+            internal State퍼즐Pattern49(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1703,8 +1703,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴50 : TriggerState {
-            internal State퍼즐패턴50(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern50 : TriggerState {
+            internal State퍼즐Pattern50(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1725,8 +1725,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴51 : TriggerState {
-            internal State퍼즐패턴51(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern51 : TriggerState {
+            internal State퍼즐Pattern51(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1748,8 +1748,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴52 : TriggerState {
-            internal State퍼즐패턴52(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern52 : TriggerState {
+            internal State퍼즐Pattern52(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1771,8 +1771,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴53 : TriggerState {
-            internal State퍼즐패턴53(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern53 : TriggerState {
+            internal State퍼즐Pattern53(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1794,8 +1794,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴54 : TriggerState {
-            internal State퍼즐패턴54(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern54 : TriggerState {
+            internal State퍼즐Pattern54(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1815,8 +1815,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴55 : TriggerState {
-            internal State퍼즐패턴55(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern55 : TriggerState {
+            internal State퍼즐Pattern55(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1836,8 +1836,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴56 : TriggerState {
-            internal State퍼즐패턴56(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern56 : TriggerState {
+            internal State퍼즐Pattern56(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1851,8 +1851,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴57 : TriggerState {
-            internal State퍼즐패턴57(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern57 : TriggerState {
+            internal State퍼즐Pattern57(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1866,8 +1866,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴58 : TriggerState {
-            internal State퍼즐패턴58(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern58 : TriggerState {
+            internal State퍼즐Pattern58(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1881,8 +1881,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴59 : TriggerState {
-            internal State퍼즐패턴59(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern59 : TriggerState {
+            internal State퍼즐Pattern59(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -1896,8 +1896,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐패턴60 : TriggerState {
-            internal State퍼즐패턴60(ITriggerContext context) : base(context) { }
+        private class State퍼즐Pattern60 : TriggerState {
+            internal State퍼즐Pattern60(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 14);
@@ -2030,7 +2030,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 120000)) {
                     context.MoveUser(arg1: 0, arg2: 0);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -2039,8 +2039,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

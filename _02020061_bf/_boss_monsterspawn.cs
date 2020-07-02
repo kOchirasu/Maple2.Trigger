@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020061_bf {
     public static class _boss_monsterspawn {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.StartCombineSpawn(groupId: new[] {482}, isStart: false);
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02020061_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterSpawn") == 0) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02020061_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.StartCombineSpawn(groupId: new[] {482}, isStart: false);

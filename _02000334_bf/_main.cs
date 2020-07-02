@@ -2,8 +2,8 @@ using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000334_bf {
     public static class _main {
-        public class Statemain : TriggerState {
-            internal Statemain(ITriggerContext context) : base(context) { }
+        public class StateMain : TriggerState {
+            internal StateMain(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 12, arg2: false, arg3: false, arg4: false);
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State시작_02(context);
+                    return new StateStart_02(context);
                 }
 
                 return null;
@@ -47,8 +47,8 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnExit() { }
         }
 
-        private class State시작_02 : TriggerState {
-            internal State시작_02(ITriggerContext context) : base(context) { }
+        private class StateStart_02 : TriggerState {
+            internal StateStart_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State시작_03(context);
+                    return new StateStart_03(context);
                 }
 
                 return null;
@@ -69,8 +69,8 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnExit() { }
         }
 
-        private class State시작_03 : TriggerState {
-            internal State시작_03(ITriggerContext context) : base(context) { }
+        private class StateStart_03 : TriggerState {
+            internal StateStart_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._02000334_bf {
                 }
 
                 if (context.UserDetected(arg1: new[] {99999})) {
-                    return new State클리어(context);
+                    return new StateClear(context);
                 }
 
                 return null;
@@ -467,7 +467,7 @@ namespace Maple2.Trigger._02000334_bf {
                 }
 
                 if (context.MonsterDead(arg1: new[] {190})) {
-                    return new State클리어(context);
+                    return new StateClear(context);
                 }
 
                 return null;
@@ -560,8 +560,8 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnExit() { }
         }
 
-        private class State클리어 : TriggerState {
-            internal State클리어(ITriggerContext context) : base(context) { }
+        private class StateClear : TriggerState {
+            internal StateClear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 90001, arg2: "trigger", arg3: "TaboKill");
@@ -573,7 +573,7 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State클리어_이벤트(context);
+                    return new StateClear_이벤트(context);
                 }
 
                 return null;
@@ -584,8 +584,8 @@ namespace Maple2.Trigger._02000334_bf {
             }
         }
 
-        private class State클리어_이벤트 : TriggerState {
-            internal State클리어_이벤트(ITriggerContext context) : base(context) { }
+        private class StateClear_이벤트 : TriggerState {
+            internal StateClear_이벤트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 991, 992, 993, 994, 995, 996, 997, 998});
@@ -593,13 +593,13 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetProductionUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__16$", arg4: 3);
                 context.SetMesh(arg1: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: false, arg4: 250, arg5: 1f);
-                context.SetSkip(arg1: "클리어_보상");
+                context.SetSkip(arg1: "Clear_보상");
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State클리어_보상(context);
+                    return new StateClear_보상(context);
                 }
 
                 return null;
@@ -612,8 +612,8 @@ namespace Maple2.Trigger._02000334_bf {
             }
         }
 
-        private class State클리어_보상 : TriggerState {
-            internal State클리어_보상(ITriggerContext context) : base(context) { }
+        private class StateClear_보상 : TriggerState {
+            internal StateClear_보상(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: false);
@@ -625,11 +625,11 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {90099})) {
-                    return new State클리어_보상_02(context);
+                    return new StateClear_보상_02(context);
                 }
 
                 if (context.TimeExpired(arg1: "10")) {
-                    return new State클리어_보상_02(context);
+                    return new StateClear_보상_02(context);
                 }
 
                 return null;
@@ -640,8 +640,8 @@ namespace Maple2.Trigger._02000334_bf {
             }
         }
 
-        private class State클리어_보상_02 : TriggerState {
-            internal State클리어_보상_02(ITriggerContext context) : base(context) { }
+        private class StateClear_보상_02 : TriggerState {
+            internal StateClear_보상_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 8003, arg2: true);
@@ -653,7 +653,7 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State클리어_보상_03(context);
+                    return new StateClear_보상_03(context);
                 }
 
                 return null;
@@ -666,8 +666,8 @@ namespace Maple2.Trigger._02000334_bf {
             }
         }
 
-        private class State클리어_보상_03 : TriggerState {
-            internal State클리어_보상_03(ITriggerContext context) : base(context) { }
+        private class StateClear_보상_03 : TriggerState {
+            internal StateClear_보상_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 199, arg3: "$02000334_BF__MAIN__19$", arg4: 5);
@@ -677,7 +677,7 @@ namespace Maple2.Trigger._02000334_bf {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.DungeonClear();
                     context.SetPortal(arg1: 12, arg2: true, arg3: true, arg4: true);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -688,8 +688,8 @@ namespace Maple2.Trigger._02000334_bf {
             }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -8,14 +8,14 @@ namespace Maple2.Trigger._52000012_qd {
             }
 
             public override TriggerState Execute() {
-                return new State대기(context);
+                return new StateWait(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        private class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103})) {
-                    return new State벨라연출시작(context);
+                    return new State벨라StartCinematic(context);
                 }
 
                 return null;
@@ -99,8 +99,8 @@ namespace Maple2.Trigger._52000012_qd {
             public override void OnExit() { }
         }
 
-        private class State벨라연출시작 : TriggerState {
-            internal State벨라연출시작(ITriggerContext context) : base(context) { }
+        private class State벨라StartCinematic : TriggerState {
+            internal State벨라StartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11")) {
-                    return new State벨라연출종료(context);
+                    return new State벨라StopCinematic(context);
                 }
 
                 return null;
@@ -141,8 +141,8 @@ namespace Maple2.Trigger._52000012_qd {
             public override void OnExit() { }
         }
 
-        private class State벨라연출종료 : TriggerState {
-            internal State벨라연출종료(ITriggerContext context) : base(context) { }
+        private class State벨라StopCinematic : TriggerState {
+            internal State벨라StopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "14", arg2: 1);
@@ -214,7 +214,7 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "12")) {
-                    return new State악령연출시작(context);
+                    return new State악령StartCinematic(context);
                 }
 
                 return null;
@@ -223,8 +223,8 @@ namespace Maple2.Trigger._52000012_qd {
             public override void OnExit() { }
         }
 
-        private class State악령연출시작 : TriggerState {
-            internal State악령연출시작(ITriggerContext context) : base(context) { }
+        private class State악령StartCinematic : TriggerState {
+            internal State악령StartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -318,7 +318,7 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "15")) {
-                    return new State영혼연출종료(context);
+                    return new State영혼StopCinematic(context);
                 }
 
                 return null;
@@ -327,8 +327,8 @@ namespace Maple2.Trigger._52000012_qd {
             public override void OnExit() { }
         }
 
-        private class State영혼연출종료 : TriggerState {
-            internal State영혼연출종료(ITriggerContext context) : base(context) { }
+        private class State영혼StopCinematic : TriggerState {
+            internal State영혼StopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1000, arg2: "MS2PatrolData_1002");
@@ -374,7 +374,7 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {10002611}, arg3: new byte[] {2})) {
-                    return new State포털생성(context);
+                    return new StatePortalCreation(context);
                 }
 
                 return null;
@@ -383,8 +383,8 @@ namespace Maple2.Trigger._52000012_qd {
             public override void OnExit() { }
         }
 
-        private class State포털생성 : TriggerState {
-            internal State포털생성(ITriggerContext context) : base(context) { }
+        private class StatePortalCreation : TriggerState {
+            internal StatePortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
@@ -392,7 +392,7 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {9001})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -401,15 +401,15 @@ namespace Maple2.Trigger._52000012_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1000, 2000, 101, 102, 103, 201, 202, 203, 301, 302});
             }
 
             public override TriggerState Execute() {
-                return new State대기(context);
+                return new StateWait(context);
             }
 
             public override void OnExit() { }

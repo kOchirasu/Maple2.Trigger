@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000350_bf {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {600, 601, 602, 610, 6010, 6011, 6012, 6013, 6015, 6110, 6111, 6112, 6113, 6101}, arg2: false);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000350_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    return new State시작대기(context);
+                    return new StateBeginWait(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000350_bf {
             public override void OnExit() { }
         }
 
-        private class State시작대기 : TriggerState {
-            internal State시작대기(ITriggerContext context) : base(context) { }
+        private class StateBeginWait : TriggerState {
+            internal StateBeginWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6010, 6011, 6012, 6013, 6015}, arg2: true);
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._02000350_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State유저감지(context);
+                    return new StateUserDetection(context);
                 }
 
                 return null;
@@ -97,8 +97,8 @@ namespace Maple2.Trigger._02000350_bf {
             public override void OnExit() { }
         }
 
-        private class State유저감지 : TriggerState {
-            internal State유저감지(ITriggerContext context) : base(context) { }
+        private class StateUserDetection : TriggerState {
+            internal StateUserDetection(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DarkStreamStartGame(round: 30);
@@ -341,7 +341,7 @@ namespace Maple2.Trigger._02000350_bf {
                     context.SetSkill(arg1: new[] {702}, arg2: true);
                     context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132, 3133, 3134, 3135, 3136, 3137, 3138, 3139, 3140, 3141, 3142, 3143, 3144, 3145, 3146}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.SetEventUI(arg1: 0, arg2: "0,0");
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -350,8 +350,8 @@ namespace Maple2.Trigger._02000350_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

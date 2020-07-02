@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._99999922 {
     public static class _event2 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1001});
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._99999922 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "300")) {
-                    return new State시작10(context);
+                    return new StateStart10(context);
                 }
 
                 return null;
@@ -55,8 +55,8 @@ namespace Maple2.Trigger._99999922 {
             public override void OnExit() { }
         }
 
-        private class State시작10 : TriggerState {
-            internal State시작10(ITriggerContext context) : base(context) { }
+        private class StateStart10 : TriggerState {
+            internal StateStart10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "400", arg2: 60);

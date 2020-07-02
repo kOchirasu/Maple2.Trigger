@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000191_bf {
     public static class _regentrigger0 {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000191_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1, 2})) {
-                    return new State웜리젠91쿨타임(context);
+                    return new State웜리젠91CoolTime(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._02000191_bf {
             public override void OnExit() { }
         }
 
-        private class State웜리젠91쿨타임 : TriggerState {
-            internal State웜리젠91쿨타임(ITriggerContext context) : base(context) { }
+        private class State웜리젠91CoolTime : TriggerState {
+            internal State웜리젠91CoolTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ResetTimer(arg1: "9");
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02000191_bf {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "9")) {
                     context.ResetTimer(arg1: "9");
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;

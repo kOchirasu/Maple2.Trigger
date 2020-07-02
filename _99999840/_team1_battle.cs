@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._99999840 {
     public static class _team1_battle {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 2, value: false);
@@ -33,7 +33,7 @@ namespace Maple2.Trigger._99999840 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
@@ -63,11 +63,11 @@ namespace Maple2.Trigger._99999840 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002178}, arg2: 0)) {
-                    return new State시작_보스전(context);
+                    return new StateStart_Boss(context);
                 }
 
                 if (context.GetScoreBoardScore() >= 100) {
@@ -89,11 +89,11 @@ namespace Maple2.Trigger._99999840 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002178}, arg2: 0)) {
-                    return new State시작_보스전(context);
+                    return new StateStart_Boss(context);
                 }
 
                 if (context.GetScoreBoardScore() >= 100) {
@@ -115,11 +115,11 @@ namespace Maple2.Trigger._99999840 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002178}, arg2: 0)) {
-                    return new State시작_보스전(context);
+                    return new StateStart_Boss(context);
                 }
 
                 if (context.GetScoreBoardScore() >= 100) {
@@ -136,16 +136,16 @@ namespace Maple2.Trigger._99999840 {
             internal State지역선택2_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "추가 병력 등장", arg3: 4000, arg4: "9101");
+                context.SetEventUI(arg1: 1, arg2: "추가 병력 Appear", arg3: 4000, arg4: "9101");
             }
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002178}, arg2: 0)) {
-                    return new State시작_보스전(context);
+                    return new StateStart_Boss(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
@@ -166,17 +166,17 @@ namespace Maple2.Trigger._99999840 {
             internal State지역선택2_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "추가 병력 등장", arg3: 4000, arg4: "9101");
+                context.SetEventUI(arg1: 1, arg2: "추가 병력 Appear", arg3: 4000, arg4: "9101");
                 context.SetTimer(arg1: "2", arg2: 60, arg3: true);
             }
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002178}, arg2: 0)) {
-                    return new State시작_보스전(context);
+                    return new StateStart_Boss(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
@@ -197,17 +197,17 @@ namespace Maple2.Trigger._99999840 {
             internal State지역선택2_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "추가 병력 등장", arg3: 4000, arg4: "9101");
+                context.SetEventUI(arg1: 1, arg2: "추가 병력 Appear", arg3: 4000, arg4: "9101");
                 context.SetTimer(arg1: "2", arg2: 60, arg3: true);
             }
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002178}, arg2: 0)) {
-                    return new State시작_보스전(context);
+                    return new StateStart_Boss(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
@@ -233,11 +233,11 @@ namespace Maple2.Trigger._99999840 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002178}, arg2: 0)) {
-                    return new State시작_보스전(context);
+                    return new StateStart_Boss(context);
                 }
 
                 if (context.GetScoreBoardScore() >= 240) {
@@ -260,11 +260,11 @@ namespace Maple2.Trigger._99999840 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002178}, arg2: 0)) {
-                    return new State시작_보스전(context);
+                    return new StateStart_Boss(context);
                 }
 
                 if (context.GetScoreBoardScore() >= 240) {
@@ -287,11 +287,11 @@ namespace Maple2.Trigger._99999840 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002178}, arg2: 0)) {
-                    return new State시작_보스전(context);
+                    return new StateStart_Boss(context);
                 }
 
                 if (context.GetScoreBoardScore() >= 240) {
@@ -314,11 +314,11 @@ namespace Maple2.Trigger._99999840 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002178}, arg2: 0)) {
-                    return new State시작_보스전(context);
+                    return new StateStart_Boss(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
@@ -344,11 +344,11 @@ namespace Maple2.Trigger._99999840 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002178}, arg2: 0)) {
-                    return new State시작_보스전(context);
+                    return new StateStart_Boss(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
@@ -374,11 +374,11 @@ namespace Maple2.Trigger._99999840 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002178}, arg2: 0)) {
-                    return new State시작_보스전(context);
+                    return new StateStart_Boss(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
@@ -404,11 +404,11 @@ namespace Maple2.Trigger._99999840 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002178}, arg2: 0)) {
-                    return new State시작_보스전(context);
+                    return new StateStart_Boss(context);
                 }
 
                 return null;
@@ -426,11 +426,11 @@ namespace Maple2.Trigger._99999840 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002178}, arg2: 0)) {
-                    return new State시작_보스전(context);
+                    return new StateStart_Boss(context);
                 }
 
                 return null;
@@ -448,11 +448,11 @@ namespace Maple2.Trigger._99999840 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002178}, arg2: 0)) {
-                    return new State시작_보스전(context);
+                    return new StateStart_Boss(context);
                 }
 
                 return null;
@@ -461,8 +461,8 @@ namespace Maple2.Trigger._99999840 {
             public override void OnExit() { }
         }
 
-        private class State시작_보스전 : TriggerState {
-            internal State시작_보스전(ITriggerContext context) : base(context) { }
+        private class StateStart_Boss : TriggerState {
+            internal StateStart_Boss(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002175}, arg2: 0, arg3: false);
@@ -478,11 +478,11 @@ namespace Maple2.Trigger._99999840 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 3) == true) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {901})) {
-                    return new State성공(context);
+                    return new StateSuccess(context);
                 }
 
                 return null;
@@ -491,8 +491,8 @@ namespace Maple2.Trigger._99999840 {
             public override void OnExit() { }
         }
 
-        private class State성공 : TriggerState {
-            internal State성공(ITriggerContext context) : base(context) { }
+        private class StateSuccess : TriggerState {
+            internal StateSuccess(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 2, value: true);
@@ -505,8 +505,8 @@ namespace Maple2.Trigger._99999840 {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002175}, arg2: 0, arg3: false);

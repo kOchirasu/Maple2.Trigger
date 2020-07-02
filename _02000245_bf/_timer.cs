@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000245_bf {
     public static class _timer {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {2001, 2002}, arg2: false);

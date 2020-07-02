@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._84000016_wd {
     public static class _84000016_moveguest {
-        public class State초기화 : TriggerState {
-            internal State초기화(ITriggerContext context) : base(context) { }
+        public class StateReset : TriggerState {
+            internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "Weddingceremonystartsready", value: 0);
@@ -9,20 +9,20 @@ namespace Maple2.Trigger._84000016_wd {
             }
 
             public override TriggerState Execute() {
-                return new State시작(context);
+                return new StateStart(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WeddingHallState(hallState: "weddingComplete")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.GetUserValue(key: "Weddingceremonystartsready") == 1) {
@@ -43,12 +43,12 @@ namespace Maple2.Trigger._84000016_wd {
 
             public override TriggerState Execute() {
                 if (context.WeddingHallState(hallState: "weddingComplete")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.GetUserValue(key: "Weddingceremonyfail") == 1) {
                     context.SetUserValue(key: "Weddingceremonyfail", value: 0);
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
@@ -89,8 +89,8 @@ namespace Maple2.Trigger._84000016_wd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

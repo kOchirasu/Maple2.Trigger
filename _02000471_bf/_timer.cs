@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000471_bf {
     public static class _timer {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 2040301, key: "TimerEnd", value: 0);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimerStart") == 1) {
-                    return new Statestart(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "Timer", arg2: 420, arg3: true, arg4: true, arg5: 0);
@@ -28,11 +28,11 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "Timer")) {
-                    return new Stateend_fail(context);
+                    return new StateEnd_fail(context);
                 }
 
                 if (context.GetUserValue(key: "InteractClear") == 1) {
-                    return new Stateend_clear(context);
+                    return new StateEnd_clear(context);
                 }
 
                 return null;
@@ -41,8 +41,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Stateend_fail : TriggerState {
-            internal Stateend_fail(ITriggerContext context) : base(context) { }
+        private class StateEnd_fail : TriggerState {
+            internal StateEnd_fail(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 2040301, key: "TimerEnd", value: 1);
@@ -56,8 +56,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Stateend_clear : TriggerState {
-            internal Stateend_clear(ITriggerContext context) : base(context) { }
+        private class StateEnd_clear : TriggerState {
+            internal StateEnd_clear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 2040301, key: "InteractClear", value: 1);

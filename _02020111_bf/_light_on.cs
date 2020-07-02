@@ -2,18 +2,18 @@ using System.Numerics;
 
 namespace Maple2.Trigger._02020111_bf {
     public static class _light_on {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Light_On_1") == 2 && context.GetUserValue(key: "Light_On_2") == 2 && context.GetUserValue(key: "Light_On_3") == 2 && context.GetUserValue(key: "Light_On_4") == 2) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.GetUserValue(key: "Light_On_1") == 1 && context.GetUserValue(key: "Light_On_2") == 1 && context.GetUserValue(key: "Light_On_3") == 1 && context.GetUserValue(key: "Light_On_4") == 1) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -22,8 +22,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        private class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Light_On_1") == 1 && context.GetUserValue(key: "Light_On_2") == 1 && context.GetUserValue(key: "Light_On_3") == 1 && context.GetUserValue(key: "Light_On_4") == 1) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;

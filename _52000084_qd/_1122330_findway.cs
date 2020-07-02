@@ -38,11 +38,11 @@ namespace Maple2.Trigger._52000084_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280}, arg3: new byte[] {2})) {
-                    return new Stateteleport52100085(context);
+                    return new StateTeleport52100085(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {50100280}, arg3: new byte[] {3})) {
-                    return new Stateteleport52100085(context);
+                    return new StateTeleport52100085(context);
                 }
 
                 return null;
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._52000084_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State연출시작(context);
+                    return new StateStartCinematic(context);
                 }
 
                 return null;
@@ -70,8 +70,8 @@ namespace Maple2.Trigger._52000084_qd {
             public override void OnExit() { }
         }
 
-        private class State연출시작 : TriggerState {
-            internal State연출시작(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic : TriggerState {
+            internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 501, arg2: true);
@@ -323,8 +323,8 @@ namespace Maple2.Trigger._52000084_qd {
             public override void OnExit() { }
         }
 
-        private class Stateteleport52100085 : TriggerState {
-            internal Stateteleport52100085(ITriggerContext context) : base(context) { }
+        private class StateTeleport52100085 : TriggerState {
+            internal StateTeleport52100085(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000085, arg2: 1);

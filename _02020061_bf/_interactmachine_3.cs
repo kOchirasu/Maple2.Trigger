@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02020061_bf {
     public static class _interactmachine_3 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9001})) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02020061_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002135}, arg2: 1);
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02020061_bf {
 
             public override TriggerState Execute() {
                 if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 9103, additionalEffectId: 99910370, level: true)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -50,8 +50,8 @@ namespace Maple2.Trigger._02020061_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020051_bf {
     public static class _105_summon_mob {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.StartCombineSpawn(groupId: new[] {1003}, isStart: true);
@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon_monster") == 1) {
-                    return new State몬스터등장(context);
+                    return new StateMonsterAppear(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._02020051_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터등장 : TriggerState {
-            internal State몬스터등장(ITriggerContext context) : base(context) { }
+        private class StateMonsterAppear : TriggerState {
+            internal StateMonsterAppear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.StartCombineSpawn(groupId: new[] {1003}, isStart: false);
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon_monster") == 2) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

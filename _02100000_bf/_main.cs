@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02100000_bf {
     public static class _main {
-        public class StateWait : TriggerState {
-            internal StateWait(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {80000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -176,7 +176,7 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -185,8 +185,8 @@ namespace Maple2.Trigger._02100000_bf {
             public override void OnExit() { }
         }
 
-        private class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        private class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {101}, arg2: 70000133, arg3: 1, arg4: false, arg5: false);
@@ -198,7 +198,7 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State버프_2(context);
+                    return new StateBuff_2(context);
                 }
 
                 return null;
@@ -207,8 +207,8 @@ namespace Maple2.Trigger._02100000_bf {
             public override void OnExit() { }
         }
 
-        private class State버프_2 : TriggerState {
-            internal State버프_2(ITriggerContext context) : base(context) { }
+        private class StateBuff_2 : TriggerState {
+            internal StateBuff_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02100000_BF__MAIN__2$", arg3: 3000);

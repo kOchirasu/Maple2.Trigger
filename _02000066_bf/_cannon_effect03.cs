@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000066_bf {
     public static class _cannon_effect03 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {803}, arg2: false);
@@ -43,11 +43,11 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {8003})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {113})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -56,8 +56,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State대기시간 : TriggerState {
-            internal State대기시간(ITriggerContext context) : base(context) { }
+        private class StateWaitTime : TriggerState {
+            internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {803}, arg2: false);
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;

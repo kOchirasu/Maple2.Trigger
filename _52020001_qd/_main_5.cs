@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52020001_qd {
     public static class _main_5 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -117,7 +117,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State마지막_연출(context);
+                    return new State마지막_Cinematic(context);
                 }
 
                 return null;
@@ -126,8 +126,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class State마지막_연출 : TriggerState {
-            internal State마지막_연출(ITriggerContext context) : base(context) { }
+        private class State마지막_Cinematic : TriggerState {
+            internal State마지막_Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -156,7 +156,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State마지막_연출_2(context);
+                    return new State마지막_Cinematic_2(context);
                 }
 
                 return null;
@@ -165,8 +165,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class State마지막_연출_2 : TriggerState {
-            internal State마지막_연출_2(ITriggerContext context) : base(context) { }
+        private class State마지막_Cinematic_2 : TriggerState {
+            internal State마지막_Cinematic_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52100041_qd {
     public static class _event_04 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1803}, arg2: true, arg3: 0, arg4: 200, arg5: 0f);

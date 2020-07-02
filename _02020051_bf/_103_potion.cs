@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020051_bf {
     public static class _103_potion {
-        public class State준비 : TriggerState {
-            internal State준비(ITriggerContext context) : base(context) { }
+        public class StateSetup : TriggerState {
+            internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10002131}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -53,8 +53,8 @@ namespace Maple2.Trigger._02020051_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 101, key: "Potion", value: 1);
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Main") == 2) {
-                    return new State준비(context);
+                    return new StateSetup(context);
                 }
 
                 return null;

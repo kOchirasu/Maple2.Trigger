@@ -16,7 +16,7 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {901})) {
-                    return new State카메라_시작(context);
+                    return new StateCamera_시작(context);
                 }
 
                 return null;
@@ -25,11 +25,11 @@ namespace Maple2.Trigger._02020025_bf {
             public override void OnExit() { }
         }
 
-        private class State카메라_시작 : TriggerState {
-            internal State카메라_시작(ITriggerContext context) : base(context) { }
+        private class StateCamera_시작 : TriggerState {
+            internal StateCamera_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "카메라_종료", arg2: "exit");
+                context.SetSceneSkip(arg1: "Camera_종료", arg2: "exit");
                 context.MoveUser(arg1: 02020025, arg2: 1);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
@@ -37,7 +37,7 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State카메라_캡션(context);
+                    return new StateCamera_캡션(context);
                 }
 
                 return null;
@@ -46,8 +46,8 @@ namespace Maple2.Trigger._02020025_bf {
             public override void OnExit() { }
         }
 
-        private class State카메라_캡션 : TriggerState {
-            internal State카메라_캡션(ITriggerContext context) : base(context) { }
+        private class StateCamera_캡션 : TriggerState {
+            internal StateCamera_캡션(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {5001, 5002}, arg2: true);
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State카메라_콘대르설명1(context);
+                    return new StateCamera_콘대르설명1(context);
                 }
 
                 return null;
@@ -85,8 +85,8 @@ namespace Maple2.Trigger._02020025_bf {
             public override void OnExit() { }
         }
 
-        private class State카메라_콘대르설명1 : TriggerState {
-            internal State카메라_콘대르설명1(ITriggerContext context) : base(context) { }
+        private class StateCamera_콘대르설명1 : TriggerState {
+            internal StateCamera_콘대르설명1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 202, arg2: "Talk_B", arg3: 18430f);
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State카메라_콘대르설명2(context);
+                    return new StateCamera_콘대르설명2(context);
                 }
 
                 return null;
@@ -140,8 +140,8 @@ namespace Maple2.Trigger._02020025_bf {
             public override void OnExit() { }
         }
 
-        private class State카메라_콘대르설명2 : TriggerState {
-            internal State카메라_콘대르설명2(ITriggerContext context) : base(context) { }
+        private class StateCamera_콘대르설명2 : TriggerState {
+            internal StateCamera_콘대르설명2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 24110001, illustId: "Conder_normal", msg: "$02020025_BF__main__1$", duration: 4000, align: "left");
@@ -149,7 +149,7 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State카메라_콘대르설명3(context);
+                    return new StateCamera_콘대르설명3(context);
                 }
 
                 return null;
@@ -158,8 +158,8 @@ namespace Maple2.Trigger._02020025_bf {
             public override void OnExit() { }
         }
 
-        private class State카메라_콘대르설명3 : TriggerState {
-            internal State카메라_콘대르설명3(ITriggerContext context) : base(context) { }
+        private class StateCamera_콘대르설명3 : TriggerState {
+            internal StateCamera_콘대르설명3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 24110001, illustId: "Conder_normal", msg: "$02020025_BF__main__2$", duration: 4000, align: "left");
@@ -167,7 +167,7 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State카메라_콘대르설명4(context);
+                    return new StateCamera_콘대르설명4(context);
                 }
 
                 return null;
@@ -176,8 +176,8 @@ namespace Maple2.Trigger._02020025_bf {
             public override void OnExit() { }
         }
 
-        private class State카메라_콘대르설명4 : TriggerState {
-            internal State카메라_콘대르설명4(ITriggerContext context) : base(context) { }
+        private class StateCamera_콘대르설명4 : TriggerState {
+            internal StateCamera_콘대르설명4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 24110001, illustId: "Conder_normal", msg: "$02020025_BF__main__7$", duration: 4000, align: "left");
@@ -186,7 +186,7 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State카메라_종료(context);
+                    return new StateCamera_종료(context);
                 }
 
                 return null;
@@ -195,8 +195,8 @@ namespace Maple2.Trigger._02020025_bf {
             public override void OnExit() { }
         }
 
-        private class State카메라_종료 : TriggerState {
-            internal State카메라_종료(ITriggerContext context) : base(context) { }
+        private class StateCamera_종료 : TriggerState {
+            internal StateCamera_종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
@@ -206,14 +206,14 @@ namespace Maple2.Trigger._02020025_bf {
             }
 
             public override TriggerState Execute() {
-                return new State준비(context);
+                return new StateSetup(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State준비 : TriggerState {
-            internal State준비(ITriggerContext context) : base(context) { }
+        private class StateSetup : TriggerState {
+            internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {201}, arg2: false, arg3: 3000);

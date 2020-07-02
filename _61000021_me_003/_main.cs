@@ -7,7 +7,7 @@ namespace Maple2.Trigger._61000021_me_003 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._61000021_me_003 {
             public override void OnExit() { }
         }
 
-        private class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        private class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "OxQuizUGC");
@@ -30,11 +30,11 @@ namespace Maple2.Trigger._61000021_me_003 {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 100) == 50) {
-                    return new State준비(context);
+                    return new StateSetup(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State준비(context);
+                    return new StateSetup(context);
                 }
 
                 return null;
@@ -43,8 +43,8 @@ namespace Maple2.Trigger._61000021_me_003 {
             public override void OnExit() { }
         }
 
-        private class State준비 : TriggerState {
-            internal State준비(ITriggerContext context) : base(context) { }
+        private class StateSetup : TriggerState {
+            internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMiniGameAreaForHack(boxId: 105);
@@ -54,11 +54,11 @@ namespace Maple2.Trigger._61000021_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {105})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -67,8 +67,8 @@ namespace Maple2.Trigger._61000021_me_003 {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMiniGameAreaForHack(boxId: 105);
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._61000021_me_003 {
                 }
 
                 if (context.WidgetCondition(arg1: "OxQuizUGC", arg2: "IsFinished")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._61000021_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "15")) {
-                    return new State벽생성(context);
+                    return new State벽Creation(context);
                 }
 
                 return null;
@@ -112,8 +112,8 @@ namespace Maple2.Trigger._61000021_me_003 {
             public override void OnExit() { }
         }
 
-        private class State벽생성 : TriggerState {
-            internal State벽생성(ITriggerContext context) : base(context) { }
+        private class State벽Creation : TriggerState {
+            internal State벽Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {105}, arg2: "System_Quiz_Popup_Off_01");
@@ -214,7 +214,7 @@ namespace Maple2.Trigger._61000021_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "20")) {
-                    return new State준비(context);
+                    return new StateSetup(context);
                 }
 
                 return null;
@@ -223,8 +223,8 @@ namespace Maple2.Trigger._61000021_me_003 {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.EndMiniGame(winnerBoxId: 105, gameName: "oxquiz_ugc");
@@ -240,8 +240,8 @@ namespace Maple2.Trigger._61000021_me_003 {
             public override void OnExit() { }
         }
 
-        private class State종료2 : TriggerState {
-            internal State종료2(ITriggerContext context) : base(context) { }
+        private class StateEnd2 : TriggerState {
+            internal StateEnd2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.UnSetMiniGameAreaForHack();
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._61000021_me_003 {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "6")) {
                     context.MoveUser(arg1: 0, arg2: 0);
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

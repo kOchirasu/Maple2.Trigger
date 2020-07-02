@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000471_bf {
     public static class _magic_04 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 2040315, key: "10002022clear", value: 0);

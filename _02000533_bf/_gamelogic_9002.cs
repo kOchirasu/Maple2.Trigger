@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000533_bf {
     public static class _gamelogic_9002 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "TypingGame");
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02000533_bf {
 
             public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "Round", arg2: "GameClear")) {
-                    return new State게임성공종료(context);
+                    return new State게임Success종료(context);
                 }
 
                 if (context.WidgetCondition(arg1: "Round", arg2: "GameFail")) {
@@ -229,19 +229,15 @@ namespace Maple2.Trigger._02000533_bf {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                if (true) {
-                    context.LockMyPc(isLock: false);
+                context.LockMyPc(isLock: false);
                     return new State새라운드시작가능체크(context);
-                }
-
-                return null;
             }
 
             public override void OnExit() { }
         }
 
-        private class State게임성공종료 : TriggerState {
-            internal State게임성공종료(ITriggerContext context) : base(context) { }
+        private class State게임Success종료 : TriggerState {
+            internal State게임Success종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 9001, key: "GameLogicEnd", value: 1);
@@ -249,7 +245,7 @@ namespace Maple2.Trigger._02000533_bf {
             }
 
             public override TriggerState Execute() {
-                return new State대기(context);
+                return new StateWait(context);
             }
 
             public override void OnExit() { }
@@ -264,7 +260,7 @@ namespace Maple2.Trigger._02000533_bf {
             }
 
             public override TriggerState Execute() {
-                return new State대기(context);
+                return new StateWait(context);
             }
 
             public override void OnExit() { }

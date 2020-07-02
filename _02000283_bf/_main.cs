@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000283_bf {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000427, 10000430, 10000431, 10000432, 10000433}, arg2: 2);
@@ -12,7 +12,7 @@ namespace Maple2.Trigger._02000283_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State준비(context);
+                    return new StateSetup(context);
                 }
 
                 return null;
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._02000283_bf {
             public override void OnExit() { }
         }
 
-        private class State준비 : TriggerState {
-            internal State준비(ITriggerContext context) : base(context) { }
+        private class StateSetup : TriggerState {
+            internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, arg2: false);
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02000283_bf {
                     context.ShowGuideSummary(entityId: 20002813, textId: 20002813);
                     context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                     context.SetMesh(arg1: new[] {400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416}, arg2: true, arg3: 0, arg4: 100, arg5: 0f);
-                    return new State소멸대기(context);
+                    return new StateWaitDestroy(context);
                 }
 
                 return null;
@@ -65,8 +65,8 @@ namespace Maple2.Trigger._02000283_bf {
             public override void OnExit() { }
         }
 
-        private class State소멸대기 : TriggerState {
-            internal State소멸대기(ITriggerContext context) : base(context) { }
+        private class StateWaitDestroy : TriggerState {
+            internal StateWaitDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 5);

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000471_bf {
     public static class _move {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateItem(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024, 9025, 9026, 9027, 9028, 9029, 9030});
@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {105})) {
-                    return new State랜덤블록1(context);
+                    return new StateRandom블록1(context);
                 }
 
                 return null;
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class State랜덤블록1 : TriggerState {
-            internal State랜덤블록1(ITriggerContext context) : base(context) { }
+        private class StateRandom블록1 : TriggerState {
+            internal StateRandom블록1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetRandomMesh(arg1: new[] {3047, 3048, 3049, 3050, 3051, 3052, 3053, 3054}, arg2: true, arg3: 4, arg4: 0, arg5: 1);
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {106})) {
-                    return new State랜덤블록2(context);
+                    return new StateRandom블록2(context);
                 }
 
                 return null;
@@ -57,8 +57,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class State랜덤블록2 : TriggerState {
-            internal State랜덤블록2(ITriggerContext context) : base(context) { }
+        private class StateRandom블록2 : TriggerState {
+            internal StateRandom블록2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetRandomMesh(arg1: new[] {3055, 3056, 3057, 3058, 3059, 3060, 3061, 3062, 3063}, arg2: true, arg3: 4, arg4: 0, arg5: 1);
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {107})) {
-                    return new State랜덤블록3(context);
+                    return new StateRandom블록3(context);
                 }
 
                 return null;
@@ -75,8 +75,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class State랜덤블록3 : TriggerState {
-            internal State랜덤블록3(ITriggerContext context) : base(context) { }
+        private class StateRandom블록3 : TriggerState {
+            internal StateRandom블록3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetRandomMesh(arg1: new[] {3064, 3065, 3066, 3067, 3068, 3069, 3070, 3071, 3072}, arg2: true, arg3: 4, arg4: 0, arg5: 1);
@@ -84,7 +84,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {108})) {
-                    return new State랜덤블록4(context);
+                    return new StateRandom블록4(context);
                 }
 
                 return null;
@@ -93,8 +93,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class State랜덤블록4 : TriggerState {
-            internal State랜덤블록4(ITriggerContext context) : base(context) { }
+        private class StateRandom블록4 : TriggerState {
+            internal StateRandom블록4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetRandomMesh(arg1: new[] {3073, 3074, 3075, 3076, 3077, 3078, 3079, 3080}, arg2: true, arg3: 4, arg4: 0, arg5: 1);
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {109})) {
-                    return new State랜덤블록5(context);
+                    return new StateRandom블록5(context);
                 }
 
                 return null;
@@ -111,8 +111,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class State랜덤블록5 : TriggerState {
-            internal State랜덤블록5(ITriggerContext context) : base(context) { }
+        private class StateRandom블록5 : TriggerState {
+            internal StateRandom블록5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetRandomMesh(arg1: new[] {3080, 3081, 3082, 3083, 3084, 3085}, arg2: true, arg3: 4, arg4: 0, arg5: 1);
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {110})) {
-                    // return new State랜덤블록6(context);
+                    // return new StateRandom블록6(context);
                     return null;
                 }
 

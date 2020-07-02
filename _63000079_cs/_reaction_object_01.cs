@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._63000079_cs {
     public static class _reaction_object_01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._63000079_cs {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

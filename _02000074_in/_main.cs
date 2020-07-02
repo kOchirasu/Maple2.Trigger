@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000074_in {
     public static class _main {
-        public class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {4000}, arg2: false);
@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02000074_in {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001592}, arg3: new byte[] {3})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001592}, arg3: new byte[] {2})) {
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02000074_in {
 
             public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {9000})) {
-                    return new Statestart(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._02000074_in {
 
             public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {9000})) {
-                    return new Statestart(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -88,8 +88,8 @@ namespace Maple2.Trigger._02000074_in {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

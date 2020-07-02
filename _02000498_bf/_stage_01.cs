@@ -2,14 +2,14 @@ using System.Numerics;
 
 namespace Maple2.Trigger._02000498_bf {
     public static class _stage_01 {
-        public class State시작연출_6 : TriggerState {
-            internal State시작연출_6(ITriggerContext context) : base(context) { }
+        public class StateStart연출_6 : TriggerState {
+            internal StateStart연출_6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    return new State페이드아웃(context);
+                    return new StateFadeOut(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnExit() { }
         }
 
-        private class State페이드아웃 : TriggerState {
-            internal State페이드아웃(ITriggerContext context) : base(context) { }
+        private class StateFadeOut : TriggerState {
+            internal StateFadeOut(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_3sec.xml");
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000498_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State페이드아웃_2(context);
+                    return new StateFadeOut_2(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnExit() { }
         }
 
-        private class State페이드아웃_2 : TriggerState {
-            internal State페이드아웃_2(ITriggerContext context) : base(context) { }
+        private class StateFadeOut_2 : TriggerState {
+            internal StateFadeOut_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "곧 새로운 차원으로 당신을 안내 합니다.", arg3: 3000);
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02000498_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State시작대기_1(context);
+                    return new StateBeginWait_1(context);
                 }
 
                 return null;
@@ -56,8 +56,8 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnExit() { }
         }
 
-        private class State시작대기_1 : TriggerState {
-            internal State시작대기_1(ITriggerContext context) : base(context) { }
+        private class StateBeginWait_1 : TriggerState {
+            internal StateBeginWait_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUserToPos(pos: new Vector3(433f, -6777f, 8701f));
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02000498_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State페이드인(context);
+                    return new StateFadeIn(context);
                 }
 
                 return null;
@@ -74,8 +74,8 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnExit() { }
         }
 
-        private class State페이드인 : TriggerState {
-            internal State페이드인(ITriggerContext context) : base(context) { }
+        private class StateFadeIn : TriggerState {
+            internal StateFadeIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000498_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State시작대기(context);
+                    return new StateBeginWait(context);
                 }
 
                 return null;
@@ -95,8 +95,8 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnExit() { }
         }
 
-        private class State시작대기 : TriggerState {
-            internal State시작대기(ITriggerContext context) : base(context) { }
+        private class StateBeginWait : TriggerState {
+            internal StateBeginWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {100010}, arg2: 70000103, arg3: 1);
@@ -114,8 +114,8 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

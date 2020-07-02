@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000230_bf {
     public static class _save_02 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {200}, arg2: false);
@@ -101,11 +101,11 @@ namespace Maple2.Trigger._02000230_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {20211, 20212, 20213, 20214, 20215})) {
-                    return new State트리거초기화(context);
+                    return new StateTriggerReset(context);
                 }
 
                 if (!context.MonsterInCombat(arg1: new[] {20211, 20212, 20213, 20214, 20215})) {
-                    return new State트리거초기화(context);
+                    return new StateTriggerReset(context);
                 }
 
                 return null;
@@ -114,8 +114,8 @@ namespace Maple2.Trigger._02000230_bf {
             public override void OnExit() { }
         }
 
-        private class State트리거초기화 : TriggerState {
-            internal State트리거초기화(ITriggerContext context) : base(context) { }
+        private class StateTriggerReset : TriggerState {
+            internal StateTriggerReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11", arg2: 10);
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._02000230_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

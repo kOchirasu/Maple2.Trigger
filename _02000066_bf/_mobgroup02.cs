@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000066_bf {
     public static class _mobgroup02 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108});
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {103})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State대기시간 : TriggerState {
-            internal State대기시간(ITriggerContext context) : base(context) { }
+        private class StateWaitTime : TriggerState {
+            internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -88,11 +88,11 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {900})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 if (context.TimeExpired(arg1: "45")) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -111,11 +111,11 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {901})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 if (context.TimeExpired(arg1: "22")) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -138,7 +138,7 @@ namespace Maple2.Trigger._02000066_bf {
                 }
 
                 if (context.TimeExpired(arg1: "40")) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -157,11 +157,11 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {904})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 if (context.TimeExpired(arg1: "33")) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -180,11 +180,11 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {905})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 if (context.TimeExpired(arg1: "16")) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -207,7 +207,7 @@ namespace Maple2.Trigger._02000066_bf {
                 }
 
                 if (context.TimeExpired(arg1: "28")) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -226,11 +226,11 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {908})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 if (context.TimeExpired(arg1: "25")) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -249,11 +249,11 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {909})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 if (context.TimeExpired(arg1: "13")) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -276,7 +276,7 @@ namespace Maple2.Trigger._02000066_bf {
                 }
 
                 if (context.TimeExpired(arg1: "22")) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -295,11 +295,11 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {912})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 if (context.TimeExpired(arg1: "20")) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -318,11 +318,11 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {913})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 if (context.TimeExpired(arg1: "10")) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -345,7 +345,7 @@ namespace Maple2.Trigger._02000066_bf {
                 }
 
                 if (context.TimeExpired(arg1: "16")) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -362,7 +362,7 @@ namespace Maple2.Trigger._02000066_bf {
             }
 
             public override TriggerState Execute() {
-                return new State대기시간(context);
+                return new StateWaitTime(context);
             }
 
             public override void OnExit() { }

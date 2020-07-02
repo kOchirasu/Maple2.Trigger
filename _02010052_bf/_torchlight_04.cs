@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02010052_bf {
     public static class _torchlight_04 {
-        public class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {6051, 6052, 6053, 6054, 6055, 6056, 6057, 6058, 6059, 6060, 6061, 6062, 6063, 6064, 6065, 6066}, arg2: false, arg3: 800, arg4: 100, arg5: 8f);
@@ -33,7 +33,7 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {104})) {
-                    return new Stateburn_state(context);
+                    return new StateBurn_state(context);
                 }
 
                 return null;
@@ -42,8 +42,8 @@ namespace Maple2.Trigger._02010052_bf {
             public override void OnExit() { }
         }
 
-        private class Stateburn_state : TriggerState {
-            internal Stateburn_state(ITriggerContext context) : base(context) { }
+        private class StateBurn_state : TriggerState {
+            internal StateBurn_state(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7504}, arg2: true);
@@ -55,7 +55,7 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new Statespawn_state(context);
+                    return new StateSpawn_state(context);
                 }
 
                 return null;
@@ -64,8 +64,8 @@ namespace Maple2.Trigger._02010052_bf {
             public override void OnExit() { }
         }
 
-        private class Statespawn_state : TriggerState {
-            internal Statespawn_state(ITriggerContext context) : base(context) { }
+        private class StateSpawn_state : TriggerState {
+            internal StateSpawn_state(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 200);
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new Staterun(context);
+                    return new StateRun(context);
                 }
 
                 return null;
@@ -94,14 +94,14 @@ namespace Maple2.Trigger._02010052_bf {
             }
         }
 
-        private class Staterun : TriggerState {
-            internal Staterun(ITriggerContext context) : base(context) { }
+        private class StateRun : TriggerState {
+            internal StateRun(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 707) == 1) {
-                    return new Staterun_01(context);
+                    return new StateRun_01(context);
                 }
 
                 return null;
@@ -110,8 +110,8 @@ namespace Maple2.Trigger._02010052_bf {
             public override void OnExit() { }
         }
 
-        private class Staterun_01 : TriggerState {
-            internal Staterun_01(ITriggerContext context) : base(context) { }
+        private class StateRun_01 : TriggerState {
+            internal StateRun_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 200, textId: 20105202);

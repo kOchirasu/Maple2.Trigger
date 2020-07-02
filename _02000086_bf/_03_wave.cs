@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000086_bf {
     public static class _03_wave {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000159}, arg2: 1);
@@ -17,7 +17,7 @@ namespace Maple2.Trigger._02000086_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000159}, arg2: 0)) {
-                    return new State딜레이1(context);
+                    return new StateDelay1(context);
                 }
 
                 return null;
@@ -26,8 +26,8 @@ namespace Maple2.Trigger._02000086_bf {
             public override void OnExit() { }
         }
 
-        private class State딜레이1 : TriggerState {
-            internal State딜레이1(ITriggerContext context) : base(context) { }
+        private class StateDelay1 : TriggerState {
+            internal StateDelay1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326}, arg2: true);
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02000086_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103, 104, 105, 106})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._02000086_bf {
             public override void OnExit() { }
         }
 
-        private class State딜레이2 : TriggerState {
-            internal State딜레이2(ITriggerContext context) : base(context) { }
+        private class StateDelay2 : TriggerState {
+            internal StateDelay2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 2);
@@ -111,11 +111,11 @@ namespace Maple2.Trigger._02000086_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103, 104, 105, 106})) {
-                    return new State딜레이4(context);
+                    return new StateDelay4(context);
                 }
 
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -124,8 +124,8 @@ namespace Maple2.Trigger._02000086_bf {
             public override void OnExit() { }
         }
 
-        private class State딜레이3 : TriggerState {
-            internal State딜레이3(ITriggerContext context) : base(context) { }
+        private class StateDelay3 : TriggerState {
+            internal StateDelay3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 2);
@@ -159,11 +159,11 @@ namespace Maple2.Trigger._02000086_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103, 104, 105, 106})) {
-                    return new State딜레이4(context);
+                    return new StateDelay4(context);
                 }
 
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -172,8 +172,8 @@ namespace Maple2.Trigger._02000086_bf {
             public override void OnExit() { }
         }
 
-        private class State딜레이4 : TriggerState {
-            internal State딜레이4(ITriggerContext context) : base(context) { }
+        private class StateDelay4 : TriggerState {
+            internal StateDelay4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 1);
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._02000086_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State딜레이5(context);
+                    return new StateDelay5(context);
                 }
 
                 return null;
@@ -190,8 +190,8 @@ namespace Maple2.Trigger._02000086_bf {
             public override void OnExit() { }
         }
 
-        private class State딜레이5 : TriggerState {
-            internal State딜레이5(ITriggerContext context) : base(context) { }
+        private class StateDelay5 : TriggerState {
+            internal StateDelay5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000159}, arg2: 1);
@@ -208,7 +208,7 @@ namespace Maple2.Trigger._02000086_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State딜레이6(context);
+                    return new StateDelay6(context);
                 }
 
                 return null;
@@ -217,8 +217,8 @@ namespace Maple2.Trigger._02000086_bf {
             public override void OnExit() { }
         }
 
-        private class State딜레이6 : TriggerState {
-            internal State딜레이6(ITriggerContext context) : base(context) { }
+        private class StateDelay6 : TriggerState {
+            internal StateDelay6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 2);
@@ -226,7 +226,7 @@ namespace Maple2.Trigger._02000086_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

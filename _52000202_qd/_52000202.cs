@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000202_qd {
     public static class _52000202 {
-        public class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

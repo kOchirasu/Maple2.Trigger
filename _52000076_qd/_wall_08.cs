@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52000076_qd {
 
             public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {108})) {
-                    return new State딜레이(context);
+                    return new StateDelay(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._52000076_qd {
             public override void OnExit() { }
         }
 
-        private class State딜레이 : TriggerState {
-            internal State딜레이(ITriggerContext context) : base(context) { }
+        private class StateDelay : TriggerState {
+            internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);

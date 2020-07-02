@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State양등장(context);
+                    return new State양Appear(context);
                 }
 
                 return null;
@@ -55,8 +55,8 @@ namespace Maple2.Trigger._52000006_qd {
             public override void OnExit() { }
         }
 
-        private class State양등장 : TriggerState {
-            internal State양등장(ITriggerContext context) : base(context) { }
+        private class State양Appear : TriggerState {
+            internal State양Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);

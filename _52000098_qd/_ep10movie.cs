@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000098_qd {
     public static class _ep10movie {
-        public class State연출시작검사 : TriggerState {
-            internal State연출시작검사(ITriggerContext context) : base(context) { }
+        public class StateStartCinematic검사 : TriggerState {
+            internal StateStartCinematic검사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

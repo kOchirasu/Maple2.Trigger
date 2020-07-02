@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000329_bf {
     public static class _cage_05 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6805}, arg2: false);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1105})) {
-                    return new State닭생성(context);
+                    return new State닭Creation(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000329_bf {
             public override void OnExit() { }
         }
 
-        private class State닭생성 : TriggerState {
-            internal State닭생성(ITriggerContext context) : base(context) { }
+        private class State닭Creation : TriggerState {
+            internal State닭Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 205, arg2: true, arg3: "Opened");

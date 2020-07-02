@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000087_qd {
     public static class _52000087 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

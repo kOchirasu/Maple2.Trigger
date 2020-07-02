@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02000383_bf {
     public static class _99_bossspawn {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State기본셋팅(context);
+                    return new State기본Setting(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000383_bf {
             public override void OnExit() { }
         }
 
-        private class State기본셋팅 : TriggerState {
-            internal State기본셋팅(ITriggerContext context) : base(context) { }
+        private class State기본Setting : TriggerState {
+            internal State기본Setting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {999});

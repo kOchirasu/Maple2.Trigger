@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010054_qd {
     public static class _52010054_qd {
-        public class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: false);
@@ -263,7 +263,7 @@ namespace Maple2.Trigger._52010054_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new Statequit01(context);
+                    return new StateQuit01(context);
                 }
 
                 return null;
@@ -272,8 +272,8 @@ namespace Maple2.Trigger._52010054_qd {
             public override void OnExit() { }
         }
 
-        private class Statequit01 : TriggerState {
-            internal Statequit01(ITriggerContext context) : base(context) { }
+        private class StateQuit01 : TriggerState {
+            internal StateQuit01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 5, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -281,7 +281,7 @@ namespace Maple2.Trigger._52010054_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new Statequit02(context);
+                    return new StateQuit02(context);
                 }
 
                 return null;
@@ -290,8 +290,8 @@ namespace Maple2.Trigger._52010054_qd {
             public override void OnExit() { }
         }
 
-        private class Statequit02 : TriggerState {
-            internal Statequit02(ITriggerContext context) : base(context) { }
+        private class StateQuit02 : TriggerState {
+            internal StateQuit02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 5, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");

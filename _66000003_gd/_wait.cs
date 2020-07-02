@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._66000003_gd {
     public static class _wait {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "60", arg2: 30, arg3: true, arg4: false);
@@ -31,11 +31,11 @@ namespace Maple2.Trigger._66000003_gd {
                 }
 
                 if (context.GetUserCount(boxId: 101) == 2) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.TimeExpired(arg1: "60")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -46,8 +46,8 @@ namespace Maple2.Trigger._66000003_gd {
             }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

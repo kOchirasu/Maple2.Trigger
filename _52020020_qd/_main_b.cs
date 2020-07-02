@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52020020_qd {
     public static class _main_b {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52020020_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200135}, arg3: new byte[] {2})) {
-                    return new Stateready(context);
+                    return new StateReady(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {60200135, 60200136, 60200137, 60200138, 60200139, 60200140}, arg3: new byte[] {3})) {
@@ -22,8 +22,8 @@ namespace Maple2.Trigger._52020020_qd {
             public override void OnExit() { }
         }
 
-        private class Stateready : TriggerState {
-            internal Stateready(ITriggerContext context) : base(context) { }
+        private class StateReady : TriggerState {
+            internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -207,7 +207,7 @@ namespace Maple2.Trigger._52020020_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new Stateexit(context);
+                    return new StateExit(context);
                 }
 
                 return null;
@@ -216,8 +216,8 @@ namespace Maple2.Trigger._52020020_qd {
             public override void OnExit() { }
         }
 
-        private class Stateexit : TriggerState {
-            internal Stateexit(ITriggerContext context) : base(context) { }
+        private class StateExit : TriggerState {
+            internal StateExit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);

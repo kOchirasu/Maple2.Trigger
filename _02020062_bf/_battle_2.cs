@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020062_bf {
     public static class _battle_2 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990001, key: "ObjectClear", value: 0);
@@ -13,7 +13,7 @@ namespace Maple2.Trigger._02020062_bf {
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectPhase") == 1) {
                     context.CreateMonster(arg1: new[] {811, 812, 821, 822, 831, 832}, arg2: false);
-                    return new State오브젝트소환(context);
+                    return new StateSummonObject(context);
                 }
 
                 return null;
@@ -22,8 +22,8 @@ namespace Maple2.Trigger._02020062_bf {
             public override void OnExit() { }
         }
 
-        private class State오브젝트소환 : TriggerState {
-            internal State오브젝트소환(ITriggerContext context) : base(context) { }
+        private class StateSummonObject : TriggerState {
+            internal StateSummonObject(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {711, 712, 713}, arg2: false);
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectPhase") == 2) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectPhase") == 2) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectPhase") == 2) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
@@ -104,11 +104,11 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectPhase") == 2) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {701})) {
-                    return new State오브젝트소환_클리어(context);
+                    return new StateSummonObject_Clear(context);
                 }
 
                 return null;
@@ -117,8 +117,8 @@ namespace Maple2.Trigger._02020062_bf {
             public override void OnExit() { }
         }
 
-        private class State오브젝트소환_클리어 : TriggerState {
-            internal State오브젝트소환_클리어(ITriggerContext context) : base(context) { }
+        private class StateSummonObject_Clear : TriggerState {
+            internal StateSummonObject_Clear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990001, key: "ObjectClear", value: 1);

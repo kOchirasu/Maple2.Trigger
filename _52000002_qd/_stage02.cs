@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000002_qd {
     public static class _stage02 {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._52000002_qd {
                 }
 
                 if (!context.UserDetected(arg1: new[] {101})) {
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;
@@ -30,11 +30,11 @@ namespace Maple2.Trigger._52000002_qd {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000612, 10000613, 10000614, 10000615, 10000616}, arg2: 2)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {101})) {
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;
@@ -43,8 +43,8 @@ namespace Maple2.Trigger._52000002_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 25200205);
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._52000002_qd {
 
             public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {101})) {
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;

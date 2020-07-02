@@ -1,21 +1,21 @@
 namespace Maple2.Trigger._02000022_bf {
     public static class _ia_104 {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 104, arg2: false, arg3: "Idle_A");
             }
 
             public override TriggerState Execute() {
-                return new State오브젝트반응(context);
+                return new StateInteractObject(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State오브젝트반응 : TriggerState {
-            internal State오브젝트반응(ITriggerContext context) : base(context) { }
+        private class StateInteractObject : TriggerState {
+            internal StateInteractObject(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02000022_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000093}, arg2: 1)) {
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;

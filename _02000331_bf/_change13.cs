@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02000331_bf {
     public static class _change13 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9024, arg2: new[] {604})) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -39,11 +39,11 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9030, arg2: new[] {999})) {
-                    return new State보스전투(context);
+                    return new StateBossCombat(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {604})) {
-                    return new State교체딜레이(context);
+                    return new State교체Delay(context);
                 }
 
                 return null;
@@ -52,8 +52,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnExit() { }
         }
 
-        private class State보스전투 : TriggerState {
-            internal State보스전투(ITriggerContext context) : base(context) { }
+        private class StateBossCombat : TriggerState {
+            internal StateBossCombat(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02000331_bf {
                 }
 
                 if (context.MonsterDead(arg1: new[] {604})) {
-                    return new State교체딜레이(context);
+                    return new State교체Delay(context);
                 }
 
                 return null;
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9024, arg2: new[] {604})) {
-                    return new State디펜스성공(context);
+                    return new State디펜스Success(context);
                 }
 
                 return null;
@@ -88,8 +88,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnExit() { }
         }
 
-        private class State디펜스성공 : TriggerState {
-            internal State디펜스성공(ITriggerContext context) : base(context) { }
+        private class State디펜스Success : TriggerState {
+            internal State디펜스Success(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -100,8 +100,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnExit() { }
         }
 
-        private class State교체딜레이 : TriggerState {
-            internal State교체딜레이(ITriggerContext context) : base(context) { }
+        private class State교체Delay : TriggerState {
+            internal State교체Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

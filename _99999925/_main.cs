@@ -94,15 +94,15 @@ namespace Maple2.Trigger._99999925 {
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 33f)) {
-                    return new Stateswitch01(context);
+                    return new StateSwitch01(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    return new Stateswitch02(context);
+                    return new StateSwitch02(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    return new Stateswitch03(context);
+                    return new StateSwitch03(context);
                 }
 
                 return null;
@@ -111,8 +111,8 @@ namespace Maple2.Trigger._99999925 {
             public override void OnExit() { }
         }
 
-        private class Stateswitch01 : TriggerState {
-            internal Stateswitch01(ITriggerContext context) : base(context) { }
+        private class StateSwitch01 : TriggerState {
+            internal StateSwitch01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -127,8 +127,8 @@ namespace Maple2.Trigger._99999925 {
             public override void OnExit() { }
         }
 
-        private class Stateswitch02 : TriggerState {
-            internal Stateswitch02(ITriggerContext context) : base(context) { }
+        private class StateSwitch02 : TriggerState {
+            internal StateSwitch02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -143,8 +143,8 @@ namespace Maple2.Trigger._99999925 {
             public override void OnExit() { }
         }
 
-        private class Stateswitch03 : TriggerState {
-            internal Stateswitch03(ITriggerContext context) : base(context) { }
+        private class StateSwitch03 : TriggerState {
+            internal StateSwitch03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

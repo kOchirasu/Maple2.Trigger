@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000033_qd {
     public static class _audiencewithereb_01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 201, 301, 401, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510}, arg2: false);

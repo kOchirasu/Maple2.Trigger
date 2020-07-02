@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02000551_bf {
     public static class _startportal {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State기본셋팅(context);
+                    return new State기본Setting(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnExit() { }
         }
 
-        private class State기본셋팅 : TriggerState {
-            internal State기본셋팅(ITriggerContext context) : base(context) { }
+        private class State기본Setting : TriggerState {
+            internal State기본Setting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State포탈활성화(context);
+                    return new StatePortalEnable(context);
                 }
 
                 return null;
@@ -35,8 +35,8 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnExit() { }
         }
 
-        private class State포탈활성화 : TriggerState {
-            internal State포탈활성화(ITriggerContext context) : base(context) { }
+        private class StatePortalEnable : TriggerState {
+            internal StatePortalEnable(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: true);
@@ -54,7 +54,7 @@ namespace Maple2.Trigger._02000551_bf {
                 }
 
                 if (context.WaitTick(waitTick: 30000)) {
-                    return new State포탈감추기(context);
+                    return new StatePortalHide(context);
                 }
 
                 return null;
@@ -63,8 +63,8 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnExit() { }
         }
 
-        private class State포탈감추기 : TriggerState {
-            internal State포탈감추기(ITriggerContext context) : base(context) { }
+        private class StatePortalHide : TriggerState {
+            internal StatePortalHide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);

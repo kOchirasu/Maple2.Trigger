@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._80000015_bonus {
     public static class _lever2 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7102}, arg2: false);
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._80000015_bonus {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2002})) {
-                    return new State딜레이(context);
+                    return new StateDelay(context);
                 }
 
                 return null;
@@ -82,8 +82,8 @@ namespace Maple2.Trigger._80000015_bonus {
             public override void OnExit() { }
         }
 
-        private class State딜레이 : TriggerState {
-            internal State딜레이(ITriggerContext context) : base(context) { }
+        private class StateDelay : TriggerState {
+            internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999101, key: "Dead_B", value: 1);
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._80000015_bonus {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.SetSkill(arg1: new[] {7102}, arg2: true);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -102,8 +102,8 @@ namespace Maple2.Trigger._80000015_bonus {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

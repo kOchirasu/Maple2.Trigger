@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000335_bf {
     public static class _invisiblewall01 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

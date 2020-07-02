@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52100031_qd {
     public static class _faction_03 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveBuff(arg1: 199, arg2: 99910130);
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._52100031_qd {
             internal State탱크준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "퀘스트");
+                context.SetSkip(arg1: "Quest");
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.DestroyMonster(arg1: new[] {2903});
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    return new State퀘스트(context);
+                    return new StateQuest(context);
                 }
 
                 return null;
@@ -47,8 +47,8 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnExit() { }
         }
 
-        private class State퀘스트 : TriggerState {
-            internal State퀘스트(ITriggerContext context) : base(context) { }
+        private class StateQuest : TriggerState {
+            internal StateQuest(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    return new State종료체크(context);
+                    return new StateEnd체크(context);
                 }
 
                 return null;
@@ -68,8 +68,8 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnExit() { }
         }
 
-        private class State종료체크 : TriggerState {
-            internal State종료체크(ITriggerContext context) : base(context) { }
+        private class StateEnd체크 : TriggerState {
+            internal StateEnd체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20040106, textId: 20040106, duration: 3500);
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52100031_qd {
                     context.DestroyMonster(arg1: new[] {1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208}, arg2: false);
                     context.SetInteractObject(arg1: new[] {10002064, 10002065, 10002069}, arg2: 0);
                     context.RemoveBuff(arg1: 199, arg2: 99910130);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -91,8 +91,8 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

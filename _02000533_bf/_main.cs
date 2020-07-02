@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000533_bf {
     public static class _main {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {901, 3000, 3001, 3002, 3003}, arg2: true);
@@ -55,7 +55,7 @@ namespace Maple2.Trigger._02000533_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {508})) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -64,8 +64,8 @@ namespace Maple2.Trigger._02000533_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7000}, arg2: true);
@@ -210,7 +210,7 @@ namespace Maple2.Trigger._02000533_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "GameLogicEnd") == 1) {
-                    return new State게임로직종료및성공(context);
+                    return new State게임로직종료및Success(context);
                 }
 
                 if (context.GetUserValue(key: "GameLogicEnd") == 2) {
@@ -223,8 +223,8 @@ namespace Maple2.Trigger._02000533_bf {
             public override void OnExit() { }
         }
 
-        private class State게임로직종료및성공 : TriggerState {
-            internal State게임로직종료및성공(ITriggerContext context) : base(context) { }
+        private class State게임로직종료및Success : TriggerState {
+            internal State게임로직종료및Success(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

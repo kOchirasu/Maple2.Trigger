@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010004_qd {
     public static class _battle01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {10000, 10001, 10002, 10003}, arg2: false);
@@ -32,7 +32,7 @@ namespace Maple2.Trigger._52010004_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State둔바연출준비01(context);
+                    return new State둔바SetupCinematic01(context);
                 }
 
                 return null;
@@ -41,8 +41,8 @@ namespace Maple2.Trigger._52010004_qd {
             public override void OnExit() { }
         }
 
-        private class State둔바연출준비01 : TriggerState {
-            internal State둔바연출준비01(ITriggerContext context) : base(context) { }
+        private class State둔바SetupCinematic01 : TriggerState {
+            internal State둔바SetupCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);
@@ -141,7 +141,7 @@ namespace Maple2.Trigger._52010004_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "12")) {
-                    return new State둔바연출종료01(context);
+                    return new State둔바StopCinematic01(context);
                 }
 
                 return null;
@@ -150,8 +150,8 @@ namespace Maple2.Trigger._52010004_qd {
             public override void OnExit() { }
         }
 
-        private class State둔바연출종료01 : TriggerState {
-            internal State둔바연출종료01(ITriggerContext context) : base(context) { }
+        private class State둔바StopCinematic01 : TriggerState {
+            internal State둔바StopCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();

@@ -11,7 +11,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2003}, arg2: new[] {30000335}, arg3: new byte[] {1})) {
-                    return new State투르카이오네연출시작(context);
+                    return new State투르카이오네StartCinematic(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카이오네연출시작 : TriggerState {
-            internal State투르카이오네연출시작(ITriggerContext context) : base(context) { }
+        private class State투르카이오네StartCinematic : TriggerState {
+            internal State투르카이오네StartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -35,7 +35,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State투르카이오네연출시작_02(context);
+                    return new State투르카이오네StartCinematic_02(context);
                 }
 
                 return null;
@@ -44,8 +44,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카이오네연출시작_02 : TriggerState {
-            internal State투르카이오네연출시작_02(ITriggerContext context) : base(context) { }
+        private class State투르카이오네StartCinematic_02 : TriggerState {
+            internal State투르카이오네StartCinematic_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -55,7 +55,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State투르카의등장(context);
+                    return new State투르카의Appear(context);
                 }
 
                 return null;
@@ -64,8 +64,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카의등장 : TriggerState {
-            internal State투르카의등장(ITriggerContext context) : base(context) { }
+        private class State투르카의Appear : TriggerState {
+            internal State투르카의Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4031}, arg2: false);
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State투르카의등장_01(context);
+                    return new State투르카의Appear_01(context);
                 }
 
                 return null;
@@ -84,8 +84,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카의등장_01 : TriggerState {
-            internal State투르카의등장_01(ITriggerContext context) : base(context) { }
+        private class State투르카의Appear_01 : TriggerState {
+            internal State투르카의Appear_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Bore_B");
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State투르카의등장02(context);
+                    return new State투르카의Appear02(context);
                 }
 
                 return null;
@@ -103,8 +103,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카의등장02 : TriggerState {
-            internal State투르카의등장02(ITriggerContext context) : base(context) { }
+        private class State투르카의Appear02 : TriggerState {
+            internal State투르카의Appear02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4019}, arg2: false);
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State투르카의등장03(context);
+                    return new State투르카의Appear03(context);
                 }
 
                 return null;
@@ -125,8 +125,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카의등장03 : TriggerState {
-            internal State투르카의등장03(ITriggerContext context) : base(context) { }
+        private class State투르카의Appear03 : TriggerState {
+            internal State투르카의Appear03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4018}, arg2: false);
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State투르카의등장04(context);
+                    return new State투르카의Appear04(context);
                 }
 
                 return null;
@@ -145,8 +145,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카의등장04 : TriggerState {
-            internal State투르카의등장04(ITriggerContext context) : base(context) { }
+        private class State투르카의Appear04 : TriggerState {
+            internal State투르카의Appear04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4019}, arg2: false);

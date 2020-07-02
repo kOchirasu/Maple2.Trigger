@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010032_qd {
     public static class _main_quest10003106 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

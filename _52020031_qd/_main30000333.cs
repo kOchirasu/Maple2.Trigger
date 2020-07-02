@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52020031_qd {
     public static class _main30000333 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001}, arg2: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52020031_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000333}, arg3: new byte[] {1})) {
-                    return new State두번째연출준비(context);
+                    return new State두번째SetupCinematic(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52020031_qd {
             public override void OnExit() { }
         }
 
-        private class State두번째연출준비 : TriggerState {
-            internal State두번째연출준비(ITriggerContext context) : base(context) { }
+        private class State두번째SetupCinematic : TriggerState {
+            internal State두번째SetupCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52020031_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State두번째연출준비_01(context);
+                    return new State두번째SetupCinematic_01(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._52020031_qd {
             public override void OnExit() { }
         }
 
-        private class State두번째연출준비_01 : TriggerState {
-            internal State두번째연출준비_01(ITriggerContext context) : base(context) { }
+        private class State두번째SetupCinematic_01 : TriggerState {
+            internal State두번째SetupCinematic_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52020031_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State두번째연출준비_02(context);
+                    return new State두번째SetupCinematic_02(context);
                 }
 
                 return null;
@@ -58,8 +58,8 @@ namespace Maple2.Trigger._52020031_qd {
             public override void OnExit() { }
         }
 
-        private class State두번째연출준비_02 : TriggerState {
-            internal State두번째연출준비_02(ITriggerContext context) : base(context) { }
+        private class State두번째SetupCinematic_02 : TriggerState {
+            internal State두번째SetupCinematic_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52020031, arg2: 6001);

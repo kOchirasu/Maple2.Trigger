@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010015_qd {
     public static class _act01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {201}, arg2: true);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52010015_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002824}, arg3: new byte[] {2})) {
-                    return new State딜레이01(context);
+                    return new StateDelay01(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52010015_qd {
             public override void OnExit() { }
         }
 
-        private class State딜레이01 : TriggerState {
-            internal State딜레이01(ITriggerContext context) : base(context) { }
+        private class StateDelay01 : TriggerState {
+            internal StateDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "100", arg2: 1);

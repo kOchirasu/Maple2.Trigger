@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._03100000_se_common {
     public static class _gettrophy {
-        public class StategetTrophy : TriggerState {
-            internal StategetTrophy(ITriggerContext context) : base(context) { }
+        public class StateGetTrophy : TriggerState {
+            internal StateGetTrophy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

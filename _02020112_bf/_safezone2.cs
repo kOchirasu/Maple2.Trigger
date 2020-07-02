@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020112_bf {
     public static class _safezone2 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990017, key: "Safe", value: 0);
@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {903})) {
-                    return new State안전장치_활성화(context);
+                    return new State안전장치Enabled(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnExit() { }
         }
 
-        private class State안전장치_활성화 : TriggerState {
-            internal State안전장치_활성화(ITriggerContext context) : base(context) { }
+        private class State안전장치Enabled : TriggerState {
+            internal State안전장치Enabled(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 8, arg2: true, arg3: true, arg4: false);

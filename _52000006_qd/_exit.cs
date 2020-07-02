@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000006_qd {
     public static class _exit {
-        public class State유저감지 : TriggerState {
-            internal State유저감지(ITriggerContext context) : base(context) { }
+        public class StateUserDetection : TriggerState {
+            internal StateUserDetection(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -61,12 +61,8 @@ namespace Maple2.Trigger._52000006_qd {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                if (true) {
-                    context.MoveUser(arg1: 02000064, arg2: 800, arg3: 0);
-                    return new State유저감지(context);
-                }
-
-                return null;
+                context.MoveUser(arg1: 02000064, arg2: 800, arg3: 0);
+                    return new StateUserDetection(context);
             }
 
             public override void OnExit() { }

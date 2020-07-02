@@ -9,7 +9,7 @@ namespace Maple2.Trigger._64000001_gd {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 104) == 6) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.TimeExpired(arg1: "10")) {
@@ -22,8 +22,8 @@ namespace Maple2.Trigger._64000001_gd {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "88", arg2: 1200, arg3: false);

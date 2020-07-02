@@ -2,8 +2,8 @@ using System.Numerics;
 
 namespace Maple2.Trigger._83000003_colosseum {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -703,7 +703,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -721,7 +721,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -739,7 +739,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -757,7 +757,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -775,7 +775,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -793,7 +793,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -811,7 +811,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -829,7 +829,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -847,7 +847,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -865,7 +865,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -883,7 +883,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -901,7 +901,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -919,7 +919,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -937,7 +937,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

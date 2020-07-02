@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000295_bf {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 3000, arg2: false, arg3: false);
@@ -232,7 +232,7 @@ namespace Maple2.Trigger._02000295_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State트리거01웨이브(context);
+                    return new StateTrigger01웨이브(context);
                 }
 
                 return null;
@@ -241,8 +241,8 @@ namespace Maple2.Trigger._02000295_bf {
             public override void OnExit() { }
         }
 
-        private class State트리거01웨이브 : TriggerState {
-            internal State트리거01웨이브(ITriggerContext context) : base(context) { }
+        private class StateTrigger01웨이브 : TriggerState {
+            internal StateTrigger01웨이브(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000, 5001, 5002}, arg2: false);
@@ -252,7 +252,7 @@ namespace Maple2.Trigger._02000295_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State트리거02웨이브(context);
+                    return new StateTrigger02웨이브(context);
                 }
 
                 return null;
@@ -261,8 +261,8 @@ namespace Maple2.Trigger._02000295_bf {
             public override void OnExit() { }
         }
 
-        private class State트리거02웨이브 : TriggerState {
-            internal State트리거02웨이브(ITriggerContext context) : base(context) { }
+        private class StateTrigger02웨이브 : TriggerState {
+            internal StateTrigger02웨이브(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {912, 913}, arg2: true);
@@ -270,7 +270,7 @@ namespace Maple2.Trigger._02000295_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State트리거03웨이브(context);
+                    return new StateTrigger03웨이브(context);
                 }
 
                 return null;
@@ -279,8 +279,8 @@ namespace Maple2.Trigger._02000295_bf {
             public override void OnExit() { }
         }
 
-        private class State트리거03웨이브 : TriggerState {
-            internal State트리거03웨이브(ITriggerContext context) : base(context) { }
+        private class StateTrigger03웨이브 : TriggerState {
+            internal StateTrigger03웨이브(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {914, 915}, arg2: true);
@@ -288,7 +288,7 @@ namespace Maple2.Trigger._02000295_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State트리거04웨이브(context);
+                    return new StateTrigger04웨이브(context);
                 }
 
                 return null;
@@ -297,8 +297,8 @@ namespace Maple2.Trigger._02000295_bf {
             public override void OnExit() { }
         }
 
-        private class State트리거04웨이브 : TriggerState {
-            internal State트리거04웨이브(ITriggerContext context) : base(context) { }
+        private class StateTrigger04웨이브 : TriggerState {
+            internal StateTrigger04웨이브(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {916, 917}, arg2: true);

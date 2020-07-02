@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000026_qd {
     public static class _seperategroup_berserker {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSound(arg1: 10000, arg2: false);
@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002963}, arg3: new byte[] {1}, arg4: 20)) {
-                    return new State연출준비01(context);
+                    return new StateSetupCinematic01(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnExit() { }
         }
 
-        private class State연출준비01 : TriggerState {
-            internal State연출준비01(ITriggerContext context) : base(context) { }
+        private class StateSetupCinematic01 : TriggerState {
+            internal StateSetupCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State연출준비02(context);
+                    return new StateSetupCinematic02(context);
                 }
 
                 return null;
@@ -43,8 +43,8 @@ namespace Maple2.Trigger._52000026_qd {
             }
         }
 
-        private class State연출준비02 : TriggerState {
-            internal State연출준비02(ITriggerContext context) : base(context) { }
+        private class StateSetupCinematic02 : TriggerState {
+            internal StateSetupCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -1470,12 +1470,12 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6007}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_BERSERKER__24$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "연출종료01");
+                context.SetSkip(arg1: "StopCinematic01");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State연출종료01(context);
+                    return new StateStopCinematic01(context);
                 }
 
                 return null;
@@ -1484,8 +1484,8 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnExit() { }
         }
 
-        private class State연출종료01 : TriggerState {
-            internal State연출종료01(ITriggerContext context) : base(context) { }
+        private class StateStopCinematic01 : TriggerState {
+            internal StateStopCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -1496,7 +1496,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State연출종료02(context);
+                    return new StateStopCinematic02(context);
                 }
 
                 return null;
@@ -1505,8 +1505,8 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnExit() { }
         }
 
-        private class State연출종료02 : TriggerState {
-            internal State연출종료02(ITriggerContext context) : base(context) { }
+        private class StateStopCinematic02 : TriggerState {
+            internal StateStopCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
@@ -1516,7 +1516,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State업적발생(context);
+                    return new StateAchievement(context);
                 }
 
                 return null;
@@ -1525,8 +1525,8 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnExit() { }
         }
 
-        private class State업적발생 : TriggerState {
-            internal State업적발생(ITriggerContext context) : base(context) { }
+        private class StateAchievement : TriggerState {
+            internal StateAchievement(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "SeperateGroup");

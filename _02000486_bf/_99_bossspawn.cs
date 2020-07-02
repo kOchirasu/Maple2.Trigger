@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State던전시작(context);
+                    return new StateDungeonInit(context);
                 }
 
                 return null;
@@ -18,14 +18,14 @@ namespace Maple2.Trigger._02000486_bf {
             public override void OnExit() { }
         }
 
-        private class State룸체크 : TriggerState {
-            internal State룸체크(ITriggerContext context) : base(context) { }
+        private class StateRoomCheck : TriggerState {
+            internal StateRoomCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.IsDungeonRoom()) {
-                    return new State던전시작(context);
+                    return new StateDungeonInit(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._02000486_bf {
             public override void OnExit() { }
         }
 
-        private class State던전시작 : TriggerState {
-            internal State던전시작(ITriggerContext context) : base(context) { }
+        private class StateDungeonInit : TriggerState {
+            internal StateDungeonInit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {900, 901}, arg2: false);

@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._99999911 {
     public static class _main {
-        public class State최초 : TriggerState {
-            internal State최초(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 701) == 1) {
-                    return new State시작조건체크(context);
+                    return new StateStart조건체크(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._99999911 {
             public override void OnExit() { }
         }
 
-        private class State시작조건체크 : TriggerState {
-            internal State시작조건체크(ITriggerContext context) : base(context) { }
+        private class StateStart조건체크 : TriggerState {
+            internal StateStart조건체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._99999911 {
                 if (context.WaitTick(waitTick: 5500)) {
                     context.SetMesh(arg1: new[] {301, 302, 303}, arg2: false, arg3: 12, arg4: 0);
                     context.SetAchievement(arg1: 101, arg2: "trigger", arg3: "dailyquest_start");
-                    return new Stateidle(context);
+                    return new StateIdle(context);
                 }
 
                 return null;
@@ -74,8 +74,8 @@ namespace Maple2.Trigger._99999911 {
             public override void OnExit() { }
         }
 
-        private class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        private class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: true, arg3: 1);
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._99999911 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    // return new Staterandom_start(context);
+                    // return new StateRandom_start(context);
                     return null;
                 }
 

@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000443_bf {
 
             public override TriggerState Execute() {
                 if (context.IsDungeonRoom()) {
-                    return new Stateidle(context);
+                    return new StateIdle(context);
                 }
 
                 return null;
@@ -16,14 +16,14 @@ namespace Maple2.Trigger._02000443_bf {
             public override void OnExit() { }
         }
 
-        private class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        private class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Ending") == 1) {
-                    return new State몬스터소멸(context);
+                    return new StateMonsterDestroy(context);
                 }
 
                 return null;
@@ -32,8 +32,8 @@ namespace Maple2.Trigger._02000443_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터소멸 : TriggerState {
-            internal State몬스터소멸(ITriggerContext context) : base(context) { }
+        private class StateMonsterDestroy : TriggerState {
+            internal StateMonsterDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {210, 101, 102});
@@ -185,7 +185,7 @@ namespace Maple2.Trigger._02000443_bf {
 
             public override TriggerState Execute() {
                 if (context.IsDungeonRoom()) {
-                    return new StatedungeonEnd(context);
+                    return new StateDungeonEnd(context);
                 }
 
                 return null;
@@ -194,8 +194,8 @@ namespace Maple2.Trigger._02000443_bf {
             public override void OnExit() { }
         }
 
-        private class StatedungeonEnd : TriggerState {
-            internal StatedungeonEnd(ITriggerContext context) : base(context) { }
+        private class StateDungeonEnd : TriggerState {
+            internal StateDungeonEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7001}, arg2: false);

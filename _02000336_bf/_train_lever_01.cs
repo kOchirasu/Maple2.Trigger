@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000336_bf {
     public static class _train_lever_01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {8111, 8112, 8113, 8114}, arg2: false);
@@ -14,7 +14,7 @@ namespace Maple2.Trigger._02000336_bf {
                 }
 
                 if (context.GetUserCount(boxId: 708) == 1) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -23,8 +23,8 @@ namespace Maple2.Trigger._02000336_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");

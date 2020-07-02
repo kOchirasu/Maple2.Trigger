@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._80000015_bonus {
     public static class _train_02 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -27,13 +27,13 @@ namespace Maple2.Trigger._80000015_bonus {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "itemSpawn") == 1) {
-                    return new State생성(context);
+                    return new StateCreation(context);
                 }
 
                 if (context.WaitTick(waitTick: 200)) {
                     context.CreateItem(arg1: new[] {9026, 9027, 9028, 9029, 9030, 9031}, arg5: 15);
                     context.SetUserValue(key: "itemSpawn", value: 1);
-                    return new State생성(context);
+                    return new StateCreation(context);
                 }
 
                 return null;
@@ -42,8 +42,8 @@ namespace Maple2.Trigger._80000015_bonus {
             public override void OnExit() { }
         }
 
-        private class State생성 : TriggerState {
-            internal State생성(ITriggerContext context) : base(context) { }
+        private class StateCreation : TriggerState {
+            internal StateCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1201}, arg2: false);
@@ -145,7 +145,7 @@ namespace Maple2.Trigger._80000015_bonus {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.DestroyMonster(arg1: new[] {1201});
-                    return new State딜레이(context);
+                    return new StateDelay(context);
                 }
 
                 return null;
@@ -154,14 +154,14 @@ namespace Maple2.Trigger._80000015_bonus {
             public override void OnExit() { }
         }
 
-        private class State딜레이 : TriggerState {
-            internal State딜레이(ITriggerContext context) : base(context) { }
+        private class StateDelay : TriggerState {
+            internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -170,8 +170,8 @@ namespace Maple2.Trigger._80000015_bonus {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

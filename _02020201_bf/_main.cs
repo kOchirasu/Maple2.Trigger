@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020201_bf {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 103, arg2: false, arg3: false, arg4: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {901})) {
-                    return new State페이카등장(context);
+                    return new State페이카Appear(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02020201_bf {
             public override void OnExit() { }
         }
 
-        private class State페이카등장 : TriggerState {
-            internal State페이카등장(ITriggerContext context) : base(context) { }
+        private class State페이카Appear : TriggerState {
+            internal State페이카Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -57,8 +57,8 @@ namespace Maple2.Trigger._02020201_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg2: "trigger", arg3: "PaikaKritiasClear");

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020021_bf {
     public static class _battle {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1});
@@ -196,7 +196,7 @@ namespace Maple2.Trigger._02020021_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State종료신호(context);
+                    return new StateEnd신호(context);
                 }
 
                 return null;
@@ -205,8 +205,8 @@ namespace Maple2.Trigger._02020021_bf {
             public override void OnExit() { }
         }
 
-        private class State종료신호 : TriggerState {
-            internal State종료신호(ITriggerContext context) : base(context) { }
+        private class StateEnd신호 : TriggerState {
+            internal StateEnd신호(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990001, key: "End", value: 1);

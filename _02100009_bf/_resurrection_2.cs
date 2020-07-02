@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02100009_bf {
     public static class _resurrection_2 {
-        public class State유저감지 : TriggerState {
-            internal State유저감지(ITriggerContext context) : base(context) { }
+        public class StateUserDetection : TriggerState {
+            internal StateUserDetection(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State전투시작(context);
+                    return new StateBattleStart(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02100009_bf {
             public override void OnExit() { }
         }
 
-        private class State전투시작 : TriggerState {
-            internal State전투시작(ITriggerContext context) : base(context) { }
+        private class StateBattleStart : TriggerState {
+            internal StateBattleStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {100000002}, arg2: false);
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {100000002})) {
-                    return new State버프(context);
+                    return new StateBuff(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._02100009_bf {
             public override void OnExit() { }
         }
 
-        private class State버프 : TriggerState {
-            internal State버프(ITriggerContext context) : base(context) { }
+        private class StateBuff : TriggerState {
+            internal StateBuff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {100000002}, arg2: 50000198, arg3: 1, arg4: true, arg5: false);
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 100000002) <= 0.5f) {
-                    return new State몬스터기절_2(context);
+                    return new StateMonster기절_2(context);
                 }
 
                 return null;
@@ -73,8 +73,8 @@ namespace Maple2.Trigger._02100009_bf {
             }
         }
 
-        private class State몬스터기절_2 : TriggerState {
-            internal State몬스터기절_2(ITriggerContext context) : base(context) { }
+        private class StateMonster기절_2 : TriggerState {
+            internal StateMonster기절_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "02100009_1");
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6800)) {
-                    return new State몬스터부활(context);
+                    return new StateMonster부활(context);
                 }
 
                 return null;
@@ -91,8 +91,8 @@ namespace Maple2.Trigger._02100009_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터부활 : TriggerState {
-            internal State몬스터부활(ITriggerContext context) : base(context) { }
+        private class StateMonster부활 : TriggerState {
+            internal StateMonster부활(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {100000002}, arg2: 50000204, arg3: 1, arg4: true, arg5: false);
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._02100009_bf {
 
             public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 100000002) > 0.5f) {
-                    return new State몬스터부활_2(context);
+                    return new StateMonster부활_2(context);
                 }
 
                 return null;
@@ -129,8 +129,8 @@ namespace Maple2.Trigger._02100009_bf {
             }
         }
 
-        private class State몬스터부활_2 : TriggerState {
-            internal State몬스터부활_2(ITriggerContext context) : base(context) { }
+        private class StateMonster부활_2 : TriggerState {
+            internal StateMonster부활_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "MonsterDown2", value: 3);

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000347_bf {
     public static class _fire {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029, 3030, 3031, 3032, 3033, 3034, 3035, 3036, 3037, 3038, 3039, 3040, 3041, 3042, 3043, 3044, 3045, 3046, 3047, 3048, 3049, 3050}, arg2: false, arg3: 0, arg4: 0);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {60002})) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022, 3023, 3024, 3025, 3026, 3027, 3028, 3029, 3030, 3031, 3032, 3033, 3034, 3035, 3036, 3037, 3038, 3039, 3040, 3041, 3042, 3043, 3044, 3045, 3046, 3047, 3048, 3049, 3050}, arg2: false, arg3: 0, arg4: 2);
@@ -32,11 +32,11 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -45,214 +45,214 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State랜덤스킬작동 : TriggerState {
-            internal State랜덤스킬작동(ITriggerContext context) : base(context) { }
+        private class  StateRandomSkillCast : TriggerState {
+            internal  StateRandomSkillCast(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State1번생성(context);
+                    return new State1TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State2번생성(context);
+                    return new State2TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State3번생성(context);
+                    return new State3TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State4번생성(context);
+                    return new State4TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State5번생성(context);
+                    return new State5TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State6번생성(context);
+                    return new State6TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State7번생성(context);
+                    return new State7TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State8번생성(context);
+                    return new State8TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State9번생성(context);
+                    return new State9TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State10번생성(context);
+                    return new State10TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State11번생성(context);
+                    return new State11TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State12번생성(context);
+                    return new State12TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State13번생성(context);
+                    return new State13TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State14번생성(context);
+                    return new State14TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State15번생성(context);
+                    return new State15TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State16번생성(context);
+                    return new State16TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State17번생성(context);
+                    return new State17TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State18번생성(context);
+                    return new State18TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State19번생성(context);
+                    return new State19TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State20번생성(context);
+                    return new State20TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State21번생성(context);
+                    return new State21TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State22번생성(context);
+                    return new State22TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State23번생성(context);
+                    return new State23TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State24번생성(context);
+                    return new State24TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State25번생성(context);
+                    return new State25TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State26번생성(context);
+                    return new State26TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State27번생성(context);
+                    return new State27TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State28번생성(context);
+                    return new State28TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State29번생성(context);
+                    return new State29TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State30번생성(context);
+                    return new State30TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State31번생성(context);
+                    return new State31TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State32번생성(context);
+                    return new State32TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State33번생성(context);
+                    return new State33TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State34번생성(context);
+                    return new State34TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State35번생성(context);
+                    return new State35TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State36번생성(context);
+                    return new State36TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State37번생성(context);
+                    return new State37TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State38번생성(context);
+                    return new State38TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State39번생성(context);
+                    return new State39TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State40번생성(context);
+                    return new State40TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State41번생성(context);
+                    return new State41TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State42번생성(context);
+                    return new State42TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State43번생성(context);
+                    return new State43TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State44번생성(context);
+                    return new State44TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State45번생성(context);
+                    return new State45TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State46번생성(context);
+                    return new State46TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State47번생성(context);
+                    return new State47TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State48번생성(context);
+                    return new State48TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State49번생성(context);
+                    return new State49TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 2f)) {
-                    return new State50번생성(context);
+                    return new State50TimedCreation(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -261,8 +261,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State1번생성 : TriggerState {
-            internal State1번생성(ITriggerContext context) : base(context) { }
+        private class State1TimedCreation : TriggerState {
+            internal State1TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7001}, arg2: true);
@@ -273,15 +273,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -290,8 +290,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State2번생성 : TriggerState {
-            internal State2번생성(ITriggerContext context) : base(context) { }
+        private class State2TimedCreation : TriggerState {
+            internal State2TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7002}, arg2: true);
@@ -302,15 +302,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -319,8 +319,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State3번생성 : TriggerState {
-            internal State3번생성(ITriggerContext context) : base(context) { }
+        private class State3TimedCreation : TriggerState {
+            internal State3TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7003}, arg2: true);
@@ -331,15 +331,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -348,8 +348,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State4번생성 : TriggerState {
-            internal State4번생성(ITriggerContext context) : base(context) { }
+        private class State4TimedCreation : TriggerState {
+            internal State4TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7004}, arg2: true);
@@ -360,15 +360,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -377,8 +377,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State5번생성 : TriggerState {
-            internal State5번생성(ITriggerContext context) : base(context) { }
+        private class State5TimedCreation : TriggerState {
+            internal State5TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7005}, arg2: true);
@@ -389,15 +389,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -406,8 +406,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State6번생성 : TriggerState {
-            internal State6번생성(ITriggerContext context) : base(context) { }
+        private class State6TimedCreation : TriggerState {
+            internal State6TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7006}, arg2: true);
@@ -418,15 +418,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -435,8 +435,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State7번생성 : TriggerState {
-            internal State7번생성(ITriggerContext context) : base(context) { }
+        private class State7TimedCreation : TriggerState {
+            internal State7TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7007}, arg2: true);
@@ -447,15 +447,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -464,8 +464,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State8번생성 : TriggerState {
-            internal State8번생성(ITriggerContext context) : base(context) { }
+        private class State8TimedCreation : TriggerState {
+            internal State8TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7008}, arg2: true);
@@ -476,15 +476,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -493,8 +493,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State9번생성 : TriggerState {
-            internal State9번생성(ITriggerContext context) : base(context) { }
+        private class State9TimedCreation : TriggerState {
+            internal State9TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7009}, arg2: true);
@@ -505,15 +505,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -522,8 +522,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State10번생성 : TriggerState {
-            internal State10번생성(ITriggerContext context) : base(context) { }
+        private class State10TimedCreation : TriggerState {
+            internal State10TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7010}, arg2: true);
@@ -534,15 +534,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -551,8 +551,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State11번생성 : TriggerState {
-            internal State11번생성(ITriggerContext context) : base(context) { }
+        private class State11TimedCreation : TriggerState {
+            internal State11TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7011}, arg2: true);
@@ -563,15 +563,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -580,8 +580,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State12번생성 : TriggerState {
-            internal State12번생성(ITriggerContext context) : base(context) { }
+        private class State12TimedCreation : TriggerState {
+            internal State12TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7012}, arg2: true);
@@ -592,15 +592,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -609,8 +609,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State13번생성 : TriggerState {
-            internal State13번생성(ITriggerContext context) : base(context) { }
+        private class State13TimedCreation : TriggerState {
+            internal State13TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7013}, arg2: true);
@@ -621,15 +621,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -638,8 +638,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State14번생성 : TriggerState {
-            internal State14번생성(ITriggerContext context) : base(context) { }
+        private class State14TimedCreation : TriggerState {
+            internal State14TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7014}, arg2: true);
@@ -650,15 +650,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -667,8 +667,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State15번생성 : TriggerState {
-            internal State15번생성(ITriggerContext context) : base(context) { }
+        private class State15TimedCreation : TriggerState {
+            internal State15TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7015}, arg2: true);
@@ -679,15 +679,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -696,8 +696,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State16번생성 : TriggerState {
-            internal State16번생성(ITriggerContext context) : base(context) { }
+        private class State16TimedCreation : TriggerState {
+            internal State16TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7016}, arg2: true);
@@ -708,15 +708,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -725,8 +725,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State17번생성 : TriggerState {
-            internal State17번생성(ITriggerContext context) : base(context) { }
+        private class State17TimedCreation : TriggerState {
+            internal State17TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7017}, arg2: true);
@@ -737,15 +737,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -754,8 +754,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State18번생성 : TriggerState {
-            internal State18번생성(ITriggerContext context) : base(context) { }
+        private class State18TimedCreation : TriggerState {
+            internal State18TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7018}, arg2: true);
@@ -766,15 +766,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -783,8 +783,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State19번생성 : TriggerState {
-            internal State19번생성(ITriggerContext context) : base(context) { }
+        private class State19TimedCreation : TriggerState {
+            internal State19TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7019}, arg2: true);
@@ -795,15 +795,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -812,8 +812,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State20번생성 : TriggerState {
-            internal State20번생성(ITriggerContext context) : base(context) { }
+        private class State20TimedCreation : TriggerState {
+            internal State20TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7020}, arg2: true);
@@ -824,15 +824,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -841,8 +841,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State21번생성 : TriggerState {
-            internal State21번생성(ITriggerContext context) : base(context) { }
+        private class State21TimedCreation : TriggerState {
+            internal State21TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7021}, arg2: true);
@@ -853,15 +853,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -870,8 +870,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State22번생성 : TriggerState {
-            internal State22번생성(ITriggerContext context) : base(context) { }
+        private class State22TimedCreation : TriggerState {
+            internal State22TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7022}, arg2: true);
@@ -882,15 +882,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -899,8 +899,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State23번생성 : TriggerState {
-            internal State23번생성(ITriggerContext context) : base(context) { }
+        private class State23TimedCreation : TriggerState {
+            internal State23TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7023}, arg2: true);
@@ -911,15 +911,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -928,8 +928,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State24번생성 : TriggerState {
-            internal State24번생성(ITriggerContext context) : base(context) { }
+        private class State24TimedCreation : TriggerState {
+            internal State24TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7024}, arg2: true);
@@ -940,15 +940,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -957,8 +957,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State25번생성 : TriggerState {
-            internal State25번생성(ITriggerContext context) : base(context) { }
+        private class State25TimedCreation : TriggerState {
+            internal State25TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7025}, arg2: true);
@@ -969,15 +969,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -986,8 +986,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State26번생성 : TriggerState {
-            internal State26번생성(ITriggerContext context) : base(context) { }
+        private class State26TimedCreation : TriggerState {
+            internal State26TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7026}, arg2: true);
@@ -998,15 +998,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1015,8 +1015,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State27번생성 : TriggerState {
-            internal State27번생성(ITriggerContext context) : base(context) { }
+        private class State27TimedCreation : TriggerState {
+            internal State27TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7027}, arg2: true);
@@ -1027,15 +1027,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1044,8 +1044,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State28번생성 : TriggerState {
-            internal State28번생성(ITriggerContext context) : base(context) { }
+        private class State28TimedCreation : TriggerState {
+            internal State28TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7028}, arg2: true);
@@ -1056,15 +1056,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1073,8 +1073,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State29번생성 : TriggerState {
-            internal State29번생성(ITriggerContext context) : base(context) { }
+        private class State29TimedCreation : TriggerState {
+            internal State29TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7029}, arg2: true);
@@ -1085,15 +1085,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1102,8 +1102,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State30번생성 : TriggerState {
-            internal State30번생성(ITriggerContext context) : base(context) { }
+        private class State30TimedCreation : TriggerState {
+            internal State30TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7030}, arg2: true);
@@ -1114,15 +1114,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1131,8 +1131,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State31번생성 : TriggerState {
-            internal State31번생성(ITriggerContext context) : base(context) { }
+        private class State31TimedCreation : TriggerState {
+            internal State31TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7031}, arg2: true);
@@ -1143,15 +1143,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1160,8 +1160,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State32번생성 : TriggerState {
-            internal State32번생성(ITriggerContext context) : base(context) { }
+        private class State32TimedCreation : TriggerState {
+            internal State32TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7032}, arg2: true);
@@ -1172,15 +1172,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1189,8 +1189,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State33번생성 : TriggerState {
-            internal State33번생성(ITriggerContext context) : base(context) { }
+        private class State33TimedCreation : TriggerState {
+            internal State33TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7033}, arg2: true);
@@ -1201,15 +1201,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1218,8 +1218,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State34번생성 : TriggerState {
-            internal State34번생성(ITriggerContext context) : base(context) { }
+        private class State34TimedCreation : TriggerState {
+            internal State34TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7034}, arg2: true);
@@ -1230,15 +1230,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1247,8 +1247,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State35번생성 : TriggerState {
-            internal State35번생성(ITriggerContext context) : base(context) { }
+        private class State35TimedCreation : TriggerState {
+            internal State35TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7035}, arg2: true);
@@ -1259,15 +1259,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1276,8 +1276,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State36번생성 : TriggerState {
-            internal State36번생성(ITriggerContext context) : base(context) { }
+        private class State36TimedCreation : TriggerState {
+            internal State36TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7036}, arg2: true);
@@ -1288,15 +1288,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1305,8 +1305,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State37번생성 : TriggerState {
-            internal State37번생성(ITriggerContext context) : base(context) { }
+        private class State37TimedCreation : TriggerState {
+            internal State37TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7037}, arg2: true);
@@ -1317,15 +1317,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1334,8 +1334,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State38번생성 : TriggerState {
-            internal State38번생성(ITriggerContext context) : base(context) { }
+        private class State38TimedCreation : TriggerState {
+            internal State38TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7038}, arg2: true);
@@ -1346,15 +1346,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1363,8 +1363,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State39번생성 : TriggerState {
-            internal State39번생성(ITriggerContext context) : base(context) { }
+        private class State39TimedCreation : TriggerState {
+            internal State39TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7039}, arg2: true);
@@ -1375,15 +1375,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1392,8 +1392,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State40번생성 : TriggerState {
-            internal State40번생성(ITriggerContext context) : base(context) { }
+        private class State40TimedCreation : TriggerState {
+            internal State40TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7040}, arg2: true);
@@ -1404,15 +1404,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1421,8 +1421,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State41번생성 : TriggerState {
-            internal State41번생성(ITriggerContext context) : base(context) { }
+        private class State41TimedCreation : TriggerState {
+            internal State41TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7041}, arg2: true);
@@ -1433,15 +1433,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1450,8 +1450,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State42번생성 : TriggerState {
-            internal State42번생성(ITriggerContext context) : base(context) { }
+        private class State42TimedCreation : TriggerState {
+            internal State42TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7042}, arg2: true);
@@ -1462,15 +1462,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1479,8 +1479,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State43번생성 : TriggerState {
-            internal State43번생성(ITriggerContext context) : base(context) { }
+        private class State43TimedCreation : TriggerState {
+            internal State43TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7043}, arg2: true);
@@ -1491,15 +1491,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1508,8 +1508,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State44번생성 : TriggerState {
-            internal State44번생성(ITriggerContext context) : base(context) { }
+        private class State44TimedCreation : TriggerState {
+            internal State44TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7044}, arg2: true);
@@ -1520,15 +1520,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1537,8 +1537,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State45번생성 : TriggerState {
-            internal State45번생성(ITriggerContext context) : base(context) { }
+        private class State45TimedCreation : TriggerState {
+            internal State45TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7045}, arg2: true);
@@ -1549,15 +1549,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1566,8 +1566,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State46번생성 : TriggerState {
-            internal State46번생성(ITriggerContext context) : base(context) { }
+        private class State46TimedCreation : TriggerState {
+            internal State46TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7046}, arg2: true);
@@ -1578,15 +1578,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1595,8 +1595,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State47번생성 : TriggerState {
-            internal State47번생성(ITriggerContext context) : base(context) { }
+        private class State47TimedCreation : TriggerState {
+            internal State47TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7047}, arg2: true);
@@ -1607,15 +1607,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1624,8 +1624,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State48번생성 : TriggerState {
-            internal State48번생성(ITriggerContext context) : base(context) { }
+        private class State48TimedCreation : TriggerState {
+            internal State48TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7048}, arg2: true);
@@ -1636,15 +1636,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1653,8 +1653,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State49번생성 : TriggerState {
-            internal State49번생성(ITriggerContext context) : base(context) { }
+        private class State49TimedCreation : TriggerState {
+            internal State49TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7049}, arg2: true);
@@ -1665,15 +1665,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1682,8 +1682,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State50번생성 : TriggerState {
-            internal State50번생성(ITriggerContext context) : base(context) { }
+        private class State50TimedCreation : TriggerState {
+            internal State50TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7050}, arg2: true);
@@ -1694,15 +1694,15 @@ namespace Maple2.Trigger._02000347_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State랜덤스킬작동(context);
+                    return new  StateRandomSkillCast(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000804}, arg2: 0)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1711,8 +1711,8 @@ namespace Maple2.Trigger._02000347_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023, 7024, 7025, 7026, 7027, 7028, 7029, 7030, 7031, 7032, 7033, 7034, 7035, 7036, 7037, 7038, 7039, 7040, 7041, 7042, 7043, 7044, 7045, 7046, 7047, 7048, 7049, 7050}, arg2: false);

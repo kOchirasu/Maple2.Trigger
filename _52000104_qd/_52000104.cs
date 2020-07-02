@@ -333,27 +333,27 @@ namespace Maple2.Trigger._52000104_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002316}, arg3: new byte[] {1})) {
-                    return new State꽃가꾸기퀘스트01(context);
+                    return new State꽃가꾸기Quest01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002317}, arg3: new byte[] {1})) {
-                    return new State꽃섬멸퀘스트01(context);
+                    return new State꽃섬멸Quest01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002317}, arg3: new byte[] {3})) {
-                    return new State할아버지등장씬01(context);
+                    return new State할아버지Appear씬01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002319}, arg3: new byte[] {1})) {
-                    return new State할아버지등장씬01(context);
+                    return new State할아버지Appear씬01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002319}, arg3: new byte[] {2})) {
-                    return new State할아버지등장씬01(context);
+                    return new State할아버지Appear씬01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002319}, arg3: new byte[] {3})) {
-                    return new State할아버지등장씬01(context);
+                    return new State할아버지Appear씬01(context);
                 }
 
                 return null;
@@ -362,8 +362,8 @@ namespace Maple2.Trigger._52000104_qd {
             public override void OnExit() { }
         }
 
-        private class State꽃가꾸기퀘스트01 : TriggerState {
-            internal State꽃가꾸기퀘스트01(ITriggerContext context) : base(context) { }
+        private class State꽃가꾸기Quest01 : TriggerState {
+            internal State꽃가꾸기Quest01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 25201042, textId: 25201042, duration: 10000);
@@ -372,7 +372,7 @@ namespace Maple2.Trigger._52000104_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002317}, arg3: new byte[] {1})) {
-                    return new State꽃섬멸퀘스트01(context);
+                    return new State꽃섬멸Quest01(context);
                 }
 
                 return null;
@@ -381,8 +381,8 @@ namespace Maple2.Trigger._52000104_qd {
             public override void OnExit() { }
         }
 
-        private class State꽃섬멸퀘스트01 : TriggerState {
-            internal State꽃섬멸퀘스트01(ITriggerContext context) : base(context) { }
+        private class State꽃섬멸Quest01 : TriggerState {
+            internal State꽃섬멸Quest01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -393,7 +393,7 @@ namespace Maple2.Trigger._52000104_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State꽃섬멸퀘스트02(context);
+                    return new State꽃섬멸Quest02(context);
                 }
 
                 return null;
@@ -402,8 +402,8 @@ namespace Maple2.Trigger._52000104_qd {
             public override void OnExit() { }
         }
 
-        private class State꽃섬멸퀘스트02 : TriggerState {
-            internal State꽃섬멸퀘스트02(ITriggerContext context) : base(context) { }
+        private class State꽃섬멸Quest02 : TriggerState {
+            internal State꽃섬멸Quest02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -412,7 +412,7 @@ namespace Maple2.Trigger._52000104_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State꽃섬멸퀘스트03(context);
+                    return new State꽃섬멸Quest03(context);
                 }
 
                 return null;
@@ -421,8 +421,8 @@ namespace Maple2.Trigger._52000104_qd {
             public override void OnExit() { }
         }
 
-        private class State꽃섬멸퀘스트03 : TriggerState {
-            internal State꽃섬멸퀘스트03(ITriggerContext context) : base(context) { }
+        private class State꽃섬멸Quest03 : TriggerState {
+            internal State꽃섬멸Quest03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
@@ -436,7 +436,7 @@ namespace Maple2.Trigger._52000104_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002317}, arg3: new byte[] {3})) {
-                    return new State할아버지등장씬01(context);
+                    return new State할아버지Appear씬01(context);
                 }
 
                 return null;
@@ -445,8 +445,8 @@ namespace Maple2.Trigger._52000104_qd {
             public override void OnExit() { }
         }
 
-        private class State할아버지등장씬01 : TriggerState {
-            internal State할아버지등장씬01(ITriggerContext context) : base(context) { }
+        private class State할아버지Appear씬01 : TriggerState {
+            internal State할아버지Appear씬01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSound(arg1: 9000, arg2: false);
@@ -457,7 +457,7 @@ namespace Maple2.Trigger._52000104_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State할아버지등장씬02(context);
+                    return new State할아버지Appear씬02(context);
                 }
 
                 return null;
@@ -466,8 +466,8 @@ namespace Maple2.Trigger._52000104_qd {
             public override void OnExit() { }
         }
 
-        private class State할아버지등장씬02 : TriggerState {
-            internal State할아버지등장씬02(ITriggerContext context) : base(context) { }
+        private class State할아버지Appear씬02 : TriggerState {
+            internal State할아버지Appear씬02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "Skip_3", arg2: "nextState");
@@ -480,7 +480,7 @@ namespace Maple2.Trigger._52000104_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State할아버지등장씬03(context);
+                    return new State할아버지Appear씬03(context);
                 }
 
                 return null;
@@ -489,8 +489,8 @@ namespace Maple2.Trigger._52000104_qd {
             public override void OnExit() { }
         }
 
-        private class State할아버지등장씬03 : TriggerState {
-            internal State할아버지등장씬03(ITriggerContext context) : base(context) { }
+        private class State할아버지Appear씬03 : TriggerState {
+            internal State할아버지Appear씬03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003175, illustId: "Ten_normal", msg: "$52000104_QD__52000104__6$", duration: 4000, align: "right");
@@ -498,7 +498,7 @@ namespace Maple2.Trigger._52000104_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State할아버지등장씬04(context);
+                    return new State할아버지Appear씬04(context);
                 }
 
                 return null;
@@ -507,8 +507,8 @@ namespace Maple2.Trigger._52000104_qd {
             public override void OnExit() { }
         }
 
-        private class State할아버지등장씬04 : TriggerState {
-            internal State할아버지등장씬04(ITriggerContext context) : base(context) { }
+        private class State할아버지Appear씬04 : TriggerState {
+            internal State할아버지Appear씬04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowCaption(type: "NameCaption", title: "$52000104_QD__52000104__7$", desc: "$52000104_QD__52000104__8$", align: "center", offsetRateX: -0.15f, offsetRateY: 0.15f, duration: 10000, scale: 2.0f);
@@ -516,7 +516,7 @@ namespace Maple2.Trigger._52000104_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State할아버지등장씬04_1(context);
+                    return new State할아버지Appear씬04_1(context);
                 }
 
                 return null;
@@ -525,8 +525,8 @@ namespace Maple2.Trigger._52000104_qd {
             public override void OnExit() { }
         }
 
-        private class State할아버지등장씬04_1 : TriggerState {
-            internal State할아버지등장씬04_1(ITriggerContext context) : base(context) { }
+        private class State할아버지Appear씬04_1 : TriggerState {
+            internal State할아버지Appear씬04_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -534,7 +534,7 @@ namespace Maple2.Trigger._52000104_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State할아버지등장씬05(context);
+                    return new State할아버지Appear씬05(context);
                 }
 
                 return null;
@@ -555,7 +555,7 @@ namespace Maple2.Trigger._52000104_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State할아버지등장씬05(context);
+                    return new State할아버지Appear씬05(context);
                 }
 
                 return null;
@@ -564,8 +564,8 @@ namespace Maple2.Trigger._52000104_qd {
             public override void OnExit() { }
         }
 
-        private class State할아버지등장씬05 : TriggerState {
-            internal State할아버지등장씬05(ITriggerContext context) : base(context) { }
+        private class State할아버지Appear씬05 : TriggerState {
+            internal State할아버지Appear씬05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");

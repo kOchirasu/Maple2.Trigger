@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02010086_bf {
     public static class _train_open_02 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000897}, arg2: 0);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02010086_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000897}, arg2: 1)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02010086_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02010086_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State벽제거(context);
+                    return new State벽Remove(context);
                 }
 
                 return null;
@@ -83,8 +83,8 @@ namespace Maple2.Trigger._02010086_bf {
             public override void OnExit() { }
         }
 
-        private class State벽제거 : TriggerState {
-            internal State벽제거(ITriggerContext context) : base(context) { }
+        private class State벽Remove : TriggerState {
+            internal State벽Remove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);

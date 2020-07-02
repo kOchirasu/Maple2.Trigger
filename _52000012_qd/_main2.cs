@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000012_qd {
     public static class _main2 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
@@ -58,11 +58,11 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {10002611}, arg3: new byte[] {2})) {
-                    return new State포털생성(context);
+                    return new StatePortalCreation(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {10002611}, arg3: new byte[] {3})) {
-                    return new State포털생성(context);
+                    return new StatePortalCreation(context);
                 }
 
                 return null;
@@ -71,8 +71,8 @@ namespace Maple2.Trigger._52000012_qd {
             public override void OnExit() { }
         }
 
-        private class State포털생성 : TriggerState {
-            internal State포털생성(ITriggerContext context) : base(context) { }
+        private class StatePortalCreation : TriggerState {
+            internal StatePortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {9001})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -89,13 +89,13 @@ namespace Maple2.Trigger._52000012_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                return new State대기(context);
+                return new StateWait(context);
             }
 
             public override void OnExit() { }

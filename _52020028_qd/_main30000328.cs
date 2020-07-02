@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52020028_qd {
     public static class _main30000328 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001, 5002, 5003}, arg2: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {30000328}, arg3: new byte[] {1})) {
-                    return new State연출시작(context);
+                    return new StateStartCinematic(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52020028_qd {
             public override void OnExit() { }
         }
 
-        private class State연출시작 : TriggerState {
-            internal State연출시작(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic : TriggerState {
+            internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52020028, arg2: 6002);
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State아르케온등장(context);
+                    return new State아르케온Appear(context);
                 }
 
                 return null;
@@ -190,8 +190,8 @@ namespace Maple2.Trigger._52020028_qd {
             public override void OnExit() { }
         }
 
-        private class State아르케온등장 : TriggerState {
-            internal State아르케온등장(ITriggerContext context) : base(context) { }
+        private class State아르케온Appear : TriggerState {
+            internal State아르케온Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5003}, arg2: false);
@@ -201,7 +201,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State아르케온등장2(context);
+                    return new State아르케온Appear2(context);
                 }
 
                 return null;
@@ -210,8 +210,8 @@ namespace Maple2.Trigger._52020028_qd {
             public override void OnExit() { }
         }
 
-        private class State아르케온등장2 : TriggerState {
-            internal State아르케온등장2(ITriggerContext context) : base(context) { }
+        private class State아르케온Appear2 : TriggerState {
+            internal State아르케온Appear2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -242,7 +242,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State등장연출(context);
+                    return new StateSpawnCinematic(context);
                 }
 
                 return null;
@@ -251,8 +251,8 @@ namespace Maple2.Trigger._52020028_qd {
             public override void OnExit() { }
         }
 
-        private class State등장연출 : TriggerState {
-            internal State등장연출(ITriggerContext context) : base(context) { }
+        private class StateSpawnCinematic : TriggerState {
+            internal StateSpawnCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1000, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
@@ -265,7 +265,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State아르케온등장3(context);
+                    return new State아르케온Appear3(context);
                 }
 
                 return null;
@@ -274,8 +274,8 @@ namespace Maple2.Trigger._52020028_qd {
             public override void OnExit() { }
         }
 
-        private class State아르케온등장3 : TriggerState {
-            internal State아르케온등장3(ITriggerContext context) : base(context) { }
+        private class State아르케온Appear3 : TriggerState {
+            internal State아르케온Appear3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, msg: "역시 이렇게 되는군.", duration: 3000);
@@ -284,7 +284,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State아르케온등장4(context);
+                    return new State아르케온Appear4(context);
                 }
 
                 return null;
@@ -293,8 +293,8 @@ namespace Maple2.Trigger._52020028_qd {
             public override void OnExit() { }
         }
 
-        private class State아르케온등장4 : TriggerState {
-            internal State아르케온등장4(ITriggerContext context) : base(context) { }
+        private class State아르케온Appear4 : TriggerState {
+            internal State아르케온Appear4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1001, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
@@ -307,7 +307,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State다음연출시작(context);
+                    return new State다음StartCinematic(context);
                 }
 
                 return null;
@@ -316,8 +316,8 @@ namespace Maple2.Trigger._52020028_qd {
             public override void OnExit() { }
         }
 
-        private class State다음연출시작 : TriggerState {
-            internal State다음연출시작(ITriggerContext context) : base(context) { }
+        private class State다음StartCinematic : TriggerState {
+            internal State다음StartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -327,7 +327,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State다음연출시작_02(context);
+                    return new State다음StartCinematic_02(context);
                 }
 
                 return null;
@@ -336,8 +336,8 @@ namespace Maple2.Trigger._52020028_qd {
             public override void OnExit() { }
         }
 
-        private class State다음연출시작_02 : TriggerState {
-            internal State다음연출시작_02(ITriggerContext context) : base(context) { }
+        private class State다음StartCinematic_02 : TriggerState {
+            internal State다음StartCinematic_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52020028, arg2: 6001);

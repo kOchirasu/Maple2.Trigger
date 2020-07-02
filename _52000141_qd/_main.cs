@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000141_qd {
     public static class _main {
-        public class State준비 : TriggerState {
-            internal State준비(ITriggerContext context) : base(context) { }
+        public class StateSetup : TriggerState {
+            internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -30,7 +30,7 @@ namespace Maple2.Trigger._52000141_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State카메라연출_01(context);
+                    return new StateCamera연출_01(context);
                 }
 
                 return null;
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._52000141_qd {
             public override void OnExit() { }
         }
 
-        private class State카메라연출_01 : TriggerState {
-            internal State카메라연출_01(ITriggerContext context) : base(context) { }
+        private class StateCamera연출_01 : TriggerState {
+            internal StateCamera연출_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._52000141_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State카메라연출_02(context);
+                    return new StateCamera연출_02(context);
                 }
 
                 return null;
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._52000141_qd {
             public override void OnExit() { }
         }
 
-        private class State카메라연출_02 : TriggerState {
-            internal State카메라연출_02(ITriggerContext context) : base(context) { }
+        private class StateCamera연출_02 : TriggerState {
+            internal StateCamera연출_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_0sec.xml");
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._52000141_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State카메라연출_03(context);
+                    return new StateCamera연출_03(context);
                 }
 
                 return null;
@@ -80,8 +80,8 @@ namespace Maple2.Trigger._52000141_qd {
             public override void OnExit() { }
         }
 
-        private class State카메라연출_03 : TriggerState {
-            internal State카메라연출_03(ITriggerContext context) : base(context) { }
+        private class StateCamera연출_03 : TriggerState {
+            internal StateCamera연출_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
@@ -218,7 +218,7 @@ namespace Maple2.Trigger._52000141_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State카메라이동_01(context);
+                    return new StateCamera이동_01(context);
                 }
 
                 return null;
@@ -227,8 +227,8 @@ namespace Maple2.Trigger._52000141_qd {
             public override void OnExit() { }
         }
 
-        private class State카메라이동_01 : TriggerState {
-            internal State카메라이동_01(ITriggerContext context) : base(context) { }
+        private class StateCamera이동_01 : TriggerState {
+            internal StateCamera이동_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8005}, arg2: false);
@@ -443,7 +443,7 @@ namespace Maple2.Trigger._52000141_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State프레데릭등장_01(context);
+                    return new State프레데릭Appear_01(context);
                 }
 
                 return null;
@@ -452,8 +452,8 @@ namespace Maple2.Trigger._52000141_qd {
             public override void OnExit() { }
         }
 
-        private class State프레데릭등장_01 : TriggerState {
-            internal State프레데릭등장_01(ITriggerContext context) : base(context) { }
+        private class State프레데릭Appear_01 : TriggerState {
+            internal State프레데릭Appear_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8009}, arg2: false);
@@ -462,7 +462,7 @@ namespace Maple2.Trigger._52000141_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State프레데릭등장_02(context);
+                    return new State프레데릭Appear_02(context);
                 }
 
                 return null;
@@ -471,8 +471,8 @@ namespace Maple2.Trigger._52000141_qd {
             public override void OnExit() { }
         }
 
-        private class State프레데릭등장_02 : TriggerState {
-            internal State프레데릭등장_02(ITriggerContext context) : base(context) { }
+        private class State프레데릭Appear_02 : TriggerState {
+            internal State프레데릭Appear_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2005");
@@ -498,7 +498,7 @@ namespace Maple2.Trigger._52000141_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State프레데릭등장_03(context);
+                    return new State프레데릭Appear_03(context);
                 }
 
                 return null;
@@ -507,8 +507,8 @@ namespace Maple2.Trigger._52000141_qd {
             public override void OnExit() { }
         }
 
-        private class State프레데릭등장_03 : TriggerState {
-            internal State프레데릭등장_03(ITriggerContext context) : base(context) { }
+        private class State프레데릭Appear_03 : TriggerState {
+            internal State프레데릭Appear_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8008}, arg2: false);

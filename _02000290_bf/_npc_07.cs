@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000290_bf {
     public static class _npc_07 {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6001, 6002}, arg2: false);
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02000290_bf {
                 if (context.TimeExpired(arg1: "4")) {
                     context.SetEffect(arg1: new[] {6002}, arg2: true);
                     context.SetConversation(arg1: 1, arg2: 907, arg3: "$02000290_BF__NPC_07__1$", arg4: 3);
-                    return new StateNPC소멸(context);
+                    return new StateNPCDestroy(context);
                 }
 
                 return null;
@@ -65,8 +65,8 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnExit() { }
         }
 
-        private class StateNPC소멸 : TriggerState {
-            internal StateNPC소멸(ITriggerContext context) : base(context) { }
+        private class StateNPCDestroy : TriggerState {
+            internal StateNPCDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

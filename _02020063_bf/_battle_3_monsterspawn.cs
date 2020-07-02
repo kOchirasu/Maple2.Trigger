@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020063_bf {
     public static class _battle_3_monsterspawn {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990001, key: "Battle_3_Clear", value: 0);
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02020063_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._02020063_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.TimeExpired(arg1: "1") || context.GetScoreBoardScore() >= 150) {
@@ -84,7 +84,7 @@ namespace Maple2.Trigger._02020063_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._02020063_bf {
                 }
 
                 if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._02020063_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._02020063_bf {
                 }
 
                 if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -176,7 +176,7 @@ namespace Maple2.Trigger._02020063_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
@@ -204,7 +204,7 @@ namespace Maple2.Trigger._02020063_bf {
                 }
 
                 if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -222,7 +222,7 @@ namespace Maple2.Trigger._02020063_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
@@ -246,7 +246,7 @@ namespace Maple2.Trigger._02020063_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_3_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

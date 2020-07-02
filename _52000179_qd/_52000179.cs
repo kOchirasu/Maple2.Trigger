@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._52000179_qd {
     public static class _52000179 {
-        public class Statewait_01 : TriggerState {
-            internal Statewait_01(ITriggerContext context) : base(context) { }
+        public class StateWait_01 : TriggerState {
+            internal StateWait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {2001}, arg2: 0)) {
-                    return new Statewait_01_02(context);
+                    return new StateWait_01_02(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52000179_qd {
             public override void OnExit() { }
         }
 
-        private class Statewait_01_02 : TriggerState {
-            internal Statewait_01_02(ITriggerContext context) : base(context) { }
+        private class StateWait_01_02 : TriggerState {
+            internal StateWait_01_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._52000179_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new Statewait_02(context);
+                    return new StateWait_02(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._52000179_qd {
             public override void OnExit() { }
         }
 
-        private class Statewait_02 : TriggerState {
-            internal Statewait_02(ITriggerContext context) : base(context) { }
+        private class StateWait_02 : TriggerState {
+            internal StateWait_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._52000179_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002757}, arg3: new byte[] {2})) {
-                    return new State퀘스트가이드_01(context);
+                    return new StateQuestGuide_01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002757}, arg3: new byte[] {3})) {
@@ -179,8 +179,8 @@ namespace Maple2.Trigger._52000179_qd {
             public override void OnExit() { }
         }
 
-        private class State퀘스트가이드_01 : TriggerState {
-            internal State퀘스트가이드_01(ITriggerContext context) : base(context) { }
+        private class StateQuestGuide_01 : TriggerState {
+            internal StateQuestGuide_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 25201791, textId: 25201791, duration: 10000);

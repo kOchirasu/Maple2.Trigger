@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._99999999_bf {
     public static class _main {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {5000, 8900, 8901, 8902, 8903, 8904, 8905}, arg2: true);
@@ -19,7 +19,7 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    return new State카메라경로(context);
+                    return new StateCamera경로(context);
                 }
 
                 return null;
@@ -28,8 +28,8 @@ namespace Maple2.Trigger._99999999_bf {
             public override void OnExit() { }
         }
 
-        private class State카메라경로 : TriggerState {
-            internal State카메라경로(ITriggerContext context) : base(context) { }
+        private class StateCamera경로 : TriggerState {
+            internal StateCamera경로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: false);
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State카메라리셋(context);
+                    return new StateCamera리셋(context);
                 }
 
                 return null;
@@ -47,8 +47,8 @@ namespace Maple2.Trigger._99999999_bf {
             public override void OnExit() { }
         }
 
-        private class State카메라리셋 : TriggerState {
-            internal State카메라리셋(ITriggerContext context) : base(context) { }
+        private class StateCamera리셋 : TriggerState {
+            internal StateCamera리셋(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1f);
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {701}, arg2: 0)) {
-                    return new Stateready(context);
+                    return new StateReady(context);
                 }
 
                 return null;
@@ -65,8 +65,8 @@ namespace Maple2.Trigger._99999999_bf {
             public override void OnExit() { }
         }
 
-        private class Stateready : TriggerState {
-            internal Stateready(ITriggerContext context) : base(context) { }
+        private class StateReady : TriggerState {
+            internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: true);
@@ -342,7 +342,7 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {708}, arg2: 0)) {
-                    return new State버프걸어주기(context);
+                    return new StateBuff걸어주기(context);
                 }
 
                 return null;
@@ -351,8 +351,8 @@ namespace Maple2.Trigger._99999999_bf {
             public override void OnExit() { }
         }
 
-        private class State버프걸어주기 : TriggerState {
-            internal State버프걸어주기(ITriggerContext context) : base(context) { }
+        private class StateBuff걸어주기 : TriggerState {
+            internal StateBuff걸어주기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "여기 들어온 순간...");
@@ -422,7 +422,7 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {108})) {
-                    return new State포털생성전(context);
+                    return new StatePortalCreation전(context);
                 }
 
                 return null;
@@ -431,8 +431,8 @@ namespace Maple2.Trigger._99999999_bf {
             public override void OnExit() { }
         }
 
-        private class State포털생성전 : TriggerState {
-            internal State포털생성전(ITriggerContext context) : base(context) { }
+        private class StatePortalCreation전 : TriggerState {
+            internal StatePortalCreation전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {109});
@@ -441,7 +441,7 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State포털생성전2(context);
+                    return new StatePortalCreation전2(context);
                 }
 
                 return null;
@@ -450,8 +450,8 @@ namespace Maple2.Trigger._99999999_bf {
             public override void OnExit() { }
         }
 
-        private class State포털생성전2 : TriggerState {
-            internal State포털생성전2(ITriggerContext context) : base(context) { }
+        private class StatePortalCreation전2 : TriggerState {
+            internal StatePortalCreation전2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {109});
@@ -461,7 +461,7 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State포털생성(context);
+                    return new StatePortalCreation(context);
                 }
 
                 return null;
@@ -470,8 +470,8 @@ namespace Maple2.Trigger._99999999_bf {
             public override void OnExit() { }
         }
 
-        private class State포털생성 : TriggerState {
-            internal State포털생성(ITriggerContext context) : base(context) { }
+        private class StatePortalCreation : TriggerState {
+            internal StatePortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);

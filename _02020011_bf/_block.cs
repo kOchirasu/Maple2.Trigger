@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020011_bf {
     public static class _block {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg5: 5f);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02020011_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State딜레이(context);
+                    return new StateDelay(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02020011_bf {
             public override void OnExit() { }
         }
 
-        private class State딜레이 : TriggerState {
-            internal State딜레이(ITriggerContext context) : base(context) { }
+        private class StateDelay : TriggerState {
+            internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02020011_bf {
 
             public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {101})) {
-                    return new State딜레이2(context);
+                    return new StateDelay2(context);
                 }
 
                 return null;
@@ -52,14 +52,14 @@ namespace Maple2.Trigger._02020011_bf {
             public override void OnExit() { }
         }
 
-        private class State딜레이2 : TriggerState {
-            internal State딜레이2(ITriggerContext context) : base(context) { }
+        private class StateDelay2 : TriggerState {
+            internal StateDelay2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

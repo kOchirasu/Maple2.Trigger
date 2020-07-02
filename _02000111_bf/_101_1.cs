@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000111_bf {
     public static class _101_1 {
-        public class State시작대기중1 : TriggerState {
-            internal State시작대기중1(ITriggerContext context) : base(context) { }
+        public class StateWaitStart1 : TriggerState {
+            internal StateWaitStart1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000164}, arg2: 1);
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000111_bf {
             public override void OnExit() { }
         }
 
-        private class State시작대기중2 : TriggerState {
-            internal State시작대기중2(ITriggerContext context) : base(context) { }
+        private class StateWaitStart2 : TriggerState {
+            internal StateWaitStart2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000164}, arg2: 1);
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02000111_bf {
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State시작대기중2(context);
+                    return new StateWaitStart2(context);
                 }
 
                 return null;
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._02000111_bf {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                return new State시작대기중2(context);
+                return new StateWaitStart2(context);
             }
 
             public override void OnExit() { }
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._02000111_bf {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                return new State시작대기중2(context);
+                return new StateWaitStart2(context);
             }
 
             public override void OnExit() { }
@@ -156,7 +156,7 @@ namespace Maple2.Trigger._02000111_bf {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                return new State시작대기중2(context);
+                return new StateWaitStart2(context);
             }
 
             public override void OnExit() { }

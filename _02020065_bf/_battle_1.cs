@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020065_bf {
     public static class _battle_1 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990001, key: "Battle_1_Clear", value: 0);
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
@@ -155,7 +155,7 @@ namespace Maple2.Trigger._02020065_bf {
                 }
 
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -173,7 +173,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
@@ -201,7 +201,7 @@ namespace Maple2.Trigger._02020065_bf {
                 }
 
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -219,7 +219,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
@@ -247,7 +247,7 @@ namespace Maple2.Trigger._02020065_bf {
                 }
 
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -265,7 +265,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
@@ -292,7 +292,7 @@ namespace Maple2.Trigger._02020065_bf {
                 }
 
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -316,7 +316,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

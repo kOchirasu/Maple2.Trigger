@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02010051_bf {
     public static class _portal03 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6000, 6001, 6002, 6003}, arg2: false);
@@ -15,7 +15,7 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9012})) {
-                    return new State입장딜레이01(context);
+                    return new State입장Delay01(context);
                 }
 
                 return null;
@@ -24,8 +24,8 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnExit() { }
         }
 
-        private class State입장딜레이01 : TriggerState {
-            internal State입장딜레이01(ITriggerContext context) : base(context) { }
+        private class State입장Delay01 : TriggerState {
+            internal State입장Delay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State가이드준비01(context);
+                    return new StateGuide준비01(context);
                 }
 
                 return null;
@@ -43,8 +43,8 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnExit() { }
         }
 
-        private class State가이드준비01 : TriggerState {
-            internal State가이드준비01(ITriggerContext context) : base(context) { }
+        private class StateGuide준비01 : TriggerState {
+            internal StateGuide준비01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20105101, textId: 20105101, duration: 4000);
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000837}, arg2: 0)) {
-                    return new State포털개방01(context);
+                    return new StatePortalEnable01(context);
                 }
 
                 return null;
@@ -61,8 +61,8 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnExit() { }
         }
 
-        private class State포털개방01 : TriggerState {
-            internal State포털개방01(ITriggerContext context) : base(context) { }
+        private class StatePortalEnable01 : TriggerState {
+            internal StatePortalEnable01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 7, key: "timercheck", value: 1);
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    return new State대화연출준비01(context);
+                    return new State대화SetupCinematic01(context);
                 }
 
                 return null;
@@ -85,8 +85,8 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnExit() { }
         }
 
-        private class State대화연출준비01 : TriggerState {
-            internal State대화연출준비01(ITriggerContext context) : base(context) { }
+        private class State대화SetupCinematic01 : TriggerState {
+            internal State대화SetupCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -111,7 +111,7 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "20")) {
-                    return new State대화연출종료01(context);
+                    return new State대화StopCinematic01(context);
                 }
 
                 return null;
@@ -120,8 +120,8 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnExit() { }
         }
 
-        private class State대화연출종료01 : TriggerState {
-            internal State대화연출종료01(ITriggerContext context) : base(context) { }
+        private class State대화StopCinematic01 : TriggerState {
+            internal State대화StopCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -130,14 +130,14 @@ namespace Maple2.Trigger._02010051_bf {
             }
 
             public override TriggerState Execute() {
-                return new State종료(context);
+                return new StateEnd(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6003}, arg2: false);

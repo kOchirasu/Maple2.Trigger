@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._03000049_bf {
     public static class _10001582_eagle_503 {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000331}, arg2: 1);
@@ -10,7 +10,7 @@ namespace Maple2.Trigger._03000049_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000331}, arg2: 0)) {
-                    return new State오브젝트반응(context);
+                    return new StateInteractObject(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._03000049_bf {
             public override void OnExit() { }
         }
 
-        private class State오브젝트반응 : TriggerState {
-            internal State오브젝트반응(ITriggerContext context) : base(context) { }
+        private class StateInteractObject : TriggerState {
+            internal StateInteractObject(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._03000049_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new StateNPC소멸(context);
+                    return new StateNPCDestroy(context);
                 }
 
                 return null;
@@ -53,8 +53,8 @@ namespace Maple2.Trigger._03000049_bf {
             public override void OnExit() { }
         }
 
-        private class StateNPC소멸 : TriggerState {
-            internal StateNPC소멸(ITriggerContext context) : base(context) { }
+        private class StateNPCDestroy : TriggerState {
+            internal StateNPCDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {5003});
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._03000049_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;

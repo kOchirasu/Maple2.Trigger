@@ -266,7 +266,7 @@ namespace Maple2.Trigger._52010061_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State이슈라등장(context);
+                    return new StateIshuraAppear(context);
                 }
 
                 return null;
@@ -275,8 +275,8 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnExit() { }
         }
 
-        private class State이슈라등장 : TriggerState {
-            internal State이슈라등장(ITriggerContext context) : base(context) { }
+        private class StateIshuraAppear : TriggerState {
+            internal StateIshuraAppear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -284,7 +284,7 @@ namespace Maple2.Trigger._52010061_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State이슈라등장_02(context);
+                    return new StateIshuraAppear_02(context);
                 }
 
                 return null;
@@ -293,8 +293,8 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnExit() { }
         }
 
-        private class State이슈라등장_02 : TriggerState {
-            internal State이슈라등장_02(ITriggerContext context) : base(context) { }
+        private class StateIshuraAppear_02 : TriggerState {
+            internal StateIshuraAppear_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11001975, msg: "$52010061_QD__main__8$", duration: 4000);
@@ -303,7 +303,7 @@ namespace Maple2.Trigger._52010061_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State이슈라등장_03(context);
+                    return new StateIshuraAppear_03(context);
                 }
 
                 return null;
@@ -312,8 +312,8 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnExit() { }
         }
 
-        private class State이슈라등장_03 : TriggerState {
-            internal State이슈라등장_03(ITriggerContext context) : base(context) { }
+        private class StateIshuraAppear_03 : TriggerState {
+            internal StateIshuraAppear_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4006, 4007}, arg2: false);
@@ -322,7 +322,7 @@ namespace Maple2.Trigger._52010061_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State이슈라대사(context);
+                    return new StateIshura대사(context);
                 }
 
                 return null;
@@ -331,8 +331,8 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnExit() { }
         }
 
-        private class State이슈라대사 : TriggerState {
-            internal State이슈라대사(ITriggerContext context) : base(context) { }
+        private class StateIshura대사 : TriggerState {
+            internal StateIshura대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 104, arg2: "Talk_A", arg3: 4000f);
@@ -341,7 +341,7 @@ namespace Maple2.Trigger._52010061_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State이슈라모션(context);
+                    return new StateIshura모션(context);
                 }
 
                 return null;
@@ -350,8 +350,8 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnExit() { }
         }
 
-        private class State이슈라모션 : TriggerState {
-            internal State이슈라모션(ITriggerContext context) : base(context) { }
+        private class StateIshura모션 : TriggerState {
+            internal StateIshura모션(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 104, arg2: "RuneBlader_Bore_A");
@@ -359,7 +359,7 @@ namespace Maple2.Trigger._52010061_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State종료(context);
+                    return new StateEnd_01(context);
                 }
 
                 return null;
@@ -368,8 +368,8 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd_01 : TriggerState {
+            internal StateEnd_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -377,7 +377,7 @@ namespace Maple2.Trigger._52010061_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State종료_02(context);
+                    return new StateEnd_02(context);
                 }
 
                 return null;
@@ -386,8 +386,8 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnExit() { }
         }
 
-        private class State종료_02 : TriggerState {
-            internal State종료_02(ITriggerContext context) : base(context) { }
+        private class StateEnd_02 : TriggerState {
+            internal StateEnd_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 300, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -395,7 +395,7 @@ namespace Maple2.Trigger._52010061_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new StateUI초기화(context);
+                    return new StateUIReset(context);
                 }
 
                 return null;
@@ -404,8 +404,8 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnExit() { }
         }
 
-        private class StateUI초기화 : TriggerState {
-            internal StateUI초기화(ITriggerContext context) : base(context) { }
+        private class StateUIReset : TriggerState {
+            internal StateUIReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: true);

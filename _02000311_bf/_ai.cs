@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000311_bf {
     public static class _ai {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 9999993, key: "Buff_01", value: 0);

@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52100108_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000360}, arg3: new byte[] {1})) {
-                    return new Statewait_01(context);
+                    return new StateWait_01(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52100108_qd {
             public override void OnExit() { }
         }
 
-        private class Statewait_01 : TriggerState {
-            internal Statewait_01(ITriggerContext context) : base(context) { }
+        private class StateWait_01 : TriggerState {
+            internal StateWait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._52100108_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new Statewait_03(context);
+                    return new StateWait_03(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._52100108_qd {
             public override void OnExit() { }
         }
 
-        private class Statewait_03 : TriggerState {
-            internal Statewait_03(ITriggerContext context) : base(context) { }
+        private class StateWait_03 : TriggerState {
+            internal StateWait_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010027_qd {
     public static class _main_quest10003101 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5005}, arg2: false);
@@ -173,7 +173,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State전투시작01(context);
+                    return new StateBattleStart01(context);
                 }
 
                 return null;
@@ -182,8 +182,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class State전투시작01 : TriggerState {
-            internal State전투시작01(ITriggerContext context) : base(context) { }
+        private class StateBattleStart01 : TriggerState {
+            internal StateBattleStart01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -193,7 +193,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State전투시작01_1(context);
+                    return new StateBattleStart01_1(context);
                 }
 
                 return null;
@@ -202,8 +202,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class State전투시작01_1 : TriggerState {
-            internal State전투시작01_1(ITriggerContext context) : base(context) { }
+        private class StateBattleStart01_1 : TriggerState {
+            internal StateBattleStart01_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -211,7 +211,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State전투시작02(context);
+                    return new StateBattleStart02(context);
                 }
 
                 return null;
@@ -231,7 +231,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State전투시작02(context);
+                    return new StateBattleStart02(context);
                 }
 
                 return null;
@@ -240,8 +240,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class State전투시작02 : TriggerState {
-            internal State전투시작02(ITriggerContext context) : base(context) { }
+        private class StateBattleStart02 : TriggerState {
+            internal StateBattleStart02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5005}, arg2: false);
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State전투시작03(context);
+                    return new StateBattleStart03(context);
                 }
 
                 return null;
@@ -262,8 +262,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class State전투시작03 : TriggerState {
-            internal State전투시작03(ITriggerContext context) : base(context) { }
+        private class StateBattleStart03 : TriggerState {
+            internal StateBattleStart03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {802}, arg2: true);

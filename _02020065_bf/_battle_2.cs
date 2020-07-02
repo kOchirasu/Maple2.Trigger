@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020065_bf {
     public static class _battle_2 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990001, key: "Battle_2_Clear", value: 0);
@@ -35,7 +35,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_2_Start") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_2_Start") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_2_Start") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._02020065_bf {
                 }
 
                 if (context.GetUserValue(key: "Battle_2_Start") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {711})) {
@@ -143,7 +143,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_2_Start") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {711})) {
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._02020065_bf {
                 }
 
                 if (context.GetUserValue(key: "Battle_2_Start") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -191,11 +191,11 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {714, 715})) {
-                    return new State종료대기(context);
+                    return new StateEnd대기(context);
                 }
 
                 if (context.GetUserValue(key: "Battle_2_Start") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -204,8 +204,8 @@ namespace Maple2.Trigger._02020065_bf {
             public override void OnExit() { }
         }
 
-        private class State종료대기 : TriggerState {
-            internal State종료대기(ITriggerContext context) : base(context) { }
+        private class StateEnd대기 : TriggerState {
+            internal StateEnd대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_smile", duration: 5000, script: "$02020065_BF__BATTLE_2__6$");
@@ -213,11 +213,11 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State포탑소환_클리어(context);
+                    return new State포탑소환_Clear(context);
                 }
 
                 if (context.GetUserValue(key: "Battle_2_Start") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -226,8 +226,8 @@ namespace Maple2.Trigger._02020065_bf {
             public override void OnExit() { }
         }
 
-        private class State포탑소환_클리어 : TriggerState {
-            internal State포탑소환_클리어(ITriggerContext context) : base(context) { }
+        private class State포탑소환_Clear : TriggerState {
+            internal State포탑소환_Clear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990001, key: "Battle_2_Clear", value: 1);
@@ -242,7 +242,7 @@ namespace Maple2.Trigger._02020065_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_2_Start") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

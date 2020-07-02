@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000067_qd {
     public static class _sub_event_04 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {759}, arg2: true);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52000067_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 706) == 1) {
-                    return new Stateready(context);
+                    return new StateReady(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52000067_qd {
             public override void OnExit() { }
         }
 
-        private class Stateready : TriggerState {
-            internal Stateready(ITriggerContext context) : base(context) { }
+        private class StateReady : TriggerState {
+            internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 759, arg2: "Talk_A");

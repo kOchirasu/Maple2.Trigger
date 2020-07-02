@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010002_qd {
     public static class _monster_02 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

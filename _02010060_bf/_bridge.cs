@@ -12,11 +12,11 @@ namespace Maple2.Trigger._02010060_bf {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 102, arg2: new[] {2099})) {
-                    return new State오브젝트반응대기(context);
+                    return new StateInteractObject대기(context);
                 }
 
                 if (context.GetUserValue(key: "FirstPhaseEnd") == 1) {
-                    return new State오브젝트반응대기(context);
+                    return new StateInteractObject대기(context);
                 }
 
                 return null;
@@ -25,8 +25,8 @@ namespace Maple2.Trigger._02010060_bf {
             public override void OnExit() { }
         }
 
-        private class State오브젝트반응대기 : TriggerState {
-            internal State오브젝트반응대기(ITriggerContext context) : base(context) { }
+        private class StateInteractObject대기 : TriggerState {
+            internal StateInteractObject대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {701}, arg2: true);
@@ -35,7 +35,7 @@ namespace Maple2.Trigger._02010060_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000918}, arg2: 0)) {
-                    return new State다리생성(context);
+                    return new State다리Creation(context);
                 }
 
                 return null;
@@ -44,8 +44,8 @@ namespace Maple2.Trigger._02010060_bf {
             public override void OnExit() { }
         }
 
-        private class State다리생성 : TriggerState {
-            internal State다리생성(ITriggerContext context) : base(context) { }
+        private class State다리Creation : TriggerState {
+            internal State다리Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 100, arg2: "trigger", arg3: "TruthOfKargon");
@@ -55,7 +55,7 @@ namespace Maple2.Trigger._02010060_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State이펙트생성(context);
+                    return new State이펙트Creation(context);
                 }
 
                 return null;
@@ -64,8 +64,8 @@ namespace Maple2.Trigger._02010060_bf {
             public override void OnExit() { }
         }
 
-        private class State이펙트생성 : TriggerState {
-            internal State이펙트생성(ITriggerContext context) : base(context) { }
+        private class State이펙트Creation : TriggerState {
+            internal State이펙트Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130}, arg2: true, arg3: 0, arg4: 100, arg5: 2f);

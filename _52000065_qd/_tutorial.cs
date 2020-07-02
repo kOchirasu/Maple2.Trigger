@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000065_qd {
     public static class _tutorial {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1000, 2000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._52000065_qd {
 
             public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "Guide", arg2: "IsTriggerEvent", arg3: "251")) {
-                    return new State몬스터소환(context);
+                    return new StateMonster소환(context);
                 }
 
                 return null;
@@ -90,8 +90,8 @@ namespace Maple2.Trigger._52000065_qd {
             public override void OnExit() { }
         }
 
-        private class State몬스터소환 : TriggerState {
-            internal State몬스터소환(ITriggerContext context) : base(context) { }
+        private class StateMonster소환 : TriggerState {
+            internal StateMonster소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
@@ -175,8 +175,8 @@ namespace Maple2.Trigger._52000065_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

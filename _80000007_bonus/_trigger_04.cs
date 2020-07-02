@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._80000007_bonus {
     public static class _trigger_04 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649}, arg2: true);
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._80000007_bonus {
 
             public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {153})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

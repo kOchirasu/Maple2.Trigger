@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000137_bf {
     public static class _ia_47 {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000047}, arg2: 1);
@@ -9,14 +9,14 @@ namespace Maple2.Trigger._02000137_bf {
             }
 
             public override TriggerState Execute() {
-                return new State오브젝트반응(context);
+                return new StateInteractObject(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State오브젝트반응 : TriggerState {
-            internal State오브젝트반응(ITriggerContext context) : base(context) { }
+        private class StateInteractObject : TriggerState {
+            internal StateInteractObject(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02000137_bf {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
                     context.DestroyMonster(arg1: new[] {148});
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -54,8 +54,8 @@ namespace Maple2.Trigger._02000137_bf {
             public override void OnExit() { }
         }
 
-        private class State대기시간 : TriggerState {
-            internal State대기시간(ITriggerContext context) : base(context) { }
+        private class StateWaitTime : TriggerState {
+            internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 10);
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02000137_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;

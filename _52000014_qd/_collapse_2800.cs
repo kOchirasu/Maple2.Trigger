@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000014_qd {
     public static class _collapse_2800 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {2800, 2801, 2802, 2803, 2810, 2811, 2812, 2813, 2814, 2815, 2820, 2821, 2822, 2823, 2824, 2830, 2831, 2832, 2833, 2840, 2841, 2842, 2843, 2850, 2851, 2852, 2853, 2854, 2855, 2860, 2861, 2862, 2863, 2870, 2871, 2872, 2873, 2874, 2880, 2881, 2882, 2883, 2890, 2891, 2892, 2893}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -139,8 +139,8 @@ namespace Maple2.Trigger._52000014_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {12800, 22800, 12810, 22810, 12820, 22820, 12830, 22830, 12840, 22840, 12850, 22850}, arg2: false);

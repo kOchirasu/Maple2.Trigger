@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000486_bf {
     public static class _103_timer {
-        public class State전투시작 : TriggerState {
-            internal State전투시작(ITriggerContext context) : base(context) { }
+        public class StateBattleStart : TriggerState {
+            internal StateBattleStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 239000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {900}) && context.MonsterDead(arg1: new[] {901})) {
@@ -56,8 +56,8 @@ namespace Maple2.Trigger._02000486_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02000486_BF__103_TIMER__1$", arg3: 4000);

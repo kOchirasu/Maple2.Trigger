@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000349_bf {
     public static class _fog {
-        public class State준비 : TriggerState {
-            internal State준비(ITriggerContext context) : base(context) { }
+        public class StateSetup : TriggerState {
+            internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000813}, arg2: 2);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 136, arg2: new[] {2006})) {
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02000349_bf {
             public override void OnExit() { }
         }
 
-        private class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        private class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1098});
@@ -50,11 +50,11 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000813}, arg2: 0)) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1099})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -63,8 +63,8 @@ namespace Maple2.Trigger._02000349_bf {
             public override void OnExit() { }
         }
 
-        private class State대기시간 : TriggerState {
-            internal State대기시간(ITriggerContext context) : base(context) { }
+        private class StateWaitTime : TriggerState {
+            internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 20003494);
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;

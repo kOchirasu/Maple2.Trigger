@@ -2,14 +2,14 @@ using System.Numerics;
 
 namespace Maple2.Trigger._52020040_qd {
     public static class _52020040 {
-        public class Statewait_01 : TriggerState {
-            internal Statewait_01(ITriggerContext context) : base(context) { }
+        public class StateWait_01 : TriggerState {
+            internal StateWait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {2001})) {
-                    return new Statewait_02(context);
+                    return new StateWait_02(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52020040_qd {
             public override void OnExit() { }
         }
 
-        private class Statewait_02 : TriggerState {
-            internal Statewait_02(ITriggerContext context) : base(context) { }
+        private class StateWait_02 : TriggerState {
+            internal StateWait_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._52020040_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new Statewait_03(context);
+                    return new StateWait_03(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._52020040_qd {
             public override void OnExit() { }
         }
 
-        private class Statewait_03 : TriggerState {
-            internal Statewait_03(ITriggerContext context) : base(context) { }
+        private class StateWait_03 : TriggerState {
+            internal StateWait_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105}, arg2: false);

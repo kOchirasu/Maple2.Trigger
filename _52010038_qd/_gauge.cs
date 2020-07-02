@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010038_qd {
     public static class _gauge {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override TriggerState Execute() {
                 if (context.GetShadowExpeditionPoints() >= 1000) {
-                    return new State성공(context);
+                    return new StateSuccess(context);
                 }
 
                 if (context.GetUserValue(key: "CoreIsDead") == 1) {
@@ -55,8 +55,8 @@ namespace Maple2.Trigger._52010038_qd {
             }
         }
 
-        private class State성공 : TriggerState {
-            internal State성공(ITriggerContext context) : base(context) { }
+        private class StateSuccess : TriggerState {
+            internal StateSuccess(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_normal", duration: 6000, script: "$52010038_QD__gauge__3$", voice: @"ko/Npc/00002107");
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -117,8 +117,8 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

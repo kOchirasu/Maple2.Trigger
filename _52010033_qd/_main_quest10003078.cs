@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._52010033_qd {
     public static class _main_quest10003078 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {10003078}, arg3: new byte[] {2})) {
-                    return new State유저감지(context);
+                    return new StateUserDetection(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52010033_qd {
             public override void OnExit() { }
         }
 
-        private class State유저감지 : TriggerState {
-            internal State유저감지(ITriggerContext context) : base(context) { }
+        private class StateUserDetection : TriggerState {
+            internal StateUserDetection(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);

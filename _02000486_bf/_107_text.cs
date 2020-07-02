@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000486_bf {
     public static class _107_text {
-        public class State유저감지 : TriggerState {
-            internal State유저감지(ITriggerContext context) : base(context) { }
+        public class StateUserDetection : TriggerState {
+            internal StateUserDetection(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -40,8 +40,6 @@ namespace Maple2.Trigger._02000486_bf {
             }
 
             public override TriggerState Execute() {
-                if (true) { }
-
                 return null;
             }
 

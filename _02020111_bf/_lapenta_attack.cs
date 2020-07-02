@@ -2,8 +2,8 @@ using System.Numerics;
 
 namespace Maple2.Trigger._02020111_bf {
     public static class _lapenta_attack {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(183f, 189f, 201f));
@@ -12,7 +12,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Lapenta_Attack") == 1) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        private class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 23501011, illust: "Turned_Renduebian_normal", script: "$02020111_BF__LAPENTA_ATTACK__0$", duration: 3432, voice: @"ko/Npc/00002199");
@@ -32,7 +32,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3432)) {
-                    return new State스킬발동(context);
+                    return new StateActivateSkill(context);
                 }
 
                 return null;
@@ -41,8 +41,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State스킬발동 : TriggerState {
-            internal State스킬발동(ITriggerContext context) : base(context) { }
+        private class StateActivateSkill : TriggerState {
+            internal StateActivateSkill(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {200001, 200002, 200003, 200004, 200005, 200011, 200012, 200013, 200014, 200015, 200021, 200022, 200023, 200024, 200025, 200031, 200032, 200033, 200034, 200035}, arg2: false);
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State실패조건버프(context);
+                    return new State실패조건Buff(context);
                 }
 
                 return null;
@@ -66,8 +66,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State실패조건버프 : TriggerState {
-            internal State실패조건버프(ITriggerContext context) : base(context) { }
+        private class State실패조건Buff : TriggerState {
+            internal State실패조건Buff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900204, key: "Message", value: 1);
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Lapenta_Attack") == 0) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;

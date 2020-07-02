@@ -2,8 +2,8 @@ using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000248_bf {
     public static class _trigger_01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 109, 110});
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02000248_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {201})) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._02000248_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {798, 799}, arg2: false);
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._02000248_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {999})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._02000248_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {999})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._02000248_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {999})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -141,7 +141,7 @@ namespace Maple2.Trigger._02000248_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {999})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -164,7 +164,7 @@ namespace Maple2.Trigger._02000248_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {999})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -187,7 +187,7 @@ namespace Maple2.Trigger._02000248_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {999})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -210,7 +210,7 @@ namespace Maple2.Trigger._02000248_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {999})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -233,7 +233,7 @@ namespace Maple2.Trigger._02000248_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {999})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -256,7 +256,7 @@ namespace Maple2.Trigger._02000248_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {999})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -279,7 +279,7 @@ namespace Maple2.Trigger._02000248_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {999})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -302,7 +302,7 @@ namespace Maple2.Trigger._02000248_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {999})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -325,7 +325,7 @@ namespace Maple2.Trigger._02000248_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {999})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -348,7 +348,7 @@ namespace Maple2.Trigger._02000248_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {999})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -372,7 +372,7 @@ namespace Maple2.Trigger._02000248_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {999})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

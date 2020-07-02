@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020098_bf {
     public static class _bossspawn {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);
@@ -13,7 +13,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10})) {
-                    return new State던전코드별보스등장(context);
+                    return new State던전코드별BossSpawn(context);
                 }
 
                 return null;
@@ -22,22 +22,22 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State던전코드별보스등장 : TriggerState {
-            internal State던전코드별보스등장(ITriggerContext context) : base(context) { }
+        private class State던전코드별BossSpawn : TriggerState {
+            internal State던전코드별BossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetDungeonId() == 23042003) {
-                    return new State어려움난이도보스등장(context);
+                    return new State어려움난이도BossSpawn(context);
                 }
 
                 if (context.GetDungeonId() == 23043003) {
-                    return new State쉬움난이도보스등장(context);
+                    return new State쉬움난이도BossSpawn(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State어려움난이도보스등장(context);
+                    return new State어려움난이도BossSpawn(context);
                 }
 
                 return null;
@@ -46,8 +46,8 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State어려움난이도보스등장 : TriggerState {
-            internal State어려움난이도보스등장(ITriggerContext context) : base(context) { }
+        private class State어려움난이도BossSpawn : TriggerState {
+            internal State어려움난이도BossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {99, 97}, arg2: false);
@@ -64,8 +64,8 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State쉬움난이도보스등장 : TriggerState {
-            internal State쉬움난이도보스등장(ITriggerContext context) : base(context) { }
+        private class State쉬움난이도BossSpawn : TriggerState {
+            internal State쉬움난이도BossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {98, 96}, arg2: false);
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State대기상태(context);
+                    return new StateWait상태(context);
                 }
 
                 return null;
@@ -100,22 +100,22 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State대기상태 : TriggerState {
-            internal State대기상태(ITriggerContext context) : base(context) { }
+        private class StateWait상태 : TriggerState {
+            internal StateWait상태(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StairsOk") == 1) {
-                    return new State계단생성시작중(context);
+                    return new State계단Creation시작중(context);
                 }
 
                 if (context.GetUserValue(key: "2PhaseStart") == 1) {
-                    return new State2페이지_바로가기포탈생성(context);
+                    return new State2페이지_바로가기PortalCreation(context);
                 }
 
                 if (context.GetUserValue(key: "3PhaseStart") == 1) {
-                    return new State3페이지_바로가기포탈생성(context);
+                    return new State3페이지_바로가기PortalCreation(context);
                 }
 
                 return null;
@@ -124,8 +124,8 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State계단생성시작중 : TriggerState {
-            internal State계단생성시작중(ITriggerContext context) : base(context) { }
+        private class State계단Creation시작중 : TriggerState {
+            internal State계단Creation시작중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "StairsOk", value: 0);
@@ -133,11 +133,11 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StairsOkPass") == 0) {
-                    return new State계단생성(context);
+                    return new State계단Creation(context);
                 }
 
                 if (context.GetUserValue(key: "StairsOkPass") == 1) {
-                    return new State대기상태(context);
+                    return new StateWait상태(context);
                 }
 
                 return null;
@@ -146,8 +146,8 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State계단생성 : TriggerState {
-            internal State계단생성(ITriggerContext context) : base(context) { }
+        private class State계단Creation : TriggerState {
+            internal State계단Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {198, 199}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -157,7 +157,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State대기상태(context);
+                    return new StateWait상태(context);
                 }
 
                 return null;
@@ -166,8 +166,8 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State2페이지_바로가기포탈생성 : TriggerState {
-            internal State2페이지_바로가기포탈생성(ITriggerContext context) : base(context) { }
+        private class State2페이지_바로가기PortalCreation : TriggerState {
+            internal State2페이지_바로가기PortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {125, 116, 168, 126}, arg2: false, arg3: 0, arg4: 50, arg5: 0.5f);
@@ -180,7 +180,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6300)) {
-                    return new State2페이지_2PhaseWall_생성(context);
+                    return new State2페이지_2PhaseWall_Creation(context);
                 }
 
                 return null;
@@ -189,8 +189,8 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State2페이지_2PhaseWall_생성 : TriggerState {
-            internal State2페이지_2PhaseWall_생성(ITriggerContext context) : base(context) { }
+        private class State2페이지_2PhaseWall_Creation : TriggerState {
+            internal State2페이지_2PhaseWall_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {6501, 6502, 6503, 6504, 6505, 6506, 6507, 6508, 6509, 6510, 6511, 6512, 6513, 6514, 6515, 6516, 6517, 6518, 6519, 6520, 6521, 6522, 6523, 6524, 6525, 6526, 6527, 6528, 6529, 6530, 6531, 6532, 6533, 6534, 6535, 6536, 6537, 6538, 6539, 6540, 6541, 6542, 6543, 6544, 6545, 6546, 6547, 6548, 6549, 6550, 6551, 6552, 6553, 6554, 6555, 6556, 6557, 6558, 6559, 6560, 6561, 6562, 6563, 6564, 6565, 6566, 6567, 6568, 6569, 6570, 6571, 6572, 6573, 6574, 6575, 6576, 6577, 6578, 6579, 6580}, arg2: true, arg3: 1, arg4: 1, arg5: 1f);
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State대기상태(context);
+                    return new StateWait상태(context);
                 }
 
                 return null;
@@ -208,8 +208,8 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State3페이지_바로가기포탈생성 : TriggerState {
-            internal State3페이지_바로가기포탈생성(ITriggerContext context) : base(context) { }
+        private class State3페이지_바로가기PortalCreation : TriggerState {
+            internal State3페이지_바로가기PortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 60, arg2: false, arg3: false, arg4: false);
@@ -226,7 +226,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6300)) {
-                    return new State3페이지_3PhaseWall_생성(context);
+                    return new State3페이지_3PhaseWall_Creation(context);
                 }
 
                 return null;
@@ -235,8 +235,8 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State3페이지_3PhaseWall_생성 : TriggerState {
-            internal State3페이지_3PhaseWall_생성(ITriggerContext context) : base(context) { }
+        private class State3페이지_3PhaseWall_Creation : TriggerState {
+            internal State3페이지_3PhaseWall_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {6701, 6702, 6703, 6704, 6705, 6706, 6707, 6708, 6709, 6710, 6711, 6712, 6713, 6714, 6715, 6716, 6717, 6718, 6719, 6720, 6721, 6722, 6723, 6724, 6725, 6726, 6727, 6728, 6729}, arg2: true, arg3: 1, arg4: 1, arg5: 1f);
@@ -245,7 +245,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State대기상태(context);
+                    return new StateWait상태(context);
                 }
 
                 return null;

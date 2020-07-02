@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000014_qd {
     public static class _meteo_3000 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State초기화(context);
+                    return new StateReset(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._52000014_qd {
             public override void OnExit() { }
         }
 
-        private class State초기화 : TriggerState {
-            internal State초기화(ITriggerContext context) : base(context) { }
+        private class StateReset : TriggerState {
+            internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 5);

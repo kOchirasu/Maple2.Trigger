@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000253_bf {
     public static class _wall_02 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {9003, 9004}, arg2: true);

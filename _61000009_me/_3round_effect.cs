@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._61000009_me {
     public static class _3round_effect {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

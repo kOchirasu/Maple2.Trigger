@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000498_bf {
     public static class _timeattack_r24_05 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02000498_bf {
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {124099})) {
                     context.DestroyMonster(arg1: new[] {124005});
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {124005})) {
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

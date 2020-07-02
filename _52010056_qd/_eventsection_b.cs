@@ -19,7 +19,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {2004})) {
-                    return new State연출준비_A(context);
+                    return new StateSetupCinematic_A(context);
                 }
 
                 return null;
@@ -28,8 +28,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State연출준비_A : TriggerState {
-            internal State연출준비_A(ITriggerContext context) : base(context) { }
+        private class StateSetupCinematic_A : TriggerState {
+            internal StateSetupCinematic_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State연출준비_B(context);
+                    return new StateSetupCinematic_B(context);
                 }
 
                 return null;
@@ -50,8 +50,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State연출준비_B : TriggerState {
-            internal State연출준비_B(ITriggerContext context) : base(context) { }
+        private class StateSetupCinematic_B : TriggerState {
+            internal StateSetupCinematic_B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {999}, arg2: false);

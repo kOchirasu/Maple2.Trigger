@@ -2,8 +2,8 @@ using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000317_bf {
     public static class _bossspawn {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 6, arg2: false, arg3: false, arg4: false, arg5: false);
@@ -220,7 +220,7 @@ namespace Maple2.Trigger._02000317_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {100})) {
-                    return new State종료체크(context);
+                    return new StateEnd체크(context);
                 }
 
                 return null;
@@ -231,15 +231,15 @@ namespace Maple2.Trigger._02000317_bf {
             }
         }
 
-        private class State종료체크 : TriggerState {
-            internal State종료체크(ITriggerContext context) : base(context) { }
+        private class StateEnd체크 : TriggerState {
+            internal StateEnd체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.DungeonClear();
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -248,8 +248,8 @@ namespace Maple2.Trigger._02000317_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);

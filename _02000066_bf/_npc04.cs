@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000066_bf {
     public static class _npc04 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {605}, arg2: false);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {103})) {
-                    return new StateNPC생성(context);
+                    return new StateNPCCreation(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class StateNPC생성 : TriggerState {
-            internal StateNPC생성(ITriggerContext context) : base(context) { }
+        private class StateNPCCreation : TriggerState {
+            internal StateNPCCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new StateNPC생성조건(context);
+                    return new StateNPCCreation조건(context);
                 }
 
                 return null;
@@ -40,8 +40,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class StateNPC생성조건 : TriggerState {
-            internal StateNPC생성조건(ITriggerContext context) : base(context) { }
+        private class StateNPCCreation조건 : TriggerState {
+            internal StateNPCCreation조건(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02000066_bf {
                     context.SetEffect(arg1: new[] {605}, arg2: true);
                     context.ShowGuideSummary(entityId: 20000663, textId: 20000663);
                     context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
-                    return new StateNPC소멸(context);
+                    return new StateNPCDestroy(context);
                 }
 
                 return null;
@@ -59,8 +59,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class StateNPC소멸 : TriggerState {
-            internal StateNPC소멸(ITriggerContext context) : base(context) { }
+        private class StateNPCDestroy : TriggerState {
+            internal StateNPCDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02000066_bf {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
                     context.HideGuideSummary(entityId: 20000663);
-                    return new State오브젝트반응(context);
+                    return new StateInteractObject(context);
                 }
 
                 return null;
@@ -79,8 +79,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State오브젝트반응 : TriggerState {
-            internal State오브젝트반응(ITriggerContext context) : base(context) { }
+        private class StateInteractObject : TriggerState {
+            internal StateInteractObject(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 204, arg2: true, arg3: "Dead_A");
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2004})) {
-                    return new StateNPC생성조건(context);
+                    return new StateNPCCreation조건(context);
                 }
 
                 return null;

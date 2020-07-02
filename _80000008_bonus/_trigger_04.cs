@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._80000008_bonus {
     public static class _trigger_04 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000211}, arg2: 1);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._80000008_bonus {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 401, arg2: new[] {104})) {
-                    return new State몬스터소멸(context);
+                    return new StateMonsterDestroy(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._80000008_bonus {
             public override void OnExit() { }
         }
 
-        private class State몬스터소멸 : TriggerState {
-            internal State몬스터소멸(ITriggerContext context) : base(context) { }
+        private class StateMonsterDestroy : TriggerState {
+            internal StateMonsterDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {104});
@@ -64,7 +64,7 @@ namespace Maple2.Trigger._80000008_bonus {
             }
 
             public override TriggerState Execute() {
-                return new State대기(context);
+                return new StateWait(context);
             }
 
             public override void OnExit() { }

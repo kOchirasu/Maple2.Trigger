@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000066_bf {
     public static class _effect {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6001}, arg2: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 103, arg2: new[] {99})) {
-                    return new State이펙트생성(context);
+                    return new State이펙트Creation(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State이펙트생성 : TriggerState {
-            internal State이펙트생성(ITriggerContext context) : base(context) { }
+        private class State이펙트Creation : TriggerState {
+            internal State이펙트Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6001}, arg2: true);
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "15")) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;

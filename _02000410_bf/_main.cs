@@ -12,7 +12,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 750) == 1) {
-                    return new State전투시작_인페르녹전함(context);
+                    return new StateBattleStart_InfernoWarship(context);
                 }
 
                 return null;
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnExit() { }
         }
 
-        private class State전투시작_인페르녹전함 : TriggerState {
-            internal State전투시작_인페르녹전함(ITriggerContext context) : base(context) { }
+        private class StateBattleStart_InfernoWarship : TriggerState {
+            internal StateBattleStart_InfernoWarship(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: true);
@@ -32,7 +32,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State첫번째페이즈_인페르녹전함(context);
+                    return new State첫번째페이즈_InfernoWarship(context);
                 }
 
                 return null;
@@ -41,14 +41,14 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnExit() { }
         }
 
-        private class State첫번째페이즈_인페르녹전함 : TriggerState {
-            internal State첫번째페이즈_인페르녹전함(ITriggerContext context) : base(context) { }
+        private class State첫번째페이즈_InfernoWarship : TriggerState {
+            internal State첫번째페이즈_InfernoWarship(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SecondPhase") == 1) {
-                    return new State두번째페이즈_인페르녹전함(context);
+                    return new State두번째페이즈_InfernoWarship(context);
                 }
 
                 return null;
@@ -57,8 +57,8 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnExit() { }
         }
 
-        private class State두번째페이즈_인페르녹전함 : TriggerState {
-            internal State두번째페이즈_인페르녹전함(ITriggerContext context) : base(context) { }
+        private class State두번째페이즈_InfernoWarship : TriggerState {
+            internal State두번째페이즈_InfernoWarship(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: false, arg3: 0, arg4: 0, arg5: 0.5f);
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ThirdPhase") == 1) {
-                    return new State세번째페이즈_인페르녹등장(context);
+                    return new State세번째페이즈_인페르녹Appear(context);
                 }
 
                 return null;
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnExit() { }
         }
 
-        private class State세번째페이즈_인페르녹등장 : TriggerState {
-            internal State세번째페이즈_인페르녹등장(ITriggerContext context) : base(context) { }
+        private class State세번째페이즈_인페르녹Appear : TriggerState {
+            internal State세번째페이즈_인페르녹Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonMoveLapTimeToNow(id: true);
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -133,8 +133,8 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -2,8 +2,8 @@ using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000194_bf {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._02000194_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State던전시작(context);
+                    return new StateDungeon시작(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._02000194_bf {
             public override void OnExit() { }
         }
 
-        private class State던전시작 : TriggerState {
-            internal State던전시작(ITriggerContext context) : base(context) { }
+        private class StateDungeon시작 : TriggerState {
+            internal StateDungeon시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20001941, textId: 20001941, duration: 4000);
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02000194_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -66,8 +66,8 @@ namespace Maple2.Trigger._02000194_bf {
             }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20001942, textId: 20001942, duration: 5000);
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02000194_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State시작2(context);
+                    return new StateStart2(context);
                 }
 
                 return null;
@@ -85,8 +85,8 @@ namespace Maple2.Trigger._02000194_bf {
             public override void OnExit() { }
         }
 
-        private class State시작2 : TriggerState {
-            internal State시작2(ITriggerContext context) : base(context) { }
+        private class StateStart2 : TriggerState {
+            internal StateStart2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._02000194_bf {
                     context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -156,8 +156,8 @@ namespace Maple2.Trigger._02000194_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

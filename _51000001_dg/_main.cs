@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._51000001_dg {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._51000001_dg {
                 }
 
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State1라운드카메라(context);
+                    return new State1라운드Camera(context);
                 }
 
                 return null;
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._51000001_dg {
                 }
 
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State1라운드카메라(context);
+                    return new State1라운드Camera(context);
                 }
 
                 return null;
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._51000001_dg {
                 }
 
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State1라운드카메라(context);
+                    return new State1라운드Camera(context);
                 }
 
                 return null;
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._51000001_dg {
                 }
 
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State1라운드카메라(context);
+                    return new State1라운드Camera(context);
                 }
 
                 return null;
@@ -127,8 +127,8 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnExit() { }
         }
 
-        private class State1라운드카메라 : TriggerState {
-            internal State1라운드카메라(ITriggerContext context) : base(context) { }
+        private class State1라운드Camera : TriggerState {
+            internal State1라운드Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
@@ -192,7 +192,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "100001")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1001, 1002, 1003})) {
@@ -236,7 +236,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    return new State2라운드카메라(context);
+                    return new State2라운드Camera(context);
                 }
 
                 return null;
@@ -245,8 +245,8 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnExit() { }
         }
 
-        private class State2라운드카메라 : TriggerState {
-            internal State2라운드카메라(ITriggerContext context) : base(context) { }
+        private class State2라운드Camera : TriggerState {
+            internal State2라운드Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -299,7 +299,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "100002")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1101, 1102, 1103, 1104})) {
@@ -343,7 +343,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {103})) {
-                    return new State3라운드카메라(context);
+                    return new State3라운드Camera(context);
                 }
 
                 return null;
@@ -352,8 +352,8 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnExit() { }
         }
 
-        private class State3라운드카메라 : TriggerState {
-            internal State3라운드카메라(ITriggerContext context) : base(context) { }
+        private class State3라운드Camera : TriggerState {
+            internal State3라운드Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -406,7 +406,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "100003")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1201, 1202, 1203, 1204, 1205, 1206, 1207})) {
@@ -450,7 +450,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {104})) {
-                    return new State4라운드카메라(context);
+                    return new State4라운드Camera(context);
                 }
 
                 return null;
@@ -459,8 +459,8 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnExit() { }
         }
 
-        private class State4라운드카메라 : TriggerState {
-            internal State4라운드카메라(ITriggerContext context) : base(context) { }
+        private class State4라운드Camera : TriggerState {
+            internal State4라운드Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -513,7 +513,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "100004")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308})) {
@@ -557,7 +557,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {105})) {
-                    return new State5라운드카메라(context);
+                    return new State5라운드Camera(context);
                 }
 
                 return null;
@@ -566,8 +566,8 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnExit() { }
         }
 
-        private class State5라운드카메라 : TriggerState {
-            internal State5라운드카메라(ITriggerContext context) : base(context) { }
+        private class State5라운드Camera : TriggerState {
+            internal State5라운드Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -620,7 +620,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "100005")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1401, 1402, 1403, 1404, 1405})) {
@@ -664,7 +664,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {106})) {
-                    return new State6라운드카메라(context);
+                    return new State6라운드Camera(context);
                 }
 
                 return null;
@@ -673,8 +673,8 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnExit() { }
         }
 
-        private class State6라운드카메라 : TriggerState {
-            internal State6라운드카메라(ITriggerContext context) : base(context) { }
+        private class State6라운드Camera : TriggerState {
+            internal State6라운드Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -727,7 +727,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "100006")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1501, 1502, 1503, 1504, 1505, 1506, 1507, 1508, 1509, 1510})) {
@@ -771,7 +771,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {107})) {
-                    return new State7라운드카메라(context);
+                    return new State7라운드Camera(context);
                 }
 
                 return null;
@@ -780,8 +780,8 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnExit() { }
         }
 
-        private class State7라운드카메라 : TriggerState {
-            internal State7라운드카메라(ITriggerContext context) : base(context) { }
+        private class State7라운드Camera : TriggerState {
+            internal State7라운드Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -834,7 +834,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "100007")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1601, 1602, 1603, 1604, 1605, 1606, 1607, 1608, 1609, 1610})) {
@@ -878,7 +878,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {108})) {
-                    return new State8라운드카메라(context);
+                    return new State8라운드Camera(context);
                 }
 
                 return null;
@@ -887,8 +887,8 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnExit() { }
         }
 
-        private class State8라운드카메라 : TriggerState {
-            internal State8라운드카메라(ITriggerContext context) : base(context) { }
+        private class State8라운드Camera : TriggerState {
+            internal State8라운드Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -941,7 +941,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "100008")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1701, 1702, 1703, 1704, 1705, 1706, 1707, 1708, 1709, 1710, 1711})) {
@@ -985,7 +985,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {109})) {
-                    return new State9라운드카메라(context);
+                    return new State9라운드Camera(context);
                 }
 
                 return null;
@@ -994,8 +994,8 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnExit() { }
         }
 
-        private class State9라운드카메라 : TriggerState {
-            internal State9라운드카메라(ITriggerContext context) : base(context) { }
+        private class State9라운드Camera : TriggerState {
+            internal State9라운드Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -1048,7 +1048,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "100009")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915})) {
@@ -1092,7 +1092,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {110})) {
-                    return new State10라운드카메라(context);
+                    return new State10라운드Camera(context);
                 }
 
                 return null;
@@ -1101,8 +1101,8 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnExit() { }
         }
 
-        private class State10라운드카메라 : TriggerState {
-            internal State10라운드카메라(ITriggerContext context) : base(context) { }
+        private class State10라운드Camera : TriggerState {
+            internal State10라운드Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -1156,7 +1156,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "100010")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {2001, 2002, 2003, 2004, 2005})) {
@@ -1183,7 +1183,7 @@ namespace Maple2.Trigger._51000001_dg {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.MoveUser(arg1: 51000001, arg2: 44, arg3: 110);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1192,8 +1192,8 @@ namespace Maple2.Trigger._51000001_dg {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Ending_Popup_01");

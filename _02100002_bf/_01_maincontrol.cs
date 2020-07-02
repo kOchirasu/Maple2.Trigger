@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
-                context.LimitSpawnNpcCount(limitCount: 0); // 몬스터 스폰 제한을 끕니다.
+                context.LimitSpawnNpcCount(limitCount: 0); // Monster 스폰 제한을 끕니다.
                 context.SetInteractObject(arg1: new[] {10001239, 10001240}, arg2: 0);
                 context.SetMesh(arg1: new[] {3000, 3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3200, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219, 3220, 3221, 3222, 3223, 3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323, 3400, 3401, 3402, 3403, 3404, 3405, 3406, 3407, 3408, 3409, 3410, 3411, 3412, 3413, 3414, 3415, 3416, 3417, 3418, 3419, 3420, 3421, 3422, 3423, 3500, 3501, 3502, 3503, 3504, 3505, 3506, 3507, 3508, 3509, 3510, 3511, 3512, 3513, 3514, 3515, 3516, 3517, 3518, 3519, 3520, 3521, 3522, 3523}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.DestroyMonster(arg1: new[] {900, 1000, 2000});
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02100002_bf {
                 context.WidgetAction(arg1: "RainbowMonster", arg2: "CreateGroup", widgetArgNum: 3, arg3: "34000125,34000126,34000127,34000144");
                 context.WidgetAction(arg1: "RainbowMonster", arg2: "CreateGroup", widgetArgNum: 4, arg3: "34000131,34000132,34000133,34000145");
                 context.WidgetAction(arg1: "RainbowMonster", arg2: "CreateGroup", widgetArgNum: 5, arg3: "34000134,34000135,34000136,34000146");
-                // 34000141 npc가 죽인 몬스터만 스코어에 반영
+                // 34000141 npc가 죽인 Monster만 스코어에 반영
                 context.WidgetAction(arg1: "RainbowMonster", arg2: "SetKillerNpc", arg3: "34000141");
                 // 60초마다 감점
                 context.WidgetAction(arg1: "RainbowMonster", arg2: "SetLoseScoreTick", widgetArgNum: 60000);

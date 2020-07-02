@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000246_bf {
     public static class _trigger_04_01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {631, 632, 633, 634, 635, 636, 637, 638, 639});
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02000246_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {204})) {
-                    return new State몹생성(context);
+                    return new StateMobCreation(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02000246_bf {
             public override void OnExit() { }
         }
 
-        private class State몹생성 : TriggerState {
-            internal State몹생성(ITriggerContext context) : base(context) { }
+        private class StateMobCreation : TriggerState {
+            internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {631, 632, 633, 634, 635, 636, 637, 638, 639}, arg2: false);

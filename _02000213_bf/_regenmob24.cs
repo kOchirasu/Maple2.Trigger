@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02000213_bf {
     public static class _regenmob24 {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State소환몹등장(context);
+                    return new State소환몹Appear(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State소환몹등장 : TriggerState {
-            internal State소환몹등장(ITriggerContext context) : base(context) { }
+        private class State소환몹Appear : TriggerState {
+            internal State소환몹Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02000213_bf {
                 }
 
                 if (context.MonsterDead(arg1: new[] {1024})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -57,8 +57,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State대기시간 : TriggerState {
-            internal State대기시간(ITriggerContext context) : base(context) { }
+        private class StateWaitTime : TriggerState {
+            internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 15);
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State소환몹등장(context);
+                    return new State소환몹Appear(context);
                 }
 
                 return null;
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;

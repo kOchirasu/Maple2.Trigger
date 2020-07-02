@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02000471_bf {
     public static class _warp {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Warp") == 1) {
-                    return new Statewarp_1st(context);
+                    return new StateWarp_1st(context);
                 }
 
                 return null;
@@ -16,34 +16,34 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statewarp_1st : TriggerState {
-            internal Statewarp_1st(ITriggerContext context) : base(context) { }
+        private class StateWarp_1st : TriggerState {
+            internal StateWarp_1st(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 17f)) {
-                    return new Statewarp_1(context);
+                    return new StateWarp_1(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    return new Statewarp_2(context);
+                    return new StateWarp_2(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    return new Statewarp_3(context);
+                    return new StateWarp_3(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    return new Statewarp_4(context);
+                    return new StateWarp_4(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    return new Statewarp_5(context);
+                    return new StateWarp_5(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    return new Statewarp_6(context);
+                    return new StateWarp_6(context);
                 }
 
                 return null;
@@ -52,8 +52,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statewarp_1 : TriggerState {
-            internal Statewarp_1(ITriggerContext context) : base(context) { }
+        private class StateWarp_1 : TriggerState {
+            internal StateWarp_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 11, arg3: 720, arg4: 1);
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Warp") == 2) {
-                    return new Statewarp_2nd(context);
+                    return new StateWarp_2nd(context);
                 }
 
                 return null;
@@ -71,8 +71,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statewarp_2 : TriggerState {
-            internal Statewarp_2(ITriggerContext context) : base(context) { }
+        private class StateWarp_2 : TriggerState {
+            internal StateWarp_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 12, arg3: 720, arg4: 1);
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Warp") == 2) {
-                    return new Statewarp_2nd(context);
+                    return new StateWarp_2nd(context);
                 }
 
                 return null;
@@ -90,8 +90,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statewarp_3 : TriggerState {
-            internal Statewarp_3(ITriggerContext context) : base(context) { }
+        private class StateWarp_3 : TriggerState {
+            internal StateWarp_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 13, arg3: 720, arg4: 1);
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Warp") == 2) {
-                    return new Statewarp_2nd(context);
+                    return new StateWarp_2nd(context);
                 }
 
                 return null;
@@ -109,8 +109,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statewarp_4 : TriggerState {
-            internal Statewarp_4(ITriggerContext context) : base(context) { }
+        private class StateWarp_4 : TriggerState {
+            internal StateWarp_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 14, arg3: 720, arg4: 1);
@@ -119,7 +119,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Warp") == 2) {
-                    return new Statewarp_2nd(context);
+                    return new StateWarp_2nd(context);
                 }
 
                 return null;
@@ -128,8 +128,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statewarp_5 : TriggerState {
-            internal Statewarp_5(ITriggerContext context) : base(context) { }
+        private class StateWarp_5 : TriggerState {
+            internal StateWarp_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 15, arg3: 720, arg4: 1);
@@ -138,7 +138,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Warp") == 2) {
-                    return new Statewarp_2nd(context);
+                    return new StateWarp_2nd(context);
                 }
 
                 return null;
@@ -147,8 +147,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statewarp_6 : TriggerState {
-            internal Statewarp_6(ITriggerContext context) : base(context) { }
+        private class StateWarp_6 : TriggerState {
+            internal StateWarp_6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 16, arg3: 720, arg4: 1);
@@ -157,7 +157,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Warp") == 2) {
-                    return new Statewarp_2nd(context);
+                    return new StateWarp_2nd(context);
                 }
 
                 return null;
@@ -166,34 +166,34 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statewarp_2nd : TriggerState {
-            internal Statewarp_2nd(ITriggerContext context) : base(context) { }
+        private class StateWarp_2nd : TriggerState {
+            internal StateWarp_2nd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 17f)) {
-                    return new Statewarp2_1(context);
+                    return new StateWarp2_1(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    return new Statewarp2_2(context);
+                    return new StateWarp2_2(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    return new Statewarp2_3(context);
+                    return new StateWarp2_3(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    return new Statewarp2_4(context);
+                    return new StateWarp2_4(context);
                 }
 
                 if (context.RandomCondition(arg1: 16f)) {
-                    return new Statewarp2_5(context);
+                    return new StateWarp2_5(context);
                 }
 
                 if (context.RandomCondition(arg1: 17f)) {
-                    return new Statewarp2_6(context);
+                    return new StateWarp2_6(context);
                 }
 
                 return null;
@@ -202,8 +202,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statewarp2_1 : TriggerState {
-            internal Statewarp2_1(ITriggerContext context) : base(context) { }
+        private class StateWarp2_1 : TriggerState {
+            internal StateWarp2_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 11, arg3: 720, arg4: 2);
@@ -217,8 +217,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statewarp2_2 : TriggerState {
-            internal Statewarp2_2(ITriggerContext context) : base(context) { }
+        private class StateWarp2_2 : TriggerState {
+            internal StateWarp2_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 12, arg3: 720, arg4: 2);
@@ -232,8 +232,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statewarp2_3 : TriggerState {
-            internal Statewarp2_3(ITriggerContext context) : base(context) { }
+        private class StateWarp2_3 : TriggerState {
+            internal StateWarp2_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 13, arg3: 720, arg4: 2);
@@ -247,8 +247,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statewarp2_4 : TriggerState {
-            internal Statewarp2_4(ITriggerContext context) : base(context) { }
+        private class StateWarp2_4 : TriggerState {
+            internal StateWarp2_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 14, arg3: 720, arg4: 2);
@@ -262,8 +262,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statewarp2_5 : TriggerState {
-            internal Statewarp2_5(ITriggerContext context) : base(context) { }
+        private class StateWarp2_5 : TriggerState {
+            internal StateWarp2_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 15, arg3: 720, arg4: 2);
@@ -277,8 +277,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statewarp2_6 : TriggerState {
-            internal Statewarp2_6(ITriggerContext context) : base(context) { }
+        private class StateWarp2_6 : TriggerState {
+            internal StateWarp2_6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveRandomUser(arg1: 02000471, arg2: 16, arg3: 720, arg4: 2);

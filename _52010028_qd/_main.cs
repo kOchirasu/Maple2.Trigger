@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52010028_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {2002})) {
-                    return new Stateblack(context);
+                    return new StateBlack(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52010028_qd {
             public override void OnExit() { }
         }
 
-        private class Stateblack : TriggerState {
-            internal Stateblack(ITriggerContext context) : base(context) { }
+        private class StateBlack : TriggerState {
+            internal StateBlack(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -218,7 +218,7 @@ namespace Maple2.Trigger._52010028_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new Stateidle(context);
+                    return new StateIdle(context);
                 }
 
                 return null;
@@ -227,8 +227,8 @@ namespace Maple2.Trigger._52010028_qd {
             public override void OnExit() { }
         }
 
-        private class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        private class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");

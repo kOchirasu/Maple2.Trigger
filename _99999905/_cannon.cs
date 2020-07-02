@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._99999905 {
     public static class _cannon {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {104})) {
-                    return new State대포등장(context);
+                    return new State대포Appear(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._99999905 {
             public override void OnExit() { }
         }
 
-        private class State대포등장 : TriggerState {
-            internal State대포등장(ITriggerContext context) : base(context) { }
+        private class State대포Appear : TriggerState {
+            internal State대포Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004}, arg2: false);

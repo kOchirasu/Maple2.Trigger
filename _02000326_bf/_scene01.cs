@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000326_bf {
     public static class _scene01 {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -12,8 +12,8 @@ namespace Maple2.Trigger._02000326_bf {
             public override void OnExit() { }
         }
 
-        private class State연출시작 : TriggerState {
-            internal State연출시작(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic : TriggerState {
+            internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02000326_bf {
             public override void OnExit() { }
         }
 
-        private class State레논등장 : TriggerState {
-            internal State레논등장(ITriggerContext context) : base(context) { }
+        private class State레논Appear : TriggerState {
+            internal State레논Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._02000326_bf {
             public override void OnExit() { }
         }
 
-        private class State벨라등장 : TriggerState {
-            internal State벨라등장(ITriggerContext context) : base(context) { }
+        private class State벨라Appear : TriggerState {
+            internal State벨라Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._02000326_bf {
             public override void OnExit() { }
         }
 
-        private class State알론등장 : TriggerState {
-            internal State알론등장(ITriggerContext context) : base(context) { }
+        private class State알론Appear : TriggerState {
+            internal State알론Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

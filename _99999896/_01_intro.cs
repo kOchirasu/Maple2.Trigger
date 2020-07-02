@@ -7,7 +7,7 @@ namespace Maple2.Trigger._99999896 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    return new State멘트대기(context);
+                    return new StateMassiveEvent대기(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._99999896 {
             }
         }
 
-        private class State멘트대기 : TriggerState {
-            internal State멘트대기(ITriggerContext context) : base(context) { }
+        private class StateMassiveEvent대기 : TriggerState {
+            internal StateMassiveEvent대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._99999896 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State멘트_1(context);
+                    return new StateMassiveEvent_1(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._99999896 {
             }
         }
 
-        private class State멘트_1 : TriggerState {
-            internal State멘트_1(ITriggerContext context) : base(context) { }
+        private class StateMassiveEvent_1 : TriggerState {
+            internal StateMassiveEvent_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._99999896 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State멘트_2(context);
+                    return new StateMassiveEvent_2(context);
                 }
 
                 return null;
@@ -59,8 +59,8 @@ namespace Maple2.Trigger._99999896 {
             }
         }
 
-        private class State멘트_2 : TriggerState {
-            internal State멘트_2(ITriggerContext context) : base(context) { }
+        private class StateMassiveEvent_2 : TriggerState {
+            internal StateMassiveEvent_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
@@ -69,7 +69,7 @@ namespace Maple2.Trigger._99999896 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State멘트_3(context);
+                    return new StateMassiveEvent_3(context);
                 }
 
                 return null;
@@ -80,8 +80,8 @@ namespace Maple2.Trigger._99999896 {
             }
         }
 
-        private class State멘트_3 : TriggerState {
-            internal State멘트_3(ITriggerContext context) : base(context) { }
+        private class StateMassiveEvent_3 : TriggerState {
+            internal StateMassiveEvent_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);

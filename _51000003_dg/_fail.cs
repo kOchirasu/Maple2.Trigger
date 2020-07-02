@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._51000003_dg {
     public static class _fail {
-        public class Stategameset : TriggerState {
-            internal Stategameset(ITriggerContext context) : base(context) { }
+        public class StateGameset : TriggerState {
+            internal StateGameset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000253_bf {
     public static class _move {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetBreakable(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910, 1911, 1912, 1913, 1914, 1915, 1916, 2901, 2902, 2903, 2904, 2905, 2906, 2907, 2908, 2909, 2910, 2911, 2912, 2913, 2914, 2915, 2916, 3901, 3902, 3903, 3904, 3905, 3906, 3907, 3908, 3909, 3910, 3911, 3912, 3913, 3914, 3915, 3916}, arg2: false);
@@ -52,8 +52,8 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnExit() { }
         }
 
-        private class State랜덤선택1 : TriggerState {
-            internal State랜덤선택1(ITriggerContext context) : base(context) { }
+        private class StateRandom선택1 : TriggerState {
+            internal StateRandom선택1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -80,8 +80,8 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnExit() { }
         }
 
-        private class State랜덤선택11 : TriggerState {
-            internal State랜덤선택11(ITriggerContext context) : base(context) { }
+        private class StateRandom선택11 : TriggerState {
+            internal StateRandom선택11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -104,8 +104,8 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnExit() { }
         }
 
-        private class State랜덤선택12 : TriggerState {
-            internal State랜덤선택12(ITriggerContext context) : base(context) { }
+        private class StateRandom선택12 : TriggerState {
+            internal StateRandom선택12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -128,8 +128,8 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnExit() { }
         }
 
-        private class State랜덤선택13 : TriggerState {
-            internal State랜덤선택13(ITriggerContext context) : base(context) { }
+        private class StateRandom선택13 : TriggerState {
+            internal StateRandom선택13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -152,8 +152,8 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnExit() { }
         }
 
-        private class State랜덤선택14 : TriggerState {
-            internal State랜덤선택14(ITriggerContext context) : base(context) { }
+        private class StateRandom선택14 : TriggerState {
+            internal StateRandom선택14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._02000253_bf {
                 if (context.TimeExpired(arg1: "1")) {
                     context.DestroyMonster(arg1: new[] {3001});
                     context.SetInteractObject(arg1: new[] {10001050, 10001051, 10001052, 10001053}, arg2: 2);
-                    return new State랜덤선택11(context);
+                    return new StateRandom선택11(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {3001})) {
@@ -238,7 +238,7 @@ namespace Maple2.Trigger._02000253_bf {
                 if (context.TimeExpired(arg1: "1")) {
                     context.DestroyMonster(arg1: new[] {3001});
                     context.SetInteractObject(arg1: new[] {10001050, 10001051, 10001052, 10001053}, arg2: 2);
-                    return new State랜덤선택11(context);
+                    return new StateRandom선택11(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001052}, arg2: 0)) {
@@ -288,7 +288,7 @@ namespace Maple2.Trigger._02000253_bf {
                 if (context.TimeExpired(arg1: "1")) {
                     context.DestroyMonster(arg1: new[] {3002});
                     context.SetInteractObject(arg1: new[] {10001050, 10001051, 10001052, 10001053}, arg2: 2);
-                    return new State랜덤선택12(context);
+                    return new StateRandom선택12(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {3002})) {
@@ -313,7 +313,7 @@ namespace Maple2.Trigger._02000253_bf {
                 if (context.TimeExpired(arg1: "1")) {
                     context.DestroyMonster(arg1: new[] {3004});
                     context.SetInteractObject(arg1: new[] {10001050, 10001051, 10001052, 10001053}, arg2: 2);
-                    return new State랜덤선택12(context);
+                    return new StateRandom선택12(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001051}, arg2: 0)) {
@@ -363,7 +363,7 @@ namespace Maple2.Trigger._02000253_bf {
                 if (context.TimeExpired(arg1: "1")) {
                     context.DestroyMonster(arg1: new[] {3003});
                     context.SetInteractObject(arg1: new[] {10001050, 10001051, 10001052, 10001053}, arg2: 2);
-                    return new State랜덤선택13(context);
+                    return new StateRandom선택13(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {3003})) {
@@ -388,7 +388,7 @@ namespace Maple2.Trigger._02000253_bf {
                 if (context.TimeExpired(arg1: "1")) {
                     context.DestroyMonster(arg1: new[] {3004});
                     context.SetInteractObject(arg1: new[] {10001050, 10001051, 10001052, 10001053}, arg2: 2);
-                    return new State랜덤선택13(context);
+                    return new StateRandom선택13(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001050}, arg2: 0)) {
@@ -438,7 +438,7 @@ namespace Maple2.Trigger._02000253_bf {
                 if (context.TimeExpired(arg1: "1")) {
                     context.DestroyMonster(arg1: new[] {3004});
                     context.SetInteractObject(arg1: new[] {10001050, 10001051, 10001052, 10001053}, arg2: 2);
-                    return new State랜덤선택14(context);
+                    return new StateRandom선택14(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {3004})) {
@@ -463,7 +463,7 @@ namespace Maple2.Trigger._02000253_bf {
                 if (context.TimeExpired(arg1: "1")) {
                     context.DestroyMonster(arg1: new[] {3004});
                     context.SetInteractObject(arg1: new[] {10001050, 10001051, 10001052, 10001053}, arg2: 2);
-                    return new State랜덤선택14(context);
+                    return new StateRandom선택14(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10001053}, arg2: 0)) {
@@ -487,7 +487,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State랜덤선택11(context);
+                    return new StateRandom선택11(context);
                 }
 
                 return null;
@@ -507,7 +507,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State랜덤선택12(context);
+                    return new StateRandom선택12(context);
                 }
 
                 return null;
@@ -527,7 +527,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State랜덤선택13(context);
+                    return new StateRandom선택13(context);
                 }
 
                 return null;
@@ -547,7 +547,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State랜덤선택14(context);
+                    return new StateRandom선택14(context);
                 }
 
                 return null;

@@ -9,7 +9,7 @@ namespace Maple2.Trigger._99999909 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {103})) {
-                    return new State블록생성(context);
+                    return new State블록Creation(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._99999909 {
             public override void OnExit() { }
         }
 
-        private class State블록생성 : TriggerState {
-            internal State블록생성(ITriggerContext context) : base(context) { }
+        private class State블록Creation : TriggerState {
+            internal State블록Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetRandomMesh(arg1: new[] {3031, 3032, 3033, 3034, 3035, 3036, 3037}, arg2: true, arg3: 4, arg4: 0, arg5: 1);

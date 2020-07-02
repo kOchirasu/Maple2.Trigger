@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52100303_qd {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52100303_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {901})) {
-                    return new State티마이온등장(context);
+                    return new State티마이온Appear(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._52100303_qd {
             public override void OnExit() { }
         }
 
-        private class State티마이온등장 : TriggerState {
-            internal State티마이온등장(ITriggerContext context) : base(context) { }
+        private class State티마이온Appear : TriggerState {
+            internal State티마이온Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11004715, illust: "Eone_serious", script: "$52100303_QD__MAIN__0$", duration: 3000);
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._52100303_qd {
                 if (context.MonsterDead(arg1: new[] {101})) {
                     context.SetAchievement(arg2: "trigger", arg3: "KillTimaion");
                     context.DestroyMonster(arg1: new[] {111});
-                    return new State종료대기(context);
+                    return new StateEnd대기(context);
                 }
 
                 return null;
@@ -40,8 +40,8 @@ namespace Maple2.Trigger._52100303_qd {
             public override void OnExit() { }
         }
 
-        private class State종료대기 : TriggerState {
-            internal State종료대기(ITriggerContext context) : base(context) { }
+        private class StateEnd대기 : TriggerState {
+            internal StateEnd대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11004715, illust: "Eone_normal", script: "$52100303_QD__MAIN__1$", duration: 3000);
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52100303_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -58,8 +58,8 @@ namespace Maple2.Trigger._52100303_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonClear();

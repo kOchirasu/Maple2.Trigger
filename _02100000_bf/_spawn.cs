@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {82001})) {
-                    // return new State성공(context);
+                    // return new StateSuccess(context);
                     return null;
                 }
 

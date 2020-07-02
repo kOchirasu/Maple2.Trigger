@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000314_bf {
     public static class _bossspawn {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000314_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State딜레이(context);
+                    return new StateDelay(context);
                 }
 
                 return null;
@@ -20,14 +20,14 @@ namespace Maple2.Trigger._02000314_bf {
             public override void OnExit() { }
         }
 
-        private class State딜레이 : TriggerState {
-            internal State딜레이(ITriggerContext context) : base(context) { }
+        private class StateDelay : TriggerState {
+            internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State보스등장(context);
+                    return new StateBossSpawn(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02000314_bf {
             public override void OnExit() { }
         }
 
-        private class State보스등장 : TriggerState {
-            internal State보스등장(ITriggerContext context) : base(context) { }
+        private class StateBossSpawn : TriggerState {
+            internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003140, textId: 20003140, duration: 4000);
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02000314_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State종료체크(context);
+                    return new StateEnd체크(context);
                 }
 
                 return null;
@@ -62,14 +62,14 @@ namespace Maple2.Trigger._02000314_bf {
             }
         }
 
-        private class State종료체크 : TriggerState {
-            internal State종료체크(ITriggerContext context) : base(context) { }
+        private class StateEnd체크 : TriggerState {
+            internal StateEnd체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    return new State종료딜레이(context);
+                    return new StateEndDelay(context);
                 }
 
                 return null;
@@ -78,14 +78,14 @@ namespace Maple2.Trigger._02000314_bf {
             public override void OnExit() { }
         }
 
-        private class State종료딜레이 : TriggerState {
-            internal State종료딜레이(ITriggerContext context) : base(context) { }
+        private class StateEndDelay : TriggerState {
+            internal StateEndDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -94,8 +94,8 @@ namespace Maple2.Trigger._02000314_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonClear();

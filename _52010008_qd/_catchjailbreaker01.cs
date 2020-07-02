@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010008_qd {
     public static class _catchjailbreaker01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {901, 902, 903, 904, 905, 906}, arg2: false);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._52010008_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    return new State딜레이01(context);
+                    return new StateDelay01(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._52010008_qd {
             public override void OnExit() { }
         }
 
-        private class State딜레이01 : TriggerState {
-            internal State딜레이01(ITriggerContext context) : base(context) { }
+        private class StateDelay01 : TriggerState {
+            internal StateDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "10", arg2: 2);
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._52010008_qd {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000851}, arg2: 0)) {
-                    return new State죄수등장01(context);
+                    return new State죄수Appear01(context);
                 }
 
                 return null;
@@ -76,8 +76,8 @@ namespace Maple2.Trigger._52010008_qd {
             public override void OnExit() { }
         }
 
-        private class State죄수등장01 : TriggerState {
-            internal State죄수등장01(ITriggerContext context) : base(context) { }
+        private class State죄수Appear01 : TriggerState {
+            internal State죄수Appear01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {6000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._52010008_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11")) {
-                    return new State죄수등장02(context);
+                    return new State죄수Appear02(context);
                 }
 
                 return null;
@@ -97,8 +97,8 @@ namespace Maple2.Trigger._52010008_qd {
             public override void OnExit() { }
         }
 
-        private class State죄수등장02 : TriggerState {
-            internal State죄수등장02(ITriggerContext context) : base(context) { }
+        private class State죄수Appear02 : TriggerState {
+            internal State죄수Appear02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "12", arg2: 2);
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._52010008_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "12")) {
-                    return new State벨마등장01(context);
+                    return new State벨마Appear01(context);
                 }
 
                 return null;
@@ -117,8 +117,8 @@ namespace Maple2.Trigger._52010008_qd {
             public override void OnExit() { }
         }
 
-        private class State벨마등장01 : TriggerState {
-            internal State벨마등장01(ITriggerContext context) : base(context) { }
+        private class State벨마Appear01 : TriggerState {
+            internal State벨마Appear01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "20", arg2: 1);
@@ -218,7 +218,7 @@ namespace Maple2.Trigger._52010008_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "23")) {
-                    return new State벨마연출종료01(context);
+                    return new State벨마StopCinematic01(context);
                 }
 
                 return null;
@@ -227,8 +227,8 @@ namespace Maple2.Trigger._52010008_qd {
             public override void OnExit() { }
         }
 
-        private class State벨마연출종료01 : TriggerState {
-            internal State벨마연출종료01(ITriggerContext context) : base(context) { }
+        private class State벨마StopCinematic01 : TriggerState {
+            internal State벨마StopCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();

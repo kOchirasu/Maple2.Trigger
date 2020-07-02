@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._99999844 {
     public static class _cube17_1 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -243,7 +243,7 @@ namespace Maple2.Trigger._99999844 {
                 if (context.WaitTick(waitTick: 200)) {
                     context.SetUserValue(triggerId: 920017, key: "CubeOff", value: 0);
                     context.SetUserValue(triggerId: 910017, key: "Cube", value: 2);
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

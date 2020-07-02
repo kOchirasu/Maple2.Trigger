@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000329_bf {
     public static class _bossbattle_01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {611}, arg2: false);
@@ -14,7 +14,7 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {5001})) {
-                    return new State보스소환(context);
+                    return new StateBoss소환(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {5001, 5002})) {
@@ -27,13 +27,13 @@ namespace Maple2.Trigger._02000329_bf {
             public override void OnExit() { }
         }
 
-        private class State보스소환 : TriggerState {
-            internal State보스소환(ITriggerContext context) : base(context) { }
+        private class StateBoss소환 : TriggerState {
+            internal StateBoss소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 109, textId: 20000070);
-                context.SetSkip(arg1: "보스전투시작");
+                context.SetSkip(arg1: "Boss투시작");
             }
 
             public override TriggerState Execute() {
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000329_bf {
                 }
 
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State보스전투시작(context);
+                    return new StateBossCombatStart(context);
                 }
 
                 return null;
@@ -54,8 +54,8 @@ namespace Maple2.Trigger._02000329_bf {
             }
         }
 
-        private class State보스전투시작 : TriggerState {
-            internal State보스전투시작(ITriggerContext context) : base(context) { }
+        private class StateBossCombatStart : TriggerState {
+            internal StateBossCombatStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000759}, arg2: 0)) {
-                    return new State보스전투끝(context);
+                    return new StateBossCombatEnd(context);
                 }
 
                 return null;
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._02000329_bf {
             }
         }
 
-        private class State보스전투끝 : TriggerState {
-            internal State보스전투끝(ITriggerContext context) : base(context) { }
+        private class StateBossCombatEnd : TriggerState {
+            internal StateBossCombatEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {611}, arg2: false);

@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02020120_bf {
     public static class _dungeonmissioncheckskillbreaktime {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    return new State보스스킬브레이크시작_대기중(context);
+                    return new StateBoss스킬브레이크시작_대기중(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State보스스킬브레이크시작_대기중 : TriggerState {
-            internal State보스스킬브레이크시작_대기중(ITriggerContext context) : base(context) { }
+        private class StateBoss스킬브레이크시작_대기중 : TriggerState {
+            internal StateBoss스킬브레이크시작_대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.GetNpcExtraData(spawnPointId: 99, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnPointId: 99, additionalEffectId: 70002171, level: 1)) {
-                    return new State던전미션_스킬브레이크저지_성공(context);
+                    return new State던전미션_스킬브레이크저지_Success(context);
                 }
 
                 if (context.CheckNpcAdditionalEffect(spawnPointId: 99, additionalEffectId: 50000367, level: 1)) {
@@ -52,8 +52,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State던전미션_스킬브레이크저지_성공 : TriggerState {
-            internal State던전미션_스킬브레이크저지_성공(ITriggerContext context) : base(context) { }
+        private class State던전미션_스킬브레이크저지_Success : TriggerState {
+            internal State던전미션_스킬브레이크저지_Success(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonMissionComplete(missionId: 23037004);
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (!context.CheckNpcAdditionalEffect(spawnPointId: 99, additionalEffectId: 50004546, level: 1)) {
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;
@@ -86,8 +86,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

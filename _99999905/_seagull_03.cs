@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._99999905 {
     public static class _seagull_03 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2003}, arg2: false);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._99999905 {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
                     context.MoveNpc(arg1: 2003, arg2: "MS2PatrolData_2003");
-                    // return new State종료(context);
+                    // return new StateEnd(context);
                     return null;
                 }
 

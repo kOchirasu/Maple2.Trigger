@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._52000020_qd {
     public static class _main {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {60001022}, arg3: new byte[] {1})) {
-                    return new Statecamera_01(context);
+                    return new StateCamera_01(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52000020_qd {
             public override void OnExit() { }
         }
 
-        private class Statecamera_01 : TriggerState {
-            internal Statecamera_01(ITriggerContext context) : base(context) { }
+        private class StateCamera_01 : TriggerState {
+            internal StateCamera_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new Statemonster_spawn_01(context);
+                    return new StateMonster_spawn_01(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._52000020_qd {
             public override void OnExit() { }
         }
 
-        private class Statemonster_spawn_01 : TriggerState {
-            internal Statemonster_spawn_01(ITriggerContext context) : base(context) { }
+        private class StateMonster_spawn_01 : TriggerState {
+            internal StateMonster_spawn_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 110, textId: 40010);
@@ -49,11 +49,11 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new Statebattle_01(context);
+                    return new StateBattle_01(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {111, 112, 113, 114})) {
-                    return new Statecamera_02(context);
+                    return new StateCamera_02(context);
                 }
 
                 return null;
@@ -66,14 +66,14 @@ namespace Maple2.Trigger._52000020_qd {
             }
         }
 
-        private class Statebattle_01 : TriggerState {
-            internal Statebattle_01(ITriggerContext context) : base(context) { }
+        private class StateBattle_01 : TriggerState {
+            internal StateBattle_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {111, 112, 113, 114})) {
-                    return new Statecamera_02(context);
+                    return new StateCamera_02(context);
                 }
 
                 return null;
@@ -84,8 +84,8 @@ namespace Maple2.Trigger._52000020_qd {
             }
         }
 
-        private class Statecamera_02 : TriggerState {
-            internal Statecamera_02(ITriggerContext context) : base(context) { }
+        private class StateCamera_02 : TriggerState {
+            internal StateCamera_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new Statemonster_spawn_02(context);
+                    return new StateMonster_spawn_02(context);
                 }
 
                 return null;
@@ -105,8 +105,8 @@ namespace Maple2.Trigger._52000020_qd {
             public override void OnExit() { }
         }
 
-        private class Statemonster_spawn_02 : TriggerState {
-            internal Statemonster_spawn_02(ITriggerContext context) : base(context) { }
+        private class StateMonster_spawn_02 : TriggerState {
+            internal StateMonster_spawn_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 110, textId: 40010);
@@ -118,11 +118,11 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new Statebattle_02(context);
+                    return new StateBattle_02(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {121, 122, 123, 124, 125, 126})) {
-                    return new Statecamera_03(context);
+                    return new StateCamera_03(context);
                 }
 
                 return null;
@@ -135,14 +135,14 @@ namespace Maple2.Trigger._52000020_qd {
             }
         }
 
-        private class Statebattle_02 : TriggerState {
-            internal Statebattle_02(ITriggerContext context) : base(context) { }
+        private class StateBattle_02 : TriggerState {
+            internal StateBattle_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {121, 122, 123, 124, 125, 126})) {
-                    return new Statecamera_03(context);
+                    return new StateCamera_03(context);
                 }
 
                 return null;
@@ -153,8 +153,8 @@ namespace Maple2.Trigger._52000020_qd {
             }
         }
 
-        private class Statecamera_03 : TriggerState {
-            internal Statecamera_03(ITriggerContext context) : base(context) { }
+        private class StateCamera_03 : TriggerState {
+            internal StateCamera_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -165,7 +165,7 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new Statemonster_spawn_03(context);
+                    return new StateMonster_spawn_03(context);
                 }
 
                 return null;
@@ -174,8 +174,8 @@ namespace Maple2.Trigger._52000020_qd {
             public override void OnExit() { }
         }
 
-        private class Statemonster_spawn_03 : TriggerState {
-            internal Statemonster_spawn_03(ITriggerContext context) : base(context) { }
+        private class StateMonster_spawn_03 : TriggerState {
+            internal StateMonster_spawn_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 110, textId: 40010);
@@ -185,11 +185,11 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new Statebattle_03(context);
+                    return new StateBattle_03(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {131, 132, 133, 134, 135, 136})) {
-                    return new Statecomplete(context);
+                    return new StateComplete(context);
                 }
 
                 return null;
@@ -203,14 +203,14 @@ namespace Maple2.Trigger._52000020_qd {
             }
         }
 
-        private class Statebattle_03 : TriggerState {
-            internal Statebattle_03(ITriggerContext context) : base(context) { }
+        private class StateBattle_03 : TriggerState {
+            internal StateBattle_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {131, 132, 133, 134, 135, 136})) {
-                    return new Statecomplete(context);
+                    return new StateComplete(context);
                 }
 
                 return null;
@@ -221,8 +221,8 @@ namespace Maple2.Trigger._52000020_qd {
             }
         }
 
-        private class Statecomplete : TriggerState {
-            internal Statecomplete(ITriggerContext context) : base(context) { }
+        private class StateComplete : TriggerState {
+            internal StateComplete(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

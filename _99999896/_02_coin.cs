@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._99999896 {
     public static class _02_coin {
-        public class State동전생성01 : TriggerState {
-            internal State동전생성01(ITriggerContext context) : base(context) { }
+        public class State동전Creation01 : TriggerState {
+            internal State동전Creation01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -10,7 +10,7 @@ namespace Maple2.Trigger._99999896 {
                     context.SetTimer(arg1: "1", arg2: 2);
                     context.CreateItem(arg1: new[] {4, 5, 6, 7, 8, 9, 10, 11, 12});
                     context.SetEventUI(arg1: 1, arg2: "$99999896__02_COIN__0$", arg3: 2000);
-                    return new State동전생성02(context);
+                    return new State동전Creation02(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._99999896 {
             public override void OnExit() { }
         }
 
-        private class State동전생성02 : TriggerState {
-            internal State동전생성02(ITriggerContext context) : base(context) { }
+        private class State동전Creation02 : TriggerState {
+            internal State동전Creation02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._99999896 {
                 if (context.UserDetected(arg1: new[] {102})) {
                     context.CreateItem(arg1: new[] {13, 14, 15, 16, 17, 18, 19, 20, 21});
                     context.SetEventUI(arg1: 1, arg2: "$99999896__02_COIN__1$", arg3: 2000);
-                    return new State동전생성03(context);
+                    return new State동전Creation03(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._99999896 {
             public override void OnExit() { }
         }
 
-        private class State동전생성03 : TriggerState {
-            internal State동전생성03(ITriggerContext context) : base(context) { }
+        private class State동전Creation03 : TriggerState {
+            internal State동전Creation03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

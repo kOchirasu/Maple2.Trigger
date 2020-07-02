@@ -2,8 +2,8 @@ using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000335_bf {
     public static class _main {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {6901, 6902, 6903, 6904, 6905, 6906, 6907, 6908}, arg2: false, arg4: 0, arg5: 10f);
@@ -33,7 +33,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State시작_02(context);
+                    return new StateStart_02(context);
                 }
 
                 return null;
@@ -42,8 +42,8 @@ namespace Maple2.Trigger._02000335_bf {
             public override void OnExit() { }
         }
 
-        private class State시작_02 : TriggerState {
-            internal State시작_02(ITriggerContext context) : base(context) { }
+        private class StateStart_02 : TriggerState {
+            internal StateStart_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -55,7 +55,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    return new State시작_03(context);
+                    return new StateStart_03(context);
                 }
 
                 return null;
@@ -68,8 +68,8 @@ namespace Maple2.Trigger._02000335_bf {
             }
         }
 
-        private class State시작_03 : TriggerState {
-            internal State시작_03(ITriggerContext context) : base(context) { }
+        private class StateStart_03 : TriggerState {
+            internal StateStart_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1.0f);
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State시작_04(context);
+                    return new StateStart_04(context);
                 }
 
                 return null;
@@ -90,8 +90,8 @@ namespace Maple2.Trigger._02000335_bf {
             }
         }
 
-        private class State시작_04 : TriggerState {
-            internal State시작_04(ITriggerContext context) : base(context) { }
+        private class StateStart_04 : TriggerState {
+            internal StateStart_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");

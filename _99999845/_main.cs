@@ -2,8 +2,8 @@ using System.Numerics;
 
 namespace Maple2.Trigger._99999845 {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000301, 12000302, 12000303, 12000304, 12000305, 12000306, 12000307, 12000308, 12000309, 12000310, 12000311, 12000312, 12000313, 12000314, 12000315, 12000316, 12000317, 12000318, 12000319, 12000320, 12000321, 12000322}, arg2: 2);

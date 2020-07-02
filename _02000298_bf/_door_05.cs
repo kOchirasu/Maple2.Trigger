@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000298_bf {
     public static class _door_05 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 205, arg2: true, arg3: "Closed");

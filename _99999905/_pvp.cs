@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._99999905 {
     public static class _pvp {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "30", arg2: 30, arg3: false);

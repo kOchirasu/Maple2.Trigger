@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000334_bf {
     public static class _guide {
-        public class State대기시간 : TriggerState {
-            internal State대기시간(ITriggerContext context) : base(context) { }
+        public class StateWaitTime : TriggerState {
+            internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State가이드_01(context);
+                    return new StateGuide_01(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnExit() { }
         }
 
-        private class State가이드_01 : TriggerState {
-            internal State가이드_01(ITriggerContext context) : base(context) { }
+        private class StateGuide_01 : TriggerState {
+            internal StateGuide_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02000334_bf {
                 }
 
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State가이드_01_02(context);
+                    return new StateGuide_01_02(context);
                 }
 
                 return null;
@@ -61,8 +61,8 @@ namespace Maple2.Trigger._02000334_bf {
             }
         }
 
-        private class State가이드_01_02 : TriggerState {
-            internal State가이드_01_02(ITriggerContext context) : base(context) { }
+        private class StateGuide_01_02 : TriggerState {
+            internal StateGuide_01_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State가이드_02(context);
+                    return new StateGuide_02(context);
                 }
 
                 return null;
@@ -95,8 +95,8 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnExit() { }
         }
 
-        private class State가이드_02 : TriggerState {
-            internal State가이드_02(ITriggerContext context) : base(context) { }
+        private class StateGuide_02 : TriggerState {
+            internal StateGuide_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -106,7 +106,7 @@ namespace Maple2.Trigger._02000334_bf {
                 }
 
                 if (context.MonsterDead(arg1: new[] {190})) {
-                    return new State가이드_02_02(context);
+                    return new StateGuide_02_02(context);
                 }
 
                 return null;
@@ -115,8 +115,8 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnExit() { }
         }
 
-        private class State가이드_02_02 : TriggerState {
-            internal State가이드_02_02(ITriggerContext context) : base(context) { }
+        private class StateGuide_02_02 : TriggerState {
+            internal StateGuide_02_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

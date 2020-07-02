@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02000374_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    return new Statestart_01(context);
+                    return new StateStart_01(context);
                 }
 
                 return null;
@@ -64,8 +64,8 @@ namespace Maple2.Trigger._02000374_bf {
             }
         }
 
-        private class Statestart_01 : TriggerState {
-            internal Statestart_01(ITriggerContext context) : base(context) { }
+        private class StateStart_01 : TriggerState {
+            internal StateStart_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02000374_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new Statestart_02(context);
+                    return new StateStart_02(context);
                 }
 
                 return null;
@@ -89,8 +89,8 @@ namespace Maple2.Trigger._02000374_bf {
             }
         }
 
-        private class Statestart_02 : TriggerState {
-            internal Statestart_02(ITriggerContext context) : base(context) { }
+        private class StateStart_02 : TriggerState {
+            internal StateStart_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 0, arg2: "1,3");

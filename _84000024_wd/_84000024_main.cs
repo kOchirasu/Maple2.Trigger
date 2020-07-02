@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._84000024_wd {
     public static class _84000024_main {
-        public class State초기화 : TriggerState {
-            internal State초기화(ITriggerContext context) : base(context) { }
+        public class StateReset : TriggerState {
+            internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "Weddingceremonystarts", value: 0);
@@ -9,14 +9,14 @@ namespace Maple2.Trigger._84000024_wd {
             }
 
             public override TriggerState Execute() {
-                return new State결혼식연출시작요청대기(context);
+                return new State결혼식StartCinematic요청대기(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State결혼식연출시작요청대기 : TriggerState {
-            internal State결혼식연출시작요청대기(ITriggerContext context) : base(context) { }
+        private class State결혼식StartCinematic요청대기 : TriggerState {
+            internal State결혼식StartCinematic요청대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.LockMyPc(isLock: false);
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._84000024_wd {
                 if (context.GetUserValue(key: "Weddingceremonystarts") == 1) {
                     context.SetUserValue(key: "Weddingceremonystarts", value: 0);
                     context.LockMyPc(isLock: true);
-                    return new State시작알림(context);
+                    return new StateStart알림(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._84000024_wd {
             public override void OnExit() { }
         }
 
-        private class State시작알림 : TriggerState {
-            internal State시작알림(ITriggerContext context) : base(context) { }
+        private class StateStart알림 : TriggerState {
+            internal StateStart알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 28400134, textId: 28400134);
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._84000024_wd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State연출시작(context);
+                    return new StateStartCinematic(context);
                 }
 
                 return null;
@@ -56,8 +56,8 @@ namespace Maple2.Trigger._84000024_wd {
             }
         }
 
-        private class State연출시작 : TriggerState {
-            internal State연출시작(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic : TriggerState {
+            internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -224,7 +224,7 @@ namespace Maple2.Trigger._84000024_wd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State카메라이동01(context);
+                    return new StateCamera이동01(context);
                 }
 
                 return null;
@@ -233,14 +233,14 @@ namespace Maple2.Trigger._84000024_wd {
             public override void OnExit() { }
         }
 
-        private class State카메라이동01 : TriggerState {
-            internal State카메라이동01(ITriggerContext context) : base(context) { }
+        private class StateCamera이동01 : TriggerState {
+            internal StateCamera이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    return new State카메라이동02(context);
+                    return new StateCamera이동02(context);
                 }
 
                 return null;
@@ -249,8 +249,8 @@ namespace Maple2.Trigger._84000024_wd {
             public override void OnExit() { }
         }
 
-        private class State카메라이동02 : TriggerState {
-            internal State카메라이동02(ITriggerContext context) : base(context) { }
+        private class StateCamera이동02 : TriggerState {
+            internal StateCamera이동02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {102});
@@ -402,7 +402,7 @@ namespace Maple2.Trigger._84000024_wd {
             }
 
             public override TriggerState Execute() {
-                return new State결혼식연출시작요청대기(context);
+                return new State결혼식StartCinematic요청대기(context);
             }
 
             public override void OnExit() { }
@@ -499,7 +499,7 @@ namespace Maple2.Trigger._84000024_wd {
             }
 
             public override TriggerState Execute() {
-                return new State결혼식연출시작요청대기(context);
+                return new State결혼식StartCinematic요청대기(context);
             }
 
             public override void OnExit() { }
@@ -556,11 +556,11 @@ namespace Maple2.Trigger._84000024_wd {
 
             public override TriggerState Execute() {
                 if (context.WeddingEntryInField(entryType: "GroomBride", isInField: false)) {
-                    return new State종료알림(context);
+                    return new StateEnd알림(context);
                 }
 
                 if (context.WeddingMutualAgreeResult(agreeType: "endActing", success: true)) {
-                    return new State종료알림(context);
+                    return new StateEnd알림(context);
                 }
 
                 if (context.WeddingMutualAgreeResult(agreeType: "endActing", success: false)) {
@@ -573,8 +573,8 @@ namespace Maple2.Trigger._84000024_wd {
             public override void OnExit() { }
         }
 
-        private class State종료알림 : TriggerState {
-            internal State종료알림(ITriggerContext context) : base(context) { }
+        private class StateEnd알림 : TriggerState {
+            internal StateEnd알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 28400137, textId: 28400137);

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020301_bf {
     public static class _300006_phase_5 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Portal_On_04") == 1) {
-                    return new State포탈_오픈_대기(context);
+                    return new StatePortal_오픈_대기(context);
                 }
 
                 return null;
@@ -37,14 +37,14 @@ namespace Maple2.Trigger._02020301_bf {
             public override void OnExit() { }
         }
 
-        private class State포탈_오픈_대기 : TriggerState {
-            internal State포탈_오픈_대기(ITriggerContext context) : base(context) { }
+        private class StatePortal_오픈_대기 : TriggerState {
+            internal StatePortal_오픈_대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State포탈_오픈(context);
+                    return new StatePortal_오픈(context);
                 }
 
                 return null;
@@ -53,8 +53,8 @@ namespace Maple2.Trigger._02020301_bf {
             public override void OnExit() { }
         }
 
-        private class State포탈_오픈 : TriggerState {
-            internal State포탈_오픈(ITriggerContext context) : base(context) { }
+        private class StatePortal_오픈 : TriggerState {
+            internal StatePortal_오픈(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 3000051, key: "Phase_4_Interect_01", value: 0);
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State아르케온_탈것_생성(context);
+                    return new State아르케온_탈것_Creation(context);
                 }
 
                 return null;
@@ -175,8 +175,8 @@ namespace Maple2.Trigger._02020301_bf {
             public override void OnExit() { }
         }
 
-        private class State아르케온_탈것_생성 : TriggerState {
-            internal State아르케온_탈것_생성(ITriggerContext context) : base(context) { }
+        private class State아르케온_탈것_Creation : TriggerState {
+            internal State아르케온_탈것_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02020301_BF__300006_PHASE_5__4$", arg3: 4000);
@@ -207,7 +207,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -216,8 +216,8 @@ namespace Maple2.Trigger._02020301_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

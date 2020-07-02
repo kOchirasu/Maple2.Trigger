@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02000535_bf {
     public static class _main2 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {707}, arg2: 0)) {
-                    return new State데코지우고몬스터스폰(context);
+                    return new State데코지우고Monster스폰(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000535_bf {
             public override void OnExit() { }
         }
 
-        private class State데코지우고몬스터스폰 : TriggerState {
-            internal State데코지우고몬스터스폰(ITriggerContext context) : base(context) { }
+        private class State데코지우고Monster스폰 : TriggerState {
+            internal State데코지우고Monster스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);

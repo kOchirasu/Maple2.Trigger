@@ -3,8 +3,8 @@ using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000471_bf {
     public static class _main {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 2040314, key: "TimerStart", value: 0);
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new Statestart(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -69,8 +69,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1801, 1802}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -81,11 +81,11 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "TimerEnd") == 1) {
-                    return new Statedungeonfail(context);
+                    return new StateDungeonfail(context);
                 }
 
                 if (context.GetUserValue(key: "InteractClear") == 1) {
-                    return new Stateboss_scene(context);
+                    return new StateBoss_scene(context);
                 }
 
                 return null;
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._02000471_bf {
             }
         }
 
-        private class Statedungeonfail : TriggerState {
-            internal Statedungeonfail(ITriggerContext context) : base(context) { }
+        private class StateDungeonfail : TriggerState {
+            internal StateDungeonfail(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonFail();
@@ -111,8 +111,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Stateboss_scene : TriggerState {
-            internal Stateboss_scene(ITriggerContext context) : base(context) { }
+        private class StateBoss_scene : TriggerState {
+            internal StateBoss_scene(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "boss", arg2: "exit");
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new Stateboss_scene_02(context);
+                    return new StateBoss_scene_02(context);
                 }
 
                 return null;
@@ -142,8 +142,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Stateboss_scene_02 : TriggerState {
-            internal Stateboss_scene_02(ITriggerContext context) : base(context) { }
+        private class StateBoss_scene_02 : TriggerState {
+            internal StateBoss_scene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -152,7 +152,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new Stateboss_scene_03(context);
+                    return new StateBoss_scene_03(context);
                 }
 
                 return null;
@@ -161,14 +161,14 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Stateboss_scene_03 : TriggerState {
-            internal Stateboss_scene_03(ITriggerContext context) : base(context) { }
+        private class StateBoss_scene_03 : TriggerState {
+            internal StateBoss_scene_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new Stateboss_scene_04(context);
+                    return new StateBoss_scene_04(context);
                 }
 
                 return null;
@@ -177,14 +177,14 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Stateboss_scene_04 : TriggerState {
-            internal Stateboss_scene_04(ITriggerContext context) : base(context) { }
+        private class StateBoss_scene_04 : TriggerState {
+            internal StateBoss_scene_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new Stateboss(context);
+                    return new StateBoss(context);
                 }
 
                 return null;
@@ -195,8 +195,8 @@ namespace Maple2.Trigger._02000471_bf {
             }
         }
 
-        private class Stateboss : TriggerState {
-            internal Stateboss(ITriggerContext context) : base(context) { }
+        private class StateBoss : TriggerState {
+            internal StateBoss(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -220,7 +220,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1999})) {
-                    return new StatedungeonClear_ready(context);
+                    return new StateDungeonClear_ready(context);
                 }
 
                 return null;
@@ -229,8 +229,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class StatedungeonClear_ready : TriggerState {
-            internal StatedungeonClear_ready(ITriggerContext context) : base(context) { }
+        private class StateDungeonClear_ready : TriggerState {
+            internal StateDungeonClear_ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSound(arg1: 9900, arg2: false);
@@ -240,7 +240,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new StatedungeonClear(context);
+                    return new StateDungeonClear(context);
                 }
 
                 return null;
@@ -249,8 +249,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class StatedungeonClear : TriggerState {
-            internal StatedungeonClear(ITriggerContext context) : base(context) { }
+        private class StateDungeonClear : TriggerState {
+            internal StateDungeonClear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonClear();

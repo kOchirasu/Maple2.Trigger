@@ -1,14 +1,14 @@
 namespace Maple2.Trigger._52010005_qd {
     public static class _act02 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
                     context.SetInteractObject(arg1: new[] {10000872}, arg2: 0);
-                    return new State퀘스트조건02(context);
+                    return new StateQuest조건02(context);
                 }
 
                 return null;
@@ -17,14 +17,14 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnExit() { }
         }
 
-        private class State퀘스트조건02 : TriggerState {
-            internal State퀘스트조건02(ITriggerContext context) : base(context) { }
+        private class StateQuest조건02 : TriggerState {
+            internal StateQuest조건02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002821}, arg3: new byte[] {2})) {
-                    return new StateQ2_미카등장01(context);
+                    return new StateQ2_미카Appear01(context);
                 }
 
                 return null;
@@ -33,22 +33,22 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnExit() { }
         }
 
-        private class StateQ2_미카등장01 : TriggerState {
-            internal StateQ2_미카등장01(ITriggerContext context) : base(context) { }
+        private class StateQ2_미카Appear01 : TriggerState {
+            internal StateQ2_미카Appear01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {401}, arg2: false);
             }
 
             public override TriggerState Execute() {
-                return new StateQ2_딜레이01(context);
+                return new StateQ2_Delay01(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class StateQ2_딜레이01 : TriggerState {
-            internal StateQ2_딜레이01(ITriggerContext context) : base(context) { }
+        private class StateQ2_Delay01 : TriggerState {
+            internal StateQ2_Delay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11", arg2: 2);

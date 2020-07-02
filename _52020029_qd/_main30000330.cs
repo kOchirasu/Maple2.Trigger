@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52020029_qd {
     public static class _main30000330 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52020029_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State연출시작1(context);
+                    return new StateStartCinematic1(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._52020029_qd {
             public override void OnExit() { }
         }
 
-        private class State연출시작1 : TriggerState {
-            internal State연출시작1(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic1 : TriggerState {
+            internal StateStartCinematic1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52020029, arg2: 6002);
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._52020029_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State연출시작2(context);
+                    return new StateStartCinematic2(context);
                 }
 
                 return null;
@@ -59,8 +59,8 @@ namespace Maple2.Trigger._52020029_qd {
             public override void OnExit() { }
         }
 
-        private class State연출시작2 : TriggerState {
-            internal State연출시작2(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic2 : TriggerState {
+            internal StateStartCinematic2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");

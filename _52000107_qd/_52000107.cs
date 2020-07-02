@@ -210,7 +210,7 @@ namespace Maple2.Trigger._52000107_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10011})) {
-                    return new State아이샤등장씬01(context);
+                    return new State아이샤Appear씬01(context);
                 }
 
                 return null;
@@ -219,8 +219,8 @@ namespace Maple2.Trigger._52000107_qd {
             public override void OnExit() { }
         }
 
-        private class State아이샤등장씬01 : TriggerState {
-            internal State아이샤등장씬01(ITriggerContext context) : base(context) { }
+        private class State아이샤Appear씬01 : TriggerState {
+            internal State아이샤Appear씬01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -230,7 +230,7 @@ namespace Maple2.Trigger._52000107_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State아이샤등장씬02(context);
+                    return new State아이샤Appear씬02(context);
                 }
 
                 return null;
@@ -239,8 +239,8 @@ namespace Maple2.Trigger._52000107_qd {
             public override void OnExit() { }
         }
 
-        private class State아이샤등장씬02 : TriggerState {
-            internal State아이샤등장씬02(ITriggerContext context) : base(context) { }
+        private class State아이샤Appear씬02 : TriggerState {
+            internal State아이샤Appear씬02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
@@ -251,7 +251,7 @@ namespace Maple2.Trigger._52000107_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State아이샤등장씬04(context);
+                    return new State아이샤Appear씬04(context);
                 }
 
                 return null;
@@ -260,8 +260,8 @@ namespace Maple2.Trigger._52000107_qd {
             public override void OnExit() { }
         }
 
-        private class State아이샤등장씬04 : TriggerState {
-            internal State아이샤등장씬04(ITriggerContext context) : base(context) { }
+        private class State아이샤Appear씬04 : TriggerState {
+            internal State아이샤Appear씬04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
@@ -271,7 +271,7 @@ namespace Maple2.Trigger._52000107_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State아이샤등장씬05(context);
+                    return new State아이샤Appear씬05(context);
                 }
 
                 return null;
@@ -280,8 +280,8 @@ namespace Maple2.Trigger._52000107_qd {
             public override void OnExit() { }
         }
 
-        private class State아이샤등장씬05 : TriggerState {
-            internal State아이샤등장씬05(ITriggerContext context) : base(context) { }
+        private class State아이샤Appear씬05 : TriggerState {
+            internal State아이샤Appear씬05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.FaceEmotion(spawnPointId: 200, emotionName: "hello_Cait");
@@ -291,7 +291,7 @@ namespace Maple2.Trigger._52000107_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    return new State아이샤등장씬06(context);
+                    return new State아이샤Appear씬06(context);
                 }
 
                 return null;
@@ -310,7 +310,7 @@ namespace Maple2.Trigger._52000107_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State아이샤등장씬06(context);
+                    return new State아이샤Appear씬06(context);
                 }
 
                 return null;
@@ -319,8 +319,8 @@ namespace Maple2.Trigger._52000107_qd {
             public override void OnExit() { }
         }
 
-        private class State아이샤등장씬06 : TriggerState {
-            internal State아이샤등장씬06(ITriggerContext context) : base(context) { }
+        private class State아이샤Appear씬06 : TriggerState {
+            internal State아이샤Appear씬06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000420_bf {
     public static class _right202 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02000420_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;

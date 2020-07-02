@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020147_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 601) == 1) {
-                    return new State변수초기화(context);
+                    return new State변수Reset(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02020147_bf {
             public override void OnExit() { }
         }
 
-        private class State변수초기화 : TriggerState {
-            internal State변수초기화(ITriggerContext context) : base(context) { }
+        private class State변수Reset : TriggerState {
+            internal State변수Reset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "DeathIshuraRbladerDark", value: 0);
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02020147_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "DeathIshuraRbladerDark") == 1) {
-                    return new State이슈라죽음알림(context);
+                    return new StateIshura죽음알림(context);
                 }
 
                 if (context.GetUserValue(key: "DeathRenduebianRbladerDark") == 1) {
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._02020147_bf {
             public override void OnExit() { }
         }
 
-        private class State이슈라죽음알림 : TriggerState {
-            internal State이슈라죽음알림(ITriggerContext context) : base(context) { }
+        private class StateIshura죽음알림 : TriggerState {
+            internal StateIshura죽음알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20051002, textId: 20051002);
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._02020147_bf {
                 }
 
                 if (context.GetUserValue(key: "DeathIshuraRbladerDark") == 1) {
-                    return new State이슈라죽음알림(context);
+                    return new StateIshura죽음알림(context);
                 }
 
                 if (context.GetUserValue(key: "DeathYuperiaRbladerDark") == 1) {
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._02020147_bf {
                 }
 
                 if (context.GetUserValue(key: "DeathIshuraRbladerDark") == 1) {
-                    return new State이슈라죽음알림(context);
+                    return new StateIshura죽음알림(context);
                 }
 
                 if (context.GetUserValue(key: "DeathRenduebianRbladerDark") == 1) {

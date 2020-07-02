@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000243_bf {
     public static class _timer {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {2001, 2002, 2003}, arg2: false);
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02000243_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "99")) {
-                    return new State딜레이(context);
+                    return new StateDelay(context);
                 }
 
                 return null;
@@ -56,8 +56,8 @@ namespace Maple2.Trigger._02000243_bf {
             public override void OnExit() { }
         }
 
-        private class State딜레이 : TriggerState {
-            internal State딜레이(ITriggerContext context) : base(context) { }
+        private class StateDelay : TriggerState {
+            internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "99", arg2: 3);

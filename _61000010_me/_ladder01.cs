@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._61000010_me {
     public static class _ladder01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 701, arg2: false, arg3: false);
@@ -13,14 +13,14 @@ namespace Maple2.Trigger._61000010_me {
             }
 
             public override TriggerState Execute() {
-                return new State랜덤(context);
+                return new StateRandom(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State랜덤 : TriggerState {
-            internal State랜덤(ITriggerContext context) : base(context) { }
+        private class StateRandom : TriggerState {
+            internal StateRandom(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -28,19 +28,19 @@ namespace Maple2.Trigger._61000010_me {
                 if (context.RandomCondition(arg1: 34f)) {
                     context.SetLadder(arg1: 701, arg2: true, arg3: true);
                     context.SetLadder(arg1: 702, arg2: true, arg3: true);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
                     context.SetLadder(arg1: 711, arg2: true, arg3: true);
                     context.SetLadder(arg1: 712, arg2: true, arg3: true);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
                     context.SetLadder(arg1: 721, arg2: true, arg3: true);
                     context.SetLadder(arg1: 722, arg2: true, arg3: true);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -49,8 +49,8 @@ namespace Maple2.Trigger._61000010_me {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

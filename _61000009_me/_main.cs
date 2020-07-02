@@ -52,11 +52,11 @@ namespace Maple2.Trigger._61000009_me {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "30")) {
-                    return new Statestart_02(context);
+                    return new StateStart_02(context);
                 }
 
                 if (context.GetUserCount(boxId: 700) == 10) {
-                    return new Statestart_02(context);
+                    return new StateStart_02(context);
                 }
 
                 return null;
@@ -67,8 +67,8 @@ namespace Maple2.Trigger._61000009_me {
             }
         }
 
-        private class Statestart_01 : TriggerState {
-            internal Statestart_01(ITriggerContext context) : base(context) { }
+        private class StateStart_01 : TriggerState {
+            internal StateStart_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._61000009_me {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new Statestart_02(context);
+                    return new StateStart_02(context);
                 }
 
                 return null;
@@ -92,8 +92,8 @@ namespace Maple2.Trigger._61000009_me {
             }
         }
 
-        private class Statestart_02 : TriggerState {
-            internal Statestart_02(ITriggerContext context) : base(context) { }
+        private class StateStart_02 : TriggerState {
+            internal StateStart_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 700, arg2: "trigger", arg3: "dailyquest_start");

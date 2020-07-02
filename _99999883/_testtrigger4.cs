@@ -7,7 +7,7 @@ namespace Maple2.Trigger._99999883 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {2001})) {
-                    return new Stateidle(context);
+                    return new StateIdle(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._99999883 {
             public override void OnExit() { }
         }
 
-        private class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        private class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: true);

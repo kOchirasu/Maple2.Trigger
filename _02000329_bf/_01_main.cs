@@ -2,8 +2,8 @@ using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000329_bf {
     public static class _01_main {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {701}, arg2: false);
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new Statescene_01(context);
+                    return new StateScene_01(context);
                 }
 
                 return null;
@@ -43,8 +43,8 @@ namespace Maple2.Trigger._02000329_bf {
             public override void OnExit() { }
         }
 
-        private class Statescene_01 : TriggerState {
-            internal Statescene_01(ITriggerContext context) : base(context) { }
+        private class StateScene_01 : TriggerState {
+            internal StateScene_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "scene_02");
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new Statescene_02(context);
+                    return new StateScene_02(context);
                 }
 
                 return null;
@@ -66,8 +66,8 @@ namespace Maple2.Trigger._02000329_bf {
             }
         }
 
-        private class Statescene_02 : TriggerState {
-            internal Statescene_02(ITriggerContext context) : base(context) { }
+        private class StateScene_02 : TriggerState {
+            internal StateScene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 105) == 1) {
-                    return new Statenpc_talk(context);
+                    return new StateNpc_talk(context);
                 }
 
                 return null;
@@ -90,8 +90,8 @@ namespace Maple2.Trigger._02000329_bf {
             public override void OnExit() { }
         }
 
-        private class Statenpc_talk : TriggerState {
-            internal Statenpc_talk(ITriggerContext context) : base(context) { }
+        private class StateNpc_talk : TriggerState {
+            internal StateNpc_talk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1301, arg2: "Talk_A");
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new Statenpc_talk_02(context);
+                    return new StateNpc_talk_02(context);
                 }
 
                 return null;
@@ -111,8 +111,8 @@ namespace Maple2.Trigger._02000329_bf {
             public override void OnExit() { }
         }
 
-        private class Statenpc_talk_02 : TriggerState {
-            internal Statenpc_talk_02(ITriggerContext context) : base(context) { }
+        private class StateNpc_talk_02 : TriggerState {
+            internal StateNpc_talk_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 1301, arg2: "Talk_A");

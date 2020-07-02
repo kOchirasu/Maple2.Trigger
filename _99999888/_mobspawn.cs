@@ -8,7 +8,7 @@ namespace Maple2.Trigger._99999888 {
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 911) == 1) {
                     context.CreateMonster(arg1: new[] {101}, arg2: true);
-                    return new State몬스터생성(context);
+                    return new StateMobCreation(context);
                 }
 
                 return null;
@@ -17,15 +17,15 @@ namespace Maple2.Trigger._99999888 {
             public override void OnExit() { }
         }
 
-        private class State몬스터생성 : TriggerState {
-            internal State몬스터생성(ITriggerContext context) : base(context) { }
+        private class StateMobCreation : TriggerState {
+            internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 50000900, level: 1)) {
                     context.DebugString(message: "버프가감지되었습니다. 20초 후 삭제합니다");
-                    return new State버프삭제(context);
+                    return new StateBuff삭제(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._99999888 {
             public override void OnExit() { }
         }
 
-        private class State버프삭제 : TriggerState {
-            internal State버프삭제(ITriggerContext context) : base(context) { }
+        private class StateBuff삭제 : TriggerState {
+            internal StateBuff삭제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._99999888 {
                 if (context.WaitTick(waitTick: 10000)) {
                     context.DebugString(message: "버프가 삭제되었습니다.");
                     context.NpcRemoveAdditionalEffect(spawnPointId: 101, additionalEffectId: 50000900);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -52,8 +52,8 @@ namespace Maple2.Trigger._99999888 {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

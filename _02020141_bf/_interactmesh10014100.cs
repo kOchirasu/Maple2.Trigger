@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State탈것_등장대기(context);
+                    return new State탈것_Appear대기(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnExit() { }
         }
 
-        private class State탈것_등장대기 : TriggerState {
-            internal State탈것_등장대기(ITriggerContext context) : base(context) { }
+        private class State탈것_Appear대기 : TriggerState {
+            internal State탈것_Appear대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RidingBattle") == -1) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.WaitTick(waitTick: 110000)) {
@@ -69,7 +69,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RidingBattle") == -1) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.WaitTick(waitTick: 135000)) {
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RidingBattle") == -1) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.WaitTick(waitTick: 150000)) {
@@ -109,11 +109,11 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 85f)) {
-                    return new State탈것등장_실패(context);
+                    return new State탈것Appear_실패(context);
                 }
 
                 if (context.RandomCondition(arg1: 15f)) {
-                    return new State탈것등장_성공(context);
+                    return new State탈것Appear_Success(context);
                 }
 
                 return null;
@@ -122,8 +122,8 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnExit() { }
         }
 
-        private class State탈것등장_성공 : TriggerState {
-            internal State탈것등장_성공(ITriggerContext context) : base(context) { }
+        private class State탈것Appear_Success : TriggerState {
+            internal State탈것Appear_Success(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {914100}, arg2: false);
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State탈것_등장(context);
+                    return new State탈것_Appear(context);
                 }
 
                 return null;
@@ -140,8 +140,8 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnExit() { }
         }
 
-        private class State탈것_등장 : TriggerState {
-            internal State탈것_등장(ITriggerContext context) : base(context) { }
+        private class State탈것_Appear : TriggerState {
+            internal State탈것_Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02020141_BF__INTERACTMESH_PHASE_3_INTERECT_01__0$", arg3: 5000);
@@ -151,11 +151,11 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10003154}, arg2: 0)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.GetUserValue(key: "RidingBattle") == -1) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -164,8 +164,8 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10003154}, arg2: 2);
@@ -178,8 +178,8 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnExit() { }
         }
 
-        private class State탈것등장_실패 : TriggerState {
-            internal State탈것등장_실패(ITriggerContext context) : base(context) { }
+        private class State탈것Appear_실패 : TriggerState {
+            internal State탈것Appear_실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {914100}, arg2: false);
@@ -187,7 +187,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 13000)) {
-                    return new State탈것등장_실패_최종종료처리(context);
+                    return new State탈것Appear_실패_Final종료처리(context);
                 }
 
                 return null;
@@ -196,8 +196,8 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnExit() { }
         }
 
-        private class State탈것등장_실패_최종종료처리 : TriggerState {
-            internal State탈것등장_실패_최종종료처리(ITriggerContext context) : base(context) { }
+        private class State탈것Appear_실패_Final종료처리 : TriggerState {
+            internal State탈것Appear_실패_Final종료처리(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {914100});

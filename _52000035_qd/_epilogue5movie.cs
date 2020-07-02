@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._52000035_qd {
     public static class _epilogue5movie {
-        public class Statestart01 : TriggerState {
-            internal Statestart01(ITriggerContext context) : base(context) { }
+        public class StateStart01 : TriggerState {
+            internal StateStart01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "50001625") == 1) {
-                    return new Statestart02(context);
+                    return new StateStart02(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnExit() { }
         }
 
-        private class Statestart02 : TriggerState {
-            internal Statestart02(ITriggerContext context) : base(context) { }
+        private class StateStart02 : TriggerState {
+            internal StateStart02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

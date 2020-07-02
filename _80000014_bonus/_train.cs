@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._80000014_bonus {
     public static class _train {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3123, 3124, 3125, 3126, 3127, 3128, 3129}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._80000014_bonus {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {120})) {
-                    return new State생성(context);
+                    return new StateCreation(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnExit() { }
         }
 
-        private class State생성 : TriggerState {
-            internal State생성(ITriggerContext context) : base(context) { }
+        private class StateCreation : TriggerState {
+            internal StateCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1200}, arg2: false);
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._80000014_bonus {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.DestroyMonster(arg1: new[] {1200});
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -133,8 +133,8 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

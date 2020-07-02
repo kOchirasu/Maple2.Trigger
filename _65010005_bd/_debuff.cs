@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._65010005_bd {
     public static class _debuff {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State디버프(context);
+                    return new State디Buff(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._65010005_bd {
             public override void OnExit() { }
         }
 
-        private class State디버프 : TriggerState {
-            internal State디버프(ITriggerContext context) : base(context) { }
+        private class State디Buff : TriggerState {
+            internal State디Buff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {101}, arg2: 70000040, arg3: 1, arg4: false, arg5: true);
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._65010005_bd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

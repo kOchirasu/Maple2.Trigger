@@ -119,7 +119,7 @@ namespace Maple2.Trigger._63000025_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new StateSkillUseGuide02(context);
+                    return new StateSkillCastGuide02(context);
                 }
 
                 return null;
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._63000025_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new StateSkillUseGuide01(context);
+                    return new StateSkillCastGuide01(context);
                 }
 
                 return null;
@@ -724,7 +724,7 @@ namespace Maple2.Trigger._63000025_cs {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {90000445}, arg3: new byte[] {3})) {
-                    return new StateSkillUseGuide01(context);
+                    return new StateSkillCastGuide01(context);
                 }
 
                 return null;
@@ -735,14 +735,14 @@ namespace Maple2.Trigger._63000025_cs {
             }
         }
 
-        private class StateSkillUseGuide01 : TriggerState {
-            internal StateSkillUseGuide01(ITriggerContext context) : base(context) { }
+        private class StateSkillCastGuide01 : TriggerState {
+            internal StateSkillCastGuide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateSkillUseGuide02(context);
+                    return new StateSkillCastGuide02(context);
                 }
 
                 return null;
@@ -751,8 +751,8 @@ namespace Maple2.Trigger._63000025_cs {
             public override void OnExit() { }
         }
 
-        private class StateSkillUseGuide02 : TriggerState {
-            internal StateSkillUseGuide02(ITriggerContext context) : base(context) { }
+        private class StateSkillCastGuide02 : TriggerState {
+            internal StateSkillCastGuide02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

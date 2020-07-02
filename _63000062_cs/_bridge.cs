@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._63000062_cs {
     public static class _bridge {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._63000062_cs {
 
             public override TriggerState Execute() {
                 if (!context.DayOfWeek(dayOfWeeks: new byte[] {1}, desc: "1(일)-7(토)")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._63000062_cs {
 
             public override TriggerState Execute() {
                 if (!context.DayOfWeek(dayOfWeeks: new byte[] {2}, desc: "1(일)-7(토)")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._63000062_cs {
 
             public override TriggerState Execute() {
                 if (!context.DayOfWeek(dayOfWeeks: new byte[] {3}, desc: "1(일)-7(토)")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._63000062_cs {
 
             public override TriggerState Execute() {
                 if (!context.DayOfWeek(dayOfWeeks: new byte[] {4}, desc: "1(일)-7(토)")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._63000062_cs {
 
             public override TriggerState Execute() {
                 if (!context.DayOfWeek(dayOfWeeks: new byte[] {5}, desc: "1(일)-7(토)")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -141,7 +141,7 @@ namespace Maple2.Trigger._63000062_cs {
 
             public override TriggerState Execute() {
                 if (!context.DayOfWeek(dayOfWeeks: new byte[] {6}, desc: "1(일)-7(토)")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -157,7 +157,7 @@ namespace Maple2.Trigger._63000062_cs {
 
             public override TriggerState Execute() {
                 if (!context.DayOfWeek(dayOfWeeks: new byte[] {7}, desc: "1(일)-7(토)")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

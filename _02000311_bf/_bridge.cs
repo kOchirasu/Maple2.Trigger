@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000311_bf {
     public static class _bridge {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._02000311_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
-                    return new State차단(context);
+                    return new StateBlock(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._02000311_bf {
             public override void OnExit() { }
         }
 
-        private class State차단 : TriggerState {
-            internal State차단(ITriggerContext context) : base(context) { }
+        private class StateBlock : TriggerState {
+            internal StateBlock(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02000311_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    return new State차단해제(context);
+                    return new StateUnblock(context);
                 }
 
                 return null;
@@ -57,8 +57,8 @@ namespace Maple2.Trigger._02000311_bf {
             public override void OnExit() { }
         }
 
-        private class State차단해제 : TriggerState {
-            internal State차단해제(ITriggerContext context) : base(context) { }
+        private class StateUnblock : TriggerState {
+            internal StateUnblock(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._02000311_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -76,8 +76,8 @@ namespace Maple2.Trigger._02000311_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -2,14 +2,14 @@ using System.Numerics;
 
 namespace Maple2.Trigger._02020111_bf {
     public static class _skillbreaksuccess_1 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SkillBreakSuccess_1") == 1 && context.GetUserValue(key: "SkillBreakSuccess_2") == 1 && context.GetUserValue(key: "SkillBreakSuccess_3") == 1 && context.GetUserValue(key: "SkillBreakSuccess_4") == 1) {
-                    return new State버프발동(context);
+                    return new StateBuff발동(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State버프발동 : TriggerState {
-            internal State버프발동(ITriggerContext context) : base(context) { }
+        private class StateBuff발동 : TriggerState {
+            internal StateBuff발동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {101}, arg2: 62100027, arg3: 1, arg4: true);
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SkillBreakSuccess_1") == 0 && context.GetUserValue(key: "SkillBreakSuccess_2") == 0 && context.GetUserValue(key: "SkillBreakSuccess_3") == 0 && context.GetUserValue(key: "SkillBreakSuccess_4") == 0 && context.GetUserValue(key: "SkillBreakSuccess_Reset") == 0) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;

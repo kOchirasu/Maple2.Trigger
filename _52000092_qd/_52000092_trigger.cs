@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000092_qd {
     public static class _52000092_trigger {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetGravity(gravity: -39.0f);
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._52000092_qd {
             public override void OnExit() { }
         }
 
-        private class State50100520퀘스트체크 : TriggerState {
-            internal State50100520퀘스트체크(ITriggerContext context) : base(context) { }
+        private class State50100520Quest체크 : TriggerState {
+            internal State50100520Quest체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

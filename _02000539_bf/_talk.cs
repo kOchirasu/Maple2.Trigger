@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000539_bf {
     public static class _talk {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02000539_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new Stateidle(context);
+                    return new StateIdle(context);
                 }
 
                 return null;
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02000539_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new Stateidle(context);
+                    return new StateIdle(context);
                 }
 
                 return null;

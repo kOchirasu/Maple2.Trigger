@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000002_qd {
     public static class _sheep_01 {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {611}, arg2: false);
@@ -13,7 +13,7 @@ namespace Maple2.Trigger._52000002_qd {
                 }
 
                 if (!context.UserDetected(arg1: new[] {101})) {
-                    return new StateNPC소멸(context);
+                    return new StateNPCDestroy(context);
                 }
 
                 return null;
@@ -37,7 +37,7 @@ namespace Maple2.Trigger._52000002_qd {
                 }
 
                 if (!context.UserDetected(arg1: new[] {101})) {
-                    return new StateNPC소멸(context);
+                    return new StateNPCDestroy(context);
                 }
 
                 return null;
@@ -58,11 +58,11 @@ namespace Maple2.Trigger._52000002_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "6")) {
-                    return new StateNPC소멸(context);
+                    return new StateNPCDestroy(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {101})) {
-                    return new StateNPC소멸(context);
+                    return new StateNPCDestroy(context);
                 }
 
                 return null;
@@ -71,15 +71,15 @@ namespace Maple2.Trigger._52000002_qd {
             public override void OnExit() { }
         }
 
-        private class StateNPC소멸 : TriggerState {
-            internal StateNPC소멸(ITriggerContext context) : base(context) { }
+        private class StateNPCDestroy : TriggerState {
+            internal StateNPCDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1091});
             }
 
             public override TriggerState Execute() {
-                return new State시작대기중(context);
+                return new StateWaitStart(context);
             }
 
             public override void OnExit() { }

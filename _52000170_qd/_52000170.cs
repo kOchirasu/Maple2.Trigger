@@ -174,7 +174,7 @@ namespace Maple2.Trigger._52000170_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002378}, arg3: new byte[] {3})) {
-                    return new State바사라등장01(context);
+                    return new State바사라Appear01(context);
                 }
 
                 return null;
@@ -183,8 +183,8 @@ namespace Maple2.Trigger._52000170_qd {
             public override void OnExit() { }
         }
 
-        private class State바사라등장01 : TriggerState {
-            internal State바사라등장01(ITriggerContext context) : base(context) { }
+        private class State바사라Appear01 : TriggerState {
+            internal State바사라Appear01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {401}, arg2: false);

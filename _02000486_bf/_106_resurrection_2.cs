@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000486_bf {
     public static class _106_resurrection_2 {
-        public class State전투시작 : TriggerState {
-            internal State전투시작(ITriggerContext context) : base(context) { }
+        public class StateBattleStart : TriggerState {
+            internal StateBattleStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 240000)) {
-                    return new State버프(context);
+                    return new StateBuff(context);
                 }
 
                 return null;
@@ -32,8 +32,8 @@ namespace Maple2.Trigger._02000486_bf {
             public override void OnExit() { }
         }
 
-        private class State버프 : TriggerState {
-            internal State버프(ITriggerContext context) : base(context) { }
+        private class StateBuff : TriggerState {
+            internal StateBuff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAiExtraData(key: "RageBuff_3", value: 1);
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000486_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State버프_종료(context);
+                    return new StateBuff_종료(context);
                 }
 
                 return null;
@@ -50,8 +50,8 @@ namespace Maple2.Trigger._02000486_bf {
             public override void OnExit() { }
         }
 
-        private class State버프_종료 : TriggerState {
-            internal State버프_종료(ITriggerContext context) : base(context) { }
+        private class StateBuff_종료 : TriggerState {
+            internal StateBuff_종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAiExtraData(key: "RageBuff_3", value: 0);

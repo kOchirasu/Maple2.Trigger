@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010055_qd {
     public static class _52010055 {
-        public class State준비 : TriggerState {
-            internal State준비(ITriggerContext context) : base(context) { }
+        public class StateSetup : TriggerState {
+            internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {500, 501, 502}, arg2: false);
@@ -12,7 +12,7 @@ namespace Maple2.Trigger._52010055_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9002})) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -449,7 +449,7 @@ namespace Maple2.Trigger._52010055_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1010, 1011, 1012, 1013, 1014, 213, 214, 215, 216})) {
-                    return new State보스전연출준비(context);
+                    return new StateBossSetupCinematic(context);
                 }
 
                 return null;
@@ -458,8 +458,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnExit() { }
         }
 
-        private class State보스전연출준비 : TriggerState {
-            internal State보스전연출준비(ITriggerContext context) : base(context) { }
+        private class StateBossSetupCinematic : TriggerState {
+            internal StateBossSetupCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -474,7 +474,7 @@ namespace Maple2.Trigger._52010055_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State보스전연출시작(context);
+                    return new StateBossStartCinematic(context);
                 }
 
                 return null;
@@ -483,8 +483,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnExit() { }
         }
 
-        private class State보스전연출시작 : TriggerState {
-            internal State보스전연출시작(ITriggerContext context) : base(context) { }
+        private class StateBossStartCinematic : TriggerState {
+            internal StateBossStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -494,7 +494,7 @@ namespace Maple2.Trigger._52010055_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State보스전연출1(context);
+                    return new StateBoss연출1(context);
                 }
 
                 return null;
@@ -503,8 +503,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnExit() { }
         }
 
-        private class State보스전연출1 : TriggerState {
-            internal State보스전연출1(ITriggerContext context) : base(context) { }
+        private class StateBoss연출1 : TriggerState {
+            internal StateBoss연출1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 2000, arg2: "Attack_01_A");
@@ -514,7 +514,7 @@ namespace Maple2.Trigger._52010055_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State보스전시작(context);
+                    return new StateBoss시작(context);
                 }
 
                 return null;
@@ -523,8 +523,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnExit() { }
         }
 
-        private class State보스전시작 : TriggerState {
-            internal State보스전시작(ITriggerContext context) : base(context) { }
+        private class StateBoss시작 : TriggerState {
+            internal StateBoss시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 4019, arg2: true);
@@ -536,7 +536,7 @@ namespace Maple2.Trigger._52010055_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
-                    return new State보스사망체크(context);
+                    return new StateBossDead체크(context);
                 }
 
                 return null;
@@ -545,8 +545,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnExit() { }
         }
 
-        private class State보스사망체크 : TriggerState {
-            internal State보스사망체크(ITriggerContext context) : base(context) { }
+        private class StateBossDead체크 : TriggerState {
+            internal StateBossDead체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: true);
@@ -556,7 +556,7 @@ namespace Maple2.Trigger._52010055_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State보스전끝크림슨발록대사1(context);
+                    return new StateBoss끝크림슨발록대사1(context);
                 }
 
                 return null;
@@ -565,8 +565,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnExit() { }
         }
 
-        private class State보스전끝크림슨발록대사1 : TriggerState {
-            internal State보스전끝크림슨발록대사1(ITriggerContext context) : base(context) { }
+        private class StateBoss끝크림슨발록대사1 : TriggerState {
+            internal StateBoss끝크림슨발록대사1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 5, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -579,7 +579,7 @@ namespace Maple2.Trigger._52010055_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State엔딩연출크림슨발록보스1(context);
+                    return new State엔딩연출크림슨발록Boss1(context);
                 }
 
                 return null;
@@ -588,8 +588,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnExit() { }
         }
 
-        private class State엔딩연출크림슨발록보스1 : TriggerState {
-            internal State엔딩연출크림슨발록보스1(ITriggerContext context) : base(context) { }
+        private class State엔딩연출크림슨발록Boss1 : TriggerState {
+            internal State엔딩연출크림슨발록Boss1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcRotation(arg1: 14, arg2: -10);
@@ -602,7 +602,7 @@ namespace Maple2.Trigger._52010055_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State엔딩연출크림슨발록보스2(context);
+                    return new State엔딩연출크림슨발록Boss2(context);
                 }
 
                 return null;
@@ -611,8 +611,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnExit() { }
         }
 
-        private class State엔딩연출크림슨발록보스2 : TriggerState {
-            internal State엔딩연출크림슨발록보스2(ITriggerContext context) : base(context) { }
+        private class State엔딩연출크림슨발록Boss2 : TriggerState {
+            internal State엔딩연출크림슨발록Boss2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ChangeMonster(arg1: 2002, arg2: 2003);
@@ -717,7 +717,7 @@ namespace Maple2.Trigger._52010055_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3002)) {
-                    return new State엔딩연출클림슨발록사망1(context);
+                    return new State엔딩연출클림슨발록Dead1(context);
                 }
 
                 return null;
@@ -726,8 +726,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnExit() { }
         }
 
-        private class State엔딩연출클림슨발록사망1 : TriggerState {
-            internal State엔딩연출클림슨발록사망1(ITriggerContext context) : base(context) { }
+        private class State엔딩연출클림슨발록Dead1 : TriggerState {
+            internal State엔딩연출클림슨발록Dead1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 2003, arg2: "Dead_01_A");
@@ -736,7 +736,7 @@ namespace Maple2.Trigger._52010055_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State엔딩연출준비1(context);
+                    return new State엔딩SetupCinematic1(context);
                 }
 
                 return null;
@@ -745,8 +745,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnExit() { }
         }
 
-        private class State엔딩연출준비1 : TriggerState {
-            internal State엔딩연출준비1(ITriggerContext context) : base(context) { }
+        private class State엔딩SetupCinematic1 : TriggerState {
+            internal State엔딩SetupCinematic1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 6, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -757,7 +757,7 @@ namespace Maple2.Trigger._52010055_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State엔딩연출준비2(context);
+                    return new State엔딩SetupCinematic2(context);
                 }
 
                 return null;
@@ -766,8 +766,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnExit() { }
         }
 
-        private class State엔딩연출준비2 : TriggerState {
-            internal State엔딩연출준비2(ITriggerContext context) : base(context) { }
+        private class State엔딩SetupCinematic2 : TriggerState {
+            internal State엔딩SetupCinematic2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -793,7 +793,7 @@ namespace Maple2.Trigger._52010055_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State엔딩연출크림슨카메라1(context);
+                    return new State엔딩연출크림슨Camera1(context);
                 }
 
                 return null;
@@ -802,8 +802,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnExit() { }
         }
 
-        private class State엔딩연출크림슨카메라1 : TriggerState {
-            internal State엔딩연출크림슨카메라1(ITriggerContext context) : base(context) { }
+        private class State엔딩연출크림슨Camera1 : TriggerState {
+            internal State엔딩연출크림슨Camera1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 6, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -960,7 +960,7 @@ namespace Maple2.Trigger._52010055_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State함교로카메라전환1(context);
+                    return new State함교로Camera전환1(context);
                 }
 
                 return null;
@@ -969,8 +969,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnExit() { }
         }
 
-        private class State함교로카메라전환1 : TriggerState {
-            internal State함교로카메라전환1(ITriggerContext context) : base(context) { }
+        private class State함교로Camera전환1 : TriggerState {
+            internal State함교로Camera전환1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 4025, arg2: true);
@@ -1021,7 +1021,7 @@ namespace Maple2.Trigger._52010055_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State엔딩연출종료1(context);
+                    return new State엔딩StopCinematic1(context);
                 }
 
                 return null;
@@ -1030,8 +1030,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnExit() { }
         }
 
-        private class State엔딩연출종료1 : TriggerState {
-            internal State엔딩연출종료1(ITriggerContext context) : base(context) { }
+        private class State엔딩StopCinematic1 : TriggerState {
+            internal State엔딩StopCinematic1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1});

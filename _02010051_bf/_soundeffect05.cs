@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02010051_bf {
     public static class _soundeffect05 {
-        public class State대기01 : TriggerState {
-            internal State대기01(ITriggerContext context) : base(context) { }
+        public class StateWait01 : TriggerState {
+            internal StateWait01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6000, 6001, 6002, 6003, 900}, arg2: false);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State대기02(context);
+                    return new StateWait02(context);
                 }
 
                 return null;
@@ -37,14 +37,14 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnExit() { }
         }
 
-        private class State대기02 : TriggerState {
-            internal State대기02(ITriggerContext context) : base(context) { }
+        private class StateWait02 : TriggerState {
+            internal StateWait02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10000})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -53,8 +53,8 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {900}, arg2: false);

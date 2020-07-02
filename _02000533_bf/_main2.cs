@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02000533_bf {
     public static class _main2 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {703}, arg2: 0)) {
-                    return new State서브몬스터1(context);
+                    return new State서브Monster1(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000533_bf {
             public override void OnExit() { }
         }
 
-        private class State서브몬스터1 : TriggerState {
-            internal State서브몬스터1(ITriggerContext context) : base(context) { }
+        private class State서브Monster1 : TriggerState {
+            internal State서브Monster1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {601, 602, 607, 608, 609, 610}, arg2: false);
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._02000533_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State서브몬스터2(context);
+                    return new State서브Monster2(context);
                 }
 
                 return null;
@@ -43,8 +43,8 @@ namespace Maple2.Trigger._02000533_bf {
             public override void OnExit() { }
         }
 
-        private class State서브몬스터2 : TriggerState {
-            internal State서브몬스터2(ITriggerContext context) : base(context) { }
+        private class State서브Monster2 : TriggerState {
+            internal State서브Monster2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {601, 602, 607, 608, 609, 610});
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._02000533_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State서브몬스터3(context);
+                    return new State서브Monster3(context);
                 }
 
                 return null;
@@ -61,8 +61,8 @@ namespace Maple2.Trigger._02000533_bf {
             public override void OnExit() { }
         }
 
-        private class State서브몬스터3 : TriggerState {
-            internal State서브몬스터3(ITriggerContext context) : base(context) { }
+        private class State서브Monster3 : TriggerState {
+            internal State서브Monster3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {6601, 6602, 6607, 6608, 6609, 6610}, arg2: true);

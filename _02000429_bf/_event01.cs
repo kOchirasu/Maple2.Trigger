@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 750) == 1) {
-                    return new State전투시작잠시대기(context);
+                    return new StateWaitCombat(context);
                 }
 
                 return null;
@@ -16,14 +16,14 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State전투시작잠시대기 : TriggerState {
-            internal State전투시작잠시대기(ITriggerContext context) : base(context) { }
+        private class StateWaitCombat : TriggerState {
+            internal StateWaitCombat(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State전투시작_인페르녹전함(context);
+                    return new StateBattleStart_InfernoWarship(context);
                 }
 
                 return null;
@@ -32,8 +32,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State전투시작_인페르녹전함 : TriggerState {
-            internal State전투시작_인페르녹전함(ITriggerContext context) : base(context) { }
+        private class StateBattleStart_InfernoWarship : TriggerState {
+            internal StateBattleStart_InfernoWarship(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20041002, textId: 20041002);
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State첫번째페이즈_인페르녹전함(context);
+                    return new State첫번째페이즈_InfernoWarship(context);
                 }
 
                 return null;
@@ -52,14 +52,14 @@ namespace Maple2.Trigger._02000429_bf {
             }
         }
 
-        private class State첫번째페이즈_인페르녹전함 : TriggerState {
-            internal State첫번째페이즈_인페르녹전함(ITriggerContext context) : base(context) { }
+        private class State첫번째페이즈_InfernoWarship : TriggerState {
+            internal State첫번째페이즈_InfernoWarship(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AirshipBalrogCrimsonBroken") == 1) {
-                    return new State인페르녹전함파괴연출(context);
+                    return new StateInfernoWarship파괴연출(context);
                 }
 
                 return null;
@@ -68,8 +68,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State인페르녹전함파괴연출 : TriggerState {
-            internal State인페르녹전함파괴연출(ITriggerContext context) : base(context) { }
+        private class StateInfernoWarship파괴연출 : TriggerState {
+            internal StateInfernoWarship파괴연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20041003, textId: 20041003);
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State인페르녹전함파괴연출2(context);
+                    return new StateInfernoWarship파괴연출2(context);
                 }
 
                 return null;
@@ -87,8 +87,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State인페르녹전함파괴연출2 : TriggerState {
-            internal State인페르녹전함파괴연출2(ITriggerContext context) : base(context) { }
+        private class StateInfernoWarship파괴연출2 : TriggerState {
+            internal StateInfernoWarship파괴연출2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 5000, script: "$02000410_BF__Event01__1$", voice: @"ko/Npc/00002158");
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State두번째페이즈_인페르녹전함(context);
+                    return new State두번째페이즈_InfernoWarship(context);
                 }
 
                 return null;
@@ -107,14 +107,14 @@ namespace Maple2.Trigger._02000429_bf {
             }
         }
 
-        private class State두번째페이즈_인페르녹전함 : TriggerState {
-            internal State두번째페이즈_인페르녹전함(ITriggerContext context) : base(context) { }
+        private class State두번째페이즈_InfernoWarship : TriggerState {
+            internal State두번째페이즈_InfernoWarship(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AirshipBalrogCrimsonFlameBroken") == 1) {
-                    return new State인페르녹전함파괴_인페르녹등장연출(context);
+                    return new StateInfernoWarship파괴_인페르녹SpawnCinematic(context);
                 }
 
                 return null;
@@ -123,8 +123,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State인페르녹전함파괴_인페르녹등장연출 : TriggerState {
-            internal State인페르녹전함파괴_인페르녹등장연출(ITriggerContext context) : base(context) { }
+        private class StateInfernoWarship파괴_인페르녹SpawnCinematic : TriggerState {
+            internal StateInfernoWarship파괴_인페르녹SpawnCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20041004, textId: 20041004);
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    return new State인페르녹전함파괴_인페르녹등장연출2(context);
+                    return new StateInfernoWarship파괴_인페르녹SpawnCinematic2(context);
                 }
 
                 return null;
@@ -144,8 +144,8 @@ namespace Maple2.Trigger._02000429_bf {
             }
         }
 
-        private class State인페르녹전함파괴_인페르녹등장연출2 : TriggerState {
-            internal State인페르녹전함파괴_인페르녹등장연출2(ITriggerContext context) : base(context) { }
+        private class StateInfernoWarship파괴_인페르녹SpawnCinematic2 : TriggerState {
+            internal StateInfernoWarship파괴_인페르녹SpawnCinematic2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 3800, script: "$02000410_BF__Event01__3$", voice: @"ko/Npc/00002169");
@@ -153,7 +153,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3800)) {
-                    return new State인페르녹전함파괴_인페르녹등장연출3(context);
+                    return new StateInfernoWarship파괴_인페르녹SpawnCinematic3(context);
                 }
 
                 return null;
@@ -162,8 +162,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State인페르녹전함파괴_인페르녹등장연출3 : TriggerState {
-            internal State인페르녹전함파괴_인페르녹등장연출3(ITriggerContext context) : base(context) { }
+        private class StateInfernoWarship파괴_인페르녹SpawnCinematic3 : TriggerState {
+            internal StateInfernoWarship파괴_인페르녹SpawnCinematic3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11003536, illust: "Bliche_closeEye", duration: 5200, script: "$02000410_BF__Event01__4$", voice: @"ko/Npc/00002159");
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5200)) {
-                    return new State인페르녹전함파괴_인페르녹등장연출4(context);
+                    return new StateInfernoWarship파괴_인페르녹SpawnCinematic4(context);
                 }
 
                 return null;
@@ -180,8 +180,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State인페르녹전함파괴_인페르녹등장연출4 : TriggerState {
-            internal State인페르녹전함파괴_인페르녹등장연출4(ITriggerContext context) : base(context) { }
+        private class StateInfernoWarship파괴_인페르녹SpawnCinematic4 : TriggerState {
+            internal StateInfernoWarship파괴_인페르녹SpawnCinematic4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02000410_BF__Event01__8$");
@@ -189,7 +189,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State인페르녹전함파괴_인페르녹등장연출5(context);
+                    return new StateInfernoWarship파괴_인페르녹SpawnCinematic5(context);
                 }
 
                 return null;
@@ -198,8 +198,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State인페르녹전함파괴_인페르녹등장연출5 : TriggerState {
-            internal State인페르녹전함파괴_인페르녹등장연출5(ITriggerContext context) : base(context) { }
+        private class StateInfernoWarship파괴_인페르녹SpawnCinematic5 : TriggerState {
+            internal StateInfernoWarship파괴_인페르녹SpawnCinematic5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02000410_BF__Event01__9$");
@@ -207,7 +207,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State인페르녹전함파괴_인페르녹등장연출6(context);
+                    return new StateInfernoWarship파괴_인페르녹SpawnCinematic6(context);
                 }
 
                 return null;
@@ -216,8 +216,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State인페르녹전함파괴_인페르녹등장연출6 : TriggerState {
-            internal State인페르녹전함파괴_인페르녹등장연출6(ITriggerContext context) : base(context) { }
+        private class StateInfernoWarship파괴_인페르녹SpawnCinematic6 : TriggerState {
+            internal StateInfernoWarship파괴_인페르녹SpawnCinematic6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 5000, script: "$02000410_BF__Event01__7$");
@@ -225,7 +225,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State세번째페이즈_인페르녹등장(context);
+                    return new State세번째페이즈_인페르녹Appear(context);
                 }
 
                 return null;
@@ -234,14 +234,14 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State세번째페이즈_인페르녹등장 : TriggerState {
-            internal State세번째페이즈_인페르녹등장(ITriggerContext context) : base(context) { }
+        private class State세번째페이즈_인페르녹Appear : TriggerState {
+            internal State세번째페이즈_인페르녹Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BalrogMagicBursterBattlePhase") == 1) {
-                    // return new State성공이벤트실행(context);
+                    // return new StateSuccess이벤트실행(context);
                     return null;
                 }
 

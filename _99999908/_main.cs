@@ -2,8 +2,8 @@ using System.Numerics;
 
 namespace Maple2.Trigger._99999908 {
     public static class _main {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(1f, 1f, 1f));
@@ -18,14 +18,14 @@ namespace Maple2.Trigger._99999908 {
             public override void OnExit() { }
         }
 
-        private class Stateswitch : TriggerState {
-            internal Stateswitch(ITriggerContext context) : base(context) { }
+        private class StateSwitch : TriggerState {
+            internal StateSwitch(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5500)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;

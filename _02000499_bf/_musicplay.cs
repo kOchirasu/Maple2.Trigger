@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000499_bf {
     public static class _musicplay {
-        public class Statewait : TriggerState {
-            internal Statewait(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5101, 5103, 5102, 5104, 5105}, arg2: false);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000499_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {11000093}, arg2: 0)) {
-                    return new Stateready(context);
+                    return new StateReady(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000499_bf {
             public override void OnExit() { }
         }
 
-        private class Stateready : TriggerState {
-            internal Stateready(ITriggerContext context) : base(context) { }
+        private class StateReady : TriggerState {
+            internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.WriteLog(arg1: "Survival", arg3: "MushkingLand_musicPlay");
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02000499_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new Statewait(context);
+                    return new StateWait(context);
                 }
 
                 return null;

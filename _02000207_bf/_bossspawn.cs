@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000207_bf {
     public static class _bossspawn {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
@@ -31,15 +31,15 @@ namespace Maple2.Trigger._02000207_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ZakumDungeonEnd") == 1) {
-                    return new State종료딜레이(context);
+                    return new StateEndDelay(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    return new State던전실패(context);
+                    return new StateDungeon실패(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    return new State던전실패(context);
+                    return new StateDungeon실패(context);
                 }
 
                 return null;
@@ -48,8 +48,8 @@ namespace Maple2.Trigger._02000207_bf {
             public override void OnExit() { }
         }
 
-        private class State종료딜레이 : TriggerState {
-            internal State종료딜레이(ITriggerContext context) : base(context) { }
+        private class StateEndDelay : TriggerState {
+            internal StateEndDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999103, key: "BattleEnd", value: 1);
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02000207_bf {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.DungeonClear();
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -72,8 +72,8 @@ namespace Maple2.Trigger._02000207_bf {
             public override void OnExit() { }
         }
 
-        private class State던전실패 : TriggerState {
-            internal State던전실패(ITriggerContext context) : base(context) { }
+        private class StateDungeon실패 : TriggerState {
+            internal StateDungeon실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1});
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._02000207_bf {
                 if (context.WaitTick(waitTick: 1500)) {
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.DungeonFail();
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -94,8 +94,8 @@ namespace Maple2.Trigger._02000207_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonEnableGiveUp(isEnable: false);

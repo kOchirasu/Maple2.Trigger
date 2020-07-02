@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._52000014_qd {
     public static class _steam_5100 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    return new State딜레이01(context);
+                    return new StateDelay01(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52000014_qd {
             public override void OnExit() { }
         }
 
-        private class State딜레이01 : TriggerState {
-            internal State딜레이01(ITriggerContext context) : base(context) { }
+        private class StateDelay01 : TriggerState {
+            internal StateDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State딜레이02(context);
+                    return new StateDelay02(context);
                 }
 
                 return null;
@@ -72,8 +72,8 @@ namespace Maple2.Trigger._52000014_qd {
             public override void OnExit() { }
         }
 
-        private class State딜레이02 : TriggerState {
-            internal State딜레이02(ITriggerContext context) : base(context) { }
+        private class StateDelay02 : TriggerState {
+            internal StateDelay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "4", arg2: 1);
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State초기화(context);
+                    return new StateReset(context);
                 }
 
                 return null;
@@ -110,15 +110,15 @@ namespace Maple2.Trigger._52000014_qd {
             public override void OnExit() { }
         }
 
-        private class State초기화 : TriggerState {
-            internal State초기화(ITriggerContext context) : base(context) { }
+        private class StateReset : TriggerState {
+            internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {511});
             }
 
             public override TriggerState Execute() {
-                return new State딜레이01(context);
+                return new StateDelay01(context);
             }
 
             public override void OnExit() { }

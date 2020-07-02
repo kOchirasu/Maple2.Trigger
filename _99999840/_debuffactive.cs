@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._99999840 {
     public static class _debuffactive {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -29,12 +29,12 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 811, value: false);
-                context.SetEventUI(arg1: 1, arg2: "이동속도 감소 디버프에 걸립니다.", arg3: 5000);
+                context.SetEventUI(arg1: 1, arg2: "이동속도 감소 디Buff에 걸립니다.", arg3: 5000);
                 context.AddBuff(arg1: new[] {9001}, arg2: 70002581, arg3: 1, arg5: false);
             }
 
             public override TriggerState Execute() {
-                return new State대기(context);
+                return new StateWait(context);
             }
 
             public override void OnExit() { }
@@ -45,12 +45,12 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 812, value: false);
-                context.SetEventUI(arg1: 1, arg2: "공격력 감소 디버프에 걸립니다.", arg3: 5000);
+                context.SetEventUI(arg1: 1, arg2: "공격력 감소 디Buff에 걸립니다.", arg3: 5000);
                 context.AddBuff(arg1: new[] {9001}, arg2: 70002591, arg3: 1, arg5: false);
             }
 
             public override TriggerState Execute() {
-                return new State대기(context);
+                return new StateWait(context);
             }
 
             public override void OnExit() { }
@@ -61,12 +61,12 @@ namespace Maple2.Trigger._99999840 {
 
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 813, value: false);
-                context.SetEventUI(arg1: 1, arg2: "체력 감소 디버프에 걸립니다.", arg3: 5000);
+                context.SetEventUI(arg1: 1, arg2: "체력 감소 디Buff에 걸립니다.", arg3: 5000);
                 context.AddBuff(arg1: new[] {9001}, arg2: 70002601, arg3: 1, arg5: false);
             }
 
             public override TriggerState Execute() {
-                return new State대기(context);
+                return new StateWait(context);
             }
 
             public override void OnExit() { }

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010018_qd {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State연출시작(context);
+                    return new StateStartCinematic(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._52010018_qd {
             public override void OnExit() { }
         }
 
-        private class State연출시작 : TriggerState {
-            internal State연출시작(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic : TriggerState {
+            internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002_A");
@@ -180,7 +180,7 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State업적발생(context);
+                    return new StateAchievement(context);
                 }
 
                 return null;
@@ -189,8 +189,8 @@ namespace Maple2.Trigger._52010018_qd {
             public override void OnExit() { }
         }
 
-        private class State업적발생 : TriggerState {
-            internal State업적발생(ITriggerContext context) : base(context) { }
+        private class StateAchievement : TriggerState {
+            internal StateAchievement(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 100, arg2: "trigger", arg3: "ChangeMika");

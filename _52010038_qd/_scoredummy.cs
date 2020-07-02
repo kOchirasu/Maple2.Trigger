@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010038_qd {
     public static class _scoredummy {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

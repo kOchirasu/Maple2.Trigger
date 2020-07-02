@@ -2,8 +2,8 @@ using System.Numerics;
 
 namespace Maple2.Trigger._02020111_bf {
     public static class _movement_01 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -25,11 +25,11 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Movement") == 0) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.GetUserValue(key: "dark") == 1) {
-                    return new State페이드아웃(context);
+                    return new StateFadeOut(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State페이드아웃 : TriggerState {
-            internal State페이드아웃(ITriggerContext context) : base(context) { }
+        private class StateFadeOut : TriggerState {
+            internal StateFadeOut(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 5, arg2: false, arg3: false, arg4: false);
@@ -74,11 +74,11 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    return new State페이드인(context);
+                    return new StateFadeIn(context);
                 }
 
                 if (context.GetUserValue(key: "Movement") == 0) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -87,8 +87,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State페이드인 : TriggerState {
-            internal State페이드인(ITriggerContext context) : base(context) { }
+        private class StateFadeIn : TriggerState {
+            internal StateFadeIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Movement") == 0) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.GetUserValue(key: "dark") == 2) {
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    return new State중앙지역이동_1_페이드인(context);
+                    return new State중앙지역이동_1_FadeIn(context);
                 }
 
                 return null;
@@ -180,14 +180,14 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State중앙지역이동_1_페이드인 : TriggerState {
-            internal State중앙지역이동_1_페이드인(ITriggerContext context) : base(context) { }
+        private class State중앙지역이동_1_FadeIn : TriggerState {
+            internal State중앙지역이동_1_FadeIn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    return new State포탈설정_1(context);
+                    return new StatePortal설정_1(context);
                 }
 
                 return null;
@@ -196,8 +196,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State포탈설정_1 : TriggerState {
-            internal State포탈설정_1(ITriggerContext context) : base(context) { }
+        private class StatePortal설정_1 : TriggerState {
+            internal StatePortal설정_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 5, arg2: true, arg3: true, arg4: true);
@@ -208,7 +208,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Movement") == 0) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;

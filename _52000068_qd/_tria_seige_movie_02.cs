@@ -681,7 +681,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State페이드아웃(context);
+                    return new StateFadeOut(context);
                 }
 
                 return null;
@@ -690,8 +690,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnExit() { }
         }
 
-        private class State페이드아웃 : TriggerState {
-            internal State페이드아웃(ITriggerContext context) : base(context) { }
+        private class StateFadeOut : TriggerState {
+            internal StateFadeOut(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
@@ -700,7 +700,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State페이드아웃_1(context);
+                    return new StateFadeOut_1(context);
                 }
 
                 return null;
@@ -709,8 +709,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnExit() { }
         }
 
-        private class State페이드아웃_1 : TriggerState {
-            internal State페이드아웃_1(ITriggerContext context) : base(context) { }
+        private class StateFadeOut_1 : TriggerState {
+            internal StateFadeOut_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();

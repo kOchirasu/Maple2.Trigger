@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000066_bf {
     public static class _mob05 {
-        public class State대기시간 : TriggerState {
-            internal State대기시간(ITriggerContext context) : base(context) { }
+        public class StateWaitTime : TriggerState {
+            internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -53,11 +53,11 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {901})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 if (context.TimeExpired(arg1: "13")) {
-                    return new State생성랜덤(context);
+                    return new StateCreationRandom(context);
                 }
 
                 return null;
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._02000066_bf {
                 }
 
                 if (context.TimeExpired(arg1: "11")) {
-                    return new State생성랜덤(context);
+                    return new StateCreationRandom(context);
                 }
 
                 return null;
@@ -97,11 +97,11 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {908})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 if (context.TimeExpired(arg1: "10")) {
-                    return new State생성랜덤(context);
+                    return new StateCreationRandom(context);
                 }
 
                 return null;
@@ -119,11 +119,11 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {909})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 if (context.TimeExpired(arg1: "9")) {
-                    return new State생성랜덤(context);
+                    return new StateCreationRandom(context);
                 }
 
                 return null;
@@ -145,7 +145,7 @@ namespace Maple2.Trigger._02000066_bf {
                 }
 
                 if (context.TimeExpired(arg1: "8")) {
-                    return new State생성랜덤(context);
+                    return new StateCreationRandom(context);
                 }
 
                 return null;
@@ -163,11 +163,11 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {912})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 if (context.TimeExpired(arg1: "7")) {
-                    return new State생성랜덤(context);
+                    return new StateCreationRandom(context);
                 }
 
                 return null;
@@ -185,11 +185,11 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {913})) {
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 if (context.TimeExpired(arg1: "6")) {
-                    return new State생성랜덤(context);
+                    return new StateCreationRandom(context);
                 }
 
                 return null;
@@ -211,7 +211,7 @@ namespace Maple2.Trigger._02000066_bf {
                 }
 
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State생성랜덤(context);
+                    return new StateCreationRandom(context);
                 }
 
                 return null;
@@ -220,15 +220,15 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State생성랜덤 : TriggerState {
-            internal State생성랜덤(ITriggerContext context) : base(context) { }
+        private class StateCreationRandom : TriggerState {
+            internal StateCreationRandom(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404}, arg2: false);
             }
 
             public override TriggerState Execute() {
-                return new State대기시간(context);
+                return new StateWaitTime(context);
             }
 
             public override void OnExit() { }
@@ -242,7 +242,7 @@ namespace Maple2.Trigger._02000066_bf {
             }
 
             public override TriggerState Execute() {
-                return new State대기시간(context);
+                return new StateWaitTime(context);
             }
 
             public override void OnExit() { }

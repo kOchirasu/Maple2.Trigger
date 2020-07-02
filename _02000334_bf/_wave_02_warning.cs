@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000334_bf {
     public static class _wave_02_warning {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State카메라_복구(context);
+                    return new StateCamera_복구(context);
                 }
 
                 return null;
@@ -56,8 +56,8 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnExit() { }
         }
 
-        private class State카메라_복구 : TriggerState {
-            internal State카메라_복구(ITriggerContext context) : base(context) { }
+        private class StateCamera_복구 : TriggerState {
+            internal StateCamera_복구(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {98006}, arg2: true);
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State카메라_복구2(context);
+                    return new StateCamera_복구2(context);
                 }
 
                 return null;
@@ -101,8 +101,8 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnExit() { }
         }
 
-        private class State카메라_복구2 : TriggerState {
-            internal State카메라_복구2(ITriggerContext context) : base(context) { }
+        private class StateCamera_복구2 : TriggerState {
+            internal StateCamera_복구2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {98006}, arg2: true);

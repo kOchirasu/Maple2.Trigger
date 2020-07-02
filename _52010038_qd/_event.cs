@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010038_qd {
     public static class _event {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013}, arg2: true);
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 104, arg2: new[] {1200})) {
-                    return new State생성(context);
+                    return new StateCreation(context);
                 }
 
                 return null;
@@ -62,8 +62,8 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnExit() { }
         }
 
-        private class State생성 : TriggerState {
-            internal State생성(ITriggerContext context) : base(context) { }
+        private class StateCreation : TriggerState {
+            internal StateCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {710}, arg2: true);
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State폭발딜레이(context);
+                    return new State폭발Delay(context);
                 }
 
                 return null;
@@ -121,8 +121,8 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnExit() { }
         }
 
-        private class State폭발딜레이 : TriggerState {
-            internal State폭발딜레이(ITriggerContext context) : base(context) { }
+        private class State폭발Delay : TriggerState {
+            internal State폭발Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 220, arg2: true, arg3: "Attack_01_A");
@@ -194,7 +194,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -203,8 +203,8 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

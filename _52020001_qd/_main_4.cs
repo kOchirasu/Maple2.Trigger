@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {4})) {
-                    return new State연출시작(context);
+                    return new StateStartCinematic(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class State연출시작 : TriggerState {
-            internal State연출시작(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic : TriggerState {
+            internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State탈것등장(context);
+                    return new State탈것Appear(context);
                 }
 
                 return null;
@@ -55,8 +55,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class State탈것등장 : TriggerState {
-            internal State탈것등장(ITriggerContext context) : base(context) { }
+        private class State탈것Appear : TriggerState {
+            internal State탈것Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {7001}, arg2: true);
@@ -157,7 +157,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State오브젝트반응(context);
+                    return new StateInteractObject(context);
                 }
 
                 return null;
@@ -168,8 +168,8 @@ namespace Maple2.Trigger._52020001_qd {
             }
         }
 
-        private class State오브젝트반응 : TriggerState {
-            internal State오브젝트반응(ITriggerContext context) : base(context) { }
+        private class StateInteractObject : TriggerState {
+            internal StateInteractObject(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "좋아! 이 녀석을 타고 돌격해야겠어!!", arg4: 3, arg5: 0);
@@ -178,7 +178,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State오브젝트반응_2(context);
+                    return new StateInteractObject_2(context);
                 }
 
                 return null;
@@ -187,14 +187,14 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class State오브젝트반응_2 : TriggerState {
-            internal State오브젝트반응_2(ITriggerContext context) : base(context) { }
+        private class StateInteractObject_2 : TriggerState {
+            internal StateInteractObject_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10002010}, arg2: 0)) {
-                    return new State오브젝트반응_3(context);
+                    return new StateInteractObject_3(context);
                 }
 
                 return null;
@@ -203,8 +203,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class State오브젝트반응_3 : TriggerState {
-            internal State오브젝트반응_3(ITriggerContext context) : base(context) { }
+        private class StateInteractObject_3 : TriggerState {
+            internal StateInteractObject_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002010}, arg2: 2);
@@ -212,7 +212,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    return new State카메라연출(context);
+                    return new StateCamera연출(context);
                 }
 
                 return null;
@@ -223,8 +223,8 @@ namespace Maple2.Trigger._52020001_qd {
             }
         }
 
-        private class State카메라연출 : TriggerState {
-            internal State카메라연출(ITriggerContext context) : base(context) { }
+        private class StateCamera연출 : TriggerState {
+            internal StateCamera연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -284,7 +284,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    return new State몬스터생성(context);
+                    return new StateMobCreation(context);
                 }
 
                 return null;
@@ -293,8 +293,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class State몬스터생성 : TriggerState {
-            internal State몬스터생성(ITriggerContext context) : base(context) { }
+        private class StateMobCreation : TriggerState {
+            internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {6000030, 6000031, 6000032, 6000033, 6000034}, arg2: false);

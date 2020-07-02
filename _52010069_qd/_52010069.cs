@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._52010069_qd {
     public static class _52010069 {
-        public class Statewait_01 : TriggerState {
-            internal Statewait_01(ITriggerContext context) : base(context) { }
+        public class StateWait_01 : TriggerState {
+            internal StateWait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100680}, arg3: new byte[] {3})) {
-                    return new StateNPC소멸(context);
+                    return new StateNPCDestroy(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {50100680}, arg3: new byte[] {2})) {
@@ -494,8 +494,8 @@ namespace Maple2.Trigger._52010069_qd {
             public override void OnExit() { }
         }
 
-        private class StateNPC소멸 : TriggerState {
-            internal StateNPC소멸(ITriggerContext context) : base(context) { }
+        private class StateNPCDestroy : TriggerState {
+            internal StateNPCDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101}, arg2: false);

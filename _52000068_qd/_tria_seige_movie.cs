@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000068_qd {
     public static class _tria_seige_movie {
-        public class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State원경카메라01(context);
+                    return new State원경Camera01(context);
                 }
 
                 return null;
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnExit() { }
         }
 
-        private class State원경카메라01 : TriggerState {
-            internal State원경카메라01(ITriggerContext context) : base(context) { }
+        private class State원경Camera01 : TriggerState {
+            internal State원경Camera01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {12000, 12001}, arg2: false);
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State원경카메라02(context);
+                    return new State원경Camera02(context);
                 }
 
                 return null;
@@ -95,8 +95,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnExit() { }
         }
 
-        private class State원경카메라02 : TriggerState {
-            internal State원경카메라02(ITriggerContext context) : base(context) { }
+        private class State원경Camera02 : TriggerState {
+            internal State원경Camera02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {12002, 12003}, arg2: false);
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State원경카메라03(context);
+                    return new State원경Camera03(context);
                 }
 
                 return null;
@@ -113,8 +113,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnExit() { }
         }
 
-        private class State원경카메라03 : TriggerState {
-            internal State원경카메라03(ITriggerContext context) : base(context) { }
+        private class State원경Camera03 : TriggerState {
+            internal State원경Camera03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {12004, 12005}, arg2: false);
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State근위대원등장(context);
+                    return new State근위대원Appear(context);
                 }
 
                 return null;
@@ -167,8 +167,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnExit() { }
         }
 
-        private class State근위대원등장 : TriggerState {
-            internal State근위대원등장(ITriggerContext context) : base(context) { }
+        private class State근위대원Appear : TriggerState {
+            internal State근위대원Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    // return new State지원군등장(context);
+                    // return new State지원군Appear(context);
                     return null;
                 }
 

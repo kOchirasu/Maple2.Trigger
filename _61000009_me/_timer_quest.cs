@@ -43,7 +43,7 @@ namespace Maple2.Trigger._61000009_me {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "60")) {
-                    return new Statedaily_quest(context);
+                    return new StateDaily_quest(context);
                 }
 
                 return null;
@@ -52,8 +52,8 @@ namespace Maple2.Trigger._61000009_me {
             public override void OnExit() { }
         }
 
-        private class Statedaily_quest : TriggerState {
-            internal Statedaily_quest(ITriggerContext context) : base(context) { }
+        private class StateDaily_quest : TriggerState {
+            internal StateDaily_quest(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 799, arg2: "trigger", arg3: "dailyquest_start");

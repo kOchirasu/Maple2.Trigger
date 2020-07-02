@@ -2,8 +2,8 @@ using System.Numerics;
 
 namespace Maple2.Trigger._52010038_qd {
     public static class _allert {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(131f, 160f, 209f));
@@ -141,7 +141,7 @@ namespace Maple2.Trigger._52010038_qd {
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AllertEnd") == 1) {
                     context.SetUserValue(triggerId: 999004, key: "AllertStart", value: 0);
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

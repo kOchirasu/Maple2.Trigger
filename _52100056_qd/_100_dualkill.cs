@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52100056_qd {
     public static class _100_dualkill {
-        public class State룸체크 : TriggerState {
-            internal State룸체크(ITriggerContext context) : base(context) { }
+        public class StateRoomCheck : TriggerState {
+            internal StateRoomCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

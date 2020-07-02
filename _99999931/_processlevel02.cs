@@ -9,7 +9,7 @@ namespace Maple2.Trigger._99999931 {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000218}, arg2: 0)) {
-                    return new State카운트다운1(context);
+                    return new StateCount다운1(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._99999931 {
             public override void OnExit() { }
         }
 
-        private class State카운트다운1 : TriggerState {
-            internal State카운트다운1(ITriggerContext context) : base(context) { }
+        private class StateCount다운1 : TriggerState {
+            internal StateCount다운1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "31", arg2: 1);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._99999931 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "31")) {
-                    return new State카운트다운2(context);
+                    return new StateCount다운2(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._99999931 {
             public override void OnExit() { }
         }
 
-        private class State카운트다운2 : TriggerState {
-            internal State카운트다운2(ITriggerContext context) : base(context) { }
+        private class StateCount다운2 : TriggerState {
+            internal StateCount다운2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "32", arg2: 1);
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._99999931 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "32")) {
-                    return new State카운트다운3(context);
+                    return new StateCount다운3(context);
                 }
 
                 return null;
@@ -56,8 +56,8 @@ namespace Maple2.Trigger._99999931 {
             public override void OnExit() { }
         }
 
-        private class State카운트다운3 : TriggerState {
-            internal State카운트다운3(ITriggerContext context) : base(context) { }
+        private class StateCount다운3 : TriggerState {
+            internal StateCount다운3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "33", arg2: 1);

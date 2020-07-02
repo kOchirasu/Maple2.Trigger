@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._99999905 {
     public static class _buffskill_03 {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 203, arg2: true, arg3: "Idle_A");
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._99999905 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10603})) {
-                    return new State스킬랜덤(context);
+                    return new StateSkillRandom(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._99999905 {
             public override void OnExit() { }
         }
 
-        private class State스킬랜덤 : TriggerState {
-            internal State스킬랜덤(ITriggerContext context) : base(context) { }
+        private class StateSkillRandom : TriggerState {
+            internal StateSkillRandom(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 203, arg2: true, arg3: "Dead_A");
@@ -27,19 +27,19 @@ namespace Maple2.Trigger._99999905 {
 
             public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {10603})) {
-                    return new State초기화(context);
+                    return new StateReset(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    return new StateA스킬작동(context);
+                    return new StateASkillCast(context);
                 }
 
                 if (context.RandomCondition(arg1: 33f)) {
-                    return new StateB스킬작동(context);
+                    return new StateBSkillCast(context);
                 }
 
                 if (context.RandomCondition(arg1: 34f)) {
-                    return new StateC스킬작동(context);
+                    return new StateCSkillCast(context);
                 }
 
                 return null;
@@ -48,8 +48,8 @@ namespace Maple2.Trigger._99999905 {
             public override void OnExit() { }
         }
 
-        private class StateA스킬작동 : TriggerState {
-            internal StateA스킬작동(ITriggerContext context) : base(context) { }
+        private class StateASkillCast : TriggerState {
+            internal StateASkillCast(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7301}, arg2: true);
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._99999905 {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "60")) {
                     context.SetSkill(arg1: new[] {7301}, arg2: false);
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;
@@ -68,8 +68,8 @@ namespace Maple2.Trigger._99999905 {
             public override void OnExit() { }
         }
 
-        private class StateB스킬작동 : TriggerState {
-            internal StateB스킬작동(ITriggerContext context) : base(context) { }
+        private class StateBSkillCast : TriggerState {
+            internal StateBSkillCast(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7302}, arg2: true);
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._99999905 {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "60")) {
                     context.SetSkill(arg1: new[] {7302}, arg2: false);
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;
@@ -88,8 +88,8 @@ namespace Maple2.Trigger._99999905 {
             public override void OnExit() { }
         }
 
-        private class StateC스킬작동 : TriggerState {
-            internal StateC스킬작동(ITriggerContext context) : base(context) { }
+        private class StateCSkillCast : TriggerState {
+            internal StateCSkillCast(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7303}, arg2: true);
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._99999905 {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "60")) {
                     context.SetSkill(arg1: new[] {7303}, arg2: false);
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;
@@ -108,8 +108,8 @@ namespace Maple2.Trigger._99999905 {
             public override void OnExit() { }
         }
 
-        private class State초기화 : TriggerState {
-            internal State초기화(ITriggerContext context) : base(context) { }
+        private class StateReset : TriggerState {
+            internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._99999905 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;

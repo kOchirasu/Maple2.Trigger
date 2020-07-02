@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52100301_qd {
     public static class _3000061_phase_5_interect_01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {200031, 200032}, arg2: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Phase_5_Interect_01") == 1) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52100301_qd {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$52100301_QD__3000061_PHASE_5_INTERECT_01__0$", arg3: 4000);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State탈것_등장(context);
+                    return new State탈것_Appear(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._52100301_qd {
             public override void OnExit() { }
         }
 
-        private class State탈것_등장 : TriggerState {
-            internal State탈것_등장(ITriggerContext context) : base(context) { }
+        private class State탈것_Appear : TriggerState {
+            internal State탈것_Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10003126}, arg2: 1);
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._52100301_qd {
                 }
 
                 if (context.GetUserValue(key: "Phase_5_Interect_01") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._52100301_qd {
                 }
 
                 if (context.GetUserValue(key: "Phase_5_Interect_01") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._52100301_qd {
                 }
 
                 if (context.GetUserValue(key: "Phase_5_Interect_01") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -107,11 +107,11 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.GetUserValue(key: "Phase_5_Interect_01") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

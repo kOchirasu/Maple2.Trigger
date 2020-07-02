@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000040_qd {
     public static class _common {
-        public class Stateend_01 : TriggerState {
-            internal Stateend_01(ITriggerContext context) : base(context) { }
+        public class StateEnd_01 : TriggerState {
+            internal StateEnd_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

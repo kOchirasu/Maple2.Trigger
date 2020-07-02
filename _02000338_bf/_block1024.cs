@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000338_bf {
     public static class _block1024 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1024}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02000338_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10024})) {
-                    return new State준비(context);
+                    return new StateSetup(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02000338_bf {
             public override void OnExit() { }
         }
 
-        private class State준비 : TriggerState {
-            internal State준비(ITriggerContext context) : base(context) { }
+        private class StateSetup : TriggerState {
+            internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);

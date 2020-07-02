@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02000432_bf {
     public static class _buff_1 {
-        public class State전투시작 : TriggerState {
-            internal State전투시작(ITriggerContext context) : base(context) { }
+        public class StateBattleStart : TriggerState {
+            internal StateBattleStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {2001})) {
-                    return new State버프(context);
+                    return new StateBuff(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000432_bf {
             public override void OnExit() { }
         }
 
-        private class State버프 : TriggerState {
-            internal State버프(ITriggerContext context) : base(context) { }
+        private class StateBuff : TriggerState {
+            internal StateBuff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {2001}, arg2: 40501001, arg3: 1, arg4: true, arg5: false);
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000432_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State사망(context);
+                    return new StateDead(context);
                 }
 
                 return null;
@@ -34,14 +34,14 @@ namespace Maple2.Trigger._02000432_bf {
             public override void OnExit() { }
         }
 
-        private class State사망 : TriggerState {
-            internal State사망(ITriggerContext context) : base(context) { }
+        private class StateDead : TriggerState {
+            internal StateDead(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
-                    return new State사망_버프제거(context);
+                    return new StateDead_BuffRemove(context);
                 }
 
                 return null;
@@ -50,8 +50,8 @@ namespace Maple2.Trigger._02000432_bf {
             public override void OnExit() { }
         }
 
-        private class State사망_버프제거 : TriggerState {
-            internal State사망_버프제거(ITriggerContext context) : base(context) { }
+        private class StateDead_BuffRemove : TriggerState {
+            internal StateDead_BuffRemove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {2002}, arg2: 40501005, arg3: 1, arg4: true, arg5: false);

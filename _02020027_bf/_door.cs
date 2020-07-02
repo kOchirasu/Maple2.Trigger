@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020027_bf {
     public static class _door {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -45,14 +45,14 @@ namespace Maple2.Trigger._02020027_bf {
             }
 
             public override TriggerState Execute() {
-                return new State종료(context);
+                return new StateEnd(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

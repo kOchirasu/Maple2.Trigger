@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010027_qd {
     public static class _main_quest10003102 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5004}, arg2: false);
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State보스몬스터는소멸준비(context);
+                    return new StateBossMonster는소멸준비(context);
                 }
 
                 return null;
@@ -75,8 +75,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class State보스몬스터는소멸준비 : TriggerState {
-            internal State보스몬스터는소멸준비(ITriggerContext context) : base(context) { }
+        private class StateBossMonster는소멸준비 : TriggerState {
+            internal StateBossMonster는소멸준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    return new State보스몬스터는소멸준비01(context);
+                    return new StateBossMonster는소멸준비01(context);
                 }
 
                 return null;
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class State보스몬스터는소멸준비01 : TriggerState {
-            internal State보스몬스터는소멸준비01(ITriggerContext context) : base(context) { }
+        private class StateBossMonster는소멸준비01 : TriggerState {
+            internal StateBossMonster는소멸준비01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4014}, arg2: false);
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State보스몬스터는소멸준비02(context);
+                    return new StateBossMonster는소멸준비02(context);
                 }
 
                 return null;
@@ -117,8 +117,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class State보스몬스터는소멸준비02 : TriggerState {
-            internal State보스몬스터는소멸준비02(ITriggerContext context) : base(context) { }
+        private class StateBossMonster는소멸준비02 : TriggerState {
+            internal StateBossMonster는소멸준비02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4013}, arg2: false);
@@ -129,7 +129,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 11000)) {
-                    return new State보스몬스터는소멸(context);
+                    return new StateBossMonster는소멸(context);
                 }
 
                 return null;
@@ -138,8 +138,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class State보스몬스터는소멸 : TriggerState {
-            internal State보스몬스터는소멸(ITriggerContext context) : base(context) { }
+        private class StateBossMonster는소멸 : TriggerState {
+            internal StateBossMonster는소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5004}, arg2: true);
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State보스몬스터는소멸_01(context);
+                    return new StateBossMonster는소멸_01(context);
                 }
 
                 return null;
@@ -156,8 +156,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class State보스몬스터는소멸_01 : TriggerState {
-            internal State보스몬스터는소멸_01(ITriggerContext context) : base(context) { }
+        private class StateBossMonster는소멸_01 : TriggerState {
+            internal StateBossMonster는소멸_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {803});
@@ -242,7 +242,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -251,8 +251,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 02000051, arg2: 3);

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020101_bf {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 4, arg2: false, arg3: false, arg4: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1001})) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveBuff(arg1: 1003, arg2: 70002151, arg3: true);
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1002})) {
-                    return new State보스전_시작(context);
+                    return new StateBoss_시작(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnExit() { }
         }
 
-        private class State보스전_시작 : TriggerState {
-            internal State보스전_시작(ITriggerContext context) : base(context) { }
+        private class StateBoss_시작 : TriggerState {
+            internal StateBoss_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 23501001, illust: "Turned_Yuperia_normal", script: "$02020101_BF__MAIN__0$", duration: 5670, voice: @"ko/Npc/00002206");
@@ -63,15 +63,15 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101}) && context.GetDungeonPlayTime() < 420) {
-                    return new State보스전_성공(context);
+                    return new StateBoss_Success(context);
                 }
 
                 if (context.GetDungeonPlayTime() == 420) {
-                    return new State보스전_타임어택실패(context);
+                    return new StateBoss_타임어택실패(context);
                 }
 
                 if (context.GetUserValue(key: "SkillBreakFail") == 1) {
-                    return new State보스전_스킬브레이크실패(context);
+                    return new StateBoss_스킬브레이크실패(context);
                 }
 
                 return null;
@@ -80,8 +80,8 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnExit() { }
         }
 
-        private class State보스전_스킬브레이크실패 : TriggerState {
-            internal State보스전_스킬브레이크실패(ITriggerContext context) : base(context) { }
+        private class StateBoss_스킬브레이크실패 : TriggerState {
+            internal StateBoss_스킬브레이크실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonStopTimer();
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State보스전_리셋세팅(context);
+                    return new StateBoss_리셋세팅(context);
                 }
 
                 return null;
@@ -99,8 +99,8 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnExit() { }
         }
 
-        private class State보스전_타임어택실패 : TriggerState {
-            internal State보스전_타임어택실패(ITriggerContext context) : base(context) { }
+        private class StateBoss_타임어택실패 : TriggerState {
+            internal StateBoss_타임어택실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1});
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State보스전_타임어택실패세팅(context);
+                    return new StateBoss_타임어택실패세팅(context);
                 }
 
                 return null;
@@ -117,8 +117,8 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnExit() { }
         }
 
-        private class State보스전_리셋세팅 : TriggerState {
-            internal State보스전_리셋세팅(ITriggerContext context) : base(context) { }
+        private class StateBoss_리셋세팅 : TriggerState {
+            internal StateBoss_리셋세팅(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1});
@@ -129,14 +129,14 @@ namespace Maple2.Trigger._02020101_bf {
             }
 
             public override TriggerState Execute() {
-                return new State대기(context);
+                return new StateWait(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State보스전_타임어택실패세팅 : TriggerState {
-            internal State보스전_타임어택실패세팅(ITriggerContext context) : base(context) { }
+        private class StateBoss_타임어택실패세팅 : TriggerState {
+            internal StateBoss_타임어택실패세팅(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonSetEndTime();
@@ -151,8 +151,8 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnExit() { }
         }
 
-        private class State보스전_성공 : TriggerState {
-            internal State보스전_성공(ITriggerContext context) : base(context) { }
+        private class StateBoss_Success : TriggerState {
+            internal StateBoss_Success(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonMissionComplete(missionId: 23038005);
@@ -162,7 +162,7 @@ namespace Maple2.Trigger._02020101_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7940)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -171,8 +171,8 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1});

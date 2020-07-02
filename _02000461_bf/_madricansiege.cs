@@ -2,8 +2,8 @@ using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000461_bf {
     public static class _madricansiege {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99999102, key: "cannon02", value: 0);
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02000461_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State던전시작(context);
+                    return new StateDungeonInit(context);
                 }
 
                 return null;
@@ -69,8 +69,8 @@ namespace Maple2.Trigger._02000461_bf {
             public override void OnExit() { }
         }
 
-        private class State던전시작 : TriggerState {
-            internal State던전시작(ITriggerContext context) : base(context) { }
+        private class StateDungeonInit : TriggerState {
+            internal StateDungeonInit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1f);
@@ -163,7 +163,7 @@ namespace Maple2.Trigger._02000461_bf {
             public override TriggerState Execute() {
                 if (context.GetShadowExpeditionPoints() >= 1400) {
                     context.ShadowExpeditionCloseBossGauge();
-                    return new State보스등장_딜레이(context);
+                    return new StateBossSpawn_Delay(context);
                 }
 
                 return null;
@@ -172,8 +172,8 @@ namespace Maple2.Trigger._02000461_bf {
             public override void OnExit() { }
         }
 
-        private class State보스등장_딜레이 : TriggerState {
-            internal State보스등장_딜레이(ITriggerContext context) : base(context) { }
+        private class StateBossSpawn_Delay : TriggerState {
+            internal StateBossSpawn_Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2901, 2902, 2903, 2904, 2905}, arg2: false);
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._02000461_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State보스등장(context);
+                    return new StateBossSpawn(context);
                 }
 
                 return null;
@@ -190,8 +190,8 @@ namespace Maple2.Trigger._02000461_bf {
             public override void OnExit() { }
         }
 
-        private class State보스등장 : TriggerState {
-            internal State보스등장(ITriggerContext context) : base(context) { }
+        private class StateBossSpawn : TriggerState {
+            internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2099}, arg2: true);
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._02000461_bf {
 
             public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 2099) <= 0.50f) {
-                    return new State보스_버프패턴(context);
+                    return new StateBoss_BuffPattern(context);
                 }
 
                 return null;
@@ -208,8 +208,8 @@ namespace Maple2.Trigger._02000461_bf {
             public override void OnExit() { }
         }
 
-        private class State보스_버프패턴 : TriggerState {
-            internal State보스_버프패턴(ITriggerContext context) : base(context) { }
+        private class StateBoss_BuffPattern : TriggerState {
+            internal StateBoss_BuffPattern(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02000461_BF__MADRICANSIEGE__0$", arg3: 5000);
@@ -259,14 +259,14 @@ namespace Maple2.Trigger._02000461_bf {
             }
 
             public override TriggerState Execute() {
-                return new State종료(context);
+                return new StateEnd(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

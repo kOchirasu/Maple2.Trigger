@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000213_bf {
     public static class _scene01 {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {201});
@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {201})) {
-                    return new State연출시작(context);
+                    return new StateStartCinematic(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State연출시작 : TriggerState {
-            internal State연출시작(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic : TriggerState {
+            internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State레논등장(context);
+                    return new State레논Appear(context);
                 }
 
                 return null;
@@ -59,8 +59,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State레논등장 : TriggerState {
-            internal State레논등장(ITriggerContext context) : base(context) { }
+        private class State레논Appear : TriggerState {
+            internal State레논Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {203});
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State벨라등장(context);
+                    return new State벨라Appear(context);
                 }
 
                 return null;
@@ -98,8 +98,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State벨라등장 : TriggerState {
-            internal State벨라등장(ITriggerContext context) : base(context) { }
+        private class State벨라Appear : TriggerState {
+            internal State벨라Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {202});
@@ -150,7 +150,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State알론등장(context);
+                    return new State알론Appear(context);
                 }
 
                 return null;
@@ -159,8 +159,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State알론등장 : TriggerState {
-            internal State알론등장(ITriggerContext context) : base(context) { }
+        private class State알론Appear : TriggerState {
+            internal State알론Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {204});

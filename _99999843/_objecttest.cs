@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._99999843 {
     public static class _objecttest {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000401}, arg2: 1);
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._99999843 {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000148_bf {
     public static class _01_trigger02 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000170}, arg2: 1);
@@ -33,7 +33,7 @@ namespace Maple2.Trigger._02000148_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {95, 96, 97, 98})) {
-                    return new State유저감지(context);
+                    return new StateUserDetection(context);
                 }
 
                 return null;
@@ -42,8 +42,8 @@ namespace Maple2.Trigger._02000148_bf {
             public override void OnExit() { }
         }
 
-        private class State유저감지 : TriggerState {
-            internal State유저감지(ITriggerContext context) : base(context) { }
+        private class StateUserDetection : TriggerState {
+            internal StateUserDetection(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._02000148_bf {
 
             public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {402})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

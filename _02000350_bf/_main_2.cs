@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000350_bf {
     public static class _main_2 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {610, 620, 603, 6110, 6111, 6112, 6113, 6201}, arg2: false);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000350_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    return new State시작대기(context);
+                    return new StateBeginWait(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000350_bf {
             public override void OnExit() { }
         }
 
-        private class State시작대기 : TriggerState {
-            internal State시작대기(ITriggerContext context) : base(context) { }
+        private class StateBeginWait : TriggerState {
+            internal StateBeginWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 0, arg2: "6,10,6");
@@ -240,7 +240,7 @@ namespace Maple2.Trigger._02000350_bf {
                     context.SetSkill(arg1: new[] {703}, arg2: true);
                     context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219, 3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230, 3231, 3232, 3233, 3234, 3235}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.SetEventUI(arg1: 0, arg2: "0,0");
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -249,8 +249,8 @@ namespace Maple2.Trigger._02000350_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

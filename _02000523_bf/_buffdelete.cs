@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02000523_bf {
     public static class _buffdelete {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State기본셋팅(context);
+                    return new State기본Setting(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000523_bf {
             public override void OnExit() { }
         }
 
-        private class State기본셋팅 : TriggerState {
-            internal State기본셋팅(ITriggerContext context) : base(context) { }
+        private class State기본Setting : TriggerState {
+            internal State기본Setting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "MonsterMany", value: 0);
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02000523_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State트리거작동01(context);
+                    return new StateTrigger작동01(context);
                 }
 
                 return null;
@@ -35,14 +35,14 @@ namespace Maple2.Trigger._02000523_bf {
             public override void OnExit() { }
         }
 
-        private class State트리거작동01 : TriggerState {
-            internal State트리거작동01(ITriggerContext context) : base(context) { }
+        private class StateTrigger작동01 : TriggerState {
+            internal StateTrigger작동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BuffDeleteOk") == 1) {
-                    return new State트리거작동02대기중(context);
+                    return new StateTrigger작동02대기중(context);
                 }
 
                 return null;
@@ -51,14 +51,14 @@ namespace Maple2.Trigger._02000523_bf {
             public override void OnExit() { }
         }
 
-        private class State트리거작동02대기중 : TriggerState {
-            internal State트리거작동02대기중(ITriggerContext context) : base(context) { }
+        private class StateTrigger작동02대기중 : TriggerState {
+            internal StateTrigger작동02대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
-                    return new State트리거작동02(context);
+                    return new StateTrigger작동02(context);
                 }
 
                 return null;
@@ -67,14 +67,14 @@ namespace Maple2.Trigger._02000523_bf {
             public override void OnExit() { }
         }
 
-        private class State트리거작동02 : TriggerState {
-            internal State트리거작동02(ITriggerContext context) : base(context) { }
+        private class StateTrigger작동02 : TriggerState {
+            internal StateTrigger작동02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterMany") == 0) {
-                    return new State버프제거(context);
+                    return new StateBuffRemove(context);
                 }
 
                 return null;
@@ -83,8 +83,8 @@ namespace Maple2.Trigger._02000523_bf {
             public override void OnExit() { }
         }
 
-        private class State버프제거 : TriggerState {
-            internal State버프제거(ITriggerContext context) : base(context) { }
+        private class StateBuffRemove : TriggerState {
+            internal StateBuffRemove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {900}, arg2: 50001098, arg3: 1, arg4: true);
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._02000523_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3700)) {
-                    return new State트리거작동01(context);
+                    return new StateTrigger작동01(context);
                 }
 
                 return null;

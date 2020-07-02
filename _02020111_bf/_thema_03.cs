@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020111_bf {
     public static class _thema_03 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State몬스터등장(context);
+                    return new StateMonsterAppear(context);
                 }
 
                 return null;
@@ -32,8 +32,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터등장 : TriggerState {
-            internal State몬스터등장(ITriggerContext context) : base(context) { }
+        private class StateMonsterAppear : TriggerState {
+            internal StateMonsterAppear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {161, 162, 163, 164, 165, 166});
@@ -41,11 +41,11 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "monster_die") == 1) {
-                    return new State몬스터소멸(context);
+                    return new StateMonsterDestroy(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {161, 162, 163, 164, 165, 166})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -54,18 +54,18 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        private class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "monster_die") == 1) {
-                    return new State몬스터소멸(context);
+                    return new StateMonsterDestroy(context);
                 }
 
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new State몬스터등장(context);
+                    return new StateMonsterAppear(context);
                 }
 
                 return null;
@@ -74,8 +74,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터소멸 : TriggerState {
-            internal State몬스터소멸(ITriggerContext context) : base(context) { }
+        private class StateMonsterDestroy : TriggerState {
+            internal StateMonsterDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {161, 162, 163, 164, 165, 166});
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SkillBreakFail") == 1) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;

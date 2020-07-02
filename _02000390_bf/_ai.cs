@@ -7,11 +7,11 @@ namespace Maple2.Trigger._02000390_bf {
 
             public override TriggerState Execute() {
                 if (context.IsDungeonRoom()) {
-                    return new Stateidle(context);
+                    return new StateIdle(context);
                 }
 
                 if (!context.IsDungeonRoom()) {
-                    return new StatequestIdle(context);
+                    return new StateQuestIdle(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000390_bf {
             public override void OnExit() { }
         }
 
-        private class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        private class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
@@ -30,11 +30,11 @@ namespace Maple2.Trigger._02000390_bf {
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Ground") == 1) {
                     context.RemoveBuff(arg1: 701, arg2: 99910120);
-                    return new Stateready(context);
+                    return new StateReady(context);
                 }
 
                 if (context.WaitTick(waitTick: 500)) {
-                    return new Statebuff_01(context);
+                    return new StateBuff_01(context);
                 }
 
                 if (context.GetUserValue(key: "Ending") == 1) {
@@ -47,8 +47,8 @@ namespace Maple2.Trigger._02000390_bf {
             public override void OnExit() { }
         }
 
-        private class Statebuff_01 : TriggerState {
-            internal Statebuff_01(ITriggerContext context) : base(context) { }
+        private class StateBuff_01 : TriggerState {
+            internal StateBuff_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
@@ -57,11 +57,11 @@ namespace Maple2.Trigger._02000390_bf {
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Ground") == 1) {
                     context.RemoveBuff(arg1: 701, arg2: 99910120);
-                    return new Stateready(context);
+                    return new StateReady(context);
                 }
 
                 if (context.WaitTick(waitTick: 500)) {
-                    return new Stateidle(context);
+                    return new StateIdle(context);
                 }
 
                 if (context.GetUserValue(key: "Ending") == 1) {
@@ -74,8 +74,8 @@ namespace Maple2.Trigger._02000390_bf {
             public override void OnExit() { }
         }
 
-        private class StatequestIdle : TriggerState {
-            internal StatequestIdle(ITriggerContext context) : base(context) { }
+        private class StateQuestIdle : TriggerState {
+            internal StateQuestIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
@@ -92,11 +92,11 @@ namespace Maple2.Trigger._02000390_bf {
 
                 if (context.GetUserValue(key: "Ground") == 1) {
                     context.RemoveBuff(arg1: 701, arg2: 99910120);
-                    return new Stateready(context);
+                    return new StateReady(context);
                 }
 
                 if (context.WaitTick(waitTick: 500)) {
-                    return new StatequestIdle_buff_01(context);
+                    return new StateQuestIdle_buff_01(context);
                 }
 
                 if (context.GetUserValue(key: "Ending") == 1) {
@@ -109,8 +109,8 @@ namespace Maple2.Trigger._02000390_bf {
             public override void OnExit() { }
         }
 
-        private class StatequestIdle_buff_01 : TriggerState {
-            internal StatequestIdle_buff_01(ITriggerContext context) : base(context) { }
+        private class StateQuestIdle_buff_01 : TriggerState {
+            internal StateQuestIdle_buff_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {701}, arg2: 99910120, arg3: 1, arg4: false, arg5: false);
@@ -123,11 +123,11 @@ namespace Maple2.Trigger._02000390_bf {
 
                 if (context.GetUserValue(key: "Ground") == 1) {
                     context.RemoveBuff(arg1: 701, arg2: 99910120);
-                    return new Stateready(context);
+                    return new StateReady(context);
                 }
 
                 if (context.WaitTick(waitTick: 500)) {
-                    return new StatequestIdle(context);
+                    return new StateQuestIdle(context);
                 }
 
                 if (context.GetUserValue(key: "Ending") == 1) {
@@ -140,8 +140,8 @@ namespace Maple2.Trigger._02000390_bf {
             public override void OnExit() { }
         }
 
-        private class Stateready : TriggerState {
-            internal Stateready(ITriggerContext context) : base(context) { }
+        private class StateReady : TriggerState {
+            internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.EnableSpawnPointPc(spawnPointId: 11001, isEnable: false);
@@ -305,11 +305,11 @@ namespace Maple2.Trigger._02000390_bf {
 
             public override TriggerState Execute() {
                 if (context.IsDungeonRoom()) {
-                    return new StatedungeonEnd(context);
+                    return new StateDungeonEnd(context);
                 }
 
                 if (!context.IsDungeonRoom()) {
-                    return new StatequestEnd(context);
+                    return new StateQuestEnd(context);
                 }
 
                 return null;
@@ -318,8 +318,8 @@ namespace Maple2.Trigger._02000390_bf {
             public override void OnExit() { }
         }
 
-        private class StatedungeonEnd : TriggerState {
-            internal StatedungeonEnd(ITriggerContext context) : base(context) { }
+        private class StateDungeonEnd : TriggerState {
+            internal StateDungeonEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1004, 1005, 1006}, arg2: false);
@@ -342,8 +342,8 @@ namespace Maple2.Trigger._02000390_bf {
             public override void OnExit() { }
         }
 
-        private class StatequestEnd : TriggerState {
-            internal StatequestEnd(ITriggerContext context) : base(context) { }
+        private class StateQuestEnd : TriggerState {
+            internal StateQuestEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveBuff(arg1: 701, arg2: 99910120);

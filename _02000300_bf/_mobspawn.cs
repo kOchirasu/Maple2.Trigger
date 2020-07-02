@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02000300_bf {
     public static class _mobspawn {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {1099})) {
-                    return new State랜덤생성조건(context);
+                    return new StateRandomCreation조건(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1099})) {
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000300_bf {
             public override void OnExit() { }
         }
 
-        private class State랜덤생성조건 : TriggerState {
-            internal State랜덤생성조건(ITriggerContext context) : base(context) { }
+        private class StateRandomCreation조건 : TriggerState {
+            internal StateRandomCreation조건(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02000300_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "45")) {
-                    return new State생성(context);
+                    return new StateCreation(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1099})) {
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._02000300_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "50")) {
-                    return new State생성(context);
+                    return new StateCreation(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1099})) {
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._02000300_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "55")) {
-                    return new State생성(context);
+                    return new StateCreation(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1099})) {
@@ -123,7 +123,7 @@ namespace Maple2.Trigger._02000300_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "60")) {
-                    return new State생성(context);
+                    return new StateCreation(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1099})) {
@@ -136,8 +136,8 @@ namespace Maple2.Trigger._02000300_bf {
             public override void OnExit() { }
         }
 
-        private class State생성 : TriggerState {
-            internal State생성(ITriggerContext context) : base(context) { }
+        private class StateCreation : TriggerState {
+            internal StateCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 1099, arg3: "$02000300_BF__MOBSPAWN__0$", arg4: 2);
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._02000300_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1097, 1098})) {
-                    return new State랜덤생성조건(context);
+                    return new StateRandomCreation조건(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1099})) {

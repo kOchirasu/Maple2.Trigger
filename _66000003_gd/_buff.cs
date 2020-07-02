@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._66000003_gd {
     public static class _buff {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {104})) {
-                    return new State버프(context);
+                    return new StateBuff(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._66000003_gd {
             public override void OnExit() { }
         }
 
-        private class State버프 : TriggerState {
-            internal State버프(ITriggerContext context) : base(context) { }
+        private class StateBuff : TriggerState {
+            internal StateBuff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._66000003_gd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

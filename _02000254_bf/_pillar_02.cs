@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000254_bf {
     public static class _pillar_02 {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000441}, arg2: 0);
@@ -33,7 +33,7 @@ namespace Maple2.Trigger._02000254_bf {
                 }
 
                 if (!context.NpcDetected(arg1: 906, arg2: new[] {104})) {
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._02000254_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;

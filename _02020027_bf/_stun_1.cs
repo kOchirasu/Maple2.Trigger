@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02020027_bf {
     public static class _stun_1 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1001})) {
-                    return new State전투시작(context);
+                    return new StateBattleStart(context);
                 }
 
                 return null;
@@ -16,14 +16,14 @@ namespace Maple2.Trigger._02020027_bf {
             public override void OnExit() { }
         }
 
-        private class State전투시작 : TriggerState {
-            internal State전투시작(ITriggerContext context) : base(context) { }
+        private class StateBattleStart : TriggerState {
+            internal StateBattleStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "summon_3_1") == 1) {
-                    return new State버프(context);
+                    return new StateBuff(context);
                 }
 
                 return null;
@@ -32,14 +32,14 @@ namespace Maple2.Trigger._02020027_bf {
             public override void OnExit() { }
         }
 
-        private class State버프 : TriggerState {
-            internal State버프(ITriggerContext context) : base(context) { }
+        private class StateBuff : TriggerState {
+            internal StateBuff(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 11000)) {
-                    return new State버프_2(context);
+                    return new StateBuff_2(context);
                 }
 
                 return null;
@@ -48,8 +48,8 @@ namespace Maple2.Trigger._02020027_bf {
             public override void OnExit() { }
         }
 
-        private class State버프_2 : TriggerState {
-            internal State버프_2(ITriggerContext context) : base(context) { }
+        private class StateBuff_2 : TriggerState {
+            internal StateBuff_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 301, arg3: "$02020027_BF__stun_1__0$", arg4: 3, arg5: 0);
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02020027_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State버프_4(context);
+                    return new StateBuff_4(context);
                 }
 
                 return null;
@@ -67,8 +67,8 @@ namespace Maple2.Trigger._02020027_bf {
             public override void OnExit() { }
         }
 
-        private class State버프_4 : TriggerState {
-            internal State버프_4(ITriggerContext context) : base(context) { }
+        private class StateBuff_4 : TriggerState {
+            internal StateBuff_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 303, arg3: "$02020027_BF__stun_1__2$", arg4: 3, arg5: 0);
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._02020027_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State버프_5(context);
+                    return new StateBuff_5(context);
                 }
 
                 return null;
@@ -86,8 +86,8 @@ namespace Maple2.Trigger._02020027_bf {
             public override void OnExit() { }
         }
 
-        private class State버프_5 : TriggerState {
-            internal State버프_5(ITriggerContext context) : base(context) { }
+        private class StateBuff_5 : TriggerState {
+            internal StateBuff_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 305, arg3: "$02020027_BF__stun_1__4$", arg4: 3, arg5: 0);
@@ -95,22 +95,20 @@ namespace Maple2.Trigger._02020027_bf {
             }
 
             public override TriggerState Execute() {
-                return new State버프_제거(context);
+                return new StateBuff_Remove(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State버프_제거 : TriggerState {
-            internal State버프_제거(ITriggerContext context) : base(context) { }
+        private class StateBuff_Remove : TriggerState {
+            internal StateBuff_Remove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {201}, arg2: 62000002, arg3: 1, arg4: true);
             }
 
             public override TriggerState Execute() {
-                if (true) { }
-
                 return null;
             }
 

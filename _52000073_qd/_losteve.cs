@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._52000073_qd {
     public static class _losteve {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9900})) {
-                    return new State퀘스트조건체크(context);
+                    return new StateQuest조건체크(context);
                 }
 
                 return null;
@@ -16,14 +16,14 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnExit() { }
         }
 
-        private class State퀘스트조건체크 : TriggerState {
-            internal State퀘스트조건체크(ITriggerContext context) : base(context) { }
+        private class StateQuest조건체크 : TriggerState {
+            internal StateQuest조건체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001683}, arg3: new byte[] {3})) {
-                    return new State기본상태(context);
+                    return new StateBasic(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001683}, arg3: new byte[] {2})) {
@@ -51,23 +51,23 @@ namespace Maple2.Trigger._52000073_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001681}, arg3: new byte[] {2})) {
-                    return new State대원등장(context);
+                    return new State대원Appear(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001681}, arg3: new byte[] {1})) {
-                    return new State대원등장(context);
+                    return new State대원Appear(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001680}, arg3: new byte[] {3})) {
-                    return new State기본상태(context);
+                    return new StateBasic(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001680}, arg3: new byte[] {2})) {
-                    return new State기본상태(context);
+                    return new StateBasic(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001680}, arg3: new byte[] {1})) {
-                    return new State기본상태(context);
+                    return new StateBasic(context);
                 }
 
                 return null;
@@ -76,8 +76,8 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnExit() { }
         }
 
-        private class State기본상태 : TriggerState {
-            internal State기본상태(ITriggerContext context) : base(context) { }
+        private class StateBasic : TriggerState {
+            internal StateBasic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {401});
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9900})) {
-                    return new State퀘스트조건체크(context);
+                    return new StateQuest조건체크(context);
                 }
 
                 return null;
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    // return new State종료(context);
+                    // return new StateEnd(context);
                     return null;
                 }
 
@@ -113,8 +113,8 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnExit() { }
         }
 
-        private class State대원등장 : TriggerState {
-            internal State대원등장(ITriggerContext context) : base(context) { }
+        private class State대원Appear : TriggerState {
+            internal State대원Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._52000073_qd {
                 context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_2001");
                 context.AddCinematicTalk(npcId: 11003446, illustId: "0", msg: "$52000073_QD__LOSTEVE__0$", duration: 4000, align: "right");
                 context.FaceEmotion(spawnPointId: 101, emotionName: "Upset");
-                context.SetSceneSkip(arg1: "연출종료", arg2: "exit");
+                context.SetSceneSkip(arg1: "StopCinematic", arg2: "exit");
             }
 
             public override TriggerState Execute() {
@@ -165,7 +165,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State연출종료(context);
+                    return new StateStopCinematic(context);
                 }
 
                 return null;
@@ -174,8 +174,8 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnExit() { }
         }
 
-        private class State연출종료 : TriggerState {
-            internal State연출종료(ITriggerContext context) : base(context) { }
+        private class StateStopCinematic : TriggerState {
+            internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -186,7 +186,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    // return new State종료(context);
+                    // return new StateEnd(context);
                     return null;
                 }
 

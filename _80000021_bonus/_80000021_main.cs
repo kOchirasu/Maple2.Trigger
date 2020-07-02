@@ -29,7 +29,7 @@ namespace Maple2.Trigger._80000021_bonus {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State몬스터체크(context);
+                    return new StateMonster체크(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._80000021_bonus {
             public override void OnExit() { }
         }
 
-        private class State몬스터체크 : TriggerState {
-            internal State몬스터체크(ITriggerContext context) : base(context) { }
+        private class StateMonster체크 : TriggerState {
+            internal StateMonster체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 1, textId: 26300734, duration: 10000);

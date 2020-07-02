@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52100302_qd {
     public static class _field_5 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000322}, arg2: 2);
@@ -160,7 +160,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State마를레네_연출(context);
+                    return new State마를레네_Cinematic(context);
                 }
 
                 return null;
@@ -169,8 +169,8 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnExit() { }
         }
 
-        private class State마를레네_연출 : TriggerState {
-            internal State마를레네_연출(ITriggerContext context) : base(context) { }
+        private class State마를레네_Cinematic : TriggerState {
+            internal State마를레네_Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -182,7 +182,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State마를레네_연출_02(context);
+                    return new State마를레네_Cinematic_02(context);
                 }
 
                 return null;
@@ -191,8 +191,8 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnExit() { }
         }
 
-        private class State마를레네_연출_02 : TriggerState {
-            internal State마를레네_연출_02(ITriggerContext context) : base(context) { }
+        private class State마를레네_Cinematic_02 : TriggerState {
+            internal State마를레네_Cinematic_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -201,7 +201,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State마를레네_연출_03(context);
+                    return new State마를레네_Cinematic_03(context);
                 }
 
                 return null;
@@ -210,8 +210,8 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnExit() { }
         }
 
-        private class State마를레네_연출_03 : TriggerState {
-            internal State마를레네_연출_03(ITriggerContext context) : base(context) { }
+        private class State마를레네_Cinematic_03 : TriggerState {
+            internal State마를레네_Cinematic_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
@@ -221,7 +221,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State마를레네_연출_04(context);
+                    return new State마를레네_Cinematic_04(context);
                 }
 
                 return null;
@@ -230,8 +230,8 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnExit() { }
         }
 
-        private class State마를레네_연출_04 : TriggerState {
-            internal State마를레네_연출_04(ITriggerContext context) : base(context) { }
+        private class State마를레네_Cinematic_04 : TriggerState {
+            internal State마를레네_Cinematic_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
@@ -242,7 +242,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State마를레네_연출_05(context);
+                    return new State마를레네_Cinematic_05(context);
                 }
 
                 return null;
@@ -251,8 +251,8 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnExit() { }
         }
 
-        private class State마를레네_연출_05 : TriggerState {
-            internal State마를레네_연출_05(ITriggerContext context) : base(context) { }
+        private class State마를레네_Cinematic_05 : TriggerState {
+            internal State마를레네_Cinematic_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -260,7 +260,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State마를레네_연출_06(context);
+                    return new State마를레네_Cinematic_06(context);
                 }
 
                 return null;
@@ -269,8 +269,8 @@ namespace Maple2.Trigger._52100302_qd {
             public override void OnExit() { }
         }
 
-        private class State마를레네_연출_06 : TriggerState {
-            internal State마를레네_연출_06(ITriggerContext context) : base(context) { }
+        private class State마를레네_Cinematic_06 : TriggerState {
+            internal State마를레네_Cinematic_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000014_qd {
     public static class _collapse_2900 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    return new State로딩딜레이(context);
+                    return new State로딩Delay(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._52000014_qd {
             public override void OnExit() { }
         }
 
-        private class State로딩딜레이 : TriggerState {
-            internal State로딩딜레이(ITriggerContext context) : base(context) { }
+        private class State로딩Delay : TriggerState {
+            internal State로딩Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State카메라연출01(context);
+                    return new StateCamera연출01(context);
                 }
 
                 return null;
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._52000014_qd {
             public override void OnExit() { }
         }
 
-        private class State카메라연출01 : TriggerState {
-            internal State카메라연출01(ITriggerContext context) : base(context) { }
+        private class StateCamera연출01 : TriggerState {
+            internal StateCamera연출01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 2);
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State카메라연출02(context);
+                    return new StateCamera연출02(context);
                 }
 
                 return null;
@@ -79,19 +79,19 @@ namespace Maple2.Trigger._52000014_qd {
             public override void OnExit() { }
         }
 
-        private class State카메라연출02 : TriggerState {
-            internal State카메라연출02(ITriggerContext context) : base(context) { }
+        private class StateCamera연출02 : TriggerState {
+            internal StateCamera연출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "4", arg2: 4);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3, arg2: "$52000014_QD__COLLAPSE_2900__0$");
-                context.SetSkip(arg1: "카메라연출03");
+                context.SetSkip(arg1: "Camera연출03");
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    return new State카메라연출03(context);
+                    return new StateCamera연출03(context);
                 }
 
                 return null;
@@ -100,8 +100,8 @@ namespace Maple2.Trigger._52000014_qd {
             public override void OnExit() { }
         }
 
-        private class State카메라연출03 : TriggerState {
-            internal State카메라연출03(ITriggerContext context) : base(context) { }
+        private class StateCamera연출03 : TriggerState {
+            internal StateCamera연출03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 3);
@@ -221,99 +221,99 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001250}, arg3: new byte[] {2})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001251}, arg3: new byte[] {2})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001252}, arg3: new byte[] {2})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001253}, arg3: new byte[] {2})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001254}, arg3: new byte[] {2})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001255}, arg3: new byte[] {2})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001256}, arg3: new byte[] {2})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001257}, arg3: new byte[] {2})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001258}, arg3: new byte[] {2})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001259}, arg3: new byte[] {2})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001370}, arg3: new byte[] {2})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001371}, arg3: new byte[] {2})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001250}, arg3: new byte[] {3})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001251}, arg3: new byte[] {3})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001252}, arg3: new byte[] {3})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001253}, arg3: new byte[] {3})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001254}, arg3: new byte[] {3})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001255}, arg3: new byte[] {3})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001256}, arg3: new byte[] {3})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001257}, arg3: new byte[] {3})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001258}, arg3: new byte[] {3})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001259}, arg3: new byte[] {3})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001370}, arg3: new byte[] {3})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9004}, arg2: new[] {50001371}, arg3: new byte[] {3})) {
-                    return new State포털생성01(context);
+                    return new StatePortalCreation01(context);
                 }
 
                 return null;
@@ -322,22 +322,22 @@ namespace Maple2.Trigger._52000014_qd {
             public override void OnExit() { }
         }
 
-        private class State포털생성01 : TriggerState {
-            internal State포털생성01(ITriggerContext context) : base(context) { }
+        private class StatePortalCreation01 : TriggerState {
+            internal StatePortalCreation01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: false);
             }
 
             public override TriggerState Execute() {
-                return new State종료(context);
+                return new StateEnd(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {12900, 22900, 12901, 22901, 12902, 22902}, arg2: false);

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._99999912 {
     public static class _01_movetest {
-        public class StateInit : TriggerState {
-            internal StateInit(ITriggerContext context) : base(context) { }
+        public class StateSetup : TriggerState {
+            internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateFieldGame(type: "GuildVsGame");

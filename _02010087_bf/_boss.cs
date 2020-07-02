@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02010087_bf {
     public static class _boss {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7301, 7302, 7303, 7304, 7305, 7306, 7307, 7308, 7309}, arg2: false);
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._02010087_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000891}, arg2: 0)) {
-                    return new State클리어(context);
+                    return new StateClear(context);
                 }
 
                 return null;
@@ -113,8 +113,8 @@ namespace Maple2.Trigger._02010087_bf {
             }
         }
 
-        private class State클리어 : TriggerState {
-            internal State클리어(ITriggerContext context) : base(context) { }
+        private class StateClear : TriggerState {
+            internal StateClear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {201});
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._02010087_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._02010087_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -218,15 +218,15 @@ namespace Maple2.Trigger._02010087_bf {
             }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.DungeonClear();
-                    return new State종료_02(context);
+                    return new StateEnd_02(context);
                 }
 
                 return null;
@@ -235,8 +235,8 @@ namespace Maple2.Trigger._02010087_bf {
             public override void OnExit() { }
         }
 
-        private class State종료_02 : TriggerState {
-            internal State종료_02(ITriggerContext context) : base(context) { }
+        private class StateEnd_02 : TriggerState {
+            internal StateEnd_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 8001, arg2: false);

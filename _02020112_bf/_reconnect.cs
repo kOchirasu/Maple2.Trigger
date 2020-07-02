@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02020112_bf {
     public static class _reconnect {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Reconnect") == 1) {
-                    return new State버프쏴주기(context);
+                    return new StateBuff쏴주기(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnExit() { }
         }
 
-        private class State버프쏴주기 : TriggerState {
-            internal State버프쏴주기(ITriggerContext context) : base(context) { }
+        private class StateBuff쏴주기 : TriggerState {
+            internal StateBuff쏴주기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {916}, arg2: 70002105, arg3: 1, arg5: false);
@@ -26,11 +26,11 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Reconnect") == 2) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {931}, arg2: 70002112, arg3: 1, arg5: false);

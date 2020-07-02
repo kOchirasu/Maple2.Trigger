@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000331_bf {
     public static class _switch15 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000801}, arg2: 2);
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000801})) {
-                    return new State외다리재생성(context);
+                    return new State외다리재Creation(context);
                 }
 
                 return null;
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._02000331_bf {
             }
         }
 
-        private class State외다리재생성 : TriggerState {
-            internal State외다리재생성(ITriggerContext context) : base(context) { }
+        private class State외다리재Creation : TriggerState {
+            internal State외다리재Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {90008}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -118,8 +118,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

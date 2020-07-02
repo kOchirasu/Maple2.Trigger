@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010007_qd {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1001}, arg2: false);
@@ -30,7 +30,7 @@ namespace Maple2.Trigger._52010007_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State연출시작(context);
+                    return new StateStartCinematic(context);
                 }
 
                 return null;
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._52010007_qd {
             public override void OnExit() { }
         }
 
-        private class State연출시작 : TriggerState {
-            internal State연출시작(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic : TriggerState {
+            internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002_A");
@@ -288,7 +288,7 @@ namespace Maple2.Trigger._52010007_qd {
                     context.SetProductionUI(arg1: 2);
                     context.CameraSelect(arg1: 301, arg2: false);
                     context.SetAchievement(arg1: 100, arg2: "trigger", arg3: "Find_Lamestone");
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -297,8 +297,8 @@ namespace Maple2.Trigger._52010007_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

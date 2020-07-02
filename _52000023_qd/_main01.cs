@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000023_qd {
     public static class _main01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000, 5001, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009}, arg2: false);
@@ -12,7 +12,7 @@ namespace Maple2.Trigger._52000023_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {20002230}, arg3: new byte[] {1})) {
-                    return new State연출준비(context);
+                    return new StateSetupCinematic(context);
                 }
 
                 return null;
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._52000023_qd {
             public override void OnExit() { }
         }
 
-        private class State연출준비 : TriggerState {
-            internal State연출준비(ITriggerContext context) : base(context) { }
+        private class StateSetupCinematic : TriggerState {
+            internal StateSetupCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8100, 8101, 8102, 8103, 8104, 8105, 8106, 8107, 8108, 8109}, arg2: true);
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._52000023_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State전투시작(context);
+                    return new StateBattleStart(context);
                 }
 
                 return null;
@@ -147,8 +147,8 @@ namespace Maple2.Trigger._52000023_qd {
             }
         }
 
-        private class State전투시작 : TriggerState {
-            internal State전투시작(ITriggerContext context) : base(context) { }
+        private class StateBattleStart : TriggerState {
+            internal StateBattleStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
@@ -215,7 +215,7 @@ namespace Maple2.Trigger._52000023_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State이슈라대화01(context);
+                    return new StateIshura대화01(context);
                 }
 
                 return null;
@@ -224,18 +224,18 @@ namespace Maple2.Trigger._52000023_qd {
             public override void OnExit() { }
         }
 
-        private class State이슈라대화01 : TriggerState {
-            internal State이슈라대화01(ITriggerContext context) : base(context) { }
+        private class StateIshura대화01 : TriggerState {
+            internal StateIshura대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6003}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000023_QD__MAIN01__2$", arg4: 8, arg5: 0);
-                context.SetSkip(arg1: "이슈라대화02");
+                context.SetSkip(arg1: "Ishura대화02");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State이슈라대화02(context);
+                    return new StateIshura대화02(context);
                 }
 
                 return null;
@@ -246,19 +246,19 @@ namespace Maple2.Trigger._52000023_qd {
             }
         }
 
-        private class State이슈라대화02 : TriggerState {
-            internal State이슈라대화02(ITriggerContext context) : base(context) { }
+        private class StateIshura대화02 : TriggerState {
+            internal StateIshura대화02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6003}, arg2: false);
                 context.SetEffect(arg1: new[] {6004}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000023_QD__MAIN01__3$", arg4: 8, arg5: 0);
-                context.SetSkip(arg1: "이슈라대화03");
+                context.SetSkip(arg1: "Ishura대화03");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State이슈라대화03(context);
+                    return new StateIshura대화03(context);
                 }
 
                 return null;
@@ -269,19 +269,19 @@ namespace Maple2.Trigger._52000023_qd {
             }
         }
 
-        private class State이슈라대화03 : TriggerState {
-            internal State이슈라대화03(ITriggerContext context) : base(context) { }
+        private class StateIshura대화03 : TriggerState {
+            internal StateIshura대화03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6004}, arg2: false);
                 context.SetEffect(arg1: new[] {6005}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000023_QD__MAIN01__4$", arg4: 7, arg5: 0);
-                context.SetSkip(arg1: "이슈라대화04");
+                context.SetSkip(arg1: "Ishura대화04");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    return new State이슈라대화04(context);
+                    return new StateIshura대화04(context);
                 }
 
                 return null;
@@ -292,8 +292,8 @@ namespace Maple2.Trigger._52000023_qd {
             }
         }
 
-        private class State이슈라대화04 : TriggerState {
-            internal State이슈라대화04(ITriggerContext context) : base(context) { }
+        private class StateIshura대화04 : TriggerState {
+            internal StateIshura대화04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6005}, arg2: false);

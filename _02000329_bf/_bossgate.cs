@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02000329_bf {
     public static class _bossgate {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {710})) {
-                    return new State사다리가이드(context);
+                    return new StateLadderGuide(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000329_bf {
             public override void OnExit() { }
         }
 
-        private class State사다리가이드 : TriggerState {
-            internal State사다리가이드(ITriggerContext context) : base(context) { }
+        private class StateLadderGuide : TriggerState {
+            internal StateLadderGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000329_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

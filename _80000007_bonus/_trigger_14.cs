@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._80000007_bonus {
     public static class _trigger_14 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

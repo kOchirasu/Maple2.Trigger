@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02010052_bf {
     public static class _torchlight_02 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7010}, arg2: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {110})) {
-                    return new Stateburn_state(context);
+                    return new StateBurn_state(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02010052_bf {
             public override void OnExit() { }
         }
 
-        private class Stateburn_state : TriggerState {
-            internal Stateburn_state(ITriggerContext context) : base(context) { }
+        private class StateBurn_state : TriggerState {
+            internal StateBurn_state(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7502}, arg2: true);
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new Statespawn_state(context);
+                    return new StateSpawn_state(context);
                 }
 
                 return null;
@@ -40,8 +40,8 @@ namespace Maple2.Trigger._02010052_bf {
             public override void OnExit() { }
         }
 
-        private class Statespawn_state : TriggerState {
-            internal Statespawn_state(ITriggerContext context) : base(context) { }
+        private class StateSpawn_state : TriggerState {
+            internal StateSpawn_state(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 200);

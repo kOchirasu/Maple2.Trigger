@@ -301,7 +301,7 @@ namespace Maple2.Trigger._52000109_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State20002302퀘스트대기01(context);
+                    return new State20002302Quest대기01(context);
                 }
 
                 return null;
@@ -322,7 +322,7 @@ namespace Maple2.Trigger._52000109_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State20002302퀘스트대기01(context);
+                    return new State20002302Quest대기01(context);
                 }
 
                 return null;
@@ -331,8 +331,8 @@ namespace Maple2.Trigger._52000109_qd {
             public override void OnExit() { }
         }
 
-        private class State20002302퀘스트대기01 : TriggerState {
-            internal State20002302퀘스트대기01(ITriggerContext context) : base(context) { }
+        private class State20002302Quest대기01 : TriggerState {
+            internal State20002302Quest대기01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1.0f);
@@ -351,11 +351,11 @@ namespace Maple2.Trigger._52000109_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10010}, arg2: new[] {20002302}, arg3: new byte[] {3})) {
-                    return new State라딘등장씬01(context);
+                    return new State라딘Appear씬01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10010}, arg2: new[] {20002302}, arg3: new byte[] {2})) {
-                    return new State라딘등장씬01(context);
+                    return new State라딘Appear씬01(context);
                 }
 
                 return null;
@@ -364,8 +364,8 @@ namespace Maple2.Trigger._52000109_qd {
             public override void OnExit() { }
         }
 
-        private class State라딘등장씬01 : TriggerState {
-            internal State라딘등장씬01(ITriggerContext context) : base(context) { }
+        private class State라딘Appear씬01 : TriggerState {
+            internal State라딘Appear씬01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -375,7 +375,7 @@ namespace Maple2.Trigger._52000109_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State라딘등장씬02(context);
+                    return new State라딘Appear씬02(context);
                 }
 
                 return null;
@@ -384,8 +384,8 @@ namespace Maple2.Trigger._52000109_qd {
             public override void OnExit() { }
         }
 
-        private class State라딘등장씬02 : TriggerState {
-            internal State라딘등장씬02(ITriggerContext context) : base(context) { }
+        private class State라딘Appear씬02 : TriggerState {
+            internal State라딘Appear씬02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
@@ -396,7 +396,7 @@ namespace Maple2.Trigger._52000109_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State라딘등장씬03(context);
+                    return new State라딘Appear씬03(context);
                 }
 
                 return null;
@@ -405,8 +405,8 @@ namespace Maple2.Trigger._52000109_qd {
             public override void OnExit() { }
         }
 
-        private class State라딘등장씬03 : TriggerState {
-            internal State라딘등장씬03(ITriggerContext context) : base(context) { }
+        private class State라딘Appear씬03 : TriggerState {
+            internal State라딘Appear씬03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -416,7 +416,7 @@ namespace Maple2.Trigger._52000109_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State라딘등장씬04(context);
+                    return new State라딘Appear씬04(context);
                 }
 
                 return null;
@@ -425,8 +425,8 @@ namespace Maple2.Trigger._52000109_qd {
             public override void OnExit() { }
         }
 
-        private class State라딘등장씬04 : TriggerState {
-            internal State라딘등장씬04(ITriggerContext context) : base(context) { }
+        private class State라딘Appear씬04 : TriggerState {
+            internal State라딘Appear씬04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.FaceEmotion(spawnPointId: 200, emotionName: "hello_Cait");
@@ -435,7 +435,7 @@ namespace Maple2.Trigger._52000109_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    return new State라딘등장씬04_1(context);
+                    return new State라딘Appear씬04_1(context);
                 }
 
                 return null;
@@ -444,8 +444,8 @@ namespace Maple2.Trigger._52000109_qd {
             public override void OnExit() { }
         }
 
-        private class State라딘등장씬04_1 : TriggerState {
-            internal State라딘등장씬04_1(ITriggerContext context) : base(context) { }
+        private class State라딘Appear씬04_1 : TriggerState {
+            internal State라딘Appear씬04_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -453,7 +453,7 @@ namespace Maple2.Trigger._52000109_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State라딘등장씬05(context);
+                    return new State라딘Appear씬05(context);
                 }
 
                 return null;
@@ -472,7 +472,7 @@ namespace Maple2.Trigger._52000109_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State라딘등장씬05(context);
+                    return new State라딘Appear씬05(context);
                 }
 
                 return null;
@@ -481,8 +481,8 @@ namespace Maple2.Trigger._52000109_qd {
             public override void OnExit() { }
         }
 
-        private class State라딘등장씬05 : TriggerState {
-            internal State라딘등장씬05(ITriggerContext context) : base(context) { }
+        private class State라딘Appear씬05 : TriggerState {
+            internal State라딘Appear씬05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1.0f);

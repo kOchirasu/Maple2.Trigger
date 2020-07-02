@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000304_bf {
     public static class _move {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State몬스터체크(context);
+                    return new StateMonster체크(context);
                 }
 
                 return null;
@@ -18,14 +18,14 @@ namespace Maple2.Trigger._02000304_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터체크 : TriggerState {
-            internal State몬스터체크(ITriggerContext context) : base(context) { }
+        private class StateMonster체크 : TriggerState {
+            internal StateMonster체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {2001})) {
-                    return new State카운트랜덤(context);
+                    return new StateCountRandom(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._02000304_bf {
             public override void OnExit() { }
         }
 
-        private class State카운트랜덤 : TriggerState {
-            internal State카운트랜덤(ITriggerContext context) : base(context) { }
+        private class StateCountRandom : TriggerState {
+            internal StateCountRandom(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.TimeExpired(arg1: "90")) {
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.TimeExpired(arg1: "100")) {
@@ -115,7 +115,7 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.TimeExpired(arg1: "110")) {
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.TimeExpired(arg1: "120")) {
@@ -161,7 +161,7 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.TimeExpired(arg1: "2")) {
@@ -185,7 +185,7 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
@@ -233,13 +233,13 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
                     context.SetConversation(arg1: 1, arg2: 2001, arg3: "$02000304_BF__MOVE__4$", arg4: 1);
                     context.MoveRandomUser(arg1: 02000304, arg2: 14, arg3: 101, arg4: 1);
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -248,8 +248,8 @@ namespace Maple2.Trigger._02000304_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1800000", arg2: 1800000);
@@ -257,7 +257,7 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1800000")) {
-                    // return new State종료2(context);
+                    // return new StateEnd2(context);
                     return null;
                 }
 

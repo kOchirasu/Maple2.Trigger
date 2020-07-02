@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52100301_qd {
     public static class _3000042_phase_3_interect_02 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {200011, 200012, 200013, 200014}, arg2: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Phase_3_Interect_02") == 1) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52100301_qd {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {1003}, arg2: 62100168, arg3: 1);
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._52100301_qd {
                 }
 
                 if (context.GetUserValue(key: "Phase_3_Interect_02") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._52100301_qd {
                 }
 
                 if (context.GetUserValue(key: "Phase_3_Interect_02") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._52100301_qd {
                 }
 
                 if (context.GetUserValue(key: "Phase_3_Interect_02") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

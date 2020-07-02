@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020112_bf {
     public static class _button6 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ButtonSuccess") == 1) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {922})) {
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ButtonSuccess") == 1) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {922})) {
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 9906, arg2: false, arg3: "Interaction_Lapentafoothold_A01_On");

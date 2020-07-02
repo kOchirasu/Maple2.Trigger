@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020111_bf {
     public static class _skillbreakmission2 {
-        public class State대기1 : TriggerState {
-            internal State대기1(ITriggerContext context) : base(context) { }
+        public class StateWait1 : TriggerState {
+            internal StateWait1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002171, level: 1)) {
-                    return new State던전미션_스킬브레이크저지_성공1(context);
+                    return new State던전미션_스킬브레이크저지_Success1(context);
                 }
 
                 return null;
@@ -32,8 +32,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State던전미션_스킬브레이크저지_성공1 : TriggerState {
-            internal State던전미션_스킬브레이크저지_성공1(ITriggerContext context) : base(context) { }
+        private class State던전미션_스킬브레이크저지_Success1 : TriggerState {
+            internal State던전미션_스킬브레이크저지_Success1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonMissionComplete(missionId: 23039005);
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (!context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 62100016, level: 1)) {
-                    return new State대기2(context);
+                    return new StateWait2(context);
                 }
 
                 return null;
@@ -50,8 +50,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State대기2 : TriggerState {
-            internal State대기2(ITriggerContext context) : base(context) { }
+        private class StateWait2 : TriggerState {
+            internal StateWait2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002171, level: 1)) {
-                    return new State던전미션_스킬브레이크저지_성공2(context);
+                    return new State던전미션_스킬브레이크저지_Success2(context);
                 }
 
                 return null;
@@ -82,22 +82,22 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State던전미션_스킬브레이크저지_성공2 : TriggerState {
-            internal State던전미션_스킬브레이크저지_성공2(ITriggerContext context) : base(context) { }
+        private class State던전미션_스킬브레이크저지_Success2 : TriggerState {
+            internal State던전미션_스킬브레이크저지_Success2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonMissionComplete(missionId: 23039005);
             }
 
             public override TriggerState Execute() {
-                return new State종료(context);
+                return new StateEnd(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

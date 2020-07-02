@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000545_bf {
     public static class _egg2 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02000545_bf {
 
             public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 102) <= 0.30f) {
-                    return new State알메쉬생성(context);
+                    return new State알메쉬Creation(context);
                 }
 
                 return null;
@@ -32,8 +32,8 @@ namespace Maple2.Trigger._02000545_bf {
             public override void OnExit() { }
         }
 
-        private class State알메쉬생성 : TriggerState {
-            internal State알메쉬생성(ITriggerContext context) : base(context) { }
+        private class State알메쉬Creation : TriggerState {
+            internal State알메쉬Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 23300010, illust: "ArakiaDark_normal", duration: 4000, script: "$02000545_BF__EGG2__0$");
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._02000545_bf {
                 }
 
                 if (context.MonsterDead(arg1: new[] {505, 507})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02000545_bf {
                 }
 
                 if (context.MonsterDead(arg1: new[] {505, 507})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -97,7 +97,7 @@ namespace Maple2.Trigger._02000545_bf {
                 }
 
                 if (context.MonsterDead(arg1: new[] {505, 507})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -106,8 +106,8 @@ namespace Maple2.Trigger._02000545_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {2150, 2151}, arg2: false);

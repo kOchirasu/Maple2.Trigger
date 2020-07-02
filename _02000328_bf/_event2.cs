@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000328_bf {
     public static class _event2 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {101}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._02000328_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "100")) {
-                    return new State종료2(context);
+                    return new StateEnd2(context);
                 }
 
                 return null;
@@ -84,8 +84,8 @@ namespace Maple2.Trigger._02000328_bf {
             public override void OnExit() { }
         }
 
-        private class State종료2 : TriggerState {
-            internal State종료2(ITriggerContext context) : base(context) { }
+        private class StateEnd2 : TriggerState {
+            internal StateEnd2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 20003281);

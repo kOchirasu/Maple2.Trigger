@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._80000013_bonus {
     public static class _wave_01 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 702, arg2: new[] {199})) {
-                    return new State생성랜덤(context);
+                    return new StateCreationRandom(context);
                 }
 
                 return new State1차타이머(context);
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._80000013_bonus {
             public override void OnExit() { }
         }
 
-        private class State대기시간 : TriggerState {
-            internal State대기시간(ITriggerContext context) : base(context) { }
+        private class StateWaitTime : TriggerState {
+            internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._80000013_bonus {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State생성랜덤(context);
+                    return new StateCreationRandom(context);
                 }
 
                 return null;
@@ -56,46 +56,46 @@ namespace Maple2.Trigger._80000013_bonus {
             public override void OnExit() { }
         }
 
-        private class State생성랜덤 : TriggerState {
-            internal State생성랜덤(ITriggerContext context) : base(context) { }
+        private class StateCreationRandom : TriggerState {
+            internal StateCreationRandom(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 3f)) {
-                    return new State1번생성(context);
+                    return new State1TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 3f)) {
-                    return new State2번생성(context);
+                    return new State2TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 3f)) {
-                    return new State3번생성(context);
+                    return new State3TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 3f)) {
-                    return new State4번생성(context);
+                    return new State4TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 3f)) {
-                    return new State5번생성(context);
+                    return new State5TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 3f)) {
-                    return new State6번생성(context);
+                    return new State6TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 3f)) {
-                    return new State7번생성(context);
+                    return new State7TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 3f)) {
-                    return new State8번생성(context);
+                    return new State8TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 3f)) {
-                    return new State9번생성(context);
+                    return new State9TimedCreation(context);
                 }
 
                 return null;
@@ -104,127 +104,127 @@ namespace Maple2.Trigger._80000013_bonus {
             public override void OnExit() { }
         }
 
-        private class State1번생성 : TriggerState {
-            internal State1번생성(ITriggerContext context) : base(context) { }
+        private class State1TimedCreation : TriggerState {
+            internal State1TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: true);
             }
 
             public override TriggerState Execute() {
-                return new State대기시간(context);
+                return new StateWaitTime(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State2번생성 : TriggerState {
-            internal State2번생성(ITriggerContext context) : base(context) { }
+        private class State2TimedCreation : TriggerState {
+            internal State2TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {102}, arg2: true);
             }
 
             public override TriggerState Execute() {
-                return new State대기시간(context);
+                return new StateWaitTime(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State3번생성 : TriggerState {
-            internal State3번생성(ITriggerContext context) : base(context) { }
+        private class State3TimedCreation : TriggerState {
+            internal State3TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {103}, arg2: true);
             }
 
             public override TriggerState Execute() {
-                return new State대기시간(context);
+                return new StateWaitTime(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State4번생성 : TriggerState {
-            internal State4번생성(ITriggerContext context) : base(context) { }
+        private class State4TimedCreation : TriggerState {
+            internal State4TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {104}, arg2: true);
             }
 
             public override TriggerState Execute() {
-                return new State대기시간(context);
+                return new StateWaitTime(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State5번생성 : TriggerState {
-            internal State5번생성(ITriggerContext context) : base(context) { }
+        private class State5TimedCreation : TriggerState {
+            internal State5TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {105}, arg2: true);
             }
 
             public override TriggerState Execute() {
-                return new State대기시간(context);
+                return new StateWaitTime(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State6번생성 : TriggerState {
-            internal State6번생성(ITriggerContext context) : base(context) { }
+        private class State6TimedCreation : TriggerState {
+            internal State6TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {106}, arg2: true);
             }
 
             public override TriggerState Execute() {
-                return new State대기시간(context);
+                return new StateWaitTime(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State7번생성 : TriggerState {
-            internal State7번생성(ITriggerContext context) : base(context) { }
+        private class State7TimedCreation : TriggerState {
+            internal State7TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {107}, arg2: true);
             }
 
             public override TriggerState Execute() {
-                return new State대기시간(context);
+                return new StateWaitTime(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State8번생성 : TriggerState {
-            internal State8번생성(ITriggerContext context) : base(context) { }
+        private class State8TimedCreation : TriggerState {
+            internal State8TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {108}, arg2: true);
             }
 
             public override TriggerState Execute() {
-                return new State대기시간(context);
+                return new StateWaitTime(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State9번생성 : TriggerState {
-            internal State9번생성(ITriggerContext context) : base(context) { }
+        private class State9TimedCreation : TriggerState {
+            internal State9TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {109}, arg2: true);
             }
 
             public override TriggerState Execute() {
-                return new State대기시간(context);
+                return new StateWaitTime(context);
             }
 
             public override void OnExit() { }

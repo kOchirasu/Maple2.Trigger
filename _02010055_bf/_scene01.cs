@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02010055_bf {
     public static class _scene01 {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {699}, arg2: false);
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnExit() { }
         }
 
-        private class State종료준비 : TriggerState {
-            internal State종료준비(ITriggerContext context) : base(context) { }
+        private class StateEnd준비 : TriggerState {
+            internal StateEnd준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -86,14 +86,14 @@ namespace Maple2.Trigger._02010055_bf {
             }
 
             public override TriggerState Execute() {
-                return new State종료(context);
+                return new StateEnd(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: false);

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020112_bf {
     public static class _room2 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990015, key: "Extinction_2_check", value: 0);
@@ -9,11 +9,11 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "EliteDead") == 1) {
-                    return new State종료2(context);
+                    return new StateEnd2(context);
                 }
 
                 if (context.GetUserValue(key: "Extinction") == 1 && context.GetUserValue(key: "Extinction_1_check") == 1) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -22,8 +22,8 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02020112_BF__ROOM2__0$", arg3: 3000);
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "EliteDead") == 1) {
-                    return new State종료2(context);
+                    return new StateEnd2(context);
                 }
 
                 if (context.WaitTick(waitTick: 3000)) {
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "EliteDead") == 1) {
-                    return new State종료2(context);
+                    return new StateEnd2(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {181, 182, 183})) {
@@ -85,10 +85,10 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "EliteDead") == 1) {
-                    return new State종료2(context);
+                    return new StateEnd2(context);
                 }
 
-                return new State종료(context);
+                return new StateEnd(context);
             }
 
             public override void OnExit() { }
@@ -103,17 +103,17 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "EliteDead") == 1) {
-                    return new State종료2(context);
+                    return new StateEnd2(context);
                 }
 
-                return new State종료(context);
+                return new StateEnd(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990015, key: "Extinction_2_check", value: 2);
@@ -131,8 +131,8 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnExit() { }
         }
 
-        private class State종료2 : TriggerState {
-            internal State종료2(ITriggerContext context) : base(context) { }
+        private class StateEnd2 : TriggerState {
+            internal StateEnd2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

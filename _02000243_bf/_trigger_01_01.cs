@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000243_bf {
     public static class _trigger_01_01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {705, 706}, arg2: true);
@@ -12,7 +12,7 @@ namespace Maple2.Trigger._02000243_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 201) == 1) {
-                    return new State몹생성(context);
+                    return new StateMobCreation(context);
                 }
 
                 return null;
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._02000243_bf {
             public override void OnExit() { }
         }
 
-        private class State몹생성 : TriggerState {
-            internal State몹생성(ITriggerContext context) : base(context) { }
+        private class StateMobCreation : TriggerState {
+            internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {711, 712}, arg2: true);
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._02000243_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {601})) {
-                    return new State통과딜레이(context);
+                    return new State통과Delay(context);
                 }
 
                 return null;
@@ -40,8 +40,8 @@ namespace Maple2.Trigger._02000243_bf {
             public override void OnExit() { }
         }
 
-        private class State통과딜레이 : TriggerState {
-            internal State통과딜레이(ITriggerContext context) : base(context) { }
+        private class State통과Delay : TriggerState {
+            internal State통과Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 999, arg2: "trigger", arg3: "GoldenTower2nd");

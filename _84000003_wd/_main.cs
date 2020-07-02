@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._84000003_wd {
     public static class _main {
-        public class State시작_타이머설정 : TriggerState {
-            internal State시작_타이머설정(ITriggerContext context) : base(context) { }
+        public class StateStart_타이머설정 : TriggerState {
+            internal StateStart_타이머설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "4000", arg2: 300, arg3: true, arg4: false);
@@ -9,14 +9,14 @@ namespace Maple2.Trigger._84000003_wd {
             }
 
             public override TriggerState Execute() {
-                return new State카메라세팅(context);
+                return new StateCamera세팅(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State카메라세팅 : TriggerState {
-            internal State카메라세팅(ITriggerContext context) : base(context) { }
+        private class StateCamera세팅 : TriggerState {
+            internal StateCamera세팅(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPhotoStudio(isEnable: true);

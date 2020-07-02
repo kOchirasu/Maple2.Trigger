@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000004_qd {
     public static class _brick_04 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3104}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {114})) {
-                    return new State발판01(context);
+                    return new StateSetup01(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnExit() { }
         }
 
-        private class State발판01 : TriggerState {
-            internal State발판01(ITriggerContext context) : base(context) { }
+        private class StateSetup01 : TriggerState {
+            internal StateSetup01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._52000004_qd {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
                     context.SetMesh(arg1: new[] {3104}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State대기시간(context);
+                    return new StateWaitTime(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnExit() { }
         }
 
-        private class State대기시간 : TriggerState {
-            internal State대기시간(ITriggerContext context) : base(context) { }
+        private class StateWaitTime : TriggerState {
+            internal StateWaitTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "10", arg2: 10);
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

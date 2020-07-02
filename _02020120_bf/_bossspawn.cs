@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020120_bf {
     public static class _bossspawn {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1920, 1921, 1922, 1923, 1924, 1925, 1926, 1927, 1928, 1929, 1930, 1931, 1932, 1933, 1934, 1935, 1936, 1937}, arg2: false);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    return new State보스등장(context);
+                    return new StateBossSpawn(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State보스등장 : TriggerState {
-            internal State보스등장(ITriggerContext context) : base(context) { }
+        private class StateBossSpawn : TriggerState {
+            internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonResetTime(seconds: 720);
@@ -33,11 +33,11 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "DungeonReset") == 1) {
-                    return new State던전초기화진행(context);
+                    return new State던전Reset진행(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    return new State종료딜레이(context);
+                    return new StateEndDelay(context);
                 }
 
                 if (context.DungeonTimeOut()) {
@@ -54,8 +54,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State던전초기화진행 : TriggerState {
-            internal State던전초기화진행(ITriggerContext context) : base(context) { }
+        private class State던전Reset진행 : TriggerState {
+            internal State던전Reset진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 02020120, arg2: 9903);
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    return new State던전초기화시간등각종설정(context);
+                    return new State던전Reset시간등각종설정(context);
                 }
 
                 return null;
@@ -75,8 +75,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State던전초기화시간등각종설정 : TriggerState {
-            internal State던전초기화시간등각종설정(ITriggerContext context) : base(context) { }
+        private class State던전Reset시간등각종설정 : TriggerState {
+            internal State던전Reset시간등각종설정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonStopTimer();
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    return new State보스등장(context);
+                    return new StateBossSpawn(context);
                 }
 
                 return null;
@@ -94,8 +94,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State종료딜레이 : TriggerState {
-            internal State종료딜레이(ITriggerContext context) : base(context) { }
+        private class StateEndDelay : TriggerState {
+            internal StateEndDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 23000113, illust: "Ishura_Dark_Idle", script: "$02020120_BF__BOSSSPAWN__2$", duration: 6576, voice: @"ko/Npc/00002194");
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._02020120_bf {
                     context.DungeonClear();
                     context.DungeonSetEndTime();
                     context.SetAchievement(arg3: "IshuraDungeonClear");
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -129,7 +129,7 @@ namespace Maple2.Trigger._02020120_bf {
                     context.SetSkill(arg1: new[] {2222, 1212}, arg2: false);
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.DungeonFail();
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -138,8 +138,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2101, arg2: true, arg3: true, arg4: true);

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._61000010_me {
     public static class _wall01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000042}, arg2: 1);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._61000010_me {
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {12000042}, arg2: 0)) {
                     context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State쿨타임(context);
+                    return new StateCoolTime(context);
                 }
 
                 return null;
@@ -20,14 +20,14 @@ namespace Maple2.Trigger._61000010_me {
             public override void OnExit() { }
         }
 
-        private class State쿨타임 : TriggerState {
-            internal State쿨타임(ITriggerContext context) : base(context) { }
+        private class StateCoolTime : TriggerState {
+            internal StateCoolTime(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._61000010_me {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

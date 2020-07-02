@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {4000005})) {
-                    return new State몬스터리젠(context);
+                    return new StateMonster리젠(context);
                 }
 
                 if (context.GetUserValue(key: "respawn_phase_1_end") == 1) {
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnExit() { }
         }
 
-        private class State몬스터리젠 : TriggerState {
-            internal State몬스터리젠(ITriggerContext context) : base(context) { }
+        private class StateMonster리젠 : TriggerState {
+            internal StateMonster리젠(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {4000007}, arg2: false);

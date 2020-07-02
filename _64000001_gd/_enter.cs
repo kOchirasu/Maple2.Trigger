@@ -8,12 +8,8 @@ namespace Maple2.Trigger._64000001_gd {
             }
 
             public override TriggerState Execute() {
-                if (true) {
-                    context.SetPvpZone(arg1: 101, arg2: 30, arg3: 120, arg4: 90001002, arg5: 4, arg6: new byte[] {102, 103, 112, 113, 10, 11, 1, 3});
+                context.SetPvpZone(arg1: 101, arg2: 30, arg3: 120, arg4: 90001002, arg5: 4, arg6: new byte[] {102, 103, 112, 113, 10, 11, 1, 3});
                     return new StatePvP종료(context);
-                }
-
-                return null;
             }
 
             public override void OnExit() { }

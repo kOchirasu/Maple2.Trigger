@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1000})) {
-                    return new State퀘스트체크(context);
+                    return new StateQuest체크(context);
                 }
 
                 return null;
@@ -18,14 +18,14 @@ namespace Maple2.Trigger._52100105_qd {
             public override void OnExit() { }
         }
 
-        private class State퀘스트체크 : TriggerState {
-            internal State퀘스트체크(ITriggerContext context) : base(context) { }
+        private class StateQuest체크 : TriggerState {
+            internal StateQuest체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {3})) {
-                    return new State시작암전1(context);
+                    return new StateStart암전1(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {2})) {
@@ -42,8 +42,8 @@ namespace Maple2.Trigger._52100105_qd {
             public override void OnExit() { }
         }
 
-        private class State시작암전1 : TriggerState {
-            internal State시작암전1(ITriggerContext context) : base(context) { }
+        private class StateStart암전1 : TriggerState {
+            internal StateStart암전1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {600, 601}, arg2: false);
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State클라디아생성1(context);
+                    return new State클라디아Creation1(context);
                 }
 
                 return null;
@@ -151,8 +151,8 @@ namespace Maple2.Trigger._52100105_qd {
             public override void OnExit() { }
         }
 
-        private class State클라디아생성1 : TriggerState {
-            internal State클라디아생성1(ITriggerContext context) : base(context) { }
+        private class State클라디아Creation1 : TriggerState {
+            internal State클라디아Creation1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {500}, arg2: false);
@@ -268,11 +268,11 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
-                    return new State클라디아생성2(context);
+                    return new State클라디아Creation2(context);
                 }
 
                 if (context.WaitTick(waitTick: 12000)) {
-                    return new State클라디아생성2(context);
+                    return new State클라디아Creation2(context);
                 }
 
                 return null;
@@ -281,8 +281,8 @@ namespace Maple2.Trigger._52100105_qd {
             public override void OnExit() { }
         }
 
-        private class State클라디아생성2 : TriggerState {
-            internal State클라디아생성2(ITriggerContext context) : base(context) { }
+        private class State클라디아Creation2 : TriggerState {
+            internal State클라디아Creation2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {500}, arg2: false);

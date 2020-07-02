@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000410_bf {
                 if (context.WaitTick(waitTick: 28000)) {
                     context.SetEventUI(arg1: 1, arg2: "$02000410_BF__BARRICADE_GIVEUP_0$", arg3: 5000);
                     context.DungeonEnableGiveUp(isEnable: true);
-                    return new State입구포탈제거(context);
+                    return new State입구PortalRemove(context);
                 }
 
                 return null;
@@ -36,15 +36,15 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnExit() { }
         }
 
-        private class State입구포탈제거 : TriggerState {
-            internal State입구포탈제거(ITriggerContext context) : base(context) { }
+        private class State입구PortalRemove : TriggerState {
+            internal State입구PortalRemove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
                     context.SetPortal(arg1: 3, arg2: false, arg3: false, arg4: false);
-                    return new State보스HP체크(context);
+                    return new StateBossHP체크(context);
                 }
 
                 return null;
@@ -53,8 +53,8 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnExit() { }
         }
 
-        private class State보스HP체크 : TriggerState {
-            internal State보스HP체크(ITriggerContext context) : base(context) { }
+        private class StateBossHP체크 : TriggerState {
+            internal StateBossHP체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -92,8 +92,8 @@ namespace Maple2.Trigger._02000410_bf {
             }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

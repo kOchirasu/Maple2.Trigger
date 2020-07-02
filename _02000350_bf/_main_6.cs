@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000350_bf {
     public static class _main_6 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3601}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000350_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {106})) {
-                    return new State시작대기(context);
+                    return new StateBeginWait(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000350_bf {
             public override void OnExit() { }
         }
 
-        private class State시작대기 : TriggerState {
-            internal State시작대기(ITriggerContext context) : base(context) { }
+        private class StateBeginWait : TriggerState {
+            internal StateBeginWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6601}, arg2: true);
@@ -221,7 +221,7 @@ namespace Maple2.Trigger._02000350_bf {
                     context.DestroyMonster(arg1: new[] {130001});
                     context.DarkStreamClearRound(round: 30);
                     context.SetAchievement(arg1: 106, arg2: "trigger", arg3: "30roundpass");
-                    return new State성공(context);
+                    return new StateSuccess(context);
                 }
 
                 return null;
@@ -230,8 +230,8 @@ namespace Maple2.Trigger._02000350_bf {
             public override void OnExit() { }
         }
 
-        private class State성공 : TriggerState {
-            internal State성공(ITriggerContext context) : base(context) { }
+        private class StateSuccess : TriggerState {
+            internal StateSuccess(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 0, arg2: "0,0");
@@ -241,7 +241,7 @@ namespace Maple2.Trigger._02000350_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State포털생성(context);
+                    return new StatePortalCreation(context);
                 }
 
                 return null;
@@ -250,8 +250,8 @@ namespace Maple2.Trigger._02000350_bf {
             public override void OnExit() { }
         }
 
-        private class State포털생성 : TriggerState {
-            internal State포털생성(ITriggerContext context) : base(context) { }
+        private class StatePortalCreation : TriggerState {
+            internal StatePortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02000350_BF__MAIN_6__2$", arg3: 2500, arg4: "0");

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000039_qd {
     public static class _main {
-        public class Stateready : TriggerState {
-            internal Stateready(ITriggerContext context) : base(context) { }
+        public class StateReady : TriggerState {
+            internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
@@ -65,77 +65,77 @@ namespace Maple2.Trigger._52000039_qd {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
                     context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
-                    return new Statescene_c_01(context);
+                    return new StateScene_c_01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {2})) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
                     context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
-                    return new Statescene_c_01(context);
+                    return new StateScene_c_01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {1})) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
                     context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
-                    return new Statescene_c_01(context);
+                    return new StateScene_c_01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002634}, arg3: new byte[] {3})) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
                     context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
-                    return new Statescene_b_07(context);
+                    return new StateScene_b_07(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002634}, arg3: new byte[] {2})) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
                     context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
-                    return new Statescene_b_07(context);
+                    return new StateScene_b_07(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {1})) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
                     context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
-                    return new Statescene_c_01(context);
+                    return new StateScene_c_01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002633}, arg3: new byte[] {1})) {
-                    return new Stateready_02(context);
+                    return new StateReady_02(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002633}, arg3: new byte[] {2})) {
                     context.CreateMonster(arg1: new[] {101}, arg2: true);
-                    return new Statescene_b_01(context);
+                    return new StateScene_b_01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002633}, arg3: new byte[] {3})) {
                     context.CreateMonster(arg1: new[] {101}, arg2: true);
-                    return new Statescene_b_01(context);
+                    return new StateScene_b_01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002634}, arg3: new byte[] {1})) {
                     context.CreateMonster(arg1: new[] {101}, arg2: true);
                     context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2001");
                     context.CreateMonster(arg1: new[] {122}, arg2: true);
-                    return new Statescene_b_02(context);
+                    return new StateScene_b_02(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {2})) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
                     context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
-                    return new Statescene_c_01(context);
+                    return new StateScene_c_01(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {701}, arg2: 110)) {
                     context.SetActor(arg1: 3001, arg2: true, arg3: "sf_fi_funct_door_A01_Opened");
                     context.SetMesh(arg1: new[] {6001, 6010}, arg2: false);
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
-                    return new Statescene_c_01(context);
+                    return new StateScene_c_01(context);
                 }
 
                 return null;
@@ -144,8 +144,8 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnExit() { }
         }
 
-        private class Stateready_02 : TriggerState {
-            internal Stateready_02(ITriggerContext context) : base(context) { }
+        private class StateReady_02 : TriggerState {
+            internal StateReady_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {201, 202, 203}, arg2: false);
@@ -154,7 +154,7 @@ namespace Maple2.Trigger._52000039_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {702}, arg2: new[] {40002633}, arg3: new byte[] {1})) {
-                    return new Statestart(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -163,8 +163,8 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnExit() { }
         }
 
-        private class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -176,7 +176,7 @@ namespace Maple2.Trigger._52000039_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new Statestart_02(context);
+                    return new StateStart_02(context);
                 }
 
                 return null;
@@ -185,8 +185,8 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnExit() { }
         }
 
-        private class Statestart_02 : TriggerState {
-            internal Statestart_02(ITriggerContext context) : base(context) { }
+        private class StateStart_02 : TriggerState {
+            internal StateStart_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 5);
@@ -198,7 +198,7 @@ namespace Maple2.Trigger._52000039_qd {
                     context.SetProductionUI(arg1: 0);
                     context.SetProductionUI(arg1: 2);
                     context.CameraSelect(arg1: 7001, arg2: false);
-                    return new Statestart_03(context);
+                    return new StateStart_03(context);
                 }
 
                 return null;
@@ -207,8 +207,8 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnExit() { }
         }
 
-        private class Statestart_03 : TriggerState {
-            internal Statestart_03(ITriggerContext context) : base(context) { }
+        private class StateStart_03 : TriggerState {
+            internal StateStart_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20020030, textId: 20020030);
@@ -218,7 +218,7 @@ namespace Maple2.Trigger._52000039_qd {
                 if (context.MonsterDead(arg1: new[] {201, 202, 203})) {
                     context.DestroyMonster(arg1: new[] {102});
                     context.HideGuideSummary(entityId: 20020030);
-                    return new Statescene_b_01(context);
+                    return new StateScene_b_01(context);
                 }
 
                 return null;
@@ -227,8 +227,8 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_b_01 : TriggerState {
-            internal Statescene_b_01(ITriggerContext context) : base(context) { }
+        private class StateScene_b_01 : TriggerState {
+            internal StateScene_b_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "beyondroid2");
@@ -239,7 +239,7 @@ namespace Maple2.Trigger._52000039_qd {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002634}, arg3: new byte[] {1})) {
                     context.DestroyMonster(arg1: new[] {112});
                     context.CreateMonster(arg1: new[] {122}, arg2: true);
-                    return new Statescene_b_02(context);
+                    return new StateScene_b_02(context);
                 }
 
                 return null;
@@ -248,8 +248,8 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_b_02 : TriggerState {
-            internal Statescene_b_02(ITriggerContext context) : base(context) { }
+        private class StateScene_b_02 : TriggerState {
+            internal StateScene_b_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 122, arg2: "MS2PatrolData_2004");
@@ -265,7 +265,7 @@ namespace Maple2.Trigger._52000039_qd {
                     context.CameraSelect(arg1: 7002, arg2: true);
                     context.MoveUser(arg1: 52000039, arg2: 3);
                     context.SetMesh(arg1: new[] {6010}, arg2: false);
-                    return new Statescene_b_03(context);
+                    return new StateScene_b_03(context);
                 }
 
                 return null;
@@ -274,8 +274,8 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_b_03 : TriggerState {
-            internal Statescene_b_03(ITriggerContext context) : base(context) { }
+        private class StateScene_b_03 : TriggerState {
+            internal StateScene_b_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 122, arg2: "MS2PatrolData_2006");
@@ -285,7 +285,7 @@ namespace Maple2.Trigger._52000039_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new Statescene_b_04(context);
+                    return new StateScene_b_04(context);
                 }
 
                 return null;
@@ -294,8 +294,8 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_b_04 : TriggerState {
-            internal Statescene_b_04(ITriggerContext context) : base(context) { }
+        private class StateScene_b_04 : TriggerState {
+            internal StateScene_b_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 7003, arg2: true);
@@ -306,7 +306,7 @@ namespace Maple2.Trigger._52000039_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new Statescene_b_05(context);
+                    return new StateScene_b_05(context);
                 }
 
                 return null;
@@ -315,8 +315,8 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_b_05 : TriggerState {
-            internal Statescene_b_05(ITriggerContext context) : base(context) { }
+        private class StateScene_b_05 : TriggerState {
+            internal StateScene_b_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 3010, arg2: true, arg3: "Attack_01_D");
@@ -324,7 +324,7 @@ namespace Maple2.Trigger._52000039_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 650)) {
-                    return new Statescene_b_06(context);
+                    return new StateScene_b_06(context);
                 }
 
                 return null;
@@ -333,8 +333,8 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_b_06 : TriggerState {
-            internal Statescene_b_06(ITriggerContext context) : base(context) { }
+        private class StateScene_b_06 : TriggerState {
+            internal StateScene_b_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 2);
@@ -346,7 +346,7 @@ namespace Maple2.Trigger._52000039_qd {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetActor(arg1: 3010, arg2: false, arg3: "Idle_A");
                     context.CreateMonster(arg1: new[] {210}, arg2: true);
-                    return new Statescene_b_07(context);
+                    return new StateScene_b_07(context);
                 }
 
                 return null;
@@ -355,8 +355,8 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_b_07 : TriggerState {
-            internal Statescene_b_07(ITriggerContext context) : base(context) { }
+        private class StateScene_b_07 : TriggerState {
+            internal StateScene_b_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20020031, textId: 20020031);
@@ -370,7 +370,7 @@ namespace Maple2.Trigger._52000039_qd {
                     context.HideGuideSummary(entityId: 20020031);
                     context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "beyondguard");
                     context.DestroyMonster(arg1: new[] {101, 122});
-                    return new Statescene_b_08(context);
+                    return new StateScene_b_08(context);
                 }
 
                 return null;
@@ -379,8 +379,8 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_b_08 : TriggerState {
-            internal Statescene_b_08(ITriggerContext context) : base(context) { }
+        private class StateScene_b_08 : TriggerState {
+            internal StateScene_b_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {111, 132}, arg2: true);
@@ -388,7 +388,7 @@ namespace Maple2.Trigger._52000039_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 300)) {
-                    return new Statescene_b_09(context);
+                    return new StateScene_b_09(context);
                 }
 
                 return null;
@@ -397,8 +397,8 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_b_09 : TriggerState {
-            internal Statescene_b_09(ITriggerContext context) : base(context) { }
+        private class StateScene_b_09 : TriggerState {
+            internal StateScene_b_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 132, arg3: "$52000039_QD__MAIN__4$", arg4: 3);
@@ -408,7 +408,7 @@ namespace Maple2.Trigger._52000039_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new Statescene_b_10(context);
+                    return new StateScene_b_10(context);
                 }
 
                 return null;
@@ -417,8 +417,8 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_b_10 : TriggerState {
-            internal Statescene_b_10(ITriggerContext context) : base(context) { }
+        private class StateScene_b_10 : TriggerState {
+            internal StateScene_b_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 132, arg3: "$52000039_QD__MAIN__5$", arg4: 3);
@@ -428,7 +428,7 @@ namespace Maple2.Trigger._52000039_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {701}, arg2: new[] {40002635}, arg3: new byte[] {1})) {
-                    return new Statescene_c_01(context);
+                    return new StateScene_c_01(context);
                 }
 
                 return null;
@@ -437,8 +437,8 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_c_01 : TriggerState {
-            internal Statescene_c_01(ITriggerContext context) : base(context) { }
+        private class StateScene_c_01 : TriggerState {
+            internal StateScene_c_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 132, arg3: "$52000039_QD__MAIN__6$", arg4: 3);
@@ -448,7 +448,7 @@ namespace Maple2.Trigger._52000039_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new Statescene_c_02(context);
+                    return new StateScene_c_02(context);
                 }
 
                 return null;
@@ -457,8 +457,8 @@ namespace Maple2.Trigger._52000039_qd {
             public override void OnExit() { }
         }
 
-        private class Statescene_c_02 : TriggerState {
-            internal Statescene_c_02(ITriggerContext context) : base(context) { }
+        private class StateScene_c_02 : TriggerState {
+            internal StateScene_c_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);

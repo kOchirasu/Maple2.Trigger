@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02010086_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 707) == 1) {
-                    return new State레이저_02_생성(context);
+                    return new State레이저_02_Creation(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._02010086_bf {
             public override void OnExit() { }
         }
 
-        private class State레이저_02_생성 : TriggerState {
-            internal State레이저_02_생성(ITriggerContext context) : base(context) { }
+        private class State레이저_02_Creation : TriggerState {
+            internal State레이저_02_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {998}, arg2: true);
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02010086_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 708) == 1) {
-                    return new State레이저_03_생성(context);
+                    return new State레이저_03_Creation(context);
                 }
 
                 return null;
@@ -52,8 +52,8 @@ namespace Maple2.Trigger._02010086_bf {
             public override void OnExit() { }
         }
 
-        private class State레이저_03_생성 : TriggerState {
-            internal State레이저_03_생성(ITriggerContext context) : base(context) { }
+        private class State레이저_03_Creation : TriggerState {
+            internal State레이저_03_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {995}, arg2: true);

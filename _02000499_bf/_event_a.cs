@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000499_bf {
     public static class _event_a {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102, 103, 104}, arg2: false);
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._02000499_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    return new Stateidle(context);
+                    return new StateIdle(context);
                 }
 
                 return null;

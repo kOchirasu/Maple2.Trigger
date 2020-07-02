@@ -2,8 +2,8 @@ using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000313_bf {
     public static class _bossspawn {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -53,8 +53,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013, 3014, 3015}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -150,11 +150,11 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10102})) {
-                    return new State2차전투딜레이(context);
+                    return new State2차전투Delay(context);
                 }
 
                 if (context.MonsterInCombat(arg1: new[] {2002})) {
-                    return new State2차전투딜레이(context);
+                    return new State2차전투Delay(context);
                 }
 
                 return null;
@@ -163,8 +163,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State2차전투딜레이 : TriggerState {
-            internal State2차전투딜레이(ITriggerContext context) : base(context) { }
+        private class State2차전투Delay : TriggerState {
+            internal State2차전투Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -238,11 +238,11 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10103})) {
-                    return new State3차전투딜레이(context);
+                    return new State3차전투Delay(context);
                 }
 
                 if (context.MonsterInCombat(arg1: new[] {2003})) {
-                    return new State3차전투딜레이(context);
+                    return new State3차전투Delay(context);
                 }
 
                 return null;
@@ -251,8 +251,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State3차전투딜레이 : TriggerState {
-            internal State3차전투딜레이(ITriggerContext context) : base(context) { }
+        private class State3차전투Delay : TriggerState {
+            internal State3차전투Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -282,7 +282,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2003})) {
-                    return new State보스등장연출(context);
+                    return new StateBossSpawnCinematic(context);
                 }
 
                 return null;
@@ -291,8 +291,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State보스등장연출 : TriggerState {
-            internal State보스등장연출(ITriggerContext context) : base(context) { }
+        private class StateBossSpawnCinematic : TriggerState {
+            internal StateBossSpawnCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 30001, arg2: true);
@@ -302,7 +302,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State보스등장연출2(context);
+                    return new StateBossSpawnCinematic2(context);
                 }
 
                 return null;
@@ -311,8 +311,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State보스등장연출2 : TriggerState {
-            internal State보스등장연출2(ITriggerContext context) : base(context) { }
+        private class StateBossSpawnCinematic2 : TriggerState {
+            internal StateBossSpawnCinematic2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1099, 1005});
@@ -321,7 +321,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State보스등장연출3(context);
+                    return new StateBossSpawnCinematic3(context);
                 }
 
                 return null;
@@ -330,8 +330,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State보스등장연출3 : TriggerState {
-            internal State보스등장연출3(ITriggerContext context) : base(context) { }
+        private class StateBossSpawnCinematic3 : TriggerState {
+            internal StateBossSpawnCinematic3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 1101, arg2: "Dead_A", arg3: 9000f);
@@ -348,7 +348,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State보스전투시작(context);
+                    return new StateBossCombatStart(context);
                 }
 
                 return null;
@@ -364,8 +364,8 @@ namespace Maple2.Trigger._02000313_bf {
             }
         }
 
-        private class State보스전투시작 : TriggerState {
-            internal State보스전투시작(ITriggerContext context) : base(context) { }
+        private class StateBossCombatStart : TriggerState {
+            internal StateBossCombatStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -374,7 +374,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State보스전투시작2(context);
+                    return new StateBossCombatStart2(context);
                 }
 
                 return null;
@@ -383,8 +383,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State보스전투시작2 : TriggerState {
-            internal State보스전투시작2(ITriggerContext context) : base(context) { }
+        private class StateBossCombatStart2 : TriggerState {
+            internal StateBossCombatStart2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -393,7 +393,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2099})) {
-                    return new State퀘스트체크(context);
+                    return new StateQuest체크(context);
                 }
 
                 return null;
@@ -402,18 +402,18 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트체크 : TriggerState {
-            internal State퀘스트체크(ITriggerContext context) : base(context) { }
+        private class StateQuest체크 : TriggerState {
+            internal StateQuest체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.IsDungeonRoom()) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (!context.IsDungeonRoom()) {
-                    return new State퀘스트코드확인(context);
+                    return new StateQuest코드확인(context);
                 }
 
                 return null;
@@ -422,8 +422,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonClear();
@@ -439,8 +439,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트코드확인 : TriggerState {
-            internal State퀘스트코드확인(ITriggerContext context) : base(context) { }
+        private class StateQuest코드확인 : TriggerState {
+            internal StateQuest코드확인(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -452,15 +452,15 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9997}, arg2: new[] {10003105}, arg3: new byte[] {2})) {
-                    return new State퀘스트연출_시작(context);
+                    return new StateQuest연출_시작(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9998}, arg2: new[] {10003105}, arg3: new byte[] {2})) {
-                    return new State퀘스트연출_시작(context);
+                    return new StateQuest연출_시작(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9999}, arg2: new[] {10003105}, arg3: new byte[] {2})) {
-                    return new State퀘스트연출_시작(context);
+                    return new StateQuest연출_시작(context);
                 }
 
                 return null;
@@ -469,8 +469,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_시작 : TriggerState {
-            internal State퀘스트연출_시작(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_시작 : TriggerState {
+            internal StateQuest연출_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -482,7 +482,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    return new State퀘스트연출_상황보여주기_01(context);
+                    return new StateQuest연출_상황보여주기_01(context);
                 }
 
                 return null;
@@ -491,8 +491,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_01 : TriggerState {
-            internal State퀘스트연출_상황보여주기_01(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_01 : TriggerState {
+            internal StateQuest연출_상황보여주기_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "퀘스트연출끝_이동", arg2: "exit");
@@ -508,7 +508,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State퀘스트연출_상황보여주기_02(context);
+                    return new StateQuest연출_상황보여주기_02(context);
                 }
 
                 return null;
@@ -517,8 +517,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_02 : TriggerState {
-            internal State퀘스트연출_상황보여주기_02(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_02 : TriggerState {
+            internal StateQuest연출_상황보여주기_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4012}, arg2: false);
@@ -530,7 +530,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State퀘스트연출_상황보여주기_03(context);
+                    return new StateQuest연출_상황보여주기_03(context);
                 }
 
                 return null;
@@ -539,8 +539,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_03 : TriggerState {
-            internal State퀘스트연출_상황보여주기_03(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_03 : TriggerState {
+            internal StateQuest연출_상황보여주기_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4014}, arg2: false);
@@ -552,7 +552,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State퀘스트연출_상황보여주기_04_1(context);
+                    return new StateQuest연출_상황보여주기_04_1(context);
                 }
 
                 return null;
@@ -561,8 +561,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_04_1 : TriggerState {
-            internal State퀘스트연출_상황보여주기_04_1(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_04_1 : TriggerState {
+            internal StateQuest연출_상황보여주기_04_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.FaceEmotion(spawnPointId: 203, emotionName: "Trigger_Danger");
@@ -573,7 +573,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    return new State퀘스트연출_상황보여주기_04_2(context);
+                    return new StateQuest연출_상황보여주기_04_2(context);
                 }
 
                 return null;
@@ -582,8 +582,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_04_2 : TriggerState {
-            internal State퀘스트연출_상황보여주기_04_2(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_04_2 : TriggerState {
+            internal StateQuest연출_상황보여주기_04_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4011}, arg2: false);
@@ -596,7 +596,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State퀘스트연출_상황보여주기_04(context);
+                    return new StateQuest연출_상황보여주기_04(context);
                 }
 
                 return null;
@@ -605,8 +605,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_04 : TriggerState {
-            internal State퀘스트연출_상황보여주기_04(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_04 : TriggerState {
+            internal StateQuest연출_상황보여주기_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.FaceEmotion(spawnPointId: 201, emotionName: "Talk");
@@ -615,7 +615,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State퀘스트연출_상황보여주기_05(context);
+                    return new StateQuest연출_상황보여주기_05(context);
                 }
 
                 return null;
@@ -624,8 +624,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_05 : TriggerState {
-            internal State퀘스트연출_상황보여주기_05(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_05 : TriggerState {
+            internal StateQuest연출_상황보여주기_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4013}, arg2: false);
@@ -635,7 +635,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State퀘스트연출_상황보여주기_06(context);
+                    return new StateQuest연출_상황보여주기_06(context);
                 }
 
                 return null;
@@ -644,8 +644,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_06 : TriggerState {
-            internal State퀘스트연출_상황보여주기_06(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_06 : TriggerState {
+            internal StateQuest연출_상황보여주기_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4013}, arg2: false);
@@ -656,7 +656,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State퀘스트연출_상황보여주기_07(context);
+                    return new StateQuest연출_상황보여주기_07(context);
                 }
 
                 return null;
@@ -665,8 +665,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_07 : TriggerState {
-            internal State퀘스트연출_상황보여주기_07(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_07 : TriggerState {
+            internal StateQuest연출_상황보여주기_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4014}, arg2: false);
@@ -675,7 +675,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State퀘스트연출_상황보여주기_08(context);
+                    return new StateQuest연출_상황보여주기_08(context);
                 }
 
                 return null;
@@ -684,8 +684,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_08 : TriggerState {
-            internal State퀘스트연출_상황보여주기_08(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_08 : TriggerState {
+            internal StateQuest연출_상황보여주기_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4018}, arg2: false);
@@ -697,7 +697,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State퀘스트연출_상황보여주기_09(context);
+                    return new StateQuest연출_상황보여주기_09(context);
                 }
 
                 return null;
@@ -706,8 +706,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_09 : TriggerState {
-            internal State퀘스트연출_상황보여주기_09(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_09 : TriggerState {
+            internal StateQuest연출_상황보여주기_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4013}, arg2: false);
@@ -718,7 +718,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State퀘스트연출_상황보여주기_10(context);
+                    return new StateQuest연출_상황보여주기_10(context);
                 }
 
                 return null;
@@ -727,8 +727,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_10 : TriggerState {
-            internal State퀘스트연출_상황보여주기_10(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_10 : TriggerState {
+            internal StateQuest연출_상황보여주기_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4014}, arg2: false);
@@ -741,7 +741,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State퀘스트연출_상황보여주기_10_1(context);
+                    return new StateQuest연출_상황보여주기_10_1(context);
                 }
 
                 return null;
@@ -750,8 +750,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_10_1 : TriggerState {
-            internal State퀘스트연출_상황보여주기_10_1(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_10_1 : TriggerState {
+            internal StateQuest연출_상황보여주기_10_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4013}, arg2: false);
@@ -765,7 +765,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    return new State퀘스트연출_상황보여주기_11(context);
+                    return new StateQuest연출_상황보여주기_11(context);
                 }
 
                 return null;
@@ -774,8 +774,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_11 : TriggerState {
-            internal State퀘스트연출_상황보여주기_11(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_11 : TriggerState {
+            internal StateQuest연출_상황보여주기_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "ChatUp_A");
@@ -787,7 +787,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State퀘스트연출_상황보여주기_11_1(context);
+                    return new StateQuest연출_상황보여주기_11_1(context);
                 }
 
                 return null;
@@ -796,8 +796,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_11_1 : TriggerState {
-            internal State퀘스트연출_상황보여주기_11_1(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_11_1 : TriggerState {
+            internal StateQuest연출_상황보여주기_11_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4014}, arg2: false);
@@ -807,7 +807,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State퀘스트연출_상황보여주기_11_2(context);
+                    return new StateQuest연출_상황보여주기_11_2(context);
                 }
 
                 return null;
@@ -816,8 +816,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_11_2 : TriggerState {
-            internal State퀘스트연출_상황보여주기_11_2(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_11_2 : TriggerState {
+            internal StateQuest연출_상황보여주기_11_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4018}, arg2: false);
@@ -826,7 +826,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State퀘스트연출_상황보여주기_11_3(context);
+                    return new StateQuest연출_상황보여주기_11_3(context);
                 }
 
                 return null;
@@ -835,8 +835,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_11_3 : TriggerState {
-            internal State퀘스트연출_상황보여주기_11_3(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_11_3 : TriggerState {
+            internal StateQuest연출_상황보여주기_11_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Bore_A");
@@ -848,7 +848,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new State퀘스트연출_상황보여주기_11_4_1(context);
+                    return new StateQuest연출_상황보여주기_11_4_1(context);
                 }
 
                 return null;
@@ -857,8 +857,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_11_4_1 : TriggerState {
-            internal State퀘스트연출_상황보여주기_11_4_1(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_11_4_1 : TriggerState {
+            internal StateQuest연출_상황보여주기_11_4_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.FaceEmotion(spawnPointId: 201, emotionName: "Trigger_Proud");
@@ -867,7 +867,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6060)) {
-                    return new State퀘스트연출_상황보여주기_11_4(context);
+                    return new StateQuest연출_상황보여주기_11_4(context);
                 }
 
                 return null;
@@ -876,8 +876,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_11_4 : TriggerState {
-            internal State퀘스트연출_상황보여주기_11_4(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_11_4 : TriggerState {
+            internal StateQuest연출_상황보여주기_11_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4019}, arg2: false);
@@ -889,7 +889,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State퀘스트연출_상황보여주기_12(context);
+                    return new StateQuest연출_상황보여주기_12(context);
                 }
 
                 return null;
@@ -898,8 +898,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_12 : TriggerState {
-            internal State퀘스트연출_상황보여주기_12(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_12 : TriggerState {
+            internal StateQuest연출_상황보여주기_12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4014}, arg2: false);
@@ -909,7 +909,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State퀘스트연출_상황보여주기_13(context);
+                    return new StateQuest연출_상황보여주기_13(context);
                 }
 
                 return null;
@@ -918,8 +918,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_상황보여주기_13 : TriggerState {
-            internal State퀘스트연출_상황보여주기_13(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_상황보여주기_13 : TriggerState {
+            internal StateQuest연출_상황보여주기_13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4018}, arg2: false);
@@ -935,7 +935,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    return new State퀘스트연출_마지막전투_01(context);
+                    return new StateQuest연출_마지막전투_01(context);
                 }
 
                 return null;
@@ -944,8 +944,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_마지막전투_01 : TriggerState {
-            internal State퀘스트연출_마지막전투_01(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_마지막전투_01 : TriggerState {
+            internal StateQuest연출_마지막전투_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4020}, arg2: false);
@@ -957,7 +957,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State퀘스트연출_마지막전투_02(context);
+                    return new StateQuest연출_마지막전투_02(context);
                 }
 
                 return null;
@@ -966,8 +966,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_마지막전투_02 : TriggerState {
-            internal State퀘스트연출_마지막전투_02(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_마지막전투_02 : TriggerState {
+            internal StateQuest연출_마지막전투_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4017}, arg2: false);
@@ -980,7 +980,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6500)) {
-                    return new State퀘스트연출_마지막전투_03(context);
+                    return new StateQuest연출_마지막전투_03(context);
                 }
 
                 return null;
@@ -989,8 +989,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_마지막전투_03 : TriggerState {
-            internal State퀘스트연출_마지막전투_03(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_마지막전투_03 : TriggerState {
+            internal StateQuest연출_마지막전투_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: false);
@@ -1001,7 +1001,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State퀘스트연출_마지막전투_03_1(context);
+                    return new StateQuest연출_마지막전투_03_1(context);
                 }
 
                 return null;
@@ -1010,8 +1010,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_마지막전투_03_1 : TriggerState {
-            internal State퀘스트연출_마지막전투_03_1(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_마지막전투_03_1 : TriggerState {
+            internal StateQuest연출_마지막전투_03_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4017}, arg2: false);
@@ -1024,7 +1024,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State퀘스트연출_마지막전투_04(context);
+                    return new StateQuest연출_마지막전투_04(context);
                 }
 
                 return null;
@@ -1033,8 +1033,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_마지막전투_04 : TriggerState {
-            internal State퀘스트연출_마지막전투_04(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_마지막전투_04 : TriggerState {
+            internal StateQuest연출_마지막전투_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -1050,7 +1050,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State퀘스트연출_마지막전투_05(context);
+                    return new StateQuest연출_마지막전투_05(context);
                 }
 
                 return null;
@@ -1059,8 +1059,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_마지막전투_05 : TriggerState {
-            internal State퀘스트연출_마지막전투_05(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_마지막전투_05 : TriggerState {
+            internal StateQuest연출_마지막전투_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
@@ -1070,7 +1070,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State퀘스트연출_마지막전투_06(context);
+                    return new StateQuest연출_마지막전투_06(context);
                 }
 
                 return null;
@@ -1079,8 +1079,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_마지막전투_06 : TriggerState {
-            internal State퀘스트연출_마지막전투_06(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_마지막전투_06 : TriggerState {
+            internal StateQuest연출_마지막전투_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
@@ -1091,7 +1091,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State퀘스트연출_마지막전투_07(context);
+                    return new StateQuest연출_마지막전투_07(context);
                 }
 
                 return null;
@@ -1100,8 +1100,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_마지막전투_07 : TriggerState {
-            internal State퀘스트연출_마지막전투_07(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_마지막전투_07 : TriggerState {
+            internal StateQuest연출_마지막전투_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 9, arg2: "$02000313_BF__BOSSSPAWN__86$", arg3: false);
@@ -1109,7 +1109,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State퀘스트연출_마지막전투_08(context);
+                    return new StateQuest연출_마지막전투_08(context);
                 }
 
                 return null;
@@ -1118,8 +1118,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출_마지막전투_08 : TriggerState {
-            internal State퀘스트연출_마지막전투_08(ITriggerContext context) : base(context) { }
+        private class StateQuest연출_마지막전투_08 : TriggerState {
+            internal StateQuest연출_마지막전투_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -1127,7 +1127,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State퀘스트연출끝_이동(context);
+                    return new StateQuest연출끝_이동(context);
                 }
 
                 return null;
@@ -1136,8 +1136,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트연출끝_이동 : TriggerState {
-            internal State퀘스트연출끝_이동(ITriggerContext context) : base(context) { }
+        private class StateQuest연출끝_이동 : TriggerState {
+            internal StateQuest연출끝_이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: true);

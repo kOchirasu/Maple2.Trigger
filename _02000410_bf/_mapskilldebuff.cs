@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 750) == 1) {
-                    return new State전투시작(context);
+                    return new StateBattleStart(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnExit() { }
         }
 
-        private class State전투시작 : TriggerState {
-            internal State전투시작(ITriggerContext context) : base(context) { }
+        private class StateBattleStart : TriggerState {
+            internal StateBattleStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._02000410_bf {
                 }
 
                 if (!context.NpcDetected(arg1: 700, arg2: new[] {0})) {
-                    return new State스킬끄기(context);
+                    return new StateSkill끄기(context);
                 }
 
                 return null;
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._02000410_bf {
                 }
 
                 if (!context.NpcDetected(arg1: 700, arg2: new[] {0})) {
-                    return new State스킬끄기(context);
+                    return new StateSkill끄기(context);
                 }
 
                 return null;
@@ -69,11 +69,11 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonPlayTime() == 900) {
-                    return new State스킬끄기(context);
+                    return new StateSkill끄기(context);
                 }
 
                 if (!context.NpcDetected(arg1: 700, arg2: new[] {0})) {
-                    return new State스킬끄기(context);
+                    return new StateSkill끄기(context);
                 }
 
                 return null;
@@ -82,8 +82,8 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnExit() { }
         }
 
-        private class State스킬끄기 : TriggerState {
-            internal State스킬끄기(ITriggerContext context) : base(context) { }
+        private class StateSkill끄기 : TriggerState {
+            internal StateSkill끄기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {444, 666}, arg2: false);
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -101,8 +101,8 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

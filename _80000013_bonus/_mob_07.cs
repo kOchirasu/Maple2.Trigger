@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._80000013_bonus {
     public static class _mob_07 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {701})) {
-                    return new Statestart(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._80000013_bonus {
             public override void OnExit() { }
         }
 
-        private class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {107}, arg2: false);
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._80000013_bonus {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {107})) {
-                    return new Statewait(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -34,18 +34,18 @@ namespace Maple2.Trigger._80000013_bonus {
             public override void OnExit() { }
         }
 
-        private class Statewait : TriggerState {
-            internal Statewait(ITriggerContext context) : base(context) { }
+        private class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {701})) {
-                    return new Statestart(context);
+                    return new StateStart(context);
                 }
 
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new Stateidle(context);
+                    return new StateIdle(context);
                 }
 
                 return null;
@@ -54,8 +54,8 @@ namespace Maple2.Trigger._80000013_bonus {
             public override void OnExit() { }
         }
 
-        private class Stateend : TriggerState {
-            internal Stateend(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

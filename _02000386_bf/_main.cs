@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000386_bf {
     public static class _main {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetGravity(gravity: 55f);
@@ -16,7 +16,7 @@ namespace Maple2.Trigger._02000386_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {701})) {
-                    return new Stateready(context);
+                    return new StateReady(context);
                 }
 
                 return null;
@@ -25,14 +25,14 @@ namespace Maple2.Trigger._02000386_bf {
             public override void OnExit() { }
         }
 
-        private class Stateready : TriggerState {
-            internal Stateready(ITriggerContext context) : base(context) { }
+        private class StateReady : TriggerState {
+            internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new Stateready_02(context);
+                    return new StateReady_02(context);
                 }
 
                 return null;
@@ -41,8 +41,8 @@ namespace Maple2.Trigger._02000386_bf {
             public override void OnExit() { }
         }
 
-        private class Stateready_02 : TriggerState {
-            internal Stateready_02(ITriggerContext context) : base(context) { }
+        private class StateReady_02 : TriggerState {
+            internal StateReady_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._02000386_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001087}, arg2: 0)) {
-                    return new Statemain(context);
+                    return new StateMain(context);
                 }
 
                 return null;
@@ -61,8 +61,8 @@ namespace Maple2.Trigger._02000386_bf {
             public override void OnExit() { }
         }
 
-        private class Statemain : TriggerState {
-            internal Statemain(ITriggerContext context) : base(context) { }
+        private class StateMain : TriggerState {
+            internal StateMain(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "ScoreBoard");
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._02000386_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new Statestart(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -90,8 +90,8 @@ namespace Maple2.Trigger._02000386_bf {
             public override void OnExit() { }
         }
 
-        private class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 901, arg2: "MS2PatrolData_2001");
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._02000386_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {702})) {
-                    return new Statestart_02(context);
+                    return new StateStart_02(context);
                 }
 
                 return null;
@@ -111,8 +111,8 @@ namespace Maple2.Trigger._02000386_bf {
             public override void OnExit() { }
         }
 
-        private class Statestart_02 : TriggerState {
-            internal Statestart_02(ITriggerContext context) : base(context) { }
+        private class StateStart_02 : TriggerState {
+            internal StateStart_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonClear();
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._02000386_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new Stateend(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -130,8 +130,8 @@ namespace Maple2.Trigger._02000386_bf {
             public override void OnExit() { }
         }
 
-        private class Stateend : TriggerState {
-            internal Stateend(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);

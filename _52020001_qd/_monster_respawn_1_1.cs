@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 6000017) <= 0.70f) {
-                    return new State몬스터생성(context);
+                    return new StateMobCreation(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class State몬스터생성 : TriggerState {
-            internal State몬스터생성(ITriggerContext context) : base(context) { }
+        private class StateMobCreation : TriggerState {
+            internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {6000021}, arg2: false);

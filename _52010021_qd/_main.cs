@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010021_qd {
     public static class _main {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7001}, arg2: false);
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._52010021_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new Stateout(context);
+                    return new StateOut(context);
                 }
 
                 return null;
@@ -111,8 +111,8 @@ namespace Maple2.Trigger._52010021_qd {
             }
         }
 
-        private class Stateout : TriggerState {
-            internal Stateout(ITriggerContext context) : base(context) { }
+        private class StateOut : TriggerState {
+            internal StateOut(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._52010021_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new Stateend(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -131,8 +131,8 @@ namespace Maple2.Trigger._52010021_qd {
             }
         }
 
-        private class Stateend : TriggerState {
-            internal Stateend(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
@@ -140,7 +140,7 @@ namespace Maple2.Trigger._52010021_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new Statereal_end2(context);
+                    return new StateReal_end2(context);
                 }
 
                 return null;
@@ -152,8 +152,8 @@ namespace Maple2.Trigger._52010021_qd {
             }
         }
 
-        private class Statereal_end2 : TriggerState {
-            internal Statereal_end2(ITriggerContext context) : base(context) { }
+        private class StateReal_end2 : TriggerState {
+            internal StateReal_end2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "4", arg2: 4);
@@ -161,7 +161,7 @@ namespace Maple2.Trigger._52010021_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    return new Statereal_end3(context);
+                    return new StateReal_end3(context);
                 }
 
                 return null;
@@ -172,8 +172,8 @@ namespace Maple2.Trigger._52010021_qd {
             }
         }
 
-        private class Statereal_end3 : TriggerState {
-            internal Statereal_end3(ITriggerContext context) : base(context) { }
+        private class StateReal_end3 : TriggerState {
+            internal StateReal_end3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._52010021_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new Statereal_end4(context);
+                    return new StateReal_end4(context);
                 }
 
                 return null;
@@ -192,8 +192,8 @@ namespace Maple2.Trigger._52010021_qd {
             }
         }
 
-        private class Statereal_end4 : TriggerState {
-            internal Statereal_end4(ITriggerContext context) : base(context) { }
+        private class StateReal_end4 : TriggerState {
+            internal StateReal_end4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
@@ -201,7 +201,7 @@ namespace Maple2.Trigger._52010021_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new Statereal_end(context);
+                    return new StateReal_end(context);
                 }
 
                 return null;
@@ -210,8 +210,8 @@ namespace Maple2.Trigger._52010021_qd {
             public override void OnExit() { }
         }
 
-        private class Statereal_end : TriggerState {
-            internal Statereal_end(ITriggerContext context) : base(context) { }
+        private class StateReal_end : TriggerState {
+            internal StateReal_end(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "mikaEpilogueEnd");

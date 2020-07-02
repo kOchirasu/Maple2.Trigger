@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020145_bf {
     public static class _summon_02 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -23,11 +23,11 @@ namespace Maple2.Trigger._02020145_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon_Enemy_1") == 0) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.GetUserValue(key: "Summon_Enemy_1") == 1) {
-                    return new State몬스터등장(context);
+                    return new StateMonsterAppear(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02020145_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터등장 : TriggerState {
-            internal State몬스터등장(ITriggerContext context) : base(context) { }
+        private class StateMonsterAppear : TriggerState {
+            internal StateMonsterAppear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {121, 122, 123, 124, 131, 132, 133, 134});
@@ -45,11 +45,11 @@ namespace Maple2.Trigger._02020145_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon_Enemy_1") == 0) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.GetUserValue(key: "Summon_Enemy_2") == 1) {
-                    return new State몬스터등장_2(context);
+                    return new StateMonsterAppear_2(context);
                 }
 
                 return null;
@@ -58,8 +58,8 @@ namespace Maple2.Trigger._02020145_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터등장_2 : TriggerState {
-            internal State몬스터등장_2(ITriggerContext context) : base(context) { }
+        private class StateMonsterAppear_2 : TriggerState {
+            internal StateMonsterAppear_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {121, 122, 123, 124, 131, 132, 133, 134});
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._02020145_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon_Enemy_1") == 0) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;

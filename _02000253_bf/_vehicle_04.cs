@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000253_bf {
     public static class _vehicle_04 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8054}, arg2: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonMaxUserCount() == 4) {
-                    return new Statevehicle_01(context);
+                    return new StateVehicle_01(context);
                 }
 
                 return null;
@@ -18,14 +18,14 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnExit() { }
         }
 
-        private class Statevehicle_01 : TriggerState {
-            internal Statevehicle_01(ITriggerContext context) : base(context) { }
+        private class StateVehicle_01 : TriggerState {
+            internal StateVehicle_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 906) == 1) {
-                    return new Statemonster_spawn_ready(context);
+                    return new StateMonster_spawn_ready(context);
                 }
 
                 return null;
@@ -34,14 +34,14 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnExit() { }
         }
 
-        private class Statemonster_spawn_ready : TriggerState {
-            internal Statemonster_spawn_ready(ITriggerContext context) : base(context) { }
+        private class StateMonster_spawn_ready : TriggerState {
+            internal StateMonster_spawn_ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new Statemonster_spawn(context);
+                    return new StateMonster_spawn(context);
                 }
 
                 return null;
@@ -50,8 +50,8 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnExit() { }
         }
 
-        private class Statemonster_spawn : TriggerState {
-            internal Statemonster_spawn(ITriggerContext context) : base(context) { }
+        private class StateMonster_spawn : TriggerState {
+            internal StateMonster_spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8054}, arg2: true);
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3002})) {
-                    return new Statevehicle_spawn(context);
+                    return new StateVehicle_spawn(context);
                 }
 
                 return null;
@@ -69,8 +69,8 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnExit() { }
         }
 
-        private class Statevehicle_spawn : TriggerState {
-            internal Statevehicle_spawn(ITriggerContext context) : base(context) { }
+        private class StateVehicle_spawn : TriggerState {
+            internal StateVehicle_spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8054}, arg2: false);
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._02000253_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001051}, arg2: 0)) {
-                    return new Stateend(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -88,8 +88,8 @@ namespace Maple2.Trigger._02000253_bf {
             public override void OnExit() { }
         }
 
-        private class Stateend : TriggerState {
-            internal Stateend(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10001051}, arg2: 2);

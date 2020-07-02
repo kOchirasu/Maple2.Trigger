@@ -2,14 +2,14 @@ using System.Numerics;
 
 namespace Maple2.Trigger._83000003_colosseum {
     public static class _start {
-        public class State유저감지 : TriggerState {
-            internal State유저감지(ITriggerContext context) : base(context) { }
+        public class StateUserDetection : TriggerState {
+            internal StateUserDetection(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {2001}, arg2: 0)) {
-                    return new State연출준비(context);
+                    return new StateSetupCinematic(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._83000003_colosseum {
             public override void OnExit() { }
         }
 
-        private class State연출준비 : TriggerState {
-            internal State연출준비(ITriggerContext context) : base(context) { }
+        private class StateSetupCinematic : TriggerState {
+            internal StateSetupCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._83000003_colosseum {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetProductionUI(arg1: 0);
                     context.CameraReset(interpolationTime: 0f);
-                    return new State대화딜레이(context);
+                    return new State대화Delay(context);
                 }
 
                 return null;
@@ -175,8 +175,8 @@ namespace Maple2.Trigger._83000003_colosseum {
             public override void OnExit() { }
         }
 
-        private class State대화딜레이 : TriggerState {
-            internal State대화딜레이(ITriggerContext context) : base(context) { }
+        private class State대화Delay : TriggerState {
+            internal State대화Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -197,7 +197,7 @@ namespace Maple2.Trigger._83000003_colosseum {
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {902})) {
                     context.MoveUserToPos(pos: new Vector3(300f, -225f, 1500f), rot: new Vector3(0f, 0f, 270f));
-                    return new State대화딜레이(context);
+                    return new State대화Delay(context);
                 }
 
                 if (context.GetUserValue(key: "DungeonPlayType") == 1) {

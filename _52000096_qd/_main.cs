@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000096_qd {
     public static class _main {
-        public class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -159,7 +159,7 @@ namespace Maple2.Trigger._52000096_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State연출종료(context);
+                    return new StateStopCinematic(context);
                 }
 
                 return null;
@@ -168,8 +168,8 @@ namespace Maple2.Trigger._52000096_qd {
             public override void OnExit() { }
         }
 
-        private class State연출종료 : TriggerState {
-            internal State연출종료(ITriggerContext context) : base(context) { }
+        private class StateStopCinematic : TriggerState {
+            internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_01");
@@ -180,7 +180,7 @@ namespace Maple2.Trigger._52000096_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State몬스터재스폰(context);
+                    return new StateMonster재스폰(context);
                 }
 
                 return null;
@@ -189,8 +189,8 @@ namespace Maple2.Trigger._52000096_qd {
             public override void OnExit() { }
         }
 
-        private class State몬스터재스폰 : TriggerState {
-            internal State몬스터재스폰(ITriggerContext context) : base(context) { }
+        private class StateMonster재스폰 : TriggerState {
+            internal StateMonster재스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004}, arg2: true);
@@ -198,7 +198,7 @@ namespace Maple2.Trigger._52000096_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -207,8 +207,8 @@ namespace Maple2.Trigger._52000096_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

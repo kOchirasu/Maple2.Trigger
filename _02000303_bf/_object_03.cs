@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000303_bf {
     public static class _object_03 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000596, 10000597, 10000598, 10000599, 10000600}, arg2: 0);
@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02000303_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State생성랜덤(context);
+                    return new StateCreationRandom(context);
                 }
 
                 return null;
@@ -19,30 +19,30 @@ namespace Maple2.Trigger._02000303_bf {
             public override void OnExit() { }
         }
 
-        private class State생성랜덤 : TriggerState {
-            internal State생성랜덤(ITriggerContext context) : base(context) { }
+        private class StateCreationRandom : TriggerState {
+            internal StateCreationRandom(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State생성01(context);
+                    return new StateCreation01(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State생성02(context);
+                    return new StateCreation02(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State생성03(context);
+                    return new StateCreation03(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State생성04(context);
+                    return new StateCreation04(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State생성05(context);
+                    return new StateCreation05(context);
                 }
 
                 return null;
@@ -51,8 +51,8 @@ namespace Maple2.Trigger._02000303_bf {
             public override void OnExit() { }
         }
 
-        private class State생성01 : TriggerState {
-            internal State생성01(ITriggerContext context) : base(context) { }
+        private class StateCreation01 : TriggerState {
+            internal StateCreation01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {60596}, arg2: true);
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._02000303_bf {
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000596}, arg2: 0)) {
                     context.SetEffect(arg1: new[] {60596}, arg2: false);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -71,8 +71,8 @@ namespace Maple2.Trigger._02000303_bf {
             public override void OnExit() { }
         }
 
-        private class State생성02 : TriggerState {
-            internal State생성02(ITriggerContext context) : base(context) { }
+        private class StateCreation02 : TriggerState {
+            internal StateCreation02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {60597}, arg2: true);
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._02000303_bf {
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000597}, arg2: 0)) {
                     context.SetEffect(arg1: new[] {60597}, arg2: false);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -91,8 +91,8 @@ namespace Maple2.Trigger._02000303_bf {
             public override void OnExit() { }
         }
 
-        private class State생성03 : TriggerState {
-            internal State생성03(ITriggerContext context) : base(context) { }
+        private class StateCreation03 : TriggerState {
+            internal StateCreation03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {60598}, arg2: true);
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._02000303_bf {
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000598}, arg2: 0)) {
                     context.SetEffect(arg1: new[] {60598}, arg2: false);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -111,8 +111,8 @@ namespace Maple2.Trigger._02000303_bf {
             public override void OnExit() { }
         }
 
-        private class State생성04 : TriggerState {
-            internal State생성04(ITriggerContext context) : base(context) { }
+        private class StateCreation04 : TriggerState {
+            internal StateCreation04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {60599}, arg2: true);
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._02000303_bf {
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000599}, arg2: 0)) {
                     context.SetEffect(arg1: new[] {60599}, arg2: false);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -131,8 +131,8 @@ namespace Maple2.Trigger._02000303_bf {
             public override void OnExit() { }
         }
 
-        private class State생성05 : TriggerState {
-            internal State생성05(ITriggerContext context) : base(context) { }
+        private class StateCreation05 : TriggerState {
+            internal StateCreation05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {60600}, arg2: true);
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._02000303_bf {
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000600}, arg2: 0)) {
                     context.SetEffect(arg1: new[] {60600}, arg2: false);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -151,8 +151,8 @@ namespace Maple2.Trigger._02000303_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "120", arg2: 120);
@@ -160,7 +160,7 @@ namespace Maple2.Trigger._02000303_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "120")) {
-                    return new State생성랜덤(context);
+                    return new StateCreationRandom(context);
                 }
 
                 return null;

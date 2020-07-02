@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02000551_bf {
     public static class _main {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State기본셋팅(context);
+                    return new State기본Setting(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnExit() { }
         }
 
-        private class State기본셋팅 : TriggerState {
-            internal State기본셋팅(ITriggerContext context) : base(context) { }
+        private class State기본Setting : TriggerState {
+            internal State기본Setting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
@@ -54,15 +54,15 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonId() == 23050003) {
-                    return new State쉬운난이도보스등장(context);
+                    return new State쉬운난이도BossSpawn(context);
                 }
 
                 if (context.GetDungeonId() == 23051003) {
-                    return new State여려움난이도보스등장(context);
+                    return new State여려움난이도BossSpawn(context);
                 }
 
                 if (context.WaitTick(waitTick: 1100)) {
-                    return new State여려움난이도보스등장(context);
+                    return new State여려움난이도BossSpawn(context);
                 }
 
                 return null;
@@ -71,8 +71,8 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnExit() { }
         }
 
-        private class State여려움난이도보스등장 : TriggerState {
-            internal State여려움난이도보스등장(ITriggerContext context) : base(context) { }
+        private class State여려움난이도BossSpawn : TriggerState {
+            internal State여려움난이도BossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
@@ -89,8 +89,8 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnExit() { }
         }
 
-        private class State쉬운난이도보스등장 : TriggerState {
-            internal State쉬운난이도보스등장(ITriggerContext context) : base(context) { }
+        private class State쉬운난이도BossSpawn : TriggerState {
+            internal State쉬운난이도BossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
@@ -134,11 +134,11 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "GuideMessage") == 1) {
-                    return new State메시지출력(context);
+                    return new StateDisplayGuide(context);
                 }
 
                 if (context.GetUserValue(key: "NextPortal") == 1) {
-                    return new State다음진행딜레이(context);
+                    return new State다음진행Delay(context);
                 }
 
                 if (context.DungeonTimeOut()) {
@@ -155,8 +155,8 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnExit() { }
         }
 
-        private class State메시지출력 : TriggerState {
-            internal State메시지출력(ITriggerContext context) : base(context) { }
+        private class StateDisplayGuide : TriggerState {
+            internal StateDisplayGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 29200007, textId: 29200007, duration: 7000);
@@ -214,14 +214,14 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnExit() { }
         }
 
-        private class State다음진행딜레이 : TriggerState {
-            internal State다음진행딜레이(ITriggerContext context) : base(context) { }
+        private class State다음진행Delay : TriggerState {
+            internal State다음진행Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5800)) {
-                    return new State다음맵가는포탈등장(context);
+                    return new State다음맵가는PortalAppear(context);
                 }
 
                 return null;
@@ -230,8 +230,8 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnExit() { }
         }
 
-        private class State다음맵가는포탈등장 : TriggerState {
-            internal State다음맵가는포탈등장(ITriggerContext context) : base(context) { }
+        private class State다음맵가는PortalAppear : TriggerState {
+            internal State다음맵가는PortalAppear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);

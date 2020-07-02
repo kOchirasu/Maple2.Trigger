@@ -2,8 +2,8 @@ using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000293_bf {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036});
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._02000293_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State준비(context);
+                    return new StateSetup(context);
                 }
 
                 return null;
@@ -84,8 +84,8 @@ namespace Maple2.Trigger._02000293_bf {
             public override void OnExit() { }
         }
 
-        private class State준비 : TriggerState {
-            internal State준비(ITriggerContext context) : base(context) { }
+        private class StateSetup : TriggerState {
+            internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20002931, textId: 20002931);
@@ -94,23 +94,23 @@ namespace Maple2.Trigger._02000293_bf {
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State1번생성(context);
+                    return new State1TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State2번생성(context);
+                    return new State2TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State3번생성(context);
+                    return new State3TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State4번생성(context);
+                    return new State4TimedCreation(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State5번생성(context);
+                    return new State5TimedCreation(context);
                 }
 
                 return null;
@@ -119,8 +119,8 @@ namespace Maple2.Trigger._02000293_bf {
             public override void OnExit() { }
         }
 
-        private class State1번생성 : TriggerState {
-            internal State1번생성(ITriggerContext context) : base(context) { }
+        private class State1TimedCreation : TriggerState {
+            internal State1TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000523, 10000505, 10000509, 10000520, 10000521, 10000522}, arg2: 1);
@@ -152,7 +152,7 @@ namespace Maple2.Trigger._02000293_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000509}, arg2: 0)) {
-                    return new State소멸대기(context);
+                    return new StateWaitDestroy(context);
                 }
 
                 if (context.TimeExpired(arg1: "181")) {
@@ -165,8 +165,8 @@ namespace Maple2.Trigger._02000293_bf {
             public override void OnExit() { }
         }
 
-        private class State2번생성 : TriggerState {
-            internal State2번생성(ITriggerContext context) : base(context) { }
+        private class State2TimedCreation : TriggerState {
+            internal State2TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000504, 10000524, 10000509, 10000520, 10000521, 10000522}, arg2: 1);
@@ -198,7 +198,7 @@ namespace Maple2.Trigger._02000293_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000509}, arg2: 0)) {
-                    return new State소멸대기(context);
+                    return new StateWaitDestroy(context);
                 }
 
                 if (context.TimeExpired(arg1: "181")) {
@@ -211,8 +211,8 @@ namespace Maple2.Trigger._02000293_bf {
             public override void OnExit() { }
         }
 
-        private class State3번생성 : TriggerState {
-            internal State3번생성(ITriggerContext context) : base(context) { }
+        private class State3TimedCreation : TriggerState {
+            internal State3TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000504, 10000505, 10000509, 10000529, 10000521, 10000522}, arg2: 1);
@@ -244,7 +244,7 @@ namespace Maple2.Trigger._02000293_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000509}, arg2: 0)) {
-                    return new State소멸대기(context);
+                    return new StateWaitDestroy(context);
                 }
 
                 if (context.TimeExpired(arg1: "181")) {
@@ -257,8 +257,8 @@ namespace Maple2.Trigger._02000293_bf {
             public override void OnExit() { }
         }
 
-        private class State4번생성 : TriggerState {
-            internal State4번생성(ITriggerContext context) : base(context) { }
+        private class State4TimedCreation : TriggerState {
+            internal State4TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000504, 10000505, 10000509, 10000520, 10000530, 10000522}, arg2: 1);
@@ -290,7 +290,7 @@ namespace Maple2.Trigger._02000293_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000509}, arg2: 0)) {
-                    return new State소멸대기(context);
+                    return new StateWaitDestroy(context);
                 }
 
                 if (context.TimeExpired(arg1: "181")) {
@@ -303,8 +303,8 @@ namespace Maple2.Trigger._02000293_bf {
             public override void OnExit() { }
         }
 
-        private class State5번생성 : TriggerState {
-            internal State5번생성(ITriggerContext context) : base(context) { }
+        private class State5TimedCreation : TriggerState {
+            internal State5TimedCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000504, 10000505, 10000509, 10000520, 10000521, 10000531}, arg2: 1);
@@ -336,7 +336,7 @@ namespace Maple2.Trigger._02000293_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000509}, arg2: 0)) {
-                    return new State소멸대기(context);
+                    return new StateWaitDestroy(context);
                 }
 
                 if (context.TimeExpired(arg1: "181")) {
@@ -349,8 +349,8 @@ namespace Maple2.Trigger._02000293_bf {
             public override void OnExit() { }
         }
 
-        private class State소멸대기 : TriggerState {
-            internal State소멸대기(ITriggerContext context) : base(context) { }
+        private class StateWaitDestroy : TriggerState {
+            internal StateWaitDestroy(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {510000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -378,7 +378,7 @@ namespace Maple2.Trigger._02000293_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State준비(context);
+                    return new StateSetup(context);
                 }
 
                 return null;

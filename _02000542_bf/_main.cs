@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000542_bf {
     public static class _main {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000542_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {701}, arg2: 0)) {
-                    return new State몬스터생성하기1(context);
+                    return new StateMobCreation하기1(context);
                 }
 
                 return null;
@@ -68,8 +68,8 @@ namespace Maple2.Trigger._02000542_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터생성하기1 : TriggerState {
-            internal State몬스터생성하기1(ITriggerContext context) : base(context) { }
+        private class StateMobCreation하기1 : TriggerState {
+            internal StateMobCreation하기1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._02000542_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {702}, arg2: 0)) {
-                    return new State몬스터생성하기2(context);
+                    return new StateMobCreation하기2(context);
                 }
 
                 return null;
@@ -121,8 +121,8 @@ namespace Maple2.Trigger._02000542_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터생성하기2 : TriggerState {
-            internal State몬스터생성하기2(ITriggerContext context) : base(context) { }
+        private class StateMobCreation하기2 : TriggerState {
+            internal StateMobCreation하기2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000, script: "$02000542_BF__MAIN__3$");
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._02000542_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {703}, arg2: 0)) {
-                    return new State몬스터생성하기3(context);
+                    return new StateMobCreation하기3(context);
                 }
 
                 return null;
@@ -140,8 +140,8 @@ namespace Maple2.Trigger._02000542_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터생성하기3 : TriggerState {
-            internal State몬스터생성하기3(ITriggerContext context) : base(context) { }
+        private class StateMobCreation하기3 : TriggerState {
+            internal StateMobCreation하기3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000, script: "$02000542_BF__MAIN__4$");
@@ -150,7 +150,7 @@ namespace Maple2.Trigger._02000542_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {704}, arg2: 0)) {
-                    return new State몬스터생성하기4(context);
+                    return new StateMobCreation하기4(context);
                 }
 
                 return null;
@@ -159,8 +159,8 @@ namespace Maple2.Trigger._02000542_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터생성하기4 : TriggerState {
-            internal State몬스터생성하기4(ITriggerContext context) : base(context) { }
+        private class StateMobCreation하기4 : TriggerState {
+            internal StateMobCreation하기4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {104}, arg2: true);
@@ -293,7 +293,7 @@ namespace Maple2.Trigger._02000542_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {706}, arg2: 0)) {
-                    return new State몬스터다수생성하기(context);
+                    return new StateMonster다수Creation하기(context);
                 }
 
                 return null;
@@ -302,8 +302,8 @@ namespace Maple2.Trigger._02000542_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터다수생성하기 : TriggerState {
-            internal State몬스터다수생성하기(ITriggerContext context) : base(context) { }
+        private class StateMonster다수Creation하기 : TriggerState {
+            internal StateMonster다수Creation하기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {114});
@@ -314,7 +314,7 @@ namespace Maple2.Trigger._02000542_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {106, 107, 108, 109})) {
-                    return new State보스스폰(context);
+                    return new StateBoss스폰(context);
                 }
 
                 return null;
@@ -323,8 +323,8 @@ namespace Maple2.Trigger._02000542_bf {
             public override void OnExit() { }
         }
 
-        private class State보스스폰 : TriggerState {
-            internal State보스스폰(ITriggerContext context) : base(context) { }
+        private class StateBoss스폰 : TriggerState {
+            internal StateBoss스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 103, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._02000542_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State보스스폰2(context);
+                    return new StateBoss스폰2(context);
                 }
 
                 return null;
@@ -346,8 +346,8 @@ namespace Maple2.Trigger._02000542_bf {
             public override void OnExit() { }
         }
 
-        private class State보스스폰2 : TriggerState {
-            internal State보스스폰2(ITriggerContext context) : base(context) { }
+        private class StateBoss스폰2 : TriggerState {
+            internal StateBoss스폰2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 103, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
@@ -356,7 +356,7 @@ namespace Maple2.Trigger._02000542_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {110})) {
-                    return new State포탈열기(context);
+                    return new StatePortal열기(context);
                 }
 
                 return null;
@@ -365,14 +365,14 @@ namespace Maple2.Trigger._02000542_bf {
             public override void OnExit() { }
         }
 
-        private class State포탈열기 : TriggerState {
-            internal State포탈열기(ITriggerContext context) : base(context) { }
+        private class StatePortal열기 : TriggerState {
+            internal StatePortal열기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State포탈열기2(context);
+                    return new StatePortal열기2(context);
                 }
 
                 return null;
@@ -381,8 +381,8 @@ namespace Maple2.Trigger._02000542_bf {
             public override void OnExit() { }
         }
 
-        private class State포탈열기2 : TriggerState {
-            internal State포탈열기2(ITriggerContext context) : base(context) { }
+        private class StatePortal열기2 : TriggerState {
+            internal StatePortal열기2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {115}, arg2: false);
@@ -393,7 +393,7 @@ namespace Maple2.Trigger._02000542_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State포탈열기3(context);
+                    return new StatePortal열기3(context);
                 }
 
                 return null;
@@ -402,8 +402,8 @@ namespace Maple2.Trigger._02000542_bf {
             public override void OnExit() { }
         }
 
-        private class State포탈열기3 : TriggerState {
-            internal State포탈열기3(ITriggerContext context) : base(context) { }
+        private class StatePortal열기3 : TriggerState {
+            internal StatePortal열기3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 103, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");

@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02000471_bf {
     public static class _event_05 {
-        public class Statenone : TriggerState {
-            internal Statenone(ITriggerContext context) : base(context) { }
+        public class StateNone : TriggerState {
+            internal StateNone(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {706})) {
-                    return new Stateidle(context);
+                    return new StateIdle(context);
                 }
 
                 return null;
@@ -16,14 +16,14 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        private class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {121, 154, 122, 156, 110})) {
-                    return new Stateready(context);
+                    return new StateReady(context);
                 }
 
                 return null;
@@ -32,8 +32,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Stateready : TriggerState {
-            internal Stateready(ITriggerContext context) : base(context) { }
+        private class StateReady : TriggerState {
+            internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 706, arg2: "trigger", arg3: "Hauntedmansion");
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new Statestart(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -51,8 +51,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 1110, arg3: "$02000471_BF__EVENT_05__0$", arg4: 3, arg5: 4);
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02000471_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    return new Stateexit(context);
+                    return new StateExit(context);
                 }
 
                 return null;
@@ -72,8 +72,8 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnExit() { }
         }
 
-        private class Stateexit : TriggerState {
-            internal Stateexit(ITriggerContext context) : base(context) { }
+        private class StateExit : TriggerState {
+            internal StateExit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1110, 1111, 1112, 1113});

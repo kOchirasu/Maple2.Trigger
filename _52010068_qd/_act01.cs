@@ -19,7 +19,7 @@ namespace Maple2.Trigger._52010068_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000075}, arg3: new byte[] {3})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000074}, arg3: new byte[] {3})) {
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._52010068_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000058}, arg3: new byte[] {3})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000057}, arg3: new byte[] {3})) {
@@ -55,7 +55,7 @@ namespace Maple2.Trigger._52010068_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000019}, arg3: new byte[] {3})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -150,7 +150,7 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -168,7 +168,7 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -177,8 +177,8 @@ namespace Maple2.Trigger._52010068_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

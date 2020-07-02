@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000335_bf {
     public static class _boss {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: false);
@@ -14,7 +14,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 710) == 1) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -23,8 +23,8 @@ namespace Maple2.Trigger._02000335_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02000335_bf {
                 }
 
                 if (context.GetUserCount(boxId: 711) == 1) {
-                    return new State보스등장연출_00(context);
+                    return new StateBossSpawnCinematic_00(context);
                 }
 
                 return null;
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 711) == 1) {
-                    return new State보스등장연출_00(context);
+                    return new StateBossSpawnCinematic_00(context);
                 }
 
                 return null;
@@ -90,8 +90,8 @@ namespace Maple2.Trigger._02000335_bf {
             public override void OnExit() { }
         }
 
-        private class State보스등장연출_00 : TriggerState {
-            internal State보스등장연출_00(ITriggerContext context) : base(context) { }
+        private class StateBossSpawnCinematic_00 : TriggerState {
+            internal StateBossSpawnCinematic_00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02000335_BF__BOSS__0$", arg3: 3000);
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State보스등장연출_01(context);
+                    return new StateBossSpawnCinematic_01(context);
                 }
 
                 return null;
@@ -110,8 +110,8 @@ namespace Maple2.Trigger._02000335_bf {
             public override void OnExit() { }
         }
 
-        private class State보스등장연출_01 : TriggerState {
-            internal State보스등장연출_01(ITriggerContext context) : base(context) { }
+        private class StateBossSpawnCinematic_01 : TriggerState {
+            internal StateBossSpawnCinematic_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {141, 142, 143, 144, 145, 146, 147, 148});
@@ -124,11 +124,11 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State보스등장연출_02(context);
+                    return new StateBossSpawnCinematic_02(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {199})) {
-                    return new State포탈_개방(context);
+                    return new StatePortalOpen(context);
                 }
 
                 return null;
@@ -137,8 +137,8 @@ namespace Maple2.Trigger._02000335_bf {
             public override void OnExit() { }
         }
 
-        private class State보스등장연출_02 : TriggerState {
-            internal State보스등장연출_02(ITriggerContext context) : base(context) { }
+        private class StateBossSpawnCinematic_02 : TriggerState {
+            internal StateBossSpawnCinematic_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {5803, 5804}, arg2: true);
@@ -148,11 +148,11 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State보스등장연출_03(context);
+                    return new StateBossSpawnCinematic_03(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {199})) {
-                    return new State포탈_개방(context);
+                    return new StatePortalOpen(context);
                 }
 
                 return null;
@@ -161,8 +161,8 @@ namespace Maple2.Trigger._02000335_bf {
             public override void OnExit() { }
         }
 
-        private class State보스등장연출_03 : TriggerState {
-            internal State보스등장연출_03(ITriggerContext context) : base(context) { }
+        private class StateBossSpawnCinematic_03 : TriggerState {
+            internal StateBossSpawnCinematic_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {5805, 5806}, arg2: true);
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {199})) {
-                    return new State포탈_개방(context);
+                    return new StatePortalOpen(context);
                 }
 
                 return null;
@@ -181,8 +181,8 @@ namespace Maple2.Trigger._02000335_bf {
             public override void OnExit() { }
         }
 
-        private class State포탈_개방 : TriggerState {
-            internal State포탈_개방(ITriggerContext context) : base(context) { }
+        private class StatePortalOpen : TriggerState {
+            internal StatePortalOpen(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_Space_PopUp_01");

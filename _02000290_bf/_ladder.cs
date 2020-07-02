@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000290_bf {
     public static class _ladder {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State사다리생김(context);
+                    return new StateLadder생김(context);
                 }
 
                 return null;
@@ -71,8 +71,8 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnExit() { }
         }
 
-        private class State사다리생김 : TriggerState {
-            internal State사다리생김(ITriggerContext context) : base(context) { }
+        private class StateLadder생김 : TriggerState {
+            internal StateLadder생김(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20002907, textId: 20002907, duration: 5000);

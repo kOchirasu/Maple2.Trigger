@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000403_bf {
     public static class _magic_04 {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000297_bf {
     public static class _main2 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004}, arg2: false);
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._02000297_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State연출시작(context);
+                    return new StateStartCinematic(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._02000297_bf {
             public override void OnExit() { }
         }
 
-        private class State연출시작 : TriggerState {
-            internal State연출시작(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic : TriggerState {
+            internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {107}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02000297_bf {
                 context.SetProductionUI(arg1: 3);
                 context.CameraSelect(arg1: 888888, arg2: true);
                 context.MoveNpc(arg1: 1004, arg2: "MS2PatrolData1");
-                context.SetSkip(arg1: "연출종료");
+                context.SetSkip(arg1: "StopCinematic");
             }
 
             public override TriggerState Execute() {
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000297_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$02000297_BF__MAIN2__0$", arg4: 2);
-                context.SetSkip(arg1: "연출종료");
+                context.SetSkip(arg1: "StopCinematic");
             }
 
             public override TriggerState Execute() {
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000297_bf {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000057, arg3: "$02000297_BF__MAIN2__1$", arg4: 3);
                 context.SetConversation(arg1: 2, arg2: 11000057, arg3: "$02000297_BF__MAIN2__2$", arg4: 3);
-                context.SetSkip(arg1: "연출종료");
+                context.SetSkip(arg1: "StopCinematic");
             }
 
             public override TriggerState Execute() {
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._02000297_bf {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData3");
-                context.SetSkip(arg1: "연출종료");
+                context.SetSkip(arg1: "StopCinematic");
             }
 
             public override TriggerState Execute() {
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._02000297_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$02000297_BF__MAIN2__3$", arg4: 2);
-                context.SetSkip(arg1: "연출종료");
+                context.SetSkip(arg1: "StopCinematic");
             }
 
             public override TriggerState Execute() {
@@ -169,12 +169,12 @@ namespace Maple2.Trigger._02000297_bf {
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$02000297_BF__MAIN2__4$", arg4: 2);
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$02000297_BF__MAIN2__5$", arg4: 2);
                 context.SetConversation(arg1: 2, arg2: 11000057, arg3: "$02000297_BF__MAIN2__6$", arg4: 3);
-                context.SetSkip(arg1: "연출종료");
+                context.SetSkip(arg1: "StopCinematic");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State카메라복귀(context);
+                    return new StateCamera복귀(context);
                 }
 
                 return null;
@@ -183,8 +183,8 @@ namespace Maple2.Trigger._02000297_bf {
             public override void OnExit() { }
         }
 
-        private class State카메라복귀 : TriggerState {
-            internal State카메라복귀(ITriggerContext context) : base(context) { }
+        private class StateCamera복귀 : TriggerState {
+            internal StateCamera복귀(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1002});
@@ -192,7 +192,7 @@ namespace Maple2.Trigger._02000297_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State연출종료(context);
+                    return new StateStopCinematic(context);
                 }
 
                 return null;
@@ -201,8 +201,8 @@ namespace Maple2.Trigger._02000297_bf {
             public override void OnExit() { }
         }
 
-        private class State연출종료 : TriggerState {
-            internal State연출종료(ITriggerContext context) : base(context) { }
+        private class StateStopCinematic : TriggerState {
+            internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkip();
@@ -257,7 +257,7 @@ namespace Maple2.Trigger._02000297_bf {
                 context.DestroyMonster(arg1: new[] {1006});
                 context.CreateMonster(arg1: new[] {1007}, arg2: false);
                 context.MoveNpc(arg1: 1007, arg2: "MS2PatrolData5");
-                context.SetSkip(arg1: "연출종료2");
+                context.SetSkip(arg1: "StopCinematic2");
             }
 
             public override TriggerState Execute() {
@@ -278,12 +278,12 @@ namespace Maple2.Trigger._02000297_bf {
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$02000297_BF__MAIN2__7$", arg4: 3);
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$02000297_BF__MAIN2__8$", arg4: 3);
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$02000297_BF__MAIN2__9$", arg4: 3);
-                context.SetSkip(arg1: "연출종료2");
+                context.SetSkip(arg1: "StopCinematic2");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 11101)) {
-                    return new State연출종료2(context);
+                    return new StateStopCinematic2(context);
                 }
 
                 return null;
@@ -292,8 +292,8 @@ namespace Maple2.Trigger._02000297_bf {
             public override void OnExit() { }
         }
 
-        private class State연출종료2 : TriggerState {
-            internal State연출종료2(ITriggerContext context) : base(context) { }
+        private class StateStopCinematic2 : TriggerState {
+            internal StateStopCinematic2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);

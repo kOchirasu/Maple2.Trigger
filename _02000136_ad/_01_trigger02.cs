@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000136_ad {
     public static class _01_trigger02 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {801, 802, 803}, arg2: false);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000136_ad {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000067}, arg2: 0)) {
-                    return new State발판등장1(context);
+                    return new StateSetupAppear1(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000136_ad {
             public override void OnExit() { }
         }
 
-        private class State발판등장1 : TriggerState {
-            internal State발판등장1(ITriggerContext context) : base(context) { }
+        private class StateSetupAppear1 : TriggerState {
+            internal StateSetupAppear1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {14}, arg2: true);
@@ -31,7 +31,7 @@ namespace Maple2.Trigger._02000136_ad {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State발판등장2(context);
+                    return new StateSetupAppear2(context);
                 }
 
                 return null;
@@ -40,8 +40,8 @@ namespace Maple2.Trigger._02000136_ad {
             public override void OnExit() { }
         }
 
-        private class State발판등장2 : TriggerState {
-            internal State발판등장2(ITriggerContext context) : base(context) { }
+        private class StateSetupAppear2 : TriggerState {
+            internal StateSetupAppear2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {17}, arg2: true);
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._02000136_ad {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State발판등장3(context);
+                    return new StateSetupAppear3(context);
                 }
 
                 return null;
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._02000136_ad {
             public override void OnExit() { }
         }
 
-        private class State발판등장3 : TriggerState {
-            internal State발판등장3(ITriggerContext context) : base(context) { }
+        private class StateSetupAppear3 : TriggerState {
+            internal StateSetupAppear3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {16}, arg2: true);
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02000136_ad {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

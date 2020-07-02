@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000294_bf {
     public static class _main2 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {10001, 10002, 10003, 10004});
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02000294_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_01") == 1) {
-                    return new State트리거01진행(context);
+                    return new StateTrigger01진행(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02000294_bf {
             public override void OnExit() { }
         }
 
-        private class State트리거01진행 : TriggerState {
-            internal State트리거01진행(ITriggerContext context) : base(context) { }
+        private class StateTrigger01진행 : TriggerState {
+            internal StateTrigger01진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {10001, 10002, 10003, 10004}, arg2: false);
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000294_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State트리거02시작(context);
+                    return new StateTrigger02시작(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02000294_bf {
             public override void OnExit() { }
         }
 
-        private class State트리거02시작 : TriggerState {
-            internal State트리거02시작(ITriggerContext context) : base(context) { }
+        private class StateTrigger02시작 : TriggerState {
+            internal StateTrigger02시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 10001, arg2: "MS2PatrolData0");

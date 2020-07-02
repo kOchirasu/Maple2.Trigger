@@ -11,7 +11,7 @@ namespace Maple2.Trigger._99999931 {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000216}, arg2: 0)) {
-                    return new State종료안내(context);
+                    return new StateEnd안내(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._99999931 {
             public override void OnExit() { }
         }
 
-        private class State종료안내 : TriggerState {
-            internal State종료안내(ITriggerContext context) : base(context) { }
+        private class StateEnd안내 : TriggerState {
+            internal StateEnd안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 3);

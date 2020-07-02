@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52010058_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 9010) == 2) {
-                    return new State성공연출시작(context);
+                    return new StateSuccessStartCinematic(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52010058_qd {
             public override void OnExit() { }
         }
 
-        private class State성공연출시작 : TriggerState {
-            internal State성공연출시작(ITriggerContext context) : base(context) { }
+        private class StateSuccessStartCinematic : TriggerState {
+            internal StateSuccessStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
@@ -27,11 +27,11 @@ namespace Maple2.Trigger._52010058_qd {
 
             public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
-                    return new Statequit02(context);
+                    return new StateQuit02(context);
                 }
 
                 if (context.WaitTick(waitTick: 9000)) {
-                    return new Statequit02(context);
+                    return new StateQuit02(context);
                 }
 
                 return null;
@@ -40,8 +40,8 @@ namespace Maple2.Trigger._52010058_qd {
             public override void OnExit() { }
         }
 
-        private class Statequit02 : TriggerState {
-            internal Statequit02(ITriggerContext context) : base(context) { }
+        private class StateQuit02 : TriggerState {
+            internal StateQuit02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 02000422, arg2: 3);

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._80000014_bonus {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10001337}, arg2: 1);
@@ -13,7 +13,7 @@ namespace Maple2.Trigger._80000014_bonus {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    return new State랜덤A(context);
+                    return new StateRandomA(context);
                 }
 
                 return null;
@@ -22,20 +22,20 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnExit() { }
         }
 
-        private class State랜덤A : TriggerState {
-            internal State랜덤A(ITriggerContext context) : base(context) { }
+        private class StateRandomA : TriggerState {
+            internal StateRandomA(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3101}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State랜덤B(context);
+                    return new StateRandomB(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3102}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State랜덤B(context);
+                    return new StateRandomB(context);
                 }
 
                 return null;
@@ -44,20 +44,20 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnExit() { }
         }
 
-        private class State랜덤B : TriggerState {
-            internal State랜덤B(ITriggerContext context) : base(context) { }
+        private class StateRandomB : TriggerState {
+            internal StateRandomB(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3201}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State랜덤C(context);
+                    return new StateRandomC(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3202}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State랜덤C(context);
+                    return new StateRandomC(context);
                 }
 
                 return null;
@@ -66,20 +66,20 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnExit() { }
         }
 
-        private class State랜덤C : TriggerState {
-            internal State랜덤C(ITriggerContext context) : base(context) { }
+        private class StateRandomC : TriggerState {
+            internal StateRandomC(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3301}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State랜덤D(context);
+                    return new StateRandomD(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3302}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State랜덤D(context);
+                    return new StateRandomD(context);
                 }
 
                 return null;
@@ -88,20 +88,20 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnExit() { }
         }
 
-        private class State랜덤D : TriggerState {
-            internal State랜덤D(ITriggerContext context) : base(context) { }
+        private class StateRandomD : TriggerState {
+            internal StateRandomD(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3401}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State랜덤E(context);
+                    return new StateRandomE(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3402}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State랜덤E(context);
+                    return new StateRandomE(context);
                 }
 
                 return null;
@@ -110,20 +110,20 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnExit() { }
         }
 
-        private class State랜덤E : TriggerState {
-            internal State랜덤E(ITriggerContext context) : base(context) { }
+        private class StateRandomE : TriggerState {
+            internal StateRandomE(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3601, 3602}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3603, 3604}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -132,8 +132,8 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$80000014_bonus__main__0$", arg3: 5000);
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._80000014_bonus {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    return new State보스등장(context);
+                    return new StateBossSpawn(context);
                 }
 
                 return null;
@@ -153,8 +153,8 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnExit() { }
         }
 
-        private class State보스등장 : TriggerState {
-            internal State보스등장(ITriggerContext context) : base(context) { }
+        private class StateBossSpawn : TriggerState {
+            internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SpawnNpcRange(rangeId: new[] {2001}, isAutoTargeting: false, score: 1500);
@@ -162,7 +162,7 @@ namespace Maple2.Trigger._80000014_bonus {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
-                    return new State딜레이(context);
+                    return new StateDelay(context);
                 }
 
                 return null;
@@ -171,8 +171,8 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnExit() { }
         }
 
-        private class State딜레이 : TriggerState {
-            internal State딜레이(ITriggerContext context) : base(context) { }
+        private class StateDelay : TriggerState {
+            internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {0});
@@ -233,7 +233,7 @@ namespace Maple2.Trigger._80000014_bonus {
                     context.DungeonClear();
                     context.ScoreBoardRemove();
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -242,8 +242,8 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

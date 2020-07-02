@@ -2,8 +2,8 @@ using System.Numerics;
 
 namespace Maple2.Trigger._02000540_bf {
     public static class _main {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(132f, 195f, 255f), arg2: new Vector3(0f, 0f, 0f), arg3: new Vector3(0f, 0f, 0f));
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._02000540_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {701}, arg2: 0)) {
-                    return new Stateready(context);
+                    return new StateReady(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._02000540_bf {
             public override void OnExit() { }
         }
 
-        private class Stateready : TriggerState {
-            internal Stateready(ITriggerContext context) : base(context) { }
+        private class StateReady : TriggerState {
+            internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._02000540_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {704}, arg2: 0)) {
-                    return new State두번째몬스터생성(context);
+                    return new State두번째MonsterCreation(context);
                 }
 
                 return null;
@@ -137,8 +137,8 @@ namespace Maple2.Trigger._02000540_bf {
             public override void OnExit() { }
         }
 
-        private class State두번째몬스터생성 : TriggerState {
-            internal State두번째몬스터생성(ITriggerContext context) : base(context) { }
+        private class State두번째MonsterCreation : TriggerState {
+            internal State두번째MonsterCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {9000}, arg2: false);
@@ -210,7 +210,7 @@ namespace Maple2.Trigger._02000540_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {705}, arg2: 0)) {
-                    return new State세번째몬스터생성(context);
+                    return new State세번째MonsterCreation(context);
                 }
 
                 return null;
@@ -219,8 +219,8 @@ namespace Maple2.Trigger._02000540_bf {
             public override void OnExit() { }
         }
 
-        private class State세번째몬스터생성 : TriggerState {
-            internal State세번째몬스터생성(ITriggerContext context) : base(context) { }
+        private class State세번째MonsterCreation : TriggerState {
+            internal State세번째MonsterCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {9001}, arg2: false);
@@ -287,7 +287,7 @@ namespace Maple2.Trigger._02000540_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {706}, arg2: 0)) {
-                    return new State네번째몬스터생성(context);
+                    return new State네번째MonsterCreation(context);
                 }
 
                 return null;
@@ -296,8 +296,8 @@ namespace Maple2.Trigger._02000540_bf {
             public override void OnExit() { }
         }
 
-        private class State네번째몬스터생성 : TriggerState {
-            internal State네번째몬스터생성(ITriggerContext context) : base(context) { }
+        private class State네번째MonsterCreation : TriggerState {
+            internal State네번째MonsterCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {9002}, arg2: false);
@@ -344,7 +344,7 @@ namespace Maple2.Trigger._02000540_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10003141}, arg2: 0)) {
-                    return new State보스전투판완성시키기(context);
+                    return new StateBossCombatCompleted(context);
                 }
 
                 return null;
@@ -353,8 +353,8 @@ namespace Maple2.Trigger._02000540_bf {
             public override void OnExit() { }
         }
 
-        private class State보스전투판완성시키기 : TriggerState {
-            internal State보스전투판완성시키기(ITriggerContext context) : base(context) { }
+        private class StateBossCombatCompleted : TriggerState {
+            internal StateBossCombatCompleted(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8004}, arg2: true);
@@ -369,7 +369,7 @@ namespace Maple2.Trigger._02000540_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State보스등장전에(context);
+                    return new StateBossSpawn전에(context);
                 }
 
                 return null;
@@ -378,8 +378,8 @@ namespace Maple2.Trigger._02000540_bf {
             public override void OnExit() { }
         }
 
-        private class State보스등장전에 : TriggerState {
-            internal State보스등장전에(ITriggerContext context) : base(context) { }
+        private class StateBossSpawn전에 : TriggerState {
+            internal StateBossSpawn전에(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000, script: "$02000540_BF__MAIN__18$");
@@ -387,7 +387,7 @@ namespace Maple2.Trigger._02000540_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {707}, arg2: 0)) {
-                    return new State보스등장(context);
+                    return new StateBossSpawn(context);
                 }
 
                 return null;
@@ -396,8 +396,8 @@ namespace Maple2.Trigger._02000540_bf {
             public override void OnExit() { }
         }
 
-        private class State보스등장 : TriggerState {
-            internal State보스등장(ITriggerContext context) : base(context) { }
+        private class StateBossSpawn : TriggerState {
+            internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {9003}, arg2: false);
@@ -411,7 +411,7 @@ namespace Maple2.Trigger._02000540_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {613})) {
-                    return new State다리생성(context);
+                    return new State다리Creation(context);
                 }
 
                 return null;
@@ -420,8 +420,8 @@ namespace Maple2.Trigger._02000540_bf {
             public override void OnExit() { }
         }
 
-        private class State다리생성 : TriggerState {
-            internal State다리생성(ITriggerContext context) : base(context) { }
+        private class State다리Creation : TriggerState {
+            internal State다리Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000, script: "$02000540_BF__MAIN__20$");

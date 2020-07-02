@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000419_bf {
     public static class _1122330_bossspawn {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000419_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State몬스터등장(context);
+                    return new StateMonsterAppear(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000419_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터등장 : TriggerState {
-            internal State몬스터등장(ITriggerContext context) : base(context) { }
+        private class StateMonsterAppear : TriggerState {
+            internal StateMonsterAppear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2000}, arg2: false);
@@ -32,11 +32,11 @@ namespace Maple2.Trigger._02000419_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "NextMove") == 1) {
-                    return new State두번째전투판이동다리생성(context);
+                    return new State두번째전투판이동다리Creation(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {2000})) {
-                    return new State연출딜레이(context);
+                    return new State연출Delay(context);
                 }
 
                 return null;
@@ -45,8 +45,8 @@ namespace Maple2.Trigger._02000419_bf {
             public override void OnExit() { }
         }
 
-        private class State두번째전투판이동다리생성 : TriggerState {
-            internal State두번째전투판이동다리생성(ITriggerContext context) : base(context) { }
+        private class State두번째전투판이동다리Creation : TriggerState {
+            internal State두번째전투판이동다리Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015}, arg2: true, arg3: 1, arg4: 120, arg5: 0.5f);
@@ -55,7 +55,7 @@ namespace Maple2.Trigger._02000419_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2000})) {
-                    return new State연출딜레이(context);
+                    return new State연출Delay(context);
                 }
 
                 return null;
@@ -64,14 +64,14 @@ namespace Maple2.Trigger._02000419_bf {
             public override void OnExit() { }
         }
 
-        private class State연출딜레이 : TriggerState {
-            internal State연출딜레이(ITriggerContext context) : base(context) { }
+        private class State연출Delay : TriggerState {
+            internal State연출Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State연출종료(context);
+                    return new StateStopCinematic(context);
                 }
 
                 return null;
@@ -80,8 +80,8 @@ namespace Maple2.Trigger._02000419_bf {
             public override void OnExit() { }
         }
 
-        private class State연출종료 : TriggerState {
-            internal State연출종료(ITriggerContext context) : base(context) { }
+        private class StateStopCinematic : TriggerState {
+            internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);

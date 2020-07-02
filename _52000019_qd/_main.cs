@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000019_qd {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2002}, arg2: false);
@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52000019_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    return new State시작대기(context);
+                    return new StateBeginWait(context);
                 }
 
                 return null;
@@ -19,14 +19,14 @@ namespace Maple2.Trigger._52000019_qd {
             public override void OnExit() { }
         }
 
-        private class State시작대기 : TriggerState {
-            internal State시작대기(ITriggerContext context) : base(context) { }
+        private class StateBeginWait : TriggerState {
+            internal StateBeginWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {100}, arg2: new[] {60001012}, arg3: new byte[] {1})) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -35,8 +35,8 @@ namespace Maple2.Trigger._52000019_qd {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {2002});
@@ -326,7 +326,7 @@ namespace Maple2.Trigger._52000019_qd {
                 if (context.TimeExpired(arg1: "3")) {
                     context.CreateMonster(arg1: new[] {2003}, arg2: false);
                     context.DestroyMonster(arg1: new[] {2001});
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -335,8 +335,8 @@ namespace Maple2.Trigger._52000019_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

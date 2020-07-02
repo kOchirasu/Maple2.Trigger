@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020300_bf {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990002, key: "Spawn", value: 0);
@@ -17,7 +17,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {901})) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -26,8 +26,8 @@ namespace Maple2.Trigger._02020300_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10002185}, arg2: 0)) {
-                    return new State엘리베이터_활성화(context);
+                    return new State엘리베이터Enabled(context);
                 }
 
                 return null;
@@ -131,8 +131,8 @@ namespace Maple2.Trigger._02020300_bf {
             public override void OnExit() { }
         }
 
-        private class State엘리베이터_활성화 : TriggerState {
-            internal State엘리베이터_활성화(ITriggerContext context) : base(context) { }
+        private class State엘리베이터Enabled : TriggerState {
+            internal State엘리베이터Enabled(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetBreakable(arg1: new[] {5001}, arg2: true);
@@ -140,7 +140,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {903})) {
-                    return new State아르케온_탑승_가이드(context);
+                    return new State아르케온_탑승_Guide(context);
                 }
 
                 return null;
@@ -149,8 +149,8 @@ namespace Maple2.Trigger._02020300_bf {
             public override void OnExit() { }
         }
 
-        private class State아르케온_탑승_가이드 : TriggerState {
-            internal State아르케온_탑승_가이드(ITriggerContext context) : base(context) { }
+        private class State아르케온_탑승_Guide : TriggerState {
+            internal State아르케온_탑승_Guide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02020300_BF__MAIN__5$", arg3: 5000);
@@ -162,7 +162,7 @@ namespace Maple2.Trigger._02020300_bf {
                     context.EnableSpawnPointPc(spawnPointId: 100, isEnable: false);
                     context.EnableSpawnPointPc(spawnPointId: 101, isEnable: true);
                     context.EnableSpawnPointPc(spawnPointId: 102, isEnable: false);
-                    return new State레이저_패턴_시작(context);
+                    return new State레이저_Pattern_시작(context);
                 }
 
                 return null;
@@ -171,8 +171,8 @@ namespace Maple2.Trigger._02020300_bf {
             public override void OnExit() { }
         }
 
-        private class State레이저_패턴_시작 : TriggerState {
-            internal State레이저_패턴_시작(ITriggerContext context) : base(context) { }
+        private class State레이저_Pattern_시작 : TriggerState {
+            internal State레이저_Pattern_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -339,7 +339,7 @@ namespace Maple2.Trigger._02020300_bf {
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RandomBombEnd") == 1) {
                     context.SetUserValue(triggerId: 99990004, key: "Laser", value: 0);
-                    return new State보스전(context);
+                    return new StateBoss(context);
                 }
 
                 return null;
@@ -348,8 +348,8 @@ namespace Maple2.Trigger._02020300_bf {
             public override void OnExit() { }
         }
 
-        private class State보스전 : TriggerState {
-            internal State보스전(ITriggerContext context) : base(context) { }
+        private class StateBoss : TriggerState {
+            internal StateBoss(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__11$", duration: 5000);
@@ -359,14 +359,14 @@ namespace Maple2.Trigger._02020300_bf {
             }
 
             public override TriggerState Execute() {
-                return new State종료(context);
+                return new StateEnd(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990005, key: "elevator", value: 0);

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._80000011_bonus {
     public static class _mainprocess_christmastree {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._80000011_bonus {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
-                    return new State사다리나타남(context);
+                    return new StateLadder나타남(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._80000011_bonus {
             public override void OnExit() { }
         }
 
-        private class State사다리나타남 : TriggerState {
-            internal State사다리나타남(ITriggerContext context) : base(context) { }
+        private class StateLadder나타남 : TriggerState {
+            internal StateLadder나타남(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 201, arg2: true, arg3: true);
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._80000011_bonus {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1)) {
                     context.MoveUser(arg1: 0, arg2: 0);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -79,8 +79,8 @@ namespace Maple2.Trigger._80000011_bonus {
             }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

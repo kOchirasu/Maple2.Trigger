@@ -147,7 +147,7 @@ namespace Maple2.Trigger._51000005_dg {
                 }
 
                 if (!context.UserDetected(arg1: new[] {9000})) {
-                    return new State연출종료(context);
+                    return new StateStopCinematic(context);
                 }
 
                 return null;
@@ -384,8 +384,8 @@ namespace Maple2.Trigger._51000005_dg {
             public override void OnExit() { }
         }
 
-        private class State연출종료 : TriggerState {
-            internal State연출종료(ITriggerContext context) : base(context) { }
+        private class StateStopCinematic : TriggerState {
+            internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ArcadeThreeTwoOneEndGame();

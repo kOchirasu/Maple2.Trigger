@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000252_bf {
     public static class _door_02 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {171, 172}, arg2: true);

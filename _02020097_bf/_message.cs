@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02020097_bf {
     public static class _message {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10})) {
-                    return new State대기상태(context);
+                    return new StateWait상태(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02020097_bf {
             public override void OnExit() { }
         }
 
-        private class State대기상태 : TriggerState {
-            internal State대기상태(ITriggerContext context) : base(context) { }
+        private class StateWait상태 : TriggerState {
+            internal StateWait상태(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02020097_bf {
                 }
 
                 if (context.GetUserValue(key: "StairsOk2nd") == 1) {
-                    return new State트리거종료(context);
+                    return new StateTrigger종료(context);
                 }
 
                 return null;
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02020097_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    return new State트리거종료(context);
+                    return new StateTrigger종료(context);
                 }
 
                 return null;
@@ -56,8 +56,8 @@ namespace Maple2.Trigger._02020097_bf {
             }
         }
 
-        private class State트리거종료 : TriggerState {
-            internal State트리거종료(ITriggerContext context) : base(context) { }
+        private class StateTrigger종료 : TriggerState {
+            internal StateTrigger종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

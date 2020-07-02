@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._99999925 {
     public static class _ladder02 {
-        public class StateladderIdle : TriggerState {
-            internal StateladderIdle(ITriggerContext context) : base(context) { }
+        public class StateLadderIdle : TriggerState {
+            internal StateLadderIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001078}, arg2: 0)) {
-                    return new StateladderWolk(context);
+                    return new StateLadderWolk(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._99999925 {
             public override void OnExit() { }
         }
 
-        private class StateladderWolk : TriggerState {
-            internal StateladderWolk(ITriggerContext context) : base(context) { }
+        private class StateLadderWolk : TriggerState {
+            internal StateLadderWolk(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {702}, arg2: false, arg3: 1);
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._99999925 {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new StateladderEnd(context);
+                    return new StateLadderEnd(context);
                 }
 
                 return null;
@@ -35,8 +35,8 @@ namespace Maple2.Trigger._99999925 {
             public override void OnExit() { }
         }
 
-        private class StateladderEnd : TriggerState {
-            internal StateladderEnd(ITriggerContext context) : base(context) { }
+        private class StateLadderEnd : TriggerState {
+            internal StateLadderEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

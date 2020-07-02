@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000336_bf {
     public static class _main {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {16003, 16004}, arg2: false, arg4: 0, arg5: 0f);

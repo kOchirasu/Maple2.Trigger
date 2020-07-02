@@ -2,8 +2,8 @@ using System.Numerics;
 
 namespace Maple2.Trigger._52100302_qd {
     public static class _move_1 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._52100302_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

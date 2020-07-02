@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02010039_bf {
     public static class _checkbridge05 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {5001}, arg2: new[] {40002110}, arg3: new byte[] {1})) {
-                    return new State업적발생(context);
+                    return new StateAchievement(context);
                 }
 
                 return null;
@@ -16,22 +16,22 @@ namespace Maple2.Trigger._02010039_bf {
             public override void OnExit() { }
         }
 
-        private class State업적발생 : TriggerState {
-            internal State업적발생(ITriggerContext context) : base(context) { }
+        private class StateAchievement : TriggerState {
+            internal StateAchievement(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 5001, arg2: "trigger", arg3: "checkBridge");
             }
 
             public override TriggerState Execute() {
-                return new State초기화준비(context);
+                return new StateReset(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State초기화준비 : TriggerState {
-            internal State초기화준비(ITriggerContext context) : base(context) { }
+        private class StateReset : TriggerState {
+            internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 5);
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02010039_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State대기(context);
+                    return new StateStart(context);
                 }
 
                 return null;

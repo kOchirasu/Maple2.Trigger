@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 601) == 1) {
-                    return new State보스의저주디버프사용신호대기(context);
+                    return new StateBoss의저주디Buff사용신호대기(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State보스의저주디버프사용신호대기 : TriggerState {
-            internal State보스의저주디버프사용신호대기(ITriggerContext context) : base(context) { }
+        private class StateBoss의저주디Buff사용신호대기 : TriggerState {
+            internal StateBoss의저주디Buff사용신호대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -31,11 +31,11 @@ namespace Maple2.Trigger._02020130_bf {
                 }
 
                 if (context.GetUserValue(key: "FirstBattleEnd") == 1) {
-                    return new State폭발저주디버프제거잠시대기(context);
+                    return new State폭발저주디BuffRemoveWait(context);
                 }
 
                 if (context.GetUserValue(key: "FirstBattleEnd") == 99) {
-                    return new State폭발저주디버프제거하고종료(context);
+                    return new State폭발저주디BuffRemove하고종료(context);
                 }
 
                 return null;
@@ -67,15 +67,15 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterMany") == 0) {
-                    return new State폭발저주디버프제거잠시대기(context);
+                    return new State폭발저주디BuffRemoveWait(context);
                 }
 
                 if (context.GetUserValue(key: "FirstBattleEnd") == 1) {
-                    return new State폭발저주디버프제거잠시대기(context);
+                    return new State폭발저주디BuffRemoveWait(context);
                 }
 
                 if (context.GetUserValue(key: "FirstBattleEnd") == 99) {
-                    return new State폭발저주디버프제거하고종료(context);
+                    return new State폭발저주디BuffRemove하고종료(context);
                 }
 
                 return null;
@@ -84,8 +84,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State폭발저주디버프제거잠시대기 : TriggerState {
-            internal State폭발저주디버프제거잠시대기(ITriggerContext context) : base(context) { }
+        private class State폭발저주디BuffRemoveWait : TriggerState {
+            internal State폭발저주디BuffRemoveWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "SkillDebuffCheck_1Phase", value: 0);
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
-                    return new State폭발저주디버프제거(context);
+                    return new State폭발저주디BuffRemove(context);
                 }
 
                 return null;
@@ -103,8 +103,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State폭발저주디버프제거 : TriggerState {
-            internal State폭발저주디버프제거(ITriggerContext context) : base(context) { }
+        private class State폭발저주디BuffRemove : TriggerState {
+            internal State폭발저주디BuffRemove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {601}, arg2: 50001413, arg3: 1, arg4: false);
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1800)) {
-                    return new State보스의저주디버프사용신호대기(context);
+                    return new StateBoss의저주디Buff사용신호대기(context);
                 }
 
                 return null;
@@ -121,8 +121,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State폭발저주디버프제거하고종료 : TriggerState {
-            internal State폭발저주디버프제거하고종료(ITriggerContext context) : base(context) { }
+        private class State폭발저주디BuffRemove하고종료 : TriggerState {
+            internal State폭발저주디BuffRemove하고종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {601}, arg2: 50001413, arg3: 1, arg4: false);
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1200)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -139,8 +139,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

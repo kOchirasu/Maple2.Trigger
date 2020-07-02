@@ -57,7 +57,7 @@ namespace Maple2.Trigger._52020014_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103, 104, 105, 106})) {
-                    return new State사다리발견(context);
+                    return new StateLadder발견(context);
                 }
 
                 return null;
@@ -66,8 +66,8 @@ namespace Maple2.Trigger._52020014_qd {
             public override void OnExit() { }
         }
 
-        private class State사다리발견 : TriggerState {
-            internal State사다리발견(ITriggerContext context) : base(context) { }
+        private class StateLadder발견 : TriggerState {
+            internal StateLadder발견(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
@@ -167,7 +167,7 @@ namespace Maple2.Trigger._52020014_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {905})) {
-                    return new State레버힌트_카메라(context);
+                    return new State레버힌트_Camera(context);
                 }
 
                 return null;
@@ -176,8 +176,8 @@ namespace Maple2.Trigger._52020014_qd {
             public override void OnExit() { }
         }
 
-        private class State레버힌트_카메라 : TriggerState {
-            internal State레버힌트_카메라(ITriggerContext context) : base(context) { }
+        private class State레버힌트_Camera : TriggerState {
+            internal State레버힌트_Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "이공간1차전투", arg2: "nextState");
@@ -188,7 +188,7 @@ namespace Maple2.Trigger._52020014_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State레버힌트_카메라대사(context);
+                    return new State레버힌트_Camera대사(context);
                 }
 
                 return null;
@@ -197,8 +197,8 @@ namespace Maple2.Trigger._52020014_qd {
             public override void OnExit() { }
         }
 
-        private class State레버힌트_카메라대사 : TriggerState {
-            internal State레버힌트_카메라대사(ITriggerContext context) : base(context) { }
+        private class State레버힌트_Camera대사 : TriggerState {
+            internal State레버힌트_Camera대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg3: "저 레버를 작동시키면 되는건가...?", arg4: 3000);
@@ -246,7 +246,7 @@ namespace Maple2.Trigger._52020014_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {121, 122, 123, 124, 125, 126})) {
-                    return new State사다리활성(context);
+                    return new StateLadder활성(context);
                 }
 
                 return null;
@@ -255,8 +255,8 @@ namespace Maple2.Trigger._52020014_qd {
             public override void OnExit() { }
         }
 
-        private class State사다리활성 : TriggerState {
-            internal State사다리활성(ITriggerContext context) : base(context) { }
+        private class StateLadder활성 : TriggerState {
+            internal StateLadder활성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 10001, arg2: true, arg3: true, arg4: 0);
@@ -283,19 +283,19 @@ namespace Maple2.Trigger._52020014_qd {
             internal State비밀의문(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "카메라리셋", arg2: "nextState");
+                context.SetSceneSkip(arg1: "Camera리셋", arg2: "nextState");
                 context.CameraSelect(arg1: 501, arg2: true);
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetBreakable(arg1: new[] {10001}, arg2: true);
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                 context.SetMesh(arg1: new[] {9101}, arg2: false, arg3: 0, arg4: 0, arg5: 30f);
-                context.SetConversation(arg1: 1, arg2: 0, arg3: "성공이야!", arg4: 3000);
+                context.SetConversation(arg1: 1, arg2: 0, arg3: "Success이야!", arg4: 3000);
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State카메라리셋(context);
+                    return new StateCamera리셋(context);
                 }
 
                 return null;
@@ -304,8 +304,8 @@ namespace Maple2.Trigger._52020014_qd {
             public override void OnExit() { }
         }
 
-        private class State카메라리셋 : TriggerState {
-            internal State카메라리셋(ITriggerContext context) : base(context) { }
+        private class StateCamera리셋 : TriggerState {
+            internal StateCamera리셋(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
@@ -314,14 +314,14 @@ namespace Maple2.Trigger._52020014_qd {
             }
 
             public override TriggerState Execute() {
-                return new State종료(context);
+                return new StateEnd(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

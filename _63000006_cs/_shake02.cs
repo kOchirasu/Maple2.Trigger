@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._63000006_cs {
     public static class _shake02 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -24,14 +24,14 @@ namespace Maple2.Trigger._63000006_cs {
             }
 
             public override TriggerState Execute() {
-                return new State스킬발동01(context);
+                return new StateActivateSkill01(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State스킬발동01 : TriggerState {
-            internal State스킬발동01(ITriggerContext context) : base(context) { }
+        private class StateActivateSkill01 : TriggerState {
+            internal StateActivateSkill01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 42);
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._63000006_cs {
                 }
 
                 if (context.UserDetected(arg1: new[] {9002})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -53,8 +53,8 @@ namespace Maple2.Trigger._63000006_cs {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {910, 911, 912, 913}, arg2: false);

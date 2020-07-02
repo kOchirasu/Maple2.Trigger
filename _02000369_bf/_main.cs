@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000369_bf {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6001}, arg2: false);
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000369_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1001})) {
-                    return new State연출시작(context);
+                    return new StateStartCinematic(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02000369_bf {
             public override void OnExit() { }
         }
 
-        private class State연출시작 : TriggerState {
-            internal State연출시작(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic : TriggerState {
+            internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102, 103, 111, 112, 113, 114, 115, 116, 117, 118, 119, 121, 122, 123, 124, 125, 126, 127, 128, 129}, arg2: false);
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._02000369_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {411, 412, 413, 414, 421, 422, 423, 424})) {
-                    return new State포털개방(context);
+                    return new StatePortalEnable(context);
                 }
 
                 return null;
@@ -136,8 +136,8 @@ namespace Maple2.Trigger._02000369_bf {
             public override void OnExit() { }
         }
 
-        private class State포털개방 : TriggerState {
-            internal State포털개방(ITriggerContext context) : base(context) { }
+        private class StatePortalEnable : TriggerState {
+            internal StatePortalEnable(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010}, arg2: false);
@@ -146,7 +146,7 @@ namespace Maple2.Trigger._02000369_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -155,8 +155,8 @@ namespace Maple2.Trigger._02000369_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

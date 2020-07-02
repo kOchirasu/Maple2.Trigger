@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000011_bf {
     public static class _move {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2, arg3: false);
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02000011_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "6")) {
-                    return new State대기(context);
+                    return new StateStart(context);
                 }
 
                 return null;

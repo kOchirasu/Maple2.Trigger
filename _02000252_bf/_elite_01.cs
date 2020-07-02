@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000252_bf {
     public static class _elite_01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {8901, 604}, arg2: false);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 903) == 1) {
-                    return new State딜레이(context);
+                    return new StateDelay(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000252_bf {
             public override void OnExit() { }
         }
 
-        private class State대기2 : TriggerState {
-            internal State대기2(ITriggerContext context) : base(context) { }
+        private class StateWait2 : TriggerState {
+            internal StateWait2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {2119, 2120, 2121, 2122, 2123, 2124}, arg2: true);
@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 903) == 1) {
-                    return new State딜레이2(context);
+                    return new StateDelay2(context);
                 }
 
                 return null;
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._02000252_bf {
             public override void OnExit() { }
         }
 
-        private class State딜레이 : TriggerState {
-            internal State딜레이(ITriggerContext context) : base(context) { }
+        private class StateDelay : TriggerState {
+            internal StateDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 3);
@@ -57,8 +57,8 @@ namespace Maple2.Trigger._02000252_bf {
             public override void OnExit() { }
         }
 
-        private class State딜레이2 : TriggerState {
-            internal State딜레이2(ITriggerContext context) : base(context) { }
+        private class StateDelay2 : TriggerState {
+            internal StateDelay2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 3);

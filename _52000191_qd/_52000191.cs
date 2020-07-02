@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000191_qd {
     public static class _52000191 {
-        public class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6001, 6008, 6015, 6022, 6033}, arg2: false);

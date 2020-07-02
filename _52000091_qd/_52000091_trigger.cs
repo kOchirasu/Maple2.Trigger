@@ -439,7 +439,7 @@ namespace Maple2.Trigger._52000091_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State사운드이펙트(context);
+                    return new StateStateSoundEffect(context);
                 }
 
                 return null;
@@ -448,8 +448,8 @@ namespace Maple2.Trigger._52000091_qd {
             public override void OnExit() { }
         }
 
-        private class State사운드이펙트 : TriggerState {
-            internal State사운드이펙트(ITriggerContext context) : base(context) { }
+        private class StateStateSoundEffect : TriggerState {
+            internal StateStateSoundEffect(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

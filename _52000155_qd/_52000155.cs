@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000155_qd {
     public static class _52000155 {
-        public class Statewait_01 : TriggerState {
-            internal Statewait_01(ITriggerContext context) : base(context) { }
+        public class StateWait_01 : TriggerState {
+            internal StateWait_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
@@ -13,11 +13,11 @@ namespace Maple2.Trigger._52000155_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002725}, arg3: new byte[] {3})) {
-                    return new State가이드_01(context);
+                    return new StateGuide_01(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {2002})) {
-                    return new Statewait_02(context);
+                    return new StateWait_02(context);
                 }
 
                 return null;
@@ -26,8 +26,8 @@ namespace Maple2.Trigger._52000155_qd {
             public override void OnExit() { }
         }
 
-        private class Statewait_02 : TriggerState {
-            internal Statewait_02(ITriggerContext context) : base(context) { }
+        private class StateWait_02 : TriggerState {
+            internal StateWait_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -36,7 +36,7 @@ namespace Maple2.Trigger._52000155_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new Statewait_03(context);
+                    return new StateWait_03(context);
                 }
 
                 return null;
@@ -45,8 +45,8 @@ namespace Maple2.Trigger._52000155_qd {
             public override void OnExit() { }
         }
 
-        private class Statewait_03 : TriggerState {
-            internal Statewait_03(ITriggerContext context) : base(context) { }
+        private class StateWait_03 : TriggerState {
+            internal StateWait_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -232,7 +232,7 @@ namespace Maple2.Trigger._52000155_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002726}, arg3: new byte[] {2})) {
-                    return new State가이드_01(context);
+                    return new StateGuide_01(context);
                 }
 
                 return null;
@@ -241,8 +241,8 @@ namespace Maple2.Trigger._52000155_qd {
             public override void OnExit() { }
         }
 
-        private class State가이드_01 : TriggerState {
-            internal State가이드_01(ITriggerContext context) : base(context) { }
+        private class StateGuide_01 : TriggerState {
+            internal StateGuide_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001, 5002}, arg2: true);
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._52000155_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002727}, arg3: new byte[] {2})) {
-                    return new State가이드_02(context);
+                    return new StateGuide_02(context);
                 }
 
                 return null;
@@ -262,8 +262,8 @@ namespace Maple2.Trigger._52000155_qd {
             public override void OnExit() { }
         }
 
-        private class State가이드_02 : TriggerState {
-            internal State가이드_02(ITriggerContext context) : base(context) { }
+        private class StateGuide_02 : TriggerState {
+            internal StateGuide_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);

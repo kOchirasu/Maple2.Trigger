@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02000551_bf {
     public static class _battlezone {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State트리거작동시작(context);
+                    return new StateTrigger작동시작(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnExit() { }
         }
 
-        private class State트리거작동시작 : TriggerState {
-            internal State트리거작동시작(ITriggerContext context) : base(context) { }
+        private class StateTrigger작동시작 : TriggerState {
+            internal StateTrigger작동시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -111,7 +111,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State트리거작동시작(context);
+                    return new StateTrigger작동시작(context);
                 }
 
                 return null;
@@ -129,7 +129,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State트리거작동시작(context);
+                    return new StateTrigger작동시작(context);
                 }
 
                 return null;
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State트리거작동시작(context);
+                    return new StateTrigger작동시작(context);
                 }
 
                 return null;
@@ -165,7 +165,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State트리거작동시작(context);
+                    return new StateTrigger작동시작(context);
                 }
 
                 return null;
@@ -183,7 +183,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State트리거작동시작(context);
+                    return new StateTrigger작동시작(context);
                 }
 
                 return null;
@@ -201,7 +201,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State트리거작동시작(context);
+                    return new StateTrigger작동시작(context);
                 }
 
                 return null;
@@ -219,7 +219,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State트리거작동시작(context);
+                    return new StateTrigger작동시작(context);
                 }
 
                 return null;
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State트리거작동시작(context);
+                    return new StateTrigger작동시작(context);
                 }
 
                 return null;
@@ -255,7 +255,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State트리거작동시작(context);
+                    return new StateTrigger작동시작(context);
                 }
 
                 return null;
@@ -273,7 +273,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State트리거작동시작(context);
+                    return new StateTrigger작동시작(context);
                 }
 
                 return null;
@@ -282,8 +282,8 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

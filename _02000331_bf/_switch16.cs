@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000331_bf {
     public static class _switch16 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000802}, arg2: 2);
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "FirstBridgeOff") == 1) {
-                    return new State딜레이01(context);
+                    return new StateDelay01(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnExit() { }
         }
 
-        private class State딜레이01 : TriggerState {
-            internal State딜레이01(ITriggerContext context) : base(context) { }
+        private class StateDelay01 : TriggerState {
+            internal StateDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    return new State딜레이02(context);
+                    return new StateDelay02(context);
                 }
 
                 return null;
@@ -68,8 +68,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnExit() { }
         }
 
-        private class State딜레이02 : TriggerState {
-            internal State딜레이02(ITriggerContext context) : base(context) { }
+        private class StateDelay02 : TriggerState {
+            internal StateDelay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000802})) {
-                    return new State다리재생성(context);
+                    return new State다리재Creation(context);
                 }
 
                 return null;
@@ -121,8 +121,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnExit() { }
         }
 
-        private class State다리재생성 : TriggerState {
-            internal State다리재생성(ITriggerContext context) : base(context) { }
+        private class State다리재Creation : TriggerState {
+            internal State다리재Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetRandomMesh(arg1: new[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013, 10014, 10015, 10016}, arg2: true, arg3: 16, arg4: 100, arg5: 100);
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -142,8 +142,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

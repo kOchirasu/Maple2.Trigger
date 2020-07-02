@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010064_qd {
     public static class _main {
-        public class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: false);
@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52010064_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State퀘스트조건체크(context);
+                    return new StateQuest조건체크(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnExit() { }
         }
 
-        private class State퀘스트조건체크 : TriggerState {
-            internal State퀘스트조건체크(ITriggerContext context) : base(context) { }
+        private class StateQuest조건체크 : TriggerState {
+            internal StateQuest조건체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -215,7 +215,7 @@ namespace Maple2.Trigger._52010064_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new Statequit01(context);
+                    return new StateQuit01(context);
                 }
 
                 return null;
@@ -224,8 +224,8 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnExit() { }
         }
 
-        private class Statequit01 : TriggerState {
-            internal Statequit01(ITriggerContext context) : base(context) { }
+        private class StateQuit01 : TriggerState {
+            internal StateQuit01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
@@ -235,7 +235,7 @@ namespace Maple2.Trigger._52010064_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new Statequit03(context);
+                    return new StateQuit03(context);
                 }
 
                 return null;
@@ -244,8 +244,8 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnExit() { }
         }
 
-        private class Statequit03 : TriggerState {
-            internal Statequit03(ITriggerContext context) : base(context) { }
+        private class StateQuit03 : TriggerState {
+            internal StateQuit03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
@@ -255,7 +255,7 @@ namespace Maple2.Trigger._52010064_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new Statequit03(context);
+                    return new StateQuit03(context);
                 }
 
                 return null;
@@ -283,8 +283,8 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020301_bf {
     public static class _3000064_phase_5_interect_04 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {200037, 200038}, arg2: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Phase_5_Interect_04") == 1) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02020301_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._02020301_bf {
                 }
 
                 if (context.GetUserValue(key: "Phase_5_Interect_04") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02020301_bf {
                 }
 
                 if (context.GetUserValue(key: "Phase_5_Interect_04") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02020301_bf {
                 }
 
                 if (context.GetUserValue(key: "Phase_5_Interect_04") == 0) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

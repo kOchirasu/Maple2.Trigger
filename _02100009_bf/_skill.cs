@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02100009_bf {
     public static class _skill {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 100, key: "Fencebreak", value: 0);
@@ -10,20 +10,20 @@ namespace Maple2.Trigger._02100009_bf {
             }
 
             public override TriggerState Execute() {
-                return new State유저감지(context);
+                return new StateUserDetection(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State유저감지 : TriggerState {
-            internal State유저감지(ITriggerContext context) : base(context) { }
+        private class StateUserDetection : TriggerState {
+            internal StateUserDetection(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State스킬사용(context);
+                    return new StateSkill사용(context);
                 }
 
                 return null;
@@ -32,8 +32,8 @@ namespace Maple2.Trigger._02100009_bf {
             public override void OnExit() { }
         }
 
-        private class State스킬사용 : TriggerState {
-            internal State스킬사용(ITriggerContext context) : base(context) { }
+        private class StateSkill사용 : TriggerState {
+            internal StateSkill사용(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -57,12 +57,8 @@ namespace Maple2.Trigger._02100009_bf {
             }
 
             public override TriggerState Execute() {
-                if (true) {
-                    // return new State끝1(context);
+                // return new State끝1(context);
                     return null;
-                }
-
-                return null;
             }
 
             public override void OnExit() { }

@@ -2,8 +2,8 @@ using System.Numerics;
 
 namespace Maple2.Trigger._02020111_bf {
     public static class _summon_01 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon") == 1) {
-                    return new State몬스터등장(context);
+                    return new StateMonsterAppear(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터등장 : TriggerState {
-            internal State몬스터등장(ITriggerContext context) : base(context) { }
+        private class StateMonsterAppear : TriggerState {
+            internal StateMonsterAppear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900005, key: "Lapenta_Attack_Guide", value: 1);
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State몬스터등장_2(context);
+                    return new StateMonsterAppear_2(context);
                 }
 
                 return null;
@@ -53,8 +53,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State몬스터등장_2 : TriggerState {
-            internal State몬스터등장_2(ITriggerContext context) : base(context) { }
+        private class StateMonsterAppear_2 : TriggerState {
+            internal StateMonsterAppear_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(52f, 48f, 38f));
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon") == 0) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;

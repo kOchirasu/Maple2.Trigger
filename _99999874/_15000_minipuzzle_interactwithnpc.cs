@@ -146,12 +146,8 @@ namespace Maple2.Trigger._99999874 {
             }
 
             public override TriggerState Execute() {
-                if (true) {
-                    context.SetEffect(arg1: new[] {15303}, arg2: false);
+                context.SetEffect(arg1: new[] {15303}, arg2: false);
                     return new StateInteractWithNpc_Success(context);
-                }
-
-                return null;
             }
 
             public override void OnExit() { }

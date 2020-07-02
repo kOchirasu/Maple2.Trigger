@@ -2,8 +2,8 @@ using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02000241_bf {
     public static class _timer {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {2001, 2002, 2003}, arg2: false);
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000241_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "98")) {
-                    return new State시작0(context);
+                    return new StateStart0(context);
                 }
 
                 return null;
@@ -95,8 +95,8 @@ namespace Maple2.Trigger._02000241_bf {
             public override void OnExit() { }
         }
 
-        private class State시작0 : TriggerState {
-            internal State시작0(ITriggerContext context) : base(context) { }
+        private class StateStart0 : TriggerState {
+            internal StateStart0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._02000241_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "98")) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -114,8 +114,8 @@ namespace Maple2.Trigger._02000241_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);

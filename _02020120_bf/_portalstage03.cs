@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    return new State스테이지3_시작(context);
+                    return new StateStage3_시작(context);
                 }
 
                 return null;
@@ -19,38 +19,38 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State스테이지3_시작 : TriggerState {
-            internal State스테이지3_시작(ITriggerContext context) : base(context) { }
+        private class StateStage3_시작 : TriggerState {
+            internal StateStage3_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Stage03") == 11) {
-                    return new State스테이지3_왼쪽_왼쪽진행(context);
+                    return new StateStage3_왼쪽_왼쪽진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage03") == 12) {
-                    return new State스테이지3_왼쪽_가운데진행(context);
+                    return new StateStage3_왼쪽_가운데진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage03") == 21) {
-                    return new State스테이지3_가운데_왼쪽진행(context);
+                    return new StateStage3_가운데_왼쪽진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage03") == 22) {
-                    return new State스테이지3_가운데_가운데진행(context);
+                    return new StateStage3_가운데_가운데진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage03") == 23) {
-                    return new State스테이지3_가운데_오른쪽진행(context);
+                    return new StateStage3_가운데_오른쪽진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage03") == 31) {
-                    return new State스테이지3_오른쪽_가운데진행(context);
+                    return new StateStage3_오른쪽_가운데진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage03") == 32) {
-                    return new State스테이지3_오른쪽_오른쪽진행(context);
+                    return new StateStage3_오른쪽_오른쪽진행(context);
                 }
 
                 return null;
@@ -59,8 +59,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State스테이지3_왼쪽_왼쪽진행 : TriggerState {
-            internal State스테이지3_왼쪽_왼쪽진행(ITriggerContext context) : base(context) { }
+        private class StateStage3_왼쪽_왼쪽진행 : TriggerState {
+            internal StateStage3_왼쪽_왼쪽진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 3101, arg2: true, arg3: true, arg4: true);
@@ -78,8 +78,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State스테이지3_왼쪽_가운데진행 : TriggerState {
-            internal State스테이지3_왼쪽_가운데진행(ITriggerContext context) : base(context) { }
+        private class StateStage3_왼쪽_가운데진행 : TriggerState {
+            internal StateStage3_왼쪽_가운데진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 3103, arg2: true, arg3: true, arg4: true);
@@ -97,8 +97,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State스테이지3_가운데_왼쪽진행 : TriggerState {
-            internal State스테이지3_가운데_왼쪽진행(ITriggerContext context) : base(context) { }
+        private class StateStage3_가운데_왼쪽진행 : TriggerState {
+            internal StateStage3_가운데_왼쪽진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 3201, arg2: true, arg3: true, arg4: true);
@@ -115,8 +115,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State스테이지3_가운데_가운데진행 : TriggerState {
-            internal State스테이지3_가운데_가운데진행(ITriggerContext context) : base(context) { }
+        private class StateStage3_가운데_가운데진행 : TriggerState {
+            internal StateStage3_가운데_가운데진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 3202, arg2: true, arg3: true, arg4: true);
@@ -133,8 +133,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State스테이지3_가운데_오른쪽진행 : TriggerState {
-            internal State스테이지3_가운데_오른쪽진행(ITriggerContext context) : base(context) { }
+        private class StateStage3_가운데_오른쪽진행 : TriggerState {
+            internal StateStage3_가운데_오른쪽진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 3203, arg2: true, arg3: true, arg4: true);
@@ -151,8 +151,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State스테이지3_오른쪽_가운데진행 : TriggerState {
-            internal State스테이지3_오른쪽_가운데진행(ITriggerContext context) : base(context) { }
+        private class StateStage3_오른쪽_가운데진행 : TriggerState {
+            internal StateStage3_오른쪽_가운데진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 3301, arg2: true, arg3: true, arg4: true);
@@ -171,8 +171,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State스테이지3_오른쪽_오른쪽진행 : TriggerState {
-            internal State스테이지3_오른쪽_오른쪽진행(ITriggerContext context) : base(context) { }
+        private class StateStage3_오른쪽_오른쪽진행 : TriggerState {
+            internal StateStage3_오른쪽_오른쪽진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 3304, arg2: true, arg3: true, arg4: true);

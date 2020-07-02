@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000301_bf {
     public static class _trap_03 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 206, arg2: true, arg3: "sf_quest_light_A01_Off");

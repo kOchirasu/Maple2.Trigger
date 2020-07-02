@@ -58,14 +58,14 @@ namespace Maple2.Trigger._81000003_item {
             }
 
             public override TriggerState Execute() {
-                return new State패턴결정(context);
+                return new StatePattern결정(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State패턴결정 : TriggerState {
-            internal State패턴결정(ITriggerContext context) : base(context) { }
+        private class StatePattern결정 : TriggerState {
+            internal StatePattern결정(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.UseState(arg1: 1, arg2: true);
@@ -84,8 +84,8 @@ namespace Maple2.Trigger._81000003_item {
             public override void OnExit() { }
         }
 
-        private class State미로패턴01 : TriggerState {
-            internal State미로패턴01(ITriggerContext context) : base(context) { }
+        private class State미로Pattern01 : TriggerState {
+            internal State미로Pattern01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {527}, arg2: false);
@@ -98,8 +98,8 @@ namespace Maple2.Trigger._81000003_item {
             public override void OnExit() { }
         }
 
-        private class State미로패턴02 : TriggerState {
-            internal State미로패턴02(ITriggerContext context) : base(context) { }
+        private class State미로Pattern02 : TriggerState {
+            internal State미로Pattern02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {528}, arg2: false);
@@ -112,8 +112,8 @@ namespace Maple2.Trigger._81000003_item {
             public override void OnExit() { }
         }
 
-        private class State미로패턴03 : TriggerState {
-            internal State미로패턴03(ITriggerContext context) : base(context) { }
+        private class State미로Pattern03 : TriggerState {
+            internal State미로Pattern03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {529}, arg2: false);
@@ -126,8 +126,8 @@ namespace Maple2.Trigger._81000003_item {
             public override void OnExit() { }
         }
 
-        private class State점프패턴01 : TriggerState {
-            internal State점프패턴01(ITriggerContext context) : base(context) { }
+        private class State점프Pattern01 : TriggerState {
+            internal State점프Pattern01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {711}, arg2: true);
@@ -155,8 +155,8 @@ namespace Maple2.Trigger._81000003_item {
             public override void OnExit() { }
         }
 
-        private class State점프패턴02 : TriggerState {
-            internal State점프패턴02(ITriggerContext context) : base(context) { }
+        private class State점프Pattern02 : TriggerState {
+            internal State점프Pattern02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {711}, arg2: false);

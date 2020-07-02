@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02010054_bf {
     public static class _brick_26 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {34026}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1126})) {
-                    return new State발판(context);
+                    return new StateSetup(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnExit() { }
         }
 
-        private class State발판 : TriggerState {
-            internal State발판(ITriggerContext context) : base(context) { }
+        private class StateSetup : TriggerState {
+            internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {7026}, arg2: true);
@@ -29,7 +29,7 @@ namespace Maple2.Trigger._02010054_bf {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 200)) {
                     context.SetMesh(arg1: new[] {34026}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -2,14 +2,14 @@ using System.Numerics;
 
 namespace Maple2.Trigger._52000073_qd {
     public static class _main {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100115}, arg3: new byte[] {1})) {
-                    return new State레논등장(context);
+                    return new State레논Appear(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnExit() { }
         }
 
-        private class State레논등장 : TriggerState {
-            internal State레논등장(ITriggerContext context) : base(context) { }
+        private class State레논Appear : TriggerState {
+            internal State레논Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG\weather\Eff_monochrome_03.xml");
@@ -299,7 +299,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State카메라시점변경_ready(context);
+                    return new StateCamera시점변경_ready(context);
                 }
 
                 return null;
@@ -308,14 +308,14 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnExit() { }
         }
 
-        private class State카메라시점변경_ready : TriggerState {
-            internal State카메라시점변경_ready(ITriggerContext context) : base(context) { }
+        private class StateCamera시점변경_ready : TriggerState {
+            internal StateCamera시점변경_ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State카메라시점변경(context);
+                    return new StateCamera시점변경(context);
                 }
 
                 return null;
@@ -324,8 +324,8 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnExit() { }
         }
 
-        private class State카메라시점변경 : TriggerState {
-            internal State카메라시점변경(ITriggerContext context) : base(context) { }
+        private class StateCamera시점변경 : TriggerState {
+            internal StateCamera시점변경(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -334,7 +334,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State카트반등장(context);
+                    return new State카트반Appear(context);
                 }
 
                 return null;
@@ -343,8 +343,8 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnExit() { }
         }
 
-        private class State카트반등장 : TriggerState {
-            internal State카트반등장(ITriggerContext context) : base(context) { }
+        private class State카트반Appear : TriggerState {
+            internal State카트반Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {305});

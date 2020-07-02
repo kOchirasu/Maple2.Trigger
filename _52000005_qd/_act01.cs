@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000005_qd {
     public static class _act01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {103, 202}, arg2: true);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52000005_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002781}, arg3: new byte[] {1})) {
-                    return new State딜레이01(context);
+                    return new StateDelay01(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52000005_qd {
             public override void OnExit() { }
         }
 
-        private class State딜레이01 : TriggerState {
-            internal State딜레이01(ITriggerContext context) : base(context) { }
+        private class StateDelay01 : TriggerState {
+            internal StateDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 4);
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._52000005_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    return new State딜레이03(context);
+                    return new StateDelay03(context);
                 }
 
                 return null;
@@ -129,8 +129,8 @@ namespace Maple2.Trigger._52000005_qd {
             public override void OnExit() { }
         }
 
-        private class State딜레이03 : TriggerState {
-            internal State딜레이03(ITriggerContext context) : base(context) { }
+        private class StateDelay03 : TriggerState {
+            internal StateDelay03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "12", arg2: 2);
@@ -219,12 +219,12 @@ namespace Maple2.Trigger._52000005_qd {
                 context.SetProductionUI(arg1: 1);
                 context.SetProductionUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000005_QD__ACT01__3$", arg4: 4);
-                context.SetSkip(arg1: "연출종료");
+                context.SetSkip(arg1: "StopCinematic");
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "31")) {
-                    return new State연출종료(context);
+                    return new StateStopCinematic(context);
                 }
 
                 return null;
@@ -233,22 +233,22 @@ namespace Maple2.Trigger._52000005_qd {
             public override void OnExit() { }
         }
 
-        private class State연출종료 : TriggerState {
-            internal State연출종료(ITriggerContext context) : base(context) { }
+        private class StateStopCinematic : TriggerState {
+            internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
             }
 
             public override TriggerState Execute() {
-                return new State업적발생(context);
+                return new StateAchievement(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State업적발생 : TriggerState {
-            internal State업적발생(ITriggerContext context) : base(context) { }
+        private class StateAchievement : TriggerState {
+            internal StateAchievement(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "Lumieragon_History");

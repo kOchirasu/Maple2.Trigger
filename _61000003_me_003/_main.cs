@@ -7,7 +7,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        private class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "OxQuiz");
@@ -30,11 +30,11 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 100) == 50) {
-                    return new State시작준비(context);
+                    return new StateStart준비(context);
                 }
 
                 if (context.WaitTick(waitTick: 60000)) {
-                    return new State시작준비(context);
+                    return new StateStart준비(context);
                 }
 
                 return null;
@@ -43,8 +43,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State시작준비 : TriggerState {
-            internal State시작준비(ITriggerContext context) : base(context) { }
+        private class StateStart준비 : TriggerState {
+            internal StateStart준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMiniGameAreaForHack(boxId: 105);
@@ -141,11 +141,11 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "15")) {
-                    return new State문제1벽생성(context);
+                    return new State문제1벽Creation(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {105})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -154,8 +154,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State문제1벽생성 : TriggerState {
-            internal State문제1벽생성(ITriggerContext context) : base(context) { }
+        private class State문제1벽Creation : TriggerState {
+            internal State문제1벽Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {105}, arg2: "System_Quiz_Popup_Off_01");
@@ -266,7 +266,7 @@ namespace Maple2.Trigger._61000003_me_003 {
                 }
 
                 if (!context.UserDetected(arg1: new[] {105})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -292,7 +292,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "15")) {
-                    return new State문제2벽생성(context);
+                    return new State문제2벽Creation(context);
                 }
 
                 return null;
@@ -301,8 +301,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State문제2벽생성 : TriggerState {
-            internal State문제2벽생성(ITriggerContext context) : base(context) { }
+        private class State문제2벽Creation : TriggerState {
+            internal State문제2벽Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {105}, arg2: "System_Quiz_Popup_Off_01");
@@ -413,7 +413,7 @@ namespace Maple2.Trigger._61000003_me_003 {
                 }
 
                 if (!context.UserDetected(arg1: new[] {105})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -439,7 +439,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "15")) {
-                    return new State문제3벽생성(context);
+                    return new State문제3벽Creation(context);
                 }
 
                 return null;
@@ -448,8 +448,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State문제3벽생성 : TriggerState {
-            internal State문제3벽생성(ITriggerContext context) : base(context) { }
+        private class State문제3벽Creation : TriggerState {
+            internal State문제3벽Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {105}, arg2: "System_Quiz_Popup_Off_01");
@@ -560,7 +560,7 @@ namespace Maple2.Trigger._61000003_me_003 {
                 }
 
                 if (!context.UserDetected(arg1: new[] {105})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -586,7 +586,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "15")) {
-                    return new State문제4벽생성(context);
+                    return new State문제4벽Creation(context);
                 }
 
                 return null;
@@ -595,8 +595,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State문제4벽생성 : TriggerState {
-            internal State문제4벽생성(ITriggerContext context) : base(context) { }
+        private class State문제4벽Creation : TriggerState {
+            internal State문제4벽Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {105}, arg2: "System_Quiz_Popup_Off_01");
@@ -707,7 +707,7 @@ namespace Maple2.Trigger._61000003_me_003 {
                 }
 
                 if (!context.UserDetected(arg1: new[] {105})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -733,7 +733,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "15")) {
-                    return new State문제5벽생성(context);
+                    return new State문제5벽Creation(context);
                 }
 
                 return null;
@@ -742,8 +742,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State문제5벽생성 : TriggerState {
-            internal State문제5벽생성(ITriggerContext context) : base(context) { }
+        private class State문제5벽Creation : TriggerState {
+            internal State문제5벽Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {105}, arg2: "System_Quiz_Popup_Off_01");
@@ -854,7 +854,7 @@ namespace Maple2.Trigger._61000003_me_003 {
                 }
 
                 if (!context.UserDetected(arg1: new[] {105})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -880,7 +880,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "15")) {
-                    return new State문제6벽생성(context);
+                    return new State문제6벽Creation(context);
                 }
 
                 return null;
@@ -889,8 +889,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State문제6벽생성 : TriggerState {
-            internal State문제6벽생성(ITriggerContext context) : base(context) { }
+        private class State문제6벽Creation : TriggerState {
+            internal State문제6벽Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {105}, arg2: "System_Quiz_Popup_Off_01");
@@ -1001,7 +1001,7 @@ namespace Maple2.Trigger._61000003_me_003 {
                 }
 
                 if (!context.UserDetected(arg1: new[] {105})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1027,7 +1027,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "15")) {
-                    return new State문제7벽생성(context);
+                    return new State문제7벽Creation(context);
                 }
 
                 return null;
@@ -1036,8 +1036,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State문제7벽생성 : TriggerState {
-            internal State문제7벽생성(ITriggerContext context) : base(context) { }
+        private class State문제7벽Creation : TriggerState {
+            internal State문제7벽Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {105}, arg2: "System_Quiz_Popup_Off_01");
@@ -1148,7 +1148,7 @@ namespace Maple2.Trigger._61000003_me_003 {
                 }
 
                 if (!context.UserDetected(arg1: new[] {105})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1174,7 +1174,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "15")) {
-                    return new State문제8벽생성(context);
+                    return new State문제8벽Creation(context);
                 }
 
                 return null;
@@ -1183,8 +1183,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State문제8벽생성 : TriggerState {
-            internal State문제8벽생성(ITriggerContext context) : base(context) { }
+        private class State문제8벽Creation : TriggerState {
+            internal State문제8벽Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {105}, arg2: "System_Quiz_Popup_Off_01");
@@ -1295,7 +1295,7 @@ namespace Maple2.Trigger._61000003_me_003 {
                 }
 
                 if (!context.UserDetected(arg1: new[] {105})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1321,7 +1321,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "15")) {
-                    return new State문제9벽생성(context);
+                    return new State문제9벽Creation(context);
                 }
 
                 return null;
@@ -1330,8 +1330,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State문제9벽생성 : TriggerState {
-            internal State문제9벽생성(ITriggerContext context) : base(context) { }
+        private class State문제9벽Creation : TriggerState {
+            internal State문제9벽Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {105}, arg2: "System_Quiz_Popup_Off_01");
@@ -1442,7 +1442,7 @@ namespace Maple2.Trigger._61000003_me_003 {
                 }
 
                 if (!context.UserDetected(arg1: new[] {105})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1468,7 +1468,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "15")) {
-                    return new State문제10벽생성(context);
+                    return new State문제10벽Creation(context);
                 }
 
                 return null;
@@ -1477,8 +1477,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State문제10벽생성 : TriggerState {
-            internal State문제10벽생성(ITriggerContext context) : base(context) { }
+        private class State문제10벽Creation : TriggerState {
+            internal State문제10벽Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {105}, arg2: "System_Quiz_Popup_Off_01");
@@ -1583,11 +1583,11 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State성공(context);
+                    return new StateSuccess(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {105})) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -1596,8 +1596,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State성공 : TriggerState {
-            internal State성공(ITriggerContext context) : base(context) { }
+        private class StateSuccess : TriggerState {
+            internal StateSuccess(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108, 3109, 3110, 3111, 3112, 3113, 3114, 3115, 3116, 3117, 3118, 3119, 3120, 3121, 3122, 3123, 3124, 3125, 3126, 3127, 3128, 3129, 3130, 3131, 3132, 3133, 3134, 3135, 3136, 3137, 3138, 3139, 3140, 3141, 3142, 3143, 3144, 3145, 3146, 3147, 3148, 3149, 3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208, 3209, 3210, 3211, 3212, 3213, 3214, 3215, 3216, 3217, 3218, 3219, 3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230, 3231, 3232, 3233, 3234, 3235, 3236, 3237, 3238, 3239, 3240, 3241, 3242, 3243, 3244, 3245, 3246, 3247, 3248, 3249, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325, 3326, 3327, 3328, 3329, 3330, 3331, 3332, 3333, 3334, 3335, 3336, 3337, 3338, 3339, 3340, 3341, 3342, 3343, 3344, 3345, 3346, 3347, 3348, 3349, 3350, 3351, 3352, 3353, 3354, 3355}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -1607,7 +1607,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State우승자카메라연출(context);
+                    return new State우승자Camera연출(context);
                 }
 
                 return null;
@@ -1616,8 +1616,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State우승자카메라연출 : TriggerState {
-            internal State우승자카메라연출(ITriggerContext context) : base(context) { }
+        private class State우승자Camera연출 : TriggerState {
+            internal State우승자Camera연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 3, arg2: "$61000003_ME_003__MAIN__12$", arg3: 5000, arg4: "105");
@@ -1650,7 +1650,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State종료2(context);
+                    return new StateEnd2(context);
                 }
 
                 return null;
@@ -1659,8 +1659,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.EndMiniGameRound(winnerBoxId: 105);
@@ -1673,7 +1673,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State종료2(context);
+                    return new StateEnd2(context);
                 }
 
                 return null;
@@ -1682,8 +1682,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State종료2 : TriggerState {
-            internal State종료2(ITriggerContext context) : base(context) { }
+        private class StateEnd2 : TriggerState {
+            internal StateEnd2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.UnSetMiniGameAreaForHack();
@@ -1695,7 +1695,7 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "6")) {
                     context.MoveUser(arg1: 0, arg2: 0);
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

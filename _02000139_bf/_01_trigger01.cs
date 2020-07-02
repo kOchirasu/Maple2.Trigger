@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000139_bf {
     public static class _01_trigger01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {401, 402, 403, 404}, arg2: false);
@@ -15,7 +15,7 @@ namespace Maple2.Trigger._02000139_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000131}, arg2: 0)) {
-                    return new State발판등장1(context);
+                    return new StateSetupAppear1(context);
                 }
 
                 return null;
@@ -24,8 +24,8 @@ namespace Maple2.Trigger._02000139_bf {
             public override void OnExit() { }
         }
 
-        private class State발판등장1 : TriggerState {
-            internal State발판등장1(ITriggerContext context) : base(context) { }
+        private class StateSetupAppear1 : TriggerState {
+            internal StateSetupAppear1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {201}, arg2: true);
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._02000139_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State발판등장2(context);
+                    return new StateSetupAppear2(context);
                 }
 
                 return null;
@@ -43,8 +43,8 @@ namespace Maple2.Trigger._02000139_bf {
             public override void OnExit() { }
         }
 
-        private class State발판등장2 : TriggerState {
-            internal State발판등장2(ITriggerContext context) : base(context) { }
+        private class StateSetupAppear2 : TriggerState {
+            internal StateSetupAppear2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {202}, arg2: true);
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02000139_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State발판등장3(context);
+                    return new StateSetupAppear3(context);
                 }
 
                 return null;
@@ -62,8 +62,8 @@ namespace Maple2.Trigger._02000139_bf {
             public override void OnExit() { }
         }
 
-        private class State발판등장3 : TriggerState {
-            internal State발판등장3(ITriggerContext context) : base(context) { }
+        private class StateSetupAppear3 : TriggerState {
+            internal StateSetupAppear3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {203}, arg2: true);
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._02000139_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    return new State사다리등장(context);
+                    return new StateLadder(context);
                 }
 
                 return null;
@@ -81,8 +81,8 @@ namespace Maple2.Trigger._02000139_bf {
             public override void OnExit() { }
         }
 
-        private class State사다리등장 : TriggerState {
-            internal State사다리등장(ITriggerContext context) : base(context) { }
+        private class StateLadder : TriggerState {
+            internal StateLadder(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetLadder(arg1: 301, arg2: true, arg3: true);
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._02000139_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

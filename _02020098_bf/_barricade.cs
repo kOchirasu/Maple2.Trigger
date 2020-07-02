@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020098_bf {
     public static class _barricade {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State트리거종료(context);
+                    return new StateTrigger종료(context);
                 }
 
                 return null;
@@ -71,8 +71,8 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State트리거종료 : TriggerState {
-            internal State트리거종료(ITriggerContext context) : base(context) { }
+        private class StateTrigger종료 : TriggerState {
+            internal StateTrigger종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

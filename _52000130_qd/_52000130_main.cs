@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000130_qd {
     public static class _52000130_main {
-        public class State준비 : TriggerState {
-            internal State준비(ITriggerContext context) : base(context) { }
+        public class StateSetup : TriggerState {
+            internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: true);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52000130_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {701})) {
-                    return new State잠시대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52000130_qd {
             public override void OnExit() { }
         }
 
-        private class State잠시대기 : TriggerState {
-            internal State잠시대기(ITriggerContext context) : base(context) { }
+        private class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -380,7 +380,7 @@ namespace Maple2.Trigger._52000130_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State페이드아웃_01(context);
+                    return new StateFadeOut_01(context);
                 }
 
                 return null;
@@ -389,8 +389,8 @@ namespace Maple2.Trigger._52000130_qd {
             public override void OnExit() { }
         }
 
-        private class State페이드아웃_01 : TriggerState {
-            internal State페이드아웃_01(ITriggerContext context) : base(context) { }
+        private class StateFadeOut_01 : TriggerState {
+            internal StateFadeOut_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -399,7 +399,7 @@ namespace Maple2.Trigger._52000130_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State페이드아웃_02(context);
+                    return new StateFadeOut_02(context);
                 }
 
                 return null;
@@ -408,8 +408,8 @@ namespace Maple2.Trigger._52000130_qd {
             public override void OnExit() { }
         }
 
-        private class State페이드아웃_02 : TriggerState {
-            internal State페이드아웃_02(ITriggerContext context) : base(context) { }
+        private class StateFadeOut_02 : TriggerState {
+            internal StateFadeOut_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003371, msg: "$52000130_QD__52000130_MAIN__13$", duration: 5000, align: "right");

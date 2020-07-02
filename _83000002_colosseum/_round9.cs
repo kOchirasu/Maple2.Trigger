@@ -2,8 +2,8 @@ using System.Numerics;
 
 namespace Maple2.Trigger._83000002_colosseum {
     public static class _round9 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSound(arg1: 11000, arg2: false);
@@ -16,7 +16,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StartRound9") == 1) {
-                    return new State시작딜레이(context);
+                    return new StateStartDelay(context);
                 }
 
                 return null;
@@ -25,8 +25,8 @@ namespace Maple2.Trigger._83000002_colosseum {
             public override void OnExit() { }
         }
 
-        private class State시작딜레이 : TriggerState {
-            internal State시작딜레이(ITriggerContext context) : base(context) { }
+        private class StateStartDelay : TriggerState {
+            internal StateStartDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -52,13 +52,9 @@ namespace Maple2.Trigger._83000002_colosseum {
                     return new State라운드대기(context);
                 }
 
-                if (true) {
-                    context.SideNpcTalk(type: "talk", npcId: 11004288, illust: "nagi_switchon", script: "$83000002_COLOSSEUM__ROUND9__1$", duration: 3000);
+                context.SideNpcTalk(type: "talk", npcId: 11004288, illust: "nagi_switchon", script: "$83000002_COLOSSEUM__ROUND9__1$", duration: 3000);
                     context.DebugString(message: "던전 요구 아이템 점수를 달성 못해 실패 처리 됩니다.");
                     return new StateFailRound(context);
-                }
-
-                return null;
             }
 
             public override void OnExit() { }
@@ -76,7 +72,7 @@ namespace Maple2.Trigger._83000002_colosseum {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SideNpcTalk(type: "cutin", illust: "VasaraChen_normal", duration: 3000);
                     context.ShowRoundUI(round: 9, duration: 3000);
-                    return new State몬스터스폰대기(context);
+                    return new StateMonster스폰대기(context);
                 }
 
                 return null;
@@ -85,14 +81,14 @@ namespace Maple2.Trigger._83000002_colosseum {
             public override void OnExit() { }
         }
 
-        private class State몬스터스폰대기 : TriggerState {
-            internal State몬스터스폰대기(ITriggerContext context) : base(context) { }
+        private class StateMonster스폰대기 : TriggerState {
+            internal StateMonster스폰대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State몬스터스폰(context);
+                    return new StateMonster스폰(context);
                 }
 
                 return null;
@@ -101,8 +97,8 @@ namespace Maple2.Trigger._83000002_colosseum {
             public override void OnExit() { }
         }
 
-        private class State몬스터스폰 : TriggerState {
-            internal State몬스터스폰(ITriggerContext context) : base(context) { }
+        private class StateMonster스폰 : TriggerState {
+            internal StateMonster스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {109}, arg2: false);
@@ -111,7 +107,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State카운트(context);
+                    return new StateCount(context);
                 }
 
                 return null;
@@ -120,8 +116,8 @@ namespace Maple2.Trigger._83000002_colosseum {
             public override void OnExit() { }
         }
 
-        private class State카운트 : TriggerState {
-            internal State카운트(ITriggerContext context) : base(context) { }
+        private class StateCount : TriggerState {
+            internal StateCount(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowCountUI(text: "$83000002_COLOSSEUM__ROUND9__2$", count: 3, soundType: 2);
@@ -129,7 +125,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State전투시작(context);
+                    return new StateBattleStart(context);
                 }
 
                 return null;
@@ -138,8 +134,8 @@ namespace Maple2.Trigger._83000002_colosseum {
             public override void OnExit() { }
         }
 
-        private class State전투시작 : TriggerState {
-            internal State전투시작(ITriggerContext context) : base(context) { }
+        private class StateBattleStart : TriggerState {
+            internal StateBattleStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.LockMyPc(isLock: false);
@@ -295,7 +291,7 @@ namespace Maple2.Trigger._83000002_colosseum {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.MoveUserPath(arg1: "MS2PatrolData_01");
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -312,7 +308,7 @@ namespace Maple2.Trigger._83000002_colosseum {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetUserValue(triggerId: 900001, key: "StartRound9", value: 3);
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

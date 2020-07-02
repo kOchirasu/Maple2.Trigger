@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000151_qd {
     public static class _52000151 {
-        public class Statewait : TriggerState {
-            internal Statewait(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -21,7 +21,7 @@ namespace Maple2.Trigger._52000151_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10010}, arg2: new[] {50001641}, arg3: new byte[] {1})) {
-                    return new State파토스등장연출01(context);
+                    return new State파토스SpawnCinematic01(context);
                 }
 
                 return null;
@@ -30,14 +30,14 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class Statewait_2 : TriggerState {
-            internal Statewait_2(ITriggerContext context) : base(context) { }
+        private class StateWait_2 : TriggerState {
+            internal StateWait_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10010})) {
-                    return new State파토스등장연출01(context);
+                    return new State파토스SpawnCinematic01(context);
                 }
 
                 return null;
@@ -65,8 +65,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출01 : TriggerState {
-            internal State파토스등장연출01(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic01 : TriggerState {
+            internal State파토스SpawnCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    return new State파토스등장연출02(context);
+                    return new State파토스SpawnCinematic02(context);
                 }
 
                 return null;
@@ -87,8 +87,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출02 : TriggerState {
-            internal State파토스등장연출02(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic02 : TriggerState {
+            internal State파토스SpawnCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "exit");
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State파토스등장연출02_B(context);
+                    return new State파토스SpawnCinematic02_B(context);
                 }
 
                 return null;
@@ -107,8 +107,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출02_B : TriggerState {
-            internal State파토스등장연출02_B(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic02_B : TriggerState {
+            internal State파토스SpawnCinematic02_B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {3000, 3001}, arg2: false);
@@ -123,7 +123,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State파토스등장연출03(context);
+                    return new State파토스SpawnCinematic03(context);
                 }
 
                 return null;
@@ -132,8 +132,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출03 : TriggerState {
-            internal State파토스등장연출03(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic03 : TriggerState {
+            internal State파토스SpawnCinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 3);
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State파토스등장연출04(context);
+                    return new State파토스SpawnCinematic04(context);
                 }
 
                 return null;
@@ -153,8 +153,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출04 : TriggerState {
-            internal State파토스등장연출04(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic04 : TriggerState {
+            internal State파토스SpawnCinematic04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003442, illustId: "0", msg: "$52000151_QD__52000151__1$", duration: 4000, align: "right");
@@ -163,7 +163,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State파토스등장연출05(context);
+                    return new State파토스SpawnCinematic05(context);
                 }
 
                 return null;
@@ -172,8 +172,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출05 : TriggerState {
-            internal State파토스등장연출05(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic05 : TriggerState {
+            internal State파토스SpawnCinematic05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003441, illustId: "0", msg: "$52000151_QD__52000151__2$", duration: 4000, align: "right");
@@ -183,7 +183,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State파토스등장연출06(context);
+                    return new State파토스SpawnCinematic06(context);
                 }
 
                 return null;
@@ -192,8 +192,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출06 : TriggerState {
-            internal State파토스등장연출06(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic06 : TriggerState {
+            internal State파토스SpawnCinematic06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003441, illustId: "0", msg: "$52000151_QD__52000151__3$", duration: 4000, align: "right");
@@ -203,7 +203,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State파토스등장연출08(context);
+                    return new State파토스SpawnCinematic08(context);
                 }
 
                 return null;
@@ -212,8 +212,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출08 : TriggerState {
-            internal State파토스등장연출08(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic08 : TriggerState {
+            internal State파토스SpawnCinematic08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003441, illustId: "0", msg: "$52000151_QD__52000151__4$", duration: 4000, align: "right");
@@ -222,7 +222,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State파토스등장연출09(context);
+                    return new State파토스SpawnCinematic09(context);
                 }
 
                 return null;
@@ -231,8 +231,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출09 : TriggerState {
-            internal State파토스등장연출09(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic09 : TriggerState {
+            internal State파토스SpawnCinematic09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003442, illustId: "0", msg: "$52000151_QD__52000151__5$", duration: 4000, align: "right");
@@ -241,7 +241,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State파토스등장연출10(context);
+                    return new State파토스SpawnCinematic10(context);
                 }
 
                 return null;
@@ -250,8 +250,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출10 : TriggerState {
-            internal State파토스등장연출10(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic10 : TriggerState {
+            internal State파토스SpawnCinematic10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003439, illustId: "0", msg: "$52000151_QD__52000151__6$", duration: 4000, align: "right");
@@ -261,7 +261,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State파토스등장연출12(context);
+                    return new State파토스SpawnCinematic12(context);
                 }
 
                 return null;
@@ -270,8 +270,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출12 : TriggerState {
-            internal State파토스등장연출12(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic12 : TriggerState {
+            internal State파토스SpawnCinematic12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003439, illustId: "0", msg: "$52000151_QD__52000151__7$", duration: 4000, align: "right");
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State파토스등장연출13(context);
+                    return new State파토스SpawnCinematic13(context);
                 }
 
                 return null;
@@ -289,8 +289,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출13 : TriggerState {
-            internal State파토스등장연출13(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic13 : TriggerState {
+            internal State파토스SpawnCinematic13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003441, illustId: "0", msg: "$52000151_QD__52000151__8$", duration: 4000, align: "right");
@@ -299,7 +299,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State파토스등장연출14(context);
+                    return new State파토스SpawnCinematic14(context);
                 }
 
                 return null;
@@ -308,8 +308,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출14 : TriggerState {
-            internal State파토스등장연출14(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic14 : TriggerState {
+            internal State파토스SpawnCinematic14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003441, illustId: "0", msg: "$52000151_QD__52000151__9$", duration: 4000, align: "right");
@@ -317,7 +317,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State파토스등장연출15(context);
+                    return new State파토스SpawnCinematic15(context);
                 }
 
                 return null;
@@ -326,8 +326,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출15 : TriggerState {
-            internal State파토스등장연출15(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic15 : TriggerState {
+            internal State파토스SpawnCinematic15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003441, illustId: "0", msg: "$52000151_QD__52000151__10$", duration: 4000, align: "right");
@@ -336,7 +336,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State파토스등장연출16(context);
+                    return new State파토스SpawnCinematic16(context);
                 }
 
                 return null;
@@ -345,8 +345,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출16 : TriggerState {
-            internal State파토스등장연출16(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic16 : TriggerState {
+            internal State파토스SpawnCinematic16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003441, illustId: "0", msg: "$52000151_QD__52000151__11$", duration: 4000, align: "right");
@@ -354,7 +354,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State파토스등장연출17(context);
+                    return new State파토스SpawnCinematic17(context);
                 }
 
                 return null;
@@ -363,8 +363,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출17 : TriggerState {
-            internal State파토스등장연출17(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic17 : TriggerState {
+            internal State파토스SpawnCinematic17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003441, illustId: "0", msg: "$52000151_QD__52000151__12$", duration: 4000, align: "right");
@@ -372,7 +372,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State파토스등장연출18(context);
+                    return new State파토스SpawnCinematic18(context);
                 }
 
                 return null;
@@ -381,8 +381,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출18 : TriggerState {
-            internal State파토스등장연출18(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic18 : TriggerState {
+            internal State파토스SpawnCinematic18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003441, illustId: "0", msg: "$52000151_QD__52000151__13$", duration: 4000, align: "right");
@@ -392,7 +392,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State파토스등장연출19(context);
+                    return new State파토스SpawnCinematic19(context);
                 }
 
                 return null;
@@ -401,8 +401,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출19 : TriggerState {
-            internal State파토스등장연출19(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic19 : TriggerState {
+            internal State파토스SpawnCinematic19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003441, illustId: "0", msg: "$52000151_QD__52000151__14$", duration: 4000, align: "right");
@@ -412,7 +412,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State파토스등장연출20(context);
+                    return new State파토스SpawnCinematic20(context);
                 }
 
                 return null;
@@ -421,8 +421,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출20 : TriggerState {
-            internal State파토스등장연출20(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic20 : TriggerState {
+            internal State파토스SpawnCinematic20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003441, illustId: "0", msg: "$52000151_QD__52000151__15$", duration: 4000, align: "right");
@@ -432,7 +432,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State파토스등장연출21(context);
+                    return new State파토스SpawnCinematic21(context);
                 }
 
                 return null;
@@ -441,14 +441,14 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출21 : TriggerState {
-            internal State파토스등장연출21(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic21 : TriggerState {
+            internal State파토스SpawnCinematic21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State파토스등장연출22(context);
+                    return new State파토스SpawnCinematic22(context);
                 }
 
                 return null;
@@ -457,8 +457,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출22 : TriggerState {
-            internal State파토스등장연출22(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic22 : TriggerState {
+            internal State파토스SpawnCinematic22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
@@ -468,7 +468,7 @@ namespace Maple2.Trigger._52000151_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State파토스등장연출23(context);
+                    return new State파토스SpawnCinematic23(context);
                 }
 
                 return null;
@@ -477,8 +477,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State파토스등장연출23 : TriggerState {
-            internal State파토스등장연출23(ITriggerContext context) : base(context) { }
+        private class State파토스SpawnCinematic23 : TriggerState {
+            internal State파토스SpawnCinematic23(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");

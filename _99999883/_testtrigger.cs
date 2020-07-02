@@ -2,8 +2,8 @@ using System.Numerics;
 
 namespace Maple2.Trigger._99999883 {
     public static class _testtrigger {
-        public class State시작대기중 : TriggerState {
-            internal State시작대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitStart : TriggerState {
+            internal StateWaitStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20000661, textId: 20000661, duration: 3000);
@@ -152,7 +152,7 @@ namespace Maple2.Trigger._99999883 {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._99999883 {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State시작대기중(context);
+                    return new StateWaitStart(context);
                 }
 
                 return null;

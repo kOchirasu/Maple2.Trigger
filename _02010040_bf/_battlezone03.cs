@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02010040_bf {
     public static class _battlezone03 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 6, arg2: false, arg3: false, arg4: false);
@@ -15,7 +15,7 @@ namespace Maple2.Trigger._02010040_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9300})) {
-                    return new State전투시작(context);
+                    return new StateBattleStart(context);
                 }
 
                 return null;
@@ -24,8 +24,8 @@ namespace Maple2.Trigger._02010040_bf {
             public override void OnExit() { }
         }
 
-        private class State전투시작 : TriggerState {
-            internal State전투시작(ITriggerContext context) : base(context) { }
+        private class StateBattleStart : TriggerState {
+            internal StateBattleStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {501, 502, 601, 602, 701, 702}, arg2: false);

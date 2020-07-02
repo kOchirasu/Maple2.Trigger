@@ -12,7 +12,7 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State트리거시작(context);
+                    return new StateTrigger시작(context);
                 }
 
                 return null;
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._02020142_bf {
             public override void OnExit() { }
         }
 
-        private class State트리거시작 : TriggerState {
-            internal State트리거시작(ITriggerContext context) : base(context) { }
+        private class StateTrigger시작 : TriggerState {
+            internal StateTrigger시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "TestSetLight", value: 0);
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State트리거시작(context);
+                    return new StateTrigger시작(context);
                 }
 
                 return null;
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State트리거시작(context);
+                    return new StateTrigger시작(context);
                 }
 
                 return null;

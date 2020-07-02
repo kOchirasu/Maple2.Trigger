@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52100301_qd {
     public static class _300005_phase_4 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {200001, 200002, 200003, 200004, 200005, 200006, 200007, 200008}, arg2: false);
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State폭발물제어장치_생성(context);
+                    return new State폭발물제어장치_Creation(context);
                 }
 
                 return null;
@@ -125,8 +125,8 @@ namespace Maple2.Trigger._52100301_qd {
             public override void OnExit() { }
         }
 
-        private class State폭발물제어장치_생성 : TriggerState {
-            internal State폭발물제어장치_생성(ITriggerContext context) : base(context) { }
+        private class State폭발물제어장치_Creation : TriggerState {
+            internal State폭발물제어장치_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 13, arg2: false, arg3: false, arg4: false);

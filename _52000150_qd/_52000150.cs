@@ -11,15 +11,15 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {10010}, arg2: new[] {50001642}, arg3: new byte[] {1})) {
-                    return new State퀘스트완료상태에서접속(context);
+                    return new StateQuest완료상태에서접속(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10010}, arg2: new[] {50001641}, arg3: new byte[] {3})) {
-                    return new State퀘스트완료상태에서접속(context);
+                    return new StateQuest완료상태에서접속(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10010}, arg2: new[] {50001641}, arg3: new byte[] {2})) {
-                    return new State퀘스트완료상태에서접속(context);
+                    return new StateQuest완료상태에서접속(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10010}, arg2: new[] {50001641}, arg3: new byte[] {1})) {
@@ -196,7 +196,7 @@ namespace Maple2.Trigger._52000150_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10010}, arg2: new[] {50001641}, arg3: new byte[] {2})) {
-                    return new State퀘스트완료상태에서접속(context);
+                    return new StateQuest완료상태에서접속(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10010}, arg2: new[] {50001641}, arg3: new byte[] {1})) {
@@ -681,8 +681,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State퀘스트완료상태에서접속 : TriggerState {
-            internal State퀘스트완료상태에서접속(ITriggerContext context) : base(context) { }
+        private class StateQuest완료상태에서접속 : TriggerState {
+            internal StateQuest완료상태에서접속(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

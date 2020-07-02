@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020310_bf {
     public static class _field_2 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000307, 12000308, 12000309, 12000310, 12000311, 12000312}, arg2: 2);
@@ -1124,7 +1124,7 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

@@ -2,8 +2,8 @@ using Maple2.Trigger._dungeon_common;
 
 namespace Maple2.Trigger._02010070_bf {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 800, arg2: true, arg3: "Closed");
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._02010070_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {999992})) {
-                    return new State시작1(context);
+                    return new StateStart1(context);
                 }
 
                 return null;
@@ -86,8 +86,8 @@ namespace Maple2.Trigger._02010070_bf {
             public override void OnExit() { }
         }
 
-        private class State시작1 : TriggerState {
-            internal State시작1(ITriggerContext context) : base(context) { }
+        private class StateStart1 : TriggerState {
+            internal StateStart1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {95222}, arg2: true);
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._02010070_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State시작2(context);
+                    return new StateStart2(context);
                 }
 
                 return null;
@@ -105,8 +105,8 @@ namespace Maple2.Trigger._02010070_bf {
             public override void OnExit() { }
         }
 
-        private class State시작2 : TriggerState {
-            internal State시작2(ITriggerContext context) : base(context) { }
+        private class StateStart2 : TriggerState {
+            internal StateStart2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1007, 1008});
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._02010070_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1000, 1001, 1002})) {
-                    return new State시작3(context);
+                    return new StateStart3(context);
                 }
 
                 return null;
@@ -127,8 +127,8 @@ namespace Maple2.Trigger._02010070_bf {
             public override void OnExit() { }
         }
 
-        private class State시작3 : TriggerState {
-            internal State시작3(ITriggerContext context) : base(context) { }
+        private class StateStart3 : TriggerState {
+            internal StateStart3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1003, 1004, 1005}, arg2: true);
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._02010070_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new State시작4(context);
+                    return new StateStart4(context);
                 }
 
                 return null;
@@ -145,8 +145,8 @@ namespace Maple2.Trigger._02010070_bf {
             public override void OnExit() { }
         }
 
-        private class State시작4 : TriggerState {
-            internal State시작4(ITriggerContext context) : base(context) { }
+        private class StateStart4 : TriggerState {
+            internal StateStart4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1006}, arg2: true);
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._02010070_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State시작5(context);
+                    return new StateStart5(context);
                 }
 
                 return null;
@@ -181,8 +181,8 @@ namespace Maple2.Trigger._02010070_bf {
             public override void OnExit() { }
         }
 
-        private class State시작5 : TriggerState {
-            internal State시작5(ITriggerContext context) : base(context) { }
+        private class StateStart5 : TriggerState {
+            internal StateStart5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7002, 7003}, arg2: true);
@@ -192,7 +192,7 @@ namespace Maple2.Trigger._02010070_bf {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.SetEffect(arg1: new[] {7001}, arg2: true);
                     context.SetSkill(arg1: new[] {7004}, arg2: true);
-                    return new State시작6(context);
+                    return new StateStart6(context);
                 }
 
                 return null;
@@ -201,8 +201,8 @@ namespace Maple2.Trigger._02010070_bf {
             public override void OnExit() { }
         }
 
-        private class State시작6 : TriggerState {
-            internal State시작6(ITriggerContext context) : base(context) { }
+        private class StateStart6 : TriggerState {
+            internal StateStart6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 6);
@@ -212,7 +212,7 @@ namespace Maple2.Trigger._02010070_bf {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.MoveUser(arg1: 02010070, arg2: 3);
-                    return new State시작7(context);
+                    return new StateStart7(context);
                 }
 
                 return null;
@@ -221,14 +221,14 @@ namespace Maple2.Trigger._02010070_bf {
             public override void OnExit() { }
         }
 
-        private class State시작7 : TriggerState {
-            internal State시작7(ITriggerContext context) : base(context) { }
+        private class StateStart7 : TriggerState {
+            internal StateStart7(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State시작8(context);
+                    return new StateStart8(context);
                 }
 
                 return null;
@@ -237,8 +237,8 @@ namespace Maple2.Trigger._02010070_bf {
             public override void OnExit() { }
         }
 
-        private class State시작8 : TriggerState {
-            internal State시작8(ITriggerContext context) : base(context) { }
+        private class StateStart8 : TriggerState {
+            internal StateStart8(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 0);

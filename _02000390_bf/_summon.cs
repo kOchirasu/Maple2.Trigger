@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000390_bf {
     public static class _summon {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 203903, key: "Summon", value: 0);

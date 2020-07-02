@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000385_bf {
     public static class _vip_dungeon_round {
-        public class State시작대기 : TriggerState {
-            internal State시작대기(ITriggerContext context) : base(context) { }
+        public class StateBeginWait : TriggerState {
+            internal StateBeginWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -557,7 +557,7 @@ namespace Maple2.Trigger._02000385_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -566,8 +566,8 @@ namespace Maple2.Trigger._02000385_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

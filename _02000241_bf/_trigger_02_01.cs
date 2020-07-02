@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000241_bf {
     public static class _trigger_02_01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {703, 704}, arg2: false);
@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02000241_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {202})) {
-                    return new State몹생성(context);
+                    return new StateMobCreation(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._02000241_bf {
             public override void OnExit() { }
         }
 
-        private class State몹생성 : TriggerState {
-            internal State몹생성(ITriggerContext context) : base(context) { }
+        private class StateMobCreation : TriggerState {
+            internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {613, 614, 615, 616, 617, 618, 619, 620, 621}, arg2: false);

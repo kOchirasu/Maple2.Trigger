@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._99999841 {
     public static class _boss_hpcheck {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -20,7 +20,7 @@ namespace Maple2.Trigger._99999841 {
             internal State메시지1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "A팀의 보스 체력이 70% 이하입니다.", arg3: 5000);
+                context.SetEventUI(arg1: 1, arg2: "A팀의Boss 체력이 70% 이하입니다.", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -38,7 +38,7 @@ namespace Maple2.Trigger._99999841 {
             internal State메시지2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "A팀의 보스 체력이 50% 이하입니다.", arg3: 5000);
+                context.SetEventUI(arg1: 1, arg2: "A팀의Boss 체력이 50% 이하입니다.", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._99999841 {
             internal State메시지3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "A팀의 보스 체력이 30% 이하입니다.", arg3: 5000);
+                context.SetEventUI(arg1: 1, arg2: "A팀의Boss 체력이 30% 이하입니다.", arg3: 5000);
             }
 
             public override TriggerState Execute() {
@@ -74,18 +74,18 @@ namespace Maple2.Trigger._99999841 {
             internal State메시지4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetEventUI(arg1: 1, arg2: "A팀의 보스 체력이 10% 이하입니다.", arg3: 5000);
+                context.SetEventUI(arg1: 1, arg2: "A팀의Boss 체력이 10% 이하입니다.", arg3: 5000);
             }
 
             public override TriggerState Execute() {
-                return new State종료(context);
+                return new StateEnd(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000299_bf {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 290, arg2: true, arg3: "sf_quest_light_A01_Off");
@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {104})) {
-                    return new State클리어체크(context);
+                    return new StateClear체크(context);
                 }
 
                 return null;
@@ -31,8 +31,8 @@ namespace Maple2.Trigger._02000299_bf {
             public override void OnExit() { }
         }
 
-        private class State클리어체크 : TriggerState {
-            internal State클리어체크(ITriggerContext context) : base(context) { }
+        private class StateClear체크 : TriggerState {
+            internal StateClear체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601, 602, 603, 604, 605, 606, 607, 610}, arg2: false);
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    return new State클리어체크2(context);
+                    return new StateClear체크2(context);
                 }
 
                 return null;
@@ -49,8 +49,8 @@ namespace Maple2.Trigger._02000299_bf {
             public override void OnExit() { }
         }
 
-        private class State클리어체크2 : TriggerState {
-            internal State클리어체크2(ITriggerContext context) : base(context) { }
+        private class StateClear체크2 : TriggerState {
+            internal StateClear체크2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
@@ -279,7 +279,7 @@ namespace Maple2.Trigger._02000299_bf {
                     context.SetActor(arg1: 297, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 298, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 299, arg2: true, arg3: "sf_quest_light_A01_Off");
-                    return new State클리어체크(context);
+                    return new StateClear체크(context);
                 }
 
                 return null;
@@ -370,7 +370,7 @@ namespace Maple2.Trigger._02000299_bf {
                     context.SetActor(arg1: 297, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 298, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 299, arg2: true, arg3: "sf_quest_light_A01_Off");
-                    return new State클리어체크(context);
+                    return new StateClear체크(context);
                 }
 
                 return null;
@@ -461,7 +461,7 @@ namespace Maple2.Trigger._02000299_bf {
                     context.SetActor(arg1: 297, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 298, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 299, arg2: true, arg3: "sf_quest_light_A01_Off");
-                    return new State클리어체크(context);
+                    return new StateClear체크(context);
                 }
 
                 return null;
@@ -552,7 +552,7 @@ namespace Maple2.Trigger._02000299_bf {
                     context.SetActor(arg1: 297, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 298, arg2: true, arg3: "sf_quest_light_A01_Off");
                     context.SetActor(arg1: 299, arg2: true, arg3: "sf_quest_light_A01_Off");
-                    return new State클리어체크(context);
+                    return new StateClear체크(context);
                 }
 
                 return null;
@@ -681,7 +681,7 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {104})) {
-                    return new State보스방이동준비(context);
+                    return new StateBoss방이동준비(context);
                 }
 
                 return null;
@@ -690,8 +690,8 @@ namespace Maple2.Trigger._02000299_bf {
             public override void OnExit() { }
         }
 
-        private class State보스방이동준비 : TriggerState {
-            internal State보스방이동준비(ITriggerContext context) : base(context) { }
+        private class StateBoss방이동준비 : TriggerState {
+            internal StateBoss방이동준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 5);
@@ -714,7 +714,7 @@ namespace Maple2.Trigger._02000299_bf {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
                     context.HideGuideSummary(entityId: 20002997);
-                    return new State보스방이동(context);
+                    return new StateBoss방이동(context);
                 }
 
                 return null;
@@ -723,8 +723,8 @@ namespace Maple2.Trigger._02000299_bf {
             public override void OnExit() { }
         }
 
-        private class State보스방이동 : TriggerState {
-            internal State보스방이동(ITriggerContext context) : base(context) { }
+        private class StateBoss방이동 : TriggerState {
+            internal StateBoss방이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "4", arg2: 4);
@@ -757,7 +757,7 @@ namespace Maple2.Trigger._02000299_bf {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
                     context.HideGuideSummary(entityId: 20002997);
-                    return new State보스방이동(context);
+                    return new StateBoss방이동(context);
                 }
 
                 return null;
@@ -766,8 +766,8 @@ namespace Maple2.Trigger._02000299_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

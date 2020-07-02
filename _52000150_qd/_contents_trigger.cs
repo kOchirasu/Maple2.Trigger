@@ -30,7 +30,7 @@ namespace Maple2.Trigger._52000150_qd {
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State웨이브1생성(context);
+                    return new State웨이브1Creation(context);
                 }
 
                 return null;
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State웨이브1생성 : TriggerState {
-            internal State웨이브1생성(ITriggerContext context) : base(context) { }
+        private class State웨이브1Creation : TriggerState {
+            internal State웨이브1Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State웨이브2생성(context);
+                    return new State웨이브2Creation(context);
                 }
 
                 return null;
@@ -74,8 +74,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State웨이브2생성 : TriggerState {
-            internal State웨이브2생성(ITriggerContext context) : base(context) { }
+        private class State웨이브2Creation : TriggerState {
+            internal State웨이브2Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {500, 501, 502, 503, 504}, arg2: false);
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State웨이브3생성(context);
+                    return new State웨이브3Creation(context);
                 }
 
                 return null;
@@ -111,8 +111,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State웨이브3생성 : TriggerState {
-            internal State웨이브3생성(ITriggerContext context) : base(context) { }
+        private class State웨이브3Creation : TriggerState {
+            internal State웨이브3Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {600, 601, 602, 603, 604}, arg2: false);
@@ -140,7 +140,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State웨이브4생성(context);
+                    return new State웨이브4Creation(context);
                 }
 
                 return null;
@@ -149,8 +149,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State웨이브4생성 : TriggerState {
-            internal State웨이브4생성(ITriggerContext context) : base(context) { }
+        private class State웨이브4Creation : TriggerState {
+            internal State웨이브4Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {300, 301, 302, 303, 304}, arg2: false);
@@ -179,7 +179,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State웨이브5생성(context);
+                    return new State웨이브5Creation(context);
                 }
 
                 return null;
@@ -188,8 +188,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State웨이브5생성 : TriggerState {
-            internal State웨이브5생성(ITriggerContext context) : base(context) { }
+        private class State웨이브5Creation : TriggerState {
+            internal State웨이브5Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {600, 601, 602, 603, 604, 400, 401, 402, 403, 404}, arg2: false);
@@ -217,7 +217,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State웨이브6생성(context);
+                    return new State웨이브6Creation(context);
                 }
 
                 return null;
@@ -226,8 +226,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State웨이브6생성 : TriggerState {
-            internal State웨이브6생성(ITriggerContext context) : base(context) { }
+        private class State웨이브6Creation : TriggerState {
+            internal State웨이브6Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {500, 501, 502, 503, 504, 300, 301, 302, 303, 304}, arg2: false);
@@ -257,7 +257,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State웨이브7생성(context);
+                    return new State웨이브7Creation(context);
                 }
 
                 return null;
@@ -266,8 +266,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State웨이브7생성 : TriggerState {
-            internal State웨이브7생성(ITriggerContext context) : base(context) { }
+        private class State웨이브7Creation : TriggerState {
+            internal State웨이브7Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {300, 301, 302, 303, 304, 400, 401, 402, 403, 404, 500, 501, 502, 503, 504, 600, 601, 602, 603, 604}, arg2: false);

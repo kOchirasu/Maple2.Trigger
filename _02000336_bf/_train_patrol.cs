@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000336_bf {
     public static class _train_patrol {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7002, 7003, 7004}, arg2: false);

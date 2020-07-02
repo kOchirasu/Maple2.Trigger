@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._61000009_me {
     public static class _timer {
-        public class Stateready : TriggerState {
-            internal Stateready(ITriggerContext context) : base(context) { }
+        public class StateReady : TriggerState {
+            internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 100, textId: 40012);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._61000009_me {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new Stateready(context);
+                    return new StateReady(context);
                 }
 
                 if (context.GetUserValue(key: "timer") == 1) {
@@ -32,7 +32,7 @@ namespace Maple2.Trigger._61000009_me {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1200")) {
-                    return new StateendGame(context);
+                    return new StateEndGame(context);
                 }
 
                 return null;
@@ -41,8 +41,8 @@ namespace Maple2.Trigger._61000009_me {
             public override void OnExit() { }
         }
 
-        private class StateendGame : TriggerState {
-            internal StateendGame(ITriggerContext context) : base(context) { }
+        private class StateEndGame : TriggerState {
+            internal StateEndGame(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 5, arg2: "$61000004_ME__TRIGGER_01__2$", arg3: 3000, arg4: "0");
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._61000009_me {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.MoveUser(arg1: 0, arg2: 0);
-                    return new Stateend(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._61000009_me {
             public override void OnExit() { }
         }
 
-        private class Stateend : TriggerState {
-            internal Stateend(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

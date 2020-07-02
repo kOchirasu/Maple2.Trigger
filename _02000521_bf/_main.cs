@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000521_bf {
     public static class _main {
-        public class Stateready : TriggerState {
-            internal Stateready(ITriggerContext context) : base(context) { }
+        public class StateReady : TriggerState {
+            internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {6001, 6002, 6003, 6004}, arg2: false);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02000521_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {702})) {
-                    return new Statechaos_raid(context);
+                    return new StateChaos_raid(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02000521_bf {
             public override void OnExit() { }
         }
 
-        private class Statechaos_raid : TriggerState {
-            internal Statechaos_raid(ITriggerContext context) : base(context) { }
+        private class StateChaos_raid : TriggerState {
+            internal StateChaos_raid(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {402}, arg2: false);
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000521_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ExitPortal") == 1) {
-                    return new Stateend(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02000521_bf {
             public override void OnExit() { }
         }
 
-        private class Stateend : TriggerState {
-            internal Stateend(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonClear();

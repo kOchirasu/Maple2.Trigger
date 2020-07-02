@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000486_bf {
     public static class _101_buff {
-        public class State전투시작 : TriggerState {
-            internal State전투시작(ITriggerContext context) : base(context) { }
+        public class StateBattleStart : TriggerState {
+            internal StateBattleStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -33,8 +33,8 @@ namespace Maple2.Trigger._02000486_bf {
             public override void OnExit() { }
         }
 
-        private class State버프_종료 : TriggerState {
-            internal State버프_종료(ITriggerContext context) : base(context) { }
+        private class StateBuff_종료 : TriggerState {
+            internal StateBuff_종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

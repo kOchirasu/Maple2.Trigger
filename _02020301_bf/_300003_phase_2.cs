@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020301_bf {
     public static class _300003_phase_2 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State아르케온_탈것_생성(context);
+                    return new State아르케온_탈것_Creation(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._02020301_bf {
             public override void OnExit() { }
         }
 
-        private class State아르케온_탈것_생성 : TriggerState {
-            internal State아르케온_탈것_생성(ITriggerContext context) : base(context) { }
+        private class State아르케온_탈것_Creation : TriggerState {
+            internal State아르케온_탈것_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 3000031, key: "Phase_2_Interect_01", value: 1);
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    return new State쫄몹등장(context);
+                    return new State쫄몹Appear(context);
                 }
 
                 return null;
@@ -52,8 +52,8 @@ namespace Maple2.Trigger._02020301_bf {
             public override void OnExit() { }
         }
 
-        private class State쫄몹등장 : TriggerState {
-            internal State쫄몹등장(ITriggerContext context) : base(context) { }
+        private class State쫄몹Appear : TriggerState {
+            internal State쫄몹Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 3000032, key: "Phase_2_Interect_02", value: 1);

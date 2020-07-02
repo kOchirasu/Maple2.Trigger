@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._03000085_bf {
     public static class _elite {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {11000008, 11000009}, arg2: 2);
@@ -10,7 +10,7 @@ namespace Maple2.Trigger._03000085_bf {
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
                     context.CreateMonster(arg1: new[] {1001, 1002, 1003}, arg2: false);
-                    return new State엘리트등장(context);
+                    return new State엘리트Appear(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._03000085_bf {
             public override void OnExit() { }
         }
 
-        private class State엘리트등장 : TriggerState {
-            internal State엘리트등장(ITriggerContext context) : base(context) { }
+        private class State엘리트Appear : TriggerState {
+            internal State엘리트Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 23000002, textId: 23000002, duration: 5000);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._03000085_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new State엘리트등장(context);
+                    return new State엘리트Appear(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1001, 1002, 1003})) {
@@ -51,12 +51,12 @@ namespace Maple2.Trigger._03000085_bf {
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 90f)) {
                     context.SetInteractObject(arg1: new[] {11000008}, arg2: 1);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
                     context.SetInteractObject(arg1: new[] {11000009}, arg2: 1);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -65,8 +65,8 @@ namespace Maple2.Trigger._03000085_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -138,7 +138,7 @@ namespace Maple2.Trigger._52010067_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new Statequit(context);
+                    return new StateQuit(context);
                 }
 
                 return null;
@@ -147,8 +147,8 @@ namespace Maple2.Trigger._52010067_qd {
             public override void OnExit() { }
         }
 
-        private class Statequit : TriggerState {
-            internal Statequit(ITriggerContext context) : base(context) { }
+        private class StateQuit : TriggerState {
+            internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 02000422, arg2: 3);
@@ -258,7 +258,7 @@ namespace Maple2.Trigger._52010067_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new Statequit02(context);
+                    return new StateQuit02(context);
                 }
 
                 return null;
@@ -267,8 +267,8 @@ namespace Maple2.Trigger._52010067_qd {
             public override void OnExit() { }
         }
 
-        private class Statequit02 : TriggerState {
-            internal Statequit02(ITriggerContext context) : base(context) { }
+        private class StateQuit02 : TriggerState {
+            internal StateQuit02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 02000422, arg2: 3);

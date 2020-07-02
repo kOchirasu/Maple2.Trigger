@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    return new State스테이지5_시작(context);
+                    return new StateStage5_시작(context);
                 }
 
                 return null;
@@ -19,34 +19,34 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State스테이지5_시작 : TriggerState {
-            internal State스테이지5_시작(ITriggerContext context) : base(context) { }
+        private class StateStage5_시작 : TriggerState {
+            internal StateStage5_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Stage05") == 11) {
-                    return new State스테이지5_왼쪽_왼쪽진행(context);
+                    return new StateStage5_왼쪽_왼쪽진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage05") == 21) {
-                    return new State스테이지5_왼쪽가운데_왼쪽진행(context);
+                    return new StateStage5_왼쪽가운데_왼쪽진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage05") == 22) {
-                    return new State스테이지5_왼쪽가운데_가운데진행(context);
+                    return new StateStage5_왼쪽가운데_가운데진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage05") == 31) {
-                    return new State스테이지5_오른쪽가운데_가운데진행(context);
+                    return new StateStage5_오른쪽가운데_가운데진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage05") == 32) {
-                    return new State스테이지5_오른쪽가운데_오른쪽진행(context);
+                    return new StateStage5_오른쪽가운데_오른쪽진행(context);
                 }
 
                 if (context.GetUserValue(key: "Stage05") == 41) {
-                    return new State스테이지5_오른쪽_오른쪽진행(context);
+                    return new StateStage5_오른쪽_오른쪽진행(context);
                 }
 
                 return null;
@@ -55,8 +55,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State스테이지5_왼쪽_왼쪽진행 : TriggerState {
-            internal State스테이지5_왼쪽_왼쪽진행(ITriggerContext context) : base(context) { }
+        private class StateStage5_왼쪽_왼쪽진행 : TriggerState {
+            internal StateStage5_왼쪽_왼쪽진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 5101, arg2: true, arg3: true, arg4: true);
@@ -74,8 +74,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State스테이지5_왼쪽가운데_왼쪽진행 : TriggerState {
-            internal State스테이지5_왼쪽가운데_왼쪽진행(ITriggerContext context) : base(context) { }
+        private class StateStage5_왼쪽가운데_왼쪽진행 : TriggerState {
+            internal StateStage5_왼쪽가운데_왼쪽진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 5201, arg2: true, arg3: true, arg4: true);
@@ -94,8 +94,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State스테이지5_왼쪽가운데_가운데진행 : TriggerState {
-            internal State스테이지5_왼쪽가운데_가운데진행(ITriggerContext context) : base(context) { }
+        private class StateStage5_왼쪽가운데_가운데진행 : TriggerState {
+            internal StateStage5_왼쪽가운데_가운데진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 5204, arg2: true, arg3: true, arg4: true);
@@ -114,8 +114,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State스테이지5_오른쪽가운데_가운데진행 : TriggerState {
-            internal State스테이지5_오른쪽가운데_가운데진행(ITriggerContext context) : base(context) { }
+        private class StateStage5_오른쪽가운데_가운데진행 : TriggerState {
+            internal StateStage5_오른쪽가운데_가운데진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 5301, arg2: true, arg3: true, arg4: true);
@@ -133,8 +133,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State스테이지5_오른쪽가운데_오른쪽진행 : TriggerState {
-            internal State스테이지5_오른쪽가운데_오른쪽진행(ITriggerContext context) : base(context) { }
+        private class StateStage5_오른쪽가운데_오른쪽진행 : TriggerState {
+            internal StateStage5_오른쪽가운데_오른쪽진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 5303, arg2: true, arg3: true, arg4: true);
@@ -152,8 +152,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State스테이지5_오른쪽_오른쪽진행 : TriggerState {
-            internal State스테이지5_오른쪽_오른쪽진행(ITriggerContext context) : base(context) { }
+        private class StateStage5_오른쪽_오른쪽진행 : TriggerState {
+            internal StateStage5_오른쪽_오른쪽진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 5401, arg2: true, arg3: true, arg4: true);

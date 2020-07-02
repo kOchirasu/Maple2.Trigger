@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52100206_qd {
     public static class _52100206_qd {
-        public class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -143,7 +143,7 @@ namespace Maple2.Trigger._52100206_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State버프부여(context);
+                    return new StateBuff부여(context);
                 }
 
                 return null;
@@ -152,8 +152,8 @@ namespace Maple2.Trigger._52100206_qd {
             public override void OnExit() { }
         }
 
-        private class State버프부여 : TriggerState {
-            internal State버프부여(ITriggerContext context) : base(context) { }
+        private class StateBuff부여 : TriggerState {
+            internal StateBuff부여(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetVisibleUI(uiName: "MessengerBrowser,GroupMessengerBrowser,HighlightGameMenu", visible: false);

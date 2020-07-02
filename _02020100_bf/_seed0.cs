@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020100_bf {
     public static class _seed0 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990001, key: "Seed0interact", value: 0);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02020100_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Seed0start") == 1) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02020100_bf {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1301}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02020100_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Seed0start") == 2) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002115}, arg2: 0)) {
@@ -52,11 +52,11 @@ namespace Maple2.Trigger._02020100_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Seed0start") == 2) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 0, additionalEffectId: 70002109, level: true)) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -65,8 +65,8 @@ namespace Maple2.Trigger._02020100_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002115}, arg2: 0);

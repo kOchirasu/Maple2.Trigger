@@ -36,11 +36,11 @@ namespace Maple2.Trigger._02020120_bf {
                 }
 
                 if (context.GetUserValue(key: "DayNightChange") == 3) {
-                    return new State디버프모조리제거(context);
+                    return new State디Buff모조리Remove(context);
                 }
 
                 if (context.GetUserValue(key: "DungeonReset") == 1) {
-                    return new State낮시간으로변화하기_맵초기화(context);
+                    return new State낮시간으로변화하기_맵Reset(context);
                 }
 
                 return null;
@@ -88,8 +88,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State낮시간으로변화하기_맵초기화 : TriggerState {
-            internal State낮시간으로변화하기_맵초기화(ITriggerContext context) : base(context) { }
+        private class State낮시간으로변화하기_맵Reset : TriggerState {
+            internal State낮시간으로변화하기_맵Reset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {299}, arg2: 50004547, arg3: 2, arg4: false);
@@ -152,8 +152,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State디버프모조리제거 : TriggerState {
-            internal State디버프모조리제거(ITriggerContext context) : base(context) { }
+        private class State디Buff모조리Remove : TriggerState {
+            internal State디Buff모조리Remove(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {299}, arg2: 50005315, arg3: 1, arg4: false);
@@ -171,8 +171,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

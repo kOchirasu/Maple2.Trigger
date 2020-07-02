@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52100300_qd {
     public static class _laser_01 {
-        public class State레이저_01_생성 : TriggerState {
-            internal State레이저_01_생성(ITriggerContext context) : base(context) { }
+        public class State레이저_01_Creation : TriggerState {
+            internal State레이저_01_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52100300_qd {
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103})) {
                     context.DestroyMonster(arg1: new[] {902});
-                    return new State레이저_02_생성(context);
+                    return new State레이저_02_Creation(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._52100300_qd {
             public override void OnExit() { }
         }
 
-        private class State레이저_02_생성 : TriggerState {
-            internal State레이저_02_생성(ITriggerContext context) : base(context) { }
+        private class State레이저_02_Creation : TriggerState {
+            internal State레이저_02_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._52100300_qd {
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 712) == 1) {
                     context.DestroyMonster(arg1: new[] {711});
-                    return new State레이저_03_생성(context);
+                    return new State레이저_03_Creation(context);
                 }
 
                 return null;
@@ -68,8 +68,8 @@ namespace Maple2.Trigger._52100300_qd {
             public override void OnExit() { }
         }
 
-        private class State레이저_03_생성 : TriggerState {
-            internal State레이저_03_생성(ITriggerContext context) : base(context) { }
+        private class State레이저_03_Creation : TriggerState {
+            internal State레이저_03_Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._52020035_qd {
     public static class _main30000318 {
-        public class Stateidle3 : TriggerState {
-            internal Stateidle3(ITriggerContext context) : base(context) { }
+        public class StateIdle3 : TriggerState {
+            internal StateIdle3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {703}, arg2: new[] {30000318}, arg3: new byte[] {2})) {
-                    return new State연출시작3(context);
+                    return new StateStartCinematic3(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52020035_qd {
             public override void OnExit() { }
         }
 
-        private class State연출시작3 : TriggerState {
-            internal State연출시작3(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic3 : TriggerState {
+            internal StateStartCinematic3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 8, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52020035_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State연출시작3_1(context);
+                    return new StateStartCinematic3_1(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._52020035_qd {
             public override void OnExit() { }
         }
 
-        private class State연출시작3_1 : TriggerState {
-            internal State연출시작3_1(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic3_1 : TriggerState {
+            internal StateStartCinematic3_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._52020035_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State초기화(context);
+                    return new StateReset(context);
                 }
 
                 return null;
@@ -179,8 +179,8 @@ namespace Maple2.Trigger._52020035_qd {
             public override void OnExit() { }
         }
 
-        private class State초기화 : TriggerState {
-            internal State초기화(ITriggerContext context) : base(context) { }
+        private class StateReset : TriggerState {
+            internal StateReset(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 9, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");

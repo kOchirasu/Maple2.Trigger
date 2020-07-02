@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 601) == 1) {
-                    return new State1셋트전투판스킬트리거셋팅(context);
+                    return new State1셋트전투판스킬TriggerSetting(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State1셋트전투판스킬트리거셋팅 : TriggerState {
-            internal State1셋트전투판스킬트리거셋팅(ITriggerContext context) : base(context) { }
+        private class State1셋트전투판스킬TriggerSetting : TriggerState {
+            internal State1셋트전투판스킬TriggerSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {1301, 1302, 1303}, arg2: true);
@@ -45,15 +45,15 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "IshuraFirstSetEnd") == 1) {
-                    return new State이슈라_디버프스킬끄기(context);
+                    return new StateIshura_디Buff스킬끄기(context);
                 }
 
                 if (context.GetUserValue(key: "RenduebianFirstSetEnd") == 1) {
-                    return new State렌듀비앙_디버프스킬끄기(context);
+                    return new State렌듀비앙_디Buff스킬끄기(context);
                 }
 
                 if (context.GetUserValue(key: "YuperiaFirstSetEnd") == 1) {
-                    return new State유페리아_디버프스킬끄기(context);
+                    return new State유페리아_디Buff스킬끄기(context);
                 }
 
                 return null;
@@ -62,8 +62,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State이슈라_디버프스킬끄기 : TriggerState {
-            internal State이슈라_디버프스킬끄기(ITriggerContext context) : base(context) { }
+        private class StateIshura_디Buff스킬끄기 : TriggerState {
+            internal StateIshura_디Buff스킬끄기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "IshuraFirstSetEnd", value: 0);
@@ -81,8 +81,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State렌듀비앙_디버프스킬끄기 : TriggerState {
-            internal State렌듀비앙_디버프스킬끄기(ITriggerContext context) : base(context) { }
+        private class State렌듀비앙_디Buff스킬끄기 : TriggerState {
+            internal State렌듀비앙_디Buff스킬끄기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "RenduebianFirstSetEnd", value: 0);
@@ -100,8 +100,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State유페리아_디버프스킬끄기 : TriggerState {
-            internal State유페리아_디버프스킬끄기(ITriggerContext context) : base(context) { }
+        private class State유페리아_디Buff스킬끄기 : TriggerState {
+            internal State유페리아_디Buff스킬끄기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "YuperiaFirstSetEnd", value: 0);
@@ -119,8 +119,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

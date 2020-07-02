@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52100060_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50100320}, arg3: new byte[] {3})) {
-                    return new Stateteleport02000487(context);
+                    return new StateTeleport02000487(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50100320}, arg3: new byte[] {2})) {
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._52100060_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1000})) {
-                    return new Statenarration01(context);
+                    return new StateNarration01(context);
                 }
 
                 return null;
@@ -49,8 +49,8 @@ namespace Maple2.Trigger._52100060_qd {
             public override void OnExit() { }
         }
 
-        private class Statenarration01 : TriggerState {
-            internal Statenarration01(ITriggerContext context) : base(context) { }
+        private class StateNarration01 : TriggerState {
+            internal StateNarration01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 9, arg2: "$52100060_QD__MAIN__12$");
@@ -363,7 +363,7 @@ namespace Maple2.Trigger._52100060_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new Stateteleport02000487(context);
+                    return new StateTeleport02000487(context);
                 }
 
                 return null;
@@ -372,8 +372,8 @@ namespace Maple2.Trigger._52100060_qd {
             public override void OnExit() { }
         }
 
-        private class Stateteleport02000487 : TriggerState {
-            internal Stateteleport02000487(ITriggerContext context) : base(context) { }
+        private class StateTeleport02000487 : TriggerState {
+            internal StateTeleport02000487(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkip();

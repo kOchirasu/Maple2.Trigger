@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000531_bf {
     public static class _giveuptime {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000531_bf {
                 if (context.WaitTick(waitTick: 30000)) {
                     context.SetEventUI(arg1: 1, arg2: "$DUNGEON__GIVEUP__TIME__0$", arg3: 3000);
                     context.DungeonEnableGiveUp(isEnable: true);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._02000531_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000147_qd {
     public static class _52000147_main {
-        public class State준비 : TriggerState {
-            internal State준비(ITriggerContext context) : base(context) { }
+        public class StateSetup : TriggerState {
+            internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102}, arg2: true);
@@ -13,7 +13,7 @@ namespace Maple2.Trigger._52000147_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {701})) {
-                    return new State잠시대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;
@@ -22,8 +22,8 @@ namespace Maple2.Trigger._52000147_qd {
             public override void OnExit() { }
         }
 
-        private class State잠시대기 : TriggerState {
-            internal State잠시대기(ITriggerContext context) : base(context) { }
+        private class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -586,7 +586,7 @@ namespace Maple2.Trigger._52000147_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State하스터와전투_01(context);
+                    return new State하스터Combat_01(context);
                 }
 
                 return null;
@@ -595,8 +595,8 @@ namespace Maple2.Trigger._52000147_qd {
             public override void OnExit() { }
         }
 
-        private class State하스터와전투_01 : TriggerState {
-            internal State하스터와전투_01(ITriggerContext context) : base(context) { }
+        private class State하스터Combat_01 : TriggerState {
+            internal State하스터Combat_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -606,7 +606,7 @@ namespace Maple2.Trigger._52000147_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State하스터와전투_02(context);
+                    return new State하스터Combat_02(context);
                 }
 
                 return null;
@@ -615,8 +615,8 @@ namespace Maple2.Trigger._52000147_qd {
             public override void OnExit() { }
         }
 
-        private class State하스터와전투_02 : TriggerState {
-            internal State하스터와전투_02(ITriggerContext context) : base(context) { }
+        private class State하스터Combat_02 : TriggerState {
+            internal State하스터Combat_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
@@ -626,7 +626,7 @@ namespace Maple2.Trigger._52000147_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State하스터와전투_03(context);
+                    return new State하스터Combat_03(context);
                 }
 
                 return null;
@@ -635,8 +635,8 @@ namespace Maple2.Trigger._52000147_qd {
             public override void OnExit() { }
         }
 
-        private class State하스터와전투_03 : TriggerState {
-            internal State하스터와전투_03(ITriggerContext context) : base(context) { }
+        private class State하스터Combat_03 : TriggerState {
+            internal State하스터Combat_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -647,7 +647,7 @@ namespace Maple2.Trigger._52000147_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    return new State하스터와전투_04(context);
+                    return new State하스터Combat_04(context);
                 }
 
                 return null;
@@ -656,8 +656,8 @@ namespace Maple2.Trigger._52000147_qd {
             public override void OnExit() { }
         }
 
-        private class State하스터와전투_04 : TriggerState {
-            internal State하스터와전투_04(ITriggerContext context) : base(context) { }
+        private class State하스터Combat_04 : TriggerState {
+            internal State하스터Combat_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -668,7 +668,7 @@ namespace Maple2.Trigger._52000147_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State하스터와전투_05(context);
+                    return new State하스터Combat_05(context);
                 }
 
                 return null;
@@ -677,8 +677,8 @@ namespace Maple2.Trigger._52000147_qd {
             public override void OnExit() { }
         }
 
-        private class State하스터와전투_05 : TriggerState {
-            internal State하스터와전투_05(ITriggerContext context) : base(context) { }
+        private class State하스터Combat_05 : TriggerState {
+            internal State하스터Combat_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {103});
@@ -689,7 +689,7 @@ namespace Maple2.Trigger._52000147_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State하스터와전투_06(context);
+                    return new State하스터Combat_06(context);
                 }
 
                 return null;
@@ -698,8 +698,8 @@ namespace Maple2.Trigger._52000147_qd {
             public override void OnExit() { }
         }
 
-        private class State하스터와전투_06 : TriggerState {
-            internal State하스터와전투_06(ITriggerContext context) : base(context) { }
+        private class State하스터Combat_06 : TriggerState {
+            internal State하스터Combat_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Down_Idle_B", arg2: 60000f);
@@ -707,7 +707,7 @@ namespace Maple2.Trigger._52000147_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State하스터와전투_07(context);
+                    return new State하스터Combat_07(context);
                 }
 
                 return null;
@@ -716,8 +716,8 @@ namespace Maple2.Trigger._52000147_qd {
             public override void OnExit() { }
         }
 
-        private class State하스터와전투_07 : TriggerState {
-            internal State하스터와전투_07(ITriggerContext context) : base(context) { }
+        private class State하스터Combat_07 : TriggerState {
+            internal State하스터Combat_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");

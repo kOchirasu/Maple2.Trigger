@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000427_bf {
     public static class _portal4578 {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 4, arg2: false, arg3: false, arg4: false);
@@ -12,7 +12,7 @@ namespace Maple2.Trigger._02000427_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ThirdPhase") == 1) {
-                    return new State순간이동포탈생성(context);
+                    return new StateTeleportationPortalCreation(context);
                 }
 
                 return null;
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._02000427_bf {
             public override void OnExit() { }
         }
 
-        private class State순간이동포탈생성 : TriggerState {
-            internal State순간이동포탈생성(ITriggerContext context) : base(context) { }
+        private class StateTeleportationPortalCreation : TriggerState {
+            internal StateTeleportationPortalCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._02000427_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

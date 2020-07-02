@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02000400_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State룸체크(context);
+                    return new StateRoomCheck(context);
                 }
 
                 return null;
@@ -18,18 +18,18 @@ namespace Maple2.Trigger._02000400_bf {
             public override void OnExit() { }
         }
 
-        private class State룸체크 : TriggerState {
-            internal State룸체크(ITriggerContext context) : base(context) { }
+        private class StateRoomCheck : TriggerState {
+            internal StateRoomCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.IsDungeonRoom()) {
-                    return new State던전시작(context);
+                    return new StateDungeonInit(context);
                 }
 
                 if (!context.IsDungeonRoom()) {
-                    return new State퀘스트던전시작(context);
+                    return new StateQuestDungeonInit(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._02000400_bf {
             public override void OnExit() { }
         }
 
-        private class State던전시작 : TriggerState {
-            internal State던전시작(ITriggerContext context) : base(context) { }
+        private class StateDungeonInit : TriggerState {
+            internal StateDungeonInit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {900, 901}, arg2: false);
@@ -56,8 +56,8 @@ namespace Maple2.Trigger._02000400_bf {
             public override void OnExit() { }
         }
 
-        private class State퀘스트던전시작 : TriggerState {
-            internal State퀘스트던전시작(ITriggerContext context) : base(context) { }
+        private class StateQuestDungeonInit : TriggerState {
+            internal StateQuestDungeonInit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {910, 911}, arg2: false);
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02000400_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State종료체크(context);
+                    return new StateEnd체크(context);
                 }
 
                 return null;
@@ -74,8 +74,8 @@ namespace Maple2.Trigger._02000400_bf {
             public override void OnExit() { }
         }
 
-        private class State종료체크 : TriggerState {
-            internal State종료체크(ITriggerContext context) : base(context) { }
+        private class StateEnd체크 : TriggerState {
+            internal StateEnd체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

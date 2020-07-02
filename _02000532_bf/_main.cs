@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000532_bf {
     public static class _main {
-        public class Stateidle : TriggerState {
-            internal Stateidle(ITriggerContext context) : base(context) { }
+        public class StateIdle : TriggerState {
+            internal StateIdle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004}, arg2: true);
@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000532_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {701}, arg2: 0)) {
-                    return new Stateready(context);
+                    return new StateReady(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000532_bf {
             public override void OnExit() { }
         }
 
-        private class Stateready : TriggerState {
-            internal Stateready(ITriggerContext context) : base(context) { }
+        private class StateReady : TriggerState {
+            internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -37,7 +37,7 @@ namespace Maple2.Trigger._02000532_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new Statestart(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -46,8 +46,8 @@ namespace Maple2.Trigger._02000532_bf {
             public override void OnExit() { }
         }
 
-        private class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "목표", arg2: "nextState");
@@ -308,7 +308,7 @@ namespace Maple2.Trigger._02000532_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {705}, arg2: 0)) {
-                    return new State길목에서나오는몬스터(context);
+                    return new State길목에서나오는Monster(context);
                 }
 
                 return null;
@@ -317,8 +317,8 @@ namespace Maple2.Trigger._02000532_bf {
             public override void OnExit() { }
         }
 
-        private class State길목에서나오는몬스터 : TriggerState {
-            internal State길목에서나오는몬스터(ITriggerContext context) : base(context) { }
+        private class State길목에서나오는Monster : TriggerState {
+            internal State길목에서나오는Monster(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {108, 109});
@@ -330,7 +330,7 @@ namespace Maple2.Trigger._02000532_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {401, 402, 403, 404, 405, 406, 407, 409, 410, 411, 412})) {
-                    return new State2차생성(context);
+                    return new State2차Creation(context);
                 }
 
                 return null;
@@ -339,8 +339,8 @@ namespace Maple2.Trigger._02000532_bf {
             public override void OnExit() { }
         }
 
-        private class State2차생성 : TriggerState {
-            internal State2차생성(ITriggerContext context) : base(context) { }
+        private class State2차Creation : TriggerState {
+            internal State2차Creation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 3000, script: "$02000532_BF__MAIN__21$");

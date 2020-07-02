@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._81000001_item {
     public static class _trigger_01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "59", arg2: 180, arg3: true, arg4: true, arg5: -90);
@@ -13,7 +13,7 @@ namespace Maple2.Trigger._81000001_item {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State랜덤블록01(context);
+                    return new StateRandom블록01(context);
                 }
 
                 return null;
@@ -22,8 +22,8 @@ namespace Maple2.Trigger._81000001_item {
             public override void OnExit() { }
         }
 
-        private class State랜덤블록01 : TriggerState {
-            internal State랜덤블록01(ITriggerContext context) : base(context) { }
+        private class StateRandom블록01 : TriggerState {
+            internal StateRandom블록01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -31,13 +31,13 @@ namespace Maple2.Trigger._81000001_item {
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3101}, arg2: true, arg3: 0, arg4: 0);
                     context.SetEffect(arg1: new[] {71011, 71012}, arg2: true);
-                    return new State랜덤블록02(context);
+                    return new StateRandom블록02(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3102}, arg2: true, arg3: 0, arg4: 0);
                     context.SetEffect(arg1: new[] {71021, 71022}, arg2: true);
-                    return new State랜덤블록02(context);
+                    return new StateRandom블록02(context);
                 }
 
                 return null;
@@ -46,8 +46,8 @@ namespace Maple2.Trigger._81000001_item {
             public override void OnExit() { }
         }
 
-        private class State랜덤블록02 : TriggerState {
-            internal State랜덤블록02(ITriggerContext context) : base(context) { }
+        private class StateRandom블록02 : TriggerState {
+            internal StateRandom블록02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -55,13 +55,13 @@ namespace Maple2.Trigger._81000001_item {
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3201}, arg2: true, arg3: 0, arg4: 0);
                     context.SetEffect(arg1: new[] {72011}, arg2: true);
-                    return new State랜덤블록03(context);
+                    return new StateRandom블록03(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3202}, arg2: true, arg3: 0, arg4: 0);
                     context.SetEffect(arg1: new[] {72021}, arg2: true);
-                    return new State랜덤블록03(context);
+                    return new StateRandom블록03(context);
                 }
 
                 return null;
@@ -70,8 +70,8 @@ namespace Maple2.Trigger._81000001_item {
             public override void OnExit() { }
         }
 
-        private class State랜덤블록03 : TriggerState {
-            internal State랜덤블록03(ITriggerContext context) : base(context) { }
+        private class StateRandom블록03 : TriggerState {
+            internal StateRandom블록03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -79,13 +79,13 @@ namespace Maple2.Trigger._81000001_item {
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3301}, arg2: true, arg3: 0, arg4: 0);
                     context.SetEffect(arg1: new[] {73011}, arg2: true);
-                    return new State랜덤블록04(context);
+                    return new StateRandom블록04(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3302}, arg2: true, arg3: 0, arg4: 0);
                     context.SetEffect(arg1: new[] {73021, 73022, 73023}, arg2: true);
-                    return new State랜덤블록04(context);
+                    return new StateRandom블록04(context);
                 }
 
                 return null;
@@ -94,20 +94,20 @@ namespace Maple2.Trigger._81000001_item {
             public override void OnExit() { }
         }
 
-        private class State랜덤블록04 : TriggerState {
-            internal State랜덤블록04(ITriggerContext context) : base(context) { }
+        private class StateRandom블록04 : TriggerState {
+            internal StateRandom블록04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3401, 3402}, arg2: true, arg3: 0, arg4: 0);
-                    return new State시작조건체크(context);
+                    return new StateStart조건체크(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3403, 3404}, arg2: true, arg3: 0, arg4: 0);
-                    return new State시작조건체크(context);
+                    return new StateStart조건체크(context);
                 }
 
                 return null;
@@ -116,8 +116,8 @@ namespace Maple2.Trigger._81000001_item {
             public override void OnExit() { }
         }
 
-        private class State시작조건체크 : TriggerState {
-            internal State시작조건체크(ITriggerContext context) : base(context) { }
+        private class StateStart조건체크 : TriggerState {
+            internal StateStart조건체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -164,7 +164,7 @@ namespace Maple2.Trigger._81000001_item {
                     context.StartMiniGame(isShowResultUI: "false", boxId: 105, round: 1, gameName: "UserMassive_Escape");
                     context.StartMiniGameRound(boxId: 105, round: 1);
                     context.MoveUserToBox(boxId: 101, portalId: true);
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -173,8 +173,8 @@ namespace Maple2.Trigger._81000001_item {
             public override void OnExit() { }
         }
 
-        private class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        private class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999111, key: "gameStart", value: 1);
@@ -223,7 +223,7 @@ namespace Maple2.Trigger._81000001_item {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
                     context.MoveUser(arg1: 0, arg2: 0);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -232,8 +232,8 @@ namespace Maple2.Trigger._81000001_item {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

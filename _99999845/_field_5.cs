@@ -2,8 +2,8 @@ using System.Numerics;
 
 namespace Maple2.Trigger._99999845 {
     public static class _field_5 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000322}, arg2: 2);

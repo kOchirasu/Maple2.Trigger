@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000242_bf {
     public static class _trigger_02_01 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {707, 708}, arg2: true);
@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02000242_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {616, 617})) {
-                    return new State1차딜레이(context);
+                    return new State1차Delay(context);
                 }
 
                 return null;
@@ -33,8 +33,8 @@ namespace Maple2.Trigger._02000242_bf {
             public override void OnExit() { }
         }
 
-        private class State1차딜레이 : TriggerState {
-            internal State1차딜레이(ITriggerContext context) : base(context) { }
+        private class State1차Delay : TriggerState {
+            internal State1차Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 10);
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02000242_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {616, 617})) {
-                    return new State2차딜레이(context);
+                    return new State2차Delay(context);
                 }
 
                 return null;
@@ -69,8 +69,8 @@ namespace Maple2.Trigger._02000242_bf {
             public override void OnExit() { }
         }
 
-        private class State2차딜레이 : TriggerState {
-            internal State2차딜레이(ITriggerContext context) : base(context) { }
+        private class State2차Delay : TriggerState {
+            internal State2차Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 10);
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._02000242_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {616, 617})) {
-                    return new State3차딜레이(context);
+                    return new State3차Delay(context);
                 }
 
                 return null;
@@ -105,8 +105,8 @@ namespace Maple2.Trigger._02000242_bf {
             public override void OnExit() { }
         }
 
-        private class State3차딜레이 : TriggerState {
-            internal State3차딜레이(ITriggerContext context) : base(context) { }
+        private class State3차Delay : TriggerState {
+            internal State3차Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020112_bf {
     public static class _main {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetGravity(gravity: 0f);
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {141, 142, 143, 144})) {
-                    return new State카메라_발판점프대(context);
+                    return new StateCamera_발판점프대(context);
                 }
 
                 return null;
@@ -87,11 +87,11 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnExit() { }
         }
 
-        private class State카메라_발판점프대 : TriggerState {
-            internal State카메라_발판점프대(ITriggerContext context) : base(context) { }
+        private class StateCamera_발판점프대 : TriggerState {
+            internal StateCamera_발판점프대(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "카메라_종료", arg2: "exit");
+                context.SetSceneSkip(arg1: "Camera_종료", arg2: "exit");
                 context.SetUserValue(triggerId: 99990020, key: "GravityRoom", value: 1);
                 context.SetUserValue(triggerId: 99990002, key: "JumpFloor", value: 1);
                 context.SetUserValue(triggerId: 99990017, key: "JumpFloor", value: 1);
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new State카메라_종료(context);
+                    return new StateCamera_종료(context);
                 }
 
                 return null;
@@ -111,8 +111,8 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnExit() { }
         }
 
-        private class State카메라_종료 : TriggerState {
-            internal State카메라_종료(ITriggerContext context) : base(context) { }
+        private class StateCamera_종료 : TriggerState {
+            internal StateCamera_종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();

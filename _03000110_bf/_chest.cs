@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._03000110_bf {
     public static class _chest {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {11000023}, arg2: 1);
@@ -139,12 +139,12 @@ namespace Maple2.Trigger._03000110_bf {
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 90f)) {
                     context.SetInteractObject(arg1: new[] {11000008}, arg2: 1);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
                     context.SetInteractObject(arg1: new[] {11000009}, arg2: 1);
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -153,8 +153,8 @@ namespace Maple2.Trigger._03000110_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

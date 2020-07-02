@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._99999841 {
     public static class _badmob3 {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990005, key: "BadMob", value: 0);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._99999841 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 903) == true) {
-                    return new State몬스터스폰(context);
+                    return new StateMonster스폰(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._99999841 {
             public override void OnExit() { }
         }
 
-        private class State몬스터스폰 : TriggerState {
-            internal State몬스터스폰(ITriggerContext context) : base(context) { }
+        private class StateMonster스폰 : TriggerState {
+            internal StateMonster스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {993}, arg2: false);
@@ -44,20 +44,20 @@ namespace Maple2.Trigger._99999841 {
             }
 
             public override TriggerState Execute() {
-                return new State종료(context);
+                return new StateEnd(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 903) == false) {
-                    return new State대기(context);
+                    return new StateWait(context);
                 }
 
                 return null;

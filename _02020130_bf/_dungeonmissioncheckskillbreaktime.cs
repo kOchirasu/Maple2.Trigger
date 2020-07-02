@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {601})) {
-                    return new State보스스킬브레이크시작_대기중(context);
+                    return new StateBoss스킬브레이크시작_대기중(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State보스스킬브레이크시작_대기중 : TriggerState {
-            internal State보스스킬브레이크시작_대기중(ITriggerContext context) : base(context) { }
+        private class StateBoss스킬브레이크시작_대기중 : TriggerState {
+            internal StateBoss스킬브레이크시작_대기중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -51,35 +51,35 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "IshuraSkillBreakClear") == 1 && context.GetUserValue(key: "YuperiaSkillBreakClear") == 1 && context.GetUserValue(key: "RenduebianSkillBreakClear") == 1) {
-                    return new State던전미션_스킬브레이크저지_성공(context);
+                    return new State던전미션_스킬브레이크저지_Success(context);
                 }
 
                 if (context.GetNpcExtraData(spawnPointId: 701, extraDataKey: "brokenShieldRemainTick") >= 6000 && context.CheckNpcAdditionalEffect(spawnPointId: 701, additionalEffectId: 70002171, level: 1) && context.GetNpcExtraData(spawnPointId: 702, extraDataKey: "brokenShieldRemainTick") >= 6000 && context.CheckNpcAdditionalEffect(spawnPointId: 702, additionalEffectId: 70002171, level: 1) && context.GetNpcExtraData(spawnPointId: 703, extraDataKey: "brokenShieldRemainTick") >= 6000 && context.CheckNpcAdditionalEffect(spawnPointId: 703, additionalEffectId: 70002171, level: 1)) {
-                    return new State던전미션_3개변수1셋팅(context);
+                    return new State던전미션_3개변수1Setting(context);
                 }
 
                 if (context.GetNpcExtraData(spawnPointId: 701, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnPointId: 701, additionalEffectId: 70002171, level: 1)) {
-                    return new State이슈라미션_변수1셋팅(context);
+                    return new StateIshura미션_변수1Setting(context);
                 }
 
                 if (context.GetNpcExtraData(spawnPointId: 702, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnPointId: 702, additionalEffectId: 70002171, level: 1)) {
-                    return new State유페리아미션_변수1셋팅(context);
+                    return new State유페리아미션_변수1Setting(context);
                 }
 
                 if (context.GetNpcExtraData(spawnPointId: 703, extraDataKey: "brokenShieldRemainTick") >= 8000 && context.CheckNpcAdditionalEffect(spawnPointId: 703, additionalEffectId: 70002171, level: 1)) {
-                    return new State렌듀비앙미션_변수1셋팅(context);
+                    return new State렌듀비앙미션_변수1Setting(context);
                 }
 
                 if (context.CheckNpcAdditionalEffect(spawnPointId: 701, additionalEffectId: 50000264, level: 1)) {
-                    return new State보스스킬브레이크시작_대기중(context);
+                    return new StateBoss스킬브레이크시작_대기중(context);
                 }
 
                 if (context.CheckNpcAdditionalEffect(spawnPointId: 702, additionalEffectId: 50000264, level: 3)) {
-                    return new State보스스킬브레이크시작_대기중(context);
+                    return new StateBoss스킬브레이크시작_대기중(context);
                 }
 
                 if (context.CheckNpcAdditionalEffect(spawnPointId: 703, additionalEffectId: 50000264, level: 2)) {
-                    return new State보스스킬브레이크시작_대기중(context);
+                    return new StateBoss스킬브레이크시작_대기중(context);
                 }
 
                 return null;
@@ -88,8 +88,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State던전미션_3개변수1셋팅 : TriggerState {
-            internal State던전미션_3개변수1셋팅(ITriggerContext context) : base(context) { }
+        private class State던전미션_3개변수1Setting : TriggerState {
+            internal State던전미션_3개변수1Setting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "IshuraSkillBreakClear", value: 1);
@@ -108,8 +108,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State이슈라미션_변수1셋팅 : TriggerState {
-            internal State이슈라미션_변수1셋팅(ITriggerContext context) : base(context) { }
+        private class StateIshura미션_변수1Setting : TriggerState {
+            internal StateIshura미션_변수1Setting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "IshuraSkillBreakClear", value: 1);
@@ -126,8 +126,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State유페리아미션_변수1셋팅 : TriggerState {
-            internal State유페리아미션_변수1셋팅(ITriggerContext context) : base(context) { }
+        private class State유페리아미션_변수1Setting : TriggerState {
+            internal State유페리아미션_변수1Setting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "YuperiaSkillBreakClear", value: 1);
@@ -144,8 +144,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State렌듀비앙미션_변수1셋팅 : TriggerState {
-            internal State렌듀비앙미션_변수1셋팅(ITriggerContext context) : base(context) { }
+        private class State렌듀비앙미션_변수1Setting : TriggerState {
+            internal State렌듀비앙미션_변수1Setting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "RenduebianSkillBreakClear", value: 1);
@@ -162,8 +162,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State던전미션_스킬브레이크저지_성공 : TriggerState {
-            internal State던전미션_스킬브레이크저지_성공(ITriggerContext context) : base(context) { }
+        private class State던전미션_스킬브레이크저지_Success : TriggerState {
+            internal State던전미션_스킬브레이크저지_Success(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonMissionComplete(missionId: 23040004);
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1100)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -180,8 +180,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

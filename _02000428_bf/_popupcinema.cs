@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000428_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 750) == 1) {
-                    return new State시작연출준비(context);
+                    return new StateStartSetupCinematic(context);
                 }
 
                 return null;
@@ -16,14 +16,14 @@ namespace Maple2.Trigger._02000428_bf {
             public override void OnExit() { }
         }
 
-        private class State시작연출준비 : TriggerState {
-            internal State시작연출준비(ITriggerContext context) : base(context) { }
+        private class StateStartSetupCinematic : TriggerState {
+            internal StateStartSetupCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new State전투시작01(context);
+                    return new StateBattleStart01(context);
                 }
 
                 return null;
@@ -32,8 +32,8 @@ namespace Maple2.Trigger._02000428_bf {
             public override void OnExit() { }
         }
 
-        private class State전투시작01 : TriggerState {
-            internal State전투시작01(ITriggerContext context) : base(context) { }
+        private class StateBattleStart01 : TriggerState {
+            internal StateBattleStart01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 5000, script: "$02000410_BF__PopUpCinema__0$", voice: @"ko/Npc/00002157");
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000428_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State전투시작02(context);
+                    return new StateBattleStart02(context);
                 }
 
                 return null;
@@ -50,8 +50,8 @@ namespace Maple2.Trigger._02000428_bf {
             public override void OnExit() { }
         }
 
-        private class State전투시작02 : TriggerState {
-            internal State전투시작02(ITriggerContext context) : base(context) { }
+        private class StateBattleStart02 : TriggerState {
+            internal StateBattleStart02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "movie", usm: @"Common/WorldInvasionScene1.usm", duration: 0);
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02000428_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State전투시작03(context);
+                    return new StateBattleStart03(context);
                 }
 
                 return null;
@@ -69,8 +69,8 @@ namespace Maple2.Trigger._02000428_bf {
             public override void OnExit() { }
         }
 
-        private class State전투시작03 : TriggerState {
-            internal State전투시작03(ITriggerContext context) : base(context) { }
+        private class StateBattleStart03 : TriggerState {
+            internal StateBattleStart03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11003536, illust: "infernog_nomal", duration: 8500, script: "$02000410_BF__PopUpCinema__2$", voice: @"ko/Monster/60000724");
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02000428_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8500)) {
-                    return new State전투시작04(context);
+                    return new StateBattleStart04(context);
                 }
 
                 return null;
@@ -87,8 +87,8 @@ namespace Maple2.Trigger._02000428_bf {
             public override void OnExit() { }
         }
 
-        private class State전투시작04 : TriggerState {
-            internal State전투시작04(ITriggerContext context) : base(context) { }
+        private class StateBattleStart04 : TriggerState {
+            internal StateBattleStart04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11003536, illust: "infernog_nomal", duration: 6000, script: "$02000410_BF__PopUpCinema__3$", voice: @"ko/Monster/60000725");
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._02000428_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State전투시작05(context);
+                    return new StateBattleStart05(context);
                 }
 
                 return null;
@@ -105,8 +105,8 @@ namespace Maple2.Trigger._02000428_bf {
             public override void OnExit() { }
         }
 
-        private class State전투시작05 : TriggerState {
-            internal State전투시작05(ITriggerContext context) : base(context) { }
+        private class StateBattleStart05 : TriggerState {
+            internal StateBattleStart05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11003536, illust: "tristan_normal", duration: 6500, script: "$02000410_BF__PopUpCinema__4$", voice: @"ko/Npc/00002172");
@@ -261,7 +261,7 @@ namespace Maple2.Trigger._02000428_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State트리거종료(context);
+                    return new StateTrigger종료(context);
                 }
 
                 return null;
@@ -270,8 +270,8 @@ namespace Maple2.Trigger._02000428_bf {
             public override void OnExit() { }
         }
 
-        private class State트리거종료 : TriggerState {
-            internal State트리거종료(ITriggerContext context) : base(context) { }
+        private class StateTrigger종료 : TriggerState {
+            internal StateTrigger종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

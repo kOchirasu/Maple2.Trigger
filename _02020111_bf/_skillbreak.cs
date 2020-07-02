@@ -2,8 +2,8 @@ using System.Numerics;
 
 namespace Maple2.Trigger._02020111_bf {
     public static class _skillbreak {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900001, key: "SkillBreakFail", value: 0);
@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 70002181, level: 1)) {
-                    return new State스킬브레이크_실패(context);
+                    return new StateSkill브레이크_실패(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State스킬브레이크_실패 : TriggerState {
-            internal State스킬브레이크_실패(ITriggerContext context) : base(context) { }
+        private class StateSkill브레이크_실패 : TriggerState {
+            internal StateSkill브레이크_실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {101}, arg2: 62100026, arg3: 1, arg4: true);
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State스킬브레이크_실패_2(context);
+                    return new StateSkill브레이크_실패_2(context);
                 }
 
                 return null;
@@ -88,8 +88,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State스킬브레이크_실패_2 : TriggerState {
-            internal State스킬브레이크_실패_2(ITriggerContext context) : base(context) { }
+        private class StateSkill브레이크_실패_2 : TriggerState {
+            internal StateSkill브레이크_실패_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900005, key: "Lapenta_Attack", value: 0);
@@ -98,14 +98,14 @@ namespace Maple2.Trigger._02020111_bf {
             }
 
             public override TriggerState Execute() {
-                return new State대기(context);
+                return new StateWait(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

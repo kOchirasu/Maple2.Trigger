@@ -227,7 +227,7 @@ namespace Maple2.Trigger._52100043_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new Statenarration01(context);
+                    return new StateNarration01(context);
                 }
 
                 return null;
@@ -236,8 +236,8 @@ namespace Maple2.Trigger._52100043_qd {
             public override void OnExit() { }
         }
 
-        private class Statenarration01 : TriggerState {
-            internal Statenarration01(ITriggerContext context) : base(context) { }
+        private class StateNarration01 : TriggerState {
+            internal StateNarration01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkip();
@@ -248,7 +248,7 @@ namespace Maple2.Trigger._52100043_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new Statenarration02(context);
+                    return new StateNarration02(context);
                 }
 
                 return null;
@@ -257,8 +257,8 @@ namespace Maple2.Trigger._52100043_qd {
             public override void OnExit() { }
         }
 
-        private class Statenarration02 : TriggerState {
-            internal Statenarration02(ITriggerContext context) : base(context) { }
+        private class StateNarration02 : TriggerState {
+            internal StateNarration02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "Map_Warf");
@@ -267,7 +267,7 @@ namespace Maple2.Trigger._52100043_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new Statenarration03(context);
+                    return new StateNarration03(context);
                 }
 
                 return null;
@@ -276,8 +276,8 @@ namespace Maple2.Trigger._52100043_qd {
             public override void OnExit() { }
         }
 
-        private class Statenarration03 : TriggerState {
-            internal Statenarration03(ITriggerContext context) : base(context) { }
+        private class StateNarration03 : TriggerState {
+            internal StateNarration03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 9, arg2: "$52100043_QD__ENDING__9$");
@@ -285,7 +285,7 @@ namespace Maple2.Trigger._52100043_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new Statenarration04(context);
+                    return new StateNarration04(context);
                 }
 
                 return null;
@@ -294,8 +294,8 @@ namespace Maple2.Trigger._52100043_qd {
             public override void OnExit() { }
         }
 
-        private class Statenarration04 : TriggerState {
-            internal Statenarration04(ITriggerContext context) : base(context) { }
+        private class StateNarration04 : TriggerState {
+            internal StateNarration04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 9, arg2: "$52100043_QD__ENDING__10$");
@@ -303,7 +303,7 @@ namespace Maple2.Trigger._52100043_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new Statenarration05(context);
+                    return new StateNarration05(context);
                 }
 
                 return null;
@@ -312,8 +312,8 @@ namespace Maple2.Trigger._52100043_qd {
             public override void OnExit() { }
         }
 
-        private class Statenarration05 : TriggerState {
-            internal Statenarration05(ITriggerContext context) : base(context) { }
+        private class StateNarration05 : TriggerState {
+            internal StateNarration05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 9, arg2: "$52100043_QD__ENDING__11$");
@@ -321,7 +321,7 @@ namespace Maple2.Trigger._52100043_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new Statenarration06(context);
+                    return new StateNarration06(context);
                 }
 
                 return null;
@@ -330,8 +330,8 @@ namespace Maple2.Trigger._52100043_qd {
             public override void OnExit() { }
         }
 
-        private class Statenarration06 : TriggerState {
-            internal Statenarration06(ITriggerContext context) : base(context) { }
+        private class StateNarration06 : TriggerState {
+            internal StateNarration06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 9, arg2: "$52100043_QD__ENDING__12$");

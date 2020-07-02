@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52000195_qd {
     public static class _52000195 {
-        public class Statestart : TriggerState {
-            internal Statestart(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -437,7 +437,7 @@ namespace Maple2.Trigger._52000195_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State업적달성(context);
+                    return new StateAchievement(context);
                 }
 
                 return null;
@@ -455,7 +455,7 @@ namespace Maple2.Trigger._52000195_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State업적달성(context);
+                    return new StateAchievement(context);
                 }
 
                 return null;
@@ -464,8 +464,8 @@ namespace Maple2.Trigger._52000195_qd {
             public override void OnExit() { }
         }
 
-        private class State업적달성 : TriggerState {
-            internal State업적달성(ITriggerContext context) : base(context) { }
+        private class StateAchievement : TriggerState {
+            internal StateAchievement(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 2002, arg3: "DreamofEreb");

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020051_bf {
     public static class _102_timmer {
-        public class State시작 : TriggerState {
-            internal State시작(ITriggerContext context) : base(context) { }
+        public class StateStart : TriggerState {
+            internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ResetTimer(arg1: "990");
@@ -27,11 +27,11 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 600000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 if (context.GetUserValue(key: "Timmer") == 3) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;
@@ -40,8 +40,8 @@ namespace Maple2.Trigger._02020051_bf {
             public override void OnExit() { }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_shy", script: "$02020051_BF__102_TIMMER__0$", duration: 5684, voice: @"ko/Npc/00002201");
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Timmer") == 2) {
-                    return new State시작(context);
+                    return new StateStart(context);
                 }
 
                 return null;

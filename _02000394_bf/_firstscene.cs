@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._02000394_bf {
     public static class _firstscene {
-        public class State대기 : TriggerState {
-            internal State대기(ITriggerContext context) : base(context) { }
+        public class StateWait : TriggerState {
+            internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    return new State카메라연출01(context);
+                    return new StateCamera연출01(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000394_bf {
             public override void OnExit() { }
         }
 
-        private class State카메라연출01 : TriggerState {
-            internal State카메라연출01(ITriggerContext context) : base(context) { }
+        private class StateCamera연출01 : TriggerState {
+            internal StateCamera연출01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetProductionUI(arg1: 1);
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000394_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State카메라연출02(context);
+                    return new StateCamera연출02(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02000394_bf {
             public override void OnExit() { }
         }
 
-        private class State카메라연출02 : TriggerState {
-            internal State카메라연출02(ITriggerContext context) : base(context) { }
+        private class StateCamera연출02 : TriggerState {
+            internal StateCamera연출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {3000, 3001, 3002, 3003}, arg2: true);
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02000394_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    return new State종료(context);
+                    return new StateEnd(context);
                 }
 
                 return null;
@@ -58,8 +58,8 @@ namespace Maple2.Trigger._02000394_bf {
             }
         }
 
-        private class State종료 : TriggerState {
-            internal State종료(ITriggerContext context) : base(context) { }
+        private class StateEnd : TriggerState {
+            internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

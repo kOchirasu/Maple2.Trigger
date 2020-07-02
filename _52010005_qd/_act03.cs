@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._52010005_qd {
     public static class _act03 {
-        public class State퀘스트조건03 : TriggerState {
-            internal State퀘스트조건03(ITriggerContext context) : base(context) { }
+        public class StateQuest조건03 : TriggerState {
+            internal StateQuest조건03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000872}, arg2: 0);
@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002822}, arg3: new byte[] {1})) {
-                    return new StateQ3_딜레이01(context);
+                    return new StateQ3_Delay01(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnExit() { }
         }
 
-        private class StateQ3_딜레이01 : TriggerState {
-            internal StateQ3_딜레이01(ITriggerContext context) : base(context) { }
+        private class StateQ3_Delay01 : TriggerState {
+            internal StateQ3_Delay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "100", arg2: 2);
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "100")) {
-                    return new StateQ3_미카등장01(context);
+                    return new StateQ3_미카Appear01(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnExit() { }
         }
 
-        private class StateQ3_미카등장01 : TriggerState {
-            internal StateQ3_미카등장01(ITriggerContext context) : base(context) { }
+        private class StateQ3_미카Appear01 : TriggerState {
+            internal StateQ3_미카Appear01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "20", arg2: 1);
@@ -333,7 +333,7 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "40")) {
-                    return new StateQ3_업적발생(context);
+                    return new StateQ3_Achievement(context);
                 }
 
                 return null;
@@ -342,8 +342,8 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnExit() { }
         }
 
-        private class StateQ3_업적발생 : TriggerState {
-            internal StateQ3_업적발생(ITriggerContext context) : base(context) { }
+        private class StateQ3_Achievement : TriggerState {
+            internal StateQ3_Achievement(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 9001, arg2: "trigger", arg3: "Intothememory");
