@@ -42,8 +42,8 @@ namespace Maple2.Trigger._02000294_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {10000}, arg2: false);
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.SetSkip(arg1: "GateOpen01");
@@ -105,8 +105,8 @@ namespace Maple2.Trigger._02000294_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 600, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetActor(arg1: 900, arg2: true, arg3: "Opened");
                 context.SetMesh(arg1: new[] {300}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetSkip();

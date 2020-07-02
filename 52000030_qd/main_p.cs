@@ -27,8 +27,8 @@ namespace Maple2.Trigger._52000030_qd {
                 context.PlaySceneMovie(fileName: "Nutaman_intro.swf", movieId: 1);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -93,8 +93,8 @@ namespace Maple2.Trigger._52000030_qd {
             public override void OnExit() {
                 context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014});
                 context.CreateMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110, 1111, 1112, 1113, 1114, 2001, 2002}, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 
@@ -143,8 +143,8 @@ namespace Maple2.Trigger._52000030_qd {
             internal StateIshura대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001230, arg3: "$52000030_QD__MAIN_P__2$", arg4: 2, arg5: 0);
             }
 
@@ -157,8 +157,8 @@ namespace Maple2.Trigger._52000030_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 
@@ -184,8 +184,8 @@ namespace Maple2.Trigger._52000030_qd {
             internal StateIshura대사03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001578, arg3: "$52000030_QD__MAIN_P__3$", arg4: 3, arg5: 0);
             }
 
@@ -199,8 +199,8 @@ namespace Maple2.Trigger._52000030_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 

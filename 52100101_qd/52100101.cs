@@ -79,7 +79,7 @@ namespace Maple2.Trigger._52100101_qd {
             internal StateWait_01_02_003(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.MoveUser(arg1: 52100101, arg2: 2);
             }
 
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._52100101_qd {
             internal State구릉도착_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 0, msg: "$52100101_QD__52100101__0$", duration: 4000);
             }
 
@@ -230,8 +230,8 @@ namespace Maple2.Trigger._52100101_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetSceneSkip();
             }
 
@@ -252,8 +252,8 @@ namespace Maple2.Trigger._52100101_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -290,7 +290,7 @@ namespace Maple2.Trigger._52100101_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {
@@ -308,7 +308,7 @@ namespace Maple2.Trigger._52100101_qd {
             internal StateWait_01_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.MoveUser(arg1: 52100101, arg2: 3);
                 context.CreateMonster(arg1: new[] {109, 110, 111, 112, 113}, arg2: false);
             }
@@ -347,7 +347,7 @@ namespace Maple2.Trigger._52100101_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4009}, arg2: false);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 0, msg: "$52100101_QD__52100101__4$", duration: 3000);
                 context.AddCinematicTalk(npcId: 11004422, msg: "$52100101_QD__52100101__5$", duration: 3000);
                 context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
@@ -491,7 +491,7 @@ namespace Maple2.Trigger._52100101_qd {
             internal State잠시후_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52100101_QD__52100101__18$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52100101_QD__52100101__18$");
                 context.CameraSelectPath(arg1: new[] {4015}, arg2: false);
             }
 
@@ -511,9 +511,9 @@ namespace Maple2.Trigger._52100101_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {109, 110, 111, 112, 113, 114});
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.VisibleMyPc(isVisible: false);
             }
 

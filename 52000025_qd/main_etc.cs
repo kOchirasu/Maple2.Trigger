@@ -168,8 +168,8 @@ namespace Maple2.Trigger._52000025_qd {
             internal StateStart_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000025_QD__MAIN_ETC__2$", arg4: 4);
                 context.SetEffect(arg1: new[] {7001}, arg2: true);
             }
@@ -203,7 +203,7 @@ namespace Maple2.Trigger._52000025_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
             }
         }
 
@@ -223,9 +223,9 @@ namespace Maple2.Trigger._52000025_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.MoveUser(arg1: 52000025, arg2: 99);
             }
         }
@@ -234,8 +234,8 @@ namespace Maple2.Trigger._52000025_qd {
             internal StateStart_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_2001");
                 context.MoveUserPath(arg1: "MS2PatrolData_2002");
                 context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: false);
@@ -333,8 +333,8 @@ namespace Maple2.Trigger._52000025_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {201});
                 context.CreateMonster(arg1: new[] {299}, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "SweepthePriates");
             }
 

@@ -123,8 +123,8 @@ namespace Maple2.Trigger._63000077_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetActor(arg1: 3001, arg2: true, arg3: "Talk_A");
             }
 
@@ -624,8 +624,8 @@ namespace Maple2.Trigger._63000077_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -664,8 +664,8 @@ namespace Maple2.Trigger._63000077_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -801,8 +801,8 @@ namespace Maple2.Trigger._63000077_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -821,8 +821,8 @@ namespace Maple2.Trigger._63000077_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 5, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -840,7 +840,7 @@ namespace Maple2.Trigger._63000077_cs {
             internal State에블린일기_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$63000077_CS__63000077_MAIN__15$");
+                context.SetCinematicUI(arg1: 9, arg2: "$63000077_CS__63000077_MAIN__15$");
                 context.MoveUser(arg1: 63000077, arg2: 4);
                 context.CameraSelect(arg1: 8008, arg2: true);
                 context.SetSceneSkip(arg1: "업적_01", arg2: "exit");
@@ -855,7 +855,7 @@ namespace Maple2.Trigger._63000077_cs {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 
@@ -863,8 +863,8 @@ namespace Maple2.Trigger._63000077_cs {
             internal State에블린일기_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 5, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -1303,8 +1303,8 @@ namespace Maple2.Trigger._63000077_cs {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetSceneSkip();
             }
 

@@ -25,8 +25,8 @@ namespace Maple2.Trigger._52000056_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000056, arg2: 3);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
             }
 
@@ -142,8 +142,8 @@ namespace Maple2.Trigger._52000056_qd {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetEffect(arg1: new[] {601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611}, arg2: true);
-                    context.SetProductionUI(arg1: 0);
-                    context.SetProductionUI(arg1: 2);
+                    context.SetCinematicUI(arg1: 0);
+                    context.SetCinematicUI(arg1: 2);
                     context.SetGravity(gravity: -9.8f);
                     return new State이펙트종료대기(context);
                 }

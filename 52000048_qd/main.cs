@@ -26,8 +26,8 @@ namespace Maple2.Trigger._52000048_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {600}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.MoveNpc(arg1: 1101, arg2: "MS2PatrolData_A");
                 context.MoveNpc(arg1: 1102, arg2: "MS2PatrolData_A");
@@ -327,8 +327,8 @@ namespace Maple2.Trigger._52000048_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 304, arg2: false);
                 context.MoveUser(arg1: 52000050, arg2: 1);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

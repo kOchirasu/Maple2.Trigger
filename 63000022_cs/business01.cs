@@ -24,9 +24,9 @@ namespace Maple2.Trigger._63000022_cs {
             internal StateLodingDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.CameraSelect(arg1: 500, arg2: true);
             }
 
@@ -73,8 +73,8 @@ namespace Maple2.Trigger._63000022_cs {
             internal StateQuestOngoing02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -108,8 +108,8 @@ namespace Maple2.Trigger._63000022_cs {
             internal StateQuestOngoing12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -141,8 +141,8 @@ namespace Maple2.Trigger._63000022_cs {
             internal StateTalkWeiHong02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -160,8 +160,8 @@ namespace Maple2.Trigger._63000022_cs {
             internal StateTalkWeiHong03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 501, arg2: true);
             }
 
@@ -315,8 +315,8 @@ namespace Maple2.Trigger._63000022_cs {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 501, arg2: false);
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: false);

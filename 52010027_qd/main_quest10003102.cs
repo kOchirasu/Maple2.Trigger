@@ -39,8 +39,8 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 52010027, arg2: 6007);
                 context.CreateMonster(arg1: new[] {803}, arg2: true);
                 context.SetNpcEmotionLoop(arg1: 803, arg2: "Stun_A", arg3: 160000000f);
@@ -199,8 +199,8 @@ namespace Maple2.Trigger._52010027_qd {
             internal State전투종료01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0f);
             }
 

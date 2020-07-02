@@ -32,9 +32,9 @@ namespace Maple2.Trigger._52010056_qd {
             internal StateSetupCinematic_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.AddBuff(arg1: new[] {2001}, arg2: 70000085, arg3: 1, arg4: false, arg5: true);
                 context.AddBuff(arg1: new[] {2001}, arg2: 70000085, arg3: 1, arg4: false, arg5: false);
             }
@@ -73,8 +73,8 @@ namespace Maple2.Trigger._52010056_qd {
             internal State경비병_스폰(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionSequence(arg1: 121, arg2: "Attack_01_B");
                 context.AddCinematicTalk(npcId: 11003816, msg: "$52010056_QD__EventSection_B__0$", duration: 2800);
             }
@@ -113,8 +113,8 @@ namespace Maple2.Trigger._52010056_qd {
             internal State조작_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1.0f);
                 context.RemoveBuff(arg1: 2001, arg2: 70000107);
                 context.SetEventUI(arg1: 1, arg2: "$52010056_QD__EventSection_B__1$", arg3: 3000, arg4: "0");

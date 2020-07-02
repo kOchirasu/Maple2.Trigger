@@ -42,8 +42,8 @@ namespace Maple2.Trigger._52100002_qd {
             internal State소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 300, arg2: true);
                 context.CreateMonster(arg1: new[] {2002}, arg2: false);
                 context.SetEffect(arg1: new[] {602}, arg2: true);
@@ -54,8 +54,8 @@ namespace Maple2.Trigger._52100002_qd {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.CameraReset(interpolationTime: 1.0f);
-                    context.SetProductionUI(arg1: 0);
-                    context.SetProductionUI(arg1: 2);
+                    context.SetCinematicUI(arg1: 0);
+                    context.SetCinematicUI(arg1: 2);
                     return new State죽음대기(context);
                 }
 
@@ -69,8 +69,8 @@ namespace Maple2.Trigger._52100002_qd {
             internal StateQuest소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 300, arg2: true);
                 context.CreateMonster(arg1: new[] {2102}, arg2: false);
                 context.SetEffect(arg1: new[] {602}, arg2: true);
@@ -81,8 +81,8 @@ namespace Maple2.Trigger._52100002_qd {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.CameraReset(interpolationTime: 1.0f);
-                    context.SetProductionUI(arg1: 0);
-                    context.SetProductionUI(arg1: 2);
+                    context.SetCinematicUI(arg1: 0);
+                    context.SetCinematicUI(arg1: 2);
                     return new StateQuest죽음대기(context);
                 }
 
@@ -97,8 +97,8 @@ namespace Maple2.Trigger._52100002_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetSkip();
             }
 
@@ -161,8 +161,8 @@ namespace Maple2.Trigger._52100002_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetSkip();
             }
 

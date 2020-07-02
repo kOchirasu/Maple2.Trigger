@@ -29,8 +29,8 @@ namespace Maple2.Trigger._02020027_bf {
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "Camera_종료", arg2: "exit");
                 context.MoveUser(arg1: 02020027, arg2: 1);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -163,8 +163,8 @@ namespace Maple2.Trigger._02020027_bf {
             internal StateCamera_종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.1f);
                 context.DestroyMonster(arg1: new[] {202});
                 context.CreateMonster(arg1: new[] {201}, arg2: false);

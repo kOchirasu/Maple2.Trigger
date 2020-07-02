@@ -81,8 +81,8 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 9, arg2: "$52000035_QD__EPILOGUE4MOVIE__0$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 9, arg2: "$52000035_QD__EPILOGUE4MOVIE__0$");
             }
 
             public override TriggerState Execute() {
@@ -131,8 +131,8 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 9, arg2: "$52000035_QD__EPILOGUE4MOVIE__1$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 9, arg2: "$52000035_QD__EPILOGUE4MOVIE__1$");
             }
 
             public override TriggerState Execute() {
@@ -181,8 +181,8 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 9, arg2: "$52000035_QD__EPILOGUE4MOVIE__2$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 9, arg2: "$52000035_QD__EPILOGUE4MOVIE__2$");
             }
 
             public override TriggerState Execute() {
@@ -301,8 +301,8 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetSceneSkip(arg1: "Quit", arg2: "exit");
                 context.SetOnetimeEffect(id: 11100104, enable: true, path: @"BG/Common/Sound/Eff_AMB_DarkCorridor_01.xml");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {900, 102, 200, 300}, arg2: false);
             }
 
@@ -343,8 +343,8 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_EP4_DarkLord");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_EP4_Turka");
                 context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_EP4_Madria");
@@ -365,7 +365,7 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateCameraEffectA1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000035_QD__EPILOGUE4MOVIE__3$", arg3: false);
+                context.SetCinematicUI(arg1: 9, arg2: "$52000035_QD__EPILOGUE4MOVIE__3$", arg3: false);
                 context.CameraSelectPath(arg1: new[] {1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009}, arg2: false);
             }
 
@@ -385,8 +385,8 @@ namespace Maple2.Trigger._52000035_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -1908,8 +1908,8 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.MoveUser(arg1: 02000001, arg2: 2);
             }
 

@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000394_bf {
             internal StateCamera연출01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 3000, arg2: false);
             }
 
@@ -52,8 +52,8 @@ namespace Maple2.Trigger._02000394_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.6f);
             }
         }

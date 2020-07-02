@@ -27,8 +27,8 @@ namespace Maple2.Trigger._51000003_dg {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7998}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {8100, 8101, 8104, 8106, 8103, 8105, 8107, 8108}, arg2: false);
             }
 
@@ -69,9 +69,9 @@ namespace Maple2.Trigger._51000003_dg {
                 context.SetEffect(arg1: new[] {7998}, arg2: false);
                 context.CameraSelectPath(arg1: new[] {8005, 8001, 8002}, arg2: false);
                 context.SetUserValue(triggerId: 991109, key: "Tutorial", value: 0);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
                 context.ArcadeBoomBoomOceanStartGame(lifeCount: 20);
                 context.ShowCountUI(text: "$51000003_DG__MAIN__0$", stage: 0, count: 5);
                 context.SetUserValue(triggerId: 991103, key: "Fail", value: 1);

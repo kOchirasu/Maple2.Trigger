@@ -30,8 +30,8 @@ namespace Maple2.Trigger._02000355_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetEffect(arg1: new[] {699}, arg2: true);
             }
@@ -115,8 +115,8 @@ namespace Maple2.Trigger._02000355_bf {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
                     context.SetMesh(arg1: new[] {3900}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    context.SetProductionUI(arg1: 0);
-                    context.SetProductionUI(arg1: 2);
+                    context.SetCinematicUI(arg1: 0);
+                    context.SetCinematicUI(arg1: 2);
                     context.CameraSelect(arg1: 301, arg2: false);
                     context.ShowGuideSummary(entityId: 20003552, textId: 20003552, duration: 4000);
                     context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -167,8 +167,8 @@ namespace Maple2.Trigger._02000355_bf {
             internal StateEndStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -206,8 +206,8 @@ namespace Maple2.Trigger._02000355_bf {
             internal StateStopCinematic2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

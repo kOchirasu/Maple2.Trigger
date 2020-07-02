@@ -55,8 +55,8 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 3);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$52000006_QD__TUTORIAL_06_2__0$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$52000006_QD__TUTORIAL_06_2__0$");
                 context.SetEffect(arg1: new[] {401}, arg2: true);
             }
 
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._52000006_qd {
             internal State맵이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
+                context.SetCinematicUI(arg1: 0);
                 context.MoveUser(arg1: 52000007, arg2: 1);
             }
 

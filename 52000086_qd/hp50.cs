@@ -96,8 +96,8 @@ namespace Maple2.Trigger._52000086_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CreateMonster(arg1: new[] {1007, 1008}, arg2: false);
                 context.MoveUser(arg1: 52000086, arg2: 30);
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "StopCinematic");
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelect(arg1: 314, arg2: true);
                 context.MoveNpc(arg1: 1008, arg2: "MS2PatrolData_1008A");
@@ -460,8 +460,8 @@ namespace Maple2.Trigger._52000086_qd {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.DestroyMonster(arg1: new[] {1007, 1008, 1009});
                 context.CreateMonster(arg1: new[] {2098}, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000115, arg3: 1, arg4: false, arg5: false);
             }
@@ -517,8 +517,8 @@ namespace Maple2.Trigger._52000086_qd {
                 context.DestroyMonster(arg1: new[] {2099, 2098});
                 context.CreateMonster(arg1: new[] {1101, 1102}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 1102, arg2: "Stun_A", arg3: 999999999999f);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -538,7 +538,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "DeadStopCinematic");
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelect(arg1: 321, arg2: true);
                 context.MoveNpc(arg1: 1101, arg2: "MS2PatrolData_1101A");
@@ -823,8 +823,8 @@ namespace Maple2.Trigger._52000086_qd {
                 context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.DestroyMonster(arg1: new[] {1101, 1102});
                 context.CreateMonster(arg1: new[] {10000, 10001, 10002});
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "snowkingbjorn");
             }

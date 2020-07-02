@@ -22,8 +22,8 @@ namespace Maple2.Trigger._63000042_cs {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.DestroyMonster(arg1: new[] {102});
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
@@ -309,8 +309,8 @@ namespace Maple2.Trigger._63000042_cs {
                 context.SetPcEmotionLoop(arg1: "Sit_Ground_Idle_A", arg2: 100f);
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                 context.CameraReset(interpolationTime: 1.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

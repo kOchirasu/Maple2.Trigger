@@ -47,7 +47,7 @@ namespace Maple2.Trigger._52000192_qd {
             internal StateWait_01_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.MoveUser(arg1: 52000192, arg2: 5001);
                 context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
                 context.CreateMonster(arg1: new[] {101});
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._52000192_qd {
             internal State불난통로_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11004785, msg: "$52000192_QD__52000192__0$", align: "left", illustId: "Ereb_surprise", duration: 4000);
                 context.CameraSelectPath(arg1: new[] {4002, 4003}, arg2: false);
                 context.SetPcEmotionLoop(arg1: "Attack_Idle_A", arg2: 5000f);
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._52000192_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 0, msg: "$52000192_QD__52000192__1$", duration: 3000);
             }
 
@@ -211,8 +211,8 @@ namespace Maple2.Trigger._52000192_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SideNpcTalk(type: "talk", npcId: 11004787, illust: "Baron_normal", script: "$52000192_QD__52000192__4$", duration: 3000);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -230,7 +230,7 @@ namespace Maple2.Trigger._52000192_qd {
             internal State불꺼라불꺼_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.AddBalloonTalk(spawnPointId: 104, msg: "$52000192_QD__52000192__5$", duration: 4000);
                 context.SetEffect(arg1: new[] {6021}, arg2: false);
                 context.SetEffect(arg1: new[] {6005, 6006, 6007, 6008}, arg2: true);
@@ -255,7 +255,7 @@ namespace Maple2.Trigger._52000192_qd {
             internal State불꺼라불꺼_02_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11004787, msg: "$52000192_QD__52000192__6$", illust: "Baron_normal", align: "left", duration: 4000);
             }
 
@@ -274,8 +274,8 @@ namespace Maple2.Trigger._52000192_qd {
             internal State불꺼라불꺼_02_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -506,8 +506,8 @@ namespace Maple2.Trigger._52000192_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 101, enable: true, path: @"BG/Common/Eff_Com_Vibrate.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetPcEmotionLoop(arg1: "Attack_Idle_A", arg2: 6000f);
                 context.AddCinematicTalk(npcId: 0, msg: "$52000192_QD__52000192__13$", duration: 3000);
                 context.AddCinematicTalk(npcId: 11004785, msg: "$52000192_QD__52000192__14$", illustId: "Ereb_surprise", duration: 4000);
@@ -529,8 +529,8 @@ namespace Maple2.Trigger._52000192_qd {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 2001, arg3: "EscapePrisonTower");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetPortal(arg1: 5003, arg2: true, arg3: true);
             }
 

@@ -21,7 +21,7 @@ namespace Maple2.Trigger._52000179_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: false);
                 context.MoveUser(arg1: 52000179, arg2: 1);
             }
@@ -139,7 +139,7 @@ namespace Maple2.Trigger._52000179_qd {
             internal StateSkip_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
             }
@@ -160,8 +160,8 @@ namespace Maple2.Trigger._52000179_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -221,7 +221,7 @@ namespace Maple2.Trigger._52000179_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {

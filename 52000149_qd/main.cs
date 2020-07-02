@@ -88,8 +88,8 @@ namespace Maple2.Trigger._52000149_qd {
             internal State전경_SetupCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 52000149, arg2: 10);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
@@ -262,8 +262,8 @@ namespace Maple2.Trigger._52000149_qd {
             internal State아노스아파_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.MoveUser(arg1: 52000149, arg2: 11);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Jorge");
             }
@@ -285,8 +285,8 @@ namespace Maple2.Trigger._52000149_qd {
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 3.0f);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "AnosReturns");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

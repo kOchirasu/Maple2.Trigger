@@ -26,9 +26,9 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.MoveUser(arg1: 52020020, arg2: 6002);
             }
 
@@ -47,8 +47,8 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateMonologue_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 0, msg: "곧 알현식이 열린다고?", duration: 2500);
                 context.SetPcEmotionLoop(arg1: "Object_React_H", arg2: 16000f);
                 context.SetSceneSkip(arg1: "EndReady", arg2: "exit");
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._52020020_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
             }
         }
 
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateEndReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
                 context.SetSound(arg1: 7001, arg2: true);
                 context.SetPcEmotionLoop(arg1: "Idle_A", arg2: 100f);
                 context.CreateMonster(arg1: new[] {201}, arg2: true);
@@ -220,8 +220,8 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateExit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 

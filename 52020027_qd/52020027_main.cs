@@ -42,8 +42,8 @@ namespace Maple2.Trigger._52020027_qd {
                 context.MoveUser(arg1: 52020027, arg2: 2);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Sit_Down_A", arg3: 5000f);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 501, arg2: true);
             }
 
@@ -120,8 +120,8 @@ namespace Maple2.Trigger._52020027_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101});
                 context.CameraReset(interpolationTime: 0.1f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

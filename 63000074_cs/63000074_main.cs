@@ -32,8 +32,8 @@ namespace Maple2.Trigger._63000074_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._63000074_cs {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "sceneskip_1", arg2: "exit");
-                context.SetProductionUI(arg1: 9, arg2: "$63000074_CS__63000074_MAIN__0$");
+                context.SetCinematicUI(arg1: 9, arg2: "$63000074_CS__63000074_MAIN__0$");
             }
 
             public override TriggerState Execute() {
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._63000074_cs {
             internal StateEvelyn_monologue_00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -109,8 +109,8 @@ namespace Maple2.Trigger._63000074_cs {
             internal StateEvelyn_monologue_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11004354, msg: "$63000074_CS__63000074_MAIN__1$", duration: 4000, illustId: "Evelyn_normal", align: "center");
             }
 
@@ -206,7 +206,7 @@ namespace Maple2.Trigger._63000074_cs {
             internal StateBobos_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$63000074_CS__63000074_MAIN__5$");
+                context.SetCinematicUI(arg1: 9, arg2: "$63000074_CS__63000074_MAIN__5$");
             }
 
             public override TriggerState Execute() {
@@ -224,7 +224,7 @@ namespace Maple2.Trigger._63000074_cs {
             internal StateBobos_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$63000074_CS__63000074_MAIN__6$");
+                context.SetCinematicUI(arg1: 9, arg2: "$63000074_CS__63000074_MAIN__6$");
                 context.SetMesh(arg1: new[] {4001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
             }
@@ -246,8 +246,8 @@ namespace Maple2.Trigger._63000074_cs {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -285,8 +285,8 @@ namespace Maple2.Trigger._63000074_cs {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -351,8 +351,8 @@ namespace Maple2.Trigger._63000074_cs {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

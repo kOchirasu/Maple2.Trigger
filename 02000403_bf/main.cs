@@ -46,8 +46,8 @@ namespace Maple2.Trigger._02000403_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetSkip(arg1: "start");
                 context.CameraSelectPath(arg1: new[] {8100, 8101, 8102}, arg2: false);
                 context.SetAmbientLight(arg1: new Vector3(120f, 120f, 120f));
@@ -76,8 +76,8 @@ namespace Maple2.Trigger._02000403_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1801, 1802}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
             }
 
@@ -101,8 +101,8 @@ namespace Maple2.Trigger._02000403_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7999}, arg2: true);
                 context.CreateMonster(arg1: new[] {1999}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetSkip(arg1: "boss");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
@@ -181,8 +181,8 @@ namespace Maple2.Trigger._02000403_bf {
             internal StateBoss(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetEventUI(arg1: 1, arg2: "$02000403_BF__MAIN__0$", arg3: 3000);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");

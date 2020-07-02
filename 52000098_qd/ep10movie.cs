@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52000098_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 11100104, enable: true, path: @"BG/Common/Sound/Eff_AMB_DarkCorridor_01.xml");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.CreateMonster(arg1: new[] {2000, 2001}, arg2: false);
             }
 
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._52000098_qd {
             internal StateEpilogue10Talk3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {3002, 3003}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001955, arg3: "$52000098_QD__EP10MOVIE__0$", arg4: 12);
                 context.SetSkip(arg1: "Epilogue10Talk4");
@@ -667,8 +667,8 @@ namespace Maple2.Trigger._52000098_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.MoveUser(arg1: 02000175, arg2: 1);
             }
 

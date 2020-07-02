@@ -43,7 +43,7 @@ namespace Maple2.Trigger._52020040_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105}, arg2: false);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.MoveUser(arg1: 52020040, arg2: 1);
             }
 
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52020040_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4003, 4004, 4005}, arg2: false);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_B", arg3: 99999999999f);
                 context.AddCinematicTalk(npcId: 11004434, illustId: "Bliche_normal", align: "left", msg: "$52020040_QD__52020040__0$", duration: 3000);
                 context.AddCinematicTalk(npcId: 11004437, illustId: "Neirin_smile", align: "right", msg: "$52020040_QD__52020040__1$", duration: 3000);

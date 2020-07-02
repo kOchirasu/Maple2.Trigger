@@ -32,9 +32,9 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateLodingDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -72,8 +72,8 @@ namespace Maple2.Trigger._52000051_qd {
             internal StateSetDarkness02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {100, 200}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_1000");
             }
@@ -222,8 +222,8 @@ namespace Maple2.Trigger._52000051_qd {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
                 context.CameraSelect(arg1: 601, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetUserValue(triggerId: 9, key: "FindLotus", value: 1);
             }
 

@@ -68,9 +68,9 @@ namespace Maple2.Trigger._02000374_bf {
             internal StateStart_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.PlaySystemSoundInBox(arg2: "System_Dark_Intro_Chord_01");
-                context.SetProductionUI(arg1: 3, arg2: "$02000374_BF__MAIN__25$");
+                context.SetCinematicUI(arg1: 3, arg2: "$02000374_BF__MAIN__25$");
                 context.SetTimer(arg1: "5", arg2: 5, arg4: false);
             }
 
@@ -83,9 +83,9 @@ namespace Maple2.Trigger._02000374_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
         }
 

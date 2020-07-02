@@ -32,8 +32,8 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -567,8 +567,8 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");
                 context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.PlaySceneMovie(fileName: "lumieragonhistory.swf", movieId: 1);
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
@@ -589,8 +589,8 @@ namespace Maple2.Trigger._52000087_qd {
             internal State알론_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000087_QD__52000087_TRIGGER__14$", arg4: 5);
                 context.SetSkip(arg1: "알론_3skip");
             }
@@ -625,8 +625,8 @@ namespace Maple2.Trigger._52000087_qd {
             internal State알론_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000087_QD__52000087_TRIGGER__15$", arg4: 5);
                 context.SetSkip(arg1: "알론_4skip");
             }
@@ -661,8 +661,8 @@ namespace Maple2.Trigger._52000087_qd {
             internal State알론_4a(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000087_QD__52000087_TRIGGER__16$", arg4: 5);
                 context.SetSkip(arg1: "알론_4askip");
             }
@@ -697,8 +697,8 @@ namespace Maple2.Trigger._52000087_qd {
             internal State알론_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000087_QD__52000087_TRIGGER__17$", arg4: 5);
                 context.SetSkip(arg1: "알론_5skip");
             }
@@ -904,8 +904,8 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 22651, arg2: "trigger", arg3: "Lumieragon_History");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -921,7 +921,7 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveUser(arg1: 52000087, arg2: 10);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {
@@ -978,7 +978,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State20002265_완료연출04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionSequence(arg1: 1003, arg2: "Bore_A");
             }
 
@@ -1035,8 +1035,8 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {600}, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 2.0f);
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_Orde");
             }
@@ -1075,8 +1075,8 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 52000087, arg2: 10);
             }
 
@@ -1153,8 +1153,8 @@ namespace Maple2.Trigger._52000087_qd {
             internal State20002266_완료연출05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 
@@ -1187,8 +1187,8 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveUser(arg1: 52000087, arg2: 10);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -1206,7 +1206,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그연출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__26$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__26$");
             }
 
             public override TriggerState Execute() {
@@ -1224,7 +1224,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그연출03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__27$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__27$");
             }
 
             public override TriggerState Execute() {
@@ -1242,7 +1242,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그연출05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__28$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__28$");
             }
 
             public override TriggerState Execute() {
@@ -1260,9 +1260,9 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그연출05b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 9);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -1386,7 +1386,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그연출09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__32$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__32$");
             }
 
             public override TriggerState Execute() {
@@ -1404,9 +1404,9 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그연출10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 9);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000087_QD__52000087_TRIGGER__33$", arg4: 5);
                 context.SetOnetimeEffect(id: 2010, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_04_00002010.xml");
                 context.SetSkip(arg1: "챕터10에필로그연출10스킵");
@@ -1477,7 +1477,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그연출12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__35$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__35$");
             }
 
             public override TriggerState Execute() {
@@ -1495,7 +1495,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그연출13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__36$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__36$");
             }
 
             public override TriggerState Execute() {
@@ -1513,9 +1513,9 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그연출13_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 9);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000087_QD__52000087_TRIGGER__37$", arg4: 5);
                 context.SetOnetimeEffect(id: 2012, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_06_00002012.xml");
                 context.SetSkip(arg1: "챕터10에필로그연출13b스킵");
@@ -1672,7 +1672,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그연출18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__41$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__41$");
             }
 
             public override TriggerState Execute() {
@@ -1690,7 +1690,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그연출18b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__42$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__42$");
             }
 
             public override TriggerState Execute() {
@@ -1708,7 +1708,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그연출19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__43$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__43$");
             }
 
             public override TriggerState Execute() {
@@ -1726,7 +1726,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그연출20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__44$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__44$");
             }
 
             public override TriggerState Execute() {
@@ -1744,7 +1744,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그연출21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__45$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52000087_QD__52000087_TRIGGER__45$");
             }
 
             public override TriggerState Execute() {
@@ -1762,7 +1762,7 @@ namespace Maple2.Trigger._52000087_qd {
             internal State챕터10에필로그연출22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9);
+                context.SetCinematicUI(arg1: 9);
             }
 
             public override TriggerState Execute() {
@@ -1781,8 +1781,8 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.MoveUser(arg1: 02000025, arg2: 2);
             }
 

@@ -38,8 +38,8 @@ namespace Maple2.Trigger._52000003_qd {
             internal StateStartCinematicDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 101, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._52000003_qd {
             internal StateSkip_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
                 context.CameraReset(interpolationTime: 0.5f);
                 context.DestroyMonster(arg1: new[] {102});
             }
@@ -195,8 +195,8 @@ namespace Maple2.Trigger._52000003_qd {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 100, arg2: "trigger", arg3: "Katvan");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

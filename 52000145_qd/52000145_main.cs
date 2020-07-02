@@ -4,8 +4,8 @@ namespace Maple2.Trigger._52000145_qd {
             internal StateSetup(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CreateMonster(arg1: new[] {101}, arg2: true);
             }
 
@@ -48,8 +48,8 @@ namespace Maple2.Trigger._52000145_qd {
             internal State영상준비_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._52000145_qd {
             internal State독백_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000145_QD__52000145_MAIN__0$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52000145_QD__52000145_MAIN__0$");
             }
 
             public override TriggerState Execute() {
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._52000145_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 
@@ -130,8 +130,8 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 52000145, arg2: 99);
             }
 
@@ -281,8 +281,8 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override void OnEnter() {
                 context.FaceEmotion(spawnPointId: 0);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.ShowGuideSummary(entityId: 25201456, textId: 25201456);
             }
 
@@ -483,8 +483,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 25201455);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {

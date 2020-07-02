@@ -46,8 +46,8 @@ namespace Maple2.Trigger._02010052_bf {
             internal StateStart_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {80010, 80011}, arg2: true);
                 context.SetMesh(arg1: new[] {22201, 22202, 22203, 22204, 22205, 22206, 22207, 22208, 22209, 22210, 22211, 22212, 22213, 22214, 22215, 22216, 22217, 22218, 22219, 22220, 22221, 22222, 22223, 22224, 22225, 22226, 22227, 22228, 22229, 22230, 22231, 22232, 22233, 22234, 22235, 22236, 22237, 22238, 22239, 22240, 22241, 22242, 22243, 22244, 22245, 22246, 22247, 22248, 22249, 22250, 22251, 22252, 22253, 22254, 22255, 22256, 22257, 22258, 22259, 22260, 22261, 22262, 22263, 22264, 22265, 22266, 22267, 22268, 22269, 22270, 22271, 22272, 22273, 22274, 22275, 22276, 22277, 22278, 22279, 22280, 22281, 22282, 22283, 22284, 22285, 22286, 22287, 22288, 22289, 22290, 22291, 22292, 22293, 22294, 22295, 22296, 22297, 22298, 22299}, arg2: false, arg3: 800, arg4: 100, arg5: 0f);
             }
@@ -61,9 +61,9 @@ namespace Maple2.Trigger._02010052_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
         }
 
@@ -89,8 +89,8 @@ namespace Maple2.Trigger._02010052_bf {
             internal StateEvent_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 80001, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 21800073, arg3: "$02010052_BF__MAIN__1$", arg4: 3);
                 context.MoveNpc(arg1: 991, arg2: "MS2PatrolData_1001");
@@ -130,9 +130,9 @@ namespace Maple2.Trigger._02010052_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
                 context.CameraSelect(arg1: 80001, arg2: false);
             }
         }
@@ -220,8 +220,8 @@ namespace Maple2.Trigger._02010052_bf {
             internal StateEvent_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 80002, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 21800073, arg3: "$02010052_BF__MAIN__5$", arg4: 3);
                 context.MoveNpc(arg1: 993, arg2: "MS2PatrolData_1004");
@@ -239,9 +239,9 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override void OnExit() {
                 context.RemoveCinematicTalk();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
                 context.CameraSelect(arg1: 80002, arg2: false);
             }
         }

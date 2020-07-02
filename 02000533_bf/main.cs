@@ -163,8 +163,8 @@ namespace Maple2.Trigger._02000533_bf {
             internal State문열기게임(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 4000, script: "$02000533_BF__MAIN__7$");
                 context.SetUserValue(key: "GameLogicEnd", value: 999);
                 context.WidgetAction(arg1: "Round", arg2: "InitWidgetRound");
@@ -290,8 +290,8 @@ namespace Maple2.Trigger._02000533_bf {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.LockMyPc(isLock: false);
                 context.AddCinematicTalk(npcId: 0, msg: "$02000533_BF__MAIN__11$", duration: 3000);
             }
@@ -311,8 +311,8 @@ namespace Maple2.Trigger._02000533_bf {
             internal State문부시기안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetEventUI(arg1: 1, arg2: "$02000533_BF__MAIN__12$", arg3: 5000);
             }
 
@@ -373,8 +373,8 @@ namespace Maple2.Trigger._02000533_bf {
                 context.SideNpcTalk(npcId: 11004639, illust: "Jay_normal", duration: 4000, script: "$02000533_BF__MAIN__14$");
                 context.SetMesh(arg1: new[] {901}, arg2: false, arg3: 1);
                 context.SetPortal(arg1: 2, arg2: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.LockMyPc(isLock: false);
             }
 

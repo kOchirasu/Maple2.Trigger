@@ -23,8 +23,8 @@ namespace Maple2.Trigger._52000017_qd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateWidget(arg1: "SceneMovie");
                 context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
                 context.PlaySceneMovie(fileName: "Cut_Remember_Vision.swf", movieId: 1);
@@ -152,8 +152,8 @@ namespace Maple2.Trigger._52000017_qd {
             internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

@@ -124,8 +124,8 @@ namespace Maple2.Trigger._52010008_qd {
                 context.SetTimer(arg1: "20", arg2: 1);
                 context.CreateMonster(arg1: new[] {301}, arg2: false);
                 context.CameraSelect(arg1: 601, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -234,8 +234,8 @@ namespace Maple2.Trigger._52010008_qd {
                 context.RemoveCinematicTalk();
                 context.SetTimer(arg1: "30", arg2: 1);
                 context.CameraSelect(arg1: 601, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "catchjailbreaker");
             }
 

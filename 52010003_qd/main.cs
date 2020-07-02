@@ -29,8 +29,8 @@ namespace Maple2.Trigger._52010003_qd {
             public override void OnEnter() {
                 context.SetActor(arg1: 2001, arg2: true, arg3: "Sit_Down_A");
                 context.CameraSelect(arg1: 8001, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {103, 104, 105, 106});
                 context.SetTimer(arg1: "4", arg2: 4);
@@ -254,9 +254,9 @@ namespace Maple2.Trigger._52010003_qd {
             public override void OnExit() {
                 context.RemoveCinematicTalk();
                 context.CameraSelect(arg1: 8001, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "Hope_Lumieragon");
             }
         }
@@ -278,8 +278,8 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 8001, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {102});
                 context.SetTimer(arg1: "4", arg2: 4);
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010003_QD__MAIN__0$", arg4: 4);
@@ -675,9 +675,9 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnExit() {
                 context.CameraSelect(arg1: 8001, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
         }
 

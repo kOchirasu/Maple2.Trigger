@@ -20,8 +20,8 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetSceneSkip(arg1: "end", arg2: "exit");
             }
 
@@ -58,8 +58,8 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateErebTalk_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {700}, arg2: false);
                 context.AddCinematicTalk(npcId: 11001663, illustId: "Ereb_normal", msg: "$52000033_QD__AUDIENCEWITHEREB_03__0$", duration: 3000, delayTick: 0, align: "left");
             }
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateStory_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000033_QD__AUDIENCEWITHEREB_03__2$", arg3: false);
+                context.SetCinematicUI(arg1: 9, arg2: "$52000033_QD__AUDIENCEWITHEREB_03__2$", arg3: false);
             }
 
             public override TriggerState Execute() {
@@ -153,7 +153,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateStory_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000033_QD__AUDIENCEWITHEREB_03__3$", arg3: false);
+                context.SetCinematicUI(arg1: 9, arg2: "$52000033_QD__AUDIENCEWITHEREB_03__3$", arg3: false);
             }
 
             public override TriggerState Execute() {
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateStory_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000033_QD__AUDIENCEWITHEREB_03__4$", arg3: false);
+                context.SetCinematicUI(arg1: 9, arg2: "$52000033_QD__AUDIENCEWITHEREB_03__4$", arg3: false);
                 context.MoveNpc(arg1: 601, arg2: "MS2PatrolData_1005");
             }
 
@@ -190,8 +190,8 @@ namespace Maple2.Trigger._52000033_qd {
             internal StateFadein(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -290,8 +290,8 @@ namespace Maple2.Trigger._52000033_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.DestroyMonster(arg1: new[] {601});
                 context.CameraReset(interpolationTime: 1.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

@@ -43,7 +43,7 @@ namespace Maple2.Trigger._52000202_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.MoveUser(arg1: 52000202, arg2: 5001);
             }
 
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._52000202_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4003, 4004}, arg2: false);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 0, msg: "$52000202_QD__52000202__1$", duration: 4000);
                 context.AddCinematicTalk(npcId: 0, msg: "$52000202_QD__52000202__2$", duration: 5000);
                 context.AddCinematicTalk(npcId: 0, msg: "$52000202_QD__52000202__3$", duration: 4500);
@@ -254,9 +254,9 @@ namespace Maple2.Trigger._52000202_qd {
             internal StateUI테스트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {
@@ -335,7 +335,7 @@ namespace Maple2.Trigger._52000202_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 30, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.CameraSelectPath(arg1: new[] {4011}, arg2: false);
             }
 
@@ -354,7 +354,7 @@ namespace Maple2.Trigger._52000202_qd {
             internal State고마해_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 0, msg: "$52000202_QD__52000202__10$", duration: 2500);
                 context.AddCinematicTalk(npcId: 0, msg: "$52000202_QD__52000202__11$", duration: 4000);
                 context.AddCinematicTalk(npcId: 0, msg: "$52000202_QD__52000202__12$", duration: 3000);

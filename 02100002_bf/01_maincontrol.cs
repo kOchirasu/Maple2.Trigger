@@ -451,8 +451,8 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateBadEndingStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 909, arg2: true);
                 context.PlaySystemSoundInBox(arg2: "GuildRaid_RainbowSlimeFactory_Result_01");
                 context.MoveUser(arg1: 02100002, arg2: 2, arg3: 9901);
@@ -493,8 +493,8 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateBadEndingEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1f);
             }
 
@@ -515,8 +515,8 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateHappyEndingStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 909, arg2: true);
                 context.PlaySystemSoundInBox(arg2: "GuildRaid_RainbowSlimeFactory_Result_01");
                 context.MoveUser(arg1: 02100002, arg2: 2, arg3: 9901);
@@ -557,8 +557,8 @@ namespace Maple2.Trigger._02100002_bf {
             internal StateHappyEndingEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1f);
             }
 

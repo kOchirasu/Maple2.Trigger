@@ -86,7 +86,7 @@ namespace Maple2.Trigger._52000112_qd {
             internal State재즈바1층습격_완료가능01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
             }
 
@@ -124,8 +124,8 @@ namespace Maple2.Trigger._52000112_qd {
             internal State재즈바1층습격_완료가능03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
                 context.CreateMonster(arg1: new[] {111}, arg2: false);
                 context.MoveNpc(arg1: 111, arg2: "MS2PatrolData_shadowClawMove");
@@ -185,7 +185,7 @@ namespace Maple2.Trigger._52000112_qd {
             internal State재즈바_지하습격_완료가능01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.SetOnetimeEffect(id: 20, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
             }
 
@@ -225,8 +225,8 @@ namespace Maple2.Trigger._52000112_qd {
             internal State재즈바_지하습격_완료가능03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -321,8 +321,8 @@ namespace Maple2.Trigger._52000112_qd {
                 context.SetSound(arg1: 9000, arg2: false);
                 context.VisibleMyPc(isVisible: true);
                 context.SetOnetimeEffect(id: 30, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.DestroyMonster(arg1: new[] {207});
                 context.CreateMonster(arg1: new[] {208}, arg2: false);
                 context.MoveUser(arg1: 52000112, arg2: 3);

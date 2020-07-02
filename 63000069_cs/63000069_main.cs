@@ -81,8 +81,8 @@ namespace Maple2.Trigger._63000069_cs {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.HideGuideSummary(entityId: 26300691, textId: 26300691);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_03_girlmaid_out");
             }
 
@@ -325,8 +325,8 @@ namespace Maple2.Trigger._63000069_cs {
                 context.DestroyMonster(arg1: new[] {150});
                 context.SetMesh(arg1: new[] {4001}, arg2: false);
                 context.MoveUser(arg1: 63000069, arg2: 10);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -367,8 +367,8 @@ namespace Maple2.Trigger._63000069_cs {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

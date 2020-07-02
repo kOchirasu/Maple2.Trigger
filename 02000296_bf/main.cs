@@ -51,8 +51,8 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateLoadingDelay02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 1, arg2: 5005, arg3: "$02000296_BF__MAIN__0$", arg4: 3, arg5: 0);
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
             }
@@ -72,8 +72,8 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateLoadingDelay03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 1, arg2: 5005, arg3: "$02000296_BF__MAIN__1$", arg4: 2, arg5: 1);
             }
 
@@ -92,8 +92,8 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateMeetLennon01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
             }
 
@@ -112,8 +112,8 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateMeetLennon02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.DestroyMonster(arg1: new[] {5005});
                 context.CreateMonster(arg1: new[] {5012}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 5007, arg3: "$02000296_BF__MAIN__2$", arg4: 3, arg5: 0);
@@ -135,8 +135,8 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateMeetLennon03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 600, arg2: false);
                 context.CameraSelect(arg1: 601, arg2: true);
             }
@@ -156,8 +156,8 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateLennonLeave01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveNpc(arg1: 5012, arg2: "MS2PatrolData_5012");
                 context.SetConversation(arg1: 1, arg2: 5012, arg3: "$02000296_BF__MAIN__4$", arg4: 3, arg5: 1);
             }
@@ -177,8 +177,8 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateLennonLeave02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetAgent(arg1: new[] {1300, 1301}, arg2: false);
                 context.ChangeMonster(arg1: 5012, arg2: 5006);
                 context.ChangeMonster(arg1: 5007, arg2: 5013);
@@ -225,8 +225,8 @@ namespace Maple2.Trigger._02000296_bf {
             internal StateLennonLeave03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 601, arg2: false);
                 context.DestroyMonster(arg1: new[] {5013});
                 context.SetMesh(arg1: new[] {1200, 1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209}, arg2: false, arg3: 500, arg4: 100, arg5: 5f);

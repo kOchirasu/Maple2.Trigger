@@ -97,8 +97,8 @@ namespace Maple2.Trigger._52020003_qd {
             internal StatePCAppear_준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -335,8 +335,8 @@ namespace Maple2.Trigger._52020003_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.DestroyMonster(arg1: new[] {111, 112, 113});
                 context.SetSceneSkip();
             }
@@ -356,8 +356,8 @@ namespace Maple2.Trigger._52020003_qd {
             internal State전투직전_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.DestroyMonster(arg1: new[] {111, 112, 113});
                 context.MoveUser(arg1: 52020003, arg2: 11);
             }
@@ -379,8 +379,8 @@ namespace Maple2.Trigger._52020003_qd {
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
                 context.CreateMonster(arg1: new[] {121, 122}, arg2: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -434,8 +434,8 @@ namespace Maple2.Trigger._52020003_qd {
             internal State전투끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -553,8 +553,8 @@ namespace Maple2.Trigger._52020003_qd {
             internal State제이든Appear_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
@@ -576,8 +576,8 @@ namespace Maple2.Trigger._52020003_qd {
             public override void OnEnter() {
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "BlackStarAttack01");
                 context.CameraReset(interpolationTime: 2.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

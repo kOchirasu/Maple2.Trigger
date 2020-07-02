@@ -53,8 +53,8 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.SetTimer(arg1: "2", arg2: 2);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$52000004_QD__MAIN__0$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$52000004_QD__MAIN__0$");
                 context.SetSkip(arg1: "StopCinematic");
             }
 
@@ -95,8 +95,8 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.CameraSelectPath(arg1: new[] {301}, arg2: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

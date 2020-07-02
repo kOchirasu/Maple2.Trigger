@@ -56,8 +56,8 @@ namespace Maple2.Trigger._02010054_bf {
             internal StateGuide02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetSkip(arg1: "가이드02스킵");
                 context.CameraSelect(arg1: 302, arg2: true);
             }
@@ -98,8 +98,8 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnEnter() {
                 context.SetSkip();
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -117,8 +117,8 @@ namespace Maple2.Trigger._02010054_bf {
             internal StateGuide02종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.ShowGuideSummary(entityId: 20105403, textId: 20105403);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
             }

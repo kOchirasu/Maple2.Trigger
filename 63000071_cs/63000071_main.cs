@@ -22,8 +22,8 @@ namespace Maple2.Trigger._63000071_cs {
             internal StateOpeningscene_start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.VisibleMyPc(isVisible: false);
                 context.CameraSelectPath(arg1: new[] {8000, 8001}, arg2: false);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
@@ -182,8 +182,8 @@ namespace Maple2.Trigger._63000071_cs {
                 context.CameraReset(interpolationTime: 2.0f);
                 context.DestroyMonster(arg1: new[] {101, 102});
                 context.SetEffect(arg1: new[] {5002, 5003}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
             }
 
@@ -203,8 +203,8 @@ namespace Maple2.Trigger._63000071_cs {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5002, 5003}, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.VisibleMyPc(isVisible: true);
                 context.CreateMonster(arg1: new[] {201}, arg2: false);
             }
@@ -244,8 +244,8 @@ namespace Maple2.Trigger._63000071_cs {
             internal StateEndingscene_start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.VisibleMyPc(isVisible: false);
                 context.CameraSelectPath(arg1: new[] {8000, 8001}, arg2: false);
                 context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
@@ -392,8 +392,8 @@ namespace Maple2.Trigger._63000071_cs {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {103, 104});
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
             }
 
@@ -414,8 +414,8 @@ namespace Maple2.Trigger._63000071_cs {
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.VisibleMyPc(isVisible: true);
                 context.SetEffect(arg1: new[] {5006}, arg2: false);
             }

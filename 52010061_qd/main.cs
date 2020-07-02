@@ -25,8 +25,8 @@ namespace Maple2.Trigger._52010061_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.VisibleMyPc(isVisible: false);
             }
 
@@ -411,8 +411,8 @@ namespace Maple2.Trigger._52010061_qd {
                 context.VisibleMyPc(isVisible: true);
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104});
                 context.CameraReset(interpolationTime: 2.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

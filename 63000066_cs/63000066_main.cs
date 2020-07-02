@@ -73,8 +73,8 @@ namespace Maple2.Trigger._63000066_cs {
                 context.HideGuideSummary(entityId: 26300662);
                 context.SetEffect(arg1: new[] {5001, 5002}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -332,8 +332,8 @@ namespace Maple2.Trigger._63000066_cs {
 
             public override void OnEnter() {
                 context.FaceEmotion(spawnPointId: 0);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
             }
 
@@ -351,8 +351,8 @@ namespace Maple2.Trigger._63000066_cs {
                 context.SetSceneSkip();
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
                 context.FaceEmotion(spawnPointId: 0);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.DestroyMonster(arg1: new[] {201});
             }

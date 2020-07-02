@@ -28,8 +28,8 @@ namespace Maple2.Trigger._63000006_cs {
             internal State영상준비_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -111,8 +111,8 @@ namespace Maple2.Trigger._63000006_cs {
             internal State룬블영상완료_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -173,8 +173,8 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -227,8 +227,8 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override void OnExit() {
                 context.RemoveCinematicTalk();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 
@@ -295,8 +295,8 @@ namespace Maple2.Trigger._63000006_cs {
             internal State이동전대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -347,8 +347,8 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override void OnExit() {
                 context.RemoveCinematicTalk();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 
@@ -469,8 +469,8 @@ namespace Maple2.Trigger._63000006_cs {
             internal State다리SetupCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -532,8 +532,8 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 601, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -657,8 +657,8 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "30", arg2: 1);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetEffect(arg1: new[] {5090}, arg2: false);
             }
 
@@ -723,8 +723,8 @@ namespace Maple2.Trigger._63000006_cs {
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 10010030, textId: 10010030);
                 context.SetEffect(arg1: new[] {5050, 5020, 5021, 5022, 5023, 5024, 5025, 5026, 5027, 5028}, arg2: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1003");
             }
 

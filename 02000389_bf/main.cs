@@ -48,8 +48,8 @@ namespace Maple2.Trigger._02000389_bf {
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Walk_A", arg3: 9999999999999999f);
                 context.CameraSelectPath(arg1: new[] {8001, 8002, 8003}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -106,8 +106,8 @@ namespace Maple2.Trigger._02000389_bf {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -201,8 +201,8 @@ namespace Maple2.Trigger._02000389_bf {
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "scene_07_ready");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {8004, 8005, 8006}, arg2: false);
             }
 
@@ -285,8 +285,8 @@ namespace Maple2.Trigger._02000389_bf {
                 context.SetActor(arg1: 3004, arg2: false, arg3: "Attack_Idle_A");
                 context.SetActor(arg1: 3005, arg2: false, arg3: "Attack_Idle_A");
                 context.SetActor(arg1: 3006, arg2: false, arg3: "Attack_Idle_A");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetLocalCamera(cameraId: 8100, enable: true);
             }
 
@@ -596,8 +596,8 @@ namespace Maple2.Trigger._02000389_bf {
             internal StateBoss_leftTurn_b_04_ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -702,8 +702,8 @@ namespace Maple2.Trigger._02000389_bf {
             public override void OnEnter() {
                 context.SetLocalCamera(cameraId: 8100, enable: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                 context.SetPortal(arg1: 3, arg2: true, arg3: true, arg4: true);

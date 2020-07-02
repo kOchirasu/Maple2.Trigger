@@ -44,8 +44,8 @@ namespace Maple2.Trigger._02000177_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {999}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: true);
                 context.SetMesh(arg1: new[] {1100, 1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108, 1109, 1110}, arg2: false, arg3: 0, arg4: 0, arg5: 10f);
             }
@@ -59,8 +59,8 @@ namespace Maple2.Trigger._02000177_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 

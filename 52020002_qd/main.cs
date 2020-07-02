@@ -115,8 +115,8 @@ namespace Maple2.Trigger._52020002_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52020002, arg2: 1);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.VisibleMyPc(isVisible: false);
             }
 
@@ -190,8 +190,8 @@ namespace Maple2.Trigger._52020002_qd {
             internal State제이든보고_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.DestroyMonster(arg1: new[] {120});
                 context.CreateMonster(arg1: new[] {121}, arg2: false);
             }
@@ -215,8 +215,8 @@ namespace Maple2.Trigger._52020002_qd {
                 context.CameraReset(interpolationTime: 2.0f);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.VisibleMyPc(isVisible: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

@@ -42,8 +42,8 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 20002521);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -62,8 +62,8 @@ namespace Maple2.Trigger._02000252_bf {
             internal State연출해제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -82,8 +82,8 @@ namespace Maple2.Trigger._02000252_bf {
             internal State벨라소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {8801, 8802}, arg2: false);
                 context.CreateMonster(arg1: new[] {1001});
             }
@@ -183,8 +183,8 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8804}, arg2: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetAchievement(arg1: 999, arg2: "trigger", arg3: "Bellafirst");
                 context.SetEffect(arg1: new[] {8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012}, arg2: true);
                 context.SetTimer(arg1: "2", arg2: 2);

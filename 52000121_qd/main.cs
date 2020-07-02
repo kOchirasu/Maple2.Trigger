@@ -28,8 +28,8 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102, 103, 104}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -869,8 +869,8 @@ namespace Maple2.Trigger._52000121_qd {
             internal State전투직전_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.CameraSelectPath(arg1: new[] {8036}, arg2: false);
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 108});
                 context.CreateMonster(arg1: new[] {105, 106}, arg2: false);
@@ -911,8 +911,8 @@ namespace Maple2.Trigger._52000121_qd {
             internal State전투준비01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -950,8 +950,8 @@ namespace Maple2.Trigger._52000121_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8040}, arg2: false);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "ManovichMobKill");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -1344,8 +1344,8 @@ namespace Maple2.Trigger._52000121_qd {
             internal State마노비치리타이어_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.DestroyMonster(arg1: new[] {108});
                 context.CreateMonster(arg1: new[] {103}, arg2: false);
             }
@@ -1366,8 +1366,8 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "ManovichRetire");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
             }
 

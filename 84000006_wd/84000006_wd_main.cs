@@ -50,8 +50,8 @@ namespace Maple2.Trigger._84000006_wd {
             internal StateOpeningscene_start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.VisibleMyPc(isVisible: false);
                 context.CameraSelectPath(arg1: new[] {5004, 5003}, arg2: true);
             }
@@ -136,8 +136,8 @@ namespace Maple2.Trigger._84000006_wd {
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1.0f);
                 context.AddBuff(arg1: new[] {9002}, arg2: 99940044, arg3: 1, arg4: false, arg5: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.VisibleMyPc(isVisible: true);
                 context.SideNpcTalk(npcId: 11004772, illust: "Conder_normal", duration: 4000, script: "$84000006_WD__84000006_WD_MAIN__5$");
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 20000f);

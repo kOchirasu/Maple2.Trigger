@@ -85,8 +85,8 @@ namespace Maple2.Trigger._52100021_qd {
             internal StateCameraSet01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 500, arg2: true);
             }
 
@@ -166,8 +166,8 @@ namespace Maple2.Trigger._52100021_qd {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 

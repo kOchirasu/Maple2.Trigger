@@ -40,7 +40,7 @@ namespace Maple2.Trigger._52000193_qd {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {202});
                 context.VisibleMyPc(isVisible: false);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._52000193_qd {
             internal StateCameraEffect02_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52000193_QD__52000193__0$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52000193_QD__52000193__0$");
             }
 
             public override TriggerState Execute() {
@@ -105,9 +105,9 @@ namespace Maple2.Trigger._52000193_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {
@@ -228,8 +228,8 @@ namespace Maple2.Trigger._52000193_qd {
             internal StateCameraEffect03_8(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

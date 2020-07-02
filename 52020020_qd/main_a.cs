@@ -26,9 +26,9 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.MoveUser(arg1: 52020020, arg2: 6001);
             }
 
@@ -102,8 +102,8 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateMonologue_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetPcEmotionLoop(arg1: "Sit_Ground_Idle_A", arg2: 3000f);
                 context.AddCinematicTalk(npcId: 0, msg: "잠깐! 여기는?!", duration: 3000, align: "Right");
                 context.SetSceneSkip();
@@ -124,8 +124,8 @@ namespace Maple2.Trigger._52020020_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 

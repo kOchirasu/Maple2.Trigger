@@ -25,8 +25,8 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {109}, arg2: false);
                 context.DestroyMonster(arg1: new[] {111});
                 context.CameraSelectPath(arg1: new[] {4011}, arg2: false);
@@ -310,8 +310,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {105});
                 context.CreateMonster(arg1: new[] {110}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {4031}, arg2: false);
                 context.AddCinematicTalk(npcId: 11003762, msg: @"자, 그럼 이오네.\n파멸의 날개에 천공의 심장을 공명시켜라.", duration: 3000);
             }
@@ -432,8 +432,8 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4021}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionSequence(arg1: 104, arg2: "Attack_02_C");
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetOnetimeEffect(id: 300, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
@@ -501,8 +501,8 @@ namespace Maple2.Trigger._52020030_qd {
                 context.SetOnetimeEffect(id: 300, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetEventUI(arg1: 1, arg2: "투르카의 부하들을 처치하세요.", arg3: 2000, arg4: "0");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CreateMonster(arg1: new[] {103}, arg2: false);
                 context.DestroyMonster(arg1: new[] {104});
                 context.CameraReset(interpolationTime: 0f);
@@ -525,8 +525,8 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 5, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetEffect(arg1: new[] {5001}, arg2: false);
             }
 
@@ -698,8 +698,8 @@ namespace Maple2.Trigger._52020030_qd {
                 context.CameraReset(interpolationTime: 0.5f);
                 context.SetAchievement(arg1: 2003, arg2: "trigger", arg3: "SkyTower");
                 context.DestroyMonster(arg1: new[] {107});
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

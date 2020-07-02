@@ -67,8 +67,8 @@ namespace Maple2.Trigger._02000336_bf {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {91});
                 context.DestroyMonster(arg1: new[] {90});
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 8001, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11003124, arg3: "$02000336_BF__BOSS__0$", arg4: 3);
                 context.SetSkip(arg1: "웨이홍_대사02");
@@ -106,9 +106,9 @@ namespace Maple2.Trigger._02000336_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
         }
 

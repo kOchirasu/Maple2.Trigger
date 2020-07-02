@@ -117,8 +117,8 @@ namespace Maple2.Trigger._52000073_qd {
             internal State대원Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {401});
             }
 
@@ -180,8 +180,8 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.CameraReset(interpolationTime: 1.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

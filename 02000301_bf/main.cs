@@ -44,8 +44,8 @@ namespace Maple2.Trigger._02000301_bf {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetTimer(arg1: "3", arg2: 3);
                 context.SetSkip(arg1: "StopCinematic");
@@ -100,8 +100,8 @@ namespace Maple2.Trigger._02000301_bf {
             internal StateMonsterCombat(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 301, arg2: false);
             }
 
@@ -141,8 +141,8 @@ namespace Maple2.Trigger._02000301_bf {
             internal State또다른StartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetTimer(arg1: "1", arg2: 1);
                 context.SetSkip(arg1: "또다른연출종료");
             }
@@ -182,8 +182,8 @@ namespace Maple2.Trigger._02000301_bf {
             internal State또다른StopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

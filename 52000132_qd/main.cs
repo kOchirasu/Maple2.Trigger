@@ -76,8 +76,8 @@ namespace Maple2.Trigger._52000132_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102});
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 52000132, arg2: 2);
             }
 
@@ -815,8 +815,8 @@ namespace Maple2.Trigger._52000132_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraReset(interpolationTime: 3.0f);
                 context.MoveUser(arg1: 52000133, arg2: 1);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

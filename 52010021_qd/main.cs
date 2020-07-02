@@ -23,8 +23,8 @@ namespace Maple2.Trigger._52010021_qd {
             internal StateEvent_01_Idle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 52010021, arg2: 3, arg3: 701);
                 context.SetTimer(arg1: "2", arg2: 2);
                 context.SetEffect(arg1: new[] {7001}, arg2: true);
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._52010021_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
             }
         }
 
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._52010021_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 9, arg2: "$52010021_QD__MAIN__1$", arg3: true);
+                context.SetCinematicUI(arg1: 9, arg2: "$52010021_QD__MAIN__1$", arg3: true);
             }
         }
 
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._52010021_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 9, arg2: "$52010021_QD__MAIN__2$", arg3: true);
+                context.SetCinematicUI(arg1: 9, arg2: "$52010021_QD__MAIN__2$", arg3: true);
                 context.PlaySystemSoundInBox(arg2: "System_Laugh_01");
             }
         }
@@ -168,7 +168,7 @@ namespace Maple2.Trigger._52010021_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 9, arg2: "$52010021_QD__MAIN__3$", arg3: true);
+                context.SetCinematicUI(arg1: 9, arg2: "$52010021_QD__MAIN__3$", arg3: true);
             }
         }
 

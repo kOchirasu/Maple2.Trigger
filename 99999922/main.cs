@@ -48,8 +48,8 @@ namespace Maple2.Trigger._99999922 {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 2000001, arg2: true);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {
@@ -136,8 +136,8 @@ namespace Maple2.Trigger._99999922 {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 2000001, arg2: false);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
             }
 
             public override TriggerState Execute() {
@@ -437,8 +437,8 @@ namespace Maple2.Trigger._99999922 {
             public override void OnEnter() {
                 context.SetSound(arg1: 99999, arg2: false);
                 context.CameraSelect(arg1: 2000002, arg2: true);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {
@@ -509,8 +509,8 @@ namespace Maple2.Trigger._99999922 {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 2000002, arg2: false);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
             }
 
             public override TriggerState Execute() {

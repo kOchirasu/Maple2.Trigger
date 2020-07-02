@@ -65,8 +65,8 @@ namespace Maple2.Trigger._52020017_qd {
             internal StateEvent_Start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11003624, msg: "아아…. 드디어 극의 주인공을 찾은 것 같네.", duration: 2800, align: "left");
                 context.SetSceneSkip(arg2: "nextState");
             }
@@ -238,8 +238,8 @@ namespace Maple2.Trigger._52020017_qd {
             internal StateEvent_A_End(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetAmbientLight(arg1: new Vector3(1f, 1f, 1f));
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddBalloonTalk(spawnPointId: 0, msg: "!", duration: 2000, delayTick: 0);

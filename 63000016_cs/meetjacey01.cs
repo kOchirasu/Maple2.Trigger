@@ -45,8 +45,8 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateMoveToJacey02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -64,9 +64,9 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateWalkIn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -88,8 +88,8 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateWalkIn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.MoveUserPath(arg1: "MS2PatrolData_1000");
             }
@@ -146,8 +146,8 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateMeetJacey02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 602, arg2: true);
             }
 
@@ -286,8 +286,8 @@ namespace Maple2.Trigger._63000016_cs {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
                 context.CameraSelect(arg1: 602, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -339,8 +339,8 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateJaceyTalk10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__4$", arg4: 4);
                 context.SetSkip(arg1: "JaceyTalk11");
             }
@@ -400,8 +400,8 @@ namespace Maple2.Trigger._63000016_cs {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -498,8 +498,8 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateCallNextRoom01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 700, arg2: true);
             }
 
@@ -559,8 +559,8 @@ namespace Maple2.Trigger._63000016_cs {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
                 context.CameraSelect(arg1: 700, arg2: false);
@@ -619,8 +619,8 @@ namespace Maple2.Trigger._63000016_cs {
             internal StateJaceyQuest02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__14$", arg4: 4);
                 context.SetSkip(arg1: "JaceyQuest03");
             }
@@ -758,8 +758,8 @@ namespace Maple2.Trigger._63000016_cs {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_301");
             }
 

@@ -27,9 +27,9 @@ namespace Maple2.Trigger._63000020_cs {
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {9900}, arg2: 70000093, arg3: 1);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.CameraSelect(arg1: 500, arg2: true);
             }
 
@@ -48,8 +48,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateLookAround01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -182,8 +182,8 @@ namespace Maple2.Trigger._63000020_cs {
                 context.SetEffect(arg1: new[] {7206}, arg2: false);
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -278,9 +278,9 @@ namespace Maple2.Trigger._63000020_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7207}, arg2: false);
                 context.RemoveCinematicTalk();
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -319,8 +319,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateFirstBattle01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001626, arg3: "$63000020_CS__BATTLE01__3$", arg4: 5);
                 context.SetEffect(arg1: new[] {7210}, arg2: true);
@@ -345,8 +345,8 @@ namespace Maple2.Trigger._63000020_cs {
                 context.SetEffect(arg1: new[] {7210}, arg2: false);
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 700, arg2: false);
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008}, arg2: false);
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
@@ -405,8 +405,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateSecondChampoin01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {600, 601}, arg2: false);
             }
 
@@ -483,9 +483,9 @@ namespace Maple2.Trigger._63000020_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7208}, arg2: false);
                 context.RemoveCinematicTalk();
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -525,8 +525,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateSecondBattle01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001626, arg3: "$63000020_CS__BATTLE01__5$", arg4: 5);
                 context.SetEffect(arg1: new[] {7210}, arg2: true);
@@ -551,8 +551,8 @@ namespace Maple2.Trigger._63000020_cs {
                 context.SetEffect(arg1: new[] {7210}, arg2: false);
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 700, arg2: false);
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008}, arg2: false);
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
@@ -611,8 +611,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateThirdChampoin01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {600, 601}, arg2: false);
             }
 
@@ -689,9 +689,9 @@ namespace Maple2.Trigger._63000020_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7209}, arg2: false);
                 context.RemoveCinematicTalk();
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -731,8 +731,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateThirdBattle01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7210}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001626, arg3: "$63000020_CS__BATTLE01__7$", arg4: 5);
@@ -757,8 +757,8 @@ namespace Maple2.Trigger._63000020_cs {
                 context.SetEffect(arg1: new[] {7210}, arg2: false);
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 700, arg2: false);
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008}, arg2: false);
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
@@ -817,8 +817,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateTalkKay20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 503, arg2: true);
             }
 
@@ -1091,8 +1091,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateTalkKay26(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001626, arg3: "$63000020_CS__BATTLE01__12$", arg4: 14);
                 context.SetEffect(arg1: new[] {7201}, arg2: true);
@@ -1135,8 +1135,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateTalkKay28(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 502, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001626, arg3: "$63000020_CS__BATTLE01__13$", arg4: 10);
@@ -1175,8 +1175,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateLastChampoin01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 601, arg2: true);
             }
 
@@ -1273,9 +1273,9 @@ namespace Maple2.Trigger._63000020_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7203}, arg2: false);
                 context.RemoveCinematicTalk();
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -1315,8 +1315,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateLastBattle01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001626, arg3: "$63000020_CS__BATTLE01__15$", arg4: 7);
                 context.SetEffect(arg1: new[] {7204}, arg2: true);
@@ -1433,8 +1433,8 @@ namespace Maple2.Trigger._63000020_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 702, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
             }
 
@@ -1473,9 +1473,9 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateCameraAct01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -1515,8 +1515,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StatePCAttack01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetPcEmotionSequence(arg1: "Knuckle_Attack_Idle_A");
             }
 
@@ -1698,9 +1698,9 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateBlurAct06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -1741,8 +1741,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateBlurAct08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveNpc(arg1: 922, arg2: "MS2PatrolData_920");
             }
 
@@ -1853,9 +1853,9 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateTalkChen06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.DestroyMonster(arg1: new[] {922});
                 context.CreateMonster(arg1: new[] {923}, arg2: false);
                 context.SetEffect(arg1: new[] {7102}, arg2: false);
@@ -1896,8 +1896,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateLastAttack01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.AddBuff(arg1: new[] {9900}, arg2: 70000095, arg3: 1);
                 context.CameraSelect(arg1: 807, arg2: true);
             }
@@ -1954,9 +1954,9 @@ namespace Maple2.Trigger._63000020_cs {
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {9900}, arg2: 70000096, arg3: 1);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -1993,8 +1993,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StatePCFainted03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Bore_A");
             }
 
@@ -2014,9 +2014,9 @@ namespace Maple2.Trigger._63000020_cs {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -2074,8 +2074,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StatePlayerDown04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveNpc(arg1: 921, arg2: "MS2PatrolData_921");
                 context.SetEffect(arg1: new[] {6001}, arg2: true);
             }
@@ -2133,9 +2133,9 @@ namespace Maple2.Trigger._63000020_cs {
             internal StatePlayerDown07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.CameraSelect(arg1: 812, arg2: false);
             }
 
@@ -2154,8 +2154,8 @@ namespace Maple2.Trigger._63000020_cs {
             internal StateMoveToNextMap01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 63000021, arg2: 1, arg3: 9900);
             }
 

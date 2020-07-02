@@ -135,7 +135,7 @@ namespace Maple2.Trigger {
         public void SetPcRotation(Vector3 rotation = default);
         public void SetPhotoStudio(bool isEnable = false);
         public void SetPortal(int arg1 = 0, bool arg2 = false, bool arg3 = false, bool arg4 = false, bool arg5 = false);
-        public void SetProductionUI(byte arg1 = 0, string arg2 = "", bool arg3 = false);
+        public void SetCinematicUI(byte arg1 = 0, string arg2 = "", bool arg3 = false);
         public void SetPvpZone(byte arg1 = 0, byte arg2 = 0, int arg3 = 0, int arg4 = 0, byte arg5 = 0, byte[] arg6 = default);
         public void SetQuestAccept(int questId = 0, int arg1 = 0);
         public void SetQuestComplete(int questId = 0);

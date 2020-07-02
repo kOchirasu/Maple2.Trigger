@@ -41,8 +41,8 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "20", arg2: 1);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {601}, arg2: false);
                 context.MoveNpc(arg1: 601, arg2: "MS2PatrolData_6010");
                 context.DestroyMonster(arg1: new[] {401, 101});
@@ -120,8 +120,8 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000872}, arg2: 1);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -160,8 +160,8 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "25", arg2: 4);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010005_QD__ACT03__0$", arg4: 4);
                 context.SetSkip(arg1: "Q3_시네마틱연출02대기");
             }
@@ -182,8 +182,8 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -198,8 +198,8 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 4001, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -327,8 +327,8 @@ namespace Maple2.Trigger._52010005_qd {
                 context.DestroyMonster(arg1: new[] {601});
                 context.SetTimer(arg1: "40", arg2: 1);
                 context.CameraSelect(arg1: 4001, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -367,8 +367,8 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "41", arg2: 2);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -389,8 +389,8 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "42", arg2: 4);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001316, arg3: "$52010005_QD__ACT03__3$", arg4: 4);
                 context.SetSkip(arg1: "Q3_유저퇴장03");
             }
@@ -412,8 +412,8 @@ namespace Maple2.Trigger._52010005_qd {
             internal StateQ3_유저퇴장03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.MoveUser(arg1: 02010026, arg2: 3, arg3: 9000);
             }
 

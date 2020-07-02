@@ -23,9 +23,9 @@ namespace Maple2.Trigger._52010032_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
                 context.MoveUser(arg1: 52010032, arg2: 7001);
                 context.CreateMonster(arg1: new[] {201}, arg2: true);
@@ -46,8 +46,8 @@ namespace Maple2.Trigger._52010032_qd {
             internal State치유의식_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.AddCinematicTalk(npcId: 11003389, msg: "$52010032_QD__MAIN__0$", duration: 3000, illustId: "0", align: "Left");
             }
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._52010032_qd {
             internal State의식종료01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -184,8 +184,8 @@ namespace Maple2.Trigger._52010032_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

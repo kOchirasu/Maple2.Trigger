@@ -43,8 +43,8 @@ namespace Maple2.Trigger._02000303_bf {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetTimer(arg1: "5", arg2: 5);
                 context.SetConversation(arg1: 2, arg2: 11000145, arg3: "$02000303_BF__MAIN__0$", arg4: 4);
                 context.SetSkip(arg1: "StopCinematic");
@@ -65,8 +65,8 @@ namespace Maple2.Trigger._02000303_bf {
             internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007}, arg2: false);
                 context.ShowGuideSummary(entityId: 20003031, textId: 20003031, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -87,8 +87,8 @@ namespace Maple2.Trigger._02000303_bf {
             internal State또다른StartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetSkip(arg1: "또다른연출종료");
             }
@@ -170,8 +170,8 @@ namespace Maple2.Trigger._02000303_bf {
                 context.DestroyMonster(arg1: new[] {2001});
                 context.CameraSelect(arg1: 302, arg2: false);
                 context.SetMesh(arg1: new[] {3005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

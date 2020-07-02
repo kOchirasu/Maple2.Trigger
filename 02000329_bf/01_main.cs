@@ -26,8 +26,8 @@ namespace Maple2.Trigger._02000329_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetSkip(arg1: "scene_02");
                 context.CameraSelectPath(arg1: new[] {80001, 80002, 80003, 80004}, arg2: true);
             }
@@ -60,9 +60,9 @@ namespace Maple2.Trigger._02000329_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
         }
 
@@ -70,9 +70,9 @@ namespace Maple2.Trigger._02000329_bf {
             internal StateScene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
                 context.CameraSelectPath(arg1: new[] {80005}, arg2: true);
                 context.SetEventUI(arg1: 1, arg2: "$02000329_BF__01_MAIN__1$", arg3: 3000, arg4: "0");
                 context.CreateMonster(arg1: new[] {2001, 2002, 2003, 2004, 2005}, arg2: false);

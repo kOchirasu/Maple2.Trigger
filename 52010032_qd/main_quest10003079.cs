@@ -39,8 +39,8 @@ namespace Maple2.Trigger._52010032_qd {
             internal StateReady01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
                 context.FaceEmotion(spawnPointId: 401, emotionName: "Trigger_angry");
                 context.CreateMonster(arg1: new[] {401, 301, 302}, arg2: true);
@@ -275,7 +275,7 @@ namespace Maple2.Trigger._52010032_qd {
             internal StateSkip_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
                 context.DestroyMonster(arg1: new[] {302, 401});
                 context.CameraReset(interpolationTime: 0.5f);
                 context.SetAchievement(arg1: 2001, arg2: "trigger", arg3: "Namid");
@@ -300,8 +300,8 @@ namespace Maple2.Trigger._52010032_qd {
                 context.CameraReset(interpolationTime: 0f);
                 context.DestroyMonster(arg1: new[] {302, 401});
                 context.CreateMonster(arg1: new[] {202}, arg2: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

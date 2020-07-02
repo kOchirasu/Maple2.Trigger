@@ -403,8 +403,8 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 200);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetEffect(arg1: new[] {7999}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 21800073, arg3: "$02010052_BF__BOSS__6$", arg4: 5);
                 context.SetSkip(arg1: "Boss_Battle");
@@ -425,9 +425,9 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override void OnExit() {
                 context.SetMesh(arg1: new[] {6890, 6891, 6892, 6893, 6894, 6895}, arg2: true, arg3: 50, arg4: 70, arg5: 0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
         }
 
@@ -473,8 +473,8 @@ namespace Maple2.Trigger._02010052_bf {
             internal StateClear_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 80006, arg2: true);
                 context.CreateMonster(arg1: new[] {9998}, arg2: false);
                 context.SetEffect(arg1: new[] {7998}, arg2: true);
@@ -492,9 +492,9 @@ namespace Maple2.Trigger._02010052_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
                 context.SetEffect(arg1: new[] {7998}, arg2: true);
                 context.DestroyMonster(arg1: new[] {9998});
                 context.CameraSelect(arg1: 80006, arg2: false);

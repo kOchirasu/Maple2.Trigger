@@ -156,9 +156,9 @@ namespace Maple2.Trigger._52020032_qd {
             internal StateEvent_C_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.SetActor(arg1: 8002, arg2: true, arg3: "Idle_A");
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSceneSkip(arg1: "Event_C_Skip_01", arg2: "Exit");
@@ -197,8 +197,8 @@ namespace Maple2.Trigger._52020032_qd {
             internal StateEvent_C_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetPcEmotionLoop(arg1: "Down_Idle_A", arg2: 90000f);
                 context.AddCinematicTalk(npcId: 11003620, msg: "그럼 편안한 죽음 되시길.", duration: 2800, illustId: "Michael_normal", align: "Center");
                 context.DestroyMonster(arg1: new[] {401});
@@ -448,9 +448,9 @@ namespace Maple2.Trigger._52020032_qd {
             internal StateEvent_C_Skip_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -496,8 +496,8 @@ namespace Maple2.Trigger._52020032_qd {
             internal StateEvent_C_Exit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 

@@ -29,8 +29,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetSkip(arg1: "암호발급");
             }
 
@@ -68,8 +68,8 @@ namespace Maple2.Trigger._02000298_bf {
             internal StateCamera이동후UI노출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.ShowGuideSummary(entityId: 20002991, textId: 20002991, duration: 5000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -171,8 +171,8 @@ namespace Maple2.Trigger._02000298_bf {
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
                 context.DestroyMonster(arg1: new[] {2099});
                 context.CameraSelect(arg1: 302, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
                 context.SetMesh(arg1: new[] {3221, 3222, 3223}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);

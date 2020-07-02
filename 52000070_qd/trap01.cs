@@ -47,8 +47,8 @@ namespace Maple2.Trigger._52000070_qd {
             internal StatePCEnter01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
             }
 
@@ -284,8 +284,8 @@ namespace Maple2.Trigger._52000070_qd {
             internal StateEnemyMobChange01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1.0f);
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104});
                 context.CreateMonster(arg1: new[] {901, 902, 903, 904}, arg2: false);
@@ -306,8 +306,8 @@ namespace Maple2.Trigger._52000070_qd {
             internal StateBattleEnd01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -555,8 +555,8 @@ namespace Maple2.Trigger._52000070_qd {
             internal StateMoveToComplete(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                 context.MoveUser(arg1: 02000208, arg2: 1);
             }

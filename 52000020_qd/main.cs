@@ -20,8 +20,8 @@ namespace Maple2.Trigger._52000020_qd {
             internal StateCamera_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -60,9 +60,9 @@ namespace Maple2.Trigger._52000020_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
         }
 
@@ -88,8 +88,8 @@ namespace Maple2.Trigger._52000020_qd {
             internal StateCamera_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetTimer(arg1: "1", arg2: 1);
                 context.CameraSelectPath(arg1: new[] {8003, 8004}, arg2: true);
             }
@@ -129,9 +129,9 @@ namespace Maple2.Trigger._52000020_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
         }
 
@@ -157,8 +157,8 @@ namespace Maple2.Trigger._52000020_qd {
             internal StateCamera_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetTimer(arg1: "1", arg2: 1);
                 context.CameraSelectPath(arg1: new[] {8005, 8006}, arg2: true);
             }
@@ -197,9 +197,9 @@ namespace Maple2.Trigger._52000020_qd {
 
             public override void OnExit() {
                 context.SetConversation(arg1: 1, arg2: 131, arg3: "$52000020_QD__MAIN__1$", arg4: 5);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
         }
 

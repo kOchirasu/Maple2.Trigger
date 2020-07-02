@@ -37,8 +37,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal StateCamera연출01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
             }
 
@@ -83,8 +83,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal State체크포인트01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 301, arg2: false);
             }
 
@@ -104,8 +104,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal StateCamera연출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 302, arg2: true);
             }
 
@@ -143,8 +143,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal State체크포인트02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002_A");
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003_A");
                 context.MoveNpc(arg1: 1004, arg2: "MS2PatrolData_1004_A");
@@ -202,8 +202,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal StateCamera연출03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -241,8 +241,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal State체크포인트03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 303, arg2: false);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002_B");
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003_B");
@@ -301,8 +301,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal StateCamera연출04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -340,8 +340,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal State체크포인트04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 304, arg2: false);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002_C");
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003_C");
@@ -400,8 +400,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal StateCamera연출05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -439,8 +439,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal State체크포인트05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 305, arg2: false);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002_D");
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003_D");
@@ -500,8 +500,8 @@ namespace Maple2.Trigger._52010017_qd {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1005, arg2: "MS2PatrolData_1005_D3");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -555,8 +555,8 @@ namespace Maple2.Trigger._52010017_qd {
             internal State이동대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetAchievement(arg1: 110, arg2: "trigger", arg3: "Getalllamestone");
             }
 

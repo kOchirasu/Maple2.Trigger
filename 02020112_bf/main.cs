@@ -95,8 +95,8 @@ namespace Maple2.Trigger._02020112_bf {
                 context.SetUserValue(triggerId: 99990020, key: "GravityRoom", value: 1);
                 context.SetUserValue(triggerId: 99990002, key: "JumpFloor", value: 1);
                 context.SetUserValue(triggerId: 99990017, key: "JumpFloor", value: 1);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {611, 612}, arg2: false);
             }
 
@@ -117,8 +117,8 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.CameraReset(interpolationTime: 1f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CreateMonster(arg1: new[] {120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130}, arg2: false);
             }
 

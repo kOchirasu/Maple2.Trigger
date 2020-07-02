@@ -305,8 +305,8 @@ namespace Maple2.Trigger._02000535_bf {
             internal State간부들대화2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetSceneSkip(arg1: "카메라리셋시키기2", arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {2005}, arg2: false);
                 context.AddBalloonTalk(spawnPointId: 9902, msg: "$02000535_BF__MAIN__25$", duration: 3500);
@@ -328,8 +328,8 @@ namespace Maple2.Trigger._02000535_bf {
             internal StateCamera리셋시키기2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1f);
                 context.LockMyPc(isLock: false);
                 context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__27$", arg3: 5000);
@@ -596,8 +596,8 @@ namespace Maple2.Trigger._02000535_bf {
             internal State문부시기안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__43$", arg3: 5000);
                 context.LockMyPc(isLock: false);
                 context.CreateMonster(arg1: new[] {611}, arg2: true);
@@ -618,8 +618,8 @@ namespace Maple2.Trigger._02000535_bf {
             internal State이동하자(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.LockMyPc(isLock: false);
                 context.SideNpcTalk(npcId: 23300001, illust: "Haren_smile", duration: 4000, script: "$02000535_BF__MAIN__44$");
             }

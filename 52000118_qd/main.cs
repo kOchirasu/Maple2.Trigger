@@ -27,9 +27,9 @@ namespace Maple2.Trigger._52000118_qd {
                 context.CreateMonster(arg1: new[] {101}, arg2: true);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.VisibleMyPc(isVisible: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.SetSceneSkip(arg1: "fadeout_a", arg2: "exit");
             }
 
@@ -48,8 +48,8 @@ namespace Maple2.Trigger._52000118_qd {
             internal StateFadein(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -501,9 +501,9 @@ namespace Maple2.Trigger._52000118_qd {
                 context.VisibleMyPc(isVisible: true);
                 context.DestroyMonster(arg1: new[] {101, 102});
                 context.CreateMonster(arg1: new[] {104}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -522,8 +522,8 @@ namespace Maple2.Trigger._52000118_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -542,8 +542,8 @@ namespace Maple2.Trigger._52000118_qd {
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$52000118_QD__MAIN__24$", arg3: 3000, arg4: "0");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

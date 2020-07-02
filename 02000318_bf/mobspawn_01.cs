@@ -44,8 +44,8 @@ namespace Maple2.Trigger._02000318_bf {
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg1: new[] {102}, arg2: "System_ShowGuideSummary_01");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.SetSkip(arg1: "CameraWalk01");
             }
@@ -84,8 +84,8 @@ namespace Maple2.Trigger._02000318_bf {
             internal StateCameraWalk02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.PlaySystemSoundInBox(arg1: new[] {102}, arg2: "System_ShowGuideSummary_01");
                 context.SetEventUI(arg1: 1, arg2: "$02000318_BF__MOBSPAWN_01__0$", arg3: 3000, arg4: "0");
                 context.SetMesh(arg1: new[] {3000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);

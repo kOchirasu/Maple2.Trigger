@@ -25,8 +25,8 @@ namespace Maple2.Trigger._52000046_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000095, arg3: 1);
             }
@@ -152,8 +152,8 @@ namespace Maple2.Trigger._52000046_qd {
                 context.CreateMonster(arg1: new[] {2002}, arg2: false);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000096, arg3: 1);
                 context.MoveUser(arg1: 52000046, arg2: 2);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 301, arg2: false);
             }
 

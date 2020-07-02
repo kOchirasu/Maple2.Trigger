@@ -471,8 +471,8 @@ namespace Maple2.Trigger._52000138_qd {
             internal StateEscape(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {122});
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
                 context.SetSceneSkip(arg1: "endready", arg2: "exit");

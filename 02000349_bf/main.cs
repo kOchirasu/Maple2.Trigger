@@ -329,8 +329,8 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetSkip(arg1: "레논구출종료");
                 context.DestroyMonster(arg1: new[] {2001});
@@ -406,8 +406,8 @@ namespace Maple2.Trigger._02000349_bf {
             internal State진행07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 301, arg2: false);
                 context.MoveNpc(arg1: 2002, arg2: "MS2PatrolData2002_AB");
                 context.ShowGuideSummary(entityId: 20003501, textId: 20003501, duration: 4000);
@@ -677,8 +677,8 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 302, arg2: true);
                 context.SetSkip(arg1: "카드반연출종료");
             }
@@ -837,8 +837,8 @@ namespace Maple2.Trigger._02000349_bf {
             internal State진행16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 302, arg2: false);
                 context.CameraSelect(arg1: 303, arg2: false);
                 context.MoveNpc(arg1: 2006, arg2: "MS2PatrolData2006_A");

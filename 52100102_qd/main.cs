@@ -47,7 +47,7 @@ namespace Maple2.Trigger._52100102_qd {
                 context.VisibleMyPc(isVisible: false);
                 context.SetEffect(arg1: new[] {600, 601, 602, 603, 604}, arg2: false);
                 context.CreateMonster(arg1: new[] {100, 101, 102, 103, 104, 105, 200, 201, 202, 203, 204, 205, 206}, arg2: false);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -66,11 +66,11 @@ namespace Maple2.Trigger._52100102_qd {
             internal StateNarration01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 9, arg2: "$52100102_QD__MAIN__0$");
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 9, arg2: "$52100102_QD__MAIN__0$");
                 context.SetSceneSkip(arg1: "연출끝", arg2: "nextState");
             }
 
@@ -90,8 +90,8 @@ namespace Maple2.Trigger._52100102_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {1, 2}, arg2: false);
                 context.ShowCaption(type: "VerticalCaption", title: "$52100102_QD__MAIN__1$", desc: "$52100102_QD__MAIN__2$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2.5f);
             }
@@ -675,8 +675,8 @@ namespace Maple2.Trigger._52100102_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1}, arg2: false);
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.VisibleMyPc(isVisible: true);
                 context.SetOnetimeEffect(id: 101, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");

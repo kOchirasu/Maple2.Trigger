@@ -130,8 +130,8 @@ namespace Maple2.Trigger._52020001_qd {
             internal State마지막_Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.CameraSelectPath(arg1: new[] {2000009}, arg2: false);
             }
 
@@ -169,8 +169,8 @@ namespace Maple2.Trigger._52020001_qd {
             internal State마지막_Cinematic_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -188,8 +188,8 @@ namespace Maple2.Trigger._52020001_qd {
             internal StateAI연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
                 context.CameraSelectPath(arg1: new[] {2000013}, arg2: false);
             }
 
@@ -245,8 +245,8 @@ namespace Maple2.Trigger._52020001_qd {
             internal State끝_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {

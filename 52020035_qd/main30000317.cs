@@ -42,8 +42,8 @@ namespace Maple2.Trigger._52020035_qd {
             internal StateStartCinematic3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 52020035, arg2: 6001);
                 context.CreateMonster(arg1: new[] {110}, arg2: false, arg3: 0);
                 context.CameraSelectPath(arg1: new[] {4007}, arg2: false);
@@ -675,8 +675,8 @@ namespace Maple2.Trigger._52020035_qd {
                 context.SetOnetimeEffect(id: 7, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetAchievement(arg1: 702, arg2: "trigger", arg3: "MeetRadin");
                 context.CameraReset(interpolationTime: 0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.DestroyMonster(arg1: new[] {111, 112, 113, 114, 115});
                 context.CreateMonster(arg1: new[] {117}, arg2: false, arg3: 0);
                 context.CreateMonster(arg1: new[] {118}, arg2: false, arg3: 0);
@@ -706,7 +706,7 @@ namespace Maple2.Trigger._52020035_qd {
                 context.CreateMonster(arg1: new[] {119}, arg2: false, arg3: 0);
                 context.CreateMonster(arg1: new[] {120}, arg2: false, arg3: 0);
                 context.CreateMonster(arg1: new[] {121}, arg2: false, arg3: 0);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
                 context.CameraReset(interpolationTime: 0f);
                 context.SetAchievement(arg1: 702, arg2: "trigger", arg3: "MeetRadin");
             }
@@ -727,8 +727,8 @@ namespace Maple2.Trigger._52020035_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 7, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.DestroyMonster(arg1: new[] {110});
             }
 

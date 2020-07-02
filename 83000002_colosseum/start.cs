@@ -23,7 +23,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.DestroyMonster(arg1: new[] {202, 203});
                 context.CreateMonster(arg1: new[] {203}, arg2: false);
             }
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SetProductionUI(arg1: 0);
+                    context.SetCinematicUI(arg1: 0);
                     context.CameraReset(interpolationTime: 0f);
                     return new State연출끝_01(context);
                 }
@@ -164,7 +164,7 @@ namespace Maple2.Trigger._83000002_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetProductionUI(arg1: 0);
+                    context.SetCinematicUI(arg1: 0);
                     context.CameraReset(interpolationTime: 0f);
                     return new State대화Delay(context);
                 }

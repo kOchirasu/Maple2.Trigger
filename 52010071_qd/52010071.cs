@@ -21,7 +21,7 @@ namespace Maple2.Trigger._52010071_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 9, arg2: "$52010071_QD__52010071__0$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52010071_QD__52010071__0$");
             }
 
             public override TriggerState Execute() {
@@ -40,9 +40,9 @@ namespace Maple2.Trigger._52010071_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.VisibleMyPc(isVisible: false);
             }
 
@@ -281,7 +281,7 @@ namespace Maple2.Trigger._52010071_qd {
             internal StateSkip_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }

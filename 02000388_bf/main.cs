@@ -107,8 +107,8 @@ namespace Maple2.Trigger._02000388_bf {
             internal StateMermaid_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: false);
                 context.CreateMonster(arg1: new[] {102}, arg2: true);
             }
@@ -251,8 +251,8 @@ namespace Maple2.Trigger._02000388_bf {
                 context.SetBreakable(arg1: new[] {1801, 1802, 1803, 1804, 1805, 1806, 1807, 1808, 1809, 1810, 1811, 1812, 1813, 1814, 1815, 1816, 1817, 1818, 1819, 1820, 1821}, arg2: true);
                 context.SetEffect(arg1: new[] {7101}, arg2: true);
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2001");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2004");
             }
@@ -295,8 +295,8 @@ namespace Maple2.Trigger._02000388_bf {
             public override void OnEnter() {
                 context.SetSkip(arg1: "open_door_03");
                 context.CameraSelect(arg1: 8007, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2005");
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000388_BF__MAIN__10$", arg4: 3, arg5: 1);
             }
@@ -355,8 +355,8 @@ namespace Maple2.Trigger._02000388_bf {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetLocalCamera(cameraId: 8100, enable: true);
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2006");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2008");
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000388_BF__MAIN__11$", arg4: 2, arg5: 1);
@@ -493,8 +493,8 @@ namespace Maple2.Trigger._02000388_bf {
             internal StateShip_end(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetSkip(arg1: "ending_02");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }

@@ -92,8 +92,8 @@ namespace Maple2.Trigger._52000072_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "ActEnd01", arg2: "exit");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -131,8 +131,8 @@ namespace Maple2.Trigger._52000072_qd {
             internal StateActStart01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_301");
                 context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_401");
@@ -230,8 +230,8 @@ namespace Maple2.Trigger._52000072_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

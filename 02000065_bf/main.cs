@@ -124,8 +124,8 @@ namespace Maple2.Trigger._02000065_bf {
             internal State연출1준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
@@ -202,8 +202,8 @@ namespace Maple2.Trigger._02000065_bf {
             internal State연출2준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {111}, arg2: false);
                 context.VisibleMyPc(isVisible: false);
@@ -560,8 +560,8 @@ namespace Maple2.Trigger._02000065_bf {
             internal State칼과앤_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.VisibleMyPc(isVisible: true);
             }
 
@@ -582,8 +582,8 @@ namespace Maple2.Trigger._02000065_bf {
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 3.0f);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "meetingAnn");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

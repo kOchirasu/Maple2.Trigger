@@ -24,8 +24,8 @@ namespace Maple2.Trigger._52000046_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.DestroyMonster(arg1: new[] {1001, 1002, 2002});
             }
@@ -156,8 +156,8 @@ namespace Maple2.Trigger._52000046_qd {
             internal StateEmd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

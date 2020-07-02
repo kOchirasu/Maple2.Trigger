@@ -44,8 +44,8 @@ namespace Maple2.Trigger._02000493_bf {
                 context.CreateWidget(arg1: "SceneMovie");
                 context.WidgetAction(arg1: "SceneMovie", arg2: "Clear");
                 context.PlaySceneMovie(fileName: "Nutaman_intro.swf", movieId: 1);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -57,8 +57,8 @@ namespace Maple2.Trigger._02000493_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 

@@ -111,8 +111,8 @@ namespace Maple2.Trigger._52000050_qd {
                 context.SetMesh(arg1: new[] {6020, 6021, 6022, 6023, 6024, 6025}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMesh(arg1: new[] {6026, 6027, 6028, 6029, 6030}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetMeshAnimation(arg1: new[] {6026, 6027, 6028, 6029, 6030}, arg2: true, arg3: 0, arg4: 0);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {8010, 8011, 8001}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_9902");
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000050_QD__MAIN_02__0$", arg4: 3, arg5: 0);
@@ -190,8 +190,8 @@ namespace Maple2.Trigger._52000050_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7011}, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: true);
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "FlyingBirds");
             }

@@ -49,8 +49,8 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() {
                 context.SetMiniGameAreaForHack(boxId: 9001);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -191,8 +191,8 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -1272,8 +1272,8 @@ namespace Maple2.Trigger._02000387_bf {
             internal StateGameEndNotice01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 02000387, arg2: 1, arg3: 9900);
                 context.SetConversation(arg1: 2, arg2: 11000491, arg3: "$02000387_BF__01_PLAYPARTTIMEJOB__8$", arg4: 4);
                 context.SetSkip(arg1: "GameEndNotice01Skip");
@@ -1296,8 +1296,8 @@ namespace Maple2.Trigger._02000387_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetUserValue(triggerId: 10, key: "DungeonClear", value: 1);
             }
 

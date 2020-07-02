@@ -54,8 +54,8 @@ namespace Maple2.Trigger._02020310_bf {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "Camera종료", arg2: "exit");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {100001, 100002, 100003, 100004, 100005}, arg2: false);
             }
 
@@ -94,8 +94,8 @@ namespace Maple2.Trigger._02020310_bf {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.CameraReset(interpolationTime: 0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

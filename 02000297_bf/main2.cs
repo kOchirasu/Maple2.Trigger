@@ -43,8 +43,8 @@ namespace Maple2.Trigger._02000297_bf {
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {107}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 888888, arg2: true);
                 context.MoveNpc(arg1: 1004, arg2: "MS2PatrolData1");
                 context.SetSkip(arg1: "StopCinematic");
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._02000297_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
             }
         }
 
@@ -163,8 +163,8 @@ namespace Maple2.Trigger._02000297_bf {
             internal State블랙01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData0");
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$02000297_BF__MAIN2__4$", arg4: 2);
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$02000297_BF__MAIN2__5$", arg4: 2);
@@ -206,8 +206,8 @@ namespace Maple2.Trigger._02000297_bf {
 
             public override void OnEnter() {
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 888888, arg2: false);
                 context.SetMesh(arg1: new[] {107, 31000, 31001, 31002, 31003, 31004, 31005}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.CreateMonster(arg1: new[] {6200}, arg2: false);
@@ -251,8 +251,8 @@ namespace Maple2.Trigger._02000297_bf {
             internal State엔딩연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 888888, arg2: true);
                 context.DestroyMonster(arg1: new[] {1006});
                 context.CreateMonster(arg1: new[] {1007}, arg2: false);
@@ -296,8 +296,8 @@ namespace Maple2.Trigger._02000297_bf {
             internal StateStopCinematic2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetSkip();
                 context.CameraSelect(arg1: 888888, arg2: false);
                 context.DestroyMonster(arg1: new[] {1005, 1008, 1007});

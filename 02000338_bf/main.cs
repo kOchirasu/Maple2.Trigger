@@ -25,9 +25,9 @@ namespace Maple2.Trigger._02000338_bf {
                 context.SetMesh(arg1: new[] {70001, 70002, 70003, 70004, 70005, 70006, 70007, 70008, 70009, 70010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015}, arg2: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
 
             public override TriggerState Execute() {
@@ -61,8 +61,8 @@ namespace Maple2.Trigger._02000338_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {5100}, arg2: false);
                 context.SetMesh(arg1: new[] {70001, 70002, 70003, 70004, 70005, 70006, 70007, 70008, 70009}, arg2: true, arg3: 200, arg4: 50, arg5: 2f);
                 context.SetMesh(arg1: new[] {70010}, arg2: true, arg3: 250, arg4: 50, arg5: 2f);
@@ -84,8 +84,8 @@ namespace Maple2.Trigger._02000338_bf {
             internal StateCameraWalk01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetEffect(arg1: new[] {74512}, arg2: true);
                 context.CameraSelect(arg1: 30200, arg2: true);
                 context.SetSkip(arg1: "CameraWalk05");
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._02000338_bf {
             internal StateCameraWalk04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.SetEffect(arg1: new[] {74500}, arg2: true);
                 context.SetSkip(arg1: "CameraWalk05");
             }
@@ -229,8 +229,8 @@ namespace Maple2.Trigger._02000338_bf {
             internal StateReady01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetMesh(arg1: new[] {70001, 70002, 70003, 70004, 70005, 70006, 70007, 70008, 70009, 70010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetEffect(arg1: new[] {75000, 75001, 75002, 75003, 75004, 75005}, arg2: true);

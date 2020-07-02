@@ -42,8 +42,8 @@ namespace Maple2.Trigger._52000045_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {902}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUserPath(arg1: "MS2PatrolData_2010");
                 context.CameraSelectPath(arg1: new[] {8004}, arg2: false);
             }

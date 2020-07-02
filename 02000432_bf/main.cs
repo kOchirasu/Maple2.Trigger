@@ -166,8 +166,8 @@ namespace Maple2.Trigger._02000432_bf {
                 context.MoveUser(arg1: 02000432, arg2: 2);
                 context.DestroyMonster(arg1: new[] {1001, 1002, 2001, 2002, 2102});
                 context.CreateMonster(arg1: new[] {1098, 1099}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionLoop(arg1: 1098, arg2: "Dead_B", arg3: 3000000f);
                 context.SetNpcEmotionLoop(arg1: 1099, arg2: "Dead_B", arg3: 3000000f);
@@ -412,8 +412,8 @@ namespace Maple2.Trigger._02000432_bf {
                 context.SetSkip();
                 context.DestroyMonster(arg1: new[] {1098, 1099, 1096, 1097});
                 context.CreateMonster(arg1: new[] {1096, 1097}, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 

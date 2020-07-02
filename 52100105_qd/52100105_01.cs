@@ -43,7 +43,7 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107}, arg2: false);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.VisibleMyPc(isVisible: false);
             }
 
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: "right", msg: "$52100105_QD__52100105_01__0$", duration: 4000);
                 context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: "right", msg: "$52100105_QD__52100105_01__1$", duration: 4000);
                 context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", align: "right", msg: "$52100105_QD__52100105_01__2$", duration: 4000);

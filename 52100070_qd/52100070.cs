@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52100070_qd {
                 context.CameraSelect(arg1: 400, arg2: true);
                 context.SetEffect(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007}, arg2: false);
                 context.VisibleMyPc(isVisible: false);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52100070_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 9, arg2: "$52100070_QD__52100070__0$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52100070_QD__52100070__0$");
             }
 
             public override TriggerState Execute() {
@@ -45,9 +45,9 @@ namespace Maple2.Trigger._52100070_qd {
             internal State암전1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
+                context.SetCinematicUI(arg1: 0);
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -279,8 +279,8 @@ namespace Maple2.Trigger._52100070_qd {
                 context.SetTimeScale(enable: false, startScale: 0.5f, endScale: 0.5f, duration: 50.0f, interpolator: 1);
                 context.DestroyMonster(arg1: new[] {101, 102, 103}, arg2: false);
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.VisibleMyPc(isVisible: true);
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");

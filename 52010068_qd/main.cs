@@ -68,8 +68,8 @@ namespace Maple2.Trigger._52010068_qd {
             internal StateOrde_In_Effect(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
             }
 
@@ -147,8 +147,8 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override void OnEnter() {
                 context.CameraReset();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -228,8 +228,8 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 10, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -248,7 +248,7 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 9, arg2: @"큰 희생이 있었지만, 우리는 $npc:11001698$를 상대로 승리를 얻었다.\n메이플월드를 공격한 그들에게 죄값을 치르게 만든것이다.");
+                context.SetCinematicUI(arg1: 9, arg2: @"큰 희생이 있었지만, 우리는 $npc:11001698$를 상대로 승리를 얻었다.\n메이플월드를 공격한 그들에게 죄값을 치르게 만든것이다.");
                 context.SetSkip(arg1: "챕터10에필로그연출02스킵");
             }
 
@@ -282,7 +282,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그연출03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: @"비록 $npc:11001698$는 무사히 도망쳤지만, \n그녀 스스로의 의지로 도망친것은 아니었다.");
+                context.SetCinematicUI(arg1: 9, arg2: @"비록 $npc:11001698$는 무사히 도망쳤지만, \n그녀 스스로의 의지로 도망친것은 아니었다.");
                 context.SetSkip(arg1: "챕터10에필로그연출03스킵");
             }
 
@@ -316,7 +316,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그연출05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "오히려 $npc:11001698$는 이번 전투에서 자신의 요새를 잃고 말았다.");
+                context.SetCinematicUI(arg1: 9, arg2: "오히려 $npc:11001698$는 이번 전투에서 자신의 요새를 잃고 말았다.");
                 context.SetSkip(arg1: "챕터10에필로그연출05스킵");
             }
 
@@ -350,8 +350,8 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그연출05b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -510,9 +510,9 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그연출10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 9);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52010068_QD__MAIN__7$", arg4: 5);
                 context.SetOnetimeEffect(id: 2010, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_04_00002010.xml");
                 context.SetSkip(arg1: "챕터10에필로그연출10스킵");
@@ -653,9 +653,9 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그연출13_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 9);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52010068_QD__MAIN__11$", arg4: 5);
                 context.SetOnetimeEffect(id: 2012, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_06_00002012.xml");
                 context.SetSkip(arg1: "챕터10에필로그연출13b스킵");
@@ -812,7 +812,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그연출18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: @"$npc:11001698$는 그녀의 용을 타고 날아올랐다\n그리고 이 것이 마드라칸 요새의 최후였다.");
+                context.SetCinematicUI(arg1: 9, arg2: @"$npc:11001698$는 그녀의 용을 타고 날아올랐다\n그리고 이 것이 마드라칸 요새의 최후였다.");
                 context.SetSkip(arg1: "챕터10에필로그연출18스킵");
             }
 
@@ -846,7 +846,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그연출18b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: @"$npc:11001698$는 분명 다시 돌아올 것이다.\n그리고 또다시 서로에게 소중한 존재들을 빼앗을지도 모른다.");
+                context.SetCinematicUI(arg1: 9, arg2: @"$npc:11001698$는 분명 다시 돌아올 것이다.\n그리고 또다시 서로에게 소중한 존재들을 빼앗을지도 모른다.");
                 context.SetSkip(arg1: "챕터10에필로그연출18b스킵");
             }
 
@@ -880,7 +880,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그연출19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: @"그렇지만, 할 수 있다면 $npc:11001698$와 싸우지 않아도 될 방법을 찾고자 한다.\n복수의 나선은 결국 서로의 모든것을 파괴할것이기 때문이다.");
+                context.SetCinematicUI(arg1: 9, arg2: @"그렇지만, 할 수 있다면 $npc:11001698$와 싸우지 않아도 될 방법을 찾고자 한다.\n복수의 나선은 결국 서로의 모든것을 파괴할것이기 때문이다.");
                 context.SetSkip(arg1: "챕터10에필로그연출19스킵");
             }
 
@@ -914,7 +914,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그연출20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: @"그리고 나는 어떤 방법으로든 테룬칼리브들이 살아있다고 굳게 믿고 있다.\n그들이 나를 살렸듯 그들 스스로 어떻게 살아날 방법을 찾았을거라 믿고 싶다.");
+                context.SetCinematicUI(arg1: 9, arg2: @"그리고 나는 어떤 방법으로든 테룬칼리브들이 살아있다고 굳게 믿고 있다.\n그들이 나를 살렸듯 그들 스스로 어떻게 살아날 방법을 찾았을거라 믿고 싶다.");
                 context.SetSkip(arg1: "챕터10에필로그연출20스킵");
             }
 
@@ -948,7 +948,7 @@ namespace Maple2.Trigger._52010068_qd {
             internal State챕터10에필로그연출21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: @"하여, 나는 블랙 샤드의 폭심지, '아이 오브 라펜타'의 수색과\n라펜샤드의 조사에 최선을 다할 것이라고 다짐했다.");
+                context.SetCinematicUI(arg1: 9, arg2: @"하여, 나는 블랙 샤드의 폭심지, '아이 오브 라펜타'의 수색과\n라펜샤드의 조사에 최선을 다할 것이라고 다짐했다.");
                 context.SetSkip(arg1: "챕터10에필로그연출22");
             }
 
@@ -987,8 +987,8 @@ namespace Maple2.Trigger._52010068_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 10, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.MoveUser(arg1: 52010068, arg2: 2);
             }
 

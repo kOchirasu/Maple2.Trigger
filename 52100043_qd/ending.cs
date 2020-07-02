@@ -27,8 +27,8 @@ namespace Maple2.Trigger._52100043_qd {
                 context.SetEffect(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5005}, arg2: false);
                 context.SetMesh(arg1: new[] {4993, 4994, 4995, 4996, 4997, 4998, 4999}, arg2: false);
                 context.VisibleMyPc(isVisible: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CreateMonster(arg1: new[] {600, 601, 602}, arg2: false);
                 context.SetMesh(arg1: new[] {4993, 4994, 4995, 4996, 4997, 4998, 4999}, arg2: true);
@@ -243,7 +243,7 @@ namespace Maple2.Trigger._52100043_qd {
                 context.SetSkip();
                 context.DestroyMonster(arg1: new[] {-1});
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
-                context.SetProductionUI(arg1: 9, arg2: "$52100043_QD__ENDING__7$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52100043_QD__ENDING__7$");
             }
 
             public override TriggerState Execute() {
@@ -262,7 +262,7 @@ namespace Maple2.Trigger._52100043_qd {
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "Map_Warf");
-                context.SetProductionUI(arg1: 9, arg2: "$52100043_QD__ENDING__8$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52100043_QD__ENDING__8$");
             }
 
             public override TriggerState Execute() {
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._52100043_qd {
             internal StateNarration03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52100043_QD__ENDING__9$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52100043_QD__ENDING__9$");
             }
 
             public override TriggerState Execute() {
@@ -298,7 +298,7 @@ namespace Maple2.Trigger._52100043_qd {
             internal StateNarration04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52100043_QD__ENDING__10$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52100043_QD__ENDING__10$");
             }
 
             public override TriggerState Execute() {
@@ -316,7 +316,7 @@ namespace Maple2.Trigger._52100043_qd {
             internal StateNarration05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52100043_QD__ENDING__11$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52100043_QD__ENDING__11$");
             }
 
             public override TriggerState Execute() {
@@ -334,7 +334,7 @@ namespace Maple2.Trigger._52100043_qd {
             internal StateNarration06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$52100043_QD__ENDING__12$");
+                context.SetCinematicUI(arg1: 9, arg2: "$52100043_QD__ENDING__12$");
             }
 
             public override TriggerState Execute() {
@@ -354,8 +354,8 @@ namespace Maple2.Trigger._52100043_qd {
             public override void OnEnter() {
                 context.SetSkip();
                 context.DestroyMonster(arg1: new[] {-1});
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0f);
                 context.MoveUser(arg1: 52010068, arg2: 1);
             }

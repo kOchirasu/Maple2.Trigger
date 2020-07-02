@@ -45,8 +45,8 @@ namespace Maple2.Trigger._52000040_qd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -89,8 +89,8 @@ namespace Maple2.Trigger._52000040_qd {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_4001");
-                    context.SetProductionUI(arg1: 0);
-                    context.SetProductionUI(arg1: 2);
+                    context.SetCinematicUI(arg1: 0);
+                    context.SetCinematicUI(arg1: 2);
                     return new StateStart_04(context);
                 }
 

@@ -29,8 +29,8 @@ namespace Maple2.Trigger._52020016_qd {
             internal StateStart_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
                 context.CameraSelectPath(arg1: new[] {2000004}, arg2: false);
             }
 
@@ -87,8 +87,8 @@ namespace Maple2.Trigger._52020016_qd {
             internal StateStart_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "한번 가볼까?", arg4: 3, arg5: 0);
             }
 
@@ -109,8 +109,8 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(0f, 0f, 0f));
                 context.SetDirectionalLight(arg1: new Vector3(0f, 0f, 0f), arg2: new Vector3(0f, 0f, 0f));
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
                 context.SetPcEmotionLoop(arg1: "Stun_A", arg2: 1500f);
             }
 
@@ -223,8 +223,8 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {2000001}, arg2: true);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
                 context.DestroyMonster(arg1: new[] {300001});
                 context.SetEffect(arg1: new[] {70001, 70002, 70003, 70004, 70005, 70006, 70007, 70008, 70009, 70010, 70011, 70012, 70013, 70014, 70015, 70016, 70017, 70018, 70019, 70020, 70021, 70022, 70023, 70024}, arg2: true);
             }
@@ -329,8 +329,8 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 95, arg2: false, arg3: false);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
                 context.SetAmbientLight(arg1: new Vector3(0f, 0f, 0f));
                 context.SetDirectionalLight(arg1: new Vector3(0f, 0f, 0f), arg2: new Vector3(0f, 0f, 0f));
             }
@@ -476,8 +476,8 @@ namespace Maple2.Trigger._52020016_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
             }
         }
 
@@ -636,8 +636,8 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {2000003}, arg2: false);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {
@@ -680,8 +680,8 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {2000003}, arg2: true);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
             }
 
             public override TriggerState Execute() {

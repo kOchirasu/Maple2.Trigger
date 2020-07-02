@@ -36,7 +36,7 @@ namespace Maple2.Trigger._52000106_qd {
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {
@@ -189,7 +189,7 @@ namespace Maple2.Trigger._52000106_qd {
             internal StateSkip_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_ririn_Turn");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraReset(interpolationTime: 0.5f);
@@ -212,8 +212,8 @@ namespace Maple2.Trigger._52000106_qd {
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {10011}, arg2: 70000109, arg3: 1, arg4: false, arg5: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.5f);
                 context.ShowGuideSummary(entityId: 25201061, textId: 25201061, duration: 5000);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_ririn_go");
@@ -254,7 +254,7 @@ namespace Maple2.Trigger._52000106_qd {
             internal State그림자의침략완료02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.SetOnetimeEffect(id: 20, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
                 context.DestroyMonster(arg1: new[] {101, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719});
@@ -275,8 +275,8 @@ namespace Maple2.Trigger._52000106_qd {
             internal State그림자의침략완료03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.5f);
                 context.SetOnetimeEffect(id: 20, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
                 context.MoveUser(arg1: 52000106, arg2: 3);
@@ -329,7 +329,7 @@ namespace Maple2.Trigger._52000106_qd {
                 context.CreateMonster(arg1: new[] {103}, arg2: false);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_ririn_goodBye_0");
                 context.SetOnetimeEffect(id: 30, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {
@@ -367,7 +367,7 @@ namespace Maple2.Trigger._52000106_qd {
             internal State리엔을떠나다03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11003174, msg: "$52000106_QD__52000106__3$", duration: 4000, align: "right");
                 context.CameraSelectPath(arg1: new[] {1006, 1007}, arg2: false);
             }
@@ -460,8 +460,8 @@ namespace Maple2.Trigger._52000106_qd {
             internal State리엔을떠나다08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.ShowCaption(type: "VerticalCaption", title: "$52000106_QD__52000106__7$", desc: "$52000106_QD__52000106__8$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 10000, scale: 2.5f);
             }
 

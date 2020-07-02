@@ -69,8 +69,8 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 200);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 80003, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 21800073, arg3: "$02010052_BF__TORCHLIGHT_04__1$", arg4: 2);
                 context.SetTimer(arg1: "2", arg2: 2);
@@ -87,9 +87,9 @@ namespace Maple2.Trigger._02010052_bf {
 
             public override void OnExit() {
                 context.RemoveCinematicTalk();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
                 context.CameraSelect(arg1: 80003, arg2: false);
             }
         }

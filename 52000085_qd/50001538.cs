@@ -54,8 +54,8 @@ namespace Maple2.Trigger._52000085_qd {
                 context.SetNpcEmotionLoop(arg1: 1001, arg2: "Attack_Idle_A", arg3: 999999999999f);
                 context.SetPcEmotionLoop(arg1: "Attack_Idle_A", arg2: 999999999999f);
                 context.SetSkip(arg1: "연출종료");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 300, arg2: true);
             }
 
@@ -663,8 +663,8 @@ namespace Maple2.Trigger._52000085_qd {
                 context.SetSkip();
                 context.DestroyMonster(arg1: new[] {1001, 1002, 1003, 1004});
                 context.CreateMonster(arg1: new[] {2001, 2002}, arg2: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.MoveUser(arg1: 52000085, arg2: 99);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000115, arg3: 1, arg4: false, arg5: false);
@@ -721,8 +721,8 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 52000085, arg2: 98);
                 context.DestroyMonster(arg1: new[] {2001, 2002});
             }
@@ -1130,8 +1130,8 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1008, 1009}, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetEffect(arg1: new[] {601, 602, 603}, arg2: false);
                 context.SetPortal(arg1: 91, arg2: true, arg3: true, arg4: true);
                 context.CameraReset(interpolationTime: 0.0f);

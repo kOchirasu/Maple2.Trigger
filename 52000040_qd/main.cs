@@ -142,8 +142,8 @@ namespace Maple2.Trigger._52000040_qd {
             internal StateSb_ready_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -180,7 +180,7 @@ namespace Maple2.Trigger._52000040_qd {
             internal StateSb_ready_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -232,8 +232,8 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {221, 222, 223}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {7001, 7002, 7003}, arg2: false);
             }
 
@@ -416,7 +416,7 @@ namespace Maple2.Trigger._52000040_qd {
                 context.CreateMonster(arg1: new[] {145}, arg2: true);
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
                 context.CameraSelectPath(arg1: new[] {7010}, arg2: true);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -434,9 +434,9 @@ namespace Maple2.Trigger._52000040_qd {
             internal StateSb_ready_b_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 4);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -495,8 +495,8 @@ namespace Maple2.Trigger._52000040_qd {
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_2001");
                 context.CreateMonster(arg1: new[] {101, 102}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {7001, 7002, 7003}, arg2: false);
             }
 
@@ -1391,14 +1391,14 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {7010}, arg2: true);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    context.SetProductionUI(arg1: 0);
+                    context.SetCinematicUI(arg1: 0);
                     context.CreateMonster(arg1: new[] {104, 111, 112}, arg2: true);
-                    context.SetProductionUI(arg1: 2);
+                    context.SetCinematicUI(arg1: 2);
                     return new StateStart_21(context);
                 }
 

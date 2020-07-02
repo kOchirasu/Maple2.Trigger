@@ -69,8 +69,8 @@ namespace Maple2.Trigger._02000348_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveRandomUser(arg1: 02000348, arg2: 99, arg3: 702, arg4: 1);
                 context.MoveRandomUser(arg1: 02000348, arg2: 98, arg3: 60005, arg4: 1);
                 context.MoveRandomUser(arg1: 02000348, arg2: 97, arg3: 60005, arg4: 1);
@@ -227,8 +227,8 @@ namespace Maple2.Trigger._02000348_bf {
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {702}, arg2: 70000106, arg3: 1);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelectPath(arg1: new[] {8808}, arg2: true);
                 context.ShowCountUI(text: "$02000348_BF__MAIN__10$", stage: 0, count: 3);
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
@@ -385,8 +385,8 @@ namespace Maple2.Trigger._02000348_bf {
             internal StateClear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.RemoveBuff(arg1: 60002, arg2: 99910040);
                 context.RemoveBuff(arg1: 60002, arg2: 70000106);
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);
@@ -456,8 +456,8 @@ namespace Maple2.Trigger._02000348_bf {
                 context.SetDungeonVariable(varId: 1, value: true);
                 context.ShowGuideSummary(entityId: 110, textId: 40009);
                 context.CameraSelectPath(arg1: new[] {8808}, arg2: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

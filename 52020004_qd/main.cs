@@ -333,8 +333,8 @@ namespace Maple2.Trigger._52020004_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 52020004, arg2: 1);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSceneSkip(arg1: "공주님과기사연출_스킵완료", arg2: "exit");
@@ -494,8 +494,8 @@ namespace Maple2.Trigger._52020004_qd {
             internal State공주님과기사연출_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -572,8 +572,8 @@ namespace Maple2.Trigger._52020004_qd {
             internal State제이든호출_StartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetSceneSkip(arg1: "제이든호출_스킵완료", arg2: "nextState");
             }
 
@@ -672,8 +672,8 @@ namespace Maple2.Trigger._52020004_qd {
             internal State제이든호출_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -692,8 +692,8 @@ namespace Maple2.Trigger._52020004_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -903,8 +903,8 @@ namespace Maple2.Trigger._52020004_qd {
             internal State세리하첫SpawnCinematic_준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 52020004, arg2: 10);
             }
 
@@ -1324,8 +1324,8 @@ namespace Maple2.Trigger._52020004_qd {
             internal State자막구간_준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
             }
 
@@ -1344,7 +1344,7 @@ namespace Maple2.Trigger._52020004_qd {
             internal State자막구간_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: @"제이든과 함께 그곳을 빠져나오던 순간\n들려왔던 어마어마한 소리.");
+                context.SetCinematicUI(arg1: 9, arg2: @"제이든과 함께 그곳을 빠져나오던 순간\n들려왔던 어마어마한 소리.");
             }
 
             public override TriggerState Execute() {
@@ -1362,7 +1362,7 @@ namespace Maple2.Trigger._52020004_qd {
             internal State자막구간_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: @"왕족의 비상상황을 대비해 견고하게 지어졌을 지하실 내부는\n순식간에 굉음을 내며 무너져 내렸다.");
+                context.SetCinematicUI(arg1: 9, arg2: @"왕족의 비상상황을 대비해 견고하게 지어졌을 지하실 내부는\n순식간에 굉음을 내며 무너져 내렸다.");
                 context.SetSkip(arg1: "ShowCaption03Skip");
             }
 
@@ -1381,7 +1381,7 @@ namespace Maple2.Trigger._52020004_qd {
             internal State자막구간_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: @"나는 달려야 했다.\n오직 살아남는 것만을 생각하면서.");
+                context.SetCinematicUI(arg1: 9, arg2: @"나는 달려야 했다.\n오직 살아남는 것만을 생각하면서.");
                 context.SetSceneSkip();
             }
 
@@ -1400,8 +1400,8 @@ namespace Maple2.Trigger._52020004_qd {
             internal State세리하첫SpawnCinematic_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -1420,8 +1420,8 @@ namespace Maple2.Trigger._52020004_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "BlackStarVSResistance");
             }

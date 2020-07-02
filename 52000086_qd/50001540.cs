@@ -111,8 +111,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000086, arg2: 99);
                 context.SetSkip(arg1: "StopCinematic");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
             }
 
@@ -389,8 +389,8 @@ namespace Maple2.Trigger._52000086_qd {
                 context.CreateMonster(arg1: new[] {1004, 1005}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 1004, arg2: "Stun_A", arg3: 999999999999f);
                 context.SetNpcEmotionLoop(arg1: 1005, arg2: "AttackReady_01_A", arg3: 999999999999f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000115, arg3: 1, arg4: false, arg5: false);
             }
@@ -513,8 +513,8 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "2차StopCinematic");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 311, arg2: true);
             }
 
@@ -575,8 +575,8 @@ namespace Maple2.Trigger._52000086_qd {
                 context.SetPortal(arg1: 91, arg2: false, arg3: false, arg4: false);
                 context.DestroyMonster(arg1: new[] {1006});
                 context.CreateMonster(arg1: new[] {2099}, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000115, arg3: 1, arg4: false, arg5: false);
             }

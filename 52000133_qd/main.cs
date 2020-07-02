@@ -112,8 +112,8 @@ namespace Maple2.Trigger._52000133_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
                 context.CreateMonster(arg1: new[] {101});
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 52000133, arg2: 1);
             }
 
@@ -267,8 +267,8 @@ namespace Maple2.Trigger._52000133_qd {
             internal State케이틀린첫만남_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.MoveUser(arg1: 52000133, arg2: 12);
             }
 
@@ -307,8 +307,8 @@ namespace Maple2.Trigger._52000133_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {111});
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 52000133, arg2: 11);
             }
 
@@ -704,8 +704,8 @@ namespace Maple2.Trigger._52000133_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.CreateMonster(arg1: new[] {113});
                 context.DestroyMonster(arg1: new[] {112});
                 context.MoveUser(arg1: 52000133, arg2: 13);
@@ -745,8 +745,8 @@ namespace Maple2.Trigger._52000133_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

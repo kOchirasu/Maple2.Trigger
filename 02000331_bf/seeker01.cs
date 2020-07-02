@@ -557,8 +557,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State첫번째무너짐StartCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$02000331_BF__Seeker01__900$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__900$");
                 context.CameraSelect(arg1: 802, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_999");
             }
@@ -603,8 +603,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {777801}, arg2: false);
                 context.CameraSelect(arg1: 802, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetSkip();
             }
 
@@ -2627,8 +2627,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State고립StartCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$02000331_BF__Seeker01__901$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__901$");
                 context.CameraSelect(arg1: 804, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1007");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2006");
@@ -2652,8 +2652,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 804, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetSkip(arg1: "구출안내01_01");
             }
 
@@ -2763,8 +2763,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State고립StartCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$02000331_BF__Seeker01__901$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__901$");
                 context.CameraSelect(arg1: 804, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1007");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2006");
@@ -2788,8 +2788,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 804, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetSkip(arg1: "구출안내02_01");
             }
 
@@ -2899,8 +2899,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State고립StartCinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$02000331_BF__Seeker01__901$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__901$");
                 context.CameraSelect(arg1: 804, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1007");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2006");
@@ -2924,8 +2924,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 804, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetSkip(arg1: "구출안내03_01");
             }
 
@@ -3035,8 +3035,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State고립StartCinematic04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$02000331_BF__Seeker01__901$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__901$");
                 context.CameraSelect(arg1: 804, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1007");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2006");
@@ -3060,8 +3060,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 804, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetSkip(arg1: "구출안내04_01");
             }
 
@@ -3171,8 +3171,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State고립StartCinematic05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$02000331_BF__Seeker01__901$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__901$");
                 context.CameraSelect(arg1: 804, arg2: true);
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1007");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2006");
@@ -3196,8 +3196,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 804, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetSkip(arg1: "구출안내05_01");
             }
 
@@ -3933,8 +3933,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7776}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$02000331_BF__Seeker01__902$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__902$");
                 context.CameraSelect(arg1: 800, arg2: true);
                 context.SetSkip(arg1: "추격연출종료01");
             }
@@ -3957,8 +3957,8 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetEventUI(arg1: 1, arg2: "$02000331_BF__Seeker01__803$", arg3: 2000, arg4: "0");
                 context.SetEffect(arg1: new[] {7771}, arg2: true);
                 context.CameraSelect(arg1: 800, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetConversation(arg1: 1, arg2: 100, arg3: "$02000331_BF__Seeker01__90$", arg4: 2);
                 context.SetConversation(arg1: 1, arg2: 300, arg3: "$02000331_BF__Seeker01__91$", arg4: 2);
                 context.SetConversation(arg1: 1, arg2: 500, arg3: "$02000331_BF__Seeker01__92$", arg4: 3);
@@ -4092,8 +4092,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal State두번째무너짐StartCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$02000331_BF__Seeker01__903$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__903$");
                 context.CameraSelect(arg1: 806, arg2: true);
             }
 
@@ -4134,8 +4134,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 806, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetSkip(arg1: "술래말풍선06");
             }
 
@@ -4625,8 +4625,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {990}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$02000331_BF__Seeker01__904$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__904$");
                 context.SetEffect(arg1: new[] {777901}, arg2: true);
                 context.CameraSelect(arg1: 808, arg2: true);
                 context.SetSkip(arg1: "BossSpawnCinematic중01");
@@ -4647,7 +4647,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateBossSpawnCinematic중01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3, arg2: "$02000331_BF__Seeker01__905$");
+                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__905$");
                 context.SetSkip(arg1: "BossSpawnCinematic중01Skip");
             }
 
@@ -4680,7 +4680,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateBossSpawnCinematic중02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3, arg2: "$02000331_BF__Seeker01__906$");
+                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__906$");
                 context.ChangeMonster(arg1: 100, arg2: 601);
                 context.ChangeMonster(arg1: 200, arg2: 602);
                 context.ChangeMonster(arg1: 300, arg2: 603);
@@ -4755,7 +4755,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 809, arg2: false);
-                context.SetProductionUI(arg1: 3, arg2: "$02000331_BF__Seeker01__907$");
+                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__907$");
                 context.SetEffect(arg1: new[] {777901}, arg2: false);
                 context.SetEffect(arg1: new[] {777902}, arg2: true);
                 context.SetSkip(arg1: "BossSpawnCinematic끝01");
@@ -4778,8 +4778,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 808, arg2: false);
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetEffect(arg1: new[] {777802}, arg2: false);
                 context.SetUserValue(triggerId: 15, key: "SecondBridgeOff", value: 1);
             }
@@ -6421,8 +6421,8 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateBossCombatSetup02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 811, arg2: true);
                 context.SetSkip(arg1: "Boss투_준비04");
             }
@@ -6442,7 +6442,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateBossCombatSetup03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3, arg2: "$02000331_BF__Seeker01__908$");
+                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__908$");
                 context.SetEffect(arg1: new[] {777902}, arg2: false);
                 context.SetEffect(arg1: new[] {777903}, arg2: true);
             }
@@ -6463,8 +6463,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 811, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -6523,8 +6523,8 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetInteractObject(arg1: new[] {10000776}, arg2: 0);
                 context.SetInteractObject(arg1: new[] {10000776}, arg2: 1);
                 context.SetActor(arg1: 97770, arg2: false, arg3: "Closed");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$02000331_BF__Seeker01__909$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__909$");
                 context.CameraSelect(arg1: 812, arg2: true);
                 context.SetSkip(arg1: "Boss도망연출03");
             }
@@ -6544,7 +6544,7 @@ namespace Maple2.Trigger._02000331_bf {
             internal StateBoss도망연출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3, arg2: "$02000331_BF__Seeker01__910$");
+                context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__910$");
                 context.SetEffect(arg1: new[] {777903}, arg2: false);
                 context.SetEffect(arg1: new[] {777904}, arg2: true);
                 context.SetSkip(arg1: "Boss도망연출03");
@@ -6566,8 +6566,8 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 812, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.ChangeMonster(arg1: 610, arg2: 600);
             }
 

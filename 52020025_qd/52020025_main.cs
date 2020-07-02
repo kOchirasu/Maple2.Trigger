@@ -25,8 +25,8 @@ namespace Maple2.Trigger._52020025_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "으아아악!!!", arg4: 2);
                 context.SetSceneSkip(arg1: "Camera_종료", arg2: "exit");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetMesh(arg1: new[] {1001}, arg2: false);
             }
 
@@ -106,8 +106,8 @@ namespace Maple2.Trigger._52020025_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101});
                 context.CameraReset(interpolationTime: 0.1f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007}, arg2: false);
             }
 

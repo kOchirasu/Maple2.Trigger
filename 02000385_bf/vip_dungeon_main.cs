@@ -9,9 +9,9 @@ namespace Maple2.Trigger._02000385_bf {
                 context.MoveUser(arg1: 02000385, arg2: 1);
                 context.SetInteractObject(arg1: new[] {10001083, 10001084, 10001085}, arg2: 1);
                 context.CameraSelect(arg1: 299, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -48,8 +48,8 @@ namespace Maple2.Trigger._02000385_bf {
             internal State캐릭터선택대기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.ShowGuideSummary(entityId: 20003851, textId: 20003851);
             }
 

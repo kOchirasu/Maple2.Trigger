@@ -41,7 +41,7 @@ namespace Maple2.Trigger._52100108_qd {
             internal StateWait_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.MoveUser(arg1: 52100108, arg2: 1);
             }
 
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._52100108_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4006, 4005}, arg2: false);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 0, msg: "$52100108_QD__MAIN__0$", duration: 3000);
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
             }
@@ -260,8 +260,8 @@ namespace Maple2.Trigger._52100108_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

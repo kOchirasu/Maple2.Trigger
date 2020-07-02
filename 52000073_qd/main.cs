@@ -28,8 +28,8 @@ namespace Maple2.Trigger._52000073_qd {
                 context.VisibleMyPc(isVisible: false);
                 context.SetAmbientLight(arg1: new Vector3(0f, 0f, 0f));
                 context.SetAmbientLight(arg1: new Vector3(1f, 1f, 1f));
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {302});
                 context.CreateMonster(arg1: new[] {301});
                 context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: false);
@@ -407,7 +407,7 @@ namespace Maple2.Trigger._52000073_qd {
                 context.VisibleMyPc(isVisible: true);
                 context.CreateMonster(arg1: new[] {101});
                 context.DestroyMonster(arg1: new[] {301, 302, 303, 304, 305});
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 2);
                 context.MoveUser(arg1: 52000138, arg2: 0);
             }
 

@@ -125,8 +125,8 @@ namespace Maple2.Trigger._02010055_bf {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 302, arg2: true);
                 context.CreateMonster(arg1: new[] {1002, 1003, 1004}, arg2: false);
                 context.SetSkip(arg1: "NPC이동");
@@ -204,8 +204,8 @@ namespace Maple2.Trigger._02010055_bf {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 302, arg2: false);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_A");
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_A");

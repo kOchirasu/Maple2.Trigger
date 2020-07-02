@@ -584,8 +584,8 @@ namespace Maple2.Trigger._02000534_bf {
             internal State오브젝트설명4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$02000534_BF__MAIN__29$", duration: 3000);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$02000534_BF__MAIN__30$", duration: 3500, delayTick: 3000);
                 context.SetSceneSkip(arg1: "방해4", arg2: "nextState");
@@ -606,8 +606,8 @@ namespace Maple2.Trigger._02000534_bf {
             internal State방해4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.RemoveBalloonTalk(spawnPointId: 0);
             }
 

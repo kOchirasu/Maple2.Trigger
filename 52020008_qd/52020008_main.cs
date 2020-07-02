@@ -29,8 +29,8 @@ namespace Maple2.Trigger._52020008_qd {
                 context.SetSceneSkip(arg1: "StopCinematic", arg2: "exit");
                 context.CreateMonster(arg1: new[] {101, 102}, arg2: false);
                 context.CreateMonster(arg1: new[] {103}, arg2: false, arg3: 30000);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 503, arg2: true);
             }
 
@@ -357,8 +357,8 @@ namespace Maple2.Trigger._52020008_qd {
                 context.SetVisibleBreakableObject(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009}, arg2: false);
                 context.SetBreakable(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009}, arg2: false);
                 context.CameraReset(interpolationTime: 0.1f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetAgent(arg1: new[] {9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024, 9025, 9026, 9027, 9028}, arg2: false);
             }
 

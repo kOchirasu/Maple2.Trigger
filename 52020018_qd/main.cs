@@ -28,9 +28,9 @@ namespace Maple2.Trigger._52020018_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.CreateMonster(arg1: new[] {101, 102, 103, 104, 105, 106}, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
@@ -52,7 +52,7 @@ namespace Maple2.Trigger._52020018_qd {
             internal StateEventScene_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "일부러 그런게 아니야.......");
+                context.SetCinematicUI(arg1: 9, arg2: "일부러 그런게 아니야.......");
                 context.SetSceneSkip(arg1: "EventScene_end", arg2: "nextState");
             }
 
@@ -71,8 +71,8 @@ namespace Maple2.Trigger._52020018_qd {
             internal StateEventScene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11003723, msg: "오호……. 핑계라도 대고 싶으신 겁니까?", duration: 3000, illustId: "Nelf_normal", align: "Center");
             }
 
@@ -228,8 +228,8 @@ namespace Maple2.Trigger._52020018_qd {
             internal StateBattle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.SetEventUI(arg1: 1, arg2: "마리오네트들을 처치하고 이곳을 빠져나가자.", arg3: 2000, arg4: "0");
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_white.xml");

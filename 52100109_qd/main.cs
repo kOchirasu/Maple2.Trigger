@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52100109_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.MoveUser(arg1: 52100109, arg2: 2);
                 context.VisibleMyPc(isVisible: false);
                 context.CreateMonster(arg1: new[] {101});
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._52100109_qd {
             internal State삼자대면_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 5000f);
                 context.AddCinematicTalk(npcId: 11004614, msg: "$52100109_QD__MAIN__0$", align: "left", illustId: "Eone_normal", duration: 5000);
             }
@@ -418,8 +418,8 @@ namespace Maple2.Trigger._52100109_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraReset(interpolationTime: 0.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetAchievement(arg1: 2001, arg3: "Georg");
             }
 

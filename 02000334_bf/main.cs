@@ -51,8 +51,8 @@ namespace Maple2.Trigger._02000334_bf {
             internal StateStart_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetTimer(arg1: "5", arg2: 5, arg4: false);
                 context.SetSkip(arg1: "시작_03");
                 context.SetTimer(arg1: "1", arg2: 1);
@@ -88,10 +88,10 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
+                context.SetCinematicUI(arg1: 4);
             }
         }
 
@@ -118,8 +118,8 @@ namespace Maple2.Trigger._02000334_bf {
             internal State1단계_시작02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 24001205, arg3: "$02000334_BF__MAIN__6$", arg4: 3);
                 context.SetTimer(arg1: "3", arg2: 3);
                 context.SetSkip(arg1: "1단계_시작03");
@@ -134,9 +134,9 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
         }
 
@@ -220,8 +220,8 @@ namespace Maple2.Trigger._02000334_bf {
             internal State2단계_준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__7$", arg4: 3);
@@ -237,9 +237,9 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
         }
 
@@ -301,8 +301,8 @@ namespace Maple2.Trigger._02000334_bf {
             internal State3단계_준비(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__9$", arg4: 3);
@@ -318,9 +318,9 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
         }
 
@@ -379,8 +379,8 @@ namespace Maple2.Trigger._02000334_bf {
             internal State4단계_준비_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__10$", arg4: 3);
@@ -414,9 +414,9 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
         }
 
@@ -504,8 +504,8 @@ namespace Maple2.Trigger._02000334_bf {
             internal State게임오버_이벤트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 190, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
                 context.SetConversation(arg1: 2, arg2: 24001205, arg3: "$02000334_BF__MAIN__13$", arg4: 3);
@@ -521,9 +521,9 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
         }
 
@@ -589,8 +589,8 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 991, 992, 993, 994, 995, 996, 997, 998});
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__16$", arg4: 3);
                 context.SetMesh(arg1: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: false, arg4: 250, arg5: 1f);
                 context.SetSkip(arg1: "Clear_보상");
@@ -606,9 +606,9 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
         }
 
@@ -645,8 +645,8 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 8003, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__18$", arg4: 3);
                 context.SetTimer(arg1: "3", arg2: 3);
             }
@@ -660,9 +660,9 @@ namespace Maple2.Trigger._02000334_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
             }
         }
 

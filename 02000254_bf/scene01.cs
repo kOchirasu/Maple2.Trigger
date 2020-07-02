@@ -25,8 +25,8 @@ namespace Maple2.Trigger._02000254_bf {
             internal StateStartCinematicDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
@@ -251,8 +251,8 @@ namespace Maple2.Trigger._02000254_bf {
             internal StateCamera원위치2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetSceneSkip();
             }
 
@@ -287,8 +287,8 @@ namespace Maple2.Trigger._02000254_bf {
             internal State스킵벨라이동Delay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetTimer(arg1: "1", arg2: 1);
                 context.CameraSelectPath(arg1: new[] {301}, arg2: true);
             }
@@ -375,8 +375,8 @@ namespace Maple2.Trigger._02000254_bf {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetSceneSkip(arg1: "벨라이동2", arg2: "nextState");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetTimer(arg1: "1", arg2: 6);
                 context.SetConversation(arg1: 2, arg2: 11000057, arg3: "$02000254_BF__SCENE01__7$", arg4: 3);
             }
@@ -416,10 +416,10 @@ namespace Maple2.Trigger._02000254_bf {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetTimer(arg1: "1", arg2: 4);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2");
             }
@@ -502,8 +502,8 @@ namespace Maple2.Trigger._02000254_bf {
                 context.CameraSelect(arg1: 301, arg2: false);
                 context.CameraSelect(arg1: 303, arg2: false);
                 context.SetMesh(arg1: new[] {3002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

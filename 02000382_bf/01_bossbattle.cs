@@ -57,8 +57,8 @@ namespace Maple2.Trigger._02000382_bf {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {901}, arg2: false);
                 context.SetUserValue(triggerId: 1122330, key: "AgentOff", value: 1);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 501, arg2: true);
             }
 
@@ -137,8 +137,8 @@ namespace Maple2.Trigger._02000382_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 
@@ -194,8 +194,8 @@ namespace Maple2.Trigger._02000382_bf {
             internal StateBoss02CameraSet(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 511, arg2: true);
             }
 
@@ -274,8 +274,8 @@ namespace Maple2.Trigger._02000382_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 
@@ -315,8 +315,8 @@ namespace Maple2.Trigger._02000382_bf {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {903}, arg2: false);
                 context.SetUserValue(triggerId: 1122330, key: "AgentOff", value: 1);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 521, arg2: true);
             }
 
@@ -395,8 +395,8 @@ namespace Maple2.Trigger._02000382_bf {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 

@@ -65,8 +65,8 @@ namespace Maple2.Trigger._02010069_bf {
             internal State1차어나운스(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.HideGuideSummary(entityId: 20100691);
                 context.SetEffect(arg1: new[] {32000, 34001}, arg2: true);
             }
@@ -202,10 +202,10 @@ namespace Maple2.Trigger._02010069_bf {
             internal State연출2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
-                context.SetProductionUI(arg1: 5);
-                context.SetProductionUI(arg1: 6);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(arg1: 5);
+                context.SetCinematicUI(arg1: 6);
                 context.SetEffect(arg1: new[] {34022, 34023}, arg2: true);
             }
 
@@ -244,8 +244,8 @@ namespace Maple2.Trigger._02010069_bf {
             internal State연출4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetEffect(arg1: new[] {34022, 34023}, arg2: false);
             }
 

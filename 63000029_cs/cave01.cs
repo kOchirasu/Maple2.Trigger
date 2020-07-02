@@ -66,9 +66,9 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateQuestOnGiong11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -108,8 +108,8 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateQuestOnGiong13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -127,9 +127,9 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateQuestOnGiong01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -169,8 +169,8 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateQuestOnGiong03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$63000029_CS__CAVE01__0$", arg4: 3, arg5: 1);
             }
 
@@ -314,9 +314,9 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateEnteranceBlock01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -356,8 +356,8 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "LaozApp05_CSkip", arg2: "nextState");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetEffect(arg1: new[] {5003}, arg2: true);
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetRandomMesh(arg1: new[] {3100, 3101, 3102, 3103, 3104, 3105, 3106, 3107, 3108}, arg2: true, arg3: 9, arg4: 100, arg5: 100);
@@ -379,8 +379,8 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 500, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -436,8 +436,8 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateLaozApp01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {301}, arg2: false);
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_301");
                 context.SetEffect(arg1: new[] {6400}, arg2: true);
@@ -610,8 +610,8 @@ namespace Maple2.Trigger._63000029_cs {
                 context.RemoveCinematicTalk();
                 context.DestroyMonster(arg1: new[] {301});
                 context.CreateMonster(arg1: new[] {302}, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 601, arg2: false);
             }
 
@@ -708,9 +708,9 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateEnteranceBlockExplosion01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.SetSceneSkip(arg1: "LaozNKahnTalk18_CSkip", arg2: "nextState");
             }
 
@@ -751,8 +751,8 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateEnteranceBlockExplosion03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetEffect(arg1: new[] {5400}, arg2: true);
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetSkill(arg1: new[] {7001}, arg2: true);
@@ -1556,9 +1556,9 @@ namespace Maple2.Trigger._63000029_cs {
                 context.CreateMonster(arg1: new[] {103, 203, 303}, arg2: false);
                 context.MoveUser(arg1: 63000029, arg2: 12, arg3: 9900);
                 context.RemoveCinematicTalk();
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -1577,9 +1577,9 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -1626,8 +1626,8 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 631, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -2027,9 +2027,9 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateLaozVersusKahnAttack02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -2069,8 +2069,8 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateLaozVersusKahnCrash01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetEffect(arg1: new[] {5600}, arg2: true);
             }
 
@@ -2452,8 +2452,8 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateTimeToLeave03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 641, arg2: false);
             }
 

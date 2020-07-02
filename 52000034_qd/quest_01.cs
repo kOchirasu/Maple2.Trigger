@@ -60,8 +60,8 @@ namespace Maple2.Trigger._52000034_qd {
             internal State연출01시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.DestroyMonster(arg1: new[] {2001, 2002, 2003});
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003}, arg2: false);
@@ -353,8 +353,8 @@ namespace Maple2.Trigger._52000034_qd {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
                 context.CameraSelect(arg1: 301, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.DestroyMonster(arg1: new[] {1003});
                 context.CreateMonster(arg1: new[] {2003}, arg2: false);
             }

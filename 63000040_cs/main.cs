@@ -68,8 +68,8 @@ namespace Maple2.Trigger._63000040_cs {
             internal StateStart_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2001");
                 context.MoveUserPath(arg1: "MS2PatrolData_2002");
                 context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: false);
@@ -182,8 +182,8 @@ namespace Maple2.Trigger._63000040_cs {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8003}, arg2: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

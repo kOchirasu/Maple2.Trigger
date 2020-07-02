@@ -27,8 +27,8 @@ namespace Maple2.Trigger._02000536_bf {
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: false, arg3: false, arg4: false);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetSceneSkip();
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
             }
@@ -108,8 +108,8 @@ namespace Maple2.Trigger._02000536_bf {
             internal StateBattleStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1f);
                 context.SetEventUI(arg1: 1, arg2: "$02000536_BF__MAIN__4$", arg3: 3000);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);

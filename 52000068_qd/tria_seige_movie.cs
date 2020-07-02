@@ -23,8 +23,8 @@ namespace Maple2.Trigger._52000068_qd {
                 context.SetSceneSkip(arg1: "NPC이동", arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetSkill(arg1: new[] {701}, arg2: true);
                 context.SetActor(arg1: 11010, arg2: true, arg3: "Dead_A");
                 context.SetActor(arg1: 11010, arg2: true, arg3: "Dead_A");
@@ -265,8 +265,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.5f);
                 context.MoveNpc(arg1: 11000, arg2: "MS2PatrolData_GoToJody_ereb");
                 context.MoveNpc(arg1: 11001, arg2: "MS2PatrolData_GoToJody_karl");

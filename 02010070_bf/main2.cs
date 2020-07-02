@@ -204,8 +204,8 @@ namespace Maple2.Trigger._02010070_bf {
             internal StateStart6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 6);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 6);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {
@@ -240,8 +240,8 @@ namespace Maple2.Trigger._02010070_bf {
             internal StateStart8(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: false);
             }
 

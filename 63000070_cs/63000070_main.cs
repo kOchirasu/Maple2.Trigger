@@ -107,8 +107,8 @@ namespace Maple2.Trigger._63000070_cs {
                 context.CreateMonster(arg1: new[] {101, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120}, arg2: false);
                 context.SetInteractObject(arg1: new[] {32000015}, arg2: 2);
                 context.VisibleMyPc(isVisible: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -378,8 +378,8 @@ namespace Maple2.Trigger._63000070_cs {
                 context.CameraReset(interpolationTime: 1.0f);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUser(arg1: 63000070, arg2: 10);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -417,8 +417,8 @@ namespace Maple2.Trigger._63000070_cs {
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "Patrol_PC_fightposition");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -550,8 +550,8 @@ namespace Maple2.Trigger._63000070_cs {
                 context.DestroyMonster(arg1: new[] {101, 105, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 1001, 1011, 1021});
                 context.CreateMonster(arg1: new[] {105}, arg2: true);
                 context.MoveUser(arg1: 63000070, arg2: 11);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -654,8 +654,8 @@ namespace Maple2.Trigger._63000070_cs {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 105, arg2: "Patrol_girl");
                 context.SetEffect(arg1: new[] {604}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -693,8 +693,8 @@ namespace Maple2.Trigger._63000070_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -730,8 +730,8 @@ namespace Maple2.Trigger._63000070_cs {
             internal StateScene3_ready(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetSceneSkip(arg1: "sceneskip_3", arg2: "exit");
             }
 
@@ -865,8 +865,8 @@ namespace Maple2.Trigger._63000070_cs {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {105});
                 context.SetEffect(arg1: new[] {605}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -887,8 +887,8 @@ namespace Maple2.Trigger._63000070_cs {
                 context.CameraReset(interpolationTime: 2.0f);
                 context.SetPortal(arg1: 20, arg2: true, arg3: true, arg4: true);
                 context.SetEffect(arg1: new[] {605}, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

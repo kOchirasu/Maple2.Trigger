@@ -22,8 +22,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {103}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {1601, 1602, 1603, 1604}, arg2: false);
                 context.SetSkip(arg1: "StopCinematic");
             }
@@ -64,8 +64,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnEnter() {
                 context.RemoveBuff(arg1: 103, arg2: 70000107);
                 context.CameraSelect(arg1: 301, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

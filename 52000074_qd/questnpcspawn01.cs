@@ -147,8 +147,8 @@ namespace Maple2.Trigger._52000074_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "TalkEnd01", arg2: "exit");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
             }
 
@@ -275,8 +275,8 @@ namespace Maple2.Trigger._52000074_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.CameraSelect(arg1: 600, arg2: false);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
             }
 
             public override TriggerState Execute() {

@@ -32,8 +32,8 @@ namespace Maple2.Trigger._52000049_qd {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUserPath(arg1: "MS2PatrolData_2001");
                 context.CameraSelectPath(arg1: new[] {8001, 8002, 8003}, arg2: false);
             }
@@ -423,8 +423,8 @@ namespace Maple2.Trigger._52000049_qd {
                     context.SetMesh(arg1: new[] {2100, 2101, 2102, 2103, 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115}, arg2: true, arg3: 0, arg4: 100, arg5: 8f);
                     context.DestroyMonster(arg1: new[] {101});
                     context.CameraSelectPath(arg1: new[] {8013}, arg2: true);
-                    context.SetProductionUI(arg1: 0);
-                    context.SetProductionUI(arg1: 2);
+                    context.SetCinematicUI(arg1: 0);
+                    context.SetCinematicUI(arg1: 2);
                     return new StateStart_21(context);
                 }
 

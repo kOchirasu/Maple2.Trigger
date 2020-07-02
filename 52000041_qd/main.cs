@@ -416,8 +416,8 @@ namespace Maple2.Trigger._52000041_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(arg1: new[] {1000, 2000, 3000}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 2000, arg2: "DownIdle_A", arg3: 2000f);
@@ -1100,8 +1100,8 @@ namespace Maple2.Trigger._52000041_qd {
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "gdreunion");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

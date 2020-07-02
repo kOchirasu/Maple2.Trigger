@@ -53,8 +53,8 @@ namespace Maple2.Trigger._52000043_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 305, arg2: true);
             }
 
@@ -1045,8 +1045,8 @@ namespace Maple2.Trigger._52000043_qd {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.MoveUser(arg1: 02000039, arg2: 10);
-                    context.SetProductionUI(arg1: 0);
-                    context.SetProductionUI(arg1: 2);
+                    context.SetCinematicUI(arg1: 0);
+                    context.SetCinematicUI(arg1: 2);
                     return new StateEnd(context);
                 }
 

@@ -75,8 +75,8 @@ namespace Maple2.Trigger._52000084_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 501, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -192,8 +192,8 @@ namespace Maple2.Trigger._52000084_qd {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1.0f);
             }
 

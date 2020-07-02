@@ -8,7 +8,7 @@ namespace Maple2.Trigger._52010067_qd {
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
                     context.VisibleMyPc(isVisible: false);
-                    context.SetProductionUI(arg1: 1);
+                    context.SetCinematicUI(arg1: 1);
                     context.SetEffect(arg1: new[] {9010}, arg2: false);
                     return new State연출브릿지(context);
                 }

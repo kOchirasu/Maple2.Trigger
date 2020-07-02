@@ -57,8 +57,8 @@ namespace Maple2.Trigger._02000315_bf {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {600, 601}, arg2: false);
                 context.SetSkip(arg1: "CameraWalk01");
             }
@@ -91,8 +91,8 @@ namespace Maple2.Trigger._02000315_bf {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetLadder(arg1: 510, arg2: true, arg3: true);
                 context.SetLadder(arg1: 511, arg2: true, arg3: true);
                 context.SetLadder(arg1: 512, arg2: true, arg3: true);

@@ -42,8 +42,8 @@ namespace Maple2.Trigger._52000119_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {4020}, arg2: false);
                 context.DestroyMonster(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929});
                 context.CreateMonster(arg1: new[] {106, 201, 202, 301, 302, 303, 304, 305, 306}, arg2: true);
@@ -310,9 +310,9 @@ namespace Maple2.Trigger._52000119_qd {
                 context.SetSound(arg1: 7002, arg2: true);
                 context.DestroyMonster(arg1: new[] {106});
                 context.CreateMonster(arg1: new[] {999}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.SetPcEmotionLoop(arg1: "Attack_Idle_A", arg2: 100f);
             }
 
@@ -332,8 +332,8 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.5f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -376,8 +376,8 @@ namespace Maple2.Trigger._52000119_qd {
                 context.AddBalloonTalk(spawnPointId: 306, msg: "$52000119_QD__MAIN3__20$", duration: 2000, delayTick: 1);
                 context.DestroyMonster(arg1: new[] {201, 202, 401, 402, 403, 404, 405, 406, 407});
                 context.SetAchievement(arg2: "trigger", arg3: "jordysave3");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -396,8 +396,8 @@ namespace Maple2.Trigger._52000119_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.5f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

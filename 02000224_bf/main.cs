@@ -126,8 +126,8 @@ namespace Maple2.Trigger._02000224_bf {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "아르마노말썽_스킵완료", arg2: "exit");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -753,8 +753,8 @@ namespace Maple2.Trigger._02000224_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101, 103});
                 context.CreateMonster(arg1: new[] {104}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -775,8 +775,8 @@ namespace Maple2.Trigger._02000224_bf {
                 context.CameraReset(interpolationTime: 3.0f);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "foolishson");
                 context.MoveUser(arg1: 02000054, arg2: 10);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

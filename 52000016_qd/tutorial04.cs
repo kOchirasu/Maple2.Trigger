@@ -29,8 +29,8 @@ namespace Maple2.Trigger._52000016_qd {
             internal StateDelay01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetRandomMesh(arg1: new[] {4000, 4001, 4002, 4003, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4013, 4014, 4015}, arg2: true, arg3: 16, arg4: 50, arg5: 80);
             }
 
@@ -149,8 +149,8 @@ namespace Maple2.Trigger._52000016_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 601, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -362,8 +362,8 @@ namespace Maple2.Trigger._52000016_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "13", arg2: 3);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 602, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001249, arg3: "$52000016_QD__TUTORIAL04__7$", arg4: 3);
                 context.SetEffect(arg1: new[] {6104}, arg2: true);
@@ -763,7 +763,7 @@ namespace Maple2.Trigger._52000016_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "30", arg2: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
                 context.CameraSelect(arg1: 606, arg2: false);
                 context.CameraSelect(arg1: 602, arg2: false);
                 context.CameraSelect(arg1: 603, arg2: false);
@@ -791,7 +791,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.RemoveCinematicTalk();
                 context.SetTimer(arg1: "30", arg2: 1);
                 context.CreateMonster(arg1: new[] {102}, arg2: true);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
                 context.CameraSelect(arg1: 606, arg2: false);
                 context.CameraSelect(arg1: 602, arg2: false);
                 context.CameraSelect(arg1: 603, arg2: false);
@@ -816,9 +816,9 @@ namespace Maple2.Trigger._52000016_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "31", arg2: 1);
-                context.SetProductionUI(arg1: 4);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 605, arg2: true);
                 context.SetInteractObject(arg1: new[] {10000825}, arg2: 1);
                 context.SetEffect(arg1: new[] {7030}, arg2: true);
@@ -863,8 +863,8 @@ namespace Maple2.Trigger._52000016_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 605, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.DestroyMonster(arg1: new[] {301, 210, 211, 212, 213, 214, 215, 216, 217, 310, 311, 312, 313});
                 context.CreateMonster(arg1: new[] {220, 221, 222, 223, 224, 225, 226, 227}, arg2: true);
                 context.SetEffect(arg1: new[] {7030}, arg2: false);
@@ -968,8 +968,8 @@ namespace Maple2.Trigger._52000016_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "42", arg2: 1);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 604, arg2: true);
                 context.SetSceneSkip(arg1: "마무리연출08", arg2: "nextState");
                 context.CreateMonster(arg1: new[] {401}, arg2: true);
@@ -1247,8 +1247,8 @@ namespace Maple2.Trigger._52000016_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "50", arg2: 1);
                 context.CameraSelect(arg1: 604, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

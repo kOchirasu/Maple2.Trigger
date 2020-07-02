@@ -65,8 +65,8 @@ namespace Maple2.Trigger._02000401_bf {
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "종료체크");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetInteractObject(arg1: new[] {12000023, 12000024, 12000025, 12000026}, arg2: 1);
             }
 
@@ -107,8 +107,8 @@ namespace Maple2.Trigger._02000401_bf {
                 context.ShowGuideSummary(entityId: 20040102, textId: 20040102, duration: 3000);
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
             }
 

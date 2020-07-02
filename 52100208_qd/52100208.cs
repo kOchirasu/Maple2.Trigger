@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52100208_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.MoveUser(arg1: 52100208, arg2: 5001);
                 context.SetEffect(arg1: new[] {6001, 6002, 6003}, arg2: false);
                 context.DestroyMonster(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209});
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._52100208_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11004678, illustId: "Neirin_surprise", align: "left", msg: "$52100208_QD__52100208__0$", duration: 4000);
                 context.AddCinematicTalk(npcId: 11004675, illustId: "Bliche_mad", align: "right", msg: "$52100208_QD__52100208__1$", duration: 4500);
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");

@@ -129,9 +129,9 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3000, 3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetSkill(arg1: new[] {701}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004}, arg2: true);
                 context.SetAgent(arg1: new[] {8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019}, arg2: false);
@@ -173,8 +173,8 @@ namespace Maple2.Trigger._52000068_qd {
             internal StateCamera이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
             }
 
@@ -342,7 +342,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
                 context.CameraReset(interpolationTime: 0.5f);
             }
 
@@ -363,8 +363,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {199}, arg2: 70000109, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 304, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetAgent(arg1: new[] {8000, 8001, 8002, 8003, 8004}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52000068_QD__TRIA_SEIGE__4$", arg4: 4, arg5: 0);
             }
@@ -388,8 +388,8 @@ namespace Maple2.Trigger._52000068_qd {
             internal State임무01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetInteractObject(arg1: new[] {10001074, 10001075, 10001076}, arg2: 1);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 305, arg2: true);
@@ -414,8 +414,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.RemoveCinematicTalk();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
                 context.CameraSelect(arg1: 305, arg2: false);
             }
@@ -454,8 +454,8 @@ namespace Maple2.Trigger._52000068_qd {
             internal State임무02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetAgent(arg1: new[] {8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018, 8019}, arg2: true);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 306, arg2: true);
@@ -525,8 +525,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.RemoveCinematicTalk();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
                 context.CameraSelect(arg1: 307, arg2: false);
                 context.SetEffect(arg1: new[] {602}, arg2: false);
@@ -551,8 +551,8 @@ namespace Maple2.Trigger._52000068_qd {
             internal State임무02종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 309, arg2: true);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.DestroyMonster(arg1: new[] {2001});
@@ -694,8 +694,8 @@ namespace Maple2.Trigger._52000068_qd {
                 context.DestroyMonster(arg1: new[] {2101, 2102, 2103, 2104});
                 context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.SetEffect(arg1: new[] {603}, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.RemoveBuff(arg1: 199, arg2: 70000107);
                 context.CameraSelect(arg1: 308, arg2: false);
             }

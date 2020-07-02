@@ -97,8 +97,8 @@ namespace Maple2.Trigger._52020016_qd {
             internal State대화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
                 context.SetConversation(arg1: 2, arg2: 4000201, arg3: "제법이군요! 그렇다면 이건 어떤가요?", arg4: 5);
             }
 
@@ -168,8 +168,8 @@ namespace Maple2.Trigger._52020016_qd {
             internal State마지막전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
                 context.DestroyMonster(arg1: new[] {4000401});
                 context.SetEffect(arg1: new[] {70001, 70002, 70003, 70004, 70005, 70006, 70007, 70008, 70009, 70010, 70011, 70012, 70013, 70014, 70015, 70016, 70017, 70018, 70019, 70020, 70021, 70022, 70023, 70024}, arg2: true);
             }
@@ -273,8 +273,8 @@ namespace Maple2.Trigger._52020016_qd {
             internal State긴급대화_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
                 context.SetPcEmotionSequence(arg1: "Emotion_Disappoint_A,Emotion_Disappoint_Idle_A");
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "이젠...더이상은...힘들어....", arg4: 3, arg5: 0);
             }
@@ -294,8 +294,8 @@ namespace Maple2.Trigger._52020016_qd {
             internal State긴급대화_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -337,8 +337,8 @@ namespace Maple2.Trigger._52020016_qd {
             internal State마지막_Cinematic_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelectPath(arg1: new[] {2000005}, arg2: false);
             }
 
@@ -357,8 +357,8 @@ namespace Maple2.Trigger._52020016_qd {
             internal State마지막_Cinematic_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
                 context.CreateMonster(arg1: new[] {320001}, arg2: false);
                 context.MoveNpc(arg1: 320001, arg2: "MS2PatrolData0_320001_1");
             }
@@ -401,8 +401,8 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {2000006}, arg2: false);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {
@@ -450,7 +450,7 @@ namespace Maple2.Trigger._52020016_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
             }
         }
 

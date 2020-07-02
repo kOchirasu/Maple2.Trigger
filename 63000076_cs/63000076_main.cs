@@ -34,8 +34,8 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -274,8 +274,8 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -294,8 +294,8 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -534,7 +534,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State보BossSpawn_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$63000076_CS__63000076_MAIN__14$");
+                context.SetCinematicUI(arg1: 9, arg2: "$63000076_CS__63000076_MAIN__14$");
             }
 
             public override TriggerState Execute() {
@@ -546,7 +546,7 @@ namespace Maple2.Trigger._63000076_cs {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 
@@ -554,8 +554,8 @@ namespace Maple2.Trigger._63000076_cs {
             internal State사라진케이크_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -612,7 +612,7 @@ namespace Maple2.Trigger._63000076_cs {
             internal State사라진케이크_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$63000076_CS__63000076_MAIN__17$");
+                context.SetCinematicUI(arg1: 9, arg2: "$63000076_CS__63000076_MAIN__17$");
             }
 
             public override TriggerState Execute() {
@@ -624,7 +624,7 @@ namespace Maple2.Trigger._63000076_cs {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 
@@ -633,8 +633,8 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8004}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -1036,8 +1036,8 @@ namespace Maple2.Trigger._63000076_cs {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

@@ -24,8 +24,8 @@ namespace Maple2.Trigger._52000096_qd {
             internal State몹소환01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004}, arg2: false);
             }
@@ -173,8 +173,8 @@ namespace Maple2.Trigger._52000096_qd {
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_01");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.DestroyMonster(arg1: new[] {-1});
             }
 

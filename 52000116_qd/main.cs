@@ -30,8 +30,8 @@ namespace Maple2.Trigger._52000116_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11003163, illustId: "Nelf_normal", msg: "$52000116_QD__MAIN__0$", duration: 4000, align: "Right");
                 context.SetSceneSkip(arg1: "fadeout", arg2: "nextState");
             }
@@ -148,7 +148,7 @@ namespace Maple2.Trigger._52000116_qd {
             internal StateSave(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Sit_Down_A", arg3: 400000f);
                 context.DestroyMonster(arg1: new[] {103});
             }
@@ -186,8 +186,8 @@ namespace Maple2.Trigger._52000116_qd {
             internal StateBattle(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionLoop(arg1: 104, arg2: "Attack_Idle_A", arg3: 10000f);
                 context.CameraReset(interpolationTime: 0.5f);
                 context.MoveUserPath(arg1: "MS2PatrolData_3003");
@@ -286,9 +286,9 @@ namespace Maple2.Trigger._52000116_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {102, 103, 104});
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.CreateMonster(arg1: new[] {105}, arg2: true);
             }
 
@@ -325,8 +325,8 @@ namespace Maple2.Trigger._52000116_qd {
             internal StateThank(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionSequence(arg1: 105, arg2: "Talk_A");
                 context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
                 context.AddCinematicTalk(npcId: 11003164, msg: "$52000116_QD__MAIN__7$", duration: 2000);
@@ -369,8 +369,8 @@ namespace Maple2.Trigger._52000116_qd {
             public override void OnEnter() {
                 context.SetAchievement(arg1: 2001, arg2: "trigger", arg3: "jordy");
                 context.CameraReset(interpolationTime: 0.5f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

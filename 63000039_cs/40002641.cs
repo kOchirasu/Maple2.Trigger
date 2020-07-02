@@ -68,8 +68,8 @@ namespace Maple2.Trigger._63000039_cs {
             internal StateNPC를이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_1001");
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002");
@@ -132,8 +132,8 @@ namespace Maple2.Trigger._63000039_cs {
             internal State유저이동조건(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

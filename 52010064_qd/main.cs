@@ -57,8 +57,8 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetSceneSkip(arg1: "quit01", arg2: "nextState");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "flyingtristan");
             }
 
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._52010064_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
-                context.SetProductionUI(arg1: 0);
+                context.SetCinematicUI(arg1: 0);
                 context.SetSceneSkip();
             }
 
@@ -228,8 +228,8 @@ namespace Maple2.Trigger._52010064_qd {
             internal StateQuit01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
             }
 

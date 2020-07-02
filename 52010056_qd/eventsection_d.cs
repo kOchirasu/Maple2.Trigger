@@ -32,9 +32,9 @@ namespace Maple2.Trigger._52010056_qd {
             internal StateSetupCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.CameraSelectPath(arg1: new[] {4006}, arg2: false);
             }
 
@@ -53,8 +53,8 @@ namespace Maple2.Trigger._52010056_qd {
             internal State경비병_외침(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionSequence(arg1: 999, arg2: "Attack_01_B");
                 context.AddCinematicTalk(npcId: 11003816, msg: "$52010056_QD__EventSection_D__0$", duration: 3727);
             }
@@ -95,8 +95,8 @@ namespace Maple2.Trigger._52010056_qd {
             internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 1.0f);
                 context.RemoveBuff(arg1: 2001, arg2: 70000107);
             }

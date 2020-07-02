@@ -39,8 +39,8 @@ namespace Maple2.Trigger._52020035_qd {
             internal StateStartCinematic_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.VisibleMyPc(isVisible: false);
                 context.CreateMonster(arg1: new[] {101}, arg2: false, arg3: 0);
                 context.CreateMonster(arg1: new[] {102}, arg2: false, arg3: 0);
@@ -238,7 +238,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State화면암전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -276,7 +276,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회Appear직전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "잠시 후, 라딘의 막사", arg3: false);
+                context.SetCinematicUI(arg1: 9, arg2: "잠시 후, 라딘의 막사", arg3: false);
             }
 
             public override TriggerState Execute() {
@@ -294,8 +294,8 @@ namespace Maple2.Trigger._52020035_qd {
             internal State흑성회입장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {116}, arg2: false, arg3: 0);
                 context.CreateMonster(arg1: new[] {109}, arg2: false, arg3: 0);
                 context.CreateMonster(arg1: new[] {104}, arg2: false, arg3: 0);
@@ -819,7 +819,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal StateSkip01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "MeetRadin");
                 context.DestroyMonster(arg1: new[] {103, 104, 109, 122, 123, 116});
             }
@@ -839,7 +839,7 @@ namespace Maple2.Trigger._52020035_qd {
             internal State마을로이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
                 context.CameraReset(interpolationTime: 0f);
                 context.VisibleMyPc(isVisible: true);
                 context.MoveUser(arg1: 02020014, arg2: 4);

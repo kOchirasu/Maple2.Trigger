@@ -34,9 +34,9 @@ namespace Maple2.Trigger._52000021_qd {
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.CreateMonster(arg1: new[] {101, 201, 301}, arg2: true);
                 context.SetEffect(arg1: new[] {6200, 6300, 6201, 6301}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {
@@ -48,8 +48,8 @@ namespace Maple2.Trigger._52000021_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 
@@ -58,8 +58,8 @@ namespace Maple2.Trigger._52000021_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 1);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -136,8 +136,8 @@ namespace Maple2.Trigger._52000021_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 602, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -161,8 +161,8 @@ namespace Maple2.Trigger._52000021_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "10", arg2: 1);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 603, arg2: true);
             }
 
@@ -201,8 +201,8 @@ namespace Maple2.Trigger._52000021_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "12", arg2: 2);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 603, arg2: false);
             }
 
@@ -379,8 +379,8 @@ namespace Maple2.Trigger._52000021_qd {
                 context.SetEffect(arg1: new[] {6000, 6400, 6401}, arg2: false);
                 context.SetEffect(arg1: new[] {6202}, arg2: true);
                 context.SetMesh(arg1: new[] {4000, 4001, 4002, 4003}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 610, arg2: true);
             }
 
@@ -481,7 +481,7 @@ namespace Maple2.Trigger._52000021_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "34", arg2: 2);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
                 context.DestroyMonster(arg1: new[] {201, 101, 301});
                 context.CreateMonster(arg1: new[] {111, 311}, arg2: true);
                 context.MoveNpc(arg1: 311, arg2: "MS2PatrolData_311");
@@ -496,7 +496,7 @@ namespace Maple2.Trigger._52000021_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
             }
         }
 
@@ -504,8 +504,8 @@ namespace Maple2.Trigger._52000021_qd {
             internal StateEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 611, arg2: false);
                 context.SetAchievement(arg1: 9900, arg2: "trigger", arg3: "EscapeHallstatt");
                 context.SetMesh(arg1: new[] {5000, 5001, 5002}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);

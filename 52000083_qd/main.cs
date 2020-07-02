@@ -151,8 +151,8 @@ namespace Maple2.Trigger._52000083_qd {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1001, 1011, 1021, 1022, 1023, 1024}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -170,8 +170,8 @@ namespace Maple2.Trigger._52000083_qd {
             internal StateMonster처치(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -189,8 +189,8 @@ namespace Maple2.Trigger._52000083_qd {
             internal State경로이동01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_01");
                 context.MoveNpc(arg1: 1011, arg2: "MS2PatrolData_blader_01");
             }
@@ -707,8 +707,8 @@ namespace Maple2.Trigger._52000083_qd {
             internal StateStopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.DestroyMonster(arg1: new[] {1012, 1001});
                 context.CreateMonster(arg1: new[] {1002}, arg2: false);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "meetarcaneblader2nd");

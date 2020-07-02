@@ -22,8 +22,8 @@ namespace Maple2.Trigger._63000003_cs {
             internal State말풍선01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 1, arg2: 1001, arg3: "$63000003_CS__50001475__0$", arg4: 4, arg5: 0);
             }
 

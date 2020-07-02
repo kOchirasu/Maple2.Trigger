@@ -140,8 +140,8 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.SetMesh(arg1: new[] {4001, 4002}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -160,8 +160,8 @@ namespace Maple2.Trigger._02000026_in {
             internal State아노스만남StartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
             }
 
@@ -618,8 +618,8 @@ namespace Maple2.Trigger._02000026_in {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.DestroyMonster(arg1: new[] {101, 102});
                 context.CreateMonster(arg1: new[] {102});
             }
@@ -641,8 +641,8 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "MeetAnos");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

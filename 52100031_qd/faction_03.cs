@@ -24,8 +24,8 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "Quest");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.DestroyMonster(arg1: new[] {2903});
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.ShowGuideSummary(entityId: 20040103, textId: 20040103, duration: 3500);
@@ -51,8 +51,8 @@ namespace Maple2.Trigger._52100031_qd {
             internal StateQuest(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
                 context.SetSkip();
             }

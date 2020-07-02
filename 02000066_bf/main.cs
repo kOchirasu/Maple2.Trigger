@@ -70,8 +70,8 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 300, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetSkip(arg1: "1차어나운스03");
             }
 
@@ -131,8 +131,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnEnter() {
                 context.SetSkip();
                 context.CameraSelect(arg1: 300, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetEventUI(arg1: 0, arg2: "1,3");
                 context.ShowCountUI(text: "$02000066_BF__MAIN__6$", stage: 1, count: 5);
             }
@@ -463,8 +463,8 @@ namespace Maple2.Trigger._02000066_bf {
             internal State3차승리연출Random(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -588,8 +588,8 @@ namespace Maple2.Trigger._02000066_bf {
             internal State3차승리StopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -651,8 +651,8 @@ namespace Maple2.Trigger._02000066_bf {
             internal State실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -827,8 +827,8 @@ namespace Maple2.Trigger._02000066_bf {
             internal State실패StopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 

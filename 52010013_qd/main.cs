@@ -23,8 +23,8 @@ namespace Maple2.Trigger._52010013_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 8001, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {104});
                 context.SetTimer(arg1: "3", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11001217, arg3: "$52010013_QD__MAIN__0$", arg4: 3);
@@ -335,9 +335,9 @@ namespace Maple2.Trigger._52010013_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 7);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 7);
                 context.CameraSelect(arg1: 8001, arg2: false);
                 context.CameraSelect(arg1: 8002, arg2: false);
             }

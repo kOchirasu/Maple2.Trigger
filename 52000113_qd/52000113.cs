@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52000113_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SpawnNpcRange(rangeId: new[] {202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221}, isAutoTargeting: false);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.MoveNpc(arg1: 203, arg2: "MS2PatrolData_203");
                 context.MoveNpc(arg1: 204, arg2: "MS2PatrolData_204");
                 context.MoveNpc(arg1: 215, arg2: "MS2PatrolData_215");
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._52000113_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {1006, 1007}, arg2: false);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11003338, illustId: "0", msg: "$52000113_QD__52000113__0$", duration: 4000, align: "right");
             }
 

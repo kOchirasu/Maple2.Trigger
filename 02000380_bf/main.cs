@@ -49,8 +49,8 @@ namespace Maple2.Trigger._02000380_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {8001, 8002, 8003}, arg2: true);
                 context.CreateMonster(arg1: new[] {101});
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000380_BF__MAIN__0$", arg4: 3, arg5: 0);
@@ -91,8 +91,8 @@ namespace Maple2.Trigger._02000380_bf {
             internal StateStart_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

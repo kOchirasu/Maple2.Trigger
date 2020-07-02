@@ -21,8 +21,8 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -41,7 +41,7 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
-                context.SetProductionUI(arg1: 3, arg2: "$52000006_QD__TUTORIAL_06_1__0$");
+                context.SetCinematicUI(arg1: 3, arg2: "$52000006_QD__TUTORIAL_06_1__0$");
             }
 
             public override TriggerState Execute() {
@@ -62,7 +62,7 @@ namespace Maple2.Trigger._52000006_qd {
                 context.SetTimer(arg1: "1", arg2: 2);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(arg1: new[] {201}, arg2: false);
-                context.SetProductionUI(arg1: 3, arg2: "$52000006_QD__TUTORIAL_06_1__1$");
+                context.SetCinematicUI(arg1: 3, arg2: "$52000006_QD__TUTORIAL_06_1__1$");
             }
 
             public override TriggerState Execute() {
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52000006_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 4);
                 context.MoveNpc(arg1: 201, arg2: "PatrolData_Sheep_01");
-                context.SetProductionUI(arg1: 3, arg2: "$52000006_QD__TUTORIAL_06_1__2$");
+                context.SetCinematicUI(arg1: 3, arg2: "$52000006_QD__TUTORIAL_06_1__2$");
             }
 
             public override TriggerState Execute() {
@@ -102,8 +102,8 @@ namespace Maple2.Trigger._52000006_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {201});
                 context.CameraSelect(arg1: 302, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

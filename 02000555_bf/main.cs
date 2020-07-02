@@ -676,8 +676,8 @@ namespace Maple2.Trigger._02000555_bf {
             internal State문파괴안내(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__43$", arg3: 7000);
                 context.LockMyPc(isLock: false);
                 context.CreateMonster(arg1: new[] {611}, arg2: true);
@@ -698,8 +698,8 @@ namespace Maple2.Trigger._02000555_bf {
             internal State이동하자(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.LockMyPc(isLock: false);
                 context.SideNpcTalk(npcId: 23300001, illust: "Haren_smile", duration: 4000, script: "$02000535_BF__MAIN__44$");
                 context.SetMesh(arg1: new[] {4014, 4015}, arg2: false);

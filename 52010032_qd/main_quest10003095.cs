@@ -22,9 +22,9 @@ namespace Maple2.Trigger._52010032_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
                 context.MoveUser(arg1: 52010032, arg2: 7001);
@@ -50,8 +50,8 @@ namespace Maple2.Trigger._52010032_qd {
             internal State치유의식_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.AddCinematicTalk(npcId: 11003389, msg: "$52010032_QD__MAIN_QUEST10003095__0$", duration: 4000);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$52010032_QD__MAIN_QUEST10003095__1$", duration: 2000, delayTick: 2000);
@@ -137,8 +137,8 @@ namespace Maple2.Trigger._52010032_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetEffect(arg1: new[] {5001}, arg2: false);
                 context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Down_Idle_A", arg3: 100000000f);
                 context.AddCinematicTalk(npcId: 11003406, msg: "$52010032_QD__MAIN_QUEST10003095__5$", duration: 4000);
                 context.AddCinematicTalk(npcId: 11003389, msg: "$52010032_QD__MAIN_QUEST10003095__6$", duration: 3000);
@@ -247,7 +247,7 @@ namespace Maple2.Trigger._52010032_qd {
             internal StateSkip_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
                 context.SetAchievement(arg1: 2001, arg2: "trigger", arg3: "Namid2");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -272,8 +272,8 @@ namespace Maple2.Trigger._52010032_qd {
                 context.CameraReset(interpolationTime: 0f);
                 context.CreateMonster(arg1: new[] {202}, arg2: true);
                 context.DestroyMonster(arg1: new[] {201});
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.DestroyMonster(arg1: new[] {101});
             }
 

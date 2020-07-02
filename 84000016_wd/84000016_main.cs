@@ -63,7 +63,7 @@ namespace Maple2.Trigger._84000016_wd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.WeddingMoveUser(entryType: "Guest", arg1: 84000016, arg2: new byte[] {22, 23}, arg3: 701);
                 context.WeddingMoveUser(entryType: "Guest", arg1: 84000016, arg2: new byte[] {22, 23}, arg3: 703);
                 context.WeddingMoveUser(entryType: "Groom", arg1: 84000016, arg2: new byte[] {11}, arg3: 702);
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._84000016_wd {
             internal State주례줌인02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11004711, msg: "$84000016_WD__84000016_MAIN__0$", duration: 3500);
             }
 
@@ -161,8 +161,8 @@ namespace Maple2.Trigger._84000016_wd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8007}, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -182,7 +182,7 @@ namespace Maple2.Trigger._84000016_wd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(arg1: new[] {8009}, arg2: false);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {
@@ -273,7 +273,7 @@ namespace Maple2.Trigger._84000016_wd {
             internal State주례사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
                 context.WeddingSetUserRotation(entryType: "Groom", rotation: new Vector3(0f, 0f, 0f), immediate: true);
                 context.WeddingSetUserRotation(entryType: "Bride", rotation: new Vector3(0f, 0f, 0f), immediate: true);
                 context.AddCinematicTalk(npcId: 11004711, msg: "$84000016_WD__84000016_MAIN__1$", duration: 4000);
@@ -400,8 +400,8 @@ namespace Maple2.Trigger._84000016_wd {
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 4002, key: "Weddingceremonyfail", value: 1);
                 context.SetUserValue(triggerId: 4000, key: "Weddingceremonyfail", value: 1);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
             }
 
@@ -459,8 +459,8 @@ namespace Maple2.Trigger._84000016_wd {
             internal State뒷풀이01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
             }
 

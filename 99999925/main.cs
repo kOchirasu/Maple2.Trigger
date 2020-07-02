@@ -47,8 +47,8 @@ namespace Maple2.Trigger._99999925 {
             internal StateDialogue01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 1, arg3: "$99999925__MAIN__0$", arg4: 3);
                 context.SetAiExtraData(key: "BuffStart", value: 1, isModify: true);
                 context.SetSkip(arg1: "Dialogue01Skip");
@@ -82,8 +82,8 @@ namespace Maple2.Trigger._99999925 {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 

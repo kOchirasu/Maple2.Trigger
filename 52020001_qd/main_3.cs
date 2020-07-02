@@ -139,8 +139,8 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {6100003});
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
                 context.VisibleMyPc(isVisible: false);
             }
 
@@ -215,8 +215,8 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {2000008}, arg2: false);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
                 context.DestroyMonster(arg1: new[] {6000018, 6000019});
             }
 

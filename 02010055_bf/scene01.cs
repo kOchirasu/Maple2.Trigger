@@ -22,8 +22,8 @@ namespace Maple2.Trigger._02010055_bf {
             internal State바르칸트대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetEffect(arg1: new[] {699}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 23000068, arg3: "$02010055_BF__SCENE01__0$", arg4: 4);
@@ -97,8 +97,8 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

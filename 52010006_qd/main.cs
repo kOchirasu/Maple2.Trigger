@@ -41,8 +41,8 @@ namespace Maple2.Trigger._52010006_qd {
             internal State미카대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010006_QD__MAIN__0$", arg4: 4);
                 context.SetSceneSkip(arg1: "미카대사02_0");
             }
@@ -112,8 +112,8 @@ namespace Maple2.Trigger._52010006_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_1001_A");
                 context.CreateMonster(arg1: new[] {2001}, arg2: false);
             }
@@ -190,8 +190,8 @@ namespace Maple2.Trigger._52010006_qd {
             internal State카보대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001319, arg3: "$52010006_QD__MAIN__1$", arg4: 5);
                 context.SetSceneSkip(arg1: "카보대사02_0");
             }
@@ -239,8 +239,8 @@ namespace Maple2.Trigger._52010006_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 
@@ -282,8 +282,8 @@ namespace Maple2.Trigger._52010006_qd {
             internal State스타츠대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003_A");
                 context.MoveNpc(arg1: 1004, arg2: "MS2PatrolData_1004_A");
                 context.MoveNpc(arg1: 1005, arg2: "MS2PatrolData_1005_A");
@@ -403,8 +403,8 @@ namespace Maple2.Trigger._52010006_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 
@@ -449,8 +449,8 @@ namespace Maple2.Trigger._52010006_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {2002});
                 context.CreateMonster(arg1: new[] {1006}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001319, arg3: "$52010006_QD__MAIN__5$", arg4: 5);
                 context.SetSceneSkip(arg1: "카보대사05_0");
             }
@@ -522,8 +522,8 @@ namespace Maple2.Trigger._52010006_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003_B");
                 context.MoveNpc(arg1: 1004, arg2: "MS2PatrolData_1004_B");
                 context.MoveNpc(arg1: 1005, arg2: "MS2PatrolData_1005_B");
@@ -548,8 +548,8 @@ namespace Maple2.Trigger._52010006_qd {
             internal State스타츠대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010006_QD__MAIN__7$", arg4: 5);
                 context.SetSceneSkip(arg1: "스타츠대사03_0");
             }
@@ -624,8 +624,8 @@ namespace Maple2.Trigger._52010006_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    context.SetProductionUI(arg1: 0);
-                    context.SetProductionUI(arg1: 2);
+                    context.SetCinematicUI(arg1: 0);
+                    context.SetCinematicUI(arg1: 2);
                     return new StateAchievement(context);
                 }
 

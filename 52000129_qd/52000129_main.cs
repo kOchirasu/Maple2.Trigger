@@ -35,7 +35,7 @@ namespace Maple2.Trigger._52000129_qd {
             internal StateWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {
@@ -107,8 +107,8 @@ namespace Maple2.Trigger._52000129_qd {
             internal State계단타고이동_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.ShowGuideSummary(entityId: 25201291, textId: 25201291);
                 context.SetEffect(arg1: new[] {5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011}, arg2: true);
             }
@@ -194,7 +194,7 @@ namespace Maple2.Trigger._52000129_qd {
                 context.HideGuideSummary(entityId: 25201292);
                 context.HideGuideSummary(entityId: 25201293);
                 context.HideGuideSummary(entityId: 25201294);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {

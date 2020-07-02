@@ -27,8 +27,8 @@ namespace Maple2.Trigger._51000004_dg {
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "셋둘하나_스킵완료", arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Walk_A", arg3: 5000f);
             }
 
@@ -48,8 +48,8 @@ namespace Maple2.Trigger._51000004_dg {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$51000004_DG__51000004_MAIN__0$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$51000004_DG__51000004_MAIN__0$");
             }
 
             public override TriggerState Execute() {
@@ -68,8 +68,8 @@ namespace Maple2.Trigger._51000004_dg {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$51000004_DG__51000004_MAIN__1$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$51000004_DG__51000004_MAIN__1$");
             }
 
             public override TriggerState Execute() {
@@ -87,8 +87,8 @@ namespace Maple2.Trigger._51000004_dg {
             internal State인트로02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$51000004_DG__51000004_MAIN__2$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$51000004_DG__51000004_MAIN__2$");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Attack_01_I_Bore", arg3: 3000f);
             }
 
@@ -109,8 +109,8 @@ namespace Maple2.Trigger._51000004_dg {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.CameraSelectPath(arg1: new[] {8003, 8004}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$51000004_DG__51000004_MAIN__3$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$51000004_DG__51000004_MAIN__3$");
             }
 
             public override TriggerState Execute() {
@@ -122,8 +122,8 @@ namespace Maple2.Trigger._51000004_dg {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 
@@ -132,8 +132,8 @@ namespace Maple2.Trigger._51000004_dg {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1.5f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -398,8 +398,8 @@ namespace Maple2.Trigger._51000004_dg {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 8010, arg2: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.PlaySystemSoundInBox(arg2: "System_PinkBeans_Arcade_Result_01");
             }
 

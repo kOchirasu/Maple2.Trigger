@@ -263,8 +263,8 @@ namespace Maple2.Trigger._02000290_bf {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 801, arg2: true);
                 context.SetTimer(arg1: "3", arg2: 3);
                 context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504}, arg2: false, arg3: 0, arg4: 300, arg5: 3f);
@@ -287,8 +287,8 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {801}, arg2: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

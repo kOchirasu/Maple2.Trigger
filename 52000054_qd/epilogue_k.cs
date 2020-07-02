@@ -43,8 +43,8 @@ namespace Maple2.Trigger._52000054_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 9, arg2: "$52000054_QD__EPILOGUE_K__0$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 9, arg2: "$52000054_QD__EPILOGUE_K__0$");
             }
 
             public override TriggerState Execute() {
@@ -78,8 +78,8 @@ namespace Maple2.Trigger._52000054_qd {
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "Quit", arg2: "exit");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {1000}, arg2: false);
             }
 
@@ -137,8 +137,8 @@ namespace Maple2.Trigger._52000054_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 11100105, enable: true, path: @"BG/Common/Sound/Eff_AMB_BlackMoon_Abyss_01.xml");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {200}, arg2: false);
                 context.SetOnetimeEffect(id: 1883, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001883.xml");
                 context.SetConversation(arg1: 2, arg2: 11001958, arg3: "$52000054_QD__EPILOGUE_K__1$", arg4: 7);
@@ -1217,8 +1217,8 @@ namespace Maple2.Trigger._52000054_qd {
             internal StateQuit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.MoveUser(arg1: 02000025, arg2: 2);
             }
 

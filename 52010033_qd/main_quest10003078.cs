@@ -20,9 +20,9 @@ namespace Maple2.Trigger._52010033_qd {
             internal StateUserDetection(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.VisibleMyPc(isVisible: false);
                 context.MoveUser(arg1: 52010033, arg2: 6001);
             }
@@ -43,8 +43,8 @@ namespace Maple2.Trigger._52010033_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "나메드들어옴02", arg2: "exit");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
                 context.AddCinematicTalk(npcId: 11003420, msg: "$52010033_QD__MAIN_QUEST10003078__0$", duration: 4000);
                 context.AddCinematicTalk(npcId: 11003389, msg: "$52010033_QD__MAIN_QUEST10003078__1$", duration: 3000);
@@ -66,8 +66,8 @@ namespace Maple2.Trigger._52010033_qd {
             internal State나메드들어옴(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {201}, arg2: true);
                 context.CameraSelectPath(arg1: new[] {4002, 4001}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");

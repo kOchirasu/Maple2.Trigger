@@ -146,9 +146,9 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePCMove01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.CameraSelect(arg1: 600, arg2: true);
             }
 
@@ -186,8 +186,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StatePatrol01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 601, arg2: true);
             }
 
@@ -263,8 +263,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateComeAcrossSB01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 700, arg2: true);
             }
 
@@ -427,8 +427,8 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 701, arg2: false);
             }
 
@@ -504,8 +504,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateTalkJabethNBravo01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__8$", arg4: 5);
                 context.SetSkip(arg1: "TalkJabethNBravo02");
             }
@@ -561,8 +561,8 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -631,8 +631,8 @@ namespace Maple2.Trigger._52000037_qd {
             internal StateReadyToLeave01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__11$", arg4: 6);
                 context.SetSkip(arg1: "ReadyToLeave02");
             }
@@ -654,8 +654,8 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
             }
 

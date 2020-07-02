@@ -54,8 +54,8 @@ namespace Maple2.Trigger._52000002_qd {
             internal State1차목표(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$52000002_QD__MAIN__0$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$52000002_QD__MAIN__0$");
                 context.SetTimer(arg1: "5", arg2: 5);
                 context.SetSkip(arg1: "오브젝트생성");
             }
@@ -73,8 +73,8 @@ namespace Maple2.Trigger._52000002_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 
@@ -173,8 +173,8 @@ namespace Maple2.Trigger._52000002_qd {
             internal State2단계시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$52000002_QD__MAIN__2$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$52000002_QD__MAIN__2$");
                 context.SetTimer(arg1: "5", arg2: 5);
                 context.SetSkip(arg1: "양생성");
             }
@@ -192,8 +192,8 @@ namespace Maple2.Trigger._52000002_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 
@@ -270,8 +270,8 @@ namespace Maple2.Trigger._52000002_qd {
             internal State3단계시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3, arg2: "$52000002_QD__MAIN__4$");
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3, arg2: "$52000002_QD__MAIN__4$");
                 context.SetTimer(arg1: "5", arg2: 5);
                 context.SetSkip(arg1: "늑대생성");
             }
@@ -289,8 +289,8 @@ namespace Maple2.Trigger._52000002_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 

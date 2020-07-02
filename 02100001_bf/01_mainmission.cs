@@ -169,8 +169,8 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateTalkStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 900, arg2: true);
             }
 
@@ -257,8 +257,8 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateTalkEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 900, arg2: false);
             }
 
@@ -342,8 +342,8 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateBadEndingStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 901, arg2: true);
             }
 
@@ -396,8 +396,8 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateBadEndingEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 901, arg2: false);
             }
 
@@ -475,8 +475,8 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateHappyEndingStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 902, arg2: true);
             }
 
@@ -529,8 +529,8 @@ namespace Maple2.Trigger._02100001_bf {
             internal StateHappyEndingEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 902, arg2: false);
             }
 

@@ -5,8 +5,8 @@ namespace Maple2.Trigger._52010020_qd {
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7001}, arg2: false);
-                context.SetProductionUI(arg1: 2);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 2);
+                context.SetCinematicUI(arg1: 4);
                 context.CreateMonster(arg1: new[] {101, 102});
             }
 
@@ -87,8 +87,8 @@ namespace Maple2.Trigger._52010020_qd {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2004");
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_2001");
                 context.MoveUser(arg1: 52010020, arg2: 1, arg3: 701);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
                 context.CreateMonster(arg1: new[] {103});
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_2003");
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._52010020_qd {
             }
 
             public override void OnExit() {
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
             }
         }
 

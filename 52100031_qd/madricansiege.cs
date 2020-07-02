@@ -38,8 +38,8 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "StopCinematic");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$52100031_QD__MADRICANSIEGE__0$", arg4: 4, arg5: 0);
             }
@@ -61,8 +61,8 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnEnter() {
                 context.SetSkip();
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraSelect(arg1: 300, arg2: false);
             }
 
@@ -250,8 +250,8 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetActor(arg1: 209, arg2: true, arg3: "Dead_A");
                 context.SetActor(arg1: 210, arg2: true, arg3: "Dead_A");
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 52100031, arg2: 3);
                 context.SetUserValue(triggerId: 99999099, key: "DungeonClear", value: 1);
                 context.SetUserValue(triggerId: 99999098, key: "DungeonClear", value: 1);
@@ -363,8 +363,8 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1920, 1921, 1922}, arg2: false);
                 context.SetSkip();
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.CameraReset(interpolationTime: 0.0f);
             }
 

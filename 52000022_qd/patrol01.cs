@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52000022_qd {
                 context.SetMesh(arg1: new[] {3001}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetEffect(arg1: new[] {601}, arg2: false);
                 context.CreateMonster(arg1: new[] {111, 211}, arg2: false);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 4);
             }
 
             public override TriggerState Execute() {

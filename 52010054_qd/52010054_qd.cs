@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52010054_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
             }
 
             public override TriggerState Execute() {
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._52010054_qd {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.AddCinematicTalk(npcId: 11003793, msg: "$52010054_QD__52010054_QD__0$", duration: 7000, align: "right");
                 context.CameraSelectPath(arg1: new[] {4002, 4003}, arg2: false);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -178,7 +178,7 @@ namespace Maple2.Trigger._52010054_qd {
             internal StateCameraEffect09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 2);
                 context.DestroyMonster(arg1: new[] {2001}, arg2: false);
                 context.DestroyMonster(arg1: new[] {2002}, arg2: false);
                 context.DestroyMonster(arg1: new[] {2003}, arg2: false);
@@ -200,7 +200,7 @@ namespace Maple2.Trigger._52010054_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 1);
                 context.CameraSelectPath(arg1: new[] {4010, 4011}, arg2: false);
                 context.SetTimeScale(enable: true, startScale: 1.0f, endScale: 0.1f, duration: 12.0f, interpolator: 1);
             }

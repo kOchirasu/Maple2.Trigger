@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52010066_qd {
                 if (context.GetUserCount() > 0) {
                     context.VisibleMyPc(isVisible: false);
                     context.SetMeshAnimation(arg1: new[] {9002}, arg2: false, arg3: 0, arg4: 0);
-                    context.SetProductionUI(arg1: 1);
+                    context.SetCinematicUI(arg1: 1);
                     return new State연출02(context);
                 }
 

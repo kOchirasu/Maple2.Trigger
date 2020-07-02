@@ -150,8 +150,8 @@ namespace Maple2.Trigger._52010063_qd {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "전투전스킵완료", arg2: "nextState");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Dead_A", arg3: 999999f);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Attack_02_D", arg3: 17000f);
                 context.SetEffect(arg1: new[] {6000, 6003, 6001, 6002}, arg2: true);
@@ -527,8 +527,8 @@ namespace Maple2.Trigger._52010063_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraReset(interpolationTime: 2.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -621,8 +621,8 @@ namespace Maple2.Trigger._52010063_qd {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.DestroyMonster(arg1: new[] {111, 112, 113, 114, 115, 211, 212, 213, 214, 215, 221, 222, 223, 224, 225, 226});
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "crimsonbalrogwipeout");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetMesh(arg1: new[] {4001, 4002, 4003, 4004}, arg2: false);
             }
 
@@ -749,8 +749,8 @@ namespace Maple2.Trigger._52010063_qd {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetMesh(arg1: new[] {4001, 4002, 4003, 4004}, arg2: false);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "tristanrescue");
             }

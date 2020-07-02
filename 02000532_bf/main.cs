@@ -25,8 +25,8 @@ namespace Maple2.Trigger._02000532_bf {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetSceneSkip();
                 context.CreateMonster(arg1: new[] {216, 101, 102, 103, 104, 105, 106, 107, 108, 109, 111, 112, 113, 110, 111}, arg2: true);
                 context.MoveNpc(arg1: 110, arg2: "MS2PatrolData_8000");
@@ -71,8 +71,8 @@ namespace Maple2.Trigger._02000532_bf {
             internal State목표(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.LockMyPc(isLock: false);
                 context.CameraReset(interpolationTime: 1f);
                 context.SetEventUI(arg1: 1, arg2: "$02000532_BF__MAIN__2$", arg3: 3000);
@@ -93,8 +93,8 @@ namespace Maple2.Trigger._02000532_bf {
             internal State문들어가기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetEventUI(arg1: 1, arg2: "$02000532_BF__MAIN__3$", arg3: 3000);
                 context.SetEffect(arg1: new[] {7006, 7007}, arg2: true);
                 context.CreateMonster(arg1: new[] {408}, arg2: true);
@@ -143,8 +143,8 @@ namespace Maple2.Trigger._02000532_bf {
             internal State경계하기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.LockMyPc(isLock: true);
                 context.SetSceneSkip(arg1: "흑성회의반격", arg2: "nextState");
                 context.AddBalloonTalk(spawnPointId: 104, msg: "$02000532_BF__MAIN__8$", duration: 3500, delayTick: 0);
@@ -205,8 +205,8 @@ namespace Maple2.Trigger._02000532_bf {
             internal State불안한제이(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -243,8 +243,8 @@ namespace Maple2.Trigger._02000532_bf {
             internal State흑성회의반격(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetMesh(arg1: new[] {3002, 3003}, arg2: false);
                 context.LockMyPc(isLock: false);
                 context.CameraReset(interpolationTime: 1f);

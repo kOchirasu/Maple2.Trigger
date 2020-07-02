@@ -474,8 +474,8 @@ namespace Maple2.Trigger._02000072_in {
             internal State아르마노가출연출(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {8010}, arg2: false);
                 context.MoveUser(arg1: 02000072, arg2: 10);
             }
@@ -914,8 +914,8 @@ namespace Maple2.Trigger._02000072_in {
             internal State아르마노가출_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 4);
                 context.DestroyMonster(arg1: new[] {107, 108, 104});
                 context.CreateMonster(arg1: new[] {108});
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_Follow");
@@ -937,8 +937,8 @@ namespace Maple2.Trigger._02000072_in {
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 3.0f);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {

@@ -27,8 +27,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetMesh(arg1: new[] {10000, 10001, 30000, 30001, 30002}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {1, 2, 3, 4, 5, 10000, 10001, 10002, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123}, arg2: false);
                 context.MoveUser(arg1: 52010055, arg2: 1);
             }
@@ -314,8 +314,8 @@ namespace Maple2.Trigger._52010055_qd {
                 context.SetLocalCamera(cameraId: 9009, enable: true);
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
                 context.SideNpcTalk(npcId: 11003533, illust: "Bliche_closeEye", duration: 3000, script: "$52010055_QD__52010055__17$", voice: @"ko/Npc/00002154");
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.DestroyMonster(arg1: new[] {-1});
             }
 
@@ -468,8 +468,8 @@ namespace Maple2.Trigger._52010055_qd {
                 context.RemoveBuff(arg1: 9002, arg2: 99910311);
                 context.CameraReset(interpolationTime: 0f);
                 context.SetMesh(arg1: new[] {10002, 10003, 10004, 10005}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -530,8 +530,8 @@ namespace Maple2.Trigger._52010055_qd {
                 context.CameraSelect(arg1: 4019, arg2: true);
                 context.DestroyMonster(arg1: new[] {2000});
                 context.CreateMonster(arg1: new[] {2001}, arg2: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
 
             public override TriggerState Execute() {
@@ -571,8 +571,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 5, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetMesh(arg1: new[] {10002, 10003, 10004, 10005}, arg2: false);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {1, 2, 13, 14, 15, 2002}, arg2: false);
                 context.MoveUser(arg1: 52010055, arg2: 5);
             }
@@ -851,8 +851,8 @@ namespace Maple2.Trigger._52010055_qd {
             internal State엔딩이동준비1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
                 context.DestroyMonster(arg1: new[] {-1});
                 context.MoveUser(arg1: 52010055, arg2: 8, arg3: 9002);
                 context.VisibleMyPc(isVisible: true);
@@ -1055,8 +1055,8 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.0f);
                 context.VisibleMyPc(isVisible: true);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.SetAchievement(arg1: 9002, arg2: "trigger", arg3: "rescueskyfortress");
                 context.SetOnetimeEffect(id: 12, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_SlowFade.xml");
                 context.MoveUser(arg1: 52010052);

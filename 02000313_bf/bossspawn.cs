@@ -61,8 +61,8 @@ namespace Maple2.Trigger._02000313_bf {
                 context.CreateMonster(arg1: new[] {1001, 2001}, arg2: false);
                 context.CameraSelect(arg1: 30000, arg2: true);
                 context.SetEffect(arg1: new[] {5002}, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetSkip(arg1: "1차전투시작");
             }
 
@@ -76,8 +76,8 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnExit() {
                 context.CameraSelect(arg1: 30000, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
             }
         }
 
@@ -296,8 +296,8 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 30001, arg2: true);
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
             }
 
             public override TriggerState Execute() {
@@ -356,8 +356,8 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnExit() {
                 context.CameraSelect(arg1: 30001, arg2: false);
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.DestroyMonster(arg1: new[] {1101, 1102, 1103, 1104, 1105, 1106, 1107, 1108});
                 context.SetNpcEmotionLoop(arg1: 1005, arg2: "Dead_Idle_A", arg3: 9999999999999999f);
                 context.SetEffect(arg1: new[] {5002}, arg2: false);
@@ -444,9 +444,9 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 4);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 4);
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
             }
 
@@ -473,9 +473,9 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuest연출_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
-                context.SetProductionUI(arg1: 9, arg2: "$02000313_BF__BOSSSPAWN__43$", arg3: false);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
+                context.SetCinematicUI(arg1: 9, arg2: "$02000313_BF__BOSSSPAWN__43$", arg3: false);
                 context.CreateMonster(arg1: new[] {205, 202, 203, 204}, arg2: true);
                 context.MoveUser(arg1: 02000313, arg2: 6001);
             }
@@ -496,8 +496,8 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "퀘스트연출끝_이동", arg2: "exit");
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 30000, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 0, msg: "$02000313_BF__BOSSSPAWN__44$", duration: 3000);
@@ -1085,7 +1085,7 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_WhiteFlash.xml");
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG\weather\Eff_monochrome_03.xml");
-                context.SetProductionUI(arg1: 9, arg2: "$02000313_BF__BOSSSPAWN__85$", arg3: false);
+                context.SetCinematicUI(arg1: 9, arg2: "$02000313_BF__BOSSSPAWN__85$", arg3: false);
                 context.SetEffect(arg1: new[] {5005, 5006}, arg2: false);
             }
 
@@ -1104,7 +1104,7 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuest연출_마지막전투_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 9, arg2: "$02000313_BF__BOSSSPAWN__86$", arg3: false);
+                context.SetCinematicUI(arg1: 9, arg2: "$02000313_BF__BOSSSPAWN__86$", arg3: false);
             }
 
             public override TriggerState Execute() {

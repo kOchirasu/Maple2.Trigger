@@ -22,8 +22,8 @@ namespace Maple2.Trigger._52010007_qd {
             internal StateNPC이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.CreateMonster(arg1: new[] {1002, 1003, 1004}, arg2: false);
             }
@@ -103,8 +103,8 @@ namespace Maple2.Trigger._52010007_qd {
             internal StateNPC이동2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002_B");
                 context.MoveNpc(arg1: 1003, arg2: "MS2PatrolData_1003_B");
                 context.MoveNpc(arg1: 1004, arg2: "MS2PatrolData_1004_B");
@@ -179,8 +179,8 @@ namespace Maple2.Trigger._52010007_qd {
             internal State스타츠대사01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010007_QD__MAIN__5$", arg4: 4);
             }
 
@@ -217,8 +217,8 @@ namespace Maple2.Trigger._52010007_qd {
             internal State타라이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 0);
-                context.SetProductionUI(arg1: 2);
+                context.SetCinematicUI(arg1: 0);
+                context.SetCinematicUI(arg1: 2);
                 context.MoveNpc(arg1: 1004, arg2: "MS2PatrolData_1004_C");
                 context.SetConversation(arg1: 1, arg2: 1004, arg3: "$52010007_QD__MAIN__6$", arg4: 2, arg5: 0);
             }
@@ -258,8 +258,8 @@ namespace Maple2.Trigger._52010007_qd {
             internal State에레브대사02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetProductionUI(arg1: 1);
-                context.SetProductionUI(arg1: 3);
+                context.SetCinematicUI(arg1: 1);
+                context.SetCinematicUI(arg1: 3);
                 context.DestroyMonster(arg1: new[] {1003, 1004});
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52010007_QD__MAIN__8$", arg4: 4);
             }
@@ -284,8 +284,8 @@ namespace Maple2.Trigger._52010007_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    context.SetProductionUI(arg1: 0);
-                    context.SetProductionUI(arg1: 2);
+                    context.SetCinematicUI(arg1: 0);
+                    context.SetCinematicUI(arg1: 2);
                     context.CameraSelect(arg1: 301, arg2: false);
                     context.SetAchievement(arg1: 100, arg2: "trigger", arg3: "Find_Lamestone");
                     return new StateEnd(context);
