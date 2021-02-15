@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000441_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "monster_respawn") == 1) {
-                    return new StateMonster체력_75(context);
+                    return new StateMonsterHealth_75(context);
                 }
 
                 return null;
@@ -16,14 +16,14 @@ namespace Maple2.Trigger._02000441_bf {
             public override void OnExit() { }
         }
 
-        private class StateMonster체력_75 : TriggerState {
-            internal StateMonster체력_75(ITriggerContext context) : base(context) { }
+        private class StateMonsterHealth_75 : TriggerState {
+            internal StateMonsterHealth_75(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 209) <= 0.75f) {
-                    return new StateMonster체력_35(context);
+                    return new StateMonsterHealth_35(context);
                 }
 
                 return null;
@@ -34,14 +34,14 @@ namespace Maple2.Trigger._02000441_bf {
             }
         }
 
-        private class StateMonster체력_35 : TriggerState {
-            internal StateMonster체력_35(ITriggerContext context) : base(context) { }
+        private class StateMonsterHealth_35 : TriggerState {
+            internal StateMonsterHealth_35(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 209) <= 0.35f) {
-                    return new StateMonster_마지막_리스폰(context);
+                    return new StateMonster_마지막_리Spawn(context);
                 }
 
                 return null;
@@ -50,8 +50,8 @@ namespace Maple2.Trigger._02000441_bf {
             public override void OnExit() { }
         }
 
-        private class StateMonster_마지막_리스폰 : TriggerState {
-            internal StateMonster_마지막_리스폰(ITriggerContext context) : base(context) { }
+        private class StateMonster_마지막_리Spawn : TriggerState {
+            internal StateMonster_마지막_리Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {214, 215, 216, 217}, arg2: true);

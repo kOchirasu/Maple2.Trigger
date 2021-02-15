@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02020147_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State신호받기대기중(context);
+                    return new State신호받기Waiting(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02020147_bf {
             public override void OnExit() { }
         }
 
-        private class State신호받기대기중 : TriggerState {
-            internal State신호받기대기중(ITriggerContext context) : base(context) { }
+        private class State신호받기Waiting : TriggerState {
+            internal State신호받기Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02020147_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3200)) {
-                    return new State신호받기대기중(context);
+                    return new State신호받기Waiting(context);
                 }
 
                 if (context.GetUserValue(key: "DeathRenduebianRbladerDark") == 1) {
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._02020147_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3200)) {
-                    return new State신호받기대기중(context);
+                    return new State신호받기Waiting(context);
                 }
 
                 if (context.GetUserValue(key: "DeathIshuraRbladerDark") == 1) {
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._02020147_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3200)) {
-                    return new State신호받기대기중(context);
+                    return new State신호받기Waiting(context);
                 }
 
                 if (context.GetUserValue(key: "DeathIshuraRbladerDark") == 1) {

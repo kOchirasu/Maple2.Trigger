@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9900})) {
-                    return new StateQuest조건체크(context);
+                    return new StateQuestConditionCheck(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnExit() { }
         }
 
-        private class StateQuest조건체크 : TriggerState {
-            internal StateQuest조건체크(ITriggerContext context) : base(context) { }
+        private class StateQuestConditionCheck : TriggerState {
+            internal StateQuestConditionCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -27,27 +27,27 @@ namespace Maple2.Trigger._52000073_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001683}, arg3: new byte[] {2})) {
-                    return new State대원있음(context);
+                    return new State대원Exists(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001683}, arg3: new byte[] {1})) {
-                    return new State대원있음(context);
+                    return new State대원Exists(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001682}, arg3: new byte[] {3})) {
-                    return new State대원있음(context);
+                    return new State대원Exists(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001682}, arg3: new byte[] {2})) {
-                    return new State대원있음(context);
+                    return new State대원Exists(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001682}, arg3: new byte[] {1})) {
-                    return new State대원있음(context);
+                    return new State대원Exists(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001681}, arg3: new byte[] {3})) {
-                    return new State대원있음(context);
+                    return new State대원Exists(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001681}, arg3: new byte[] {2})) {
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9900})) {
-                    return new StateQuest조건체크(context);
+                    return new StateQuestConditionCheck(context);
                 }
 
                 return null;
@@ -94,8 +94,8 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnExit() { }
         }
 
-        private class State대원있음 : TriggerState {
-            internal State대원있음(ITriggerContext context) : base(context) { }
+        private class State대원Exists : TriggerState {
+            internal State대원Exists(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {401}, arg2: false);

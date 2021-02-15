@@ -95,7 +95,7 @@ namespace Maple2.Trigger._02000551_bf {
                 }
 
                 if (context.WaitTick(waitTick: 2200)) {
-                    return new State시간경과대기(context);
+                    return new State시간경과Wait(context);
                 }
 
                 return null;
@@ -104,8 +104,8 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnExit() { }
         }
 
-        private class State시간경과대기 : TriggerState {
-            internal State시간경과대기(ITriggerContext context) : base(context) { }
+        private class State시간경과Wait : TriggerState {
+            internal State시간경과Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

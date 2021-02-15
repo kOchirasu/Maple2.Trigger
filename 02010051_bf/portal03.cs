@@ -34,7 +34,7 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new StateGuide준비01(context);
+                    return new StateGuidePrepare01(context);
                 }
 
                 return null;
@@ -43,8 +43,8 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnExit() { }
         }
 
-        private class StateGuide준비01 : TriggerState {
-            internal StateGuide준비01(ITriggerContext context) : base(context) { }
+        private class StateGuidePrepare01 : TriggerState {
+            internal StateGuidePrepare01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20105101, textId: 20105101, duration: 4000);
@@ -94,14 +94,14 @@ namespace Maple2.Trigger._02010051_bf {
             }
 
             public override TriggerState Execute() {
-                return new State연출대화01(context);
+                return new StateCinematic대화01(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State연출대화01 : TriggerState {
-            internal State연출대화01(ITriggerContext context) : base(context) { }
+        private class StateCinematic대화01 : TriggerState {
+            internal StateCinematic대화01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "20", arg2: 3);

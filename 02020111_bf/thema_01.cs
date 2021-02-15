@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1002})) {
-                    return new State소환준비(context);
+                    return new State소환Prepare(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class State소환준비 : TriggerState {
-            internal State소환준비(ITriggerContext context) : base(context) { }
+        private class State소환Prepare : TriggerState {
+            internal State소환Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

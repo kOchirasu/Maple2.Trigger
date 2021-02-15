@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State다음대기(context);
+                    return new StateNextWait(context);
                 }
 
                 return null;
@@ -52,8 +52,8 @@ namespace Maple2.Trigger._02000410_bf {
             }
         }
 
-        private class State다음대기 : TriggerState {
-            internal State다음대기(ITriggerContext context) : base(context) { }
+        private class StateNextWait : TriggerState {
+            internal StateNextWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

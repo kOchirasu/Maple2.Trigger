@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000464}, arg2: 0)) {
-                    return new StateNPC대사(context);
+                    return new StateNPCScript(context);
                 }
 
                 return null;
@@ -23,8 +23,8 @@ namespace Maple2.Trigger._02000290_bf {
             }
         }
 
-        private class StateNPC대사 : TriggerState {
-            internal StateNPC대사(ITriggerContext context) : base(context) { }
+        private class StateNPCScript : TriggerState {
+            internal StateNPCScript(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {907});

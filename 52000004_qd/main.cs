@@ -124,7 +124,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State엘리트스폰대기(context);
+                    return new StateEliteSpawnWait(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {199})) {
@@ -139,8 +139,8 @@ namespace Maple2.Trigger._52000004_qd {
             }
         }
 
-        private class State엘리트스폰대기 : TriggerState {
-            internal State엘리트스폰대기(ITriggerContext context) : base(context) { }
+        private class StateEliteSpawnWait : TriggerState {
+            internal StateEliteSpawnWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016}, arg2: false);
@@ -149,7 +149,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State엘리트스폰(context);
+                    return new StateEliteSpawn(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {199})) {
@@ -162,8 +162,8 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnExit() { }
         }
 
-        private class State엘리트스폰 : TriggerState {
-            internal State엘리트스폰(ITriggerContext context) : base(context) { }
+        private class StateEliteSpawn : TriggerState {
+            internal StateEliteSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 25200402, textId: 25200402);
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._52000004_qd {
                 if (context.TimeExpired(arg1: "3")) {
                     context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);
                     context.ShowGuideSummary(entityId: 25200403, textId: 25200403);
-                    return new StateEnd대기(context);
+                    return new StateEndWait(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {199})) {
@@ -293,8 +293,8 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnExit() { }
         }
 
-        private class StateEnd대기 : TriggerState {
-            internal StateEnd대기(ITriggerContext context) : base(context) { }
+        private class StateEndWait : TriggerState {
+            internal StateEndWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "30", arg2: 30);

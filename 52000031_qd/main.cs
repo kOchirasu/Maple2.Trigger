@@ -312,7 +312,7 @@ namespace Maple2.Trigger._52000031_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2003})) {
-                    return new State렌듀비앙대사02(context);
+                    return new State렌듀비앙Script02(context);
                 }
 
                 return null;
@@ -324,8 +324,8 @@ namespace Maple2.Trigger._52000031_qd {
             }
         }
 
-        private class State렌듀비앙대사02 : TriggerState {
-            internal State렌듀비앙대사02(ITriggerContext context) : base(context) { }
+        private class State렌듀비앙Script02 : TriggerState {
+            internal State렌듀비앙Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3100, 3200}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -339,7 +339,7 @@ namespace Maple2.Trigger._52000031_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State유페리아대사_기타음성1(context);
+                    return new State유페리아Script_기타음성1(context);
                 }
 
                 return null;
@@ -348,8 +348,8 @@ namespace Maple2.Trigger._52000031_qd {
             public override void OnExit() { }
         }
 
-        private class State유페리아대사_기타음성1 : TriggerState {
-            internal State유페리아대사_기타음성1(ITriggerContext context) : base(context) { }
+        private class State유페리아Script_기타음성1 : TriggerState {
+            internal State유페리아Script_기타음성1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {603}, arg2: true);

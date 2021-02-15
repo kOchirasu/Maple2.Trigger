@@ -12,7 +12,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 199) == 1) {
-                    return new State낮밤변환신호대기(context);
+                    return new State낮밤변환신호Wait(context);
                 }
 
                 return null;
@@ -21,18 +21,18 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State낮밤변환신호대기 : TriggerState {
-            internal State낮밤변환신호대기(ITriggerContext context) : base(context) { }
+        private class State낮밤변환신호Wait : TriggerState {
+            internal State낮밤변환신호Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "DayNightChange") == 1) {
-                    return new State낮시간으로변화대기단계(context);
+                    return new State낮시간으로변화Wait단계(context);
                 }
 
                 if (context.GetUserValue(key: "DayNightChange") == 2) {
-                    return new State밤시간으로변화대기단계(context);
+                    return new State밤시간으로변화Wait단계(context);
                 }
 
                 if (context.GetUserValue(key: "DayNightChange") == 3) {
@@ -49,8 +49,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State낮시간으로변화대기단계 : TriggerState {
-            internal State낮시간으로변화대기단계(ITriggerContext context) : base(context) { }
+        private class State낮시간으로변화Wait단계 : TriggerState {
+            internal State낮시간으로변화Wait단계(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -79,7 +79,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State낮밤변환신호대기(context);
+                    return new State낮밤변환신호Wait(context);
                 }
 
                 return null;
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State낮밤변환신호대기(context);
+                    return new State낮밤변환신호Wait(context);
                 }
 
                 return null;
@@ -113,8 +113,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State밤시간으로변화대기단계 : TriggerState {
-            internal State밤시간으로변화대기단계(ITriggerContext context) : base(context) { }
+        private class State밤시간으로변화Wait단계 : TriggerState {
+            internal State밤시간으로변화Wait단계(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -143,7 +143,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State낮밤변환신호대기(context);
+                    return new State낮밤변환신호Wait(context);
                 }
 
                 return null;
@@ -162,7 +162,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1100)) {
-                    return new State낮밤변환신호대기(context);
+                    return new State낮밤변환신호Wait(context);
                 }
 
                 return null;

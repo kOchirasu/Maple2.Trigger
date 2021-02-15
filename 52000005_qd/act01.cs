@@ -29,7 +29,7 @@ namespace Maple2.Trigger._52000005_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State영감대화준비(context);
+                    return new State영감대화Prepare(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._52000005_qd {
             public override void OnExit() { }
         }
 
-        private class State영감대화준비 : TriggerState {
-            internal State영감대화준비(ITriggerContext context) : base(context) { }
+        private class State영감대화Prepare : TriggerState {
+            internal State영감대화Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 4);
@@ -60,12 +60,12 @@ namespace Maple2.Trigger._52000005_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000005_QD__ACT01__0$", arg4: 3);
-                context.SetSkip(arg1: "영감대화02대기");
+                context.SetSkip(arg1: "영감대화02Wait");
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State영감대화02대기(context);
+                    return new State영감대화02Wait(context);
                 }
 
                 return null;
@@ -74,8 +74,8 @@ namespace Maple2.Trigger._52000005_qd {
             public override void OnExit() { }
         }
 
-        private class State영감대화02대기 : TriggerState {
-            internal State영감대화02대기(ITriggerContext context) : base(context) { }
+        private class State영감대화02Wait : TriggerState {
+            internal State영감대화02Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._52000005_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "20")) {
-                    return new State영상준비(context);
+                    return new State영상Prepare(context);
                 }
 
                 return null;
@@ -167,8 +167,8 @@ namespace Maple2.Trigger._52000005_qd {
             public override void OnExit() { }
         }
 
-        private class State영상준비 : TriggerState {
-            internal State영상준비(ITriggerContext context) : base(context) { }
+        private class State영상Prepare : TriggerState {
+            internal State영상Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();

@@ -57,7 +57,7 @@ namespace Maple2.Trigger._02000355_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State카드반대사01(context);
+                    return new State카드반Script01(context);
                 }
 
                 return null;
@@ -66,8 +66,8 @@ namespace Maple2.Trigger._02000355_bf {
             public override void OnExit() { }
         }
 
-        private class State카드반대사01 : TriggerState {
-            internal State카드반대사01(ITriggerContext context) : base(context) { }
+        private class State카드반Script01 : TriggerState {
+            internal State카드반Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {600}, arg2: true);
@@ -173,7 +173,7 @@ namespace Maple2.Trigger._02000355_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    return new State카드반대사02(context);
+                    return new State카드반Script02(context);
                 }
 
                 return null;
@@ -182,8 +182,8 @@ namespace Maple2.Trigger._02000355_bf {
             public override void OnExit() { }
         }
 
-        private class State카드반대사02 : TriggerState {
-            internal State카드반대사02(ITriggerContext context) : base(context) { }
+        private class State카드반Script02 : TriggerState {
+            internal State카드반Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {600}, arg2: true);

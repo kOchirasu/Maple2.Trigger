@@ -51,7 +51,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new StateCamera연출01(context);
+                    return new StateCameraCinematic01(context);
                 }
 
                 return null;
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._52000014_qd {
             public override void OnExit() { }
         }
 
-        private class StateCamera연출01 : TriggerState {
-            internal StateCamera연출01(ITriggerContext context) : base(context) { }
+        private class StateCameraCinematic01 : TriggerState {
+            internal StateCameraCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 2);
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new StateCamera연출02(context);
+                    return new StateCameraCinematic02(context);
                 }
 
                 return null;
@@ -79,8 +79,8 @@ namespace Maple2.Trigger._52000014_qd {
             public override void OnExit() { }
         }
 
-        private class StateCamera연출02 : TriggerState {
-            internal StateCamera연출02(ITriggerContext context) : base(context) { }
+        private class StateCameraCinematic02 : TriggerState {
+            internal StateCameraCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "4", arg2: 4);
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    return new StateCamera연출03(context);
+                    return new StateCameraCinematic03(context);
                 }
 
                 return null;
@@ -100,8 +100,8 @@ namespace Maple2.Trigger._52000014_qd {
             public override void OnExit() { }
         }
 
-        private class StateCamera연출03 : TriggerState {
-            internal StateCamera연출03(ITriggerContext context) : base(context) { }
+        private class StateCameraCinematic03 : TriggerState {
+            internal StateCameraCinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 3);

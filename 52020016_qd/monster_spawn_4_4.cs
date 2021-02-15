@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "respawn_phase_4") == 1) {
-                    return new State전투페이즈(context);
+                    return new State전투Phase(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnExit() { }
         }
 
-        private class State전투페이즈 : TriggerState {
-            internal State전투페이즈(ITriggerContext context) : base(context) { }
+        private class State전투Phase : TriggerState {
+            internal State전투Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {4000405}, arg2: false);

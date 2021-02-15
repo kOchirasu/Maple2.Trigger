@@ -97,7 +97,7 @@ namespace Maple2.Trigger._52010029_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State1차전투시작_Monster스폰(context);
+                    return new State1차전투시작_MonsterSpawn(context);
                 }
 
                 return null;
@@ -106,8 +106,8 @@ namespace Maple2.Trigger._52010029_qd {
             public override void OnExit() { }
         }
 
-        private class State1차전투시작_Monster스폰 : TriggerState {
-            internal State1차전투시작_Monster스폰(ITriggerContext context) : base(context) { }
+        private class State1차전투시작_MonsterSpawn : TriggerState {
+            internal State1차전투시작_MonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4015}, arg2: false);
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._52010029_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State1차전투시작_Monster스폰_02(context);
+                    return new State1차전투시작_MonsterSpawn_02(context);
                 }
 
                 return null;
@@ -129,8 +129,8 @@ namespace Maple2.Trigger._52010029_qd {
             public override void OnExit() { }
         }
 
-        private class State1차전투시작_Monster스폰_02 : TriggerState {
-            internal State1차전투시작_Monster스폰_02(ITriggerContext context) : base(context) { }
+        private class State1차전투시작_MonsterSpawn_02 : TriggerState {
+            internal State1차전투시작_MonsterSpawn_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._52010029_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State1차전투시작_Monster스폰_black(context);
+                    return new State1차전투시작_MonsterSpawn_black(context);
                 }
 
                 return null;
@@ -156,8 +156,8 @@ namespace Maple2.Trigger._52010029_qd {
             public override void OnExit() { }
         }
 
-        private class State1차전투시작_Monster스폰_black : TriggerState {
-            internal State1차전투시작_Monster스폰_black(ITriggerContext context) : base(context) { }
+        private class State1차전투시작_MonsterSpawn_black : TriggerState {
+            internal State1차전투시작_MonsterSpawn_black(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);

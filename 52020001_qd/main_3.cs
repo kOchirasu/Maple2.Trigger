@@ -59,7 +59,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateMonster체력50(context);
+                    return new StateMonsterHealth50(context);
                 }
 
                 if (context.TimeExpired(arg1: "102")) {
@@ -72,8 +72,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class StateMonster체력50 : TriggerState {
-            internal StateMonster체력50(ITriggerContext context) : base(context) { }
+        private class StateMonsterHealth50 : TriggerState {
+            internal StateMonsterHealth50(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -182,7 +182,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 900)) {
-                    return new State맵폭발연출_1(context);
+                    return new State맵폭발Cinematic_1(context);
                 }
 
                 return null;
@@ -191,8 +191,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class State맵폭발연출_1 : TriggerState {
-            internal State맵폭발연출_1(ITriggerContext context) : base(context) { }
+        private class State맵폭발Cinematic_1 : TriggerState {
+            internal State맵폭발Cinematic_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {10041}, arg2: true);
@@ -201,7 +201,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 400)) {
-                    return new StateCamera연출(context);
+                    return new StateCameraCinematic(context);
                 }
 
                 return null;
@@ -210,8 +210,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class StateCamera연출 : TriggerState {
-            internal StateCamera연출(ITriggerContext context) : base(context) { }
+        private class StateCameraCinematic : TriggerState {
+            internal StateCameraCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {2000008}, arg2: false);
@@ -241,7 +241,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 800)) {
-                    return new State맵폭발연출_2(context);
+                    return new State맵폭발Cinematic_2(context);
                 }
 
                 return null;
@@ -250,8 +250,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class State맵폭발연출_2 : TriggerState {
-            internal State맵폭발연출_2(ITriggerContext context) : base(context) { }
+        private class State맵폭발Cinematic_2 : TriggerState {
+            internal State맵폭발Cinematic_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {10042}, arg2: true);

@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02000392_bf {
                 context.CreateMonster(arg1: new[] {2002}, arg2: false);
                 context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 24003015, arg3: "$02000392_BF__SUMMON__0$", arg4: 2, arg5: 0);
-                context.SetSkip(arg1: "죽음대기");
+                context.SetSkip(arg1: "죽음Wait");
             }
 
             public override TriggerState Execute() {
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02000392_bf {
                     context.CameraReset(interpolationTime: 1.0f);
                     context.SetCinematicUI(arg1: 0);
                     context.SetCinematicUI(arg1: 2);
-                    return new State죽음대기(context);
+                    return new State죽음Wait(context);
                 }
 
                 return null;
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._02000392_bf {
                 context.CreateMonster(arg1: new[] {2102}, arg2: false);
                 context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 24003015, arg3: "$02000392_BF__SUMMON__0$", arg4: 2, arg5: 0);
-                context.SetSkip(arg1: "Quest죽음대기");
+                context.SetSkip(arg1: "Quest죽음Wait");
             }
 
             public override TriggerState Execute() {
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._02000392_bf {
                     context.CameraReset(interpolationTime: 1.0f);
                     context.SetCinematicUI(arg1: 0);
                     context.SetCinematicUI(arg1: 2);
-                    return new StateQuest죽음대기(context);
+                    return new StateQuest죽음Wait(context);
                 }
 
                 return null;
@@ -92,8 +92,8 @@ namespace Maple2.Trigger._02000392_bf {
             public override void OnExit() { }
         }
 
-        private class StateQuest죽음대기 : TriggerState {
-            internal StateQuest죽음대기(ITriggerContext context) : base(context) { }
+        private class StateQuest죽음Wait : TriggerState {
+            internal StateQuest죽음Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1.0f);
@@ -156,8 +156,8 @@ namespace Maple2.Trigger._02000392_bf {
             public override void OnExit() { }
         }
 
-        private class State죽음대기 : TriggerState {
-            internal State죽음대기(ITriggerContext context) : base(context) { }
+        private class State죽음Wait : TriggerState {
+            internal State죽음Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1.0f);

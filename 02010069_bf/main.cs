@@ -94,7 +94,7 @@ namespace Maple2.Trigger._02010069_bf {
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {999997})) {
                     context.CreateMonster(arg1: new[] {44441, 44442, 44443}, arg2: false);
-                    return new State연출1(context);
+                    return new StateCinematic1(context);
                 }
 
                 return null;
@@ -103,8 +103,8 @@ namespace Maple2.Trigger._02010069_bf {
             public override void OnExit() { }
         }
 
-        private class State연출1 : TriggerState {
-            internal State연출1(ITriggerContext context) : base(context) { }
+        private class StateCinematic1 : TriggerState {
+            internal StateCinematic1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 999900, arg2: true);
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._02010069_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State연출22(context);
+                    return new StateCinematic22(context);
                 }
 
                 return null;
@@ -121,8 +121,8 @@ namespace Maple2.Trigger._02010069_bf {
             public override void OnExit() { }
         }
 
-        private class State연출22 : TriggerState {
-            internal State연출22(ITriggerContext context) : base(context) { }
+        private class StateCinematic22 : TriggerState {
+            internal StateCinematic22(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 44441, arg3: "$02010069_BF__MAIN__1$", arg4: 3, arg5: 1);
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._02010069_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State연출23(context);
+                    return new StateCinematic23(context);
                 }
 
                 return null;
@@ -141,8 +141,8 @@ namespace Maple2.Trigger._02010069_bf {
             public override void OnExit() { }
         }
 
-        private class State연출23 : TriggerState {
-            internal State연출23(ITriggerContext context) : base(context) { }
+        private class StateCinematic23 : TriggerState {
+            internal StateCinematic23(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 44443, arg3: "$02010069_BF__MAIN__2$", arg4: 3, arg5: 1);
@@ -151,7 +151,7 @@ namespace Maple2.Trigger._02010069_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State연출24(context);
+                    return new StateCinematic24(context);
                 }
 
                 return null;
@@ -160,8 +160,8 @@ namespace Maple2.Trigger._02010069_bf {
             public override void OnExit() { }
         }
 
-        private class State연출24 : TriggerState {
-            internal State연출24(ITriggerContext context) : base(context) { }
+        private class StateCinematic24 : TriggerState {
+            internal StateCinematic24(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 44442, arg3: "$02010069_BF__MAIN__3$", arg4: 3, arg5: 1);
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._02010069_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State연출25(context);
+                    return new StateCinematic25(context);
                 }
 
                 return null;
@@ -179,8 +179,8 @@ namespace Maple2.Trigger._02010069_bf {
             public override void OnExit() { }
         }
 
-        private class State연출25 : TriggerState {
-            internal State연출25(ITriggerContext context) : base(context) { }
+        private class StateCinematic25 : TriggerState {
+            internal StateCinematic25(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveBalloonTalk();
@@ -189,7 +189,7 @@ namespace Maple2.Trigger._02010069_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State연출2(context);
+                    return new StateCinematic2(context);
                 }
 
                 return null;
@@ -198,8 +198,8 @@ namespace Maple2.Trigger._02010069_bf {
             public override void OnExit() { }
         }
 
-        private class State연출2 : TriggerState {
-            internal State연출2(ITriggerContext context) : base(context) { }
+        private class StateCinematic2 : TriggerState {
+            internal StateCinematic2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -211,7 +211,7 @@ namespace Maple2.Trigger._02010069_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State연출3(context);
+                    return new StateCinematic3(context);
                 }
 
                 return null;
@@ -220,8 +220,8 @@ namespace Maple2.Trigger._02010069_bf {
             public override void OnExit() { }
         }
 
-        private class State연출3 : TriggerState {
-            internal State연출3(ITriggerContext context) : base(context) { }
+        private class StateCinematic3 : TriggerState {
+            internal StateCinematic3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 999900, arg2: false);
@@ -231,7 +231,7 @@ namespace Maple2.Trigger._02010069_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State연출4(context);
+                    return new StateCinematic4(context);
                 }
 
                 return null;
@@ -240,8 +240,8 @@ namespace Maple2.Trigger._02010069_bf {
             public override void OnExit() { }
         }
 
-        private class State연출4 : TriggerState {
-            internal State연출4(ITriggerContext context) : base(context) { }
+        private class StateCinematic4 : TriggerState {
+            internal StateCinematic4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 0);

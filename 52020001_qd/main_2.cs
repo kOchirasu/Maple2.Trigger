@@ -219,7 +219,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 800)) {
-                    return new State맵폭발연출_1(context);
+                    return new State맵폭발Cinematic_1(context);
                 }
 
                 return null;
@@ -228,8 +228,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class State맵폭발연출_1 : TriggerState {
-            internal State맵폭발연출_1(ITriggerContext context) : base(context) { }
+        private class State맵폭발Cinematic_1 : TriggerState {
+            internal State맵폭발Cinematic_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {10031}, arg2: true);
@@ -238,7 +238,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 400)) {
-                    return new StateCamera연출(context);
+                    return new StateCameraCinematic(context);
                 }
 
                 return null;
@@ -247,8 +247,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class StateCamera연출 : TriggerState {
-            internal StateCamera연출(ITriggerContext context) : base(context) { }
+        private class StateCameraCinematic : TriggerState {
+            internal StateCameraCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {2000006}, arg2: false);

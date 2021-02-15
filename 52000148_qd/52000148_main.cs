@@ -484,7 +484,7 @@ namespace Maple2.Trigger._52000148_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State오스카퇴장_01(context);
+                    return new State오스카Exit_01(context);
                 }
 
                 return null;
@@ -493,8 +493,8 @@ namespace Maple2.Trigger._52000148_qd {
             public override void OnExit() { }
         }
 
-        private class State오스카퇴장_01 : TriggerState {
-            internal State오스카퇴장_01(ITriggerContext context) : base(context) { }
+        private class State오스카Exit_01 : TriggerState {
+            internal State오스카Exit_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
@@ -502,7 +502,7 @@ namespace Maple2.Trigger._52000148_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State오스카퇴장_02(context);
+                    return new State오스카Exit_02(context);
                 }
 
                 return null;
@@ -511,8 +511,8 @@ namespace Maple2.Trigger._52000148_qd {
             public override void OnExit() { }
         }
 
-        private class State오스카퇴장_02 : TriggerState {
-            internal State오스카퇴장_02(ITriggerContext context) : base(context) { }
+        private class State오스카Exit_02 : TriggerState {
+            internal State오스카Exit_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();

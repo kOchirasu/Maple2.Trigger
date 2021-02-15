@@ -180,7 +180,7 @@ namespace Maple2.Trigger._52000096_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateMonster재스폰(context);
+                    return new StateMonster재Spawn(context);
                 }
 
                 return null;
@@ -189,8 +189,8 @@ namespace Maple2.Trigger._52000096_qd {
             public override void OnExit() { }
         }
 
-        private class StateMonster재스폰 : TriggerState {
-            internal StateMonster재스폰(ITriggerContext context) : base(context) { }
+        private class StateMonster재Spawn : TriggerState {
+            internal StateMonster재Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004}, arg2: true);

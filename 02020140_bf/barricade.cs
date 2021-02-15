@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State칸막이대기시작(context);
+                    return new State칸막이Wait시작(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02020140_bf {
             public override void OnExit() { }
         }
 
-        private class State칸막이대기시작 : TriggerState {
-            internal State칸막이대기시작(ITriggerContext context) : base(context) { }
+        private class State칸막이Wait시작 : TriggerState {
+            internal State칸막이Wait시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601, 602, 603, 604, 605}, arg2: false);
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State칸막이대기알림(context);
+                    return new State칸막이Wait알림(context);
                 }
 
                 return null;
@@ -35,8 +35,8 @@ namespace Maple2.Trigger._02020140_bf {
             public override void OnExit() { }
         }
 
-        private class State칸막이대기알림 : TriggerState {
-            internal State칸막이대기알림(ITriggerContext context) : base(context) { }
+        private class State칸막이Wait알림 : TriggerState {
+            internal State칸막이Wait알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02020140_BF__BARRICADE__0$", arg3: 3000);
@@ -45,11 +45,11 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override TriggerState Execute() {
                 if (context.DungeonTimeOut()) {
-                    return new State던전실패종료(context);
+                    return new StateDungeonFailure종료(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    return new State던전실패종료(context);
+                    return new StateDungeonFailure종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 30000)) {
@@ -72,11 +72,11 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override TriggerState Execute() {
                 if (context.DungeonTimeOut()) {
-                    return new State던전실패종료(context);
+                    return new StateDungeonFailure종료(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    return new State던전실패종료(context);
+                    return new StateDungeonFailure종료(context);
                 }
 
                 return null;
@@ -85,8 +85,8 @@ namespace Maple2.Trigger._02020140_bf {
             public override void OnExit() { }
         }
 
-        private class State던전실패종료 : TriggerState {
-            internal State던전실패종료(ITriggerContext context) : base(context) { }
+        private class StateDungeonFailure종료 : TriggerState {
+            internal StateDungeonFailure종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601, 602, 603, 604, 605}, arg2: false);

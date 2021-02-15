@@ -171,7 +171,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new StateNPC대사01(context);
+                    return new StateNPCScript01(context);
                 }
 
                 return null;
@@ -180,17 +180,17 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnExit() { }
         }
 
-        private class StateNPC대사01 : TriggerState {
-            internal StateNPC대사01(ITriggerContext context) : base(context) { }
+        private class StateNPCScript01 : TriggerState {
+            internal StateNPCScript01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001727, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__5$", arg4: 2);
-                context.SetSkip(arg1: "NPC대사01스킵");
+                context.SetSkip(arg1: "NPCScript01스킵");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new StateNPC대사02(context);
+                    return new StateNPCScript02(context);
                 }
 
                 return null;
@@ -199,8 +199,8 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnExit() { }
         }
 
-        private class StateNPC대사01스킵 : TriggerState {
-            internal StateNPC대사01스킵(ITriggerContext context) : base(context) { }
+        private class StateNPCScript01스킵 : TriggerState {
+            internal StateNPCScript01스킵(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -208,18 +208,18 @@ namespace Maple2.Trigger._52000037_qd {
             }
 
             public override TriggerState Execute() {
-                return new StateNPC대사02(context);
+                return new StateNPCScript02(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class StateNPC대사02 : TriggerState {
-            internal StateNPC대사02(ITriggerContext context) : base(context) { }
+        private class StateNPCScript02 : TriggerState {
+            internal StateNPCScript02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001725, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__6$", arg4: 2);
-                context.SetSkip(arg1: "NPC대사02스킵");
+                context.SetSkip(arg1: "NPCScript02스킵");
             }
 
             public override TriggerState Execute() {
@@ -233,8 +233,8 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnExit() { }
         }
 
-        private class StateNPC대사02스킵 : TriggerState {
-            internal StateNPC대사02스킵(ITriggerContext context) : base(context) { }
+        private class StateNPCScript02스킵 : TriggerState {
+            internal StateNPCScript02스킵(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();

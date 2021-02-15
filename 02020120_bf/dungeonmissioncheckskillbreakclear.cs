@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SkillBreakSuccess") == 1) {
-                    return new StateSkill브레이크Success_던전미션랭크(context);
+                    return new StateSkill브레이크Success_Dungeon미션랭크(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class StateSkill브레이크Success_던전미션랭크 : TriggerState {
-            internal StateSkill브레이크Success_던전미션랭크(ITriggerContext context) : base(context) { }
+        private class StateSkill브레이크Success_Dungeon미션랭크 : TriggerState {
+            internal StateSkill브레이크Success_Dungeon미션랭크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonMissionComplete(missionId: 23037005);

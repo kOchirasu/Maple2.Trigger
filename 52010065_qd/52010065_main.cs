@@ -579,7 +579,7 @@ namespace Maple2.Trigger._52010065_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State검마퇴장_01(context);
+                    return new State검마Exit_01(context);
                 }
 
                 return null;
@@ -588,8 +588,8 @@ namespace Maple2.Trigger._52010065_qd {
             public override void OnExit() { }
         }
 
-        private class State검마퇴장_01 : TriggerState {
-            internal State검마퇴장_01(ITriggerContext context) : base(context) { }
+        private class State검마Exit_01 : TriggerState {
+            internal State검마Exit_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8006}, arg2: false);
@@ -603,7 +603,7 @@ namespace Maple2.Trigger._52010065_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    return new State검마퇴장_02(context);
+                    return new State검마Exit_02(context);
                 }
 
                 return null;
@@ -612,8 +612,8 @@ namespace Maple2.Trigger._52010065_qd {
             public override void OnExit() { }
         }
 
-        private class State검마퇴장_02 : TriggerState {
-            internal State검마퇴장_02(ITriggerContext context) : base(context) { }
+        private class State검마Exit_02 : TriggerState {
+            internal State검마Exit_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 5, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -622,7 +622,7 @@ namespace Maple2.Trigger._52010065_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State검마퇴장_03(context);
+                    return new State검마Exit_03(context);
                 }
 
                 return null;
@@ -631,8 +631,8 @@ namespace Maple2.Trigger._52010065_qd {
             public override void OnExit() { }
         }
 
-        private class State검마퇴장_03 : TriggerState {
-            internal State검마퇴장_03(ITriggerContext context) : base(context) { }
+        private class State검마Exit_03 : TriggerState {
+            internal State검마Exit_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 106, arg2: "MS2PatrolData_2002");
@@ -640,7 +640,7 @@ namespace Maple2.Trigger._52010065_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State검마퇴장_04(context);
+                    return new State검마Exit_04(context);
                 }
 
                 return null;
@@ -649,8 +649,8 @@ namespace Maple2.Trigger._52010065_qd {
             public override void OnExit() { }
         }
 
-        private class State검마퇴장_04 : TriggerState {
-            internal State검마퇴장_04(ITriggerContext context) : base(context) { }
+        private class State검마Exit_04 : TriggerState {
+            internal State검마Exit_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8006, 8007}, arg2: false);
@@ -658,7 +658,7 @@ namespace Maple2.Trigger._52010065_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State검마퇴장_05(context);
+                    return new State검마Exit_05(context);
                 }
 
                 return null;
@@ -667,8 +667,8 @@ namespace Maple2.Trigger._52010065_qd {
             public override void OnExit() { }
         }
 
-        private class State검마퇴장_05 : TriggerState {
-            internal State검마퇴장_05(ITriggerContext context) : base(context) { }
+        private class State검마Exit_05 : TriggerState {
+            internal State검마Exit_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8007, 8008}, arg2: false);
@@ -676,7 +676,7 @@ namespace Maple2.Trigger._52010065_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State검마퇴장_06(context);
+                    return new State검마Exit_06(context);
                 }
 
                 return null;
@@ -685,8 +685,8 @@ namespace Maple2.Trigger._52010065_qd {
             public override void OnExit() { }
         }
 
-        private class State검마퇴장_06 : TriggerState {
-            internal State검마퇴장_06(ITriggerContext context) : base(context) { }
+        private class State검마Exit_06 : TriggerState {
+            internal State검마Exit_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11001811, msg: "$52010065_QD__52010065_main__6$", duration: 3000, align: "right");

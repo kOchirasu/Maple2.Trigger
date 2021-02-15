@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52100031_qd {
             internal State인원수체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "반응대기");
+                context.SetSkip(arg1: "반응Wait");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.DestroyMonster(arg1: new[] {2902});
@@ -37,7 +37,7 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State반응대기(context);
+                    return new State반응Wait(context);
                 }
 
                 return null;
@@ -46,8 +46,8 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnExit() { }
         }
 
-        private class State반응대기 : TriggerState {
-            internal State반응대기(ITriggerContext context) : base(context) { }
+        private class State반응Wait : TriggerState {
+            internal State반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkip();

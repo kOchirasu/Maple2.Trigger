@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02020061_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectStart") == 1) {
-                    return new State레버4_체크(context);
+                    return new StateLever4_체크(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02020061_bf {
             public override void OnExit() { }
         }
 
-        private class State레버4_체크 : TriggerState {
-            internal State레버4_체크(ITriggerContext context) : base(context) { }
+        private class StateLever4_체크 : TriggerState {
+            internal StateLever4_체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {724}, arg2: false);
@@ -33,11 +33,11 @@ namespace Maple2.Trigger._02020061_bf {
                 }
 
                 if (context.MonsterDead(arg1: new[] {714})) {
-                    return new State레버4_발동(context);
+                    return new StateLever4_발동(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {9014})) {
-                    return new State레버4_안내MassiveEvent(context);
+                    return new StateLever4_안내MassiveEvent(context);
                 }
 
                 return null;
@@ -46,8 +46,8 @@ namespace Maple2.Trigger._02020061_bf {
             public override void OnExit() { }
         }
 
-        private class State레버4_안내MassiveEvent : TriggerState {
-            internal State레버4_안내MassiveEvent(ITriggerContext context) : base(context) { }
+        private class StateLever4_안내MassiveEvent : TriggerState {
+            internal StateLever4_안내MassiveEvent(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02020061_BF__OBJECT4__0$", arg3: 5000, arg4: "9014");
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02020061_bf {
                 }
 
                 if (context.MonsterDead(arg1: new[] {714})) {
-                    return new State레버4_발동(context);
+                    return new StateLever4_발동(context);
                 }
 
                 return null;
@@ -68,8 +68,8 @@ namespace Maple2.Trigger._02020061_bf {
             public override void OnExit() { }
         }
 
-        private class State레버4_발동 : TriggerState {
-            internal State레버4_발동(ITriggerContext context) : base(context) { }
+        private class StateLever4_발동 : TriggerState {
+            internal StateLever4_발동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5301}, arg2: true);
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._02020061_bf {
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000087}, arg2: 0)) {
-                    return new State레버4_MonsterAppear(context);
+                    return new StateLever4_MonsterAppear(context);
                 }
 
                 return null;
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._02020061_bf {
             public override void OnExit() { }
         }
 
-        private class State레버4_MonsterAppear : TriggerState {
-            internal State레버4_MonsterAppear(ITriggerContext context) : base(context) { }
+        private class StateLever4_MonsterAppear : TriggerState {
+            internal StateLever4_MonsterAppear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990014, key: "EliteSpawn", value: 1);
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._02020061_bf {
                 }
 
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new State레버4_재활성(context);
+                    return new StateLever4_재활성(context);
                 }
 
                 return null;
@@ -122,8 +122,8 @@ namespace Maple2.Trigger._02020061_bf {
             public override void OnExit() { }
         }
 
-        private class State레버4_재활성 : TriggerState {
-            internal State레버4_재활성(ITriggerContext context) : base(context) { }
+        private class StateLever4_재활성 : TriggerState {
+            internal StateLever4_재활성(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000087}, arg2: 1);
@@ -139,7 +139,7 @@ namespace Maple2.Trigger._02020061_bf {
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000087}, arg2: 0)) {
-                    return new State레버4_재활성_대기(context);
+                    return new StateLever4_재활성_Wait(context);
                 }
 
                 return null;
@@ -148,8 +148,8 @@ namespace Maple2.Trigger._02020061_bf {
             public override void OnExit() { }
         }
 
-        private class State레버4_재활성_대기 : TriggerState {
-            internal State레버4_재활성_대기(ITriggerContext context) : base(context) { }
+        private class StateLever4_재활성_Wait : TriggerState {
+            internal StateLever4_재활성_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -163,7 +163,7 @@ namespace Maple2.Trigger._02020061_bf {
                 }
 
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new State레버4_재활성(context);
+                    return new StateLever4_재활성(context);
                 }
 
                 return null;

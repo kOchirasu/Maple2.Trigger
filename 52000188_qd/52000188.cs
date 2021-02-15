@@ -11,7 +11,7 @@ namespace Maple2.Trigger._52000188_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2})) {
-                    return new State컷씬준비(context);
+                    return new State컷씬Prepare(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {2001}, arg2: 0)) {
@@ -168,7 +168,7 @@ namespace Maple2.Trigger._52000188_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002793}, arg3: new byte[] {2})) {
-                    return new State컷씬준비(context);
+                    return new State컷씬Prepare(context);
                 }
 
                 return null;
@@ -177,8 +177,8 @@ namespace Maple2.Trigger._52000188_qd {
             public override void OnExit() { }
         }
 
-        private class State컷씬준비 : TriggerState {
-            internal State컷씬준비(ITriggerContext context) : base(context) { }
+        private class State컷씬Prepare : TriggerState {
+            internal State컷씬Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 30, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
@@ -187,7 +187,7 @@ namespace Maple2.Trigger._52000188_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State컷씬준비_02(context);
+                    return new State컷씬Prepare_02(context);
                 }
 
                 return null;
@@ -196,8 +196,8 @@ namespace Maple2.Trigger._52000188_qd {
             public override void OnExit() { }
         }
 
-        private class State컷씬준비_02 : TriggerState {
-            internal State컷씬준비_02(ITriggerContext context) : base(context) { }
+        private class State컷씬Prepare_02 : TriggerState {
+            internal State컷씬Prepare_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

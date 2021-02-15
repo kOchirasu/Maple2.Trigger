@@ -124,7 +124,7 @@ namespace Maple2.Trigger._51000006_dg {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3300)) {
-                    return new State게임시작_대기(context);
+                    return new State게임시작_Wait(context);
                 }
 
                 return null;
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._51000006_dg {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    return new State게임시작_대기(context);
+                    return new State게임시작_Wait(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {9000})) {
@@ -160,8 +160,8 @@ namespace Maple2.Trigger._51000006_dg {
             public override void OnExit() { }
         }
 
-        private class State게임시작_대기 : TriggerState {
-            internal State게임시작_대기(ITriggerContext context) : base(context) { }
+        private class State게임시작_Wait : TriggerState {
+            internal State게임시작_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
@@ -175,7 +175,7 @@ namespace Maple2.Trigger._51000006_dg {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State라운드준비(context);
+                    return new State라운드Prepare(context);
                 }
 
                 return null;
@@ -184,8 +184,8 @@ namespace Maple2.Trigger._51000006_dg {
             public override void OnExit() { }
         }
 
-        private class State라운드준비 : TriggerState {
-            internal State라운드준비(ITriggerContext context) : base(context) { }
+        private class State라운드Prepare : TriggerState {
+            internal State라운드Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601, 602, 603, 604, 610}, arg2: false);
@@ -272,7 +272,7 @@ namespace Maple2.Trigger._51000006_dg {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State결과연출(context);
+                    return new State결과Cinematic(context);
                 }
 
                 return null;
@@ -292,7 +292,7 @@ namespace Maple2.Trigger._51000006_dg {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State결과연출(context);
+                    return new State결과Cinematic(context);
                 }
 
                 return null;
@@ -312,7 +312,7 @@ namespace Maple2.Trigger._51000006_dg {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State결과연출(context);
+                    return new State결과Cinematic(context);
                 }
 
                 return null;
@@ -321,8 +321,8 @@ namespace Maple2.Trigger._51000006_dg {
             public override void OnExit() { }
         }
 
-        private class State결과연출 : TriggerState {
-            internal State결과연출(ITriggerContext context) : base(context) { }
+        private class State결과Cinematic : TriggerState {
+            internal State결과Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.InitNpcRotation(arg1: new[] {101});
@@ -388,7 +388,7 @@ namespace Maple2.Trigger._51000006_dg {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State라운드준비(context);
+                    return new State라운드Prepare(context);
                 }
 
                 return null;

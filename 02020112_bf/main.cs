@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {901})) {
-                    return new State중력방_대기(context);
+                    return new State중력방_Wait(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnExit() { }
         }
 
-        private class State중력방_대기 : TriggerState {
-            internal State중력방_대기(ITriggerContext context) : base(context) { }
+        private class State중력방_Wait : TriggerState {
+            internal State중력방_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterDead") == 1) {
-                    return new State격리방_대기(context);
+                    return new State격리방_Wait(context);
                 }
 
                 return null;
@@ -151,8 +151,8 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnExit() { }
         }
 
-        private class State격리방_대기 : TriggerState {
-            internal State격리방_대기(ITriggerContext context) : base(context) { }
+        private class State격리방_Wait : TriggerState {
+            internal State격리방_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 4, arg2: true, arg3: true, arg4: true);

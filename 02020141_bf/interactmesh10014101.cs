@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State탈것_Appear대기(context);
+                    return new State탈것_AppearWait(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnExit() { }
         }
 
-        private class State탈것_Appear대기 : TriggerState {
-            internal State탈것_Appear대기(ITriggerContext context) : base(context) { }
+        private class State탈것_AppearWait : TriggerState {
+            internal State탈것_AppearWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -84,7 +84,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 40000)) {
-                    return new State탈것_Appear대기(context);
+                    return new State탈것_AppearWait(context);
                 }
 
                 if (context.GetUserValue(key: "RidingBattle") == -1) {

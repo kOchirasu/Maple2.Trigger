@@ -7,7 +7,7 @@ namespace Maple2.Trigger._99999896 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {100})) {
-                    return new StateMassiveEvent대기(context);
+                    return new StateMassiveEventWait(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._99999896 {
             }
         }
 
-        private class StateMassiveEvent대기 : TriggerState {
-            internal StateMassiveEvent대기(ITriggerContext context) : base(context) { }
+        private class StateMassiveEventWait : TriggerState {
+            internal StateMassiveEventWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);

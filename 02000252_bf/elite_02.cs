@@ -104,7 +104,7 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State벨라대사2(context);
+                    return new State벨라Script2(context);
                 }
 
                 return null;
@@ -133,8 +133,8 @@ namespace Maple2.Trigger._02000252_bf {
             public override void OnExit() { }
         }
 
-        private class State벨라대사2 : TriggerState {
-            internal State벨라대사2(ITriggerContext context) : base(context) { }
+        private class State벨라Script2 : TriggerState {
+            internal State벨라Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 3);

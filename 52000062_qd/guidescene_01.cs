@@ -38,7 +38,7 @@ namespace Maple2.Trigger._52000062_qd {
                 }
 
                 if (context.UserDetected(arg1: new[] {199})) {
-                    return new State페르시카대사01(context);
+                    return new State페르시카Script01(context);
                 }
 
                 return null;
@@ -47,8 +47,8 @@ namespace Maple2.Trigger._52000062_qd {
             public override void OnExit() { }
         }
 
-        private class State페르시카대사01 : TriggerState {
-            internal State페르시카대사01(ITriggerContext context) : base(context) { }
+        private class State페르시카Script01 : TriggerState {
+            internal State페르시카Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._52000062_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    return new State페르시카대사02(context);
+                    return new State페르시카Script02(context);
                 }
 
                 return null;
@@ -67,8 +67,8 @@ namespace Maple2.Trigger._52000062_qd {
             public override void OnExit() { }
         }
 
-        private class State페르시카대사02 : TriggerState {
-            internal State페르시카대사02(ITriggerContext context) : base(context) { }
+        private class State페르시카Script02 : TriggerState {
+            internal State페르시카Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001176, arg3: "$52000062_QD__GUIdESCENE_01__0$", arg4: 3, arg5: 0);
@@ -179,7 +179,7 @@ namespace Maple2.Trigger._52000062_qd {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1001})) {
-                    return new State찬양연출(context);
+                    return new State찬양Cinematic(context);
                 }
 
                 return null;
@@ -188,8 +188,8 @@ namespace Maple2.Trigger._52000062_qd {
             public override void OnExit() { }
         }
 
-        private class State찬양연출 : TriggerState {
-            internal State찬양연출(ITriggerContext context) : base(context) { }
+        private class State찬양Cinematic : TriggerState {
+            internal State찬양Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 1008, arg3: "$52000062_QD__GUIdESCENE_01__2$", arg4: 2, arg5: 1);

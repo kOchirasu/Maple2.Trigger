@@ -7,7 +7,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9001})) {
-                    return new State다리흔들기준비(context);
+                    return new State다리흔들기Prepare(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._63000006_cs {
             public override void OnExit() { }
         }
 
-        private class State다리흔들기준비 : TriggerState {
-            internal State다리흔들기준비(ITriggerContext context) : base(context) { }
+        private class State다리흔들기Prepare : TriggerState {
+            internal State다리흔들기Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {910, 911, 912, 913}, arg2: false);
@@ -40,7 +40,7 @@ namespace Maple2.Trigger._63000006_cs {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State다리흔들기준비(context);
+                    return new State다리흔들기Prepare(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {9002})) {

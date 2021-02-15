@@ -106,7 +106,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override TriggerState Execute() {
                 if (context.CheckNpcAdditionalEffect(spawnPointId: 101, additionalEffectId: 62100152, level: 1)) {
-                    return new State리셋_대기(context);
+                    return new State리셋_Wait(context);
                 }
 
                 if (context.GetUserValue(key: "Phase_2_Interect_01") == 0) {
@@ -119,8 +119,8 @@ namespace Maple2.Trigger._02020301_bf {
             public override void OnExit() { }
         }
 
-        private class State리셋_대기 : TriggerState {
-            internal State리셋_대기(ITriggerContext context) : base(context) { }
+        private class State리셋_Wait : TriggerState {
+            internal State리셋_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

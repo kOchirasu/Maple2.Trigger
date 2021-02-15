@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State연출진행(context);
+                    return new StateCinematic진행(context);
                 }
 
                 return null;
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State연출진행 : TriggerState {
-            internal State연출진행(ITriggerContext context) : base(context) { }
+        private class StateCinematic진행 : TriggerState {
+            internal StateCinematic진행(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000066_BF__PATO__0$", arg4: 2);

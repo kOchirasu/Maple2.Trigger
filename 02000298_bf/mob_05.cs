@@ -11,12 +11,12 @@ namespace Maple2.Trigger._02000298_bf {
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
                     context.CreateMonster(arg1: new[] {1005}, arg2: false);
-                    return new State방호벽대기(context);
+                    return new State방호벽Wait(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {103})) {
                     context.CreateMonster(arg1: new[] {1005}, arg2: false);
-                    return new State방호벽대기(context);
+                    return new State방호벽Wait(context);
                 }
 
                 return null;
@@ -25,8 +25,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State방호벽대기 : TriggerState {
-            internal State방호벽대기(ITriggerContext context) : base(context) { }
+        private class State방호벽Wait : TriggerState {
+            internal State방호벽Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

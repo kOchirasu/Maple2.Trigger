@@ -84,7 +84,7 @@ namespace Maple2.Trigger._02020062_bf {
                 }
 
                 if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(arg1: 9099, arg2: new[] {921})) {
-                    return new StateBoss_무적페이즈(context);
+                    return new StateBoss_InvincibilityPhase(context);
                 }
 
                 return null;
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._02020062_bf {
                 }
 
                 if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(arg1: 9099, arg2: new[] {922})) {
-                    return new StateBoss_무적페이즈(context);
+                    return new StateBoss_InvincibilityPhase(context);
                 }
 
                 return null;
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._02020062_bf {
                 }
 
                 if (context.GetUserValue(key: "ObjectStart") == 2 && context.NpcDetected(arg1: 9099, arg2: new[] {923})) {
-                    return new StateBoss_무적페이즈(context);
+                    return new StateBoss_InvincibilityPhase(context);
                 }
 
                 return null;
@@ -145,8 +145,8 @@ namespace Maple2.Trigger._02020062_bf {
             public override void OnExit() { }
         }
 
-        private class StateBoss_무적페이즈 : TriggerState {
-            internal StateBoss_무적페이즈(ITriggerContext context) : base(context) { }
+        private class StateBoss_InvincibilityPhase : TriggerState {
+            internal StateBoss_InvincibilityPhase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02020062_BF__BATTLE_3__2$", arg3: 5000);
@@ -167,7 +167,7 @@ namespace Maple2.Trigger._02020062_bf {
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new StateBoss_추가대사1(context);
+                    return new StateBoss_추가Script1(context);
                 }
 
                 return null;
@@ -176,8 +176,8 @@ namespace Maple2.Trigger._02020062_bf {
             public override void OnExit() { }
         }
 
-        private class StateBoss_추가대사1 : TriggerState {
-            internal StateBoss_추가대사1(ITriggerContext context) : base(context) { }
+        private class StateBoss_추가Script1 : TriggerState {
+            internal StateBoss_추가Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020062_BF__BATTLE_3__1$");
@@ -193,7 +193,7 @@ namespace Maple2.Trigger._02020062_bf {
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new StateBoss_추가대사2(context);
+                    return new StateBoss_추가Script2(context);
                 }
 
                 return null;
@@ -202,8 +202,8 @@ namespace Maple2.Trigger._02020062_bf {
             public override void OnExit() { }
         }
 
-        private class StateBoss_추가대사2 : TriggerState {
-            internal StateBoss_추가대사2(ITriggerContext context) : base(context) { }
+        private class StateBoss_추가Script2 : TriggerState {
+            internal StateBoss_추가Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020062_BF__BATTLE_3__3$");

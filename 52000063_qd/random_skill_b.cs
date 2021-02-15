@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52000063_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "gameStart") == 1) {
-                    return new State감지대기(context);
+                    return new State감지Wait(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52000063_qd {
             public override void OnExit() { }
         }
 
-        private class State감지대기 : TriggerState {
-            internal State감지대기(ITriggerContext context) : base(context) { }
+        private class State감지Wait : TriggerState {
+            internal State감지Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {604, 605, 606}, arg2: true);

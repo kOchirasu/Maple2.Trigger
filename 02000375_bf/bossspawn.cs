@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02000375_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateClear_체크대기(context);
+                    return new StateClear_체크Wait(context);
                 }
 
                 return null;
@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02000375_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateClear_체크대기(context);
+                    return new StateClear_체크Wait(context);
                 }
 
                 return null;
@@ -83,8 +83,8 @@ namespace Maple2.Trigger._02000375_bf {
             public override void OnExit() { }
         }
 
-        private class StateClear_체크대기 : TriggerState {
-            internal StateClear_체크대기(ITriggerContext context) : base(context) { }
+        private class StateClear_체크Wait : TriggerState {
+            internal StateClear_체크Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

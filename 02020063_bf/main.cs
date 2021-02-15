@@ -127,7 +127,7 @@ namespace Maple2.Trigger._02020063_bf {
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_1_Clear") == 1) {
                     context.SetUserValue(triggerId: 99990002, key: "Battle_1_SpawnStart", value: 0);
-                    return new State포탑페이즈(context);
+                    return new State포탑Phase(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {801})) {
@@ -143,8 +143,8 @@ namespace Maple2.Trigger._02020063_bf {
             public override void OnExit() { }
         }
 
-        private class State포탑페이즈 : TriggerState {
-            internal State포탑페이즈(ITriggerContext context) : base(context) { }
+        private class State포탑Phase : TriggerState {
+            internal State포탑Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.GiveRewardContent(rewardId: 31000001);
@@ -157,7 +157,7 @@ namespace Maple2.Trigger._02020063_bf {
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Battle_2_Clear") == 1) {
                     context.SetUserValue(triggerId: 99990005, key: "Battle_2_SpawnStart", value: 0);
-                    return new StateBoss페이즈(context);
+                    return new StateBossPhase(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {801})) {
@@ -173,8 +173,8 @@ namespace Maple2.Trigger._02020063_bf {
             public override void OnExit() { }
         }
 
-        private class StateBoss페이즈 : TriggerState {
-            internal StateBoss페이즈(ITriggerContext context) : base(context) { }
+        private class StateBossPhase : TriggerState {
+            internal StateBossPhase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.GiveRewardContent(rewardId: 31000002);

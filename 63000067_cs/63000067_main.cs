@@ -276,7 +276,7 @@ namespace Maple2.Trigger._63000067_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State마리엔퇴장_01(context);
+                    return new State마리엔Exit_01(context);
                 }
 
                 return null;
@@ -285,8 +285,8 @@ namespace Maple2.Trigger._63000067_cs {
             public override void OnExit() { }
         }
 
-        private class State마리엔퇴장_01 : TriggerState {
-            internal State마리엔퇴장_01(ITriggerContext context) : base(context) { }
+        private class State마리엔Exit_01 : TriggerState {
+            internal State마리엔Exit_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -296,7 +296,7 @@ namespace Maple2.Trigger._63000067_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State마리엔퇴장_02(context);
+                    return new State마리엔Exit_02(context);
                 }
 
                 return null;
@@ -305,8 +305,8 @@ namespace Maple2.Trigger._63000067_cs {
             public override void OnExit() { }
         }
 
-        private class State마리엔퇴장_02 : TriggerState {
-            internal State마리엔퇴장_02(ITriggerContext context) : base(context) { }
+        private class State마리엔Exit_02 : TriggerState {
+            internal State마리엔Exit_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 0);

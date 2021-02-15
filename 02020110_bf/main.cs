@@ -109,7 +109,7 @@ namespace Maple2.Trigger._02020110_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {114, 115, 116, 117, 118, 119})) {
-                    return new State다음블록이동(context);
+                    return new StateNext블록이동(context);
                 }
 
                 return null;
@@ -118,8 +118,8 @@ namespace Maple2.Trigger._02020110_bf {
             public override void OnExit() { }
         }
 
-        private class State다음블록이동 : TriggerState {
-            internal State다음블록이동(ITriggerContext context) : base(context) { }
+        private class StateNext블록이동 : TriggerState {
+            internal StateNext블록이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 7, arg2: true, arg3: true, arg4: true);

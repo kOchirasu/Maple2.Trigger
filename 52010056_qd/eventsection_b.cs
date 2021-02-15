@@ -60,7 +60,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State경비병_스폰(context);
+                    return new State경비병_Spawn(context);
                 }
 
                 return null;
@@ -69,8 +69,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State경비병_스폰 : TriggerState {
-            internal State경비병_스폰(ITriggerContext context) : base(context) { }
+        private class State경비병_Spawn : TriggerState {
+            internal State경비병_Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);

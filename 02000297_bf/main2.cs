@@ -220,7 +220,7 @@ namespace Maple2.Trigger._02000297_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {6200})) {
-                    return new State엔딩연출1(context);
+                    return new State엔딩Cinematic1(context);
                 }
 
                 return null;
@@ -229,8 +229,8 @@ namespace Maple2.Trigger._02000297_bf {
             public override void OnExit() { }
         }
 
-        private class State엔딩연출1 : TriggerState {
-            internal State엔딩연출1(ITriggerContext context) : base(context) { }
+        private class State엔딩Cinematic1 : TriggerState {
+            internal State엔딩Cinematic1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {31000, 31001, 31002, 31003, 31004, 31005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -238,7 +238,7 @@ namespace Maple2.Trigger._02000297_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    return new State엔딩연출(context);
+                    return new State엔딩Cinematic(context);
                 }
 
                 return null;
@@ -247,8 +247,8 @@ namespace Maple2.Trigger._02000297_bf {
             public override void OnExit() { }
         }
 
-        private class State엔딩연출 : TriggerState {
-            internal State엔딩연출(ITriggerContext context) : base(context) { }
+        private class State엔딩Cinematic : TriggerState {
+            internal State엔딩Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);

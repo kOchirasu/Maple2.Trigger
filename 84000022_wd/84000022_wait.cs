@@ -139,7 +139,7 @@ namespace Maple2.Trigger._84000022_wd {
                 }
 
                 if (context.WeddingMutualAgreeResult(agreeType: "startActing", success: true)) {
-                    return new State결혼식연출진행중(context);
+                    return new State결혼식Cinematic진행중(context);
                 }
 
                 if (context.WeddingMutualAgreeResult(agreeType: "startActing", success: false)) {
@@ -192,8 +192,8 @@ namespace Maple2.Trigger._84000022_wd {
             public override void OnExit() { }
         }
 
-        private class State결혼식연출진행중 : TriggerState {
-            internal State결혼식연출진행중(ITriggerContext context) : base(context) { }
+        private class State결혼식Cinematic진행중 : TriggerState {
+            internal State결혼식Cinematic진행중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 4001, key: "Weddingceremonystarts", value: 1);

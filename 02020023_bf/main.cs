@@ -109,7 +109,7 @@ namespace Maple2.Trigger._02020023_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new StateCamera_블리체대사1(context);
+                    return new StateCamera_블리체Script1(context);
                 }
 
                 return null;
@@ -118,8 +118,8 @@ namespace Maple2.Trigger._02020023_bf {
             public override void OnExit() { }
         }
 
-        private class StateCamera_블리체대사1 : TriggerState {
-            internal StateCamera_블리체대사1(ITriggerContext context) : base(context) { }
+        private class StateCamera_블리체Script1 : TriggerState {
+            internal StateCamera_블리체Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 23200083, illustId: "Bliche_normal", msg: "$02020023_BF__main__0$", duration: 4000, align: "left");

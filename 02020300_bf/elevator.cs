@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020300_bf {
     public static class _elevator {
-        public class State메시지_대기 : TriggerState {
-            internal State메시지_대기(ITriggerContext context) : base(context) { }
+        public class State메시지_Wait : TriggerState {
+            internal State메시지_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "elevator") == 0) {
-                    return new State메시지_대기(context);
+                    return new State메시지_Wait(context);
                 }
 
                 return null;

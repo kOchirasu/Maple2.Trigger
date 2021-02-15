@@ -35,7 +35,7 @@ namespace Maple2.Trigger._63000039_cs {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.SetConversation(arg1: 1, arg2: 1002, arg3: "$63000039_CS__40002641__0$", arg4: 4, arg5: 0);
                     context.SetConversation(arg1: 1, arg2: 1005, arg3: "$63000039_CS__40002641__1$", arg4: 4, arg5: 2);
-                    return new StateInteractObject대기(context);
+                    return new StateInteractObjectWait(context);
                 }
 
                 return null;
@@ -44,8 +44,8 @@ namespace Maple2.Trigger._63000039_cs {
             public override void OnExit() { }
         }
 
-        private class StateInteractObject대기 : TriggerState {
-            internal StateInteractObject대기(ITriggerContext context) : base(context) { }
+        private class StateInteractObjectWait : TriggerState {
+            internal StateInteractObjectWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10001025}, arg2: 1);

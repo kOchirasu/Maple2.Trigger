@@ -139,7 +139,7 @@ namespace Maple2.Trigger._02000539_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {103, 1031, 1032, 1033, 1034})) {
-                    return new State다음MonsterCreation조건체크(context);
+                    return new StateNextMonsterCreationConditionCheck(context);
                 }
 
                 return null;
@@ -148,8 +148,8 @@ namespace Maple2.Trigger._02000539_bf {
             public override void OnExit() { }
         }
 
-        private class State다음MonsterCreation조건체크 : TriggerState {
-            internal State다음MonsterCreation조건체크(ITriggerContext context) : base(context) { }
+        private class StateNextMonsterCreationConditionCheck : TriggerState {
+            internal StateNextMonsterCreationConditionCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004644, illust: "SlaveMan3_normal", duration: 4000, script: "$02000539_BF__MAIN__1$");
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._02000539_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State다음MonsterCreation(context);
+                    return new StateNextMonsterCreation(context);
                 }
 
                 return null;
@@ -167,8 +167,8 @@ namespace Maple2.Trigger._02000539_bf {
             public override void OnExit() { }
         }
 
-        private class State다음MonsterCreation : TriggerState {
-            internal State다음MonsterCreation(ITriggerContext context) : base(context) { }
+        private class StateNextMonsterCreation : TriggerState {
+            internal StateNextMonsterCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {105, 1051, 1052}, arg2: false);
@@ -325,7 +325,7 @@ namespace Maple2.Trigger._02000539_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {708}, arg2: 0)) {
-                    return new State다음MonsterCreation1(context);
+                    return new StateNextMonsterCreation1(context);
                 }
 
                 return null;
@@ -334,8 +334,8 @@ namespace Maple2.Trigger._02000539_bf {
             public override void OnExit() { }
         }
 
-        private class State다음MonsterCreation1 : TriggerState {
-            internal State다음MonsterCreation1(ITriggerContext context) : base(context) { }
+        private class StateNextMonsterCreation1 : TriggerState {
+            internal StateNextMonsterCreation1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {202}, arg2: false);
@@ -347,7 +347,7 @@ namespace Maple2.Trigger._02000539_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {111, 1111, 1112, 112, 1121})) {
-                    return new State다음MonsterCreation조건체크2(context);
+                    return new StateNextMonsterCreationConditionCheck2(context);
                 }
 
                 return null;
@@ -356,8 +356,8 @@ namespace Maple2.Trigger._02000539_bf {
             public override void OnExit() { }
         }
 
-        private class State다음MonsterCreation조건체크2 : TriggerState {
-            internal State다음MonsterCreation조건체크2(ITriggerContext context) : base(context) { }
+        private class StateNextMonsterCreationConditionCheck2 : TriggerState {
+            internal StateNextMonsterCreationConditionCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 3000, script: "$02000539_BF__MAIN__6$");
@@ -366,7 +366,7 @@ namespace Maple2.Trigger._02000539_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {705}, arg2: 0)) {
-                    return new State다음MonsterCreation조건체크3(context);
+                    return new StateNextMonsterCreationConditionCheck3(context);
                 }
 
                 return null;
@@ -375,8 +375,8 @@ namespace Maple2.Trigger._02000539_bf {
             public override void OnExit() { }
         }
 
-        private class State다음MonsterCreation조건체크3 : TriggerState {
-            internal State다음MonsterCreation조건체크3(ITriggerContext context) : base(context) { }
+        private class StateNextMonsterCreationConditionCheck3 : TriggerState {
+            internal StateNextMonsterCreationConditionCheck3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {3001}, arg2: true);
@@ -442,7 +442,7 @@ namespace Maple2.Trigger._02000539_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State다음MonsterCreation3(context);
+                    return new StateNextMonsterCreation3(context);
                 }
 
                 return null;
@@ -451,8 +451,8 @@ namespace Maple2.Trigger._02000539_bf {
             public override void OnExit() { }
         }
 
-        private class State다음MonsterCreation3 : TriggerState {
-            internal State다음MonsterCreation3(ITriggerContext context) : base(context) { }
+        private class StateNextMonsterCreation3 : TriggerState {
+            internal StateNextMonsterCreation3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {104, 1041}, arg2: false);

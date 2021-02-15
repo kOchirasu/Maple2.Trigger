@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020019_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "5Phase") == 1) {
-                    return new State크림슨발록스폰체크(context);
+                    return new State크림슨발록Spawn체크(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02020019_bf {
             public override void OnExit() { }
         }
 
-        private class State크림슨발록스폰체크 : TriggerState {
-            internal State크림슨발록스폰체크(ITriggerContext context) : base(context) { }
+        private class State크림슨발록Spawn체크 : TriggerState {
+            internal State크림슨발록Spawn체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(feature: "FameChallengeBuff_01", arg1: new[] {241}, arg2: 49218001, arg3: 1, arg4: true);

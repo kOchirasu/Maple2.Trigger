@@ -50,11 +50,11 @@ namespace Maple2.Trigger._52010007_qd {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 102, arg2: new[] {1002})) {
-                    return new State둔바대사01(context);
+                    return new State둔바Script01(context);
                 }
 
                 if (context.NpcDetected(arg1: 102, arg2: new[] {1003})) {
-                    return new State둔바대사01(context);
+                    return new State둔바Script01(context);
                 }
 
                 return null;
@@ -63,8 +63,8 @@ namespace Maple2.Trigger._52010007_qd {
             public override void OnExit() { }
         }
 
-        private class State둔바대사01 : TriggerState {
-            internal State둔바대사01(ITriggerContext context) : base(context) { }
+        private class State둔바Script01 : TriggerState {
+            internal State둔바Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001217, arg3: "$52010007_QD__MAIN__0$", arg4: 4);
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._52010007_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State에레브대사01(context);
+                    return new State에레브Script01(context);
                 }
 
                 return null;
@@ -81,8 +81,8 @@ namespace Maple2.Trigger._52010007_qd {
             public override void OnExit() { }
         }
 
-        private class State에레브대사01 : TriggerState {
-            internal State에레브대사01(ITriggerContext context) : base(context) { }
+        private class State에레브Script01 : TriggerState {
+            internal State에레브Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52010007_QD__MAIN__1$", arg4: 4);
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._52010007_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State말풍선대사01(context);
+                    return new State말풍선Script01(context);
                 }
 
                 return null;
@@ -121,8 +121,8 @@ namespace Maple2.Trigger._52010007_qd {
             public override void OnExit() { }
         }
 
-        private class State말풍선대사01 : TriggerState {
-            internal State말풍선대사01(ITriggerContext context) : base(context) { }
+        private class State말풍선Script01 : TriggerState {
+            internal State말풍선Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 1003, arg3: "$52010007_QD__MAIN__2$", arg4: 2, arg5: 0);
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._52010007_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State말풍선대사02(context);
+                    return new State말풍선Script02(context);
                 }
 
                 return null;
@@ -139,8 +139,8 @@ namespace Maple2.Trigger._52010007_qd {
             public override void OnExit() { }
         }
 
-        private class State말풍선대사02 : TriggerState {
-            internal State말풍선대사02(ITriggerContext context) : base(context) { }
+        private class State말풍선Script02 : TriggerState {
+            internal State말풍선Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 1003, arg3: "$52010007_QD__MAIN__3$", arg4: 2, arg5: 0);
@@ -148,7 +148,7 @@ namespace Maple2.Trigger._52010007_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State말풍선대사03(context);
+                    return new State말풍선Script03(context);
                 }
 
                 return null;
@@ -157,8 +157,8 @@ namespace Maple2.Trigger._52010007_qd {
             public override void OnExit() { }
         }
 
-        private class State말풍선대사03 : TriggerState {
-            internal State말풍선대사03(ITriggerContext context) : base(context) { }
+        private class State말풍선Script03 : TriggerState {
+            internal State말풍선Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 1004, arg3: "$52010007_QD__MAIN__4$", arg4: 2, arg5: 0);
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._52010007_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State스타츠대사01(context);
+                    return new State스타츠Script01(context);
                 }
 
                 return null;
@@ -175,8 +175,8 @@ namespace Maple2.Trigger._52010007_qd {
             public override void OnExit() { }
         }
 
-        private class State스타츠대사01 : TriggerState {
-            internal State스타츠대사01(ITriggerContext context) : base(context) { }
+        private class State스타츠Script01 : TriggerState {
+            internal State스타츠Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -245,7 +245,7 @@ namespace Maple2.Trigger._52010007_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State에레브대사02(context);
+                    return new State에레브Script02(context);
                 }
 
                 return null;
@@ -254,8 +254,8 @@ namespace Maple2.Trigger._52010007_qd {
             public override void OnExit() { }
         }
 
-        private class State에레브대사02 : TriggerState {
-            internal State에레브대사02(ITriggerContext context) : base(context) { }
+        private class State에레브Script02 : TriggerState {
+            internal State에레브Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -266,7 +266,7 @@ namespace Maple2.Trigger._52010007_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State에레브대사03(context);
+                    return new State에레브Script03(context);
                 }
 
                 return null;
@@ -275,8 +275,8 @@ namespace Maple2.Trigger._52010007_qd {
             public override void OnExit() { }
         }
 
-        private class State에레브대사03 : TriggerState {
-            internal State에레브대사03(ITriggerContext context) : base(context) { }
+        private class State에레브Script03 : TriggerState {
+            internal State에레브Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52010007_QD__MAIN__9$", arg4: 4);

@@ -35,7 +35,7 @@ namespace Maple2.Trigger._52000145_qd {
                 }
 
                 if (context.UserDetected(arg1: new[] {701})) {
-                    return new State영상준비_01(context);
+                    return new State영상Prepare_01(context);
                 }
 
                 return null;
@@ -44,8 +44,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State영상준비_01 : TriggerState {
-            internal State영상준비_01(ITriggerContext context) : base(context) { }
+        private class State영상Prepare_01 : TriggerState {
+            internal State영상Prepare_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);

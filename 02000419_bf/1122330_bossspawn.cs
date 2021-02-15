@@ -36,7 +36,7 @@ namespace Maple2.Trigger._02000419_bf {
                 }
 
                 if (context.MonsterDead(arg1: new[] {2000})) {
-                    return new State연출Delay(context);
+                    return new StateCinematicDelay(context);
                 }
 
                 return null;
@@ -55,7 +55,7 @@ namespace Maple2.Trigger._02000419_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2000})) {
-                    return new State연출Delay(context);
+                    return new StateCinematicDelay(context);
                 }
 
                 return null;
@@ -64,8 +64,8 @@ namespace Maple2.Trigger._02000419_bf {
             public override void OnExit() { }
         }
 
-        private class State연출Delay : TriggerState {
-            internal State연출Delay(ITriggerContext context) : base(context) { }
+        private class StateCinematicDelay : TriggerState {
+            internal StateCinematicDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -147,19 +147,19 @@ namespace Maple2.Trigger._02000300_bf {
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 25f)) {
-                    return new State대사1(context);
+                    return new StateScript1(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    return new State대사2(context);
+                    return new StateScript2(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    return new State대사3(context);
+                    return new StateScript3(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    return new State대사4(context);
+                    return new StateScript4(context);
                 }
 
                 return null;
@@ -168,8 +168,8 @@ namespace Maple2.Trigger._02000300_bf {
             public override void OnExit() { }
         }
 
-        private class State대사1 : TriggerState {
-            internal State대사1(ITriggerContext context) : base(context) { }
+        private class StateScript1 : TriggerState {
+            internal StateScript1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);
@@ -187,8 +187,8 @@ namespace Maple2.Trigger._02000300_bf {
             public override void OnExit() { }
         }
 
-        private class State대사2 : TriggerState {
-            internal State대사2(ITriggerContext context) : base(context) { }
+        private class StateScript2 : TriggerState {
+            internal StateScript2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);
@@ -206,8 +206,8 @@ namespace Maple2.Trigger._02000300_bf {
             public override void OnExit() { }
         }
 
-        private class State대사3 : TriggerState {
-            internal State대사3(ITriggerContext context) : base(context) { }
+        private class StateScript3 : TriggerState {
+            internal StateScript3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);
@@ -225,8 +225,8 @@ namespace Maple2.Trigger._02000300_bf {
             public override void OnExit() { }
         }
 
-        private class State대사4 : TriggerState {
-            internal State대사4(ITriggerContext context) : base(context) { }
+        private class StateScript4 : TriggerState {
+            internal StateScript4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);

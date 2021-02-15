@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State메시지작동준비(context);
+                    return new State메시지작동Prepare(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnExit() { }
         }
 
-        private class State메시지작동준비 : TriggerState {
-            internal State메시지작동준비(ITriggerContext context) : base(context) { }
+        private class State메시지작동Prepare : TriggerState {
+            internal State메시지작동Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "MessageAlarm", value: 0);
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 15000)) {
-                    return new State메시지작동대기Buff체크(context);
+                    return new State메시지작동WaitBuff체크(context);
                 }
 
                 return null;
@@ -35,8 +35,8 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnExit() { }
         }
 
-        private class State메시지작동대기Buff체크 : TriggerState {
-            internal State메시지작동대기Buff체크(ITriggerContext context) : base(context) { }
+        private class State메시지작동WaitBuff체크 : TriggerState {
+            internal State메시지작동WaitBuff체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State메시지작동대기Buff체크(context);
+                    return new State메시지작동WaitBuff체크(context);
                 }
 
                 return null;
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State메시지작동대기Buff체크(context);
+                    return new State메시지작동WaitBuff체크(context);
                 }
 
                 return null;
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State메시지작동대기Buff체크(context);
+                    return new State메시지작동WaitBuff체크(context);
                 }
 
                 return null;

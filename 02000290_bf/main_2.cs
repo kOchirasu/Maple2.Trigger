@@ -232,7 +232,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2002})) {
-                    return new State연출대기(context);
+                    return new StateCinematicWait(context);
                 }
 
                 return null;
@@ -241,8 +241,8 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnExit() { }
         }
 
-        private class State연출대기 : TriggerState {
-            internal State연출대기(ITriggerContext context) : base(context) { }
+        private class StateCinematicWait : TriggerState {
+            internal StateCinematicWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
@@ -424,7 +424,7 @@ namespace Maple2.Trigger._02000290_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateNPC대사01(context);
+                    return new StateNPCScript01(context);
                 }
 
                 return null;
@@ -433,8 +433,8 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnExit() { }
         }
 
-        private class StateNPC대사01 : TriggerState {
-            internal StateNPC대사01(ITriggerContext context) : base(context) { }
+        private class StateNPCScript01 : TriggerState {
+            internal StateNPCScript01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -442,7 +442,7 @@ namespace Maple2.Trigger._02000290_bf {
                 if (context.WaitTick(waitTick: 2000)) {
                     context.SetConversation(arg1: 1, arg2: 910, arg3: "$02000290_BF__MAIN_2__4$", arg4: 3);
                     context.SetEffect(arg1: new[] {6003}, arg2: true);
-                    return new StateNPC대사02(context);
+                    return new StateNPCScript02(context);
                 }
 
                 return null;
@@ -451,8 +451,8 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnExit() { }
         }
 
-        private class StateNPC대사02 : TriggerState {
-            internal StateNPC대사02(ITriggerContext context) : base(context) { }
+        private class StateNPCScript02 : TriggerState {
+            internal StateNPCScript02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -460,7 +460,7 @@ namespace Maple2.Trigger._02000290_bf {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetConversation(arg1: 1, arg2: 911, arg3: "$02000290_BF__MAIN_2__5$", arg4: 3);
                     context.SetEffect(arg1: new[] {6004}, arg2: true);
-                    return new StateNPC대사03(context);
+                    return new StateNPCScript03(context);
                 }
 
                 return null;
@@ -469,8 +469,8 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnExit() { }
         }
 
-        private class StateNPC대사03 : TriggerState {
-            internal StateNPC대사03(ITriggerContext context) : base(context) { }
+        private class StateNPCScript03 : TriggerState {
+            internal StateNPCScript03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -478,7 +478,7 @@ namespace Maple2.Trigger._02000290_bf {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.SetConversation(arg1: 1, arg2: 912, arg3: "$02000290_BF__MAIN_2__6$", arg4: 3);
                     context.SetEffect(arg1: new[] {6005}, arg2: true);
-                    return new StateNPC대사04(context);
+                    return new StateNPCScript04(context);
                 }
 
                 return null;
@@ -487,8 +487,8 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnExit() { }
         }
 
-        private class StateNPC대사04 : TriggerState {
-            internal StateNPC대사04(ITriggerContext context) : base(context) { }
+        private class StateNPCScript04 : TriggerState {
+            internal StateNPCScript04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -497,7 +497,7 @@ namespace Maple2.Trigger._02000290_bf {
                     context.SetConversation(arg1: 1, arg2: 913, arg3: "$02000290_BF__MAIN_2__7$", arg4: 3);
                     context.SetEffect(arg1: new[] {6006}, arg2: true);
                     context.HideGuideSummary(entityId: 20002905);
-                    return new StateEnd대기(context);
+                    return new StateEndWait(context);
                 }
 
                 return null;
@@ -506,8 +506,8 @@ namespace Maple2.Trigger._02000290_bf {
             public override void OnExit() { }
         }
 
-        private class StateEnd대기 : TriggerState {
-            internal StateEnd대기(ITriggerContext context) : base(context) { }
+        private class StateEndWait : TriggerState {
+            internal StateEndWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonClear();

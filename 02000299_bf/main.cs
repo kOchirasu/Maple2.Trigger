@@ -93,7 +93,7 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State시간반응대기(context);
+                    return new State시간반응Wait(context);
                 }
 
                 return null;
@@ -102,8 +102,8 @@ namespace Maple2.Trigger._02000299_bf {
             public override void OnExit() { }
         }
 
-        private class State시간반응대기 : TriggerState {
-            internal State시간반응대기(ITriggerContext context) : base(context) { }
+        private class State시간반응Wait : TriggerState {
+            internal State시간반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20002992, textId: 20002992, duration: 4000);
@@ -665,7 +665,7 @@ namespace Maple2.Trigger._02000299_bf {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
                     context.HideGuideSummary(entityId: 20002996);
-                    return new State시간반응대기(context);
+                    return new State시간반응Wait(context);
                 }
 
                 return null;
@@ -681,7 +681,7 @@ namespace Maple2.Trigger._02000299_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {104})) {
-                    return new StateBoss방이동준비(context);
+                    return new StateBoss방이동Prepare(context);
                 }
 
                 return null;
@@ -690,8 +690,8 @@ namespace Maple2.Trigger._02000299_bf {
             public override void OnExit() { }
         }
 
-        private class StateBoss방이동준비 : TriggerState {
-            internal StateBoss방이동준비(ITriggerContext context) : base(context) { }
+        private class StateBoss방이동Prepare : TriggerState {
+            internal StateBoss방이동Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 5);

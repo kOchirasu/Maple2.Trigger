@@ -236,7 +236,7 @@ namespace Maple2.Trigger._02000538_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {105, 1051, 1052, 1053, 1054, 1055})) {
-                    return new State엘리트소환체크(context);
+                    return new StateEliteSummonCheck(context);
                 }
 
                 return null;
@@ -245,14 +245,14 @@ namespace Maple2.Trigger._02000538_bf {
             public override void OnExit() { }
         }
 
-        private class State엘리트소환체크 : TriggerState {
-            internal State엘리트소환체크(ITriggerContext context) : base(context) { }
+        private class StateEliteSummonCheck : TriggerState {
+            internal StateEliteSummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {806}, arg2: 0)) {
-                    return new State엘리트소환(context);
+                    return new StateElite소환(context);
                 }
 
                 return null;
@@ -261,8 +261,8 @@ namespace Maple2.Trigger._02000538_bf {
             public override void OnExit() { }
         }
 
-        private class State엘리트소환 : TriggerState {
-            internal State엘리트소환(ITriggerContext context) : base(context) { }
+        private class StateElite소환 : TriggerState {
+            internal StateElite소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {5000}, arg2: true);

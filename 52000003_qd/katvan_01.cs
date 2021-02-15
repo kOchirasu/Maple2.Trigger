@@ -66,7 +66,7 @@ namespace Maple2.Trigger._52000003_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State카트반대사1(context);
+                    return new State카트반Script1(context);
                 }
 
                 return null;
@@ -75,8 +75,8 @@ namespace Maple2.Trigger._52000003_qd {
             public override void OnExit() { }
         }
 
-        private class State카트반대사1 : TriggerState {
-            internal State카트반대사1(ITriggerContext context) : base(context) { }
+        private class State카트반Script1 : TriggerState {
+            internal State카트반Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {603}, arg2: true);
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._52000003_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State카트반대사2(context);
+                    return new State카트반Script2(context);
                 }
 
                 return null;
@@ -94,8 +94,8 @@ namespace Maple2.Trigger._52000003_qd {
             public override void OnExit() { }
         }
 
-        private class State카트반대사2 : TriggerState {
-            internal State카트반대사2(ITriggerContext context) : base(context) { }
+        private class State카트반Script2 : TriggerState {
+            internal State카트반Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {604}, arg2: true);
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._52000003_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State레논대사1(context);
+                    return new State레논Script1(context);
                 }
 
                 return null;
@@ -115,8 +115,8 @@ namespace Maple2.Trigger._52000003_qd {
             }
         }
 
-        private class State레논대사1 : TriggerState {
-            internal State레논대사1(ITriggerContext context) : base(context) { }
+        private class State레논Script1 : TriggerState {
+            internal State레논Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {602}, arg2: true);

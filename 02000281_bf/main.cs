@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02000281_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new StateCamera대기(context);
+                    return new StateCameraWait(context);
                 }
 
                 return null;
@@ -51,8 +51,8 @@ namespace Maple2.Trigger._02000281_bf {
             }
         }
 
-        private class StateCamera대기 : TriggerState {
-            internal StateCamera대기(ITriggerContext context) : base(context) { }
+        private class StateCameraWait : TriggerState {
+            internal StateCameraWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20002810, textId: 20002810, duration: 5000);

@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02020061_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10002134}, arg2: 0)) {
-                    return new State재활성대기(context);
+                    return new State재활성Wait(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._02020061_bf {
             public override void OnExit() { }
         }
 
-        private class State재활성대기 : TriggerState {
-            internal State재활성대기(ITriggerContext context) : base(context) { }
+        private class State재활성Wait : TriggerState {
+            internal State재활성Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

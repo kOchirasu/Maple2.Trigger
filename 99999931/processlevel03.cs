@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._99999931 {
     public static class _processlevel03 {
-        public class State레버당기기 : TriggerState {
-            internal State레버당기기(ITriggerContext context) : base(context) { }
+        public class StateLeverPull : TriggerState {
+            internal StateLeverPull(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000219}, arg2: 1);
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._99999931 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "36")) {
-                    return new State레버당기기(context);
+                    return new StateLeverPull(context);
                 }
 
                 return null;

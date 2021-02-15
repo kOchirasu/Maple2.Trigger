@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02020062_bf {
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State스폰_1_추가대사1(context);
+                    return new State스폰_1_추가Script1(context);
                 }
 
                 return null;
@@ -69,8 +69,8 @@ namespace Maple2.Trigger._02020062_bf {
             public override void OnExit() { }
         }
 
-        private class State스폰_1_추가대사1 : TriggerState {
-            internal State스폰_1_추가대사1(ITriggerContext context) : base(context) { }
+        private class State스폰_1_추가Script1 : TriggerState {
+            internal State스폰_1_추가Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020062_BF__BATTLE_1__1$");
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._02020062_bf {
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State스폰_1_추가대사2(context);
+                    return new State스폰_1_추가Script2(context);
                 }
 
                 return null;
@@ -91,8 +91,8 @@ namespace Maple2.Trigger._02020062_bf {
             public override void OnExit() { }
         }
 
-        private class State스폰_1_추가대사2 : TriggerState {
-            internal State스폰_1_추가대사2(ITriggerContext context) : base(context) { }
+        private class State스폰_1_추가Script2 : TriggerState {
+            internal State스폰_1_추가Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020062_BF__BATTLE_1__2$");
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override TriggerState Execute() {
                 if (context.GetShadowExpeditionPoints() >= 750) {
-                    return new State오브젝트페이즈(context);
+                    return new State오브젝트Phase(context);
                 }
 
                 if (context.GetUserValue(key: "SpawnStart") == 2) {
@@ -293,8 +293,8 @@ namespace Maple2.Trigger._02020062_bf {
             public override void OnExit() { }
         }
 
-        private class State오브젝트페이즈 : TriggerState {
-            internal State오브젝트페이즈(ITriggerContext context) : base(context) { }
+        private class State오브젝트Phase : TriggerState {
+            internal State오브젝트Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShadowExpeditionCloseBossGauge();

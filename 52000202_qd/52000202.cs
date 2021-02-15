@@ -216,7 +216,7 @@ namespace Maple2.Trigger._52000202_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    return new State전투준비(context);
+                    return new State전투Prepare(context);
                 }
 
                 return null;
@@ -225,8 +225,8 @@ namespace Maple2.Trigger._52000202_qd {
             public override void OnExit() { }
         }
 
-        private class State전투준비 : TriggerState {
-            internal State전투준비(ITriggerContext context) : base(context) { }
+        private class State전투Prepare : TriggerState {
+            internal State전투Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Attack_Idle_A", arg2: 4500f);

@@ -33,7 +33,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StatePortal체크대기중(context);
+                    return new StatePortal체크Waiting(context);
                 }
 
                 return null;
@@ -42,8 +42,8 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class StatePortal체크대기중 : TriggerState {
-            internal StatePortal체크대기중(ITriggerContext context) : base(context) { }
+        private class StatePortal체크Waiting : TriggerState {
+            internal StatePortal체크Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StatePortal체크대기중(context);
+                    return new StatePortal체크Waiting(context);
                 }
 
                 return null;

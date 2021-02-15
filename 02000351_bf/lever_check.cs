@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000351_bf {
     public static class _lever_check {
-        public class State레버체크 : TriggerState {
-            internal State레버체크(ITriggerContext context) : base(context) { }
+        public class StateLeverCheck : TriggerState {
+            internal StateLeverCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000819, 10000820}, arg2: 0);
@@ -9,11 +9,11 @@ namespace Maple2.Trigger._02000351_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000819}, arg2: 1)) {
-                    return new State레버체크2(context);
+                    return new StateLeverCheck2(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000820}, arg2: 1)) {
-                    return new State레버체크2(context);
+                    return new StateLeverCheck2(context);
                 }
 
                 return null;
@@ -22,18 +22,18 @@ namespace Maple2.Trigger._02000351_bf {
             public override void OnExit() { }
         }
 
-        private class State레버체크2 : TriggerState {
-            internal State레버체크2(ITriggerContext context) : base(context) { }
+        private class StateLeverCheck2 : TriggerState {
+            internal StateLeverCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000820}, arg2: 0)) {
-                    return new State레버체크3_1개(context);
+                    return new StateLeverCheck3_1개(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000819}, arg2: 0)) {
-                    return new State레버체크4_1개(context);
+                    return new StateLeverCheck4_1개(context);
                 }
 
                 return null;
@@ -42,14 +42,14 @@ namespace Maple2.Trigger._02000351_bf {
             public override void OnExit() { }
         }
 
-        private class State레버체크3_1개 : TriggerState {
-            internal State레버체크3_1개(ITriggerContext context) : base(context) { }
+        private class StateLeverCheck3_1개 : TriggerState {
+            internal StateLeverCheck3_1개(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000819}, arg2: 0)) {
-                    return new State레버체크완료(context);
+                    return new StateLeverCheck완료(context);
                 }
 
                 return null;
@@ -58,14 +58,14 @@ namespace Maple2.Trigger._02000351_bf {
             public override void OnExit() { }
         }
 
-        private class State레버체크4_1개 : TriggerState {
-            internal State레버체크4_1개(ITriggerContext context) : base(context) { }
+        private class StateLeverCheck4_1개 : TriggerState {
+            internal StateLeverCheck4_1개(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000820}, arg2: 0)) {
-                    return new State레버체크완료(context);
+                    return new StateLeverCheck완료(context);
                 }
 
                 return null;
@@ -74,8 +74,8 @@ namespace Maple2.Trigger._02000351_bf {
             public override void OnExit() { }
         }
 
-        private class State레버체크완료 : TriggerState {
-            internal State레버체크완료(ITriggerContext context) : base(context) { }
+        private class StateLeverCheck완료 : TriggerState {
+            internal StateLeverCheck완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);

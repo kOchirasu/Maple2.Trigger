@@ -17,7 +17,7 @@ namespace Maple2.Trigger._99999942 {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "WaitUser") == 1) {
-                    return new State유저대기중(context);
+                    return new State유저Waiting(context);
                 }
 
                 return null;
@@ -26,8 +26,8 @@ namespace Maple2.Trigger._99999942 {
             public override void OnExit() { }
         }
 
-        private class State유저대기중 : TriggerState {
-            internal State유저대기중(ITriggerContext context) : base(context) { }
+        private class State유저Waiting : TriggerState {
+            internal State유저Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 15, arg3: false, arg4: true);

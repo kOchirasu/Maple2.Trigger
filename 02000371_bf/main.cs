@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000371_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2101})) {
-                    return new State2초대기(context);
+                    return new State2초Wait(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02000371_bf {
             public override void OnExit() { }
         }
 
-        private class State2초대기 : TriggerState {
-            internal State2초대기(ITriggerContext context) : base(context) { }
+        private class State2초Wait : TriggerState {
+            internal State2초Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -7,7 +7,7 @@ namespace Maple2.Trigger._66000001_gd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {301})) {
-                    return new State퍼즐대기중(context);
+                    return new State퍼즐Waiting(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._66000001_gd {
             public override void OnExit() { }
         }
 
-        private class State퍼즐대기중 : TriggerState {
-            internal State퍼즐대기중(ITriggerContext context) : base(context) { }
+        private class State퍼즐Waiting : TriggerState {
+            internal State퍼즐Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211}, arg2: true);
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._66000001_gd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State퍼즐단계1대기(context);
+                    return new State퍼즐단계1Wait(context);
                 }
 
                 return null;
@@ -220,8 +220,8 @@ namespace Maple2.Trigger._66000001_gd {
             }
         }
 
-        private class State퍼즐단계1대기 : TriggerState {
-            internal State퍼즐단계1대기(ITriggerContext context) : base(context) { }
+        private class State퍼즐단계1Wait : TriggerState {
+            internal State퍼즐단계1Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
@@ -290,7 +290,7 @@ namespace Maple2.Trigger._66000001_gd {
                 if (context.UserDetected(arg1: new[] {301})) {
                     context.SetEventUI(arg1: 0, arg2: "2,4");
                     context.ShowCountUI(text: "$61000002_ME_002__MASSIVE01__4$", stage: 2, count: 5);
-                    return new State퍼즐단계2대기(context);
+                    return new State퍼즐단계2Wait(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {301})) {
@@ -303,8 +303,8 @@ namespace Maple2.Trigger._66000001_gd {
             public override void OnExit() { }
         }
 
-        private class State퍼즐단계2대기 : TriggerState {
-            internal State퍼즐단계2대기(ITriggerContext context) : base(context) { }
+        private class State퍼즐단계2Wait : TriggerState {
+            internal State퍼즐단계2Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 6);
@@ -373,7 +373,7 @@ namespace Maple2.Trigger._66000001_gd {
                 if (context.UserDetected(arg1: new[] {301})) {
                     context.SetEventUI(arg1: 0, arg2: "3,4");
                     context.ShowCountUI(text: "$61000002_ME_002__MASSIVE01__5$", stage: 3, count: 5);
-                    return new State퍼즐단계3대기(context);
+                    return new State퍼즐단계3Wait(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {301})) {
@@ -386,8 +386,8 @@ namespace Maple2.Trigger._66000001_gd {
             public override void OnExit() { }
         }
 
-        private class State퍼즐단계3대기 : TriggerState {
-            internal State퍼즐단계3대기(ITriggerContext context) : base(context) { }
+        private class State퍼즐단계3Wait : TriggerState {
+            internal State퍼즐단계3Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 6);
@@ -456,7 +456,7 @@ namespace Maple2.Trigger._66000001_gd {
                 if (context.UserDetected(arg1: new[] {301})) {
                     context.SetEventUI(arg1: 0, arg2: "4,4");
                     context.ShowCountUI(text: "$61000002_ME_002__MASSIVE01__6$", stage: 4, count: 5);
-                    return new State퍼즐단계4대기(context);
+                    return new State퍼즐단계4Wait(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {301})) {
@@ -469,8 +469,8 @@ namespace Maple2.Trigger._66000001_gd {
             public override void OnExit() { }
         }
 
-        private class State퍼즐단계4대기 : TriggerState {
-            internal State퍼즐단계4대기(ITriggerContext context) : base(context) { }
+        private class State퍼즐단계4Wait : TriggerState {
+            internal State퍼즐단계4Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 6);

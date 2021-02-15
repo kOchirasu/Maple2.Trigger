@@ -27,12 +27,12 @@ namespace Maple2.Trigger._02010055_bf {
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetEffect(arg1: new[] {699}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 23000068, arg3: "$02010055_BF__SCENE01__0$", arg4: 4);
-                context.SetSkip(arg1: "바르칸트대사2스킵");
+                context.SetSkip(arg1: "바르칸트Script2스킵");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State바르칸트대사2(context);
+                    return new State바르칸트Script2(context);
                 }
 
                 return null;
@@ -41,8 +41,8 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnExit() { }
         }
 
-        private class State바르칸트대사2스킵 : TriggerState {
-            internal State바르칸트대사2스킵(ITriggerContext context) : base(context) { }
+        private class State바르칸트Script2스킵 : TriggerState {
+            internal State바르칸트Script2스킵(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -50,14 +50,14 @@ namespace Maple2.Trigger._02010055_bf {
             }
 
             public override TriggerState Execute() {
-                return new State바르칸트대사2(context);
+                return new State바르칸트Script2(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State바르칸트대사2 : TriggerState {
-            internal State바르칸트대사2(ITriggerContext context) : base(context) { }
+        private class State바르칸트Script2 : TriggerState {
+            internal State바르칸트Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnExit() { }
         }
 
-        private class StateEnd준비 : TriggerState {
-            internal StateEnd준비(ITriggerContext context) : base(context) { }
+        private class StateEndPrepare : TriggerState {
+            internal StateEndPrepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();

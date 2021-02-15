@@ -29,7 +29,7 @@ namespace Maple2.Trigger._02020112_bf {
 
             public override TriggerState Execute() {
                 if (context.GetNpcHpRate(spawnPointId: 191) <= 0.70f) {
-                    return new State격리조치_1_준비(context);
+                    return new State격리조치_1_Prepare(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnExit() { }
         }
 
-        private class State격리조치_1_준비 : TriggerState {
-            internal State격리조치_1_준비(ITriggerContext context) : base(context) { }
+        private class State격리조치_1_Prepare : TriggerState {
+            internal State격리조치_1_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990013, key: "Extinction", value: 1);
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._02020112_bf {
                 }
 
                 if (context.GetNpcHpRate(spawnPointId: 191) <= 0.45f) {
-                    return new State격리조치_2_준비(context);
+                    return new State격리조치_2_Prepare(context);
                 }
 
                 return null;
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnExit() { }
         }
 
-        private class State격리조치_2_준비 : TriggerState {
-            internal State격리조치_2_준비(ITriggerContext context) : base(context) { }
+        private class State격리조치_2_Prepare : TriggerState {
+            internal State격리조치_2_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990014, key: "Extinction", value: 1);
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02020112_bf {
                 }
 
                 if (context.GetNpcHpRate(spawnPointId: 191) <= 0.20f) {
-                    return new State격리조치_2_준비(context);
+                    return new State격리조치_2_Prepare(context);
                 }
 
                 return null;
@@ -82,8 +82,8 @@ namespace Maple2.Trigger._02020112_bf {
             public override void OnExit() { }
         }
 
-        private class State격리조치_3_준비 : TriggerState {
-            internal State격리조치_3_준비(ITriggerContext context) : base(context) { }
+        private class State격리조치_3_Prepare : TriggerState {
+            internal State격리조치_3_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990015, key: "Extinction", value: 1);

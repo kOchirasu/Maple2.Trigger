@@ -40,19 +40,19 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 25f)) {
-                    return new StateNPC대사01(context);
+                    return new StateNPCScript01(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    return new StateNPC대사02(context);
+                    return new StateNPCScript02(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    return new StateNPC대사03(context);
+                    return new StateNPCScript03(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    return new StateNPC대사04(context);
+                    return new StateNPCScript04(context);
                 }
 
                 return null;
@@ -61,8 +61,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class StateNPC대사01 : TriggerState {
-            internal StateNPC대사01(ITriggerContext context) : base(context) { }
+        private class StateNPCScript01 : TriggerState {
+            internal StateNPCScript01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 5001, arg3: "$02000066_BF__ALON__0$", arg4: 3);
@@ -75,8 +75,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class StateNPC대사02 : TriggerState {
-            internal StateNPC대사02(ITriggerContext context) : base(context) { }
+        private class StateNPCScript02 : TriggerState {
+            internal StateNPCScript02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 5001, arg3: "$02000066_BF__ALON__1$", arg4: 3);
@@ -89,8 +89,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class StateNPC대사03 : TriggerState {
-            internal StateNPC대사03(ITriggerContext context) : base(context) { }
+        private class StateNPCScript03 : TriggerState {
+            internal StateNPCScript03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 5001, arg3: "$02000066_BF__ALON__2$", arg4: 3);
@@ -103,8 +103,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class StateNPC대사04 : TriggerState {
-            internal StateNPC대사04(ITriggerContext context) : base(context) { }
+        private class StateNPCScript04 : TriggerState {
+            internal StateNPCScript04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 5001, arg3: "$02000066_BF__ALON__3$", arg4: 3);

@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000420_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new StateDisplayGuide02대기(context);
+                    return new StateDisplayGuide02Wait(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02000420_bf {
             }
         }
 
-        private class StateDisplayGuide02대기 : TriggerState {
-            internal StateDisplayGuide02대기(ITriggerContext context) : base(context) { }
+        private class StateDisplayGuide02Wait : TriggerState {
+            internal StateDisplayGuide02Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02000420_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new StateDisplayGuide03대기(context);
+                    return new StateDisplayGuide03Wait(context);
                 }
 
                 return null;
@@ -72,8 +72,8 @@ namespace Maple2.Trigger._02000420_bf {
             }
         }
 
-        private class StateDisplayGuide03대기 : TriggerState {
-            internal StateDisplayGuide03대기(ITriggerContext context) : base(context) { }
+        private class StateDisplayGuide03Wait : TriggerState {
+            internal StateDisplayGuide03Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

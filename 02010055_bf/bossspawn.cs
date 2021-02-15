@@ -33,7 +33,7 @@ namespace Maple2.Trigger._02010055_bf {
                 }
 
                 if (!context.IsDungeonRoom()) {
-                    return new StateQuest던전(context);
+                    return new StateQuestDungeon(context);
                 }
 
                 return null;
@@ -64,8 +64,8 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnExit() { }
         }
 
-        private class StateQuest던전 : TriggerState {
-            internal StateQuest던전(ITriggerContext context) : base(context) { }
+        private class StateQuestDungeon : TriggerState {
+            internal StateQuestDungeon(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {101}, arg2: 70000118, arg3: 1, arg4: false, arg5: false);

@@ -448,7 +448,7 @@ namespace Maple2.Trigger._02000066_bf {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SetEffect(arg1: new[] {6003}, arg2: false);
-                    return new State3차승리연출Random(context);
+                    return new State3차승리CinematicRandom(context);
                 }
 
                 return null;
@@ -459,8 +459,8 @@ namespace Maple2.Trigger._02000066_bf {
             }
         }
 
-        private class State3차승리연출Random : TriggerState {
-            internal State3차승리연출Random(ITriggerContext context) : base(context) { }
+        private class State3차승리CinematicRandom : TriggerState {
+            internal State3차승리CinematicRandom(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -469,23 +469,23 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State3차승리연출01(context);
+                    return new State3차승리Cinematic01(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State3차승리연출02(context);
+                    return new State3차승리Cinematic02(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State3차승리연출03(context);
+                    return new State3차승리Cinematic03(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State3차승리연출04(context);
+                    return new State3차승리Cinematic04(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State3차승리연출05(context);
+                    return new State3차승리Cinematic05(context);
                 }
 
                 return null;
@@ -494,8 +494,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State3차승리연출01 : TriggerState {
-            internal State3차승리연출01(ITriggerContext context) : base(context) { }
+        private class State3차승리Cinematic01 : TriggerState {
+            internal State3차승리Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000066_BF__MAIN__17$", arg4: 3);
@@ -512,8 +512,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State3차승리연출02 : TriggerState {
-            internal State3차승리연출02(ITriggerContext context) : base(context) { }
+        private class State3차승리Cinematic02 : TriggerState {
+            internal State3차승리Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000066_BF__MAIN__18$", arg4: 3);
@@ -530,8 +530,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State3차승리연출03 : TriggerState {
-            internal State3차승리연출03(ITriggerContext context) : base(context) { }
+        private class State3차승리Cinematic03 : TriggerState {
+            internal State3차승리Cinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000066_BF__MAIN__19$", arg4: 3);
@@ -548,8 +548,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State3차승리연출04 : TriggerState {
-            internal State3차승리연출04(ITriggerContext context) : base(context) { }
+        private class State3차승리Cinematic04 : TriggerState {
+            internal State3차승리Cinematic04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000066_BF__MAIN__20$", arg4: 5);
@@ -566,8 +566,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State3차승리연출05 : TriggerState {
-            internal State3차승리연출05(ITriggerContext context) : base(context) { }
+        private class State3차승리Cinematic05 : TriggerState {
+            internal State3차승리Cinematic05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000066_BF__MAIN__21$", arg4: 3);
@@ -657,31 +657,31 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 15f)) {
-                    return new State실패연출01(context);
+                    return new State실패Cinematic01(context);
                 }
 
                 if (context.RandomCondition(arg1: 15f)) {
-                    return new State실패연출02(context);
+                    return new State실패Cinematic02(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    return new State실패연출03(context);
+                    return new State실패Cinematic03(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    return new State실패연출04(context);
+                    return new State실패Cinematic04(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    return new State실패연출05(context);
+                    return new State실패Cinematic05(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    return new State실패연출06(context);
+                    return new State실패Cinematic06(context);
                 }
 
                 if (context.RandomCondition(arg1: 14f)) {
-                    return new State실패연출07(context);
+                    return new State실패Cinematic07(context);
                 }
 
                 return null;
@@ -690,8 +690,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State실패연출01 : TriggerState {
-            internal State실패연출01(ITriggerContext context) : base(context) { }
+        private class State실패Cinematic01 : TriggerState {
+            internal State실패Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000066_BF__MAIN__40$", arg4: 3);
@@ -709,8 +709,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State실패연출02 : TriggerState {
-            internal State실패연출02(ITriggerContext context) : base(context) { }
+        private class State실패Cinematic02 : TriggerState {
+            internal State실패Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000066_BF__MAIN__41$", arg4: 3);
@@ -728,8 +728,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State실패연출03 : TriggerState {
-            internal State실패연출03(ITriggerContext context) : base(context) { }
+        private class State실패Cinematic03 : TriggerState {
+            internal State실패Cinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000066_BF__MAIN__42$", arg4: 5);
@@ -747,8 +747,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State실패연출04 : TriggerState {
-            internal State실패연출04(ITriggerContext context) : base(context) { }
+        private class State실패Cinematic04 : TriggerState {
+            internal State실패Cinematic04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000066_BF__MAIN__43$", arg4: 5);
@@ -766,8 +766,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State실패연출05 : TriggerState {
-            internal State실패연출05(ITriggerContext context) : base(context) { }
+        private class State실패Cinematic05 : TriggerState {
+            internal State실패Cinematic05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000066_BF__MAIN__44$", arg4: 5);
@@ -785,8 +785,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State실패연출06 : TriggerState {
-            internal State실패연출06(ITriggerContext context) : base(context) { }
+        private class State실패Cinematic06 : TriggerState {
+            internal State실패Cinematic06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000066_BF__MAIN__45$", arg4: 6);
@@ -804,8 +804,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State실패연출07 : TriggerState {
-            internal State실패연출07(ITriggerContext context) : base(context) { }
+        private class State실패Cinematic07 : TriggerState {
+            internal State실패Cinematic07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000066_BF__MAIN__46$", arg4: 4);

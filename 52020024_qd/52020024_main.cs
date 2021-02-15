@@ -271,7 +271,7 @@ namespace Maple2.Trigger._52020024_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateCamera_미카엘대사1(context);
+                    return new StateCamera_미카엘Script1(context);
                 }
 
                 return null;
@@ -280,8 +280,8 @@ namespace Maple2.Trigger._52020024_qd {
             public override void OnExit() { }
         }
 
-        private class StateCamera_미카엘대사1 : TriggerState {
-            internal StateCamera_미카엘대사1(ITriggerContext context) : base(context) { }
+        private class StateCamera_미카엘Script1 : TriggerState {
+            internal StateCamera_미카엘Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 201, arg3: "아주 좋아!", arg4: 5);
@@ -289,7 +289,7 @@ namespace Maple2.Trigger._52020024_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new StateCamera_미카엘대사2(context);
+                    return new StateCamera_미카엘Script2(context);
                 }
 
                 return null;
@@ -298,8 +298,8 @@ namespace Maple2.Trigger._52020024_qd {
             public override void OnExit() { }
         }
 
-        private class StateCamera_미카엘대사2 : TriggerState {
-            internal StateCamera_미카엘대사2(ITriggerContext context) : base(context) { }
+        private class StateCamera_미카엘Script2 : TriggerState {
+            internal StateCamera_미카엘Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 502, arg2: true);

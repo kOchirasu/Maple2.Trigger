@@ -31,7 +31,7 @@ namespace Maple2.Trigger._52100303_qd {
                 if (context.MonsterDead(arg1: new[] {101})) {
                     context.SetAchievement(arg2: "trigger", arg3: "KillTimaion");
                     context.DestroyMonster(arg1: new[] {111});
-                    return new StateEnd대기(context);
+                    return new StateEndWait(context);
                 }
 
                 return null;
@@ -40,8 +40,8 @@ namespace Maple2.Trigger._52100303_qd {
             public override void OnExit() { }
         }
 
-        private class StateEnd대기 : TriggerState {
-            internal StateEnd대기(ITriggerContext context) : base(context) { }
+        private class StateEndWait : TriggerState {
+            internal StateEndWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11004715, illust: "Eone_normal", script: "$52100303_QD__MAIN__1$", duration: 3000);

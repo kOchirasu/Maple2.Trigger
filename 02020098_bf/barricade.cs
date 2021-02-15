@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10})) {
-                    return new State칸막이대기시작(context);
+                    return new State칸막이Wait시작(context);
                 }
 
                 return null;
@@ -18,14 +18,14 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State칸막이대기시작 : TriggerState {
-            internal State칸막이대기시작(ITriggerContext context) : base(context) { }
+        private class State칸막이Wait시작 : TriggerState {
+            internal State칸막이Wait시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State칸막이대기알림(context);
+                    return new State칸막이Wait알림(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State칸막이대기알림 : TriggerState {
-            internal State칸막이대기알림(ITriggerContext context) : base(context) { }
+        private class State칸막이Wait알림 : TriggerState {
+            internal State칸막이Wait알림(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02020098_BF__BARRICADE__0$", arg3: 3000);

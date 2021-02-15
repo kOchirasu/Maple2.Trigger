@@ -118,7 +118,7 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    return new StateQ1_Camera연출01(context);
+                    return new StateQ1_CameraCinematic01(context);
                 }
 
                 return null;
@@ -127,8 +127,8 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnExit() { }
         }
 
-        private class StateQ1_Camera연출01 : TriggerState {
-            internal StateQ1_Camera연출01(ITriggerContext context) : base(context) { }
+        private class StateQ1_CameraCinematic01 : TriggerState {
+            internal StateQ1_CameraCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 3);
@@ -141,7 +141,7 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new StateQ1_Camera연출02(context);
+                    return new StateQ1_CameraCinematic02(context);
                 }
 
                 return null;
@@ -150,8 +150,8 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnExit() { }
         }
 
-        private class StateQ1_Camera연출02 : TriggerState {
-            internal StateQ1_Camera연출02(ITriggerContext context) : base(context) { }
+        private class StateQ1_CameraCinematic02 : TriggerState {
+            internal StateQ1_CameraCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "6", arg2: 5);
@@ -163,7 +163,7 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "6")) {
-                    return new StateQ1_Camera연출03(context);
+                    return new StateQ1_CameraCinematic03(context);
                 }
 
                 return null;
@@ -174,8 +174,8 @@ namespace Maple2.Trigger._52010005_qd {
             }
         }
 
-        private class StateQ1_Camera연출03 : TriggerState {
-            internal StateQ1_Camera연출03(ITriggerContext context) : base(context) { }
+        private class StateQ1_CameraCinematic03 : TriggerState {
+            internal StateQ1_CameraCinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "7", arg2: 1);
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002821}, arg3: new byte[] {2})) {
-                    return new StateQ1_퇴장(context);
+                    return new StateQ1_Exit(context);
                 }
 
                 return null;
@@ -214,8 +214,8 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnExit() { }
         }
 
-        private class StateQ1_퇴장 : TriggerState {
-            internal StateQ1_퇴장(ITriggerContext context) : base(context) { }
+        private class StateQ1_Exit : TriggerState {
+            internal StateQ1_Exit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {103, 202});

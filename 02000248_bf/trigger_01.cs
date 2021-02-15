@@ -368,7 +368,7 @@ namespace Maple2.Trigger._02000248_bf {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
                     context.DestroyMonster(arg1: new[] {161, 162, 163, 164, 167, 168, 169, 170});
-                    return new State끝연출(context);
+                    return new State끝Cinematic(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {999})) {
@@ -381,8 +381,8 @@ namespace Maple2.Trigger._02000248_bf {
             public override void OnExit() { }
         }
 
-        private class State끝연출 : TriggerState {
-            internal State끝연출(ITriggerContext context) : base(context) { }
+        private class State끝Cinematic : TriggerState {
+            internal State끝Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -412,7 +412,7 @@ namespace Maple2.Trigger._02000248_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State2차진입대기(context);
+                    return new State2차진입Wait(context);
                 }
 
                 return null;
@@ -421,8 +421,8 @@ namespace Maple2.Trigger._02000248_bf {
             public override void OnExit() { }
         }
 
-        private class State2차진입대기 : TriggerState {
-            internal State2차진입대기(ITriggerContext context) : base(context) { }
+        private class State2차진입Wait : TriggerState {
+            internal State2차진입Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 15, arg3: false);

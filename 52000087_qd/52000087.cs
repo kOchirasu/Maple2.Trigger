@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {22651}, arg2: new[] {10003370}, arg3: new byte[] {2})) {
-                    return new State보고시작준비_01(context);
+                    return new State보고시작Prepare_01(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnExit() { }
         }
 
-        private class State보고시작준비_01 : TriggerState {
-            internal State보고시작준비_01(ITriggerContext context) : base(context) { }
+        private class State보고시작Prepare_01 : TriggerState {
+            internal State보고시작Prepare_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State보고시작준비_02(context);
+                    return new State보고시작Prepare_02(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnExit() { }
         }
 
-        private class State보고시작준비_02 : TriggerState {
-            internal State보고시작준비_02(ITriggerContext context) : base(context) { }
+        private class State보고시작Prepare_02 : TriggerState {
+            internal State보고시작Prepare_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5500)) {
-                    return new State보고시작준비_03(context);
+                    return new State보고시작Prepare_03(context);
                 }
 
                 return null;
@@ -58,8 +58,8 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnExit() { }
         }
 
-        private class State보고시작준비_03 : TriggerState {
-            internal State보고시작준비_03(ITriggerContext context) : base(context) { }
+        private class State보고시작Prepare_03 : TriggerState {
+            internal State보고시작Prepare_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 5000f);
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State보고시작준비_04(context);
+                    return new State보고시작Prepare_04(context);
                 }
 
                 return null;
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnExit() { }
         }
 
-        private class State보고시작준비_04 : TriggerState {
-            internal State보고시작준비_04(ITriggerContext context) : base(context) { }
+        private class State보고시작Prepare_04 : TriggerState {
+            internal State보고시작Prepare_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");

@@ -29,7 +29,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 310)) {
-                    return new State1셋트전투판마무리신호대기(context);
+                    return new State1셋트전투판마무리신호Wait(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State1셋트전투판마무리신호대기 : TriggerState {
-            internal State1셋트전투판마무리신호대기(ITriggerContext context) : base(context) { }
+        private class State1셋트전투판마무리신호Wait : TriggerState {
+            internal State1셋트전투판마무리신호Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 370)) {
-                    return new State1셋트전투판마무리신호대기(context);
+                    return new State1셋트전투판마무리신호Wait(context);
                 }
 
                 return null;
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 370)) {
-                    return new State1셋트전투판마무리신호대기(context);
+                    return new State1셋트전투판마무리신호Wait(context);
                 }
 
                 return null;
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 370)) {
-                    return new State1셋트전투판마무리신호대기(context);
+                    return new State1셋트전투판마무리신호Wait(context);
                 }
 
                 return null;

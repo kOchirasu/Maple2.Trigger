@@ -12,7 +12,7 @@ namespace Maple2.Trigger._02020062_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MovePanel01") == 1) {
-                    return new State레버Creation(context);
+                    return new StateLeverCreation(context);
                 }
 
                 return null;
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._02020062_bf {
             public override void OnExit() { }
         }
 
-        private class State레버Creation : TriggerState {
-            internal State레버Creation(ITriggerContext context) : base(context) { }
+        private class StateLeverCreation : TriggerState {
+            internal StateLeverCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000115}, arg2: 1);

@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "respawn_phase_3") == 1) {
-                    return new State전투페이즈(context);
+                    return new State전투Phase(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnExit() { }
         }
 
-        private class State전투페이즈 : TriggerState {
-            internal State전투페이즈(ITriggerContext context) : base(context) { }
+        private class State전투Phase : TriggerState {
+            internal State전투Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {4000201, 4000202}, arg2: false);
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {4000201}) && context.MonsterDead(arg1: new[] {4000202})) {
-                    return new State전투페이즈_2(context);
+                    return new State전투Phase_2(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnExit() { }
         }
 
-        private class State전투페이즈_2 : TriggerState {
-            internal State전투페이즈_2(ITriggerContext context) : base(context) { }
+        private class State전투Phase_2 : TriggerState {
+            internal State전투Phase_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {4000301}, arg2: false);
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State전투페이즈_2_대사(context);
+                    return new State전투Phase_2_대사(context);
                 }
 
                 return null;
@@ -54,8 +54,8 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnExit() { }
         }
 
-        private class State전투페이즈_2_대사 : TriggerState {
-            internal State전투페이즈_2_대사(ITriggerContext context) : base(context) { }
+        private class State전투Phase_2_대사 : TriggerState {
+            internal State전투Phase_2_대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 4000301, arg3: "하하하!!내가 돌아왔다!", arg4: 3, arg5: 0);

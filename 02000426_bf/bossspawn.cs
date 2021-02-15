@@ -14,7 +14,7 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    return new State던전코드별BossSpawn(context);
+                    return new StateDungeonBossSpawnByDifficulty(context);
                 }
 
                 return null;
@@ -23,8 +23,8 @@ namespace Maple2.Trigger._02000426_bf {
             public override void OnExit() { }
         }
 
-        private class State던전코드별BossSpawn : TriggerState {
-            internal State던전코드별BossSpawn(ITriggerContext context) : base(context) { }
+        private class StateDungeonBossSpawnByDifficulty : TriggerState {
+            internal StateDungeonBossSpawnByDifficulty(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._02000426_bf {
                 }
 
                 if (context.GetDungeonId() == 23041003) {
-                    return new State쉬운난이도BossSpawn(context);
+                    return new StateEasyDifficultyBossSpawn(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
@@ -65,8 +65,8 @@ namespace Maple2.Trigger._02000426_bf {
             public override void OnExit() { }
         }
 
-        private class State쉬운난이도BossSpawn : TriggerState {
-            internal State쉬운난이도BossSpawn(ITriggerContext context) : base(context) { }
+        private class StateEasyDifficultyBossSpawn : TriggerState {
+            internal StateEasyDifficultyBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2002}, arg2: false);
@@ -98,11 +98,11 @@ namespace Maple2.Trigger._02000426_bf {
                 }
 
                 if (context.DungeonTimeOut()) {
-                    return new State던전실패(context);
+                    return new StateDungeonFailure(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    return new State던전실패(context);
+                    return new StateDungeonFailure(context);
                 }
 
                 return null;
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._02000426_bf {
                 }
 
                 if (context.GetDungeonId() == 23041003) {
-                    return new State쉬운난이도_자쿰몸Appear(context);
+                    return new StateEasyDifficulty_자쿰몸Appear(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
@@ -155,8 +155,8 @@ namespace Maple2.Trigger._02000426_bf {
             public override void OnExit() { }
         }
 
-        private class State쉬운난이도_자쿰몸Appear : TriggerState {
-            internal State쉬운난이도_자쿰몸Appear(ITriggerContext context) : base(context) { }
+        private class StateEasyDifficulty_자쿰몸Appear : TriggerState {
+            internal StateEasyDifficulty_자쿰몸Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2012}, arg2: false);
@@ -203,8 +203,8 @@ namespace Maple2.Trigger._02000426_bf {
             public override void OnExit() { }
         }
 
-        private class State던전실패 : TriggerState {
-            internal State던전실패(ITriggerContext context) : base(context) { }
+        private class StateDungeonFailure : TriggerState {
+            internal StateDungeonFailure(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1});

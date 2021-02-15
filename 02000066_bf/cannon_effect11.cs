@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {121})) {
-                    return new State이펙트대기(context);
+                    return new State이펙트Wait(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class State이펙트대기 : TriggerState {
-            internal State이펙트대기(ITriggerContext context) : base(context) { }
+        private class State이펙트Wait : TriggerState {
+            internal State이펙트Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

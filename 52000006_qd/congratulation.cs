@@ -8,14 +8,14 @@ namespace Maple2.Trigger._52000006_qd {
             }
 
             public override TriggerState Execute() {
-                return new State축하대기1(context);
+                return new State축하Wait1(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State축하대기1 : TriggerState {
-            internal State축하대기1(ITriggerContext context) : base(context) { }
+        private class State축하Wait1 : TriggerState {
+            internal State축하Wait1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -76,7 +76,7 @@ namespace Maple2.Trigger._99999999_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 1011, 1012, 1013, 1014, 1017, 1018, 1019})) {
-                    return new State도마뱀스폰1(context);
+                    return new State도마뱀Spawn1(context);
                 }
 
                 return null;
@@ -85,8 +85,8 @@ namespace Maple2.Trigger._99999999_bf {
             public override void OnExit() { }
         }
 
-        private class State도마뱀스폰1 : TriggerState {
-            internal State도마뱀스폰1(ITriggerContext context) : base(context) { }
+        private class State도마뱀Spawn1 : TriggerState {
+            internal State도마뱀Spawn1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {8900}, arg2: false);

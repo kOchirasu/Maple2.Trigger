@@ -67,7 +67,7 @@ namespace Maple2.Trigger._52020035_qd {
                 context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetSceneSkip(arg1: "Skip_1", arg2: "exit");
                 context.AddCinematicTalk(npcId: 11003753, msg: "자네도 알겠지만 수호군이 크리티아스에 쉽게 오지는 못할걸세.", duration: 3000);
-                context.AddCinematicTalk(npcId: 11003753, msg: @"지원군을 소집하는데도 시간이 걸리겠지만\n우리가 포털 수리 및 방어 시스템을 무력화시키지 않는다면\n결국 또 다른 많은 희생을 치루게 되겠지.", duration: 4500);
+                context.AddCinematicTalk(npcId: 11003753, msg: @"Reinforcements을 소집하는데도 시간이 걸리겠지만\n우리가 포털 수리 및 방어 시스템을 무력화시키지 않는다면\n결국 또 다른 많은 희생을 치루게 되겠지.", duration: 4500);
             }
 
             public override TriggerState Execute() {
@@ -193,7 +193,7 @@ namespace Maple2.Trigger._52020035_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State간부얼굴준비(context);
+                    return new State간부얼굴Prepare(context);
                 }
 
                 return null;
@@ -202,8 +202,8 @@ namespace Maple2.Trigger._52020035_qd {
             public override void OnExit() { }
         }
 
-        private class State간부얼굴준비 : TriggerState {
-            internal State간부얼굴준비(ITriggerContext context) : base(context) { }
+        private class State간부얼굴Prepare : TriggerState {
+            internal State간부얼굴Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4010, 4011}, arg2: false);

@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Portal_On_04") == 1) {
-                    return new StatePortal_오픈_대기(context);
+                    return new StatePortal_오픈_Wait(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._02020301_bf {
             public override void OnExit() { }
         }
 
-        private class StatePortal_오픈_대기 : TriggerState {
-            internal StatePortal_오픈_대기(ITriggerContext context) : base(context) { }
+        private class StatePortal_오픈_Wait : TriggerState {
+            internal StatePortal_오픈_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1002})) {
-                    return new State엘리베이터_동작_대기(context);
+                    return new State엘리베이터_동작_Wait(context);
                 }
 
                 return null;
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._02020301_bf {
             public override void OnExit() { }
         }
 
-        private class State엘리베이터_동작_대기 : TriggerState {
-            internal State엘리베이터_동작_대기(ITriggerContext context) : base(context) { }
+        private class State엘리베이터_동작_Wait : TriggerState {
+            internal State엘리베이터_동작_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAiExtraData(key: "Last_Phase", value: 1, isModify: false);

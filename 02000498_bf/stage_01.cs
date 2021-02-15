@@ -2,8 +2,8 @@ using System.Numerics;
 
 namespace Maple2.Trigger._02000498_bf {
     public static class _stage_01 {
-        public class StateStart연출_6 : TriggerState {
-            internal StateStart연출_6(ITriggerContext context) : base(context) { }
+        public class StateStartCinematic_6 : TriggerState {
+            internal StateStartCinematic_6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

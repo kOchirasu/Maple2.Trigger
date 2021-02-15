@@ -72,7 +72,7 @@ namespace Maple2.Trigger._52020025_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateCamera_PC도망준비(context);
+                    return new StateCamera_PC도망Prepare(context);
                 }
 
                 return null;
@@ -81,8 +81,8 @@ namespace Maple2.Trigger._52020025_qd {
             public override void OnExit() { }
         }
 
-        private class StateCamera_PC도망준비 : TriggerState {
-            internal StateCamera_PC도망준비(ITriggerContext context) : base(context) { }
+        private class StateCamera_PC도망Prepare : TriggerState {
+            internal StateCamera_PC도망Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcRotation(arg1: 0, arg2: 180);

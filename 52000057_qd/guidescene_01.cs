@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52000057_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State말풍선대사01(context);
+                    return new State말풍선Script01(context);
                 }
 
                 return null;
@@ -57,14 +57,14 @@ namespace Maple2.Trigger._52000057_qd {
             public override void OnExit() { }
         }
 
-        private class State말풍선대사01 : TriggerState {
-            internal State말풍선대사01(ITriggerContext context) : base(context) { }
+        private class State말풍선Script01 : TriggerState {
+            internal State말풍선Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 198, arg2: new[] {1001})) {
-                    return new State시네마틱대사01(context);
+                    return new State시네마틱Script01(context);
                 }
 
                 return null;
@@ -73,8 +73,8 @@ namespace Maple2.Trigger._52000057_qd {
             public override void OnExit() { }
         }
 
-        private class State시네마틱대사01 : TriggerState {
-            internal State시네마틱대사01(ITriggerContext context) : base(context) { }
+        private class State시네마틱Script01 : TriggerState {
+            internal State시네마틱Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001871, arg3: "$52000057_QD__GUIdESCENE_01__0$", arg4: 2, arg5: 0);
@@ -119,7 +119,7 @@ namespace Maple2.Trigger._52000057_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000611}, arg3: new byte[] {1})) {
-                    return new State오필리아대사연출01(context);
+                    return new State오필리아대사Cinematic01(context);
                 }
 
                 return null;
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._52000057_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State오필리아대사연출01(context);
+                    return new State오필리아대사Cinematic01(context);
                 }
 
                 return null;
@@ -146,8 +146,8 @@ namespace Maple2.Trigger._52000057_qd {
             public override void OnExit() { }
         }
 
-        private class State오필리아대사연출01 : TriggerState {
-            internal State오필리아대사연출01(ITriggerContext context) : base(context) { }
+        private class State오필리아대사Cinematic01 : TriggerState {
+            internal State오필리아대사Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -193,7 +193,7 @@ namespace Maple2.Trigger._52000057_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {199}, arg2: new[] {90000611}, arg3: new byte[] {1})) {
-                    return new State오필리아대사연출01(context);
+                    return new State오필리아대사Cinematic01(context);
                 }
 
                 return null;

@@ -23,15 +23,15 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BossDead") == 1) {
-                    return new State연출Delay(context);
+                    return new StateCinematicDelay(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    return new State던전실패(context);
+                    return new StateDungeonFailure(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    return new State던전실패(context);
+                    return new StateDungeonFailure(context);
                 }
 
                 return null;
@@ -40,8 +40,8 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State연출Delay : TriggerState {
-            internal State연출Delay(ITriggerContext context) : base(context) { }
+        private class StateCinematicDelay : TriggerState {
+            internal StateCinematicDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg3: "BalrogMagicBursterKritiasClear");
@@ -79,8 +79,8 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State던전실패 : TriggerState {
-            internal State던전실패(ITriggerContext context) : base(context) { }
+        private class StateDungeonFailure : TriggerState {
+            internal StateDungeonFailure(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonSetEndTime();

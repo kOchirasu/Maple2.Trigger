@@ -7,7 +7,7 @@ namespace Maple2.Trigger._61000007_me {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {302})) {
-                    return new State이벤트대기중(context);
+                    return new State이벤트Waiting(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._61000007_me {
             public override void OnExit() { }
         }
 
-        private class State이벤트대기중 : TriggerState {
-            internal State이벤트대기중(ITriggerContext context) : base(context) { }
+        private class State이벤트Waiting : TriggerState {
+            internal State이벤트Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 901, arg2: true, arg3: true, arg4: true);
@@ -1469,7 +1469,7 @@ namespace Maple2.Trigger._61000007_me {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State우승자Camera연출(context);
+                    return new State우승자CameraCinematic(context);
                 }
 
                 return null;
@@ -1478,8 +1478,8 @@ namespace Maple2.Trigger._61000007_me {
             public override void OnExit() { }
         }
 
-        private class State우승자Camera연출 : TriggerState {
-            internal State우승자Camera연출(ITriggerContext context) : base(context) { }
+        private class State우승자CameraCinematic : TriggerState {
+            internal State우승자CameraCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MiniGameCameraDirection(boxId: 301, cameraId: 9001);

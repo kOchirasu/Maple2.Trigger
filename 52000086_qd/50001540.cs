@@ -118,7 +118,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    return new State에르다대사01(context);
+                    return new State에르다Script01(context);
                 }
 
                 return null;
@@ -127,8 +127,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnExit() { }
         }
 
-        private class State에르다대사01 : TriggerState {
-            internal State에르다대사01(ITriggerContext context) : base(context) { }
+        private class State에르다Script01 : TriggerState {
+            internal State에르다Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State에르다대사02(context);
+                    return new State에르다Script02(context);
                 }
 
                 return null;
@@ -146,8 +146,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnExit() { }
         }
 
-        private class State에르다대사02 : TriggerState {
-            internal State에르다대사02(ITriggerContext context) : base(context) { }
+        private class State에르다Script02 : TriggerState {
+            internal State에르다Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003069, illustId: "SnowQueen_normal", msg: "$52000086_QD__50001540__1$", align: "Right", duration: 4000);
@@ -155,7 +155,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State설눈이대사01(context);
+                    return new State설눈이Script01(context);
                 }
 
                 return null;
@@ -164,8 +164,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnExit() { }
         }
 
-        private class State설눈이대사01 : TriggerState {
-            internal State설눈이대사01(ITriggerContext context) : base(context) { }
+        private class State설눈이Script01 : TriggerState {
+            internal State설눈이Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 303, arg2: true);
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State비에른대사01(context);
+                    return new State비에른Script01(context);
                 }
 
                 return null;
@@ -183,8 +183,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnExit() { }
         }
 
-        private class State비에른대사01 : TriggerState {
-            internal State비에른대사01(ITriggerContext context) : base(context) { }
+        private class State비에른Script01 : TriggerState {
+            internal State비에른Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 304, arg2: true);
@@ -193,7 +193,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State설눈이대사02(context);
+                    return new State설눈이Script02(context);
                 }
 
                 return null;
@@ -202,8 +202,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnExit() { }
         }
 
-        private class State설눈이대사02 : TriggerState {
-            internal State설눈이대사02(ITriggerContext context) : base(context) { }
+        private class State설눈이Script02 : TriggerState {
+            internal State설눈이Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 305, arg2: true);
@@ -272,7 +272,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State에르다대사03(context);
+                    return new State에르다Script03(context);
                 }
 
                 return null;
@@ -281,8 +281,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnExit() { }
         }
 
-        private class State에르다대사03 : TriggerState {
-            internal State에르다대사03(ITriggerContext context) : base(context) { }
+        private class State에르다Script03 : TriggerState {
+            internal State에르다Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
@@ -291,7 +291,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    return new State비에른대사02(context);
+                    return new State비에른Script02(context);
                 }
 
                 return null;
@@ -300,8 +300,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnExit() { }
         }
 
-        private class State비에른대사02 : TriggerState {
-            internal State비에른대사02(ITriggerContext context) : base(context) { }
+        private class State비에른Script02 : TriggerState {
+            internal State비에른Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 307, arg2: true);
@@ -311,7 +311,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State비에른대사03(context);
+                    return new State비에른Script03(context);
                 }
 
                 return null;
@@ -320,8 +320,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnExit() { }
         }
 
-        private class State비에른대사03 : TriggerState {
-            internal State비에른대사03(ITriggerContext context) : base(context) { }
+        private class State비에른Script03 : TriggerState {
+            internal State비에른Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 308, arg2: true);
@@ -331,7 +331,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State에르다대사04(context);
+                    return new State에르다Script04(context);
                 }
 
                 return null;
@@ -340,8 +340,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnExit() { }
         }
 
-        private class State에르다대사04 : TriggerState {
-            internal State에르다대사04(ITriggerContext context) : base(context) { }
+        private class State에르다Script04 : TriggerState {
+            internal State에르다Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 309, arg2: true);
@@ -351,7 +351,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State에르다대사05(context);
+                    return new State에르다Script05(context);
                 }
 
                 return null;
@@ -360,8 +360,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnExit() { }
         }
 
-        private class State에르다대사05 : TriggerState {
-            internal State에르다대사05(ITriggerContext context) : base(context) { }
+        private class State에르다Script05 : TriggerState {
+            internal State에르다Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 310, arg2: true);
@@ -477,7 +477,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2004})) {
-                    return new State감지대기(context);
+                    return new State감지Wait(context);
                 }
 
                 return null;
@@ -486,8 +486,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnExit() { }
         }
 
-        private class State감지대기 : TriggerState {
-            internal State감지대기(ITriggerContext context) : base(context) { }
+        private class State감지Wait : TriggerState {
+            internal State감지Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1006}, arg2: false);
@@ -520,7 +520,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State비에른대사04(context);
+                    return new State비에른Script04(context);
                 }
 
                 return null;
@@ -529,8 +529,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnExit() { }
         }
 
-        private class State비에른대사04 : TriggerState {
-            internal State비에른대사04(ITriggerContext context) : base(context) { }
+        private class State비에른Script04 : TriggerState {
+            internal State비에른Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003075, illustId: "SnowKing_normal", msg: "$52000086_QD__50001540__13$", align: "left", duration: 4000);
@@ -538,7 +538,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State비에른대사05(context);
+                    return new State비에른Script05(context);
                 }
 
                 return null;
@@ -547,8 +547,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnExit() { }
         }
 
-        private class State비에른대사05 : TriggerState {
-            internal State비에른대사05(ITriggerContext context) : base(context) { }
+        private class State비에른Script05 : TriggerState {
+            internal State비에른Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 312, arg2: true);

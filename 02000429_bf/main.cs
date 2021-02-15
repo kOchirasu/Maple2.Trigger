@@ -29,7 +29,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State첫번째페이즈_InfernoWarship(context);
+                    return new State첫번째Phase_InfernoWarship(context);
                 }
 
                 return null;
@@ -38,22 +38,22 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State첫번째페이즈_InfernoWarship : TriggerState {
-            internal State첫번째페이즈_InfernoWarship(ITriggerContext context) : base(context) { }
+        private class State첫번째Phase_InfernoWarship : TriggerState {
+            internal State첫번째Phase_InfernoWarship(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SecondPhase") == 1) {
-                    return new State두번째페이즈_InfernoWarship(context);
+                    return new State두번째Phase_InfernoWarship(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    return new State던전실패(context);
+                    return new StateDungeonFailure(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    return new State던전실패(context);
+                    return new StateDungeonFailure(context);
                 }
 
                 return null;
@@ -62,8 +62,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State두번째페이즈_InfernoWarship : TriggerState {
-            internal State두번째페이즈_InfernoWarship(ITriggerContext context) : base(context) { }
+        private class State두번째Phase_InfernoWarship : TriggerState {
+            internal State두번째Phase_InfernoWarship(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: false, arg3: 0, arg4: 0, arg5: 0.5f);
@@ -71,15 +71,15 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ThirdPhase") == 1) {
-                    return new State세번째페이즈_인페르녹Appear(context);
+                    return new State세번째Phase_인페르녹Appear(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    return new State던전실패(context);
+                    return new StateDungeonFailure(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    return new State던전실패(context);
+                    return new StateDungeonFailure(context);
                 }
 
                 return null;
@@ -88,8 +88,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State세번째페이즈_인페르녹Appear : TriggerState {
-            internal State세번째페이즈_인페르녹Appear(ITriggerContext context) : base(context) { }
+        private class State세번째Phase_인페르녹Appear : TriggerState {
+            internal State세번째Phase_인페르녹Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {102}, arg2: true);
@@ -102,11 +102,11 @@ namespace Maple2.Trigger._02000429_bf {
                 }
 
                 if (context.DungeonTimeOut()) {
-                    return new State던전실패(context);
+                    return new StateDungeonFailure(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    return new State던전실패(context);
+                    return new StateDungeonFailure(context);
                 }
 
                 return null;
@@ -126,11 +126,11 @@ namespace Maple2.Trigger._02000429_bf {
                 }
 
                 if (context.DungeonTimeOut()) {
-                    return new State던전실패(context);
+                    return new StateDungeonFailure(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    return new State던전실패(context);
+                    return new StateDungeonFailure(context);
                 }
 
                 return null;
@@ -139,8 +139,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State던전실패 : TriggerState {
-            internal State던전실패(ITriggerContext context) : base(context) { }
+        private class StateDungeonFailure : TriggerState {
+            internal StateDungeonFailure(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1});
@@ -148,7 +148,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State전멸던전실패연출01(context);
+                    return new State전멸Dungeon실패Cinematic01(context);
                 }
 
                 return null;
@@ -157,8 +157,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State전멸던전실패연출01 : TriggerState {
-            internal State전멸던전실패연출01(ITriggerContext context) : base(context) { }
+        private class State전멸Dungeon실패Cinematic01 : TriggerState {
+            internal State전멸Dungeon실패Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11003536, illust: "tristan_normal", duration: 4000, script: "$02000410_BF__ClearCheck__10$");
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State전멸던전실패연출02(context);
+                    return new State전멸Dungeon실패Cinematic02(context);
                 }
 
                 return null;
@@ -175,8 +175,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State전멸던전실패연출02 : TriggerState {
-            internal State전멸던전실패연출02(ITriggerContext context) : base(context) { }
+        private class State전멸Dungeon실패Cinematic02 : TriggerState {
+            internal State전멸Dungeon실패Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 6200, script: "$02000410_BF__ClearCheck__1$", voice: @"ko/Npc/00002156");
@@ -184,7 +184,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6200)) {
-                    return new State전멸던전실패(context);
+                    return new State전멸Dungeon실패(context);
                 }
 
                 return null;
@@ -193,8 +193,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class State전멸던전실패 : TriggerState {
-            internal State전멸던전실패(ITriggerContext context) : base(context) { }
+        private class State전멸Dungeon실패 : TriggerState {
+            internal State전멸Dungeon실패(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1});
@@ -240,7 +240,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new StateSuccess연출01(context);
+                    return new StateSuccessCinematic01(context);
                 }
 
                 return null;
@@ -249,8 +249,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class StateSuccess연출01 : TriggerState {
-            internal StateSuccess연출01(ITriggerContext context) : base(context) { }
+        private class StateSuccessCinematic01 : TriggerState {
+            internal StateSuccessCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "movie", usm: @"Common/WorldInvasionScene5.usm", duration: 0);
@@ -259,7 +259,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new StateSuccess연출02_pre(context);
+                    return new StateSuccessCinematic02_pre(context);
                 }
 
                 return null;
@@ -268,8 +268,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class StateSuccess연출02_pre : TriggerState {
-            internal StateSuccess연출02_pre(ITriggerContext context) : base(context) { }
+        private class StateSuccessCinematic02_pre : TriggerState {
+            internal StateSuccessCinematic02_pre(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -277,7 +277,7 @@ namespace Maple2.Trigger._02000429_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateSuccess연출02(context);
+                    return new StateSuccessCinematic02(context);
                 }
 
                 return null;
@@ -286,8 +286,8 @@ namespace Maple2.Trigger._02000429_bf {
             public override void OnExit() { }
         }
 
-        private class StateSuccess연출02 : TriggerState {
-            internal StateSuccess연출02(ITriggerContext context) : base(context) { }
+        private class StateSuccessCinematic02 : TriggerState {
+            internal StateSuccessCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateWidget(arg1: "SceneMovie");

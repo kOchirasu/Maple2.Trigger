@@ -60,18 +60,18 @@ namespace Maple2.Trigger._52000015_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSceneSkip(arg1: "Ishura대화04대기CSkip", arg2: "nextState");
+                context.SetSceneSkip(arg1: "Ishura대화04WaitCSkip", arg2: "nextState");
             }
 
             public override TriggerState Execute() {
-                return new StateTeleportation준비(context);
+                return new StateTeleportationPrepare(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class StateTeleportation준비 : TriggerState {
-            internal StateTeleportation준비(ITriggerContext context) : base(context) { }
+        private class StateTeleportationPrepare : TriggerState {
+            internal StateTeleportationPrepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
@@ -182,12 +182,12 @@ namespace Maple2.Trigger._52000015_qd {
                 context.SetTimer(arg1: "8", arg2: 3);
                 context.SetEffect(arg1: new[] {6001}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000015_QD__TUTORIAL03__1$", arg4: 3);
-                context.SetSkip(arg1: "Ishura대화02대기");
+                context.SetSkip(arg1: "Ishura대화02Wait");
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "8")) {
-                    return new StateIshura대화02대기(context);
+                    return new StateIshura대화02Wait(context);
                 }
 
                 return null;
@@ -196,8 +196,8 @@ namespace Maple2.Trigger._52000015_qd {
             public override void OnExit() { }
         }
 
-        private class StateIshura대화02대기 : TriggerState {
-            internal StateIshura대화02대기(ITriggerContext context) : base(context) { }
+        private class StateIshura대화02Wait : TriggerState {
+            internal StateIshura대화02Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -246,7 +246,7 @@ namespace Maple2.Trigger._52000015_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "10")) {
-                    return new StateIshura대화03대기(context);
+                    return new StateIshura대화03Wait(context);
                 }
 
                 return null;
@@ -255,8 +255,8 @@ namespace Maple2.Trigger._52000015_qd {
             public override void OnExit() { }
         }
 
-        private class StateIshura대화03대기 : TriggerState {
-            internal StateIshura대화03대기(ITriggerContext context) : base(context) { }
+        private class StateIshura대화03Wait : TriggerState {
+            internal StateIshura대화03Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -282,7 +282,7 @@ namespace Maple2.Trigger._52000015_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11")) {
-                    return new StateIshura대화04대기(context);
+                    return new StateIshura대화04Wait(context);
                 }
 
                 return null;
@@ -291,8 +291,8 @@ namespace Maple2.Trigger._52000015_qd {
             public override void OnExit() { }
         }
 
-        private class StateIshura대화04대기CSkip : TriggerState {
-            internal StateIshura대화04대기CSkip(ITriggerContext context) : base(context) { }
+        private class StateIshura대화04WaitCSkip : TriggerState {
+            internal StateIshura대화04WaitCSkip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {202});
@@ -308,8 +308,8 @@ namespace Maple2.Trigger._52000015_qd {
             public override void OnExit() { }
         }
 
-        private class StateIshura대화04대기 : TriggerState {
-            internal StateIshura대화04대기(ITriggerContext context) : base(context) { }
+        private class StateIshura대화04Wait : TriggerState {
+            internal StateIshura대화04Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -444,7 +444,7 @@ namespace Maple2.Trigger._52000015_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "23")) {
-                    return new State위기상황연출완료(context);
+                    return new State위기상황Cinematic완료(context);
                 }
 
                 return null;
@@ -453,8 +453,8 @@ namespace Maple2.Trigger._52000015_qd {
             public override void OnExit() { }
         }
 
-        private class State위기상황연출완료 : TriggerState {
-            internal State위기상황연출완료(ITriggerContext context) : base(context) { }
+        private class State위기상황Cinematic완료 : TriggerState {
+            internal State위기상황Cinematic완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 4);

@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52000173_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {2001})) {
-                    return new StateWait_01_준비(context);
+                    return new StateWait_01_Prepare(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52000173_qd {
             public override void OnExit() { }
         }
 
-        private class StateWait_01_준비 : TriggerState {
-            internal StateWait_01_준비(ITriggerContext context) : base(context) { }
+        private class StateWait_01_Prepare : TriggerState {
+            internal StateWait_01_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");

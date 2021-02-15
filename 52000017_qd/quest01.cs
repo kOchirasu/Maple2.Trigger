@@ -67,7 +67,7 @@ namespace Maple2.Trigger._52000017_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new StateNPC대사01(context);
+                    return new StateNPCScript01(context);
                 }
 
                 return null;
@@ -76,18 +76,18 @@ namespace Maple2.Trigger._52000017_qd {
             public override void OnExit() { }
         }
 
-        private class StateNPC대사01 : TriggerState {
-            internal StateNPC대사01(ITriggerContext context) : base(context) { }
+        private class StateNPCScript01 : TriggerState {
+            internal StateNPCScript01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001560, arg3: "$52000017_QD__QUEST01__1$", arg4: 4);
-                context.SetSkip(arg1: "NPC대사01스킵");
+                context.SetSkip(arg1: "NPCScript01스킵");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new StateNPC대사02(context);
+                    return new StateNPCScript02(context);
                 }
 
                 return null;
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._52000017_qd {
             public override void OnExit() { }
         }
 
-        private class StateNPC대사01스킵 : TriggerState {
-            internal StateNPC대사01스킵(ITriggerContext context) : base(context) { }
+        private class StateNPCScript01스킵 : TriggerState {
+            internal StateNPCScript01스킵(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: false);
@@ -106,19 +106,19 @@ namespace Maple2.Trigger._52000017_qd {
             }
 
             public override TriggerState Execute() {
-                return new StateNPC대사02(context);
+                return new StateNPCScript02(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class StateNPC대사02 : TriggerState {
-            internal StateNPC대사02(ITriggerContext context) : base(context) { }
+        private class StateNPCScript02 : TriggerState {
+            internal StateNPCScript02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001560, arg3: "$52000017_QD__QUEST01__2$", arg4: 3);
-                context.SetSkip(arg1: "NPC대사02스킵");
+                context.SetSkip(arg1: "NPCScript02스킵");
             }
 
             public override TriggerState Execute() {
@@ -132,8 +132,8 @@ namespace Maple2.Trigger._52000017_qd {
             public override void OnExit() { }
         }
 
-        private class StateNPC대사02스킵 : TriggerState {
-            internal StateNPC대사02스킵(ITriggerContext context) : base(context) { }
+        private class StateNPCScript02스킵 : TriggerState {
+            internal StateNPCScript02스킵(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001}, arg2: false);

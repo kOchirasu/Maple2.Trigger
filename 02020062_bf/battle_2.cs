@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02020062_bf {
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State추가대사_1(context);
+                    return new State추가Script_1(context);
                 }
 
                 return null;
@@ -51,8 +51,8 @@ namespace Maple2.Trigger._02020062_bf {
             public override void OnExit() { }
         }
 
-        private class State추가대사_1 : TriggerState {
-            internal State추가대사_1(ITriggerContext context) : base(context) { }
+        private class State추가Script_1 : TriggerState {
+            internal State추가Script_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020062_BF__BATTLE_2__0$");
@@ -64,7 +64,7 @@ namespace Maple2.Trigger._02020062_bf {
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State추가대사_2(context);
+                    return new State추가Script_2(context);
                 }
 
                 return null;
@@ -73,8 +73,8 @@ namespace Maple2.Trigger._02020062_bf {
             public override void OnExit() { }
         }
 
-        private class State추가대사_2 : TriggerState {
-            internal State추가대사_2(ITriggerContext context) : base(context) { }
+        private class State추가Script_2 : TriggerState {
+            internal State추가Script_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020062_BF__BATTLE_2__1$");
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02020062_bf {
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State추가대사_3(context);
+                    return new State추가Script_3(context);
                 }
 
                 return null;
@@ -95,8 +95,8 @@ namespace Maple2.Trigger._02020062_bf {
             public override void OnExit() { }
         }
 
-        private class State추가대사_3 : TriggerState {
-            internal State추가대사_3(ITriggerContext context) : base(context) { }
+        private class State추가Script_3 : TriggerState {
+            internal State추가Script_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11003533, illust: "Bliche_normal", duration: 5000, script: "$02020062_BF__BATTLE_2__2$");

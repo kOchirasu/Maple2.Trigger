@@ -7,7 +7,7 @@ namespace Maple2.Trigger._99999911 {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 701) == 1) {
-                    return new StateStart조건체크(context);
+                    return new StateStartConditionCheck(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._99999911 {
             public override void OnExit() { }
         }
 
-        private class StateStart조건체크 : TriggerState {
-            internal StateStart조건체크(ITriggerContext context) : base(context) { }
+        private class StateStartConditionCheck : TriggerState {
+            internal StateStartConditionCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {1002}, arg2: new[] {10002041}, arg3: new byte[] {1})) {
-                    return new State지원군Creation(context);
+                    return new StateReinforcementsCreation(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
             public override void OnExit() { }
         }
 
-        private class State지원군Creation : TriggerState {
-            internal State지원군Creation(ITriggerContext context) : base(context) { }
+        private class StateReinforcementsCreation : TriggerState {
+            internal StateReinforcementsCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {204}, arg2: false);
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 4004, arg2: new[] {204})) {
-                    return new State지원군이동(context);
+                    return new StateMoveReinforcements(context);
                 }
 
                 return null;
@@ -35,8 +35,8 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
             public override void OnExit() { }
         }
 
-        private class State지원군이동 : TriggerState {
-            internal State지원군이동(ITriggerContext context) : base(context) { }
+        private class StateMoveReinforcements : TriggerState {
+            internal StateMoveReinforcements(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 204, arg3: "$02000076_TW_HenesysVillage__02_NPCBACKUP04__0$", arg4: 1);
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 2001, arg2: new[] {204})) {
-                    return new State지원군소멸(context);
+                    return new StateReinforcementsDead(context);
                 }
 
                 return null;
@@ -54,8 +54,8 @@ namespace Maple2.Trigger._02000076_tw_henesysvillage {
             public override void OnExit() { }
         }
 
-        private class State지원군소멸 : TriggerState {
-            internal State지원군소멸(ITriggerContext context) : base(context) { }
+        private class StateReinforcementsDead : TriggerState {
+            internal StateReinforcementsDead(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {204});

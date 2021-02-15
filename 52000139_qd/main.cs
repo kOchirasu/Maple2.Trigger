@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52000139_qd {
                 }
 
                 if (context.UserDetected(arg1: new[] {701})) {
-                    return new State영상준비_01(context);
+                    return new State영상Prepare_01(context);
                 }
 
                 return null;
@@ -33,8 +33,8 @@ namespace Maple2.Trigger._52000139_qd {
             public override void OnExit() { }
         }
 
-        private class State영상준비_01 : TriggerState {
-            internal State영상준비_01(ITriggerContext context) : base(context) { }
+        private class State영상Prepare_01 : TriggerState {
+            internal State영상Prepare_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._52000139_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateCamera연출_01(context);
+                    return new StateCameraCinematic_01(context);
                 }
 
                 return null;
@@ -95,8 +95,8 @@ namespace Maple2.Trigger._52000139_qd {
             }
         }
 
-        private class StateCamera연출_01 : TriggerState {
-            internal StateCamera연출_01(ITriggerContext context) : base(context) { }
+        private class StateCameraCinematic_01 : TriggerState {
+            internal StateCameraCinematic_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._52000139_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new StateCamera연출_02(context);
+                    return new StateCameraCinematic_02(context);
                 }
 
                 return null;
@@ -114,8 +114,8 @@ namespace Maple2.Trigger._52000139_qd {
             public override void OnExit() { }
         }
 
-        private class StateCamera연출_02 : TriggerState {
-            internal StateCamera연출_02(ITriggerContext context) : base(context) { }
+        private class StateCameraCinematic_02 : TriggerState {
+            internal StateCameraCinematic_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: false);
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._52000139_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new StateCamera연출_03(context);
+                    return new StateCameraCinematic_03(context);
                 }
 
                 return null;
@@ -133,8 +133,8 @@ namespace Maple2.Trigger._52000139_qd {
             public override void OnExit() { }
         }
 
-        private class StateCamera연출_03 : TriggerState {
-            internal StateCamera연출_03(ITriggerContext context) : base(context) { }
+        private class StateCameraCinematic_03 : TriggerState {
+            internal StateCameraCinematic_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowCaption(type: "VerticalCaption", title: "$52000139_QD__MAIN__22$", desc: "$52000139_QD__MAIN__23$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2.5f);

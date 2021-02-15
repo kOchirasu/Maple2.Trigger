@@ -6,14 +6,14 @@ namespace Maple2.Trigger._02000487_bf {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                return new StateBossSpawn대기(context);
+                return new StateBossSpawnWait(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class StateBossSpawn대기 : TriggerState {
-            internal StateBossSpawn대기(ITriggerContext context) : base(context) { }
+        private class StateBossSpawnWait : TriggerState {
+            internal StateBossSpawnWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {111, 121, 131}, arg2: true);

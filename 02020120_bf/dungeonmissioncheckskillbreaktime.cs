@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    return new StateBoss스킬브레이크시작_대기중(context);
+                    return new StateBoss스킬브레이크시작_Waiting(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class StateBoss스킬브레이크시작_대기중 : TriggerState {
-            internal StateBoss스킬브레이크시작_대기중(ITriggerContext context) : base(context) { }
+        private class StateBoss스킬브레이크시작_Waiting : TriggerState {
+            internal StateBoss스킬브레이크시작_Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

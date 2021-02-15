@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._81000003_item {
     public static class _trigger_01 {
-        public class State레버 : TriggerState {
-            internal State레버(ITriggerContext context) : base(context) { }
+        public class StateLever : TriggerState {
+            internal StateLever(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000223, 10000214}, arg2: 1);
@@ -123,7 +123,7 @@ namespace Maple2.Trigger._81000003_item {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "6")) {
-                    return new State레버(context);
+                    return new StateLever(context);
                 }
 
                 return null;

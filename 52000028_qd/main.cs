@@ -101,7 +101,7 @@ namespace Maple2.Trigger._52000028_qd {
 
             public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
-                    return new StateIshura대사01(context);
+                    return new StateIshuraScript01(context);
                 }
 
                 return null;
@@ -110,8 +110,8 @@ namespace Maple2.Trigger._52000028_qd {
             public override void OnExit() { }
         }
 
-        private class StateIshura대사01 : TriggerState {
-            internal StateIshura대사01(ITriggerContext context) : base(context) { }
+        private class StateIshuraScript01 : TriggerState {
+            internal StateIshuraScript01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._52000028_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5500)) {
-                    return new StateIshura대사02(context);
+                    return new StateIshuraScript02(context);
                 }
 
                 return null;
@@ -130,8 +130,8 @@ namespace Maple2.Trigger._52000028_qd {
             public override void OnExit() { }
         }
 
-        private class StateIshura대사02 : TriggerState {
-            internal StateIshura대사02(ITriggerContext context) : base(context) { }
+        private class StateIshuraScript02 : TriggerState {
+            internal StateIshuraScript02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {602}, arg2: true);
@@ -140,7 +140,7 @@ namespace Maple2.Trigger._52000028_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State아시모프대사01(context);
+                    return new State아시모프Script01(context);
                 }
 
                 return null;
@@ -149,8 +149,8 @@ namespace Maple2.Trigger._52000028_qd {
             public override void OnExit() { }
         }
 
-        private class State아시모프대사01 : TriggerState {
-            internal State아시모프대사01(ITriggerContext context) : base(context) { }
+        private class State아시모프Script01 : TriggerState {
+            internal State아시모프Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_1001_B");
@@ -160,7 +160,7 @@ namespace Maple2.Trigger._52000028_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State아시모프대사02(context);
+                    return new State아시모프Script02(context);
                 }
 
                 return null;
@@ -169,8 +169,8 @@ namespace Maple2.Trigger._52000028_qd {
             public override void OnExit() { }
         }
 
-        private class State아시모프대사02 : TriggerState {
-            internal State아시모프대사02(ITriggerContext context) : base(context) { }
+        private class State아시모프Script02 : TriggerState {
+            internal State아시모프Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {604}, arg2: true);
@@ -179,7 +179,7 @@ namespace Maple2.Trigger._52000028_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new StateQuest수락대기(context);
+                    return new StateQuest수락Wait(context);
                 }
 
                 return null;
@@ -193,8 +193,8 @@ namespace Maple2.Trigger._52000028_qd {
             }
         }
 
-        private class StateQuest수락대기 : TriggerState {
-            internal StateQuest수락대기(ITriggerContext context) : base(context) { }
+        private class StateQuest수락Wait : TriggerState {
+            internal StateQuest수락Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

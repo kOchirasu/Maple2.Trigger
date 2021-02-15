@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02020100_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {201})) {
-                    return new State씨앗체험(context);
+                    return new StateSeedExperience(context);
                 }
 
                 return null;
@@ -62,8 +62,8 @@ namespace Maple2.Trigger._02020100_bf {
             public override void OnExit() { }
         }
 
-        private class State씨앗체험 : TriggerState {
-            internal State씨앗체험(ITriggerContext context) : base(context) { }
+        private class StateSeedExperience : TriggerState {
+            internal StateSeedExperience(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {9006, 9007, 9008, 9009}, arg2: false);
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02020100_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {202, 203, 204, 205})) {
-                    return new State씨앗체험_씨앗들기(context);
+                    return new StateSeedExperience_씨앗들기(context);
                 }
 
                 return null;
@@ -82,8 +82,8 @@ namespace Maple2.Trigger._02020100_bf {
             public override void OnExit() { }
         }
 
-        private class State씨앗체험_씨앗들기 : TriggerState {
-            internal State씨앗체험_씨앗들기(ITriggerContext context) : base(context) { }
+        private class StateSeedExperience_씨앗들기 : TriggerState {
+            internal StateSeedExperience_씨앗들기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02020100_BF__MAIN__0$", arg3: 5000);
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._02020100_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Seed0interact") == 1) {
-                    return new State씨앗체험_나무심기(context);
+                    return new StateSeedExperience_나무Planting(context);
                 }
 
                 return null;
@@ -101,8 +101,8 @@ namespace Maple2.Trigger._02020100_bf {
             public override void OnExit() { }
         }
 
-        private class State씨앗체험_나무심기 : TriggerState {
-            internal State씨앗체험_나무심기(ITriggerContext context) : base(context) { }
+        private class StateSeedExperience_나무Planting : TriggerState {
+            internal StateSeedExperience_나무Planting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002116}, arg2: 1);
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._02020100_bf {
                 if (context.ObjectInteracted(arg1: new[] {10002116}, arg2: 0)) {
                     context.SetActor(arg1: 1401, arg2: true, arg3: "Interaction_lapentatree_A01_On");
                     context.SetUserValue(triggerId: 99990005, key: "Seed0start", value: 2);
-                    return new State씨앗체험_끝(context);
+                    return new StateSeedExperience_끝(context);
                 }
 
                 return null;
@@ -121,8 +121,8 @@ namespace Maple2.Trigger._02020100_bf {
             public override void OnExit() { }
         }
 
-        private class State씨앗체험_끝 : TriggerState {
-            internal State씨앗체험_끝(ITriggerContext context) : base(context) { }
+        private class StateSeedExperience_끝 : TriggerState {
+            internal StateSeedExperience_끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {9010, 9011, 9012, 9013}, arg2: false);
@@ -157,7 +157,7 @@ namespace Maple2.Trigger._02020100_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {210, 211, 212})) {
-                    return new State씨앗1Enabled(context);
+                    return new StateSeed1Enabled(context);
                 }
 
                 return null;
@@ -166,8 +166,8 @@ namespace Maple2.Trigger._02020100_bf {
             public override void OnExit() { }
         }
 
-        private class State씨앗1Enabled : TriggerState {
-            internal State씨앗1Enabled(ITriggerContext context) : base(context) { }
+        private class StateSeed1Enabled : TriggerState {
+            internal StateSeed1Enabled(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.EnableSpawnPointPc(spawnPointId: 0, isEnable: false);
@@ -177,7 +177,7 @@ namespace Maple2.Trigger._02020100_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Seed1interact") == 1) {
-                    return new State씨앗1_전투(context);
+                    return new StateSeed1_전투(context);
                 }
 
                 return null;
@@ -186,8 +186,8 @@ namespace Maple2.Trigger._02020100_bf {
             public override void OnExit() { }
         }
 
-        private class State씨앗1_전투 : TriggerState {
-            internal State씨앗1_전투(ITriggerContext context) : base(context) { }
+        private class StateSeed1_전투 : TriggerState {
+            internal StateSeed1_전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {9014, 9015, 9016, 9017, 9018}, arg2: false);
@@ -197,7 +197,7 @@ namespace Maple2.Trigger._02020100_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {213, 214, 215, 216})) {
-                    return new State씨앗1_심기(context);
+                    return new StateSeed1_Planting(context);
                 }
 
                 return null;
@@ -206,8 +206,8 @@ namespace Maple2.Trigger._02020100_bf {
             public override void OnExit() { }
         }
 
-        private class State씨앗1_심기 : TriggerState {
-            internal State씨앗1_심기(ITriggerContext context) : base(context) { }
+        private class StateSeed1_Planting : TriggerState {
+            internal StateSeed1_Planting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {9019, 9020, 9021, 9022}, arg2: false);
@@ -217,7 +217,7 @@ namespace Maple2.Trigger._02020100_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10002112}, arg2: 0)) {
-                    return new State씨앗2Enabled(context);
+                    return new StateSeed2Enabled(context);
                 }
 
                 return null;
@@ -226,8 +226,8 @@ namespace Maple2.Trigger._02020100_bf {
             public override void OnExit() { }
         }
 
-        private class State씨앗2Enabled : TriggerState {
-            internal State씨앗2Enabled(ITriggerContext context) : base(context) { }
+        private class StateSeed2Enabled : TriggerState {
+            internal StateSeed2Enabled(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {9023, 9024}, arg2: false);
@@ -241,7 +241,7 @@ namespace Maple2.Trigger._02020100_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Seed2interact") == 1) {
-                    return new State씨앗2_전투(context);
+                    return new StateSeed2_전투(context);
                 }
 
                 return null;
@@ -250,8 +250,8 @@ namespace Maple2.Trigger._02020100_bf {
             public override void OnExit() { }
         }
 
-        private class State씨앗2_전투 : TriggerState {
-            internal State씨앗2_전투(ITriggerContext context) : base(context) { }
+        private class StateSeed2_전투 : TriggerState {
+            internal StateSeed2_전투(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAgent(arg1: new[] {9025, 9026, 9027, 9028, 9029}, arg2: false);

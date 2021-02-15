@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterInCombat(arg1: new[] {101})) {
-                    return new StateCreation대기(context);
+                    return new StateCreationWait(context);
                 }
 
                 return null;
@@ -32,14 +32,14 @@ namespace Maple2.Trigger._02020201_bf {
             public override void OnExit() { }
         }
 
-        private class StateCreation대기 : TriggerState {
-            internal StateCreation대기(ITriggerContext context) : base(context) { }
+        private class StateCreationWait : TriggerState {
+            internal StateCreationWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "gogo") == 1) {
-                    return new StateCreation대기2(context);
+                    return new StateCreationWait2(context);
                 }
 
                 return null;
@@ -48,8 +48,8 @@ namespace Maple2.Trigger._02020201_bf {
             public override void OnExit() { }
         }
 
-        private class StateCreation대기2 : TriggerState {
-            internal StateCreation대기2(ITriggerContext context) : base(context) { }
+        private class StateCreationWait2 : TriggerState {
+            internal StateCreationWait2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

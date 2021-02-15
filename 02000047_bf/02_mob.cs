@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000047_bf {
     public static class _02_mob {
-        public class State반응대기 : TriggerState {
-            internal State반응대기(ITriggerContext context) : base(context) { }
+        public class State반응Wait : TriggerState {
+            internal State반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000078}, arg2: 1);
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._02000047_bf {
 
                 if (!context.MonsterInCombat(arg1: new[] {102})) {
                     context.DestroyMonster(arg1: new[] {102});
-                    return new State반응대기(context);
+                    return new State반응Wait(context);
                 }
 
                 return null;

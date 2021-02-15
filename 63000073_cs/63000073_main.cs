@@ -90,7 +90,7 @@ namespace Maple2.Trigger._63000073_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State보Boss퇴장_01(context);
+                    return new State보BossExit_01(context);
                 }
 
                 return null;
@@ -99,8 +99,8 @@ namespace Maple2.Trigger._63000073_cs {
             public override void OnExit() { }
         }
 
-        private class State보Boss퇴장_01 : TriggerState {
-            internal State보Boss퇴장_01(ITriggerContext context) : base(context) { }
+        private class State보BossExit_01 : TriggerState {
+            internal State보BossExit_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._63000073_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State보Boss퇴장_02(context);
+                    return new State보BossExit_02(context);
                 }
 
                 return null;
@@ -118,8 +118,8 @@ namespace Maple2.Trigger._63000073_cs {
             public override void OnExit() { }
         }
 
-        private class State보Boss퇴장_02 : TriggerState {
-            internal State보Boss퇴장_02(ITriggerContext context) : base(context) { }
+        private class State보BossExit_02 : TriggerState {
+            internal State보BossExit_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 121, arg2: "MS2PatrolData_2001");
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._63000073_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State보Boss퇴장_03(context);
+                    return new State보BossExit_03(context);
                 }
 
                 return null;
@@ -137,8 +137,8 @@ namespace Maple2.Trigger._63000073_cs {
             public override void OnExit() { }
         }
 
-        private class State보Boss퇴장_03 : TriggerState {
-            internal State보Boss퇴장_03(ITriggerContext context) : base(context) { }
+        private class State보BossExit_03 : TriggerState {
+            internal State보BossExit_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._63000073_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State보Boss퇴장_04(context);
+                    return new State보BossExit_04(context);
                 }
 
                 return null;
@@ -159,8 +159,8 @@ namespace Maple2.Trigger._63000073_cs {
             }
         }
 
-        private class State보Boss퇴장_04 : TriggerState {
-            internal State보Boss퇴장_04(ITriggerContext context) : base(context) { }
+        private class State보BossExit_04 : TriggerState {
+            internal State보BossExit_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -452,7 +452,7 @@ namespace Maple2.Trigger._63000073_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State에이든퇴장_01(context);
+                    return new State에이든Exit_01(context);
                 }
 
                 return null;
@@ -461,8 +461,8 @@ namespace Maple2.Trigger._63000073_cs {
             public override void OnExit() { }
         }
 
-        private class State에이든퇴장_01 : TriggerState {
-            internal State에이든퇴장_01(ITriggerContext context) : base(context) { }
+        private class State에이든Exit_01 : TriggerState {
+            internal State에이든Exit_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();

@@ -29,7 +29,7 @@ namespace Maple2.Trigger._52000146_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State한번더대기(context);
+                    return new State한번더Wait(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._52000146_qd {
             public override void OnExit() { }
         }
 
-        private class State한번더대기 : TriggerState {
-            internal State한번더대기(ITriggerContext context) : base(context) { }
+        private class State한번더Wait : TriggerState {
+            internal State한번더Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");

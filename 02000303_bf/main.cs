@@ -95,7 +95,7 @@ namespace Maple2.Trigger._02000303_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State연출이펙트(context);
+                    return new StateCinematic이펙트(context);
                 }
 
                 return null;
@@ -104,8 +104,8 @@ namespace Maple2.Trigger._02000303_bf {
             public override void OnExit() { }
         }
 
-        private class State연출이펙트 : TriggerState {
-            internal State연출이펙트(ITriggerContext context) : base(context) { }
+        private class StateCinematic이펙트 : TriggerState {
+            internal StateCinematic이펙트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3005}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._02000303_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    return new StateNPC대사(context);
+                    return new StateNPCScript(context);
                 }
 
                 return null;
@@ -143,8 +143,8 @@ namespace Maple2.Trigger._02000303_bf {
             public override void OnExit() { }
         }
 
-        private class StateNPC대사 : TriggerState {
-            internal StateNPC대사(ITriggerContext context) : base(context) { }
+        private class StateNPCScript : TriggerState {
+            internal StateNPCScript(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 2001, arg2: "MS2PatrolData_2001_A");
@@ -175,14 +175,14 @@ namespace Maple2.Trigger._02000303_bf {
             }
 
             public override TriggerState Execute() {
-                return new State이동대기(context);
+                return new State이동Wait(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State이동대기 : TriggerState {
-            internal State이동대기(ITriggerContext context) : base(context) { }
+        private class State이동Wait : TriggerState {
+            internal State이동Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000585}, arg2: 1);
@@ -214,7 +214,7 @@ namespace Maple2.Trigger._02000303_bf {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
                     context.MoveUser(arg1: 02000299, arg2: 2, arg3: 101);
-                    return new State이동대기(context);
+                    return new State이동Wait(context);
                 }
 
                 return null;

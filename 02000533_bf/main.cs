@@ -194,7 +194,7 @@ namespace Maple2.Trigger._02000533_bf {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     context.SetUserValue(triggerId: 9002, key: "GameLogicStart", value: 1);
-                    return new State게임로직종료대기(context);
+                    return new State게임로직종료Wait(context);
                 }
 
                 return null;
@@ -203,8 +203,8 @@ namespace Maple2.Trigger._02000533_bf {
             public override void OnExit() { }
         }
 
-        private class State게임로직종료대기 : TriggerState {
-            internal State게임로직종료대기(ITriggerContext context) : base(context) { }
+        private class State게임로직종료Wait : TriggerState {
+            internal State게임로직종료Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

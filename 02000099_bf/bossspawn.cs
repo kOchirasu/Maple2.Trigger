@@ -92,7 +92,7 @@ namespace Maple2.Trigger._02000099_bf {
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SetSkillA") == 1) {
                     context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105, 3106}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State2차Appear대기(context);
+                    return new State2차AppearWait(context);
                 }
 
                 return null;
@@ -101,8 +101,8 @@ namespace Maple2.Trigger._02000099_bf {
             public override void OnExit() { }
         }
 
-        private class State2차Appear대기 : TriggerState {
-            internal State2차Appear대기(ITriggerContext context) : base(context) { }
+        private class State2차AppearWait : TriggerState {
+            internal State2차AppearWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._02000099_bf {
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SetSkillB") == 1) {
                     context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State엘리트Appear(context);
+                    return new StateEliteAppear(context);
                 }
 
                 return null;
@@ -136,8 +136,8 @@ namespace Maple2.Trigger._02000099_bf {
             public override void OnExit() { }
         }
 
-        private class State엘리트Appear : TriggerState {
-            internal State엘리트Appear(ITriggerContext context) : base(context) { }
+        private class StateEliteAppear : TriggerState {
+            internal StateEliteAppear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._02000099_bf {
                     context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                     context.ShowGuideSummary(entityId: 20000993, textId: 20000993, duration: 5000);
                     context.SetMesh(arg1: new[] {3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State엘리트처치(context);
+                    return new StateElite처치(context);
                 }
 
                 return null;
@@ -156,8 +156,8 @@ namespace Maple2.Trigger._02000099_bf {
             public override void OnExit() { }
         }
 
-        private class State엘리트처치 : TriggerState {
-            internal State엘리트처치(ITriggerContext context) : base(context) { }
+        private class StateElite처치 : TriggerState {
+            internal StateElite처치(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

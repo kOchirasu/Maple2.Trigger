@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52010064_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new StateQuest조건체크(context);
+                    return new StateQuestConditionCheck(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnExit() { }
         }
 
-        private class StateQuest조건체크 : TriggerState {
-            internal StateQuest조건체크(ITriggerContext context) : base(context) { }
+        private class StateQuestConditionCheck : TriggerState {
+            internal StateQuestConditionCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._52010064_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State트리스탄대사01(context);
+                    return new State트리스탄Script01(context);
                 }
 
                 return null;
@@ -92,8 +92,8 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnExit() { }
         }
 
-        private class State트리스탄대사01 : TriggerState {
-            internal State트리스탄대사01(ITriggerContext context) : base(context) { }
+        private class State트리스탄Script01 : TriggerState {
+            internal State트리스탄Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8010}, arg2: false);
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._52010064_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State트리스탄대사02(context);
+                    return new State트리스탄Script02(context);
                 }
 
                 return null;
@@ -111,8 +111,8 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnExit() { }
         }
 
-        private class State트리스탄대사02 : TriggerState {
-            internal State트리스탄대사02(ITriggerContext context) : base(context) { }
+        private class State트리스탄Script02 : TriggerState {
+            internal State트리스탄Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", msg: "$52010064_QD__main__1$", duration: 3000, align: "right");
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._52010064_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State트리스탄대사03(context);
+                    return new State트리스탄Script03(context);
                 }
 
                 return null;
@@ -129,8 +129,8 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnExit() { }
         }
 
-        private class State트리스탄대사03 : TriggerState {
-            internal State트리스탄대사03(ITriggerContext context) : base(context) { }
+        private class State트리스탄Script03 : TriggerState {
+            internal State트리스탄Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
@@ -140,7 +140,7 @@ namespace Maple2.Trigger._52010064_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State트리스탄대사04(context);
+                    return new State트리스탄Script04(context);
                 }
 
                 return null;
@@ -149,8 +149,8 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnExit() { }
         }
 
-        private class State트리스탄대사04 : TriggerState {
-            internal State트리스탄대사04(ITriggerContext context) : base(context) { }
+        private class State트리스탄Script04 : TriggerState {
+            internal State트리스탄Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", msg: "$52010064_QD__main__3$", duration: 3000, align: "right");
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._52010064_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State트리스탄대사05(context);
+                    return new State트리스탄Script05(context);
                 }
 
                 return null;
@@ -167,8 +167,8 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnExit() { }
         }
 
-        private class State트리스탄대사05 : TriggerState {
-            internal State트리스탄대사05(ITriggerContext context) : base(context) { }
+        private class State트리스탄Script05 : TriggerState {
+            internal State트리스탄Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
@@ -177,7 +177,7 @@ namespace Maple2.Trigger._52010064_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State트리스탄대사06(context);
+                    return new State트리스탄Script06(context);
                 }
 
                 return null;
@@ -186,8 +186,8 @@ namespace Maple2.Trigger._52010064_qd {
             public override void OnExit() { }
         }
 
-        private class State트리스탄대사06 : TriggerState {
-            internal State트리스탄대사06(ITriggerContext context) : base(context) { }
+        private class State트리스탄Script06 : TriggerState {
+            internal State트리스탄Script06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003842, illustId: "Tristan_normal", msg: "$52010064_QD__main__5$", duration: 3000, align: "right");

@@ -33,7 +33,7 @@ namespace Maple2.Trigger._52000030_qd {
 
             public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
-                    return new StateIshura대사01(context);
+                    return new StateIshuraScript01(context);
                 }
 
                 return null;
@@ -42,8 +42,8 @@ namespace Maple2.Trigger._52000030_qd {
             public override void OnExit() { }
         }
 
-        private class StateIshura대사01 : TriggerState {
-            internal StateIshura대사01(ITriggerContext context) : base(context) { }
+        private class StateIshuraScript01 : TriggerState {
+            internal StateIshuraScript01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {602}, arg2: true);
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._52000030_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2003})) {
-                    return new StateIshura대사02(context);
+                    return new StateIshuraScript02(context);
                 }
 
                 return null;
@@ -139,8 +139,8 @@ namespace Maple2.Trigger._52000030_qd {
             }
         }
 
-        private class StateIshura대사02 : TriggerState {
-            internal StateIshura대사02(ITriggerContext context) : base(context) { }
+        private class StateIshuraScript02 : TriggerState {
+            internal StateIshuraScript02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._52000030_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2005})) {
-                    return new StateIshura대사03(context);
+                    return new StateIshuraScript03(context);
                 }
 
                 return null;
@@ -181,8 +181,8 @@ namespace Maple2.Trigger._52000030_qd {
             public override void OnExit() { }
         }
 
-        private class StateIshura대사03 : TriggerState {
-            internal StateIshura대사03(ITriggerContext context) : base(context) { }
+        private class StateIshuraScript03 : TriggerState {
+            internal StateIshuraScript03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);

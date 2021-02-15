@@ -52,7 +52,7 @@ namespace Maple2.Trigger._02000336_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State웨이홍_대사01(context);
+                    return new State웨이홍_Script01(context);
                 }
 
                 return null;
@@ -61,8 +61,8 @@ namespace Maple2.Trigger._02000336_bf {
             public override void OnExit() { }
         }
 
-        private class State웨이홍_대사01 : TriggerState {
-            internal State웨이홍_대사01(ITriggerContext context) : base(context) { }
+        private class State웨이홍_Script01 : TriggerState {
+            internal State웨이홍_Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {91});
@@ -71,13 +71,13 @@ namespace Maple2.Trigger._02000336_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 8001, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11003124, arg3: "$02000336_BF__BOSS__0$", arg4: 3);
-                context.SetSkip(arg1: "웨이홍_대사02");
+                context.SetSkip(arg1: "웨이홍_Script02");
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State웨이홍_대사02(context);
+                    return new State웨이홍_Script02(context);
                 }
 
                 return null;
@@ -88,8 +88,8 @@ namespace Maple2.Trigger._02000336_bf {
             }
         }
 
-        private class State웨이홍_대사02 : TriggerState {
-            internal State웨이홍_대사02(ITriggerContext context) : base(context) { }
+        private class State웨이홍_Script02 : TriggerState {
+            internal State웨이홍_Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003124, arg3: "$02000336_BF__BOSS__1$", arg4: 3);

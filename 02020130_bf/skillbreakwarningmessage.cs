@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 601) == 1) {
-                    return new State신호받기대기중(context);
+                    return new State신호받기Waiting(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State신호받기대기중 : TriggerState {
-            internal State신호받기대기중(ITriggerContext context) : base(context) { }
+        private class State신호받기Waiting : TriggerState {
+            internal State신호받기Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "WarningMessage", value: 0);
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3200)) {
-                    return new State신호받기대기중(context);
+                    return new State신호받기Waiting(context);
                 }
 
                 if (context.GetUserValue(key: "DeathRenduebianRbladerDark") == 1) {
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3200)) {
-                    return new State신호받기대기중(context);
+                    return new State신호받기Waiting(context);
                 }
 
                 if (context.GetUserValue(key: "DeathIshuraRbladerDark") == 1) {
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3200)) {
-                    return new State신호받기대기중(context);
+                    return new State신호받기Waiting(context);
                 }
 
                 if (context.GetUserValue(key: "DeathIshuraRbladerDark") == 1) {
@@ -160,7 +160,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    return new State신호받기대기중(context);
+                    return new State신호받기Waiting(context);
                 }
 
                 return null;

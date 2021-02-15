@@ -135,7 +135,7 @@ namespace Maple2.Trigger._52000192_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    return new State불끄기준비(context);
+                    return new State불끄기Prepare(context);
                 }
 
                 return null;
@@ -144,8 +144,8 @@ namespace Maple2.Trigger._52000192_qd {
             public override void OnExit() { }
         }
 
-        private class State불끄기준비 : TriggerState {
-            internal State불끄기준비(ITriggerContext context) : base(context) { }
+        private class State불끄기Prepare : TriggerState {
+            internal State불끄기Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -154,7 +154,7 @@ namespace Maple2.Trigger._52000192_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State불끄기준비_02(context);
+                    return new State불끄기Prepare_02(context);
                 }
 
                 return null;
@@ -173,7 +173,7 @@ namespace Maple2.Trigger._52000192_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State불끄기준비_02(context);
+                    return new State불끄기Prepare_02(context);
                 }
 
                 return null;
@@ -182,8 +182,8 @@ namespace Maple2.Trigger._52000192_qd {
             public override void OnExit() { }
         }
 
-        private class State불끄기준비_02 : TriggerState {
-            internal State불끄기준비_02(ITriggerContext context) : base(context) { }
+        private class State불끄기Prepare_02 : TriggerState {
+            internal State불끄기Prepare_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101, 102});

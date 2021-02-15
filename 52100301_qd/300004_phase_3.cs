@@ -100,7 +100,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    // return new State엘리베이터_대기(context);
+                    // return new State엘리베이터_Wait(context);
                     return null;
                 }
 

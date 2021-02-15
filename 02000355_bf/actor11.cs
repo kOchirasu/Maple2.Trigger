@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02000355_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {11001})) {
-                    return new StateMonster소환대기(context);
+                    return new StateMonster소환Wait(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._02000355_bf {
             public override void OnExit() { }
         }
 
-        private class StateMonster소환대기 : TriggerState {
-            internal StateMonster소환대기(ITriggerContext context) : base(context) { }
+        private class StateMonster소환Wait : TriggerState {
+            internal StateMonster소환Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {611}, arg2: true);
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02000355_bf {
 
                 if (context.NpcDetected(arg1: 105, arg2: new[] {2011})) {
                     context.DestroyMonster(arg1: new[] {2011});
-                    return new State리젠준비(context);
+                    return new State리젠Prepare(context);
                 }
 
                 return null;
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02000355_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
-                    return new State리젠준비(context);
+                    return new State리젠Prepare(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {2099})) {
@@ -102,8 +102,8 @@ namespace Maple2.Trigger._02000355_bf {
             public override void OnExit() { }
         }
 
-        private class State리젠준비 : TriggerState {
-            internal State리젠준비(ITriggerContext context) : base(context) { }
+        private class State리젠Prepare : TriggerState {
+            internal State리젠Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 211, arg2: true, arg3: "Regen_A");

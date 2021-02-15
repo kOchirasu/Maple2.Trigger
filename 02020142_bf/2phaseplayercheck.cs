@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "2PhasePlayerCheckStart") == 1) {
-                    return new State1페이즈지점체크하기(context);
+                    return new State1Phase지점체크하기(context);
                 }
 
                 return null;
@@ -32,8 +32,8 @@ namespace Maple2.Trigger._02020142_bf {
             public override void OnExit() { }
         }
 
-        private class State1페이즈지점체크하기 : TriggerState {
-            internal State1페이즈지점체크하기(ITriggerContext context) : base(context) { }
+        private class State1Phase지점체크하기 : TriggerState {
+            internal State1Phase지점체크하기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._02020142_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State2페이즈복격진행_안내DisplayGuide(context);
+                    return new State2Phase복격진행_안내DisplayGuide(context);
                 }
 
                 return null;
@@ -90,8 +90,8 @@ namespace Maple2.Trigger._02020142_bf {
             public override void OnExit() { }
         }
 
-        private class State2페이즈복격진행_안내DisplayGuide : TriggerState {
-            internal State2페이즈복격진행_안내DisplayGuide(ITriggerContext context) : base(context) { }
+        private class State2Phase복격진행_안내DisplayGuide : TriggerState {
+            internal State2Phase복격진행_안내DisplayGuide(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {91}, arg2: true);

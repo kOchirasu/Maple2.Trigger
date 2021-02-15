@@ -30,7 +30,7 @@ namespace Maple2.Trigger._52000050_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State자베스대사01(context);
+                    return new State자베스Script01(context);
                 }
 
                 return null;
@@ -39,17 +39,17 @@ namespace Maple2.Trigger._52000050_qd {
             public override void OnExit() { }
         }
 
-        private class State자베스대사01 : TriggerState {
-            internal State자베스대사01(ITriggerContext context) : base(context) { }
+        private class State자베스Script01 : TriggerState {
+            internal State자베스Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000050_QD__MAIN_03__0$", arg4: 3);
-                context.SetSkip(arg1: "자베스대사01스킵");
+                context.SetSkip(arg1: "자베스Script01스킵");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State브라보대사01(context);
+                    return new State브라보Script01(context);
                 }
 
                 return null;
@@ -58,8 +58,8 @@ namespace Maple2.Trigger._52000050_qd {
             public override void OnExit() { }
         }
 
-        private class State자베스대사01스킵 : TriggerState {
-            internal State자베스대사01스킵(ITriggerContext context) : base(context) { }
+        private class State자베스Script01스킵 : TriggerState {
+            internal State자베스Script01스킵(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -67,23 +67,23 @@ namespace Maple2.Trigger._52000050_qd {
             }
 
             public override TriggerState Execute() {
-                return new State브라보대사01(context);
+                return new State브라보Script01(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State브라보대사01 : TriggerState {
-            internal State브라보대사01(ITriggerContext context) : base(context) { }
+        private class State브라보Script01 : TriggerState {
+            internal State브라보Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000050_QD__MAIN_03__1$", arg4: 3);
-                context.SetSkip(arg1: "브라보대사01스킵");
+                context.SetSkip(arg1: "브라보Script01스킵");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State제이시대사01(context);
+                    return new State제이시Script01(context);
                 }
 
                 return null;
@@ -92,8 +92,8 @@ namespace Maple2.Trigger._52000050_qd {
             public override void OnExit() { }
         }
 
-        private class State브라보대사01스킵 : TriggerState {
-            internal State브라보대사01스킵(ITriggerContext context) : base(context) { }
+        private class State브라보Script01스킵 : TriggerState {
+            internal State브라보Script01스킵(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -101,18 +101,18 @@ namespace Maple2.Trigger._52000050_qd {
             }
 
             public override TriggerState Execute() {
-                return new State제이시대사01(context);
+                return new State제이시Script01(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State제이시대사01 : TriggerState {
-            internal State제이시대사01(ITriggerContext context) : base(context) { }
+        private class State제이시Script01 : TriggerState {
+            internal State제이시Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000515, arg3: "$52000050_QD__MAIN_03__2$", arg4: 5);
-                context.SetSkip(arg1: "제이시대사01스킵");
+                context.SetSkip(arg1: "제이시Script01스킵");
             }
 
             public override TriggerState Execute() {
@@ -126,8 +126,8 @@ namespace Maple2.Trigger._52000050_qd {
             public override void OnExit() { }
         }
 
-        private class State제이시대사01스킵 : TriggerState {
-            internal State제이시대사01스킵(ITriggerContext context) : base(context) { }
+        private class State제이시Script01스킵 : TriggerState {
+            internal State제이시Script01스킵(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();

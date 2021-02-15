@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02000461_bf {
                 if (context.MonsterDead(arg1: new[] {2905})) {
                     context.SetEffect(arg1: new[] {695}, arg2: true);
                     context.SetMesh(arg1: new[] {3905}, arg2: false, arg3: 0, arg4: 0, arg5: 5f);
-                    return new StateBoss_대기(context);
+                    return new StateBoss_Wait(context);
                 }
 
                 return null;
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._02000461_bf {
             public override void OnExit() { }
         }
 
-        private class StateBoss_대기 : TriggerState {
-            internal StateBoss_대기(ITriggerContext context) : base(context) { }
+        private class StateBoss_Wait : TriggerState {
+            internal StateBoss_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

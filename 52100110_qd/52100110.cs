@@ -34,15 +34,15 @@ namespace Maple2.Trigger._52100110_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {2})) {
-                    return new StateQuest용Monster스폰(context);
+                    return new StateQuest용MonsterSpawn(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {1})) {
-                    return new StateQuest용Monster스폰(context);
+                    return new StateQuest용MonsterSpawn(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101020}, arg3: new byte[] {3})) {
-                    return new StateQuest용Monster스폰(context);
+                    return new StateQuest용MonsterSpawn(context);
                 }
 
                 return null;
@@ -92,8 +92,8 @@ namespace Maple2.Trigger._52100110_qd {
             public override void OnExit() { }
         }
 
-        private class StateQuest용Monster스폰 : TriggerState {
-            internal StateQuest용Monster스폰(ITriggerContext context) : base(context) { }
+        private class StateQuest용MonsterSpawn : TriggerState {
+            internal StateQuest용MonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: false);

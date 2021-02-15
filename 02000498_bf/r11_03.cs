@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000498_bf {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 103, arg2: new[] {111001})) {
-                    return new State몹스폰(context);
+                    return new State몹Spawn(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnExit() { }
         }
 
-        private class State몹스폰 : TriggerState {
-            internal State몹스폰(ITriggerContext context) : base(context) { }
+        private class State몹Spawn : TriggerState {
+            internal State몹Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {111004}, arg2: true);
@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02000498_bf {
                 }
 
                 if (context.MonsterDead(arg1: new[] {111004})) {
-                    return new State몹스폰(context);
+                    return new State몹Spawn(context);
                 }
 
                 return null;

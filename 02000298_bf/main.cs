@@ -95,7 +95,7 @@ namespace Maple2.Trigger._02000298_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new StateDungeon안내01(context);
+                    return new StateDungeonGuide01(context);
                 }
 
                 return null;
@@ -104,8 +104,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class StateDungeon안내01 : TriggerState {
-            internal StateDungeon안내01(ITriggerContext context) : base(context) { }
+        private class StateDungeonGuide01 : TriggerState {
+            internal StateDungeonGuide01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3221, 3222, 3223}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -117,7 +117,7 @@ namespace Maple2.Trigger._02000298_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new StateDungeon안내Camera이동(context);
+                    return new StateDungeonGuideCamera이동(context);
                 }
 
                 return null;
@@ -126,8 +126,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class StateDungeon안내Camera이동 : TriggerState {
-            internal StateDungeon안내Camera이동(ITriggerContext context) : base(context) { }
+        private class StateDungeonGuideCamera이동 : TriggerState {
+            internal StateDungeonGuideCamera이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._02000298_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateDungeon안내02(context);
+                    return new StateDungeonGuide02(context);
                 }
 
                 return null;
@@ -144,8 +144,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class StateDungeon안내02 : TriggerState {
-            internal StateDungeon안내02(ITriggerContext context) : base(context) { }
+        private class StateDungeonGuide02 : TriggerState {
+            internal StateDungeonGuide02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20002981, textId: 20002981, duration: 4000);

@@ -175,7 +175,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateAI연출(context);
+                    return new StateAICinematic(context);
                 }
 
                 return null;
@@ -184,8 +184,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class StateAI연출 : TriggerState {
-            internal StateAI연출(ITriggerContext context) : base(context) { }
+        private class StateAICinematic : TriggerState {
+            internal StateAICinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 3);
@@ -195,7 +195,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateAI연출_2(context);
+                    return new StateAICinematic_2(context);
                 }
 
                 return null;
@@ -204,8 +204,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class StateAI연출_2 : TriggerState {
-            internal StateAI연출_2(ITriggerContext context) : base(context) { }
+        private class StateAICinematic_2 : TriggerState {
+            internal StateAICinematic_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 0, arg3: "준비완료! 크리티아스로 돌진!", arg4: 3, arg5: 0);

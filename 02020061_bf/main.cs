@@ -128,7 +128,7 @@ namespace Maple2.Trigger._02020061_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "GaugeClear") == 1) {
-                    return new State오브젝트페이즈(context);
+                    return new State오브젝트Phase(context);
                 }
 
                 if (context.TimeExpired(arg1: "1")) {
@@ -141,8 +141,8 @@ namespace Maple2.Trigger._02020061_bf {
             public override void OnExit() { }
         }
 
-        private class State오브젝트페이즈 : TriggerState {
-            internal State오브젝트페이즈(ITriggerContext context) : base(context) { }
+        private class State오브젝트Phase : TriggerState {
+            internal State오브젝트Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.GiveRewardContent(rewardId: 31000001);
@@ -156,7 +156,7 @@ namespace Maple2.Trigger._02020061_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ObjectClear") == 1) {
-                    return new StateBoss페이즈(context);
+                    return new StateBossPhase(context);
                 }
 
                 if (context.TimeExpired(arg1: "2")) {
@@ -169,8 +169,8 @@ namespace Maple2.Trigger._02020061_bf {
             public override void OnExit() { }
         }
 
-        private class StateBoss페이즈 : TriggerState {
-            internal StateBoss페이즈(ITriggerContext context) : base(context) { }
+        private class StateBossPhase : TriggerState {
+            internal StateBossPhase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.GiveRewardContent(rewardId: 31000002);

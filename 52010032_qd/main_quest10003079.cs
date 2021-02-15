@@ -201,7 +201,7 @@ namespace Maple2.Trigger._52010032_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    return new State에바고르퇴장(context);
+                    return new State에바고르Exit(context);
                 }
 
                 return null;
@@ -210,8 +210,8 @@ namespace Maple2.Trigger._52010032_qd {
             public override void OnExit() { }
         }
 
-        private class State에바고르퇴장 : TriggerState {
-            internal State에바고르퇴장(ITriggerContext context) : base(context) { }
+        private class State에바고르Exit : TriggerState {
+            internal State에바고르Exit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4006}, arg2: false);
@@ -222,7 +222,7 @@ namespace Maple2.Trigger._52010032_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State에바고르퇴장후(context);
+                    return new State에바고르Exit후(context);
                 }
 
                 return null;
@@ -231,8 +231,8 @@ namespace Maple2.Trigger._52010032_qd {
             public override void OnExit() { }
         }
 
-        private class State에바고르퇴장후 : TriggerState {
-            internal State에바고르퇴장후(ITriggerContext context) : base(context) { }
+        private class State에바고르Exit후 : TriggerState {
+            internal State에바고르Exit후(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
@@ -244,7 +244,7 @@ namespace Maple2.Trigger._52010032_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    return new State에바고르퇴장후_1(context);
+                    return new State에바고르Exit후_1(context);
                 }
 
                 return null;
@@ -253,8 +253,8 @@ namespace Maple2.Trigger._52010032_qd {
             public override void OnExit() { }
         }
 
-        private class State에바고르퇴장후_1 : TriggerState {
-            internal State에바고르퇴장후_1(ITriggerContext context) : base(context) { }
+        private class State에바고르Exit후_1 : TriggerState {
+            internal State에바고르Exit후_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();

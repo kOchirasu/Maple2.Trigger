@@ -13,7 +13,7 @@ namespace Maple2.Trigger._02000283_bf {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 102, arg2: new[] {2001})) {
-                    return new State반응대기(context);
+                    return new State반응Wait(context);
                 }
 
                 return null;
@@ -22,8 +22,8 @@ namespace Maple2.Trigger._02000283_bf {
             public override void OnExit() { }
         }
 
-        private class State반응대기 : TriggerState {
-            internal State반응대기(ITriggerContext context) : base(context) { }
+        private class State반응Wait : TriggerState {
+            internal State반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000429}, arg2: 1);

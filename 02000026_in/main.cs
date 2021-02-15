@@ -14,11 +14,11 @@ namespace Maple2.Trigger._02000026_in {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001568}, arg3: new byte[] {2})) {
-                    return new State아노스있음01(context);
+                    return new State아노스Exists01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001568}, arg3: new byte[] {1})) {
-                    return new State아노스만남연출대기(context);
+                    return new State아노스만남CinematicWait(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001567}, arg3: new byte[] {3})) {
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000026_in {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001569}, arg3: new byte[] {1})) {
-                    return new State아노스있음01(context);
+                    return new State아노스Exists01(context);
                 }
 
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001569}, arg3: new byte[] {1})) {
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._02000026_in {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001568, 50001569, 50001570, 50001571, 50001572, 50001573}, arg3: new byte[] {2})) {
-                    return new State아노스있음01(context);
+                    return new State아노스Exists01(context);
                 }
 
                 return null;
@@ -115,8 +115,8 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnExit() { }
         }
 
-        private class State아노스있음01 : TriggerState {
-            internal State아노스있음01(ITriggerContext context) : base(context) { }
+        private class State아노스Exists01 : TriggerState {
+            internal State아노스Exists01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
@@ -134,8 +134,8 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnExit() { }
         }
 
-        private class State아노스만남연출대기 : TriggerState {
-            internal State아노스만남연출대기(ITriggerContext context) : base(context) { }
+        private class State아노스만남CinematicWait : TriggerState {
+            internal State아노스만남CinematicWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
@@ -244,7 +244,7 @@ namespace Maple2.Trigger._02000026_in {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4623)) {
-                    return new State아노스대사01(context);
+                    return new State아노스Script01(context);
                 }
 
                 return null;
@@ -253,13 +253,13 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnExit() { }
         }
 
-        private class State아노스대사01 : TriggerState {
-            internal State아노스대사01(ITriggerContext context) : base(context) { }
+        private class State아노스Script01 : TriggerState {
+            internal State아노스Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003313, arg3: "$02000026_IN__MAIN__3$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "아노스대사01_skip");
+                context.SetSkip(arg1: "아노스Script01_skip");
             }
 
             public override TriggerState Execute() {
@@ -273,8 +273,8 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnExit() { }
         }
 
-        private class State아노스대사01_skip : TriggerState {
-            internal State아노스대사01_skip(ITriggerContext context) : base(context) { }
+        private class State아노스Script01_skip : TriggerState {
+            internal State아노스Script01_skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -299,7 +299,7 @@ namespace Maple2.Trigger._02000026_in {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State라딘대사01(context);
+                    return new State라딘Script01(context);
                 }
 
                 return null;
@@ -308,18 +308,18 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnExit() { }
         }
 
-        private class State라딘대사01 : TriggerState {
-            internal State라딘대사01(ITriggerContext context) : base(context) { }
+        private class State라딘Script01 : TriggerState {
+            internal State라딘Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000264, arg3: "$02000026_IN__MAIN__4$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Bore_A");
-                context.SetSkip(arg1: "라딘대사01_skip");
+                context.SetSkip(arg1: "라딘Script01_skip");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4623)) {
-                    return new State아노스대사02(context);
+                    return new State아노스Script02(context);
                 }
 
                 return null;
@@ -328,8 +328,8 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnExit() { }
         }
 
-        private class State라딘대사01_skip : TriggerState {
-            internal State라딘대사01_skip(ITriggerContext context) : base(context) { }
+        private class State라딘Script01_skip : TriggerState {
+            internal State라딘Script01_skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -337,25 +337,25 @@ namespace Maple2.Trigger._02000026_in {
             }
 
             public override TriggerState Execute() {
-                return new State아노스대사02(context);
+                return new State아노스Script02(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State아노스대사02 : TriggerState {
-            internal State아노스대사02(ITriggerContext context) : base(context) { }
+        private class State아노스Script02 : TriggerState {
+            internal State아노스Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 4000f);
                 context.SetConversation(arg1: 2, arg2: 11003313, arg3: "$02000026_IN__MAIN__5$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "아노스대사02_skip");
+                context.SetSkip(arg1: "아노스Script02_skip");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4519)) {
-                    return new State라딘대사02(context);
+                    return new State라딘Script02(context);
                 }
 
                 return null;
@@ -364,8 +364,8 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnExit() { }
         }
 
-        private class State아노스대사02_skip : TriggerState {
-            internal State아노스대사02_skip(ITriggerContext context) : base(context) { }
+        private class State아노스Script02_skip : TriggerState {
+            internal State아노스Script02_skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -373,19 +373,19 @@ namespace Maple2.Trigger._02000026_in {
             }
 
             public override TriggerState Execute() {
-                return new State라딘대사02(context);
+                return new State라딘Script02(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State라딘대사02 : TriggerState {
-            internal State라딘대사02(ITriggerContext context) : base(context) { }
+        private class State라딘Script02 : TriggerState {
+            internal State라딘Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "ChatUP_A");
                 context.SetConversation(arg1: 2, arg2: 11000264, arg3: "$02000026_IN__MAIN__6$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "라딘대사02_skip");
+                context.SetSkip(arg1: "라딘Script02_skip");
             }
 
             public override TriggerState Execute() {
@@ -399,8 +399,8 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnExit() { }
         }
 
-        private class State라딘대사02_skip : TriggerState {
-            internal State라딘대사02_skip(ITriggerContext context) : base(context) { }
+        private class State라딘Script02_skip : TriggerState {
+            internal State라딘Script02_skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -423,7 +423,7 @@ namespace Maple2.Trigger._02000026_in {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State아노스대사03(context);
+                    return new State아노스Script03(context);
                 }
 
                 return null;
@@ -432,18 +432,18 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnExit() { }
         }
 
-        private class State아노스대사03 : TriggerState {
-            internal State아노스대사03(ITriggerContext context) : base(context) { }
+        private class State아노스Script03 : TriggerState {
+            internal State아노스Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "ChatUp_A");
                 context.SetConversation(arg1: 2, arg2: 11003313, arg3: "$02000026_IN__MAIN__7$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "아노스대사03_skip");
+                context.SetSkip(arg1: "아노스Script03_skip");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6817)) {
-                    return new State아노스대사04(context);
+                    return new State아노스Script04(context);
                 }
 
                 return null;
@@ -452,8 +452,8 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnExit() { }
         }
 
-        private class State아노스대사03_skip : TriggerState {
-            internal State아노스대사03_skip(ITriggerContext context) : base(context) { }
+        private class State아노스Script03_skip : TriggerState {
+            internal State아노스Script03_skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -461,24 +461,24 @@ namespace Maple2.Trigger._02000026_in {
             }
 
             public override TriggerState Execute() {
-                return new State아노스대사04(context);
+                return new State아노스Script04(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State아노스대사04 : TriggerState {
-            internal State아노스대사04(ITriggerContext context) : base(context) { }
+        private class State아노스Script04 : TriggerState {
+            internal State아노스Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003313, arg3: "$02000026_IN__MAIN__8$", arg4: 3, arg5: 0);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_01");
-                context.SetSkip(arg1: "아노스대사04_skip");
+                context.SetSkip(arg1: "아노스Script04_skip");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State라딘대사03(context);
+                    return new State라딘Script03(context);
                 }
 
                 return null;
@@ -487,8 +487,8 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnExit() { }
         }
 
-        private class State아노스대사04_skip : TriggerState {
-            internal State아노스대사04_skip(ITriggerContext context) : base(context) { }
+        private class State아노스Script04_skip : TriggerState {
+            internal State아노스Script04_skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -496,20 +496,20 @@ namespace Maple2.Trigger._02000026_in {
             }
 
             public override TriggerState Execute() {
-                return new State라딘대사03(context);
+                return new State라딘Script03(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State라딘대사03 : TriggerState {
-            internal State라딘대사03(ITriggerContext context) : base(context) { }
+        private class State라딘Script03 : TriggerState {
+            internal State라딘Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8004}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Talk_A", arg3: 4000f);
                 context.SetConversation(arg1: 2, arg2: 11000264, arg3: "$02000026_IN__MAIN__9$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "라딘대사03_skip");
+                context.SetSkip(arg1: "라딘Script03_skip");
             }
 
             public override TriggerState Execute() {
@@ -523,8 +523,8 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnExit() { }
         }
 
-        private class State라딘대사03_skip : TriggerState {
-            internal State라딘대사03_skip(ITriggerContext context) : base(context) { }
+        private class State라딘Script03_skip : TriggerState {
+            internal State라딘Script03_skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -547,7 +547,7 @@ namespace Maple2.Trigger._02000026_in {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State아노스대사05(context);
+                    return new State아노스Script05(context);
                 }
 
                 return null;
@@ -556,19 +556,19 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnExit() { }
         }
 
-        private class State아노스대사05 : TriggerState {
-            internal State아노스대사05(ITriggerContext context) : base(context) { }
+        private class State아노스Script05 : TriggerState {
+            internal State아노스Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 3000f);
                 context.SetConversation(arg1: 2, arg2: 11003313, arg3: "$02000026_IN__MAIN__10$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "아노스대사05_skip");
+                context.SetSkip(arg1: "아노스Script05_skip");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3343)) {
-                    return new State아노스대사06(context);
+                    return new State아노스Script06(context);
                 }
 
                 return null;
@@ -577,8 +577,8 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnExit() { }
         }
 
-        private class State아노스대사05_skip : TriggerState {
-            internal State아노스대사05_skip(ITriggerContext context) : base(context) { }
+        private class State아노스Script05_skip : TriggerState {
+            internal State아노스Script05_skip(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
@@ -586,14 +586,14 @@ namespace Maple2.Trigger._02000026_in {
             }
 
             public override TriggerState Execute() {
-                return new State아노스대사06(context);
+                return new State아노스Script06(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State아노스대사06 : TriggerState {
-            internal State아노스대사06(ITriggerContext context) : base(context) { }
+        private class State아노스Script06 : TriggerState {
+            internal State아노스Script06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Idle_A", arg3: 3000f);

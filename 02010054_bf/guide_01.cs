@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02010054_bf {
     public static class _guide_01 {
-        public class State반응대기 : TriggerState {
-            internal State반응대기(ITriggerContext context) : base(context) { }
+        public class State반응Wait : TriggerState {
+            internal State반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02010054_bf {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.HideGuideSummary(entityId: 20105402);
-                    return new State감지대기(context);
+                    return new State감지Wait(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnExit() { }
         }
 
-        private class State감지대기 : TriggerState {
-            internal State감지대기(ITriggerContext context) : base(context) { }
+        private class State감지Wait : TriggerState {
+            internal State감지Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -162,7 +162,7 @@ namespace Maple2.Trigger._02010054_bf {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.HideGuideSummary(entityId: 20105405);
-                    return new State반응대기02(context);
+                    return new State반응Wait02(context);
                 }
 
                 return null;
@@ -171,14 +171,14 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnExit() { }
         }
 
-        private class State반응대기02 : TriggerState {
-            internal State반응대기02(ITriggerContext context) : base(context) { }
+        private class State반응Wait02 : TriggerState {
+            internal State반응Wait02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {109})) {
-                    return new State반응대기02종료(context);
+                    return new State반응Wait02종료(context);
                 }
 
                 return null;
@@ -187,8 +187,8 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnExit() { }
         }
 
-        private class State반응대기02종료 : TriggerState {
-            internal State반응대기02종료(ITriggerContext context) : base(context) { }
+        private class State반응Wait02종료 : TriggerState {
+            internal State반응Wait02종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20105403, textId: 20105403);
@@ -234,7 +234,7 @@ namespace Maple2.Trigger._02010054_bf {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
                     context.HideGuideSummary(entityId: 20105402);
-                    return new State감지대기02(context);
+                    return new State감지Wait02(context);
                 }
 
                 return null;
@@ -243,8 +243,8 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnExit() { }
         }
 
-        private class State감지대기02 : TriggerState {
-            internal State감지대기02(ITriggerContext context) : base(context) { }
+        private class State감지Wait02 : TriggerState {
+            internal State감지Wait02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

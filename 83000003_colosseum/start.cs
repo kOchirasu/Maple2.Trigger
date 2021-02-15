@@ -30,7 +30,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State연출_01(context);
+                    return new StateCinematic_01(context);
                 }
 
                 return null;
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._83000003_colosseum {
             public override void OnExit() { }
         }
 
-        private class State연출_01 : TriggerState {
-            internal State연출_01(ITriggerContext context) : base(context) { }
+        private class StateCinematic_01 : TriggerState {
+            internal StateCinematic_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State연출_01_01(context);
+                    return new StateCinematic_01_01(context);
                 }
 
                 return null;
@@ -57,8 +57,8 @@ namespace Maple2.Trigger._83000003_colosseum {
             public override void OnExit() { }
         }
 
-        private class State연출_01_01 : TriggerState {
-            internal State연출_01_01(ITriggerContext context) : base(context) { }
+        private class StateCinematic_01_01 : TriggerState {
+            internal StateCinematic_01_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State연출_02(context);
+                    return new StateCinematic_02(context);
                 }
 
                 return null;
@@ -76,8 +76,8 @@ namespace Maple2.Trigger._83000003_colosseum {
             public override void OnExit() { }
         }
 
-        private class State연출_02 : TriggerState {
-            internal State연출_02(ITriggerContext context) : base(context) { }
+        private class StateCinematic_02 : TriggerState {
+            internal StateCinematic_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4003, 4004}, arg2: false);
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State연출_03(context);
+                    return new StateCinematic_03(context);
                 }
 
                 return null;
@@ -94,8 +94,8 @@ namespace Maple2.Trigger._83000003_colosseum {
             public override void OnExit() { }
         }
 
-        private class State연출_03 : TriggerState {
-            internal State연출_03(ITriggerContext context) : base(context) { }
+        private class StateCinematic_03 : TriggerState {
+            internal StateCinematic_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State연출_05(context);
+                    return new StateCinematic_05(context);
                 }
 
                 return null;
@@ -112,8 +112,8 @@ namespace Maple2.Trigger._83000003_colosseum {
             public override void OnExit() { }
         }
 
-        private class State연출_05 : TriggerState {
-            internal State연출_05(ITriggerContext context) : base(context) { }
+        private class StateCinematic_05 : TriggerState {
+            internal StateCinematic_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State연출_07(context);
+                    return new StateCinematic_07(context);
                 }
 
                 return null;
@@ -131,8 +131,8 @@ namespace Maple2.Trigger._83000003_colosseum {
             public override void OnExit() { }
         }
 
-        private class State연출_07 : TriggerState {
-            internal State연출_07(ITriggerContext context) : base(context) { }
+        private class StateCinematic_07 : TriggerState {
+            internal StateCinematic_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4007, 4008}, arg2: false);
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._83000003_colosseum {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SetCinematicUI(arg1: 0);
                     context.CameraReset(interpolationTime: 0f);
-                    return new State연출끝_01(context);
+                    return new StateCinematic끝_01(context);
                 }
 
                 return null;
@@ -181,14 +181,14 @@ namespace Maple2.Trigger._83000003_colosseum {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                return new State연출끝_01(context);
+                return new StateCinematic끝_01(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State연출끝_01 : TriggerState {
-            internal State연출끝_01(ITriggerContext context) : base(context) { }
+        private class StateCinematic끝_01 : TriggerState {
+            internal StateCinematic끝_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.TalkNpc(spawnPointId: 203);

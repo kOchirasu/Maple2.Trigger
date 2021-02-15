@@ -262,7 +262,7 @@ namespace Maple2.Trigger._52100070_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State연출끝(context);
+                    return new StateCinematic끝(context);
                 }
 
                 return null;
@@ -271,8 +271,8 @@ namespace Maple2.Trigger._52100070_qd {
             public override void OnExit() { }
         }
 
-        private class State연출끝 : TriggerState {
-            internal State연출끝(ITriggerContext context) : base(context) { }
+        private class StateCinematic끝 : TriggerState {
+            internal StateCinematic끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007}, arg2: false);

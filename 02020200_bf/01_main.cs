@@ -88,7 +88,7 @@ namespace Maple2.Trigger._02020200_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State엘리베이터_1Enabled_대기(context);
+                    return new State엘리베이터_1Enabled_Wait(context);
                 }
 
                 return null;
@@ -97,8 +97,8 @@ namespace Maple2.Trigger._02020200_bf {
             public override void OnExit() { }
         }
 
-        private class State엘리베이터_1Enabled_대기 : TriggerState {
-            internal State엘리베이터_1Enabled_대기(ITriggerContext context) : base(context) { }
+        private class State엘리베이터_1Enabled_Wait : TriggerState {
+            internal State엘리베이터_1Enabled_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 11002}, arg2: true);
@@ -197,7 +197,7 @@ namespace Maple2.Trigger._02020200_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State엘리베이터_2Enabled_대기(context);
+                    return new State엘리베이터_2Enabled_Wait(context);
                 }
 
                 return null;
@@ -206,8 +206,8 @@ namespace Maple2.Trigger._02020200_bf {
             public override void OnExit() { }
         }
 
-        private class State엘리베이터_2Enabled_대기 : TriggerState {
-            internal State엘리베이터_2Enabled_대기(ITriggerContext context) : base(context) { }
+        private class State엘리베이터_2Enabled_Wait : TriggerState {
+            internal State엘리베이터_2Enabled_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {10010, 10011, 10012, 10013, 10014, 10015, 10016, 10017, 10018, 11004}, arg2: true);
@@ -306,7 +306,7 @@ namespace Maple2.Trigger._02020200_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State엘리베이터_3Enabled_대기(context);
+                    return new State엘리베이터_3Enabled_Wait(context);
                 }
 
                 return null;
@@ -315,8 +315,8 @@ namespace Maple2.Trigger._02020200_bf {
             public override void OnExit() { }
         }
 
-        private class State엘리베이터_3Enabled_대기 : TriggerState {
-            internal State엘리베이터_3Enabled_대기(ITriggerContext context) : base(context) { }
+        private class State엘리베이터_3Enabled_Wait : TriggerState {
+            internal State엘리베이터_3Enabled_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {10019, 10020, 10021, 10022, 10023, 10024, 10025, 10026, 10027, 11006}, arg2: true);

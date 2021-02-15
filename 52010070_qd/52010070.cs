@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52010070_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {2001}, arg2: 0)) {
-                    return new State엔피씨스폰(context);
+                    return new State엔피씨Spawn(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52010070_qd {
             public override void OnExit() { }
         }
 
-        private class State엔피씨스폰 : TriggerState {
-            internal State엔피씨스폰(ITriggerContext context) : base(context) { }
+        private class State엔피씨Spawn : TriggerState {
+            internal State엔피씨Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102, 103, 107, 109}, arg2: false);

@@ -61,7 +61,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -70,8 +70,8 @@ namespace Maple2.Trigger._02000393_bf {
             public override void OnExit() { }
         }
 
-        private class State2라운드대기 : TriggerState {
-            internal State2라운드대기(ITriggerContext context) : base(context) { }
+        private class State2라운드Wait : TriggerState {
+            internal State2라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -140,8 +140,8 @@ namespace Maple2.Trigger._02000393_bf {
             public override void OnExit() { }
         }
 
-        private class State3라운드대기 : TriggerState {
-            internal State3라운드대기(ITriggerContext context) : base(context) { }
+        private class State3라운드Wait : TriggerState {
+            internal State3라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State4라운드대기(context);
+                    return new State4라운드Wait(context);
                 }
 
                 return null;
@@ -246,8 +246,8 @@ namespace Maple2.Trigger._02000393_bf {
             public override void OnExit() { }
         }
 
-        private class State4라운드대기 : TriggerState {
-            internal State4라운드대기(ITriggerContext context) : base(context) { }
+        private class State4라운드Wait : TriggerState {
+            internal State4라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -361,7 +361,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State5라운드대기(context);
+                    return new State5라운드Wait(context);
                 }
 
                 return null;
@@ -370,8 +370,8 @@ namespace Maple2.Trigger._02000393_bf {
             public override void OnExit() { }
         }
 
-        private class State5라운드대기 : TriggerState {
-            internal State5라운드대기(ITriggerContext context) : base(context) { }
+        private class State5라운드Wait : TriggerState {
+            internal State5라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

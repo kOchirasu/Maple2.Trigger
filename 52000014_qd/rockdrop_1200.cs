@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    return new State낙하01준비(context);
+                    return new State낙하01Prepare(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._52000014_qd {
             public override void OnExit() { }
         }
 
-        private class State낙하01준비 : TriggerState {
-            internal State낙하01준비(ITriggerContext context) : base(context) { }
+        private class State낙하01Prepare : TriggerState {
+            internal State낙하01Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._52000014_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State낙하01준비(context);
+                    return new State낙하01Prepare(context);
                 }
 
                 return null;

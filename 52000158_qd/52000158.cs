@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52000158_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002736}, arg3: new byte[] {3})) {
-                    return new State돌아왔다준비_01(context);
+                    return new State돌아왔다Prepare_01(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {2001}, arg2: 0)) {
@@ -253,8 +253,8 @@ namespace Maple2.Trigger._52000158_qd {
             public override void OnExit() { }
         }
 
-        private class State돌아왔다준비_01 : TriggerState {
-            internal State돌아왔다준비_01(ITriggerContext context) : base(context) { }
+        private class State돌아왔다Prepare_01 : TriggerState {
+            internal State돌아왔다Prepare_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");

@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52020027_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {901})) {
-                    return new State연출감지(context);
+                    return new StateCinematic감지(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52020027_qd {
             public override void OnExit() { }
         }
 
-        private class State연출감지 : TriggerState {
-            internal State연출감지(ITriggerContext context) : base(context) { }
+        private class StateCinematic감지 : TriggerState {
+            internal StateCinematic감지(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52020027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new StateCamera_세리하대사1(context);
+                    return new StateCamera_세리하Script1(context);
                 }
 
                 return null;
@@ -58,8 +58,8 @@ namespace Maple2.Trigger._52020027_qd {
             public override void OnExit() { }
         }
 
-        private class StateCamera_세리하대사1 : TriggerState {
-            internal StateCamera_세리하대사1(ITriggerContext context) : base(context) { }
+        private class StateCamera_세리하Script1 : TriggerState {
+            internal StateCamera_세리하Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 22000114, arg3: "대체 어딨는거지?", arg4: 3);
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._52020027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new StateCamera_세리하대사2(context);
+                    return new StateCamera_세리하Script2(context);
                 }
 
                 return null;
@@ -76,8 +76,8 @@ namespace Maple2.Trigger._52020027_qd {
             public override void OnExit() { }
         }
 
-        private class StateCamera_세리하대사2 : TriggerState {
-            internal StateCamera_세리하대사2(ITriggerContext context) : base(context) { }
+        private class StateCamera_세리하Script2 : TriggerState {
+            internal StateCamera_세리하Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 502, arg2: true);
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._52020027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new StateCamera_세리하대사3(context);
+                    return new StateCamera_세리하Script3(context);
                 }
 
                 return null;
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._52020027_qd {
             public override void OnExit() { }
         }
 
-        private class StateCamera_세리하대사3 : TriggerState {
-            internal StateCamera_세리하대사3(ITriggerContext context) : base(context) { }
+        private class StateCamera_세리하Script3 : TriggerState {
+            internal StateCamera_세리하Script3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 22000114, arg3: "이제 결판을 내자!!", arg4: 4);

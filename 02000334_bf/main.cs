@@ -197,7 +197,7 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "60")) {
-                    return new State2단계_준비(context);
+                    return new State2단계_Prepare(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {999})) {
@@ -216,8 +216,8 @@ namespace Maple2.Trigger._02000334_bf {
             }
         }
 
-        private class State2단계_준비 : TriggerState {
-            internal State2단계_준비(ITriggerContext context) : base(context) { }
+        private class State2단계_Prepare : TriggerState {
+            internal State2단계_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -282,7 +282,7 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "60")) {
-                    return new State3단계_준비(context);
+                    return new State3단계_Prepare(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {999})) {
@@ -297,8 +297,8 @@ namespace Maple2.Trigger._02000334_bf {
             }
         }
 
-        private class State3단계_준비 : TriggerState {
-            internal State3단계_준비(ITriggerContext context) : base(context) { }
+        private class State3단계_Prepare : TriggerState {
+            internal State3단계_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -360,7 +360,7 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "60")) {
-                    return new State4단계_준비_01(context);
+                    return new State4단계_Prepare_01(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {999})) {
@@ -375,8 +375,8 @@ namespace Maple2.Trigger._02000334_bf {
             }
         }
 
-        private class State4단계_준비_01 : TriggerState {
-            internal State4단계_준비_01(ITriggerContext context) : base(context) { }
+        private class State4단계_Prepare_01 : TriggerState {
+            internal State4단계_Prepare_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -388,7 +388,7 @@ namespace Maple2.Trigger._02000334_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State4단계_준비_02(context);
+                    return new State4단계_Prepare_02(context);
                 }
 
                 return null;
@@ -397,8 +397,8 @@ namespace Maple2.Trigger._02000334_bf {
             public override void OnExit() { }
         }
 
-        private class State4단계_준비_02 : TriggerState {
-            internal State4단계_준비_02(ITriggerContext context) : base(context) { }
+        private class State4단계_Prepare_02 : TriggerState {
+            internal State4단계_Prepare_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);

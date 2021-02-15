@@ -102,12 +102,12 @@ namespace Maple2.Trigger._81000001_item {
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3401, 3402}, arg2: true, arg3: 0, arg4: 0);
-                    return new StateStart조건체크(context);
+                    return new StateStartConditionCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
                     context.SetMesh(arg1: new[] {3403, 3404}, arg2: true, arg3: 0, arg4: 0);
-                    return new StateStart조건체크(context);
+                    return new StateStartConditionCheck(context);
                 }
 
                 return null;
@@ -116,8 +116,8 @@ namespace Maple2.Trigger._81000001_item {
             public override void OnExit() { }
         }
 
-        private class StateStart조건체크 : TriggerState {
-            internal StateStart조건체크(ITriggerContext context) : base(context) { }
+        private class StateStartConditionCheck : TriggerState {
+            internal StateStartConditionCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

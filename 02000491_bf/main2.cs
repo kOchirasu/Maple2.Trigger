@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02000491_bf {
                     context.SetMesh(arg1: new[] {3111, 3112}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                     context.SetInteractObject(arg1: new[] {10000993, 10000994}, arg2: 1);
                     context.SetUserValue(triggerId: 9999901, key: "main", value: 1);
-                    return new State합류대기(context);
+                    return new State합류Wait(context);
                 }
 
                 return null;
@@ -80,8 +80,8 @@ namespace Maple2.Trigger._02000491_bf {
             public override void OnExit() { }
         }
 
-        private class State합류대기 : TriggerState {
-            internal State합류대기(ITriggerContext context) : base(context) { }
+        private class State합류Wait : TriggerState {
+            internal State합류Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

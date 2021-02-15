@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52100303_qd {
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Mesh") == 2) {
                     context.SetMesh(arg1: new[] {4002}, arg2: true);
-                    return new State이페이즈(context);
+                    return new State이Phase(context);
                 }
 
                 return null;
@@ -33,8 +33,8 @@ namespace Maple2.Trigger._52100303_qd {
             public override void OnExit() { }
         }
 
-        private class State이페이즈 : TriggerState {
-            internal State이페이즈(ITriggerContext context) : base(context) { }
+        private class State이Phase : TriggerState {
+            internal State이Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {111}, arg2: false);
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._52100303_qd {
                 if (context.GetUserValue(key: "Mesh") == 3) {
                     context.SetAiExtraData(key: "Thunder", value: 2);
                     context.SetMesh(arg1: new[] {4003}, arg2: true);
-                    return new State삼페이즈(context);
+                    return new State삼Phase(context);
                 }
 
                 return null;
@@ -53,8 +53,8 @@ namespace Maple2.Trigger._52100303_qd {
             public override void OnExit() { }
         }
 
-        private class State삼페이즈 : TriggerState {
-            internal State삼페이즈(ITriggerContext context) : base(context) { }
+        private class State삼Phase : TriggerState {
+            internal State삼Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

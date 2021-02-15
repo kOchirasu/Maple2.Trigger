@@ -33,11 +33,11 @@ namespace Maple2.Trigger._02000531_bf {
                 }
 
                 if (context.DungeonTimeOut()) {
-                    return new State던전실패(context);
+                    return new StateDungeonFailure(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    return new State던전실패(context);
+                    return new StateDungeonFailure(context);
                 }
 
                 return null;
@@ -67,8 +67,8 @@ namespace Maple2.Trigger._02000531_bf {
             public override void OnExit() { }
         }
 
-        private class State던전실패 : TriggerState {
-            internal State던전실패(ITriggerContext context) : base(context) { }
+        private class StateDungeonFailure : TriggerState {
+            internal StateDungeonFailure(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1});

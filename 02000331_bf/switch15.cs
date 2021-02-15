@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SecondBridgeOff") == 1) {
-                    return new State스위치준비(context);
+                    return new State스위치Prepare(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnExit() { }
         }
 
-        private class State스위치준비 : TriggerState {
-            internal State스위치준비(ITriggerContext context) : base(context) { }
+        private class State스위치Prepare : TriggerState {
+            internal State스위치Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {777703, 777804}, arg2: false);

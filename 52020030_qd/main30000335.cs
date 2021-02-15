@@ -295,7 +295,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State공명준비이오네(context);
+                    return new State공명Prepare이오네(context);
                 }
 
                 return null;
@@ -304,8 +304,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State공명준비이오네 : TriggerState {
-            internal State공명준비이오네(ITriggerContext context) : base(context) { }
+        private class State공명Prepare이오네 : TriggerState {
+            internal State공명Prepare이오네(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {105});
@@ -318,7 +318,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State공명준비이오네_02(context);
+                    return new State공명Prepare이오네_02(context);
                 }
 
                 return null;
@@ -327,8 +327,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State공명준비이오네_02 : TriggerState {
-            internal State공명준비이오네_02(ITriggerContext context) : base(context) { }
+        private class State공명Prepare이오네_02 : TriggerState {
+            internal State공명Prepare이오네_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4018}, arg2: false);
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State공명준비이오네03(context);
+                    return new State공명Prepare이오네03(context);
                 }
 
                 return null;
@@ -346,8 +346,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State공명준비이오네03 : TriggerState {
-            internal State공명준비이오네03(ITriggerContext context) : base(context) { }
+        private class State공명Prepare이오네03 : TriggerState {
+            internal State공명Prepare이오네03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Quest_Spell_A");
@@ -357,7 +357,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State공명준비이오네04(context);
+                    return new State공명Prepare이오네04(context);
                 }
 
                 return null;
@@ -366,8 +366,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State공명준비이오네04 : TriggerState {
-            internal State공명준비이오네04(ITriggerContext context) : base(context) { }
+        private class State공명Prepare이오네04 : TriggerState {
+            internal State공명Prepare이오네04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4034}, arg2: false);
@@ -377,7 +377,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State투르카공격준비(context);
+                    return new State투르카공격Prepare(context);
                 }
 
                 return null;
@@ -386,8 +386,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카공격준비 : TriggerState {
-            internal State투르카공격준비(ITriggerContext context) : base(context) { }
+        private class State투르카공격Prepare : TriggerState {
+            internal State투르카공격Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4031}, arg2: false);
@@ -398,7 +398,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    return new State투르카공격준비_1(context);
+                    return new State투르카공격Prepare_1(context);
                 }
 
                 return null;
@@ -407,8 +407,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카공격준비_1 : TriggerState {
-            internal State투르카공격준비_1(ITriggerContext context) : base(context) { }
+        private class State투르카공격Prepare_1 : TriggerState {
+            internal State투르카공격Prepare_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -418,7 +418,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State투르카공격준비01(context);
+                    return new State투르카공격Prepare01(context);
                 }
 
                 return null;
@@ -427,8 +427,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카공격준비01 : TriggerState {
-            internal State투르카공격준비01(ITriggerContext context) : base(context) { }
+        private class State투르카공격Prepare01 : TriggerState {
+            internal State투르카공격Prepare01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4021}, arg2: false);
@@ -443,7 +443,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State투르카공격준비03(context);
+                    return new State투르카공격Prepare03(context);
                 }
 
                 return null;
@@ -452,8 +452,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카공격준비03 : TriggerState {
-            internal State투르카공격준비03(ITriggerContext context) : base(context) { }
+        private class State투르카공격Prepare03 : TriggerState {
+            internal State투르카공격Prepare03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 400, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
@@ -465,7 +465,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State투르카공격준비04(context);
+                    return new State투르카공격Prepare04(context);
                 }
 
                 return null;
@@ -474,8 +474,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카공격준비04 : TriggerState {
-            internal State투르카공격준비04(ITriggerContext context) : base(context) { }
+        private class State투르카공격Prepare04 : TriggerState {
+            internal State투르카공격Prepare04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -483,7 +483,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State투르카공격준비05(context);
+                    return new State투르카공격Prepare05(context);
                 }
 
                 return null;
@@ -492,8 +492,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카공격준비05 : TriggerState {
-            internal State투르카공격준비05(ITriggerContext context) : base(context) { }
+        private class State투르카공격Prepare05 : TriggerState {
+            internal State투르카공격Prepare05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52020030, arg2: 6005);

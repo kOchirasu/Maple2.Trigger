@@ -201,17 +201,17 @@ namespace Maple2.Trigger._80000014_bonus {
                     context.DebugString(value: "18000 이상");
                     context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "HighScoreTreasureMap01");
                     context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "TimerunTreasureMap01");
-                    return new State반응대기(context);
+                    return new State반응Wait(context);
                 }
 
                 if (context.GetScoreBoardScore() < 18000) {
                     context.DebugString(value: "18000 미만");
                     context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "TimerunTreasureMap01");
-                    return new State반응대기(context);
+                    return new State반응Wait(context);
                 }
 
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State반응대기(context);
+                    return new State반응Wait(context);
                 }
 
                 return null;
@@ -220,8 +220,8 @@ namespace Maple2.Trigger._80000014_bonus {
             public override void OnExit() { }
         }
 
-        private class State반응대기 : TriggerState {
-            internal State반응대기(ITriggerContext context) : base(context) { }
+        private class State반응Wait : TriggerState {
+            internal State반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10001338}, arg2: 1);

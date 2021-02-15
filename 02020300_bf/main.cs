@@ -35,7 +35,7 @@ namespace Maple2.Trigger._02020300_bf {
                 if (context.UserDetected(arg1: new[] {902})) {
                     context.SetEventUI(arg1: 1, arg2: "$02020300_BF__MAIN__0$", arg3: 5000);
                     context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: false);
-                    return new State추가대사_01(context);
+                    return new State추가Script_01(context);
                 }
 
                 return null;
@@ -44,8 +44,8 @@ namespace Maple2.Trigger._02020300_bf {
             public override void OnExit() { }
         }
 
-        private class State추가대사_01 : TriggerState {
-            internal State추가대사_01(ITriggerContext context) : base(context) { }
+        private class State추가Script_01 : TriggerState {
+            internal State추가Script_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02020300_bf {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SetUserValue(triggerId: 99990004, key: "Laser", value: 1);
                     context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal", script: "$02020300_BF__MAIN__1$", duration: 5000);
-                    return new State추가대사_02(context);
+                    return new State추가Script_02(context);
                 }
 
                 return null;
@@ -62,15 +62,15 @@ namespace Maple2.Trigger._02020300_bf {
             public override void OnExit() { }
         }
 
-        private class State추가대사_02 : TriggerState {
-            internal State추가대사_02(ITriggerContext context) : base(context) { }
+        private class State추가Script_02 : TriggerState {
+            internal State추가Script_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102, 103})) {
                     context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__2$", duration: 5000);
-                    return new State추가대사_03(context);
+                    return new State추가Script_03(context);
                 }
 
                 return null;
@@ -79,8 +79,8 @@ namespace Maple2.Trigger._02020300_bf {
             public override void OnExit() { }
         }
 
-        private class State추가대사_03 : TriggerState {
-            internal State추가대사_03(ITriggerContext context) : base(context) { }
+        private class State추가Script_03 : TriggerState {
+            internal State추가Script_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -236,7 +236,7 @@ namespace Maple2.Trigger._02020300_bf {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SetMesh(arg1: new[] {2001, 2002, 2003, 2004, 30000, 30010, 30020, 30030}, arg2: false);
-                    return new State추가대사_04(context);
+                    return new State추가Script_04(context);
                 }
 
                 return null;
@@ -245,8 +245,8 @@ namespace Maple2.Trigger._02020300_bf {
             public override void OnExit() { }
         }
 
-        private class State추가대사_04 : TriggerState {
-            internal State추가대사_04(ITriggerContext context) : base(context) { }
+        private class State추가Script_04 : TriggerState {
+            internal State추가Script_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 29500101, illust: "ArcheonBlack_Normal", script: "$02020300_BF__MAIN__7$", duration: 5000);
@@ -302,7 +302,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State추가대사_05(context);
+                    return new State추가Script_05(context);
                 }
 
                 return null;
@@ -311,8 +311,8 @@ namespace Maple2.Trigger._02020300_bf {
             public override void OnExit() { }
         }
 
-        private class State추가대사_05 : TriggerState {
-            internal State추가대사_05(ITriggerContext context) : base(context) { }
+        private class State추가Script_05 : TriggerState {
+            internal State추가Script_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 29000170, illust: "ArcaneBlader_normal", script: "$02020300_BF__MAIN__9$", duration: 5000);
@@ -320,7 +320,7 @@ namespace Maple2.Trigger._02020300_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State추가대사_06(context);
+                    return new State추가Script_06(context);
                 }
 
                 return null;
@@ -329,8 +329,8 @@ namespace Maple2.Trigger._02020300_bf {
             public override void OnExit() { }
         }
 
-        private class State추가대사_06 : TriggerState {
-            internal State추가대사_06(ITriggerContext context) : base(context) { }
+        private class State추가Script_06 : TriggerState {
+            internal State추가Script_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_normal", script: "$02020300_BF__MAIN__10$", duration: 5000);

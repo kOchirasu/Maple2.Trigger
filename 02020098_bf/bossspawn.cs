@@ -13,7 +13,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10})) {
-                    return new State던전코드별BossSpawn(context);
+                    return new StateDungeonBossSpawnByDifficulty(context);
                 }
 
                 return null;
@@ -22,8 +22,8 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State던전코드별BossSpawn : TriggerState {
-            internal State던전코드별BossSpawn(ITriggerContext context) : base(context) { }
+        private class StateDungeonBossSpawnByDifficulty : TriggerState {
+            internal StateDungeonBossSpawnByDifficulty(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -55,7 +55,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State인페르녹최초이미지대사연출(context);
+                    return new State인페르녹최초이미지대사Cinematic(context);
                 }
 
                 return null;
@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02020098_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State인페르녹최초이미지대사연출(context);
+                    return new State인페르녹최초이미지대사Cinematic(context);
                 }
 
                 return null;
@@ -82,8 +82,8 @@ namespace Maple2.Trigger._02020098_bf {
             public override void OnExit() { }
         }
 
-        private class State인페르녹최초이미지대사연출 : TriggerState {
-            internal State인페르녹최초이미지대사연출(ITriggerContext context) : base(context) { }
+        private class State인페르녹최초이미지대사Cinematic : TriggerState {
+            internal State인페르녹최초이미지대사Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 23000150, illust: "infernog_nomal", duration: 9000, script: "$02020098_BF__PopUpCinema__0$");

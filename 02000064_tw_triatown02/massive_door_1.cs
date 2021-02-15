@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000064_tw_triatown02 {
     public static class _massive_door_1 {
-        public class State오픈대기중 : TriggerState {
-            internal State오픈대기중(ITriggerContext context) : base(context) { }
+        public class StateWaitOpening : TriggerState {
+            internal StateWaitOpening(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {11, 12, 13}, arg2: true);
@@ -17,8 +17,8 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             public override void OnExit() { }
         }
 
-        private class State오픈중1 : TriggerState {
-            internal State오픈중1(ITriggerContext context) : base(context) { }
+        private class StateStateOpening1 : TriggerState {
+            internal StateStateOpening1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 1);
@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State오픈중2(context);
+                    return new StateStateOpening2(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             }
         }
 
-        private class State오픈중2 : TriggerState {
-            internal State오픈중2(ITriggerContext context) : base(context) { }
+        private class StateStateOpening2 : TriggerState {
+            internal StateStateOpening2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 1);
@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State클로즈대기중(context);
+                    return new StateWaitClosing(context);
                 }
 
                 return null;
@@ -58,8 +58,8 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             }
         }
 
-        private class State클로즈대기중 : TriggerState {
-            internal State클로즈대기중(ITriggerContext context) : base(context) { }
+        private class StateWaitClosing : TriggerState {
+            internal StateWaitClosing(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 114);
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State클로즈5초전(context);
+                    return new State5SecondsBeforeClose(context);
                 }
 
                 return null;
@@ -78,8 +78,8 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             }
         }
 
-        private class State클로즈5초전 : TriggerState {
-            internal State클로즈5초전(ITriggerContext context) : base(context) { }
+        private class State5SecondsBeforeClose : TriggerState {
+            internal State5SecondsBeforeClose(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.Notice(arg1: false, arg2: "$02000064_TW_Triatown02__MASSIVE_DOOR_1__0$", arg3: true);
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    return new State클로즈중1(context);
+                    return new StateClosed1(context);
                 }
 
                 return null;
@@ -100,8 +100,8 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             }
         }
 
-        private class State클로즈중1 : TriggerState {
-            internal State클로즈중1(ITriggerContext context) : base(context) { }
+        private class StateClosed1 : TriggerState {
+            internal StateClosed1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 1);
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State클로즈중2(context);
+                    return new StateClosed2(context);
                 }
 
                 return null;
@@ -120,8 +120,8 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
             }
         }
 
-        private class State클로즈중2 : TriggerState {
-            internal State클로즈중2(ITriggerContext context) : base(context) { }
+        private class StateClosed2 : TriggerState {
+            internal StateClosed2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.Notice(arg1: false, arg2: "$02000064_TW_Triatown02__MASSIVE_DOOR_1__1$", arg3: true);
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._02000064_tw_triatown02 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "6")) {
-                    return new State오픈대기중(context);
+                    return new StateWaitOpening(context);
                 }
 
                 return null;

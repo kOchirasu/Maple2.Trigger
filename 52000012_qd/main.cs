@@ -30,7 +30,7 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002610}, arg3: new byte[] {1})) {
-                    return new State레논연출1(context);
+                    return new State레논Cinematic1(context);
                 }
 
                 return null;
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._52000012_qd {
             public override void OnExit() { }
         }
 
-        private class State레논연출1 : TriggerState {
-            internal State레논연출1(ITriggerContext context) : base(context) { }
+        private class State레논Cinematic1 : TriggerState {
+            internal State레논Cinematic1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "9", arg2: 2);
@@ -50,7 +50,7 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "9")) {
-                    return new State레논연출2(context);
+                    return new State레논Cinematic2(context);
                 }
 
                 return null;
@@ -59,8 +59,8 @@ namespace Maple2.Trigger._52000012_qd {
             public override void OnExit() { }
         }
 
-        private class State레논연출2 : TriggerState {
-            internal State레논연출2(ITriggerContext context) : base(context) { }
+        private class State레논Cinematic2 : TriggerState {
+            internal State레논Cinematic2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "10", arg2: 4);
@@ -111,7 +111,7 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "8")) {
-                    return new State벨라연출중(context);
+                    return new State벨라Cinematic중(context);
                 }
 
                 return null;
@@ -120,8 +120,8 @@ namespace Maple2.Trigger._52000012_qd {
             public override void OnExit() { }
         }
 
-        private class State벨라연출중 : TriggerState {
-            internal State벨라연출중(ITriggerContext context) : base(context) { }
+        private class State벨라Cinematic중 : TriggerState {
+            internal State벨라Cinematic중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11", arg2: 7);
@@ -256,7 +256,7 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "22")) {
-                    return new State영혼연출(context);
+                    return new State영혼Cinematic(context);
                 }
 
                 return null;
@@ -265,8 +265,8 @@ namespace Maple2.Trigger._52000012_qd {
             public override void OnExit() { }
         }
 
-        private class State영혼연출 : TriggerState {
-            internal State영혼연출(ITriggerContext context) : base(context) { }
+        private class State영혼Cinematic : TriggerState {
+            internal State영혼Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "23", arg2: 2);
@@ -298,7 +298,7 @@ namespace Maple2.Trigger._52000012_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "14")) {
-                    return new State영혼연출중(context);
+                    return new State영혼Cinematic중(context);
                 }
 
                 return null;
@@ -307,8 +307,8 @@ namespace Maple2.Trigger._52000012_qd {
             public override void OnExit() { }
         }
 
-        private class State영혼연출중 : TriggerState {
-            internal State영혼연출중(ITriggerContext context) : base(context) { }
+        private class State영혼Cinematic중 : TriggerState {
+            internal State영혼Cinematic중(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "15", arg2: 4);

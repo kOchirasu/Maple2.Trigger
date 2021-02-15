@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State연출해제(context);
+                    return new StateCinematic해제(context);
                 }
 
                 return null;
@@ -54,8 +54,8 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnExit() { }
         }
 
-        private class State연출해제 : TriggerState {
-            internal State연출해제(ITriggerContext context) : base(context) { }
+        private class StateCinematic해제 : TriggerState {
+            internal StateCinematic해제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: false);
@@ -74,8 +74,8 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnExit() { }
         }
 
-        private class State인트로연출스킵 : TriggerState {
-            internal State인트로연출스킵(ITriggerContext context) : base(context) { }
+        private class State인트로Cinematic스킵 : TriggerState {
+            internal State인트로Cinematic스킵(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkip();
@@ -111,7 +111,7 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State반응대기01(context);
+                    return new State반응Wait01(context);
                 }
 
                 return null;
@@ -120,8 +120,8 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnExit() { }
         }
 
-        private class State반응대기01 : TriggerState {
-            internal State반응대기01(ITriggerContext context) : base(context) { }
+        private class State반응Wait01 : TriggerState {
+            internal State반응Wait01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20105401, textId: 20105401);
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._02010054_bf {
                 if (context.ObjectInteracted(arg1: new[] {10000856}, arg2: 0)) {
                     context.HideGuideSummary(entityId: 20105401);
                     context.SetGravity(gravity: -39f);
-                    return new State반응대기02(context);
+                    return new State반응Wait02(context);
                 }
 
                 return null;
@@ -142,8 +142,8 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnExit() { }
         }
 
-        private class State반응대기02 : TriggerState {
-            internal State반응대기02(ITriggerContext context) : base(context) { }
+        private class State반응Wait02 : TriggerState {
+            internal State반응Wait02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -151,7 +151,7 @@ namespace Maple2.Trigger._02010054_bf {
                 if (context.ObjectInteracted(arg1: new[] {10000860, 10000861}, arg2: 0)) {
                     context.SetEventUI(arg1: 1, arg2: "$02010054_BF__MAIN__1$", arg3: 5000, arg4: "0");
                     context.SetInteractObject(arg1: new[] {10000858}, arg2: 1);
-                    return new State반응대기03(context);
+                    return new State반응Wait03(context);
                 }
 
                 return null;
@@ -160,8 +160,8 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnExit() { }
         }
 
-        private class State반응대기03 : TriggerState {
-            internal State반응대기03(ITriggerContext context) : base(context) { }
+        private class State반응Wait03 : TriggerState {
+            internal State반응Wait03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -212,7 +212,7 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000884, 10000885}, arg2: 0)) {
-                    return new State반응대기05(context);
+                    return new State반응Wait05(context);
                 }
 
                 return null;
@@ -228,11 +228,11 @@ namespace Maple2.Trigger._02010054_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000884}, arg2: 0)) {
-                    return new State반응대기05(context);
+                    return new State반응Wait05(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10000885}, arg2: 0)) {
-                    return new State반응대기05(context);
+                    return new State반응Wait05(context);
                 }
 
                 return null;
@@ -241,8 +241,8 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnExit() { }
         }
 
-        private class State반응대기05 : TriggerState {
-            internal State반응대기05(ITriggerContext context) : base(context) { }
+        private class State반응Wait05 : TriggerState {
+            internal State반응Wait05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000857, 10000859}, arg2: 1);
@@ -274,7 +274,7 @@ namespace Maple2.Trigger._02010054_bf {
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
                     context.SetMesh(arg1: new[] {3315, 3316, 3317, 3318, 3319, 3320, 3321}, arg2: false, arg3: 0, arg4: 900, arg5: 2f);
-                    return new State반응대기06(context);
+                    return new State반응Wait06(context);
                 }
 
                 return null;
@@ -283,8 +283,8 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnExit() { }
         }
 
-        private class State반응대기06 : TriggerState {
-            internal State반응대기06(ITriggerContext context) : base(context) { }
+        private class State반응Wait06 : TriggerState {
+            internal State반응Wait06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -312,7 +312,7 @@ namespace Maple2.Trigger._02010054_bf {
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2098})) {
                     context.SetEffect(arg1: new[] {6003}, arg2: false);
-                    return new State골렘소환대기(context);
+                    return new State골렘소환Wait(context);
                 }
 
                 return null;
@@ -321,8 +321,8 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnExit() { }
         }
 
-        private class State골렘소환대기 : TriggerState {
-            internal State골렘소환대기(ITriggerContext context) : base(context) { }
+        private class State골렘소환Wait : TriggerState {
+            internal State골렘소환Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {612, 613, 614, 615, 616}, arg2: false);

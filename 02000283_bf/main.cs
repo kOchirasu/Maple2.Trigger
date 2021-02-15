@@ -31,7 +31,7 @@ namespace Maple2.Trigger._02000283_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000427}, arg2: 0)) {
-                    return new State엘리트스폰(context);
+                    return new StateEliteSpawn(context);
                 }
 
                 return null;
@@ -40,8 +40,8 @@ namespace Maple2.Trigger._02000283_bf {
             public override void OnExit() { }
         }
 
-        private class State엘리트스폰 : TriggerState {
-            internal State엘리트스폰(ITriggerContext context) : base(context) { }
+        private class StateEliteSpawn : TriggerState {
+            internal StateEliteSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2001}, arg2: false);

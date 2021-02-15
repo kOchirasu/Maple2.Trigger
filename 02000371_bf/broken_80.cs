@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02000371_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State5초대기(context);
+                    return new State5초Wait(context);
                 }
 
                 return null;
@@ -19,14 +19,14 @@ namespace Maple2.Trigger._02000371_bf {
             public override void OnExit() { }
         }
 
-        private class State5초대기 : TriggerState {
-            internal State5초대기(ITriggerContext context) : base(context) { }
+        private class State5초Wait : TriggerState {
+            internal State5초Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State30초대기(context);
+                    return new State30초Wait(context);
                 }
 
                 return null;
@@ -35,8 +35,8 @@ namespace Maple2.Trigger._02000371_bf {
             public override void OnExit() { }
         }
 
-        private class State30초대기 : TriggerState {
-            internal State30초대기(ITriggerContext context) : base(context) { }
+        private class State30초Wait : TriggerState {
+            internal State30초Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02000384_BF__BARRICADE__0$", arg3: 3000);

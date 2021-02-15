@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02000355_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {1901})) {
-                    return new StateMonster소환대기(context);
+                    return new StateMonster소환Wait(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._02000355_bf {
             public override void OnExit() { }
         }
 
-        private class StateMonster소환대기 : TriggerState {
-            internal StateMonster소환대기(ITriggerContext context) : base(context) { }
+        private class StateMonster소환Wait : TriggerState {
+            internal StateMonster소환Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {609}, arg2: true);

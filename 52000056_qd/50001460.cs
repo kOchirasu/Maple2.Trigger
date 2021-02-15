@@ -50,7 +50,7 @@ namespace Maple2.Trigger._52000056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State낙하준비(context);
+                    return new State낙하Prepare(context);
                 }
 
                 return null;
@@ -59,8 +59,8 @@ namespace Maple2.Trigger._52000056_qd {
             public override void OnExit() { }
         }
 
-        private class State낙하준비 : TriggerState {
-            internal State낙하준비(ITriggerContext context) : base(context) { }
+        private class State낙하Prepare : TriggerState {
+            internal State낙하Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008}, arg2: false, arg3: 0, arg4: 200, arg5: 2f);
@@ -145,7 +145,7 @@ namespace Maple2.Trigger._52000056_qd {
                     context.SetCinematicUI(arg1: 0);
                     context.SetCinematicUI(arg1: 2);
                     context.SetGravity(gravity: -9.8f);
-                    return new State이펙트종료대기(context);
+                    return new State이펙트종료Wait(context);
                 }
 
                 return null;
@@ -154,8 +154,8 @@ namespace Maple2.Trigger._52000056_qd {
             public override void OnExit() { }
         }
 
-        private class State이펙트종료대기 : TriggerState {
-            internal State이펙트종료대기(ITriggerContext context) : base(context) { }
+        private class State이펙트종료Wait : TriggerState {
+            internal State이펙트종료Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

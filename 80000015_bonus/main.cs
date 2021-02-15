@@ -52,7 +52,7 @@ namespace Maple2.Trigger._80000015_bonus {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Dead_A") == 1 && context.GetUserValue(key: "Dead_B") == 1) {
-                    return new StateBoss소환대기(context);
+                    return new StateBoss소환Wait(context);
                 }
 
                 return null;
@@ -61,8 +61,8 @@ namespace Maple2.Trigger._80000015_bonus {
             public override void OnExit() { }
         }
 
-        private class StateBoss소환대기 : TriggerState {
-            internal StateBoss소환대기(ITriggerContext context) : base(context) { }
+        private class StateBoss소환Wait : TriggerState {
+            internal StateBoss소환Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -127,16 +127,16 @@ namespace Maple2.Trigger._80000015_bonus {
                 if (context.GetScoreBoardScore() >= 28000) {
                     context.DebugString(value: "28000 이상");
                     context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "HighScoreTreasureMap04");
-                    return new State반응대기(context);
+                    return new State반응Wait(context);
                 }
 
                 if (context.GetScoreBoardScore() < 28000) {
                     context.DebugString(value: "28000 미만");
-                    return new State반응대기(context);
+                    return new State반응Wait(context);
                 }
 
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State반응대기(context);
+                    return new State반응Wait(context);
                 }
 
                 return null;
@@ -145,8 +145,8 @@ namespace Maple2.Trigger._80000015_bonus {
             public override void OnExit() { }
         }
 
-        private class State반응대기 : TriggerState {
-            internal State반응대기(ITriggerContext context) : base(context) { }
+        private class State반응Wait : TriggerState {
+            internal State반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10001340}, arg2: 1);

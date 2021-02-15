@@ -10,7 +10,7 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Setlever") == 1) {
-                    return new State레버반응대기(context);
+                    return new StateLever반응Wait(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._63000038_cs {
             public override void OnExit() { }
         }
 
-        private class State레버반응대기 : TriggerState {
-            internal State레버반응대기(ITriggerContext context) : base(context) { }
+        private class StateLever반응Wait : TriggerState {
+            internal StateLever반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 26300382, textId: 26300382);

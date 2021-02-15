@@ -31,7 +31,7 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new StateGuide준비01(context);
+                    return new StateGuidePrepare01(context);
                 }
 
                 return null;
@@ -40,8 +40,8 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnExit() { }
         }
 
-        private class StateGuide준비01 : TriggerState {
-            internal StateGuide준비01(ITriggerContext context) : base(context) { }
+        private class StateGuidePrepare01 : TriggerState {
+            internal StateGuidePrepare01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20105101, textId: 20105101, duration: 4000);

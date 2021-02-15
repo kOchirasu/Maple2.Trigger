@@ -267,7 +267,7 @@ namespace Maple2.Trigger._02000542_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {705}, arg2: 0)) {
-                    return new State연출NPC스폰(context);
+                    return new StateCinematicNPCSpawn(context);
                 }
 
                 return null;
@@ -276,8 +276,8 @@ namespace Maple2.Trigger._02000542_bf {
             public override void OnExit() { }
         }
 
-        private class State연출NPC스폰 : TriggerState {
-            internal State연출NPC스폰(ITriggerContext context) : base(context) { }
+        private class StateCinematicNPCSpawn : TriggerState {
+            internal StateCinematicNPCSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 102, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
@@ -314,7 +314,7 @@ namespace Maple2.Trigger._02000542_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {106, 107, 108, 109})) {
-                    return new StateBoss스폰(context);
+                    return new StateBossSpawn(context);
                 }
 
                 return null;
@@ -323,8 +323,8 @@ namespace Maple2.Trigger._02000542_bf {
             public override void OnExit() { }
         }
 
-        private class StateBoss스폰 : TriggerState {
-            internal StateBoss스폰(ITriggerContext context) : base(context) { }
+        private class StateBossSpawn : TriggerState {
+            internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 103, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._02000542_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new StateBoss스폰2(context);
+                    return new StateBossSpawn2(context);
                 }
 
                 return null;
@@ -346,8 +346,8 @@ namespace Maple2.Trigger._02000542_bf {
             public override void OnExit() { }
         }
 
-        private class StateBoss스폰2 : TriggerState {
-            internal StateBoss스폰2(ITriggerContext context) : base(context) { }
+        private class StateBossSpawn2 : TriggerState {
+            internal StateBossSpawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 103, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");

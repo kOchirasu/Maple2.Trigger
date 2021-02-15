@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State소환대기(context);
+                    return new State소환Wait(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnExit() { }
         }
 
-        private class State소환대기 : TriggerState {
-            internal State소환대기(ITriggerContext context) : base(context) { }
+        private class State소환Wait : TriggerState {
+            internal State소환Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999992, key: "NpcSpawned04", value: 0);

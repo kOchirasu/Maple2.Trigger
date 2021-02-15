@@ -56,7 +56,7 @@ namespace Maple2.Trigger._52000094_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State블랙아이대사01(context);
+                    return new State블랙아이Script01(context);
                 }
 
                 return null;
@@ -65,8 +65,8 @@ namespace Maple2.Trigger._52000094_qd {
             public override void OnExit() { }
         }
 
-        private class State블랙아이대사01 : TriggerState {
-            internal State블랙아이대사01(ITriggerContext context) : base(context) { }
+        private class State블랙아이Script01 : TriggerState {
+            internal State블랙아이Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3003, 3004}, arg2: true);
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._52000094_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    return new State데블린Dead대기(context);
+                    return new State데블린DeadWait(context);
                 }
 
                 return null;
@@ -134,8 +134,8 @@ namespace Maple2.Trigger._52000094_qd {
             public override void OnExit() { }
         }
 
-        private class State데블린Dead대기 : TriggerState {
-            internal State데블린Dead대기(ITriggerContext context) : base(context) { }
+        private class State데블린DeadWait : TriggerState {
+            internal State데블린DeadWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");

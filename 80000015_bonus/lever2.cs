@@ -11,7 +11,7 @@ namespace Maple2.Trigger._80000015_bonus {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    return new State반응대기(context);
+                    return new State반응Wait(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._80000015_bonus {
             public override void OnExit() { }
         }
 
-        private class State반응대기 : TriggerState {
-            internal State반응대기(ITriggerContext context) : base(context) { }
+        private class State반응Wait : TriggerState {
+            internal State반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._80000015_bonus {
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State반응대기(context);
+                    return new State반응Wait(context);
                 }
 
                 return null;

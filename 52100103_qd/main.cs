@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52100103_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {10000}, arg2: new[] {50100960}, arg3: new byte[] {2})) {
-                    return new StateStartCinematic준비(context);
+                    return new StateStartCinematicPrepare(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._52100103_qd {
             public override void OnExit() { }
         }
 
-        private class StateStartCinematic준비 : TriggerState {
-            internal StateStartCinematic준비(ITriggerContext context) : base(context) { }
+        private class StateStartCinematicPrepare : TriggerState {
+            internal StateStartCinematicPrepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1}, arg2: false);
@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52100103_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State연출NPC소환(context);
+                    return new StateCinematicNPC소환(context);
                 }
 
                 return null;
@@ -54,8 +54,8 @@ namespace Maple2.Trigger._52100103_qd {
             public override void OnExit() { }
         }
 
-        private class State연출NPC소환 : TriggerState {
-            internal State연출NPC소환(ITriggerContext context) : base(context) { }
+        private class StateCinematicNPC소환 : TriggerState {
+            internal StateCinematicNPC소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._52100103_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State클라디아대사1(context);
+                    return new State클라디아Script1(context);
                 }
 
                 return null;
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._52100103_qd {
             public override void OnExit() { }
         }
 
-        private class State클라디아대사1 : TriggerState {
-            internal State클라디아대사1(ITriggerContext context) : base(context) { }
+        private class State클라디아Script1 : TriggerState {
+            internal State클라디아Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_3sec.xml");
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._52100103_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State마를레네대사1(context);
+                    return new State마를레네Script1(context);
                 }
 
                 return null;
@@ -117,8 +117,8 @@ namespace Maple2.Trigger._52100103_qd {
             public override void OnExit() { }
         }
 
-        private class State마를레네대사1 : TriggerState {
-            internal State마를레네대사1(ITriggerContext context) : base(context) { }
+        private class State마를레네Script1 : TriggerState {
+            internal State마를레네Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_3sec.xml");
@@ -146,7 +146,7 @@ namespace Maple2.Trigger._52100103_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State마를레네대사2(context);
+                    return new State마를레네Script2(context);
                 }
 
                 return null;
@@ -155,8 +155,8 @@ namespace Maple2.Trigger._52100103_qd {
             public override void OnExit() { }
         }
 
-        private class State마를레네대사2 : TriggerState {
-            internal State마를레네대사2(ITriggerContext context) : base(context) { }
+        private class State마를레네Script2 : TriggerState {
+            internal State마를레네Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {3, 200, 201, 202, 203}, arg2: false);
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._52100103_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State투르카대사1(context);
+                    return new State투르카Script1(context);
                 }
 
                 return null;
@@ -179,8 +179,8 @@ namespace Maple2.Trigger._52100103_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카대사1 : TriggerState {
-            internal State투르카대사1(ITriggerContext context) : base(context) { }
+        private class State투르카Script1 : TriggerState {
+            internal State투르카Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUserPath(arg1: "PatrolData_PC_01");
@@ -454,7 +454,7 @@ namespace Maple2.Trigger._52100103_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State클라디아대사2(context);
+                    return new State클라디아Script2(context);
                 }
 
                 return null;
@@ -463,8 +463,8 @@ namespace Maple2.Trigger._52100103_qd {
             public override void OnExit() { }
         }
 
-        private class State클라디아대사2 : TriggerState {
-            internal State클라디아대사2(ITriggerContext context) : base(context) { }
+        private class State클라디아Script2 : TriggerState {
+            internal State클라디아Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 2001, arg2: "Talk_A", arg3: 1333f);
@@ -474,7 +474,7 @@ namespace Maple2.Trigger._52100103_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State투르카대사3(context);
+                    return new State투르카Script3(context);
                 }
 
                 return null;
@@ -483,8 +483,8 @@ namespace Maple2.Trigger._52100103_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카대사3 : TriggerState {
-            internal State투르카대사3(ITriggerContext context) : base(context) { }
+        private class State투르카Script3 : TriggerState {
+            internal State투르카Script3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11004430, msg: "$52100103_QD__MAIN__18$", duration: 3000, align: "left");
@@ -493,7 +493,7 @@ namespace Maple2.Trigger._52100103_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State클라디아퇴장(context);
+                    return new State클라디아Exit(context);
                 }
 
                 return null;
@@ -502,8 +502,8 @@ namespace Maple2.Trigger._52100103_qd {
             public override void OnExit() { }
         }
 
-        private class State클라디아퇴장 : TriggerState {
-            internal State클라디아퇴장(ITriggerContext context) : base(context) { }
+        private class State클라디아Exit : TriggerState {
+            internal State클라디아Exit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {600}, arg2: true);
@@ -513,7 +513,7 @@ namespace Maple2.Trigger._52100103_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State부하퇴장(context);
+                    return new State부하Exit(context);
                 }
 
                 return null;
@@ -522,8 +522,8 @@ namespace Maple2.Trigger._52100103_qd {
             public override void OnExit() { }
         }
 
-        private class State부하퇴장 : TriggerState {
-            internal State부하퇴장(ITriggerContext context) : base(context) { }
+        private class State부하Exit : TriggerState {
+            internal State부하Exit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 200, arg2: "PatrolData_200_3");
@@ -534,7 +534,7 @@ namespace Maple2.Trigger._52100103_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State투르카퇴장(context);
+                    return new State투르카Exit(context);
                 }
 
                 return null;
@@ -543,8 +543,8 @@ namespace Maple2.Trigger._52100103_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카퇴장 : TriggerState {
-            internal State투르카퇴장(ITriggerContext context) : base(context) { }
+        private class State투르카Exit : TriggerState {
+            internal State투르카Exit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 300, arg2: "PatrolData_Turka_3");
@@ -629,7 +629,7 @@ namespace Maple2.Trigger._52100103_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State마를레네Creation준비(context);
+                    return new State마를레네CreationPrepare(context);
                 }
 
                 return null;
@@ -638,8 +638,8 @@ namespace Maple2.Trigger._52100103_qd {
             public override void OnExit() { }
         }
 
-        private class State마를레네Creation준비 : TriggerState {
-            internal State마를레네Creation준비(ITriggerContext context) : base(context) { }
+        private class State마를레네CreationPrepare : TriggerState {
+            internal State마를레네CreationPrepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {-1}, arg2: false);

@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02100000_bf {
     public static class _spawnpoint {
-        public class State리스폰변경_1 : TriggerState {
-            internal State리스폰변경_1(ITriggerContext context) : base(context) { }
+        public class State리Spawn변경_1 : TriggerState {
+            internal State리Spawn변경_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.EnableSpawnPointPc(spawnPointId: 1, isEnable: true);

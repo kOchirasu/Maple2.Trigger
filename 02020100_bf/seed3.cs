@@ -34,7 +34,7 @@ namespace Maple2.Trigger._02020100_bf {
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002111}, arg2: 0)) {
-                    return new State씨앗3_심기(context);
+                    return new StateSeed3_Planting(context);
                 }
 
                 return null;
@@ -43,8 +43,8 @@ namespace Maple2.Trigger._02020100_bf {
             public override void OnExit() { }
         }
 
-        private class State씨앗3_심기 : TriggerState {
-            internal State씨앗3_심기(ITriggerContext context) : base(context) { }
+        private class StateSeed3_Planting : TriggerState {
+            internal StateSeed3_Planting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990001, key: "Seed3interact", value: 1);
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02020100_bf {
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002122}, arg2: 0)) {
-                    return new State씨앗3_중보(context);
+                    return new StateSeed3_중보(context);
                 }
 
                 if (!context.CheckAnyUserAdditionalEffect(triggerBoxId: 0, additionalEffectId: 70002109, level: true)) {
@@ -71,8 +71,8 @@ namespace Maple2.Trigger._02020100_bf {
             public override void OnExit() { }
         }
 
-        private class State씨앗3_중보 : TriggerState {
-            internal State씨앗3_중보(ITriggerContext context) : base(context) { }
+        private class StateSeed3_중보 : TriggerState {
+            internal StateSeed3_중보(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 1404, arg2: true, arg3: "Interaction_lapentatree_A01_On");

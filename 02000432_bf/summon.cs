@@ -20,12 +20,12 @@ namespace Maple2.Trigger._02000432_bf {
             internal State소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "죽음대기");
+                context.SetSkip(arg1: "죽음Wait");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State죽음대기(context);
+                    return new State죽음Wait(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._02000432_bf {
             public override void OnExit() { }
         }
 
-        private class State죽음대기 : TriggerState {
-            internal State죽음대기(ITriggerContext context) : base(context) { }
+        private class State죽음Wait : TriggerState {
+            internal State죽음Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkip();

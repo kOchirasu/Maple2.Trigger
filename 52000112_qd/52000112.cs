@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52000112_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002313}, arg3: new byte[] {2})) {
-                    return new State쉐도우클로전투_완료연출01(context);
+                    return new State쉐도우클로전투_완료Cinematic01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002311}, arg3: new byte[] {3})) {
@@ -305,7 +305,7 @@ namespace Maple2.Trigger._52000112_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {10011}, arg2: new[] {20002313}, arg3: new byte[] {2})) {
-                    return new State쉐도우클로전투_완료연출01(context);
+                    return new State쉐도우클로전투_완료Cinematic01(context);
                 }
 
                 return null;
@@ -314,8 +314,8 @@ namespace Maple2.Trigger._52000112_qd {
             public override void OnExit() { }
         }
 
-        private class State쉐도우클로전투_완료연출01 : TriggerState {
-            internal State쉐도우클로전투_완료연출01(ITriggerContext context) : base(context) { }
+        private class State쉐도우클로전투_완료Cinematic01 : TriggerState {
+            internal State쉐도우클로전투_완료Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSound(arg1: 9000, arg2: false);
@@ -334,7 +334,7 @@ namespace Maple2.Trigger._52000112_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State쉐도우클로전투_완료연출02(context);
+                    return new State쉐도우클로전투_완료Cinematic02(context);
                 }
 
                 return null;
@@ -343,8 +343,8 @@ namespace Maple2.Trigger._52000112_qd {
             public override void OnExit() { }
         }
 
-        private class State쉐도우클로전투_완료연출02 : TriggerState {
-            internal State쉐도우클로전투_완료연출02(ITriggerContext context) : base(context) { }
+        private class State쉐도우클로전투_완료Cinematic02 : TriggerState {
+            internal State쉐도우클로전투_완료Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "쉐도우클로전투_완료연출09", arg2: "exit");
@@ -356,7 +356,7 @@ namespace Maple2.Trigger._52000112_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State쉐도우클로전투_완료연출03(context);
+                    return new State쉐도우클로전투_완료Cinematic03(context);
                 }
 
                 return null;
@@ -365,8 +365,8 @@ namespace Maple2.Trigger._52000112_qd {
             public override void OnExit() { }
         }
 
-        private class State쉐도우클로전투_완료연출03 : TriggerState {
-            internal State쉐도우클로전투_완료연출03(ITriggerContext context) : base(context) { }
+        private class State쉐도우클로전투_완료Cinematic03 : TriggerState {
+            internal State쉐도우클로전투_완료Cinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {3002, 3003}, arg2: false);
@@ -375,7 +375,7 @@ namespace Maple2.Trigger._52000112_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State쉐도우클로전투_완료연출04(context);
+                    return new State쉐도우클로전투_완료Cinematic04(context);
                 }
 
                 return null;
@@ -384,8 +384,8 @@ namespace Maple2.Trigger._52000112_qd {
             public override void OnExit() { }
         }
 
-        private class State쉐도우클로전투_완료연출04 : TriggerState {
-            internal State쉐도우클로전투_완료연출04(ITriggerContext context) : base(context) { }
+        private class State쉐도우클로전투_완료Cinematic04 : TriggerState {
+            internal State쉐도우클로전투_완료Cinematic04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000112_QD__52000112__4$", duration: 4000, align: "right");
@@ -393,7 +393,7 @@ namespace Maple2.Trigger._52000112_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State쉐도우클로전투_완료연출05(context);
+                    return new State쉐도우클로전투_완료Cinematic05(context);
                 }
 
                 return null;
@@ -402,8 +402,8 @@ namespace Maple2.Trigger._52000112_qd {
             public override void OnExit() { }
         }
 
-        private class State쉐도우클로전투_완료연출05 : TriggerState {
-            internal State쉐도우클로전투_완료연출05(ITriggerContext context) : base(context) { }
+        private class State쉐도우클로전투_완료Cinematic05 : TriggerState {
+            internal State쉐도우클로전투_완료Cinematic05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimeScale(enable: true, startScale: 1f, endScale: 0.1f, duration: 5.5f, interpolator: 2);
@@ -414,7 +414,7 @@ namespace Maple2.Trigger._52000112_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State쉐도우클로전투_완료연출06(context);
+                    return new State쉐도우클로전투_완료Cinematic06(context);
                 }
 
                 return null;
@@ -423,8 +423,8 @@ namespace Maple2.Trigger._52000112_qd {
             public override void OnExit() { }
         }
 
-        private class State쉐도우클로전투_완료연출06 : TriggerState {
-            internal State쉐도우클로전투_완료연출06(ITriggerContext context) : base(context) { }
+        private class State쉐도우클로전투_완료Cinematic06 : TriggerState {
+            internal State쉐도우클로전투_완료Cinematic06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {3005, 3006}, arg2: false);
@@ -434,7 +434,7 @@ namespace Maple2.Trigger._52000112_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State쉐도우클로전투_완료연출07_b(context);
+                    return new State쉐도우클로전투_완료Cinematic07_b(context);
                 }
 
                 return null;
@@ -443,8 +443,8 @@ namespace Maple2.Trigger._52000112_qd {
             public override void OnExit() { }
         }
 
-        private class State쉐도우클로전투_완료연출07_b : TriggerState {
-            internal State쉐도우클로전투_완료연출07_b(ITriggerContext context) : base(context) { }
+        private class State쉐도우클로전투_완료Cinematic07_b : TriggerState {
+            internal State쉐도우클로전투_완료Cinematic07_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {400, 401, 402, 403, 404, 405, 406, 407}, arg2: true);
@@ -452,7 +452,7 @@ namespace Maple2.Trigger._52000112_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1700)) {
-                    return new State쉐도우클로전투_완료연출07(context);
+                    return new State쉐도우클로전투_완료Cinematic07(context);
                 }
 
                 return null;
@@ -461,8 +461,8 @@ namespace Maple2.Trigger._52000112_qd {
             public override void OnExit() { }
         }
 
-        private class State쉐도우클로전투_완료연출07 : TriggerState {
-            internal State쉐도우클로전투_완료연출07(ITriggerContext context) : base(context) { }
+        private class State쉐도우클로전투_완료Cinematic07 : TriggerState {
+            internal State쉐도우클로전투_완료Cinematic07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {3007, 3008}, arg2: false);
@@ -473,7 +473,7 @@ namespace Maple2.Trigger._52000112_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State쉐도우클로전투_완료연출08(context);
+                    return new State쉐도우클로전투_완료Cinematic08(context);
                 }
 
                 return null;
@@ -482,8 +482,8 @@ namespace Maple2.Trigger._52000112_qd {
             public override void OnExit() { }
         }
 
-        private class State쉐도우클로전투_완료연출08 : TriggerState {
-            internal State쉐도우클로전투_완료연출08(ITriggerContext context) : base(context) { }
+        private class State쉐도우클로전투_완료Cinematic08 : TriggerState {
+            internal State쉐도우클로전투_완료Cinematic08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {3009, 3010}, arg2: false);
@@ -494,7 +494,7 @@ namespace Maple2.Trigger._52000112_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State쉐도우클로전투_완료연출08_1(context);
+                    return new State쉐도우클로전투_완료Cinematic08_1(context);
                 }
 
                 return null;
@@ -503,8 +503,8 @@ namespace Maple2.Trigger._52000112_qd {
             public override void OnExit() { }
         }
 
-        private class State쉐도우클로전투_완료연출08_1 : TriggerState {
-            internal State쉐도우클로전투_완료연출08_1(ITriggerContext context) : base(context) { }
+        private class State쉐도우클로전투_완료Cinematic08_1 : TriggerState {
+            internal State쉐도우클로전투_완료Cinematic08_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -512,7 +512,7 @@ namespace Maple2.Trigger._52000112_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State쉐도우클로전투_완료연출09(context);
+                    return new State쉐도우클로전투_완료Cinematic09(context);
                 }
 
                 return null;
@@ -521,8 +521,8 @@ namespace Maple2.Trigger._52000112_qd {
             public override void OnExit() { }
         }
 
-        private class State쉐도우클로전투_완료연출09 : TriggerState {
-            internal State쉐도우클로전투_완료연출09(ITriggerContext context) : base(context) { }
+        private class State쉐도우클로전투_완료Cinematic09 : TriggerState {
+            internal State쉐도우클로전투_완료Cinematic09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000111, arg2: 11);

@@ -178,7 +178,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State근위대대사01(context);
+                    return new State근위대Script01(context);
                 }
 
                 return null;
@@ -187,8 +187,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnExit() { }
         }
 
-        private class State근위대대사01 : TriggerState {
-            internal State근위대대사01(ITriggerContext context) : base(context) { }
+        private class State근위대Script01 : TriggerState {
+            internal State근위대Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001968, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE__2$", arg4: 5);
@@ -196,7 +196,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State근위대대사02(context);
+                    return new State근위대Script02(context);
                 }
 
                 return null;
@@ -205,8 +205,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnExit() { }
         }
 
-        private class State근위대대사02 : TriggerState {
-            internal State근위대대사02(ITriggerContext context) : base(context) { }
+        private class State근위대Script02 : TriggerState {
+            internal State근위대Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001968, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE__3$", arg4: 5);
@@ -214,7 +214,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State근위대대사03(context);
+                    return new State근위대Script03(context);
                 }
 
                 return null;
@@ -223,8 +223,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnExit() { }
         }
 
-        private class State근위대대사03 : TriggerState {
-            internal State근위대대사03(ITriggerContext context) : base(context) { }
+        private class State근위대Script03 : TriggerState {
+            internal State근위대Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000601, arg3: "$52000068_QD__TRIA_SEIGE_MOVIE__4$", arg4: 5);
@@ -232,7 +232,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State근위대대사04(context);
+                    return new State근위대Script04(context);
                 }
 
                 return null;
@@ -241,8 +241,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnExit() { }
         }
 
-        private class State근위대대사04 : TriggerState {
-            internal State근위대대사04(ITriggerContext context) : base(context) { }
+        private class State근위대Script04 : TriggerState {
+            internal State근위대Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    // return new State지원군Appear(context);
+                    // return new StateReinforcementsAppear(context);
                     return null;
                 }
 

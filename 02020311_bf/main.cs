@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02020311_bf {
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
                     context.DestroyMonster(arg1: new[] {111});
-                    return new StateEnd대기(context);
+                    return new StateEndWait(context);
                 }
 
                 return null;
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._02020311_bf {
             public override void OnExit() { }
         }
 
-        private class StateEnd대기 : TriggerState {
-            internal StateEnd대기(ITriggerContext context) : base(context) { }
+        private class StateEndWait : TriggerState {
+            internal StateEndWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonSetEndTime();

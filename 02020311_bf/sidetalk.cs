@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02020311_bf {
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Sidetalk") == 3) {
                     context.SideNpcTalk(type: "talk", npcId: 11004715, illust: "Eone_serious", script: "$02020311_BF__SIdETALK__2$", duration: 3000);
-                    return new State대사대기(context);
+                    return new State대사Wait(context);
                 }
 
                 return null;
@@ -51,8 +51,8 @@ namespace Maple2.Trigger._02020311_bf {
             public override void OnExit() { }
         }
 
-        private class State대사대기 : TriggerState {
-            internal State대사대기(ITriggerContext context) : base(context) { }
+        private class State대사Wait : TriggerState {
+            internal State대사Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -54,7 +54,7 @@ namespace Maple2.Trigger._02020027_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State유저연출(context);
+                    return new State유저Cinematic(context);
                 }
 
                 return null;
@@ -63,8 +63,8 @@ namespace Maple2.Trigger._02020027_bf {
             public override void OnExit() { }
         }
 
-        private class State유저연출 : TriggerState {
-            internal State유저연출(ITriggerContext context) : base(context) { }
+        private class State유저Cinematic : TriggerState {
+            internal State유저Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 5003, arg2: true);
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02020027_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State유저연출_2(context);
+                    return new State유저Cinematic_2(context);
                 }
 
                 return null;
@@ -100,8 +100,8 @@ namespace Maple2.Trigger._02020027_bf {
             public override void OnExit() { }
         }
 
-        private class State유저연출_2 : TriggerState {
-            internal State유저연출_2(ITriggerContext context) : base(context) { }
+        private class State유저Cinematic_2 : TriggerState {
+            internal State유저Cinematic_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 202, arg2: "Talk_B", arg3: 18430f);

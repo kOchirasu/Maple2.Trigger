@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000553_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State기본Setting(context);
+                    return new StateDefaultSetting(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000553_bf {
             public override void OnExit() { }
         }
 
-        private class State기본Setting : TriggerState {
-            internal State기본Setting(ITriggerContext context) : base(context) { }
+        private class StateDefaultSetting : TriggerState {
+            internal StateDefaultSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 10, arg2: false, arg3: false, arg4: false);

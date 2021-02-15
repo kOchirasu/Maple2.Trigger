@@ -301,7 +301,7 @@ namespace Maple2.Trigger._52000109_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State20002302Quest대기01(context);
+                    return new State20002302QuestWait01(context);
                 }
 
                 return null;
@@ -322,7 +322,7 @@ namespace Maple2.Trigger._52000109_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State20002302Quest대기01(context);
+                    return new State20002302QuestWait01(context);
                 }
 
                 return null;
@@ -331,8 +331,8 @@ namespace Maple2.Trigger._52000109_qd {
             public override void OnExit() { }
         }
 
-        private class State20002302Quest대기01 : TriggerState {
-            internal State20002302Quest대기01(ITriggerContext context) : base(context) { }
+        private class State20002302QuestWait01 : TriggerState {
+            internal State20002302QuestWait01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 1.0f);

@@ -11,7 +11,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100065}, arg3: new byte[] {2}, arg4: 110)) {
-                    return new State연출01조건(context);
+                    return new StateCinematic01조건(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100065}, arg3: new byte[] {3}, arg4: 110)) {
@@ -48,8 +48,8 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnExit() { }
         }
 
-        private class State연출01조건 : TriggerState {
-            internal State연출01조건(ITriggerContext context) : base(context) { }
+        private class StateCinematic01조건 : TriggerState {
+            internal StateCinematic01조건(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 4000, arg2: true, arg3: "Dead_A");
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9300}, arg2: new[] {60100065}, arg3: new byte[] {2}, arg4: 110)) {
-                    return new State연출01시작(context);
+                    return new StateCinematic01시작(context);
                 }
 
                 return null;
@@ -68,8 +68,8 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnExit() { }
         }
 
-        private class State연출01시작 : TriggerState {
-            internal State연출01시작(ITriggerContext context) : base(context) { }
+        private class StateCinematic01시작 : TriggerState {
+            internal StateCinematic01시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);

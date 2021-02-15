@@ -132,14 +132,14 @@ namespace Maple2.Trigger._02020019_bf {
             }
 
             public override TriggerState Execute() {
-                return new State전투_대기(context);
+                return new State전투_Wait(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State전투_대기 : TriggerState {
-            internal State전투_대기(ITriggerContext context) : base(context) { }
+        private class State전투_Wait : TriggerState {
+            internal State전투_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

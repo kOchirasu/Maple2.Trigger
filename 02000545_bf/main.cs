@@ -175,7 +175,7 @@ namespace Maple2.Trigger._02000545_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State엘리트스폰(context);
+                    return new StateEliteSpawn(context);
                 }
 
                 return null;
@@ -184,8 +184,8 @@ namespace Maple2.Trigger._02000545_bf {
             public override void OnExit() { }
         }
 
-        private class State엘리트스폰 : TriggerState {
-            internal State엘리트스폰(ITriggerContext context) : base(context) { }
+        private class StateEliteSpawn : TriggerState {
+            internal StateEliteSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02000545_BF__MAIN__10$", arg3: 3000);
@@ -196,7 +196,7 @@ namespace Maple2.Trigger._02000545_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State엘리트스폰2(context);
+                    return new StateEliteSpawn2(context);
                 }
 
                 return null;
@@ -205,8 +205,8 @@ namespace Maple2.Trigger._02000545_bf {
             public override void OnExit() { }
         }
 
-        private class State엘리트스폰2 : TriggerState {
-            internal State엘리트스폰2(ITriggerContext context) : base(context) { }
+        private class StateEliteSpawn2 : TriggerState {
+            internal StateEliteSpawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004643, illust: "SlaveWoman3_normal", duration: 4000, script: "$02000545_BF__MAIN__11$");
@@ -214,7 +214,7 @@ namespace Maple2.Trigger._02000545_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {202})) {
-                    return new State엘리트Dead(context);
+                    return new StateEliteDead(context);
                 }
 
                 return null;
@@ -223,8 +223,8 @@ namespace Maple2.Trigger._02000545_bf {
             public override void OnExit() { }
         }
 
-        private class State엘리트Dead : TriggerState {
-            internal State엘리트Dead(ITriggerContext context) : base(context) { }
+        private class StateEliteDead : TriggerState {
+            internal StateEliteDead(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004706, illust: "PuppetBunnyBlue_normal", duration: 3000, script: "$02000545_BF__MAIN__12$");
@@ -274,7 +274,7 @@ namespace Maple2.Trigger._02000545_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State거미여왕스폰2(context);
+                    return new State거미여왕Spawn2(context);
                 }
 
                 return null;
@@ -283,8 +283,8 @@ namespace Maple2.Trigger._02000545_bf {
             public override void OnExit() { }
         }
 
-        private class State거미여왕스폰2 : TriggerState {
-            internal State거미여왕스폰2(ITriggerContext context) : base(context) { }
+        private class State거미여왕Spawn2 : TriggerState {
+            internal State거미여왕Spawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -296,7 +296,7 @@ namespace Maple2.Trigger._02000545_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State거미여왕스폰3(context);
+                    return new State거미여왕Spawn3(context);
                 }
 
                 return null;
@@ -305,8 +305,8 @@ namespace Maple2.Trigger._02000545_bf {
             public override void OnExit() { }
         }
 
-        private class State거미여왕스폰3 : TriggerState {
-            internal State거미여왕스폰3(ITriggerContext context) : base(context) { }
+        private class State거미여왕Spawn3 : TriggerState {
+            internal State거미여왕Spawn3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035, 2036, 2037, 2038, 2039, 2040, 2041, 2042, 2043, 2044, 2045, 2046, 2047, 2048, 2049, 2050, 2141, 2142}, arg2: false);
@@ -321,7 +321,7 @@ namespace Maple2.Trigger._02000545_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State거미여왕스폰4(context);
+                    return new State거미여왕Spawn4(context);
                 }
 
                 return null;
@@ -330,8 +330,8 @@ namespace Maple2.Trigger._02000545_bf {
             public override void OnExit() { }
         }
 
-        private class State거미여왕스폰4 : TriggerState {
-            internal State거미여왕스폰4(ITriggerContext context) : base(context) { }
+        private class State거미여왕Spawn4 : TriggerState {
+            internal State거미여왕Spawn4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {608});
@@ -361,7 +361,7 @@ namespace Maple2.Trigger._02000545_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State거미여왕스폰5(context);
+                    return new State거미여왕Spawn5(context);
                 }
 
                 return null;
@@ -370,8 +370,8 @@ namespace Maple2.Trigger._02000545_bf {
             public override void OnExit() { }
         }
 
-        private class State거미여왕스폰5 : TriggerState {
-            internal State거미여왕스폰5(ITriggerContext context) : base(context) { }
+        private class State거미여왕Spawn5 : TriggerState {
+            internal State거미여왕Spawn5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5011}, arg2: false);
@@ -384,7 +384,7 @@ namespace Maple2.Trigger._02000545_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State거미여왕스폰6(context);
+                    return new State거미여왕Spawn6(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {102})) {
@@ -397,8 +397,8 @@ namespace Maple2.Trigger._02000545_bf {
             public override void OnExit() { }
         }
 
-        private class State거미여왕스폰6 : TriggerState {
-            internal State거미여왕스폰6(ITriggerContext context) : base(context) { }
+        private class State거미여왕Spawn6 : TriggerState {
+            internal State거미여왕Spawn6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11004706, illust: "PuppetBunnyBlue_normal", duration: 3000, script: "$02000545_BF__MAIN__17$");

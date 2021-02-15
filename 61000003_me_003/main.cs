@@ -30,11 +30,11 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 100) == 50) {
-                    return new StateStart준비(context);
+                    return new StateStartPrepare(context);
                 }
 
                 if (context.WaitTick(waitTick: 60000)) {
-                    return new StateStart준비(context);
+                    return new StateStartPrepare(context);
                 }
 
                 return null;
@@ -43,8 +43,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class StateStart준비 : TriggerState {
-            internal StateStart준비(ITriggerContext context) : base(context) { }
+        private class StateStartPrepare : TriggerState {
+            internal StateStartPrepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMiniGameAreaForHack(boxId: 105);
@@ -212,7 +212,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제2준비(context);
+                    return new State문제2Prepare(context);
                 }
 
                 return null;
@@ -239,7 +239,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제2준비(context);
+                    return new State문제2Prepare(context);
                 }
 
                 return null;
@@ -250,8 +250,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             }
         }
 
-        private class State문제2준비 : TriggerState {
-            internal State문제2준비(ITriggerContext context) : base(context) { }
+        private class State문제2Prepare : TriggerState {
+            internal State문제2Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {604}, arg2: true);
@@ -359,7 +359,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제3준비(context);
+                    return new State문제3Prepare(context);
                 }
 
                 return null;
@@ -386,7 +386,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제3준비(context);
+                    return new State문제3Prepare(context);
                 }
 
                 return null;
@@ -397,8 +397,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             }
         }
 
-        private class State문제3준비 : TriggerState {
-            internal State문제3준비(ITriggerContext context) : base(context) { }
+        private class State문제3Prepare : TriggerState {
+            internal State문제3Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {604}, arg2: true);
@@ -506,7 +506,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제4준비(context);
+                    return new State문제4Prepare(context);
                 }
 
                 return null;
@@ -533,7 +533,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제4준비(context);
+                    return new State문제4Prepare(context);
                 }
 
                 return null;
@@ -544,8 +544,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             }
         }
 
-        private class State문제4준비 : TriggerState {
-            internal State문제4준비(ITriggerContext context) : base(context) { }
+        private class State문제4Prepare : TriggerState {
+            internal State문제4Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {604}, arg2: true);
@@ -653,7 +653,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제5준비(context);
+                    return new State문제5Prepare(context);
                 }
 
                 return null;
@@ -680,7 +680,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제5준비(context);
+                    return new State문제5Prepare(context);
                 }
 
                 return null;
@@ -691,8 +691,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             }
         }
 
-        private class State문제5준비 : TriggerState {
-            internal State문제5준비(ITriggerContext context) : base(context) { }
+        private class State문제5Prepare : TriggerState {
+            internal State문제5Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {604}, arg2: true);
@@ -800,7 +800,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제6준비(context);
+                    return new State문제6Prepare(context);
                 }
 
                 return null;
@@ -827,7 +827,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제6준비(context);
+                    return new State문제6Prepare(context);
                 }
 
                 return null;
@@ -838,8 +838,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             }
         }
 
-        private class State문제6준비 : TriggerState {
-            internal State문제6준비(ITriggerContext context) : base(context) { }
+        private class State문제6Prepare : TriggerState {
+            internal State문제6Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {604}, arg2: true);
@@ -947,7 +947,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제7준비(context);
+                    return new State문제7Prepare(context);
                 }
 
                 return null;
@@ -974,7 +974,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제7준비(context);
+                    return new State문제7Prepare(context);
                 }
 
                 return null;
@@ -985,8 +985,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             }
         }
 
-        private class State문제7준비 : TriggerState {
-            internal State문제7준비(ITriggerContext context) : base(context) { }
+        private class State문제7Prepare : TriggerState {
+            internal State문제7Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {604}, arg2: true);
@@ -1094,7 +1094,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제8준비(context);
+                    return new State문제8Prepare(context);
                 }
 
                 return null;
@@ -1121,7 +1121,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제8준비(context);
+                    return new State문제8Prepare(context);
                 }
 
                 return null;
@@ -1132,8 +1132,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             }
         }
 
-        private class State문제8준비 : TriggerState {
-            internal State문제8준비(ITriggerContext context) : base(context) { }
+        private class State문제8Prepare : TriggerState {
+            internal State문제8Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {604}, arg2: true);
@@ -1241,7 +1241,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제9준비(context);
+                    return new State문제9Prepare(context);
                 }
 
                 return null;
@@ -1268,7 +1268,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제9준비(context);
+                    return new State문제9Prepare(context);
                 }
 
                 return null;
@@ -1279,8 +1279,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             }
         }
 
-        private class State문제9준비 : TriggerState {
-            internal State문제9준비(ITriggerContext context) : base(context) { }
+        private class State문제9Prepare : TriggerState {
+            internal State문제9Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {604}, arg2: true);
@@ -1388,7 +1388,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제10준비(context);
+                    return new State문제10Prepare(context);
                 }
 
                 return null;
@@ -1415,7 +1415,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State문제10준비(context);
+                    return new State문제10Prepare(context);
                 }
 
                 return null;
@@ -1426,8 +1426,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             }
         }
 
-        private class State문제10준비 : TriggerState {
-            internal State문제10준비(ITriggerContext context) : base(context) { }
+        private class State문제10Prepare : TriggerState {
+            internal State문제10Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {605}, arg2: true);
@@ -1607,7 +1607,7 @@ namespace Maple2.Trigger._61000003_me_003 {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State우승자Camera연출(context);
+                    return new State우승자CameraCinematic(context);
                 }
 
                 return null;
@@ -1616,8 +1616,8 @@ namespace Maple2.Trigger._61000003_me_003 {
             public override void OnExit() { }
         }
 
-        private class State우승자Camera연출 : TriggerState {
-            internal State우승자Camera연출(ITriggerContext context) : base(context) { }
+        private class State우승자CameraCinematic : TriggerState {
+            internal State우승자CameraCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 3, arg2: "$61000003_ME_003__MAIN__12$", arg3: 5000, arg4: "105");

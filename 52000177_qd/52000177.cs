@@ -225,7 +225,7 @@ namespace Maple2.Trigger._52000177_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002366}, arg3: new byte[] {3})) {
-                    return new State전원퇴장01(context);
+                    return new State전원Exit01(context);
                 }
 
                 return null;
@@ -234,8 +234,8 @@ namespace Maple2.Trigger._52000177_qd {
             public override void OnExit() { }
         }
 
-        private class State전원퇴장01 : TriggerState {
-            internal State전원퇴장01(ITriggerContext context) : base(context) { }
+        private class State전원Exit01 : TriggerState {
+            internal State전원Exit01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 10, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -247,7 +247,7 @@ namespace Maple2.Trigger._52000177_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State전원퇴장02(context);
+                    return new State전원Exit02(context);
                 }
 
                 return null;
@@ -256,8 +256,8 @@ namespace Maple2.Trigger._52000177_qd {
             public override void OnExit() { }
         }
 
-        private class State전원퇴장02 : TriggerState {
-            internal State전원퇴장02(ITriggerContext context) : base(context) { }
+        private class State전원Exit02 : TriggerState {
+            internal State전원Exit02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 10, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -266,7 +266,7 @@ namespace Maple2.Trigger._52000177_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State전원퇴장03(context);
+                    return new State전원Exit03(context);
                 }
 
                 return null;
@@ -275,8 +275,8 @@ namespace Maple2.Trigger._52000177_qd {
             public override void OnExit() { }
         }
 
-        private class State전원퇴장03 : TriggerState {
-            internal State전원퇴장03(ITriggerContext context) : base(context) { }
+        private class State전원Exit03 : TriggerState {
+            internal State전원Exit03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {402}, arg2: false);

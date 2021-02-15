@@ -32,7 +32,7 @@ namespace Maple2.Trigger._52000022_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State말풍선연출01(context);
+                    return new State말풍선Cinematic01(context);
                 }
 
                 return null;
@@ -41,8 +41,8 @@ namespace Maple2.Trigger._52000022_qd {
             public override void OnExit() { }
         }
 
-        private class State말풍선연출01 : TriggerState {
-            internal State말풍선연출01(ITriggerContext context) : base(context) { }
+        private class State말풍선Cinematic01 : TriggerState {
+            internal State말풍선Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 5);
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._52000022_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State말풍선연출02(context);
+                    return new State말풍선Cinematic02(context);
                 }
 
                 return null;
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._52000022_qd {
             public override void OnExit() { }
         }
 
-        private class State말풍선연출02 : TriggerState {
-            internal State말풍선연출02(ITriggerContext context) : base(context) { }
+        private class State말풍선Cinematic02 : TriggerState {
+            internal State말풍선Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "4", arg2: 4);
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._52000022_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "4")) {
-                    return new State말풍선연출03(context);
+                    return new State말풍선Cinematic03(context);
                 }
 
                 return null;
@@ -79,8 +79,8 @@ namespace Maple2.Trigger._52000022_qd {
             public override void OnExit() { }
         }
 
-        private class State말풍선연출03 : TriggerState {
-            internal State말풍선연출03(ITriggerContext context) : base(context) { }
+        private class State말풍선Cinematic03 : TriggerState {
+            internal State말풍선Cinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 5);
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._52000022_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State말풍선연출04(context);
+                    return new State말풍선Cinematic04(context);
                 }
 
                 return null;
@@ -137,8 +137,8 @@ namespace Maple2.Trigger._52000022_qd {
             public override void OnExit() { }
         }
 
-        private class State말풍선연출04 : TriggerState {
-            internal State말풍선연출04(ITriggerContext context) : base(context) { }
+        private class State말풍선Cinematic04 : TriggerState {
+            internal State말풍선Cinematic04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 5);
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._52000022_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "5")) {
-                    return new State말풍선연출05(context);
+                    return new State말풍선Cinematic05(context);
                 }
 
                 return null;
@@ -156,8 +156,8 @@ namespace Maple2.Trigger._52000022_qd {
             public override void OnExit() { }
         }
 
-        private class State말풍선연출05 : TriggerState {
-            internal State말풍선연출05(ITriggerContext context) : base(context) { }
+        private class State말풍선Cinematic05 : TriggerState {
+            internal State말풍선Cinematic05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);
@@ -167,7 +167,7 @@ namespace Maple2.Trigger._52000022_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State말풍선연출06(context);
+                    return new State말풍선Cinematic06(context);
                 }
 
                 return null;
@@ -176,8 +176,8 @@ namespace Maple2.Trigger._52000022_qd {
             public override void OnExit() { }
         }
 
-        private class State말풍선연출06 : TriggerState {
-            internal State말풍선연출06(ITriggerContext context) : base(context) { }
+        private class State말풍선Cinematic06 : TriggerState {
+            internal State말풍선Cinematic06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);
@@ -206,7 +206,7 @@ namespace Maple2.Trigger._52000022_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State말풍선연출07(context);
+                    return new State말풍선Cinematic07(context);
                 }
 
                 return null;
@@ -215,8 +215,8 @@ namespace Maple2.Trigger._52000022_qd {
             public override void OnExit() { }
         }
 
-        private class State말풍선연출07 : TriggerState {
-            internal State말풍선연출07(ITriggerContext context) : base(context) { }
+        private class State말풍선Cinematic07 : TriggerState {
+            internal State말풍선Cinematic07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);
@@ -226,7 +226,7 @@ namespace Maple2.Trigger._52000022_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State말풍선연출08(context);
+                    return new State말풍선Cinematic08(context);
                 }
 
                 return null;
@@ -235,8 +235,8 @@ namespace Maple2.Trigger._52000022_qd {
             public override void OnExit() { }
         }
 
-        private class State말풍선연출08 : TriggerState {
-            internal State말풍선연출08(ITriggerContext context) : base(context) { }
+        private class State말풍선Cinematic08 : TriggerState {
+            internal State말풍선Cinematic08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);

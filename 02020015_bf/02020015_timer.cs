@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02020015_bf {
     public static class _02020015_timer {
-        public class State신호대기 : TriggerState {
-            internal State신호대기(ITriggerContext context) : base(context) { }
+        public class State신호Wait : TriggerState {
+            internal State신호Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

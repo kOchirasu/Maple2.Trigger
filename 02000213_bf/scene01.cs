@@ -69,7 +69,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State레논대사1(context);
+                    return new State레논Script1(context);
                 }
 
                 return null;
@@ -78,8 +78,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State레논대사1 : TriggerState {
-            internal State레논대사1(ITriggerContext context) : base(context) { }
+        private class State레논Script1 : TriggerState {
+            internal State레논Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
@@ -109,7 +109,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State벨라대사1(context);
+                    return new State벨라Script1(context);
                 }
 
                 return null;
@@ -118,8 +118,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State벨라대사1 : TriggerState {
-            internal State벨라대사1(ITriggerContext context) : base(context) { }
+        private class State벨라Script1 : TriggerState {
+            internal State벨라Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {401}, arg2: false);
@@ -130,7 +130,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State벨라대사2(context);
+                    return new State벨라Script2(context);
                 }
 
                 return null;
@@ -139,8 +139,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State벨라대사2 : TriggerState {
-            internal State벨라대사2(ITriggerContext context) : base(context) { }
+        private class State벨라Script2 : TriggerState {
+            internal State벨라Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 3);
@@ -169,7 +169,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State알론대사1(context);
+                    return new State알론Script1(context);
                 }
 
                 return null;
@@ -178,8 +178,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State알론대사1 : TriggerState {
-            internal State알론대사1(ITriggerContext context) : base(context) { }
+        private class State알론Script1 : TriggerState {
+            internal State알론Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 4);
@@ -189,7 +189,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State벨라대사3(context);
+                    return new State벨라Script3(context);
                 }
 
                 return null;
@@ -198,8 +198,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State벨라대사3 : TriggerState {
-            internal State벨라대사3(ITriggerContext context) : base(context) { }
+        private class State벨라Script3 : TriggerState {
+            internal State벨라Script3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 4);
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State벨라대사4(context);
+                    return new State벨라Script4(context);
                 }
 
                 return null;
@@ -218,8 +218,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State벨라대사4 : TriggerState {
-            internal State벨라대사4(ITriggerContext context) : base(context) { }
+        private class State벨라Script4 : TriggerState {
+            internal State벨라Script4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 4);
@@ -229,7 +229,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State벨라대사5(context);
+                    return new State벨라Script5(context);
                 }
 
                 return null;
@@ -238,8 +238,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State벨라대사5 : TriggerState {
-            internal State벨라대사5(ITriggerContext context) : base(context) { }
+        private class State벨라Script5 : TriggerState {
+            internal State벨라Script5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
@@ -291,7 +291,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State알론대사2(context);
+                    return new State알론Script2(context);
                 }
 
                 return null;
@@ -300,8 +300,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State알론대사2 : TriggerState {
-            internal State알론대사2(ITriggerContext context) : base(context) { }
+        private class State알론Script2 : TriggerState {
+            internal State알론Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 4);
@@ -311,7 +311,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State알론대사3(context);
+                    return new State알론Script3(context);
                 }
 
                 return null;
@@ -320,8 +320,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State알론대사3 : TriggerState {
-            internal State알론대사3(ITriggerContext context) : base(context) { }
+        private class State알론Script3 : TriggerState {
+            internal State알론Script3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 4);
@@ -331,7 +331,7 @@ namespace Maple2.Trigger._02000213_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State연출끝(context);
+                    return new StateCinematic끝(context);
                 }
 
                 return null;
@@ -340,8 +340,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State연출끝 : TriggerState {
-            internal State연출끝(ITriggerContext context) : base(context) { }
+        private class StateCinematic끝 : TriggerState {
+            internal StateCinematic끝(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: false);

@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02000213_bf {
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000260}, arg2: 1)) {
                     context.CreateMonster(arg1: new[] {1013}, arg2: false);
-                    return new State소멸체크(context);
+                    return new StateDeadCheck(context);
                 }
 
                 return null;
@@ -33,8 +33,8 @@ namespace Maple2.Trigger._02000213_bf {
             public override void OnExit() { }
         }
 
-        private class State소멸체크 : TriggerState {
-            internal State소멸체크(ITriggerContext context) : base(context) { }
+        private class StateDeadCheck : TriggerState {
+            internal StateDeadCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

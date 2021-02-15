@@ -75,7 +75,7 @@ namespace Maple2.Trigger._52000063_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new StateK대사02(context);
+                    return new StateKScript02(context);
                 }
 
                 return null;
@@ -84,8 +84,8 @@ namespace Maple2.Trigger._52000063_qd {
             public override void OnExit() { }
         }
 
-        private class StateK대사02 : TriggerState {
-            internal StateK대사02(ITriggerContext context) : base(context) { }
+        private class StateKScript02 : TriggerState {
+            internal StateKScript02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1104, arg2: "MS2PatrolData_1104A");
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._52000063_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State마칸대사01(context);
+                    return new State마칸Script01(context);
                 }
 
                 return null;
@@ -103,8 +103,8 @@ namespace Maple2.Trigger._52000063_qd {
             public override void OnExit() { }
         }
 
-        private class State마칸대사01 : TriggerState {
-            internal State마칸대사01(ITriggerContext context) : base(context) { }
+        private class State마칸Script01 : TriggerState {
+            internal State마칸Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1101, arg2: "MS2PatrolData_1101A");
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._52000063_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State마칸대사02(context);
+                    return new State마칸Script02(context);
                 }
 
                 return null;
@@ -125,8 +125,8 @@ namespace Maple2.Trigger._52000063_qd {
             public override void OnExit() { }
         }
 
-        private class State마칸대사02 : TriggerState {
-            internal State마칸대사02(ITriggerContext context) : base(context) { }
+        private class State마칸Script02 : TriggerState {
+            internal State마칸Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001872, arg3: "$52000063_QD__90000640__3$", arg4: 4);
@@ -192,7 +192,7 @@ namespace Maple2.Trigger._52000063_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new StateK대사03(context);
+                    return new StateKScript03(context);
                 }
 
                 return null;
@@ -201,8 +201,8 @@ namespace Maple2.Trigger._52000063_qd {
             public override void OnExit() { }
         }
 
-        private class StateK대사03 : TriggerState {
-            internal StateK대사03(ITriggerContext context) : base(context) { }
+        private class StateKScript03 : TriggerState {
+            internal StateKScript03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 304, arg2: true);
@@ -278,7 +278,7 @@ namespace Maple2.Trigger._52000063_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    return new State완료대기(context);
+                    return new State완료Wait(context);
                 }
 
                 return null;
@@ -287,8 +287,8 @@ namespace Maple2.Trigger._52000063_qd {
             public override void OnExit() { }
         }
 
-        private class State완료대기 : TriggerState {
-            internal State완료대기(ITriggerContext context) : base(context) { }
+        private class State완료Wait : TriggerState {
+            internal State완료Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateItem(arg1: new[] {9026, 9027, 9028, 9029});

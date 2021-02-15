@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AI_Phase") == 1) {
-                    return new State텍스트_대기(context);
+                    return new State텍스트_Wait(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02020301_bf {
             public override void OnExit() { }
         }
 
-        private class State텍스트_대기 : TriggerState {
-            internal State텍스트_대기(ITriggerContext context) : base(context) { }
+        private class State텍스트_Wait : TriggerState {
+            internal State텍스트_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52000157_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002731}, arg3: new byte[] {2})) {
-                    return new State이별준비(context);
+                    return new State이별Prepare(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002731}, arg3: new byte[] {3})) {
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._52000157_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State떠나기전준비(context);
+                    return new State떠나기전Prepare(context);
                 }
 
                 return null;
@@ -102,14 +102,14 @@ namespace Maple2.Trigger._52000157_qd {
             public override void OnExit() { }
         }
 
-        private class State떠나기전준비 : TriggerState {
-            internal State떠나기전준비(ITriggerContext context) : base(context) { }
+        private class State떠나기전Prepare : TriggerState {
+            internal State떠나기전Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2002}, arg2: new[] {40002731}, arg3: new byte[] {2})) {
-                    return new State이별준비(context);
+                    return new State이별Prepare(context);
                 }
 
                 return null;
@@ -118,8 +118,8 @@ namespace Maple2.Trigger._52000157_qd {
             public override void OnExit() { }
         }
 
-        private class State이별준비 : TriggerState {
-            internal State이별준비(ITriggerContext context) : base(context) { }
+        private class State이별Prepare : TriggerState {
+            internal State이별Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 5, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._52000157_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State이별준비_01(context);
+                    return new State이별Prepare_01(context);
                 }
 
                 return null;
@@ -136,8 +136,8 @@ namespace Maple2.Trigger._52000157_qd {
             public override void OnExit() { }
         }
 
-        private class State이별준비_01 : TriggerState {
-            internal State이별준비_01(ITriggerContext context) : base(context) { }
+        private class State이별Prepare_01 : TriggerState {
+            internal State이별Prepare_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -148,7 +148,7 @@ namespace Maple2.Trigger._52000157_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State이별준비_02(context);
+                    return new State이별Prepare_02(context);
                 }
 
                 return null;
@@ -157,8 +157,8 @@ namespace Maple2.Trigger._52000157_qd {
             public override void OnExit() { }
         }
 
-        private class State이별준비_02 : TriggerState {
-            internal State이별준비_02(ITriggerContext context) : base(context) { }
+        private class State이별Prepare_02 : TriggerState {
+            internal State이별Prepare_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 5, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._52000157_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State이별준비_03(context);
+                    return new State이별Prepare_03(context);
                 }
 
                 return null;
@@ -175,8 +175,8 @@ namespace Maple2.Trigger._52000157_qd {
             public override void OnExit() { }
         }
 
-        private class State이별준비_03 : TriggerState {
-            internal State이별준비_03(ITriggerContext context) : base(context) { }
+        private class State이별Prepare_03 : TriggerState {
+            internal State이별Prepare_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 0);

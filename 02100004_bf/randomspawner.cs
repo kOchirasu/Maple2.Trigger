@@ -23,7 +23,7 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "RoundStart") == 1) {
-                    return new StateRandom스폰(context);
+                    return new StateRandomSpawn(context);
                 }
 
                 return null;
@@ -32,8 +32,8 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnExit() { }
         }
 
-        private class StateRandom스폰 : TriggerState {
-            internal StateRandom스폰(ITriggerContext context) : base(context) { }
+        private class StateRandomSpawn : TriggerState {
+            internal StateRandomSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 999992, key: "RoundStart", value: 0);
@@ -41,51 +41,51 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 10f)) {
-                    return new State중복체크01(context);
+                    return new StateOverlapCheck01(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    return new State중복체크02(context);
+                    return new StateOverlapCheck02(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    return new State중복체크03(context);
+                    return new StateOverlapCheck03(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    return new State중복체크04(context);
+                    return new StateOverlapCheck04(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    return new State중복체크05(context);
+                    return new StateOverlapCheck05(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    return new State중복체크06(context);
+                    return new StateOverlapCheck06(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    return new State중복체크08(context);
+                    return new StateOverlapCheck08(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    return new State중복체크09(context);
+                    return new StateOverlapCheck09(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    return new State중복체크10(context);
+                    return new StateOverlapCheck10(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    return new State중복체크11(context);
+                    return new StateOverlapCheck11(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    return new State중복체크12(context);
+                    return new StateOverlapCheck12(context);
                 }
 
                 if (context.RandomCondition(arg1: 10f)) {
-                    return new State중복체크13(context);
+                    return new StateOverlapCheck13(context);
                 }
 
                 return null;
@@ -94,8 +94,8 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnExit() { }
         }
 
-        private class State중복체크01 : TriggerState {
-            internal State중복체크01(ITriggerContext context) : base(context) { }
+        private class StateOverlapCheck01 : TriggerState {
+            internal StateOverlapCheck01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -106,7 +106,7 @@ namespace Maple2.Trigger._02100004_bf {
                 }
 
                 if (context.GetUserValue(key: "NpcSpawned01") == 1) {
-                    return new StateRandom스폰(context);
+                    return new StateRandomSpawn(context);
                 }
 
                 return null;
@@ -115,8 +115,8 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnExit() { }
         }
 
-        private class State중복체크02 : TriggerState {
-            internal State중복체크02(ITriggerContext context) : base(context) { }
+        private class StateOverlapCheck02 : TriggerState {
+            internal StateOverlapCheck02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._02100004_bf {
                 }
 
                 if (context.GetUserValue(key: "NpcSpawned02") == 1) {
-                    return new StateRandom스폰(context);
+                    return new StateRandomSpawn(context);
                 }
 
                 return null;
@@ -136,8 +136,8 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnExit() { }
         }
 
-        private class State중복체크03 : TriggerState {
-            internal State중복체크03(ITriggerContext context) : base(context) { }
+        private class StateOverlapCheck03 : TriggerState {
+            internal StateOverlapCheck03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -148,7 +148,7 @@ namespace Maple2.Trigger._02100004_bf {
                 }
 
                 if (context.GetUserValue(key: "NpcSpawned03") == 1) {
-                    return new StateRandom스폰(context);
+                    return new StateRandomSpawn(context);
                 }
 
                 return null;
@@ -157,8 +157,8 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnExit() { }
         }
 
-        private class State중복체크04 : TriggerState {
-            internal State중복체크04(ITriggerContext context) : base(context) { }
+        private class StateOverlapCheck04 : TriggerState {
+            internal StateOverlapCheck04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -169,7 +169,7 @@ namespace Maple2.Trigger._02100004_bf {
                 }
 
                 if (context.GetUserValue(key: "NpcSpawned04") == 1) {
-                    return new StateRandom스폰(context);
+                    return new StateRandomSpawn(context);
                 }
 
                 return null;
@@ -178,8 +178,8 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnExit() { }
         }
 
-        private class State중복체크05 : TriggerState {
-            internal State중복체크05(ITriggerContext context) : base(context) { }
+        private class StateOverlapCheck05 : TriggerState {
+            internal StateOverlapCheck05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -190,7 +190,7 @@ namespace Maple2.Trigger._02100004_bf {
                 }
 
                 if (context.GetUserValue(key: "NpcSpawned05") == 1) {
-                    return new StateRandom스폰(context);
+                    return new StateRandomSpawn(context);
                 }
 
                 return null;
@@ -199,8 +199,8 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnExit() { }
         }
 
-        private class State중복체크06 : TriggerState {
-            internal State중복체크06(ITriggerContext context) : base(context) { }
+        private class StateOverlapCheck06 : TriggerState {
+            internal StateOverlapCheck06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -211,7 +211,7 @@ namespace Maple2.Trigger._02100004_bf {
                 }
 
                 if (context.GetUserValue(key: "NpcSpawned06") == 1) {
-                    return new StateRandom스폰(context);
+                    return new StateRandomSpawn(context);
                 }
 
                 return null;
@@ -220,8 +220,8 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnExit() { }
         }
 
-        private class State중복체크08 : TriggerState {
-            internal State중복체크08(ITriggerContext context) : base(context) { }
+        private class StateOverlapCheck08 : TriggerState {
+            internal StateOverlapCheck08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -232,7 +232,7 @@ namespace Maple2.Trigger._02100004_bf {
                 }
 
                 if (context.GetUserValue(key: "NpcSpawned08") == 1) {
-                    return new StateRandom스폰(context);
+                    return new StateRandomSpawn(context);
                 }
 
                 return null;
@@ -241,8 +241,8 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnExit() { }
         }
 
-        private class State중복체크09 : TriggerState {
-            internal State중복체크09(ITriggerContext context) : base(context) { }
+        private class StateOverlapCheck09 : TriggerState {
+            internal StateOverlapCheck09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._02100004_bf {
                 }
 
                 if (context.GetUserValue(key: "NpcSpawned09") == 1) {
-                    return new StateRandom스폰(context);
+                    return new StateRandomSpawn(context);
                 }
 
                 return null;
@@ -262,8 +262,8 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnExit() { }
         }
 
-        private class State중복체크10 : TriggerState {
-            internal State중복체크10(ITriggerContext context) : base(context) { }
+        private class StateOverlapCheck10 : TriggerState {
+            internal StateOverlapCheck10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -274,7 +274,7 @@ namespace Maple2.Trigger._02100004_bf {
                 }
 
                 if (context.GetUserValue(key: "NpcSpawned10") == 1) {
-                    return new StateRandom스폰(context);
+                    return new StateRandomSpawn(context);
                 }
 
                 return null;
@@ -283,8 +283,8 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnExit() { }
         }
 
-        private class State중복체크11 : TriggerState {
-            internal State중복체크11(ITriggerContext context) : base(context) { }
+        private class StateOverlapCheck11 : TriggerState {
+            internal StateOverlapCheck11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -295,7 +295,7 @@ namespace Maple2.Trigger._02100004_bf {
                 }
 
                 if (context.GetUserValue(key: "NpcSpawned11") == 1) {
-                    return new StateRandom스폰(context);
+                    return new StateRandomSpawn(context);
                 }
 
                 return null;
@@ -304,8 +304,8 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnExit() { }
         }
 
-        private class State중복체크12 : TriggerState {
-            internal State중복체크12(ITriggerContext context) : base(context) { }
+        private class StateOverlapCheck12 : TriggerState {
+            internal StateOverlapCheck12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -316,7 +316,7 @@ namespace Maple2.Trigger._02100004_bf {
                 }
 
                 if (context.GetUserValue(key: "NpcSpawned12") == 1) {
-                    return new StateRandom스폰(context);
+                    return new StateRandomSpawn(context);
                 }
 
                 return null;
@@ -325,8 +325,8 @@ namespace Maple2.Trigger._02100004_bf {
             public override void OnExit() { }
         }
 
-        private class State중복체크13 : TriggerState {
-            internal State중복체크13(ITriggerContext context) : base(context) { }
+        private class StateOverlapCheck13 : TriggerState {
+            internal StateOverlapCheck13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._02100004_bf {
                 }
 
                 if (context.GetUserValue(key: "NpcSpawned13") == 1) {
-                    return new StateRandom스폰(context);
+                    return new StateRandomSpawn(context);
                 }
 
                 return null;

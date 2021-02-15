@@ -148,7 +148,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State조건체크Monster스폰1(context);
+                    return new State조건체크MonsterSpawn1(context);
                 }
 
                 return null;
@@ -157,8 +157,8 @@ namespace Maple2.Trigger._02000543_bf {
             public override void OnExit() { }
         }
 
-        private class State조건체크Monster스폰1 : TriggerState {
-            internal State조건체크Monster스폰1(ITriggerContext context) : base(context) { }
+        private class State조건체크MonsterSpawn1 : TriggerState {
+            internal State조건체크MonsterSpawn1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {110});
@@ -168,7 +168,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "main") == 4) {
-                    return new State조건체크Monster스폰2(context);
+                    return new State조건체크MonsterSpawn2(context);
                 }
 
                 return null;
@@ -177,14 +177,14 @@ namespace Maple2.Trigger._02000543_bf {
             public override void OnExit() { }
         }
 
-        private class State조건체크Monster스폰2 : TriggerState {
-            internal State조건체크Monster스폰2(ITriggerContext context) : base(context) { }
+        private class State조건체크MonsterSpawn2 : TriggerState {
+            internal State조건체크MonsterSpawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new State조건체크Monster스폰3(context);
+                    return new State조건체크MonsterSpawn3(context);
                 }
 
                 return null;
@@ -193,8 +193,8 @@ namespace Maple2.Trigger._02000543_bf {
             public override void OnExit() { }
         }
 
-        private class State조건체크Monster스폰3 : TriggerState {
-            internal State조건체크Monster스폰3(ITriggerContext context) : base(context) { }
+        private class State조건체크MonsterSpawn3 : TriggerState {
+            internal State조건체크MonsterSpawn3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {108}, arg2: true);
@@ -273,7 +273,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new State2단계조건체크Monster(context);
+                    return new State2단계ConditionCheckMonster(context);
                 }
 
                 return null;
@@ -282,8 +282,8 @@ namespace Maple2.Trigger._02000543_bf {
             public override void OnExit() { }
         }
 
-        private class State2단계조건체크Monster : TriggerState {
-            internal State2단계조건체크Monster(ITriggerContext context) : base(context) { }
+        private class State2단계ConditionCheckMonster : TriggerState {
+            internal State2단계ConditionCheckMonster(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {109}, arg2: true);
@@ -344,7 +344,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State조건체크Monster스폰(context);
+                    return new State조건체크MonsterSpawn(context);
                 }
 
                 return null;
@@ -353,8 +353,8 @@ namespace Maple2.Trigger._02000543_bf {
             public override void OnExit() { }
         }
 
-        private class State조건체크Monster스폰 : TriggerState {
-            internal State조건체크Monster스폰(ITriggerContext context) : base(context) { }
+        private class State조건체크MonsterSpawn : TriggerState {
+            internal State조건체크MonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 21450036, illust: "DesertDragonMagicGreen_normal", duration: 4000, script: "$02000543_BF__MAIN__10$");
@@ -362,7 +362,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "main") == 8) {
-                    return new State응접실문열기전Monster스폰(context);
+                    return new State응접실문열기전MonsterSpawn(context);
                 }
 
                 return null;
@@ -371,8 +371,8 @@ namespace Maple2.Trigger._02000543_bf {
             public override void OnExit() { }
         }
 
-        private class State응접실문열기전Monster스폰 : TriggerState {
-            internal State응접실문열기전Monster스폰(ITriggerContext context) : base(context) { }
+        private class State응접실문열기전MonsterSpawn : TriggerState {
+            internal State응접실문열기전MonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102}, arg2: true);
@@ -380,7 +380,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101, 102})) {
-                    return new State응접실문대기(context);
+                    return new State응접실문Wait(context);
                 }
 
                 return null;
@@ -389,8 +389,8 @@ namespace Maple2.Trigger._02000543_bf {
             public override void OnExit() { }
         }
 
-        private class State응접실문대기 : TriggerState {
-            internal State응접실문대기(ITriggerContext context) : base(context) { }
+        private class State응접실문Wait : TriggerState {
+            internal State응접실문Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(201f, 38f, 70f), arg2: new Vector3(0f, 0f, 0f));
@@ -505,7 +505,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {702}, arg2: 0)) {
-                    return new StateBoss스폰(context);
+                    return new StateBossSpawn(context);
                 }
 
                 return null;
@@ -514,8 +514,8 @@ namespace Maple2.Trigger._02000543_bf {
             public override void OnExit() { }
         }
 
-        private class StateBoss스폰 : TriggerState {
-            internal StateBoss스폰(ITriggerContext context) : base(context) { }
+        private class StateBossSpawn : TriggerState {
+            internal StateBossSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 102, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
@@ -524,7 +524,7 @@ namespace Maple2.Trigger._02000543_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateBoss스폰2(context);
+                    return new StateBossSpawn2(context);
                 }
 
                 return null;
@@ -533,8 +533,8 @@ namespace Maple2.Trigger._02000543_bf {
             public override void OnExit() { }
         }
 
-        private class StateBoss스폰2 : TriggerState {
-            internal StateBoss스폰2(ITriggerContext context) : base(context) { }
+        private class StateBossSpawn2 : TriggerState {
+            internal StateBossSpawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 103, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");

@@ -492,7 +492,7 @@ namespace Maple2.Trigger._52000115_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199}, arg2: 10)) {
-                    return new State기본종료(context);
+                    return new StateDefaultEnd(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {199}, arg2: 20)) {
@@ -508,23 +508,23 @@ namespace Maple2.Trigger._52000115_qd {
                 }
 
                 if (context.UserDetected(arg1: new[] {199}, arg2: 50)) {
-                    return new State기본종료(context);
+                    return new StateDefaultEnd(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {199}, arg2: 60)) {
-                    return new State기본종료(context);
+                    return new StateDefaultEnd(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {199}, arg2: 70)) {
-                    return new State기본종료(context);
+                    return new StateDefaultEnd(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {199}, arg2: 80)) {
-                    return new State기본종료(context);
+                    return new StateDefaultEnd(context);
                 }
 
                 if (context.UserDetected(arg1: new[] {199}, arg2: 90)) {
-                    return new State기본종료(context);
+                    return new StateDefaultEnd(context);
                 }
 
                 return null;
@@ -597,8 +597,8 @@ namespace Maple2.Trigger._52000115_qd {
             public override void OnExit() { }
         }
 
-        private class State기본종료 : TriggerState {
-            internal State기본종료(ITriggerContext context) : base(context) { }
+        private class StateDefaultEnd : TriggerState {
+            internal StateDefaultEnd(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 02000062, arg2: 1);

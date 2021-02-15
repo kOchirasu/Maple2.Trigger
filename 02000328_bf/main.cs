@@ -87,7 +87,7 @@ namespace Maple2.Trigger._02000328_bf {
                     context.ShowGuideSummary(entityId: 20003286, textId: 20003286, duration: 5000);
                     context.RemoveBuff(arg1: 999998, arg2: 70000107);
                     context.CameraSelect(arg1: 60001, arg2: false);
-                    return new State웨폰오브젝트대기(context);
+                    return new State웨폰오브젝트Wait(context);
                 }
 
                 return null;
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._02000328_bf {
             public override void OnExit() { }
         }
 
-        private class State웨폰오브젝트대기 : TriggerState {
-            internal State웨폰오브젝트대기(ITriggerContext context) : base(context) { }
+        private class State웨폰오브젝트Wait : TriggerState {
+            internal State웨폰오브젝트Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCube(ids: new[] {5001, 5002, 5003, 5004}, isVisible: true);
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._02000328_bf {
                 if (context.UserDetected(arg1: new[] {999997})) {
                     context.SetEffect(arg1: new[] {84002}, arg2: true);
                     context.SetConversation(arg1: 1, arg2: 2001, arg3: "$02000328_BF__MAIN__6$", arg4: 5, arg5: 0);
-                    return new State하층Clear대기(context);
+                    return new State하층ClearWait(context);
                 }
 
                 return null;
@@ -117,8 +117,8 @@ namespace Maple2.Trigger._02000328_bf {
             public override void OnExit() { }
         }
 
-        private class State하층Clear대기 : TriggerState {
-            internal State하층Clear대기(ITriggerContext context) : base(context) { }
+        private class State하층ClearWait : TriggerState {
+            internal State하층ClearWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");

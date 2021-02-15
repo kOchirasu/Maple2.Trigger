@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02000535_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {523, 524, 525, 526, 527, 528, 529, 530, 531})) {
-                    return new State다음으로이동(context);
+                    return new StateNext으로이동(context);
                 }
 
                 return null;
@@ -83,8 +83,8 @@ namespace Maple2.Trigger._02000535_bf {
             public override void OnExit() { }
         }
 
-        private class State다음으로이동 : TriggerState {
-            internal State다음으로이동(ITriggerContext context) : base(context) { }
+        private class StateNext으로이동 : TriggerState {
+            internal StateNext으로이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10003146}, arg2: 1);
@@ -237,7 +237,7 @@ namespace Maple2.Trigger._02000535_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State흑성회스폰(context);
+                    return new State흑성회Spawn(context);
                 }
 
                 return null;
@@ -246,8 +246,8 @@ namespace Maple2.Trigger._02000535_bf {
             public override void OnExit() { }
         }
 
-        private class State흑성회스폰 : TriggerState {
-            internal State흑성회스폰(ITriggerContext context) : base(context) { }
+        private class State흑성회Spawn : TriggerState {
+            internal State흑성회Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {670, 671});
@@ -498,7 +498,7 @@ namespace Maple2.Trigger._02000535_bf {
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
                     context.SetUserValue(triggerId: 9002, key: "GameLogicStart", value: 1);
-                    return new State게임로직종료대기(context);
+                    return new State게임로직종료Wait(context);
                 }
 
                 return null;
@@ -507,8 +507,8 @@ namespace Maple2.Trigger._02000535_bf {
             public override void OnExit() { }
         }
 
-        private class State게임로직종료대기 : TriggerState {
-            internal State게임로직종료대기(ITriggerContext context) : base(context) { }
+        private class State게임로직종료Wait : TriggerState {
+            internal State게임로직종료Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -108,7 +108,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new StateNPC대사(context);
+                    return new StateNPCScript(context);
                 }
 
                 return null;
@@ -117,8 +117,8 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnExit() { }
         }
 
-        private class StateNPC대사 : TriggerState {
-            internal StateNPC대사(ITriggerContext context) : base(context) { }
+        private class StateNPCScript : TriggerState {
+            internal StateNPCScript(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetActor(arg1: 205, arg2: false, arg3: "Dead_A");

@@ -24,20 +24,20 @@ namespace Maple2.Trigger._84000003_wd {
             }
 
             public override TriggerState Execute() {
-                return new State강제퇴장대기(context);
+                return new State강제ExitWait(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State강제퇴장대기 : TriggerState {
-            internal State강제퇴장대기(ITriggerContext context) : base(context) { }
+        private class State강제ExitWait : TriggerState {
+            internal State강제ExitWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "exitstudio") == 1) {
-                    return new State강제퇴장준비(context);
+                    return new State강제ExitPrepare(context);
                 }
 
                 if (context.TimeExpired(arg1: "4000")) {
@@ -59,7 +59,7 @@ namespace Maple2.Trigger._84000003_wd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State강제퇴장준비(context);
+                    return new State강제ExitPrepare(context);
                 }
 
                 return null;
@@ -68,8 +68,8 @@ namespace Maple2.Trigger._84000003_wd {
             public override void OnExit() { }
         }
 
-        private class State강제퇴장준비 : TriggerState {
-            internal State강제퇴장준비(ITriggerContext context) : base(context) { }
+        private class State강제ExitPrepare : TriggerState {
+            internal State강제ExitPrepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 28400138);
@@ -77,7 +77,7 @@ namespace Maple2.Trigger._84000003_wd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State강제퇴장(context);
+                    return new State강제Exit(context);
                 }
 
                 return null;
@@ -86,8 +86,8 @@ namespace Maple2.Trigger._84000003_wd {
             public override void OnExit() { }
         }
 
-        private class State강제퇴장 : TriggerState {
-            internal State강제퇴장(ITriggerContext context) : base(context) { }
+        private class State강제Exit : TriggerState {
+            internal State강제Exit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RoomExpire();

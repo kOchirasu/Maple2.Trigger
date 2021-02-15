@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020025_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {901})) {
-                    return new State던전미션체크대기(context);
+                    return new State던전미션체크Wait(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02020025_bf {
             public override void OnExit() { }
         }
 
-        private class State던전미션체크대기 : TriggerState {
-            internal State던전미션체크대기(ITriggerContext context) : base(context) { }
+        private class State던전미션체크Wait : TriggerState {
+            internal State던전미션체크Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

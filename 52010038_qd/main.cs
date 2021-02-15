@@ -122,7 +122,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State부관대사03(context);
+                    return new State부관Script03(context);
                 }
 
                 return null;
@@ -131,8 +131,8 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnExit() { }
         }
 
-        private class State부관대사03 : TriggerState {
-            internal State부관대사03(ITriggerContext context) : base(context) { }
+        private class State부관Script03 : TriggerState {
+            internal State부관Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "연출02종료");
@@ -141,7 +141,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State연출02종료(context);
+                    return new StateCinematic02종료(context);
                 }
 
                 return null;
@@ -150,8 +150,8 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnExit() { }
         }
 
-        private class State연출02종료 : TriggerState {
-            internal State연출02종료(ITriggerContext context) : base(context) { }
+        private class StateCinematic02종료 : TriggerState {
+            internal StateCinematic02종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 0);
@@ -243,7 +243,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new StateBoss대사01(context);
+                    return new StateBossScript01(context);
                 }
 
                 return null;
@@ -252,8 +252,8 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnExit() { }
         }
 
-        private class StateBoss대사01 : TriggerState {
-            internal StateBoss대사01(ITriggerContext context) : base(context) { }
+        private class StateBossScript01 : TriggerState {
+            internal StateBossScript01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "BossStopCinematic");

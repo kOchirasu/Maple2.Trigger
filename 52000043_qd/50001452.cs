@@ -133,7 +133,7 @@ namespace Maple2.Trigger._52000043_qd {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10001019}, arg2: 0)) {
-                    return new State부서짐연출(context);
+                    return new State부서짐Cinematic(context);
                 }
 
                 return null;
@@ -142,8 +142,8 @@ namespace Maple2.Trigger._52000043_qd {
             public override void OnExit() { }
         }
 
-        private class State부서짐연출 : TriggerState {
-            internal State부서짐연출(ITriggerContext context) : base(context) { }
+        private class State부서짐Cinematic : TriggerState {
+            internal State부서짐Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10001017, 10001018}, arg2: 2);
@@ -152,12 +152,12 @@ namespace Maple2.Trigger._52000043_qd {
                 context.CameraSelect(arg1: 306, arg2: true);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "향로반응대기");
+                context.SetSkip(arg1: "향로반응Wait");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State향로반응대기(context);
+                    return new State향로반응Wait(context);
                 }
 
                 return null;
@@ -170,8 +170,8 @@ namespace Maple2.Trigger._52000043_qd {
             }
         }
 
-        private class State향로반응대기 : TriggerState {
-            internal State향로반응대기(ITriggerContext context) : base(context) { }
+        private class State향로반응Wait : TriggerState {
+            internal State향로반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

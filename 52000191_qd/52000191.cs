@@ -172,7 +172,7 @@ namespace Maple2.Trigger._52000191_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State전투준비(context);
+                    return new State전투Prepare(context);
                 }
 
                 return null;
@@ -181,8 +181,8 @@ namespace Maple2.Trigger._52000191_qd {
             public override void OnExit() { }
         }
 
-        private class State전투준비 : TriggerState {
-            internal State전투준비(ITriggerContext context) : base(context) { }
+        private class State전투Prepare : TriggerState {
+            internal State전투Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: false);
@@ -197,7 +197,7 @@ namespace Maple2.Trigger._52000191_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State전투준비_02(context);
+                    return new State전투Prepare_02(context);
                 }
 
                 return null;
@@ -206,8 +206,8 @@ namespace Maple2.Trigger._52000191_qd {
             public override void OnExit() { }
         }
 
-        private class State전투준비_02 : TriggerState {
-            internal State전투준비_02(ITriggerContext context) : base(context) { }
+        private class State전투Prepare_02 : TriggerState {
+            internal State전투Prepare_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -216,7 +216,7 @@ namespace Maple2.Trigger._52000191_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State전투준비_03(context);
+                    return new State전투Prepare_03(context);
                 }
 
                 return null;
@@ -235,7 +235,7 @@ namespace Maple2.Trigger._52000191_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State전투준비_03(context);
+                    return new State전투Prepare_03(context);
                 }
 
                 return null;
@@ -244,8 +244,8 @@ namespace Maple2.Trigger._52000191_qd {
             public override void OnExit() { }
         }
 
-        private class State전투준비_03 : TriggerState {
-            internal State전투준비_03(ITriggerContext context) : base(context) { }
+        private class State전투Prepare_03 : TriggerState {
+            internal State전투Prepare_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101, 102, 103});
@@ -254,7 +254,7 @@ namespace Maple2.Trigger._52000191_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State1페이즈(context);
+                    return new State1Phase(context);
                 }
 
                 return null;
@@ -263,8 +263,8 @@ namespace Maple2.Trigger._52000191_qd {
             public override void OnExit() { }
         }
 
-        private class State1페이즈 : TriggerState {
-            internal State1페이즈(ITriggerContext context) : base(context) { }
+        private class State1Phase : TriggerState {
+            internal State1Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -282,7 +282,7 @@ namespace Maple2.Trigger._52000191_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {201, 202, 203, 204, 205, 206})) {
-                    return new State2페이즈(context);
+                    return new State2Phase(context);
                 }
 
                 return null;
@@ -291,8 +291,8 @@ namespace Maple2.Trigger._52000191_qd {
             public override void OnExit() { }
         }
 
-        private class State2페이즈 : TriggerState {
-            internal State2페이즈(ITriggerContext context) : base(context) { }
+        private class State2Phase : TriggerState {
+            internal State2Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11004787, illust: "Baron_normal", script: "$52000191_QD__52000191__11$", duration: 3000);
@@ -308,7 +308,7 @@ namespace Maple2.Trigger._52000191_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {213, 214, 215, 216, 217, 218})) {
-                    return new State3페이즈(context);
+                    return new State3Phase(context);
                 }
 
                 return null;
@@ -317,8 +317,8 @@ namespace Maple2.Trigger._52000191_qd {
             public override void OnExit() { }
         }
 
-        private class State3페이즈 : TriggerState {
-            internal State3페이즈(ITriggerContext context) : base(context) { }
+        private class State3Phase : TriggerState {
+            internal State3Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11004787, illust: "Baron_normal", script: "$52000191_QD__52000191__12$", duration: 3000);
@@ -334,7 +334,7 @@ namespace Maple2.Trigger._52000191_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {207, 208, 209, 210, 211, 212})) {
-                    return new State4페이즈(context);
+                    return new State4Phase(context);
                 }
 
                 return null;
@@ -343,8 +343,8 @@ namespace Maple2.Trigger._52000191_qd {
             public override void OnExit() { }
         }
 
-        private class State4페이즈 : TriggerState {
-            internal State4페이즈(ITriggerContext context) : base(context) { }
+        private class State4Phase : TriggerState {
+            internal State4Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11004787, illust: "Baron_normal", script: "$52000191_QD__52000191__13$", duration: 3000);
@@ -360,7 +360,7 @@ namespace Maple2.Trigger._52000191_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {219, 220, 221, 222, 223, 224})) {
-                    return new State5페이즈(context);
+                    return new State5Phase(context);
                 }
 
                 return null;
@@ -369,8 +369,8 @@ namespace Maple2.Trigger._52000191_qd {
             public override void OnExit() { }
         }
 
-        private class State5페이즈 : TriggerState {
-            internal State5페이즈(ITriggerContext context) : base(context) { }
+        private class State5Phase : TriggerState {
+            internal State5Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11004787, illust: "Baron_normal", script: "$52000191_QD__52000191__14$", duration: 3000);

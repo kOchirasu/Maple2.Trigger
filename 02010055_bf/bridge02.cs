@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02010055_bf {
     public static class _bridge02 {
-        public class StateNPC감지대기 : TriggerState {
-            internal StateNPC감지대기(ITriggerContext context) : base(context) { }
+        public class StateNPC감지Wait : TriggerState {
+            internal StateNPC감지Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {702}, arg2: false);
@@ -12,11 +12,11 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 103, arg2: new[] {2099})) {
-                    return new StateInteractObject대기(context);
+                    return new StateInteractObjectWait(context);
                 }
 
                 if (context.GetUserValue(key: "SecondPhaseEnd") == 1) {
-                    return new StateInteractObject대기(context);
+                    return new StateInteractObjectWait(context);
                 }
 
                 return null;
@@ -25,8 +25,8 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnExit() { }
         }
 
-        private class StateInteractObject대기 : TriggerState {
-            internal StateInteractObject대기(ITriggerContext context) : base(context) { }
+        private class StateInteractObjectWait : TriggerState {
+            internal StateInteractObjectWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {702}, arg2: true);

@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State기본Setting(context);
+                    return new StateDefaultSetting(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnExit() { }
         }
 
-        private class State기본Setting : TriggerState {
-            internal State기본Setting(ITriggerContext context) : base(context) { }
+        private class StateDefaultSetting : TriggerState {
+            internal StateDefaultSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 11, arg2: false, arg3: false, arg4: false);
@@ -46,11 +46,11 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.DungeonTimeOut()) {
-                    return new State던전실패종료(context);
+                    return new StateDungeonFailure종료(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    return new State던전실패종료(context);
+                    return new StateDungeonFailure종료(context);
                 }
 
                 if (context.WaitTick(waitTick: 30000)) {
@@ -72,11 +72,11 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.DungeonTimeOut()) {
-                    return new State던전실패종료(context);
+                    return new StateDungeonFailure종료(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    return new State던전실패종료(context);
+                    return new StateDungeonFailure종료(context);
                 }
 
                 return null;
@@ -85,8 +85,8 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnExit() { }
         }
 
-        private class State던전실패종료 : TriggerState {
-            internal State던전실패종료(ITriggerContext context) : base(context) { }
+        private class StateDungeonFailure종료 : TriggerState {
+            internal StateDungeonFailure종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 11, arg2: true, arg3: true, arg4: true);

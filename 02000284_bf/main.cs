@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000284_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new StateBoss연출(context);
+                    return new StateBossCinematic(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000284_bf {
             public override void OnExit() { }
         }
 
-        private class StateBoss연출 : TriggerState {
-            internal StateBoss연출(ITriggerContext context) : base(context) { }
+        private class StateBossCinematic : TriggerState {
+            internal StateBossCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._02000284_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
-                    return new State반응대기(context);
+                    return new State반응Wait(context);
                 }
 
                 return null;
@@ -65,8 +65,8 @@ namespace Maple2.Trigger._02000284_bf {
             public override void OnExit() { }
         }
 
-        private class State반응대기 : TriggerState {
-            internal State반응대기(ITriggerContext context) : base(context) { }
+        private class State반응Wait : TriggerState {
+            internal State반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);

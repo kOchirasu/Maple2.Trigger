@@ -104,8 +104,8 @@ namespace Maple2.Trigger._99999900 {
             }
         }
 
-        private class State퍼즐단계대기 : TriggerState {
-            internal State퍼즐단계대기(ITriggerContext context) : base(context) { }
+        private class State퍼즐단계Wait : TriggerState {
+            internal State퍼즐단계Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1005", arg2: 5);
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._99999900 {
 
             public override TriggerState Execute() {
                 if (!context.UserDetected(arg1: new[] {901})) {
-                    return new State퍼즐단계대기(context);
+                    return new State퍼즐단계Wait(context);
                 }
 
                 return null;

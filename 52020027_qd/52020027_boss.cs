@@ -7,7 +7,7 @@ namespace Maple2.Trigger._52020027_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Boss") == 1) {
-                    return new State1페이즈(context);
+                    return new State1Phase(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52020027_qd {
             public override void OnExit() { }
         }
 
-        private class State1페이즈 : TriggerState {
-            internal State1페이즈(ITriggerContext context) : base(context) { }
+        private class State1Phase : TriggerState {
+            internal State1Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -39,7 +39,7 @@ namespace Maple2.Trigger._52020027_qd {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 903, arg2: new[] {111})) {
-                    return new State2페이즈(context);
+                    return new State2Phase(context);
                 }
 
                 return null;
@@ -48,8 +48,8 @@ namespace Maple2.Trigger._52020027_qd {
             public override void OnExit() { }
         }
 
-        private class State2페이즈 : TriggerState {
-            internal State2페이즈(ITriggerContext context) : base(context) { }
+        private class State2Phase : TriggerState {
+            internal State2Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 111, arg3: "조심하는 게 좋을걸?", arg4: 4);

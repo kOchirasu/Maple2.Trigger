@@ -194,7 +194,7 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "bossSpawn") == 1) {
-                    return new State던전종료대기(context);
+                    return new State던전종료Wait(context);
                 }
 
                 return null;
@@ -203,8 +203,8 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnExit() { }
         }
 
-        private class State던전종료대기 : TriggerState {
-            internal State던전종료대기(ITriggerContext context) : base(context) { }
+        private class State던전종료Wait : TriggerState {
+            internal State던전종료Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -286,7 +286,7 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State던전종료연출01(context);
+                    return new State던전EndingCinematic01(context);
                 }
 
                 return null;
@@ -297,8 +297,8 @@ namespace Maple2.Trigger._52100031_qd {
             }
         }
 
-        private class State던전종료연출01 : TriggerState {
-            internal State던전종료연출01(ITriggerContext context) : base(context) { }
+        private class State던전EndingCinematic01 : TriggerState {
+            internal State던전EndingCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 304, arg2: true);
@@ -308,7 +308,7 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    return new State던전종료연출02(context);
+                    return new State던전EndingCinematic02(context);
                 }
 
                 return null;
@@ -317,8 +317,8 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnExit() { }
         }
 
-        private class State던전종료연출02 : TriggerState {
-            internal State던전종료연출02(ITriggerContext context) : base(context) { }
+        private class State던전EndingCinematic02 : TriggerState {
+            internal State던전EndingCinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcRotation(arg1: 1920, arg2: 180);
@@ -370,7 +370,7 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateQuest던전종료(context);
+                    return new StateQuestDungeon종료(context);
                 }
 
                 return null;
@@ -379,8 +379,8 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnExit() { }
         }
 
-        private class StateQuest던전종료 : TriggerState {
-            internal StateQuest던전종료(ITriggerContext context) : base(context) { }
+        private class StateQuestDungeon종료 : TriggerState {
+            internal StateQuestDungeon종료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 2, arg2: true, arg3: true, arg4: true);

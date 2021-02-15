@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02000375_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 60000)) {
-                    return new State레버삭제(context);
+                    return new StateLever삭제(context);
                 }
 
                 return null;
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._02000375_bf {
             public override void OnExit() { }
         }
 
-        private class State레버삭제 : TriggerState {
-            internal State레버삭제(ITriggerContext context) : base(context) { }
+        private class StateLever삭제 : TriggerState {
+            internal StateLever삭제(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetVisibleBreakableObject(arg1: new[] {7000, 7001, 7002, 7003, 7004, 7005, 7006, 7007, 7008, 7009, 7010, 7011, 7012, 7013, 7014, 7015, 7016, 7017, 7018, 7019, 7020, 7021, 7022, 7023}, arg2: false);

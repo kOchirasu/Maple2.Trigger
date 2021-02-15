@@ -61,25 +61,25 @@ namespace Maple2.Trigger._02020101_bf {
                 if (context.ObjectInteracted(arg1: new[] {10002124}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {10002125, 10002126, 10002127}, arg2: 0);
                     context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State씨앗심기1(context);
+                    return new StateSeedPlanting1(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002125}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {10002124, 10002126, 10002127}, arg2: 0);
                     context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State씨앗심기2(context);
+                    return new StateSeedPlanting2(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002126}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {10002124, 10002125, 10002127}, arg2: 0);
                     context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State씨앗심기3(context);
+                    return new StateSeedPlanting3(context);
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002127}, arg2: 0)) {
                     context.SetInteractObject(arg1: new[] {10002124, 10002125, 10002126}, arg2: 0);
                     context.SetMesh(arg1: new[] {9001, 9002, 9003, 9004}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State씨앗심기4(context);
+                    return new StateSeedPlanting4(context);
                 }
 
                 return null;
@@ -88,8 +88,8 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnExit() { }
         }
 
-        private class State씨앗심기1 : TriggerState {
-            internal State씨앗심기1(ITriggerContext context) : base(context) { }
+        private class StateSeedPlanting1 : TriggerState {
+            internal StateSeedPlanting1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
@@ -114,8 +114,8 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnExit() { }
         }
 
-        private class State씨앗심기2 : TriggerState {
-            internal State씨앗심기2(ITriggerContext context) : base(context) { }
+        private class StateSeedPlanting2 : TriggerState {
+            internal StateSeedPlanting2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
@@ -140,8 +140,8 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnExit() { }
         }
 
-        private class State씨앗심기3 : TriggerState {
-            internal State씨앗심기3(ITriggerContext context) : base(context) { }
+        private class StateSeedPlanting3 : TriggerState {
+            internal StateSeedPlanting3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);
@@ -166,8 +166,8 @@ namespace Maple2.Trigger._02020101_bf {
             public override void OnExit() { }
         }
 
-        private class State씨앗심기4 : TriggerState {
-            internal State씨앗심기4(ITriggerContext context) : base(context) { }
+        private class StateSeedPlanting4 : TriggerState {
+            internal StateSeedPlanting4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002128, 10002129}, arg2: 1);

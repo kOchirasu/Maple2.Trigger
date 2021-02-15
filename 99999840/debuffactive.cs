@@ -7,15 +7,15 @@ namespace Maple2.Trigger._99999840 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 811) == true) {
-                    return new State이동속도감소(context);
+                    return new StateReduceMoveSpeed(context);
                 }
 
                 if (context.GetDungeonVariable(id: 812) == true) {
-                    return new State공격력감소(context);
+                    return new StateReduceAttack(context);
                 }
 
                 if (context.GetDungeonVariable(id: 813) == true) {
-                    return new State체력감소(context);
+                    return new StateReduceHealth(context);
                 }
 
                 return null;
@@ -24,8 +24,8 @@ namespace Maple2.Trigger._99999840 {
             public override void OnExit() { }
         }
 
-        private class State이동속도감소 : TriggerState {
-            internal State이동속도감소(ITriggerContext context) : base(context) { }
+        private class StateReduceMoveSpeed : TriggerState {
+            internal StateReduceMoveSpeed(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 811, value: false);
@@ -40,8 +40,8 @@ namespace Maple2.Trigger._99999840 {
             public override void OnExit() { }
         }
 
-        private class State공격력감소 : TriggerState {
-            internal State공격력감소(ITriggerContext context) : base(context) { }
+        private class StateReduceAttack : TriggerState {
+            internal StateReduceAttack(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 812, value: false);
@@ -56,8 +56,8 @@ namespace Maple2.Trigger._99999840 {
             public override void OnExit() { }
         }
 
-        private class State체력감소 : TriggerState {
-            internal State체력감소(ITriggerContext context) : base(context) { }
+        private class StateReduceHealth : TriggerState {
+            internal StateReduceHealth(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetDungeonVariable(varId: 813, value: false);

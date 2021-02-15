@@ -74,12 +74,12 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "12", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010005_QD__ACT02__0$", arg4: 3);
-                context.SetSkip(arg1: "Q2_미카대화02대기");
+                context.SetSkip(arg1: "Q2_미카대화02Wait");
             }
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "12")) {
-                    return new StateQ2_미카대화02대기(context);
+                    return new StateQ2_미카대화02Wait(context);
                 }
 
                 return null;
@@ -88,8 +88,8 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnExit() { }
         }
 
-        private class StateQ2_미카대화02대기 : TriggerState {
-            internal StateQ2_미카대화02대기(ITriggerContext context) : base(context) { }
+        private class StateQ2_미카대화02Wait : TriggerState {
+            internal StateQ2_미카대화02Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();

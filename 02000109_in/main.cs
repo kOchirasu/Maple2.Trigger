@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000109_in {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    return new StateQuest조건체크(context);
+                    return new StateQuestConditionCheck(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000109_in {
             public override void OnExit() { }
         }
 
-        private class StateQuest조건체크 : TriggerState {
-            internal StateQuest조건체크(ITriggerContext context) : base(context) { }
+        private class StateQuestConditionCheck : TriggerState {
+            internal StateQuestConditionCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -31,19 +31,19 @@ namespace Maple2.Trigger._02000109_in {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001608}, arg3: new byte[] {2})) {
-                    return new State일기장스폰_대기(context);
+                    return new State일기장Spawn_Wait(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001608}, arg3: new byte[] {1})) {
-                    return new State일기장스폰_대기(context);
+                    return new State일기장Spawn_Wait(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
-                    return new State일기장스폰_대기(context);
+                    return new State일기장Spawn_Wait(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
-                    return new State일기장스폰_대기(context);
+                    return new State일기장Spawn_Wait(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {1})) {
@@ -51,11 +51,11 @@ namespace Maple2.Trigger._02000109_in {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {3})) {
-                    return new StateNpc스폰_대기(context);
+                    return new StateNpcSpawn_Wait(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {2})) {
-                    return new StateNpc스폰_대기(context);
+                    return new StateNpcSpawn_Wait(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {1})) {
@@ -79,22 +79,22 @@ namespace Maple2.Trigger._02000109_in {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001608}, arg3: new byte[] {2})) {
-                    // return new State일기장스폰(context);
+                    // return new State일기장Spawn(context);
                     return null;
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001608}, arg3: new byte[] {1})) {
-                    // return new State일기장스폰(context);
+                    // return new State일기장Spawn(context);
                     return null;
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
-                    // return new State일기장스폰(context);
+                    // return new State일기장Spawn(context);
                     return null;
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
-                    return new State일기장스폰_대기(context);
+                    return new State일기장Spawn_Wait(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {1})) {
@@ -102,11 +102,11 @@ namespace Maple2.Trigger._02000109_in {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {3})) {
-                    return new StateNpc스폰(context);
+                    return new StateNpcSpawn(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {2})) {
-                    return new StateNpc스폰(context);
+                    return new StateNpcSpawn(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {1})) {
@@ -119,8 +119,8 @@ namespace Maple2.Trigger._02000109_in {
             public override void OnExit() { }
         }
 
-        private class StateNpc스폰_대기 : TriggerState {
-            internal StateNpc스폰_대기(ITriggerContext context) : base(context) { }
+        private class StateNpcSpawn_Wait : TriggerState {
+            internal StateNpcSpawn_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
@@ -141,8 +141,8 @@ namespace Maple2.Trigger._02000109_in {
             public override void OnExit() { }
         }
 
-        private class StateNpc스폰 : TriggerState {
-            internal StateNpc스폰(ITriggerContext context) : base(context) { }
+        private class StateNpcSpawn : TriggerState {
+            internal StateNpcSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._02000109_in {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
-                    return new State일기장스폰_대기(context);
+                    return new State일기장Spawn_Wait(context);
                 }
 
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
@@ -183,8 +183,8 @@ namespace Maple2.Trigger._02000109_in {
             public override void OnExit() { }
         }
 
-        private class State일기장스폰_대기 : TriggerState {
-            internal State일기장스폰_대기(ITriggerContext context) : base(context) { }
+        private class State일기장Spawn_Wait : TriggerState {
+            internal State일기장Spawn_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
@@ -198,7 +198,7 @@ namespace Maple2.Trigger._02000109_in {
                 }
 
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
-                    return new State일기장스폰01(context);
+                    return new State일기장Spawn01(context);
                 }
 
                 return null;
@@ -207,8 +207,8 @@ namespace Maple2.Trigger._02000109_in {
             public override void OnExit() { }
         }
 
-        private class State일기장스폰01 : TriggerState {
-            internal State일기장스폰01(ITriggerContext context) : base(context) { }
+        private class State일기장Spawn01 : TriggerState {
+            internal State일기장Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {4011}, arg2: true);
@@ -221,7 +221,7 @@ namespace Maple2.Trigger._02000109_in {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
-                    return new State일기장스폰02(context);
+                    return new State일기장Spawn02(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {3})) {
@@ -229,7 +229,7 @@ namespace Maple2.Trigger._02000109_in {
                 }
 
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
-                    return new State일기장스폰02(context);
+                    return new State일기장Spawn02(context);
                 }
 
                 return null;
@@ -238,8 +238,8 @@ namespace Maple2.Trigger._02000109_in {
             public override void OnExit() { }
         }
 
-        private class State일기장스폰02 : TriggerState {
-            internal State일기장스폰02(ITriggerContext context) : base(context) { }
+        private class State일기장Spawn02 : TriggerState {
+            internal State일기장Spawn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {4011}, arg2: true);
@@ -252,7 +252,7 @@ namespace Maple2.Trigger._02000109_in {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
-                    return new State일기장스폰01(context);
+                    return new State일기장Spawn01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001606}, arg3: new byte[] {3})) {
@@ -260,7 +260,7 @@ namespace Maple2.Trigger._02000109_in {
                 }
 
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {3})) {
-                    return new State일기장스폰01(context);
+                    return new State일기장Spawn01(context);
                 }
 
                 return null;
@@ -279,7 +279,7 @@ namespace Maple2.Trigger._02000109_in {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {
-                    return new State일기장스폰_대기(context);
+                    return new State일기장Spawn_Wait(context);
                 }
 
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001607}, arg3: new byte[] {2})) {

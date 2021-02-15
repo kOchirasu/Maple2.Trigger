@@ -55,7 +55,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State메세지02대기(context);
+                    return new State메세지02Wait(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {199})) {
@@ -70,8 +70,8 @@ namespace Maple2.Trigger._52000004_qd {
             }
         }
 
-        private class State메세지02대기 : TriggerState {
-            internal State메세지02대기(ITriggerContext context) : base(context) { }
+        private class State메세지02Wait : TriggerState {
+            internal State메세지02Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State메세지03대기(context);
+                    return new State메세지03Wait(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {199})) {
@@ -111,8 +111,8 @@ namespace Maple2.Trigger._52000004_qd {
             }
         }
 
-        private class State메세지03대기 : TriggerState {
-            internal State메세지03대기(ITriggerContext context) : base(context) { }
+        private class State메세지03Wait : TriggerState {
+            internal State메세지03Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State메세지04대기(context);
+                    return new State메세지04Wait(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {199})) {
@@ -152,8 +152,8 @@ namespace Maple2.Trigger._52000004_qd {
             }
         }
 
-        private class State메세지04대기 : TriggerState {
-            internal State메세지04대기(ITriggerContext context) : base(context) { }
+        private class State메세지04Wait : TriggerState {
+            internal State메세지04Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -178,7 +178,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State메세지05대기(context);
+                    return new State메세지05Wait(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {199})) {
@@ -193,8 +193,8 @@ namespace Maple2.Trigger._52000004_qd {
             }
         }
 
-        private class State메세지05대기 : TriggerState {
-            internal State메세지05대기(ITriggerContext context) : base(context) { }
+        private class State메세지05Wait : TriggerState {
+            internal State메세지05Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

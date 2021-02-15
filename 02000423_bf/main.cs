@@ -6,14 +6,14 @@ namespace Maple2.Trigger._02000423_bf {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                return new State기본Setting시작(context);
+                return new StateDefaultSetting시작(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State기본Setting시작 : TriggerState {
-            internal State기본Setting시작(ITriggerContext context) : base(context) { }
+        private class StateDefaultSetting시작 : TriggerState {
+            internal StateDefaultSetting시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02000423_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StatePortal다시체크대기(context);
+                    return new StatePortal다시체크Wait(context);
                 }
 
                 return null;
@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02000423_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new StatePortal다시체크대기이전(context);
+                    return new StatePortal다시체크Wait이전(context);
                 }
 
                 return null;
@@ -123,14 +123,14 @@ namespace Maple2.Trigger._02000423_bf {
             }
 
             public override TriggerState Execute() {
-                return new StatePortal다시체크대기(context);
+                return new StatePortal다시체크Wait(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class StatePortal다시체크대기이전 : TriggerState {
-            internal StatePortal다시체크대기이전(ITriggerContext context) : base(context) { }
+        private class StatePortal다시체크Wait이전 : TriggerState {
+            internal StatePortal다시체크Wait이전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -145,8 +145,8 @@ namespace Maple2.Trigger._02000423_bf {
             public override void OnExit() { }
         }
 
-        private class StatePortal다시체크대기 : TriggerState {
-            internal StatePortal다시체크대기(ITriggerContext context) : base(context) { }
+        private class StatePortal다시체크Wait : TriggerState {
+            internal StatePortal다시체크Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

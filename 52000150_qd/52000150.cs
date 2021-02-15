@@ -200,7 +200,7 @@ namespace Maple2.Trigger._52000150_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10010}, arg2: new[] {50001641}, arg3: new byte[] {1})) {
-                    return new State결계흑화연출01(context);
+                    return new State결계흑화Cinematic01(context);
                 }
 
                 return null;
@@ -209,8 +209,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State결계흑화연출01 : TriggerState {
-            internal State결계흑화연출01(ITriggerContext context) : base(context) { }
+        private class State결계흑화Cinematic01 : TriggerState {
+            internal State결계흑화Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
@@ -221,7 +221,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State결계흑화연출02(context);
+                    return new State결계흑화Cinematic02(context);
                 }
 
                 return null;
@@ -230,8 +230,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State결계흑화연출02 : TriggerState {
-            internal State결계흑화연출02(ITriggerContext context) : base(context) { }
+        private class State결계흑화Cinematic02 : TriggerState {
+            internal State결계흑화Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -239,7 +239,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State결계흑화연출03(context);
+                    return new State결계흑화Cinematic03(context);
                 }
 
                 return null;
@@ -248,8 +248,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State결계흑화연출03 : TriggerState {
-            internal State결계흑화연출03(ITriggerContext context) : base(context) { }
+        private class State결계흑화Cinematic03 : TriggerState {
+            internal State결계흑화Cinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {2608}, arg2: true);
@@ -261,7 +261,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 800)) {
-                    return new State결계흑화연출03_b(context);
+                    return new State결계흑화Cinematic03_b(context);
                 }
 
                 return null;
@@ -270,8 +270,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State결계흑화연출03_b : TriggerState {
-            internal State결계흑화연출03_b(ITriggerContext context) : base(context) { }
+        private class State결계흑화Cinematic03_b : TriggerState {
+            internal State결계흑화Cinematic03_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.FaceEmotion(spawnPointId: 202, emotionName: "Bore_A");
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4200)) {
-                    return new State결계흑화연출04(context);
+                    return new State결계흑화Cinematic04(context);
                 }
 
                 return null;
@@ -289,8 +289,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State결계흑화연출04 : TriggerState {
-            internal State결계흑화연출04(ITriggerContext context) : base(context) { }
+        private class State결계흑화Cinematic04 : TriggerState {
+            internal State결계흑화Cinematic04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Bore_A");
@@ -300,7 +300,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State결계흑화연출05(context);
+                    return new State결계흑화Cinematic05(context);
                 }
 
                 return null;
@@ -309,8 +309,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State결계흑화연출05 : TriggerState {
-            internal State결계흑화연출05(ITriggerContext context) : base(context) { }
+        private class State결계흑화Cinematic05 : TriggerState {
+            internal State결계흑화Cinematic05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 202, arg2: "Attack_Idle_A", arg3: 999999f);
@@ -321,7 +321,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State결계흑화연출06(context);
+                    return new State결계흑화Cinematic06(context);
                 }
 
                 return null;
@@ -330,8 +330,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State결계흑화연출06 : TriggerState {
-            internal State결계흑화연출06(ITriggerContext context) : base(context) { }
+        private class State결계흑화Cinematic06 : TriggerState {
+            internal State결계흑화Cinematic06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {2606}, arg2: true);
@@ -345,7 +345,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State결계흑화연출07(context);
+                    return new State결계흑화Cinematic07(context);
                 }
 
                 return null;
@@ -354,8 +354,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State결계흑화연출07 : TriggerState {
-            internal State결계흑화연출07(ITriggerContext context) : base(context) { }
+        private class State결계흑화Cinematic07 : TriggerState {
+            internal State결계흑화Cinematic07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {2606}, arg2: true);
@@ -369,7 +369,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State결계흑화연출08(context);
+                    return new State결계흑화Cinematic08(context);
                 }
 
                 return null;
@@ -378,8 +378,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State결계흑화연출08 : TriggerState {
-            internal State결계흑화연출08(ITriggerContext context) : base(context) { }
+        private class State결계흑화Cinematic08 : TriggerState {
+            internal State결계흑화Cinematic08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {2606}, arg2: true);
@@ -392,7 +392,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State결계흑화연출09(context);
+                    return new State결계흑화Cinematic09(context);
                 }
 
                 return null;
@@ -401,8 +401,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State결계흑화연출09 : TriggerState {
-            internal State결계흑화연출09(ITriggerContext context) : base(context) { }
+        private class State결계흑화Cinematic09 : TriggerState {
+            internal State결계흑화Cinematic09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {2606}, arg2: true);
@@ -416,7 +416,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State결계흑화연출10(context);
+                    return new State결계흑화Cinematic10(context);
                 }
 
                 return null;
@@ -425,8 +425,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State결계흑화연출10 : TriggerState {
-            internal State결계흑화연출10(ITriggerContext context) : base(context) { }
+        private class State결계흑화Cinematic10 : TriggerState {
+            internal State결계흑화Cinematic10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {2606}, arg2: true);
@@ -440,7 +440,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State결계흑화연출10_1(context);
+                    return new State결계흑화Cinematic10_1(context);
                 }
 
                 return null;
@@ -449,8 +449,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State결계흑화연출10_1 : TriggerState {
-            internal State결계흑화연출10_1(ITriggerContext context) : base(context) { }
+        private class State결계흑화Cinematic10_1 : TriggerState {
+            internal State결계흑화Cinematic10_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -458,7 +458,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State결계흑화연출11(context);
+                    return new State결계흑화Cinematic11(context);
                 }
 
                 return null;
@@ -488,7 +488,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State결계흑화연출11(context);
+                    return new State결계흑화Cinematic11(context);
                 }
 
                 return null;
@@ -497,8 +497,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State결계흑화연출11 : TriggerState {
-            internal State결계흑화연출11(ITriggerContext context) : base(context) { }
+        private class State결계흑화Cinematic11 : TriggerState {
+            internal State결계흑화Cinematic11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -514,7 +514,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State아노스흑화준비(context);
+                    return new State아노스흑화Prepare(context);
                 }
 
                 return null;
@@ -523,8 +523,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State아노스흑화준비 : TriggerState {
-            internal State아노스흑화준비(ITriggerContext context) : base(context) { }
+        private class State아노스흑화Prepare : TriggerState {
+            internal State아노스흑화Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 10001, key: "52000150", value: 0);
@@ -532,7 +532,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "52000150monster") == 1) {
-                    return new State아노스흑화대기(context);
+                    return new State아노스흑화Wait(context);
                 }
 
                 return null;
@@ -541,8 +541,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State아노스흑화대기 : TriggerState {
-            internal State아노스흑화대기(ITriggerContext context) : base(context) { }
+        private class State아노스흑화Wait : TriggerState {
+            internal State아노스흑화Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -560,7 +560,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State아노스흑화전대사01(context);
+                    return new State아노스흑화전Script01(context);
                 }
 
                 return null;
@@ -569,8 +569,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State아노스흑화전대사01 : TriggerState {
-            internal State아노스흑화전대사01(ITriggerContext context) : base(context) { }
+        private class State아노스흑화전Script01 : TriggerState {
+            internal State아노스흑화전Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "아노스흑화09", arg2: "exit");
@@ -580,7 +580,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State아노스흑화전대사02(context);
+                    return new State아노스흑화전Script02(context);
                 }
 
                 return null;
@@ -589,8 +589,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State아노스흑화전대사02 : TriggerState {
-            internal State아노스흑화전대사02(ITriggerContext context) : base(context) { }
+        private class State아노스흑화전Script02 : TriggerState {
+            internal State아노스흑화전Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003442, illustId: "Caitlyn_serious", msg: "$52000150_QD__52000150__12$", duration: 3000, align: "right");
@@ -598,7 +598,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State아노스흑화전대사03(context);
+                    return new State아노스흑화전Script03(context);
                 }
 
                 return null;
@@ -607,8 +607,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State아노스흑화전대사03 : TriggerState {
-            internal State아노스흑화전대사03(ITriggerContext context) : base(context) { }
+        private class State아노스흑화전Script03 : TriggerState {
+            internal State아노스흑화전Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {6000, 6001}, arg2: false);
@@ -617,7 +617,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State아노스흑화전대사04(context);
+                    return new State아노스흑화전Script04(context);
                 }
 
                 return null;
@@ -626,8 +626,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State아노스흑화전대사04 : TriggerState {
-            internal State아노스흑화전대사04(ITriggerContext context) : base(context) { }
+        private class State아노스흑화전Script04 : TriggerState {
+            internal State아노스흑화전Script04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003442, illustId: "Caitlyn_serious", msg: "$52000150_QD__52000150__14$", duration: 3000, align: "right");
@@ -635,7 +635,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State아노스흑화전대사05(context);
+                    return new State아노스흑화전Script05(context);
                 }
 
                 return null;
@@ -644,8 +644,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State아노스흑화전대사05 : TriggerState {
-            internal State아노스흑화전대사05(ITriggerContext context) : base(context) { }
+        private class State아노스흑화전Script05 : TriggerState {
+            internal State아노스흑화전Script05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003438, illustId: "Horrhe_normal", msg: "$52000150_QD__52000150__15$", duration: 3000, align: "left");
@@ -653,7 +653,7 @@ namespace Maple2.Trigger._52000150_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State아노스흑화전대사06(context);
+                    return new State아노스흑화전Script06(context);
                 }
 
                 return null;
@@ -662,8 +662,8 @@ namespace Maple2.Trigger._52000150_qd {
             public override void OnExit() { }
         }
 
-        private class State아노스흑화전대사06 : TriggerState {
-            internal State아노스흑화전대사06(ITriggerContext context) : base(context) { }
+        private class State아노스흑화전Script06 : TriggerState {
+            internal State아노스흑화전Script06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {6000}, arg2: false);

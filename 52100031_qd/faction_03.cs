@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "faction03") == 1) {
-                    return new State탱크준비(context);
+                    return new State탱크Prepare(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnExit() { }
         }
 
-        private class State탱크준비 : TriggerState {
-            internal State탱크준비(ITriggerContext context) : base(context) { }
+        private class State탱크Prepare : TriggerState {
+            internal State탱크Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "Quest");

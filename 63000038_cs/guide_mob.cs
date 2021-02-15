@@ -29,7 +29,7 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    return new StateGuide삭제대기(context);
+                    return new StateGuide삭제Wait(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._63000038_cs {
             public override void OnExit() { }
         }
 
-        private class StateGuide삭제대기 : TriggerState {
-            internal StateGuide삭제대기(ITriggerContext context) : base(context) { }
+        private class StateGuide삭제Wait : TriggerState {
+            internal StateGuide삭제Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

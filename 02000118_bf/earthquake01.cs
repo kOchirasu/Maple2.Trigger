@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000118_bf {
     public static class _earthquake01 {
-        public class State레버당기기 : TriggerState {
-            internal State레버당기기(ITriggerContext context) : base(context) { }
+        public class StateLeverPull : TriggerState {
+            internal StateLeverPull(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000290}, arg2: 1);
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02000118_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State레버당기기(context);
+                    return new StateLeverPull(context);
                 }
 
                 return null;

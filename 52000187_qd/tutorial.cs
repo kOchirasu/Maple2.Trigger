@@ -169,7 +169,7 @@ namespace Maple2.Trigger._52000187_qd {
             public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "Guide", arg2: "IsTriggerEvent", arg3: "551")) {
                     context.CreateMonster(arg1: new[] {101}, arg2: false);
-                    return new State모쿰대사1(context);
+                    return new State모쿰Script1(context);
                 }
 
                 return null;
@@ -178,8 +178,8 @@ namespace Maple2.Trigger._52000187_qd {
             public override void OnExit() { }
         }
 
-        private class State모쿰대사1 : TriggerState {
-            internal State모쿰대사1(ITriggerContext context) : base(context) { }
+        private class State모쿰Script1 : TriggerState {
+            internal State모쿰Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_mokum_1");
@@ -193,7 +193,7 @@ namespace Maple2.Trigger._52000187_qd {
                 }
 
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State모쿰대사2(context);
+                    return new State모쿰Script2(context);
                 }
 
                 return null;
@@ -202,8 +202,8 @@ namespace Maple2.Trigger._52000187_qd {
             public override void OnExit() { }
         }
 
-        private class State모쿰대사2 : TriggerState {
-            internal State모쿰대사2(ITriggerContext context) : base(context) { }
+        private class State모쿰Script2 : TriggerState {
+            internal State모쿰Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBalloonTalk(spawnPointId: 102, msg: "$52000187_QD__TUTORIAL__8$");
@@ -215,7 +215,7 @@ namespace Maple2.Trigger._52000187_qd {
                 }
 
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State모쿰대사2(context);
+                    return new State모쿰Script2(context);
                 }
 
                 return null;

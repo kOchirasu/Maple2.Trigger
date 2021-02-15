@@ -87,7 +87,7 @@ namespace Maple2.Trigger._52000002_qd {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000607, 10000608, 10000609, 10000610, 10000611}, arg2: 0)) {
-                    return new State2단계준비(context);
+                    return new State2단계Prepare(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {101})) {
@@ -100,8 +100,8 @@ namespace Maple2.Trigger._52000002_qd {
             public override void OnExit() { }
         }
 
-        private class State2단계준비 : TriggerState {
-            internal State2단계준비(ITriggerContext context) : base(context) { }
+        private class State2단계Prepare : TriggerState {
+            internal State2단계Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._52000002_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new State레버대기(context);
+                    return new StateLeverWait(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {101})) {
@@ -123,8 +123,8 @@ namespace Maple2.Trigger._52000002_qd {
             public override void OnExit() { }
         }
 
-        private class State레버대기 : TriggerState {
-            internal State레버대기(ITriggerContext context) : base(context) { }
+        private class StateLeverWait : TriggerState {
+            internal StateLeverWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 25200202);
@@ -207,7 +207,7 @@ namespace Maple2.Trigger._52000002_qd {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000612, 10000613, 10000614, 10000615, 10000616}, arg2: 2)) {
-                    return new State3단계준비(context);
+                    return new State3단계Prepare(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {101})) {
@@ -220,8 +220,8 @@ namespace Maple2.Trigger._52000002_qd {
             public override void OnExit() { }
         }
 
-        private class State3단계준비 : TriggerState {
-            internal State3단계준비(ITriggerContext context) : base(context) { }
+        private class State3단계Prepare : TriggerState {
+            internal State3단계Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);
@@ -230,7 +230,7 @@ namespace Maple2.Trigger._52000002_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State3단계대기(context);
+                    return new State3단계Wait(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {101})) {
@@ -243,8 +243,8 @@ namespace Maple2.Trigger._52000002_qd {
             public override void OnExit() { }
         }
 
-        private class State3단계대기 : TriggerState {
-            internal State3단계대기(ITriggerContext context) : base(context) { }
+        private class State3단계Wait : TriggerState {
+            internal State3단계Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.HideGuideSummary(entityId: 25200202);
@@ -303,7 +303,7 @@ namespace Maple2.Trigger._52000002_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2099})) {
-                    return new StateSuccess대기(context);
+                    return new StateSuccessWait(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {101})) {
@@ -316,8 +316,8 @@ namespace Maple2.Trigger._52000002_qd {
             public override void OnExit() { }
         }
 
-        private class StateSuccess대기 : TriggerState {
-            internal StateSuccess대기(ITriggerContext context) : base(context) { }
+        private class StateSuccessWait : TriggerState {
+            internal StateSuccessWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);

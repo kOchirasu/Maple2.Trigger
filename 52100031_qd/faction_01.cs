@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52100031_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "faction01") == 1) {
-                    return new State석궁준비(context);
+                    return new State석궁Prepare(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnExit() { }
         }
 
-        private class State석궁준비 : TriggerState {
-            internal State석궁준비(ITriggerContext context) : base(context) { }
+        private class State석궁Prepare : TriggerState {
+            internal State석궁Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52100031_QD__FACTION_01__0$", arg4: 5, arg5: 0);
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._52100031_qd {
                     context.SetInteractObject(arg1: new[] {10002058, 10002059, 10002067}, arg2: 0);
                     context.SetConversation(arg1: 1, arg2: 1001, arg3: "$52100031_QD__FACTION_01__2$", arg4: 5, arg5: 0);
                     context.RemoveBuff(arg1: 199, arg2: 99910150);
-                    return new StateNPC삭제대기(context);
+                    return new StateNPC삭제Wait(context);
                 }
 
                 return null;
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._52100031_qd {
             public override void OnExit() { }
         }
 
-        private class StateNPC삭제대기 : TriggerState {
-            internal StateNPC삭제대기(ITriggerContext context) : base(context) { }
+        private class StateNPC삭제Wait : TriggerState {
+            internal StateNPC삭제Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

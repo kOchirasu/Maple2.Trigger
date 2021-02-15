@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020143_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State기본Setting(context);
+                    return new StateDefaultSetting(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02020143_bf {
             public override void OnExit() { }
         }
 
-        private class State기본Setting : TriggerState {
-            internal State기본Setting(ITriggerContext context) : base(context) { }
+        private class StateDefaultSetting : TriggerState {
+            internal StateDefaultSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
@@ -33,7 +33,7 @@ namespace Maple2.Trigger._02020143_bf {
                 }
 
                 if (context.UserDetected(arg1: new[] {102})) {
-                    return new StateBossSpawn준비(context);
+                    return new StateBossSpawnPrepare(context);
                 }
 
                 return null;
@@ -42,8 +42,8 @@ namespace Maple2.Trigger._02020143_bf {
             public override void OnExit() { }
         }
 
-        private class StateBossSpawn준비 : TriggerState {
-            internal StateBossSpawn준비(ITriggerContext context) : base(context) { }
+        private class StateBossSpawnPrepare : TriggerState {
+            internal StateBossSpawnPrepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {301}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -86,15 +86,15 @@ namespace Maple2.Trigger._02020143_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {99})) {
-                    return new State연출Delay(context);
+                    return new StateCinematicDelay(context);
                 }
 
                 if (context.DungeonTimeOut()) {
-                    return new State던전실패(context);
+                    return new StateDungeonFailure(context);
                 }
 
                 if (context.GetDungeonState() == "Fail") {
-                    return new State던전실패(context);
+                    return new StateDungeonFailure(context);
                 }
 
                 return null;
@@ -103,8 +103,8 @@ namespace Maple2.Trigger._02020143_bf {
             public override void OnExit() { }
         }
 
-        private class State던전실패 : TriggerState {
-            internal State던전실패(ITriggerContext context) : base(context) { }
+        private class StateDungeonFailure : TriggerState {
+            internal StateDungeonFailure(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonSetEndTime();
@@ -139,8 +139,8 @@ namespace Maple2.Trigger._02020143_bf {
             public override void OnExit() { }
         }
 
-        private class State연출Delay : TriggerState {
-            internal State연출Delay(ITriggerContext context) : base(context) { }
+        private class StateCinematicDelay : TriggerState {
+            internal StateCinematicDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg3: "TurkaQuestDungeonClear");
@@ -168,7 +168,7 @@ namespace Maple2.Trigger._02020143_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State영상재생준비(context);
+                    return new State영상재생Prepare(context);
                 }
 
                 return null;
@@ -177,8 +177,8 @@ namespace Maple2.Trigger._02020143_bf {
             public override void OnExit() { }
         }
 
-        private class State영상재생준비 : TriggerState {
-            internal State영상재생준비(ITriggerContext context) : base(context) { }
+        private class State영상재생Prepare : TriggerState {
+            internal State영상재생Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");

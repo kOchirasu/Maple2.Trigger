@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 601) == 1) {
-                    return new StateBoss의저주디Buff사용신호대기(context);
+                    return new StateBoss의저주디Buff사용신호Wait(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class StateBoss의저주디Buff사용신호대기 : TriggerState {
-            internal StateBoss의저주디Buff사용신호대기(ITriggerContext context) : base(context) { }
+        private class StateBoss의저주디Buff사용신호Wait : TriggerState {
+            internal StateBoss의저주디Buff사용신호Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -51,7 +51,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5200)) {
-                    return new State소환몹전멸할때까지대기(context);
+                    return new State소환몹전멸할때까지Wait(context);
                 }
 
                 return null;
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._02020130_bf {
             public override void OnExit() { }
         }
 
-        private class State소환몹전멸할때까지대기 : TriggerState {
-            internal State소환몹전멸할때까지대기(ITriggerContext context) : base(context) { }
+        private class State소환몹전멸할때까지Wait : TriggerState {
+            internal State소환몹전멸할때까지Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -112,7 +112,7 @@ namespace Maple2.Trigger._02020130_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1800)) {
-                    return new StateBoss의저주디Buff사용신호대기(context);
+                    return new StateBoss의저주디Buff사용신호Wait(context);
                 }
 
                 return null;

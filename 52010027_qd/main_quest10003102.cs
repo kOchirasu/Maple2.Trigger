@@ -66,7 +66,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new StateBossMonster는소멸준비(context);
+                    return new StateBossMonster는소멸Prepare(context);
                 }
 
                 return null;
@@ -75,8 +75,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class StateBossMonster는소멸준비 : TriggerState {
-            internal StateBossMonster는소멸준비(ITriggerContext context) : base(context) { }
+        private class StateBossMonster는소멸Prepare : TriggerState {
+            internal StateBossMonster는소멸Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    return new StateBossMonster는소멸준비01(context);
+                    return new StateBossMonster는소멸Prepare01(context);
                 }
 
                 return null;
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class StateBossMonster는소멸준비01 : TriggerState {
-            internal StateBossMonster는소멸준비01(ITriggerContext context) : base(context) { }
+        private class StateBossMonster는소멸Prepare01 : TriggerState {
+            internal StateBossMonster는소멸Prepare01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4014}, arg2: false);
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new StateBossMonster는소멸준비02(context);
+                    return new StateBossMonster는소멸Prepare02(context);
                 }
 
                 return null;
@@ -117,8 +117,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class StateBossMonster는소멸준비02 : TriggerState {
-            internal StateBossMonster는소멸준비02(ITriggerContext context) : base(context) { }
+        private class StateBossMonster는소멸Prepare02 : TriggerState {
+            internal StateBossMonster는소멸Prepare02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4013}, arg2: false);

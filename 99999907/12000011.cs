@@ -9,7 +9,7 @@ namespace Maple2.Trigger._99999907 {
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 50f)) {
-                    return new State반응대기(context);
+                    return new State반응Wait(context);
                 }
 
                 if (context.RandomCondition(arg1: 50f)) {
@@ -22,8 +22,8 @@ namespace Maple2.Trigger._99999907 {
             public override void OnExit() { }
         }
 
-        private class State반응대기 : TriggerState {
-            internal State반응대기(ITriggerContext context) : base(context) { }
+        private class State반응Wait : TriggerState {
+            internal State반응Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000011}, arg2: 1);

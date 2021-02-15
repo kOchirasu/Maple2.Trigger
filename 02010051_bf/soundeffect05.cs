@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02010051_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9001})) {
-                    return new State음성연출(context);
+                    return new State음성Cinematic(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnExit() { }
         }
 
-        private class State음성연출 : TriggerState {
-            internal State음성연출(ITriggerContext context) : base(context) { }
+        private class State음성Cinematic : TriggerState {
+            internal State음성Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 10);

@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02000336_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 703) == 1) {
-                    return new State관문_01_개방_준비(context);
+                    return new State관문_01_개방_Prepare(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._02000336_bf {
             public override void OnExit() { }
         }
 
-        private class State관문_01_개방_준비 : TriggerState {
-            internal State관문_01_개방_준비(ITriggerContext context) : base(context) { }
+        private class State관문_01_개방_Prepare : TriggerState {
+            internal State관문_01_개방_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
@@ -62,8 +62,8 @@ namespace Maple2.Trigger._02000336_bf {
             public override void OnExit() { }
         }
 
-        private class State관문_02_개방_준비 : TriggerState {
-            internal State관문_02_개방_준비(ITriggerContext context) : base(context) { }
+        private class State관문_02_개방_Prepare : TriggerState {
+            internal State관문_02_개방_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -41,19 +41,19 @@ namespace Maple2.Trigger._02000304_bf {
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 25f)) {
-                    return new State이동대기01(context);
+                    return new State이동Wait01(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    return new State이동대기02(context);
+                    return new State이동Wait02(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    return new State이동대기03(context);
+                    return new State이동Wait03(context);
                 }
 
                 if (context.RandomCondition(arg1: 25f)) {
-                    return new State이동대기04(context);
+                    return new State이동Wait04(context);
                 }
 
                 return null;
@@ -62,8 +62,8 @@ namespace Maple2.Trigger._02000304_bf {
             public override void OnExit() { }
         }
 
-        private class State이동대기01 : TriggerState {
-            internal State이동대기01(ITriggerContext context) : base(context) { }
+        private class State이동Wait01 : TriggerState {
+            internal State이동Wait01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "90", arg2: 90);
@@ -84,8 +84,8 @@ namespace Maple2.Trigger._02000304_bf {
             public override void OnExit() { }
         }
 
-        private class State이동대기02 : TriggerState {
-            internal State이동대기02(ITriggerContext context) : base(context) { }
+        private class State이동Wait02 : TriggerState {
+            internal State이동Wait02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "100", arg2: 100);
@@ -106,8 +106,8 @@ namespace Maple2.Trigger._02000304_bf {
             public override void OnExit() { }
         }
 
-        private class State이동대기03 : TriggerState {
-            internal State이동대기03(ITriggerContext context) : base(context) { }
+        private class State이동Wait03 : TriggerState {
+            internal State이동Wait03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "110", arg2: 110);
@@ -128,8 +128,8 @@ namespace Maple2.Trigger._02000304_bf {
             public override void OnExit() { }
         }
 
-        private class State이동대기04 : TriggerState {
-            internal State이동대기04(ITriggerContext context) : base(context) { }
+        private class State이동Wait04 : TriggerState {
+            internal State이동Wait04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "120", arg2: 120);

@@ -12,7 +12,7 @@ namespace Maple2.Trigger._03000058_bf {
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
                     context.SetInteractObject(arg1: new[] {11000023}, arg2: 2);
-                    return new State1차웨이브대기(context);
+                    return new State1차웨이브Wait(context);
                 }
 
                 return null;
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._03000058_bf {
             public override void OnExit() { }
         }
 
-        private class State1차웨이브대기 : TriggerState {
-            internal State1차웨이브대기(ITriggerContext context) : base(context) { }
+        private class State1차웨이브Wait : TriggerState {
+            internal State1차웨이브Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 23000003, textId: 23000003, duration: 5000);
@@ -49,7 +49,7 @@ namespace Maple2.Trigger._03000058_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {1001, 1002})) {
-                    return new State2차웨이브대기(context);
+                    return new State2차웨이브Wait(context);
                 }
 
                 return null;
@@ -58,8 +58,8 @@ namespace Maple2.Trigger._03000058_bf {
             public override void OnExit() { }
         }
 
-        private class State2차웨이브대기 : TriggerState {
-            internal State2차웨이브대기(ITriggerContext context) : base(context) { }
+        private class State2차웨이브Wait : TriggerState {
+            internal State2차웨이브Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: true);
@@ -85,7 +85,7 @@ namespace Maple2.Trigger._03000058_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2001})) {
-                    return new State3차웨이브대기(context);
+                    return new State3차웨이브Wait(context);
                 }
 
                 return null;
@@ -94,8 +94,8 @@ namespace Maple2.Trigger._03000058_bf {
             public override void OnExit() { }
         }
 
-        private class State3차웨이브대기 : TriggerState {
-            internal State3차웨이브대기(ITriggerContext context) : base(context) { }
+        private class State3차웨이브Wait : TriggerState {
+            internal State3차웨이브Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {604}, arg2: true);

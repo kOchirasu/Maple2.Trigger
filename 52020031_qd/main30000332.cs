@@ -68,7 +68,7 @@ namespace Maple2.Trigger._52020031_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    return new State다음스타트(context);
+                    return new StateNext스타트(context);
                 }
 
                 return null;
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._52020031_qd {
             public override void OnExit() { }
         }
 
-        private class State다음스타트 : TriggerState {
-            internal State다음스타트(ITriggerContext context) : base(context) { }
+        private class StateNext스타트 : TriggerState {
+            internal StateNext스타트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4003}, arg2: false);

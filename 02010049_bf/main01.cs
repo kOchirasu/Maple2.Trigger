@@ -132,7 +132,7 @@ namespace Maple2.Trigger._02010049_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {102, 103, 104, 105, 107, 108})) {
-                    return new State전투지역02대기(context);
+                    return new State전투지역02Wait(context);
                 }
 
                 return null;
@@ -141,8 +141,8 @@ namespace Maple2.Trigger._02010049_bf {
             public override void OnExit() { }
         }
 
-        private class State전투지역02대기 : TriggerState {
-            internal State전투지역02대기(ITriggerContext context) : base(context) { }
+        private class State전투지역02Wait : TriggerState {
+            internal State전투지역02Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {10000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -191,7 +191,7 @@ namespace Maple2.Trigger._02010049_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {201, 202, 203, 204, 205, 206})) {
-                    return new State전투지역03대기(context);
+                    return new State전투지역03Wait(context);
                 }
 
                 return null;
@@ -200,8 +200,8 @@ namespace Maple2.Trigger._02010049_bf {
             public override void OnExit() { }
         }
 
-        private class State전투지역03대기 : TriggerState {
-            internal State전투지역03대기(ITriggerContext context) : base(context) { }
+        private class State전투지역03Wait : TriggerState {
+            internal State전투지역03Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {20000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -251,7 +251,7 @@ namespace Maple2.Trigger._02010049_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {309})) {
-                    return new State퇴장연출01(context);
+                    return new State퇴장Cinematic01(context);
                 }
 
                 return null;
@@ -260,8 +260,8 @@ namespace Maple2.Trigger._02010049_bf {
             public override void OnExit() { }
         }
 
-        private class State퇴장연출01 : TriggerState {
-            internal State퇴장연출01(ITriggerContext context) : base(context) { }
+        private class State퇴장Cinematic01 : TriggerState {
+            internal State퇴장Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {399});
@@ -274,7 +274,7 @@ namespace Maple2.Trigger._02010049_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State퇴장연출02(context);
+                    return new State퇴장Cinematic02(context);
                 }
 
                 return null;
@@ -283,8 +283,8 @@ namespace Maple2.Trigger._02010049_bf {
             public override void OnExit() { }
         }
 
-        private class State퇴장연출02 : TriggerState {
-            internal State퇴장연출02(ITriggerContext context) : base(context) { }
+        private class State퇴장Cinematic02 : TriggerState {
+            internal State퇴장Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
@@ -292,7 +292,7 @@ namespace Maple2.Trigger._02010049_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State퇴장연출03(context);
+                    return new State퇴장Cinematic03(context);
                 }
 
                 return null;
@@ -301,8 +301,8 @@ namespace Maple2.Trigger._02010049_bf {
             public override void OnExit() { }
         }
 
-        private class State퇴장연출03 : TriggerState {
-            internal State퇴장연출03(ITriggerContext context) : base(context) { }
+        private class State퇴장Cinematic03 : TriggerState {
+            internal State퇴장Cinematic03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 601, arg2: false);

@@ -138,7 +138,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State1라운드대기(context);
+                    return new State1라운드Wait(context);
                 }
 
                 return null;
@@ -150,8 +150,8 @@ namespace Maple2.Trigger._51000001_dg {
             }
         }
 
-        private class State1라운드대기 : TriggerState {
-            internal State1라운드대기(ITriggerContext context) : base(context) { }
+        private class State1라운드Wait : TriggerState {
+            internal State1라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 199, arg2: "trigger", arg3: "springfarm_start");
@@ -256,7 +256,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -268,8 +268,8 @@ namespace Maple2.Trigger._51000001_dg {
             }
         }
 
-        private class State2라운드대기 : TriggerState {
-            internal State2라운드대기(ITriggerContext context) : base(context) { }
+        private class State2라운드Wait : TriggerState {
+            internal State2라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "100002", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
@@ -363,7 +363,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -375,8 +375,8 @@ namespace Maple2.Trigger._51000001_dg {
             }
         }
 
-        private class State3라운드대기 : TriggerState {
-            internal State3라운드대기(ITriggerContext context) : base(context) { }
+        private class State3라운드Wait : TriggerState {
+            internal State3라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "100003", arg2: 120, arg3: true, arg4: true, arg5: -30, arg6: "TR");
@@ -470,7 +470,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State4라운드대기(context);
+                    return new State4라운드Wait(context);
                 }
 
                 return null;
@@ -482,8 +482,8 @@ namespace Maple2.Trigger._51000001_dg {
             }
         }
 
-        private class State4라운드대기 : TriggerState {
-            internal State4라운드대기(ITriggerContext context) : base(context) { }
+        private class State4라운드Wait : TriggerState {
+            internal State4라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCube(ids: new[] {5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410, 5411, 5412, 5413, 5414}, randomCount: 7, isVisible: true);
@@ -577,7 +577,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State5라운드대기(context);
+                    return new State5라운드Wait(context);
                 }
 
                 return null;
@@ -589,8 +589,8 @@ namespace Maple2.Trigger._51000001_dg {
             }
         }
 
-        private class State5라운드대기 : TriggerState {
-            internal State5라운드대기(ITriggerContext context) : base(context) { }
+        private class State5라운드Wait : TriggerState {
+            internal State5라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCube(ids: new[] {5501, 5502, 5503, 5504, 5505, 5506, 5507, 5508, 5509, 5510, 5511, 5512}, randomCount: 6, isVisible: true);
@@ -684,7 +684,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State6라운드대기(context);
+                    return new State6라운드Wait(context);
                 }
 
                 return null;
@@ -696,8 +696,8 @@ namespace Maple2.Trigger._51000001_dg {
             }
         }
 
-        private class State6라운드대기 : TriggerState {
-            internal State6라운드대기(ITriggerContext context) : base(context) { }
+        private class State6라운드Wait : TriggerState {
+            internal State6라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCube(ids: new[] {5601, 5602, 5603, 5604, 5605, 5606, 5607, 5608, 5609, 5610, 5611, 5612, 5613, 5614, 5615, 5616, 5617, 5618, 5619, 5620, 5621}, randomCount: 10, isVisible: true);
@@ -791,7 +791,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State7라운드대기(context);
+                    return new State7라운드Wait(context);
                 }
 
                 return null;
@@ -803,8 +803,8 @@ namespace Maple2.Trigger._51000001_dg {
             }
         }
 
-        private class State7라운드대기 : TriggerState {
-            internal State7라운드대기(ITriggerContext context) : base(context) { }
+        private class State7라운드Wait : TriggerState {
+            internal State7라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCube(ids: new[] {5701, 5702, 5703, 5704, 5705, 5706, 5707, 5708, 5709, 5710, 5711, 5712, 5713, 5714, 5715, 5716, 5717, 5718, 5719, 5720, 5721}, randomCount: 12, isVisible: true);
@@ -898,7 +898,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State8라운드대기(context);
+                    return new State8라운드Wait(context);
                 }
 
                 return null;
@@ -910,8 +910,8 @@ namespace Maple2.Trigger._51000001_dg {
             }
         }
 
-        private class State8라운드대기 : TriggerState {
-            internal State8라운드대기(ITriggerContext context) : base(context) { }
+        private class State8라운드Wait : TriggerState {
+            internal State8라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCube(ids: new[] {5801, 5802, 5803, 5804, 5805, 5806, 5807, 5808, 5809, 5810, 5811, 5812, 5813, 5814, 5815, 5816, 5817, 5818, 5819, 5820, 5821, 5822}, randomCount: 12, isVisible: true);
@@ -1005,7 +1005,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State9라운드대기(context);
+                    return new State9라운드Wait(context);
                 }
 
                 return null;
@@ -1017,8 +1017,8 @@ namespace Maple2.Trigger._51000001_dg {
             }
         }
 
-        private class State9라운드대기 : TriggerState {
-            internal State9라운드대기(ITriggerContext context) : base(context) { }
+        private class State9라운드Wait : TriggerState {
+            internal State9라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCube(ids: new[] {5901, 5902, 5903, 5904, 5905, 5906, 5907, 5908, 5909, 5910, 5911, 5912, 5913, 5914, 5915}, randomCount: 8, isVisible: true);
@@ -1112,7 +1112,7 @@ namespace Maple2.Trigger._51000001_dg {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State10라운드대기(context);
+                    return new State10라운드Wait(context);
                 }
 
                 return null;
@@ -1124,8 +1124,8 @@ namespace Maple2.Trigger._51000001_dg {
             }
         }
 
-        private class State10라운드대기 : TriggerState {
-            internal State10라운드대기(ITriggerContext context) : base(context) { }
+        private class State10라운드Wait : TriggerState {
+            internal State10라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCube(ids: new[] {51001, 51002, 51003, 51004, 51005, 51006, 51007, 51008, 51009, 51010, 51011, 51012, 51013, 51014, 51015, 51016, 51017, 51018, 51019, 51020, 51021, 51022, 51023, 51024}, randomCount: 6, isVisible: true);

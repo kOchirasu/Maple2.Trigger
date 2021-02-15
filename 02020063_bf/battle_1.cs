@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02020063_bf {
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State스폰_1_추가대사1(context);
+                    return new State스폰_1_추가Script1(context);
                 }
 
                 return null;
@@ -74,8 +74,8 @@ namespace Maple2.Trigger._02020063_bf {
             public override void OnExit() { }
         }
 
-        private class State스폰_1_추가대사1 : TriggerState {
-            internal State스폰_1_추가대사1(ITriggerContext context) : base(context) { }
+        private class State스폰_1_추가Script1 : TriggerState {
+            internal State스폰_1_추가Script1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11001813, illust: "Turka_normal", duration: 5000, script: "$02020063_BF__BATTLE_1__1$");
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._02020063_bf {
                 }
 
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State스폰_1_추가대사2(context);
+                    return new State스폰_1_추가Script2(context);
                 }
 
                 return null;
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._02020063_bf {
             public override void OnExit() { }
         }
 
-        private class State스폰_1_추가대사2 : TriggerState {
-            internal State스폰_1_추가대사2(ITriggerContext context) : base(context) { }
+        private class State스폰_1_추가Script2 : TriggerState {
+            internal State스폰_1_추가Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11003536, illust: "Neirin_surprise", duration: 5000, script: "$02020063_BF__BATTLE_1__2$");
@@ -288,7 +288,7 @@ namespace Maple2.Trigger._02020063_bf {
 
             public override TriggerState Execute() {
                 if (context.GetScoreBoardScore() >= 800) {
-                    return new State포탑페이즈(context);
+                    return new State포탑Phase(context);
                 }
 
                 if (context.GetUserValue(key: "Battle_1_SpawnStart") == 0) {
@@ -301,8 +301,8 @@ namespace Maple2.Trigger._02020063_bf {
             public override void OnExit() { }
         }
 
-        private class State포탑페이즈 : TriggerState {
-            internal State포탑페이즈(ITriggerContext context) : base(context) { }
+        private class State포탑Phase : TriggerState {
+            internal State포탑Phase(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.StartCombineSpawn(groupId: new[] {500}, isStart: false);

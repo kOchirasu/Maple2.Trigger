@@ -70,7 +70,7 @@ namespace Maple2.Trigger._02000081_in {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State토무대사2(context);
+                    return new State토무Script2(context);
                 }
 
                 return null;
@@ -79,8 +79,8 @@ namespace Maple2.Trigger._02000081_in {
             public override void OnExit() { }
         }
 
-        private class State토무대사2 : TriggerState {
-            internal State토무대사2(ITriggerContext context) : base(context) { }
+        private class State토무Script2 : TriggerState {
+            internal State토무Script2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 202, arg3: "$02000081_IN__TRIGGER_01__1$", arg4: 4);
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._02000081_in {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State토무대사3(context);
+                    return new State토무Script3(context);
                 }
 
                 return null;
@@ -98,8 +98,8 @@ namespace Maple2.Trigger._02000081_in {
             public override void OnExit() { }
         }
 
-        private class State토무대사3 : TriggerState {
-            internal State토무대사3(ITriggerContext context) : base(context) { }
+        private class State토무Script3 : TriggerState {
+            internal State토무Script3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 202, arg3: "$02000081_IN__TRIGGER_01__2$", arg4: 2);

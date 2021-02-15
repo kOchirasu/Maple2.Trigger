@@ -32,7 +32,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State첫번째페이즈_InfernoWarship(context);
+                    return new State첫번째Phase_InfernoWarship(context);
                 }
 
                 return null;
@@ -41,14 +41,14 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnExit() { }
         }
 
-        private class State첫번째페이즈_InfernoWarship : TriggerState {
-            internal State첫번째페이즈_InfernoWarship(ITriggerContext context) : base(context) { }
+        private class State첫번째Phase_InfernoWarship : TriggerState {
+            internal State첫번째Phase_InfernoWarship(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SecondPhase") == 1) {
-                    return new State두번째페이즈_InfernoWarship(context);
+                    return new State두번째Phase_InfernoWarship(context);
                 }
 
                 return null;
@@ -57,8 +57,8 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnExit() { }
         }
 
-        private class State두번째페이즈_InfernoWarship : TriggerState {
-            internal State두번째페이즈_InfernoWarship(ITriggerContext context) : base(context) { }
+        private class State두번째Phase_InfernoWarship : TriggerState {
+            internal State두번째Phase_InfernoWarship(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: false, arg3: 0, arg4: 0, arg5: 0.5f);
@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ThirdPhase") == 1) {
-                    return new State세번째페이즈_인페르녹Appear(context);
+                    return new State세번째Phase_인페르녹Appear(context);
                 }
 
                 return null;
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnExit() { }
         }
 
-        private class State세번째페이즈_인페르녹Appear : TriggerState {
-            internal State세번째페이즈_인페르녹Appear(ITriggerContext context) : base(context) { }
+        private class State세번째Phase_인페르녹Appear : TriggerState {
+            internal State세번째Phase_인페르녹Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonMoveLapTimeToNow(id: true);
@@ -106,7 +106,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonPlayTime() == 720) {
-                    return new State네번째페이즈_인페르녹광폭화(context);
+                    return new State네번째Phase_인페르녹광폭화(context);
                 }
 
                 return null;
@@ -115,8 +115,8 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnExit() { }
         }
 
-        private class State네번째페이즈_인페르녹광폭화 : TriggerState {
-            internal State네번째페이즈_인페르녹광폭화(ITriggerContext context) : base(context) { }
+        private class State네번째Phase_인페르녹광폭화 : TriggerState {
+            internal State네번째Phase_인페르녹광폭화(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAiExtraData(key: "Phase", value: 2);

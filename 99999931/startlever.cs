@@ -38,14 +38,14 @@ namespace Maple2.Trigger._99999931 {
             }
 
             public override TriggerState Execute() {
-                return new State게임준비(context);
+                return new State게임Prepare(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State게임준비 : TriggerState {
-            internal State게임준비(ITriggerContext context) : base(context) { }
+        private class State게임Prepare : TriggerState {
+            internal State게임Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "11", arg2: 3);

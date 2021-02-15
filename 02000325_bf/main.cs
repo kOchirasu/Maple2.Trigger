@@ -235,7 +235,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3001})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3002})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -271,7 +271,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3003})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -289,7 +289,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3004})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -307,7 +307,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3005})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -325,7 +325,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3006})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -343,7 +343,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3007})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -361,7 +361,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3008})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -379,7 +379,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3009})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -397,7 +397,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3010})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -415,7 +415,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3011})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -433,7 +433,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3012})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -451,7 +451,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3013})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -469,7 +469,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3014})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -487,7 +487,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3015})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -505,7 +505,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3016})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -523,7 +523,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3017})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -541,7 +541,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3018})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -559,7 +559,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3019})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -577,7 +577,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3020})) {
-                    return new State2라운드대기(context);
+                    return new State2라운드Wait(context);
                 }
 
                 return null;
@@ -586,8 +586,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State2라운드대기 : TriggerState {
-            internal State2라운드대기(ITriggerContext context) : base(context) { }
+        private class State2라운드Wait : TriggerState {
+            internal State2라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10000739, 10000740}, arg2: 2);
@@ -687,83 +687,83 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3001소환체크(context);
+                    return new State3001SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3002소환체크(context);
+                    return new State3002SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3003소환체크(context);
+                    return new State3003SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3004소환체크(context);
+                    return new State3004SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3005소환체크(context);
+                    return new State3005SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3006소환체크(context);
+                    return new State3006SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3007소환체크(context);
+                    return new State3007SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3008소환체크(context);
+                    return new State3008SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3009소환체크(context);
+                    return new State3009SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3010소환체크(context);
+                    return new State3010SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3011소환체크(context);
+                    return new State3011SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3012소환체크(context);
+                    return new State3012SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3013소환체크(context);
+                    return new State3013SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3014소환체크(context);
+                    return new State3014SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3015소환체크(context);
+                    return new State3015SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3016소환체크(context);
+                    return new State3016SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3017소환체크(context);
+                    return new State3017SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3018소환체크(context);
+                    return new State3018SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3019소환체크(context);
+                    return new State3019SummonCheck(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3020소환체크(context);
+                    return new State3020SummonCheck(context);
                 }
 
                 return null;
@@ -772,8 +772,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3001소환체크 : TriggerState {
-            internal State3001소환체크(ITriggerContext context) : base(context) { }
+        private class State3001SummonCheck : TriggerState {
+            internal State3001SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -792,8 +792,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3002소환체크 : TriggerState {
-            internal State3002소환체크(ITriggerContext context) : base(context) { }
+        private class State3002SummonCheck : TriggerState {
+            internal State3002SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -812,8 +812,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3003소환체크 : TriggerState {
-            internal State3003소환체크(ITriggerContext context) : base(context) { }
+        private class State3003SummonCheck : TriggerState {
+            internal State3003SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -832,8 +832,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3004소환체크 : TriggerState {
-            internal State3004소환체크(ITriggerContext context) : base(context) { }
+        private class State3004SummonCheck : TriggerState {
+            internal State3004SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -852,8 +852,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3005소환체크 : TriggerState {
-            internal State3005소환체크(ITriggerContext context) : base(context) { }
+        private class State3005SummonCheck : TriggerState {
+            internal State3005SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -872,8 +872,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3006소환체크 : TriggerState {
-            internal State3006소환체크(ITriggerContext context) : base(context) { }
+        private class State3006SummonCheck : TriggerState {
+            internal State3006SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -892,8 +892,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3007소환체크 : TriggerState {
-            internal State3007소환체크(ITriggerContext context) : base(context) { }
+        private class State3007SummonCheck : TriggerState {
+            internal State3007SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -912,8 +912,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3008소환체크 : TriggerState {
-            internal State3008소환체크(ITriggerContext context) : base(context) { }
+        private class State3008SummonCheck : TriggerState {
+            internal State3008SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -932,8 +932,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3009소환체크 : TriggerState {
-            internal State3009소환체크(ITriggerContext context) : base(context) { }
+        private class State3009SummonCheck : TriggerState {
+            internal State3009SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -952,8 +952,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3010소환체크 : TriggerState {
-            internal State3010소환체크(ITriggerContext context) : base(context) { }
+        private class State3010SummonCheck : TriggerState {
+            internal State3010SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -972,8 +972,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3011소환체크 : TriggerState {
-            internal State3011소환체크(ITriggerContext context) : base(context) { }
+        private class State3011SummonCheck : TriggerState {
+            internal State3011SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -992,8 +992,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3012소환체크 : TriggerState {
-            internal State3012소환체크(ITriggerContext context) : base(context) { }
+        private class State3012SummonCheck : TriggerState {
+            internal State3012SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1012,8 +1012,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3013소환체크 : TriggerState {
-            internal State3013소환체크(ITriggerContext context) : base(context) { }
+        private class State3013SummonCheck : TriggerState {
+            internal State3013SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1032,8 +1032,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3014소환체크 : TriggerState {
-            internal State3014소환체크(ITriggerContext context) : base(context) { }
+        private class State3014SummonCheck : TriggerState {
+            internal State3014SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1052,8 +1052,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3015소환체크 : TriggerState {
-            internal State3015소환체크(ITriggerContext context) : base(context) { }
+        private class State3015SummonCheck : TriggerState {
+            internal State3015SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1072,8 +1072,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3016소환체크 : TriggerState {
-            internal State3016소환체크(ITriggerContext context) : base(context) { }
+        private class State3016SummonCheck : TriggerState {
+            internal State3016SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1092,8 +1092,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3017소환체크 : TriggerState {
-            internal State3017소환체크(ITriggerContext context) : base(context) { }
+        private class State3017SummonCheck : TriggerState {
+            internal State3017SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1112,8 +1112,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3018소환체크 : TriggerState {
-            internal State3018소환체크(ITriggerContext context) : base(context) { }
+        private class State3018SummonCheck : TriggerState {
+            internal State3018SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1132,8 +1132,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3019소환체크 : TriggerState {
-            internal State3019소환체크(ITriggerContext context) : base(context) { }
+        private class State3019SummonCheck : TriggerState {
+            internal State3019SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1152,8 +1152,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3020소환체크 : TriggerState {
-            internal State3020소환체크(ITriggerContext context) : base(context) { }
+        private class State3020SummonCheck : TriggerState {
+            internal State3020SummonCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1181,7 +1181,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3001})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1199,7 +1199,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3002})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1217,7 +1217,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3003})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1235,7 +1235,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3004})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1253,7 +1253,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3005})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1271,7 +1271,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3006})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1289,7 +1289,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3007})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1307,7 +1307,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3008})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1325,7 +1325,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3009})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1343,7 +1343,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3010})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1361,7 +1361,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3011})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1379,7 +1379,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3012})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1397,7 +1397,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3013})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1415,7 +1415,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3014})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1433,7 +1433,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3015})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1451,7 +1451,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3016})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1469,7 +1469,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3017})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1487,7 +1487,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3018})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1505,7 +1505,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3019})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1523,7 +1523,7 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {3020})) {
-                    return new State3라운드대기(context);
+                    return new State3라운드Wait(context);
                 }
 
                 return null;
@@ -1532,8 +1532,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3라운드대기 : TriggerState {
-            internal State3라운드대기(ITriggerContext context) : base(context) { }
+        private class State3라운드Wait : TriggerState {
+            internal State3라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601, 612}, arg2: false);
@@ -1615,83 +1615,83 @@ namespace Maple2.Trigger._02000325_bf {
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3001소환체크2(context);
+                    return new State3001SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3002소환체크2(context);
+                    return new State3002SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3003소환체크2(context);
+                    return new State3003SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3004소환체크2(context);
+                    return new State3004SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3005소환체크2(context);
+                    return new State3005SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3006소환체크2(context);
+                    return new State3006SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3007소환체크2(context);
+                    return new State3007SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3008소환체크2(context);
+                    return new State3008SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3009소환체크2(context);
+                    return new State3009SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3010소환체크2(context);
+                    return new State3010SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3011소환체크2(context);
+                    return new State3011SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3012소환체크2(context);
+                    return new State3012SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3013소환체크2(context);
+                    return new State3013SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3014소환체크2(context);
+                    return new State3014SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3015소환체크2(context);
+                    return new State3015SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3016소환체크2(context);
+                    return new State3016SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3017소환체크2(context);
+                    return new State3017SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3018소환체크2(context);
+                    return new State3018SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3019소환체크2(context);
+                    return new State3019SummonCheck2(context);
                 }
 
                 if (context.RandomCondition(arg1: 5f)) {
-                    return new State3020소환체크2(context);
+                    return new State3020SummonCheck2(context);
                 }
 
                 return null;
@@ -1700,8 +1700,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3001소환체크2 : TriggerState {
-            internal State3001소환체크2(ITriggerContext context) : base(context) { }
+        private class State3001SummonCheck2 : TriggerState {
+            internal State3001SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1720,8 +1720,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3002소환체크2 : TriggerState {
-            internal State3002소환체크2(ITriggerContext context) : base(context) { }
+        private class State3002SummonCheck2 : TriggerState {
+            internal State3002SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1740,8 +1740,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3003소환체크2 : TriggerState {
-            internal State3003소환체크2(ITriggerContext context) : base(context) { }
+        private class State3003SummonCheck2 : TriggerState {
+            internal State3003SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1760,8 +1760,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3004소환체크2 : TriggerState {
-            internal State3004소환체크2(ITriggerContext context) : base(context) { }
+        private class State3004SummonCheck2 : TriggerState {
+            internal State3004SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1780,8 +1780,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3005소환체크2 : TriggerState {
-            internal State3005소환체크2(ITriggerContext context) : base(context) { }
+        private class State3005SummonCheck2 : TriggerState {
+            internal State3005SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1800,8 +1800,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3006소환체크2 : TriggerState {
-            internal State3006소환체크2(ITriggerContext context) : base(context) { }
+        private class State3006SummonCheck2 : TriggerState {
+            internal State3006SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1820,8 +1820,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3007소환체크2 : TriggerState {
-            internal State3007소환체크2(ITriggerContext context) : base(context) { }
+        private class State3007SummonCheck2 : TriggerState {
+            internal State3007SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1840,8 +1840,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3008소환체크2 : TriggerState {
-            internal State3008소환체크2(ITriggerContext context) : base(context) { }
+        private class State3008SummonCheck2 : TriggerState {
+            internal State3008SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1860,8 +1860,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3009소환체크2 : TriggerState {
-            internal State3009소환체크2(ITriggerContext context) : base(context) { }
+        private class State3009SummonCheck2 : TriggerState {
+            internal State3009SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1880,8 +1880,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3010소환체크2 : TriggerState {
-            internal State3010소환체크2(ITriggerContext context) : base(context) { }
+        private class State3010SummonCheck2 : TriggerState {
+            internal State3010SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1900,8 +1900,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3011소환체크2 : TriggerState {
-            internal State3011소환체크2(ITriggerContext context) : base(context) { }
+        private class State3011SummonCheck2 : TriggerState {
+            internal State3011SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1920,8 +1920,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3012소환체크2 : TriggerState {
-            internal State3012소환체크2(ITriggerContext context) : base(context) { }
+        private class State3012SummonCheck2 : TriggerState {
+            internal State3012SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1940,8 +1940,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3013소환체크2 : TriggerState {
-            internal State3013소환체크2(ITriggerContext context) : base(context) { }
+        private class State3013SummonCheck2 : TriggerState {
+            internal State3013SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1960,8 +1960,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3014소환체크2 : TriggerState {
-            internal State3014소환체크2(ITriggerContext context) : base(context) { }
+        private class State3014SummonCheck2 : TriggerState {
+            internal State3014SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -1980,8 +1980,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3015소환체크2 : TriggerState {
-            internal State3015소환체크2(ITriggerContext context) : base(context) { }
+        private class State3015SummonCheck2 : TriggerState {
+            internal State3015SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -2000,8 +2000,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3016소환체크2 : TriggerState {
-            internal State3016소환체크2(ITriggerContext context) : base(context) { }
+        private class State3016SummonCheck2 : TriggerState {
+            internal State3016SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -2020,8 +2020,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3017소환체크2 : TriggerState {
-            internal State3017소환체크2(ITriggerContext context) : base(context) { }
+        private class State3017SummonCheck2 : TriggerState {
+            internal State3017SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -2040,8 +2040,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3018소환체크2 : TriggerState {
-            internal State3018소환체크2(ITriggerContext context) : base(context) { }
+        private class State3018SummonCheck2 : TriggerState {
+            internal State3018SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -2060,8 +2060,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3019소환체크2 : TriggerState {
-            internal State3019소환체크2(ITriggerContext context) : base(context) { }
+        private class State3019SummonCheck2 : TriggerState {
+            internal State3019SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -2080,8 +2080,8 @@ namespace Maple2.Trigger._02000325_bf {
             public override void OnExit() { }
         }
 
-        private class State3020소환체크2 : TriggerState {
-            internal State3020소환체크2(ITriggerContext context) : base(context) { }
+        private class State3020SummonCheck2 : TriggerState {
+            internal State3020SummonCheck2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

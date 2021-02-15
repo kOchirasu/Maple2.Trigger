@@ -69,7 +69,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State엘리베이터_대기(context);
+                    return new State엘리베이터_Wait(context);
                 }
 
                 return null;
@@ -78,8 +78,8 @@ namespace Maple2.Trigger._02020301_bf {
             public override void OnExit() { }
         }
 
-        private class State엘리베이터_대기 : TriggerState {
-            internal State엘리베이터_대기(ITriggerContext context) : base(context) { }
+        private class State엘리베이터_Wait : TriggerState {
+            internal State엘리베이터_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddBuff(arg1: new[] {101}, arg2: 62100108, arg3: 1, arg4: true);

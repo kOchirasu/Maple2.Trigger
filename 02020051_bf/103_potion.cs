@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Main") == 1) {
-                    return new State포션사용_준비(context);
+                    return new State포션사용_Prepare(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02020051_bf {
             public override void OnExit() { }
         }
 
-        private class State포션사용_준비 : TriggerState {
-            internal State포션사용_준비(ITriggerContext context) : base(context) { }
+        private class State포션사용_Prepare : TriggerState {
+            internal State포션사용_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10002131}, arg2: 2);

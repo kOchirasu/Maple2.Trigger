@@ -39,7 +39,7 @@ namespace Maple2.Trigger._81000003_item {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "89")) {
-                    return new State레버(context);
+                    return new StateLever(context);
                 }
 
                 return null;
@@ -48,8 +48,8 @@ namespace Maple2.Trigger._81000003_item {
             public override void OnExit() { }
         }
 
-        private class State레버 : TriggerState {
-            internal State레버(ITriggerContext context) : base(context) { }
+        private class StateLever : TriggerState {
+            internal StateLever(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetState(arg1: 1, arg2: "미로패턴01,미로패턴02,미로패턴03", arg3: false);

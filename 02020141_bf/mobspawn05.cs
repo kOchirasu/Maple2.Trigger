@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02020141_bf {
                 }
 
                 if (context.UserDetected(arg1: new[] {10500})) {
-                    return new State졸MonsterAppear대기중(context);
+                    return new State졸MonsterAppearWaiting(context);
                 }
 
                 return null;
@@ -56,8 +56,8 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnExit() { }
         }
 
-        private class State졸MonsterAppear대기중 : TriggerState {
-            internal State졸MonsterAppear대기중(ITriggerContext context) : base(context) { }
+        private class State졸MonsterAppearWaiting : TriggerState {
+            internal State졸MonsterAppearWaiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._02020141_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {10500})) {
-                    return new State졸MonsterRemove작동대기(context);
+                    return new State졸MonsterRemove작동Wait(context);
                 }
 
                 return null;
@@ -153,11 +153,11 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {10500})) {
-                    return new State졸Monster리젠대기중(context);
+                    return new State졸Monster리젠Waiting(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {10500})) {
-                    return new State졸MonsterRemove작동대기(context);
+                    return new State졸MonsterRemove작동Wait(context);
                 }
 
                 return null;
@@ -166,8 +166,8 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnExit() { }
         }
 
-        private class State졸Monster리젠대기중 : TriggerState {
-            internal State졸Monster리젠대기중(ITriggerContext context) : base(context) { }
+        private class State졸Monster리젠Waiting : TriggerState {
+            internal State졸Monster리젠Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._02020141_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {10500})) {
-                    return new State졸MonsterRemove작동대기(context);
+                    return new State졸MonsterRemove작동Wait(context);
                 }
 
                 if (context.WaitTick(waitTick: 15000)) {
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._02020141_bf {
                 }
 
                 if (!context.UserDetected(arg1: new[] {10500})) {
-                    return new State졸MonsterRemove작동대기(context);
+                    return new State졸MonsterRemove작동Wait(context);
                 }
 
                 return null;
@@ -222,8 +222,8 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnExit() { }
         }
 
-        private class State졸MonsterRemove작동대기 : TriggerState {
-            internal State졸MonsterRemove작동대기(ITriggerContext context) : base(context) { }
+        private class State졸MonsterRemove작동Wait : TriggerState {
+            internal State졸MonsterRemove작동Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

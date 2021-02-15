@@ -14,35 +14,35 @@ namespace Maple2.Trigger._02000074_in {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001592}, arg3: new byte[] {2})) {
-                    return new State쪽지스폰(context);
+                    return new StateSpawnMessage(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001592}, arg3: new byte[] {1})) {
-                    return new State쪽지스폰(context);
+                    return new StateSpawnMessage(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001591}, arg3: new byte[] {3})) {
-                    return new State쪽지스폰(context);
+                    return new StateSpawnMessage(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001591}, arg3: new byte[] {2})) {
-                    return new State쪽지스폰(context);
+                    return new StateSpawnMessage(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001589}, arg3: new byte[] {2})) {
-                    return new State케이틀린스폰(context);
+                    return new State케이틀린Spawn(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001589}, arg3: new byte[] {1})) {
-                    return new State케이틀린스폰(context);
+                    return new State케이틀린Spawn(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001588}, arg3: new byte[] {3})) {
-                    return new State케이틀린스폰(context);
+                    return new State케이틀린Spawn(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001588}, arg3: new byte[] {2})) {
-                    return new State케이틀린스폰(context);
+                    return new State케이틀린Spawn(context);
                 }
 
                 return null;
@@ -51,8 +51,8 @@ namespace Maple2.Trigger._02000074_in {
             public override void OnExit() { }
         }
 
-        private class State케이틀린스폰 : TriggerState {
-            internal State케이틀린스폰(ITriggerContext context) : base(context) { }
+        private class State케이틀린Spawn : TriggerState {
+            internal State케이틀린Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
@@ -69,8 +69,8 @@ namespace Maple2.Trigger._02000074_in {
             public override void OnExit() { }
         }
 
-        private class State쪽지스폰 : TriggerState {
-            internal State쪽지스폰(ITriggerContext context) : base(context) { }
+        private class StateSpawnMessage : TriggerState {
+            internal StateSpawnMessage(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {102}, arg2: false);

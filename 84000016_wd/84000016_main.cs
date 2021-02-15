@@ -11,14 +11,14 @@ namespace Maple2.Trigger._84000016_wd {
             }
 
             public override TriggerState Execute() {
-                return new State결혼식StartCinematic요청대기(context);
+                return new State결혼식StartCinematic요청Wait(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State결혼식StartCinematic요청대기 : TriggerState {
-            internal State결혼식StartCinematic요청대기(ITriggerContext context) : base(context) { }
+        private class State결혼식StartCinematic요청Wait : TriggerState {
+            internal State결혼식StartCinematic요청Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.LockMyPc(isLock: false);
@@ -167,7 +167,7 @@ namespace Maple2.Trigger._84000016_wd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    return new State입장준비01(context);
+                    return new State입장Prepare01(context);
                 }
 
                 return null;
@@ -176,8 +176,8 @@ namespace Maple2.Trigger._84000016_wd {
             public override void OnExit() { }
         }
 
-        private class State입장준비01 : TriggerState {
-            internal State입장준비01(ITriggerContext context) : base(context) { }
+        private class State입장Prepare01 : TriggerState {
+            internal State입장Prepare01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -187,7 +187,7 @@ namespace Maple2.Trigger._84000016_wd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State입장준비02(context);
+                    return new State입장Prepare02(context);
                 }
 
                 return null;
@@ -196,8 +196,8 @@ namespace Maple2.Trigger._84000016_wd {
             public override void OnExit() { }
         }
 
-        private class State입장준비02 : TriggerState {
-            internal State입장준비02(ITriggerContext context) : base(context) { }
+        private class State입장Prepare02 : TriggerState {
+            internal State입장Prepare02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.WeddingSetUserEmotion(entryType: "Bride", id: 6);
@@ -406,7 +406,7 @@ namespace Maple2.Trigger._84000016_wd {
             }
 
             public override TriggerState Execute() {
-                return new State결혼식StartCinematic요청대기(context);
+                return new State결혼식StartCinematic요청Wait(context);
             }
 
             public override void OnExit() { }
@@ -503,7 +503,7 @@ namespace Maple2.Trigger._84000016_wd {
             }
 
             public override TriggerState Execute() {
-                return new State결혼식StartCinematic요청대기(context);
+                return new State결혼식StartCinematic요청Wait(context);
             }
 
             public override void OnExit() { }

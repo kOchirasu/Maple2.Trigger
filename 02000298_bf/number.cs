@@ -37,83 +37,83 @@ namespace Maple2.Trigger._02000298_bf {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1279})) {
-                    return new State입력대기중_1279(context);
+                    return new State입력Waiting_1279(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1238})) {
-                    return new State입력대기중_1238(context);
+                    return new State입력Waiting_1238(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1358})) {
-                    return new State입력대기중_1358(context);
+                    return new State입력Waiting_1358(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1489})) {
-                    return new State입력대기중_1489(context);
+                    return new State입력Waiting_1489(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1567})) {
-                    return new State입력대기중_1567(context);
+                    return new State입력Waiting_1567(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {1679})) {
-                    return new State입력대기중_1679(context);
+                    return new State입력Waiting_1679(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2389})) {
-                    return new State입력대기중_2389(context);
+                    return new State입력Waiting_2389(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2347})) {
-                    return new State입력대기중_2347(context);
+                    return new State입력Waiting_2347(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2478})) {
-                    return new State입력대기중_2478(context);
+                    return new State입력Waiting_2478(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2456})) {
-                    return new State입력대기중_2456(context);
+                    return new State입력Waiting_2456(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2569})) {
-                    return new State입력대기중_2569(context);
+                    return new State입력Waiting_2569(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {2678})) {
-                    return new State입력대기중_2678(context);
+                    return new State입력Waiting_2678(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {3458})) {
-                    return new State입력대기중_3458(context);
+                    return new State입력Waiting_3458(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {3589})) {
-                    return new State입력대기중_3589(context);
+                    return new State입력Waiting_3589(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {3679})) {
-                    return new State입력대기중_3679(context);
+                    return new State입력Waiting_3679(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {3789})) {
-                    return new State입력대기중_3789(context);
+                    return new State입력Waiting_3789(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {4567})) {
-                    return new State입력대기중_4567(context);
+                    return new State입력Waiting_4567(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {4578})) {
-                    return new State입력대기중_4578(context);
+                    return new State입력Waiting_4578(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {4689})) {
-                    return new State입력대기중_4689(context);
+                    return new State입력Waiting_4689(context);
                 }
 
                 if (context.NpcDetected(arg1: 197, arg2: new[] {4789})) {
-                    return new State입력대기중_4789(context);
+                    return new State입력Waiting_4789(context);
                 }
 
                 return null;
@@ -122,8 +122,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_1279 : TriggerState {
-            internal State입력대기중_1279(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_1279 : TriggerState {
+            internal State입력Waiting_1279(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -160,8 +160,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_1238 : TriggerState {
-            internal State입력대기중_1238(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_1238 : TriggerState {
+            internal State입력Waiting_1238(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -198,8 +198,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_1358 : TriggerState {
-            internal State입력대기중_1358(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_1358 : TriggerState {
+            internal State입력Waiting_1358(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -236,8 +236,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_1489 : TriggerState {
-            internal State입력대기중_1489(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_1489 : TriggerState {
+            internal State입력Waiting_1489(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -274,8 +274,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_1567 : TriggerState {
-            internal State입력대기중_1567(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_1567 : TriggerState {
+            internal State입력Waiting_1567(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -312,8 +312,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_1679 : TriggerState {
-            internal State입력대기중_1679(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_1679 : TriggerState {
+            internal State입력Waiting_1679(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -350,8 +350,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_2389 : TriggerState {
-            internal State입력대기중_2389(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_2389 : TriggerState {
+            internal State입력Waiting_2389(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -388,8 +388,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_2347 : TriggerState {
-            internal State입력대기중_2347(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_2347 : TriggerState {
+            internal State입력Waiting_2347(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -426,8 +426,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_2478 : TriggerState {
-            internal State입력대기중_2478(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_2478 : TriggerState {
+            internal State입력Waiting_2478(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -464,8 +464,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_2456 : TriggerState {
-            internal State입력대기중_2456(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_2456 : TriggerState {
+            internal State입력Waiting_2456(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -502,8 +502,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_2569 : TriggerState {
-            internal State입력대기중_2569(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_2569 : TriggerState {
+            internal State입력Waiting_2569(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -540,8 +540,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_2678 : TriggerState {
-            internal State입력대기중_2678(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_2678 : TriggerState {
+            internal State입력Waiting_2678(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -578,8 +578,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_3458 : TriggerState {
-            internal State입력대기중_3458(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_3458 : TriggerState {
+            internal State입력Waiting_3458(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -616,8 +616,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_3589 : TriggerState {
-            internal State입력대기중_3589(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_3589 : TriggerState {
+            internal State입력Waiting_3589(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -654,8 +654,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_3679 : TriggerState {
-            internal State입력대기중_3679(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_3679 : TriggerState {
+            internal State입력Waiting_3679(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -692,8 +692,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_3789 : TriggerState {
-            internal State입력대기중_3789(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_3789 : TriggerState {
+            internal State입력Waiting_3789(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -730,8 +730,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_4567 : TriggerState {
-            internal State입력대기중_4567(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_4567 : TriggerState {
+            internal State입력Waiting_4567(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -768,8 +768,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_4578 : TriggerState {
-            internal State입력대기중_4578(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_4578 : TriggerState {
+            internal State입력Waiting_4578(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -806,8 +806,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_4689 : TriggerState {
-            internal State입력대기중_4689(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_4689 : TriggerState {
+            internal State입력Waiting_4689(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);
@@ -844,8 +844,8 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnExit() { }
         }
 
-        private class State입력대기중_4789 : TriggerState {
-            internal State입력대기중_4789(ITriggerContext context) : base(context) { }
+        private class State입력Waiting_4789 : TriggerState {
+            internal State입력Waiting_4789(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {12000001, 12000002, 12000003, 12000004, 12000005, 12000006, 12000007, 12000008, 12000009}, arg2: 1);

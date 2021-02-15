@@ -9,7 +9,7 @@ namespace Maple2.Trigger._99999840 {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonVariable(id: 912) == true) {
-                    return new StateMonster스폰(context);
+                    return new StateMonsterSpawn(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._99999840 {
             public override void OnExit() { }
         }
 
-        private class StateMonster스폰 : TriggerState {
-            internal StateMonster스폰(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn : TriggerState {
+            internal StateMonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {992}, arg2: false);

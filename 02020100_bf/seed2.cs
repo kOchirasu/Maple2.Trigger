@@ -33,7 +33,7 @@ namespace Maple2.Trigger._02020100_bf {
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {10002110}, arg2: 0)) {
-                    return new State씨앗2_대기(context);
+                    return new StateSeed2_Wait(context);
                 }
 
                 return null;
@@ -42,8 +42,8 @@ namespace Maple2.Trigger._02020100_bf {
             public override void OnExit() { }
         }
 
-        private class State씨앗2_대기 : TriggerState {
-            internal State씨앗2_대기(ITriggerContext context) : base(context) { }
+        private class StateSeed2_Wait : TriggerState {
+            internal StateSeed2_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {221, 222, 223, 224}, arg2: false);

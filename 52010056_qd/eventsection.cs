@@ -37,14 +37,14 @@ namespace Maple2.Trigger._52010056_qd {
             }
 
             public override TriggerState Execute() {
-                return new State인트로_준비(context);
+                return new State인트로_Prepare(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State인트로_준비 : TriggerState {
-            internal State인트로_준비(ITriggerContext context) : base(context) { }
+        private class State인트로_Prepare : TriggerState {
+            internal State인트로_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 9, arg2: "$52010056_QD__EventSection__52$", arg3: false);
@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    return new State크림슨스피어_대사_A(context);
+                    return new State크림슨스피어_Script_A(context);
                 }
 
                 return null;
@@ -91,8 +91,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State크림슨스피어_대사_A : TriggerState {
-            internal State크림슨스피어_대사_A(ITriggerContext context) : base(context) { }
+        private class State크림슨스피어_Script_A : TriggerState {
+            internal State크림슨스피어_Script_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 126, arg2: "MS2PatrolData_3001");
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State크림슨발록_대사_A(context);
+                    return new State크림슨발록_Script_A(context);
                 }
 
                 return null;
@@ -110,8 +110,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State크림슨발록_대사_A : TriggerState {
-            internal State크림슨발록_대사_A(ITriggerContext context) : base(context) { }
+        private class State크림슨발록_Script_A : TriggerState {
+            internal State크림슨발록_Script_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 121, arg2: "Stun_A");
@@ -120,7 +120,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State크림슨발록_대사_B(context);
+                    return new State크림슨발록_Script_B(context);
                 }
 
                 return null;
@@ -129,8 +129,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State크림슨발록_대사_B : TriggerState {
-            internal State크림슨발록_대사_B(ITriggerContext context) : base(context) { }
+        private class State크림슨발록_Script_B : TriggerState {
+            internal State크림슨발록_Script_B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003817, msg: "$52010056_QD__EventSection__3$", duration: 2800);
@@ -138,7 +138,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State크림슨발록_대사_C(context);
+                    return new State크림슨발록_Script_C(context);
                 }
 
                 return null;
@@ -147,8 +147,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State크림슨발록_대사_C : TriggerState {
-            internal State크림슨발록_대사_C(ITriggerContext context) : base(context) { }
+        private class State크림슨발록_Script_C : TriggerState {
+            internal State크림슨발록_Script_C(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003817, msg: "$52010056_QD__EventSection__4$", duration: 2800);
@@ -156,7 +156,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State크림슨발록_대사_D(context);
+                    return new State크림슨발록_Script_D(context);
                 }
 
                 return null;
@@ -165,8 +165,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State크림슨발록_대사_D : TriggerState {
-            internal State크림슨발록_대사_D(ITriggerContext context) : base(context) { }
+        private class State크림슨발록_Script_D : TriggerState {
+            internal State크림슨발록_Script_D(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003817, msg: "$52010056_QD__EventSection__5$", duration: 2800);
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State크림슨발록_대사_E(context);
+                    return new State크림슨발록_Script_E(context);
                 }
 
                 return null;
@@ -183,8 +183,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State크림슨발록_대사_E : TriggerState {
-            internal State크림슨발록_대사_E(ITriggerContext context) : base(context) { }
+        private class State크림슨발록_Script_E : TriggerState {
+            internal State크림슨발록_Script_E(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003817, msg: "$52010056_QD__EventSection__6$", duration: 2800);
@@ -192,7 +192,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State크림슨발록_대사_F(context);
+                    return new State크림슨발록_Script_F(context);
                 }
 
                 return null;
@@ -201,8 +201,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State크림슨발록_대사_F : TriggerState {
-            internal State크림슨발록_대사_F(ITriggerContext context) : base(context) { }
+        private class State크림슨발록_Script_F : TriggerState {
+            internal State크림슨발록_Script_F(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003817, msg: "$52010056_QD__EventSection__7$", duration: 2800);
@@ -210,7 +210,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State크림슨스피어_대사_B(context);
+                    return new State크림슨스피어_Script_B(context);
                 }
 
                 return null;
@@ -221,8 +221,8 @@ namespace Maple2.Trigger._52010056_qd {
             }
         }
 
-        private class State크림슨스피어_대사_B : TriggerState {
-            internal State크림슨스피어_대사_B(ITriggerContext context) : base(context) { }
+        private class State크림슨스피어_Script_B : TriggerState {
+            internal State크림슨스피어_Script_B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 125, arg2: "MS2PatrolData_3002");
@@ -259,7 +259,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new StateStart연출_준비(context);
+                    return new StateStartCinematic_Prepare(context);
                 }
 
                 return null;
@@ -268,8 +268,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class StateStart연출_준비 : TriggerState {
-            internal StateStart연출_준비(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic_Prepare : TriggerState {
+            internal StateStartCinematic_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 9, arg2: "$52010056_QD__EventSection__53$", arg3: false);
@@ -279,7 +279,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    return new StateStart연출_지역소개(context);
+                    return new StateStartCinematic_지역소개(context);
                 }
 
                 return null;
@@ -288,8 +288,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class StateStart연출_지역소개 : TriggerState {
-            internal StateStart연출_지역소개(ITriggerContext context) : base(context) { }
+        private class StateStartCinematic_지역소개 : TriggerState {
+            internal StateStartCinematic_지역소개(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -416,7 +416,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State조작_준비(context);
+                    return new State조작_Prepare(context);
                 }
 
                 return null;
@@ -425,8 +425,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State조작_준비 : TriggerState {
-            internal State조작_준비(ITriggerContext context) : base(context) { }
+        private class State조작_Prepare : TriggerState {
+            internal State조작_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101, 111, 112, 121, 122, 123, 124, 125, 126});
@@ -487,7 +487,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State의외의효능_준비(context);
+                    return new State의외의효능_Prepare(context);
                 }
 
                 return null;
@@ -500,8 +500,8 @@ namespace Maple2.Trigger._52010056_qd {
             }
         }
 
-        private class State의외의효능_준비 : TriggerState {
-            internal State의외의효능_준비(ITriggerContext context) : base(context) { }
+        private class State의외의효능_Prepare : TriggerState {
+            internal State의외의효능_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveBuff(arg1: 2001, arg2: 99910300);
@@ -636,7 +636,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State트리스탄대사_A(context);
+                    return new State트리스탄Script_A(context);
                 }
 
                 return null;
@@ -647,8 +647,8 @@ namespace Maple2.Trigger._52010056_qd {
             }
         }
 
-        private class State트리스탄대사_A : TriggerState {
-            internal State트리스탄대사_A(ITriggerContext context) : base(context) { }
+        private class State트리스탄Script_A : TriggerState {
+            internal State트리스탄Script_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003812, msg: "$52010056_QD__EventSection__23$", duration: 2800, illustId: "Tristan_normal", align: "Center");
@@ -656,7 +656,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State트리스탄대사_B(context);
+                    return new State트리스탄Script_B(context);
                 }
 
                 return null;
@@ -665,8 +665,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State트리스탄대사_B : TriggerState {
-            internal State트리스탄대사_B(ITriggerContext context) : base(context) { }
+        private class State트리스탄Script_B : TriggerState {
+            internal State트리스탄Script_B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003812, msg: "$52010056_QD__EventSection__24$", duration: 2800, illustId: "Tristan_normal", align: "Center");
@@ -674,7 +674,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State크림슨발록대사_A(context);
+                    return new State크림슨발록Script_A(context);
                 }
 
                 return null;
@@ -683,8 +683,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State크림슨발록대사_A : TriggerState {
-            internal State크림슨발록대사_A(ITriggerContext context) : base(context) { }
+        private class State크림슨발록Script_A : TriggerState {
+            internal State크림슨발록Script_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4011}, arg2: false);
@@ -694,7 +694,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State인페르녹의혼_흡수연출_A(context);
+                    return new State인페르녹의혼_흡수Cinematic_A(context);
                 }
 
                 return null;
@@ -705,8 +705,8 @@ namespace Maple2.Trigger._52010056_qd {
             }
         }
 
-        private class State인페르녹의혼_흡수연출_A : TriggerState {
-            internal State인페르녹의혼_흡수연출_A(ITriggerContext context) : base(context) { }
+        private class State인페르녹의혼_흡수Cinematic_A : TriggerState {
+            internal State인페르녹의혼_흡수Cinematic_A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Attack_02_B", arg3: 999999999f);
@@ -715,7 +715,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State인페르녹의혼_흡수연출_B(context);
+                    return new State인페르녹의혼_흡수Cinematic_B(context);
                 }
 
                 return null;
@@ -724,8 +724,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State인페르녹의혼_흡수연출_B : TriggerState {
-            internal State인페르녹의혼_흡수연출_B(ITriggerContext context) : base(context) { }
+        private class State인페르녹의혼_흡수Cinematic_B : TriggerState {
+            internal State인페르녹의혼_흡수Cinematic_B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4012}, arg2: false);
@@ -734,7 +734,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State인페르녹의혼_흡수연출_C(context);
+                    return new State인페르녹의혼_흡수Cinematic_C(context);
                 }
 
                 return null;
@@ -743,8 +743,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State인페르녹의혼_흡수연출_C : TriggerState {
-            internal State인페르녹의혼_흡수연출_C(ITriggerContext context) : base(context) { }
+        private class State인페르녹의혼_흡수Cinematic_C : TriggerState {
+            internal State인페르녹의혼_흡수Cinematic_C(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5012, 5013}, arg2: true);
@@ -753,7 +753,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State인페르녹의혼_흡수연출_D(context);
+                    return new State인페르녹의혼_흡수Cinematic_D(context);
                 }
 
                 return null;
@@ -762,8 +762,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State인페르녹의혼_흡수연출_D : TriggerState {
-            internal State인페르녹의혼_흡수연출_D(ITriggerContext context) : base(context) { }
+        private class State인페르녹의혼_흡수Cinematic_D : TriggerState {
+            internal State인페르녹의혼_흡수Cinematic_D(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -771,7 +771,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State인페르녹의혼_흡수연출_E(context);
+                    return new State인페르녹의혼_흡수Cinematic_E(context);
                 }
 
                 return null;
@@ -780,8 +780,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State인페르녹의혼_흡수연출_E : TriggerState {
-            internal State인페르녹의혼_흡수연출_E(ITriggerContext context) : base(context) { }
+        private class State인페르녹의혼_흡수Cinematic_E : TriggerState {
+            internal State인페르녹의혼_흡수Cinematic_E(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003821, msg: "$52010056_QD__EventSection__29$", duration: 2800);
@@ -789,7 +789,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State인페르녹의혼_흡수연출_F(context);
+                    return new State인페르녹의혼_흡수Cinematic_F(context);
                 }
 
                 return null;
@@ -798,8 +798,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State인페르녹의혼_흡수연출_F : TriggerState {
-            internal State인페르녹의혼_흡수연출_F(ITriggerContext context) : base(context) { }
+        private class State인페르녹의혼_흡수Cinematic_F : TriggerState {
+            internal State인페르녹의혼_흡수Cinematic_F(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003812, msg: "$52010056_QD__EventSection__30$", duration: 2800, illustId: "Tristan_normal", align: "Center");
@@ -807,7 +807,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State인페르녹의혼_흡수연출_G(context);
+                    return new State인페르녹의혼_흡수Cinematic_G(context);
                 }
 
                 return null;
@@ -816,8 +816,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State인페르녹의혼_흡수연출_G : TriggerState {
-            internal State인페르녹의혼_흡수연출_G(ITriggerContext context) : base(context) { }
+        private class State인페르녹의혼_흡수Cinematic_G : TriggerState {
+            internal State인페르녹의혼_흡수Cinematic_G(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003821, msg: "$52010056_QD__EventSection__31$", duration: 2800, align: "Center");
@@ -825,7 +825,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State인페르녹의혼_흡수연출_H(context);
+                    return new State인페르녹의혼_흡수Cinematic_H(context);
                 }
 
                 return null;
@@ -834,8 +834,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State인페르녹의혼_흡수연출_H : TriggerState {
-            internal State인페르녹의혼_흡수연출_H(ITriggerContext context) : base(context) { }
+        private class State인페르녹의혼_흡수Cinematic_H : TriggerState {
+            internal State인페르녹의혼_흡수Cinematic_H(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003821, msg: "$52010056_QD__EventSection__32$", duration: 2800, align: "Center");
@@ -843,7 +843,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State인페르녹의혼_흡수연출_I(context);
+                    return new State인페르녹의혼_흡수Cinematic_I(context);
                 }
 
                 return null;
@@ -852,8 +852,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State인페르녹의혼_흡수연출_I : TriggerState {
-            internal State인페르녹의혼_흡수연출_I(ITriggerContext context) : base(context) { }
+        private class State인페르녹의혼_흡수Cinematic_I : TriggerState {
+            internal State인페르녹의혼_흡수Cinematic_I(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003812, msg: "$52010056_QD__EventSection__33$", duration: 2800, illustId: "Tristan_normal", align: "Center");
@@ -861,7 +861,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State인페르녹의혼_흡수연출_J(context);
+                    return new State인페르녹의혼_흡수Cinematic_J(context);
                 }
 
                 return null;
@@ -870,8 +870,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State인페르녹의혼_흡수연출_J : TriggerState {
-            internal State인페르녹의혼_흡수연출_J(ITriggerContext context) : base(context) { }
+        private class State인페르녹의혼_흡수Cinematic_J : TriggerState {
+            internal State인페르녹의혼_흡수Cinematic_J(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003821, msg: "$52010056_QD__EventSection__34$", duration: 2800);
@@ -879,7 +879,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State인페르녹의혼_흡수연출_K(context);
+                    return new State인페르녹의혼_흡수Cinematic_K(context);
                 }
 
                 return null;
@@ -888,8 +888,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State인페르녹의혼_흡수연출_K : TriggerState {
-            internal State인페르녹의혼_흡수연출_K(ITriggerContext context) : base(context) { }
+        private class State인페르녹의혼_흡수Cinematic_K : TriggerState {
+            internal State인페르녹의혼_흡수Cinematic_K(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003812, msg: "$52010056_QD__EventSection__35$", duration: 2800, illustId: "Tristan_normal", align: "Center");
@@ -897,7 +897,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State인페르녹의혼_흡수연출_L(context);
+                    return new State인페르녹의혼_흡수Cinematic_L(context);
                 }
 
                 return null;
@@ -906,8 +906,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State인페르녹의혼_흡수연출_L : TriggerState {
-            internal State인페르녹의혼_흡수연출_L(ITriggerContext context) : base(context) { }
+        private class State인페르녹의혼_흡수Cinematic_L : TriggerState {
+            internal State인페르녹의혼_흡수Cinematic_L(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003821, msg: "$52010056_QD__EventSection__36$", duration: 2800);
@@ -915,7 +915,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State인페르녹의혼_흡수연출_M(context);
+                    return new State인페르녹의혼_흡수Cinematic_M(context);
                 }
 
                 return null;
@@ -924,8 +924,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State인페르녹의혼_흡수연출_M : TriggerState {
-            internal State인페르녹의혼_흡수연출_M(ITriggerContext context) : base(context) { }
+        private class State인페르녹의혼_흡수Cinematic_M : TriggerState {
+            internal State인페르녹의혼_흡수Cinematic_M(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003821, msg: "$52010056_QD__EventSection__37$", duration: 2800);
@@ -933,7 +933,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State인페르녹의혼_흡수연출_N(context);
+                    return new State인페르녹의혼_흡수Cinematic_N(context);
                 }
 
                 return null;
@@ -942,8 +942,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State인페르녹의혼_흡수연출_N : TriggerState {
-            internal State인페르녹의혼_흡수연출_N(ITriggerContext context) : base(context) { }
+        private class State인페르녹의혼_흡수Cinematic_N : TriggerState {
+            internal State인페르녹의혼_흡수Cinematic_N(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4013}, arg2: false);
@@ -953,7 +953,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State각성_전투준비(context);
+                    return new State각성_전투Prepare(context);
                 }
 
                 return null;
@@ -962,8 +962,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State각성_전투준비 : TriggerState {
-            internal State각성_전투준비(ITriggerContext context) : base(context) { }
+        private class State각성_전투Prepare : TriggerState {
+            internal State각성_전투Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -1132,7 +1132,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724})) {
-                    return new State필살기연출_암전(context);
+                    return new State필살기Cinematic_암전(context);
                 }
 
                 return null;
@@ -1141,8 +1141,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State필살기연출_암전 : TriggerState {
-            internal State필살기연출_암전(ITriggerContext context) : base(context) { }
+        private class State필살기Cinematic_암전 : TriggerState {
+            internal State필살기Cinematic_암전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: false);
@@ -1155,7 +1155,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State필살기연출_준비A(context);
+                    return new State필살기Cinematic_PrepareA(context);
                 }
 
                 return null;
@@ -1164,8 +1164,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State필살기연출_준비A : TriggerState {
-            internal State필살기연출_준비A(ITriggerContext context) : base(context) { }
+        private class State필살기Cinematic_PrepareA : TriggerState {
+            internal State필살기Cinematic_PrepareA(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724});
@@ -1174,7 +1174,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State필살기연출_준비B(context);
+                    return new State필살기Cinematic_PrepareB(context);
                 }
 
                 return null;
@@ -1183,8 +1183,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State필살기연출_준비B : TriggerState {
-            internal State필살기연출_준비B(ITriggerContext context) : base(context) { }
+        private class State필살기Cinematic_PrepareB : TriggerState {
+            internal State필살기Cinematic_PrepareB(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Attack_Idle_A", arg3: 9999999f);
@@ -1288,7 +1288,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State크림슨발록_대사_G(context);
+                    return new State크림슨발록_Script_G(context);
                 }
 
                 return null;
@@ -1297,8 +1297,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State크림슨발록_대사_G : TriggerState {
-            internal State크림슨발록_대사_G(ITriggerContext context) : base(context) { }
+        private class State크림슨발록_Script_G : TriggerState {
+            internal State크림슨발록_Script_G(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 801, arg2: "Attack_01_B");
@@ -1307,7 +1307,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State트리스탄_대사_H(context);
+                    return new State트리스탄_Script_H(context);
                 }
 
                 return null;
@@ -1316,8 +1316,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State트리스탄_대사_H : TriggerState {
-            internal State트리스탄_대사_H(ITriggerContext context) : base(context) { }
+        private class State트리스탄_Script_H : TriggerState {
+            internal State트리스탄_Script_H(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003812, msg: "$52010056_QD__EventSection__44$", duration: 2800, illustId: "Tristan_normal", align: "Center");
@@ -1325,7 +1325,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State크림슨발록_대사_I(context);
+                    return new State크림슨발록_Script_I(context);
                 }
 
                 return null;
@@ -1334,8 +1334,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State크림슨발록_대사_I : TriggerState {
-            internal State크림슨발록_대사_I(ITriggerContext context) : base(context) { }
+        private class State크림슨발록_Script_I : TriggerState {
+            internal State크림슨발록_Script_I(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003817, msg: "$52010056_QD__EventSection__45$", duration: 2800);
@@ -1379,7 +1379,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State필살기연출_모션A(context);
+                    return new State필살기Cinematic_모션A(context);
                 }
 
                 return null;
@@ -1388,8 +1388,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State필살기연출_모션A : TriggerState {
-            internal State필살기연출_모션A(ITriggerContext context) : base(context) { }
+        private class State필살기Cinematic_모션A : TriggerState {
+            internal State필살기Cinematic_모션A(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Attack_02_B", arg3: 9999999f);
@@ -1398,7 +1398,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State필살기연출_모션B(context);
+                    return new State필살기Cinematic_모션B(context);
                 }
 
                 return null;
@@ -1407,8 +1407,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State필살기연출_모션B : TriggerState {
-            internal State필살기연출_모션B(ITriggerContext context) : base(context) { }
+        private class State필살기Cinematic_모션B : TriggerState {
+            internal State필살기Cinematic_모션B(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Attack_01_B", arg3: 9999999f);
@@ -1416,7 +1416,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State크림슨발록_대사_J(context);
+                    return new State크림슨발록_Script_J(context);
                 }
 
                 return null;
@@ -1425,8 +1425,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State크림슨발록_대사_J : TriggerState {
-            internal State크림슨발록_대사_J(ITriggerContext context) : base(context) { }
+        private class State크림슨발록_Script_J : TriggerState {
+            internal State크림슨발록_Script_J(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003817, msg: "$52010056_QD__EventSection__48$", duration: 1800);
@@ -1434,7 +1434,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1800)) {
-                    return new State크림슨발록_대사_K(context);
+                    return new State크림슨발록_Script_K(context);
                 }
 
                 return null;
@@ -1443,8 +1443,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State크림슨발록_대사_K : TriggerState {
-            internal State크림슨발록_대사_K(ITriggerContext context) : base(context) { }
+        private class State크림슨발록_Script_K : TriggerState {
+            internal State크림슨발록_Script_K(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5101}, arg2: true);
@@ -1796,7 +1796,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State크림슨발록_대사_L(context);
+                    return new State크림슨발록_Script_L(context);
                 }
 
                 return null;
@@ -1805,8 +1805,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State크림슨발록_대사_L : TriggerState {
-            internal State크림슨발록_대사_L(ITriggerContext context) : base(context) { }
+        private class State크림슨발록_Script_L : TriggerState {
+            internal State크림슨발록_Script_L(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003817, msg: "$52010056_QD__EventSection__50$", duration: 2800, illustId: "balrog_normal", align: "Center");
@@ -1814,7 +1814,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State마지막연출_세팅(context);
+                    return new State마지막Cinematic_세팅(context);
                 }
 
                 return null;
@@ -1826,8 +1826,8 @@ namespace Maple2.Trigger._52010056_qd {
             }
         }
 
-        private class State마지막연출_세팅 : TriggerState {
-            internal State마지막연출_세팅(ITriggerContext context) : base(context) { }
+        private class State마지막Cinematic_세팅 : TriggerState {
+            internal State마지막Cinematic_세팅(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5101, 5102, 5103, 5104, 5105, 5106, 5107, 5108, 5109, 5110, 5111, 5112, 5113, 5114, 5115, 5116, 5117, 5118, 5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209, 5210, 5211, 5212, 5213, 5214, 5215, 5216, 5218, 5218, 5301, 5302, 5303, 5304}, arg2: false);
@@ -1857,7 +1857,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State마지막연출_온(context);
+                    return new State마지막Cinematic_온(context);
                 }
 
                 return null;
@@ -1866,8 +1866,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class State마지막연출_온 : TriggerState {
-            internal State마지막연출_온(ITriggerContext context) : base(context) { }
+        private class State마지막Cinematic_온 : TriggerState {
+            internal State마지막Cinematic_온(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 6, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");

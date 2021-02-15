@@ -68,7 +68,7 @@ namespace Maple2.Trigger._52010071_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State검마대사_01(context);
+                    return new State검마Script_01(context);
                 }
 
                 return null;
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._52010071_qd {
             public override void OnExit() { }
         }
 
-        private class State검마대사_01 : TriggerState {
-            internal State검마대사_01(ITriggerContext context) : base(context) { }
+        private class State검마Script_01 : TriggerState {
+            internal State검마Script_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 6000f);
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._52010071_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State검마대사_02(context);
+                    return new State검마Script_02(context);
                 }
 
                 return null;
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._52010071_qd {
             public override void OnExit() { }
         }
 
-        private class State검마대사_02 : TriggerState {
-            internal State검마대사_02(ITriggerContext context) : base(context) { }
+        private class State검마Script_02 : TriggerState {
+            internal State검마Script_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._52010071_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State검마대사_03(context);
+                    return new State검마Script_03(context);
                 }
 
                 return null;
@@ -114,8 +114,8 @@ namespace Maple2.Trigger._52010071_qd {
             public override void OnExit() { }
         }
 
-        private class State검마대사_03 : TriggerState {
-            internal State검마대사_03(ITriggerContext context) : base(context) { }
+        private class State검마Script_03 : TriggerState {
+            internal State검마Script_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._52010071_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 16000)) {
-                    return new State검마대사_04(context);
+                    return new State검마Script_04(context);
                 }
 
                 return null;
@@ -137,8 +137,8 @@ namespace Maple2.Trigger._52010071_qd {
             public override void OnExit() { }
         }
 
-        private class State검마대사_04 : TriggerState {
-            internal State검마대사_04(ITriggerContext context) : base(context) { }
+        private class State검마Script_04 : TriggerState {
+            internal State검마Script_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4009}, arg2: false);
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._52010071_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State투르카대사_01(context);
+                    return new State투르카Script_01(context);
                 }
 
                 return null;
@@ -156,8 +156,8 @@ namespace Maple2.Trigger._52010071_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카대사_01 : TriggerState {
-            internal State투르카대사_01(ITriggerContext context) : base(context) { }
+        private class State투르카Script_01 : TriggerState {
+            internal State투르카Script_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4004}, arg2: false);

@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000179_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    // return new StateQuest조건체크(context);
+                    // return new StateQuestConditionCheck(context);
                     return null;
                 }
 

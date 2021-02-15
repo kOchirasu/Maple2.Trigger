@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000523_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State기본Setting(context);
+                    return new StateDefaultSetting(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000523_bf {
             public override void OnExit() { }
         }
 
-        private class State기본Setting : TriggerState {
-            internal State기본Setting(ITriggerContext context) : base(context) { }
+        private class StateDefaultSetting : TriggerState {
+            internal StateDefaultSetting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "MonsterMany", value: 0);
@@ -42,7 +42,7 @@ namespace Maple2.Trigger._02000523_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "BuffDeleteOk") == 1) {
-                    return new StateTrigger작동02대기중(context);
+                    return new StateTrigger작동02Waiting(context);
                 }
 
                 return null;
@@ -51,8 +51,8 @@ namespace Maple2.Trigger._02000523_bf {
             public override void OnExit() { }
         }
 
-        private class StateTrigger작동02대기중 : TriggerState {
-            internal StateTrigger작동02대기중(ITriggerContext context) : base(context) { }
+        private class StateTrigger작동02Waiting : TriggerState {
+            internal StateTrigger작동02Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

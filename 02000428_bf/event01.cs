@@ -41,7 +41,7 @@ namespace Maple2.Trigger._02000428_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8000)) {
-                    return new State첫번째페이즈_InfernoWarship(context);
+                    return new State첫번째Phase_InfernoWarship(context);
                 }
 
                 return null;
@@ -52,14 +52,14 @@ namespace Maple2.Trigger._02000428_bf {
             }
         }
 
-        private class State첫번째페이즈_InfernoWarship : TriggerState {
-            internal State첫번째페이즈_InfernoWarship(ITriggerContext context) : base(context) { }
+        private class State첫번째Phase_InfernoWarship : TriggerState {
+            internal State첫번째Phase_InfernoWarship(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "AirshipBalrogCrimsonBroken") == 1) {
-                    return new StateInfernoWarship파괴연출(context);
+                    return new StateInfernoWarship파괴Cinematic(context);
                 }
 
                 return null;
@@ -68,8 +68,8 @@ namespace Maple2.Trigger._02000428_bf {
             public override void OnExit() { }
         }
 
-        private class StateInfernoWarship파괴연출 : TriggerState {
-            internal StateInfernoWarship파괴연출(ITriggerContext context) : base(context) { }
+        private class StateInfernoWarship파괴Cinematic : TriggerState {
+            internal StateInfernoWarship파괴Cinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20041010, textId: 20041010);
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02000428_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new StateInfernoWarship파괴연출2(context);
+                    return new StateInfernoWarship파괴Cinematic2(context);
                 }
 
                 return null;
@@ -87,8 +87,8 @@ namespace Maple2.Trigger._02000428_bf {
             public override void OnExit() { }
         }
 
-        private class StateInfernoWarship파괴연출2 : TriggerState {
-            internal StateInfernoWarship파괴연출2(ITriggerContext context) : base(context) { }
+        private class StateInfernoWarship파괴Cinematic2 : TriggerState {
+            internal StateInfernoWarship파괴Cinematic2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 11003536, illust: "Bliche_nomal", duration: 5000, script: "$02000410_BF__Event01__1$", voice: @"ko/Npc/00002158");
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._02000428_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State두번째페이즈_InfernoWarship(context);
+                    return new State두번째Phase_InfernoWarship(context);
                 }
 
                 return null;
@@ -107,8 +107,8 @@ namespace Maple2.Trigger._02000428_bf {
             }
         }
 
-        private class State두번째페이즈_InfernoWarship : TriggerState {
-            internal State두번째페이즈_InfernoWarship(ITriggerContext context) : base(context) { }
+        private class State두번째Phase_InfernoWarship : TriggerState {
+            internal State두번째Phase_InfernoWarship(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -225,7 +225,7 @@ namespace Maple2.Trigger._02000428_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State세번째페이즈_인페르녹Appear(context);
+                    return new State세번째Phase_인페르녹Appear(context);
                 }
 
                 return null;
@@ -234,8 +234,8 @@ namespace Maple2.Trigger._02000428_bf {
             public override void OnExit() { }
         }
 
-        private class State세번째페이즈_인페르녹Appear : TriggerState {
-            internal State세번째페이즈_인페르녹Appear(ITriggerContext context) : base(context) { }
+        private class State세번째Phase_인페르녹Appear : TriggerState {
+            internal State세번째Phase_인페르녹Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

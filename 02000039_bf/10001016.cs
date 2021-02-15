@@ -1,7 +1,7 @@
 namespace Maple2.Trigger._02000039_bf {
     public static class _10001016 {
-        public class StateInteractObject대기 : TriggerState {
-            internal StateInteractObject대기(ITriggerContext context) : base(context) { }
+        public class StateInteractObjectWait : TriggerState {
+            internal StateInteractObjectWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02000039_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new StateInteractObject대기(context);
+                    return new StateInteractObjectWait(context);
                 }
 
                 return null;

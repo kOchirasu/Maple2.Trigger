@@ -30,7 +30,7 @@ namespace Maple2.Trigger._52000064_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    return new State완료대기(context);
+                    return new State완료Wait(context);
                 }
 
                 return null;
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._52000064_qd {
             public override void OnExit() { }
         }
 
-        private class State완료대기 : TriggerState {
-            internal State완료대기(ITriggerContext context) : base(context) { }
+        private class State완료Wait : TriggerState {
+            internal State완료Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3000, 3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);

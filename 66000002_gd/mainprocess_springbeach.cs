@@ -7,7 +7,7 @@ namespace Maple2.Trigger._66000002_gd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {302})) {
-                    return new State이벤트대기중(context);
+                    return new State이벤트Waiting(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._66000002_gd {
             public override void OnExit() { }
         }
 
-        private class State이벤트대기중 : TriggerState {
-            internal State이벤트대기중(ITriggerContext context) : base(context) { }
+        private class State이벤트Waiting : TriggerState {
+            internal State이벤트Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 901, arg2: true, arg3: true, arg4: true);

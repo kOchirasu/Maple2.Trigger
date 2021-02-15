@@ -167,7 +167,7 @@ namespace Maple2.Trigger._52020014_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {905})) {
-                    return new State레버힌트_Camera(context);
+                    return new StateLever힌트_Camera(context);
                 }
 
                 return null;
@@ -176,8 +176,8 @@ namespace Maple2.Trigger._52020014_qd {
             public override void OnExit() { }
         }
 
-        private class State레버힌트_Camera : TriggerState {
-            internal State레버힌트_Camera(ITriggerContext context) : base(context) { }
+        private class StateLever힌트_Camera : TriggerState {
+            internal StateLever힌트_Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "이공간1차전투", arg2: "nextState");
@@ -188,7 +188,7 @@ namespace Maple2.Trigger._52020014_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State레버힌트_Camera대사(context);
+                    return new StateLever힌트_Camera대사(context);
                 }
 
                 return null;
@@ -197,8 +197,8 @@ namespace Maple2.Trigger._52020014_qd {
             public override void OnExit() { }
         }
 
-        private class State레버힌트_Camera대사 : TriggerState {
-            internal State레버힌트_Camera대사(ITriggerContext context) : base(context) { }
+        private class StateLever힌트_Camera대사 : TriggerState {
+            internal StateLever힌트_Camera대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg3: "저 레버를 작동시키면 되는건가...?", arg4: 3000);

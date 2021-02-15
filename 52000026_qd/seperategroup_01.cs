@@ -1474,7 +1474,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State강제퇴장(context);
+                    return new State강제Exit(context);
                 }
 
                 return null;
@@ -1483,8 +1483,8 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnExit() { }
         }
 
-        private class State강제퇴장 : TriggerState {
-            internal State강제퇴장(ITriggerContext context) : base(context) { }
+        private class State강제Exit : TriggerState {
+            internal State강제Exit(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 02000001, arg2: 17, arg3: 9001);

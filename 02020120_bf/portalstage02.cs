@@ -93,7 +93,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State혹시모를_던전리셋신호_대기(context);
+                    return new State혹시모를_Dungeon리셋신호_Wait(context);
                 }
 
                 return null;
@@ -111,7 +111,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State혹시모를_던전리셋신호_대기(context);
+                    return new State혹시모를_Dungeon리셋신호_Wait(context);
                 }
 
                 return null;
@@ -129,7 +129,7 @@ namespace Maple2.Trigger._02020120_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State혹시모를_던전리셋신호_대기(context);
+                    return new State혹시모를_Dungeon리셋신호_Wait(context);
                 }
 
                 return null;
@@ -138,8 +138,8 @@ namespace Maple2.Trigger._02020120_bf {
             public override void OnExit() { }
         }
 
-        private class State혹시모를_던전리셋신호_대기 : TriggerState {
-            internal State혹시모를_던전리셋신호_대기(ITriggerContext context) : base(context) { }
+        private class State혹시모를_Dungeon리셋신호_Wait : TriggerState {
+            internal State혹시모를_Dungeon리셋신호_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

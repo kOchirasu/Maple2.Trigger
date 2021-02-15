@@ -146,7 +146,7 @@ namespace Maple2.Trigger._52000163_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State전직준비(context);
+                    return new State전직Prepare(context);
                 }
 
                 return null;
@@ -155,8 +155,8 @@ namespace Maple2.Trigger._52000163_qd {
             public override void OnExit() { }
         }
 
-        private class State전직준비 : TriggerState {
-            internal State전직준비(ITriggerContext context) : base(context) { }
+        private class State전직Prepare : TriggerState {
+            internal State전직Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -198,7 +198,7 @@ namespace Maple2.Trigger._52000163_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State떠나기전준비(context);
+                    return new State떠나기전Prepare(context);
                 }
 
                 return null;
@@ -207,8 +207,8 @@ namespace Maple2.Trigger._52000163_qd {
             public override void OnExit() { }
         }
 
-        private class State떠나기전준비 : TriggerState {
-            internal State떠나기전준비(ITriggerContext context) : base(context) { }
+        private class State떠나기전Prepare : TriggerState {
+            internal State떠나기전Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

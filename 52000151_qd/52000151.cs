@@ -13,11 +13,11 @@ namespace Maple2.Trigger._52000151_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10010}, arg2: new[] {50001641}, arg3: new byte[] {3})) {
-                    return new State생틈퀘수령전대기(context);
+                    return new State생틈퀘수령전Wait(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10010}, arg2: new[] {50001641}, arg3: new byte[] {2})) {
-                    return new State생틈퀘수령전대기(context);
+                    return new State생틈퀘수령전Wait(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {10010}, arg2: new[] {50001641}, arg3: new byte[] {1})) {
@@ -46,8 +46,8 @@ namespace Maple2.Trigger._52000151_qd {
             public override void OnExit() { }
         }
 
-        private class State생틈퀘수령전대기 : TriggerState {
-            internal State생틈퀘수령전대기(ITriggerContext context) : base(context) { }
+        private class State생틈퀘수령전Wait : TriggerState {
+            internal State생틈퀘수령전Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {202, 200, 201}, arg2: false);

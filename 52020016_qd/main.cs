@@ -249,7 +249,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State전투페이즈_1(context);
+                    return new State전투Phase_1(context);
                 }
 
                 return null;
@@ -263,8 +263,8 @@ namespace Maple2.Trigger._52020016_qd {
             }
         }
 
-        private class State전투페이즈_1 : TriggerState {
-            internal State전투페이즈_1(ITriggerContext context) : base(context) { }
+        private class State전투Phase_1 : TriggerState {
+            internal State전투Phase_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -293,7 +293,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override TriggerState Execute() {
                 if (context.GetShadowExpeditionPoints() >= 300) {
-                    return new State페이즈_2_준비(context);
+                    return new State페이즈_2_Prepare(context);
                 }
 
                 return null;
@@ -302,8 +302,8 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnExit() { }
         }
 
-        private class State페이즈_2_준비 : TriggerState {
-            internal State페이즈_2_준비(ITriggerContext context) : base(context) { }
+        private class State페이즈_2_Prepare : TriggerState {
+            internal State페이즈_2_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShadowExpeditionCloseBossGauge();

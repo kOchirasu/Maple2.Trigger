@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000545_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {702}, arg2: 0)) {
-                    return new State아르키아체력(context);
+                    return new State아르키아Health(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000545_bf {
             public override void OnExit() { }
         }
 
-        private class State아르키아체력 : TriggerState {
-            internal State아르키아체력(ITriggerContext context) : base(context) { }
+        private class State아르키아Health : TriggerState {
+            internal State아르키아Health(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

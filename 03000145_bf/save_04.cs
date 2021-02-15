@@ -50,7 +50,7 @@ namespace Maple2.Trigger._03000145_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State도망갈준비1(context);
+                    return new State도망갈Prepare1(context);
                 }
 
                 return null;
@@ -59,8 +59,8 @@ namespace Maple2.Trigger._03000145_bf {
             public override void OnExit() { }
         }
 
-        private class State도망갈준비1 : TriggerState {
-            internal State도망갈준비1(ITriggerContext context) : base(context) { }
+        private class State도망갈Prepare1 : TriggerState {
+            internal State도망갈Prepare1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 2);
@@ -69,7 +69,7 @@ namespace Maple2.Trigger._03000145_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State도망갈준비2(context);
+                    return new State도망갈Prepare2(context);
                 }
 
                 return null;
@@ -78,8 +78,8 @@ namespace Maple2.Trigger._03000145_bf {
             public override void OnExit() { }
         }
 
-        private class State도망갈준비2 : TriggerState {
-            internal State도망갈준비2(ITriggerContext context) : base(context) { }
+        private class State도망갈Prepare2 : TriggerState {
+            internal State도망갈Prepare2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);

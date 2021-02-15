@@ -1,13 +1,13 @@
 namespace Maple2.Trigger._52000006_qd {
     public static class _tutorial_06_2 {
-        public class State엔터대기중 : TriggerState {
-            internal State엔터대기중(ITriggerContext context) : base(context) { }
+        public class State엔터Waiting : TriggerState {
+            internal State엔터Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State오픈대기중(context);
+                    return new StateWaitOpening(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._52000006_qd {
             public override void OnExit() { }
         }
 
-        private class State오픈대기중 : TriggerState {
-            internal State오픈대기중(ITriggerContext context) : base(context) { }
+        private class StateWaitOpening : TriggerState {
+            internal StateWaitOpening(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

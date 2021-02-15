@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02010055_bf {
                 }
 
                 if (!context.IsDungeonRoom()) {
-                    return new StateQuest던전대기(context);
+                    return new StateQuestDungeonWait(context);
                 }
 
                 return null;
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonLevel() == 2) {
-                    return new State레이드대기(context);
+                    return new State레이드Wait(context);
                 }
 
                 if (context.GetDungeonLevel() == 3) {
@@ -57,14 +57,14 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnExit() { }
         }
 
-        private class StateQuest던전대기 : TriggerState {
-            internal StateQuest던전대기(ITriggerContext context) : base(context) { }
+        private class StateQuestDungeonWait : TriggerState {
+            internal StateQuestDungeonWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2299})) {
-                    return new State영상준비(context);
+                    return new State영상Prepare(context);
                 }
 
                 return null;
@@ -73,14 +73,14 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnExit() { }
         }
 
-        private class State레이드대기 : TriggerState {
-            internal State레이드대기(ITriggerContext context) : base(context) { }
+        private class State레이드Wait : TriggerState {
+            internal State레이드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2099})) {
-                    return new State영상준비(context);
+                    return new State영상Prepare(context);
                 }
 
                 return null;
@@ -89,14 +89,14 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnExit() { }
         }
 
-        private class State카오스레이드대기 : TriggerState {
-            internal State카오스레이드대기(ITriggerContext context) : base(context) { }
+        private class State카오스레이드Wait : TriggerState {
+            internal State카오스레이드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {2199})) {
-                    return new State영상준비(context);
+                    return new State영상Prepare(context);
                 }
 
                 return null;
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State스타츠대사01(context);
+                    return new State스타츠Script01(context);
                 }
 
                 return null;
@@ -143,8 +143,8 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnExit() { }
         }
 
-        private class State스타츠대사01 : TriggerState {
-            internal State스타츠대사01(ITriggerContext context) : base(context) { }
+        private class State스타츠Script01 : TriggerState {
+            internal State스타츠Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "NPC이동");
@@ -153,7 +153,7 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State타라대사01(context);
+                    return new State타라Script01(context);
                 }
 
                 return null;
@@ -162,8 +162,8 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnExit() { }
         }
 
-        private class State타라대사01 : TriggerState {
-            internal State타라대사01(ITriggerContext context) : base(context) { }
+        private class State타라Script01 : TriggerState {
+            internal State타라Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "NPC이동");
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._02010055_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State스타츠대사02(context);
+                    return new State스타츠Script02(context);
                 }
 
                 return null;
@@ -181,8 +181,8 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnExit() { }
         }
 
-        private class State스타츠대사02 : TriggerState {
-            internal State스타츠대사02(ITriggerContext context) : base(context) { }
+        private class State스타츠Script02 : TriggerState {
+            internal State스타츠Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkip(arg1: "NPC이동");
@@ -224,8 +224,8 @@ namespace Maple2.Trigger._02010055_bf {
             public override void OnExit() { }
         }
 
-        private class State영상준비 : TriggerState {
-            internal State영상준비(ITriggerContext context) : base(context) { }
+        private class State영상Prepare : TriggerState {
+            internal State영상Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.RemoveCinematicTalk();

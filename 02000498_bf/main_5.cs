@@ -52,7 +52,7 @@ namespace Maple2.Trigger._02000498_bf {
                 if (context.MonsterDead(arg1: new[] {121001})) {
                     context.DarkStreamClearRound(round: 21);
                     context.SetAchievement(arg1: 105, arg2: "trigger", arg3: "21roundpass");
-                    return new State22라운드대기(context);
+                    return new State22라운드Wait(context);
                 }
 
                 return null;
@@ -61,8 +61,8 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnExit() { }
         }
 
-        private class State22라운드대기 : TriggerState {
-            internal State22라운드대기(ITriggerContext context) : base(context) { }
+        private class State22라운드Wait : TriggerState {
+            internal State22라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 0, arg2: "22,25,21");
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._02000498_bf {
                 if (context.MonsterDead(arg1: new[] {122001, 122002, 122003})) {
                     context.DarkStreamClearRound(round: 22);
                     context.SetAchievement(arg1: 105, arg2: "trigger", arg3: "22roundpass");
-                    return new State23라운드대기(context);
+                    return new State23라운드Wait(context);
                 }
 
                 return null;
@@ -101,8 +101,8 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnExit() { }
         }
 
-        private class State23라운드대기 : TriggerState {
-            internal State23라운드대기(ITriggerContext context) : base(context) { }
+        private class State23라운드Wait : TriggerState {
+            internal State23라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
@@ -132,7 +132,7 @@ namespace Maple2.Trigger._02000498_bf {
                 if (context.MonsterDead(arg1: new[] {123001})) {
                     context.DarkStreamClearRound(round: 23);
                     context.SetAchievement(arg1: 105, arg2: "trigger", arg3: "23roundpass");
-                    return new State24라운드대기(context);
+                    return new State24라운드Wait(context);
                 }
 
                 return null;
@@ -141,8 +141,8 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnExit() { }
         }
 
-        private class State24라운드대기 : TriggerState {
-            internal State24라운드대기(ITriggerContext context) : base(context) { }
+        private class State24라운드Wait : TriggerState {
+            internal State24라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 0, arg2: "24,25,21");
@@ -176,7 +176,7 @@ namespace Maple2.Trigger._02000498_bf {
                     context.ResetTimer(arg1: "30");
                     context.DarkStreamClearRound(round: 24);
                     context.SetAchievement(arg1: 105, arg2: "trigger", arg3: "24roundpass");
-                    return new State25라운드대기(context);
+                    return new State25라운드Wait(context);
                 }
 
                 return null;
@@ -185,8 +185,8 @@ namespace Maple2.Trigger._02000498_bf {
             public override void OnExit() { }
         }
 
-        private class State25라운드대기 : TriggerState {
-            internal State25라운드대기(ITriggerContext context) : base(context) { }
+        private class State25라운드Wait : TriggerState {
+            internal State25라운드Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 0, arg2: "25,25,21");

@@ -7,7 +7,7 @@ namespace Maple2.Trigger._61000001_me_001 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {301})) {
-                    return new State퍼즐대기중(context);
+                    return new State퍼즐Waiting(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐대기중 : TriggerState {
-            internal State퍼즐대기중(ITriggerContext context) : base(context) { }
+        private class State퍼즐Waiting : TriggerState {
+            internal State퍼즐Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetState(arg1: 1, arg2: "퍼즐패턴10,퍼즐패턴11,퍼즐패턴12,퍼즐패턴13,퍼즐패턴14,퍼즐패턴15,퍼즐패턴16,퍼즐패턴17,퍼즐패턴18,퍼즐패턴19,퍼즐패턴20,퍼즐패턴21,퍼즐패턴22,퍼즐패턴23,퍼즐패턴24,퍼즐패턴25,퍼즐패턴26,퍼즐패턴27,퍼즐패턴28,퍼즐패턴29,퍼즐패턴30,퍼즐패턴31,퍼즐패턴32,퍼즐패턴33,퍼즐패턴34,퍼즐패턴35,퍼즐패턴36,퍼즐패턴37,퍼즐패턴38,퍼즐패턴39,퍼즐패턴40,퍼즐패턴41,퍼즐패턴42,퍼즐패턴43,퍼즐패턴44,퍼즐패턴45,퍼즐패턴46,퍼즐패턴47,퍼즐패턴48,퍼즐패턴49,퍼즐패턴50,퍼즐패턴51,퍼즐패턴52,퍼즐패턴53,퍼즐패턴54,퍼즐패턴55,퍼즐패턴56,퍼즐패턴57,퍼즐패턴58,퍼즐패턴59,퍼즐패턴60", arg3: true);
@@ -285,7 +285,7 @@ namespace Maple2.Trigger._61000001_me_001 {
                 if (context.UserDetected(arg1: new[] {301})) {
                     context.SetEventUI(arg1: 0, arg2: "2,5");
                     context.ShowCountUI(text: "$61000001_ME_001__MASSIVE00__4$", stage: 2, count: 5);
-                    return new State퍼즐단계2대기(context);
+                    return new State퍼즐단계2Wait(context);
                 }
 
                 return null;
@@ -294,8 +294,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐단계2대기 : TriggerState {
-            internal State퍼즐단계2대기(ITriggerContext context) : base(context) { }
+        private class State퍼즐단계2Wait : TriggerState {
+            internal State퍼즐단계2Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 6);
@@ -371,7 +371,7 @@ namespace Maple2.Trigger._61000001_me_001 {
                 if (context.UserDetected(arg1: new[] {301})) {
                     context.SetEventUI(arg1: 0, arg2: "3,5");
                     context.ShowCountUI(text: "$61000001_ME_001__MASSIVE00__5$", stage: 3, count: 5);
-                    return new State퍼즐단계3대기(context);
+                    return new State퍼즐단계3Wait(context);
                 }
 
                 return null;
@@ -380,8 +380,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐단계3대기 : TriggerState {
-            internal State퍼즐단계3대기(ITriggerContext context) : base(context) { }
+        private class State퍼즐단계3Wait : TriggerState {
+            internal State퍼즐단계3Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 6);
@@ -457,7 +457,7 @@ namespace Maple2.Trigger._61000001_me_001 {
                 if (context.UserDetected(arg1: new[] {301})) {
                     context.SetEventUI(arg1: 0, arg2: "4,5");
                     context.ShowCountUI(text: "$61000001_ME_001__MASSIVE00__6$", stage: 4, count: 5);
-                    return new State퍼즐단계4대기(context);
+                    return new State퍼즐단계4Wait(context);
                 }
 
                 return null;
@@ -466,8 +466,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐단계4대기 : TriggerState {
-            internal State퍼즐단계4대기(ITriggerContext context) : base(context) { }
+        private class State퍼즐단계4Wait : TriggerState {
+            internal State퍼즐단계4Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 6);
@@ -543,7 +543,7 @@ namespace Maple2.Trigger._61000001_me_001 {
                 if (context.UserDetected(arg1: new[] {301})) {
                     context.SetEventUI(arg1: 0, arg2: "5,5");
                     context.ShowCountUI(text: "$61000001_ME_001__MASSIVE00__7$", stage: 5, count: 5);
-                    return new State퍼즐단계5대기(context);
+                    return new State퍼즐단계5Wait(context);
                 }
 
                 return null;
@@ -552,8 +552,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State퍼즐단계5대기 : TriggerState {
-            internal State퍼즐단계5대기(ITriggerContext context) : base(context) { }
+        private class State퍼즐단계5Wait : TriggerState {
+            internal State퍼즐단계5Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 6);
@@ -627,7 +627,7 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {301})) {
                     context.SetMesh(arg1: new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100}, arg2: true);
-                    return new State우승자Camera연출(context);
+                    return new State우승자CameraCinematic(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {301})) {
@@ -640,8 +640,8 @@ namespace Maple2.Trigger._61000001_me_001 {
             public override void OnExit() { }
         }
 
-        private class State우승자Camera연출 : TriggerState {
-            internal State우승자Camera연출(ITriggerContext context) : base(context) { }
+        private class State우승자CameraCinematic : TriggerState {
+            internal State우승자CameraCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MiniGameCameraDirection(boxId: 301, cameraId: 901);

@@ -29,7 +29,7 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State연출보러(context);
+                    return new StateCinematic보러(context);
                 }
 
                 return null;
@@ -38,8 +38,8 @@ namespace Maple2.Trigger._52100105_qd {
             public override void OnExit() { }
         }
 
-        private class State연출보러 : TriggerState {
-            internal State연출보러(ITriggerContext context) : base(context) { }
+        private class StateCinematic보러 : TriggerState {
+            internal StateCinematic보러(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52100105, arg2: 4);

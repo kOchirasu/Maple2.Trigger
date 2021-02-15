@@ -49,11 +49,11 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 102, arg2: new[] {1002})) {
-                    return new State둔바대사01(context);
+                    return new State둔바Script01(context);
                 }
 
                 if (context.NpcDetected(arg1: 102, arg2: new[] {1003})) {
-                    return new State둔바대사01(context);
+                    return new State둔바Script01(context);
                 }
 
                 return null;
@@ -62,8 +62,8 @@ namespace Maple2.Trigger._52010018_qd {
             public override void OnExit() { }
         }
 
-        private class State둔바대사01 : TriggerState {
-            internal State둔바대사01(ITriggerContext context) : base(context) { }
+        private class State둔바Script01 : TriggerState {
+            internal State둔바Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001217, arg3: "$52010018_QD__MAIN__0$", arg4: 3);
@@ -71,7 +71,7 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State에레브대사01(context);
+                    return new State에레브Script01(context);
                 }
 
                 return null;
@@ -80,8 +80,8 @@ namespace Maple2.Trigger._52010018_qd {
             public override void OnExit() { }
         }
 
-        private class State에레브대사01 : TriggerState {
-            internal State에레브대사01(ITriggerContext context) : base(context) { }
+        private class State에레브Script01 : TriggerState {
+            internal State에레브Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52010018_QD__MAIN__1$", arg4: 3);
@@ -89,7 +89,7 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State미카대사01(context);
+                    return new State미카Script01(context);
                 }
 
                 return null;
@@ -98,8 +98,8 @@ namespace Maple2.Trigger._52010018_qd {
             public override void OnExit() { }
         }
 
-        private class State미카대사01 : TriggerState {
-            internal State미카대사01(ITriggerContext context) : base(context) { }
+        private class State미카Script01 : TriggerState {
+            internal State미카Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010018_QD__MAIN__2$", arg4: 2);
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 103, arg2: new[] {1006})) {
-                    return new State동영상재생대기(context);
+                    return new State동영상재생Wait(context);
                 }
 
                 return null;
@@ -137,8 +137,8 @@ namespace Maple2.Trigger._52010018_qd {
             public override void OnExit() { }
         }
 
-        private class State동영상재생대기 : TriggerState {
-            internal State동영상재생대기(ITriggerContext context) : base(context) { }
+        private class State동영상재생Wait : TriggerState {
+            internal State동영상재생Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -164,7 +164,7 @@ namespace Maple2.Trigger._52010018_qd {
 
             public override TriggerState Execute() {
                 if (context.WidgetCondition(arg1: "SceneMovie", arg2: "IsStop", arg3: "1")) {
-                    return new State동영상종료대기(context);
+                    return new State동영상종료Wait(context);
                 }
 
                 return null;
@@ -173,8 +173,8 @@ namespace Maple2.Trigger._52010018_qd {
             public override void OnExit() { }
         }
 
-        private class State동영상종료대기 : TriggerState {
-            internal State동영상종료대기(ITriggerContext context) : base(context) { }
+        private class State동영상종료Wait : TriggerState {
+            internal State동영상종료Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

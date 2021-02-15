@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new StateTrigger작동신호받기대기중(context);
+                    return new StateTrigger작동신호받기Waiting(context);
                 }
 
                 return null;
@@ -19,14 +19,14 @@ namespace Maple2.Trigger._02020140_bf {
             public override void OnExit() { }
         }
 
-        private class StateTrigger작동신호받기대기중 : TriggerState {
-            internal StateTrigger작동신호받기대기중(ITriggerContext context) : base(context) { }
+        private class StateTrigger작동신호받기Waiting : TriggerState {
+            internal StateTrigger작동신호받기Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "2PhaseTubeStep") >= 1) {
-                    return new StateTrigger작동대기중(context);
+                    return new StateTrigger작동Waiting(context);
                 }
 
                 return null;
@@ -35,8 +35,8 @@ namespace Maple2.Trigger._02020140_bf {
             public override void OnExit() { }
         }
 
-        private class StateTrigger작동대기중 : TriggerState {
-            internal StateTrigger작동대기중(ITriggerContext context) : base(context) { }
+        private class StateTrigger작동Waiting : TriggerState {
+            internal StateTrigger작동Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

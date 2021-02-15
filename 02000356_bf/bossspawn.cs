@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02000356_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2500)) {
-                    return new StateInteractObject대기(context);
+                    return new StateInteractObjectWait(context);
                 }
 
                 return null;
@@ -100,8 +100,8 @@ namespace Maple2.Trigger._02000356_bf {
             public override void OnExit() { }
         }
 
-        private class StateInteractObject대기 : TriggerState {
-            internal StateInteractObject대기(ITriggerContext context) : base(context) { }
+        private class StateInteractObjectWait : TriggerState {
+            internal StateInteractObjectWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 305, arg2: false);

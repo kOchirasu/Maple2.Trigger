@@ -35,7 +35,7 @@ namespace Maple2.Trigger._02000393_bf {
                 if (context.WaitTick(waitTick: 1000)) {
                     context.CameraSelect(arg1: 300, arg2: true);
                     context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                    return new State캐릭터선택대기(context);
+                    return new State캐릭터선택Wait(context);
                 }
 
                 return null;
@@ -44,8 +44,8 @@ namespace Maple2.Trigger._02000393_bf {
             public override void OnExit() { }
         }
 
-        private class State캐릭터선택대기 : TriggerState {
-            internal State캐릭터선택대기(ITriggerContext context) : base(context) { }
+        private class State캐릭터선택Wait : TriggerState {
+            internal State캐릭터선택Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 0);
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State게임준비(context);
+                    return new State게임Prepare(context);
                 }
 
                 return null;
@@ -106,7 +106,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State게임준비(context);
+                    return new State게임Prepare(context);
                 }
 
                 return null;
@@ -126,7 +126,7 @@ namespace Maple2.Trigger._02000393_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State게임준비(context);
+                    return new State게임Prepare(context);
                 }
 
                 return null;
@@ -135,8 +135,8 @@ namespace Maple2.Trigger._02000393_bf {
             public override void OnExit() { }
         }
 
-        private class State게임준비 : TriggerState {
-            internal State게임준비(ITriggerContext context) : base(context) { }
+        private class State게임Prepare : TriggerState {
+            internal State게임Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_UI_Start_01");

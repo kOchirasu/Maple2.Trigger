@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02000490_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {199})) {
-                    return new State수신대기(context);
+                    return new State수신Wait(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02000490_bf {
             public override void OnExit() { }
         }
 
-        private class State수신대기 : TriggerState {
-            internal State수신대기(ITriggerContext context) : base(context) { }
+        private class State수신Wait : TriggerState {
+            internal State수신Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

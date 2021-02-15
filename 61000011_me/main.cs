@@ -150,7 +150,7 @@ namespace Maple2.Trigger._61000011_me {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new State정답대기(context);
+                    return new State정답Wait(context);
                 }
 
                 return null;
@@ -159,8 +159,8 @@ namespace Maple2.Trigger._61000011_me {
             public override void OnExit() { }
         }
 
-        private class State정답대기 : TriggerState {
-            internal State정답대기(ITriggerContext context) : base(context) { }
+        private class State정답Wait : TriggerState {
+            internal State정답Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.WidgetAction(arg1: "OxQuizUGC", arg2: "HostUIChange", arg3: "SelectAnswer");
@@ -339,7 +339,7 @@ namespace Maple2.Trigger._61000011_me {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State우승자Camera연출(context);
+                    return new State우승자CameraCinematic(context);
                 }
 
                 return null;
@@ -348,8 +348,8 @@ namespace Maple2.Trigger._61000011_me {
             public override void OnExit() { }
         }
 
-        private class State우승자Camera연출 : TriggerState {
-            internal State우승자Camera연출(ITriggerContext context) : base(context) { }
+        private class State우승자CameraCinematic : TriggerState {
+            internal State우승자CameraCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 3, arg2: "$61000011_ME__WINNER_IS$", arg3: 5000, arg4: "105");

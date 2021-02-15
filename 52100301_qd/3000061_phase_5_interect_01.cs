@@ -87,7 +87,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override TriggerState Execute() {
                 if (context.CheckAnyUserAdditionalEffect(triggerBoxId: 0, additionalEffectId: 62100152, level: true)) {
-                    return new State리셋_대기(context);
+                    return new State리셋_Wait(context);
                 }
 
                 if (context.GetUserValue(key: "Phase_5_Interect_01") == 0) {
@@ -100,8 +100,8 @@ namespace Maple2.Trigger._52100301_qd {
             public override void OnExit() { }
         }
 
-        private class State리셋_대기 : TriggerState {
-            internal State리셋_대기(ITriggerContext context) : base(context) { }
+        private class State리셋_Wait : TriggerState {
+            internal State리셋_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

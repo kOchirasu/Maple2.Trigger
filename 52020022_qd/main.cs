@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52020022_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    return new StateQuest조건체크(context);
+                    return new StateQuestConditionCheck(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52020022_qd {
             public override void OnExit() { }
         }
 
-        private class StateQuest조건체크 : TriggerState {
-            internal StateQuest조건체크(ITriggerContext context) : base(context) { }
+        private class StateQuestConditionCheck : TriggerState {
+            internal StateQuestConditionCheck(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -29,83 +29,83 @@ namespace Maple2.Trigger._52020022_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001791}, arg3: new byte[] {2})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001791}, arg3: new byte[] {1})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001790}, arg3: new byte[] {3})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001790}, arg3: new byte[] {2})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001790}, arg3: new byte[] {1})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001784}, arg3: new byte[] {3})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001784}, arg3: new byte[] {2})) {
-                    return new State세리하_대기(context);
+                    return new State세리하_Wait(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001784}, arg3: new byte[] {1})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001783}, arg3: new byte[] {3})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001783}, arg3: new byte[] {2})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001783}, arg3: new byte[] {1})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001782}, arg3: new byte[] {3})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001782}, arg3: new byte[] {2})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001782}, arg3: new byte[] {1})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001781}, arg3: new byte[] {3})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001781}, arg3: new byte[] {2})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001781}, arg3: new byte[] {1})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001780}, arg3: new byte[] {3})) {
-                    return new State기본_대기(context);
+                    return new StateDefault_Waiting(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001780}, arg3: new byte[] {2})) {
-                    return new State아르망_대기(context);
+                    return new State아르망_Wait(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001780}, arg3: new byte[] {1})) {
-                    return new State레지스탕스_대기(context);
+                    return new State레지스탕스_Wait(context);
                 }
 
                 return null;
@@ -114,8 +114,8 @@ namespace Maple2.Trigger._52020022_qd {
             public override void OnExit() { }
         }
 
-        private class State기본 : TriggerState {
-            internal State기본(ITriggerContext context) : base(context) { }
+        private class StateDefault : TriggerState {
+            internal StateDefault(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -130,8 +130,8 @@ namespace Maple2.Trigger._52020022_qd {
             public override void OnExit() { }
         }
 
-        private class State기본_대기 : TriggerState {
-            internal State기본_대기(ITriggerContext context) : base(context) { }
+        private class StateDefault_Waiting : TriggerState {
+            internal StateDefault_Waiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {111}, arg2: false);
@@ -143,15 +143,15 @@ namespace Maple2.Trigger._52020022_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001784}, arg3: new byte[] {2})) {
-                    return new State세리하_대기(context);
+                    return new State세리하_Wait(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001780}, arg3: new byte[] {2})) {
-                    return new State아르망_대기(context);
+                    return new State아르망_Wait(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001780}, arg3: new byte[] {1})) {
-                    return new State레지스탕스_대기(context);
+                    return new State레지스탕스_Wait(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
@@ -164,8 +164,8 @@ namespace Maple2.Trigger._52020022_qd {
             public override void OnExit() { }
         }
 
-        private class State레지스탕스_대기 : TriggerState {
-            internal State레지스탕스_대기(ITriggerContext context) : base(context) { }
+        private class State레지스탕스_Wait : TriggerState {
+            internal State레지스탕스_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {102, 103, 104}, arg2: false);
@@ -176,11 +176,11 @@ namespace Maple2.Trigger._52020022_qd {
 
             public override TriggerState Execute() {
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001780}, arg3: new byte[] {1})) {
-                    return new StateQuest조건체크(context);
+                    return new StateQuestConditionCheck(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State레지스탕스_준비(context);
+                    return new State레지스탕스_Prepare(context);
                 }
 
                 return null;
@@ -189,8 +189,8 @@ namespace Maple2.Trigger._52020022_qd {
             public override void OnExit() { }
         }
 
-        private class State레지스탕스_준비 : TriggerState {
-            internal State레지스탕스_준비(ITriggerContext context) : base(context) { }
+        private class State레지스탕스_Prepare : TriggerState {
+            internal State레지스탕스_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8000, 8001}, arg2: false);
@@ -359,7 +359,7 @@ namespace Maple2.Trigger._52020022_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State조건확인_대기01(context);
+                    return new State조건확인_Wait01(context);
                 }
 
                 return null;
@@ -368,30 +368,30 @@ namespace Maple2.Trigger._52020022_qd {
             public override void OnExit() { }
         }
 
-        private class State조건확인_대기01 : TriggerState {
-            internal State조건확인_대기01(ITriggerContext context) : base(context) { }
+        private class State조건확인_Wait01 : TriggerState {
+            internal State조건확인_Wait01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001780}, arg3: new byte[] {2})) {
-                    return new State아르망_대기(context);
+                    return new State아르망_Wait(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001780}, arg3: new byte[] {1})) {
-                    return new State조건확인_대기02(context);
+                    return new State조건확인_Wait02(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001763}, arg3: new byte[] {3})) {
-                    return new State조건확인_대기02(context);
+                    return new State조건확인_Wait02(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001763}, arg3: new byte[] {2})) {
-                    return new State조건확인_대기02(context);
+                    return new State조건확인_Wait02(context);
                 }
 
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001780}, arg3: new byte[] {2})) {
-                    return new State조건확인_대기02(context);
+                    return new State조건확인_Wait02(context);
                 }
 
                 return null;
@@ -400,30 +400,30 @@ namespace Maple2.Trigger._52020022_qd {
             public override void OnExit() { }
         }
 
-        private class State조건확인_대기02 : TriggerState {
-            internal State조건확인_대기02(ITriggerContext context) : base(context) { }
+        private class State조건확인_Wait02 : TriggerState {
+            internal State조건확인_Wait02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001780}, arg3: new byte[] {2})) {
-                    return new State아르망_대기(context);
+                    return new State아르망_Wait(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001780}, arg3: new byte[] {1})) {
-                    return new State조건확인_대기01(context);
+                    return new State조건확인_Wait01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001763}, arg3: new byte[] {3})) {
-                    return new State조건확인_대기01(context);
+                    return new State조건확인_Wait01(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001763}, arg3: new byte[] {2})) {
-                    return new State조건확인_대기01(context);
+                    return new State조건확인_Wait01(context);
                 }
 
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001780}, arg3: new byte[] {2})) {
-                    return new State조건확인_대기01(context);
+                    return new State조건확인_Wait01(context);
                 }
 
                 return null;
@@ -432,8 +432,8 @@ namespace Maple2.Trigger._52020022_qd {
             public override void OnExit() { }
         }
 
-        private class State아르망_대기 : TriggerState {
-            internal State아르망_대기(ITriggerContext context) : base(context) { }
+        private class State아르망_Wait : TriggerState {
+            internal State아르망_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101}, arg2: false);
@@ -445,11 +445,11 @@ namespace Maple2.Trigger._52020022_qd {
 
             public override TriggerState Execute() {
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001780}, arg3: new byte[] {2})) {
-                    return new StateQuest조건체크(context);
+                    return new StateQuestConditionCheck(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State아르망_준비(context);
+                    return new State아르망_Prepare(context);
                 }
 
                 return null;
@@ -458,8 +458,8 @@ namespace Maple2.Trigger._52020022_qd {
             public override void OnExit() { }
         }
 
-        private class State아르망_준비 : TriggerState {
-            internal State아르망_준비(ITriggerContext context) : base(context) { }
+        private class State아르망_Prepare : TriggerState {
+            internal State아르망_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8010}, arg2: false);
@@ -558,8 +558,8 @@ namespace Maple2.Trigger._52020022_qd {
             public override void OnExit() { }
         }
 
-        private class State세리하_대기 : TriggerState {
-            internal State세리하_대기(ITriggerContext context) : base(context) { }
+        private class State세리하_Wait : TriggerState {
+            internal State세리하_Wait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {111, 115}, arg2: false);
@@ -570,11 +570,11 @@ namespace Maple2.Trigger._52020022_qd {
 
             public override TriggerState Execute() {
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001784}, arg3: new byte[] {2})) {
-                    return new StateQuest조건체크(context);
+                    return new StateQuestConditionCheck(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State세리하_준비(context);
+                    return new State세리하_Prepare(context);
                 }
 
                 return null;
@@ -583,8 +583,8 @@ namespace Maple2.Trigger._52020022_qd {
             public override void OnExit() { }
         }
 
-        private class State세리하_준비 : TriggerState {
-            internal State세리하_준비(ITriggerContext context) : base(context) { }
+        private class State세리하_Prepare : TriggerState {
+            internal State세리하_Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8014}, arg2: false);
@@ -709,7 +709,7 @@ namespace Maple2.Trigger._52020022_qd {
 
             public override TriggerState Execute() {
                 if (!context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {50001791}, arg3: new byte[] {3})) {
-                    return new StateQuest조건체크(context);
+                    return new StateQuestConditionCheck(context);
                 }
 
                 if (context.WaitTick(waitTick: 1000)) {
