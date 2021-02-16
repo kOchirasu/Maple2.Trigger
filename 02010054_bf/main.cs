@@ -40,7 +40,7 @@ namespace Maple2.Trigger._02010054_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.SetSkip(arg1: "인트로연출스킵");
+                context.SetSkip(state: new State인트로Cinematic스킵(context));
             }
 
             public override TriggerState Execute() {

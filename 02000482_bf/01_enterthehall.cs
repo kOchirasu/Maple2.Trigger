@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02000482_bf {
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101");
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000482_BF__01_ENTERTHEHALL__0$", arg4: 3, arg5: 1);
-                context.SetSkip(arg1: "BlackeyeApp02Skip");
+                context.SetSkip(state: new StateBlackeyeApp02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._02000482_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000482_BF__01_ENTERTHEHALL__1$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "BlackeyeApp03Skip");
+                context.SetSkip(state: new StateBlackeyeApp03Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -165,7 +165,7 @@ namespace Maple2.Trigger._02000482_bf {
                 context.SetConversation(arg1: 1, arg2: 901, arg3: "$02000482_BF__01_ENTERTHEHALL__2$", arg4: 2, arg5: 1);
                 context.SetConversation(arg1: 1, arg2: 902, arg3: "$02000482_BF__01_ENTERTHEHALL__3$", arg4: 2, arg5: 1);
                 context.SetConversation(arg1: 1, arg2: 903, arg3: "$02000482_BF__01_ENTERTHEHALL__4$", arg4: 2, arg5: 1);
-                context.SetSkip(arg1: "EnemyApp03Skip");
+                context.SetSkip(state: new StateEnemyApp03Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -224,7 +224,7 @@ namespace Maple2.Trigger._02000482_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$02000482_BF__01_ENTERTHEHALL__5$", arg4: 5);
-                context.SetSkip(arg1: "BlackeyeAction01Skip");
+                context.SetSkip(state: new StateBlackeyeAction01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -335,7 +335,7 @@ namespace Maple2.Trigger._02000482_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$02000482_BF__01_ENTERTHEHALL__7$", arg4: 5);
-                context.SetSkip(arg1: "MoveToUpstairs02Skip");
+                context.SetSkip(state: new StateMoveToUpstairs02Skip(context));
             }
 
             public override TriggerState Execute() {

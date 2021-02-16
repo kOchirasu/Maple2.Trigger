@@ -99,7 +99,7 @@ namespace Maple2.Trigger._52000099_qd {
             internal StateStart2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "scene_07");
+                context.SetSkip(state: new StateScene_07(context));
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {8001, 8002, 8003}, arg2: false);
@@ -385,7 +385,7 @@ namespace Maple2.Trigger._52000099_qd {
             internal StateScene_14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "phase_b_scene_05");
+                context.SetSkip(state: new StatePhase_b_scene_05(context));
                 context.RemoveBuff(arg1: 103, arg2: 71000007);
                 context.RemoveBuff(arg1: 103, arg2: 71000008);
             }
@@ -756,7 +756,7 @@ namespace Maple2.Trigger._52000099_qd {
                 context.SetLocalCamera(cameraId: 8017, enable: false);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "phase_b_skip_1");
+                context.SetSkip(state: new StatePhase_b_skip_1(context));
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUser(arg1: 52000099, arg2: 3);
                 context.SetAchievement(arg1: 701, arg2: "trigger", arg3: "Defence2Clear");

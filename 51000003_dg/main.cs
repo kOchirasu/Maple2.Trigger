@@ -47,7 +47,7 @@ namespace Maple2.Trigger._51000003_dg {
             internal StateTutorial_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "Tutorial_02");
+                context.SetSkip(state: new StateTutorial_02(context));
             }
 
             public override TriggerState Execute() {

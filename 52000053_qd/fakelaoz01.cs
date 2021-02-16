@@ -109,7 +109,7 @@ namespace Maple2.Trigger._52000053_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000053_QD__FAKELAOZ01__0$", arg4: 4);
-                context.SetSkip(arg1: "ZoomInLamp02Skip");
+                context.SetSkip(state: new StateZoomInLamp02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -315,7 +315,7 @@ namespace Maple2.Trigger._52000053_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 512, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$52000053_QD__FAKELAOZ01__6$", arg4: 3);
-                context.SetSkip(arg1: "KanduraApp03Skip");
+                context.SetSkip(state: new StateKanduraApp03Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -357,7 +357,7 @@ namespace Maple2.Trigger._52000053_qd {
                 context.CreateMonster(arg1: new[] {104, 204}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Event_A");
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$52000053_QD__FAKELAOZ01__7$", arg4: 5);
-                context.SetSkip(arg1: "KanduraApp04Skip");
+                context.SetSkip(state: new StateKanduraApp04Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -492,7 +492,7 @@ namespace Maple2.Trigger._52000053_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Event_A");
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$52000053_QD__FAKELAOZ01__8$", arg4: 4);
-                context.SetSkip(arg1: "KanduraSummon03");
+                context.SetSkip(state: new StateKanduraSummon03(context));
             }
 
             public override TriggerState Execute() {
@@ -587,7 +587,7 @@ namespace Maple2.Trigger._52000053_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000053_QD__FAKELAOZ01__10$", arg4: 4);
-                context.SetSkip(arg1: "FakeLaozApp04Skip");
+                context.SetSkip(state: new StateFakeLaozApp04Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -621,7 +621,7 @@ namespace Maple2.Trigger._52000053_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000053_QD__FAKELAOZ01__11$", arg4: 4);
-                context.SetSkip(arg1: "ReachToLamp02");
+                context.SetSkip(state: new StateReachToLamp02(context));
             }
 
             public override TriggerState Execute() {
@@ -784,7 +784,7 @@ namespace Maple2.Trigger._52000053_qd {
                 context.CameraSelect(arg1: 700, arg2: true);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "LampLightUp02");
+                context.SetSkip(state: new StateLampLightUp02(context));
             }
 
             public override TriggerState Execute() {
@@ -819,7 +819,7 @@ namespace Maple2.Trigger._52000053_qd {
                 context.MoveUser(arg1: 52000053, arg2: 11, arg3: 9900);
                 context.SetConversation(arg1: 1, arg2: 103, arg3: "$52000053_QD__FAKELAOZ01__12$", arg4: 3, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 203, arg3: "$52000053_QD__FAKELAOZ01__13$", arg4: 3, arg5: 3);
-                context.SetSkip(arg1: "LampLightUp04");
+                context.SetSkip(state: new StateLampLightUp04(context));
             }
 
             public override TriggerState Execute() {
@@ -976,7 +976,7 @@ namespace Maple2.Trigger._52000053_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 105, arg2: "MS2PatrolData_104");
                 context.MoveNpc(arg1: 205, arg2: "MS2PatrolData_204");
-                context.SetSkip(arg1: "KanduraAppAgain03");
+                context.SetSkip(state: new StateKanduraAppAgain03(context));
             }
 
             public override TriggerState Execute() {
@@ -1016,7 +1016,7 @@ namespace Maple2.Trigger._52000053_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000053_QD__FAKELAOZ01__20$", arg4: 4);
-                context.SetSkip(arg1: "NoticeLampDisapp01Skip");
+                context.SetSkip(state: new StateNoticeLampDisapp01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1050,7 +1050,7 @@ namespace Maple2.Trigger._52000053_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000053_QD__FAKELAOZ01__21$", arg4: 4);
-                context.SetSkip(arg1: "NoticeLampDisapp02Skip");
+                context.SetSkip(state: new StateNoticeLampDisapp02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1108,7 +1108,7 @@ namespace Maple2.Trigger._52000053_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$52000053_QD__FAKELAOZ01__22$", arg4: 5);
                 context.SetEffect(arg1: new[] {5400}, arg2: true);
-                context.SetSkip(arg1: "KanduraReadyToLeave03");
+                context.SetSkip(state: new StateKanduraReadyToLeave03(context));
             }
 
             public override TriggerState Execute() {
@@ -1297,7 +1297,7 @@ namespace Maple2.Trigger._52000053_qd {
                 context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$52000053_QD__FAKELAOZ01__27$", arg4: 4);
                 context.DestroyMonster(arg1: new[] {105, 205});
                 context.CreateMonster(arg1: new[] {106, 206}, arg2: false);
-                context.SetSkip(arg1: "RealLaozApp02");
+                context.SetSkip(state: new StateRealLaozApp02(context));
             }
 
             public override TriggerState Execute() {

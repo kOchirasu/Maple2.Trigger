@@ -51,7 +51,7 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 0, arg3: "이곳은 뭐하는 곳이지?!", arg4: 3, arg5: 0);
                 context.SetConversation(arg1: 2, arg2: 0, arg3: @"미카엘의 기운이 느껴지고 있어!\n서둘러야 해!!", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "시작_3");
+                context.SetSkip(state: new StateStart_3(context));
             }
 
             public override TriggerState Execute() {
@@ -203,7 +203,7 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 300001, arg3: "오호...여기까지 오다니...놀랍군요..", arg4: 5);
                 context.SetConversation(arg1: 2, arg2: 300001, arg3: "자...그럼 본격적으로 놀아볼까요?", arg4: 5);
-                context.SetSkip(arg1: "카메라리셋_1");
+                context.SetSkip(state: new StateCamera리셋_1(context));
                 context.SetMesh(arg1: new[] {5001, 5002, 5003, 5004, 5005}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -373,7 +373,7 @@ namespace Maple2.Trigger._52020016_qd {
                 context.SetConversation(arg1: 2, arg2: 300002, arg3: "음... 기대 이상인데요?", arg4: 5);
                 context.SetConversation(arg1: 2, arg2: 300002, arg3: "이번엔 이분들이 당신과 놀아줄겁니다!!", arg4: 5);
                 context.MoveUser(arg1: 52020016, arg2: 91);
-                context.SetSkip(arg1: "카메라리셋_2");
+                context.SetSkip(state: new StateCamera리셋_2(context));
                 context.SetMesh(arg1: new[] {5103, 5104}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
             }
 
@@ -650,7 +650,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override void OnExit() {
                 context.SetConversation(arg1: 2, arg2: 4000201, arg3: "자...기대하세요!", arg4: 5);
-                context.SetSkip(arg1: "몬스터등장_3");
+                context.SetSkip(state: new StateMonsterAppear_3(context));
             }
         }
 

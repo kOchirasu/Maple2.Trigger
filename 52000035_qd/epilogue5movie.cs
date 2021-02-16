@@ -158,7 +158,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.CameraSelectPath(arg1: new[] {52000, 52001}, arg2: false);
                 context.SetOnetimeEffect(id: 1920, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001920.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE5MOVIE__1$", arg4: 7);
-                context.SetSkip(arg1: "Epilogue5Talk2");
+                context.SetSkip(state: new StateEpilogue5Talk2(context));
             }
 
             public override TriggerState Execute() {
@@ -194,7 +194,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.CameraSelectPath(arg1: new[] {52002, 52003}, arg2: false);
                 context.SetOnetimeEffect(id: 1921, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001921.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE5MOVIE__2$", arg4: 12);
-                context.SetSkip(arg1: "Epilogue5Talk4");
+                context.SetSkip(state: new StateEpilogue5Talk4(context));
             }
 
             public override TriggerState Execute() {
@@ -231,7 +231,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_EP4_DarkToTurka");
                 context.SetOnetimeEffect(id: 02100275, enable: true, path: @"BG/Common/Sound/Eff_System_DarkLord_Breathing.xml");
                 context.SetConversation(arg1: 2, arg2: 11001957, arg3: "$52000035_QD__EPILOGUE5MOVIE__3$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk6");
+                context.SetSkip(state: new StateEpilogue5Talk6(context));
             }
 
             public override TriggerState Execute() {
@@ -268,7 +268,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.CameraSelectPath(arg1: new[] {52004}, arg2: false);
                 context.SetOnetimeEffect(id: 1922, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001922.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE5MOVIE__4$", arg4: 7);
-                context.SetSkip(arg1: "Epilogue5Talk8");
+                context.SetSkip(state: new StateEpilogue5Talk8(context));
             }
 
             public override TriggerState Execute() {
@@ -305,7 +305,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.CameraSelectPath(arg1: new[] {2102, 2103}, arg2: false);
                 context.SetOnetimeEffect(id: 1923, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001923.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE5MOVIE__5$", arg4: 8);
-                context.SetSkip(arg1: "Epilogue5Talk10");
+                context.SetSkip(state: new StateEpilogue5Talk10(context));
             }
 
             public override TriggerState Execute() {
@@ -343,7 +343,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetOnetimeEffect(id: 02100281, enable: true, path: @"BG/Common/Sound/Eff_System_Chapter5_Armor_Footsteps_Short_01.xml");
                 context.SetOnetimeEffect(id: 02100275, enable: true, path: @"BG/Common/Sound/Eff_System_DarkLord_Breathing.xml");
                 context.SetConversation(arg1: 2, arg2: 11001957, arg3: "$52000035_QD__EPILOGUE5MOVIE__6$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk12");
+                context.SetSkip(state: new StateEpilogue5Talk12(context));
             }
 
             public override TriggerState Execute() {
@@ -378,7 +378,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {53003, 53004}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001957, arg3: "$52000035_QD__EPILOGUE5MOVIE__7$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk14");
+                context.SetSkip(state: new StateEpilogue5Talk14(context));
             }
 
             public override TriggerState Execute() {
@@ -414,7 +414,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.CameraSelectPath(arg1: new[] {53005, 53006}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001957, arg3: "$52000035_QD__EPILOGUE5MOVIE__8$", arg4: 5);
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Bore_A");
-                context.SetSkip(arg1: "Epilogue5Talk17");
+                context.SetSkip(state: new StateEpilogue5Talk17(context));
             }
 
             public override TriggerState Execute() {
@@ -451,7 +451,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.CameraSelectPath(arg1: new[] {52005}, arg2: false);
                 context.SetOnetimeEffect(id: 1924, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001924.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE5MOVIE__9$", arg4: 7);
-                context.SetSkip(arg1: "Epilogue5Talk19");
+                context.SetSkip(state: new StateEpilogue5Talk19(context));
             }
 
             public override TriggerState Execute() {
@@ -489,7 +489,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_EP4_DarkToTurka");
                 context.SetOnetimeEffect(id: 02100275, enable: true, path: @"BG/Common/Sound/Eff_System_DarkLord_Breathing.xml");
                 context.SetConversation(arg1: 2, arg2: 11001957, arg3: "$52000035_QD__EPILOGUE5MOVIE__10$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk21");
+                context.SetSkip(state: new StateEpilogue5Talk21(context));
             }
 
             public override TriggerState Execute() {
@@ -527,7 +527,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_darkReturn");
                 context.SetOnetimeEffect(id: 1925, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001925.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE5MOVIE__11$", arg4: 6);
-                context.SetSkip(arg1: "Epilogue5Talk23");
+                context.SetSkip(state: new StateEpilogue5Talk23(context));
             }
 
             public override TriggerState Execute() {
@@ -562,7 +562,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1926, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001926.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE5MOVIE__12$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk25");
+                context.SetSkip(state: new StateEpilogue5Talk25(context));
             }
 
             public override TriggerState Execute() {
@@ -598,7 +598,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetOnetimeEffect(id: 02100275, enable: true, path: @"BG/Common/Sound/Eff_System_DarkLord_Breathing.xml");
                 context.CameraSelectPath(arg1: new[] {53010}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001957, arg3: "$52000035_QD__EPILOGUE5MOVIE__32$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk28");
+                context.SetSkip(state: new StateEpilogue5Talk28(context));
             }
 
             public override TriggerState Execute() {
@@ -635,7 +635,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.CameraSelectPath(arg1: new[] {52006, 52007}, arg2: false);
                 context.SetOnetimeEffect(id: 1927, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001927.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE5MOVIE__13$", arg4: 10);
-                context.SetSkip(arg1: "Epilogue5Talk30");
+                context.SetSkip(state: new StateEpilogue5Talk30(context));
             }
 
             public override TriggerState Execute() {
@@ -670,7 +670,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1928, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001928.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE5MOVIE__14$", arg4: 10);
-                context.SetSkip(arg1: "Epilogue5Talk32");
+                context.SetSkip(state: new StateEpilogue5Talk32(context));
             }
 
             public override TriggerState Execute() {
@@ -706,7 +706,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.CameraSelectPath(arg1: new[] {51004, 51005}, arg2: false);
                 context.SetOnetimeEffect(id: 1929, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001929.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE5MOVIE__15$", arg4: 7);
-                context.SetSkip(arg1: "Epilogue5Talk34");
+                context.SetSkip(state: new StateEpilogue5Talk34(context));
             }
 
             public override TriggerState Execute() {
@@ -741,7 +741,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1930, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001930.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE5MOVIE__16$", arg4: 12);
-                context.SetSkip(arg1: "Epilogue5Talk36");
+                context.SetSkip(state: new StateEpilogue5Talk36(context));
             }
 
             public override TriggerState Execute() {
@@ -777,7 +777,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetOnetimeEffect(id: 02100275, enable: true, path: @"BG/Common/Sound/Eff_System_DarkLord_Breathing.xml");
                 context.CameraSelectPath(arg1: new[] {53011, 53012}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001957, arg3: "$52000035_QD__EPILOGUE5MOVIE__17$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk38");
+                context.SetSkip(state: new StateEpilogue5Talk38(context));
             }
 
             public override TriggerState Execute() {
@@ -812,7 +812,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_EP4_DarkToTurka");
                 context.SetConversation(arg1: 2, arg2: 11001957, arg3: "$52000035_QD__EPILOGUE5MOVIE__18$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk40");
+                context.SetSkip(state: new StateEpilogue5Talk40(context));
             }
 
             public override TriggerState Execute() {
@@ -849,7 +849,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.CameraSelectPath(arg1: new[] {1300}, arg2: false);
                 context.SetOnetimeEffect(id: 1931, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001931.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE5MOVIE__19$", arg4: 7);
-                context.SetSkip(arg1: "Epilogue5Talk42");
+                context.SetSkip(state: new StateEpilogue5Talk42(context));
             }
 
             public override TriggerState Execute() {
@@ -886,7 +886,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.CameraSelectPath(arg1: new[] {1400}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 5300, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001852, arg3: "$52000035_QD__EPILOGUE5MOVIE__20$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk44");
+                context.SetSkip(state: new StateEpilogue5Talk44(context));
             }
 
             public override TriggerState Execute() {
@@ -922,7 +922,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.CameraSelectPath(arg1: new[] {1300}, arg2: false);
                 context.SetOnetimeEffect(id: 1932, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001932.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE5MOVIE__21$", arg4: 7);
-                context.SetSkip(arg1: "Epilogue5Talk46");
+                context.SetSkip(state: new StateEpilogue5Talk46(context));
             }
 
             public override TriggerState Execute() {
@@ -957,7 +957,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {54000}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001852, arg3: "$52000035_QD__EPILOGUE5MOVIE__22$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk48");
+                context.SetSkip(state: new StateEpilogue5Talk48(context));
             }
 
             public override TriggerState Execute() {
@@ -993,7 +993,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.CameraSelectPath(arg1: new[] {52008}, arg2: false);
                 context.SetOnetimeEffect(id: 1933, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001933.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE5MOVIE__23$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk50");
+                context.SetSkip(state: new StateEpilogue5Talk50(context));
             }
 
             public override TriggerState Execute() {
@@ -1028,7 +1028,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {51006, 51007}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001852, arg3: "$52000035_QD__EPILOGUE5MOVIE__24$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk52");
+                context.SetSkip(state: new StateEpilogue5Talk52(context));
             }
 
             public override TriggerState Execute() {
@@ -1063,7 +1063,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1934, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000035_Turka_00001934.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000035_QD__EPILOGUE5MOVIE__25$", arg4: 8);
-                context.SetSkip(arg1: "Epilogue5Talk54");
+                context.SetSkip(state: new StateEpilogue5Talk54(context));
             }
 
             public override TriggerState Execute() {
@@ -1099,7 +1099,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetOnetimeEffect(id: 02100275, enable: true, path: @"BG/Common/Sound/Eff_System_DarkLord_Breathing.xml");
                 context.CameraSelectPath(arg1: new[] {53013, 53014}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001957, arg3: "$52000035_QD__EPILOGUE5MOVIE__26$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk56");
+                context.SetSkip(state: new StateEpilogue5Talk56(context));
             }
 
             public override TriggerState Execute() {
@@ -1135,7 +1135,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {1400}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001852, arg3: "$52000035_QD__EPILOGUE5MOVIE__27$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk58");
+                context.SetSkip(state: new StateEpilogue5Talk58(context));
             }
 
             public override TriggerState Execute() {
@@ -1172,7 +1172,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {55001, 55002}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001852, arg3: "$52000035_QD__EPILOGUE5MOVIE__28$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk60");
+                context.SetSkip(state: new StateEpilogue5Talk60(context));
             }
 
             public override TriggerState Execute() {
@@ -1207,7 +1207,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {55003, 55004}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001852, arg3: "$52000035_QD__EPILOGUE5MOVIE__29$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk62");
+                context.SetSkip(state: new StateEpilogue5Talk62(context));
             }
 
             public override TriggerState Execute() {
@@ -1244,7 +1244,7 @@ namespace Maple2.Trigger._52000035_qd {
                 context.SetOnetimeEffect(id: 10, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(arg1: new[] {55005, 55006}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001852, arg3: "$52000035_QD__EPILOGUE5MOVIE__30$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk64");
+                context.SetSkip(state: new StateEpilogue5Talk64(context));
             }
 
             public override TriggerState Execute() {
@@ -1280,7 +1280,7 @@ namespace Maple2.Trigger._52000035_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {55007}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001852, arg3: "$52000035_QD__EPILOGUE5MOVIE__31$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue5Talk66");
+                context.SetSkip(state: new StateEpilogue5Talk66(context));
             }
 
             public override TriggerState Execute() {

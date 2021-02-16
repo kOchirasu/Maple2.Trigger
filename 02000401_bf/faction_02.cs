@@ -64,7 +64,7 @@ namespace Maple2.Trigger._02000401_bf {
             internal State던전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "종료체크");
+                context.SetSkip(state: new StateEnd체크(context));
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetInteractObject(arg1: new[] {12000023, 12000024, 12000025, 12000026}, arg2: 1);

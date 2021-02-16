@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02000284_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {2001}, arg2: false);
                 context.CameraSelect(arg1: 3001, arg2: true);
-                context.SetSkip(arg1: "준비");
+                context.SetSkip(state: new StateSetup(context));
             }
 
             public override TriggerState Execute() {

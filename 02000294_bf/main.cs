@@ -46,7 +46,7 @@ namespace Maple2.Trigger._02000294_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {10000}, arg2: false);
                 context.CameraSelect(arg1: 600, arg2: true);
-                context.SetSkip(arg1: "GateOpen01");
+                context.SetSkip(state: new StateGateOpen01(context));
             }
 
             public override TriggerState Execute() {
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000294_bf {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 10000, arg2: "MS2PatrolData_10000");
                 context.SetConversation(arg1: 1, arg2: 10000, arg3: "$02000294_BF__MAIN__0$", arg4: 2, arg5: 0);
-                context.SetSkip(arg1: "GateOpen01");
+                context.SetSkip(state: new StateGateOpen01(context));
             }
 
             public override TriggerState Execute() {
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000294_bf {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 10000, arg2: "MS2PatrolData_10001");
                 context.SetConversation(arg1: 1, arg2: 10000, arg3: "$02000294_BF__MAIN__1$", arg4: 2, arg5: 0);
-                context.SetSkip(arg1: "GateOpen01");
+                context.SetSkip(state: new StateGateOpen01(context));
             }
 
             public override TriggerState Execute() {

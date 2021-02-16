@@ -214,7 +214,7 @@ namespace Maple2.Trigger._63000006_cs {
                 context.SetTimer(arg1: "3", arg2: 4);
                 context.SetEffect(arg1: new[] {5060}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$63000006_CS__TUTORIAL01__0$", arg4: 4);
-                context.SetSkip(arg1: "움직이기01");
+                context.SetSkip(state: new State움직이기01(context));
             }
 
             public override TriggerState Execute() {
@@ -334,7 +334,7 @@ namespace Maple2.Trigger._63000006_cs {
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$63000006_CS__TUTORIAL01__2$", arg4: 3);
                 context.SetEffect(arg1: new[] {5061}, arg2: false);
                 context.SetEffect(arg1: new[] {5062}, arg2: true);
-                context.SetSkip(arg1: "미니맵가이드01");
+                context.SetSkip(state: new State미니맵Guide01(context));
             }
 
             public override TriggerState Execute() {
@@ -491,7 +491,7 @@ namespace Maple2.Trigger._63000006_cs {
                 context.SetTimer(arg1: "20", arg2: 4);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$63000006_CS__TUTORIAL01__7$", arg4: 3);
                 context.SetEffect(arg1: new[] {5064}, arg2: true);
-                context.SetSkip(arg1: "다리연출02");
+                context.SetSkip(state: new State다리Cinematic02(context));
             }
 
             public override TriggerState Execute() {
@@ -701,7 +701,7 @@ namespace Maple2.Trigger._63000006_cs {
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$63000006_CS__TUTORIAL01__10$", arg4: 3);
                 context.SetEffect(arg1: new[] {5065}, arg2: false);
                 context.SetEffect(arg1: new[] {5066}, arg2: true);
-                context.SetSkip(arg1: "Ishura교체");
+                context.SetSkip(state: new StateIshura교체(context));
             }
 
             public override TriggerState Execute() {

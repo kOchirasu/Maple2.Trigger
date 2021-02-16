@@ -71,7 +71,7 @@ namespace Maple2.Trigger._02000336_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 8001, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11003124, arg3: "$02000336_BF__BOSS__0$", arg4: 3);
-                context.SetSkip(arg1: "웨이홍_Script02");
+                context.SetSkip(state: new State웨이홍_Script02(context));
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
             }
 
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._02000336_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003124, arg3: "$02000336_BF__BOSS__1$", arg4: 3);
-                context.SetSkip(arg1: "종료");
+                context.SetSkip(state: new StateEnd(context));
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
             }
 

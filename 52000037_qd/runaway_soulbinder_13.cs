@@ -185,7 +185,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001727, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__5$", arg4: 2);
-                context.SetSkip(arg1: "NPCScript01스킵");
+                context.SetSkip(state: new StateNPCScript01스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -219,7 +219,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001725, arg3: "$52000037_QD__RUNAWAY_SOULBINDER_13__6$", arg4: 2);
-                context.SetSkip(arg1: "NPCScript02스킵");
+                context.SetSkip(state: new StateNPCScript02스킵(context));
             }
 
             public override TriggerState Execute() {

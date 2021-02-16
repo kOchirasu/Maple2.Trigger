@@ -72,7 +72,7 @@ namespace Maple2.Trigger._02000066_bf {
                 context.CameraSelect(arg1: 300, arg2: true);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "1차어나운스03");
+                context.SetSkip(state: new State1차어나운스03(context));
             }
 
             public override TriggerState Execute() {
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._02000066_bf {
             public override void OnEnter() {
                 context.SetEffect(arg2: true);
                 context.AddCinematicTalk(npcId: 11000032, illustId: "Anos_serious", msg: "$02000066_BF__MAIN__4$", duration: 5000, align: "center");
-                context.SetSkip(arg1: "1차어나운스03");
+                context.SetSkip(state: new State1차어나운스03(context));
             }
 
             public override TriggerState Execute() {
@@ -111,7 +111,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11000032, illustId: "Anos_serious", msg: "$02000066_BF__MAIN__5$", duration: 5000, align: "center");
-                context.SetSkip(arg1: "1차어나운스03");
+                context.SetSkip(state: new State1차어나운스03(context));
             }
 
             public override TriggerState Execute() {

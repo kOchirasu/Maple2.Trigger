@@ -502,7 +502,7 @@ namespace Maple2.Trigger._52000047_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 601, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$52000047_QD__ACTION01__4$", arg4: 4);
-                context.SetSkip(arg1: "WeihongTalk01Skip");
+                context.SetSkip(state: new StateWeihongTalk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -551,7 +551,7 @@ namespace Maple2.Trigger._52000047_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$52000047_QD__ACTION01__5$", arg4: 4);
-                context.SetSkip(arg1: "WeihongTalk02Skip");
+                context.SetSkip(state: new StateWeihongTalk02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1247,7 +1247,7 @@ namespace Maple2.Trigger._52000047_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$52000047_QD__ACTION01__16$", arg4: 5);
-                context.SetSkip(arg1: "WeihongOrder02Skip");
+                context.SetSkip(state: new StateWeihongOrder02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1333,7 +1333,7 @@ namespace Maple2.Trigger._52000047_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 203, arg2: "MS2PatrolData_204");
                 context.SetConversation(arg1: 2, arg2: 11001547, arg3: "$52000047_QD__ACTION01__17$", arg4: 5);
-                context.SetSkip(arg1: "VasaraTalk10Skip");
+                context.SetSkip(state: new StateVasaraTalk10Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1499,7 +1499,7 @@ namespace Maple2.Trigger._52000047_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001547, arg3: "$52000047_QD__ACTION01__18$", arg4: 5);
-                context.SetSkip(arg1: "VasaraTalk20Skip");
+                context.SetSkip(state: new StateVasaraTalk20Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1533,7 +1533,7 @@ namespace Maple2.Trigger._52000047_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001547, arg3: "$52000047_QD__ACTION01__19$", arg4: 5);
-                context.SetSkip(arg1: "VasaraTalk21Skip");
+                context.SetSkip(state: new StateVasaraTalk21Skip(context));
             }
 
             public override TriggerState Execute() {

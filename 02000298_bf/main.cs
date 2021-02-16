@@ -31,7 +31,7 @@ namespace Maple2.Trigger._02000298_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "암호발급");
+                context.SetSkip(state: new State암호발급(context));
             }
 
             public override TriggerState Execute() {

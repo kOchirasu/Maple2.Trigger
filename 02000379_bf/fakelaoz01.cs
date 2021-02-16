@@ -95,7 +95,7 @@ namespace Maple2.Trigger._02000379_bf {
                 context.SetConversation(arg1: 1, arg2: 101, arg3: "$02000379_BF__FAKELAOZ01__0$", arg4: 3, arg5: 1);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101");
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201");
-                context.SetSkip(arg1: "CameraAct02");
+                context.SetSkip(state: new StateCameraAct02(context));
             }
 
             public override TriggerState Execute() {
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._02000379_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 201, arg3: "$02000379_BF__FAKELAOZ01__1$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "CameraAct04");
+                context.SetSkip(state: new StateCameraAct04(context));
             }
 
             public override TriggerState Execute() {
@@ -269,7 +269,7 @@ namespace Maple2.Trigger._02000379_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 601, arg2: true);
-                context.SetSkip(arg1: "CameraAct13");
+                context.SetSkip(state: new StateCameraAct13(context));
             }
 
             public override TriggerState Execute() {
@@ -289,7 +289,7 @@ namespace Maple2.Trigger._02000379_bf {
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 301, arg3: "$02000379_BF__FAKELAOZ01__3$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Event_A");
-                context.SetSkip(arg1: "CameraAct13");
+                context.SetSkip(state: new StateCameraAct13(context));
             }
 
             public override TriggerState Execute() {
@@ -368,7 +368,7 @@ namespace Maple2.Trigger._02000379_bf {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101, 201});
                 context.CreateMonster(arg1: new[] {102, 202, 900}, arg2: false);
-                context.SetSkip(arg1: "FakeLaozApp04");
+                context.SetSkip(state: new StateFakeLaozApp04(context));
             }
 
             public override TriggerState Execute() {
@@ -474,7 +474,7 @@ namespace Maple2.Trigger._02000379_bf {
                 context.CameraSelect(arg1: 700, arg2: true);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "LampLightUp02");
+                context.SetSkip(state: new StateLampLightUp02(context));
             }
 
             public override TriggerState Execute() {
@@ -509,7 +509,7 @@ namespace Maple2.Trigger._02000379_bf {
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 103, arg3: "$02000379_BF__FAKELAOZ01__4$", arg4: 3, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 203, arg3: "$02000379_BF__FAKELAOZ01__5$", arg4: 3, arg5: 3);
-                context.SetSkip(arg1: "LampLightUp04");
+                context.SetSkip(state: new StateLampLightUp04(context));
             }
 
             public override TriggerState Execute() {
@@ -545,7 +545,7 @@ namespace Maple2.Trigger._02000379_bf {
                 context.MoveNpc(arg1: 203, arg2: "MS2PatrolData_202");
                 context.SetConversation(arg1: 1, arg2: 103, arg3: "$02000379_BF__FAKELAOZ01__6$", arg4: 3, arg5: 2);
                 context.SetConversation(arg1: 1, arg2: 203, arg3: "$02000379_BF__FAKELAOZ01__7$", arg4: 3, arg5: 6);
-                context.SetSkip(arg1: "TimeToLeave01");
+                context.SetSkip(state: new StateTimeToLeave01(context));
             }
 
             public override TriggerState Execute() {

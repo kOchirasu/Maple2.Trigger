@@ -70,7 +70,7 @@ namespace Maple2.Trigger._52000052_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000052_QD__01_FINDWAY__0$", arg4: 5);
-                context.SetSkip(arg1: "Dialogue02Skip");
+                context.SetSkip(state: new StateDialogue02Skip(context));
             }
 
             public override TriggerState Execute() {

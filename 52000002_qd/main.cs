@@ -57,7 +57,7 @@ namespace Maple2.Trigger._52000002_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3, arg2: "$52000002_QD__MAIN__0$");
                 context.SetTimer(arg1: "5", arg2: 5);
-                context.SetSkip(arg1: "오브젝트생성");
+                context.SetSkip(state: new State오브젝트Creation(context));
             }
 
             public override TriggerState Execute() {
@@ -176,7 +176,7 @@ namespace Maple2.Trigger._52000002_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3, arg2: "$52000002_QD__MAIN__2$");
                 context.SetTimer(arg1: "5", arg2: 5);
-                context.SetSkip(arg1: "양생성");
+                context.SetSkip(state: new State양Creation(context));
             }
 
             public override TriggerState Execute() {
@@ -273,7 +273,7 @@ namespace Maple2.Trigger._52000002_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3, arg2: "$52000002_QD__MAIN__4$");
                 context.SetTimer(arg1: "5", arg2: 5);
-                context.SetSkip(arg1: "늑대생성");
+                context.SetSkip(state: new State늑대Creation(context));
             }
 
             public override TriggerState Execute() {

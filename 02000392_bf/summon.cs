@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02000392_bf {
                 context.CreateMonster(arg1: new[] {2002}, arg2: false);
                 context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 24003015, arg3: "$02000392_BF__SUMMON__0$", arg4: 2, arg5: 0);
-                context.SetSkip(arg1: "죽음Wait");
+                context.SetSkip(state: new State죽음Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._02000392_bf {
                 context.CreateMonster(arg1: new[] {2102}, arg2: false);
                 context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 24003015, arg3: "$02000392_BF__SUMMON__0$", arg4: 2, arg5: 0);
-                context.SetSkip(arg1: "Quest죽음Wait");
+                context.SetSkip(state: new StateQuest죽음Wait(context));
             }
 
             public override TriggerState Execute() {

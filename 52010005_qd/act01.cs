@@ -158,7 +158,7 @@ namespace Maple2.Trigger._52010005_qd {
                 context.DestroyMonster(arg1: new[] {201});
                 context.CreateMonster(arg1: new[] {202}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010005_QD__ACT01__2$", arg4: 4);
-                context.SetSkip(arg1: "Q1_Camera연출03");
+                context.SetSkip(state: new StateQ1_CameraCinematic03(context));
             }
 
             public override TriggerState Execute() {

@@ -233,7 +233,7 @@ namespace Maple2.Trigger._52000033_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000033_QD__AUDIENCEWITHEREB_01__0$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "ErebTalk03");
+                context.SetSkip(state: new StateErebTalk03(context));
             }
 
             public override TriggerState Execute() {
@@ -471,7 +471,7 @@ namespace Maple2.Trigger._52000033_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000033_QD__AUDIENCEWITHEREB_01__1$", arg4: 5, arg5: 0);
-                context.SetSkip(arg1: "ErebTalk12");
+                context.SetSkip(state: new StateErebTalk12(context));
             }
 
             public override TriggerState Execute() {

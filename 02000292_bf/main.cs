@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02000292_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 600, arg2: true);
-                context.SetSkip(arg1: "CameraWalk03");
+                context.SetSkip(state: new StateCameraWalk03(context));
             }
 
             public override TriggerState Execute() {
@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02000292_bf {
                 context.CreateMonster(arg1: new[] {1110}, arg2: false);
                 context.MoveNpc(arg1: 1110, arg2: "MS2PatrolData_1110");
                 context.CameraSelect(arg1: 601, arg2: true);
-                context.SetSkip(arg1: "CameraWalk03");
+                context.SetSkip(state: new StateCameraWalk03(context));
             }
 
             public override TriggerState Execute() {
@@ -84,7 +84,7 @@ namespace Maple2.Trigger._02000292_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 1110, arg3: "$02000292_BF__MAIN__0$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "CameraWalk03");
+                context.SetSkip(state: new StateCameraWalk03(context));
             }
 
             public override TriggerState Execute() {

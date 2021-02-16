@@ -69,7 +69,7 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52010003_QD__MAIN__13$", arg4: 5);
-                context.SetSkip(arg1: "B_Event_03_IdLE");
+                context.SetSkip(state: new StateB_Event_03_IdLE(context));
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010003_QD__MAIN__14$", arg4: 5);
-                context.SetSkip(arg1: "B_Event_04_IdLE");
+                context.SetSkip(state: new StateB_Event_04_IdLE(context));
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52010003_QD__MAIN__15$", arg4: 5);
-                context.SetSkip(arg1: "B_Event_05_IdLE");
+                context.SetSkip(state: new StateB_Event_05_IdLE(context));
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001218, arg3: "$52010003_QD__MAIN__16$", arg4: 5);
-                context.SetSkip(arg1: "B_Event_06_IdLE");
+                context.SetSkip(state: new StateB_Event_06_IdLE(context));
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001217, arg3: "$52010003_QD__MAIN__17$", arg4: 5);
-                context.SetSkip(arg1: "B_Event_07_IdLE");
+                context.SetSkip(state: new StateB_Event_07_IdLE(context));
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
@@ -239,7 +239,7 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52010003_QD__MAIN__18$", arg4: 5);
-                context.SetSkip(arg1: "B_Event_08_IdLE");
+                context.SetSkip(state: new StateB_Event_08_IdLE(context));
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
@@ -284,7 +284,7 @@ namespace Maple2.Trigger._52010003_qd {
                 context.SetTimer(arg1: "4", arg2: 4);
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010003_QD__MAIN__0$", arg4: 4);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_1002");
-                context.SetSkip(arg1: "Event_02_IdLE");
+                context.SetSkip(state: new StateEvent_02_IdLE(context));
             }
 
             public override TriggerState Execute() {
@@ -317,7 +317,7 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010003_QD__MAIN__1$", arg4: 5);
-                context.SetSkip(arg1: "Event_03_IdLE");
+                context.SetSkip(state: new StateEvent_03_IdLE(context));
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
@@ -351,7 +351,7 @@ namespace Maple2.Trigger._52010003_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52010003_QD__MAIN__2$", arg4: 4);
-                context.SetSkip(arg1: "Event_04_IdLE");
+                context.SetSkip(state: new StateEvent_04_IdLE(context));
                 context.SetTimer(arg1: "4", arg2: 4);
             }
 
@@ -386,7 +386,7 @@ namespace Maple2.Trigger._52010003_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010003_QD__MAIN__3$", arg4: 4);
                 context.SetTimer(arg1: "4", arg2: 4);
-                context.SetSkip(arg1: "Event_05_IdLE");
+                context.SetSkip(state: new StateEvent_05_IdLE(context));
             }
 
             public override TriggerState Execute() {
@@ -420,7 +420,7 @@ namespace Maple2.Trigger._52010003_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52010003_QD__MAIN__4$", arg4: 4);
                 context.SetTimer(arg1: "4", arg2: 4);
-                context.SetSkip(arg1: "Event_06_IdLE");
+                context.SetSkip(state: new StateEvent_06_IdLE(context));
             }
 
             public override TriggerState Execute() {
@@ -454,7 +454,7 @@ namespace Maple2.Trigger._52010003_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52010003_QD__MAIN__5$", arg4: 5);
                 context.SetTimer(arg1: "5", arg2: 5);
-                context.SetSkip(arg1: "Event_07_IdLE");
+                context.SetSkip(state: new StateEvent_07_IdLE(context));
             }
 
             public override TriggerState Execute() {
@@ -488,7 +488,7 @@ namespace Maple2.Trigger._52010003_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010003_QD__MAIN__6$", arg4: 4);
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.SetSkip(arg1: "Event_08_IdLE");
+                context.SetSkip(state: new StateEvent_08_IdLE(context));
             }
 
             public override TriggerState Execute() {
@@ -522,7 +522,7 @@ namespace Maple2.Trigger._52010003_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010003_QD__MAIN__7$", arg4: 4);
                 context.SetTimer(arg1: "4", arg2: 4);
-                context.SetSkip(arg1: "Event_09_IdLE");
+                context.SetSkip(state: new StateEvent_09_IdLE(context));
             }
 
             public override TriggerState Execute() {
@@ -556,7 +556,7 @@ namespace Maple2.Trigger._52010003_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010003_QD__MAIN__8$", arg4: 3);
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.SetSkip(arg1: "Event_10");
+                context.SetSkip(state: new StateEvent_10(context));
             }
 
             public override TriggerState Execute() {
@@ -578,7 +578,7 @@ namespace Maple2.Trigger._52010003_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52010003_QD__MAIN__9$", arg4: 4);
                 context.SetTimer(arg1: "4", arg2: 4);
-                context.SetSkip(arg1: "Event_11");
+                context.SetSkip(state: new StatePlayMovie_01(context));
             }
 
             public override TriggerState Execute() {
@@ -620,7 +620,7 @@ namespace Maple2.Trigger._52010003_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "45", arg2: 4);
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010003_QD__MAIN__10$", arg4: 4);
-                context.SetSkip(arg1: "Event_12");
+                context.SetSkip(state: new StateEvent_12(context));
             }
 
             public override TriggerState Execute() {
@@ -642,7 +642,7 @@ namespace Maple2.Trigger._52010003_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010003_QD__MAIN__11$", arg4: 3);
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.SetSkip(arg1: "Event_13");
+                context.SetSkip(state: new StateEvent_13(context));
             }
 
             public override TriggerState Execute() {
@@ -662,7 +662,7 @@ namespace Maple2.Trigger._52010003_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010003_QD__MAIN__12$", arg4: 4);
                 context.SetTimer(arg1: "4", arg2: 4);
-                context.SetSkip(arg1: "Event_14");
+                context.SetSkip(state: new StateEvent_14(context));
             }
 
             public override TriggerState Execute() {

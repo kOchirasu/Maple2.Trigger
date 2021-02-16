@@ -233,7 +233,7 @@ namespace Maple2.Trigger._63000027_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5400}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001560, arg3: "$63000027_CS__MISTERY01__1$", arg4: 5);
-                context.SetSkip(arg1: "VisionTalk04");
+                context.SetSkip(state: new StateVisionTalk04(context));
             }
 
             public override TriggerState Execute() {
@@ -267,7 +267,7 @@ namespace Maple2.Trigger._63000027_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001560, arg3: "$63000027_CS__MISTERY01__2$", arg4: 5);
-                context.SetSkip(arg1: "VisionTalk04");
+                context.SetSkip(state: new StateVisionTalk04(context));
             }
 
             public override TriggerState Execute() {

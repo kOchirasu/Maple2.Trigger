@@ -141,7 +141,7 @@ namespace Maple2.Trigger._63000038_cs {
             internal State1차CinematicDelay(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "1차StopCinematic");
+                context.SetSkip(state: new State1차StopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -295,7 +295,7 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000038_CS__40002640__0$", arg4: 3);
-                context.SetSkip(arg1: "칸두라Script01스킵");
+                context.SetSkip(state: new State칸두라Script01스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -329,7 +329,7 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000038_CS__40002640__1$", arg4: 5);
-                context.SetSkip(arg1: "칸두라Script02스킵");
+                context.SetSkip(state: new State칸두라Script02스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -457,7 +457,7 @@ namespace Maple2.Trigger._63000038_cs {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 307, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001782, arg3: "$63000038_CS__40002640__2$", arg4: 3);
-                context.SetSkip(arg1: "NPCScript01스킵");
+                context.SetSkip(state: new StateNPCScript01스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -493,7 +493,7 @@ namespace Maple2.Trigger._63000038_cs {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001782, arg3: "$63000038_CS__40002640__3$", arg4: 4);
-                context.SetSkip(arg1: "NPCScript02스킵");
+                context.SetSkip(state: new StateNPCScript02스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -528,7 +528,7 @@ namespace Maple2.Trigger._63000038_cs {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 305, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000038_CS__40002640__4$", arg4: 5);
-                context.SetSkip(arg1: "칸두라Script03스킵");
+                context.SetSkip(state: new State칸두라Script03스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -582,7 +582,7 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000038_CS__40002640__5$", arg4: 4);
-                context.SetSkip(arg1: "칸두라Script01스킵_소울바인더");
+                context.SetSkip(state: new State칸두라Script01스킵_소울바인더(context));
             }
 
             public override TriggerState Execute() {
@@ -616,7 +616,7 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000038_CS__40002640__6$", arg4: 4);
-                context.SetSkip(arg1: "칸두라Script02스킵_소울바인더");
+                context.SetSkip(state: new State칸두라Script02스킵_소울바인더(context));
             }
 
             public override TriggerState Execute() {
@@ -744,7 +744,7 @@ namespace Maple2.Trigger._63000038_cs {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 305, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000038_CS__40002640__7$", arg4: 3);
-                context.SetSkip(arg1: "칸두라Script03스킵_소울바인더");
+                context.SetSkip(state: new State칸두라Script03스킵_소울바인더(context));
             }
 
             public override TriggerState Execute() {
@@ -779,7 +779,7 @@ namespace Maple2.Trigger._63000038_cs {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 305, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000038_CS__40002640__8$", arg4: 6);
-                context.SetSkip(arg1: "칸두라Script04스킵_소울바인더");
+                context.SetSkip(state: new State칸두라Script04스킵_소울바인더_소울바인더(context));
             }
 
             public override TriggerState Execute() {
@@ -1128,7 +1128,7 @@ namespace Maple2.Trigger._63000038_cs {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 308, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000038_CS__40002640__9$", arg4: 5);
-                context.SetSkip(arg1: "준타Script01스킵");
+                context.SetSkip(state: new State준타Script01스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -1165,7 +1165,7 @@ namespace Maple2.Trigger._63000038_cs {
                 context.CreateMonster(arg1: new[] {2004}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 2004, arg2: "Attack_Idle_A", arg3: 9999999999f);
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000038_CS__40002640__10$", arg4: 5);
-                context.SetSkip(arg1: "칸두라Script05스킵");
+                context.SetSkip(state: new State칸두라Script05스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -1199,7 +1199,7 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000038_CS__40002640__11$", arg4: 3);
-                context.SetSkip(arg1: "칸두라Script06스킵");
+                context.SetSkip(state: new State칸두라Script06스킵(context));
             }
 
             public override TriggerState Execute() {

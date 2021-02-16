@@ -68,7 +68,7 @@ namespace Maple2.Trigger._99999922 {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 101, arg3: "신입사원인가요?", arg4: 5);
-                context.SetSkip(arg1: "대화_1_스킵");
+                context.SetSkip(state: new State대화_1_스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._99999922 {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 101, arg3: @"반가워요.\n그럼 저를 따라와 보시겠어요??", arg4: 3);
-                context.SetSkip(arg1: "연출끝_1");
+                context.SetSkip(state: new StateCinematic끝_1(context));
             }
 
             public override TriggerState Execute() {
@@ -475,7 +475,7 @@ namespace Maple2.Trigger._99999922 {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 101, arg3: "저 스위치를 당겨야해요!", arg4: 5);
-                context.SetSkip(arg1: "대화_3_스킵");
+                context.SetSkip(state: new State대화_3_스킵(context));
             }
 
             public override TriggerState Execute() {

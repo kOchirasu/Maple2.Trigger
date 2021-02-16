@@ -259,7 +259,7 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003313, arg3: "$02000026_IN__MAIN__3$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "아노스Script01_skip");
+                context.SetSkip(state: new State아노스Script01_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -314,7 +314,7 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000264, arg3: "$02000026_IN__MAIN__4$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Bore_A");
-                context.SetSkip(arg1: "라딘Script01_skip");
+                context.SetSkip(state: new State라딘Script01_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -350,7 +350,7 @@ namespace Maple2.Trigger._02000026_in {
                 context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 4000f);
                 context.SetConversation(arg1: 2, arg2: 11003313, arg3: "$02000026_IN__MAIN__5$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "아노스Script02_skip");
+                context.SetSkip(state: new State아노스Script02_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -385,7 +385,7 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "ChatUP_A");
                 context.SetConversation(arg1: 2, arg2: 11000264, arg3: "$02000026_IN__MAIN__6$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "라딘Script02_skip");
+                context.SetSkip(state: new State라딘Script02_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -438,7 +438,7 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "ChatUp_A");
                 context.SetConversation(arg1: 2, arg2: 11003313, arg3: "$02000026_IN__MAIN__7$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "아노스Script03_skip");
+                context.SetSkip(state: new State아노스Script03_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -473,7 +473,7 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003313, arg3: "$02000026_IN__MAIN__8$", arg4: 3, arg5: 0);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_01");
-                context.SetSkip(arg1: "아노스Script04_skip");
+                context.SetSkip(state: new State아노스Script04_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -509,7 +509,7 @@ namespace Maple2.Trigger._02000026_in {
                 context.CameraSelectPath(arg1: new[] {8004}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Talk_A", arg3: 4000f);
                 context.SetConversation(arg1: 2, arg2: 11000264, arg3: "$02000026_IN__MAIN__9$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "라딘Script03_skip");
+                context.SetSkip(state: new State라딘Script03_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -563,7 +563,7 @@ namespace Maple2.Trigger._02000026_in {
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 3000f);
                 context.SetConversation(arg1: 2, arg2: 11003313, arg3: "$02000026_IN__MAIN__10$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "아노스Script05_skip");
+                context.SetSkip(state: new State아노스Script05_skip(context));
             }
 
             public override TriggerState Execute() {

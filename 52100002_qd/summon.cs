@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52100002_qd {
                 context.CreateMonster(arg1: new[] {2002}, arg2: false);
                 context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$02000392_BF__SUMMON__0$", align: "left", duration: 2000);
-                context.SetSkip(arg1: "죽음Wait");
+                context.SetSkip(state: new State죽음Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._52100002_qd {
                 context.CreateMonster(arg1: new[] {2102}, arg2: false);
                 context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$02000392_BF__SUMMON__0$", align: "left", duration: 2000);
-                context.SetSkip(arg1: "Quest죽음Wait");
+                context.SetSkip(state: new StateQuest죽음Wait(context));
             }
 
             public override TriggerState Execute() {

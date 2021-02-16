@@ -273,7 +273,7 @@ namespace Maple2.Trigger._02000035_in {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003262, arg3: "$02000035_IN__MAIN__1$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3000f);
-                context.SetSkip(arg1: "케이틀린Script01_skip");
+                context.SetSkip(state: new State케이틀린Script01_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -308,7 +308,7 @@ namespace Maple2.Trigger._02000035_in {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003264, arg3: "$02000035_IN__MAIN__2$", arg4: 5, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "앤Script01_skip");
+                context.SetSkip(state: new State앤Script01_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -344,7 +344,7 @@ namespace Maple2.Trigger._02000035_in {
                 context.CameraSelectPath(arg1: new[] {8004}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003262, arg3: "$02000035_IN__MAIN__3$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3000f);
-                context.SetSkip(arg1: "케이틀린Script02_skip");
+                context.SetSkip(state: new State케이틀린Script02_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -380,7 +380,7 @@ namespace Maple2.Trigger._02000035_in {
                 context.CameraSelectPath(arg1: new[] {8006}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003263, arg3: "$02000035_IN__MAIN__4$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 3000f);
-                context.SetSkip(arg1: "호르헤Script01_skip");
+                context.SetSkip(state: new State호르헤Script01_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -416,7 +416,7 @@ namespace Maple2.Trigger._02000035_in {
                 context.CameraSelectPath(arg1: new[] {8004}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003262, arg3: "$02000035_IN__MAIN__5$", arg4: 5, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "케이틀린Script03_skip");
+                context.SetSkip(state: new State케이틀린Script03_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -452,7 +452,7 @@ namespace Maple2.Trigger._02000035_in {
                 context.CameraSelectPath(arg1: new[] {8005}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003264, arg3: "$02000035_IN__MAIN__9$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "ChatUp_A", arg3: 2000f);
-                context.SetSkip(arg1: "앤Script02_skip");
+                context.SetSkip(state: new State앤Script02_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -488,7 +488,7 @@ namespace Maple2.Trigger._02000035_in {
                 context.CameraSelectPath(arg1: new[] {8006}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003263, arg3: "$02000035_IN__MAIN__10$", arg4: 2, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "ChatUp_A", arg3: 2000f);
-                context.SetSkip(arg1: "호르헤Script02_skip");
+                context.SetSkip(state: new State호르헤Script02_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -524,7 +524,7 @@ namespace Maple2.Trigger._02000035_in {
                 context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003262, arg3: "$02000035_IN__MAIN__6$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "케이틀린Script04_skip");
+                context.SetSkip(state: new State케이틀린Script04_skip(context));
             }
 
             public override TriggerState Execute() {

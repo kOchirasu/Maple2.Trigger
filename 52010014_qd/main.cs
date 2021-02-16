@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52010014_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.SetTimer(arg1: "3", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010014_QD__MAIN__0$", arg4: 3);
-                context.SetSkip(arg1: "Event_02");
+                context.SetSkip(state: new StateEvent_02(context));
             }
 
             public override TriggerState Execute() {
@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52010014_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010014_QD__MAIN__1$", arg4: 3);
-                context.SetSkip(arg1: "Event_03");
+                context.SetSkip(state: new StateEvent_03(context));
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
@@ -70,7 +70,7 @@ namespace Maple2.Trigger._52010014_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010014_QD__MAIN__2$", arg4: 3);
-                context.SetSkip(arg1: "Event_04");
+                context.SetSkip(state: new StateEvent_04(context));
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
@@ -93,7 +93,7 @@ namespace Maple2.Trigger._52010014_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010014_QD__MAIN__3$", arg4: 3);
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.SetSkip(arg1: "Event_05");
+                context.SetSkip(state: new StateEvent_05(context));
             }
 
             public override TriggerState Execute() {

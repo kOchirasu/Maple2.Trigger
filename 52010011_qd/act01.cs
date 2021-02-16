@@ -97,7 +97,7 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__0$", arg4: 5);
-                context.SetSkip(arg1: "Script_01_테모로skip");
+                context.SetSkip(state: new StateScript_01_테모로skip(context));
             }
 
             public override TriggerState Execute() {
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__1$", arg4: 5);
-                context.SetSkip(arg1: "Script_02_테모로skip");
+                context.SetSkip(state: new StateScript_02_테모로skip(context));
             }
 
             public override TriggerState Execute() {
@@ -183,7 +183,7 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__3$", arg4: 5);
-                context.SetSkip(arg1: "Script_04_테모로skip");
+                context.SetSkip(state: new StateScript_04_테모로skip(context));
             }
 
             public override TriggerState Execute() {
@@ -217,7 +217,7 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__4$", arg4: 5);
-                context.SetSkip(arg1: "Script_05_테모로skip");
+                context.SetSkip(state: new StateScript_05_테모로skip(context));
             }
 
             public override TriggerState Execute() {
@@ -269,7 +269,7 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__6$", arg4: 5);
-                context.SetSkip(arg1: "Script_07_테모로skip");
+                context.SetSkip(state: new StateScript_07_테모로skip(context));
             }
 
             public override TriggerState Execute() {
@@ -303,7 +303,7 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__7$", arg4: 5);
-                context.SetSkip(arg1: "Script_08_테모로skip");
+                context.SetSkip(state: new StateScript_08_테모로skip(context));
             }
 
             public override TriggerState Execute() {
@@ -355,7 +355,7 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__9$", arg4: 5);
-                context.SetSkip(arg1: "Script_10_테모로skip");
+                context.SetSkip(state: new StateScript_10_테모로skip(context));
             }
 
             public override TriggerState Execute() {
@@ -389,7 +389,7 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__10$", arg4: 5);
-                context.SetSkip(arg1: "Script_11_테모로skip");
+                context.SetSkip(state: new StateScript_11_테모로skip(context));
             }
 
             public override TriggerState Execute() {
@@ -441,7 +441,7 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__12$", arg4: 5);
-                context.SetSkip(arg1: "Script_13_테모로skip");
+                context.SetSkip(state: new StateScript_13_테모로skip(context));
             }
 
             public override TriggerState Execute() {
@@ -538,7 +538,7 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__14$", arg4: 5);
-                context.SetSkip(arg1: "Script_15_테모로skip");
+                context.SetSkip(state: new StateScript_15_테모로skip(context));
             }
 
             public override TriggerState Execute() {
@@ -572,7 +572,7 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001314, arg3: "$52010011_QD__ACT01__15$", arg4: 5);
-                context.SetSkip(arg1: "Script_16_테모로skip");
+                context.SetSkip(state: new StateScript_16_테모로skip(context));
             }
 
             public override TriggerState Execute() {
@@ -592,7 +592,7 @@ namespace Maple2.Trigger._52010011_qd {
             public override void OnEnter() {
                 context.RemoveCinematicTalk();
                 context.CreateMonster(arg1: new[] {1001}, arg2: true);
-                context.SetSkip(arg1: "Script_17_덴덴");
+                context.SetSkip(state: new StateScript_17_덴덴(context));
             }
 
             public override TriggerState Execute() {
@@ -608,7 +608,7 @@ namespace Maple2.Trigger._52010011_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1001, arg2: "MS2PatrolData_2001");
                 context.SetConversation(arg1: 2, arg2: 11001313, arg3: "$52010011_QD__ACT01__16$", arg4: 5);
-                context.SetSkip(arg1: "Script_17_덴덴skip");
+                context.SetSkip(state: new StateScript_17_덴덴skip(context));
             }
 
             public override TriggerState Execute() {
@@ -660,7 +660,7 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001313, arg3: "$52010011_QD__ACT01__18$", arg4: 4);
-                context.SetSkip(arg1: "Script_19_덴덴skip");
+                context.SetSkip(state: new StateScript_19_덴덴skip(context));
             }
 
             public override TriggerState Execute() {
@@ -712,7 +712,7 @@ namespace Maple2.Trigger._52010011_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001313, arg3: "$52010011_QD__ACT01__20$", arg4: 3);
-                context.SetSkip(arg1: "Script_21_덴덴skip");
+                context.SetSkip(state: new StateScript_21_덴덴skip(context));
             }
 
             public override TriggerState Execute() {

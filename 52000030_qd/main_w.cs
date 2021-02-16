@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52000030_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {603}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000032, arg3: "$52000030_QD__MAIN_W__0$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "NPC 단체 이동");
+                context.SetSkip(state: new StateNPC단체이동(context));
             }
 
             public override TriggerState Execute() {

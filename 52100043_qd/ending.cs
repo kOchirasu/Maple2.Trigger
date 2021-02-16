@@ -53,7 +53,7 @@ namespace Maple2.Trigger._52100043_qd {
             internal StateEnding_Talk_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "narration01");
+                context.SetSkip(state: new StateNarration01(context));
                 context.CameraSelect(arg1: 1000, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 602, arg2: "Talk_A");
                 context.AddCinematicTalk(npcId: 11001566, illustId: "11001566", msg: "$52100043_QD__ENDING__0$", duration: 3000, align: "left");
@@ -261,7 +261,7 @@ namespace Maple2.Trigger._52100043_qd {
             internal StateNarration02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "Map_Warf");
+                context.SetSkip(state: new StateMap_Warf(context));
                 context.SetCinematicUI(arg1: 9, arg2: "$52100043_QD__ENDING__8$");
             }
 

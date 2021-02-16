@@ -94,7 +94,7 @@ namespace Maple2.Trigger._02010052_bf {
                 context.CameraSelect(arg1: 80001, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 21800073, arg3: "$02010052_BF__MAIN__1$", arg4: 3);
                 context.MoveNpc(arg1: 991, arg2: "MS2PatrolData_1001");
-                context.SetSkip(arg1: "Event_01_02");
+                context.SetSkip(state: new StateEvent_01_02(context));
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
@@ -117,7 +117,7 @@ namespace Maple2.Trigger._02010052_bf {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 21800073, arg3: "$02010052_BF__MAIN__2$", arg4: 3);
                 context.MoveNpc(arg1: 991, arg2: "MS2PatrolData_1002");
-                context.SetSkip(arg1: "Event_01_03");
+                context.SetSkip(state: new StateEvent_01_03(context));
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 
@@ -225,7 +225,7 @@ namespace Maple2.Trigger._02010052_bf {
                 context.CameraSelect(arg1: 80002, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 21800073, arg3: "$02010052_BF__MAIN__5$", arg4: 3);
                 context.MoveNpc(arg1: 993, arg2: "MS2PatrolData_1004");
-                context.SetSkip(arg1: "Event_03_02");
+                context.SetSkip(state: new StateEvent_03_02(context));
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 

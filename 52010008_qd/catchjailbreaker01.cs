@@ -145,7 +145,7 @@ namespace Maple2.Trigger._52010008_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "21", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11000521, arg3: "$52010008_QD__CATCHJAILBREAKER01__0$", arg4: 3);
-                context.SetSkip(arg1: "벨마대화02Wait");
+                context.SetSkip(state: new State벨마대화02Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -179,7 +179,7 @@ namespace Maple2.Trigger._52010008_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "22", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11000521, arg3: "$52010008_QD__CATCHJAILBREAKER01__1$", arg4: 3);
-                context.SetSkip(arg1: "벨마대화03Wait");
+                context.SetSkip(state: new State벨마대화03Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._52010008_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "23", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11000521, arg3: "$52010008_QD__CATCHJAILBREAKER01__2$", arg4: 3);
-                context.SetSkip(arg1: "벨마연출종료01");
+                context.SetSkip(state: new State벨마StopCinematic01(context));
             }
 
             public override TriggerState Execute() {

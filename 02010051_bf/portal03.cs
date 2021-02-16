@@ -106,7 +106,7 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnEnter() {
                 context.SetTimer(arg1: "20", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11001319, arg3: "$02010051_BF__PORTAL03__0$", arg4: 3);
-                context.SetSkip(arg1: "대화연출종료01");
+                context.SetSkip(state: new State대화StopCinematic01(context));
             }
 
             public override TriggerState Execute() {

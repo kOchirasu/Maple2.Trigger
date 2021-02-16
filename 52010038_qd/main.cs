@@ -32,7 +32,7 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SpawnNpcRange(rangeId: new[] {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008}, isAutoTargeting: false);
                 context.SpawnNpcRange(rangeId: new[] {1101, 1102, 1103, 1104, 1105, 1106}, isAutoTargeting: false);
                 context.SpawnNpcRange(rangeId: new[] {1801, 1802, 1803, 1804}, isAutoTargeting: false);
-                context.SetSkip(arg1: "시작");
+                context.SetSkip(state: new StateStart(context));
             }
 
             public override TriggerState Execute() {
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._52010038_qd {
                 context.SetUserValue(triggerId: 992003, key: "bombStart", value: 1);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "연출02종료");
+                context.SetSkip(state: new StateCinematic02종료(context));
             }
 
             public override TriggerState Execute() {
@@ -117,7 +117,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 304, arg2: true);
-                context.SetSkip(arg1: "연출02종료");
+                context.SetSkip(state: new StateCinematic02종료(context));
             }
 
             public override TriggerState Execute() {
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal State부관Script03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "연출02종료");
+                context.SetSkip(state: new StateCinematic02종료(context));
                 context.AddCinematicTalk(npcId: 11003536, illustId: "Neirin_surprise", msg: "$52010038_QD__MAIN__0$", duration: 7000, align: "right");
             }
 
@@ -219,7 +219,7 @@ namespace Maple2.Trigger._52010038_qd {
                 context.CreateMonster(arg1: new[] {2098}, arg2: false);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "BossStopCinematic");
+                context.SetSkip(state: new StateBossStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -238,7 +238,7 @@ namespace Maple2.Trigger._52010038_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
-                context.SetSkip(arg1: "BossStopCinematic");
+                context.SetSkip(state: new StateBossStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -256,7 +256,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateBossScript01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "BossStopCinematic");
+                context.SetSkip(state: new StateBossStopCinematic(context));
                 context.AddCinematicTalk(npcId: 11003185, illustId: "ShadowClaw_normal", msg: "$52010038_QD__MAIN__2$", duration: 5000, align: "left");
             }
 
@@ -275,7 +275,7 @@ namespace Maple2.Trigger._52010038_qd {
             internal StateBoss이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "BossStopCinematic");
+                context.SetSkip(state: new StateBossStopCinematic(context));
                 context.MoveNpc(arg1: 2098, arg2: "MS2PatrolData_2098");
             }
 
@@ -296,7 +296,7 @@ namespace Maple2.Trigger._52010038_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003185, illustId: "ShadowClaw_normal", msg: "$52010038_QD__MAIN__3$", duration: 5000, align: "left");
                 context.CameraSelect(arg1: 303, arg2: true);
-                context.SetSkip(arg1: "BossStopCinematic");
+                context.SetSkip(state: new StateBossStopCinematic(context));
             }
 
             public override TriggerState Execute() {

@@ -95,7 +95,7 @@ namespace Maple2.Trigger._02100004_bf {
 
             public override void OnEnter() {
                 context.SetCinematicIntro(text: "$02100004_BF__MAIN__0$");
-                context.SetSkip(arg1: "Caption01Skip");
+                context.SetSkip(state: new StateCaption01Skip(context));
             }
 
             public override TriggerState Execute() {

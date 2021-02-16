@@ -218,7 +218,7 @@ namespace Maple2.Trigger._63000026_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000026_CS__FAINT01__0$", arg4: 5);
-                context.SetSkip(arg1: "TinChaiTalk02");
+                context.SetSkip(state: new StateTinChaiTalk02(context));
             }
 
             public override TriggerState Execute() {
@@ -342,7 +342,7 @@ namespace Maple2.Trigger._63000026_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6002}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000026_CS__FAINT01__2$", arg4: 5);
-                context.SetSkip(arg1: "ReadyToBattle02");
+                context.SetSkip(state: new StateReadyToBattle02(context));
             }
 
             public override TriggerState Execute() {
@@ -478,7 +478,7 @@ namespace Maple2.Trigger._63000026_cs {
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000026_CS__FAINT01__4$", arg4: 5);
                 context.DestroyMonster(arg1: new[] {900, 901, 902, 903, 904, 905, 910, 911, 912, 913, 914, 915});
                 context.CreateMonster(arg1: new[] {920, 921, 922}, arg2: false);
-                context.SetSkip(arg1: "PCFaint04");
+                context.SetSkip(state: new StatePCFaint04(context));
             }
 
             public override TriggerState Execute() {

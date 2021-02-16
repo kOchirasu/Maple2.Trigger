@@ -129,7 +129,7 @@ namespace Maple2.Trigger._02010055_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 302, arg2: true);
                 context.CreateMonster(arg1: new[] {1002, 1003, 1004}, arg2: false);
-                context.SetSkip(arg1: "NPC이동");
+                context.SetSkip(state: new StateNPC이동(context));
             }
 
             public override TriggerState Execute() {
@@ -147,7 +147,7 @@ namespace Maple2.Trigger._02010055_bf {
             internal State스타츠Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "NPC이동");
+                context.SetSkip(state: new StateNPC이동(context));
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$02010055_BF__SCENE02__0$", arg4: 4);
             }
 
@@ -166,7 +166,7 @@ namespace Maple2.Trigger._02010055_bf {
             internal State타라Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "NPC이동");
+                context.SetSkip(state: new StateNPC이동(context));
                 context.SetConversation(arg1: 2, arg2: 11001218, arg3: "$02010055_BF__SCENE02__1$", arg4: 3);
             }
 
@@ -185,7 +185,7 @@ namespace Maple2.Trigger._02010055_bf {
             internal State스타츠Script02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "NPC이동");
+                context.SetSkip(state: new StateNPC이동(context));
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$02010055_BF__SCENE02__2$", arg4: 3);
             }
 

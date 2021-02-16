@@ -78,7 +78,7 @@ namespace Maple2.Trigger._52100022_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003068, arg3: "$02000382_BF__01_BOSSBATTLE__0$", arg4: 4);
-                context.SetSkip(arg1: "Boss01Talk01Skip");
+                context.SetSkip(state: new StateBoss01Talk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -117,7 +117,7 @@ namespace Maple2.Trigger._52100022_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003069, arg3: "$02000382_BF__01_BOSSBATTLE__1$", arg4: 5);
-                context.SetSkip(arg1: "Boss01Talk02Skip");
+                context.SetSkip(state: new StateBoss01Talk02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -215,7 +215,7 @@ namespace Maple2.Trigger._52100022_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003068, arg3: "$02000382_BF__01_BOSSBATTLE__2$", arg4: 3);
-                context.SetSkip(arg1: "Boss02Talk01Skip");
+                context.SetSkip(state: new StateBoss02Talk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -254,7 +254,7 @@ namespace Maple2.Trigger._52100022_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003069, arg3: "$02000382_BF__01_BOSSBATTLE__3$", arg4: 4);
-                context.SetSkip(arg1: "Boss02Talk02Skip");
+                context.SetSkip(state: new StateBoss02Talk02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -336,7 +336,7 @@ namespace Maple2.Trigger._52100022_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003068, arg3: "$02000382_BF__01_BOSSBATTLE__4$", arg4: 4);
-                context.SetSkip(arg1: "Boss03Talk01Skip");
+                context.SetSkip(state: new StateBoss03Talk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -375,7 +375,7 @@ namespace Maple2.Trigger._52100022_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003069, arg3: "$02000382_BF__01_BOSSBATTLE__5$", arg4: 5);
-                context.SetSkip(arg1: "Boss03Talk02Skip");
+                context.SetSkip(state: new StateBoss03Talk02Skip(context));
             }
 
             public override TriggerState Execute() {

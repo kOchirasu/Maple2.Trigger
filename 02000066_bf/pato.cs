@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02000066_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {1601, 1602, 1603, 1604}, arg2: false);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02000066_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000066_BF__PATO__0$", arg4: 2);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {

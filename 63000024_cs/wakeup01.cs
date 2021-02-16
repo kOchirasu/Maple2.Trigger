@@ -341,7 +341,7 @@ namespace Maple2.Trigger._63000024_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000024_CS__WAKEUP01__0$", arg4: 7);
-                context.SetSkip(arg1: "TinChaiTalk02");
+                context.SetSkip(state: new StateTinChaiTalk02(context));
             }
 
             public override TriggerState Execute() {
@@ -376,7 +376,7 @@ namespace Maple2.Trigger._63000024_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6001}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000024_CS__WAKEUP01__1$", arg4: 5);
-                context.SetSkip(arg1: "TinChaiTalk04");
+                context.SetSkip(state: new StateTinChaiTalk04(context));
             }
 
             public override TriggerState Execute() {
@@ -510,7 +510,7 @@ namespace Maple2.Trigger._63000024_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6002}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000024_CS__WAKEUP01__2$", arg4: 6);
-                context.SetSkip(arg1: "TinChaiTalk14");
+                context.SetSkip(state: new StateTinChaiTalk14(context));
             }
 
             public override TriggerState Execute() {
@@ -544,7 +544,7 @@ namespace Maple2.Trigger._63000024_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000024_CS__WAKEUP01__3$", arg4: 5);
-                context.SetSkip(arg1: "TinChaiTalk14");
+                context.SetSkip(state: new StateTinChaiTalk14(context));
             }
 
             public override TriggerState Execute() {

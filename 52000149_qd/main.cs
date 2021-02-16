@@ -131,7 +131,7 @@ namespace Maple2.Trigger._52000149_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
                 context.AddCinematicTalk(npcId: 11003436, msg: "$52000149_QD__MAIN__0$", duration: 3000);
-                context.SetSkip(arg1: "아노스아파_스킵완료");
+                context.SetSkip(state: new State아노스아파_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -167,7 +167,7 @@ namespace Maple2.Trigger._52000149_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8002, 8004}, arg2: false);
                 context.AddCinematicTalk(npcId: 11003436, msg: "$52000149_QD__MAIN__1$", duration: 3000);
-                context.SetSkip(arg1: "아노스아파_스킵완료");
+                context.SetSkip(state: new State아노스아파_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -206,7 +206,7 @@ namespace Maple2.Trigger._52000149_qd {
                 context.AddCinematicTalk(npcId: 11003436, msg: "$52000149_QD__MAIN__2$", duration: 3000);
                 context.AddBalloonTalk(spawnPointId: 102, msg: "$52000149_QD__MAIN__3$", duration: 3000, delayTick: 0);
                 context.MoveNpc(arg1: 102, arg2: "MS2PatrolData_katelyn");
-                context.SetSkip(arg1: "아노스아파_스킵완료");
+                context.SetSkip(state: new State아노스아파_스킵완료(context));
             }
 
             public override TriggerState Execute() {

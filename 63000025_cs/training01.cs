@@ -420,7 +420,7 @@ namespace Maple2.Trigger._63000025_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6101}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000025_CS__TRAINING01__1$", arg4: 7);
-                context.SetSkip(arg1: "Dialogue04");
+                context.SetSkip(state: new StateDialogue04(context));
             }
 
             public override TriggerState Execute() {
@@ -455,7 +455,7 @@ namespace Maple2.Trigger._63000025_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000025_CS__TRAINING01__2$", arg4: 6);
-                context.SetSkip(arg1: "Dialogue06");
+                context.SetSkip(state: new StateDialogue06(context));
             }
 
             public override TriggerState Execute() {
@@ -490,7 +490,7 @@ namespace Maple2.Trigger._63000025_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6102}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000025_CS__TRAINING01__3$", arg4: 6);
-                context.SetSkip(arg1: "Dialogue08");
+                context.SetSkip(state: new StateDialogue08(context));
             }
 
             public override TriggerState Execute() {
@@ -871,7 +871,7 @@ namespace Maple2.Trigger._63000025_cs {
                 context.SetEffect(arg1: new[] {6104}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000025_CS__TRAINING01__6$", arg4: 5);
                 context.SetSceneSkip(arg1: "FeelStrange18", arg2: "nextState");
-                context.SetSkip(arg1: "FeelStrange02");
+                context.SetSkip(state: new StateFeelStrange02(context));
             }
 
             public override TriggerState Execute() {
@@ -906,7 +906,7 @@ namespace Maple2.Trigger._63000025_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6105}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000025_CS__TRAINING01__7$", arg4: 3);
-                context.SetSkip(arg1: "FeelStrange04");
+                context.SetSkip(state: new StateFeelStrange04(context));
             }
 
             public override TriggerState Execute() {
@@ -942,7 +942,7 @@ namespace Maple2.Trigger._63000025_cs {
                 context.SetEffect(arg1: new[] {6002}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000025_CS__TRAINING01__8$", arg4: 4);
                 context.SetNpcEmotionSequence(arg1: 205, arg2: "Talk_A");
-                context.SetSkip(arg1: "FeelStrange06");
+                context.SetSkip(state: new StateFeelStrange06(context));
             }
 
             public override TriggerState Execute() {
@@ -979,7 +979,7 @@ namespace Maple2.Trigger._63000025_cs {
                 context.SetEffect(arg1: new[] {6106}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000025_CS__TRAINING01__9$", arg4: 4);
                 context.SetNpcEmotionSequence(arg1: 105, arg2: "Talk_A");
-                context.SetSkip(arg1: "FeelStrange08");
+                context.SetSkip(state: new StateFeelStrange08(context));
             }
 
             public override TriggerState Execute() {
@@ -1016,7 +1016,7 @@ namespace Maple2.Trigger._63000025_cs {
                 context.SetEffect(arg1: new[] {6003}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000025_CS__TRAINING01__10$", arg4: 4);
                 context.SetNpcEmotionSequence(arg1: 205, arg2: "Talk_A");
-                context.SetSkip(arg1: "FeelStrange10");
+                context.SetSkip(state: new StateFeelStrange10(context));
             }
 
             public override TriggerState Execute() {
@@ -1053,7 +1053,7 @@ namespace Maple2.Trigger._63000025_cs {
                 context.SetEffect(arg1: new[] {6107}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000025_CS__TRAINING01__11$", arg4: 6);
                 context.SetNpcEmotionSequence(arg1: 105, arg2: "Talk_A");
-                context.SetSkip(arg1: "FeelStrange12");
+                context.SetSkip(state: new StateFeelStrange12(context));
             }
 
             public override TriggerState Execute() {
@@ -1090,7 +1090,7 @@ namespace Maple2.Trigger._63000025_cs {
                 context.SetEffect(arg1: new[] {6004}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000025_CS__TRAINING01__12$", arg4: 4);
                 context.SetNpcEmotionSequence(arg1: 205, arg2: "Talk_A");
-                context.SetSkip(arg1: "FeelStrange14");
+                context.SetSkip(state: new StateFeelStrange14(context));
             }
 
             public override TriggerState Execute() {
@@ -1127,7 +1127,7 @@ namespace Maple2.Trigger._63000025_cs {
                 context.SetEffect(arg1: new[] {6108}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000025_CS__TRAINING01__13$", arg4: 5);
                 context.SetNpcEmotionSequence(arg1: 105, arg2: "Talk_A");
-                context.SetSkip(arg1: "FeelStrange16");
+                context.SetSkip(state: new StateFeelStrange16(context));
             }
 
             public override TriggerState Execute() {
@@ -1246,7 +1246,7 @@ namespace Maple2.Trigger._63000025_cs {
                 context.SetEffect(arg1: new[] {6109}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000025_CS__TRAINING01__19$", arg4: 7);
                 context.SetNpcEmotionSequence(arg1: 106, arg2: "Talk_A");
-                context.SetSkip(arg1: "MinimapGuide02");
+                context.SetSkip(state: new StateMinimapGuide02(context));
             }
 
             public override TriggerState Execute() {

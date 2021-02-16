@@ -159,7 +159,7 @@ namespace Maple2.Trigger._52000121_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003309, arg3: "$52000121_QD__MAIN__0$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Talk_B", arg3: 4000f);
-                context.SetSkip(arg1: "오스칼Script01_skip");
+                context.SetSkip(state: new State오스칼Script01_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -194,7 +194,7 @@ namespace Maple2.Trigger._52000121_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003362, arg3: "$52000121_QD__MAIN__1$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Bore_B", arg3: 4000f);
-                context.SetSkip(arg1: "투르카Script01_skip");
+                context.SetSkip(state: new State투르카Script01_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -230,7 +230,7 @@ namespace Maple2.Trigger._52000121_qd {
                 context.CameraSelectPath(arg1: new[] {8022}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003308, arg3: "$52000121_QD__MAIN__2$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 3000f);
-                context.SetSkip(arg1: "마노비치Script01_skip");
+                context.SetSkip(state: new State마노비치Script01_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -266,7 +266,7 @@ namespace Maple2.Trigger._52000121_qd {
                 context.CameraSelectPath(arg1: new[] {8023}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003362, arg3: "$52000121_QD__MAIN__3$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3000f);
-                context.SetSkip(arg1: "투르카Script02_skip");
+                context.SetSkip(state: new State투르카Script02_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -301,7 +301,7 @@ namespace Maple2.Trigger._52000121_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003362, arg3: "$52000121_QD__MAIN__4$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3000f);
-                context.SetSkip(arg1: "투르카Script03_skip");
+                context.SetSkip(state: new State투르카Script03_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._52000121_qd {
                 context.CameraSelectPath(arg1: new[] {8021}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003309, arg3: "$52000121_QD__MAIN__5$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Attack_Idle_A", arg3: 4000f);
-                context.SetSkip(arg1: "오스칼Script02_skip");
+                context.SetSkip(state: new State오스칼Script02_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -373,7 +373,7 @@ namespace Maple2.Trigger._52000121_qd {
                 context.CameraSelectPath(arg1: new[] {8023}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003362, arg3: "$52000121_QD__MAIN__6$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "투르카Script04_skip");
+                context.SetSkip(state: new State투르카Script04_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -620,7 +620,7 @@ namespace Maple2.Trigger._52000121_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Stun_A", arg3: 3000f);
                 context.AddCinematicTalk(npcId: 11003309, illustId: "Oskhal_normal", msg: "$52000121_QD__MAIN__11$", duration: 2000, align: "left");
-                context.SetSkip(arg1: "오스칼멘붕_skip");
+                context.SetSkip(state: new State오스칼멘붕_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -656,7 +656,7 @@ namespace Maple2.Trigger._52000121_qd {
                 context.CameraSelectPath(arg1: new[] {8035}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_101_disappear_01");
                 context.SetConversation(arg1: 2, arg2: 11003362, arg3: "$52000121_QD__MAIN__12$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "투르카Script05_skip");
+                context.SetSkip(state: new State투르카Script05_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1027,7 +1027,7 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003361, arg3: "$52000121_QD__MAIN__18$", arg4: 2, arg5: 0);
-                context.SetSkip(arg1: "마노비치Script03_skip");
+                context.SetSkip(state: new State마노비치Script03_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1062,7 +1062,7 @@ namespace Maple2.Trigger._52000121_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8042}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003364, arg3: "$52000121_QD__MAIN__19$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "아르마노Script01_skip");
+                context.SetSkip(state: new State아르마노Script01_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1096,7 +1096,7 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003364, arg3: "$52000121_QD__MAIN__20$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "아르마노Script02_skip");
+                context.SetSkip(state: new State아르마노Script02_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1131,7 +1131,7 @@ namespace Maple2.Trigger._52000121_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8041}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003361, arg3: "$52000121_QD__MAIN__21$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "마노비치Script04_skip");
+                context.SetSkip(state: new State마노비치Script04_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1165,7 +1165,7 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003361, arg3: "$52000121_QD__MAIN__22$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "마노비치Script05_skip");
+                context.SetSkip(state: new State마노비치Script05_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1200,7 +1200,7 @@ namespace Maple2.Trigger._52000121_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8046}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003361, arg3: "$52000121_QD__MAIN__23$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "마노비치Script06_skip");
+                context.SetSkip(state: new State마노비치Script06_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1236,7 +1236,7 @@ namespace Maple2.Trigger._52000121_qd {
                 context.CameraSelectPath(arg1: new[] {8043}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003361, arg3: "$52000121_QD__MAIN__24$", arg4: 2, arg5: 0);
                 context.SetNpcEmotionSequence(arg1: 105, arg2: "Event_02_A");
-                context.SetSkip(arg1: "마노비치Script07_skip");
+                context.SetSkip(state: new State마노비치Script07_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1272,7 +1272,7 @@ namespace Maple2.Trigger._52000121_qd {
                 context.CameraSelectPath(arg1: new[] {8047}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003361, arg3: "$52000121_QD__MAIN__25$", arg4: 2, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 105, arg2: "Event_03_A", arg3: 10000f);
-                context.SetSkip(arg1: "마노비치Script08_skip");
+                context.SetSkip(state: new State마노비치Script08_skip(context));
             }
 
             public override TriggerState Execute() {

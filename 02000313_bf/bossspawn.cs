@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02000313_bf {
                 context.SetEffect(arg1: new[] {5002}, arg2: true);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "1차전투시작");
+                context.SetSkip(state: new State1차전투시작(context));
             }
 
             public override TriggerState Execute() {
@@ -343,7 +343,7 @@ namespace Maple2.Trigger._02000313_bf {
                 context.SetNpcEmotionLoop(arg1: 1107, arg2: "Dead_A", arg3: 9000f);
                 context.SetNpcEmotionLoop(arg1: 1108, arg2: "Dead_A", arg3: 9000f);
                 context.SetMesh(arg1: new[] {3300, 3301, 3302, 3303, 3304, 3305, 3306, 3307, 3308, 3309, 3310, 3311, 3312, 3313, 3314, 3315, 3316, 3317, 3318, 3319, 3320, 3321, 3322, 3323, 3324, 3325}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkip(arg1: "보스전투시작");
+                context.SetSkip(state: new StateBossCombatStart(context));
             }
 
             public override TriggerState Execute() {
@@ -884,7 +884,7 @@ namespace Maple2.Trigger._02000313_bf {
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Attack_01_A");
                 context.AddCinematicTalk(npcId: 11003393, msg: "$02000313_BF__BOSSSPAWN__76$", duration: 4000);
                 context.AddCinematicTalk(npcId: 11003393, msg: "$02000313_BF__BOSSSPAWN__77$", duration: 4000);
-                context.SetSkip(arg1: "퀘스트연출_마지막전투_04");
+                context.SetSkip(state: new StateQuestCinematic_마지막전투_04(context));
             }
 
             public override TriggerState Execute() {

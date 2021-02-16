@@ -247,7 +247,7 @@ namespace Maple2.Trigger._02000065_bf {
                 context.AddCinematicTalk(npcId: 11003432, msg: "$02000065_BF__MAIN__2$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Talk_A", arg3: 3000f);
                 context.SetSceneSkip(arg1: "칼과앤_스킵완료", arg2: "nextState");
-                context.SetSkip(arg1: "앤Script01_skip");
+                context.SetSkip(state: new State앤Script01_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -281,7 +281,7 @@ namespace Maple2.Trigger._02000065_bf {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11000074, msg: "$02000065_BF__MAIN__3$", duration: 3000);
-                context.SetSkip(arg1: "칼Script01_skip");
+                context.SetSkip(state: new State칼Script01_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -316,7 +316,7 @@ namespace Maple2.Trigger._02000065_bf {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003432, msg: "$02000065_BF__MAIN__4$", duration: 4000);
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Talk_A", arg3: 3000f);
-                context.SetSkip(arg1: "앤Script02_skip");
+                context.SetSkip(state: new State앤Script02_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -350,7 +350,7 @@ namespace Maple2.Trigger._02000065_bf {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11000074, msg: "$02000065_BF__MAIN__5$", duration: 3000);
-                context.SetSkip(arg1: "칼Script02_skip");
+                context.SetSkip(state: new State칼Script02_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -385,7 +385,7 @@ namespace Maple2.Trigger._02000065_bf {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003432, msg: "$02000065_BF__MAIN__6$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Talk_A", arg3: 2000f);
-                context.SetSkip(arg1: "앤Script03_skip");
+                context.SetSkip(state: new State앤Script03_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -419,7 +419,7 @@ namespace Maple2.Trigger._02000065_bf {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11000074, msg: "$02000065_BF__MAIN__7$", duration: 4000);
-                context.SetSkip(arg1: "칼Script03_skip");
+                context.SetSkip(state: new State칼Script03_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -454,7 +454,7 @@ namespace Maple2.Trigger._02000065_bf {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003432, msg: "$02000065_BF__MAIN__8$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Talk_A", arg3: 2000f);
-                context.SetSkip(arg1: "앤Script04_skip");
+                context.SetSkip(state: new State앤Script04_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -488,7 +488,7 @@ namespace Maple2.Trigger._02000065_bf {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11000074, msg: "$02000065_BF__MAIN__9$", duration: 3000);
-                context.SetSkip(arg1: "칼Script04_skip");
+                context.SetSkip(state: new State칼Script04_skip(context));
             }
 
             public override TriggerState Execute() {

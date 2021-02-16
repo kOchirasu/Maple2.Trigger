@@ -23,7 +23,7 @@ namespace Maple2.Trigger._52100031_qd {
             internal State말Prepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "Quest");
+                context.SetSkip(state: new StateQuest(context));
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);

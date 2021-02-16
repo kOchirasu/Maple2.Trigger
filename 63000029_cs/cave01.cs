@@ -557,7 +557,7 @@ namespace Maple2.Trigger._63000029_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$63000029_CS__CAVE01__7$", arg4: 5);
-                context.SetSkip(arg1: "LaozTalk04");
+                context.SetSkip(state: new StateLaozTalk04(context));
             }
 
             public override TriggerState Execute() {
@@ -1235,7 +1235,7 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetConversation(arg1: 2, arg2: 11001556, arg3: "$63000029_CS__CAVE01__19$", arg4: 9);
                 context.SetNpcEmotionSequence(arg1: 303, arg2: "Talk_A");
                 context.CameraSelect(arg1: 612, arg2: true);
-                context.SetSkip(arg1: "LaozNKahnTalk02");
+                context.SetSkip(state: new StateLaozNKahnTalk02(context));
             }
 
             public override TriggerState Execute() {
@@ -1307,7 +1307,7 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetNpcEmotionSequence(arg1: 401, arg2: "Event_A");
                 context.SetEffect(arg1: new[] {6103}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001559, arg3: "$63000029_CS__CAVE01__21$", arg4: 6);
-                context.SetSkip(arg1: "LaozNKahnTalk06");
+                context.SetSkip(state: new StateLaozNKahnTalk06(context));
             }
 
             public override TriggerState Execute() {

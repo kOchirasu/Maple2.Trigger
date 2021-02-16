@@ -246,7 +246,7 @@ namespace Maple2.Trigger._02000392_bf {
             internal StateEndCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "연출종료");
+                context.SetSkip(state: new StateStopCinematic(context));
                 context.SetConversation(arg1: 1, arg2: 1098, arg3: "$02000392_BF__MAIN__0$", arg4: 3, arg5: 0);
                 context.SetConversation(arg1: 1, arg2: 1099, arg3: "$02000392_BF__MAIN__1$", arg4: 3, arg5: 0);
             }

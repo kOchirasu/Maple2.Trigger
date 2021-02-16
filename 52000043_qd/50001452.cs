@@ -152,7 +152,7 @@ namespace Maple2.Trigger._52000043_qd {
                 context.CameraSelect(arg1: 306, arg2: true);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "향로반응Wait");
+                context.SetSkip(state: new State향로반응Wait(context));
             }
 
             public override TriggerState Execute() {

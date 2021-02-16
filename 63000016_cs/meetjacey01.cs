@@ -187,7 +187,7 @@ namespace Maple2.Trigger._63000016_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__1$", arg4: 5);
-                context.SetSkip(arg1: "JaceyTalk02");
+                context.SetSkip(state: new StateJaceyTalk02(context));
             }
 
             public override TriggerState Execute() {
@@ -227,7 +227,7 @@ namespace Maple2.Trigger._63000016_cs {
                 context.MoveUserPath(arg1: "MS2PatrolData_1002");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_102");
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__2$", arg4: 4);
-                context.SetSkip(arg1: "JaceyTalk04");
+                context.SetSkip(state: new StateJaceyTalk04(context));
             }
 
             public override TriggerState Execute() {
@@ -265,7 +265,7 @@ namespace Maple2.Trigger._63000016_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__3$", arg4: 4);
-                context.SetSkip(arg1: "JaceyTalk06");
+                context.SetSkip(state: new StateJaceyTalk06(context));
             }
 
             public override TriggerState Execute() {
@@ -342,7 +342,7 @@ namespace Maple2.Trigger._63000016_cs {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__4$", arg4: 4);
-                context.SetSkip(arg1: "JaceyTalk11");
+                context.SetSkip(state: new StateJaceyTalk11(context));
             }
 
             public override TriggerState Execute() {
@@ -380,7 +380,7 @@ namespace Maple2.Trigger._63000016_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__5$", arg4: 4);
-                context.SetSkip(arg1: "JaceyTalk13");
+                context.SetSkip(state: new StateJaceyTalk13(context));
             }
 
             public override TriggerState Execute() {
@@ -539,7 +539,7 @@ namespace Maple2.Trigger._63000016_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__13$", arg4: 4);
-                context.SetSkip(arg1: "CallNextRoom04");
+                context.SetSkip(state: new StateCallNextRoom04(context));
             }
 
             public override TriggerState Execute() {
@@ -622,7 +622,7 @@ namespace Maple2.Trigger._63000016_cs {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__14$", arg4: 4);
-                context.SetSkip(arg1: "JaceyQuest03");
+                context.SetSkip(state: new StateJaceyQuest03(context));
             }
 
             public override TriggerState Execute() {
@@ -662,7 +662,7 @@ namespace Maple2.Trigger._63000016_cs {
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__15$", arg4: 4);
                 context.DestroyMonster(arg1: new[] {102});
                 context.CreateMonster(arg1: new[] {103}, arg2: false);
-                context.SetSkip(arg1: "JaceyQuest05");
+                context.SetSkip(state: new StateJaceyQuest05(context));
             }
 
             public override TriggerState Execute() {
@@ -700,7 +700,7 @@ namespace Maple2.Trigger._63000016_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__16$", arg4: 4);
-                context.SetSkip(arg1: "AboutPotion02");
+                context.SetSkip(state: new StateAboutPotion02(context));
             }
 
             public override TriggerState Execute() {
@@ -738,7 +738,7 @@ namespace Maple2.Trigger._63000016_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000016_CS__MEETJACEY01__17$", arg4: 4);
-                context.SetSkip(arg1: "AboutPotion04");
+                context.SetSkip(state: new StateAboutPotion04(context));
             }
 
             public override TriggerState Execute() {

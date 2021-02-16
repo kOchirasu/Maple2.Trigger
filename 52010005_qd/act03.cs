@@ -163,7 +163,7 @@ namespace Maple2.Trigger._52010005_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010005_QD__ACT03__0$", arg4: 4);
-                context.SetSkip(arg1: "Q3_시네마틱연출02Wait");
+                context.SetSkip(state: new StateQ3_시네마틱Cinematic02Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -215,7 +215,7 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "26", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11001316, arg3: "$52010005_QD__ACT03__1$", arg4: 3);
-                context.SetSkip(arg1: "Q3_시네마틱연출04");
+                context.SetSkip(state: new StateQ3_시네마틱Cinematic04(context));
             }
 
             public override TriggerState Execute() {
@@ -286,7 +286,7 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "31", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010005_QD__ACT03__2$", arg4: 3);
-                context.SetSkip(arg1: "Q3_미카퇴장03");
+                context.SetSkip(state: new StateQ3_미카Exit03(context));
             }
 
             public override TriggerState Execute() {
@@ -392,7 +392,7 @@ namespace Maple2.Trigger._52010005_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001316, arg3: "$52010005_QD__ACT03__3$", arg4: 4);
-                context.SetSkip(arg1: "Q3_유저퇴장03");
+                context.SetSkip(state: new StateQ3_UserExit03(context));
             }
 
             public override TriggerState Execute() {

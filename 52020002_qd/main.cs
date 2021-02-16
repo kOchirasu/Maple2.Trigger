@@ -157,7 +157,7 @@ namespace Maple2.Trigger._52020002_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 11003540, illustId: "Jaiden_normal", msg: @"안녕하세요? 제가 나타났습니다.\n연출은 제작 중이니 기다려 주세요.", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 120, arg2: "Talk_A", arg3: 3000f);
-                context.SetSkip(arg1: "01_skip");
+                context.SetSkip(state: new State01_skip(context));
             }
 
             public override TriggerState Execute() {

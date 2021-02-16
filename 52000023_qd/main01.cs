@@ -108,7 +108,7 @@ namespace Maple2.Trigger._52000023_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6001}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000023_QD__MAIN01__0$", arg4: 6, arg5: 0);
-                context.SetSkip(arg1: "전투준비02");
+                context.SetSkip(state: new State전투Prepare02(context));
             }
 
             public override TriggerState Execute() {
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetEffect(arg1: new[] {6001}, arg2: false);
                 context.SetEffect(arg1: new[] {6002}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000023_QD__MAIN01__1$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "전투시작");
+                context.SetSkip(state: new StateBattleStart(context));
             }
 
             public override TriggerState Execute() {
@@ -230,7 +230,7 @@ namespace Maple2.Trigger._52000023_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6003}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000023_QD__MAIN01__2$", arg4: 8, arg5: 0);
-                context.SetSkip(arg1: "Ishura대화02");
+                context.SetSkip(state: new StateIshura대화02(context));
             }
 
             public override TriggerState Execute() {
@@ -253,7 +253,7 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetEffect(arg1: new[] {6003}, arg2: false);
                 context.SetEffect(arg1: new[] {6004}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000023_QD__MAIN01__3$", arg4: 8, arg5: 0);
-                context.SetSkip(arg1: "Ishura대화03");
+                context.SetSkip(state: new StateIshura대화03(context));
             }
 
             public override TriggerState Execute() {
@@ -276,7 +276,7 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetEffect(arg1: new[] {6004}, arg2: false);
                 context.SetEffect(arg1: new[] {6005}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000023_QD__MAIN01__4$", arg4: 7, arg5: 0);
-                context.SetSkip(arg1: "Ishura대화04");
+                context.SetSkip(state: new StateIshura대화04(context));
             }
 
             public override TriggerState Execute() {
@@ -299,7 +299,7 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetEffect(arg1: new[] {6005}, arg2: false);
                 context.SetEffect(arg1: new[] {6006}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000023_QD__MAIN01__5$", arg4: 6, arg5: 0);
-                context.SetSkip(arg1: "수색준비");
+                context.SetSkip(state: new State수색Prepare(context));
             }
 
             public override TriggerState Execute() {
@@ -445,7 +445,7 @@ namespace Maple2.Trigger._52000023_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6008}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000023_QD__MAIN01__7$", arg4: 9, arg5: 0);
-                context.SetSkip(arg1: "정리대화02");
+                context.SetSkip(state: new State정리대화02(context));
             }
 
             public override TriggerState Execute() {
@@ -468,7 +468,7 @@ namespace Maple2.Trigger._52000023_qd {
                 context.SetEffect(arg1: new[] {6008}, arg2: false);
                 context.SetEffect(arg1: new[] {6009}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000023_QD__MAIN01__8$", arg4: 5, arg5: 0);
-                context.SetSkip(arg1: "퇴장준비");
+                context.SetSkip(state: new State퇴장Prepare(context));
             }
 
             public override TriggerState Execute() {

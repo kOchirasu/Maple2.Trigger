@@ -39,7 +39,7 @@ namespace Maple2.Trigger._02000401_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -298,7 +298,7 @@ namespace Maple2.Trigger._02000401_bf {
                 context.CameraSelect(arg1: 305, arg2: true);
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetConversation(arg1: 1, arg2: 1901, arg3: "$02000401_BF__MADRICANSIEGE__2$", arg4: 3, arg5: 2);
-                context.SetSkip(arg1: "던전종료연출종료");
+                context.SetSkip(state: new State던전종료StopCinematic(context));
             }
 
             public override TriggerState Execute() {

@@ -145,7 +145,7 @@ namespace Maple2.Trigger._02000353_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "관문_02_스킵");
+                context.SetSkip(state: new State관문_02_스킵(context));
                 context.CameraSelect(arg1: 8001, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
             }

@@ -51,7 +51,7 @@ namespace Maple2.Trigger._02000471_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "start");
+                context.SetSkip(state: new StateStart(context));
                 context.CameraSelectPath(arg1: new[] {8100, 8101, 8102}, arg2: false);
                 context.SetAmbientLight(arg1: new Vector3(120f, 120f, 120f));
                 context.SetDirectionalLight(arg1: new Vector3(10f, 10f, 10f), arg2: new Vector3(0f, 0f, 0f));

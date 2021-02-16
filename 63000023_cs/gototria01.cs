@@ -195,7 +195,7 @@ namespace Maple2.Trigger._63000023_cs {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7000}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$63000023_CS__GOTOTRIA01__0$", arg4: 6);
-                context.SetSkip(arg1: "Dialogue02");
+                context.SetSkip(state: new StateDialogue02(context));
             }
 
             public override TriggerState Execute() {
@@ -233,7 +233,7 @@ namespace Maple2.Trigger._63000023_cs {
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7100}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$63000023_CS__GOTOTRIA01__1$", arg4: 6);
-                context.SetSkip(arg1: "Dialogue04");
+                context.SetSkip(state: new StateDialogue04(context));
             }
 
             public override TriggerState Execute() {
@@ -271,7 +271,7 @@ namespace Maple2.Trigger._63000023_cs {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7001}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$63000023_CS__GOTOTRIA01__2$", arg4: 6);
-                context.SetSkip(arg1: "Dialogue06");
+                context.SetSkip(state: new StateDialogue06(context));
             }
 
             public override TriggerState Execute() {
@@ -308,7 +308,7 @@ namespace Maple2.Trigger._63000023_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$63000023_CS__GOTOTRIA01__3$", arg4: 4);
-                context.SetSkip(arg1: "Dialogue08");
+                context.SetSkip(state: new StateDialogue08(context));
             }
 
             public override TriggerState Execute() {
@@ -345,7 +345,7 @@ namespace Maple2.Trigger._63000023_cs {
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7101}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$63000023_CS__GOTOTRIA01__4$", arg4: 5);
-                context.SetSkip(arg1: "Dialogue10");
+                context.SetSkip(state: new StateDialogue10(context));
             }
 
             public override TriggerState Execute() {
@@ -383,7 +383,7 @@ namespace Maple2.Trigger._63000023_cs {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7002}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$63000023_CS__GOTOTRIA01__5$", arg4: 5);
-                context.SetSkip(arg1: "Dialogue12");
+                context.SetSkip(state: new StateDialogue12(context));
             }
 
             public override TriggerState Execute() {
@@ -421,7 +421,7 @@ namespace Maple2.Trigger._63000023_cs {
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7102}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$63000023_CS__GOTOTRIA01__6$", arg4: 5);
-                context.SetSkip(arg1: "Dialogue14");
+                context.SetSkip(state: new StateDialogue14(context));
             }
 
             public override TriggerState Execute() {
@@ -459,7 +459,7 @@ namespace Maple2.Trigger._63000023_cs {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7003}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$63000023_CS__GOTOTRIA01__7$", arg4: 5);
-                context.SetSkip(arg1: "Dialogue16");
+                context.SetSkip(state: new StateDialogue16(context));
             }
 
             public override TriggerState Execute() {
@@ -495,7 +495,7 @@ namespace Maple2.Trigger._63000023_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$63000023_CS__GOTOTRIA01__8$", arg4: 4);
-                context.SetSkip(arg1: "Dialogue18");
+                context.SetSkip(state: new StateDialogue18(context));
             }
 
             public override TriggerState Execute() {
@@ -533,7 +533,7 @@ namespace Maple2.Trigger._63000023_cs {
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7103}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$63000023_CS__GOTOTRIA01__9$", arg4: 5);
-                context.SetSkip(arg1: "Dialogue20");
+                context.SetSkip(state: new StateDialogue20(context));
             }
 
             public override TriggerState Execute() {
@@ -569,7 +569,7 @@ namespace Maple2.Trigger._63000023_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$63000023_CS__GOTOTRIA01__10$", arg4: 4);
-                context.SetSkip(arg1: "Dialogue22");
+                context.SetSkip(state: new StateDialogue22(context));
             }
 
             public override TriggerState Execute() {
@@ -689,7 +689,7 @@ namespace Maple2.Trigger._63000023_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000023_CS__GOTOTRIA01__13$", arg4: 5);
-                context.SetSkip(arg1: "JaceyTalk05");
+                context.SetSkip(state: new StateJaceyTalk05(context));
             }
 
             public override TriggerState Execute() {

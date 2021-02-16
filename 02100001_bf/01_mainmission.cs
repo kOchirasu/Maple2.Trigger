@@ -67,7 +67,7 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() {
                 context.SetCinematicIntro(text: "$02100001_BF__01_MAINMISSION__0$");
-                context.SetSkip(arg1: "ShowCaption01Skip");
+                context.SetSkip(state: new StateShowCaption01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -100,7 +100,7 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() {
                 context.SetCinematicIntro(text: "$02100001_BF__01_MAINMISSION__1$");
-                context.SetSkip(arg1: "ShowCaption02Skip");
+                context.SetSkip(state: new StateShowCaption02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -190,7 +190,7 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003512, msg: "$02100001_BF__01_MAINMISSION__2$", duration: 5000, align: "center", illustId: "0");
-                context.SetSkip(arg1: "CinematicTalk01Skip");
+                context.SetSkip(state: new StateCinematicTalk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -224,7 +224,7 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003512, msg: "$02100001_BF__01_MAINMISSION__3$", duration: 5000, align: "center", illustId: "0");
-                context.SetSkip(arg1: "CinematicTalk02Skip");
+                context.SetSkip(state: new StateCinematicTalk02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -363,7 +363,7 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003517, msg: "$02100001_BF__01_MAINMISSION__5$", duration: 5000, align: "center", illustId: "0");
-                context.SetSkip(arg1: "BadEndingTalk01Skip");
+                context.SetSkip(state: new StateBadEndingTalk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -496,7 +496,7 @@ namespace Maple2.Trigger._02100001_bf {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003512, msg: "$02100001_BF__01_MAINMISSION__7$", duration: 5000, align: "center", illustId: "0");
-                context.SetSkip(arg1: "HappyEndingTalk01Skip");
+                context.SetSkip(state: new StateHappyEndingTalk01Skip(context));
             }
 
             public override TriggerState Execute() {

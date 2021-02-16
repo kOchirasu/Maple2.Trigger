@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02010055_bf {
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetEffect(arg1: new[] {699}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 23000068, arg3: "$02010055_BF__SCENE01__0$", arg4: 4);
-                context.SetSkip(arg1: "바르칸트Script2스킵");
+                context.SetSkip(state: new State바르칸트Script2스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -63,7 +63,7 @@ namespace Maple2.Trigger._02010055_bf {
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetEffect(arg1: new[] {699}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 23000068, arg3: "$02010055_BF__SCENE01__1$", arg4: 4);
-                context.SetSkip(arg1: "종료준비");
+                context.SetSkip(state: new StateEndPrepare(context));
             }
 
             public override TriggerState Execute() {

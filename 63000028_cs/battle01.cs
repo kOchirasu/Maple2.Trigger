@@ -665,7 +665,7 @@ namespace Maple2.Trigger._63000028_cs {
                 context.SetPcEmotionLoop(arg1: "Orb_Attack_Idle_A", arg2: 12000f);
                 context.SetEffect(arg1: new[] {6001}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$63000028_CS__BATTLE01__5$", arg4: 5);
-                context.SetSkip(arg1: "TinChaiDesperate02");
+                context.SetSkip(state: new StateTinChaiDesperate02(context));
             }
 
             public override TriggerState Execute() {

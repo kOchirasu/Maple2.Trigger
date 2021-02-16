@@ -209,7 +209,7 @@ namespace Maple2.Trigger._02000224_bf {
                 context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003242, arg3: "$02000224_BF__MAIN__1$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "아르마노Script01_skip");
+                context.SetSkip(state: new State아르마노Script01_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -245,7 +245,7 @@ namespace Maple2.Trigger._02000224_bf {
                 context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003243, arg3: "$02000224_BF__MAIN__2$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "티니에Script01_skip");
+                context.SetSkip(state: new State티니에Script01_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -282,7 +282,7 @@ namespace Maple2.Trigger._02000224_bf {
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_girl02");
                 context.SetConversation(arg1: 2, arg2: 11003242, arg3: "$02000224_BF__MAIN__3$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "아르마노Script02_skip");
+                context.SetSkip(state: new State아르마노Script02_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -318,7 +318,7 @@ namespace Maple2.Trigger._02000224_bf {
                 context.CameraSelectPath(arg1: new[] {8004}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003243, arg3: "$02000224_BF__MAIN__4$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "티니에Script02_skip");
+                context.SetSkip(state: new State티니에Script02_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -373,7 +373,7 @@ namespace Maple2.Trigger._02000224_bf {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003243, arg3: "$02000224_BF__MAIN__6$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "티니에Script03_skip");
+                context.SetSkip(state: new State티니에Script03_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -409,7 +409,7 @@ namespace Maple2.Trigger._02000224_bf {
                 context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003242, arg3: "$02000224_BF__MAIN__7$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "아르마노Script03_skip");
+                context.SetSkip(state: new State아르마노Script03_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -444,7 +444,7 @@ namespace Maple2.Trigger._02000224_bf {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003243, arg3: "$02000224_BF__MAIN__8$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "티니에Script04_skip");
+                context.SetSkip(state: new State티니에Script04_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -479,7 +479,7 @@ namespace Maple2.Trigger._02000224_bf {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003242, arg3: "$02000224_BF__MAIN__9$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "아르마노Script04_skip");
+                context.SetSkip(state: new State아르마노Script04_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -515,7 +515,7 @@ namespace Maple2.Trigger._02000224_bf {
                 context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4000f);
                 context.SetConversation(arg1: 2, arg2: 11003242, arg3: "$02000224_BF__MAIN__10$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "아르마노Script05_skip");
+                context.SetSkip(state: new State아르마노Script05_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -591,7 +591,7 @@ namespace Maple2.Trigger._02000224_bf {
                 context.MoveUserPath(arg1: "MS2PatrolData_PC01");
                 context.SetConversation(arg1: 2, arg2: 11003243, arg3: "$02000224_BF__MAIN__12$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Bore_C", arg3: 4000f);
-                context.SetSkip(arg1: "티니에Script06_skip");
+                context.SetSkip(state: new State티니에Script06_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -645,7 +645,7 @@ namespace Maple2.Trigger._02000224_bf {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003243, arg3: "$02000224_BF__MAIN__14$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "ChatUp_A");
-                context.SetSkip(arg1: "티니에Script07_skip");
+                context.SetSkip(state: new State티니에Script07_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -699,7 +699,7 @@ namespace Maple2.Trigger._02000224_bf {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003243, arg3: "$02000224_BF__MAIN__16$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "티니에Script08_skip");
+                context.SetSkip(state: new State티니에Script08_skip(context));
             }
 
             public override TriggerState Execute() {

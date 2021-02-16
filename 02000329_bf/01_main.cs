@@ -28,7 +28,7 @@ namespace Maple2.Trigger._02000329_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "scene_02");
+                context.SetSkip(state: new StateScene_02(context));
                 context.CameraSelectPath(arg1: new[] {80001, 80002, 80003, 80004}, arg2: true);
             }
 
@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02000329_bf {
             internal StateScene_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "scene_02");
+                context.SetSkip(state: new StateScene_02(context));
                 context.SetConversation(arg1: 1, arg2: 1301, arg3: "$02000329_BF__01_MAIN__0$", arg4: 2, arg5: 0);
             }
 

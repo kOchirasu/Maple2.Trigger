@@ -274,7 +274,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001726, arg3: "$52000040_QD__MAIN__26$", arg4: 4);
-                context.SetSkip(arg1: "sb_ready_b_07_skip");
+                context.SetSkip(state: new StateSb_ready_b_07_skip(context));
                 context.SetNpcEmotionLoop(arg1: 221, arg2: "Talk_A", arg3: 5000f);
             }
 
@@ -309,7 +309,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001728, arg3: "$52000040_QD__MAIN__27$", arg4: 4);
-                context.SetSkip(arg1: "sb_ready_b_08_skip");
+                context.SetSkip(state: new StateSb_ready_b_08_skip(context));
                 context.SetNpcEmotionLoop(arg1: 222, arg2: "Talk_A", arg3: 5000f);
             }
 
@@ -344,7 +344,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001726, arg3: "$52000040_QD__MAIN__28$", arg4: 4);
-                context.SetSkip(arg1: "sb_ready_b_09_skip");
+                context.SetSkip(state: new StateSb_ready_b_09_skip(context));
                 context.SetNpcEmotionLoop(arg1: 221, arg2: "Talk_A", arg3: 5000f);
             }
 
@@ -379,7 +379,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001724, arg3: "$52000040_QD__MAIN__29$", arg4: 4);
-                context.SetSkip(arg1: "sb_ready_b_10_skip");
+                context.SetSkip(state: new StateSb_ready_b_10_skip(context));
                 context.SetNpcEmotionLoop(arg1: 223, arg2: "Talk_A", arg3: 5000f);
             }
 
@@ -516,7 +516,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000040_QD__MAIN__0$", arg4: 5);
-                context.SetSkip(arg1: "ready_04_skip");
+                context.SetSkip(state: new StateReady_04_skip(context));
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Idle_A", arg3: 5000f);
             }
 
@@ -551,7 +551,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000040_QD__MAIN__1$", arg4: 5);
-                context.SetSkip(arg1: "ready_05_skip");
+                context.SetSkip(state: new StateReady_05_skip(context));
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Idle_A", arg3: 5000f);
             }
 
@@ -587,7 +587,7 @@ namespace Maple2.Trigger._52000040_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000040_QD__MAIN__2$", arg4: 5);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Idle_A", arg3: 5000f);
-                context.SetSkip(arg1: "ready_06_skip");
+                context.SetSkip(state: new StateReady_06_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -622,7 +622,7 @@ namespace Maple2.Trigger._52000040_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {7004}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000040_QD__MAIN__3$", arg4: 5);
-                context.SetSkip(arg1: "ready_07_skip");
+                context.SetSkip(state: new StateReady_07_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -657,7 +657,7 @@ namespace Maple2.Trigger._52000040_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {7004}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000040_QD__MAIN__4$", arg4: 5);
-                context.SetSkip(arg1: "ready_08_skip");
+                context.SetSkip(state: new StateReady_08_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -692,7 +692,7 @@ namespace Maple2.Trigger._52000040_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {7004}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000040_QD__MAIN__5$", arg4: 5);
-                context.SetSkip(arg1: "ready_09_skip");
+                context.SetSkip(state: new StateReady_09_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -727,7 +727,7 @@ namespace Maple2.Trigger._52000040_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {7004}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000040_QD__MAIN__6$", arg4: 5);
-                context.SetSkip(arg1: "ready_10_skip");
+                context.SetSkip(state: new StateReady_10_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -821,7 +821,7 @@ namespace Maple2.Trigger._52000040_qd {
                 context.CameraSelectPath(arg1: new[] {7005}, arg2: false);
                 context.CreateMonster(arg1: new[] {103}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000040_QD__MAIN__8$", arg4: 5);
-                context.SetSkip(arg1: "start_02_skip");
+                context.SetSkip(state: new StateStart_02_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -855,7 +855,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000040_QD__MAIN__9$", arg4: 5);
-                context.SetSkip(arg1: "start_03_skip");
+                context.SetSkip(state: new StateStart_03_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -889,7 +889,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000040_QD__MAIN__10$", arg4: 4);
-                context.SetSkip(arg1: "start_04_skip");
+                context.SetSkip(state: new StateStart_04_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -924,7 +924,7 @@ namespace Maple2.Trigger._52000040_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {7006, 7007}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001548, arg3: "$52000040_QD__MAIN__11$", arg4: 5);
-                context.SetSkip(arg1: "start_05_skip");
+                context.SetSkip(state: new StateStart_05_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -958,7 +958,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001548, arg3: "$52000040_QD__MAIN__12$", arg4: 4);
-                context.SetSkip(arg1: "start_06_skip");
+                context.SetSkip(state: new StateStart_06_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -992,7 +992,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000040_QD__MAIN__13$", arg4: 5);
-                context.SetSkip(arg1: "start_07_skip");
+                context.SetSkip(state: new StateStart_07_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1027,7 +1027,7 @@ namespace Maple2.Trigger._52000040_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {7008}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001548, arg3: "$52000040_QD__MAIN__14$", arg4: 5);
-                context.SetSkip(arg1: "start_08_skip");
+                context.SetSkip(state: new StateStart_08_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1061,7 +1061,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000040_QD__MAIN__15$", arg4: 3);
-                context.SetSkip(arg1: "start_09_skip");
+                context.SetSkip(state: new StateStart_09_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1095,7 +1095,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000040_QD__MAIN__16$", arg4: 5);
-                context.SetSkip(arg1: "start_10_skip");
+                context.SetSkip(state: new StateStart_10_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1129,7 +1129,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001548, arg3: "$52000040_QD__MAIN__17$", arg4: 4);
-                context.SetSkip(arg1: "start_11_skip");
+                context.SetSkip(state: new StateStart_11_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1163,7 +1163,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000040_QD__MAIN__18$", arg4: 3);
-                context.SetSkip(arg1: "start_12_skip");
+                context.SetSkip(state: new StateStart_12_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1197,7 +1197,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001548, arg3: "$52000040_QD__MAIN__19$", arg4: 5);
-                context.SetSkip(arg1: "start_13_skip");
+                context.SetSkip(state: new StateStart_13_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1231,7 +1231,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001548, arg3: "$52000040_QD__MAIN__20$", arg4: 5);
-                context.SetSkip(arg1: "start_14_skip");
+                context.SetSkip(state: new StateStart_14_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1265,7 +1265,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001548, arg3: "$52000040_QD__MAIN__21$", arg4: 5);
-                context.SetSkip(arg1: "start_15_skip");
+                context.SetSkip(state: new StateStart_15_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1299,7 +1299,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001548, arg3: "$52000040_QD__MAIN__22$", arg4: 5);
-                context.SetSkip(arg1: "start_16_skip");
+                context.SetSkip(state: new StateStart_16_skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1333,7 +1333,7 @@ namespace Maple2.Trigger._52000040_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000040_QD__MAIN__23$", arg4: 3);
-                context.SetSkip(arg1: "start_17_skip");
+                context.SetSkip(state: new StateStart_18(context));
             }
 
             public override TriggerState Execute() {

@@ -74,7 +74,7 @@ namespace Maple2.Trigger._02010052_bf {
                 context.CameraSelect(arg1: 80003, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 21800073, arg3: "$02010052_BF__TORCHLIGHT_04__1$", arg4: 2);
                 context.SetTimer(arg1: "2", arg2: 2);
-                context.SetSkip(arg1: "run");
+                context.SetSkip(state: new StateRun(context));
             }
 
             public override TriggerState Execute() {

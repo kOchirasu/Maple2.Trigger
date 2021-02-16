@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02000290_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {802, 800}, arg2: false);
-                context.SetSkip(arg1: "CameraWalk01");
+                context.SetSkip(state: new StateCameraWalk01(context));
             }
 
             public override TriggerState Execute() {

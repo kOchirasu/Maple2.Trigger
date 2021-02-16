@@ -182,7 +182,7 @@ namespace Maple2.Trigger._52000015_qd {
                 context.SetTimer(arg1: "8", arg2: 3);
                 context.SetEffect(arg1: new[] {6001}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000015_QD__TUTORIAL03__1$", arg4: 3);
-                context.SetSkip(arg1: "Ishura대화02Wait");
+                context.SetSkip(state: new StateIshura대화02Wait(context));
             }
 
             public override TriggerState Execute() {

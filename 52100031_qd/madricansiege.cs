@@ -37,7 +37,7 @@ namespace Maple2.Trigger._52100031_qd {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -281,7 +281,7 @@ namespace Maple2.Trigger._52100031_qd {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionLoop(arg1: 1922, arg2: "Talk_A", arg3: 3000f);
                 context.AddCinematicTalk(npcId: 11001567, illustId: "11001567", msg: "$52100031_QD__MADRICANSIEGE__2$", duration: 3000, align: "Right");
-                context.SetSkip(arg1: "던전종료연출종료");
+                context.SetSkip(state: new State던전종료StopCinematic(context));
             }
 
             public override TriggerState Execute() {

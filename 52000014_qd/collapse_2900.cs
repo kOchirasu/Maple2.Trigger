@@ -86,7 +86,7 @@ namespace Maple2.Trigger._52000014_qd {
                 context.SetTimer(arg1: "4", arg2: 4);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3, arg2: "$52000014_QD__COLLAPSE_2900__0$");
-                context.SetSkip(arg1: "Camera연출03");
+                context.SetSkip(state: new StateCameraCinematic03(context));
             }
 
             public override TriggerState Execute() {

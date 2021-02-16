@@ -101,7 +101,7 @@ namespace Maple2.Trigger._52000098_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {3002, 3003}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001955, arg3: "$52000098_QD__EP10MOVIE__0$", arg4: 12);
-                context.SetSkip(arg1: "Epilogue10Talk4");
+                context.SetSkip(state: new StateEpilogue10Talk4(context));
             }
 
             public override TriggerState Execute() {
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._52000098_qd {
                 context.CameraSelectPath(arg1: new[] {3006, 3007}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001851, arg3: "$52000098_QD__EP10MOVIE__1$", arg4: 9);
                 context.SetOnetimeEffect(id: 1998, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_Start_01_00001998.xml");
-                context.SetSkip(arg1: "Epilogue10Talk6");
+                context.SetSkip(state: new StateEpilogue10Talk6(context));
             }
 
             public override TriggerState Execute() {
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._52000098_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001851, arg3: "$52000098_QD__EP10MOVIE__2$", arg4: 9);
                 context.SetOnetimeEffect(id: 1999, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_Start_02_00001999.xml");
-                context.SetSkip(arg1: "Epilogue10Talk8");
+                context.SetSkip(state: new StateEpilogue10Talk8(context));
             }
 
             public override TriggerState Execute() {
@@ -207,7 +207,7 @@ namespace Maple2.Trigger._52000098_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {3008, 3009}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001955, arg3: "$52000098_QD__EP10MOVIE__15$", arg4: 4);
-                context.SetSkip(arg1: "Epilogue10Talk10");
+                context.SetSkip(state: new StateEpilogue10Talk10(context));
             }
 
             public override TriggerState Execute() {
@@ -243,7 +243,7 @@ namespace Maple2.Trigger._52000098_qd {
                 context.CameraSelectPath(arg1: new[] {3010, 3011}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001851, arg3: "$52000098_QD__EP10MOVIE__3$", arg4: 6);
                 context.SetOnetimeEffect(id: 2000, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_Start_03_00002000.xml");
-                context.SetSkip(arg1: "Epilogue10Talk12");
+                context.SetSkip(state: new StateEpilogue10Talk12(context));
             }
 
             public override TriggerState Execute() {
@@ -278,7 +278,7 @@ namespace Maple2.Trigger._52000098_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {3012, 3013}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001955, arg3: "$52000098_QD__EP10MOVIE__4$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue10Talk14");
+                context.SetSkip(state: new StateEpilogue10Talk14(context));
             }
 
             public override TriggerState Execute() {
@@ -313,7 +313,7 @@ namespace Maple2.Trigger._52000098_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {53005, 53006}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001955, arg3: "$52000098_QD__EP10MOVIE__5$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue10Talk17");
+                context.SetSkip(state: new StateEpilogue10Talk17(context));
             }
 
             public override TriggerState Execute() {
@@ -349,7 +349,7 @@ namespace Maple2.Trigger._52000098_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {3014}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001955, arg3: "$52000098_QD__EP10MOVIE__6$", arg4: 7);
-                context.SetSkip(arg1: "Epilogue10Talk19");
+                context.SetSkip(state: new StateEpilogue10Talk19(context));
             }
 
             public override TriggerState Execute() {
@@ -384,7 +384,7 @@ namespace Maple2.Trigger._52000098_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {3015}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001851, arg3: "$52000098_QD__EP10MOVIE__7$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue10Talk21");
+                context.SetSkip(state: new StateEpilogue10Talk21(context));
             }
 
             public override TriggerState Execute() {
@@ -419,7 +419,7 @@ namespace Maple2.Trigger._52000098_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {3016, 3017}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001955, arg3: "$52000098_QD__EP10MOVIE__8$", arg4: 6);
-                context.SetSkip(arg1: "Epilogue10Talk23");
+                context.SetSkip(state: new StateEpilogue10Talk23(context));
             }
 
             public override TriggerState Execute() {
@@ -455,7 +455,7 @@ namespace Maple2.Trigger._52000098_qd {
                 context.CameraSelectPath(arg1: new[] {3018}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001851, arg3: "$52000098_QD__EP10MOVIE__9$", arg4: 5);
                 context.SetOnetimeEffect(id: 2001, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_Start_04_00002001.xml");
-                context.SetSkip(arg1: "Epilogue10Talk25");
+                context.SetSkip(state: new StateEpilogue10Talk25(context));
             }
 
             public override TriggerState Execute() {
@@ -490,7 +490,7 @@ namespace Maple2.Trigger._52000098_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {3019, 3020}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001955, arg3: "$52000098_QD__EP10MOVIE__10$", arg4: 5);
-                context.SetSkip(arg1: "Epilogue10Talk28");
+                context.SetSkip(state: new StateEpilogue10Talk28(context));
             }
 
             public override TriggerState Execute() {
@@ -525,7 +525,7 @@ namespace Maple2.Trigger._52000098_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {3021, 3022}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001955, arg3: "$52000098_QD__EP10MOVIE__11$", arg4: 10);
-                context.SetSkip(arg1: "Epilogue10Talk30");
+                context.SetSkip(state: new StateEpilogue10Talk30(context));
             }
 
             public override TriggerState Execute() {
@@ -560,7 +560,7 @@ namespace Maple2.Trigger._52000098_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {3023, 3024}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001955, arg3: "$52000098_QD__EP10MOVIE__12$", arg4: 10);
-                context.SetSkip(arg1: "Epilogue10Talk32");
+                context.SetSkip(state: new StateEpilogue10Talk32(context));
             }
 
             public override TriggerState Execute() {
@@ -595,7 +595,7 @@ namespace Maple2.Trigger._52000098_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {3025, 3026}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001955, arg3: "$52000098_QD__EP10MOVIE__13$", arg4: 7);
-                context.SetSkip(arg1: "Epilogue10Talk34");
+                context.SetSkip(state: new StateEpilogue10Talk34(context));
             }
 
             public override TriggerState Execute() {
@@ -630,7 +630,7 @@ namespace Maple2.Trigger._52000098_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {3027, 3028}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001851, arg3: "$52000098_QD__EP10MOVIE__14$", arg4: 12);
-                context.SetSkip(arg1: "Epilogue10Talk36");
+                context.SetSkip(state: new StateEpilogue10Talk36(context));
             }
 
             public override TriggerState Execute() {

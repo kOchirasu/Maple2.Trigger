@@ -270,7 +270,7 @@ namespace Maple2.Trigger._52100002_qd {
             internal StateEndCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
                 context.AddCinematicTalk(npcId: 11003889, illustId: "Firis_normal", msg: "$02000392_BF__MAIN__0$", align: "left", duration: 4000);
                 context.AddCinematicTalk(npcId: 11003888, illustId: "Celine_normal", msg: "$02000392_BF__MAIN__1$", align: "right", duration: 3000);
             }

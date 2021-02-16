@@ -129,7 +129,7 @@ namespace Maple2.Trigger._02000388_bf {
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: true);
-                context.SetSkip(arg1: "scene_04");
+                context.SetSkip(state: new StateScene_04(context));
             }
 
             public override TriggerState Execute() {
@@ -293,7 +293,7 @@ namespace Maple2.Trigger._02000388_bf {
             internal StateBattle_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "open_door_03");
+                context.SetSkip(state: new StateOpen_door_03(context));
                 context.CameraSelect(arg1: 8007, arg2: true);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
@@ -495,7 +495,7 @@ namespace Maple2.Trigger._02000388_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "ending_02");
+                context.SetSkip(state: new StateEnding_02(context));
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 

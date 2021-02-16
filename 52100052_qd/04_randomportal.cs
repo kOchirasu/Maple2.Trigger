@@ -97,7 +97,7 @@ namespace Maple2.Trigger._52100052_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001563, arg3: "$52100052_QD__04_RANDOMPORTAL__0$", arg4: 5);
-                context.SetSkip(arg1: "ToWallGuide01Skip");
+                context.SetSkip(state: new StateToWallGuide01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -178,7 +178,7 @@ namespace Maple2.Trigger._52100052_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001563, arg3: "$52100052_QD__04_RANDOMPORTAL__2$", arg4: 5);
-                context.SetSkip(arg1: "ToRoomGuide01Skip");
+                context.SetSkip(state: new StateToRoomGuide01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -262,7 +262,7 @@ namespace Maple2.Trigger._52100052_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001563, arg3: "$52100052_QD__04_RANDOMPORTAL__4$", arg4: 5);
-                context.SetSkip(arg1: "ToTowerGuide01Skip");
+                context.SetSkip(state: new StateToTowerGuide01Skip(context));
             }
 
             public override TriggerState Execute() {

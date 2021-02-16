@@ -45,7 +45,7 @@ namespace Maple2.Trigger._02000314_bf {
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.AddBuff(arg1: new[] {102}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CreateMonster(arg1: new[] {99}, arg2: false);
-                context.SetSkip(arg1: "종료체크");
+                context.SetSkip(state: new StateEnd체크(context));
             }
 
             public override TriggerState Execute() {

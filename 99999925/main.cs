@@ -51,7 +51,7 @@ namespace Maple2.Trigger._99999925 {
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 1, arg3: "$99999925__MAIN__0$", arg4: 3);
                 context.SetAiExtraData(key: "BuffStart", value: 1, isModify: true);
-                context.SetSkip(arg1: "Dialogue01Skip");
+                context.SetSkip(state: new StateDialogue01Skip(context));
             }
 
             public override TriggerState Execute() {

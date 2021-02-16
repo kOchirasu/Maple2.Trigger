@@ -124,7 +124,7 @@ namespace Maple2.Trigger._63000020_cs {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 13000f);
                 context.SetEffect(arg1: new[] {7205}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001626, arg3: "$63000020_CS__BATTLE01__0$", arg4: 7);
-                context.SetSkip(arg1: "TalkKay04");
+                context.SetSkip(state: new StateTalkKay04(context));
             }
 
             public override TriggerState Execute() {
@@ -160,7 +160,7 @@ namespace Maple2.Trigger._63000020_cs {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001626, arg3: "$63000020_CS__BATTLE01__1$", arg4: 8);
                 context.SetEffect(arg1: new[] {7206}, arg2: true);
-                context.SetSkip(arg1: "TalkKay11");
+                context.SetSkip(state: new StateTalkKay11(context));
             }
 
             public override TriggerState Execute() {
@@ -324,7 +324,7 @@ namespace Maple2.Trigger._63000020_cs {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001626, arg3: "$63000020_CS__BATTLE01__3$", arg4: 5);
                 context.SetEffect(arg1: new[] {7210}, arg2: true);
-                context.SetSkip(arg1: "FirstBattle02");
+                context.SetSkip(state: new StateFirstBattle02(context));
             }
 
             public override TriggerState Execute() {
@@ -530,7 +530,7 @@ namespace Maple2.Trigger._63000020_cs {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001626, arg3: "$63000020_CS__BATTLE01__5$", arg4: 5);
                 context.SetEffect(arg1: new[] {7210}, arg2: true);
-                context.SetSkip(arg1: "SecondBattle02");
+                context.SetSkip(state: new StateSecondBattle02(context));
             }
 
             public override TriggerState Execute() {
@@ -736,7 +736,7 @@ namespace Maple2.Trigger._63000020_cs {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetEffect(arg1: new[] {7210}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001626, arg3: "$63000020_CS__BATTLE01__7$", arg4: 5);
-                context.SetSkip(arg1: "ThirdBattle02");
+                context.SetSkip(state: new StateThirdBattle02(context));
             }
 
             public override TriggerState Execute() {
@@ -841,7 +841,7 @@ namespace Maple2.Trigger._63000020_cs {
                 context.CameraSelect(arg1: 502, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001626, arg3: "$63000020_CS__BATTLE01__8$", arg4: 9);
                 context.SetEffect(arg1: new[] {7211}, arg2: true);
-                context.SetSkip(arg1: "TalkKay22");
+                context.SetSkip(state: new StateTalkKay22(context));
             }
 
             public override TriggerState Execute() {
@@ -1034,7 +1034,7 @@ namespace Maple2.Trigger._63000020_cs {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001626, arg3: "$63000020_CS__BATTLE01__11$", arg4: 9);
                 context.SetEffect(arg1: new[] {7200}, arg2: true);
-                context.SetSkip(arg1: "TalkKay24");
+                context.SetSkip(state: new StateTalkKay24(context));
             }
 
             public override TriggerState Execute() {
@@ -1096,7 +1096,7 @@ namespace Maple2.Trigger._63000020_cs {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001626, arg3: "$63000020_CS__BATTLE01__12$", arg4: 14);
                 context.SetEffect(arg1: new[] {7201}, arg2: true);
-                context.SetSkip(arg1: "TalkKay27");
+                context.SetSkip(state: new StateTalkKay27(context));
             }
 
             public override TriggerState Execute() {
@@ -1141,7 +1141,7 @@ namespace Maple2.Trigger._63000020_cs {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001626, arg3: "$63000020_CS__BATTLE01__13$", arg4: 10);
                 context.SetEffect(arg1: new[] {7202}, arg2: true);
-                context.SetSkip(arg1: "TalkKay29");
+                context.SetSkip(state: new StateTalkKay29(context));
             }
 
             public override TriggerState Execute() {
@@ -1235,7 +1235,7 @@ namespace Maple2.Trigger._63000020_cs {
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 900, arg2: "Bore_A");
-                context.SetSkip(arg1: "LastChampoin05");
+                context.SetSkip(state: new StateLastChampoin05(context));
             }
 
             public override TriggerState Execute() {
@@ -1320,7 +1320,7 @@ namespace Maple2.Trigger._63000020_cs {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001626, arg3: "$63000020_CS__BATTLE01__15$", arg4: 7);
                 context.SetEffect(arg1: new[] {7204}, arg2: true);
-                context.SetSkip(arg1: "LastBattle02");
+                context.SetSkip(state: new StateLastBattle02(context));
             }
 
             public override TriggerState Execute() {
@@ -1763,7 +1763,7 @@ namespace Maple2.Trigger._63000020_cs {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001547, arg3: "$63000020_CS__BATTLE01__18$", arg4: 5);
                 context.SetEffect(arg1: new[] {7101}, arg2: true);
-                context.SetSkip(arg1: "TalkChen02");
+                context.SetSkip(state: new StateTalkChen02(context));
             }
 
             public override TriggerState Execute() {
@@ -1799,7 +1799,7 @@ namespace Maple2.Trigger._63000020_cs {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001547, arg3: "$63000020_CS__BATTLE01__19$", arg4: 4);
                 context.SetEffect(arg1: new[] {7103}, arg2: true);
-                context.SetSkip(arg1: "TalkChen04");
+                context.SetSkip(state: new StateTalkChen04(context));
             }
 
             public override TriggerState Execute() {
@@ -1835,7 +1835,7 @@ namespace Maple2.Trigger._63000020_cs {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001547, arg3: "$63000020_CS__BATTLE01__20$", arg4: 4);
                 context.SetEffect(arg1: new[] {7102}, arg2: true);
-                context.SetSkip(arg1: "TalkChen06");
+                context.SetSkip(state: new StateTalkChen06(context));
             }
 
             public override TriggerState Execute() {

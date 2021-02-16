@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52000017_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001560, arg3: "$52000017_QD__QUEST01__1$", arg4: 4);
-                context.SetSkip(arg1: "NPCScript01스킵");
+                context.SetSkip(state: new StateNPCScript01스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -118,7 +118,7 @@ namespace Maple2.Trigger._52000017_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001560, arg3: "$52000017_QD__QUEST01__2$", arg4: 3);
-                context.SetSkip(arg1: "NPCScript02스킵");
+                context.SetSkip(state: new StateNPCScript02스킵(context));
             }
 
             public override TriggerState Execute() {

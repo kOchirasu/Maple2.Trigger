@@ -74,7 +74,7 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "12", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010005_QD__ACT02__0$", arg4: 3);
-                context.SetSkip(arg1: "Q2_미카대화02Wait");
+                context.SetSkip(state: new StateQ2_미카대화02Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "13", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010005_QD__ACT02__1$", arg4: 3);
-                context.SetSkip(arg1: "Q2_미카대화종료");
+                context.SetSkip(state: new StateQ2_미카대화종료(context));
             }
 
             public override TriggerState Execute() {

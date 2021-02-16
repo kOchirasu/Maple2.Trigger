@@ -147,7 +147,7 @@ namespace Maple2.Trigger._52020016_qd {
                 context.SetConversation(arg1: 2, arg2: 0, arg3: "그...그게 아니야!!", arg4: 3, arg5: 0);
                 context.SetConversation(arg1: 2, arg2: 300001, arg3: "당신을...저주해요..가만두지 않겠어요!!", arg4: 5);
                 context.SetConversation(arg1: 2, arg2: 0, arg3: "아...안돼 그만둬!! 조디!!", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "마지막전투");
+                context.SetSkip(state: new State마지막전투(context));
             }
 
             public override TriggerState Execute() {
@@ -382,7 +382,7 @@ namespace Maple2.Trigger._52020016_qd {
                 context.SetConversation(arg1: 2, arg2: 0, arg3: "헉헉...제발 그만둬!!", arg4: 3, arg5: 0);
                 context.SetConversation(arg1: 2, arg2: 320001, arg3: "이 몽환의 무대 안에서는 어떠한 존재라도 저를 이길 수 없습니다!", arg4: 5);
                 context.SetConversation(arg1: 2, arg2: 320001, arg3: "그럼 이제 마무리를 지어 볼까요?", arg4: 5);
-                context.SetSkip(arg1: "마지막_연출_4_2");
+                context.SetSkip(state: new State마지막_Cinematic_4_2(context));
             }
 
             public override TriggerState Execute() {

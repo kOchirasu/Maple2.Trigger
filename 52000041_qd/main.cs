@@ -496,7 +496,7 @@ namespace Maple2.Trigger._52000041_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001729, arg3: "$52000041_QD__MAIN__0$", arg4: 3);
-                context.SetSkip(arg1: "어흥이Script01스킵");
+                context.SetSkip(state: new State어흥이Script01스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -532,7 +532,7 @@ namespace Maple2.Trigger._52000041_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000041_QD__MAIN__1$", arg4: 3);
-                context.SetSkip(arg1: "틴차이Script01스킵");
+                context.SetSkip(state: new State틴차이Script01스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -568,7 +568,7 @@ namespace Maple2.Trigger._52000041_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {603}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000041_QD__MAIN__2$", arg4: 6);
-                context.SetSkip(arg1: "준타Script01스킵");
+                context.SetSkip(state: new State준타Script01스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -603,7 +603,7 @@ namespace Maple2.Trigger._52000041_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001729, arg3: "$52000041_QD__MAIN__3$", arg4: 4);
-                context.SetSkip(arg1: "어흥이Script02스킵");
+                context.SetSkip(state: new State어흥이Script02스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -637,7 +637,7 @@ namespace Maple2.Trigger._52000041_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000041_QD__MAIN__4$", arg4: 5);
-                context.SetSkip(arg1: "준타Script02스킵");
+                context.SetSkip(state: new State준타Script02스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -671,7 +671,7 @@ namespace Maple2.Trigger._52000041_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000041_QD__MAIN__5$", arg4: 3);
-                context.SetSkip(arg1: "준타Script02_2스킵");
+                context.SetSkip(state: new State준타Script02_2스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -706,7 +706,7 @@ namespace Maple2.Trigger._52000041_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {604}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001729, arg3: "$52000041_QD__MAIN__6$", arg4: 3);
-                context.SetSkip(arg1: "어흥이Script03스킵");
+                context.SetSkip(state: new State어흥이Script03스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -760,7 +760,7 @@ namespace Maple2.Trigger._52000041_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000041_QD__MAIN__7$", arg4: 3);
-                context.SetSkip(arg1: "틴차이Script02스킵");
+                context.SetSkip(state: new State틴차이Script02스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -794,7 +794,7 @@ namespace Maple2.Trigger._52000041_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000041_QD__MAIN__8$", arg4: 3);
-                context.SetSkip(arg1: "틴차이Script03스킵");
+                context.SetSkip(state: new State틴차이Script03스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -828,7 +828,7 @@ namespace Maple2.Trigger._52000041_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000041_QD__MAIN__9$", arg4: 3);
-                context.SetSkip(arg1: "틴차이Script04스킵");
+                context.SetSkip(state: new State틴차이Script04스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -954,7 +954,7 @@ namespace Maple2.Trigger._52000041_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {605}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000041_QD__MAIN__12$", arg4: 5);
-                context.SetSkip(arg1: "준타Script03스킵");
+                context.SetSkip(state: new State준타Script03스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -990,7 +990,7 @@ namespace Maple2.Trigger._52000041_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {606}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001729, arg3: "$52000041_QD__MAIN__13$", arg4: 4);
-                context.SetSkip(arg1: "어흥이Script05스킵");
+                context.SetSkip(state: new State어흥이Script05스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -1025,7 +1025,7 @@ namespace Maple2.Trigger._52000041_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001729, arg3: "$52000041_QD__MAIN__14$", arg4: 1);
-                context.SetSkip(arg1: "어흥이Script06스킵");
+                context.SetSkip(state: new State어흥이Script06스킵(context));
             }
 
             public override TriggerState Execute() {

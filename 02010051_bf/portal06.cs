@@ -65,7 +65,7 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11001319, arg3: "$02010051_BF__PORTAL06__0$", arg4: 3);
-                context.SetSkip(arg1: "연출대화02Wait");
+                context.SetSkip(state: new StateCinematic대화02Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -99,7 +99,7 @@ namespace Maple2.Trigger._02010051_bf {
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 4);
                 context.SetConversation(arg1: 2, arg2: 11001319, arg3: "$02010051_BF__PORTAL06__1$", arg4: 3);
-                context.SetSkip(arg1: "대화연출종료01");
+                context.SetSkip(state: new State대화StopCinematic01(context));
             }
 
             public override TriggerState Execute() {

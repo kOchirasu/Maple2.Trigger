@@ -20,7 +20,7 @@ namespace Maple2.Trigger._02000432_bf {
             internal State소환(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "죽음Wait");
+                context.SetSkip(state: new State죽음Wait(context));
             }
 
             public override TriggerState Execute() {

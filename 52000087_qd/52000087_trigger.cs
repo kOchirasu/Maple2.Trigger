@@ -70,7 +70,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000087_QD__52000087_TRIGGER__0$", arg4: 3);
-                context.SetSkip(arg1: "에레브_1skip");
+                context.SetSkip(state: new State에레브_1skip(context));
             }
 
             public override TriggerState Execute() {
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000087_QD__52000087_TRIGGER__1$", arg4: 5);
-                context.SetSkip(arg1: "에레브_2skip");
+                context.SetSkip(state: new State에레브_2skip(context));
             }
 
             public override TriggerState Execute() {
@@ -138,7 +138,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000087_QD__52000087_TRIGGER__2$", arg4: 5);
-                context.SetSkip(arg1: "에레브_3skip");
+                context.SetSkip(state: new State에레브_3skip(context));
             }
 
             public override TriggerState Execute() {
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$52000087_QD__52000087_TRIGGER__3$", arg4: 3);
-                context.SetSkip(arg1: "블랙아이_1skip");
+                context.SetSkip(state: new State블랙아이_1skip(context));
             }
 
             public override TriggerState Execute() {
@@ -206,7 +206,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$52000087_QD__52000087_TRIGGER__4$", arg4: 5);
-                context.SetSkip(arg1: "블랙아이_1askip");
+                context.SetSkip(state: new State블랙아이_1askip(context));
             }
 
             public override TriggerState Execute() {
@@ -240,7 +240,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000119, arg3: "$52000087_QD__52000087_TRIGGER__5$", arg4: 5);
-                context.SetSkip(arg1: "프레이_1skip");
+                context.SetSkip(state: new State프레이_1skip(context));
             }
 
             public override TriggerState Execute() {
@@ -274,7 +274,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001581, arg3: "$52000087_QD__52000087_TRIGGER__6$", arg4: 3);
-                context.SetSkip(arg1: "구르는천둥_1skip");
+                context.SetSkip(state: new State구르는천둥_1skip(context));
             }
 
             public override TriggerState Execute() {
@@ -308,7 +308,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000087_QD__52000087_TRIGGER__7$", arg4: 3);
-                context.SetSkip(arg1: "알론_1skip");
+                context.SetSkip(state: new State알론_1skip(context));
             }
 
             public override TriggerState Execute() {
@@ -342,7 +342,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$52000087_QD__52000087_TRIGGER__8$", arg4: 5);
-                context.SetSkip(arg1: "오스칼_1skip");
+                context.SetSkip(state: new State오스칼_1skip(context));
             }
 
             public override TriggerState Execute() {
@@ -376,7 +376,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$52000087_QD__52000087_TRIGGER__9$", arg4: 5);
-                context.SetSkip(arg1: "블랙아이_2skip");
+                context.SetSkip(state: new State블랙아이_2skip(context));
             }
 
             public override TriggerState Execute() {
@@ -410,7 +410,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$52000087_QD__52000087_TRIGGER__10$", arg4: 5);
-                context.SetSkip(arg1: "블랙아이_2askip");
+                context.SetSkip(state: new State블랙아이_2askip(context));
             }
 
             public override TriggerState Execute() {
@@ -444,7 +444,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$52000087_QD__52000087_TRIGGER__11$", arg4: 5);
-                context.SetSkip(arg1: "블랙아이_3skip");
+                context.SetSkip(state: new State블랙아이_3skip(context));
             }
 
             public override TriggerState Execute() {
@@ -478,7 +478,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000087_QD__52000087_TRIGGER__12$", arg4: 3);
-                context.SetSkip(arg1: "알론_2skip");
+                context.SetSkip(state: new State알론_2skip(context));
             }
 
             public override TriggerState Execute() {
@@ -512,7 +512,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000087_QD__52000087_TRIGGER__13$", arg4: 5);
-                context.SetSkip(arg1: "에레브_4skip");
+                context.SetSkip(state: new State에레브_4skip(context));
             }
 
             public override TriggerState Execute() {
@@ -592,7 +592,7 @@ namespace Maple2.Trigger._52000087_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000087_QD__52000087_TRIGGER__14$", arg4: 5);
-                context.SetSkip(arg1: "알론_3skip");
+                context.SetSkip(state: new State알론_3skip(context));
             }
 
             public override TriggerState Execute() {
@@ -628,7 +628,7 @@ namespace Maple2.Trigger._52000087_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000087_QD__52000087_TRIGGER__15$", arg4: 5);
-                context.SetSkip(arg1: "알론_4skip");
+                context.SetSkip(state: new State알론_4skip(context));
             }
 
             public override TriggerState Execute() {
@@ -664,7 +664,7 @@ namespace Maple2.Trigger._52000087_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000087_QD__52000087_TRIGGER__16$", arg4: 5);
-                context.SetSkip(arg1: "알론_4askip");
+                context.SetSkip(state: new State알론_4askip(context));
             }
 
             public override TriggerState Execute() {
@@ -700,7 +700,7 @@ namespace Maple2.Trigger._52000087_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000087_QD__52000087_TRIGGER__17$", arg4: 5);
-                context.SetSkip(arg1: "알론_5skip");
+                context.SetSkip(state: new State알론_5skip(context));
             }
 
             public override TriggerState Execute() {
@@ -734,7 +734,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000087_QD__52000087_TRIGGER__18$", arg4: 5);
-                context.SetSkip(arg1: "에레브_5skip");
+                context.SetSkip(state: new State에레브_5skip(context));
             }
 
             public override TriggerState Execute() {
@@ -768,7 +768,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000087_QD__52000087_TRIGGER__19$", arg4: 5);
-                context.SetSkip(arg1: "에레브_6skip");
+                context.SetSkip(state: new State에레브_6skip(context));
             }
 
             public override TriggerState Execute() {
@@ -802,7 +802,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000074, arg3: "$52000087_QD__52000087_TRIGGER__20$", arg4: 5);
-                context.SetSkip(arg1: "칼_1skip");
+                context.SetSkip(state: new State칼_1skip(context));
             }
 
             public override TriggerState Execute() {
@@ -836,7 +836,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000087_QD__52000087_TRIGGER__21$", arg4: 5);
-                context.SetSkip(arg1: "에레브_7skip");
+                context.SetSkip(state: new State에레브_7skip(context));
             }
 
             public override TriggerState Execute() {
@@ -870,7 +870,7 @@ namespace Maple2.Trigger._52000087_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000087_QD__52000087_TRIGGER__22$", arg4: 5);
-                context.SetSkip(arg1: "에레브_8skip");
+                context.SetSkip(state: new State에레브_8skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1283,7 +1283,7 @@ namespace Maple2.Trigger._52000087_qd {
                 context.SetSound(arg1: 90000, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000087_QD__52000087_TRIGGER__29$", arg4: 6);
                 context.SetOnetimeEffect(id: 2007, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_01_00002007.xml");
-                context.SetSkip(arg1: "챕터10에필로그연출06스킵");
+                context.SetSkip(state: new State챕터10에필로그Cinematic06스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -1318,7 +1318,7 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000087_QD__52000087_TRIGGER__30$", arg4: 6);
                 context.SetOnetimeEffect(id: 2008, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_02_00002008.xml");
-                context.SetSkip(arg1: "챕터10에필로그연출07스킵");
+                context.SetSkip(state: new State챕터10에필로그Cinematic07스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -1353,7 +1353,7 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000087_QD__52000087_TRIGGER__31$", arg4: 9);
                 context.SetOnetimeEffect(id: 2009, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_03_00002009.xml");
-                context.SetSkip(arg1: "챕터10에필로그연출08스킵");
+                context.SetSkip(state: new State챕터10에필로그Cinematic08스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -1409,7 +1409,7 @@ namespace Maple2.Trigger._52000087_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000087_QD__52000087_TRIGGER__33$", arg4: 5);
                 context.SetOnetimeEffect(id: 2010, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_04_00002010.xml");
-                context.SetSkip(arg1: "챕터10에필로그연출10스킵");
+                context.SetSkip(state: new State챕터10에필로그Cinematic10스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -1444,7 +1444,7 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000087_QD__52000087_TRIGGER__34$", arg4: 5);
                 context.SetOnetimeEffect(id: 2011, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_05_00002011.xml");
-                context.SetSkip(arg1: "챕터10에필로그연출11스킵");
+                context.SetSkip(state: new State챕터10에필로그Cinematic11스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -1518,7 +1518,7 @@ namespace Maple2.Trigger._52000087_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000087_QD__52000087_TRIGGER__37$", arg4: 5);
                 context.SetOnetimeEffect(id: 2012, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_06_00002012.xml");
-                context.SetSkip(arg1: "챕터10에필로그연출13b스킵");
+                context.SetSkip(state: new State챕터10에필로그Cinematic13b스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -1553,7 +1553,7 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000087_QD__52000087_TRIGGER__38$", arg4: 5);
                 context.SetOnetimeEffect(id: 2013, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_07_00002013.xml");
-                context.SetSkip(arg1: "챕터10에필로그연출14스킵");
+                context.SetSkip(state: new State챕터10에필로그Cinematic14스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -1588,7 +1588,7 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000087_QD__52000087_TRIGGER__39$", arg4: 6);
                 context.SetOnetimeEffect(id: 2014, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_08_00002014.xml");
-                context.SetSkip(arg1: "챕터10에필로그연출15스킵");
+                context.SetSkip(state: new State챕터10에필로그Cinematic15스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -1623,7 +1623,7 @@ namespace Maple2.Trigger._52000087_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001820, arg3: "$52000087_QD__52000087_TRIGGER__40$", arg4: 5);
                 context.SetOnetimeEffect(id: 2015, enable: true, path: @"BG/Common/Sound/Eff_Madria_Chapter10_End_09_00002015.xml");
-                context.SetSkip(arg1: "챕터10에필로그연출16스킵");
+                context.SetSkip(state: new State챕터10에필로그Cinematic16스킵(context));
             }
 
             public override TriggerState Execute() {

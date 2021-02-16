@@ -1363,7 +1363,7 @@ namespace Maple2.Trigger._52020004_qd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 9, arg2: @"왕족의 비상상황을 대비해 견고하게 지어졌을 지하실 내부는\n순식간에 굉음을 내며 무너져 내렸다.");
-                context.SetSkip(arg1: "ShowCaption03Skip");
+                context.SetSkip(state: new State자막구간_03(context));
             }
 
             public override TriggerState Execute() {

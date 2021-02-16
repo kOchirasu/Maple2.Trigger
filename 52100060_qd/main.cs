@@ -94,7 +94,7 @@ namespace Maple2.Trigger._52100060_qd {
             internal StateNPC_Show(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "teleport02000487");
+                context.SetSkip(state: new StateTeleport02000487(context));
                 context.CreateMonster(arg1: new[] {1, 2}, arg2: false);
                 context.SetNpcRotation(arg1: 1, arg2: 180);
                 context.SetNpcRotation(arg1: 2, arg2: 180);

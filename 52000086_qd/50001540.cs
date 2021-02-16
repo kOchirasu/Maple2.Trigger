@@ -110,7 +110,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000086, arg2: 99);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
@@ -512,7 +512,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State2차StartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "2차StopCinematic");
+                context.SetSkip(state: new State2차StopCinematic(context));
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 311, arg2: true);

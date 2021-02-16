@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02000297_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 888888, arg2: true);
                 context.MoveNpc(arg1: 1004, arg2: "MS2PatrolData1");
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -66,7 +66,7 @@ namespace Maple2.Trigger._02000297_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$02000297_BF__MAIN2__0$", arg4: 2);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000297_bf {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000057, arg3: "$02000297_BF__MAIN2__1$", arg4: 3);
                 context.SetConversation(arg1: 2, arg2: 11000057, arg3: "$02000297_BF__MAIN2__2$", arg4: 3);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._02000297_bf {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData3");
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._02000297_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$02000297_BF__MAIN2__3$", arg4: 2);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -169,7 +169,7 @@ namespace Maple2.Trigger._02000297_bf {
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$02000297_BF__MAIN2__4$", arg4: 2);
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$02000297_BF__MAIN2__5$", arg4: 2);
                 context.SetConversation(arg1: 2, arg2: 11000057, arg3: "$02000297_BF__MAIN2__6$", arg4: 3);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -257,7 +257,7 @@ namespace Maple2.Trigger._02000297_bf {
                 context.DestroyMonster(arg1: new[] {1006});
                 context.CreateMonster(arg1: new[] {1007}, arg2: false);
                 context.MoveNpc(arg1: 1007, arg2: "MS2PatrolData5");
-                context.SetSkip(arg1: "StopCinematic2");
+                context.SetSkip(state: new StateStopCinematic2(context));
             }
 
             public override TriggerState Execute() {
@@ -278,7 +278,7 @@ namespace Maple2.Trigger._02000297_bf {
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$02000297_BF__MAIN2__7$", arg4: 3);
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$02000297_BF__MAIN2__8$", arg4: 3);
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$02000297_BF__MAIN2__9$", arg4: 3);
-                context.SetSkip(arg1: "StopCinematic2");
+                context.SetSkip(state: new StateStopCinematic2(context));
             }
 
             public override TriggerState Execute() {

@@ -133,7 +133,7 @@ namespace Maple2.Trigger._52000044_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000515, arg3: "$52000044_QD__10003040__2$", arg4: 2);
-                context.SetSkip(arg1: "제이시Script01스킵");
+                context.SetSkip(state: new State제이시Script01스킵(context));
             }
 
             public override TriggerState Execute() {
@@ -169,7 +169,7 @@ namespace Maple2.Trigger._52000044_qd {
                 context.CameraSelect(arg1: 302, arg2: true);
                 context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000515, arg3: "$52000044_QD__10003040__3$", arg4: 4);
-                context.SetSkip(arg1: "제이시Script02스킵");
+                context.SetSkip(state: new State제이시Script02스킵(context));
             }
 
             public override TriggerState Execute() {

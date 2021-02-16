@@ -94,7 +94,7 @@ namespace Maple2.Trigger._52000051_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000051_QD__01_MAIN__0$", arg4: 5);
-                context.SetSkip(arg1: "NpcCinematic01Skip");
+                context.SetSkip(state: new StateNpcCinematic01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -128,7 +128,7 @@ namespace Maple2.Trigger._52000051_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001708, arg3: "$52000051_QD__01_MAIN__1$", arg4: 5);
-                context.SetSkip(arg1: "NpcCinematic02Skip");
+                context.SetSkip(state: new StateNpcCinematic02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -201,7 +201,7 @@ namespace Maple2.Trigger._52000051_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$52000051_QD__01_MAIN__3$", arg4: 5);
-                context.SetSkip(arg1: "NpcCinematic05Skip");
+                context.SetSkip(state: new StateNpcCinematic05Skip(context));
             }
 
             public override TriggerState Execute() {

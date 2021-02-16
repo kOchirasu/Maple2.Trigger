@@ -210,7 +210,7 @@ namespace Maple2.Trigger._52000070_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001963, arg3: "$52000070_QD__TRAP01__0$", arg4: 5);
-                context.SetSkip(arg1: "EnemyNpcTalk01Skip");
+                context.SetSkip(state: new StateEnemyNpcTalk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -246,7 +246,7 @@ namespace Maple2.Trigger._52000070_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001963, arg3: "$52000070_QD__TRAP01__1$", arg4: 5);
-                context.SetSkip(arg1: "EnemyNpcTalk02Skip");
+                context.SetSkip(state: new StateEnemyNpcTalk02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -406,7 +406,7 @@ namespace Maple2.Trigger._52000070_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001964, arg3: "$52000070_QD__TRAP01__2$", arg4: 4);
-                context.SetSkip(arg1: "FriendNpcTalk01Skip");
+                context.SetSkip(state: new StateFriendNpcTalk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -442,7 +442,7 @@ namespace Maple2.Trigger._52000070_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001964, arg3: "$52000070_QD__TRAP01__3$", arg4: 4);
-                context.SetSkip(arg1: "FriendNpcTalk02Skip");
+                context.SetSkip(state: new StateFriendNpcTalk02Skip(context));
             }
 
             public override TriggerState Execute() {

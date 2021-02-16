@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02000300_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._02000300_bf {
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 5);
                 context.SetConversation(arg1: 2, arg2: 11000144, arg3: "$02000300_BF__MAIN__0$", arg4: 4);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._02000300_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSkip(arg1: "또다른연출종료");
+                context.SetSkip(state: new State또다른StopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._02000300_bf {
             public override void OnEnter() {
                 context.SetTimer(arg1: "5", arg2: 5);
                 context.SetConversation(arg1: 2, arg2: 11000144, arg3: "$02000300_BF__MAIN__1$", arg4: 4);
-                context.SetSkip(arg1: "또다른연출종료");
+                context.SetSkip(state: new State또다른StopCinematic(context));
             }
 
             public override TriggerState Execute() {

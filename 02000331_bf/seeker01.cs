@@ -581,7 +581,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetRandomMesh(arg1: new[] {10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012, 10013, 10014, 10015, 10016}, arg2: false, arg3: 16, arg4: 100, arg5: 100);
                 context.SetEffect(arg1: new[] {777801}, arg2: true);
                 context.SetMesh(arg1: new[] {90001, 90000}, arg2: true, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSkip(arg1: "첫번째무너짐연출종료01");
+                context.SetSkip(state: new State첫번째무너짐StopCinematic01(context));
             }
 
             public override TriggerState Execute() {
@@ -2633,7 +2633,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1007");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2006");
                 context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_3004");
-                context.SetSkip(arg1: "고립연출종료01");
+                context.SetSkip(state: new State고립StopCinematic01(context));
             }
 
             public override TriggerState Execute() {
@@ -2654,7 +2654,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.CameraSelect(arg1: 804, arg2: false);
                 context.SetCinematicUI(arg1: 0);
                 context.SetCinematicUI(arg1: 2);
-                context.SetSkip(arg1: "구출안내01_01");
+                context.SetSkip(state: new State구출안내01_01(context));
             }
 
             public override TriggerState Execute() {
@@ -2769,7 +2769,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1007");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2006");
                 context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_3004");
-                context.SetSkip(arg1: "고립연출종료02");
+                context.SetSkip(state: new State고립StopCinematic02(context));
             }
 
             public override TriggerState Execute() {
@@ -2790,7 +2790,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.CameraSelect(arg1: 804, arg2: false);
                 context.SetCinematicUI(arg1: 0);
                 context.SetCinematicUI(arg1: 2);
-                context.SetSkip(arg1: "구출안내02_01");
+                context.SetSkip(state: new State구출안내02_01(context));
             }
 
             public override TriggerState Execute() {
@@ -2905,7 +2905,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1007");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2006");
                 context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_3004");
-                context.SetSkip(arg1: "고립연출종료03");
+                context.SetSkip(state: new State고립StopCinematic03(context));
             }
 
             public override TriggerState Execute() {
@@ -2926,7 +2926,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.CameraSelect(arg1: 804, arg2: false);
                 context.SetCinematicUI(arg1: 0);
                 context.SetCinematicUI(arg1: 2);
-                context.SetSkip(arg1: "구출안내03_01");
+                context.SetSkip(state: new State구출안내03_01(context));
             }
 
             public override TriggerState Execute() {
@@ -3041,7 +3041,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1007");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2006");
                 context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_3004");
-                context.SetSkip(arg1: "고립연출종료04");
+                context.SetSkip(state: new State고립StopCinematic04(context));
             }
 
             public override TriggerState Execute() {
@@ -3062,7 +3062,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.CameraSelect(arg1: 804, arg2: false);
                 context.SetCinematicUI(arg1: 0);
                 context.SetCinematicUI(arg1: 2);
-                context.SetSkip(arg1: "구출안내04_01");
+                context.SetSkip(state: new State구출안내04_01(context));
             }
 
             public override TriggerState Execute() {
@@ -3177,7 +3177,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1007");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_2006");
                 context.MoveNpc(arg1: 300, arg2: "MS2PatrolData_3004");
-                context.SetSkip(arg1: "고립연출종료05");
+                context.SetSkip(state: new State고립StopCinematic05(context));
             }
 
             public override TriggerState Execute() {
@@ -3198,7 +3198,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.CameraSelect(arg1: 804, arg2: false);
                 context.SetCinematicUI(arg1: 0);
                 context.SetCinematicUI(arg1: 2);
-                context.SetSkip(arg1: "구출안내05_01");
+                context.SetSkip(state: new State구출안내05_01(context));
             }
 
             public override TriggerState Execute() {
@@ -3936,7 +3936,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__902$");
                 context.CameraSelect(arg1: 800, arg2: true);
-                context.SetSkip(arg1: "추격연출종료01");
+                context.SetSkip(state: new State추격StopCinematic01(context));
             }
 
             public override TriggerState Execute() {
@@ -4115,7 +4115,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetRandomMesh(arg1: new[] {10020, 10021, 10022, 10023, 10024, 10025, 10026, 10027, 10028, 10029, 10030, 10031, 10032, 10033}, arg2: false, arg3: 14, arg4: 100, arg5: 100);
                 context.SetEffect(arg1: new[] {777803}, arg2: true);
                 context.SetAgent(arg1: new[] {15000, 15001, 15002}, arg2: true);
-                context.SetSkip(arg1: "두번째무너짐연출종료01");
+                context.SetSkip(state: new State두번째무너짐StopCinematic01(context));
             }
 
             public override TriggerState Execute() {
@@ -4136,7 +4136,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.CameraSelect(arg1: 806, arg2: false);
                 context.SetCinematicUI(arg1: 0);
                 context.SetCinematicUI(arg1: 2);
-                context.SetSkip(arg1: "술래말풍선06");
+                context.SetSkip(state: new State술래말풍선06(context));
             }
 
             public override TriggerState Execute() {
@@ -4629,7 +4629,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__904$");
                 context.SetEffect(arg1: new[] {777901}, arg2: true);
                 context.CameraSelect(arg1: 808, arg2: true);
-                context.SetSkip(arg1: "BossSpawnCinematic중01");
+                context.SetSkip(state: new StateBossSpawnCinematic중01(context));
             }
 
             public override TriggerState Execute() {
@@ -4648,7 +4648,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__905$");
-                context.SetSkip(arg1: "BossSpawnCinematic중01Skip");
+                context.SetSkip(state: new StateBossSpawnCinematic중01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -4687,7 +4687,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.ChangeMonster(arg1: 400, arg2: 604);
                 context.ChangeMonster(arg1: 500, arg2: 605);
                 context.CameraSelect(arg1: 809, arg2: true);
-                context.SetSkip(arg1: "BossSpawnCinematic중02Skip");
+                context.SetSkip(state: new StateBossSpawnCinematic중02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -4722,7 +4722,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetRandomMesh(arg1: new[] {10040, 10041, 10042, 10043, 10044}, arg2: false, arg3: 5, arg4: 150, arg5: 150);
                 context.SetEffect(arg1: new[] {777802}, arg2: true);
                 context.SetAgent(arg1: new[] {16000, 16001, 16002, 16003, 16004}, arg2: true);
-                context.SetSkip(arg1: "BossSpawnCinematic중03Skip");
+                context.SetSkip(state: new StateBossSpawnCinematic중03Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -4758,7 +4758,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__907$");
                 context.SetEffect(arg1: new[] {777901}, arg2: false);
                 context.SetEffect(arg1: new[] {777902}, arg2: true);
-                context.SetSkip(arg1: "BossSpawnCinematic끝01");
+                context.SetSkip(state: new StateBossSpawnCinematic끝01(context));
             }
 
             public override TriggerState Execute() {
@@ -6424,7 +6424,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 811, arg2: true);
-                context.SetSkip(arg1: "Boss투_준비04");
+                context.SetSkip(state: new StateBossCombatSetup04(context));
             }
 
             public override TriggerState Execute() {
@@ -6526,7 +6526,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__909$");
                 context.CameraSelect(arg1: 812, arg2: true);
-                context.SetSkip(arg1: "Boss도망연출03");
+                context.SetSkip(state: new StateBoss도망Cinematic03(context));
             }
 
             public override TriggerState Execute() {
@@ -6547,7 +6547,7 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__910$");
                 context.SetEffect(arg1: new[] {777903}, arg2: false);
                 context.SetEffect(arg1: new[] {777904}, arg2: true);
-                context.SetSkip(arg1: "Boss도망연출03");
+                context.SetSkip(state: new StateBoss도망Cinematic03(context));
             }
 
             public override TriggerState Execute() {

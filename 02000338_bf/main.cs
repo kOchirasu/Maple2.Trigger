@@ -88,7 +88,7 @@ namespace Maple2.Trigger._02000338_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.SetEffect(arg1: new[] {74512}, arg2: true);
                 context.CameraSelect(arg1: 30200, arg2: true);
-                context.SetSkip(arg1: "CameraWalk05");
+                context.SetSkip(state: new StateCameraWalk05(context));
             }
 
             public override TriggerState Execute() {
@@ -107,7 +107,7 @@ namespace Maple2.Trigger._02000338_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 30201, arg2: true);
-                context.SetSkip(arg1: "CameraWalk05");
+                context.SetSkip(state: new StateCameraWalk05(context));
             }
 
             public override TriggerState Execute() {
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._02000338_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
                 context.SetEffect(arg1: new[] {74500}, arg2: true);
-                context.SetSkip(arg1: "CameraWalk05");
+                context.SetSkip(state: new StateCameraWalk05(context));
             }
 
             public override TriggerState Execute() {
@@ -192,7 +192,7 @@ namespace Maple2.Trigger._02000338_bf {
                 context.SetMesh(arg1: new[] {20211, 20212, 20213, 20214, 20215, 20216}, arg2: false, arg3: 4500, arg4: 50, arg5: 2f);
                 context.SetMesh(arg1: new[] {20217, 20218, 20219}, arg2: false, arg3: 4750, arg4: 50, arg5: 2f);
                 context.SetMesh(arg1: new[] {20220, 20221, 20222, 20223, 20224, 20225}, arg2: false, arg3: 5000, arg4: 50, arg5: 2f);
-                context.SetSkip(arg1: "3차어나운스");
+                context.SetSkip(state: new State3차어나운스(context));
             }
 
             public override TriggerState Execute() {

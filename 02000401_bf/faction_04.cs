@@ -24,7 +24,7 @@ namespace Maple2.Trigger._02000401_bf {
             internal State인원수체크(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "반응Wait");
+                context.SetSkip(state: new State반응Wait(context));
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.DestroyMonster(arg1: new[] {2902});

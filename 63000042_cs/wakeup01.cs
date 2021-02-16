@@ -85,7 +85,7 @@ namespace Maple2.Trigger._63000042_cs {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "PCDownIdle02");
+                context.SetSkip(state: new StatePCDownIdle02(context));
             }
 
             public override TriggerState Execute() {
@@ -125,7 +125,7 @@ namespace Maple2.Trigger._63000042_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000038, arg3: "$63000042_CS__WAKEUP01__0$", arg4: 4);
-                context.SetSkip(arg1: "DoctorTalk01Skip");
+                context.SetSkip(state: new StateDoctorTalk01Skip(context));
             }
 
             public override TriggerState Execute() {

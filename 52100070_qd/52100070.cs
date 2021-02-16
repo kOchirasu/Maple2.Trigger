@@ -85,7 +85,7 @@ namespace Maple2.Trigger._52100070_qd {
             internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "연출끝");
+                context.SetSkip(state: new StateCinematic끝(context));
                 context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: false);
             }
 

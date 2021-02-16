@@ -268,7 +268,7 @@ namespace Maple2.Trigger._02000290_bf {
                 context.CameraSelect(arg1: 801, arg2: true);
                 context.SetTimer(arg1: "3", arg2: 3);
                 context.SetMesh(arg1: new[] {3500, 3501, 3502, 3503, 3504}, arg2: false, arg3: 0, arg4: 300, arg5: 3f);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {

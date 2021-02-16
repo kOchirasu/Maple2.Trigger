@@ -58,7 +58,7 @@ namespace Maple2.Trigger._02010054_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "가이드02스킵");
+                context.SetSkip(state: new StateGuide02스킵(context));
                 context.CameraSelect(arg1: 302, arg2: true);
             }
 

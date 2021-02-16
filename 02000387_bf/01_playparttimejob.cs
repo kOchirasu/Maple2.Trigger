@@ -69,7 +69,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000491, arg3: "$02000387_BF__01_PLAYPARTTIMEJOB__0$", arg4: 4);
-                context.SetSkip(arg1: "GuideTalk01Skip");
+                context.SetSkip(state: new StateGuideTalk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -103,7 +103,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000491, arg3: "$02000387_BF__01_PLAYPARTTIMEJOB__1$", arg4: 4);
-                context.SetSkip(arg1: "GuideTalk02Skip");
+                context.SetSkip(state: new StateGuideTalk02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000491, arg3: "$02000387_BF__01_PLAYPARTTIMEJOB__2$", arg4: 4);
-                context.SetSkip(arg1: "GuideTalk03Skip");
+                context.SetSkip(state: new StateGuideTalk03Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -171,7 +171,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000491, arg3: "$02000387_BF__01_PLAYPARTTIMEJOB__3$", arg4: 4);
-                context.SetSkip(arg1: "GuideTalk04Skip");
+                context.SetSkip(state: new StateGuideTalk04Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1276,7 +1276,7 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 02000387, arg2: 1, arg3: 9900);
                 context.SetConversation(arg1: 2, arg2: 11000491, arg3: "$02000387_BF__01_PLAYPARTTIMEJOB__8$", arg4: 4);
-                context.SetSkip(arg1: "GameEndNotice01Skip");
+                context.SetSkip(state: new StateGameEndNotice01Skip(context));
             }
 
             public override TriggerState Execute() {

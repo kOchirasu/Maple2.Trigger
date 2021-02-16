@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02000357_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {99}, arg2: false);
-                context.SetSkip(arg1: "종료체크");
+                context.SetSkip(state: new StateEnd체크(context));
             }
 
             public override TriggerState Execute() {

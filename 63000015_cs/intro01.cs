@@ -238,7 +238,7 @@ namespace Maple2.Trigger._63000015_cs {
                 context.CameraSelect(arg1: 601, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000015_CS__INTRO01__0$", arg4: 6);
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
-                context.SetSkip(arg1: "WeiHongTalk03");
+                context.SetSkip(state: new StateWeiHongTalk03(context));
             }
 
             public override TriggerState Execute() {
@@ -274,7 +274,7 @@ namespace Maple2.Trigger._63000015_cs {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000015_CS__INTRO01__1$", arg4: 6);
                 context.SetEffect(arg1: new[] {8001}, arg2: true);
-                context.SetSkip(arg1: "WeiHongTalk05");
+                context.SetSkip(state: new StateWeiHongTalk05(context));
             }
 
             public override TriggerState Execute() {
@@ -310,7 +310,7 @@ namespace Maple2.Trigger._63000015_cs {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000015_CS__INTRO01__2$", arg4: 5);
                 context.SetEffect(arg1: new[] {8002}, arg2: true);
-                context.SetSkip(arg1: "WeiHongTalk07");
+                context.SetSkip(state: new StateWeiHongTalk07(context));
             }
 
             public override TriggerState Execute() {
@@ -490,7 +490,7 @@ namespace Maple2.Trigger._63000015_cs {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000015_CS__INTRO01__3$", arg4: 5);
                 context.SetEffect(arg1: new[] {8005}, arg2: true);
-                context.SetSkip(arg1: "WeiHongTalk12");
+                context.SetSkip(state: new StateWeiHongTalk12(context));
             }
 
             public override TriggerState Execute() {
@@ -528,7 +528,7 @@ namespace Maple2.Trigger._63000015_cs {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000015_CS__INTRO01__4$", arg4: 5);
                 context.SetEffect(arg1: new[] {8003}, arg2: true);
-                context.SetSkip(arg1: "WeiHongTalk14");
+                context.SetSkip(state: new StateWeiHongTalk14(context));
             }
 
             public override TriggerState Execute() {
@@ -629,7 +629,7 @@ namespace Maple2.Trigger._63000015_cs {
                 context.SetNpcEmotionSequence(arg1: 206, arg2: "Idle_A");
                 context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000015_CS__INTRO01__8$", arg4: 6);
                 context.SetEffect(arg1: new[] {8004}, arg2: true);
-                context.SetSkip(arg1: "WeiHongQuest01");
+                context.SetSkip(state: new StateWeiHongQuest01(context));
             }
 
             public override TriggerState Execute() {

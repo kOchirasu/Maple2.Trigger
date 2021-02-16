@@ -476,7 +476,7 @@ namespace Maple2.Trigger._02000387_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000491, arg3: "$02000387_BF__10_RANDOMPORTAL__2$", arg4: 4);
-                context.SetSkip(arg1: "FieredNotice01Skip");
+                context.SetSkip(state: new StateFieredNotice01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -510,7 +510,7 @@ namespace Maple2.Trigger._02000387_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000491, arg3: "$02000387_BF__10_RANDOMPORTAL__3$", arg4: 4);
-                context.SetSkip(arg1: "FieredNotice02Skip");
+                context.SetSkip(state: new StateFieredNotice02Skip(context));
             }
 
             public override TriggerState Execute() {

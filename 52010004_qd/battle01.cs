@@ -68,7 +68,7 @@ namespace Maple2.Trigger._52010004_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "10", arg2: 2);
                 context.SetConversation(arg1: 2, arg2: 11001217, arg3: "$52010004_QD__BATTLE01__0$", arg4: 2);
-                context.SetSkip(arg1: "둔바대화02Wait");
+                context.SetSkip(state: new State둔바대화02Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -102,7 +102,7 @@ namespace Maple2.Trigger._52010004_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "11", arg2: 2);
                 context.SetConversation(arg1: 2, arg2: 11001217, arg3: "$52010004_QD__BATTLE01__1$", arg4: 2);
-                context.SetSkip(arg1: "둔바대화03Wait");
+                context.SetSkip(state: new State둔바대화03Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._52010004_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "12", arg2: 2);
                 context.SetConversation(arg1: 2, arg2: 11001217, arg3: "$52010004_QD__BATTLE01__2$", arg4: 2);
-                context.SetSkip(arg1: "둔바연출종료01");
+                context.SetSkip(state: new State둔바StopCinematic01(context));
             }
 
             public override TriggerState Execute() {

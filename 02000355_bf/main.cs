@@ -188,7 +188,7 @@ namespace Maple2.Trigger._02000355_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {600}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000355_BF__MAIN__1$", arg4: 4);
-                context.SetSkip(arg1: "StopCinematic2");
+                context.SetSkip(state: new StateStopCinematic2(context));
             }
 
             public override TriggerState Execute() {

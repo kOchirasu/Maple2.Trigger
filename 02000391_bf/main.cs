@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02000391_bf {
             internal StateDungeonStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 300, arg2: true);
@@ -462,7 +462,7 @@ namespace Maple2.Trigger._02000391_bf {
             internal State오브젝트Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "하프반응Wait");
+                context.SetSkip(state: new State하프반응Wait(context));
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetEffect(arg1: new[] {601}, arg2: true);
@@ -526,7 +526,7 @@ namespace Maple2.Trigger._02000391_bf {
             internal State물큐브Remove2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "종료");
+                context.SetSkip(state: new StateEnd(context));
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetEffect(arg1: new[] {602}, arg2: true);

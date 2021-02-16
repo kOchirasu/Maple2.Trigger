@@ -224,7 +224,7 @@ namespace Maple2.Trigger._63000019_cs {
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000019_CS__DRINKJUICE01__0$", arg4: 5);
                 context.SetEffect(arg1: new[] {8000}, arg2: true);
-                context.SetSkip(arg1: "WeiHongTalk02");
+                context.SetSkip(state: new StateWeiHongTalk02(context));
             }
 
             public override TriggerState Execute() {
@@ -264,7 +264,7 @@ namespace Maple2.Trigger._63000019_cs {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001547, arg3: "$63000019_CS__DRINKJUICE01__1$", arg4: 4);
                 context.SetEffect(arg1: new[] {8001}, arg2: true);
-                context.SetSkip(arg1: "WeiHongTalk04");
+                context.SetSkip(state: new StateWeiHongTalk04(context));
             }
 
             public override TriggerState Execute() {
@@ -304,7 +304,7 @@ namespace Maple2.Trigger._63000019_cs {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000251, arg3: "$63000019_CS__DRINKJUICE01__2$", arg4: 8);
                 context.SetEffect(arg1: new[] {8002}, arg2: true);
-                context.SetSkip(arg1: "MovingDelay01");
+                context.SetSkip(state: new StateMovingDelay01(context));
             }
 
             public override TriggerState Execute() {

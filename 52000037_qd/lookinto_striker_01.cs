@@ -372,7 +372,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__4$", arg4: 5);
-                context.SetSkip(arg1: "Dialogue02");
+                context.SetSkip(state: new StateDialogue02(context));
             }
 
             public override TriggerState Execute() {
@@ -407,7 +407,7 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {401});
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__5$", arg4: 5);
-                context.SetSkip(arg1: "Dialogue04");
+                context.SetSkip(state: new StateDialogue04(context));
             }
 
             public override TriggerState Execute() {
@@ -507,7 +507,7 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__8$", arg4: 5);
-                context.SetSkip(arg1: "TalkJabethNBravo02");
+                context.SetSkip(state: new StateTalkJabethNBravo02(context));
             }
 
             public override TriggerState Execute() {
@@ -541,7 +541,7 @@ namespace Maple2.Trigger._52000037_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__9$", arg4: 5);
-                context.SetSkip(arg1: "TalkJabethNBravo04");
+                context.SetSkip(state: new StateTalkJabethNBravo04(context));
             }
 
             public override TriggerState Execute() {
@@ -634,7 +634,7 @@ namespace Maple2.Trigger._52000037_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$52000037_QD__LOOKINTO_STRIKER_01__11$", arg4: 6);
-                context.SetSkip(arg1: "ReadyToLeave02");
+                context.SetSkip(state: new StateReadyToLeave02(context));
             }
 
             public override TriggerState Execute() {

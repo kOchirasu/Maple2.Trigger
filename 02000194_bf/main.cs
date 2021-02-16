@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02000194_bf {
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004, 2000}, arg2: false);
                 context.CameraSelect(arg1: 301, arg2: true);
                 context.AddBuff(arg1: new[] {101}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
-                context.SetSkip(arg1: "시작");
+                context.SetSkip(state: new StateStart(context));
             }
 
             public override TriggerState Execute() {

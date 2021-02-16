@@ -103,7 +103,7 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override void OnEnter() {
                 context.SetCinematicIntro(text: "$02100000_BF__MAIN__0$");
-                context.SetSkip(arg1: "ShowCaption01Skip");
+                context.SetSkip(state: new StateShowCaption01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override void OnEnter() {
                 context.SetCinematicIntro(text: "$02100000_BF__MAIN__1$");
-                context.SetSkip(arg1: "ShowCaption02Skip");
+                context.SetSkip(state: new StateShowCaption02Skip(context));
             }
 
             public override TriggerState Execute() {

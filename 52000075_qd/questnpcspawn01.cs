@@ -155,7 +155,7 @@ namespace Maple2.Trigger._52000075_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001960, arg3: "$52000075_QD__QUESTNPCSPAWN01__0$", arg4: 4);
-                context.SetSkip(arg1: "MobTalk02");
+                context.SetSkip(state: new StateMobTalk02(context));
             }
 
             public override TriggerState Execute() {

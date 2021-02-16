@@ -52,7 +52,7 @@ namespace Maple2.Trigger._02000481_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000119, arg3: "$02000481_BF__01_ENTER__0$", arg4: 4);
-                context.SetSkip(arg1: "NpcTalk01Skip");
+                context.SetSkip(state: new StateNpcTalk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -86,7 +86,7 @@ namespace Maple2.Trigger._02000481_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000481_BF__01_ENTER__1$", arg4: 5);
-                context.SetSkip(arg1: "NpcTalk02Skip");
+                context.SetSkip(state: new StateNpcTalk02Skip(context));
             }
 
             public override TriggerState Execute() {

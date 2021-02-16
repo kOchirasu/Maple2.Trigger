@@ -75,7 +75,7 @@ namespace Maple2.Trigger._02000302_bf {
                 context.SetEffect(arg1: new[] {6101}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000032, arg3: "$02000302_BF__MAIN__0$", arg4: 3);
                 context.SetTimer(arg1: "4", arg2: 4);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._02000302_bf {
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -115,7 +115,7 @@ namespace Maple2.Trigger._02000302_bf {
             public override void OnEnter() {
                 context.SetTimer(arg1: "4", arg2: 4);
                 context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000302_BF__MAIN__1$", arg4: 3);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -155,7 +155,7 @@ namespace Maple2.Trigger._02000302_bf {
                 context.SetEffect(arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000032, arg3: "$02000302_BF__MAIN__2$", arg4: 6);
                 context.SetTimer(arg1: "6", arg2: 6);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -795,7 +795,7 @@ namespace Maple2.Trigger._02000302_bf {
             public override void OnEnter() {
                 context.SetTimer(arg1: "4", arg2: 4);
                 context.SetConversation(arg1: 2, arg2: 11000068, arg3: "$02000302_BF__MAIN__7$", arg4: 4);
-                context.SetSkip(arg1: "또다른연출종료");
+                context.SetSkip(state: new State또다른StopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -817,7 +817,7 @@ namespace Maple2.Trigger._02000302_bf {
                 context.SetTimer(arg1: "5", arg2: 5);
                 context.SetEffect(arg1: new[] {6103}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000032, arg3: "$02000302_BF__MAIN__8$", arg4: 4);
-                context.SetSkip(arg1: "또다른연출종료");
+                context.SetSkip(state: new State또다른StopCinematic(context));
             }
 
             public override TriggerState Execute() {

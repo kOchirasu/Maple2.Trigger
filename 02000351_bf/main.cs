@@ -29,7 +29,7 @@ namespace Maple2.Trigger._02000351_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "Start");
+                context.SetSkip(state: new StateStart(context));
                 context.CameraSelectPath(arg1: new[] {80001, 80002}, arg2: true);
             }
 

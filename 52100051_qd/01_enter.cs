@@ -71,7 +71,7 @@ namespace Maple2.Trigger._52100051_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3000f);
                 context.SetConversation(arg1: 2, arg2: 11001592, arg3: "$52100051_QD__01_ENTER__0$", arg4: 4);
-                context.SetSkip(arg1: "NpcTalk01Skip");
+                context.SetSkip(state: new StateNpcTalk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -106,7 +106,7 @@ namespace Maple2.Trigger._52100051_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 201, arg2: "Talk_A", arg3: 3000f);
                 context.SetConversation(arg1: 2, arg2: 11001597, arg3: "$52100051_QD__01_ENTER__1$", arg4: 5);
-                context.SetSkip(arg1: "NpcTalk02Skip");
+                context.SetSkip(state: new StateNpcTalk02Skip(context));
             }
 
             public override TriggerState Execute() {

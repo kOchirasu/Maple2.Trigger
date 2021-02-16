@@ -105,7 +105,7 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() {
                 context.SetCinematicIntro(text: "$02100002_BF__01_MAINCONTROL__0$");
-                context.SetSkip(arg1: "ShowCaption01Skip");
+                context.SetSkip(state: new StateShowCaption01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -138,7 +138,7 @@ namespace Maple2.Trigger._02100002_bf {
 
             public override void OnEnter() {
                 context.SetCinematicIntro(text: "$02100002_BF__01_MAINCONTROL__1$");
-                context.SetSkip(arg1: "ShowCaption02Skip");
+                context.SetSkip(state: new StateShowCaption02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -172,7 +172,7 @@ namespace Maple2.Trigger._02100002_bf {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 900, arg2: true);
                 context.SetCinematicIntro(text: "$02100002_BF__01_MAINCONTROL__2$");
-                context.SetSkip(arg1: "ShowCaption03Skip");
+                context.SetSkip(state: new StateShowCaption03Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -210,7 +210,7 @@ namespace Maple2.Trigger._02100002_bf {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 901, arg2: true);
                 context.SetCinematicIntro(text: "$02100002_BF__01_MAINCONTROL__3$");
-                context.SetSkip(arg1: "ShowCaption04Skip");
+                context.SetSkip(state: new StateShowCaption04Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -244,7 +244,7 @@ namespace Maple2.Trigger._02100002_bf {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 902, arg2: true);
                 context.SetCinematicIntro(text: "$02100002_BF__01_MAINCONTROL__4$");
-                context.SetSkip(arg1: "ShowCaption05Skip");
+                context.SetSkip(state: new StateShowCaption05Skip(context));
             }
 
             public override TriggerState Execute() {

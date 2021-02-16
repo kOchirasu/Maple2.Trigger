@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02000303_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.SetTimer(arg1: "5", arg2: 5);
                 context.SetConversation(arg1: 2, arg2: 11000145, arg3: "$02000303_BF__MAIN__0$", arg4: 4);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -90,7 +90,7 @@ namespace Maple2.Trigger._02000303_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.SetSkip(arg1: "또다른연출종료");
+                context.SetSkip(state: new State또다른StopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -110,7 +110,7 @@ namespace Maple2.Trigger._02000303_bf {
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {3005}, arg2: true, arg3: 0, arg4: 0, arg5: 2f);
                 context.SetEffect(arg1: new[] {602}, arg2: true);
-                context.SetSkip(arg1: "또다른연출종료");
+                context.SetSkip(state: new State또다른StopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -129,7 +129,7 @@ namespace Maple2.Trigger._02000303_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
-                context.SetSkip(arg1: "또다른연출종료");
+                context.SetSkip(state: new State또다른StopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -149,7 +149,7 @@ namespace Maple2.Trigger._02000303_bf {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 2001, arg2: "MS2PatrolData_2001_A");
                 context.SetConversation(arg1: 2, arg2: 11000145, arg3: "$02000303_BF__MAIN__1$", arg4: 4);
-                context.SetSkip(arg1: "또다른연출종료");
+                context.SetSkip(state: new State또다른StopCinematic(context));
             }
 
             public override TriggerState Execute() {

@@ -95,7 +95,7 @@ namespace Maple2.Trigger._52000084_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal", msg: "$52000084_QD__1122330_FINDWAY__0$", align: "right", duration: 4000);
-                context.SetSkip(arg1: "NpcTalk01Skip");
+                context.SetSkip(state: new StateNpcTalk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -133,7 +133,7 @@ namespace Maple2.Trigger._52000084_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003068, illustId: "Seolnunyi_normal", msg: "$52000084_QD__1122330_FINDWAY__1$", align: "right", duration: 5000);
-                context.SetSkip(arg1: "NpcTalk02Skip");
+                context.SetSkip(state: new StateNpcTalk02Skip(context));
             }
 
             public override TriggerState Execute() {

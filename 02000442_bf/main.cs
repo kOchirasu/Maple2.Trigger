@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02000442_bf {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "start_ready");
+                context.SetSkip(state: new StateStart_ready(context));
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Walk_A", arg3: 9999999999999999f);
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Walk_A", arg3: 9999999999999999f);
                 context.CameraSelectPath(arg1: new[] {8001, 8002, 8003}, arg2: false);
@@ -200,7 +200,7 @@ namespace Maple2.Trigger._02000442_bf {
             internal StateScene_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "scene_07_ready");
+                context.SetSkip(state: new StateScene_07_ready(context));
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {8004, 8005, 8006}, arg2: false);
@@ -635,7 +635,7 @@ namespace Maple2.Trigger._02000442_bf {
             internal StateEnding_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "Ending_03_ready");
+                context.SetSkip(state: new StateEnding_03_ready(context));
                 context.SetMesh(arg1: new[] {1990, 1991, 1992, 1993}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.SetActor(arg1: 3101, arg2: true, arg3: "Idle_A");
                 context.SetActor(arg1: 3102, arg2: true, arg3: "Idle_A");

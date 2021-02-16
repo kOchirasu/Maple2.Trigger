@@ -207,7 +207,7 @@ namespace Maple2.Trigger._63000021_cs {
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$63000021_CS__WAKUP01__0$", arg4: 4);
                 context.SetEffect(arg1: new[] {7000}, arg2: true);
-                context.SetSkip(arg1: "Dialogue02");
+                context.SetSkip(state: new StateDialogue02(context));
             }
 
             public override TriggerState Execute() {
@@ -263,7 +263,7 @@ namespace Maple2.Trigger._63000021_cs {
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_300");
-                context.SetSkip(arg1: "Dialogue05");
+                context.SetSkip(state: new StateDialogue05(context));
             }
 
             public override TriggerState Execute() {
@@ -303,7 +303,7 @@ namespace Maple2.Trigger._63000021_cs {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$63000021_CS__WAKUP01__2$", arg4: 4);
                 context.SetEffect(arg1: new[] {7001}, arg2: true);
-                context.SetSkip(arg1: "Dialogue07");
+                context.SetSkip(state: new StateDialogue07(context));
             }
 
             public override TriggerState Execute() {
@@ -376,7 +376,7 @@ namespace Maple2.Trigger._63000021_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000021_CS__WAKUP01__3$", arg4: 4);
-                context.SetSkip(arg1: "Trialogue02");
+                context.SetSkip(state: new StateTrialogue02(context));
             }
 
             public override TriggerState Execute() {
@@ -419,7 +419,7 @@ namespace Maple2.Trigger._63000021_cs {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$63000021_CS__WAKUP01__4$", arg4: 4);
                 context.SetEffect(arg1: new[] {7101}, arg2: true);
-                context.SetSkip(arg1: "Trialogue04");
+                context.SetSkip(state: new StateTrialogue04(context));
             }
 
             public override TriggerState Execute() {
@@ -457,7 +457,7 @@ namespace Maple2.Trigger._63000021_cs {
                 context.SetNpcEmotionSequence(arg1: 301, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001546, arg3: "$63000021_CS__WAKUP01__5$", arg4: 4);
                 context.SetEffect(arg1: new[] {7002}, arg2: true);
-                context.SetSkip(arg1: "Trialogue06");
+                context.SetSkip(state: new StateTrialogue06(context));
             }
 
             public override TriggerState Execute() {
@@ -495,7 +495,7 @@ namespace Maple2.Trigger._63000021_cs {
                 context.SetNpcEmotionSequence(arg1: 201, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001545, arg3: "$63000021_CS__WAKUP01__6$", arg4: 4);
                 context.SetEffect(arg1: new[] {7102}, arg2: true);
-                context.SetSkip(arg1: "Trialogue08");
+                context.SetSkip(state: new StateTrialogue08(context));
             }
 
             public override TriggerState Execute() {
@@ -532,7 +532,7 @@ namespace Maple2.Trigger._63000021_cs {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000021_CS__WAKUP01__7$", arg4: 4);
-                context.SetSkip(arg1: "Trialogue10");
+                context.SetSkip(state: new StateTrialogue10(context));
             }
 
             public override TriggerState Execute() {
@@ -762,7 +762,7 @@ namespace Maple2.Trigger._63000021_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000021_CS__WAKUP01__12$", arg4: 3);
-                context.SetSkip(arg1: "JaceyTalk03");
+                context.SetSkip(state: new StateJaceyTalk03(context));
             }
 
             public override TriggerState Execute() {
@@ -796,7 +796,7 @@ namespace Maple2.Trigger._63000021_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000021_CS__WAKUP01__13$", arg4: 5);
-                context.SetSkip(arg1: "JaceyTalk05");
+                context.SetSkip(state: new StateJaceyTalk05(context));
             }
 
             public override TriggerState Execute() {
@@ -920,7 +920,7 @@ namespace Maple2.Trigger._63000021_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000021_CS__WAKUP01__14$", arg4: 4);
-                context.SetSkip(arg1: "CallNextRoom04");
+                context.SetSkip(state: new StateCallNextRoom04(context));
             }
 
             public override TriggerState Execute() {
@@ -955,7 +955,7 @@ namespace Maple2.Trigger._63000021_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6000}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000021_CS__WAKUP01__15$", arg4: 3);
-                context.SetSkip(arg1: "CallNextRoom06");
+                context.SetSkip(state: new StateCallNextRoom06(context));
             }
 
             public override TriggerState Execute() {
@@ -1010,7 +1010,7 @@ namespace Maple2.Trigger._63000021_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001620, arg3: "$63000021_CS__WAKUP01__16$", arg4: 5);
-                context.SetSkip(arg1: "SayGoodBye03");
+                context.SetSkip(state: new StateSayGoodBye03(context));
             }
 
             public override TriggerState Execute() {

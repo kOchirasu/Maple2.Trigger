@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02000335_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSkip(arg1: "시작_03");
+                context.SetSkip(state: new StateStart_03(context));
                 context.SetConversation(arg1: 1, arg2: 203, arg3: "$02000335_BF__MAIN__0$", arg4: 2, arg5: 0);
                 context.CameraSelectPath(arg1: new[] {80001, 80002, 80003, 80004}, arg2: false);
             }

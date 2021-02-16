@@ -332,7 +332,7 @@ namespace Maple2.Trigger._02000349_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.SetSkip(arg1: "레논구출종료");
+                context.SetSkip(state: new State레논구출종료(context));
                 context.DestroyMonster(arg1: new[] {2001});
                 context.CreateMonster(arg1: new[] {2002});
             }
@@ -354,7 +354,7 @@ namespace Maple2.Trigger._02000349_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6101}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$02000349_BF__MAIN__3$", arg4: 3);
-                context.SetSkip(arg1: "레논구출종료");
+                context.SetSkip(state: new State레논구출종료(context));
             }
 
             public override TriggerState Execute() {
@@ -374,7 +374,7 @@ namespace Maple2.Trigger._02000349_bf {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6102}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$02000349_BF__MAIN__4$", arg4: 3);
-                context.SetSkip(arg1: "레논구출종료");
+                context.SetSkip(state: new State레논구출종료(context));
             }
 
             public override TriggerState Execute() {
@@ -680,7 +680,7 @@ namespace Maple2.Trigger._02000349_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 302, arg2: true);
-                context.SetSkip(arg1: "카드반연출종료");
+                context.SetSkip(state: new State카드반StopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -699,7 +699,7 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000349_BF__MAIN__5$", arg4: 3);
-                context.SetSkip(arg1: "카드반연출종료");
+                context.SetSkip(state: new State카드반StopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -718,7 +718,7 @@ namespace Maple2.Trigger._02000349_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000349_BF__MAIN__6$", arg4: 4);
-                context.SetSkip(arg1: "카드반연출종료");
+                context.SetSkip(state: new State카드반StopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -738,7 +738,7 @@ namespace Maple2.Trigger._02000349_bf {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 303, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$02000349_BF__MAIN__7$", arg4: 4);
-                context.SetSkip(arg1: "카드반연출종료");
+                context.SetSkip(state: new State카드반StopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -758,7 +758,7 @@ namespace Maple2.Trigger._02000349_bf {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000349_BF__MAIN__8$", arg4: 6);
-                context.SetSkip(arg1: "카드반연출종료");
+                context.SetSkip(state: new State카드반StopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -778,7 +778,7 @@ namespace Maple2.Trigger._02000349_bf {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 302, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000349_BF__MAIN__9$", arg4: 8);
-                context.SetSkip(arg1: "카드반연출종료");
+                context.SetSkip(state: new State카드반StopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -799,7 +799,7 @@ namespace Maple2.Trigger._02000349_bf {
                 context.CameraSelect(arg1: 302, arg2: true);
                 context.CreateMonster(arg1: new[] {1025, 1026}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 24001705, arg3: "$02000349_BF__MAIN__10$", arg4: 7);
-                context.SetSkip(arg1: "카드반연출종료");
+                context.SetSkip(state: new State카드반StopCinematic(context));
             }
 
             public override TriggerState Execute() {

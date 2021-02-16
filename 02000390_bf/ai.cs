@@ -197,7 +197,7 @@ namespace Maple2.Trigger._02000390_bf {
             internal StateEnding_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "Ending_04");
+                context.SetSkip(state: new StateEnding_04(context));
                 context.DestroyMonster(arg1: new[] {501, 502, 503, 504, 505, 506, 507, 508, 509, 510});
                 context.CameraSelectPath(arg1: new[] {8101, 8102, 8103}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");

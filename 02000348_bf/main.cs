@@ -96,7 +96,7 @@ namespace Maple2.Trigger._02000348_bf {
                 context.CameraSelectPath(arg1: new[] {8802, 8803}, arg2: false);
                 context.SetConversation(arg1: 1, arg2: 102, arg3: "$02000348_BF__MAIN__0$", arg4: 2, arg5: 0);
                 context.SetConversation(arg1: 2, arg2: 11001376, arg3: "$02000348_BF__MAIN__1$", arg4: 3);
-                context.SetSkip(arg1: "start_game");
+                context.SetSkip(state: new StateStart_game(context));
             }
 
             public override TriggerState Execute() {
@@ -395,7 +395,7 @@ namespace Maple2.Trigger._02000348_bf {
                 context.SetInteractObject(arg1: new[] {10000789}, arg2: 1);
                 context.SetTimer(arg1: "5", arg2: 5);
                 context.CameraSelectPath(arg1: new[] {8801, 8803}, arg2: false);
-                context.SetSkip(arg1: "Clear_03");
+                context.SetSkip(state: new StateClear_03(context));
             }
 
             public override TriggerState Execute() {

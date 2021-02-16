@@ -142,7 +142,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {200}, arg2: false);
                 context.SetOnetimeEffect(id: 1883, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001883.xml");
                 context.SetConversation(arg1: 2, arg2: 11001958, arg3: "$52000054_QD__EPILOGUE_K__1$", arg4: 7);
-                context.SetSkip(arg1: "CityWarfareTalk2");
+                context.SetSkip(state: new StateCityWarfareTalk2(context));
             }
 
             public override TriggerState Execute() {
@@ -177,7 +177,7 @@ namespace Maple2.Trigger._52000054_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1884, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001884.xml");
                 context.SetConversation(arg1: 2, arg2: 11001958, arg3: "$52000054_QD__EPILOGUE_K__2$", arg4: 5);
-                context.SetSkip(arg1: "CityWarfareTalk4");
+                context.SetSkip(state: new StateCityWarfareTalk4(context));
             }
 
             public override TriggerState Execute() {
@@ -215,7 +215,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {300, 301}, arg2: false);
                 context.SetOnetimeEffect(id: 1943, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000054_Turka_00001943.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__3$", arg4: 11);
-                context.SetSkip(arg1: "CityWarfareTalk6");
+                context.SetSkip(state: new StateCityWarfareTalk6(context));
             }
 
             public override TriggerState Execute() {
@@ -252,7 +252,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetNpcEmotionSequence(arg1: 1000, arg2: "Sit_Down_HeadUP");
                 context.SetOnetimeEffect(id: 1885, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001885.xml");
                 context.SetConversation(arg1: 2, arg2: 11001958, arg3: "$52000054_QD__EPILOGUE_K__4$", arg4: 5);
-                context.SetSkip(arg1: "CityWarfareTalk8");
+                context.SetSkip(state: new StateCityWarfareTalk8(context));
             }
 
             public override TriggerState Execute() {
@@ -287,7 +287,7 @@ namespace Maple2.Trigger._52000054_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1886, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001886.xml");
                 context.SetConversation(arg1: 2, arg2: 11001958, arg3: "$52000054_QD__EPILOGUE_K__5$", arg4: 5);
-                context.SetSkip(arg1: "CityWarfareTalk10");
+                context.SetSkip(state: new StateCityWarfareTalk10(context));
             }
 
             public override TriggerState Execute() {
@@ -323,7 +323,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {400, 401}, arg2: false);
                 context.SetOnetimeEffect(id: 1944, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000054_Turka_00001944.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__6$", arg4: 13);
-                context.SetSkip(arg1: "CityWarfareTalk12");
+                context.SetSkip(state: new StateCityWarfareTalk12(context));
             }
 
             public override TriggerState Execute() {
@@ -358,7 +358,7 @@ namespace Maple2.Trigger._52000054_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1945, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000054_Turka_00001945.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__7$", arg4: 8);
-                context.SetSkip(arg1: "CityWarfareTalk14");
+                context.SetSkip(state: new StateCityWarfareTalk14(context));
             }
 
             public override TriggerState Execute() {
@@ -394,7 +394,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {204, 205}, arg2: false);
                 context.SetOnetimeEffect(id: 1887, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001887.xml");
                 context.SetConversation(arg1: 2, arg2: 11001958, arg3: "$52000054_QD__EPILOGUE_K__8$", arg4: 5);
-                context.SetSkip(arg1: "CityWarfareTalk16");
+                context.SetSkip(state: new StateCityWarfareTalk16(context));
             }
 
             public override TriggerState Execute() {
@@ -430,7 +430,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {402}, arg2: false);
                 context.SetOnetimeEffect(id: 1946, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000054_Turka_00001946.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__9$", arg4: 12);
-                context.SetSkip(arg1: "CityWarfareTalk18");
+                context.SetSkip(state: new StateCityWarfareTalk18(context));
             }
 
             public override TriggerState Execute() {
@@ -466,7 +466,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {204}, arg2: false);
                 context.SetOnetimeEffect(id: 1888, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001888.xml");
                 context.SetConversation(arg1: 2, arg2: 11001958, arg3: "$52000054_QD__EPILOGUE_K__10$", arg4: 5);
-                context.SetSkip(arg1: "CityWarfareTalk20");
+                context.SetSkip(state: new StateCityWarfareTalk20(context));
             }
 
             public override TriggerState Execute() {
@@ -502,7 +502,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {500, 501}, arg2: false);
                 context.SetOnetimeEffect(id: 1947, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000054_Turka_00001947.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__11$", arg4: 10);
-                context.SetSkip(arg1: "CityWarfareTalk22");
+                context.SetSkip(state: new StateCityWarfareTalk22(context));
             }
 
             public override TriggerState Execute() {
@@ -538,7 +538,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {200}, arg2: false);
                 context.SetOnetimeEffect(id: 1889, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001889.xml");
                 context.SetConversation(arg1: 2, arg2: 11001958, arg3: "$52000054_QD__EPILOGUE_K__12$", arg4: 5);
-                context.SetSkip(arg1: "CityWarfareTalk24");
+                context.SetSkip(state: new StateCityWarfareTalk24(context));
             }
 
             public override TriggerState Execute() {
@@ -574,7 +574,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {403}, arg2: false);
                 context.SetOnetimeEffect(id: 1948, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000054_Turka_00001948.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__13$", arg4: 8);
-                context.SetSkip(arg1: "CityWarfareTalk26");
+                context.SetSkip(state: new StateCityWarfareTalk26(context));
             }
 
             public override TriggerState Execute() {
@@ -608,7 +608,7 @@ namespace Maple2.Trigger._52000054_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__14$", arg4: 5);
-                context.SetSkip(arg1: "CityWarfareTalk28");
+                context.SetSkip(state: new StateCityWarfareTalk28(context));
             }
 
             public override TriggerState Execute() {
@@ -643,7 +643,7 @@ namespace Maple2.Trigger._52000054_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {200}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001958, arg3: "$52000054_QD__EPILOGUE_K__29$", arg4: 5);
-                context.SetSkip(arg1: "CityWarfareTalk30");
+                context.SetSkip(state: new StateCityWarfareTalk30(context));
             }
 
             public override TriggerState Execute() {
@@ -679,7 +679,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {404}, arg2: false);
                 context.SetOnetimeEffect(id: 1949, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000054_Turka_00001949.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__15$", arg4: 11);
-                context.SetSkip(arg1: "CityWarfareTalk32");
+                context.SetSkip(state: new StateCityWarfareTalk32(context));
             }
 
             public override TriggerState Execute() {
@@ -715,7 +715,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {408, 409}, arg2: false);
                 context.SetOnetimeEffect(id: 1950, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000054_Turka_00001950.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__16$", arg4: 8);
-                context.SetSkip(arg1: "CityWarfareTalk34");
+                context.SetSkip(state: new StateCityWarfareTalk34(context));
             }
 
             public override TriggerState Execute() {
@@ -750,7 +750,7 @@ namespace Maple2.Trigger._52000054_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1890, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001890.xml");
                 context.SetConversation(arg1: 2, arg2: 11001958, arg3: "$52000054_QD__EPILOGUE_K__17$", arg4: 5);
-                context.SetSkip(arg1: "CityWarfareTalk36");
+                context.SetSkip(state: new StateCityWarfareTalk36(context));
             }
 
             public override TriggerState Execute() {
@@ -786,7 +786,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {502, 503}, arg2: false);
                 context.SetOnetimeEffect(id: 1951, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000054_Turka_00001951.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__18$", arg4: 7);
-                context.SetSkip(arg1: "CityWarfareTalk38");
+                context.SetSkip(state: new StateCityWarfareTalk38(context));
             }
 
             public override TriggerState Execute() {
@@ -821,7 +821,7 @@ namespace Maple2.Trigger._52000054_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1952, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000054_Turka_00001952.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__19$", arg4: 7);
-                context.SetSkip(arg1: "CityWarfareTalk40");
+                context.SetSkip(state: new StateCityWarfareTalk40(context));
             }
 
             public override TriggerState Execute() {
@@ -857,7 +857,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {402}, arg2: false);
                 context.SetOnetimeEffect(id: 1953, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000054_Turka_00001953.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__20$", arg4: 6);
-                context.SetSkip(arg1: "CityWarfareTalk42");
+                context.SetSkip(state: new StateCityWarfareTalk42(context));
             }
 
             public override TriggerState Execute() {
@@ -893,7 +893,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {504, 505}, arg2: false);
                 context.SetOnetimeEffect(id: 1891, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001891.xml");
                 context.SetConversation(arg1: 2, arg2: 11001958, arg3: "$52000054_QD__EPILOGUE_K__21$", arg4: 7);
-                context.SetSkip(arg1: "CityWarfareTalk44");
+                context.SetSkip(state: new StateCityWarfareTalk44(context));
             }
 
             public override TriggerState Execute() {
@@ -929,7 +929,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {405, 406}, arg2: false);
                 context.SetOnetimeEffect(id: 1954, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000054_Turka_00001954.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__22$", arg4: 13);
-                context.SetSkip(arg1: "CityWarfareTalk46");
+                context.SetSkip(state: new StateCityWarfareTalk46(context));
             }
 
             public override TriggerState Execute() {
@@ -966,7 +966,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetNpcEmotionSequence(arg1: 1000, arg2: "Sit_Down_HeadUP");
                 context.SetOnetimeEffect(id: 1892, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001892.xml");
                 context.SetConversation(arg1: 2, arg2: 11001958, arg3: "$52000054_QD__EPILOGUE_K__23$", arg4: 5);
-                context.SetSkip(arg1: "CityWarfareTalk48");
+                context.SetSkip(state: new StateCityWarfareTalk48(context));
             }
 
             public override TriggerState Execute() {
@@ -1003,7 +1003,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetNpcEmotionSequence(arg1: 2000, arg2: "Bore_B");
                 context.SetOnetimeEffect(id: 1955, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000054_Turka_00001955.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__24$", arg4: 10);
-                context.SetSkip(arg1: "CityWarfareTalk50");
+                context.SetSkip(state: new StateCityWarfareTalk50(context));
             }
 
             public override TriggerState Execute() {
@@ -1038,7 +1038,7 @@ namespace Maple2.Trigger._52000054_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1956, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000054_Turka_00001956.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__25$", arg4: 6);
-                context.SetSkip(arg1: "CityWarfareTalk52");
+                context.SetSkip(state: new StateCityWarfareTalk52(context));
             }
 
             public override TriggerState Execute() {
@@ -1074,7 +1074,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {500, 501}, arg2: false);
                 context.SetOnetimeEffect(id: 1957, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000054_Turka_00001957.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__26$", arg4: 10);
-                context.SetSkip(arg1: "CityWarfareTalk54");
+                context.SetSkip(state: new StateCityWarfareTalk54(context));
             }
 
             public override TriggerState Execute() {
@@ -1110,7 +1110,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.CameraSelectPath(arg1: new[] {402}, arg2: false);
                 context.SetOnetimeEffect(id: 1958, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000054_Turka_00001958.xml");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$52000054_QD__EPILOGUE_K__27$", arg4: 12);
-                context.SetSkip(arg1: "CityWarfareTalk56");
+                context.SetSkip(state: new StateCityWarfareTalk56(context));
             }
 
             public override TriggerState Execute() {
@@ -1147,7 +1147,7 @@ namespace Maple2.Trigger._52000054_qd {
                 context.SetNpcEmotionSequence(arg1: 1000, arg2: "Sit_Down_HeadUP");
                 context.SetOnetimeEffect(id: 1893, enable: true, path: @"BG/Common/Sound/Eff_Sound_52000055_Katvan_00001893.xml");
                 context.SetConversation(arg1: 2, arg2: 11001958, arg3: "$52000054_QD__EPILOGUE_K__28$", arg4: 5);
-                context.SetSkip(arg1: "CityWarfareTalk58");
+                context.SetSkip(state: new StateCityWarfareTalk58(context));
             }
 
             public override TriggerState Execute() {

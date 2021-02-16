@@ -78,7 +78,7 @@ namespace Maple2.Trigger._02000443_bf {
             internal StateEnding_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "Ending_04");
+                context.SetSkip(state: new StateEnding_04(context));
                 context.CameraSelectPath(arg1: new[] {8101, 8102, 8103}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionLoop(arg1: 202, arg2: "Stun_A", arg3: 9000000f);

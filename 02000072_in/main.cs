@@ -516,7 +516,7 @@ namespace Maple2.Trigger._02000072_in {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003244, arg3: "$02000072_IN__MAIN__2$", arg4: 5, arg5: 0);
-                context.SetSkip(arg1: "아르마노가출_스킵완료");
+                context.SetSkip(state: new State아르마노가출_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -537,7 +537,7 @@ namespace Maple2.Trigger._02000072_in {
                 context.CameraSelectPath(arg1: new[] {8013}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003245, arg3: "$02000072_IN__MAIN__3$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 105, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "아르마노가출_스킵완료");
+                context.SetSkip(state: new State아르마노가출_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -557,7 +557,7 @@ namespace Maple2.Trigger._02000072_in {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8014}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003244, arg3: "$02000072_IN__MAIN__4$", arg4: 5, arg5: 0);
-                context.SetSkip(arg1: "아르마노가출_스킵완료");
+                context.SetSkip(state: new State아르마노가출_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -578,7 +578,7 @@ namespace Maple2.Trigger._02000072_in {
                 context.CameraSelectPath(arg1: new[] {8013}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003245, arg3: "$02000072_IN__MAIN__5$", arg4: 8, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 105, arg2: "Talk_A", arg3: 8000f);
-                context.SetSkip(arg1: "아르마노가출_스킵완료");
+                context.SetSkip(state: new State아르마노가출_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -599,7 +599,7 @@ namespace Maple2.Trigger._02000072_in {
                 context.CameraSelectPath(arg1: new[] {8013}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003245, arg3: "$02000072_IN__MAIN__6$", arg4: 8, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 105, arg2: "Talk_A", arg3: 8000f);
-                context.SetSkip(arg1: "아르마노가출_스킵완료");
+                context.SetSkip(state: new State아르마노가출_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -619,7 +619,7 @@ namespace Maple2.Trigger._02000072_in {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003245, arg3: "$02000072_IN__MAIN__7$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 105, arg2: "Talk_A", arg3: 8000f);
-                context.SetSkip(arg1: "아르마노가출_스킵완료");
+                context.SetSkip(state: new State아르마노가출_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -639,7 +639,7 @@ namespace Maple2.Trigger._02000072_in {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8014}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003244, arg3: "$02000072_IN__MAIN__8$", arg4: 6, arg5: 0);
-                context.SetSkip(arg1: "아르마노가출_스킵완료");
+                context.SetSkip(state: new State아르마노가출_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -658,7 +658,7 @@ namespace Maple2.Trigger._02000072_in {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003244, arg3: "$02000072_IN__MAIN__9$", arg4: 8, arg5: 0);
-                context.SetSkip(arg1: "아르마노가출_스킵완료");
+                context.SetSkip(state: new State아르마노가출_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -679,7 +679,7 @@ namespace Maple2.Trigger._02000072_in {
                 context.CameraSelectPath(arg1: new[] {8012}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003246, arg3: "$02000072_IN__MAIN__10$", arg4: 7, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 106, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "아르마노가출_스킵완료");
+                context.SetSkip(state: new State아르마노가출_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -699,7 +699,7 @@ namespace Maple2.Trigger._02000072_in {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8014}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003244, arg3: "$02000072_IN__MAIN__11$", arg4: 8, arg5: 0);
-                context.SetSkip(arg1: "아르마노가출_스킵완료");
+                context.SetSkip(state: new State아르마노가출_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -720,7 +720,7 @@ namespace Maple2.Trigger._02000072_in {
                 context.CameraSelectPath(arg1: new[] {8012}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003246, arg3: "$02000072_IN__MAIN__12$", arg4: 9, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 106, arg2: "Talk_A", arg3: 9000f);
-                context.SetSkip(arg1: "아르마노가출_스킵완료");
+                context.SetSkip(state: new State아르마노가출_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -741,7 +741,7 @@ namespace Maple2.Trigger._02000072_in {
                 context.CameraSelectPath(arg1: new[] {8014, 8015}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003244, arg3: "$02000072_IN__MAIN__13$", arg4: 3, arg5: 0);
                 context.CreateMonster(arg1: new[] {107});
-                context.SetSkip(arg1: "아르마노가출_스킵완료");
+                context.SetSkip(state: new State아르마노가출_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -761,7 +761,7 @@ namespace Maple2.Trigger._02000072_in {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8015}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003244, arg3: "$02000072_IN__MAIN__14$", arg4: 6, arg5: 0);
-                context.SetSkip(arg1: "아르마노가출_스킵완료_조디제외");
+                context.SetSkip(state: new State아르마노탈주(context));
             }
 
             public override TriggerState Execute() {
@@ -839,7 +839,7 @@ namespace Maple2.Trigger._02000072_in {
                 context.CameraSelectPath(arg1: new[] {8017}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003247, arg3: "$02000072_IN__MAIN__16$", arg4: 3, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 107, arg2: "Talk_A", arg3: 3000f);
-                context.SetSkip(arg1: "아르마노가출_스킵완료_조디제외");
+                context.SetSkip(state: new State조디Script02(context));
             }
 
             public override TriggerState Execute() {
@@ -859,7 +859,7 @@ namespace Maple2.Trigger._02000072_in {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003247, arg3: "$02000072_IN__MAIN__17$", arg4: 4, arg5: 0);
                 context.SetNpcEmotionLoop(arg1: 107, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "아르마노가출_스킵완료_조디제외");
+                context.SetSkip(state: new StatePC안녕(context));
             }
 
             public override TriggerState Execute() {

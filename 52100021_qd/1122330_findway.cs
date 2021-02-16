@@ -106,7 +106,7 @@ namespace Maple2.Trigger._52100021_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003068, arg3: "$52100021_QD__1122330_FINDWAY__0$", arg4: 5);
-                context.SetSkip(arg1: "NpcTalk01Skip");
+                context.SetSkip(state: new StateNpcTalk01Skip(context));
             }
 
             public override TriggerState Execute() {

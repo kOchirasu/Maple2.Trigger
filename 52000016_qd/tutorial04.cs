@@ -126,7 +126,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetEffect(arg1: new[] {6101}, arg2: true);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1001");
                 context.SetConversation(arg1: 2, arg2: 11001249, arg3: "$52000016_QD__TUTORIAL04__1$", arg4: 3);
-                context.SetSkip(arg1: "돌치우기안내03");
+                context.SetSkip(state: new State돌치우기안내03(context));
             }
 
             public override TriggerState Execute() {
@@ -444,7 +444,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetEffect(arg1: new[] {6200}, arg2: true);
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: true);
-                context.SetSkip(arg1: "대결연출02Wait");
+                context.SetSkip(state: new State대결Cinematic02Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -480,7 +480,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetConversation(arg1: 2, arg2: 11001231, arg3: "$52000016_QD__TUTORIAL04__10$", arg4: 6);
                 context.SetEffect(arg1: new[] {6200}, arg2: false);
                 context.SetEffect(arg1: new[] {6210}, arg2: true);
-                context.SetSkip(arg1: "대결연출03Wait");
+                context.SetSkip(state: new State대결Cinematic03Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -516,7 +516,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000016_QD__TUTORIAL04__11$", arg4: 4);
                 context.SetEffect(arg1: new[] {6210}, arg2: false);
                 context.SetEffect(arg1: new[] {6201}, arg2: true);
-                context.SetSkip(arg1: "대결연출04Wait");
+                context.SetSkip(state: new State대결Cinematic04Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -552,7 +552,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetConversation(arg1: 2, arg2: 11001231, arg3: "$52000016_QD__TUTORIAL04__12$", arg4: 5);
                 context.SetEffect(arg1: new[] {6201}, arg2: false);
                 context.SetEffect(arg1: new[] {6211}, arg2: true);
-                context.SetSkip(arg1: "대결연출05Wait");
+                context.SetSkip(state: new State대결Cinematic05Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -588,7 +588,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000016_QD__TUTORIAL04__13$", arg4: 3);
                 context.SetEffect(arg1: new[] {6211}, arg2: false);
                 context.SetEffect(arg1: new[] {6202}, arg2: true);
-                context.SetSkip(arg1: "대결연출06Wait");
+                context.SetSkip(state: new State대결Cinematic06Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -624,7 +624,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetConversation(arg1: 2, arg2: 11001231, arg3: "$52000016_QD__TUTORIAL04__14$", arg4: 3);
                 context.SetEffect(arg1: new[] {6202}, arg2: false);
                 context.SetEffect(arg1: new[] {6212}, arg2: true);
-                context.SetSkip(arg1: "대결연출07Wait");
+                context.SetSkip(state: new State대결Cinematic07Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -1012,7 +1012,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetTimer(arg1: "44", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11001230, arg3: "$52000016_QD__TUTORIAL04__17$", arg4: 3);
                 context.SetEffect(arg1: new[] {6300}, arg2: true);
-                context.SetSkip(arg1: "마무리연출04Wait");
+                context.SetSkip(state: new State마무리Cinematic04Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -1048,7 +1048,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetEffect(arg1: new[] {6300}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000016_QD__TUTORIAL04__18$", arg4: 4);
                 context.SetEffect(arg1: new[] {6400}, arg2: true);
-                context.SetSkip(arg1: "마무리연출05Wait");
+                context.SetSkip(state: new State마무리Cinematic05Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -1084,7 +1084,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetEffect(arg1: new[] {6400}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001230, arg3: "$52000016_QD__TUTORIAL04__19$", arg4: 4);
                 context.SetEffect(arg1: new[] {6301}, arg2: true);
-                context.SetSkip(arg1: "마무리연출06Wait");
+                context.SetSkip(state: new State마무리Cinematic06Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -1156,7 +1156,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetEffect(arg1: new[] {6401}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001230, arg3: "$52000016_QD__TUTORIAL04__21$", arg4: 4);
                 context.SetEffect(arg1: new[] {6302}, arg2: true);
-                context.SetSkip(arg1: "마무리연출08Wait");
+                context.SetSkip(state: new State마무리Cinematic08Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -1213,7 +1213,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetEffect(arg1: new[] {6302}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000016_QD__TUTORIAL04__22$", arg4: 3);
                 context.SetEffect(arg1: new[] {6402}, arg2: true);
-                context.SetSkip(arg1: "퇴장준비01Wait");
+                context.SetSkip(state: new State퇴장Prepare01Wait(context));
             }
 
             public override TriggerState Execute() {

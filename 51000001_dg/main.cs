@@ -25,7 +25,7 @@ namespace Maple2.Trigger._51000001_dg {
                 context.CameraSelect(arg1: 300, arg2: true);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3, arg2: "$51000001_DG__MAIN__0$");
-                context.SetSkip(arg1: "튜토리얼시작");
+                context.SetSkip(state: new State튜토리얼시작(context));
             }
 
             public override TriggerState Execute() {

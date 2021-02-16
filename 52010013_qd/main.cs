@@ -62,7 +62,7 @@ namespace Maple2.Trigger._52010013_qd {
             public override void OnEnter() {
                 context.CameraSelect(arg1: 8002, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010013_QD__MAIN__1$", arg4: 5);
-                context.SetSkip(arg1: "Event_03_IdLE");
+                context.SetSkip(state: new StateEvent_03_IdLE(context));
                 context.SetTimer(arg1: "5", arg2: 5);
             }
 
@@ -96,7 +96,7 @@ namespace Maple2.Trigger._52010013_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010013_QD__MAIN__2$", arg4: 4);
-                context.SetSkip(arg1: "Event_04_IdLE");
+                context.SetSkip(state: new StateEvent_04_IdLE(context));
                 context.SetTimer(arg1: "4", arg2: 4);
             }
 
@@ -131,7 +131,7 @@ namespace Maple2.Trigger._52010013_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010013_QD__MAIN__3$", arg4: 4);
                 context.SetTimer(arg1: "4", arg2: 4);
-                context.SetSkip(arg1: "Event_05_IdLE");
+                context.SetSkip(state: new StateEvent_05_IdLE(context));
             }
 
             public override TriggerState Execute() {
@@ -165,7 +165,7 @@ namespace Maple2.Trigger._52010013_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010013_QD__MAIN__4$", arg4: 4);
                 context.SetTimer(arg1: "4", arg2: 4);
-                context.SetSkip(arg1: "Event_06_IdLE");
+                context.SetSkip(state: new StateEvent_06_IdLE(context));
             }
 
             public override TriggerState Execute() {
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._52010013_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010013_QD__MAIN__5$", arg4: 5);
                 context.SetTimer(arg1: "5", arg2: 5);
-                context.SetSkip(arg1: "Event_07_IdLE");
+                context.SetSkip(state: new StateEvent_07_IdLE(context));
             }
 
             public override TriggerState Execute() {
@@ -233,7 +233,7 @@ namespace Maple2.Trigger._52010013_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010013_QD__MAIN__6$", arg4: 4);
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.SetSkip(arg1: "Event_08_IdLE");
+                context.SetSkip(state: new StateEvent_08_IdLE(context));
             }
 
             public override TriggerState Execute() {
@@ -267,7 +267,7 @@ namespace Maple2.Trigger._52010013_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010013_QD__MAIN__7$", arg4: 4);
                 context.SetTimer(arg1: "4", arg2: 4);
-                context.SetSkip(arg1: "Event_09_IdLE");
+                context.SetSkip(state: new StateEvent_09_IdLE(context));
             }
 
             public override TriggerState Execute() {
@@ -301,7 +301,7 @@ namespace Maple2.Trigger._52010013_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010013_QD__MAIN__8$", arg4: 3);
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.SetSkip(arg1: "Event_10");
+                context.SetSkip(state: new StateEvent_10(context));
             }
 
             public override TriggerState Execute() {
@@ -323,7 +323,7 @@ namespace Maple2.Trigger._52010013_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010013_QD__MAIN__9$", arg4: 4);
                 context.SetTimer(arg1: "4", arg2: 4);
-                context.SetSkip(arg1: "End");
+                context.SetSkip(state: new StateEnd(context));
             }
 
             public override TriggerState Execute() {

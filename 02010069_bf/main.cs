@@ -127,7 +127,7 @@ namespace Maple2.Trigger._02010069_bf {
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 44441, arg3: "$02010069_BF__MAIN__1$", arg4: 3, arg5: 1);
                 context.MoveNpc(arg1: 44441, arg2: "MS2PatrolData2");
-                context.SetSkip(arg1: "연출25");
+                context.SetSkip(state: new StateCinematic25(context));
             }
 
             public override TriggerState Execute() {

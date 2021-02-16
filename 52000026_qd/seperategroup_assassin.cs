@@ -128,7 +128,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000601, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__0$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "2차입장01");
+                context.SetSkip(state: new State2차입장01(context));
             }
 
             public override TriggerState Execute() {
@@ -211,7 +211,7 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6104}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__1$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "2차입장05");
+                context.SetSkip(state: new State2차입장05(context));
             }
 
             public override TriggerState Execute() {
@@ -296,7 +296,7 @@ namespace Maple2.Trigger._52000026_qd {
                 context.CameraSelect(arg1: 3102, arg2: true);
                 context.SetEffect(arg1: new[] {6001}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__2$", arg4: 7, arg5: 0);
-                context.SetSkip(arg1: "4차입장01");
+                context.SetSkip(state: new State4차입장01(context));
             }
 
             public override TriggerState Execute() {
@@ -358,7 +358,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001581, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__3$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "4차입장04");
+                context.SetSkip(state: new State4차입장04(context));
             }
 
             public override TriggerState Execute() {
@@ -399,7 +399,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__4$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "4차입장06");
+                context.SetSkip(state: new State4차입장06(context));
             }
 
             public override TriggerState Execute() {
@@ -476,7 +476,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001583, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__5$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "5차입장04");
+                context.SetSkip(state: new State5차입장04(context));
             }
 
             public override TriggerState Execute() {
@@ -517,7 +517,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__6$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "5차입장06");
+                context.SetSkip(state: new State5차입장06(context));
             }
 
             public override TriggerState Execute() {
@@ -555,7 +555,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__7$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "5차입장08");
+                context.SetSkip(state: new State5차입장08(context));
             }
 
             public override TriggerState Execute() {
@@ -596,7 +596,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__8$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "5차입장10");
+                context.SetSkip(state: new State5차입장10(context));
             }
 
             public override TriggerState Execute() {
@@ -656,7 +656,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001586, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__9$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "5차입장13");
+                context.SetSkip(state: new State5차입장13(context));
             }
 
             public override TriggerState Execute() {
@@ -696,7 +696,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__10$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "입장완료01");
+                context.SetSkip(state: new State입장완료01(context));
             }
 
             public override TriggerState Execute() {
@@ -737,7 +737,7 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6002}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__11$", arg4: 5, arg5: 0);
-                context.SetSkip(arg1: "정렬02");
+                context.SetSkip(state: new State정렬02(context));
             }
 
             public override TriggerState Execute() {
@@ -858,7 +858,7 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6003}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__12$", arg4: 10, arg5: 0);
-                context.SetSkip(arg1: "본론02");
+                context.SetSkip(state: new State본론02(context));
             }
 
             public override TriggerState Execute() {
@@ -898,7 +898,7 @@ namespace Maple2.Trigger._52000026_qd {
                 context.SetEffect(arg1: new[] {6003}, arg2: false);
                 context.SetEffect(arg1: new[] {6004}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__13$", arg4: 6, arg5: 0);
-                context.SetSkip(arg1: "본론04");
+                context.SetSkip(state: new State본론04(context));
             }
 
             public override TriggerState Execute() {
@@ -976,7 +976,7 @@ namespace Maple2.Trigger._52000026_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6102}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__14$", arg4: 5, arg5: 0);
-                context.SetSkip(arg1: "영상01");
+                context.SetSkip(state: new State영상01(context));
             }
 
             public override TriggerState Execute() {
@@ -1078,7 +1078,7 @@ namespace Maple2.Trigger._52000026_qd {
                 context.CameraSelect(arg1: 3600, arg2: true);
                 context.SetEffect(arg1: new[] {6105}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001244, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__15$", arg4: 6, arg5: 0);
-                context.SetSkip(arg1: "정리02");
+                context.SetSkip(state: new State정리02(context));
             }
 
             public override TriggerState Execute() {
@@ -1117,7 +1117,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000076, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__16$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "반대02");
+                context.SetSkip(state: new State반대02(context));
             }
 
             public override TriggerState Execute() {
@@ -1156,7 +1156,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001586, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__17$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "반대04");
+                context.SetSkip(state: new State반대04(context));
             }
 
             public override TriggerState Execute() {
@@ -1213,7 +1213,7 @@ namespace Maple2.Trigger._52000026_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000026_QD__SEPERATEGROUP_ASSASSIN__18$", arg4: 4, arg5: 0);
-                context.SetSkip(arg1: "반대07");
+                context.SetSkip(state: new State반대07(context));
             }
 
             public override TriggerState Execute() {

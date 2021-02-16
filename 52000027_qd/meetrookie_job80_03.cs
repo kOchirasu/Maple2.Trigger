@@ -119,7 +119,7 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1011");
                 context.SetConversation(arg1: 2, arg2: 11001610, arg3: "$52000027_QD__MEETROOKIE01__0$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "루키등장03");
+                context.SetSkip(state: new State루키Appear03(context));
             }
 
             public override TriggerState Execute() {
@@ -140,7 +140,7 @@ namespace Maple2.Trigger._52000027_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__1$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "사다리생성01");
+                context.SetSkip(state: new StateLadderCreation01(context));
             }
 
             public override TriggerState Execute() {
@@ -407,7 +407,7 @@ namespace Maple2.Trigger._52000027_qd {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 701, arg2: true);
-                context.SetSkip(arg1: "상황연출03");
+                context.SetSkip(state: new State상황Cinematic03(context));
             }
 
             public override TriggerState Execute() {
@@ -462,7 +462,7 @@ namespace Maple2.Trigger._52000027_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__6$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "루키경고02");
+                context.SetSkip(state: new State루키경고02(context));
             }
 
             public override TriggerState Execute() {
@@ -501,7 +501,7 @@ namespace Maple2.Trigger._52000027_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001610, arg3: "$52000027_QD__MEETROOKIE01__7$", arg4: 5, arg5: 0);
-                context.SetSkip(arg1: "루키경고04");
+                context.SetSkip(state: new State루키경고04(context));
             }
 
             public override TriggerState Execute() {
@@ -754,7 +754,7 @@ namespace Maple2.Trigger._52000027_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__11$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "루키미션03");
+                context.SetSkip(state: new State루키미션03(context));
             }
 
             public override TriggerState Execute() {
@@ -777,7 +777,7 @@ namespace Maple2.Trigger._52000027_qd {
                 context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__12$", arg4: 4, arg5: 0);
                 context.SetMesh(arg1: new[] {8500}, arg2: false, arg3: 100, arg4: 0, arg5: 0f);
                 context.SetInteractObject(arg1: new[] {10000420}, arg2: 1);
-                context.SetSkip(arg1: "루키미션04");
+                context.SetSkip(state: new State루키미션04(context));
             }
 
             public override TriggerState Execute() {

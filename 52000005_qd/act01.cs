@@ -60,7 +60,7 @@ namespace Maple2.Trigger._52000005_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "2", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11000031, arg3: "$52000005_QD__ACT01__0$", arg4: 3);
-                context.SetSkip(arg1: "영감대화02Wait");
+                context.SetSkip(state: new State영감대화02Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._52000005_qd {
                 context.SetTimer(arg1: "3", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11000001, arg3: "$52000005_QD__ACT01__1$", arg4: 3);
                 context.CreateMonster(arg1: new[] {101, 201}, arg2: true);
-                context.SetSkip(arg1: "여제입장01");
+                context.SetSkip(state: new State여제입장01(context));
             }
 
             public override TriggerState Execute() {
@@ -153,7 +153,7 @@ namespace Maple2.Trigger._52000005_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "20", arg2: 3);
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000005_QD__ACT01__2$", arg4: 3);
-                context.SetSkip(arg1: "영상준비");
+                context.SetSkip(state: new State영상Prepare(context));
             }
 
             public override TriggerState Execute() {
@@ -219,7 +219,7 @@ namespace Maple2.Trigger._52000005_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000075, arg3: "$52000005_QD__ACT01__3$", arg4: 4);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {

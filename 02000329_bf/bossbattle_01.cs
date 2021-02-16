@@ -33,7 +33,7 @@ namespace Maple2.Trigger._02000329_bf {
             public override void OnEnter() {
                 context.PlaySystemSoundInBox(arg2: "System_ShowGuideSummary_01");
                 context.ShowGuideSummary(entityId: 109, textId: 20000070);
-                context.SetSkip(arg1: "Boss투시작");
+                context.SetSkip(state: new StateBossCombatStart(context));
             }
 
             public override TriggerState Execute() {

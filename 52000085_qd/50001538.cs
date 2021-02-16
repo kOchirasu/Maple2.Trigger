@@ -53,7 +53,7 @@ namespace Maple2.Trigger._52000085_qd {
                 context.SetLocalCamera(cameraId: 2000, enable: false);
                 context.SetNpcEmotionLoop(arg1: 1001, arg2: "Attack_Idle_A", arg3: 999999999999f);
                 context.SetPcEmotionLoop(arg1: "Attack_Idle_A", arg2: 999999999999f);
-                context.SetSkip(arg1: "연출종료");
+                context.SetSkip(state: new StateStopCinematic(context));
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 300, arg2: true);
@@ -742,7 +742,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal StateEndStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "종료연출종료");
+                context.SetSkip(state: new StateEndStopCinematic(context));
                 context.CreateMonster(arg1: new[] {1005, 1006}, arg2: false);
                 context.CameraSelect(arg1: 314, arg2: true);
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -1015,7 +1015,7 @@ namespace Maple2.Trigger._52000085_qd {
             internal State설만이Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "종료연출종료");
+                context.SetSkip(state: new StateEndStopCinematic(context));
                 context.CameraSelect(arg1: 319, arg2: true);
                 context.AddCinematicTalk(npcId: 11003073, illustId: "11000404", msg: "$52000085_QD__50001538__34$", align: "right", duration: 6000);
             }

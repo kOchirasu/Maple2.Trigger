@@ -119,7 +119,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State에르다Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
                 context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelect(arg1: 314, arg2: true);
@@ -537,7 +537,7 @@ namespace Maple2.Trigger._52000086_qd {
             internal State에드다이동02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(arg1: "DeadStopCinematic");
+                context.SetSkip(state: new StateDeadStopCinematic(context));
                 context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelect(arg1: 321, arg2: true);

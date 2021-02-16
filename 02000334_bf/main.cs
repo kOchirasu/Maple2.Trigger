@@ -54,7 +54,7 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetTimer(arg1: "5", arg2: 5, arg4: false);
-                context.SetSkip(arg1: "시작_03");
+                context.SetSkip(state: new StateStart_03(context));
                 context.SetTimer(arg1: "1", arg2: 1);
             }
 
@@ -76,7 +76,7 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__1$", arg4: 3);
                 context.CreateMonster(arg1: new[] {190}, arg2: false);
-                context.SetSkip(arg1: "1단계_시작");
+                context.SetSkip(state: new State1단계_시작(context));
             }
 
             public override TriggerState Execute() {
@@ -122,7 +122,7 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 24001205, arg3: "$02000334_BF__MAIN__6$", arg4: 3);
                 context.SetTimer(arg1: "3", arg2: 3);
-                context.SetSkip(arg1: "1단계_시작03");
+                context.SetSkip(state: new State1단계_시작03(context));
             }
 
             public override TriggerState Execute() {
@@ -225,7 +225,7 @@ namespace Maple2.Trigger._02000334_bf {
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__7$", arg4: 3);
-                context.SetSkip(arg1: "2단계_시작");
+                context.SetSkip(state: new State2단계_시작(context));
             }
 
             public override TriggerState Execute() {
@@ -306,7 +306,7 @@ namespace Maple2.Trigger._02000334_bf {
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__9$", arg4: 3);
-                context.SetSkip(arg1: "3단계_시작");
+                context.SetSkip(state: new State3단계_시작(context));
             }
 
             public override TriggerState Execute() {
@@ -509,7 +509,7 @@ namespace Maple2.Trigger._02000334_bf {
                 context.DestroyMonster(arg1: new[] {101, 102, 103, 104, 105, 106, 107, 108, 111, 112, 113, 114, 115, 131, 132, 133, 134, 135, 150, 151, 152, 190, 991, 992, 993, 994, 995, 996, 997, 998});
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
                 context.SetConversation(arg1: 2, arg2: 24001205, arg3: "$02000334_BF__MAIN__13$", arg4: 3);
-                context.SetSkip(arg1: "게임오버_강퇴");
+                context.SetSkip(state: new State게임오버_강퇴(context));
             }
 
             public override TriggerState Execute() {
@@ -593,7 +593,7 @@ namespace Maple2.Trigger._02000334_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11000015, arg3: "$02000334_BF__MAIN__16$", arg4: 3);
                 context.SetMesh(arg1: new[] {6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016}, arg2: false, arg4: 250, arg5: 1f);
-                context.SetSkip(arg1: "Clear_보상");
+                context.SetSkip(state: new StateClear_보상(context));
                 context.SetTimer(arg1: "3", arg2: 3);
             }
 

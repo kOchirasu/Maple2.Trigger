@@ -104,7 +104,7 @@ namespace Maple2.Trigger._02000252_bf {
 
             public override void OnEnter() {
                 context.SetSceneSkip(arg1: "벨라스킬딜레이", arg2: "nextState");
-                context.SetSkip(arg1: "벨라스킬딜레이");
+                context.SetSkip(state: new State벨라스킬Delay(context));
                 context.SetTimer(arg1: "1", arg2: 6);
                 context.SetConversation(arg1: 2, arg2: 11000057, arg3: "$02000252_BF__START__4$", arg4: 3);
             }

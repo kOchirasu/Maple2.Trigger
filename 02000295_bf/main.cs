@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000295_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {201}, arg2: false);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_201");
-                context.SetSkip(arg1: "CameraWalk02");
+                context.SetSkip(state: new StateCameraWalk02(context));
             }
 
             public override TriggerState Execute() {
@@ -80,7 +80,7 @@ namespace Maple2.Trigger._02000295_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 1, arg2: 201, arg3: "$02000295_BF__MAIN__0$", arg4: 3, arg5: 0);
-                context.SetSkip(arg1: "CameraWalk02");
+                context.SetSkip(state: new StateCameraWalk02(context));
             }
 
             public override TriggerState Execute() {
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._02000295_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 601, arg2: true);
-                context.SetSkip(arg1: "CameraWalk02");
+                context.SetSkip(state: new StateCameraWalk02(context));
                 context.AddBalloonTalk(spawnPointId: 301, msg: "$02000295_BF__MAIN__1$", duration: 3000, delayTick: 2000);
                 context.AddBalloonTalk(spawnPointId: 310, msg: "$02000295_BF__MAIN__2$", duration: 3000, delayTick: 2000);
                 context.AddBalloonTalk(spawnPointId: 318, msg: "$02000295_BF__MAIN__3$", duration: 3000, delayTick: 3000);
@@ -161,7 +161,7 @@ namespace Maple2.Trigger._02000295_bf {
                 context.SetLadder(arg1: 3001, arg2: true, arg3: true, arg4: 12);
                 context.SetMesh(arg1: new[] {2000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
                 context.CameraSelect(arg1: 600, arg2: true);
-                context.SetSkip(arg1: "CameraWalk05");
+                context.SetSkip(state: new StateCameraWalk05(context));
             }
 
             public override TriggerState Execute() {
@@ -182,7 +182,7 @@ namespace Maple2.Trigger._02000295_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 1, arg2: 202, arg3: "$02000295_BF__MAIN__14$", arg4: 3, arg5: 1);
-                context.SetSkip(arg1: "CameraWalk05");
+                context.SetSkip(state: new StateCameraWalk05(context));
             }
 
             public override TriggerState Execute() {
@@ -339,7 +339,7 @@ namespace Maple2.Trigger._02000295_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 603, arg2: true);
                 context.SetEffect(arg1: new[] {5103}, arg2: true);
-                context.SetSkip(arg1: "BossAct03");
+                context.SetSkip(state: new StateBossAct03(context));
             }
 
             public override TriggerState Execute() {
@@ -645,7 +645,7 @@ namespace Maple2.Trigger._02000295_bf {
                 context.SetConversation(arg1: 1, arg2: 424, arg3: "$02000295_BF__MAIN__29$", arg4: 3, arg5: 2);
                 context.SetConversation(arg1: 1, arg2: 427, arg3: "$02000295_BF__MAIN__30$", arg4: 3, arg5: 2);
                 context.SetConversation(arg1: 1, arg2: 430, arg3: "$02000295_BF__MAIN__31$", arg4: 3, arg5: 3);
-                context.SetSkip(arg1: "ReleaseSlaves05");
+                context.SetSkip(state: new StateReleaseSlaves05(context));
             }
 
             public override TriggerState Execute() {
@@ -686,7 +686,7 @@ namespace Maple2.Trigger._02000295_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11000006, arg3: "$02000295_BF__MAIN__32$", arg4: 4);
-                context.SetSkip(arg1: "Quit01");
+                context.SetSkip(state: new StateQuit01(context));
             }
 
             public override TriggerState Execute() {

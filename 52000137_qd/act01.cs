@@ -131,7 +131,7 @@ namespace Maple2.Trigger._52000137_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003283, msg: "$52000137_QD__ACT01__0$", duration: 5000, align: "center", illustId: "0");
                 context.SetSceneSkip(arg1: "DarkAnosTalk01CSkip", arg2: "nextState");
-                context.SetSkip(arg1: "AsimovTalk01Skip");
+                context.SetSkip(state: new StateAsimovTalk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -220,7 +220,7 @@ namespace Maple2.Trigger._52000137_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003289, msg: "$52000137_QD__ACT01__1$", duration: 4000, align: "center", illustId: "0");
-                context.SetSkip(arg1: "AnosTalk01Skip");
+                context.SetSkip(state: new StateAnosTalk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -291,7 +291,7 @@ namespace Maple2.Trigger._52000137_qd {
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 4000f);
                 context.AddCinematicTalk(npcId: 0, msg: "$52000137_QD__ACT01__2$", duration: 4000, align: "center", illustId: "0");
-                context.SetSkip(arg1: "PCTalk01Skip");
+                context.SetSkip(state: new StatePCTalk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -328,7 +328,7 @@ namespace Maple2.Trigger._52000137_qd {
                 context.AddCinematicTalk(npcId: 11003283, msg: "$52000137_QD__ACT01__3$", duration: 4000, align: "center", illustId: "Asimov_normal");
                 context.DestroyMonster(arg1: new[] {102});
                 context.CreateMonster(arg1: new[] {103}, arg2: false);
-                context.SetSkip(arg1: "AsimovTalk02Skip");
+                context.SetSkip(state: new StateAsimovTalk02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -362,7 +362,7 @@ namespace Maple2.Trigger._52000137_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003283, msg: "$52000137_QD__ACT01__4$", duration: 5000, align: "center", illustId: "Asimov_normal");
-                context.SetSkip(arg1: "AsimovTalk03Skip");
+                context.SetSkip(state: new StateAsimovTalk03Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -432,7 +432,7 @@ namespace Maple2.Trigger._52000137_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, msg: "$52000137_QD__ACT01__5$", duration: 5000, align: "center", illustId: "0");
-                context.SetSkip(arg1: "PCTalk02Skip");
+                context.SetSkip(state: new StatePCTalk02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -487,7 +487,7 @@ namespace Maple2.Trigger._52000137_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 104, arg2: "Attack_Idle_A,Attack_Idle_A");
                 context.AddCinematicTalk(npcId: 11003285, msg: "$52000137_QD__ACT01__6$", duration: 3000, align: "center", illustId: "Patos_normal");
-                context.SetSkip(arg1: "DarkAnosTalk01Skip");
+                context.SetSkip(state: new StateDarkAnosTalk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -638,7 +638,7 @@ namespace Maple2.Trigger._52000137_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003283, msg: "$52000137_QD__ACT01__8$", duration: 5000, align: "center", illustId: "Asimov_normal");
-                context.SetSkip(arg1: "AsimovTalk04Skip");
+                context.SetSkip(state: new StateAsimovTalk04Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -769,7 +769,7 @@ namespace Maple2.Trigger._52000137_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003285, msg: "$52000137_QD__ACT01__9$", duration: 5000, align: "center", illustId: "Patos_normal");
-                context.SetSkip(arg1: "DarkAnosTalk02Skip");
+                context.SetSkip(state: new StateDarkAnosTalk02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1209,7 +1209,7 @@ namespace Maple2.Trigger._52000137_qd {
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_302");
                 context.AddCinematicTalk(npcId: 11003287, msg: "$52000137_QD__ACT01__15$", duration: 4000, align: "center", illustId: "Kandura_normal");
                 context.SetSceneSkip(arg1: "ShowCaption04Skip", arg2: "exit");
-                context.SetSkip(arg1: "KanduraTalk01Skip");
+                context.SetSkip(state: new StateKanduraTalk01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1243,7 +1243,7 @@ namespace Maple2.Trigger._52000137_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, msg: "$52000137_QD__ACT01__16$", duration: 4000, align: "center", illustId: "0");
-                context.SetSkip(arg1: "PCTalk04Skip");
+                context.SetSkip(state: new StatePCTalk04Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1296,7 +1296,7 @@ namespace Maple2.Trigger._52000137_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003287, msg: "$52000137_QD__ACT01__17$", duration: 4000, align: "center", illustId: "Kandura_normal");
-                context.SetSkip(arg1: "KanduraTalk02Skip");
+                context.SetSkip(state: new StateKanduraTalk02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1455,7 +1455,7 @@ namespace Maple2.Trigger._52000137_qd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 9, arg2: "$52000137_QD__ACT01__19$");
-                context.SetSkip(arg1: "ShowCaption03Skip");
+                context.SetSkip(state: new StateShowCaption03Skip(context));
             }
 
             public override TriggerState Execute() {

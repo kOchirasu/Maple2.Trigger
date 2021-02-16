@@ -153,7 +153,7 @@ namespace Maple2.Trigger._02010087_bf {
                 context.CreateMonster(arg1: new[] {199});
                 context.CameraSelect(arg1: 8001, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11003125, arg3: "$02010087_BF__BOSS__0$", arg4: 3);
-                context.SetSkip(arg1: "웨이홍_Script02");
+                context.SetSkip(state: new State웨이홍_Script02(context));
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
             }
 
@@ -175,7 +175,7 @@ namespace Maple2.Trigger._02010087_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003125, arg3: "$02010087_BF__BOSS__1$", arg4: 3);
-                context.SetSkip(arg1: "종료");
+                context.SetSkip(state: new StateEnd(context));
                 context.SetTimer(arg1: "3", arg2: 3, arg4: false);
             }
 
@@ -199,7 +199,7 @@ namespace Maple2.Trigger._02010087_bf {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11003125, arg3: "$02010087_BF__BOSS__2$", arg4: 3);
-                context.SetSkip(arg1: "종료");
+                context.SetSkip(state: new StateEnd(context));
                 context.SetTimer(arg1: "4", arg2: 4, arg4: false);
             }
 

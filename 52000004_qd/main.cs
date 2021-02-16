@@ -55,7 +55,7 @@ namespace Maple2.Trigger._52000004_qd {
                 context.SetTimer(arg1: "2", arg2: 2);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3, arg2: "$52000004_QD__MAIN__0$");
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnEnter() {
                 context.SetTimer(arg1: "3", arg2: 3);
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.SetSkip(arg1: "StopCinematic");
+                context.SetSkip(state: new StateStopCinematic(context));
             }
 
             public override TriggerState Execute() {

@@ -119,7 +119,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003253, illustId: "0", msg: "$52000132_QD__MAIN__0$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Bore_B", arg3: 4000f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -139,7 +139,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003252, illustId: "0", msg: "$52000132_QD__MAIN__1$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Bore_B", arg3: 6000f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -160,7 +160,7 @@ namespace Maple2.Trigger._52000132_qd {
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
                 context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000132_QD__MAIN__2$", duration: 3000, align: "right");
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 3000f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -180,7 +180,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003253, illustId: "0", msg: "$52000132_QD__MAIN__3$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 4000f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -200,7 +200,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003252, illustId: "0", msg: "$52000132_QD__MAIN__4$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Bore_C", arg3: 7000f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -220,7 +220,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003253, illustId: "0", msg: "$52000132_QD__MAIN__5$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Bore_A", arg3: 3000f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -241,7 +241,7 @@ namespace Maple2.Trigger._52000132_qd {
                 context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
                 context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000132_QD__MAIN__6$", duration: 3000, align: "right");
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 1000f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -261,7 +261,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003253, illustId: "0", msg: "$52000132_QD__MAIN__7$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 6000f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -281,7 +281,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003252, illustId: "0", msg: "$52000132_QD__MAIN__8$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4500f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -339,7 +339,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003253, illustId: "0", msg: "$52000132_QD__MAIN__9$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 7000f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -359,7 +359,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003252, illustId: "0", msg: "$52000132_QD__MAIN__10$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 13000f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -379,7 +379,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003253, illustId: "0", msg: "$52000132_QD__MAIN__11$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 102, arg2: "Talk_A", arg3: 4300f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -437,7 +437,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003252, illustId: "0", msg: "$52000132_QD__MAIN__12$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 8900f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -457,7 +457,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003252, illustId: "0", msg: "$52000132_QD__MAIN__13$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 4700f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -477,7 +477,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000132_QD__MAIN__14$", duration: 3000, align: "right");
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 2000f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -497,7 +497,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003253, illustId: "0", msg: "$52000132_QD__MAIN__15$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3200f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -517,7 +517,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003252, illustId: "0", msg: "$52000132_QD__MAIN__16$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 2000f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -575,7 +575,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003252, illustId: "0", msg: "$52000132_QD__MAIN__17$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 7400f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -595,7 +595,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003253, illustId: "0", msg: "$52000132_QD__MAIN__18$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3700f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -615,7 +615,7 @@ namespace Maple2.Trigger._52000132_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003252, illustId: "0", msg: "$52000132_QD__MAIN__19$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 2000f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
@@ -657,7 +657,7 @@ namespace Maple2.Trigger._52000132_qd {
                 context.CameraSelectPath(arg1: new[] {8006}, arg2: false);
                 context.AddCinematicTalk(npcId: 11003253, illustId: "0", msg: "$52000132_QD__MAIN__20$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 3200f);
-                context.SetSkip(arg1: "아이들과인사_스킵완료");
+                context.SetSkip(state: new State아이들과인사_스킵완료(context));
             }
 
             public override TriggerState Execute() {
