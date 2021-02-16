@@ -77,7 +77,7 @@ namespace Maple2.Trigger._52010056_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.ShowCaption(type: "VerticalCaption", title: "$52010056_QD__EventSection__54$", desc: "$52010056_QD__EventSection__0$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 3500, scale: 1f);
-                context.SetSceneSkip(arg1: "시작연출_준비", arg2: "nextState");
+                context.SetSceneSkip(state: new StateStartCinematic_Prepare(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -548,7 +548,7 @@ namespace Maple2.Trigger._52010056_qd {
                 context.CreateMonster(arg1: new[] {801}, arg2: false);
                 context.CameraSelectPath(arg1: new[] {4009, 4010}, arg2: false);
                 context.AddCinematicTalk(npcId: 11003812, msg: "$52010056_QD__EventSection__19$", duration: 2800);
-                context.SetSceneSkip(arg1: "각성_전투준비", arg2: "nextState");
+                context.SetSceneSkip(state: new State각성_전투Prepare(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -1228,7 +1228,7 @@ namespace Maple2.Trigger._52010056_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 5, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(arg1: new[] {4014}, arg2: false);
-                context.SetSceneSkip(arg1: "트리거업적", arg2: "nextState");
+                context.SetSceneSkip(state: new StateTriggerAchievement(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -1894,7 +1894,7 @@ namespace Maple2.Trigger._52010056_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new StateTrigger업적(context);
+                    return new StateTriggerAchievement(context);
                 }
 
                 return null;
@@ -1903,8 +1903,8 @@ namespace Maple2.Trigger._52010056_qd {
             public override void OnExit() { }
         }
 
-        private class StateTrigger업적 : TriggerState {
-            internal StateTrigger업적(ITriggerContext context) : base(context) { }
+        private class StateTriggerAchievement : TriggerState {
+            internal StateTriggerAchievement(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 2009, arg2: "trigger", arg3: "tristanarousal");

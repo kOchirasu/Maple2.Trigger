@@ -180,7 +180,7 @@ namespace Maple2.Trigger._52020014_qd {
             internal StateLever힌트_Camera(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "이공간1차전투", arg2: "nextState");
+                context.SetSceneSkip(state: new State이공간1차전투(context), arg2: "nextState");
                 context.CameraSelect(arg1: 502, arg2: true);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
@@ -283,7 +283,7 @@ namespace Maple2.Trigger._52020014_qd {
             internal State비밀의문(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Camera리셋", arg2: "nextState");
+                context.SetSceneSkip(state: new StateCamera리셋(context), arg2: "nextState");
                 context.CameraSelect(arg1: 501, arg2: true);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);

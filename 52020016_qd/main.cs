@@ -151,7 +151,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State미카엘Appear(context);
+                    return new State미카엘Spawn(context);
                 }
 
                 return null;
@@ -160,8 +160,8 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnExit() { }
         }
 
-        private class State미카엘Appear : TriggerState {
-            internal State미카엘Appear(ITriggerContext context) : base(context) { }
+        private class State미카엘Spawn : TriggerState {
+            internal State미카엘Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {2000001}, arg2: false);
@@ -337,7 +337,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State미카엘Appear_2(context);
+                    return new State미카엘Spawn_2(context);
                 }
 
                 return null;
@@ -346,8 +346,8 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnExit() { }
         }
 
-        private class State미카엘Appear_2 : TriggerState {
-            internal State미카엘Appear_2(ITriggerContext context) : base(context) { }
+        private class State미카엘Spawn_2 : TriggerState {
+            internal State미카엘Spawn_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {2000002}, arg2: false);
@@ -513,7 +513,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new StateMonsterAppear_2(context);
+                    return new StateMonsterSpawn_2(context);
                 }
 
                 return null;
@@ -522,8 +522,8 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnExit() { }
         }
 
-        private class StateMonsterAppear_2 : TriggerState {
-            internal StateMonsterAppear_2(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn_2 : TriggerState {
+            internal StateMonsterSpawn_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 96, arg2: true, arg3: true);
@@ -532,7 +532,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateMonsterAppear_2_2(context);
+                    return new StateMonsterSpawn_2_2(context);
                 }
 
                 return null;
@@ -541,8 +541,8 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnExit() { }
         }
 
-        private class StateMonsterAppear_2_2 : TriggerState {
-            internal StateMonsterAppear_2_2(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn_2_2 : TriggerState {
+            internal StateMonsterSpawn_2_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 906, key: "respawn_phase_2", value: 1);
@@ -550,7 +550,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateMonsterAppear_2_3(context);
+                    return new StateMonsterSpawn_2_3(context);
                 }
 
                 return null;
@@ -559,8 +559,8 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnExit() { }
         }
 
-        private class StateMonsterAppear_2_3 : TriggerState {
-            internal StateMonsterAppear_2_3(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn_2_3 : TriggerState {
+            internal StateMonsterSpawn_2_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 907, key: "respawn_phase_2", value: 1);
@@ -568,7 +568,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateMonsterAppear_2_4(context);
+                    return new StateMonsterSpawn_2_4(context);
                 }
 
                 return null;
@@ -577,8 +577,8 @@ namespace Maple2.Trigger._52020016_qd {
             public override void OnExit() { }
         }
 
-        private class StateMonsterAppear_2_4 : TriggerState {
-            internal StateMonsterAppear_2_4(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn_2_4 : TriggerState {
+            internal StateMonsterSpawn_2_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 908, key: "respawn_phase_2", value: 1);
@@ -642,7 +642,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new StateMonsterAppear_3(context);
+                    return new StateMonsterSpawn_3(context);
                 }
 
                 return null;
@@ -650,12 +650,12 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override void OnExit() {
                 context.SetConversation(arg1: 2, arg2: 4000201, arg3: "자...기대하세요!", arg4: 5);
-                context.SetSkip(state: new StateMonsterAppear_3(context));
+                context.SetSkip(state: new StateMonsterSpawn_3(context));
             }
         }
 
-        private class StateMonsterAppear_3 : TriggerState {
-            internal StateMonsterAppear_3(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn_3 : TriggerState {
+            internal StateMonsterSpawn_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {72001, 72002, 72003, 72004, 72005, 72006, 72007, 72008, 72009, 72010, 72011, 72012}, arg2: false);

@@ -10,7 +10,7 @@ namespace Maple2.Trigger._03000054_bf {
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
                     context.CreateMonster(arg1: new[] {1001, 1002, 1003}, arg2: false);
-                    return new StateEliteAppear(context);
+                    return new StateEliteSpawn(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._03000054_bf {
             public override void OnExit() { }
         }
 
-        private class StateEliteAppear : TriggerState {
-            internal StateEliteAppear(ITriggerContext context) : base(context) { }
+        private class StateEliteSpawn : TriggerState {
+            internal StateEliteSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 23000002, textId: 23000002, duration: 5000);
@@ -28,7 +28,7 @@ namespace Maple2.Trigger._03000054_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 10000)) {
-                    return new StateEliteAppear(context);
+                    return new StateEliteSpawn(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1001, 1002, 1003})) {

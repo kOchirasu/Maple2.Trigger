@@ -72,7 +72,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetSceneSkip(arg1: "요정잡담종료_01", arg2: "nextState");
+                context.SetSceneSkip(state: new State요정잡담종료_01(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -315,7 +315,7 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {201, 202, 203, 204, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217});
                 context.MoveUser(arg1: 63000076, arg2: 1);
-                context.SetSceneSkip(arg1: "연출종료_01", arg2: "nextState");
+                context.SetSceneSkip(state: new StateStopCinematic_01(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -639,7 +639,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State미아Appear_01(context);
+                    return new State미아Spawn_01(context);
                 }
 
                 return null;
@@ -648,8 +648,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_01 : TriggerState {
-            internal State미아Appear_01(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_01 : TriggerState {
+            internal State미아Spawn_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -657,7 +657,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State미아Appear_02(context);
+                    return new State미아Spawn_02(context);
                 }
 
                 return null;
@@ -666,8 +666,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_02 : TriggerState {
-            internal State미아Appear_02(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_02 : TriggerState {
+            internal State미아Spawn_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11004372, msg: "$63000076_CS__63000076_MAIN__18$", duration: 3000, align: "right");
@@ -675,7 +675,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State미아Appear_03(context);
+                    return new State미아Spawn_03(context);
                 }
 
                 return null;
@@ -684,8 +684,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_03 : TriggerState {
-            internal State미아Appear_03(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_03 : TriggerState {
+            internal State미아Spawn_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11004372, msg: "$63000076_CS__63000076_MAIN__19$", duration: 3000, align: "right");
@@ -693,7 +693,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State미아Appear_04(context);
+                    return new State미아Spawn_04(context);
                 }
 
                 return null;
@@ -702,8 +702,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_04 : TriggerState {
-            internal State미아Appear_04(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_04 : TriggerState {
+            internal State미아Spawn_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11004372, msg: "$63000076_CS__63000076_MAIN__20$", duration: 3000, align: "right");
@@ -711,7 +711,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State미아Appear_05(context);
+                    return new State미아Spawn_05(context);
                 }
 
                 return null;
@@ -720,8 +720,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_05 : TriggerState {
-            internal State미아Appear_05(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_05 : TriggerState {
+            internal State미아Spawn_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 141, arg2: "MS2PatrolData_2001");
@@ -729,7 +729,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State미아Appear_06(context);
+                    return new State미아Spawn_06(context);
                 }
 
                 return null;
@@ -738,8 +738,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_06 : TriggerState {
-            internal State미아Appear_06(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_06 : TriggerState {
+            internal State미아Spawn_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 5, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -747,7 +747,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State미아Appear_07(context);
+                    return new State미아Spawn_07(context);
                 }
 
                 return null;
@@ -756,8 +756,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_07 : TriggerState {
-            internal State미아Appear_07(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_07 : TriggerState {
+            internal State미아Spawn_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {141});
@@ -768,7 +768,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State미아Appear_08(context);
+                    return new State미아Spawn_08(context);
                 }
 
                 return null;
@@ -777,8 +777,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_08 : TriggerState {
-            internal State미아Appear_08(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_08 : TriggerState {
+            internal State미아Spawn_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 5, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -786,7 +786,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State미아Appear_09(context);
+                    return new State미아Spawn_09(context);
                 }
 
                 return null;
@@ -795,8 +795,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_09 : TriggerState {
-            internal State미아Appear_09(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_09 : TriggerState {
+            internal State미아Spawn_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11004364, msg: "$63000076_CS__63000076_MAIN__21$", duration: 3000, illustId: "Mia_annoyed", align: "right");
@@ -804,7 +804,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State미아Appear_10(context);
+                    return new State미아Spawn_10(context);
                 }
 
                 return null;
@@ -813,8 +813,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_10 : TriggerState {
-            internal State미아Appear_10(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_10 : TriggerState {
+            internal State미아Spawn_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, msg: "$63000076_CS__63000076_MAIN__22$", duration: 2500, align: "right");
@@ -822,7 +822,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State미아Appear_11(context);
+                    return new State미아Spawn_11(context);
                 }
 
                 return null;
@@ -831,8 +831,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_11 : TriggerState {
-            internal State미아Appear_11(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_11 : TriggerState {
+            internal State미아Spawn_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11004364, msg: "$63000076_CS__63000076_MAIN__23$", duration: 2500, illustId: "Mia_annoyed", align: "right");
@@ -840,7 +840,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State미아Appear_12(context);
+                    return new State미아Spawn_12(context);
                 }
 
                 return null;
@@ -849,8 +849,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_12 : TriggerState {
-            internal State미아Appear_12(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_12 : TriggerState {
+            internal State미아Spawn_12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, msg: "$63000076_CS__63000076_MAIN__24$", duration: 3500, align: "right");
@@ -858,7 +858,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State미아Appear_13(context);
+                    return new State미아Spawn_13(context);
                 }
 
                 return null;
@@ -867,8 +867,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_13 : TriggerState {
-            internal State미아Appear_13(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_13 : TriggerState {
+            internal State미아Spawn_13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11004364, msg: "$63000076_CS__63000076_MAIN__25$", duration: 3000, illustId: "Mia_normal", align: "right");
@@ -876,7 +876,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State미아Appear_14(context);
+                    return new State미아Spawn_14(context);
                 }
 
                 return null;
@@ -885,8 +885,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_14 : TriggerState {
-            internal State미아Appear_14(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_14 : TriggerState {
+            internal State미아Spawn_14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, msg: "$63000076_CS__63000076_MAIN__26$", duration: 2500, align: "right");
@@ -894,7 +894,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State미아Appear_15(context);
+                    return new State미아Spawn_15(context);
                 }
 
                 return null;
@@ -903,8 +903,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_15 : TriggerState {
-            internal State미아Appear_15(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_15 : TriggerState {
+            internal State미아Spawn_15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11004364, msg: "$63000076_CS__63000076_MAIN__27$", duration: 3000, illustId: "Mia_annoyed", align: "right");
@@ -912,7 +912,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State미아Appear_16(context);
+                    return new State미아Spawn_16(context);
                 }
 
                 return null;
@@ -921,8 +921,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_16 : TriggerState {
-            internal State미아Appear_16(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_16 : TriggerState {
+            internal State미아Spawn_16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 6, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -930,7 +930,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State미아Appear_17(context);
+                    return new State미아Spawn_17(context);
                 }
 
                 return null;
@@ -939,8 +939,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_17 : TriggerState {
-            internal State미아Appear_17(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_17 : TriggerState {
+            internal State미아Spawn_17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -950,7 +950,7 @@ namespace Maple2.Trigger._63000076_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State미아Appear_18(context);
+                    return new State미아Spawn_18(context);
                 }
 
                 return null;
@@ -959,8 +959,8 @@ namespace Maple2.Trigger._63000076_cs {
             public override void OnExit() { }
         }
 
-        private class State미아Appear_18 : TriggerState {
-            internal State미아Appear_18(ITriggerContext context) : base(context) { }
+        private class State미아Spawn_18 : TriggerState {
+            internal State미아Spawn_18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 6, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");

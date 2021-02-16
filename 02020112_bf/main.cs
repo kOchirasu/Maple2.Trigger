@@ -91,7 +91,7 @@ namespace Maple2.Trigger._02020112_bf {
             internal StateCamera_발판점프대(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Camera_종료", arg2: "exit");
+                context.SetSceneSkip(state: new StateCamera_종료(context), arg2: "exit");
                 context.SetUserValue(triggerId: 99990020, key: "GravityRoom", value: 1);
                 context.SetUserValue(triggerId: 99990002, key: "JumpFloor", value: 1);
                 context.SetUserValue(triggerId: 99990017, key: "JumpFloor", value: 1);

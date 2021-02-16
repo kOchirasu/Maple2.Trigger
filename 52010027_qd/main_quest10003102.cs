@@ -80,7 +80,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "완료조건", arg2: "exit");
+                context.SetSceneSkip(state: new State완료조건(context), arg2: "exit");
                 context.AddCinematicTalk(npcId: 11003469, msg: "$52010027_QD__MAIN_QUEST10003102__0$", duration: 4000);
                 context.AddCinematicTalk(npcId: 11003469, msg: "$52010027_QD__MAIN_QUEST10003102__1$", duration: 3000);
             }

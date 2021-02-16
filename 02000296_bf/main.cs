@@ -54,7 +54,7 @@ namespace Maple2.Trigger._02000296_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 1, arg2: 5005, arg3: "$02000296_BF__MAIN__0$", arg4: 3, arg5: 0);
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

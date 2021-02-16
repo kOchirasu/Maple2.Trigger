@@ -141,7 +141,7 @@ namespace Maple2.Trigger {
         public void SetQuestComplete(int questId = 0);
         public void SetRandomMesh(int[] arg1 = default, bool arg2 = false, byte arg3 = 0, int arg4 = 0, int arg5 = 0);
         public void SetRope(int arg1 = 0, bool arg2 = false, bool arg3 = false, byte arg4 = 0);
-        public void SetSceneSkip(string arg1 = "", string arg2 = "");
+        public void SetSceneSkip(TriggerState state = default, string arg2 = "");
         public void SetSkill(int[] arg1 = default, bool arg2 = false);
         public void SetSkip(TriggerState state = default);
         public void SetSound(int arg1 = 0, bool arg2 = false);

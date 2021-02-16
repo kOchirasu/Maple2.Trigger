@@ -118,7 +118,7 @@ namespace Maple2.Trigger._52000144_qd {
             internal State로베와대화_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "스킵도착_01", arg2: "exit");
+                context.SetSceneSkip(state: new State스킵도착_01(context), arg2: "exit");
                 context.AddCinematicTalk(npcId: 0, msg: "$52000144_QD__52000144_MAIN__0$", duration: 3000, align: "right");
             }
 

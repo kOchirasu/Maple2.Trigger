@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52010061_qd {
             internal State칼리브해안전경_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "종료_02", arg2: "exit");
+                context.SetSceneSkip(state: new StateEnd_02(context), arg2: "exit");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
             }
@@ -266,7 +266,7 @@ namespace Maple2.Trigger._52010061_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new StateIshuraAppear(context);
+                    return new StateIshuraSpawn(context);
                 }
 
                 return null;
@@ -275,8 +275,8 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnExit() { }
         }
 
-        private class StateIshuraAppear : TriggerState {
-            internal StateIshuraAppear(ITriggerContext context) : base(context) { }
+        private class StateIshuraSpawn : TriggerState {
+            internal StateIshuraSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -284,7 +284,7 @@ namespace Maple2.Trigger._52010061_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateIshuraAppear_02(context);
+                    return new StateIshuraSpawn_02(context);
                 }
 
                 return null;
@@ -293,8 +293,8 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnExit() { }
         }
 
-        private class StateIshuraAppear_02 : TriggerState {
-            internal StateIshuraAppear_02(ITriggerContext context) : base(context) { }
+        private class StateIshuraSpawn_02 : TriggerState {
+            internal StateIshuraSpawn_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11001975, msg: "$52010061_QD__main__8$", duration: 4000);
@@ -303,7 +303,7 @@ namespace Maple2.Trigger._52010061_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new StateIshuraAppear_03(context);
+                    return new StateIshuraSpawn_03(context);
                 }
 
                 return null;
@@ -312,8 +312,8 @@ namespace Maple2.Trigger._52010061_qd {
             public override void OnExit() { }
         }
 
-        private class StateIshuraAppear_03 : TriggerState {
-            internal StateIshuraAppear_03(ITriggerContext context) : base(context) { }
+        private class StateIshuraSpawn_03 : TriggerState {
+            internal StateIshuraSpawn_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4006, 4007}, arg2: false);

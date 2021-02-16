@@ -497,7 +497,7 @@ namespace Maple2.Trigger._02000072_in {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8011}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11003244, arg3: "$02000072_IN__MAIN__1$", arg4: 4, arg5: 0);
-                context.SetSceneSkip(arg1: "아르마노가출_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State아르마노가출_스킵완료(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -805,7 +805,7 @@ namespace Maple2.Trigger._02000072_in {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State조디Appear(context);
+                    return new State조디Spawn(context);
                 }
 
                 return null;
@@ -814,8 +814,8 @@ namespace Maple2.Trigger._02000072_in {
             public override void OnExit() { }
         }
 
-        private class State조디Appear : TriggerState {
-            internal State조디Appear(ITriggerContext context) : base(context) { }
+        private class State조디Spawn : TriggerState {
+            internal State조디Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8016}, arg2: false);

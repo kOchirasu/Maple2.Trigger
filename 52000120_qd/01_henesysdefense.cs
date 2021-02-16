@@ -84,7 +84,7 @@ namespace Maple2.Trigger._52000120_qd {
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Talk_A");
                 context.AddCinematicTalk(npcId: 11003221, msg: "$52000120_QD__01_HENESYSDEFENSE__0$", duration: 5000, align: "center", illustId: "Manovich_normal");
-                context.SetSceneSkip(arg1: "SetLocalTargetCamera01cskip", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSetLocalTargetCamera01cskip(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -742,7 +742,7 @@ namespace Maple2.Trigger._52000120_qd {
                 context.DestroyMonster(arg1: new[] {202, 210, 211, 212, 213, 214, 215});
                 context.CreateMonster(arg1: new[] {203, 220, 221, 222, 223, 224, 225}, arg2: false);
                 context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__10$", duration: 5000, align: "center", illustId: "Oskhal_normal");
-                context.SetSceneSkip(arg1: "BattleOnTheWallGuide01Skip");
+                context.SetSceneSkip(state: new StateBattleOnTheWallGuide01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -779,7 +779,7 @@ namespace Maple2.Trigger._52000120_qd {
                 context.CreateMonster(arg1: new[] {903, 904}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 102, arg2: "Talk_A");
                 context.AddCinematicTalk(npcId: 11003221, msg: "$52000120_QD__01_HENESYSDEFENSE__11$", duration: 4000, align: "center", illustId: "Manovich_normal");
-                context.SetSceneSkip(arg1: "BattleOnTheWallGuide02Skip");
+                context.SetSceneSkip(state: new StateBattleOnTheWallGuide02Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -901,7 +901,7 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__12$", duration: 5000, align: "center", illustId: "Oskhal_normal");
-                context.SetSceneSkip(arg1: "PCVolunteer05CSkip", arg2: "nextState");
+                context.SetSceneSkip(state: new StatePCVolunteer05CSkip(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -1238,7 +1238,7 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__14$", duration: 5000, align: "center", illustId: "Oskhal_normal");
-                context.SetSceneSkip(arg1: "Battle01End01Skip");
+                context.SetSceneSkip(state: new StateBattle01End01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1350,7 +1350,7 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11003319, msg: "$52000120_QD__01_HENESYSDEFENSE__15$", duration: 5000, align: "center", illustId: "Oskhal_normal");
-                context.SetSceneSkip(arg1: "Battle02End01Skip");
+                context.SetSceneSkip(state: new StateBattle02End01Skip(context));
             }
 
             public override TriggerState Execute() {
@@ -1561,7 +1561,7 @@ namespace Maple2.Trigger._52000120_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.SetEffect(arg1: new[] {5000, 5001}, arg2: true);
                 context.AddCinematicTalk(npcId: 11003226, msg: "$52000120_QD__01_HENESYSDEFENSE__16$", duration: 5000, align: "center", illustId: "0");
-                context.SetSceneSkip(arg1: "ManovichTalk03_CSkip", arg2: "exit");
+                context.SetSceneSkip(state: new StateManovichTalk03_CSkip(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

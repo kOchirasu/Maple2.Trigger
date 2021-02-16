@@ -72,7 +72,7 @@ namespace Maple2.Trigger._63000074_cs {
             internal StateDiary_start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "sceneskip_1", arg2: "exit");
+                context.SetSceneSkip(state: new StateSceneskip_1(context), arg2: "exit");
                 context.SetCinematicUI(arg1: 9, arg2: "$63000074_CS__63000074_MAIN__0$");
             }
 

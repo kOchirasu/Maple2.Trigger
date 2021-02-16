@@ -48,7 +48,7 @@ namespace Maple2.Trigger._02000536_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "전투시작", arg2: "nextState");
+                context.SetSceneSkip(state: new StateBattleStart(context), arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {7000, 7003}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.ShowCaption(type: "VerticalCaption", title: "$02000536_BF__MAIN__0$", desc: "$02000536_BF__MAIN__1$", align: "centerRight", offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2f);

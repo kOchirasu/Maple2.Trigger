@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52000121_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
-                context.SetSceneSkip(arg1: "전투직전_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State전투직전_스킵완료(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -661,7 +661,7 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new StatePCAppearWait(context);
+                    return new StatePCSpawnWait(context);
                 }
 
                 return null;
@@ -679,14 +679,14 @@ namespace Maple2.Trigger._52000121_qd {
             }
 
             public override TriggerState Execute() {
-                return new StatePCAppearWait(context);
+                return new StatePCSpawnWait(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class StatePCAppearWait : TriggerState {
-            internal StatePCAppearWait(ITriggerContext context) : base(context) { }
+        private class StatePCSpawnWait : TriggerState {
+            internal StatePCSpawnWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8036}, arg2: false);
@@ -714,7 +714,7 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new StatePCAppear(context);
+                    return new StatePCSpawn(context);
                 }
 
                 return null;
@@ -723,8 +723,8 @@ namespace Maple2.Trigger._52000121_qd {
             public override void OnExit() { }
         }
 
-        private class StatePCAppear : TriggerState {
-            internal StatePCAppear(ITriggerContext context) : base(context) { }
+        private class StatePCSpawn : TriggerState {
+            internal StatePCSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8034}, arg2: false);
@@ -774,7 +774,7 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new StateMonsterAppear00(context);
+                    return new StateMonsterSpawn00(context);
                 }
 
                 return null;
@@ -783,8 +783,8 @@ namespace Maple2.Trigger._52000121_qd {
             public override void OnExit() { }
         }
 
-        private class StateMonsterAppear00 : TriggerState {
-            internal StateMonsterAppear00(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn00 : TriggerState {
+            internal StateMonsterSpawn00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {111}, arg2: true);
@@ -794,7 +794,7 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateMonsterAppear01(context);
+                    return new StateMonsterSpawn01(context);
                 }
 
                 return null;
@@ -803,8 +803,8 @@ namespace Maple2.Trigger._52000121_qd {
             public override void OnExit() { }
         }
 
-        private class StateMonsterAppear01 : TriggerState {
-            internal StateMonsterAppear01(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn01 : TriggerState {
+            internal StateMonsterSpawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8037}, arg2: false);
@@ -815,7 +815,7 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateMonsterAppear02(context);
+                    return new StateMonsterSpawn02(context);
                 }
 
                 return null;
@@ -824,8 +824,8 @@ namespace Maple2.Trigger._52000121_qd {
             public override void OnExit() { }
         }
 
-        private class StateMonsterAppear02 : TriggerState {
-            internal StateMonsterAppear02(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn02 : TriggerState {
+            internal StateMonsterSpawn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8038}, arg2: false);
@@ -835,7 +835,7 @@ namespace Maple2.Trigger._52000121_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateMonsterAppear03(context);
+                    return new StateMonsterSpawn03(context);
                 }
 
                 return null;
@@ -844,8 +844,8 @@ namespace Maple2.Trigger._52000121_qd {
             public override void OnExit() { }
         }
 
-        private class StateMonsterAppear03 : TriggerState {
-            internal StateMonsterAppear03(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn03 : TriggerState {
+            internal StateMonsterSpawn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8039}, arg2: false);
@@ -1008,7 +1008,7 @@ namespace Maple2.Trigger._52000121_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8040}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "마노비치리타이어_스킵완료", arg2: "exit");
+                context.SetSceneSkip(state: new State마노비치리타이어_스킵완료(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

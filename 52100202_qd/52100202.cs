@@ -64,7 +64,7 @@ namespace Maple2.Trigger._52100202_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.MoveUserPath(arg1: "MS2PatrolData_3001");
                 context.AddCinematicTalk(npcId: 0, msg: "$52100202_QD__52100202__0$", duration: 3500);
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

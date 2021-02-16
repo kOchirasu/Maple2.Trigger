@@ -149,7 +149,7 @@ namespace Maple2.Trigger._52010063_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "전투전스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State전투전스킵완료(context), arg2: "nextState");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Dead_A", arg3: 999999f);
@@ -450,7 +450,7 @@ namespace Maple2.Trigger._52010063_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State부하들Appear00(context);
+                    return new State부하들Spawn00(context);
                 }
 
                 return null;
@@ -459,8 +459,8 @@ namespace Maple2.Trigger._52010063_qd {
             public override void OnExit() { }
         }
 
-        private class State부하들Appear00 : TriggerState {
-            internal State부하들Appear00(ITriggerContext context) : base(context) { }
+        private class State부하들Spawn00 : TriggerState {
+            internal State부하들Spawn00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -469,7 +469,7 @@ namespace Maple2.Trigger._52010063_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State부하들Appear01(context);
+                    return new State부하들Spawn01(context);
                 }
 
                 return null;
@@ -492,7 +492,7 @@ namespace Maple2.Trigger._52010063_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State부하들Appear02(context);
+                    return new State부하들Spawn02(context);
                 }
 
                 return null;
@@ -501,8 +501,8 @@ namespace Maple2.Trigger._52010063_qd {
             public override void OnExit() { }
         }
 
-        private class State부하들Appear01 : TriggerState {
-            internal State부하들Appear01(ITriggerContext context) : base(context) { }
+        private class State부하들Spawn01 : TriggerState {
+            internal State부하들Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {102, 111, 112, 113, 114, 115});
@@ -512,7 +512,7 @@ namespace Maple2.Trigger._52010063_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State부하들Appear02(context);
+                    return new State부하들Spawn02(context);
                 }
 
                 return null;
@@ -521,8 +521,8 @@ namespace Maple2.Trigger._52010063_qd {
             public override void OnExit() { }
         }
 
-        private class State부하들Appear02 : TriggerState {
-            internal State부하들Appear02(ITriggerContext context) : base(context) { }
+        private class State부하들Spawn02 : TriggerState {
+            internal State부하들Spawn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -533,7 +533,7 @@ namespace Maple2.Trigger._52010063_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State부하들Appear211(context);
+                    return new State부하들Spawn211(context);
                 }
 
                 return null;
@@ -542,8 +542,8 @@ namespace Maple2.Trigger._52010063_qd {
             public override void OnExit() { }
         }
 
-        private class State부하들Appear211 : TriggerState {
-            internal State부하들Appear211(ITriggerContext context) : base(context) { }
+        private class State부하들Spawn211 : TriggerState {
+            internal State부하들Spawn211(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {212}, arg2: true);
@@ -551,7 +551,7 @@ namespace Maple2.Trigger._52010063_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {211})) {
-                    return new State부하들Appear212(context);
+                    return new State부하들Spawn212(context);
                 }
 
                 return null;
@@ -560,8 +560,8 @@ namespace Maple2.Trigger._52010063_qd {
             public override void OnExit() { }
         }
 
-        private class State부하들Appear212 : TriggerState {
-            internal State부하들Appear212(ITriggerContext context) : base(context) { }
+        private class State부하들Spawn212 : TriggerState {
+            internal State부하들Spawn212(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {213}, arg2: true);
@@ -569,7 +569,7 @@ namespace Maple2.Trigger._52010063_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {212})) {
-                    return new State부하들Appear213(context);
+                    return new State부하들Spawn213(context);
                 }
 
                 return null;
@@ -578,8 +578,8 @@ namespace Maple2.Trigger._52010063_qd {
             public override void OnExit() { }
         }
 
-        private class State부하들Appear213 : TriggerState {
-            internal State부하들Appear213(ITriggerContext context) : base(context) { }
+        private class State부하들Spawn213 : TriggerState {
+            internal State부하들Spawn213(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {214}, arg2: true);
@@ -587,7 +587,7 @@ namespace Maple2.Trigger._52010063_qd {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {213})) {
-                    return new State부하들Appear214215(context);
+                    return new State부하들Spawn214215(context);
                 }
 
                 return null;
@@ -596,8 +596,8 @@ namespace Maple2.Trigger._52010063_qd {
             public override void OnExit() { }
         }
 
-        private class State부하들Appear214215 : TriggerState {
-            internal State부하들Appear214215(ITriggerContext context) : base(context) { }
+        private class State부하들Spawn214215 : TriggerState {
+            internal State부하들Spawn214215(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {215}, arg2: true);
@@ -663,7 +663,7 @@ namespace Maple2.Trigger._52010063_qd {
             internal State트리스탄구출02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "전투후스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State전투후스킵완료(context), arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {8003, 8013, 8014}, arg2: false);
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetNpcEmotionLoop(arg1: 103, arg2: "Dead_A", arg3: 5000f);

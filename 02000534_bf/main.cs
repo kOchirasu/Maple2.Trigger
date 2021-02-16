@@ -77,7 +77,7 @@ namespace Maple2.Trigger._02000534_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {707}, arg2: 0)) {
-                    return new State하렌Appear(context);
+                    return new State하렌Spawn(context);
                 }
 
                 return null;
@@ -86,8 +86,8 @@ namespace Maple2.Trigger._02000534_bf {
             public override void OnExit() { }
         }
 
-        private class State하렌Appear : TriggerState {
-            internal State하렌Appear(ITriggerContext context) : base(context) { }
+        private class State하렌Spawn : TriggerState {
+            internal State하렌Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 23300001, illust: "Haren_smile", duration: 4000, script: "$02000534_BF__MAIN__5$");
@@ -98,7 +98,7 @@ namespace Maple2.Trigger._02000534_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State하렌Appear2(context);
+                    return new State하렌Spawn2(context);
                 }
 
                 return null;
@@ -107,8 +107,8 @@ namespace Maple2.Trigger._02000534_bf {
             public override void OnExit() { }
         }
 
-        private class State하렌Appear2 : TriggerState {
-            internal State하렌Appear2(ITriggerContext context) : base(context) { }
+        private class State하렌Spawn2 : TriggerState {
+            internal State하렌Spawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 23300001, illust: "Jay_normal", duration: 4000, script: "$02000534_BF__MAIN__8$");
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._02000534_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State하렌Appear3(context);
+                    return new State하렌Spawn3(context);
                 }
 
                 return null;
@@ -125,8 +125,8 @@ namespace Maple2.Trigger._02000534_bf {
             public override void OnExit() { }
         }
 
-        private class State하렌Appear3 : TriggerState {
-            internal State하렌Appear3(ITriggerContext context) : base(context) { }
+        private class State하렌Spawn3 : TriggerState {
+            internal State하렌Spawn3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(npcId: 23300001, illust: "Haren_smile", duration: 4000, script: "$02000534_BF__MAIN__9$");
@@ -588,7 +588,7 @@ namespace Maple2.Trigger._02000534_bf {
                 context.SetCinematicUI(arg1: 3);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$02000534_BF__MAIN__29$", duration: 3000);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$02000534_BF__MAIN__30$", duration: 3500, delayTick: 3000);
-                context.SetSceneSkip(arg1: "방해4", arg2: "nextState");
+                context.SetSceneSkip(state: new State방해4(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

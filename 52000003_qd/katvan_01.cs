@@ -42,7 +42,7 @@ namespace Maple2.Trigger._52000003_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 101, arg2: true);
                 context.SetTimer(arg1: "1", arg2: 1);
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

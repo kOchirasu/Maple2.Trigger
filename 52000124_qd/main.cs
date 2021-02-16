@@ -86,7 +86,7 @@ namespace Maple2.Trigger._52000124_qd {
                 context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
                 context.SetNpcEmotionSequence(arg1: 202, arg2: "Talk_A");
                 context.AddCinematicTalk(npcId: 11003195, msg: "$52000124_QD__MAIN__0$", duration: 2000, align: "right");
-                context.SetSceneSkip(arg1: "scene_07", arg2: "exit");
+                context.SetSceneSkip(state: new StateScene_07(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

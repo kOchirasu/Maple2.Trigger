@@ -52,7 +52,7 @@ namespace Maple2.Trigger._63000036_cs {
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101, 102}, arg2: false);
                 context.CameraSelect(arg1: 500, arg2: true);
-                context.SetSceneSkip(arg1: "DialogueSkip03", arg2: "exit");
+                context.SetSceneSkip(state: new StateDialogueSkip03(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

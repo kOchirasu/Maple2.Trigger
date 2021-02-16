@@ -60,7 +60,7 @@ namespace Maple2.Trigger._52000100_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002286}, arg3: new byte[] {2})) {
-                    return new State아노스Appear01(context);
+                    return new State아노스Spawn01(context);
                 }
 
                 return null;
@@ -69,8 +69,8 @@ namespace Maple2.Trigger._52000100_qd {
             public override void OnExit() { }
         }
 
-        private class State아노스Appear01 : TriggerState {
-            internal State아노스Appear01(ITriggerContext context) : base(context) { }
+        private class State아노스Spawn01 : TriggerState {
+            internal State아노스Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -81,7 +81,7 @@ namespace Maple2.Trigger._52000100_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State아노스Appear02(context);
+                    return new State아노스Spawn02(context);
                 }
 
                 return null;
@@ -90,11 +90,11 @@ namespace Maple2.Trigger._52000100_qd {
             public override void OnExit() { }
         }
 
-        private class State아노스Appear02 : TriggerState {
-            internal State아노스Appear02(ITriggerContext context) : base(context) { }
+        private class State아노스Spawn02 : TriggerState {
+            internal State아노스Spawn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetPcEmotionLoop(arg1: "Emotion_Disappoint_Idle_A", arg2: 2000f);
                 context.CameraSelectPath(arg1: new[] {4000, 4001}, arg2: false);
@@ -105,7 +105,7 @@ namespace Maple2.Trigger._52000100_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State아노스Appear03(context);
+                    return new State아노스Spawn03(context);
                 }
 
                 return null;
@@ -114,8 +114,8 @@ namespace Maple2.Trigger._52000100_qd {
             public override void OnExit() { }
         }
 
-        private class State아노스Appear03 : TriggerState {
-            internal State아노스Appear03(ITriggerContext context) : base(context) { }
+        private class State아노스Spawn03 : TriggerState {
+            internal State아노스Spawn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._52000100_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    return new State아노스Appear03_1(context);
+                    return new State아노스Spawn03_1(context);
                 }
 
                 return null;
@@ -133,8 +133,8 @@ namespace Maple2.Trigger._52000100_qd {
             public override void OnExit() { }
         }
 
-        private class State아노스Appear03_1 : TriggerState {
-            internal State아노스Appear03_1(ITriggerContext context) : base(context) { }
+        private class State아노스Spawn03_1 : TriggerState {
+            internal State아노스Spawn03_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._52000100_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State아노스Appear04(context);
+                    return new State아노스Spawn04(context);
                 }
 
                 return null;
@@ -161,7 +161,7 @@ namespace Maple2.Trigger._52000100_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State아노스Appear04(context);
+                    return new State아노스Spawn04(context);
                 }
 
                 return null;
@@ -170,8 +170,8 @@ namespace Maple2.Trigger._52000100_qd {
             public override void OnExit() { }
         }
 
-        private class State아노스Appear04 : TriggerState {
-            internal State아노스Appear04(ITriggerContext context) : base(context) { }
+        private class State아노스Spawn04 : TriggerState {
+            internal State아노스Spawn04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 0.5f);
@@ -331,7 +331,7 @@ namespace Maple2.Trigger._52000100_qd {
             internal State케이틀린대련02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_2(context), arg2: "nextState");
                 context.FaceEmotion(spawnPointId: 200, emotionName: "UpSet");
                 context.AddCinematicTalk(npcId: 11003146, illustId: "Caitlyn_normal", msg: "$52000100_QD__52000100__3$", duration: 4000, align: "right");
                 context.SetOnetimeEffect(id: 3000950, enable: true, path: @"BG/Common/Sound/Eff_Caitlyn_IntroQuest_03000950.xml");
@@ -539,7 +539,7 @@ namespace Maple2.Trigger._52000100_qd {
             internal State대련종료씬시작03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_3", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_3(context), arg2: "nextState");
                 context.MoveUserPath(arg1: "MS2PatrolData_PCRun");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(arg1: new[] {4005, 4006}, arg2: false);
@@ -953,7 +953,7 @@ namespace Maple2.Trigger._52000100_qd {
             internal State아시모프와대화03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_4", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_4(context), arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {4028}, arg2: false);
                 context.ShowCaption(type: "NameCaption", title: "$52000100_QD__52000100__16$", desc: "$52000100_QD__52000100__17$", align: "center", offsetRateX: -0.05f, offsetRateY: 0.15f, duration: 10000, scale: 2.0f);
             }

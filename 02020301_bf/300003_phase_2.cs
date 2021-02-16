@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02020301_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 12000)) {
-                    return new State쫄몹Appear(context);
+                    return new State쫄몹Spawn(context);
                 }
 
                 return null;
@@ -52,8 +52,8 @@ namespace Maple2.Trigger._02020301_bf {
             public override void OnExit() { }
         }
 
-        private class State쫄몹Appear : TriggerState {
-            internal State쫄몹Appear(ITriggerContext context) : base(context) { }
+        private class State쫄몹Spawn : TriggerState {
+            internal State쫄몹Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 3000032, key: "Phase_2_Interect_02", value: 1);

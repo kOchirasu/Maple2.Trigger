@@ -31,7 +31,7 @@ namespace Maple2.Trigger._52000126_qd {
                 context.DestroyMonster(arg1: new[] {101});
                 context.CreateMonster(arg1: new[] {102}, arg2: true);
                 context.MoveUser(arg1: 52000126, arg2: 6002);
-                context.SetSceneSkip(arg1: "battle_ready", arg2: "nextState");
+                context.SetSceneSkip(state: new StateBattle_ready(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

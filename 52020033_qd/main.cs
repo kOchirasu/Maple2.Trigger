@@ -236,7 +236,7 @@ namespace Maple2.Trigger._52020033_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8000, 8001}, arg2: false);
                 context.ShowCaption(type: "NameCaption", title: "$map:52020033$", desc: "크리티아스 정찰 임무 지원 중", align: "centerLeft", offsetRateX: -0.05f, offsetRateY: 0.15f, duration: 12000, scale: 2.0f);
-                context.SetSceneSkip(arg1: "소개_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State소개_스킵완료(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -359,7 +359,7 @@ namespace Maple2.Trigger._52020033_qd {
                 context.CameraSelectPath(arg1: new[] {8002, 8003}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_Walking");
                 context.AddCinematicTalk(npcId: 0, msg: @"(함선 아래서부터 들려오는 요란한 소리.\n침입자를 막기 위한 결계, 그리고 방어군과의 전투가 벌어진 듯하다.)", duration: 4000);
-                context.SetSceneSkip(arg1: "부유도_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State부유도_스킵완료(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

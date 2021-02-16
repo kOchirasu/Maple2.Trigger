@@ -51,7 +51,7 @@ namespace Maple2.Trigger._52020020_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 0, msg: "곧 알현식이 열린다고?", duration: 2500);
                 context.SetPcEmotionLoop(arg1: "Object_React_H", arg2: 16000f);
-                context.SetSceneSkip(arg1: "EndReady", arg2: "exit");
+                context.SetSceneSkip(state: new StateEndReady(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

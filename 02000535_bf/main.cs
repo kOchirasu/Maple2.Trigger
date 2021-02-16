@@ -307,7 +307,7 @@ namespace Maple2.Trigger._02000535_bf {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSceneSkip(arg1: "카메라리셋시키기2", arg2: "nextState");
+                context.SetSceneSkip(state: new StateCamera리셋시키기2(context), arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {2005}, arg2: false);
                 context.AddBalloonTalk(spawnPointId: 9902, msg: "$02000535_BF__MAIN__25$", duration: 3500);
                 context.AddBalloonTalk(spawnPointId: 9903, msg: "$02000535_BF__MAIN__26$", duration: 3500, delayTick: 3000);

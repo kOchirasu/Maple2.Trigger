@@ -41,7 +41,7 @@ namespace Maple2.Trigger._52000102_qd {
             internal State입장02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(arg1: new[] {4010, 4011}, arg2: false);
             }
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._52000102_qd {
             internal StatePC화남01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "PC화남12", arg2: "exit");
+                context.SetSceneSkip(state: new StatePC화남12(context), arg2: "exit");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);

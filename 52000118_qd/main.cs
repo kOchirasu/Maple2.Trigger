@@ -30,7 +30,7 @@ namespace Maple2.Trigger._52000118_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetCinematicUI(arg1: 4);
-                context.SetSceneSkip(arg1: "fadeout_a", arg2: "exit");
+                context.SetSceneSkip(state: new StateFadeout_a(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

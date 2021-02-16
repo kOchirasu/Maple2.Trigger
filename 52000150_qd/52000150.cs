@@ -63,7 +63,7 @@ namespace Maple2.Trigger._52000150_qd {
             internal State차원의숲전경씬01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(arg1: 1);
                 context.MoveUser(arg1: 52000150, arg2: 11);
@@ -213,7 +213,7 @@ namespace Maple2.Trigger._52000150_qd {
             internal State결계흑화Cinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_2(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(arg1: 1);
                 context.MoveUser(arg1: 52000150, arg2: 10);
@@ -573,7 +573,7 @@ namespace Maple2.Trigger._52000150_qd {
             internal State아노스흑화전Script01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "아노스흑화09", arg2: "exit");
+                context.SetSceneSkip(state: new State아노스흑화09(context), arg2: "exit");
                 context.CameraSelectPath(arg1: new[] {3005}, arg2: false);
                 context.AddCinematicTalk(npcId: 11003440, msg: "$52000150_QD__52000150__11$", duration: 4000, align: "right");
             }

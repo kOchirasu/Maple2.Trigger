@@ -90,7 +90,7 @@ namespace Maple2.Trigger._52020032_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
-                context.SetSceneSkip(arg1: "Battle_B", arg2: "nextState");
+                context.SetSceneSkip(state: new StateBattle_B(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

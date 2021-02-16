@@ -26,7 +26,7 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    return new StateMonsterAppear(context);
+                    return new StateMonsterSpawn(context);
                 }
 
                 return null;
@@ -35,8 +35,8 @@ namespace Maple2.Trigger._02100000_bf {
             public override void OnExit() { }
         }
 
-        private class StateMonsterAppear : TriggerState {
-            internal StateMonsterAppear(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn : TriggerState {
+            internal StateMonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {80001, 800011, 81001}, arg2: true);
@@ -60,7 +60,7 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {80001})) {
-                    return new StateMonsterAppear_2(context);
+                    return new StateMonsterSpawn_2(context);
                 }
 
                 return null;
@@ -69,8 +69,8 @@ namespace Maple2.Trigger._02100000_bf {
             public override void OnExit() { }
         }
 
-        private class StateMonsterAppear_2 : TriggerState {
-            internal StateMonsterAppear_2(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn_2 : TriggerState {
+            internal StateMonsterSpawn_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {80002, 800021, 810021}, arg2: true);
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._02100000_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {80002}) && context.MonsterDead(arg1: new[] {800021}) && context.MonsterDead(arg1: new[] {800011})) {
-                    return new StateMonsterAppear_3(context);
+                    return new StateMonsterSpawn_3(context);
                 }
 
                 return null;
@@ -103,8 +103,8 @@ namespace Maple2.Trigger._02100000_bf {
             public override void OnExit() { }
         }
 
-        private class StateMonsterAppear_3 : TriggerState {
-            internal StateMonsterAppear_3(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn_3 : TriggerState {
+            internal StateMonsterSpawn_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {81001, 81002, 810021});

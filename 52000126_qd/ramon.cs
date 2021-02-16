@@ -40,7 +40,7 @@ namespace Maple2.Trigger._52000126_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "end", arg2: "exit");
+                context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");
                 context.CameraSelectPath(arg1: new[] {4101}, arg2: false);
             }
 

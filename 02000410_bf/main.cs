@@ -68,7 +68,7 @@ namespace Maple2.Trigger._02000410_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ThirdPhase") == 1) {
-                    return new State세번째Phase_인페르녹Appear(context);
+                    return new State세번째Phase_인페르녹Spawn(context);
                 }
 
                 return null;
@@ -77,8 +77,8 @@ namespace Maple2.Trigger._02000410_bf {
             public override void OnExit() { }
         }
 
-        private class State세번째Phase_인페르녹Appear : TriggerState {
-            internal State세번째Phase_인페르녹Appear(ITriggerContext context) : base(context) { }
+        private class State세번째Phase_인페르녹Spawn : TriggerState {
+            internal State세번째Phase_인페르녹Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DungeonMoveLapTimeToNow(id: true);

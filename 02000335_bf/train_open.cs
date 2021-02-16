@@ -95,7 +95,7 @@ namespace Maple2.Trigger._02000335_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount(boxId: 701) == 1) {
-                    return new StateMonsterAppear(context);
+                    return new StateMonsterSpawn(context);
                 }
 
                 return null;
@@ -104,8 +104,8 @@ namespace Maple2.Trigger._02000335_bf {
             public override void OnExit() { }
         }
 
-        private class StateMonsterAppear : TriggerState {
-            internal StateMonsterAppear(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn : TriggerState {
+            internal StateMonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {113}, arg2: true);

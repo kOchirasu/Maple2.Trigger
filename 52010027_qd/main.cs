@@ -64,7 +64,7 @@ namespace Maple2.Trigger._52010027_qd {
             internal StateCinematic_습격현장(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.AddBalloonTalk(spawnPointId: 301, msg: "$52010027_QD__MAIN__2$", duration: 3000, delayTick: 0);
                 context.AddBalloonTalk(spawnPointId: 403, msg: "$52010027_QD__MAIN__3$", duration: 3000, delayTick: 0);
                 context.AddBalloonTalk(spawnPointId: 303, msg: "$52010027_QD__MAIN__4$", duration: 2000, delayTick: 1000);
@@ -395,7 +395,7 @@ namespace Maple2.Trigger._52010027_qd {
             internal State1차_전투_BossMonster대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_2(context), arg2: "nextState");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
@@ -502,7 +502,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new StateCinematic_페리온영웅Appear(context);
+                    return new StateCinematic_페리온영웅Spawn(context);
                 }
 
                 return null;
@@ -511,8 +511,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class StateCinematic_페리온영웅Appear : TriggerState {
-            internal StateCinematic_페리온영웅Appear(ITriggerContext context) : base(context) { }
+        private class StateCinematic_페리온영웅Spawn : TriggerState {
+            internal StateCinematic_페리온영웅Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg1: 2001, arg2: "trigger", arg3: "Windvalley");
@@ -520,12 +520,12 @@ namespace Maple2.Trigger._52010027_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 501, arg2: "Attack_Idle_A", arg3: 16000f);
-                context.SetSceneSkip(arg1: "페리온으로", arg2: "nextState");
+                context.SetSceneSkip(state: new State페리온으로(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateCinematic_페리온영웅Appear_Boss대사(context);
+                    return new StateCinematic_페리온영웅Spawn_Boss대사(context);
                 }
 
                 return null;
@@ -534,8 +534,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class StateCinematic_페리온영웅Appear_Boss대사 : TriggerState {
-            internal StateCinematic_페리온영웅Appear_Boss대사(ITriggerContext context) : base(context) { }
+        private class StateCinematic_페리온영웅Spawn_Boss대사 : TriggerState {
+            internal StateCinematic_페리온영웅Spawn_Boss대사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
@@ -546,7 +546,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new StateCinematic_페리온영웅Appear_BossScript_02(context);
+                    return new StateCinematic_페리온영웅Spawn_BossScript_02(context);
                 }
 
                 return null;
@@ -555,8 +555,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class StateCinematic_페리온영웅Appear_BossScript_02 : TriggerState {
-            internal StateCinematic_페리온영웅Appear_BossScript_02(ITriggerContext context) : base(context) { }
+        private class StateCinematic_페리온영웅Spawn_BossScript_02 : TriggerState {
+            internal StateCinematic_페리온영웅Spawn_BossScript_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4004, 4015}, arg2: false);
@@ -567,7 +567,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new StateCinematic_페리온영웅Appear_BossScript_03(context);
+                    return new StateCinematic_페리온영웅Spawn_BossScript_03(context);
                 }
 
                 return null;
@@ -576,8 +576,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class StateCinematic_페리온영웅Appear_BossScript_03 : TriggerState {
-            internal StateCinematic_페리온영웅Appear_BossScript_03(ITriggerContext context) : base(context) { }
+        private class StateCinematic_페리온영웅Spawn_BossScript_03 : TriggerState {
+            internal StateCinematic_페리온영웅Spawn_BossScript_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4009}, arg2: false);
@@ -588,7 +588,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4500)) {
-                    return new StateCinematic_페리온영웅Appear_02(context);
+                    return new StateCinematic_페리온영웅Spawn_02(context);
                 }
 
                 return null;
@@ -597,8 +597,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class StateCinematic_페리온영웅Appear_02 : TriggerState {
-            internal StateCinematic_페리온영웅Appear_02(ITriggerContext context) : base(context) { }
+        private class StateCinematic_페리온영웅Spawn_02 : TriggerState {
+            internal StateCinematic_페리온영웅Spawn_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 4);
@@ -611,7 +611,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new StateCinematic_페리온영웅Appear_03(context);
+                    return new StateCinematic_페리온영웅Spawn_03(context);
                 }
 
                 return null;
@@ -620,8 +620,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class StateCinematic_페리온영웅Appear_03 : TriggerState {
-            internal StateCinematic_페리온영웅Appear_03(ITriggerContext context) : base(context) { }
+        private class StateCinematic_페리온영웅Spawn_03 : TriggerState {
+            internal StateCinematic_페리온영웅Spawn_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003388, msg: "$52010027_QD__MAIN__38$", duration: 3000);
@@ -632,7 +632,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new StateCinematic_페리온영웅Appear_04(context);
+                    return new StateCinematic_페리온영웅Spawn_04(context);
                 }
 
                 return null;
@@ -641,8 +641,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class StateCinematic_페리온영웅Appear_04 : TriggerState {
-            internal StateCinematic_페리온영웅Appear_04(ITriggerContext context) : base(context) { }
+        private class StateCinematic_페리온영웅Spawn_04 : TriggerState {
+            internal StateCinematic_페리온영웅Spawn_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
@@ -652,7 +652,7 @@ namespace Maple2.Trigger._52010027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    return new StateCinematic_페리온영웅Appear_05(context);
+                    return new StateCinematic_페리온영웅Spawn_05(context);
                 }
 
                 return null;
@@ -661,8 +661,8 @@ namespace Maple2.Trigger._52010027_qd {
             public override void OnExit() { }
         }
 
-        private class StateCinematic_페리온영웅Appear_05 : TriggerState {
-            internal StateCinematic_페리온영웅Appear_05(ITriggerContext context) : base(context) { }
+        private class StateCinematic_페리온영웅Spawn_05 : TriggerState {
+            internal StateCinematic_페리온영웅Spawn_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001}, arg2: true);

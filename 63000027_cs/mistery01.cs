@@ -100,7 +100,7 @@ namespace Maple2.Trigger._63000027_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 500, arg2: true);
-                context.SetSceneSkip(arg1: "VisionApp02", arg2: "nextState");
+                context.SetSceneSkip(state: new StateVisionApp02(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -413,7 +413,7 @@ namespace Maple2.Trigger._63000027_cs {
                 context.DestroyMonster(arg1: new[] {102});
                 context.CreateMonster(arg1: new[] {103}, arg2: false);
                 context.MoveUser(arg1: 63000027, arg2: 10, arg3: 9900);
-                context.SetSceneSkip(arg1: "VisionSayGoodbye04", arg2: "exit");
+                context.SetSceneSkip(state: new StateVisionSayGoodbye04(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

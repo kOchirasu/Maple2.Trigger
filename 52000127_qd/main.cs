@@ -59,7 +59,7 @@ namespace Maple2.Trigger._52000127_qd {
                 context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
                 context.MoveUser(arg1: 52000127, arg2: 6001);
                 context.SetSound(arg1: 7001, arg2: true);
-                context.SetSceneSkip(arg1: "end", arg2: "exit");
+                context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

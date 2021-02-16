@@ -103,7 +103,7 @@ namespace Maple2.Trigger._52000131_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State버튼Appear_01(context);
+                    return new State버튼Spawn_01(context);
                 }
 
                 return null;
@@ -112,8 +112,8 @@ namespace Maple2.Trigger._52000131_qd {
             public override void OnExit() { }
         }
 
-        private class State버튼Appear_01 : TriggerState {
-            internal State버튼Appear_01(ITriggerContext context) : base(context) { }
+        private class State버튼Spawn_01 : TriggerState {
+            internal State버튼Spawn_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._52000131_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State버튼Appear_02(context);
+                    return new State버튼Spawn_02(context);
                 }
 
                 return null;
@@ -130,8 +130,8 @@ namespace Maple2.Trigger._52000131_qd {
             public override void OnExit() { }
         }
 
-        private class State버튼Appear_02 : TriggerState {
-            internal State버튼Appear_02(ITriggerContext context) : base(context) { }
+        private class State버튼Spawn_02 : TriggerState {
+            internal State버튼Spawn_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2001");
@@ -139,7 +139,7 @@ namespace Maple2.Trigger._52000131_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State버튼Appear_03(context);
+                    return new State버튼Spawn_03(context);
                 }
 
                 return null;
@@ -148,8 +148,8 @@ namespace Maple2.Trigger._52000131_qd {
             public override void OnExit() { }
         }
 
-        private class State버튼Appear_03 : TriggerState {
-            internal State버튼Appear_03(ITriggerContext context) : base(context) { }
+        private class State버튼Spawn_03 : TriggerState {
+            internal State버튼Spawn_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2002");
@@ -189,7 +189,7 @@ namespace Maple2.Trigger._52000131_qd {
             internal State버튼과대화_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "마무리", arg2: "exit");
+                context.SetSceneSkip(state: new State마무리(context), arg2: "exit");
                 context.AddCinematicTalk(npcId: 11001540, msg: "$52000131_QD__52000131_MAIN__1$", duration: 3000, align: "right");
             }
 

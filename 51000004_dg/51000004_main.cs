@@ -25,7 +25,7 @@ namespace Maple2.Trigger._51000004_dg {
             internal State인트로(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "셋둘하나_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State셋둘하나_스킵완료(context), arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);

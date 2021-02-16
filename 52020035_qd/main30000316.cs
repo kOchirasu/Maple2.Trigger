@@ -62,7 +62,7 @@ namespace Maple2.Trigger._52020035_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "Skip01", arg2: "exit");
+                context.SetSceneSkip(state: new StateSkip01(context), arg2: "exit");
                 context.ShowCaption(type: "VerticalCaption", title: "라딘의 막사", desc: "$MyPCName$$pp:가,이$ 떠난 직후", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
             }
 
@@ -263,7 +263,7 @@ namespace Maple2.Trigger._52020035_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State흑성회Appear직전(context);
+                    return new State흑성회Spawn직전(context);
                 }
 
                 return null;
@@ -272,8 +272,8 @@ namespace Maple2.Trigger._52020035_qd {
             public override void OnExit() { }
         }
 
-        private class State흑성회Appear직전 : TriggerState {
-            internal State흑성회Appear직전(ITriggerContext context) : base(context) { }
+        private class State흑성회Spawn직전 : TriggerState {
+            internal State흑성회Spawn직전(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 9, arg2: "잠시 후, 라딘의 막사", arg3: false);

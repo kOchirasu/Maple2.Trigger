@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SpeedRacingMode") == 1) {
-                    return new StateTeleportationPortalAppear(context);
+                    return new StateTeleportationPortalSpawn(context);
                 }
 
                 if (context.GetUserValue(key: "SpeedRacingMode") == 2) {
@@ -57,8 +57,8 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnExit() { }
         }
 
-        private class StateTeleportationPortalAppear : TriggerState {
-            internal StateTeleportationPortalAppear(ITriggerContext context) : base(context) { }
+        private class StateTeleportationPortalSpawn : TriggerState {
+            internal StateTeleportationPortalSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 12000, arg2: true, arg3: true, arg4: true);
@@ -117,7 +117,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3800)) {
-                    return new StateTeleportationPortalAppear(context);
+                    return new StateTeleportationPortalSpawn(context);
                 }
 
                 return null;

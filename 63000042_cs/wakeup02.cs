@@ -46,7 +46,7 @@ namespace Maple2.Trigger._63000042_cs {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, msg: "$63000042_CS__WAKEUP02__0$", duration: 3000);
-                context.SetSceneSkip(arg1: "sitready", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSitReady(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -196,7 +196,7 @@ namespace Maple2.Trigger._63000042_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new StateSitready(context);
+                    return new StateSitReady(context);
                 }
 
                 return null;
@@ -205,8 +205,8 @@ namespace Maple2.Trigger._63000042_cs {
             public override void OnExit() { }
         }
 
-        private class StateSitready : TriggerState {
-            internal StateSitready(ITriggerContext context) : base(context) { }
+        private class StateSitReady : TriggerState {
+            internal StateSitReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPcEmotionLoop(arg1: "Sit_Ground_Idle_A", arg2: 13000f);
@@ -249,7 +249,7 @@ namespace Maple2.Trigger._63000042_cs {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_103");
                 context.AddCinematicTalk(npcId: 11003165, illustId: "Fray_normal", msg: "$63000042_CS__WAKEUP02__9$", duration: 3000, align: "Left");
-                context.SetSceneSkip(arg1: "end", arg2: "exit");
+                context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

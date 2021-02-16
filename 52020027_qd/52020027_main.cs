@@ -38,7 +38,7 @@ namespace Maple2.Trigger._52020027_qd {
             internal StateCamera_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Camera_종료", arg2: "exit");
+                context.SetSceneSkip(state: new StateCamera_종료(context), arg2: "exit");
                 context.MoveUser(arg1: 52020027, arg2: 2);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Sit_Down_A", arg3: 5000f);

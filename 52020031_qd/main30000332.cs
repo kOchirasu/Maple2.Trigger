@@ -63,7 +63,7 @@ namespace Maple2.Trigger._52020031_qd {
                 context.CameraSelectPath(arg1: new[] {4005, 4001}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.ShowCaption(type: "VerticalCaption", title: "천공의 제단", desc: "천공의 심장의 보관소", align: "centerLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 4000, scale: 2f);
-                context.SetSceneSkip(arg1: "끝", arg2: "exit");
+                context.SetSceneSkip(state: new State끝(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {
@@ -354,7 +354,7 @@ namespace Maple2.Trigger._52020031_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State하렌Appear2(context);
+                    return new State하렌Spawn2(context);
                 }
 
                 return null;
@@ -363,8 +363,8 @@ namespace Maple2.Trigger._52020031_qd {
             public override void OnExit() { }
         }
 
-        private class State하렌Appear2 : TriggerState {
-            internal State하렌Appear2(ITriggerContext context) : base(context) { }
+        private class State하렌Spawn2 : TriggerState {
+            internal State하렌Spawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4003}, arg2: false);

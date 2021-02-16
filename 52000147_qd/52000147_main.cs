@@ -213,7 +213,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State목격_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "삼자대화_01");
+                context.SetSceneSkip(state: new State삼자대화_01(context));
                 context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__1$", duration: 4000, illustId: "DarkLord_normal", align: "right");
             }
 
@@ -306,7 +306,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State삼자대화_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "하스터와전투_01", arg2: "nextState");
+                context.SetSceneSkip(state: new State하스터Combat_01(context), arg2: "nextState");
                 context.AddCinematicTalk(npcId: 0, msg: "$52000147_QD__52000147_MAIN__2$", duration: 3500, align: "right");
             }
 
@@ -738,7 +738,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State전투후대화_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "전투후대화_02");
+                context.SetSceneSkip(state: new State전투후대화_02(context));
                 context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__17$", duration: 3000, illustId: "DarkLord_normal", align: "right");
             }
 
@@ -777,7 +777,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State전투후대화_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "전투후대화_03_01");
+                context.SetSceneSkip(state: new State전투후대화_03_01(context));
                 context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__18$", duration: 3000, illustId: "Hastur_normal", align: "left");
             }
 
@@ -815,7 +815,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State전투후대화_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "전투후대화_05");
+                context.SetSceneSkip(state: new State전투후대화_05(context));
                 context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__19$", duration: 3000, illustId: "DarkLord_normal", align: "right");
                 context.AddCinematicTalk(npcId: 11003382, msg: "$52000147_QD__52000147_MAIN__20$", duration: 2500, illustId: "DarkLord_normal", align: "right");
             }
@@ -945,7 +945,7 @@ namespace Maple2.Trigger._52000147_qd {
             internal State전투후대화_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "전투후대화_12");
+                context.SetSceneSkip(state: new State전투후대화_12(context));
                 context.AddCinematicTalk(npcId: 11003189, msg: "$52000147_QD__52000147_MAIN__21$", duration: 3000, illustId: "Hastur_normal", align: "left");
             }
 

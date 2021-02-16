@@ -162,7 +162,7 @@ namespace Maple2.Trigger._63000077_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetSceneSkip(arg1: "화난보보스_01", arg2: "nextState");
+                context.SetSceneSkip(state: new State화난보Boss_01(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -707,7 +707,7 @@ namespace Maple2.Trigger._63000077_cs {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetSceneSkip(arg1: "클라우스대화_03", arg2: "nextState");
+                context.SetSceneSkip(state: new State클라우스대화_03(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -843,7 +843,7 @@ namespace Maple2.Trigger._63000077_cs {
                 context.SetCinematicUI(arg1: 9, arg2: "$63000077_CS__63000077_MAIN__15$");
                 context.MoveUser(arg1: 63000077, arg2: 4);
                 context.CameraSelect(arg1: 8008, arg2: true);
-                context.SetSceneSkip(arg1: "업적_01", arg2: "exit");
+                context.SetSceneSkip(state: new StateAchievement_01(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

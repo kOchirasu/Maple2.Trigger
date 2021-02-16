@@ -32,7 +32,7 @@ namespace Maple2.Trigger._02000081_in {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State토무Appear(context);
+                    return new State토무Spawn(context);
                 }
 
                 return null;
@@ -41,8 +41,8 @@ namespace Maple2.Trigger._02000081_in {
             public override void OnExit() { }
         }
 
-        private class State토무Appear : TriggerState {
-            internal State토무Appear(ITriggerContext context) : base(context) { }
+        private class State토무Spawn : TriggerState {
+            internal State토무Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {202}, arg2: true);

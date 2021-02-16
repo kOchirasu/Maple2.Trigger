@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new State양Appear(context);
+                    return new State양Spawn(context);
                 }
 
                 return null;
@@ -55,8 +55,8 @@ namespace Maple2.Trigger._52000006_qd {
             public override void OnExit() { }
         }
 
-        private class State양Appear : TriggerState {
-            internal State양Appear(ITriggerContext context) : base(context) { }
+        private class State양Spawn : TriggerState {
+            internal State양Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._52000006_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new StateCinematic끝(context);
+                    return new StateEndCinematic(context);
                 }
 
                 return null;
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._52000006_qd {
             public override void OnExit() { }
         }
 
-        private class StateCinematic끝 : TriggerState {
-            internal StateCinematic끝(ITriggerContext context) : base(context) { }
+        private class StateEndCinematic : TriggerState {
+            internal StateEndCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {201});

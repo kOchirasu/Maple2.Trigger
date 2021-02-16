@@ -345,7 +345,7 @@ namespace Maple2.Trigger._52000085_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State홀슈타트Appear(context);
+                    return new State홀슈타트Spawn(context);
                 }
 
                 return null;
@@ -354,8 +354,8 @@ namespace Maple2.Trigger._52000085_qd {
             public override void OnExit() { }
         }
 
-        private class State홀슈타트Appear : TriggerState {
-            internal State홀슈타트Appear(ITriggerContext context) : base(context) { }
+        private class State홀슈타트Spawn : TriggerState {
+            internal State홀슈타트Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 306, arg2: true);

@@ -100,7 +100,7 @@ namespace Maple2.Trigger._52000037_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 602, arg2: "MS2PatrolData_3002");
                 context.AddCinematicTalk(npcId: 11003202, illustId: "Jordy_normal", msg: "$52000037_QD__MAIN__0$", duration: 3000, align: "Right");
-                context.SetSceneSkip(arg1: "fadeout", arg2: "exit");
+                context.SetSceneSkip(state: new StateFadeout(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

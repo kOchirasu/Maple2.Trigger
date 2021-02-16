@@ -90,7 +90,7 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "ZakumBodyAppearance") == 1) {
-                    return new State자쿰몸체Appear(context);
+                    return new State자쿰몸체Spawn(context);
                 }
 
                 if (context.GetUserValue(key: "ZakumDungeonEnd") == 1) {
@@ -111,8 +111,8 @@ namespace Maple2.Trigger._02000426_bf {
             public override void OnExit() { }
         }
 
-        private class State자쿰몸체Appear : TriggerState {
-            internal State자쿰몸체Appear(ITriggerContext context) : base(context) { }
+        private class State자쿰몸체Spawn : TriggerState {
+            internal State자쿰몸체Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "ZakumBodyAppearance", value: 0);
@@ -120,15 +120,15 @@ namespace Maple2.Trigger._02000426_bf {
 
             public override TriggerState Execute() {
                 if (context.GetDungeonId() == 23040003) {
-                    return new State어려운난이도_자쿰몸Appear(context);
+                    return new State어려운난이도_자쿰몸Spawn(context);
                 }
 
                 if (context.GetDungeonId() == 23041003) {
-                    return new StateEasyDifficulty_자쿰몸Appear(context);
+                    return new StateEasyDifficulty_자쿰몸Spawn(context);
                 }
 
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State어려운난이도_자쿰몸Appear(context);
+                    return new State어려운난이도_자쿰몸Spawn(context);
                 }
 
                 return null;
@@ -137,8 +137,8 @@ namespace Maple2.Trigger._02000426_bf {
             public override void OnExit() { }
         }
 
-        private class State어려운난이도_자쿰몸Appear : TriggerState {
-            internal State어려운난이도_자쿰몸Appear(ITriggerContext context) : base(context) { }
+        private class State어려운난이도_자쿰몸Spawn : TriggerState {
+            internal State어려운난이도_자쿰몸Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2011}, arg2: false);
@@ -155,8 +155,8 @@ namespace Maple2.Trigger._02000426_bf {
             public override void OnExit() { }
         }
 
-        private class StateEasyDifficulty_자쿰몸Appear : TriggerState {
-            internal StateEasyDifficulty_자쿰몸Appear(ITriggerContext context) : base(context) { }
+        private class StateEasyDifficulty_자쿰몸Spawn : TriggerState {
+            internal StateEasyDifficulty_자쿰몸Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2012}, arg2: false);

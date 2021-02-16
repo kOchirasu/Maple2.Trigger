@@ -21,7 +21,7 @@ namespace Maple2.Trigger._52010058_qd {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "EventNpcAppearance") == 1) {
-                    return new State우호적NPCAppear(context);
+                    return new State우호적NPCSpawn(context);
                 }
 
                 return null;
@@ -30,8 +30,8 @@ namespace Maple2.Trigger._52010058_qd {
             public override void OnExit() { }
         }
 
-        private class State우호적NPCAppear : TriggerState {
-            internal State우호적NPCAppear(ITriggerContext context) : base(context) { }
+        private class State우호적NPCSpawn : TriggerState {
+            internal State우호적NPCSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {111}, arg2: true);

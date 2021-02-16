@@ -59,7 +59,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateScene_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "scene_06_ready", arg2: "exit");
+                context.SetSceneSkip(state: new StateScene_06_ready(context), arg2: "exit");
                 context.SetConversation(arg1: 2, arg2: 11001956, arg3: "$02000471_BF__EVENT_02__0$", arg4: 5);
                 context.MoveNpc(arg1: 199, arg2: "MS2PatrolData_2001");
             }

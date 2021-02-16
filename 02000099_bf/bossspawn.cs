@@ -73,7 +73,7 @@ namespace Maple2.Trigger._02000099_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State1차Appear(context);
+                    return new State1차Spawn(context);
                 }
 
                 return null;
@@ -82,8 +82,8 @@ namespace Maple2.Trigger._02000099_bf {
             public override void OnExit() { }
         }
 
-        private class State1차Appear : TriggerState {
-            internal State1차Appear(ITriggerContext context) : base(context) { }
+        private class State1차Spawn : TriggerState {
+            internal State1차Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2001}, arg2: false);
@@ -92,7 +92,7 @@ namespace Maple2.Trigger._02000099_bf {
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SetSkillA") == 1) {
                     context.SetMesh(arg1: new[] {3101, 3102, 3103, 3104, 3105, 3106}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    return new State2차AppearWait(context);
+                    return new State2차SpawnWait(context);
                 }
 
                 return null;
@@ -101,14 +101,14 @@ namespace Maple2.Trigger._02000099_bf {
             public override void OnExit() { }
         }
 
-        private class State2차AppearWait : TriggerState {
-            internal State2차AppearWait(ITriggerContext context) : base(context) { }
+        private class State2차SpawnWait : TriggerState {
+            internal State2차SpawnWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    return new State2차Appear(context);
+                    return new State2차Spawn(context);
                 }
 
                 return null;
@@ -117,8 +117,8 @@ namespace Maple2.Trigger._02000099_bf {
             public override void OnExit() { }
         }
 
-        private class State2차Appear : TriggerState {
-            internal State2차Appear(ITriggerContext context) : base(context) { }
+        private class State2차Spawn : TriggerState {
+            internal State2차Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2002}, arg2: false);
@@ -127,7 +127,7 @@ namespace Maple2.Trigger._02000099_bf {
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "SetSkillB") == 1) {
                     context.SetMesh(arg1: new[] {3201, 3202, 3203, 3204, 3205, 3206, 3207, 3208}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                    return new StateEliteAppear(context);
+                    return new StateEliteSpawn(context);
                 }
 
                 return null;
@@ -136,8 +136,8 @@ namespace Maple2.Trigger._02000099_bf {
             public override void OnExit() { }
         }
 
-        private class StateEliteAppear : TriggerState {
-            internal StateEliteAppear(ITriggerContext context) : base(context) { }
+        private class StateEliteSpawn : TriggerState {
+            internal StateEliteSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

@@ -234,7 +234,7 @@ namespace Maple2.Trigger._52000129_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMaskEff_fadein_1sec.xml");
                 context.SetPcEmotionSequence(arg1: "Talk_A");
-                context.SetSceneSkip(arg1: "마무리", arg2: "exit");
+                context.SetSceneSkip(state: new State마무리(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

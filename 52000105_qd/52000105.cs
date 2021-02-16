@@ -76,7 +76,7 @@ namespace Maple2.Trigger._52000105_qd {
             internal State할아버지대련01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(arg1: 1);
                 context.MoveUser(arg1: 52000105, arg2: 2);
@@ -261,7 +261,7 @@ namespace Maple2.Trigger._52000105_qd {
             internal State대련종료씬시작02_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_2(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -476,7 +476,7 @@ namespace Maple2.Trigger._52000105_qd {
             internal State떠나는할아버지01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "떠나는할아버지07", arg2: "exit");
+                context.SetSceneSkip(state: new State떠나는할아버지07(context), arg2: "exit");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);

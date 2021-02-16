@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02020311_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {901})) {
-                    return new State티마이온Appear(context);
+                    return new State티마이온Spawn(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._02020311_bf {
             public override void OnExit() { }
         }
 
-        private class State티마이온Appear : TriggerState {
-            internal State티마이온Appear(ITriggerContext context) : base(context) { }
+        private class State티마이온Spawn : TriggerState {
+            internal State티마이온Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SideNpcTalk(type: "talk", npcId: 11004715, illust: "Eone_serious", script: "$02020311_BF__MAIN__0$", duration: 3000);

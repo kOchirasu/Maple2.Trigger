@@ -1518,7 +1518,7 @@ namespace Maple2.Trigger._61000007_me {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State다리Appear(context);
+                    return new State다리Spawn(context);
                 }
 
                 return null;
@@ -1557,7 +1557,7 @@ namespace Maple2.Trigger._61000007_me {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "40")) {
-                    return new State다리Appear(context);
+                    return new State다리Spawn(context);
                 }
 
                 return null;
@@ -1566,8 +1566,8 @@ namespace Maple2.Trigger._61000007_me {
             public override void OnExit() { }
         }
 
-        private class State다리Appear : TriggerState {
-            internal State다리Appear(ITriggerContext context) : base(context) { }
+        private class State다리Spawn : TriggerState {
+            internal State다리Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.UnSetMiniGameAreaForHack();

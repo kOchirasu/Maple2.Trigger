@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52000101_qd {
             internal State엘리니아전경씬01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(arg1: new[] {1100, 1101}, arg2: false);
                 context.SetCinematicUI(arg1: 1);
@@ -155,7 +155,7 @@ namespace Maple2.Trigger._52000101_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {4001})) {
-                    return new State케이틀린Appear씬01(context);
+                    return new State케이틀린Spawn씬01(context);
                 }
 
                 return null;
@@ -164,8 +164,8 @@ namespace Maple2.Trigger._52000101_qd {
             public override void OnExit() { }
         }
 
-        private class State케이틀린Appear씬01 : TriggerState {
-            internal State케이틀린Appear씬01(ITriggerContext context) : base(context) { }
+        private class State케이틀린Spawn씬01 : TriggerState {
+            internal State케이틀린Spawn씬01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -175,7 +175,7 @@ namespace Maple2.Trigger._52000101_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State케이틀린Appear씬02(context);
+                    return new State케이틀린Spawn씬02(context);
                 }
 
                 return null;
@@ -184,11 +184,11 @@ namespace Maple2.Trigger._52000101_qd {
             public override void OnExit() { }
         }
 
-        private class State케이틀린Appear씬02 : TriggerState {
-            internal State케이틀린Appear씬02(ITriggerContext context) : base(context) { }
+        private class State케이틀린Spawn씬02 : TriggerState {
+            internal State케이틀린Spawn씬02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_2(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.MoveNpc(arg1: 200, arg2: "MS2PatrolData_caitCome");
                 context.CameraSelectPath(arg1: new[] {1002, 1003}, arg2: false);
@@ -196,7 +196,7 @@ namespace Maple2.Trigger._52000101_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State케이틀린Appear씬03(context);
+                    return new State케이틀린Spawn씬03(context);
                 }
 
                 return null;
@@ -205,8 +205,8 @@ namespace Maple2.Trigger._52000101_qd {
             public override void OnExit() { }
         }
 
-        private class State케이틀린Appear씬03 : TriggerState {
-            internal State케이틀린Appear씬03(ITriggerContext context) : base(context) { }
+        private class State케이틀린Spawn씬03 : TriggerState {
+            internal State케이틀린Spawn씬03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {1004, 1005}, arg2: false);
@@ -214,7 +214,7 @@ namespace Maple2.Trigger._52000101_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State케이틀린Appear씬04_b(context);
+                    return new State케이틀린Spawn씬04_b(context);
                 }
 
                 return null;
@@ -223,8 +223,8 @@ namespace Maple2.Trigger._52000101_qd {
             public override void OnExit() { }
         }
 
-        private class State케이틀린Appear씬04_b : TriggerState {
-            internal State케이틀린Appear씬04_b(ITriggerContext context) : base(context) { }
+        private class State케이틀린Spawn씬04_b : TriggerState {
+            internal State케이틀린Spawn씬04_b(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 200, arg2: "Bore_B");
@@ -232,7 +232,7 @@ namespace Maple2.Trigger._52000101_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 100)) {
-                    return new State케이틀린Appear씬04(context);
+                    return new State케이틀린Spawn씬04(context);
                 }
 
                 return null;
@@ -241,8 +241,8 @@ namespace Maple2.Trigger._52000101_qd {
             public override void OnExit() { }
         }
 
-        private class State케이틀린Appear씬04 : TriggerState {
-            internal State케이틀린Appear씬04(ITriggerContext context) : base(context) { }
+        private class State케이틀린Spawn씬04 : TriggerState {
+            internal State케이틀린Spawn씬04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowCaption(type: "NameCaption", title: "$52000101_QD__52000101__3$", desc: "$52000101_QD__52000101__4$", align: "center", offsetRateX: -0.15f, offsetRateY: 0.15f, duration: 10000, scale: 2.0f);
@@ -250,7 +250,7 @@ namespace Maple2.Trigger._52000101_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State케이틀린Appear씬04_1(context);
+                    return new State케이틀린Spawn씬04_1(context);
                 }
 
                 return null;
@@ -259,8 +259,8 @@ namespace Maple2.Trigger._52000101_qd {
             public override void OnExit() { }
         }
 
-        private class State케이틀린Appear씬04_1 : TriggerState {
-            internal State케이틀린Appear씬04_1(ITriggerContext context) : base(context) { }
+        private class State케이틀린Spawn씬04_1 : TriggerState {
+            internal State케이틀린Spawn씬04_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSceneSkip();
@@ -268,7 +268,7 @@ namespace Maple2.Trigger._52000101_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State케이틀린Appear씬05(context);
+                    return new State케이틀린Spawn씬05(context);
                 }
 
                 return null;
@@ -288,7 +288,7 @@ namespace Maple2.Trigger._52000101_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State케이틀린Appear씬05(context);
+                    return new State케이틀린Spawn씬05(context);
                 }
 
                 return null;
@@ -297,8 +297,8 @@ namespace Maple2.Trigger._52000101_qd {
             public override void OnExit() { }
         }
 
-        private class State케이틀린Appear씬05 : TriggerState {
-            internal State케이틀린Appear씬05(ITriggerContext context) : base(context) { }
+        private class State케이틀린Spawn씬05 : TriggerState {
+            internal State케이틀린Spawn씬05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 0);
@@ -328,7 +328,7 @@ namespace Maple2.Trigger._52000101_qd {
             internal State케이틀린화남01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "케이틀린화남06", arg2: "exit");
+                context.SetSceneSkip(state: new State케이틀린화남06(context), arg2: "exit");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);

@@ -72,7 +72,7 @@ namespace Maple2.Trigger._52020029_qd {
                 context.AddCinematicTalk(npcId: 11003755, msg: "어떤가요? 사용할 수 있겠어요?", duration: 3000);
                 context.AddCinematicTalk(npcId: 11003717, msg: "절 너무 물로보면 곤란합니다.", duration: 3000);
                 context.AddCinematicTalk(npcId: 11003755, msg: "그럼 순서대로 검색해볼까요?", duration: 3000);
-                context.SetSceneSkip(arg1: "이동", arg2: "exit");
+                context.SetSceneSkip(state: new State이동(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

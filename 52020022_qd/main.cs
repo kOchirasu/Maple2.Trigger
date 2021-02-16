@@ -213,7 +213,7 @@ namespace Maple2.Trigger._52020022_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "레지스탕스_스킵완료", arg2: "exit");
+                context.SetSceneSkip(state: new State레지스탕스_스킵완료(context), arg2: "exit");
                 context.MoveUserPath(arg1: "MS2PatrolData_PC_Walkin");
             }
 
@@ -482,7 +482,7 @@ namespace Maple2.Trigger._52020022_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "아르망_스킵완료", arg2: "exit");
+                context.SetSceneSkip(state: new State아르망_스킵완료(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {
@@ -608,7 +608,7 @@ namespace Maple2.Trigger._52020022_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "세리하_스킵완료", arg2: "exit");
+                context.SetSceneSkip(state: new State세리하_스킵완료(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

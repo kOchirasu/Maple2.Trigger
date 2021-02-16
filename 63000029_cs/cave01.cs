@@ -355,7 +355,7 @@ namespace Maple2.Trigger._63000029_cs {
             internal StateEnteranceBlock03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "LaozApp05_CSkip", arg2: "nextState");
+                context.SetSceneSkip(state: new StateLaozApp05_CSkip(context), arg2: "nextState");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetEffect(arg1: new[] {5003}, arg2: true);
@@ -711,7 +711,7 @@ namespace Maple2.Trigger._63000029_cs {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetCinematicUI(arg1: 4);
-                context.SetSceneSkip(arg1: "LaozNKahnTalk18_CSkip", arg2: "nextState");
+                context.SetSceneSkip(state: new StateLaozNKahnTalk18_CSkip(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -1781,7 +1781,7 @@ namespace Maple2.Trigger._63000029_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 633, arg2: true);
-                context.SetSceneSkip(arg1: "Earthquake_CSkip", arg2: "nextState");
+                context.SetSceneSkip(state: new StateEarthquake_CSkip(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

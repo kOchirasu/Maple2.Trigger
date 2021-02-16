@@ -789,7 +789,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal State카드반StartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "카드반연출종료", arg2: "nextState");
+                context.SetSceneSkip(state: new State카드반StopCinematic(context), arg2: "nextState");
                 context.SetEffect(arg1: new[] {602}, arg2: true);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
@@ -1075,7 +1075,7 @@ namespace Maple2.Trigger._52000076_qd {
                 context.MoveNpc(arg1: 1400, arg2: "MS2PatrolData_1400");
                 context.CameraSelect(arg1: 312, arg2: true);
                 context.SetConversation(arg1: 1, arg2: 1400, arg3: "$52000076_QD__MAIN__0$", arg4: 4, arg5: 2);
-                context.SetSceneSkip(arg1: "EvilKatvanLeave04", arg2: "nextState");
+                context.SetSceneSkip(state: new StateEvilKatvanLeave04(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -2048,7 +2048,7 @@ namespace Maple2.Trigger._52000076_qd {
             internal StateLennonTalk30(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "EveTalk31Skip", arg2: "nextState");
+                context.SetSceneSkip(state: new StateEveTalk31Skip(context), arg2: "nextState");
                 context.SetNpcEmotionSequence(arg1: 1310, arg2: "Talk_A");
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000076_QD__MAIN__23$", arg4: 5);
             }

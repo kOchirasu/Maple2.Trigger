@@ -99,7 +99,7 @@ namespace Maple2.Trigger._52000132_qd {
                 context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.MoveUserPath(arg1: "MS2PatrolData_PC00");
-                context.SetSceneSkip(arg1: "아이들과인사_스킵완료", arg2: "exit");
+                context.SetSceneSkip(state: new State아이들과인사_스킵완료(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

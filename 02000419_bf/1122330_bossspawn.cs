@@ -11,7 +11,7 @@ namespace Maple2.Trigger._02000419_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new StateMonsterAppear(context);
+                    return new StateMonsterSpawn(context);
                 }
 
                 return null;
@@ -20,8 +20,8 @@ namespace Maple2.Trigger._02000419_bf {
             public override void OnExit() { }
         }
 
-        private class StateMonsterAppear : TriggerState {
-            internal StateMonsterAppear(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn : TriggerState {
+            internal StateMonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2000}, arg2: false);

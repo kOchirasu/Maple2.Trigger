@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52100108_qd {
                 context.CameraSelectPath(arg1: new[] {4006, 4005}, arg2: false);
                 context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 0, msg: "$52100108_QD__MAIN__0$", duration: 3000);
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

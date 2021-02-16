@@ -55,7 +55,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State투르카의Appear(context);
+                    return new State투르카의Spawn(context);
                 }
 
                 return null;
@@ -64,18 +64,18 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카의Appear : TriggerState {
-            internal State투르카의Appear(ITriggerContext context) : base(context) { }
+        private class State투르카의Spawn : TriggerState {
+            internal State투르카의Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4031}, arg2: false);
                 context.AddCinematicTalk(npcId: 11003762, msg: "천공의 심장을 손에 넣었군.", duration: 3000);
-                context.SetSceneSkip(arg1: "공명준비", arg2: "exit");
+                context.SetSceneSkip(state: new State공명Prepare이오네(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State투르카의Appear_01(context);
+                    return new State투르카의Spawn_01(context);
                 }
 
                 return null;
@@ -84,8 +84,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카의Appear_01 : TriggerState {
-            internal State투르카의Appear_01(ITriggerContext context) : base(context) { }
+        private class State투르카의Spawn_01 : TriggerState {
+            internal State투르카의Spawn_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionSequence(arg1: 103, arg2: "Bore_B");
@@ -94,7 +94,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State투르카의Appear02(context);
+                    return new State투르카의Spawn02(context);
                 }
 
                 return null;
@@ -103,8 +103,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카의Appear02 : TriggerState {
-            internal State투르카의Appear02(ITriggerContext context) : base(context) { }
+        private class State투르카의Spawn02 : TriggerState {
+            internal State투르카의Spawn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4019}, arg2: false);
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State투르카의Appear03(context);
+                    return new State투르카의Spawn03(context);
                 }
 
                 return null;
@@ -125,8 +125,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카의Appear03 : TriggerState {
-            internal State투르카의Appear03(ITriggerContext context) : base(context) { }
+        private class State투르카의Spawn03 : TriggerState {
+            internal State투르카의Spawn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4018}, arg2: false);
@@ -136,7 +136,7 @@ namespace Maple2.Trigger._52020030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State투르카의Appear04(context);
+                    return new State투르카의Spawn04(context);
                 }
 
                 return null;
@@ -145,8 +145,8 @@ namespace Maple2.Trigger._52020030_qd {
             public override void OnExit() { }
         }
 
-        private class State투르카의Appear04 : TriggerState {
-            internal State투르카의Appear04(ITriggerContext context) : base(context) { }
+        private class State투르카의Spawn04 : TriggerState {
+            internal State투르카의Spawn04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4019}, arg2: false);

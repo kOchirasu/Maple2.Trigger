@@ -152,7 +152,7 @@ namespace Maple2.Trigger._52000133_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000133_QD__MAIN__0$", duration: 2000, align: "left");
-                context.SetSceneSkip(arg1: "케이틀린첫만남_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State케이틀린첫만남_스킵완료(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -350,7 +350,7 @@ namespace Maple2.Trigger._52000133_qd {
                 context.AddCinematicTalk(npcId: 11003258, illustId: "Caitlyn_normal", msg: "$52000133_QD__MAIN__5$", duration: 3000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Bore_A", arg3: 4600f);
                 context.MoveUserPath(arg1: "2_MS2PatrolData_PC01");
-                context.SetSceneSkip(arg1: "예민한아노스_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State예민한아노스_스킵완료(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

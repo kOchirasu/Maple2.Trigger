@@ -289,7 +289,7 @@ namespace Maple2.Trigger._63000025_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 500, arg2: true);
-                context.SetSceneSkip(arg1: "Dialogue10", arg2: "nextState");
+                context.SetSceneSkip(state: new StateDialogue10(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -870,7 +870,7 @@ namespace Maple2.Trigger._63000025_cs {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {6104}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001557, arg3: "$63000025_CS__TRAINING01__6$", arg4: 5);
-                context.SetSceneSkip(arg1: "FeelStrange18", arg2: "nextState");
+                context.SetSceneSkip(state: new StateFeelStrange18(context), arg2: "nextState");
                 context.SetSkip(state: new StateFeelStrange02(context));
             }
 
@@ -1358,7 +1358,7 @@ namespace Maple2.Trigger._63000025_cs {
             internal StateTimeToLeave03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "NpcLeave_CSkip", arg2: "nextState");
+                context.SetSceneSkip(state: new StateNpcLeave_CSkip(context), arg2: "nextState");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
             }

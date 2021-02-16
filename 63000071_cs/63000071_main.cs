@@ -9,7 +9,7 @@ namespace Maple2.Trigger._63000071_cs {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    return new StateOpeningscene_start(context);
+                    return new StateOpeningScene_start(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._63000071_cs {
             public override void OnExit() { }
         }
 
-        private class StateOpeningscene_start : TriggerState {
-            internal StateOpeningscene_start(ITriggerContext context) : base(context) { }
+        private class StateOpeningScene_start : TriggerState {
+            internal StateOpeningScene_start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -28,12 +28,12 @@ namespace Maple2.Trigger._63000071_cs {
                 context.CameraSelectPath(arg1: new[] {8000, 8001}, arg2: false);
                 context.CreateMonster(arg1: new[] {101}, arg2: false);
                 context.SetEffect(arg1: new[] {5000}, arg2: true);
-                context.SetSceneSkip(arg1: "openingskip_1", arg2: "exit");
+                context.SetSceneSkip(state: new StateOpeningSkip_1(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new StateOpeningscene_1_1(context);
+                    return new StateOpeningScene_1_1(context);
                 }
 
                 return null;
@@ -44,8 +44,8 @@ namespace Maple2.Trigger._63000071_cs {
             }
         }
 
-        private class StateOpeningscene_1_1 : TriggerState {
-            internal StateOpeningscene_1_1(ITriggerContext context) : base(context) { }
+        private class StateOpeningScene_1_1 : TriggerState {
+            internal StateOpeningScene_1_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
@@ -56,7 +56,7 @@ namespace Maple2.Trigger._63000071_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new StateOpeningscene_1_2(context);
+                    return new StateOpeningScene_1_2(context);
                 }
 
                 return null;
@@ -65,8 +65,8 @@ namespace Maple2.Trigger._63000071_cs {
             public override void OnExit() { }
         }
 
-        private class StateOpeningscene_1_2 : TriggerState {
-            internal StateOpeningscene_1_2(ITriggerContext context) : base(context) { }
+        private class StateOpeningScene_1_2 : TriggerState {
+            internal StateOpeningScene_1_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Attack_Idle_A", arg3: 3500f);
@@ -75,7 +75,7 @@ namespace Maple2.Trigger._63000071_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new StateOpeningscene_1_3(context);
+                    return new StateOpeningScene_1_3(context);
                 }
 
                 return null;
@@ -84,8 +84,8 @@ namespace Maple2.Trigger._63000071_cs {
             public override void OnExit() { }
         }
 
-        private class StateOpeningscene_1_3 : TriggerState {
-            internal StateOpeningscene_1_3(ITriggerContext context) : base(context) { }
+        private class StateOpeningScene_1_3 : TriggerState {
+            internal StateOpeningScene_1_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Stun_A", arg3: 8000f);
@@ -95,7 +95,7 @@ namespace Maple2.Trigger._63000071_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 8500)) {
-                    return new StateOpeningscene_2(context);
+                    return new StateOpeningScene_2(context);
                 }
 
                 return null;
@@ -109,8 +109,8 @@ namespace Maple2.Trigger._63000071_cs {
             }
         }
 
-        private class StateOpeningscene_2 : TriggerState {
-            internal StateOpeningscene_2(ITriggerContext context) : base(context) { }
+        private class StateOpeningScene_2 : TriggerState {
+            internal StateOpeningScene_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
@@ -121,7 +121,7 @@ namespace Maple2.Trigger._63000071_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 7000)) {
-                    return new StateOpeningscene_3(context);
+                    return new StateOpeningScene_3(context);
                 }
 
                 return null;
@@ -133,8 +133,8 @@ namespace Maple2.Trigger._63000071_cs {
             }
         }
 
-        private class StateOpeningscene_3 : TriggerState {
-            internal StateOpeningscene_3(ITriggerContext context) : base(context) { }
+        private class StateOpeningScene_3 : TriggerState {
+            internal StateOpeningScene_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11004310, msg: "$63000071_CS__63000071_MAIN__6$", duration: 2500);
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._63000071_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9500)) {
-                    return new StateOpeningscene_end(context);
+                    return new StateOpeningScene_end(context);
                 }
 
                 return null;
@@ -153,8 +153,8 @@ namespace Maple2.Trigger._63000071_cs {
             public override void OnExit() { }
         }
 
-        private class StateOpeningscene_end : TriggerState {
-            internal StateOpeningscene_end(ITriggerContext context) : base(context) { }
+        private class StateOpeningScene_end : TriggerState {
+            internal StateOpeningScene_end(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
@@ -175,8 +175,8 @@ namespace Maple2.Trigger._63000071_cs {
             }
         }
 
-        private class StateOpeningskip_1 : TriggerState {
-            internal StateOpeningskip_1(ITriggerContext context) : base(context) { }
+        private class StateOpeningSkip_1 : TriggerState {
+            internal StateOpeningSkip_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
@@ -249,7 +249,7 @@ namespace Maple2.Trigger._63000071_cs {
                 context.VisibleMyPc(isVisible: false);
                 context.CameraSelectPath(arg1: new[] {8000, 8001}, arg2: false);
                 context.SetOnetimeEffect(id: 4, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_halfsec.xml");
-                context.SetSceneSkip(arg1: "endingskip_1", arg2: "exit");
+                context.SetSceneSkip(state: new StateEndingskip_1(context), arg2: "exit");
                 context.SetEffect(arg1: new[] {5004, 5005}, arg2: false);
             }
 

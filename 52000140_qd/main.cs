@@ -101,7 +101,7 @@ namespace Maple2.Trigger._52000140_qd {
             internal State삼자대화_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "투르카소멸_01", arg2: "nextState");
+                context.SetSceneSkip(state: new State투르카소멸_01(context), arg2: "nextState");
                 context.AddCinematicTalk(npcId: 0, msg: "$52000140_QD__MAIN__0$", duration: 2500);
             }
 
@@ -281,7 +281,7 @@ namespace Maple2.Trigger._52000140_qd {
             internal State알론과대화_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "투르카와전투_01", arg2: "nextState");
+                context.SetSceneSkip(state: new State투르카Combat_01(context), arg2: "nextState");
                 context.AddCinematicTalk(npcId: 0, msg: "$52000140_QD__MAIN__4$", duration: 3000);
             }
 

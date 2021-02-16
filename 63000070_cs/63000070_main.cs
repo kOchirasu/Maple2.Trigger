@@ -150,7 +150,7 @@ namespace Maple2.Trigger._63000070_cs {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8000, 8001}, arg2: false);
-                context.SetSceneSkip(arg1: "sceneskip_1", arg2: "exit");
+                context.SetSceneSkip(state: new StateSceneskip_1(context), arg2: "exit");
                 context.AddCinematicTalk(npcId: 11004289, illustId: "Rue_Halloween", msg: "$63000070_CS__63000070_MAIN__0$", duration: 3000);
             }
 
@@ -573,7 +573,7 @@ namespace Maple2.Trigger._63000070_cs {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetInteractObject(arg1: new[] {32000015}, arg2: 1);
                 context.SetMesh(arg1: new[] {529}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
-                context.SetSceneSkip(arg1: "sceneskip_2", arg2: "exit");
+                context.SetSceneSkip(state: new StateSceneskip_2(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {
@@ -732,7 +732,7 @@ namespace Maple2.Trigger._63000070_cs {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSceneSkip(arg1: "sceneskip_3", arg2: "exit");
+                context.SetSceneSkip(state: new StateSceneskip_3(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

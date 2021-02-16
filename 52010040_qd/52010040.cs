@@ -154,7 +154,7 @@ namespace Maple2.Trigger._52010040_qd {
             internal State엔딩Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "quit", arg2: "nextState");
+                context.SetSceneSkip(state: new StateQuit(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.AddCinematicTalk(npcId: 11003536, illustId: "Neirin_normal", msg: "$52010040_QD__52010040__2$", duration: 6200, align: "right");
                 context.CameraSelectPath(arg1: new[] {2012, 2013}, arg2: false);

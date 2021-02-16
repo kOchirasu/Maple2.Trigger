@@ -67,7 +67,7 @@ namespace Maple2.Trigger._52010008_qd {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000851}, arg2: 0)) {
-                    return new State죄수Appear01(context);
+                    return new State죄수Spawn01(context);
                 }
 
                 return null;
@@ -76,8 +76,8 @@ namespace Maple2.Trigger._52010008_qd {
             public override void OnExit() { }
         }
 
-        private class State죄수Appear01 : TriggerState {
-            internal State죄수Appear01(ITriggerContext context) : base(context) { }
+        private class State죄수Spawn01 : TriggerState {
+            internal State죄수Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {6000}, arg2: false, arg3: 0, arg4: 0, arg5: 0f);
@@ -88,7 +88,7 @@ namespace Maple2.Trigger._52010008_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "11")) {
-                    return new State죄수Appear02(context);
+                    return new State죄수Spawn02(context);
                 }
 
                 return null;
@@ -97,8 +97,8 @@ namespace Maple2.Trigger._52010008_qd {
             public override void OnExit() { }
         }
 
-        private class State죄수Appear02 : TriggerState {
-            internal State죄수Appear02(ITriggerContext context) : base(context) { }
+        private class State죄수Spawn02 : TriggerState {
+            internal State죄수Spawn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "12", arg2: 2);
@@ -108,7 +108,7 @@ namespace Maple2.Trigger._52010008_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "12")) {
-                    return new State벨마Appear01(context);
+                    return new State벨마Spawn01(context);
                 }
 
                 return null;
@@ -117,8 +117,8 @@ namespace Maple2.Trigger._52010008_qd {
             public override void OnExit() { }
         }
 
-        private class State벨마Appear01 : TriggerState {
-            internal State벨마Appear01(ITriggerContext context) : base(context) { }
+        private class State벨마Spawn01 : TriggerState {
+            internal State벨마Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "20", arg2: 1);

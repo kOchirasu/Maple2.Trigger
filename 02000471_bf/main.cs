@@ -115,7 +115,7 @@ namespace Maple2.Trigger._02000471_bf {
             internal StateBoss_scene(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "boss", arg2: "exit");
+                context.SetSceneSkip(state: new StateBoss(context), arg2: "exit");
                 context.SetSound(arg1: 9900, arg2: true);
                 context.DestroyMonster(arg1: new[] {201, 202, 203, 204, 205, 206});
                 context.SetEffect(arg1: new[] {7999}, arg2: false);

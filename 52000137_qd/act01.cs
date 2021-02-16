@@ -130,7 +130,7 @@ namespace Maple2.Trigger._52000137_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003283, msg: "$52000137_QD__ACT01__0$", duration: 5000, align: "center", illustId: "0");
-                context.SetSceneSkip(arg1: "DarkAnosTalk01CSkip", arg2: "nextState");
+                context.SetSceneSkip(state: new StateDarkAnosTalk01CSkip(context), arg2: "nextState");
                 context.SetSkip(state: new StateAsimovTalk01Skip(context));
             }
 
@@ -1208,7 +1208,7 @@ namespace Maple2.Trigger._52000137_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 301, arg2: "MS2PatrolData_302");
                 context.AddCinematicTalk(npcId: 11003287, msg: "$52000137_QD__ACT01__15$", duration: 4000, align: "center", illustId: "Kandura_normal");
-                context.SetSceneSkip(arg1: "ShowCaption04Skip", arg2: "exit");
+                context.SetSceneSkip(state: new StateShowCaption04Skip(context), arg2: "exit");
                 context.SetSkip(state: new StateKanduraTalk01Skip(context));
             }
 

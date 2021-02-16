@@ -73,7 +73,7 @@ namespace Maple2.Trigger._52100208_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11004678, illustId: "Neirin_surprise", align: "left", msg: "$52100208_QD__52100208__0$", duration: 4000);
                 context.AddCinematicTalk(npcId: 11004675, illustId: "Bliche_mad", align: "right", msg: "$52100208_QD__52100208__1$", duration: 4500);
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

@@ -170,7 +170,7 @@ namespace Maple2.Trigger._63000028_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 500, arg2: true);
-                context.SetSceneSkip(arg1: "TinChaiTalk02_CSkip", arg2: "nextState");
+                context.SetSceneSkip(state: new StateTinChaiTalk02_CSkip(context), arg2: "nextState");
                 context.CreateMonster(arg1: new[] {101, 900, 901, 902}, arg2: false);
             }
 
@@ -461,7 +461,7 @@ namespace Maple2.Trigger._63000028_cs {
             internal StateBattleEnd04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "MeetJunta05_Cskip", arg2: "nextState");
+                context.SetSceneSkip(state: new StateMeetJunta05_Cskip(context), arg2: "nextState");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
             }
@@ -1045,7 +1045,7 @@ namespace Maple2.Trigger._63000028_cs {
                 context.DestroyMonster(arg1: new[] {103, 202});
                 context.CreateMonster(arg1: new[] {104, 203}, arg2: false);
                 context.CameraSelect(arg1: 600, arg2: true);
-                context.SetSceneSkip(arg1: "TimeToLeave05", arg2: "exit");
+                context.SetSceneSkip(state: new StateTimeToLeave05(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State탈것Appear(context);
+                    return new State탈것Spawn(context);
                 }
 
                 return null;
@@ -55,8 +55,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class State탈것Appear : TriggerState {
-            internal State탈것Appear(ITriggerContext context) : base(context) { }
+        private class State탈것Spawn : TriggerState {
+            internal State탈것Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {7001}, arg2: true);
@@ -137,7 +137,7 @@ namespace Maple2.Trigger._52020001_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4400)) {
-                    return new StateCinematic끝(context);
+                    return new StateEndCinematic(context);
                 }
 
                 return null;
@@ -146,8 +146,8 @@ namespace Maple2.Trigger._52020001_qd {
             public override void OnExit() { }
         }
 
-        private class StateCinematic끝 : TriggerState {
-            internal StateCinematic끝(ITriggerContext context) : base(context) { }
+        private class StateEndCinematic : TriggerState {
+            internal StateEndCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {2000010}, arg2: true);

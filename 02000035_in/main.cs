@@ -233,7 +233,7 @@ namespace Maple2.Trigger._02000035_in {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "케이틀린슬픔_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State케이틀린슬픔_스킵완료(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

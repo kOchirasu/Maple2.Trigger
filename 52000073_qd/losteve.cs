@@ -51,11 +51,11 @@ namespace Maple2.Trigger._52000073_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001681}, arg3: new byte[] {2})) {
-                    return new State대원Appear(context);
+                    return new State대원Spawn(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001681}, arg3: new byte[] {1})) {
-                    return new State대원Appear(context);
+                    return new State대원Spawn(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {50001680}, arg3: new byte[] {3})) {
@@ -113,8 +113,8 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnExit() { }
         }
 
-        private class State대원Appear : TriggerState {
-            internal State대원Appear(ITriggerContext context) : base(context) { }
+        private class State대원Spawn : TriggerState {
+            internal State대원Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -142,7 +142,7 @@ namespace Maple2.Trigger._52000073_qd {
                 context.MoveNpc(arg1: 401, arg2: "MS2PatrolData_2001");
                 context.AddCinematicTalk(npcId: 11003446, illustId: "0", msg: "$52000073_QD__LOSTEVE__0$", duration: 4000, align: "right");
                 context.FaceEmotion(spawnPointId: 101, emotionName: "Upset");
-                context.SetSceneSkip(arg1: "StopCinematic", arg2: "exit");
+                context.SetSceneSkip(state: new StateStopCinematic(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

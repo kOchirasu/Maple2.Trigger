@@ -82,7 +82,7 @@ namespace Maple2.Trigger._52100103_qd {
                 context.MoveUser(arg1: 52100103, arg2: 3);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSceneSkip(arg1: "엔딩암전", arg2: "nextState");
+                context.SetSceneSkip(state: new State엔딩암전(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

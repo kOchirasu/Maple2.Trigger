@@ -22,7 +22,7 @@ namespace Maple2.Trigger._52000033_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSceneSkip(arg1: "end", arg2: "exit");
+                context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

@@ -272,7 +272,7 @@ namespace Maple2.Trigger._52020006_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "세리하와아르망_스킵완료", arg2: "exit");
+                context.SetSceneSkip(state: new State세리하와아르망_스킵완료(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {
@@ -457,7 +457,7 @@ namespace Maple2.Trigger._52020006_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "세리하와함께전투_전투직전스킵", arg2: "exit");
+                context.SetSceneSkip(state: new State세리하와함께전투_전투직전스킵(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {
@@ -637,7 +637,7 @@ namespace Maple2.Trigger._52020006_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State전투후제이든Appear_SetupCinematic(context);
+                    return new State전투후제이든Spawn_SetupCinematic(context);
                 }
 
                 return null;
@@ -646,20 +646,20 @@ namespace Maple2.Trigger._52020006_qd {
             public override void OnExit() { }
         }
 
-        private class State전투후제이든Appear_SetupCinematic : TriggerState {
-            internal State전투후제이든Appear_SetupCinematic(ITriggerContext context) : base(context) { }
+        private class State전투후제이든Spawn_SetupCinematic : TriggerState {
+            internal State전투후제이든Spawn_SetupCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {111});
                 context.CreateMonster(arg1: new[] {110}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.CameraSelectPath(arg1: new[] {8020}, arg2: false);
-                context.SetSceneSkip(arg1: "전투후제이든등장_스킵완료", arg2: "exit");
+                context.SetSceneSkip(state: new State전투후제이든Spawn_스킵완료(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State전투후제이든Appear_01_세리하소멸(context);
+                    return new State전투후제이든Spawn_01_세리하소멸(context);
                 }
 
                 return null;
@@ -668,8 +668,8 @@ namespace Maple2.Trigger._52020006_qd {
             public override void OnExit() { }
         }
 
-        private class State전투후제이든Appear_01_세리하소멸 : TriggerState {
-            internal State전투후제이든Appear_01_세리하소멸(ITriggerContext context) : base(context) { }
+        private class State전투후제이든Spawn_01_세리하소멸 : TriggerState {
+            internal State전투후제이든Spawn_01_세리하소멸(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003548, illustId: "Seriha_normal", msg: "내가 이긴 듯. 그럼 이만!", duration: 3000);
@@ -677,7 +677,7 @@ namespace Maple2.Trigger._52020006_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State전투후제이든Appear_02_PC독백(context);
+                    return new State전투후제이든Spawn_02_PC독백(context);
                 }
 
                 return null;
@@ -686,8 +686,8 @@ namespace Maple2.Trigger._52020006_qd {
             public override void OnExit() { }
         }
 
-        private class State전투후제이든Appear_02_PC독백 : TriggerState {
-            internal State전투후제이든Appear_02_PC독백(ITriggerContext context) : base(context) { }
+        private class State전투후제이든Spawn_02_PC독백 : TriggerState {
+            internal State전투후제이든Spawn_02_PC독백(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {110});
@@ -696,7 +696,7 @@ namespace Maple2.Trigger._52020006_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State전투후제이든Appear_03_제이든Appear(context);
+                    return new State전투후제이든Spawn_03_제이든Appear(context);
                 }
 
                 return null;
@@ -705,8 +705,8 @@ namespace Maple2.Trigger._52020006_qd {
             public override void OnExit() { }
         }
 
-        private class State전투후제이든Appear_03_제이든Appear : TriggerState {
-            internal State전투후제이든Appear_03_제이든Appear(ITriggerContext context) : base(context) { }
+        private class State전투후제이든Spawn_03_제이든Appear : TriggerState {
+            internal State전투후제이든Spawn_03_제이든Appear(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {105}, arg2: false);
@@ -716,7 +716,7 @@ namespace Maple2.Trigger._52020006_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State세리하와함께전투_제이든Appear_StopCinematic(context);
+                    return new State세리하와함께전투_제이든Spawn_StopCinematic(context);
                 }
 
                 return null;
@@ -725,8 +725,8 @@ namespace Maple2.Trigger._52020006_qd {
             public override void OnExit() { }
         }
 
-        private class State전투후제이든Appear_스킵완료 : TriggerState {
-            internal State전투후제이든Appear_스킵완료(ITriggerContext context) : base(context) { }
+        private class State전투후제이든Spawn_스킵완료 : TriggerState {
+            internal State전투후제이든Spawn_스킵완료(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {101, 102, 105, 110, 111, 150, 151, 152, 153});
@@ -747,8 +747,8 @@ namespace Maple2.Trigger._52020006_qd {
             public override void OnExit() { }
         }
 
-        private class State세리하와함께전투_제이든Appear_StopCinematic : TriggerState {
-            internal State세리하와함께전투_제이든Appear_StopCinematic(ITriggerContext context) : base(context) { }
+        private class State세리하와함께전투_제이든Spawn_StopCinematic : TriggerState {
+            internal State세리하와함께전투_제이든Spawn_StopCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);

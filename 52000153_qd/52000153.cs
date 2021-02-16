@@ -68,7 +68,7 @@ namespace Maple2.Trigger._52000153_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 0);
                 context.SetCinematicUI(arg1: 2);
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

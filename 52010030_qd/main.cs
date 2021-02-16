@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52010030_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Down_Idle_A", arg3: 200000f);
                 context.SetCinematicUI(arg1: 9, arg2: "$52010030_QD__MAIN__0$", arg3: false);
-                context.SetSceneSkip(arg1: "종료", arg2: "exit");
+                context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {
@@ -186,7 +186,7 @@ namespace Maple2.Trigger._52010030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State뮤테라피온_Appear_01(context);
+                    return new State뮤테라피온_Spawn_01(context);
                 }
 
                 return null;
@@ -195,8 +195,8 @@ namespace Maple2.Trigger._52010030_qd {
             public override void OnExit() { }
         }
 
-        private class State뮤테라피온_Appear_01 : TriggerState {
-            internal State뮤테라피온_Appear_01(ITriggerContext context) : base(context) { }
+        private class State뮤테라피온_Spawn_01 : TriggerState {
+            internal State뮤테라피온_Spawn_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._52010030_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State뮤테라피온_Appear_02(context);
+                    return new State뮤테라피온_Spawn_02(context);
                 }
 
                 return null;
@@ -214,8 +214,8 @@ namespace Maple2.Trigger._52010030_qd {
             public override void OnExit() { }
         }
 
-        private class State뮤테라피온_Appear_02 : TriggerState {
-            internal State뮤테라피온_Appear_02(ITriggerContext context) : base(context) { }
+        private class State뮤테라피온_Spawn_02 : TriggerState {
+            internal State뮤테라피온_Spawn_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {2002, 4003}, arg2: false);

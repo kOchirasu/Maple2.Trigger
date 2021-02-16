@@ -56,7 +56,7 @@ namespace Maple2.Trigger._52010064_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetSceneSkip(arg1: "quit01", arg2: "nextState");
+                context.SetSceneSkip(state: new StateQuit01(context), arg2: "nextState");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetAchievement(arg1: 9000, arg2: "trigger", arg3: "flyingtristan");

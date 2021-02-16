@@ -154,7 +154,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal StateStartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
             }
 
@@ -394,7 +394,7 @@ namespace Maple2.Trigger._52000068_qd {
                 context.AddBuff(arg1: new[] {199}, arg2: 70000107, arg3: 1, arg4: false, arg5: false);
                 context.CameraSelect(arg1: 305, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11000064, arg3: "$52000068_QD__TRIA_SEIGE__5$", arg4: 4);
-                context.SetSceneSkip(arg1: "임무01반응Wait");
+                context.SetSceneSkip(state: new StateMission01반응Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -465,7 +465,7 @@ namespace Maple2.Trigger._52000068_qd {
                 context.MoveNpc(arg1: 1102, arg2: "MS2PatrolData_1102");
                 context.MoveNpc(arg1: 1103, arg2: "MS2PatrolData_1103");
                 context.MoveNpc(arg1: 1104, arg2: "MS2PatrolData_1104");
-                context.SetSceneSkip(arg1: "대사스킵용01");
+                context.SetSceneSkip(state: new State대사스킵용01(context));
             }
 
             public override TriggerState Execute() {
@@ -505,7 +505,7 @@ namespace Maple2.Trigger._52000068_qd {
                 context.CreateMonster(arg1: new[] {2003}, arg2: false);
                 context.SetConversation(arg1: 2, arg2: 11001838, arg3: "$52000068_QD__TRIA_SEIGE__8$", arg4: 4);
                 context.SetNpcEmotionSequence(arg1: 2003, arg2: "AttackReady_A");
-                context.SetSceneSkip(arg1: "임무02종료Wait");
+                context.SetSceneSkip(state: new StateMission02종료Wait(context));
             }
 
             public override TriggerState Execute() {
@@ -635,7 +635,7 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: true);
                 context.SetConversation(arg1: 2, arg2: 11001838, arg3: "$52000068_QD__TRIA_SEIGE__9$", arg4: 4);
-                context.SetSceneSkip(arg1: "대사스킵용02");
+                context.SetSceneSkip(state: new State대사스킵용02(context));
             }
 
             public override TriggerState Execute() {
@@ -670,7 +670,7 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnEnter() {
                 context.SetSceneSkip();
                 context.SetConversation(arg1: 2, arg2: 11001838, arg3: "$52000068_QD__TRIA_SEIGE__10$", arg4: 4);
-                context.SetSceneSkip(arg1: "벽파괴종료");
+                context.SetSceneSkip(state: new State벽파괴종료(context));
             }
 
             public override TriggerState Execute() {

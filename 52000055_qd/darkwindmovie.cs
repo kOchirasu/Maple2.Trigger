@@ -81,7 +81,7 @@ namespace Maple2.Trigger._52000055_qd {
                 context.CameraSelect(arg1: 101, arg2: true);
                 context.MoveUserPath(arg1: "MS2PatrolData_PC");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Katvan");
-                context.SetSceneSkip(arg1: "Quit", arg2: "exit");
+                context.SetSceneSkip(state: new StateQuit(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

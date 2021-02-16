@@ -198,7 +198,7 @@ namespace Maple2.Trigger._63000026_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 502, arg2: true);
-                context.SetSceneSkip(arg1: "PCTeleport03", arg2: "exit");
+                context.SetSceneSkip(state: new StatePCTeleport03(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

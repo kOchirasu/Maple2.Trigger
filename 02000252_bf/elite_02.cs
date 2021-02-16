@@ -119,7 +119,7 @@ namespace Maple2.Trigger._02000252_bf {
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 3);
                 context.SetConversation(arg1: 1, arg2: 1003, arg3: "$02000252_BF__ELITE_02__0$", arg4: 2);
-                context.SetSceneSkip(arg1: "이동", arg2: "nextState");
+                context.SetSceneSkip(state: new State이동(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -139,7 +139,7 @@ namespace Maple2.Trigger._02000252_bf {
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 3);
                 context.SetConversation(arg1: 1, arg2: 1003, arg3: "$02000252_BF__ELITE_02__1$", arg4: 2);
-                context.SetSceneSkip(arg1: "이동", arg2: "nextState");
+                context.SetSceneSkip(state: new State이동(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

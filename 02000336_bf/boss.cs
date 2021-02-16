@@ -30,7 +30,7 @@ namespace Maple2.Trigger._02000336_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {101})) {
-                    return new State조직원Appear(context);
+                    return new State조직원Spawn(context);
                 }
 
                 return null;
@@ -39,8 +39,8 @@ namespace Maple2.Trigger._02000336_bf {
             public override void OnExit() { }
         }
 
-        private class State조직원Appear : TriggerState {
-            internal State조직원Appear(ITriggerContext context) : base(context) { }
+        private class State조직원Spawn : TriggerState {
+            internal State조직원Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7001}, arg2: true);

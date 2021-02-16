@@ -149,7 +149,7 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "2PhaseSpawnStart") == 1) {
-                    return new State1Phase전투완료_2페이즈투르카Appear(context);
+                    return new State1Phase전투완료_2페이즈투르카Spawn(context);
                 }
 
                 if (context.DungeonTimeOut()) {
@@ -166,8 +166,8 @@ namespace Maple2.Trigger._02020140_bf {
             public override void OnExit() { }
         }
 
-        private class State1Phase전투완료_2페이즈투르카Appear : TriggerState {
-            internal State1Phase전투완료_2페이즈투르카Appear(ITriggerContext context) : base(context) { }
+        private class State1Phase전투완료_2페이즈투르카Spawn : TriggerState {
+            internal State1Phase전투완료_2페이즈투르카Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._02020140_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "StageOpen") == 1) {
-                    return new State최초졸구간MonsterAppear(context);
+                    return new State최초졸구간MonsterSpawn(context);
                 }
 
                 return null;
@@ -214,8 +214,8 @@ namespace Maple2.Trigger._02020140_bf {
             public override void OnExit() { }
         }
 
-        private class State최초졸구간MonsterAppear : TriggerState {
-            internal State최초졸구간MonsterAppear(ITriggerContext context) : base(context) { }
+        private class State최초졸구간MonsterSpawn : TriggerState {
+            internal State최초졸구간MonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "TriggerMesh11", value: 0);

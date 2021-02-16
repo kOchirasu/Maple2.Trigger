@@ -125,7 +125,7 @@ namespace Maple2.Trigger._02000224_bf {
             internal StateSetupCinematic00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "아르마노말썽_스킵완료", arg2: "exit");
+                context.SetSceneSkip(state: new State아르마노말썽_스킵완료(context), arg2: "exit");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -152,7 +152,7 @@ namespace Maple2.Trigger._02000224_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State티니에Appear(context);
+                    return new State티니에Spawn(context);
                 }
 
                 return null;
@@ -161,8 +161,8 @@ namespace Maple2.Trigger._02000224_bf {
             public override void OnExit() { }
         }
 
-        private class State티니에Appear : TriggerState {
-            internal State티니에Appear(ITriggerContext context) : base(context) { }
+        private class State티니에Spawn : TriggerState {
+            internal State티니에Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);

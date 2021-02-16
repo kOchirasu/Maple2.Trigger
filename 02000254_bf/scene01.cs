@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02000254_bf {
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "1", arg2: 2);
-                context.SetSceneSkip(arg1: "스킵벨라이동딜레이", arg2: "nextState");
+                context.SetSceneSkip(state: new State스킵벨라이동Delay(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -374,7 +374,7 @@ namespace Maple2.Trigger._02000254_bf {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 301, arg2: true);
-                context.SetSceneSkip(arg1: "벨라이동2", arg2: "nextState");
+                context.SetSceneSkip(state: new State벨라이동2(context), arg2: "nextState");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetTimer(arg1: "1", arg2: 6);

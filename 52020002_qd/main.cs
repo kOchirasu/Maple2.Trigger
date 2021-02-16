@@ -136,12 +136,12 @@ namespace Maple2.Trigger._52020002_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
-                context.SetSceneSkip(arg1: "제이든보고_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State제이든보고_스킵완료(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State제이든Appear(context);
+                    return new State제이든Spawn(context);
                 }
 
                 return null;
@@ -150,8 +150,8 @@ namespace Maple2.Trigger._52020002_qd {
             public override void OnExit() { }
         }
 
-        private class State제이든Appear : TriggerState {
-            internal State제이든Appear(ITriggerContext context) : base(context) { }
+        private class State제이든Spawn : TriggerState {
+            internal State제이든Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");

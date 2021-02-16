@@ -10,7 +10,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon_monster") == 1) {
-                    return new StateMonsterAppear(context);
+                    return new StateMonsterSpawn(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._02020051_bf {
             public override void OnExit() { }
         }
 
-        private class StateMonsterAppear : TriggerState {
-            internal StateMonsterAppear(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn : TriggerState {
+            internal StateMonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.StartCombineSpawn(groupId: new[] {1003}, isStart: false);

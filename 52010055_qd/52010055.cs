@@ -50,7 +50,7 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetMesh(arg1: new[] {10000, 10001}, arg2: false);
-                context.SetSceneSkip(arg1: "게임시작", arg2: "nextState");
+                context.SetSceneSkip(state: new State게임시작(context), arg2: "nextState");
                 context.CameraSelect(arg1: 4001, arg2: true);
                 context.AddCinematicTalk(npcId: 11003781, msg: "$52010055_QD__52010055__0$", duration: 3000, align: "right");
                 context.AddCinematicTalk(npcId: 11003781, msg: "$52010055_QD__52010055__1$", duration: 3000, align: "right");
@@ -617,7 +617,7 @@ namespace Maple2.Trigger._52010055_qd {
             public override void OnEnter() {
                 context.ChangeMonster(arg1: 2002, arg2: 2003);
                 context.SetNpcEmotionSequence(arg1: 2003, arg2: "Dead_01_A");
-                context.SetSceneSkip(arg1: "맵이동", arg2: "nextState");
+                context.SetSceneSkip(state: new State맵이동(context), arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {4007, 4008}, arg2: false);
                 context.VisibleMyPc(isVisible: false);
                 context.SetNpcEmotionSequence(arg1: 13, arg2: "Attack_Idle_A,Attack_Idle_A,Attack_Idle_A,Attack_Idle_A");

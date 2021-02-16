@@ -49,7 +49,7 @@ namespace Maple2.Trigger._52000170_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.SetCinematicUI(arg1: 1);
             }
 
@@ -174,7 +174,7 @@ namespace Maple2.Trigger._52000170_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002378}, arg3: new byte[] {3})) {
-                    return new State바사라Appear01(context);
+                    return new State바사라Spawn01(context);
                 }
 
                 return null;
@@ -183,8 +183,8 @@ namespace Maple2.Trigger._52000170_qd {
             public override void OnExit() { }
         }
 
-        private class State바사라Appear01 : TriggerState {
-            internal State바사라Appear01(ITriggerContext context) : base(context) { }
+        private class State바사라Spawn01 : TriggerState {
+            internal State바사라Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {401}, arg2: false);

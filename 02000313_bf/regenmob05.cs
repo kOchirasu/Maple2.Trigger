@@ -7,7 +7,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 13, arg2: new[] {91})) {
-                    return new State소환몹Appear(context);
+                    return new State소환몹Spawn(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class State소환몹Appear : TriggerState {
-            internal State소환몹Appear(ITriggerContext context) : base(context) { }
+        private class State소환몹Spawn : TriggerState {
+            internal State소환몹Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {103, 104});

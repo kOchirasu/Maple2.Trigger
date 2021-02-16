@@ -62,7 +62,7 @@ namespace Maple2.Trigger._52000017_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "$52000017_QD__QUEST01__0$", arg4: 3, arg5: 0);
-                context.SetSceneSkip(arg1: "종료", arg2: "exit");
+                context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

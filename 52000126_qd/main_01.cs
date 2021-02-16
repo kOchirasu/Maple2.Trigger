@@ -37,7 +37,7 @@ namespace Maple2.Trigger._52000126_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {201}, arg2: true);
-                context.SetSceneSkip(arg1: "endwaiting", arg2: "exit");
+                context.SetSceneSkip(state: new StateEndwaiting(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

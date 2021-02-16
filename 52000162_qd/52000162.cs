@@ -64,7 +64,7 @@ namespace Maple2.Trigger._52000162_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -167,7 +167,7 @@ namespace Maple2.Trigger._52000162_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {2001}, arg2: new[] {40002744}, arg3: new byte[] {3})) {
-                    return new State리린Appear_01(context);
+                    return new State리린Spawn_01(context);
                 }
 
                 return null;
@@ -176,8 +176,8 @@ namespace Maple2.Trigger._52000162_qd {
             public override void OnExit() { }
         }
 
-        private class State리린Appear_01 : TriggerState {
-            internal State리린Appear_01(ITriggerContext context) : base(context) { }
+        private class State리린Spawn_01 : TriggerState {
+            internal State리린Spawn_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -185,7 +185,7 @@ namespace Maple2.Trigger._52000162_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State리린Appear_02(context);
+                    return new State리린Spawn_02(context);
                 }
 
                 return null;
@@ -194,8 +194,8 @@ namespace Maple2.Trigger._52000162_qd {
             public override void OnExit() { }
         }
 
-        private class State리린Appear_02 : TriggerState {
-            internal State리린Appear_02(ITriggerContext context) : base(context) { }
+        private class State리린Spawn_02 : TriggerState {
+            internal State리린Spawn_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -205,7 +205,7 @@ namespace Maple2.Trigger._52000162_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State리린Appear_03(context);
+                    return new State리린Spawn_03(context);
                 }
 
                 return null;
@@ -214,8 +214,8 @@ namespace Maple2.Trigger._52000162_qd {
             public override void OnExit() { }
         }
 
-        private class State리린Appear_03 : TriggerState {
-            internal State리린Appear_03(ITriggerContext context) : base(context) { }
+        private class State리린Spawn_03 : TriggerState {
+            internal State리린Spawn_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -224,7 +224,7 @@ namespace Maple2.Trigger._52000162_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State리린Appear_04(context);
+                    return new State리린Spawn_04(context);
                 }
 
                 return null;
@@ -233,13 +233,13 @@ namespace Maple2.Trigger._52000162_qd {
             public override void OnExit() { }
         }
 
-        private class State리린Appear_04 : TriggerState {
-            internal State리린Appear_04(ITriggerContext context) : base(context) { }
+        private class State리린Spawn_04 : TriggerState {
+            internal State리린Spawn_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_3001");
-                context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_2(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

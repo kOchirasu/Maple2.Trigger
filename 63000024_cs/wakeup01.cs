@@ -152,7 +152,7 @@ namespace Maple2.Trigger._63000024_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 500, arg2: true);
-                context.SetSceneSkip(arg1: "TinChaiTalk04_CSkip", arg2: "nextState");
+                context.SetSceneSkip(state: new StateTinChaiTalk04_CSkip(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserCount() > 0) {
-                    return new State탈것_AppearWait(context);
+                    return new State탈것_SpawnWait(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnExit() { }
         }
 
-        private class State탈것_AppearWait : TriggerState {
-            internal State탈것_AppearWait(ITriggerContext context) : base(context) { }
+        private class State탈것_SpawnWait : TriggerState {
+            internal State탈것_SpawnWait(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -43,7 +43,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State탈것_Appear(context);
+                    return new State탈것_Spawn(context);
                 }
 
                 return null;
@@ -52,8 +52,8 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnExit() { }
         }
 
-        private class State탈것_Appear : TriggerState {
-            internal State탈것_Appear(ITriggerContext context) : base(context) { }
+        private class State탈것_Spawn : TriggerState {
+            internal State탈것_Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10003152}, arg2: 1);
@@ -84,7 +84,7 @@ namespace Maple2.Trigger._02020141_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 30000)) {
-                    return new State탈것_AppearWait(context);
+                    return new State탈것_SpawnWait(context);
                 }
 
                 if (context.GetUserValue(key: "RidingBattle") == -1) {

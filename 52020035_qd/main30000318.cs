@@ -68,7 +68,7 @@ namespace Maple2.Trigger._52020035_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 8, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 11003754, msg: "크크큭... 착한 연기 잘 하는군. 라딘.", duration: 3000);
-                context.SetSceneSkip(arg1: "끝", arg2: "exit");
+                context.SetSceneSkip(state: new State끝(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

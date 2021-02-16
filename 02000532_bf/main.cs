@@ -50,7 +50,7 @@ namespace Maple2.Trigger._02000532_bf {
             internal StateStart(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "목표", arg2: "nextState");
+                context.SetSceneSkip(state: new State목표(context), arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {604, 603}, arg2: true);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.ShowCaption(type: "VerticalCaption", title: "$02000532_BF__MAIN__0$", desc: "$02000532_BF__MAIN__1$", align: "centerRight", offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2f);
@@ -146,7 +146,7 @@ namespace Maple2.Trigger._02000532_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.LockMyPc(isLock: true);
-                context.SetSceneSkip(arg1: "흑성회의반격", arg2: "nextState");
+                context.SetSceneSkip(state: new State흑성회의반격(context), arg2: "nextState");
                 context.AddBalloonTalk(spawnPointId: 104, msg: "$02000532_BF__MAIN__8$", duration: 3500, delayTick: 0);
                 context.AddBalloonTalk(spawnPointId: 105, msg: "$02000532_BF__MAIN__9$", duration: 3500, delayTick: 2500);
                 context.AddBalloonTalk(spawnPointId: 103, msg: "$02000532_BF__MAIN__10$", duration: 3500, delayTick: 2800);

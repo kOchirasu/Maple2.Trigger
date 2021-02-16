@@ -26,7 +26,7 @@ namespace Maple2.Trigger._52020008_qd {
             internal StateCinematicCamera1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "StopCinematic", arg2: "exit");
+                context.SetSceneSkip(state: new StateStopCinematic(context), arg2: "exit");
                 context.CreateMonster(arg1: new[] {101, 102}, arg2: false);
                 context.CreateMonster(arg1: new[] {103}, arg2: false, arg3: 30000);
                 context.SetCinematicUI(arg1: 1);
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new StateCinematicCamera1_흑성회Appear(context);
+                    return new StateCinematicCamera1_흑성회Spawn(context);
                 }
 
                 return null;
@@ -143,8 +143,8 @@ namespace Maple2.Trigger._52020008_qd {
             public override void OnExit() { }
         }
 
-        private class StateCinematicCamera1_흑성회Appear : TriggerState {
-            internal StateCinematicCamera1_흑성회Appear(ITriggerContext context) : base(context) { }
+        private class StateCinematicCamera1_흑성회Spawn : TriggerState {
+            internal StateCinematicCamera1_흑성회Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 501, arg2: true);
@@ -190,7 +190,7 @@ namespace Maple2.Trigger._52020008_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateCinematicCamera1_레지스탕스Appear(context);
+                    return new StateCinematicCamera1_레지스탕스Spawn(context);
                 }
 
                 return null;
@@ -199,8 +199,8 @@ namespace Maple2.Trigger._52020008_qd {
             public override void OnExit() { }
         }
 
-        private class StateCinematicCamera1_레지스탕스Appear : TriggerState {
-            internal StateCinematicCamera1_레지스탕스Appear(ITriggerContext context) : base(context) { }
+        private class StateCinematicCamera1_레지스탕스Spawn : TriggerState {
+            internal StateCinematicCamera1_레지스탕스Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkill(arg1: new[] {9991}, arg2: true);

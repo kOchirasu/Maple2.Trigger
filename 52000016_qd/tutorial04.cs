@@ -419,7 +419,7 @@ namespace Maple2.Trigger._52000016_qd {
             internal StateStartCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "StopCinematic01_skip", arg2: "nextState");
+                context.SetSceneSkip(state: new StateStopCinematic01_skip(context), arg2: "nextState");
                 context.SetTimer(arg1: "16", arg2: 1);
                 context.CameraSelectPath(arg1: new[] {602, 603}, arg2: false);
             }
@@ -971,7 +971,7 @@ namespace Maple2.Trigger._52000016_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 604, arg2: true);
-                context.SetSceneSkip(arg1: "마무리연출08", arg2: "nextState");
+                context.SetSceneSkip(state: new State마무리Cinematic08(context), arg2: "nextState");
                 context.CreateMonster(arg1: new[] {401}, arg2: true);
             }
 

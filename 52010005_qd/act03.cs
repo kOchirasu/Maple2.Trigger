@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "100")) {
-                    return new StateQ3_미카Appear01(context);
+                    return new StateQ3_미카Spawn01(context);
                 }
 
                 return null;
@@ -36,8 +36,8 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnExit() { }
         }
 
-        private class StateQ3_미카Appear01 : TriggerState {
-            internal StateQ3_미카Appear01(ITriggerContext context) : base(context) { }
+        private class StateQ3_미카Spawn01 : TriggerState {
+            internal StateQ3_미카Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "20", arg2: 1);

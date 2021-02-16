@@ -85,7 +85,7 @@ namespace Maple2.Trigger._52100070_qd {
             internal StateMobCreation(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSkip(state: new StateCinematic끝(context));
+                context.SetSkip(state: new StateEndCinematic(context));
                 context.CreateMonster(arg1: new[] {101, 102, 103}, arg2: false);
             }
 
@@ -262,7 +262,7 @@ namespace Maple2.Trigger._52100070_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new StateCinematic끝(context);
+                    return new StateEndCinematic(context);
                 }
 
                 return null;
@@ -271,8 +271,8 @@ namespace Maple2.Trigger._52100070_qd {
             public override void OnExit() { }
         }
 
-        private class StateCinematic끝 : TriggerState {
-            internal StateCinematic끝(ITriggerContext context) : base(context) { }
+        private class StateEndCinematic : TriggerState {
+            internal StateEndCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007}, arg2: false);

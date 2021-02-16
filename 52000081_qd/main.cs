@@ -127,7 +127,7 @@ namespace Maple2.Trigger._52000081_qd {
 
             public override TriggerState Execute() {
                 if (!context.MonsterDead(arg1: new[] {1001, 1003, 1004})) {
-                    return new State검사Appear(context);
+                    return new State검사Spawn(context);
                 }
 
                 if (context.MonsterDead(arg1: new[] {1001, 1003, 1004})) {
@@ -140,8 +140,8 @@ namespace Maple2.Trigger._52000081_qd {
             public override void OnExit() { }
         }
 
-        private class State검사Appear : TriggerState {
-            internal State검사Appear(ITriggerContext context) : base(context) { }
+        private class State검사Spawn : TriggerState {
+            internal State검사Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);

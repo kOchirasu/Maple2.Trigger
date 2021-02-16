@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52020025_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 0, arg3: "으아아악!!!", arg4: 2);
-                context.SetSceneSkip(arg1: "Camera_종료", arg2: "exit");
+                context.SetSceneSkip(state: new StateCamera_종료(context), arg2: "exit");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetMesh(arg1: new[] {1001}, arg2: false);

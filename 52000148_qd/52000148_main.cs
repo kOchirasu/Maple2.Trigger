@@ -144,7 +144,7 @@ namespace Maple2.Trigger._52000148_qd {
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__1$", duration: 2500, align: "right");
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_2001");
-                context.SetSceneSkip(arg1: "오스카퇴장_02", arg2: "nextState");
+                context.SetSceneSkip(state: new State오스카Exit_02(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -553,7 +553,7 @@ namespace Maple2.Trigger._52000148_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, msg: "$52000148_QD__52000148_MAIN__26$", duration: 2500, align: "right");
-                context.SetSceneSkip(arg1: "마무리_01", arg2: "nextState");
+                context.SetSceneSkip(state: new State마무리_01(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

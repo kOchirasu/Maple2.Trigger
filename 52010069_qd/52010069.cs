@@ -34,7 +34,7 @@ namespace Maple2.Trigger._52010069_qd {
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(arg1: 1);
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -191,7 +191,7 @@ namespace Maple2.Trigger._52010069_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_2(context), arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
                 context.SetPcEmotionLoop(arg1: "Object_React_H", arg2: 12000f);
                 context.AddCinematicTalk(npcId: 0, msg: "$52010069_QD__52010069__1$", duration: 5000);

@@ -111,7 +111,7 @@ namespace Maple2.Trigger._52000149_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8000, 8010}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_pc");
-                context.SetSceneSkip(arg1: "아노스아파_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State아노스아파_스킵완료(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

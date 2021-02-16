@@ -22,7 +22,7 @@ namespace Maple2.Trigger._02000146_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000179}, arg2: 0)) {
-                    return new StateNPCAppear(context);
+                    return new StateNPCSpawn(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._02000146_bf {
             }
         }
 
-        private class StateNPCAppear : TriggerState {
-            internal StateNPCAppear(ITriggerContext context) : base(context) { }
+        private class StateNPCSpawn : TriggerState {
+            internal StateNPCSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 404, arg3: "$02000146_BF__IA_104__0$", arg4: 2);

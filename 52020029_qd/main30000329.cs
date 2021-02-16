@@ -124,7 +124,7 @@ namespace Maple2.Trigger._52020029_qd {
                 context.CameraSelectPath(arg1: new[] {4003}, arg2: false);
                 context.AddCinematicTalk(npcId: 11003755, msg: "아아. 저 두개의 큰 화면. 저것이 바로 진리의 문입니다.", duration: 3000);
                 context.AddCinematicTalk(npcId: 11003755, msg: "듣기론 세상의 모든 정보를 찾을 수 있는 기계라더군요.", duration: 3000);
-                context.SetSceneSkip(arg1: "마무리", arg2: "exit");
+                context.SetSceneSkip(state: new State마무리(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

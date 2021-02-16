@@ -20,7 +20,7 @@ namespace Maple2.Trigger._52000068_qd {
             internal StateLoadingDelayB0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "NPC이동", arg2: "nextState");
+                context.SetSceneSkip(state: new StateNPC이동(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeOut.xml");
                 context.SetCinematicUI(arg1: 1);
@@ -158,7 +158,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State근위대원Appear(context);
+                    return new State근위대원Spawn(context);
                 }
 
                 return null;
@@ -167,8 +167,8 @@ namespace Maple2.Trigger._52000068_qd {
             public override void OnExit() { }
         }
 
-        private class State근위대원Appear : TriggerState {
-            internal State근위대원Appear(ITriggerContext context) : base(context) { }
+        private class State근위대원Spawn : TriggerState {
+            internal State근위대원Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraReset(interpolationTime: 2.0f);
@@ -280,7 +280,7 @@ namespace Maple2.Trigger._52000068_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    // return new StateReinforcementsAppear(context);
+                    // return new StateReinforcementsSpawn(context);
                     return null;
                 }
 

@@ -94,7 +94,7 @@ namespace Maple2.Trigger._52020028_qd {
                 context.SetPcEmotionLoop(arg1: "Idle_A", arg2: 6000f);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "?!", duration: 3000);
                 context.AddBalloonTalk(spawnPointId: 0, msg: "이... 이건?", duration: 3000, delayTick: 3000);
-                context.SetSceneSkip(arg1: "경고", arg2: "exit");
+                context.SetSceneSkip(state: new State경고(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {
@@ -113,7 +113,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 9, arg2: "침입자 발견. 자격을 확인한다.", arg3: false);
-                context.SetSceneSkip(arg1: "아르케온등장4", arg2: "exit");
+                context.SetSceneSkip(state: new State아르케온Spawn4(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {
@@ -181,7 +181,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State아르케온Appear(context);
+                    return new State아르케온Spawn(context);
                 }
 
                 return null;
@@ -190,8 +190,8 @@ namespace Maple2.Trigger._52020028_qd {
             public override void OnExit() { }
         }
 
-        private class State아르케온Appear : TriggerState {
-            internal State아르케온Appear(ITriggerContext context) : base(context) { }
+        private class State아르케온Spawn : TriggerState {
+            internal State아르케온Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {5003}, arg2: false);
@@ -201,7 +201,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State아르케온Appear2(context);
+                    return new State아르케온Spawn2(context);
                 }
 
                 return null;
@@ -210,8 +210,8 @@ namespace Maple2.Trigger._52020028_qd {
             public override void OnExit() { }
         }
 
-        private class State아르케온Appear2 : TriggerState {
-            internal State아르케온Appear2(ITriggerContext context) : base(context) { }
+        private class State아르케온Spawn2 : TriggerState {
+            internal State아르케온Spawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -265,7 +265,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State아르케온Appear3(context);
+                    return new State아르케온Spawn3(context);
                 }
 
                 return null;
@@ -274,8 +274,8 @@ namespace Maple2.Trigger._52020028_qd {
             public override void OnExit() { }
         }
 
-        private class State아르케온Appear3 : TriggerState {
-            internal State아르케온Appear3(ITriggerContext context) : base(context) { }
+        private class State아르케온Spawn3 : TriggerState {
+            internal State아르케온Spawn3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, msg: "역시 이렇게 되는군.", duration: 3000);
@@ -284,7 +284,7 @@ namespace Maple2.Trigger._52020028_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State아르케온Appear4(context);
+                    return new State아르케온Spawn4(context);
                 }
 
                 return null;
@@ -293,8 +293,8 @@ namespace Maple2.Trigger._52020028_qd {
             public override void OnExit() { }
         }
 
-        private class State아르케온Appear4 : TriggerState {
-            internal State아르케온Appear4(ITriggerContext context) : base(context) { }
+        private class State아르케온Spawn4 : TriggerState {
+            internal State아르케온Spawn4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1001, enable: false, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");

@@ -9,7 +9,7 @@ namespace Maple2.Trigger._02020201_bf {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {901})) {
-                    return new State페이카Appear(context);
+                    return new State페이카Spawn(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._02020201_bf {
             public override void OnExit() { }
         }
 
-        private class State페이카Appear : TriggerState {
-            internal State페이카Appear(ITriggerContext context) : base(context) { }
+        private class State페이카Spawn : TriggerState {
+            internal State페이카Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {101}, arg2: false);

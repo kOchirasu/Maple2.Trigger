@@ -72,7 +72,7 @@ namespace Maple2.Trigger._52000136_qd {
                 context.CameraSelectPath(arg1: new[] {8000}, arg2: false);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000136_QD__MAIN__0$", duration: 3000, align: "left");
-                context.SetSceneSkip(arg1: "불안한케이틀린_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State불안한케이틀린_스킵완료(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

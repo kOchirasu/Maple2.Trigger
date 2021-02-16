@@ -77,7 +77,7 @@ namespace Maple2.Trigger._52000130_qd {
             internal State카일과대화_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "카일이동_01", arg2: "nextState");
+                context.SetSceneSkip(state: new State카일이동_01(context), arg2: "nextState");
                 context.AddCinematicTalk(npcId: 11003371, msg: "$52000130_QD__52000130_MAIN__0$", duration: 3000, align: "right");
             }
 
@@ -260,7 +260,7 @@ namespace Maple2.Trigger._52000130_qd {
             internal State습격후대화_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "씬스킵_01", arg2: "exit");
+                context.SetSceneSkip(state: new State씬스킵_01(context), arg2: "exit");
                 context.AddCinematicTalk(npcId: 0, msg: "$52000130_QD__52000130_MAIN__3$", duration: 4000, align: "right");
             }
 

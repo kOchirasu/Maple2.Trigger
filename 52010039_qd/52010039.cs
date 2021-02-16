@@ -119,7 +119,7 @@ namespace Maple2.Trigger._52010039_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.ShowCaption(type: "VerticalCaption", title: "$52010039_QD__52010039__8$", desc: "$52010039_QD__52010039__9$", align: "bottomLeft", offsetRateX: 0f, offsetRateY: 0f, duration: 7000, scale: 2.5f);
                 context.CameraSelectPath(arg1: new[] {1002, 1003}, arg2: false);
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "exit");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

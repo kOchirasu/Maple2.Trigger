@@ -25,7 +25,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "Summon") == 1) {
-                    return new StateMonsterAppear(context);
+                    return new StateMonsterSpawn(context);
                 }
 
                 return null;
@@ -34,8 +34,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class StateMonsterAppear : TriggerState {
-            internal StateMonsterAppear(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn : TriggerState {
+            internal StateMonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 900005, key: "Lapenta_Attack_Guide", value: 1);
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._02020111_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new StateMonsterAppear_2(context);
+                    return new StateMonsterSpawn_2(context);
                 }
 
                 return null;
@@ -53,8 +53,8 @@ namespace Maple2.Trigger._02020111_bf {
             public override void OnExit() { }
         }
 
-        private class StateMonsterAppear_2 : TriggerState {
-            internal StateMonsterAppear_2(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn_2 : TriggerState {
+            internal StateMonsterSpawn_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(52f, 48f, 38f));

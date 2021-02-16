@@ -24,7 +24,7 @@ namespace Maple2.Trigger._52010005_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9000}, arg2: new[] {10002821}, arg3: new byte[] {2})) {
-                    return new StateQ2_미카Appear01(context);
+                    return new StateQ2_미카Spawn01(context);
                 }
 
                 return null;
@@ -33,8 +33,8 @@ namespace Maple2.Trigger._52010005_qd {
             public override void OnExit() { }
         }
 
-        private class StateQ2_미카Appear01 : TriggerState {
-            internal StateQ2_미카Appear01(ITriggerContext context) : base(context) { }
+        private class StateQ2_미카Spawn01 : TriggerState {
+            internal StateQ2_미카Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {401}, arg2: false);

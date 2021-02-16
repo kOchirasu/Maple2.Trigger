@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52020011_qd {
                 context.SetCinematicUI(arg1: 4);
                 context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
                 context.MoveUser(arg1: 52020011, arg2: 6001);
-                context.SetSceneSkip(arg1: "Exit", arg2: "Exit");
+                context.SetSceneSkip(state: new StateExit(context), arg2: "Exit");
             }
 
             public override TriggerState Execute() {

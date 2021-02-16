@@ -651,7 +651,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State첫번째덤불Appear01(context);
+                    return new State첫번째덤불Spawn01(context);
                 }
 
                 return null;
@@ -660,8 +660,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnExit() { }
         }
 
-        private class State첫번째덤불Appear01 : TriggerState {
-            internal State첫번째덤불Appear01(ITriggerContext context) : base(context) { }
+        private class State첫번째덤불Spawn01 : TriggerState {
+            internal State첫번째덤불Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003312, textId: 20003312);
@@ -1326,7 +1326,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9016, arg2: new[] {100})) {
-                    return new State두번째덤불Appear01(context);
+                    return new State두번째덤불Spawn01(context);
                 }
 
                 return null;
@@ -1335,8 +1335,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnExit() { }
         }
 
-        private class State두번째덤불Appear01 : TriggerState {
-            internal State두번째덤불Appear01(ITriggerContext context) : base(context) { }
+        private class State두번째덤불Spawn01 : TriggerState {
+            internal State두번째덤불Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003312, textId: 20003312);
@@ -2441,7 +2441,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State세번째덤불Appear01(context);
+                    return new State세번째덤불Spawn01(context);
                 }
 
                 return null;
@@ -2450,8 +2450,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnExit() { }
         }
 
-        private class State세번째덤불Appear01 : TriggerState {
-            internal State세번째덤불Appear01(ITriggerContext context) : base(context) { }
+        private class State세번째덤불Spawn01 : TriggerState {
+            internal State세번째덤불Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003312, textId: 20003312);
@@ -2460,7 +2460,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {91004})) {
-                    return new State세번째덤불Appear02(context);
+                    return new State세번째덤불Spawn02(context);
                 }
 
                 return null;
@@ -2471,8 +2471,8 @@ namespace Maple2.Trigger._02000331_bf {
             }
         }
 
-        private class State세번째덤불Appear02 : TriggerState {
-            internal State세번째덤불Appear02(ITriggerContext context) : base(context) { }
+        private class State세번째덤불Spawn02 : TriggerState {
+            internal State세번째덤불Spawn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 100, arg2: "MS2PatrolData_1006");
@@ -2486,7 +2486,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override TriggerState Execute() {
                 if (context.MonsterDead(arg1: new[] {91005})) {
-                    return new State세번째덤불Appear03(context);
+                    return new State세번째덤불Spawn03(context);
                 }
 
                 return null;
@@ -2498,8 +2498,8 @@ namespace Maple2.Trigger._02000331_bf {
             }
         }
 
-        private class State세번째덤불Appear03 : TriggerState {
-            internal State세번째덤불Appear03(ITriggerContext context) : base(context) { }
+        private class State세번째덤불Spawn03 : TriggerState {
+            internal State세번째덤불Spawn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 1, arg2: 200, arg3: "$02000331_BF__Seeker01__72$", arg4: 2, arg5: 0);
@@ -3414,7 +3414,7 @@ namespace Maple2.Trigger._02000331_bf {
 
             public override TriggerState Execute() {
                 if (context.NpcDetected(arg1: 9017, arg2: new[] {100})) {
-                    return new State네번째덤불Appear01(context);
+                    return new State네번째덤불Spawn01(context);
                 }
 
                 return null;
@@ -3423,8 +3423,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnExit() { }
         }
 
-        private class State네번째덤불Appear01 : TriggerState {
-            internal State네번째덤불Appear01(ITriggerContext context) : base(context) { }
+        private class State네번째덤불Spawn01 : TriggerState {
+            internal State네번째덤불Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 20003312, textId: 20003312);
@@ -4758,12 +4758,12 @@ namespace Maple2.Trigger._02000331_bf {
                 context.SetCinematicUI(arg1: 3, arg2: "$02000331_BF__Seeker01__907$");
                 context.SetEffect(arg1: new[] {777901}, arg2: false);
                 context.SetEffect(arg1: new[] {777902}, arg2: true);
-                context.SetSkip(state: new StateBossSpawnCinematic끝01(context));
+                context.SetSkip(state: new StateBossSpawnEndCinematic01(context));
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new StateBossSpawnCinematic끝01(context);
+                    return new StateBossSpawnEndCinematic01(context);
                 }
 
                 return null;
@@ -4772,8 +4772,8 @@ namespace Maple2.Trigger._02000331_bf {
             public override void OnExit() { }
         }
 
-        private class StateBossSpawnCinematic끝01 : TriggerState {
-            internal StateBossSpawnCinematic끝01(ITriggerContext context) : base(context) { }
+        private class StateBossSpawnEndCinematic01 : TriggerState {
+            internal StateBossSpawnEndCinematic01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 808, arg2: false);

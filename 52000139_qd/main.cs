@@ -213,7 +213,7 @@ namespace Maple2.Trigger._52000139_qd {
             internal State기사와대화_00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Quest수락_01", arg2: "nextState");
+                context.SetSceneSkip(state: new StateQuest수락_01(context), arg2: "nextState");
                 context.AddCinematicTalk(npcId: 11003320, msg: "$52000139_QD__MAIN__0$", duration: 2500, align: "left");
             }
 
@@ -512,7 +512,7 @@ namespace Maple2.Trigger._52000139_qd {
                 context.HideGuideSummary(entityId: 25201393);
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.AddCinematicTalk(npcId: 11003327, msg: "$52000139_QD__MAIN__13$", duration: 3000);
-                context.SetSceneSkip(arg1: "마무리", arg2: "exit");
+                context.SetSceneSkip(state: new State마무리(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

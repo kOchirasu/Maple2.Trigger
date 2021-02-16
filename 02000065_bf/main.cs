@@ -132,7 +132,7 @@ namespace Maple2.Trigger._02000065_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new StateCinematic1앤AppearPrepare(context);
+                    return new StateCinematic1앤SpawnPrepare(context);
                 }
 
                 return null;
@@ -141,8 +141,8 @@ namespace Maple2.Trigger._02000065_bf {
             public override void OnExit() { }
         }
 
-        private class StateCinematic1앤AppearPrepare : TriggerState {
-            internal StateCinematic1앤AppearPrepare(ITriggerContext context) : base(context) { }
+        private class StateCinematic1앤SpawnPrepare : TriggerState {
+            internal StateCinematic1앤SpawnPrepare(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -150,7 +150,7 @@ namespace Maple2.Trigger._02000065_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State앤Appear(context);
+                    return new State앤Spawn(context);
                 }
 
                 return null;
@@ -159,8 +159,8 @@ namespace Maple2.Trigger._02000065_bf {
             public override void OnExit() { }
         }
 
-        private class State앤Appear : TriggerState {
-            internal State앤Appear(ITriggerContext context) : base(context) { }
+        private class State앤Spawn : TriggerState {
+            internal State앤Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
@@ -170,7 +170,7 @@ namespace Maple2.Trigger._02000065_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State앤Appear2(context);
+                    return new State앤Spawn2(context);
                 }
 
                 return null;
@@ -179,8 +179,8 @@ namespace Maple2.Trigger._02000065_bf {
             public override void OnExit() { }
         }
 
-        private class State앤Appear2 : TriggerState {
-            internal State앤Appear2(ITriggerContext context) : base(context) { }
+        private class State앤Spawn2 : TriggerState {
+            internal State앤Spawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8002}, arg2: false);
@@ -246,7 +246,7 @@ namespace Maple2.Trigger._02000065_bf {
                 context.CameraSelectPath(arg1: new[] {8010, 8011}, arg2: false);
                 context.AddCinematicTalk(npcId: 11003432, msg: "$02000065_BF__MAIN__2$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 111, arg2: "Talk_A", arg3: 3000f);
-                context.SetSceneSkip(arg1: "칼과앤_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State칼과앤_스킵완료(context), arg2: "nextState");
                 context.SetSkip(state: new State앤Script01_skip(context));
             }
 

@@ -261,7 +261,7 @@ namespace Maple2.Trigger._52000146_qd {
             internal State멈춰서대화_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "전투_01", arg2: "nextState");
+                context.SetSceneSkip(state: new State전투_01(context), arg2: "nextState");
                 context.AddCinematicTalk(npcId: 0, msg: "$52000146_QD__52000146_MAIN__8$", duration: 3000, align: "right");
             }
 
@@ -400,7 +400,7 @@ namespace Maple2.Trigger._52000146_qd {
             internal State전투후대화_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "스킵도착_01", arg2: "nextState");
+                context.SetSceneSkip(state: new State스킵도착_01(context), arg2: "nextState");
                 context.AddCinematicTalk(npcId: 0, msg: "$52000146_QD__52000146_MAIN__10$", duration: 4000, align: "right");
             }
 
@@ -624,7 +624,7 @@ namespace Maple2.Trigger._52000146_qd {
             internal State전투후대화_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "하스터찾기_01", arg2: "nextState");
+                context.SetSceneSkip(state: new State하스터찾기_01(context), arg2: "nextState");
                 context.AddCinematicTalk(npcId: 0, msg: "$52000146_QD__52000146_MAIN__18$", duration: 4000, align: "right");
                 context.AddCinematicTalk(npcId: 0, msg: "$52000146_QD__52000146_MAIN__19$", duration: 3000, align: "right");
             }

@@ -51,7 +51,7 @@ namespace Maple2.Trigger._52010037_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000003}, arg3: new byte[] {3})) {
-                    return new State블리체함장Appear(context);
+                    return new State블리체함장Spawn(context);
                 }
 
                 return null;
@@ -83,7 +83,7 @@ namespace Maple2.Trigger._52010037_qd {
             internal State지하기지전경씬02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Quit01", arg2: "nextState");
+                context.SetSceneSkip(state: new StateQuit01(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(arg1: new[] {3000, 3001}, arg2: false);
             }
@@ -184,7 +184,7 @@ namespace Maple2.Trigger._52010037_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {91000003}, arg3: new byte[] {3})) {
-                    return new State블리체함장Appear(context);
+                    return new State블리체함장Spawn(context);
                 }
 
                 return null;
@@ -193,8 +193,8 @@ namespace Maple2.Trigger._52010037_qd {
             public override void OnExit() { }
         }
 
-        private class State블리체함장Appear : TriggerState {
-            internal State블리체함장Appear(ITriggerContext context) : base(context) { }
+        private class State블리체함장Spawn : TriggerState {
+            internal State블리체함장Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {200}, arg2: false);

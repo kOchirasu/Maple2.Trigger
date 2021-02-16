@@ -477,7 +477,7 @@ namespace Maple2.Trigger._52000142_qd {
             internal State로베와대화1_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "벌칙_01", arg2: "nextState");
+                context.SetSceneSkip(state: new State벌칙_01(context), arg2: "nextState");
                 context.AddCinematicTalk(npcId: 0, msg: "$52000142_QD__52000142_MAIN__1$", duration: 3500, align: "right");
             }
 
@@ -794,7 +794,7 @@ namespace Maple2.Trigger._52000142_qd {
             internal State벌칙_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "수호사제찾기_01", arg2: "nextState");
+                context.SetSceneSkip(state: new State수호사제찾기_01(context), arg2: "nextState");
                 context.AddCinematicTalk(npcId: 0, msg: "$52000142_QD__52000142_MAIN__18$", duration: 4000, align: "right");
             }
 
@@ -1080,7 +1080,7 @@ namespace Maple2.Trigger._52000142_qd {
             internal State란스구하기_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "란스구하기스킵_01", arg2: "nextState");
+                context.SetSceneSkip(state: new State란스구하기스킵_01(context), arg2: "nextState");
                 context.AddCinematicTalk(npcId: 0, msg: "$52000142_QD__52000142_MAIN__28$", duration: 3000, align: "right");
             }
 

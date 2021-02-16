@@ -300,7 +300,7 @@ namespace Maple2.Trigger._52020005_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52020005, arg2: 10);
-                context.SetSceneSkip(arg1: "일어나_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State일어나_스킵완료(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -500,7 +500,7 @@ namespace Maple2.Trigger._52020005_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 52020005, arg2: 10);
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "PC퇴장_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new StatePCExit_스킵완료(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

@@ -47,12 +47,12 @@ namespace Maple2.Trigger._99999883 {
             public override void OnExit() { }
         }
 
-        private class State02업적이벤트 : TriggerState {
-            internal State02업적이벤트(ITriggerContext context) : base(context) { }
+        private class State02Achievement이벤트 : TriggerState {
+            internal State02Achievement이벤트(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAchievement(arg3: "oxquiz_win");
-                context.DebugString(message: "업적이벤트테스트");
+                context.DebugString(message: "Achievement이벤트테스트");
             }
 
             public override TriggerState Execute() {

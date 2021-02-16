@@ -33,7 +33,7 @@ namespace Maple2.Trigger._52000125_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSceneSkip(arg1: "battle_ready", arg2: "nextState");
+                context.SetSceneSkip(state: new StateBattle_ready(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -345,7 +345,7 @@ namespace Maple2.Trigger._52000125_qd {
                 context.MoveUser(arg1: 52000125, arg2: 6001);
                 context.CameraSelectPath(arg1: new[] {4005}, arg2: false);
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);
-                context.SetSceneSkip(arg1: "end", arg2: "exit");
+                context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

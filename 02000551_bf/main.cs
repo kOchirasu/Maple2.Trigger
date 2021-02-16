@@ -221,7 +221,7 @@ namespace Maple2.Trigger._02000551_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5800)) {
-                    return new StateNext맵가는PortalAppear(context);
+                    return new StateNext맵가는PortalSpawn(context);
                 }
 
                 return null;
@@ -230,8 +230,8 @@ namespace Maple2.Trigger._02000551_bf {
             public override void OnExit() { }
         }
 
-        private class StateNext맵가는PortalAppear : TriggerState {
-            internal StateNext맵가는PortalAppear(ITriggerContext context) : base(context) { }
+        private class StateNext맵가는PortalSpawn : TriggerState {
+            internal StateNext맵가는PortalSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 1, arg2: true, arg3: true, arg4: true);

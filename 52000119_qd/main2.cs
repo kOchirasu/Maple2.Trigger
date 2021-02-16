@@ -45,7 +45,7 @@ namespace Maple2.Trigger._52000119_qd {
                 context.DestroyMonster(arg1: new[] {901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929});
                 context.CreateMonster(arg1: new[] {105, 106}, arg2: true);
                 context.MoveUser(arg1: 52000119, arg2: 6002);
-                context.SetSceneSkip(arg1: "fadeout_01", arg2: "nextState");
+                context.SetSceneSkip(state: new StateFadeout_01(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

@@ -49,7 +49,7 @@ namespace Maple2.Trigger._02000555_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2900)) {
-                    return new StateStage1_추가AppearWait01(context);
+                    return new StateStage1_추가SpawnWait01(context);
                 }
 
                 return null;
@@ -58,8 +58,8 @@ namespace Maple2.Trigger._02000555_bf {
             public override void OnExit() { }
         }
 
-        private class StateStage1_추가AppearWait01 : TriggerState {
-            internal StateStage1_추가AppearWait01(ITriggerContext context) : base(context) { }
+        private class StateStage1_추가SpawnWait01 : TriggerState {
+            internal StateStage1_추가SpawnWait01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEventUI(arg1: 1, arg2: "$02000535_BF__MAIN__37$", arg3: 5000);
@@ -67,7 +67,7 @@ namespace Maple2.Trigger._02000555_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterMany") <= 6) {
-                    return new StateStage1_추가Appear01(context);
+                    return new StateStage1_추가Spawn01(context);
                 }
 
                 return null;
@@ -76,8 +76,8 @@ namespace Maple2.Trigger._02000555_bf {
             public override void OnExit() { }
         }
 
-        private class StateStage1_추가Appear01 : TriggerState {
-            internal StateStage1_추가Appear01(ITriggerContext context) : base(context) { }
+        private class StateStage1_추가Spawn01 : TriggerState {
+            internal StateStage1_추가Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1201, 1202, 1203, 1204, 1205, 1206, 1207, 1208, 1209, 1210}, arg2: true);
@@ -101,7 +101,7 @@ namespace Maple2.Trigger._02000555_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterMany") <= 6) {
-                    return new StateStage1_추가Appear02(context);
+                    return new StateStage1_추가Spawn02(context);
                 }
 
                 return null;
@@ -110,8 +110,8 @@ namespace Maple2.Trigger._02000555_bf {
             public override void OnExit() { }
         }
 
-        private class StateStage1_추가Appear02 : TriggerState {
-            internal StateStage1_추가Appear02(ITriggerContext context) : base(context) { }
+        private class StateStage1_추가Spawn02 : TriggerState {
+            internal StateStage1_추가Spawn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1301, 1302, 1303, 1304, 1305, 1306, 1307, 1308, 1309, 1310, 1311}, arg2: true);
@@ -135,7 +135,7 @@ namespace Maple2.Trigger._02000555_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterMany") <= 6) {
-                    return new StateStage1_추가Appear03(context);
+                    return new StateStage1_추가Spawn03(context);
                 }
 
                 return null;
@@ -144,8 +144,8 @@ namespace Maple2.Trigger._02000555_bf {
             public override void OnExit() { }
         }
 
-        private class StateStage1_추가Appear03 : TriggerState {
-            internal StateStage1_추가Appear03(ITriggerContext context) : base(context) { }
+        private class StateStage1_추가Spawn03 : TriggerState {
+            internal StateStage1_추가Spawn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409, 1410}, arg2: true);
@@ -169,7 +169,7 @@ namespace Maple2.Trigger._02000555_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterMany") == 0) {
-                    return new StateStage1문파괴Wait_Stage2MonsterAppear(context);
+                    return new StateStage1문파괴Wait_Stage2MonsterSpawn(context);
                 }
 
                 return null;
@@ -178,8 +178,8 @@ namespace Maple2.Trigger._02000555_bf {
             public override void OnExit() { }
         }
 
-        private class StateStage1문파괴Wait_Stage2MonsterAppear : TriggerState {
-            internal StateStage1문파괴Wait_Stage2MonsterAppear(ITriggerContext context) : base(context) { }
+        private class StateStage1문파괴Wait_Stage2MonsterSpawn : TriggerState {
+            internal StateStage1문파괴Wait_Stage2MonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "MonsterMany", value: 0);
@@ -243,7 +243,7 @@ namespace Maple2.Trigger._02000555_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterMany") <= 4) {
-                    return new StateStage2_추가Appear01(context);
+                    return new StateStage2_추가Spawn01(context);
                 }
 
                 return null;
@@ -252,8 +252,8 @@ namespace Maple2.Trigger._02000555_bf {
             public override void OnExit() { }
         }
 
-        private class StateStage2_추가Appear01 : TriggerState {
-            internal StateStage2_추가Appear01(ITriggerContext context) : base(context) { }
+        private class StateStage2_추가Spawn01 : TriggerState {
+            internal StateStage2_추가Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216, 2217, 2218, 2219, 2220, 2221}, arg2: true);
@@ -277,7 +277,7 @@ namespace Maple2.Trigger._02000555_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterMany") == 0) {
-                    return new StateStage2문파괴Wait_Stage3MonsterAppear(context);
+                    return new StateStage2문파괴Wait_Stage3MonsterSpawn(context);
                 }
 
                 return null;
@@ -286,8 +286,8 @@ namespace Maple2.Trigger._02000555_bf {
             public override void OnExit() { }
         }
 
-        private class StateStage2문파괴Wait_Stage3MonsterAppear : TriggerState {
-            internal StateStage2문파괴Wait_Stage3MonsterAppear(ITriggerContext context) : base(context) { }
+        private class StateStage2문파괴Wait_Stage3MonsterSpawn : TriggerState {
+            internal StateStage2문파괴Wait_Stage3MonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "MonsterMany", value: 0);
@@ -351,7 +351,7 @@ namespace Maple2.Trigger._02000555_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterMany") == 0) {
-                    return new StateStage3문파괴Wait_Stage4MonsterAppear(context);
+                    return new StateStage3문파괴Wait_Stage4MonsterSpawn(context);
                 }
 
                 return null;
@@ -360,8 +360,8 @@ namespace Maple2.Trigger._02000555_bf {
             public override void OnExit() { }
         }
 
-        private class StateStage3문파괴Wait_Stage4MonsterAppear : TriggerState {
-            internal StateStage3문파괴Wait_Stage4MonsterAppear(ITriggerContext context) : base(context) { }
+        private class StateStage3문파괴Wait_Stage4MonsterSpawn : TriggerState {
+            internal StateStage3문파괴Wait_Stage4MonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "MonsterMany", value: 0);
@@ -426,7 +426,7 @@ namespace Maple2.Trigger._02000555_bf {
 
             public override TriggerState Execute() {
                 if (context.GetUserValue(key: "MonsterMany") == 0) {
-                    return new StateStage4문파괴Wait_Stage5MonsterAppear(context);
+                    return new StateStage4문파괴Wait_Stage5MonsterSpawn(context);
                 }
 
                 return null;
@@ -435,8 +435,8 @@ namespace Maple2.Trigger._02000555_bf {
             public override void OnExit() { }
         }
 
-        private class StateStage4문파괴Wait_Stage5MonsterAppear : TriggerState {
-            internal StateStage4문파괴Wait_Stage5MonsterAppear(ITriggerContext context) : base(context) { }
+        private class StateStage4문파괴Wait_Stage5MonsterSpawn : TriggerState {
+            internal StateStage4문파괴Wait_Stage5MonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "MonsterMany", value: 0);

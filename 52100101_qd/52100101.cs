@@ -118,7 +118,7 @@ namespace Maple2.Trigger._52100101_qd {
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4001, 4002, 4003}, arg2: false);
                 context.MoveUserPath(arg1: "MS2PatrolData_3001");
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -350,7 +350,7 @@ namespace Maple2.Trigger._52100101_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 0, msg: "$52100101_QD__52100101__4$", duration: 3000);
                 context.AddCinematicTalk(npcId: 11004422, msg: "$52100101_QD__52100101__5$", duration: 3000);
-                context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_2(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

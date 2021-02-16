@@ -53,7 +53,7 @@ namespace Maple2.Trigger._52020018_qd {
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 9, arg2: "일부러 그런게 아니야.......");
-                context.SetSceneSkip(arg1: "EventScene_end", arg2: "nextState");
+                context.SetSceneSkip(state: new StateEventScene_end(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

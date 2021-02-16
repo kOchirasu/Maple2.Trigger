@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02020310_bf {
             internal StateCamera시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Camera종료", arg2: "exit");
+                context.SetSceneSkip(state: new StateCamera종료(context), arg2: "exit");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {100001, 100002, 100003, 100004, 100005}, arg2: false);

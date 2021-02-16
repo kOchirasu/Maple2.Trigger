@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52000183_qd {
 
             public override void OnEnter() {
                 context.MoveUser(arg1: 52000183, arg2: 80);
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 30, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOutFast.xml");
                 context.CameraSelectPath(arg1: new[] {4000, 4001, 4002}, arg2: false);
                 context.SetCinematicUI(arg1: 1);

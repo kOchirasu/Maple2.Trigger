@@ -7,7 +7,7 @@ namespace Maple2.Trigger._99999905 {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {104})) {
-                    return new State대포Appear(context);
+                    return new State대포Spawn(context);
                 }
 
                 return null;
@@ -16,8 +16,8 @@ namespace Maple2.Trigger._99999905 {
             public override void OnExit() { }
         }
 
-        private class State대포Appear : TriggerState {
-            internal State대포Appear(ITriggerContext context) : base(context) { }
+        private class State대포Spawn : TriggerState {
+            internal State대포Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1001, 1002, 1003, 1004}, arg2: false);

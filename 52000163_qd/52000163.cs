@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52000163_qd {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4003, 4004}, arg2: false);
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

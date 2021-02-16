@@ -33,7 +33,7 @@ namespace Maple2.Trigger._52000116_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11003163, illustId: "Nelf_normal", msg: "$52000116_QD__MAIN__0$", duration: 4000, align: "Right");
-                context.SetSceneSkip(arg1: "fadeout", arg2: "nextState");
+                context.SetSceneSkip(state: new StateFadeout(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -330,7 +330,7 @@ namespace Maple2.Trigger._52000116_qd {
                 context.SetNpcEmotionSequence(arg1: 105, arg2: "Talk_A");
                 context.CameraSelectPath(arg1: new[] {4002}, arg2: false);
                 context.AddCinematicTalk(npcId: 11003164, msg: "$52000116_QD__MAIN__7$", duration: 2000);
-                context.SetSceneSkip(arg1: "end", arg2: "nextState");
+                context.SetSceneSkip(state: new StateEnd(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

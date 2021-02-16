@@ -27,7 +27,7 @@ namespace Maple2.Trigger._02020023_bf {
             internal StateCamera_시작(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Camera_종료", arg2: "exit");
+                context.SetSceneSkip(state: new StateCamera_종료(context), arg2: "exit");
                 context.CreateMonster(arg1: new[] {102}, arg2: false);
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
@@ -72,7 +72,7 @@ namespace Maple2.Trigger._02020023_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new StateCamera_블리체Appear(context);
+                    return new StateCamera_블리체Spawn(context);
                 }
 
                 return null;
@@ -81,8 +81,8 @@ namespace Maple2.Trigger._02020023_bf {
             public override void OnExit() { }
         }
 
-        private class StateCamera_블리체Appear : TriggerState {
-            internal StateCamera_블리체Appear(ITriggerContext context) : base(context) { }
+        private class StateCamera_블리체Spawn : TriggerState {
+            internal StateCamera_블리체Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 505, arg2: true);

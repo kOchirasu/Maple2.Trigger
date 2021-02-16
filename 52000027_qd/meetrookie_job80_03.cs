@@ -83,7 +83,7 @@ namespace Maple2.Trigger._52000027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State루키Appear01(context);
+                    return new State루키Spawn01(context);
                 }
 
                 return null;
@@ -92,8 +92,8 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnExit() { }
         }
 
-        private class State루키Appear01 : TriggerState {
-            internal State루키Appear01(ITriggerContext context) : base(context) { }
+        private class State루키Spawn01 : TriggerState {
+            internal State루키Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -104,7 +104,7 @@ namespace Maple2.Trigger._52000027_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State루키Appear02(context);
+                    return new State루키Spawn02(context);
                 }
 
                 return null;
@@ -113,18 +113,18 @@ namespace Maple2.Trigger._52000027_qd {
             public override void OnExit() { }
         }
 
-        private class State루키Appear02 : TriggerState {
-            internal State루키Appear02(ITriggerContext context) : base(context) { }
+        private class State루키Spawn02 : TriggerState {
+            internal State루키Spawn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_1011");
                 context.SetConversation(arg1: 2, arg2: 11001610, arg3: "$52000027_QD__MEETROOKIE01__0$", arg4: 3, arg5: 0);
-                context.SetSkip(state: new State루키Appear03(context));
+                context.SetSkip(state: new State루키Spawn03(context));
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State루키Appear03(context);
+                    return new State루키Spawn03(context);
                 }
 
                 return null;
@@ -135,8 +135,8 @@ namespace Maple2.Trigger._52000027_qd {
             }
         }
 
-        private class State루키Appear03 : TriggerState {
-            internal State루키Appear03(ITriggerContext context) : base(context) { }
+        private class State루키Spawn03 : TriggerState {
+            internal State루키Spawn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001584, arg3: "$52000027_QD__MEETROOKIE01__1$", arg4: 3, arg5: 0);

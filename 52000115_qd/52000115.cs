@@ -38,7 +38,7 @@ namespace Maple2.Trigger._52000115_qd {
             internal StateWait02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "exit");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "exit");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(arg1: 1);
                 context.CreateMonster(arg1: new[] {200}, arg2: false);

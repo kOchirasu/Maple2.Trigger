@@ -347,7 +347,7 @@ namespace Maple2.Trigger._52000112_qd {
             internal State쉐도우클로전투_완료Cinematic02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "쉐도우클로전투_완료연출09", arg2: "exit");
+                context.SetSceneSkip(state: new State쉐도우클로전투_완료Cinematic09(context), arg2: "exit");
                 context.SetOnetimeEffect(id: 30, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FadeInOut1sec.xml");
                 context.CameraSelectPath(arg1: new[] {3000, 3001}, arg2: false);
                 context.SetPcEmotionLoop(arg1: "Push_A", arg2: 5000f);

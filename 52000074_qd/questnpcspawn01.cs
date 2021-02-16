@@ -146,7 +146,7 @@ namespace Maple2.Trigger._52000074_qd {
             internal StateCameraSet01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "TalkEnd01", arg2: "exit");
+                context.SetSceneSkip(state: new StateTalkEnd01(context), arg2: "exit");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 600, arg2: true);

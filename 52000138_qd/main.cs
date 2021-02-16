@@ -475,7 +475,7 @@ namespace Maple2.Trigger._52000138_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {122});
                 context.CameraSelectPath(arg1: new[] {8001}, arg2: false);
-                context.SetSceneSkip(arg1: "endready", arg2: "exit");
+                context.SetSceneSkip(state: new StateEndready(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

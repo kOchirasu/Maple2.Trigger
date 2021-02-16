@@ -9,7 +9,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9900}, arg2: new[] {60100115}, arg3: new byte[] {1})) {
-                    return new State레논Appear(context);
+                    return new State레논Spawn(context);
                 }
 
                 return null;
@@ -18,8 +18,8 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnExit() { }
         }
 
-        private class State레논Appear : TriggerState {
-            internal State레논Appear(ITriggerContext context) : base(context) { }
+        private class State레논Spawn : TriggerState {
+            internal State레논Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG\weather\Eff_monochrome_03.xml");
@@ -33,7 +33,7 @@ namespace Maple2.Trigger._52000073_qd {
                 context.CreateMonster(arg1: new[] {302});
                 context.CreateMonster(arg1: new[] {301});
                 context.CameraSelectPath(arg1: new[] {8001, 8002}, arg2: false);
-                context.SetSceneSkip(arg1: "다크윈드통로", arg2: "exit");
+                context.SetSceneSkip(state: new State다크윈드통로(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {
@@ -334,7 +334,7 @@ namespace Maple2.Trigger._52000073_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State카트반Appear(context);
+                    return new State카트반Spawn(context);
                 }
 
                 return null;
@@ -343,8 +343,8 @@ namespace Maple2.Trigger._52000073_qd {
             public override void OnExit() { }
         }
 
-        private class State카트반Appear : TriggerState {
-            internal State카트반Appear(ITriggerContext context) : base(context) { }
+        private class State카트반Spawn : TriggerState {
+            internal State카트반Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {305});

@@ -106,7 +106,7 @@ namespace Maple2.Trigger._52000086_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State에르다Appear(context);
+                    return new State에르다Spawn(context);
                 }
 
                 return null;
@@ -115,8 +115,8 @@ namespace Maple2.Trigger._52000086_qd {
             public override void OnExit() { }
         }
 
-        private class State에르다Appear : TriggerState {
-            internal State에르다Appear(ITriggerContext context) : base(context) { }
+        private class State에르다Spawn : TriggerState {
+            internal State에르다Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkip(state: new StateStopCinematic(context));

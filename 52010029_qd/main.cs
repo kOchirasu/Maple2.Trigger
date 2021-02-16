@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52010029_qd {
             internal StateReady(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.ShowCaption(type: "VerticalCaption", title: "$52010029_QD__MAIN__0$", desc: "$52010029_QD__MAIN__1$", align: "centerRight", offsetRateX: 0f, offsetRateY: 0f, duration: 3000, scale: 2f);
                 context.AddCinematicTalk(npcId: 0, msg: "$52010029_QD__MAIN__2$", duration: 3000);
                 context.AddCinematicTalk(npcId: 0, msg: "$52010029_QD__MAIN__3$", duration: 3000);
@@ -476,7 +476,7 @@ namespace Maple2.Trigger._52010029_qd {
                 context.SetLocalCamera(cameraId: 4014, enable: false);
                 context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_2(context), arg2: "nextState");
                 context.MoveUserPath(arg1: "MS2PatrolData_3002");
                 context.AddCinematicTalk(npcId: 0, msg: "$52010029_QD__MAIN__31$", duration: 4000);
             }
@@ -682,7 +682,7 @@ namespace Maple2.Trigger._52010029_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.DestroyMonster(arg1: new[] {601, 602, 603, 604});
-                context.SetSceneSkip(arg1: "Skip_3", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_3(context), arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
                 context.SetNpcEmotionLoop(arg1: 501, arg2: "Stun_A", arg3: 16000000f);
                 context.AddCinematicTalk(npcId: 11003431, msg: "$52010029_QD__MAIN__38$", duration: 3000);
@@ -803,7 +803,7 @@ namespace Maple2.Trigger._52010029_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 52010029, arg2: 6003);
-                context.SetSceneSkip(arg1: "Skip_4", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_4(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -1209,7 +1209,7 @@ namespace Maple2.Trigger._52010029_qd {
                 context.SetAchievement(arg1: 2001, arg2: "trigger", arg3: "evagor");
                 context.SetOnetimeEffect(id: 8, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.DestroyMonster(arg1: new[] {699});
-                context.SetSceneSkip(arg1: "Warp", arg2: "exit");
+                context.SetSceneSkip(state: new StateWarp(context), arg2: "exit");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
             }

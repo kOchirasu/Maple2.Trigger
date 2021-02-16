@@ -60,7 +60,7 @@ namespace Maple2.Trigger._52000015_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSceneSkip(arg1: "Ishura대화04WaitCSkip", arg2: "nextState");
+                context.SetSceneSkip(state: new StateIshura대화04WaitCSkip(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._52000015_qd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "6")) {
-                    return new State적Appear01(context);
+                    return new State적Spawn01(context);
                 }
 
                 return null;
@@ -153,8 +153,8 @@ namespace Maple2.Trigger._52000015_qd {
             public override void OnExit() { }
         }
 
-        private class State적Appear01 : TriggerState {
-            internal State적Appear01(ITriggerContext context) : base(context) { }
+        private class State적Spawn01 : TriggerState {
+            internal State적Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "7", arg2: 2);

@@ -50,7 +50,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State아르케온_Appear(context);
+                    return new State아르케온_Spawn(context);
                 }
 
                 return null;
@@ -59,8 +59,8 @@ namespace Maple2.Trigger._52100301_qd {
             public override void OnExit() { }
         }
 
-        private class State아르케온_Appear : TriggerState {
-            internal State아르케온_Appear(ITriggerContext context) : base(context) { }
+        private class State아르케온_Spawn : TriggerState {
+            internal State아르케온_Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(key: "AI_Phase", value: 0);

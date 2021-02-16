@@ -38,7 +38,7 @@ namespace Maple2.Trigger._52000067_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.SetEffect(arg1: new[] {7005}, arg2: true);
                 context.SetCinematicUI(arg1: 9, arg2: "$52000067_QD__MAIN__0$", arg3: false);
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -671,7 +671,7 @@ namespace Maple2.Trigger._52000067_qd {
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {7306}, arg2: true);
                 context.CreateMonster(arg1: new[] {999}, arg2: true, arg3: 5000);
-                context.SetSceneSkip(arg1: "Skip_3", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_3(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -799,7 +799,7 @@ namespace Maple2.Trigger._52000067_qd {
             internal StateEnding(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_4", arg2: "exit");
+                context.SetSceneSkip(state: new StateSkip_4(context), arg2: "exit");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetEffect(arg1: new[] {7005}, arg2: true);
@@ -1224,7 +1224,7 @@ namespace Maple2.Trigger._52000067_qd {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 4);
                 context.PlaySceneMovie(fileName: "Aftermath_Madria.swf");
-                context.SetSceneSkip(arg1: "end02", arg2: "exit");
+                context.SetSceneSkip(state: new StateEnd02(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

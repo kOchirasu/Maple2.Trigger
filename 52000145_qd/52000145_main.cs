@@ -204,7 +204,7 @@ namespace Maple2.Trigger._52000145_qd {
             internal State하스터숙면_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "퀘스트1수락_01", arg2: "nextState");
+                context.SetSceneSkip(state: new StateQuest1수락_01(context), arg2: "nextState");
                 context.SetPcEmotionLoop(arg1: "Talk_A", arg2: 3000f);
                 context.AddCinematicTalk(npcId: 0, msg: "$52000145_QD__52000145_MAIN__3$", duration: 3000, align: "right");
             }
@@ -509,7 +509,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new State오스칼Appear_01(context);
+                    return new State오스칼Spawn_01(context);
                 }
 
                 return null;
@@ -518,8 +518,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_01 : TriggerState {
-            internal State오스칼Appear_01(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_01 : TriggerState {
+            internal State오스칼Spawn_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -529,7 +529,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State오스칼Appear_02(context);
+                    return new State오스칼Spawn_02(context);
                 }
 
                 return null;
@@ -538,8 +538,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_02 : TriggerState {
-            internal State오스칼Appear_02(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_02 : TriggerState {
+            internal State오스칼Spawn_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPcEmotionSequence(arg1: "Emotion_Suprise_A");
@@ -547,7 +547,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State오스칼Appear_03(context);
+                    return new State오스칼Spawn_03(context);
                 }
 
                 return null;
@@ -556,18 +556,18 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_03 : TriggerState {
-            internal State오스칼Appear_03(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_03 : TriggerState {
+            internal State오스칼Spawn_03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "마무리", arg2: "exit");
+                context.SetSceneSkip(state: new State마무리(context), arg2: "exit");
                 context.FaceEmotion(spawnPointId: 0, emotionName: "Think_A");
                 context.AddCinematicTalk(npcId: 0, msg: "$52000145_QD__52000145_MAIN__7$", duration: 3000, align: "right");
             }
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State오스칼Appear_04(context);
+                    return new State오스칼Spawn_04(context);
                 }
 
                 return null;
@@ -576,8 +576,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_04 : TriggerState {
-            internal State오스칼Appear_04(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_04 : TriggerState {
+            internal State오스칼Spawn_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003189, msg: "$52000145_QD__52000145_MAIN__8$", duration: 3000, align: "right");
@@ -585,7 +585,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State오스칼Appear_05(context);
+                    return new State오스칼Spawn_05(context);
                 }
 
                 return null;
@@ -594,8 +594,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_05 : TriggerState {
-            internal State오스칼Appear_05(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_05 : TriggerState {
+            internal State오스칼Spawn_05(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, msg: "$52000145_QD__52000145_MAIN__9$", duration: 3000, align: "right");
@@ -604,7 +604,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6000)) {
-                    return new State오스칼Appear_06(context);
+                    return new State오스칼Spawn_06(context);
                 }
 
                 return null;
@@ -613,8 +613,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_06 : TriggerState {
-            internal State오스칼Appear_06(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_06 : TriggerState {
+            internal State오스칼Spawn_06(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003189, msg: "$52000145_QD__52000145_MAIN__11$", duration: 4000, align: "right");
@@ -622,7 +622,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5485)) {
-                    return new State오스칼Appear_07(context);
+                    return new State오스칼Spawn_07(context);
                 }
 
                 return null;
@@ -631,8 +631,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_07 : TriggerState {
-            internal State오스칼Appear_07(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_07 : TriggerState {
+            internal State오스칼Spawn_07(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8003}, arg2: false);
@@ -640,7 +640,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State오스칼Appear_08(context);
+                    return new State오스칼Spawn_08(context);
                 }
 
                 return null;
@@ -649,8 +649,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_08 : TriggerState {
-            internal State오스칼Appear_08(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_08 : TriggerState {
+            internal State오스칼Spawn_08(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003380, msg: "$52000145_QD__52000145_MAIN__12$", duration: 3000, align: "left");
@@ -661,7 +661,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State오스칼Appear_08_1(context);
+                    return new State오스칼Spawn_08_1(context);
                 }
 
                 return null;
@@ -670,8 +670,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_08_1 : TriggerState {
-            internal State오스칼Appear_08_1(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_08_1 : TriggerState {
+            internal State오스칼Spawn_08_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003189, msg: "$52000145_QD__52000145_MAIN__13$", duration: 2500, align: "left");
@@ -679,7 +679,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State오스칼Appear_09(context);
+                    return new State오스칼Spawn_09(context);
                 }
 
                 return null;
@@ -688,8 +688,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_09 : TriggerState {
-            internal State오스칼Appear_09(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_09 : TriggerState {
+            internal State오스칼Spawn_09(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {8004}, arg2: false);
@@ -697,7 +697,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State오스칼Appear_10(context);
+                    return new State오스칼Spawn_10(context);
                 }
 
                 return null;
@@ -706,8 +706,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_10 : TriggerState {
-            internal State오스칼Appear_10(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_10 : TriggerState {
+            internal State오스칼Spawn_10(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003189, msg: "$52000145_QD__52000145_MAIN__14$", duration: 4000, illustId: "Hastur_normal", align: "center");
@@ -715,7 +715,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State오스칼Appear_11(context);
+                    return new State오스칼Spawn_11(context);
                 }
 
                 return null;
@@ -724,8 +724,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_11 : TriggerState {
-            internal State오스칼Appear_11(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_11 : TriggerState {
+            internal State오스칼Spawn_11(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003380, msg: "$52000145_QD__52000145_MAIN__15$", duration: 3000, illustId: "Oskhal_normal", align: "left");
@@ -733,7 +733,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State오스칼Appear_12(context);
+                    return new State오스칼Spawn_12(context);
                 }
 
                 return null;
@@ -742,8 +742,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_12 : TriggerState {
-            internal State오스칼Appear_12(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_12 : TriggerState {
+            internal State오스칼Spawn_12(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003189, msg: "$52000145_QD__52000145_MAIN__16$", duration: 3500, illustId: "Hastur_normal", align: "center");
@@ -751,7 +751,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State오스칼Appear_13(context);
+                    return new State오스칼Spawn_13(context);
                 }
 
                 return null;
@@ -760,8 +760,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_13 : TriggerState {
-            internal State오스칼Appear_13(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_13 : TriggerState {
+            internal State오스칼Spawn_13(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003380, msg: "$52000145_QD__52000145_MAIN__17$", duration: 2500, illustId: "Oskhal_normal", align: "left");
@@ -771,7 +771,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9500)) {
-                    return new State오스칼Appear_14(context);
+                    return new State오스칼Spawn_14(context);
                 }
 
                 return null;
@@ -780,8 +780,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_14 : TriggerState {
-            internal State오스칼Appear_14(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_14 : TriggerState {
+            internal State오스칼Spawn_14(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003189, msg: "$52000145_QD__52000145_MAIN__20$", duration: 3000, illustId: "Hastur_normal", align: "center");
@@ -789,7 +789,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State오스칼Appear_15(context);
+                    return new State오스칼Spawn_15(context);
                 }
 
                 return null;
@@ -798,8 +798,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_15 : TriggerState {
-            internal State오스칼Appear_15(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_15 : TriggerState {
+            internal State오스칼Spawn_15(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003380, msg: "$52000145_QD__52000145_MAIN__21$", duration: 3500, illustId: "Oskhal_normal", align: "left");
@@ -807,7 +807,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5172)) {
-                    return new State오스칼Appear_16(context);
+                    return new State오스칼Spawn_16(context);
                 }
 
                 return null;
@@ -816,8 +816,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_16 : TriggerState {
-            internal State오스칼Appear_16(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_16 : TriggerState {
+            internal State오스칼Spawn_16(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003189, msg: "$52000145_QD__52000145_MAIN__22$", duration: 3000, illustId: "Hastur_normal", align: "center");
@@ -825,7 +825,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State오스칼Appear_17(context);
+                    return new State오스칼Spawn_17(context);
                 }
 
                 return null;
@@ -834,8 +834,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_17 : TriggerState {
-            internal State오스칼Appear_17(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_17 : TriggerState {
+            internal State오스칼Spawn_17(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003380, msg: "$52000145_QD__52000145_MAIN__23$", duration: 2500, illustId: "Oskhal_normal", align: "left");
@@ -845,7 +845,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9742)) {
-                    return new State오스칼Appear_18(context);
+                    return new State오스칼Spawn_18(context);
                 }
 
                 return null;
@@ -854,8 +854,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_18 : TriggerState {
-            internal State오스칼Appear_18(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_18 : TriggerState {
+            internal State오스칼Spawn_18(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003189, msg: "$52000145_QD__52000145_MAIN__26$", duration: 3000, illustId: "Hastur_normal", align: "center");
@@ -863,7 +863,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State오스칼Appear_19(context);
+                    return new State오스칼Spawn_19(context);
                 }
 
                 return null;
@@ -872,8 +872,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_19 : TriggerState {
-            internal State오스칼Appear_19(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_19 : TriggerState {
+            internal State오스칼Spawn_19(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003380, msg: "$52000145_QD__52000145_MAIN__27$", duration: 3000, illustId: "Oskhal_normal", align: "left");
@@ -881,7 +881,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3631)) {
-                    return new State오스칼Appear_20(context);
+                    return new State오스칼Spawn_20(context);
                 }
 
                 return null;
@@ -890,8 +890,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_20 : TriggerState {
-            internal State오스칼Appear_20(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_20 : TriggerState {
+            internal State오스칼Spawn_20(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 11003189, msg: "$52000145_QD__52000145_MAIN__28$", duration: 3500, illustId: "Hastur_normal", align: "center");
@@ -899,7 +899,7 @@ namespace Maple2.Trigger._52000145_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new State오스칼Appear_21(context);
+                    return new State오스칼Spawn_21(context);
                 }
 
                 return null;
@@ -908,8 +908,8 @@ namespace Maple2.Trigger._52000145_qd {
             public override void OnExit() { }
         }
 
-        private class State오스칼Appear_21 : TriggerState {
-            internal State오스칼Appear_21(ITriggerContext context) : base(context) { }
+        private class State오스칼Spawn_21 : TriggerState {
+            internal State오스칼Spawn_21(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.FaceEmotion(spawnPointId: 0);

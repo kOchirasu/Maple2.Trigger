@@ -28,7 +28,7 @@ namespace Maple2.Trigger._52100301_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State탈것_Appear(context);
+                    return new State탈것_Spawn(context);
                 }
 
                 return null;
@@ -37,8 +37,8 @@ namespace Maple2.Trigger._52100301_qd {
             public override void OnExit() { }
         }
 
-        private class State탈것_Appear : TriggerState {
-            internal State탈것_Appear(ITriggerContext context) : base(context) { }
+        private class State탈것_Spawn : TriggerState {
+            internal State탈것_Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetInteractObject(arg1: new[] {10003126}, arg2: 1);

@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52010070_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.SetCinematicUI(arg1: 1);
                 context.CameraSelectPath(arg1: new[] {4004}, arg2: false);
                 context.MoveUser(arg1: 52010070, arg2: 6001);
@@ -184,7 +184,7 @@ namespace Maple2.Trigger._52010070_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 30, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastWhiteOut.xml");
-                context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_2(context), arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
                 context.CreateMonster(arg1: new[] {104, 105, 106}, arg2: false);
                 context.DestroyMonster(arg1: new[] {101}, arg2: false);
@@ -323,7 +323,7 @@ namespace Maple2.Trigger._52010070_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 3, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "Skip_3", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_3(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

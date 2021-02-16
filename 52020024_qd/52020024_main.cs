@@ -247,7 +247,7 @@ namespace Maple2.Trigger._52020024_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new StateCamera_미카엘Appear(context);
+                    return new StateCamera_미카엘Spawn(context);
                 }
 
                 return null;
@@ -256,11 +256,11 @@ namespace Maple2.Trigger._52020024_qd {
             public override void OnExit() { }
         }
 
-        private class StateCamera_미카엘Appear : TriggerState {
-            internal StateCamera_미카엘Appear(ITriggerContext context) : base(context) { }
+        private class StateCamera_미카엘Spawn : TriggerState {
+            internal StateCamera_미카엘Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Camera_종료", arg2: "exit");
+                context.SetSceneSkip(state: new StateCamera_종료(context), arg2: "exit");
                 context.MoveUser(arg1: 52020024, arg2: 2);
                 context.CreateMonster(arg1: new[] {201}, arg2: false);
                 context.MoveNpc(arg1: 201, arg2: "MS2PatrolData_Michael");

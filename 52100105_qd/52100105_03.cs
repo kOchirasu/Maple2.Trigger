@@ -29,11 +29,11 @@ namespace Maple2.Trigger._52100105_qd {
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {2})) {
-                    return new StateCinematic끝(context);
+                    return new StateEndCinematic(context);
                 }
 
                 if (context.QuestUserDetected(arg1: new[] {1000}, arg2: new[] {50101030}, arg3: new byte[] {1})) {
-                    return new StateCinematic끝(context);
+                    return new StateEndCinematic(context);
                 }
 
                 return null;
@@ -134,7 +134,7 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {500}, arg2: false);
-                context.SetSceneSkip(arg1: "컷신3_1", arg2: "nextState");
+                context.SetSceneSkip(state: new State컷신3_1(context), arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {700, 701}, arg2: false);
                 context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", msg: "$52100105_QD__52100105_03__0$", duration: 6000, align: "Right");
                 context.AddCinematicTalk(npcId: 11004430, illustId: "Turka_normal", msg: "$52100105_QD__52100105_03__1$", duration: 6000, align: "Right");
@@ -304,7 +304,7 @@ namespace Maple2.Trigger._52100105_qd {
             internal State투르카도망1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "연출끝", arg2: "nextState");
+                context.SetSceneSkip(state: new StateEndCinematic(context), arg2: "nextState");
                 context.SetCinematicUI(arg1: 4);
                 context.SetOnetimeEffect(id: 100, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(arg1: 1);
@@ -391,7 +391,7 @@ namespace Maple2.Trigger._52100105_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateCinematic끝(context);
+                    return new StateEndCinematic(context);
                 }
 
                 return null;
@@ -400,8 +400,8 @@ namespace Maple2.Trigger._52100105_qd {
             public override void OnExit() { }
         }
 
-        private class StateCinematic끝 : TriggerState {
-            internal StateCinematic끝(ITriggerContext context) : base(context) { }
+        private class StateEndCinematic : TriggerState {
+            internal StateEndCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSkip();

@@ -46,7 +46,7 @@ namespace Maple2.Trigger._52000186_qd {
             internal State묘지전경씬01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(arg1: new[] {8000, 8001, 8002, 8003}, arg2: false);
                 context.SetCinematicUI(arg1: 1);

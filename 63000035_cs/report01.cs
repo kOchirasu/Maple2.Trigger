@@ -161,7 +161,7 @@ namespace Maple2.Trigger._63000035_cs {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001705, arg3: "$63000035_CS__REPORT01__0$", arg4: 6);
-                context.SetSceneSkip(arg1: "PCTeleport01", arg2: "exit");
+                context.SetSceneSkip(state: new StatePCTeleport01(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

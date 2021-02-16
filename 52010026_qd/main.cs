@@ -87,7 +87,7 @@ namespace Maple2.Trigger._52010026_qd {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetPcEmotionLoop(arg1: "Sit_Ground_Idle_A", arg2: 29000f);
                 context.FaceEmotion(spawnPointId: 0, emotionName: "Trigger_disappoint");
-                context.SetSceneSkip(arg1: "두번째연출_ready", arg2: "nextState");
+                context.SetSceneSkip(state: new State두번째Cinematic_ready(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -409,7 +409,7 @@ namespace Maple2.Trigger._52010026_qd {
                 context.CreateMonster(arg1: new[] {101}, arg2: false, arg3: 0);
                 context.CreateMonster(arg1: new[] {102}, arg2: false, arg3: 0);
                 context.SetNpcEmotionLoop(arg1: 1000, arg2: "Down_Idle_A", arg3: 70000f);
-                context.SetSceneSkip(arg1: "두번째연출_피치전투01", arg2: "nextState");
+                context.SetSceneSkip(state: new State두번째Cinematic_피치전투01(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -573,7 +573,7 @@ namespace Maple2.Trigger._52010026_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 0, msg: "$52010026_QD__MAIN__28$", duration: 3000);
-                context.SetSceneSkip(arg1: "Skip", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -764,7 +764,7 @@ namespace Maple2.Trigger._52010026_qd {
             internal State세번째Cinematic_Script02_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "skip_a", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_a(context), arg2: "nextState");
                 context.AddCinematicTalk(npcId: 0, msg: "$52010026_QD__MAIN__35$", duration: 2000);
                 context.AddCinematicTalk(npcId: 11003343, msg: "$52010026_QD__MAIN__36$", duration: 2000);
                 context.AddCinematicTalk(npcId: 0, msg: "$52010026_QD__MAIN__49$", duration: 2000);
@@ -897,7 +897,7 @@ namespace Maple2.Trigger._52010026_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetOnetimeEffect(id: 6, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "Warp", arg2: "exit");
+                context.SetSceneSkip(state: new StateWarp(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

@@ -198,7 +198,7 @@ namespace Maple2.Trigger._52000004_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {102})) {
-                    return new StateNPCAppear(context);
+                    return new StateNPCSpawn(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {199})) {
@@ -211,8 +211,8 @@ namespace Maple2.Trigger._52000004_qd {
             public override void OnExit() { }
         }
 
-        private class StateNPCAppear : TriggerState {
-            internal StateNPCAppear(ITriggerContext context) : base(context) { }
+        private class StateNPCSpawn : TriggerState {
+            internal StateNPCSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: false);

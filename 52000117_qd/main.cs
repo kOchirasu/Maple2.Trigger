@@ -66,7 +66,7 @@ namespace Maple2.Trigger._52000117_qd {
                 context.SetNpcEmotionSequence(arg1: 101, arg2: "Bore_A");
                 context.AddCinematicTalk(npcId: 11003166, msg: "$52000117_QD__MAIN__0$", duration: 3000, illustId: "Jordy_normal", align: "Left");
                 context.AddCinematicTalk(npcId: 11003166, msg: "$52000117_QD__MAIN__1$", duration: 3000);
-                context.SetSceneSkip(arg1: "end", arg2: "exit");
+                context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

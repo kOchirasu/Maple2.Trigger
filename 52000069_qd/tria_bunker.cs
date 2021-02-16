@@ -31,7 +31,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    context.SetSceneSkip(arg1: "StopCinematic");
+                    context.SetSceneSkip(state: new StateStopCinematic(context));
                     context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                     return new StateCamera이동(context);
                 }
@@ -116,7 +116,7 @@ namespace Maple2.Trigger._52000069_qd {
                 context.CameraSelect(arg1: 303, arg2: true);
                 context.SetNpcEmotionSequence(arg1: 2003, arg2: "Bore_A");
                 context.AddCinematicTalk(npcId: 11000119, illustId: "Fray_serious", msg: "$52000069_QD__TRIA_BUNKER__2$", duration: 4000, align: "center");
-                context.SetSceneSkip(arg1: "대사스킵용01");
+                context.SetSceneSkip(state: new State대사스킵용01(context));
             }
 
             public override TriggerState Execute() {
@@ -176,7 +176,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 20000)) {
-                    return new StateReinforcementsAppear(context);
+                    return new StateReinforcementsSpawn(context);
                 }
 
                 return null;
@@ -185,8 +185,8 @@ namespace Maple2.Trigger._52000069_qd {
             public override void OnExit() { }
         }
 
-        private class StateReinforcementsAppear : TriggerState {
-            internal StateReinforcementsAppear(ITriggerContext context) : base(context) { }
+        private class StateReinforcementsSpawn : TriggerState {
+            internal StateReinforcementsSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.DestroyMonster(arg1: new[] {1201, 1202, 1203, 2101, 2102, 2103});
@@ -315,7 +315,7 @@ namespace Maple2.Trigger._52000069_qd {
             internal State에레브StartCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "NPC교체2", arg2: "nextState");
+                context.SetSceneSkip(state: new StateNPC교체2(context), arg2: "nextState");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 306, arg2: true);
@@ -400,7 +400,7 @@ namespace Maple2.Trigger._52000069_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 5000)) {
-                    return new State마드리아Appear(context);
+                    return new State마드리아Spawn(context);
                 }
 
                 return null;
@@ -409,8 +409,8 @@ namespace Maple2.Trigger._52000069_qd {
             public override void OnExit() { }
         }
 
-        private class State마드리아Appear : TriggerState {
-            internal State마드리아Appear(ITriggerContext context) : base(context) { }
+        private class State마드리아Spawn : TriggerState {
+            internal State마드리아Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: true);

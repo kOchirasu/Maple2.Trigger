@@ -161,7 +161,7 @@ namespace Maple2.Trigger._52020032_qd {
                 context.SetCinematicUI(arg1: 4);
                 context.SetActor(arg1: 8002, arg2: true, arg3: "Idle_A");
                 context.SetOnetimeEffect(id: 2, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "Event_C_Skip_01", arg2: "Exit");
+                context.SetSceneSkip(state: new StateEvent_C_Skip_01(context), arg2: "Exit");
             }
 
             public override TriggerState Execute() {

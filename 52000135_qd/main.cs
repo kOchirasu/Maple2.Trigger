@@ -100,7 +100,7 @@ namespace Maple2.Trigger._52000135_qd {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_01");
                 context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__0$", duration: 4000, align: "right");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 8500f);
-                context.SetSceneSkip(arg1: "오브젝트조사전_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State오브젝트조사전_스킵완료(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -243,7 +243,7 @@ namespace Maple2.Trigger._52000135_qd {
                 context.AddCinematicTalk(npcId: 11003251, illustId: "Anos_normal", msg: "$52000135_QD__MAIN__3$", duration: 3000, align: "left");
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Talk_A", arg3: 7000f);
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_0201");
-                context.SetSceneSkip(arg1: "오브젝트조사후_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State오브젝트조사후_스킵완료(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

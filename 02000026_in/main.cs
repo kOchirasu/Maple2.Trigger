@@ -167,7 +167,7 @@ namespace Maple2.Trigger._02000026_in {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State아노스Appear(context);
+                    return new State아노스Spawn(context);
                 }
 
                 return null;
@@ -176,13 +176,13 @@ namespace Maple2.Trigger._02000026_in {
             public override void OnExit() { }
         }
 
-        private class State아노스Appear : TriggerState {
-            internal State아노스Appear(ITriggerContext context) : base(context) { }
+        private class State아노스Spawn : TriggerState {
+            internal State아노스Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 101, arg2: "MS2PatrolData_Anos_00");
                 context.SetConversation(arg1: 2, arg2: 11003313, arg3: "$02000026_IN__MAIN__0$", arg4: 4, arg5: 0);
-                context.SetSceneSkip(arg1: "아노스만남_스킵완료", arg2: "nextState");
+                context.SetSceneSkip(state: new State아노스만남_스킵완료(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

@@ -82,7 +82,7 @@ namespace Maple2.Trigger._02020062_bf {
                 }
 
                 if (context.ObjectInteracted(arg1: new[] {12000107}, arg2: 0)) {
-                    return new StateLever1_MonsterAppear(context);
+                    return new StateLever1_MonsterSpawn(context);
                 }
 
                 return null;
@@ -91,8 +91,8 @@ namespace Maple2.Trigger._02020062_bf {
             public override void OnExit() { }
         }
 
-        private class StateLever1_MonsterAppear : TriggerState {
-            internal StateLever1_MonsterAppear(ITriggerContext context) : base(context) { }
+        private class StateLever1_MonsterSpawn : TriggerState {
+            internal StateLever1_MonsterSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetUserValue(triggerId: 99990014, key: "EliteSpawn", value: 1);

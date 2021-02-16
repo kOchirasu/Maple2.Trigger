@@ -298,7 +298,7 @@ namespace Maple2.Trigger._52000035_qd {
             internal StateLoadingDelayA0(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Quit", arg2: "exit");
+                context.SetSceneSkip(state: new StateQuit(context), arg2: "exit");
                 context.SetOnetimeEffect(id: 11100104, enable: true, path: @"BG/Common/Sound/Eff_AMB_DarkCorridor_01.xml");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(arg1: 1);

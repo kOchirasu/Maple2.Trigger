@@ -116,7 +116,7 @@ namespace Maple2.Trigger._02000552_bf {
                 }
 
                 if (context.GetUserValue(key: "NextPortal") == 1) {
-                    return new StateNextMovePortalAppear(context);
+                    return new StateNextMovePortalSpawn(context);
                 }
 
                 if (context.GetUserValue(key: "End") == 1) {
@@ -176,8 +176,8 @@ namespace Maple2.Trigger._02000552_bf {
             public override void OnExit() { }
         }
 
-        private class StateNextMovePortalAppear : TriggerState {
-            internal StateNextMovePortalAppear(ITriggerContext context) : base(context) { }
+        private class StateNextMovePortalSpawn : TriggerState {
+            internal StateNextMovePortalSpawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetPortal(arg1: 10, arg2: true, arg3: true, arg4: true);

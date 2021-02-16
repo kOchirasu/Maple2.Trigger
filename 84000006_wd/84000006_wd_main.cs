@@ -33,11 +33,11 @@ namespace Maple2.Trigger._84000006_wd {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "1")) {
-                    return new StateOpeningscene_start(context);
+                    return new StateOpeningScene_start(context);
                 }
 
                 if (context.GetUserCount(boxId: 9000) == 70) {
-                    return new StateOpeningscene_start(context);
+                    return new StateOpeningScene_start(context);
                 }
 
                 return null;
@@ -46,8 +46,8 @@ namespace Maple2.Trigger._84000006_wd {
             public override void OnExit() { }
         }
 
-        private class StateOpeningscene_start : TriggerState {
-            internal StateOpeningscene_start(ITriggerContext context) : base(context) { }
+        private class StateOpeningScene_start : TriggerState {
+            internal StateOpeningScene_start(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
@@ -58,7 +58,7 @@ namespace Maple2.Trigger._84000006_wd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 2000)) {
-                    return new StateOpeningscene_1_1(context);
+                    return new StateOpeningScene_1_1(context);
                 }
 
                 return null;
@@ -67,8 +67,8 @@ namespace Maple2.Trigger._84000006_wd {
             public override void OnExit() { }
         }
 
-        private class StateOpeningscene_1_1 : TriggerState {
-            internal StateOpeningscene_1_1(ITriggerContext context) : base(context) { }
+        private class StateOpeningScene_1_1 : TriggerState {
+            internal StateOpeningScene_1_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {3001}, arg2: true);
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._84000006_wd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 6500)) {
-                    return new StateOpeningscene_1_2(context);
+                    return new StateOpeningScene_1_2(context);
                 }
 
                 return null;
@@ -87,8 +87,8 @@ namespace Maple2.Trigger._84000006_wd {
             public override void OnExit() { }
         }
 
-        private class StateOpeningscene_1_2 : TriggerState {
-            internal StateOpeningscene_1_2(ITriggerContext context) : base(context) { }
+        private class StateOpeningScene_1_2 : TriggerState {
+            internal StateOpeningScene_1_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {3001}, arg2: true);
@@ -97,7 +97,7 @@ namespace Maple2.Trigger._84000006_wd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3500)) {
-                    return new StateOpeningscene_1_3(context);
+                    return new StateOpeningScene_1_3(context);
                 }
 
                 return null;
@@ -108,8 +108,8 @@ namespace Maple2.Trigger._84000006_wd {
             }
         }
 
-        private class StateOpeningscene_1_3 : TriggerState {
-            internal StateOpeningscene_1_3(ITriggerContext context) : base(context) { }
+        private class StateOpeningScene_1_3 : TriggerState {
+            internal StateOpeningScene_1_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetAmbientLight(arg1: new Vector3(150f, 150f, 150f));

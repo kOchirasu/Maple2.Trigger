@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52010032_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetCinematicUI(arg1: 4);
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {4001}, arg2: false);
                 context.MoveUser(arg1: 52010032, arg2: 7001);
                 context.CreateMonster(arg1: new[] {101}, arg2: true);

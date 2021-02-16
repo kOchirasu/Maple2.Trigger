@@ -78,7 +78,7 @@ namespace Maple2.Trigger._52020010_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.SetPcEmotionSequence(arg1: "Object_React_H");
                 context.AddCinematicTalk(npcId: 0, msg: "왜 아무일도 일어나지 않는거지?", duration: 2800);
-                context.SetSceneSkip(arg1: "Next", arg2: "nextState");
+                context.SetSceneSkip(state: new StateNext(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

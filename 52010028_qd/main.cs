@@ -73,7 +73,7 @@ namespace Maple2.Trigger._52010028_qd {
                 context.AddCinematicTalk(npcId: 0, msg: "$52010028_QD__MAIN__2$", duration: 3000);
                 context.SetOnetimeEffect(id: 301, enable: true, path: @"BG/Common/Eff_Com_Vibrate_Short.xml");
                 context.SetOnetimeEffect(id: 401, enable: true, path: @"BG/sound/Eff_DevilPortal_01.xml");
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -255,7 +255,7 @@ namespace Maple2.Trigger._52010028_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 52010028, arg2: 7001);
-                context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_2(context), arg2: "nextState");
                 context.AddCinematicTalk(npcId: 0, msg: "$52010028_QD__MAIN__9$", duration: 3000);
                 context.SetNpcEmotionLoop(arg1: 101, arg2: "Down_Idle_A", arg3: 1500000f);
                 context.SetNpcEmotionLoop(arg1: 201, arg2: "Attack_Idle_A", arg3: 1500000f);
@@ -604,7 +604,7 @@ namespace Maple2.Trigger._52010028_qd {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSceneSkip(arg1: "이동", arg2: "exit");
+                context.SetSceneSkip(state: new State이동(context), arg2: "exit");
                 context.MoveUser(arg1: 52010028, arg2: 7002);
                 context.CreateMonster(arg1: new[] {202}, arg2: true);
             }

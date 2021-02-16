@@ -27,7 +27,7 @@ namespace Maple2.Trigger._52000020_qd {
                 context.DestroyMonster(arg1: new[] {201});
                 context.CreateMonster(arg1: new[] {202, 302, 404, 405, 406, 407, 408, 409, 410, 411}, arg2: true);
                 context.SetPortal(arg1: 1, arg2: false, arg3: false, arg4: false);
-                context.SetSceneSkip(arg1: "battle_ready", arg2: "nextState");
+                context.SetSceneSkip(state: new StateBattle_ready(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

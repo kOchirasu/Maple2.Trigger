@@ -64,7 +64,7 @@ namespace Maple2.Trigger._52000033_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {700}, arg2: false);
                 context.AddCinematicTalk(npcId: 11001663, msg: "$52000033_QD__AUDIENCEWITHEREB_02__0$", duration: 5000);
-                context.SetSceneSkip(arg1: "end", arg2: "nextState");
+                context.SetSceneSkip(state: new StateEnd(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

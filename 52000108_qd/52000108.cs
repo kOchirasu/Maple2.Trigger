@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52000108_qd {
             internal State불끄기Quest01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.CameraSelectPath(arg1: new[] {2000}, arg2: false);
                 context.MoveUser(arg1: 52000108, arg2: 10);
@@ -397,7 +397,7 @@ namespace Maple2.Trigger._52000108_qd {
             internal State저항군로봇Quest02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_2", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_2(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 2, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.AddCinematicTalk(npcId: 0, illustId: "0", msg: "$52000108_QD__52000108__11$", duration: 6000, align: "right");
                 context.SetPcEmotionLoop(arg1: "Object_React_D", arg2: 25000f);
@@ -837,7 +837,7 @@ namespace Maple2.Trigger._52000108_qd {
             internal State체키등판Quest02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_3", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_3(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 3, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.AddCinematicTalk(npcId: 11003191, msg: "$52000108_QD__52000108__26$", duration: 4000, align: "right");
             }
@@ -1022,7 +1022,7 @@ namespace Maple2.Trigger._52000108_qd {
             internal State프로토콜해피02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_4", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_4(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 4, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.AddCinematicTalk(npcId: 11003191, msg: "$52000108_QD__52000108__33$", duration: 4000, align: "right");
             }

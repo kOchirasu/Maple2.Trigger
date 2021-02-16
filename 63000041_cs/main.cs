@@ -36,7 +36,7 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetCinematicUI(arg1: 3);
                 context.CreateMonster(arg1: new[] {101, 102, 201, 202, 203, 301, 302, 303, 501, 502, 503, 504, 505, 506, 507, 508, 666}, arg2: true);
                 context.MoveUser(arg1: 63000041, arg2: 1);
-                context.SetSceneSkip(arg1: "skip_01", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_01(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -651,7 +651,7 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 63000041, arg2: 2);
                 context.SetEffect(arg1: new[] {7005}, arg2: true);
-                context.SetSceneSkip(arg1: "skip_a_01", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_a_01(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -1392,7 +1392,7 @@ namespace Maple2.Trigger._63000041_cs {
                 context.SetCinematicUI(arg1: 3);
                 context.SetCinematicUI(arg1: 4);
                 context.SetSound(arg1: 7102, arg2: true);
-                context.SetSceneSkip(arg1: "end_warp", arg2: "exit");
+                context.SetSceneSkip(state: new StateEnd_warp(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

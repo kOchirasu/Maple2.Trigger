@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52020020_qd {
 
             public override void OnEnter() {
                 context.AddCinematicTalk(npcId: 0, msg: "으으.......", duration: 2500, align: "Right");
-                context.SetSceneSkip(arg1: "end", arg2: "exit");
+                context.SetSceneSkip(state: new StateEnd(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

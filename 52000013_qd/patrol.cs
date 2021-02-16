@@ -10,7 +10,7 @@ namespace Maple2.Trigger._52000013_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {9000})) {
-                    return new State어린벨라Appear(context);
+                    return new State어린벨라Spawn(context);
                 }
 
                 return null;
@@ -19,8 +19,8 @@ namespace Maple2.Trigger._52000013_qd {
             public override void OnExit() { }
         }
 
-        private class State어린벨라Appear : TriggerState {
-            internal State어린벨라Appear(ITriggerContext context) : base(context) { }
+        private class State어린벨라Spawn : TriggerState {
+            internal State어린벨라Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetTimer(arg1: "10", arg2: 1);

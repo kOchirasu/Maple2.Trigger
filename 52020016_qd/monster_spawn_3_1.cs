@@ -104,7 +104,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State조디Appear_1(context);
+                    return new State조디Spawn_1(context);
                 }
 
                 return null;
@@ -115,8 +115,8 @@ namespace Maple2.Trigger._52020016_qd {
             }
         }
 
-        private class State조디Appear_1 : TriggerState {
-            internal State조디Appear_1(ITriggerContext context) : base(context) { }
+        private class State조디Spawn_1 : TriggerState {
+            internal State조디Spawn_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 4000401, arg2: "MS2PatrolData0_4000401_1");
@@ -124,7 +124,7 @@ namespace Maple2.Trigger._52020016_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State조디Appear_2(context);
+                    return new State조디Spawn_2(context);
                 }
 
                 return null;
@@ -135,8 +135,8 @@ namespace Maple2.Trigger._52020016_qd {
             }
         }
 
-        private class State조디Appear_2 : TriggerState {
-            internal State조디Appear_2(ITriggerContext context) : base(context) { }
+        private class State조디Spawn_2 : TriggerState {
+            internal State조디Spawn_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 0, arg3: "!!!!!!!??????", arg4: 3, arg5: 0);

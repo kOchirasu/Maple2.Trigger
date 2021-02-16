@@ -62,7 +62,7 @@ namespace Maple2.Trigger._83000003_colosseum {
 
             public override void OnEnter() {
                 context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -144,7 +144,7 @@ namespace Maple2.Trigger._83000003_colosseum {
                 if (context.WaitTick(waitTick: 5000)) {
                     context.SetCinematicUI(arg1: 0);
                     context.CameraReset(interpolationTime: 0f);
-                    return new StateCinematic끝_01(context);
+                    return new StateEndCinematic_01(context);
                 }
 
                 return null;
@@ -181,14 +181,14 @@ namespace Maple2.Trigger._83000003_colosseum {
             public override void OnEnter() { }
 
             public override TriggerState Execute() {
-                return new StateCinematic끝_01(context);
+                return new StateEndCinematic_01(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class StateCinematic끝_01 : TriggerState {
-            internal StateCinematic끝_01(ITriggerContext context) : base(context) { }
+        private class StateEndCinematic_01 : TriggerState {
+            internal StateEndCinematic_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.TalkNpc(spawnPointId: 203);

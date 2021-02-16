@@ -15,7 +15,7 @@ namespace Maple2.Trigger._02000139_bf {
 
             public override TriggerState Execute() {
                 if (context.ObjectInteracted(arg1: new[] {10000131}, arg2: 0)) {
-                    return new StateSetupAppear1(context);
+                    return new StateSetupSpawn1(context);
                 }
 
                 return null;
@@ -24,8 +24,8 @@ namespace Maple2.Trigger._02000139_bf {
             public override void OnExit() { }
         }
 
-        private class StateSetupAppear1 : TriggerState {
-            internal StateSetupAppear1(ITriggerContext context) : base(context) { }
+        private class StateSetupSpawn1 : TriggerState {
+            internal StateSetupSpawn1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {201}, arg2: true);
@@ -34,7 +34,7 @@ namespace Maple2.Trigger._02000139_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "2")) {
-                    return new StateSetupAppear2(context);
+                    return new StateSetupSpawn2(context);
                 }
 
                 return null;
@@ -43,8 +43,8 @@ namespace Maple2.Trigger._02000139_bf {
             public override void OnExit() { }
         }
 
-        private class StateSetupAppear2 : TriggerState {
-            internal StateSetupAppear2(ITriggerContext context) : base(context) { }
+        private class StateSetupSpawn2 : TriggerState {
+            internal StateSetupSpawn2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {202}, arg2: true);
@@ -53,7 +53,7 @@ namespace Maple2.Trigger._02000139_bf {
 
             public override TriggerState Execute() {
                 if (context.TimeExpired(arg1: "3")) {
-                    return new StateSetupAppear3(context);
+                    return new StateSetupSpawn3(context);
                 }
 
                 return null;
@@ -62,8 +62,8 @@ namespace Maple2.Trigger._02000139_bf {
             public override void OnExit() { }
         }
 
-        private class StateSetupAppear3 : TriggerState {
-            internal StateSetupAppear3(ITriggerContext context) : base(context) { }
+        private class StateSetupSpawn3 : TriggerState {
+            internal StateSetupSpawn3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {203}, arg2: true);

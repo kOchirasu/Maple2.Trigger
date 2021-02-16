@@ -102,7 +102,7 @@ namespace Maple2.Trigger._99999922 {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 101, arg3: @"반가워요.\n그럼 저를 따라와 보시겠어요??", arg4: 3);
-                context.SetSkip(state: new StateCinematic끝_1(context));
+                context.SetSkip(state: new StateEndCinematic_1(context));
             }
 
             public override TriggerState Execute() {
@@ -125,14 +125,14 @@ namespace Maple2.Trigger._99999922 {
             }
 
             public override TriggerState Execute() {
-                return new StateCinematic끝_1(context);
+                return new StateEndCinematic_1(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class StateCinematic끝_1 : TriggerState {
-            internal StateCinematic끝_1(ITriggerContext context) : base(context) { }
+        private class StateEndCinematic_1 : TriggerState {
+            internal StateEndCinematic_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 2000001, arg2: false);
@@ -182,7 +182,7 @@ namespace Maple2.Trigger._99999922 {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new StateMonsterAppear_1(context);
+                    return new StateMonsterSpawn_1(context);
                 }
 
                 return null;
@@ -193,8 +193,8 @@ namespace Maple2.Trigger._99999922 {
             }
         }
 
-        private class StateMonsterAppear_1 : TriggerState {
-            internal StateMonsterAppear_1(ITriggerContext context) : base(context) { }
+        private class StateMonsterSpawn_1 : TriggerState {
+            internal StateMonsterSpawn_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetMesh(arg1: new[] {1400}, arg2: false, arg3: 1000, arg4: 0, arg5: 0f);
@@ -498,14 +498,14 @@ namespace Maple2.Trigger._99999922 {
             }
 
             public override TriggerState Execute() {
-                return new StateCinematic끝_2(context);
+                return new StateEndCinematic_2(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class StateCinematic끝_2 : TriggerState {
-            internal StateCinematic끝_2(ITriggerContext context) : base(context) { }
+        private class StateEndCinematic_2 : TriggerState {
+            internal StateEndCinematic_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 2000002, arg2: false);

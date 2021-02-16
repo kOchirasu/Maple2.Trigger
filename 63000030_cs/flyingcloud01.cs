@@ -237,7 +237,7 @@ namespace Maple2.Trigger._63000030_cs {
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 500, arg2: true);
-                context.SetSceneSkip(arg1: "LookAround07_CSkip", arg2: "nextState");
+                context.SetSceneSkip(state: new StateLookAround07_CSkip(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -441,7 +441,7 @@ namespace Maple2.Trigger._63000030_cs {
             public override void OnEnter() {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
-                context.SetSceneSkip(arg1: "DialogueSkip10", arg2: "nextState");
+                context.SetSceneSkip(state: new StateDialogueSkip10(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -922,7 +922,7 @@ namespace Maple2.Trigger._63000030_cs {
             internal StatePatrolWhileTalking03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "FightBack01", arg2: "nextState");
+                context.SetSceneSkip(state: new StateFightBack01(context), arg2: "nextState");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_103");

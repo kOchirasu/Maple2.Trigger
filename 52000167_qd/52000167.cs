@@ -48,7 +48,7 @@ namespace Maple2.Trigger._52000167_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.SetEffect(arg1: new[] {700}, arg2: false);
                 context.SetCinematicUI(arg1: 1);
             }
@@ -156,7 +156,7 @@ namespace Maple2.Trigger._52000167_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002369}, arg3: new byte[] {3})) {
-                    return new State홀슈타트Appear00(context);
+                    return new State홀슈타트Spawn00(context);
                 }
 
                 return null;
@@ -165,8 +165,8 @@ namespace Maple2.Trigger._52000167_qd {
             public override void OnExit() { }
         }
 
-        private class State홀슈타트Appear00 : TriggerState {
-            internal State홀슈타트Appear00(ITriggerContext context) : base(context) { }
+        private class State홀슈타트Spawn00 : TriggerState {
+            internal State홀슈타트Spawn00(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 20, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -176,7 +176,7 @@ namespace Maple2.Trigger._52000167_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State홀슈타트Appear01(context);
+                    return new State홀슈타트Spawn01(context);
                 }
 
                 return null;
@@ -185,8 +185,8 @@ namespace Maple2.Trigger._52000167_qd {
             public override void OnExit() { }
         }
 
-        private class State홀슈타트Appear01 : TriggerState {
-            internal State홀슈타트Appear01(ITriggerContext context) : base(context) { }
+        private class State홀슈타트Spawn01 : TriggerState {
+            internal State홀슈타트Spawn01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 20, enable: false, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -201,7 +201,7 @@ namespace Maple2.Trigger._52000167_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1500)) {
-                    return new State홀슈타트Appear02_c(context);
+                    return new State홀슈타트Spawn02_c(context);
                 }
 
                 return null;
@@ -210,8 +210,8 @@ namespace Maple2.Trigger._52000167_qd {
             public override void OnExit() { }
         }
 
-        private class State홀슈타트Appear02_c : TriggerState {
-            internal State홀슈타트Appear02_c(ITriggerContext context) : base(context) { }
+        private class State홀슈타트Spawn02_c : TriggerState {
+            internal State홀슈타트Spawn02_c(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {700}, arg2: true);
@@ -221,7 +221,7 @@ namespace Maple2.Trigger._52000167_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 9000)) {
-                    return new State홀슈타트Appear02(context);
+                    return new State홀슈타트Spawn02(context);
                 }
 
                 return null;
@@ -230,8 +230,8 @@ namespace Maple2.Trigger._52000167_qd {
             public override void OnExit() { }
         }
 
-        private class State홀슈타트Appear02 : TriggerState {
-            internal State홀슈타트Appear02(ITriggerContext context) : base(context) { }
+        private class State홀슈타트Spawn02 : TriggerState {
+            internal State홀슈타트Spawn02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 40, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
@@ -239,7 +239,7 @@ namespace Maple2.Trigger._52000167_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State홀슈타트Appear03(context);
+                    return new State홀슈타트Spawn03(context);
                 }
 
                 return null;
@@ -248,8 +248,8 @@ namespace Maple2.Trigger._52000167_qd {
             public override void OnExit() { }
         }
 
-        private class State홀슈타트Appear03 : TriggerState {
-            internal State홀슈타트Appear03(ITriggerContext context) : base(context) { }
+        private class State홀슈타트Spawn03 : TriggerState {
+            internal State홀슈타트Spawn03(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.ShowGuideSummary(entityId: 52001672, textId: 52001672, duration: 10000);
@@ -261,7 +261,7 @@ namespace Maple2.Trigger._52000167_qd {
 
             public override TriggerState Execute() {
                 if (context.QuestUserDetected(arg1: new[] {9001}, arg2: new[] {20002370}, arg3: new byte[] {3})) {
-                    return new State홀슈타트Appear04(context);
+                    return new State홀슈타트Spawn04(context);
                 }
 
                 return null;
@@ -270,8 +270,8 @@ namespace Maple2.Trigger._52000167_qd {
             public override void OnExit() { }
         }
 
-        private class State홀슈타트Appear04 : TriggerState {
-            internal State홀슈타트Appear04(ITriggerContext context) : base(context) { }
+        private class State홀슈타트Spawn04 : TriggerState {
+            internal State홀슈타트Spawn04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetNpcEmotionLoop(arg1: 402, arg2: "Attack_Idle_A", arg3: 800000f);

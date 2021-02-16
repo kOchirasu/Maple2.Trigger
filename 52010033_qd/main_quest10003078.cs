@@ -42,7 +42,7 @@ namespace Maple2.Trigger._52010033_qd {
             internal State티나감사(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "나메드들어옴02", arg2: "exit");
+                context.SetSceneSkip(state: new State나메드들어옴02(context), arg2: "exit");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelectPath(arg1: new[] {4002}, arg2: false);

@@ -64,7 +64,7 @@ namespace Maple2.Trigger._52000143_qd {
             internal State로베와대화_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "로베와전투_01", arg2: "nextState");
+                context.SetSceneSkip(state: new State로베Combat_01(context), arg2: "nextState");
                 context.AddCinematicTalk(npcId: 0, msg: "$52000143_QD__52000143_MAIN__0$", duration: 3000, align: "left");
             }
 
@@ -284,7 +284,7 @@ namespace Maple2.Trigger._52000143_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State알론Appear_01(context);
+                    return new State알론Spawn_01(context);
                 }
 
                 return null;
@@ -293,8 +293,8 @@ namespace Maple2.Trigger._52000143_qd {
             public override void OnExit() { }
         }
 
-        private class State알론Appear_01 : TriggerState {
-            internal State알론Appear_01(ITriggerContext context) : base(context) { }
+        private class State알론Spawn_01 : TriggerState {
+            internal State알론Spawn_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: false, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
@@ -302,7 +302,7 @@ namespace Maple2.Trigger._52000143_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new State알론Appear_02(context);
+                    return new State알론Spawn_02(context);
                 }
 
                 return null;
@@ -311,8 +311,8 @@ namespace Maple2.Trigger._52000143_qd {
             public override void OnExit() { }
         }
 
-        private class State알론Appear_02 : TriggerState {
-            internal State알론Appear_02(ITriggerContext context) : base(context) { }
+        private class State알론Spawn_02 : TriggerState {
+            internal State알론Spawn_02(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.MoveNpc(arg1: 104, arg2: "MS2PatrolData_2001");
@@ -354,7 +354,7 @@ namespace Maple2.Trigger._52000143_qd {
             internal State3자대화_04(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "마무리_01", arg2: "nextState");
+                context.SetSceneSkip(state: new State마무리_01(context), arg2: "nextState");
                 context.AddCinematicTalk(npcId: 11003401, msg: "$52000143_QD__52000143_MAIN__10$", duration: 2500, illustId: "Robe_normal", align: "right");
             }
 

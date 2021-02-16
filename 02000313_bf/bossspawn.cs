@@ -495,7 +495,7 @@ namespace Maple2.Trigger._02000313_bf {
             internal StateQuestCinematic_상황보여주기_01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "퀘스트연출끝_이동", arg2: "exit");
+                context.SetSceneSkip(state: new StateQuestEndCinematic_이동(context), arg2: "exit");
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.CameraSelect(arg1: 30000, arg2: true);
@@ -1127,7 +1127,7 @@ namespace Maple2.Trigger._02000313_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 1000)) {
-                    return new StateQuestCinematic끝_이동(context);
+                    return new StateQuestEndCinematic_이동(context);
                 }
 
                 return null;
@@ -1136,8 +1136,8 @@ namespace Maple2.Trigger._02000313_bf {
             public override void OnExit() { }
         }
 
-        private class StateQuestCinematic끝_이동 : TriggerState {
-            internal StateQuestCinematic끝_이동(ITriggerContext context) : base(context) { }
+        private class StateQuestEndCinematic_이동 : TriggerState {
+            internal StateQuestEndCinematic_이동(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.VisibleMyPc(isVisible: true);

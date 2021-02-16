@@ -25,7 +25,7 @@ namespace Maple2.Trigger._52020030_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.VisibleMyPc(isVisible: false);
                 context.CreateMonster(arg1: new[] {107, 108}, arg2: false);
-                context.SetSceneSkip(arg1: "세번째연출대화진행05", arg2: "exit");
+                context.SetSceneSkip(state: new State세번째Cinematic대화진행05(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

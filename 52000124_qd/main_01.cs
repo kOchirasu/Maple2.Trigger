@@ -50,7 +50,7 @@ namespace Maple2.Trigger._52000124_qd {
                 context.CameraSelectPath(arg1: new[] {4001, 4002}, arg2: false);
                 context.CreateMonster(arg1: new[] {401, 402}, arg2: true);
                 context.AddCinematicTalk(npcId: 11000069, msg: "$52000124_QD__MAIN_01__0$", duration: 2000, align: "left");
-                context.SetSceneSkip(arg1: "battle_ready", arg2: "exit");
+                context.SetSceneSkip(state: new StateBattle_ready(context), arg2: "exit");
             }
 
             public override TriggerState Execute() {

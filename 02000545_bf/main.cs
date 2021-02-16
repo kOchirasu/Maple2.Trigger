@@ -107,7 +107,7 @@ namespace Maple2.Trigger._02000545_bf {
                 context.CameraSelectPath(arg1: new[] {7001}, arg2: false);
                 context.AddCinematicTalk(npcId: 11004687, msg: "$02000545_BF__MAIN__6$", align: "left", duration: 4000);
                 context.SetEffect(arg1: new[] {5001}, arg2: true);
-                context.SetSceneSkip(arg1: "몬스터웨이브1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateMonster웨이브1(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -268,7 +268,7 @@ namespace Maple2.Trigger._02000545_bf {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.MoveUser(arg1: 02000545, arg2: 3);
-                context.SetSceneSkip(arg1: "거미여왕기어올라오기", arg2: "nextState");
+                context.SetSceneSkip(state: new State거미여왕기어올라오기(context), arg2: "nextState");
                 context.CameraSelectPath(arg1: new[] {7004}, arg2: false);
             }
 

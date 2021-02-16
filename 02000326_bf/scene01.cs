@@ -36,8 +36,8 @@ namespace Maple2.Trigger._02000326_bf {
             public override void OnExit() { }
         }
 
-        private class State레논Appear : TriggerState {
-            internal State레논Appear(ITriggerContext context) : base(context) { }
+        private class State레논Spawn : TriggerState {
+            internal State레논Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -60,8 +60,8 @@ namespace Maple2.Trigger._02000326_bf {
             public override void OnExit() { }
         }
 
-        private class State벨라Appear : TriggerState {
-            internal State벨라Appear(ITriggerContext context) : base(context) { }
+        private class State벨라Spawn : TriggerState {
+            internal State벨라Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -96,8 +96,8 @@ namespace Maple2.Trigger._02000326_bf {
             public override void OnExit() { }
         }
 
-        private class State알론Appear : TriggerState {
-            internal State알론Appear(ITriggerContext context) : base(context) { }
+        private class State알론Spawn : TriggerState {
+            internal State알론Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -204,8 +204,8 @@ namespace Maple2.Trigger._02000326_bf {
             public override void OnExit() { }
         }
 
-        private class StateCinematic끝 : TriggerState {
-            internal StateCinematic끝(ITriggerContext context) : base(context) { }
+        private class StateEndCinematic : TriggerState {
+            internal StateEndCinematic(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 

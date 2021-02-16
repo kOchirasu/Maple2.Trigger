@@ -68,7 +68,7 @@ namespace Maple2.Trigger._52000119_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.AddCinematicTalk(npcId: 11003169, illustId: "Jordy_normal", msg: "$52000119_QD__MAIN__0$", duration: 3000, align: "Left");
-                context.SetSceneSkip(arg1: "fadeout_02", arg2: "nextState");
+                context.SetSceneSkip(state: new StateFadeout_02(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {
@@ -317,7 +317,7 @@ namespace Maple2.Trigger._52000119_qd {
                 context.SetCinematicUI(arg1: 3);
                 context.MoveUserPath(arg1: "MS2PatrolData_3003");
                 context.AddBalloonTalk(spawnPointId: 0, msg: "$52000119_QD__MAIN__12$", duration: 2000, delayTick: 0);
-                context.SetSceneSkip(arg1: "fadeout_04", arg2: "nextState");
+                context.SetSceneSkip(state: new StateFadeout_04(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

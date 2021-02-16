@@ -21,7 +21,7 @@ namespace Maple2.Trigger._52000046_qd {
 
             public override void OnEnter() {
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_fadein_1sec.xml");
-                context.SetSceneSkip(arg1: "scene_10", arg2: "nextState");
+                context.SetSceneSkip(state: new StateScene_10(context), arg2: "nextState");
             }
 
             public override TriggerState Execute() {

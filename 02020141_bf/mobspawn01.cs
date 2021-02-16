@@ -47,7 +47,7 @@ namespace Maple2.Trigger._02020141_bf {
                 }
 
                 if (context.UserDetected(arg1: new[] {10100})) {
-                    return new State졸MonsterAppearWaiting(context);
+                    return new State졸MonsterSpawnWaiting(context);
                 }
 
                 return null;
@@ -56,8 +56,8 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnExit() { }
         }
 
-        private class State졸MonsterAppearWaiting : TriggerState {
-            internal State졸MonsterAppearWaiting(ITriggerContext context) : base(context) { }
+        private class State졸MonsterSpawnWaiting : TriggerState {
+            internal State졸MonsterSpawnWaiting(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -87,7 +87,7 @@ namespace Maple2.Trigger._02020141_bf {
                 }
 
                 if (context.UserDetected(arg1: new[] {10100})) {
-                    return new State졸MonsterAppear하기(context);
+                    return new State졸MonsterSpawn하기(context);
                 }
 
                 if (context.WaitTick(waitTick: 500)) {
@@ -100,8 +100,8 @@ namespace Maple2.Trigger._02020141_bf {
             public override void OnExit() { }
         }
 
-        private class State졸MonsterAppear하기 : TriggerState {
-            internal State졸MonsterAppear하기(ITriggerContext context) : base(context) { }
+        private class State졸MonsterSpawn하기 : TriggerState {
+            internal State졸MonsterSpawn하기(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {10101, 10102, 10103, 10104}, arg2: false);
@@ -209,7 +209,7 @@ namespace Maple2.Trigger._02020141_bf {
                 }
 
                 if (context.UserDetected(arg1: new[] {10100})) {
-                    return new State졸MonsterAppear하기(context);
+                    return new State졸MonsterSpawn하기(context);
                 }
 
                 if (!context.UserDetected(arg1: new[] {10100})) {

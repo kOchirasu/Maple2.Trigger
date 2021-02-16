@@ -1095,7 +1095,7 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 500)) {
-                    return new State준타틴차이Appear(context);
+                    return new State준타틴차이Spawn(context);
                 }
 
                 return null;
@@ -1104,8 +1104,8 @@ namespace Maple2.Trigger._63000038_cs {
             public override void OnExit() { }
         }
 
-        private class State준타틴차이Appear : TriggerState {
-            internal State준타틴차이Appear(ITriggerContext context) : base(context) { }
+        private class State준타틴차이Spawn : TriggerState {
+            internal State준타틴차이Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {13001, 13002}, arg2: false);
@@ -1204,7 +1204,7 @@ namespace Maple2.Trigger._63000038_cs {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 3000)) {
-                    return new State비전Appear(context);
+                    return new State비전Spawn(context);
                 }
 
                 return null;
@@ -1222,14 +1222,14 @@ namespace Maple2.Trigger._63000038_cs {
             }
 
             public override TriggerState Execute() {
-                return new State비전Appear(context);
+                return new State비전Spawn(context);
             }
 
             public override void OnExit() { }
         }
 
-        private class State비전Appear : TriggerState {
-            internal State비전Appear(ITriggerContext context) : base(context) { }
+        private class State비전Spawn : TriggerState {
+            internal State비전Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CameraSelect(arg1: 309, arg2: true);

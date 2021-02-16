@@ -34,7 +34,7 @@ namespace Maple2.Trigger._52000106_qd {
             internal State그림자의침략01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "Skip_1", arg2: "nextState");
+                context.SetSceneSkip(state: new StateSkip_1(context), arg2: "nextState");
                 context.SetOnetimeEffect(id: 1, enable: true, path: @"BG/Common/ScreenMask/Eff_CameraMasking_FastFadeIn.xml");
                 context.SetCinematicUI(arg1: 1);
             }
@@ -324,7 +324,7 @@ namespace Maple2.Trigger._52000106_qd {
             internal State리엔을떠나다01(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
-                context.SetSceneSkip(arg1: "리엔을떠나다09", arg2: "exit");
+                context.SetSceneSkip(state: new State리엔을떠나다09(context), arg2: "exit");
                 context.DestroyMonster(arg1: new[] {102});
                 context.CreateMonster(arg1: new[] {103}, arg2: false);
                 context.MoveNpc(arg1: 103, arg2: "MS2PatrolData_ririn_goodBye_0");

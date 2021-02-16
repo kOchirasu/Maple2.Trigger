@@ -93,7 +93,7 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 4000)) {
-                    return new State기간티카Appear_렌덤조건(context);
+                    return new State기간티카Spawn_렌덤조건(context);
                 }
 
                 return null;
@@ -102,8 +102,8 @@ namespace Maple2.Trigger._02020051_bf {
             public override void OnExit() { }
         }
 
-        private class State기간티카Appear_렌덤조건 : TriggerState {
-            internal State기간티카Appear_렌덤조건(ITriggerContext context) : base(context) { }
+        private class State기간티카Spawn_렌덤조건 : TriggerState {
+            internal State기간티카Spawn_렌덤조건(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetSound(arg1: 60001, arg2: true);
@@ -111,27 +111,27 @@ namespace Maple2.Trigger._02020051_bf {
 
             public override TriggerState Execute() {
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State기간티카Appear_1(context);
+                    return new State기간티카Spawn_1(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State기간티카Appear_2(context);
+                    return new State기간티카Spawn_2(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State기간티카Appear_3(context);
+                    return new State기간티카Spawn_3(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State기간티카Appear_4(context);
+                    return new State기간티카Spawn_4(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State기간티카Appear_5(context);
+                    return new State기간티카Spawn_5(context);
                 }
 
                 if (context.RandomCondition(arg1: 20f)) {
-                    return new State기간티카Appear_6(context);
+                    return new State기간티카Spawn_6(context);
                 }
 
                 return null;
@@ -140,8 +140,8 @@ namespace Maple2.Trigger._02020051_bf {
             public override void OnExit() { }
         }
 
-        private class State기간티카Appear_1 : TriggerState {
-            internal State기간티카Appear_1(ITriggerContext context) : base(context) { }
+        private class State기간티카Spawn_1 : TriggerState {
+            internal State기간티카Spawn_1(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1001}, arg2: false);
@@ -158,8 +158,8 @@ namespace Maple2.Trigger._02020051_bf {
             public override void OnExit() { }
         }
 
-        private class State기간티카Appear_2 : TriggerState {
-            internal State기간티카Appear_2(ITriggerContext context) : base(context) { }
+        private class State기간티카Spawn_2 : TriggerState {
+            internal State기간티카Spawn_2(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1002}, arg2: false);
@@ -176,8 +176,8 @@ namespace Maple2.Trigger._02020051_bf {
             public override void OnExit() { }
         }
 
-        private class State기간티카Appear_3 : TriggerState {
-            internal State기간티카Appear_3(ITriggerContext context) : base(context) { }
+        private class State기간티카Spawn_3 : TriggerState {
+            internal State기간티카Spawn_3(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1003}, arg2: false);
@@ -194,8 +194,8 @@ namespace Maple2.Trigger._02020051_bf {
             public override void OnExit() { }
         }
 
-        private class State기간티카Appear_4 : TriggerState {
-            internal State기간티카Appear_4(ITriggerContext context) : base(context) { }
+        private class State기간티카Spawn_4 : TriggerState {
+            internal State기간티카Spawn_4(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1004}, arg2: false);
@@ -212,8 +212,8 @@ namespace Maple2.Trigger._02020051_bf {
             public override void OnExit() { }
         }
 
-        private class State기간티카Appear_5 : TriggerState {
-            internal State기간티카Appear_5(ITriggerContext context) : base(context) { }
+        private class State기간티카Spawn_5 : TriggerState {
+            internal State기간티카Spawn_5(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1005}, arg2: false);
@@ -230,8 +230,8 @@ namespace Maple2.Trigger._02020051_bf {
             public override void OnExit() { }
         }
 
-        private class State기간티카Appear_6 : TriggerState {
-            internal State기간티카Appear_6(ITriggerContext context) : base(context) { }
+        private class State기간티카Spawn_6 : TriggerState {
+            internal State기간티카Spawn_6(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.CreateMonster(arg1: new[] {1006}, arg2: false);

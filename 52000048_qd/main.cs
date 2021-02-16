@@ -153,7 +153,7 @@ namespace Maple2.Trigger._52000048_qd {
 
             public override TriggerState Execute() {
                 if (context.WaitTick(waitTick: 800)) {
-                    return new State라오즈Appear(context);
+                    return new State라오즈Spawn(context);
                 }
 
                 return null;
@@ -162,8 +162,8 @@ namespace Maple2.Trigger._52000048_qd {
             public override void OnExit() { }
         }
 
-        private class State라오즈Appear : TriggerState {
-            internal State라오즈Appear(ITriggerContext context) : base(context) { }
+        private class State라오즈Spawn : TriggerState {
+            internal State라오즈Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() {
                 context.SetEffect(arg1: new[] {601}, arg2: true);

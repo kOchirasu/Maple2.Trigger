@@ -12,7 +12,7 @@ namespace Maple2.Trigger._52010006_qd {
 
             public override TriggerState Execute() {
                 if (context.UserDetected(arg1: new[] {101})) {
-                    return new State미카Appear(context);
+                    return new State미카Spawn(context);
                 }
 
                 return null;
@@ -21,8 +21,8 @@ namespace Maple2.Trigger._52010006_qd {
             public override void OnExit() { }
         }
 
-        private class State미카Appear : TriggerState {
-            internal State미카Appear(ITriggerContext context) : base(context) { }
+        private class State미카Spawn : TriggerState {
+            internal State미카Spawn(ITriggerContext context) : base(context) { }
 
             public override void OnEnter() { }
 
@@ -44,7 +44,7 @@ namespace Maple2.Trigger._52010006_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010006_QD__MAIN__0$", arg4: 4);
-                context.SetSceneSkip(arg1: "미카Script02_0");
+                context.SetSceneSkip(state: new State미카Script02_0(context));
             }
 
             public override TriggerState Execute() {
@@ -78,7 +78,7 @@ namespace Maple2.Trigger._52010006_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001285, arg3: "$52010006_QD__MAIN__10$", arg4: 4);
-                context.SetSceneSkip(arg1: "몬스터생성_0");
+                context.SetSceneSkip(state: new StateMobCreation_0(context));
             }
 
             public override TriggerState Execute() {
@@ -193,7 +193,7 @@ namespace Maple2.Trigger._52010006_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001319, arg3: "$52010006_QD__MAIN__1$", arg4: 5);
-                context.SetSceneSkip(arg1: "카보Script02_0");
+                context.SetSceneSkip(state: new State카보Script02_0(context));
             }
 
             public override TriggerState Execute() {
@@ -227,7 +227,7 @@ namespace Maple2.Trigger._52010006_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001319, arg3: "$52010006_QD__MAIN__2$", arg4: 5);
-                context.SetSceneSkip(arg1: "미카친구들소환_0");
+                context.SetSceneSkip(state: new State미카친구들소환_0(context));
             }
 
             public override TriggerState Execute() {
@@ -288,7 +288,7 @@ namespace Maple2.Trigger._52010006_qd {
                 context.MoveNpc(arg1: 1004, arg2: "MS2PatrolData_1004_A");
                 context.MoveNpc(arg1: 1005, arg2: "MS2PatrolData_1005_A");
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010006_QD__MAIN__3$", arg4: 2);
-                context.SetSceneSkip(arg1: "둔바Script01_0");
+                context.SetSceneSkip(state: new State둔바Script01_0(context));
             }
 
             public override TriggerState Execute() {
@@ -322,7 +322,7 @@ namespace Maple2.Trigger._52010006_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001217, arg3: "$52010006_QD__MAIN__11$", arg4: 2);
-                context.SetSceneSkip(arg1: "타라Script01_0");
+                context.SetSceneSkip(state: new State타라Script01_0(context));
             }
 
             public override TriggerState Execute() {
@@ -356,7 +356,7 @@ namespace Maple2.Trigger._52010006_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001218, arg3: "$52010006_QD__MAIN__12$", arg4: 3);
-                context.SetSceneSkip(arg1: "카보Script03_0");
+                context.SetSceneSkip(state: new State카보Script03_0(context));
             }
 
             public override TriggerState Execute() {
@@ -391,7 +391,7 @@ namespace Maple2.Trigger._52010006_qd {
             public override void OnEnter() {
                 context.MoveNpc(arg1: 1002, arg2: "MS2PatrolData_1002_A");
                 context.SetConversation(arg1: 2, arg2: 11001319, arg3: "$52010006_QD__MAIN__4$", arg4: 5);
-                context.SetSceneSkip(arg1: "카보소환_0");
+                context.SetSceneSkip(state: new State카보소환_0(context));
             }
 
             public override TriggerState Execute() {
@@ -452,7 +452,7 @@ namespace Maple2.Trigger._52010006_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001319, arg3: "$52010006_QD__MAIN__5$", arg4: 5);
-                context.SetSceneSkip(arg1: "카보Script05_0");
+                context.SetSceneSkip(state: new State카보Script05_0(context));
             }
 
             public override TriggerState Execute() {
@@ -487,7 +487,7 @@ namespace Maple2.Trigger._52010006_qd {
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001319, arg3: "$52010006_QD__MAIN__6$", arg4: 5);
                 context.MoveNpc(arg1: 1006, arg2: "MS2PatrolData_1002_B");
-                context.SetSceneSkip(arg1: "사슬해제_0");
+                context.SetSceneSkip(state: new State사슬해제_0(context));
             }
 
             public override TriggerState Execute() {
@@ -551,7 +551,7 @@ namespace Maple2.Trigger._52010006_qd {
                 context.SetCinematicUI(arg1: 1);
                 context.SetCinematicUI(arg1: 3);
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010006_QD__MAIN__7$", arg4: 5);
-                context.SetSceneSkip(arg1: "스타츠Script03_0");
+                context.SetSceneSkip(state: new State스타츠Script03_0(context));
             }
 
             public override TriggerState Execute() {
@@ -585,7 +585,7 @@ namespace Maple2.Trigger._52010006_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010006_QD__MAIN__8$", arg4: 5);
-                context.SetSceneSkip(arg1: "스타츠Script04_0");
+                context.SetSceneSkip(state: new State스타츠Script04_0(context));
             }
 
             public override TriggerState Execute() {
@@ -619,7 +619,7 @@ namespace Maple2.Trigger._52010006_qd {
 
             public override void OnEnter() {
                 context.SetConversation(arg1: 2, arg2: 11001292, arg3: "$52010006_QD__MAIN__9$", arg4: 5);
-                context.SetSceneSkip(arg1: "업적이벤트발생_0");
+                context.SetSceneSkip(state: new StateAchievement_0(context));
             }
 
             public override TriggerState Execute() {
